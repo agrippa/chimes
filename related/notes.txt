@@ -1,0 +1,5 @@
+Stnfrd50.pdf
+Title: Why can I Debug some Numerical Programs that You Can't?
+Summary: Discusses debugging the numerical accuracy of multi-module software by
+         seeing how different modules respond to slight derivations in global
+         configurables (like rounding mode)
