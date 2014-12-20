@@ -1,5 +1,5 @@
-Plugin passes put underneath ${HOME}/dev/llvm/lib/Transforms are compiled into
-libraries under ${HOME}/dev/llvm/Debug+Asserts/lib/.
+Plugin passes put underneath ${HOME}/dev/llvm/llvm/lib/Transforms are compiled into
+libraries under ${HOME}/dev/llvm/build/Debug+Asserts/lib/.
 
 To load one of those libraries with LLVM, use opt -load ${path-to-dylib}.
 
