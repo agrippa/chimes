@@ -1,0 +1,14 @@
+Plugin passes put underneath ${HOME}/dev/llvm/lib/Transforms are compiled into
+libraries under ${HOME}/dev/llvm/Debug+Asserts/lib/.
+
+To load one of those libraries with LLVM, use opt -load ${path-to-dylib}.
+
+You can verify that the library is loaded by running
+    opt -load ${path-to-dylib} -help
+and checking that it shows up in the usage.
+
+LLVM bitcode files (.bc) can be generated from .c files using:
+    clang -S -emit-llvm foo.c -o foo.bc
+
+You can then run the custom pass on the bitcode file using:
+    opt -load ${path-to-dylib} -pass < foo.bc
