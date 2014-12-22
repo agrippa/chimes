@@ -12,3 +12,6 @@ LLVM bitcode files (.bc) can be generated from .c files using:
 
 You can then run the custom pass on the bitcode file using:
     opt -load ${path-to-dylib} -pass < foo.bc
+
+You can visuzlize alias sets using:
+    opt -basicaa -disable-output -print-alias-sets test.bc
