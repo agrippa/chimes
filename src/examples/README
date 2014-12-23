@@ -10,6 +10,9 @@ and checking that it shows up in the usage.
 LLVM bitcode files (.bc) can be generated from .c files using:
     clang -S -emit-llvm foo.c -o foo.bc
 
+To generate bitcode files with line number info included:
+    clang -S -emit-llvm foo.c -o foo.bc -gline-tables-only
+
 You can then run the custom pass on the bitcode file using:
     opt -load ${path-to-dylib} -pass < foo.bc
 
