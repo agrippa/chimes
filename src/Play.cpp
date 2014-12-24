@@ -8,6 +8,7 @@
 #include "llvm/IR/InstIterator.h"
 
 #include <stdio.h>
+#include <set>
 
 using namespace llvm;
 
@@ -39,6 +40,7 @@ namespace {
         std::map<std::string, FunctionInfo *> functions;
         std::map<Value *, int> value_to_alias_group;
         std::vector<AliasSetGroup *> alias_groups;
+        std::map<int, std::set<int>*> line_to_groups_modified;
 
         explicit Play(): ModulePass(ID) {
             // errs() << "Initializing Play\n";
@@ -60,6 +62,14 @@ namespace {
         int iterateOverUses(Value *val, int nesting);
         void mergeAliasGroupsInterprocedurally();
         void printAliasGroupings();
+        void unifyAliasGroupings();
+        void printValueMappings();
+        void collectLineToGroupsMapping(Module &M);
+        void printLineToGroupsMapping();
+        void collectLineToGroupsMappingInFunction(BasicBlock *bb,
+                std::set<BasicBlock *> &visited, std::set<int> *parent_groups);
+        void unionGroups(int line, std::set<int> *groups);
+        void dumpLineToGroupsMappingTo(const char *filename);
     };
 }
 
@@ -380,18 +390,24 @@ void Play::mergeAliasGroupsInterprocedurally() {
 
 void Play::printAliasGroupings() {
     errs() << alias_groups.size() << " global alias groups:\n";    
-    for (std::vector<AliasSetGroup *>::iterator group_iter = alias_groups.begin(), group_end = alias_groups.end(); group_iter != group_end; group_iter++) {
+    for (std::vector<AliasSetGroup *>::iterator group_iter =
+            alias_groups.begin(), group_end = alias_groups.end();
+            group_iter != group_end; group_iter++) {
         AliasSetGroup *group = *group_iter;
         errs() << "  { ";
-        for (std::vector<int>::iterator set_iter = group->group.begin(), set_end = group->group.end(); set_iter != set_end; set_iter++) {
+        for (std::vector<int>::iterator set_iter = group->group.begin(),
+                set_end = group->group.end(); set_iter != set_end; set_iter++) {
             if (set_iter != group->group.begin()) errs() << ", ";
             errs() << *set_iter;
         }
         errs() << " } {";
 
         int first = 1;
-        for (std::map<Value *, int>::iterator val_iter = value_to_alias_group.begin(), val_end = value_to_alias_group.end(); val_iter != val_end; val_iter++) {
-            if (std::find(group->group.begin(), group->group.end(), val_iter->second) != group->group.end()) {
+        for (std::map<Value *, int>::iterator val_iter =
+                value_to_alias_group.begin(), val_end =
+                value_to_alias_group.end(); val_iter != val_end; val_iter++) {
+            if (std::find(group->group.begin(), group->group.end(),
+                        val_iter->second) != group->group.end()) {
                 if (!first) {
                     errs() << " |";
                 }
@@ -403,13 +419,204 @@ void Play::printAliasGroupings() {
     }
 }
 
+void Play::unifyAliasGroupings() {
+    std::map<int, int> mapping;
+
+    int count = 0;
+    for (std::vector<AliasSetGroup *>::iterator group_iter =
+            alias_groups.begin(), group_end = alias_groups.end();
+            group_iter != group_end; group_iter++) {
+        AliasSetGroup *group = *group_iter;
+        for (std::vector<int>::iterator set_iter = group->group.begin(),
+                set_end = group->group.end(); set_iter != set_end; set_iter++) {
+            mapping[*set_iter] = count;
+        }
+        count++;
+    }
+
+    std::map<Value *, int> tmp = value_to_alias_group;
+    for (std::map<Value *, int>::iterator value_iter =
+            value_to_alias_group.begin(), value_end =
+            value_to_alias_group.end(); value_iter != value_end;
+            value_iter++) {
+        value_iter->second = mapping[value_iter->second];
+    }
+}
+
+void Play::printValueMappings() {
+    errs() << "\n" << value_to_alias_group.size() << " values:\n";
+    for (std::map<Value *, int>::iterator value_iter =
+            value_to_alias_group.begin(), value_end =
+            value_to_alias_group.end(); value_iter != value_end;
+            value_iter++) {
+        errs() << *(value_iter->first) << " -> " << value_iter->second << "\n";
+    }
+    errs() << "\n";
+}
+
+void Play::unionGroups(int line, std::set<int> *groups) {
+    if (line_to_groups_modified.find(line) == line_to_groups_modified.end()) {
+        line_to_groups_modified[line] = groups;
+    } else {
+        std::map<int, std::set<int>*>::iterator found =
+            line_to_groups_modified.find(line);
+        std::set<int> *curr_groups = found->second;
+        for (std::set<int>::iterator parent_iter = groups->begin(),
+                parent_end = groups->end(); parent_iter != parent_end;
+                parent_iter++) {
+            curr_groups->insert(*parent_iter);
+        }
+    }
+}
+
+void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
+        std::set<BasicBlock *>& visited, std::set<int> *parent_groups) {
+
+    if (parent_groups != NULL && parent_groups->size() > 0) {
+
+        if (curr->getName().str().find("for.inc") == 0 ||
+                curr->getName().str().find("for.cond") == 0) {
+
+            TerminatorInst *term = curr->getTerminator();
+            for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+                BasicBlock *child = term->getSuccessor(i);
+                collectLineToGroupsMappingInFunction(child, visited, parent_groups);
+            }
+
+        } else {
+            int minline = -1;
+            for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
+                    inst_iter != inst_end; inst_iter++) {
+                Instruction *curr_inst = inst_iter;
+                // if (dyn_cast<TerminatorInst>(curr_inst) == NULL) {
+                    int line = curr_inst->getDebugLoc().getLine();
+                    if (minline == -1 || line < minline) {
+                        minline = line;
+                    }
+                // }
+            }
+
+            errs() << "B> " << curr->getName().str() << " " << minline << "\n";
+            unionGroups(minline, parent_groups);
+        }
+    }
+
+    if (visited.find(curr) != visited.end()) {
+        return;
+    }
+    visited.insert(curr);
+
+    std::set<int> *groups = new std::set<int>();
+    int maxline = -1;
+
+    for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
+            inst_iter != inst_end; inst_iter++) {
+        Instruction *curr_inst = inst_iter;
+        // if (dyn_cast<TerminatorInst>(curr_inst) == NULL) {
+            int line = curr_inst->getDebugLoc().getLine();
+            if (line > maxline) maxline = line;
+        // }
+
+        if (StoreInst *store = dyn_cast<StoreInst>(curr_inst)) {
+            assert(value_to_alias_group.find(store->getPointerOperand()) !=
+                    value_to_alias_group.end());
+            int group = value_to_alias_group[store->getPointerOperand()];
+            groups->insert(group);
+        }
+    }
+
+    TerminatorInst *term = curr->getTerminator();
+
+    // if (dyn_cast<ReturnInst>(term) != NULL) {
+    //     /*
+    //      * do nothing, maxline points directly at the line we want to
+    //      * insert our metrics.
+    //      */
+    // } else if (dyn_cast<BranchInst>(term) != NULL) {
+    //     maxline = maxline - 1;
+    // } else {
+    //     errs() << "ERROR: Unsupporter terminator " << *term << "\n";
+    //     exit(1);
+    // }
+
+    if (curr->getName().str().find("for.inc") == 0 ||
+            curr->getName().str().find("for.cond") == 0) {
+        errs() << "found label " << curr->getName().str() + "\n";
+
+        for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+            BasicBlock *child = term->getSuccessor(i);
+            collectLineToGroupsMappingInFunction(child, visited, groups);
+        }
+
+    } else {
+        if (groups->size() > 0) {
+            errs() << "A> " << curr->getName().str() << " " << maxline << "\n";
+            unionGroups(maxline, groups);
+        }
+
+        for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+            BasicBlock *child = term->getSuccessor(i);
+            collectLineToGroupsMappingInFunction(child, visited, NULL);
+        }
+    }
+}
+
+void Play::collectLineToGroupsMapping(Module& M) {
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        std::set<BasicBlock *> visited;
+        BasicBlock& entry = F->getEntryBlock();
+
+        collectLineToGroupsMappingInFunction(&entry, visited, NULL);
+    }
+}
+
+void Play::printLineToGroupsMapping() {
+    errs() << "\n" << line_to_groups_modified.size() << " lines:\n";
+    for (std::map<int, std::set<int>*>::iterator line_iter =
+            line_to_groups_modified.begin(), line_end =
+            line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
+        std::set<int> *groups = line_iter->second;
+
+        errs() << " " << line_iter->first << " -> { ";
+        for (std::set<int>::iterator groups_iter = groups->begin(),
+                groups_end = groups->end(); groups_iter != groups_end;
+                groups_iter++) {
+            if (groups_iter != groups->begin()) errs() << ", ";
+            errs() << *groups_iter;
+        }
+        errs() << " }\n";
+    }
+}
+
+void Play::dumpLineToGroupsMappingTo(const char *filename) {
+    FILE *fp = fopen(filename, "w");
+
+    for (std::map<int, std::set<int>*>::iterator line_iter =
+            line_to_groups_modified.begin(), line_end =
+            line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
+        std::set<int> *groups = line_iter->second;
+
+        fprintf(fp, "%d -> { ", line_iter->first);
+        for (std::set<int>::iterator groups_iter = groups->begin(),
+                groups_end = groups->end(); groups_iter != groups_end;
+                groups_iter++) {
+            if (groups_iter != groups->begin()) fprintf(fp, ", ");
+            fprintf(fp, "%d", *groups_iter);
+        }
+        fprintf(fp, " }\n");
+    }
+
+    fclose(fp);
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
  *  graphs (i.e. functions) in reverse depth traversal order.
  */
 bool Play::runOnModule(Module &M) {
-    // errs() << "Running pass on call graph of size " << SCC.size() << "\n";
 
     gatherCallSites(M);
 
@@ -421,5 +628,15 @@ bool Play::runOnModule(Module &M) {
 
     printAliasGroupings();
 
-    return false;
+    unifyAliasGroupings();
+
+    printValueMappings();
+
+    collectLineToGroupsMapping(M);
+
+    printLineToGroupsMapping();
+
+    dumpLineToGroupsMappingTo("lines.info");
+
+    return true;
 }
