@@ -41,6 +41,7 @@ def getFunctionStartInsertions(functions_start_file):
 
     for line in functions_start_fp:
         line_no = int(line)
+        assert line_no not in insertions.keys()
         insertions[line_no] = 'new_stack(); '
 
     functions_start_fp.close()
@@ -48,6 +49,20 @@ def getFunctionStartInsertions(functions_start_file):
     return insertions
 
 
+def getFunctionExitInsertions(function_exits_file):
+    function_exits_fp = open(function_exits_file, 'r')
+
+    insertions = {}
+
+    for line in function_exits_fp:
+        line_no = int(line)
+        assert line_no not in insertions.keys()
+        insertions[line_no] = 'rm_stack(); '
+
+    function_exits_fp.close()
+
+    return insertions
+    
 def getInputFileContents(input_file):
     input_file_contents = []
     input_file_fp = open(input_file, 'r')
@@ -58,20 +73,22 @@ def getInputFileContents(input_file):
     return input_file_contents
 
 
-if len(sys.argv) != 5:
-    print 'usage: InsertTrackingCalls.py file.c lines.info functions.info out.c'
+if len(sys.argv) != 6:
+    print 'usage: InsertTrackingCalls.py file.c lines.info functions.info exits.info out.c'
     sys.exit(1)
 
 input_file = sys.argv[1]
 lines_info_file = sys.argv[2]
 functions_start_file = sys.argv[3]
-out_file = sys.argv[4]
+function_exits_file = sys.argv[4]
+out_file = sys.argv[5]
 
 state_change_inserts = getStateChangeInsertions(lines_info_file)
 function_start_inserts = getFunctionStartInsertions(functions_start_file)
+function_exit_inserts = getFunctionExitInsertions(function_exits_file)
 input_file_contents = getInputFileContents(input_file)
 
-all_insertions = [state_change_inserts, function_start_inserts]
+all_insertions = [function_start_inserts, state_change_inserts, function_exit_inserts]
 all_lines = set()
 for insert_list in all_insertions:
     all_lines = all_lines.union(set(insert_list.keys()))
