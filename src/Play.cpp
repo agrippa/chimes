@@ -933,5 +933,11 @@ bool Play::runOnModule(Module &M) {
 
     findStackAllocations(M);
 
+    /*
+     * Next up: intercept all malloc calls and replace them with a custom
+     * wrapper that takes both the usual malloc arguments, plus the alias group
+     * this allocation belongs to.
+     */
+
     return false;
 }
