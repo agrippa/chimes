@@ -73,6 +73,7 @@ namespace {
         void dumpFunctionStartingLineTo(const char *filename,
                 std::vector<int> functions);
         void findStartingLinesForAllFunctions(Module &M);
+        void findFunctionExits(Module &M);
     };
 }
 
@@ -636,6 +637,37 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
     dumpFunctionStartingLineTo("func_start.info", functions);
 }
 
+void Play::findFunctionExits(Module &M) {
+    const char *exit_filename = "exit.info";
+    FILE *fp = fopen(exit_filename, "w");
+    std::vector<int> exits;
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                if (dyn_cast<ReturnInst>(&inst)) {
+                    int line = inst.getDebugLoc().getLine();
+                    if (line != 0) {
+                        assert(std::find(exits.begin(), exits.end(), line) ==
+                                exits.end());
+                        exits.push_back(line);
+                        fprintf(fp, "%d\n", line);
+                    }
+                }
+            }
+        }
+    }
+
+    fclose(fp);
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
@@ -683,6 +715,8 @@ bool Play::runOnModule(Module &M) {
      */
 
     findStartingLinesForAllFunctions(M);
+
+    findFunctionExits(M);
 
     return false;
 }
