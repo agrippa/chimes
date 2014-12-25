@@ -13,7 +13,7 @@
 
 using namespace llvm;
 
-// #define VERBOSE
+#define VERBOSE
 
 namespace {
 
@@ -66,9 +66,11 @@ namespace {
         void traverse(BasicBlock &curr, std::vector<std::string> visited);
         void gatherCallSites(Module &M);
         void combineAliasSetGroups(int merge_into, int merge_from);
-        int searchDownUsesForAliasSetGroup(Value *val, int nesting);
+        int searchDownUsesForAliasSetGroup(Value *val);
+        int searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
+                std::set<Value *> *visited);
         int searchForValueInKnownAliases(Value *val);
-        int iterateOverUses(Value *val, int nesting);
+        int iterateOverUses(Value *val, int nesting, std::set<Value *> *visited);
         void mergeAliasGroupsInterprocedurally();
         void printAliasGroupings();
         void unifyAliasGroupings();
@@ -93,6 +95,7 @@ namespace {
                 std::set<int> *to_insert);
         int findStartingLineForFunction(Function *F);
         void findHeapAllocations(Module &M);
+        int searchUpDefsForAliasSetGroup(Value *val, int nesting);
     };
 }
 
@@ -271,7 +274,7 @@ int Play::searchForValueInKnownAliases(Value *val) {
     return -1;
 }
 
-int Play::iterateOverUses(Value *val, int nesting) {
+int Play::iterateOverUses(Value *val, int nesting, std::set<Value *> *visited) {
 #ifdef VERBOSE
     for (Value::use_iterator use_iter = val->use_begin(),
             use_end = val->use_end(); use_iter != use_end;
@@ -286,17 +289,27 @@ int Play::iterateOverUses(Value *val, int nesting) {
             use_iter++) {
         Use& use = *use_iter;
 
-        int foundUse = searchDownUsesForAliasSetGroup(use.getUser(), nesting);
+        int foundUse = searchDownUsesForAliasSetGroupHelper(use.getUser(),
+                nesting, visited);
         if (foundUse != -1) return foundUse;
     }
 
     return -1;
 }
 
-int Play::searchDownUsesForAliasSetGroup(Value *val, int nesting) {
+int Play::searchDownUsesForAliasSetGroup(Value *val) {
+    std::set<Value *> visited;
+    return searchDownUsesForAliasSetGroupHelper(val, 0, &visited);
+}
+
+int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
+        std::set<Value *> *visited) {
 #ifdef VERBOSE
     errs() << "Searching down use chains for group of: \"" << *val << "\"\n";
 #endif
+
+    if (visited->find(val) != visited->end()) return -1;
+    visited->insert(val);
 
     if (nesting == 0) {
         int foundThis = searchForValueInKnownAliases(val);
@@ -313,8 +326,8 @@ int Play::searchDownUsesForAliasSetGroup(Value *val, int nesting) {
         errs() << "  Is a store with pointer \"" << *store->getPointerOperand() << "\"\n";
 #endif
 
-        return searchDownUsesForAliasSetGroup(store->getPointerOperand(),
-                nesting + 1);
+        return searchDownUsesForAliasSetGroupHelper(store->getPointerOperand(),
+                nesting + 1, visited);
     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
 #ifdef VERBOSE
         errs() << "  Is a load with pointer \"" << *load->getPointerOperand() <<
@@ -327,13 +340,13 @@ int Play::searchDownUsesForAliasSetGroup(Value *val, int nesting) {
 #endif
             if (found != -1) return found;
 
-            return iterateOverUses(val, nesting - 1);
+            return iterateOverUses(val, nesting - 1, visited);
         } else {
-            return searchDownUsesForAliasSetGroup(load->getPointerOperand(),
-                    nesting - 1);
+            return searchDownUsesForAliasSetGroupHelper(load->getPointerOperand(),
+                    nesting - 1, visited);
         }
     } else {
-        return iterateOverUses(val, nesting);
+        return iterateOverUses(val, nesting, visited);
     }
     
     return -1;
@@ -400,11 +413,11 @@ void Play::mergeAliasGroupsInterprocedurally() {
                 Argument *arg_in_callee = (*arguments)[arg];
                 Value *passed_in_caller = (*call->passed)[arg];
 
-                int callee_group = searchDownUsesForAliasSetGroup(arg_in_callee, 0);
+                int callee_group = searchDownUsesForAliasSetGroup(arg_in_callee);
 #ifdef VERBOSE
                 errs() << "\n";
 #endif
-                int caller_group = searchDownUsesForAliasSetGroup(passed_in_caller, 0);
+                int caller_group = searchDownUsesForAliasSetGroup(passed_in_caller);
 #ifdef VERBOSE
                 errs() << "\n";
 #endif
@@ -668,7 +681,11 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
         Function *F = &*I;
 
         int min_func_line = findStartingLineForFunction(F);
-        functions.push_back(min_func_line);
+
+        // Externally defined functions won't have any body info
+        if (min_func_line != -1) {
+            functions.push_back(min_func_line);
+        }
     }
 
     dumpFunctionStartingLineTo("func_start.info", functions);
@@ -891,6 +908,39 @@ void Play::findStackAllocations(Module &M) {
     fclose(fp);
 }
 
+int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
+    if (nesting == 0) {
+        int alias_no = searchForValueInKnownAliases(val);
+        if (alias_no >= 0) return alias_no;
+    }
+
+    if (AllocaInst *alloc = dyn_cast<AllocaInst>(val)) {
+        std::set<Value *> visited;
+        return searchDownUsesForAliasSetGroupHelper(alloc, nesting, &visited);
+    } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
+        return searchUpDefsForAliasSetGroup(load->getPointerOperand(),
+                nesting + 1);
+    } else if (dyn_cast<StoreInst>(val)) {
+        /*
+         * This shouldn't be possible, because store shouldn't be producing any
+         * defs. assert(0) here so that if it is possible, we have to debug.
+         */
+        assert(0);
+        return -1;
+    } else if (User *user = dyn_cast<User>(val)) {
+        /*
+         * This isn't true, but assert it for now to get a prototype working so
+         * we'll trip it when it actually starts being not true and we'll have
+         * to special-case pointer chasing through different instruction types.
+         */
+        assert(user->getNumOperands() == 1);
+        Value *op = user->getOperand(0);
+        return searchUpDefsForAliasSetGroup(op, nesting);
+    } else {
+        return -1;
+    }
+}
+
 void Play::findHeapAllocations(Module &M) {
     const char *filename = "heap.info";
     FILE *fp = fopen(filename, "w");
@@ -908,18 +958,41 @@ void Play::findHeapAllocations(Module &M) {
                 Instruction &inst = *i;
                 if (CallInst *callInst = dyn_cast<CallInst>(&inst)) {
                     Function *callee = callInst->getCalledFunction();
-                    if (callee && strcmp(callee->getName().str().c_str(), "malloc") == 0) {
+                    if (callee) {
                         int line_no = callInst->getDebugLoc().getLine();
                         assert(line_no != 0);
+                        const char *callee_name =
+                            callee->getName().str().c_str();
 
-                        int alias_no = searchDownUsesForAliasSetGroup(callInst,
-                                0);
-                        // We don't currently support multiple mallocs per line
-                        assert(found_mallocs.find(line_no) ==
-                                found_mallocs.end());
-                        found_mallocs.insert(line_no);
+                        if (strcmp(callee_name, "malloc") == 0 ||
+                                strcmp(callee_name, "realloc") == 0 ||
+                                strcmp(callee_name, "free") == 0) {
 
-                        fprintf(fp, "%d %d\n", line_no, alias_no);
+                            int alias_no;
+                            errs() << "working on " << callee_name << "\n";
+                            if (strcmp(callee_name, "malloc") == 0 ||
+                                    strcmp(callee_name, "realloc") == 0) {
+                                alias_no = searchDownUsesForAliasSetGroup(
+                                        callInst);
+                            } else {
+                                // free
+                                assert(callInst->getNumArgOperands() == 1);
+                                alias_no = searchUpDefsForAliasSetGroup(
+                                        callInst->getArgOperand(0), 0);
+                            }
+                            errs() << "done\n";
+                            assert(alias_no >= 0);
+
+                            /*
+                             * We don't currently support multiple mallocs per
+                             * line
+                             */
+                            assert(found_mallocs.find(line_no) ==
+                                    found_mallocs.end());
+                            found_mallocs.insert(line_no);
+
+                            fprintf(fp, "%d %d\n", line_no, alias_no);
+                        }
                     }
                 }
             }

@@ -106,20 +106,31 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         line_no = int(tokens[0])
         alias_group = int(tokens[1])
         file_line = input_file_contents[line_no - 1]
-        assert 'malloc' in file_line
+
         # Only support single-line malloc calls for now
+        fname = ''
+        if 'malloc' in file_line:
+            assert 'realloc' not in line and 'free' not in line
+            fname = 'malloc'
+        elif 'realloc' in file_line:
+            assert 'malloc' not in line and 'free' not in line
+            fname = 'realloc'
+        elif 'free' in file_line:
+            assert 'malloc' not in line and 'realloc' not in line
+            fname = 'free'
+
         assert file_line.find(';') == len(file_line) - 1
 
-        malloc_index = file_line.find('malloc')
-        new_line = file_line[0:malloc_index + len('malloc')]
-        file_line = file_line[malloc_index + len('malloc'):]
+        func_index = file_line.find(fname)
+        new_line = file_line[0:func_index + len(fname)]
+        file_line = file_line[func_index + len(fname):]
         open_paren_index = file_line.find('(')
         assert open_paren_index == 0
         file_line = file_line[1:]
         new_line = new_line + '_wrapper('
 
-        size = file_line[:file_line.rfind(')')]
-        new_line = new_line + size + ', ' + str(alias_group) + ');'
+        args = file_line[:file_line.rfind(')')]
+        new_line = new_line + args + ', ' + str(alias_group) + ');'
 
         input_file_contents[line_no - 1] = new_line
 
