@@ -12,6 +12,7 @@ int main(int argc, char **argv) {
     int i;
     int caller_var = 3;
     int caller_var2 = 4;
+    int arr[10];
     foo(&caller_var);
     
     bar(&caller_var2);
