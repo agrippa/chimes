@@ -70,6 +70,9 @@ namespace {
                 std::set<BasicBlock *> &visited, std::set<int> *parent_groups);
         void unionGroups(int line, std::set<int> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
+        void dumpFunctionStartingLineTo(const char *filename,
+                std::vector<int> functions);
+        void findStartingLinesForAllFunctions(Module &M);
     };
 }
 
@@ -488,15 +491,12 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
                     inst_iter != inst_end; inst_iter++) {
                 Instruction *curr_inst = inst_iter;
-                // if (dyn_cast<TerminatorInst>(curr_inst) == NULL) {
-                    int line = curr_inst->getDebugLoc().getLine();
-                    if (minline == -1 || line < minline) {
-                        minline = line;
-                    }
-                // }
+                int line = curr_inst->getDebugLoc().getLine();
+                if (line != 0 && (minline == -1 || line < minline)) {
+                    minline = line;
+                }
             }
 
-            errs() << "B> " << curr->getName().str() << " " << minline << "\n";
             unionGroups(minline, parent_groups);
         }
     }
@@ -512,10 +512,8 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
     for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
             inst_iter != inst_end; inst_iter++) {
         Instruction *curr_inst = inst_iter;
-        // if (dyn_cast<TerminatorInst>(curr_inst) == NULL) {
-            int line = curr_inst->getDebugLoc().getLine();
-            if (line > maxline) maxline = line;
-        // }
+        int line = curr_inst->getDebugLoc().getLine();
+        if (line != 0 && line > maxline) maxline = line;
 
         if (StoreInst *store = dyn_cast<StoreInst>(curr_inst)) {
             assert(value_to_alias_group.find(store->getPointerOperand()) !=
@@ -527,21 +525,8 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
 
     TerminatorInst *term = curr->getTerminator();
 
-    // if (dyn_cast<ReturnInst>(term) != NULL) {
-    //     /*
-    //      * do nothing, maxline points directly at the line we want to
-    //      * insert our metrics.
-    //      */
-    // } else if (dyn_cast<BranchInst>(term) != NULL) {
-    //     maxline = maxline - 1;
-    // } else {
-    //     errs() << "ERROR: Unsupporter terminator " << *term << "\n";
-    //     exit(1);
-    // }
-
     if (curr->getName().str().find("for.inc") == 0 ||
             curr->getName().str().find("for.cond") == 0) {
-        errs() << "found label " << curr->getName().str() + "\n";
 
         for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
             BasicBlock *child = term->getSuccessor(i);
@@ -550,7 +535,6 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
 
     } else {
         if (groups->size() > 0) {
-            errs() << "A> " << curr->getName().str() << " " << maxline << "\n";
             unionGroups(maxline, groups);
         }
 
@@ -598,7 +582,7 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
             line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
         std::set<int> *groups = line_iter->second;
 
-        fprintf(fp, "%d -> { ", line_iter->first);
+        fprintf(fp, "%d : { ", line_iter->first);
         for (std::set<int>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;
                 groups_iter++) {
@@ -611,6 +595,47 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
     fclose(fp);
 }
 
+void Play::dumpFunctionStartingLineTo(const char *filename, std::vector<int> functions) {
+    FILE *fp = fopen(filename, "w");
+
+    for (std::vector<int>::iterator f_iter = functions.begin(),
+            f_end = functions.end(); f_iter != f_end; f_iter++) {
+        fprintf(fp, "%d\n", *f_iter);
+    }
+
+    fclose(fp);
+}
+
+void Play::findStartingLinesForAllFunctions(Module &M) {
+    /*
+     * This assumes that for all functions, their declaration and body are on
+     * different lines. This may not be true for all functions.
+     */
+    std::vector<int> functions;
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        int min_func_line = -1;
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                int line = inst.getDebugLoc().getLine();
+                if (line != 0 && (min_func_line == -1 || line < min_func_line)) {
+                    min_func_line = line;
+                }
+            }
+        }
+
+        functions.push_back(min_func_line);
+    }
+
+    dumpFunctionStartingLineTo("func_start.info", functions);
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
@@ -618,6 +643,12 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
  */
 bool Play::runOnModule(Module &M) {
 
+    /*
+     * This first section of code groups values into alias sets, finds all alias
+     * sets modified in each basic block, and produces the lines on which calls
+     * to metrics collectors should be inserted in the original source code, as
+     * well as the alias sets that should be marked by those calls.
+     */
     gatherCallSites(M);
 
     AliasAnalysis *AA = &getAnalysis<AliasAnalysis>();
@@ -638,5 +669,20 @@ bool Play::runOnModule(Module &M) {
 
     dumpLineToGroupsMappingTo("lines.info");
 
-    return true;
+    /*
+     * This next region is responsible for finding and marking all stack
+     * allocations that use alloca, so that we can save them in the library.
+     *
+     * In this stage, we mark a number of things to be added in the code. First,
+     * we add a callback at the very beginning of everything function that says
+     * we're creating a new stack frame. Second, we add a callback at every
+     * alloca statement for a stack variable that passes the address of that
+     * variable and its name to the backend. Third, at every return statement we
+     * add a callback that indicates we are removing a stack frame and any stack
+     * variables belonging to it can be ignored now.
+     */
+
+    findStartingLinesForAllFunctions(M);
+
+    return false;
 }
