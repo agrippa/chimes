@@ -9,12 +9,21 @@
 
 #include <stdio.h>
 #include <set>
+#include <sstream>
 
 using namespace llvm;
 
 // #define VERBOSE
 
 namespace {
+
+    typedef struct _StackAllocInfo {
+        std::string *varname;
+        int type_size_in_bits;
+        AllocaInst *alloca;
+        BasicBlock *parent;
+        std::vector<Instruction *> users;
+    } StackAllocInfo;
 
     typedef struct _CallInfo {
         Function *caller;
@@ -72,8 +81,17 @@ namespace {
         void dumpLineToGroupsMappingTo(const char *filename);
         void dumpFunctionStartingLineTo(const char *filename,
                 std::vector<int> functions);
+
         void findStartingLinesForAllFunctions(Module &M);
         void findFunctionExits(Module &M);
+        void findStackAllocations(Module &M);
+        int findMinimumLineInBasicBlock(BasicBlock *curr);
+        void traverseUntilNotForIncOrCond(BasicBlock *curr,
+                std::set<int> *to_insert);
+        void traverseLookingForFirstUsers(BasicBlock::iterator curr,
+                BasicBlock::iterator end, std::vector<Instruction *> users,
+                std::set<int> *to_insert);
+        int findStartingLineForFunction(Function *F);
     };
 }
 
@@ -145,7 +163,8 @@ void Play::combineAliasSetGroups(int merge_into, int merge_from) {
     if (target == src) return;
 
     target->mergeAliasSet(src);
-    std::vector<AliasSetGroup *>::iterator to_remove = std::find(alias_groups.begin(), alias_groups.end(), src);
+    std::vector<AliasSetGroup *>::iterator to_remove = std::find(
+            alias_groups.begin(), alias_groups.end(), src);
     assert(to_remove != alias_groups.end());
     alias_groups.erase(to_remove);
     delete src;
@@ -473,6 +492,19 @@ void Play::unionGroups(int line, std::set<int> *groups) {
     }
 }
 
+int Play::findMinimumLineInBasicBlock(BasicBlock *curr) {
+    int minline = -1;
+    for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
+            inst_iter != inst_end; inst_iter++) {
+        Instruction *curr_inst = inst_iter;
+        int line = curr_inst->getDebugLoc().getLine();
+        if (line != 0 && (minline == -1 || line < minline)) {
+            minline = line;
+        }
+    }
+    return minline;
+}
+
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
         std::set<BasicBlock *>& visited, std::set<int> *parent_groups) {
 
@@ -488,16 +520,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             }
 
         } else {
-            int minline = -1;
-            for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
-                    inst_iter != inst_end; inst_iter++) {
-                Instruction *curr_inst = inst_iter;
-                int line = curr_inst->getDebugLoc().getLine();
-                if (line != 0 && (minline == -1 || line < minline)) {
-                    minline = line;
-                }
-            }
-
+            int minline = findMinimumLineInBasicBlock(curr);
             unionGroups(minline, parent_groups);
         }
     }
@@ -607,6 +630,24 @@ void Play::dumpFunctionStartingLineTo(const char *filename, std::vector<int> fun
     fclose(fp);
 }
 
+int Play::findStartingLineForFunction(Function *F) {
+    int min_func_line = -1;
+    Function::BasicBlockListType &bblist = F->getBasicBlockList();
+    for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+            bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+        BasicBlock *bb = &*bb_iter;
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                ++i) {
+            Instruction &inst = *i;
+            int line = inst.getDebugLoc().getLine();
+            if (line != 0 && (min_func_line == -1 || line < min_func_line)) {
+                min_func_line = line;
+            }
+        }
+    }
+    return min_func_line;
+}
+
 void Play::findStartingLinesForAllFunctions(Module &M) {
     /*
      * This assumes that for all functions, their declaration and body are on
@@ -616,21 +657,7 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        int min_func_line = -1;
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                    ++i) {
-                Instruction &inst = *i;
-                int line = inst.getDebugLoc().getLine();
-                if (line != 0 && (min_func_line == -1 || line < min_func_line)) {
-                    min_func_line = line;
-                }
-            }
-        }
-
+        int min_func_line = findStartingLineForFunction(F);
         functions.push_back(min_func_line);
     }
 
@@ -665,6 +692,192 @@ void Play::findFunctionExits(Module &M) {
         }
     }
 
+    fclose(fp);
+}
+
+void Play::traverseUntilNotForIncOrCond(BasicBlock *curr,
+        std::set<int> *to_insert) {
+    if (curr->getName().str().find("for.inc") == 0 ||
+            curr->getName().str().find("for.cond") == 0) {
+        TerminatorInst *term = curr->getTerminator();
+        for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+            BasicBlock *child = term->getSuccessor(i);
+            traverseUntilNotForIncOrCond(child, to_insert);
+        }
+    } else {
+        int minLine = findMinimumLineInBasicBlock(curr);
+        to_insert->insert(minLine);
+    }
+}
+
+void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
+        BasicBlock::iterator end, std::vector<Instruction *> users,
+        std::set<int> *to_insert) {
+    TerminatorInst *term = curr->getParent()->getTerminator();
+
+    while (curr != end) {
+        if (std::find(users.begin(), users.end(), curr) != users.end()) {
+            // Found a user! now just need to mark the right line and exit
+            BasicBlock *parent = curr->getParent();
+            if (parent->getName().str().find("for.inc") == 0 ||
+                    parent->getName().str().find("for.cond") == 0) {
+                traverseUntilNotForIncOrCond(parent, to_insert);
+            } else {
+                if (curr->getDebugLoc().getLine() == 0) {
+                    /*
+                     * If we have a user with an invalid line, it should be a
+                     * store instruction initializing a stack variable at
+                     * declaration. If that's the case, we just find what line
+                     * this function starts on and insert there.
+                     */
+                    assert(dyn_cast<StoreInst>(curr));
+                    to_insert->insert(findStartingLineForFunction(
+                                curr->getParent()->getParent()));
+                } else {
+                    int insert_at = curr->getDebugLoc().getLine();
+                    to_insert->insert(insert_at);
+                }
+            }
+            return;
+        }
+        curr++;
+    }
+
+    /*
+     * If not user was found in this basic block, we need to traverse all
+     * successors.
+     */
+    assert(term->getNumSuccessors() > 0);
+    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+        BasicBlock *child = term->getSuccessor(i);
+        traverseLookingForFirstUsers(child->begin(), child->end(), users,
+                to_insert);
+    }
+}
+
+
+//TODO I don't think this supports stack-allocated arrays yet
+void Play::findStackAllocations(Module &M) {
+    const char *filename = "stack.info";
+    FILE *fp = fopen(filename, "w");
+    DataLayout *layout = new DataLayout(&M);
+    std::set<std::string> found_variables;
+
+    std::vector<StackAllocInfo *> alloc_infos;
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                if (AllocaInst *alloca = dyn_cast<AllocaInst>(&inst)) {
+                    // int array_size = alloca->getArraySize();
+                    std::string varname = alloca->getName().str();
+                    uint64_t type_size = layout->getTypeSizeInBits(
+                            alloca->getAllocatedType());
+                    assert(type_size % 8 == 0);
+
+                    if (strcmp(varname.c_str(), "retval") == 0) {
+                        continue;
+                    }
+
+                    int is_argument = 0;
+                    const char *arg_addr_suffix = ".addr";
+                    if (varname.find(arg_addr_suffix) == varname.length() -
+                            strlen(arg_addr_suffix)) {
+
+                        varname = varname.substr(0, varname.length() -
+                                strlen(arg_addr_suffix));
+
+                        for (Function::arg_iterator arg_iter = F->arg_begin(),
+                                arg_end = F->arg_end(); arg_iter != arg_end;
+                                arg_iter++) {
+                            Argument *arg = arg_iter;
+                            if (arg->getName().str() == varname) {
+                                is_argument = 1;
+                                break;
+                            }
+                        }
+                        assert(is_argument);
+                    }
+
+                    StackAllocInfo *info = new StackAllocInfo();
+                    info->type_size_in_bits = type_size;
+                    info->alloca = alloca;
+                    info->parent = bb;
+
+                    for (Value::use_iterator use_iter = alloca->use_begin(),
+                            use_end = alloca->use_end(); use_iter != use_end;
+                            use_iter++) {
+                        Use *use = &*use_iter;
+                        if (Instruction *user = dyn_cast<Instruction>(use->getUser())) {
+                            info->users.push_back(user);
+                        } else {
+                            fprintf(stderr, "User is not an instruction?\n");
+                            exit(1);
+                        }
+                    }
+
+                    std::string *unique_varname = new std::string();
+                    int permute = 0;
+                    do {
+                        std::ostringstream str_stream;
+                        str_stream << F->getName().str() << "____" <<
+                            varname << "____" << permute;
+                        *unique_varname = str_stream.str();
+                        permute++;
+                    } while (found_variables.find(*unique_varname) != found_variables.end());
+
+                    found_variables.insert(*unique_varname);
+                  
+                    info->varname = unique_varname;
+
+                    if (info->users.size() > 0) {
+                        alloc_infos.push_back(info);
+                    } else {
+                        delete info;
+                    }
+                }
+            }
+        }
+    }
+
+    for (std::vector<StackAllocInfo *>::iterator alloc_iter =
+            alloc_infos.begin(), alloc_end = alloc_infos.end();
+            alloc_iter != alloc_end; alloc_iter++) {
+        StackAllocInfo *info = *alloc_iter;
+        std::vector<Instruction *> users = info->users;
+        BasicBlock *parent = info->parent;
+        BasicBlock::iterator i = parent->begin();
+        while (i != parent->end()) {
+            if (AllocaInst *alloc = dyn_cast<AllocaInst>(i)) {
+                if (alloc == info->alloca) {
+                    break;
+                }
+            }
+            i++;
+        }
+        // functions should have something other than stack allocations
+        assert(i != parent->end());
+
+        std::set<int> lines_to_insert_at;
+        traverseLookingForFirstUsers(i, parent->end(), users,
+                &lines_to_insert_at);
+
+        for (std::set<int>::iterator lines_iter = lines_to_insert_at.begin(),
+                lines_end = lines_to_insert_at.end(); lines_iter != lines_end;
+                lines_iter++) {
+            fprintf(fp, "%d %s %d\n", *lines_iter, info->varname->c_str(),
+                    info->type_size_in_bits);
+        }
+    }
+
+    delete layout;
     fclose(fp);
 }
 
@@ -717,6 +930,8 @@ bool Play::runOnModule(Module &M) {
     findStartingLinesForAllFunctions(M);
 
     findFunctionExits(M);
+
+    findStackAllocations(M);
 
     return false;
 }
