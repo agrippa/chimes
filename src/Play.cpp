@@ -13,7 +13,7 @@
 
 using namespace llvm;
 
-#define VERBOSE
+// #define VERBOSE
 
 namespace {
 
@@ -969,7 +969,6 @@ void Play::findHeapAllocations(Module &M) {
                                 strcmp(callee_name, "free") == 0) {
 
                             int alias_no;
-                            errs() << "working on " << callee_name << "\n";
                             if (strcmp(callee_name, "malloc") == 0 ||
                                     strcmp(callee_name, "realloc") == 0) {
                                 alias_no = searchDownUsesForAliasSetGroup(
@@ -980,7 +979,6 @@ void Play::findHeapAllocations(Module &M) {
                                 alias_no = searchUpDefsForAliasSetGroup(
                                         callInst->getArgOperand(0), 0);
                             }
-                            errs() << "done\n";
                             assert(alias_no >= 0);
 
                             /*
