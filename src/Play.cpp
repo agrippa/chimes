@@ -92,6 +92,7 @@ namespace {
                 BasicBlock::iterator end, std::vector<Instruction *> users,
                 std::set<int> *to_insert);
         int findStartingLineForFunction(Function *F);
+        void findHeapAllocations(Module &M);
     };
 }
 
@@ -312,18 +313,24 @@ int Play::searchDownUsesForAliasSetGroup(Value *val, int nesting) {
         errs() << "  Is a store with pointer \"" << *store->getPointerOperand() << "\"\n";
 #endif
 
-        return searchDownUsesForAliasSetGroup(store->getPointerOperand(), nesting + 1);
+        return searchDownUsesForAliasSetGroup(store->getPointerOperand(),
+                nesting + 1);
     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
 #ifdef VERBOSE
-        errs() << "  Is a load with pointer \"" << *load->getPointerOperand() << "\"\n";
+        errs() << "  Is a load with pointer \"" << *load->getPointerOperand() <<
+            "\", nesting=" << nesting << "\n";
 #endif
         if (nesting == 1) {
             int found = searchForValueInKnownAliases(val);
+#ifdef VERBOSE
+            errs() << "    Found group " << found << " for " << *load << "\n";
+#endif
             if (found != -1) return found;
 
             return iterateOverUses(val, nesting - 1);
         } else {
-            return searchDownUsesForAliasSetGroup(load->getPointerOperand(), nesting - 1);
+            return searchDownUsesForAliasSetGroup(load->getPointerOperand(),
+                    nesting - 1);
         }
     } else {
         return iterateOverUses(val, nesting);
@@ -574,9 +581,12 @@ void Play::collectLineToGroupsMapping(Module& M) {
         Function *F = &*I;
 
         std::set<BasicBlock *> visited;
-        BasicBlock& entry = F->getEntryBlock();
+        // A function may have no basic blocks if it is defined externally
+        if (F->getBasicBlockList().size() > 0) {
+            BasicBlock& entry = F->getEntryBlock();
 
-        collectLineToGroupsMappingInFunction(&entry, visited, NULL);
+            collectLineToGroupsMappingInFunction(&entry, visited, NULL);
+        }
     }
 }
 
@@ -881,6 +891,46 @@ void Play::findStackAllocations(Module &M) {
     fclose(fp);
 }
 
+void Play::findHeapAllocations(Module &M) {
+    const char *filename = "heap.info";
+    FILE *fp = fopen(filename, "w");
+    std::set<int> found_mallocs;
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                if (CallInst *callInst = dyn_cast<CallInst>(&inst)) {
+                    Function *callee = callInst->getCalledFunction();
+                    if (callee && strcmp(callee->getName().str().c_str(), "malloc") == 0) {
+                        int line_no = callInst->getDebugLoc().getLine();
+                        assert(line_no != 0);
+
+                        int alias_no = searchDownUsesForAliasSetGroup(callInst,
+                                0);
+                        // We don't currently support multiple mallocs per line
+                        assert(found_mallocs.find(line_no) ==
+                                found_mallocs.end());
+                        found_mallocs.insert(line_no);
+
+                        fprintf(fp, "%d %d\n", line_no, alias_no);
+                    }
+                }
+            }
+        }
+    }
+
+    errs() << "\nFound " << found_mallocs.size() << " heap allocation(s)\n";
+
+    fclose(fp);
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
@@ -938,6 +988,8 @@ bool Play::runOnModule(Module &M) {
      * wrapper that takes both the usual malloc arguments, plus the alias group
      * this allocation belongs to.
      */
+
+    findHeapAllocations(M);
 
     return false;
 }
