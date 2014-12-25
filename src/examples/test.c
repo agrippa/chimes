@@ -10,10 +10,13 @@ int foo(int *callee_ptr) {
 
 int main(int argc, char **argv) {
     int i;
+    int *caller_ptr = (int *)malloc(sizeof(int));
     int caller_var = 3;
     int caller_var2 = 4;
     int arr[10];
     foo(&caller_var);
+
+    *caller_ptr = 5;
     
     bar(&caller_var2);
 

@@ -97,6 +97,35 @@ def getStackInsertions(stack_info_file, input_contents):
     stack_info_fp.close()
     return insertions
 
+
+def getMallocInsertions(heap_info_file, input_file_contents):
+    heap_info_fp = open(heap_info_file, 'r')
+
+    for line in heap_info_fp:
+        tokens = line.split()
+        line_no = int(tokens[0])
+        alias_group = int(tokens[1])
+        file_line = input_file_contents[line_no - 1]
+        assert 'malloc' in file_line
+        # Only support single-line malloc calls for now
+        assert file_line.find(';') == len(file_line) - 1
+
+        malloc_index = file_line.find('malloc')
+        new_line = file_line[0:malloc_index + len('malloc')]
+        file_line = file_line[malloc_index + len('malloc'):]
+        open_paren_index = file_line.find('(')
+        assert open_paren_index == 0
+        file_line = file_line[1:]
+        new_line = new_line + '_wrapper('
+
+        size = file_line[:file_line.rfind(')')]
+        new_line = new_line + size + ', ' + str(alias_group) + ');'
+
+        input_file_contents[line_no - 1] = new_line
+
+    heap_info_fp.close()
+
+
 def getInputFileContents(input_file):
     input_file_contents = []
     input_file_fp = open(input_file, 'r')
@@ -108,8 +137,8 @@ def getInputFileContents(input_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 7:
-        print 'usage: InsertTrackingCalls.py file.c lines.info functions.info exits.info stack.info out.c'
+    if len(sys.argv) != 8:
+        print 'usage: InsertTrackingCalls.py file.c lines.info functions.info exits.info stack.info heap.info out.c'
         sys.exit(1)
 
     input_file = sys.argv[1]
@@ -117,13 +146,15 @@ if __name__ == '__main__':
     functions_start_file = sys.argv[3]
     function_exits_file = sys.argv[4]
     stack_info_file = sys.argv[5]
-    out_file = sys.argv[6]
+    heap_info_file = sys.argv[6]
+    out_file = sys.argv[7]
 
     state_change_inserts = getStateChangeInsertions(lines_info_file)
     function_start_inserts = getFunctionStartInsertions(functions_start_file)
     function_exit_inserts = getFunctionExitInsertions(function_exits_file)
     input_file_contents = getInputFileContents(input_file)
     stack_inserts = getStackInsertions(stack_info_file, input_file_contents)
+    getMallocInsertions(heap_info_file, input_file_contents)
 
     all_insertions = [function_start_inserts, stack_inserts, state_change_inserts, function_exit_inserts]
     all_lines = set()
