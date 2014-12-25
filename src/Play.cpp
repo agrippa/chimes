@@ -997,7 +997,8 @@ void Play::findHeapAllocations(Module &M) {
         }
     }
 
-    errs() << "\nFound " << found_mallocs.size() << " heap allocation(s)\n";
+    errs() << "\nFound " << found_mallocs.size() << " heap allocation(s), " <<
+        "reallocation(s), or free(s)\n";
 
     fclose(fp);
 }
