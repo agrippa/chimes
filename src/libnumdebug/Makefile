@@ -1,2 +1,2 @@
 libnumdebug.so: libnumdebug.cpp
-	g++ -shared libnumdebug.cpp -o libnumdebug.so
+	g++ -Wall -shared libnumdebug.cpp stack_frame.cpp stack_serialization.cpp -o libnumdebug.so
