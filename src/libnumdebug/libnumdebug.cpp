@@ -218,6 +218,18 @@ void checkpoint() {
             fprintf(stderr, "%d ", (*i)->size());
         }
         fprintf(stderr, ")\n");
+
+        /*
+         * TODO restore stack and heap state from checkpoint file (see TODOs
+         * above about getting it out of the checkpoint file) and updating the
+         * pointers in both the stack and heap. This update will require type
+         * information on the first-level types of all stack and heap
+         * allocations, which will need to be added to the dump file or
+         * callbacks somewhere. We only really care about either the allocation
+         * of pointers (don't really care if they are nested because we only
+         * update the one we're looking at) and structs that contain pointers.
+         */
+
         exit(0);
     }
 
