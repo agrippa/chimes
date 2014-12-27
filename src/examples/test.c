@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "checkpoint.h"
 
 int bar(int *callee_ptr2) {
     return *callee_ptr2 + 2;
