@@ -48,7 +48,8 @@ def getFunctionStartInsertions(functions_start_file):
     insertions = {}
 
     for line in functions_start_fp:
-        line_no = int(line)
+        tokens = line.split()
+        line_no = int(tokens[0])
         assert line_no not in insertions.keys()
         insertions[line_no] = 'new_stack(); '
 
@@ -137,6 +138,27 @@ def getMallocInsertions(heap_info_file, input_file_contents):
     heap_info_fp.close()
 
 
+def getInitializationInsertions(functions_start_file):
+    functions_start_fp = open(functions_start_file, 'r')
+
+    insertions = {}
+
+    found = False
+    for line in functions_start_fp:
+        tokens = line.split()
+        line_no = int(tokens[0])
+        fname = tokens[1]
+        if fname == 'main':
+            insertions[line_no] = 'init_numdebug(); '
+            found = True
+            break
+
+    functions_start_fp.close()
+    assert found
+
+    return insertions
+
+
 def getInputFileContents(input_file):
     input_file_contents = []
     input_file_fp = open(input_file, 'r')
@@ -161,13 +183,14 @@ if __name__ == '__main__':
     out_file = sys.argv[7]
 
     state_change_inserts = getStateChangeInsertions(lines_info_file)
+    initialization_inserts = getInitializationInsertions(functions_start_file)
     function_start_inserts = getFunctionStartInsertions(functions_start_file)
     function_exit_inserts = getFunctionExitInsertions(function_exits_file)
     input_file_contents = getInputFileContents(input_file)
     stack_inserts = getStackInsertions(stack_info_file, input_file_contents)
     getMallocInsertions(heap_info_file, input_file_contents)
 
-    all_insertions = [function_start_inserts, stack_inserts, state_change_inserts, function_exit_inserts]
+    all_insertions = [initialization_inserts, function_start_inserts, stack_inserts, state_change_inserts, function_exit_inserts]
     all_lines = set()
     for insert_list in all_insertions:
         all_lines = all_lines.union(set(insert_list.keys()))
