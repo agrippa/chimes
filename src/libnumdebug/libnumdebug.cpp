@@ -43,6 +43,8 @@ static map<int, vector<heap_allocation *> *> alias_to_heap;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static uint64_t curr_seq_no = 0;
 
+static vector<stack_frame *> *unpacked_program_stack;
+
 static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
@@ -68,8 +70,21 @@ void init_numdebug() {
             trace.push_back(trace_ele);
         }
 
-        //TODO read in stack serialization
-        //TODO read in heap serialization
+        // read in stack state
+        uint64_t stack_serialized_len;
+        safe_read(fd, &stack_serialized_len, sizeof(stack_serialized_len),
+                "stack_serialized_len", checkpoint_file);
+        unsigned char *stack_serialized = (unsigned char *)malloc(
+                stack_serialized_len);
+        safe_read(fd, stack_serialized, stack_serialized_len,
+                "stack_serialized", checkpoint_file);
+        unpacked_program_stack = deserialize_program_stack(stack_serialized,
+                stack_serialized_len);
+
+        // TODO read in heap serialization
+        // TODO find pointers in the heap and restore them to point to the correct object
+        // TODO find pointers in the stack and restore them to point to the correct object
+        // TODO restore non-pointers in the stack to have the correct values
 
         close(fd);
     }
@@ -218,6 +233,8 @@ void checkpoint() {
             fprintf(stderr, "%d ", (*i)->size());
         }
         fprintf(stderr, ")\n");
+        
+        assert(unpacked_program_stack->size() == program_stack.size());
 
         /*
          * TODO restore stack and heap state from checkpoint file (see TODOs
@@ -229,6 +246,7 @@ void checkpoint() {
          * of pointers (don't really care if they are nested because we only
          * update the one we're looking at) and structs that contain pointers.
          */
+        ____numdebug_replaying = 0;
 
         exit(0);
     }

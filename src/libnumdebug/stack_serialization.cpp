@@ -96,3 +96,49 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
 
     return serialization;
 }
+
+vector<stack_frame *> *deserialize_program_stack(
+        unsigned char *stack_serialized, uint64_t stack_serialized_len) {
+    vector<stack_frame *> *stack = new vector<stack_frame *>();
+    stack_frame *curr = NULL;
+    unsigned char *iter = stack_serialized;
+
+    while (iter - stack_serialized < stack_serialized_len) {
+        unsigned char marker = *iter;
+        iter++;
+
+        if (marker == NEW_STACK_FRAME) {
+            stack_frame *frame = new stack_frame();
+            stack->push_back(frame);
+            curr = frame;
+        } else if (marker == NEW_STACK_VAR) {
+            assert(curr != NULL);
+
+            unsigned char *varname = iter;
+
+            unsigned char *address_ptr = varname;
+            while (*address_ptr != '\0') {
+                address_ptr++;
+            }
+            address_ptr++;
+            void *address;
+            memcpy(&address, address_ptr, sizeof(address));
+
+            size_t size;
+            unsigned char *size_ptr = address_ptr + sizeof(address);
+            memcpy(&size, size_ptr, sizeof(size));
+
+            stack_var *var = new stack_var((const char *)varname, address,
+                    size);
+            curr->add_stack_var(var);
+
+            iter = size_ptr + sizeof(size);
+        } else {
+            fprintf(stderr, "Invalid record type in serialized stack: %d\n",
+                    marker);
+            exit(1);
+        }
+    }
+
+    return stack;
+}
