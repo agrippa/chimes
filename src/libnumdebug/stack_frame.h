@@ -20,6 +20,8 @@ class stack_frame {
         const_iterator begin() const { return locals.begin(); }
         iterator end() { return locals.end(); }
         const_iterator end() const { return locals.end(); }
+
+        int size() { return locals.size(); }
 };
 
 #endif

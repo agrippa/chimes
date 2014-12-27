@@ -4,6 +4,8 @@
 #include <stdlib.h>
 
 extern void init_numdebug();
+extern void calling(int lbl);
+extern int get_next_call();
 extern void new_stack();
 extern void rm_stack();
 extern void register_stack_var(const char *mangled_name, void *ptr,
