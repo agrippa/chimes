@@ -35,6 +35,8 @@ int main(int argc, char **argv) {
         bar(&caller_var2);
     }
 
+    checkpoint();
+
     free(caller_ptr);
     return 0;
 }
