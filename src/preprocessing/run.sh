@@ -13,6 +13,11 @@
 #      original source to generate a transformed source with callbacks inserted
 #      as needed.
 #
+# Example usage:
+#
+#   $ ./run.sh ~/dev/num-debug/src/examples/test.cpp \
+#             /Users/mgrossman/dev/num-debug/src/libnumdebug/examples/
+#
 
 set -e
 
