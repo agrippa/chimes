@@ -82,7 +82,7 @@ namespace {
         void unionGroups(int line, std::set<int> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
         void dumpFunctionStartingLineTo(const char *filename,
-                std::vector<int> functions);
+                std::map<int, std::string> functions);
 
         void findStartingLinesForAllFunctions(Module &M);
         void findFunctionExits(Module &M);
@@ -642,12 +642,13 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
     fclose(fp);
 }
 
-void Play::dumpFunctionStartingLineTo(const char *filename, std::vector<int> functions) {
+void Play::dumpFunctionStartingLineTo(const char *filename,
+        std::map<int, std::string> functions) {
     FILE *fp = fopen(filename, "w");
 
-    for (std::vector<int>::iterator f_iter = functions.begin(),
+    for (std::map<int, std::string>::iterator f_iter = functions.begin(),
             f_end = functions.end(); f_iter != f_end; f_iter++) {
-        fprintf(fp, "%d\n", *f_iter);
+        fprintf(fp, "%d %s\n", f_iter->first, f_iter->second.c_str());
     }
 
     fclose(fp);
@@ -676,7 +677,7 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
      * This assumes that for all functions, their declaration and body are on
      * different lines. This may not be true for all functions.
      */
-    std::vector<int> functions;
+    std::map<int, std::string> functions;
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
@@ -684,7 +685,8 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
 
         // Externally defined functions won't have any body info
         if (min_func_line != -1) {
-            functions.push_back(min_func_line);
+            assert(functions.find(min_func_line) == functions.end());
+            functions[min_func_line] = F->getName();
         }
     }
 

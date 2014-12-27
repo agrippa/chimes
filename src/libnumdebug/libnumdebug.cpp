@@ -38,13 +38,12 @@ static uint64_t curr_seq_no = 0;
 static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
-static int initialized = 0;
+
+void init_numdebug() {
+    atexit(onexit);
+}
 
 void new_stack() {
-    if (!initialized) {
-        atexit(onexit);
-        initialized = 1;
-    }
     program_stack.push_back(new stack_frame());
 }
 
