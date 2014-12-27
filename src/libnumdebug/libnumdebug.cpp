@@ -9,6 +9,7 @@
 #include <pthread.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 #include "stack_var.h"
 #include "stack_frame.h"
@@ -20,7 +21,8 @@ using namespace std;
 // functions defined in this file
 void new_stack();
 void rm_stack();
-void register_stack_var(const char *mangled_name, void *ptr, size_t size);
+void register_stack_var(const char *mangled_name, void *ptr, size_t size,
+        int is_ptr, int n_ptr_fields, ...);
 void alias_group_changed(int group);
 void *malloc_wrapper(size_t nbytes, int group);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
@@ -111,8 +113,11 @@ int get_next_call() {
     return trace[trace_index++];
 }
 
-void register_stack_var(const char *mangled_name, void *ptr, size_t size) {
-    program_stack.back()->add_stack_var(new stack_var(mangled_name, ptr, size));
+void register_stack_var(const char *mangled_name, void *ptr, size_t size,
+        int is_ptr, int n_ptr_fields, ...) {
+    stack_var *new_var = new stack_var(mangled_name, ptr, size, is_ptr);
+
+    program_stack.back()->add_stack_var(new_var);
 }
 
 void alias_group_changed(int group) {
