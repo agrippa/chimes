@@ -16,6 +16,15 @@ using namespace llvm;
 // #define VERBOSE
 
 namespace {
+    const char *stack_info_filename = "stack.info";
+
+    typedef enum {CALLSITE, STACK_REGISTRATION} LocationType;
+
+    typedef struct _LabeledLoc {
+        LocationType type;
+        int line_no;
+        int id;
+    } LabeledLoc;
 
     typedef struct _StackAllocInfo {
         std::string *varname;
@@ -96,6 +105,15 @@ namespace {
         int findStartingLineForFunction(Function *F);
         void findHeapAllocations(Module &M);
         int searchUpDefsForAliasSetGroup(Value *val, int nesting);
+        std::map<Function *, std::vector<LabeledLoc *> *> *collectUniqueIDs(
+                Module &M);
+        bool isFunctionNameEnd(char *fname_end);
+        void addIfNotExists(LabeledLoc *loc, Function *containing_function,
+                std::map<Function *, std::vector<LabeledLoc *> *> *locations);
+        void dumpLocationsToFile(const char *filename,
+                std::map<Function *, std::vector<LabeledLoc *> *> *locations);
+        void dumpGotoChainsToFile(const char *filename,
+                std::map<Function *, std::vector<LabeledLoc *> *> *locations);
     };
 }
 
@@ -787,8 +805,7 @@ void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
 
 //TODO I don't think this supports stack-allocated arrays yet
 void Play::findStackAllocations(Module &M) {
-    const char *filename = "stack.info";
-    FILE *fp = fopen(filename, "w");
+    FILE *fp = fopen(stack_info_filename, "w");
     DataLayout *layout = new DataLayout(&M);
     std::set<std::string> found_variables;
 
@@ -1005,6 +1022,183 @@ void Play::findHeapAllocations(Module &M) {
     fclose(fp);
 }
 
+bool Play::isFunctionNameEnd(char *fname_end) {
+    if (fname_end[0] != '_') return false;
+    if (fname_end[1] != '_') return false;
+    if (fname_end[2] != '_') return false;
+    if (fname_end[3] != '_') return false;
+    return true;
+}
+
+void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
+        std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
+
+    if (locations->find(containing_function) == locations->end()) {
+        (*locations)[containing_function] = new std::vector<LabeledLoc *>();
+    }
+
+    LabeledLoc *exists = NULL;
+    std::vector<LabeledLoc *> *existing = (*locations)[containing_function];
+    for (std::vector<LabeledLoc *>::iterator exist_iter = existing->begin(),
+            exist_end = existing->end(); exist_iter != exist_end;
+            exist_iter++) {
+        LabeledLoc *curr = *exist_iter;
+        if (curr->line_no == loc->line_no) {
+            /*
+             * Already have decided to label this line, we can skip it. Have to
+             * ensure that any callsites that might also be local variable
+             * declarations (which realistically shouldn't be possible) are
+             * marked as such
+             */
+            exists = curr;
+            break;
+        }
+    }
+
+    if (exists != NULL) {
+        if (exists->type != loc->type) {
+            (*locations)[containing_function]->push_back(loc);
+            // exists->type = BOTH;
+        } else {
+            free(loc);
+        }
+    } else {
+        (*locations)[containing_function]->push_back(loc);
+    }
+}
+
+std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
+        Module &M) {
+    std::map<Function *, std::vector<LabeledLoc *> *> *locations =
+        new std::map<Function *, std::vector<LabeledLoc *> *>();
+    int id = 0;
+
+    // Collect stack variable registrations from the stack.info file
+    ssize_t read;
+    size_t len;
+    char *line = NULL;
+    FILE *fp = fopen(stack_info_filename, "r");
+    while ((read = getline(&line, &len, fp)) != -1) {
+        char *end = strchr(line, ' ');
+        assert(end != NULL);
+        *end = '\0';
+        int line_no = atoi(line);
+
+        LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
+        loc->id = id++;
+        loc->line_no = line_no;
+        loc->type = STACK_REGISTRATION;
+
+        char *fname = end + 1;
+        char *fname_end = strchr(fname, '_');
+        while (!isFunctionNameEnd(fname_end)) {
+            fname_end = strchr(fname_end + 1, '_');
+        }
+        *fname_end = '\0';
+
+        Function *containing_function = NULL;
+        // Find containing function
+        for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+            Function *F = &*I;
+
+            if (strcmp(fname, F->getName().str().c_str()) == 0) {
+                containing_function = F;
+                break;
+            }
+        }
+        assert(containing_function != NULL);
+
+        addIfNotExists(loc, containing_function, locations);
+    }
+    free(line);
+    fclose(fp);
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+
+                if (dyn_cast<CallInst>(&inst)) {
+                    LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
+                    loc->id = id++;
+                    loc->type = CALLSITE;
+                    loc->line_no = inst.getDebugLoc().getLine();
+                    assert(loc->line_no != 0);
+
+                    addIfNotExists(loc, F, locations);
+                }
+            }
+        }
+    }
+
+    return locations;
+}
+
+void Play::dumpLocationsToFile(const char *filename,
+        std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
+
+    FILE *fp = fopen(filename, "w");
+
+    for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator loc_iter =
+            locations->begin(), loc_end = locations->end(); loc_iter != loc_end;
+            loc_iter++) {
+        std::vector<LabeledLoc *> *curr = loc_iter->second;
+        for (std::vector<LabeledLoc *>::iterator iter = curr->begin(),
+                end = curr->end(); iter != end; iter++) {
+            LabeledLoc *loc = *iter;
+            fprintf(fp, "%d %d %s\n", loc->line_no, loc->id,
+                    loc->type == CALLSITE ? "CALLSITE" : "STACK_REGISTRATION");
+        }
+    }
+
+    fclose(fp);
+}
+
+void Play::dumpGotoChainsToFile(const char *filename,
+        std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
+    FILE *fp = fopen(filename, "w");
+
+    for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator i =
+            locations->begin(), e = locations->end(); i != e; i++) {
+        Function *F = i->first;
+        std::vector<LabeledLoc *> *locs = i->second;
+        int start = findStartingLineForFunction(F);
+        std::vector<LabeledLoc *> only_stack;
+        std::vector<LabeledLoc *> only_calls;
+
+        for (std::vector<LabeledLoc *>::iterator loc_iter = locs->begin(),
+                loc_end = locs->end(); loc_iter != loc_end; loc_iter++) {
+            LabeledLoc *curr = *loc_iter;
+            if (curr->type == STACK_REGISTRATION) {
+                only_stack.push_back(curr);
+            } else {
+                only_calls.push_back(curr);
+            }
+        }
+
+        fprintf(fp, "%d START %d\n", start, only_stack[0]->id);
+        for (unsigned int i = 1; i < only_stack.size(); i++) {
+            fprintf(fp, "%d INTERNAL %d\n", only_stack[i - 1]->line_no, only_stack[i]->id);
+        }
+
+        if (!only_calls.empty()) {
+            fprintf(fp, "%d FINAL ", only_stack[only_stack.size() - 1]->line_no);
+            for (unsigned int i = 0; i < only_calls.size(); i++) {
+                fprintf(fp, "%d ", only_calls[i]->id);
+            }
+            fprintf(fp, "\n");
+        }
+    }
+
+    fclose(fp);
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
@@ -1064,6 +1258,33 @@ bool Play::runOnModule(Module &M) {
      */
 
     findHeapAllocations(M);
+
+    /*
+     * Now: this next bit is in support of the resumability. We start by assigning a unique integer to every call site, and adding a label to that callsite. This label will have to be a special case prepend inline during the transform pass. We also add a callback in the application right before every call site which allows the runtime library to recreate the stack trace based on callbacks and record them as they happen. The callback must be made right before the call is made because we must know what callsite we are making the call from, we can use the same rm_stack callback to remove functions from the stack that we've returned from. In addition, we have to add unique labels to every call to checkpoint() so that we can jump through the application straight to the call to checkpoint that was used to create this checkpoint.
+     *
+     * This stack generated from pre-call callbacks must be added to the dump files.
+     *
+     * Then, in init_numdebug we extract this stack from the dump file (which should be passed as an environment variable to indicated that we're doing a replay instead of a real run). We use the stack's entries to jmp from one callsite to the next, recreating the stack artificially until we get to the final checkpoint callback that was made to create this checkpoint. The application will then call back into the library using checkpoint(), and that's where we reconstruct stack and heap state. We can use a dummy variable inside checkpoint() as a ruler against which to measure stack allocations. The problem with this approach is that it is vulnerable to recompilation: if you recompile and have added some variables to the stack, the offsets won't match anymore and it will fail.
+     *
+     * An alternative technique would rebuild the stack at every callsite based on variable name. This would be more robust against recompilation, but still won't fill in any newly created stack variables. It might be possible to add a programmer-provided callback for this technique at every function, which they can use to initialize new variables, but that would be confusing to use (probably). This also won't handle nested variables with the same name.
+     *
+     * A third technique that combines the two: a unique label is applied to every callsite, checkpoint() call, and register_stack_var() call. We maintain the stack in the same way as described in the first paragraph, but also add jmps from every function entry to all stack variable registrations (to get their addresses), and only after all stack variables are registered do we jump to the next callsite/checkpoint(). That way, by the time we get to the final checkpoint() we know for sure that we have all stack variables precisely identified. We'll still have any new stack variables precisely identified, we just won't have values to fill them with (and can emit a warning based on that).
+     */
+
+    std::map<Function *, std::vector<LabeledLoc *> *> *locations =
+        collectUniqueIDs(M);
+    errs() << "\nFound " << locations->size() << " functions with locations to "
+        "mark\n";
+    int count_locations = 0;
+    for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator loc_iter =
+            locations->begin(), loc_end = locations->end(); loc_iter != loc_end;
+            loc_iter++) {
+        count_locations += loc_iter->second->size();
+    }
+    errs() << "Found " << count_locations << " locations to mark\n";
+    dumpLocationsToFile("loc.info", locations);
+
+    dumpGotoChainsToFile("goto.info", locations);
 
     return false;
 }

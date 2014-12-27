@@ -27,8 +27,16 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
 void onexit();
 
+static void safe_write(int fd, void *ptr, size_t size, const char *msg,
+        const char *filename);
+static void safe_read(int fd, void *ptr, size_t size, const char *msg,
+        const char *filename);
+
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
+static vector<int> stack_tracker;
+static vector<int> trace;
+static int trace_index = 0;
 static set<int> changed_groups;
 static map<void *, heap_allocation *> heap;
 static map<int, vector<heap_allocation *> *> alias_to_heap;
@@ -39,19 +47,53 @@ static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
 
+int ____numdebug_replaying = 0;
+
 void init_numdebug() {
     atexit(onexit);
+
+    char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
+    if (checkpoint_file != NULL) {
+        ____numdebug_replaying = 1;
+        int fd = open(checkpoint_file, O_RDONLY);
+        assert(fd >= 0);
+
+        int trace_len;
+        safe_read(fd, &trace_len, sizeof(trace_len), "trace_len",
+                checkpoint_file);
+        for (int i = 0; i < trace_len; i++) {
+            int trace_ele;
+            safe_read(fd, &trace_ele, sizeof(trace_ele), "trace_ele",
+                    checkpoint_file);
+            trace.push_back(trace_ele);
+        }
+
+        //TODO read in stack serialization
+        //TODO read in heap serialization
+
+        close(fd);
+    }
 }
 
 void new_stack() {
     program_stack.push_back(new stack_frame());
 }
 
+void calling(int lbl) {
+    stack_tracker.push_back(lbl);
+}
+
 void rm_stack() {
     stack_frame *curr = program_stack.back();
     program_stack.pop_back();
-
     delete curr;
+
+    stack_tracker.pop_back();
+}
+
+int get_next_call() {
+    assert(trace_index < trace.size());
+    return trace[trace_index++];
 }
 
 void register_stack_var(const char *mangled_name, void *ptr, size_t size) {
@@ -162,10 +204,23 @@ typedef struct _checkpoint_thread_ctx {
     uint64_t stack_serialized_len;
 
     vector<heap_allocation *> *heap_to_checkpoint;
+
+    vector<int> *stack_tracker;
 } checkpoint_thread_ctx;
 static void *checkpoint_func(void *data);
 
 void checkpoint() {
+    if (____numdebug_replaying) {
+        fprintf(stderr, "Got to the desired checkpoint with a stack size of "
+                "%lu ( ", program_stack.size());
+        for (std::vector<stack_frame *>::iterator i = program_stack.begin(),
+                e = program_stack.end(); i != e; i++) {
+            fprintf(stderr, "%d ", (*i)->size());
+        }
+        fprintf(stderr, ")\n");
+        exit(0);
+    }
+
     if (checkpoint_thread_running) return;
 
     pthread_mutex_lock(&checkpoint_mutex);
@@ -208,10 +263,32 @@ void checkpoint() {
     thread_ctx->stack_serialized = serialize_program_stack(&program_stack,
             &thread_ctx->stack_serialized_len);
     thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
+    thread_ctx->stack_tracker = new std::vector<int>();
+    *(thread_ctx->stack_tracker) = stack_tracker;
+    // for (std::vector<int>::iterator i = stack_tracker.begin(),
+    //         e = stack_tracker.end(); i != e; i++) {
+    //     thread_ctx->stack_tracker.push_back(*i);
+    // }
 
     pthread_mutex_unlock(&checkpoint_mutex);
 
     pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
+}
+
+static void safe_write(int fd, void *ptr, size_t size, const char *msg,
+        const char *filename) {
+    if (write(fd, ptr, size) != size) {
+        fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
+        exit(1);
+    }
+}
+
+static void safe_read(int fd, void *ptr, size_t size, const char *msg,
+        const char *filename) {
+    if (read(fd, ptr, size) != size) {
+        fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
+        exit(1);
+    }
 }
 
 void *checkpoint_func(void *data) {
@@ -220,13 +297,12 @@ void *checkpoint_func(void *data) {
     uint64_t stack_serialized_len = ctx->stack_serialized_len;
     vector<heap_allocation *> *heap_to_checkpoint = ctx->heap_to_checkpoint;
 
-    free(ctx);
-
     /*
      * Until we implement the planned client-server architecture, just dump
      * checkpoints to a file locally. Right now, we naively dump everything.
      */
 
+    // Find a unique file for this checkpoint
     int count = 0;
     char dump_filename[256];
     sprintf(dump_filename, "numdebug.dump.%d", count);
@@ -237,26 +313,26 @@ void *checkpoint_func(void *data) {
         fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     }
 
-    if (write(fd, &stack_serialized_len, sizeof(stack_serialized_len)) !=
-            sizeof(stack_serialized_len)) {
-        fprintf(stderr, "Error writing stack_serialized_len to %s\n",
-                dump_filename);
-        exit(1);
+    // Write the trace of function calls out
+    int trace_len = ctx->stack_tracker->size();
+    safe_write(fd, &trace_len, sizeof(trace_len), "trace length", dump_filename);
+    for (std::vector<int>::iterator trace_iter = ctx->stack_tracker->begin(),
+            trace_end = ctx->stack_tracker->end(); trace_iter != trace_end;
+            trace_iter++) {
+        int trace = *trace_iter;
+        safe_write(fd, &trace, sizeof(trace), "trace element", dump_filename);
     }
 
-    if (write(fd, stack_serialized, ctx->stack_serialized_len) !=
-            ctx->stack_serialized_len) {
-        fprintf(stderr, "Error writing stack_serialized of length %llu to %s\n",
-                ctx->stack_serialized_len, dump_filename);
-        exit(1);
-    }
+    // Write the serialized stack out
+    safe_write(fd, &stack_serialized_len, sizeof(stack_serialized_len),
+            "stack_serialized_len", dump_filename);
+    safe_write(fd, stack_serialized, ctx->stack_serialized_len,
+            "stack_serialized_len", dump_filename);
 
+    // Write the heap allocations out (all of them, for now)
     uint64_t n_heap_allocs = heap_to_checkpoint->size();
-    if (write(fd, &n_heap_allocs, sizeof(n_heap_allocs)) !=
-            sizeof(n_heap_allocs)) {
-        fprintf(stderr, "Error writing n_heap_allocs to %s\n", dump_filename);
-        exit(1);
-    }
+    safe_write(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
+            dump_filename);
 
     for (vector<heap_allocation *>::iterator heap_iter =
             heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
@@ -265,32 +341,11 @@ void *checkpoint_func(void *data) {
         void *address = alloc->get_address();
         size_t size = alloc->get_size();
 
-        if (write(fd, &address, sizeof(address)) != sizeof(address)) {
-            fprintf(stderr, "Error writing alloc->address to %s\n",
-                    dump_filename);
-            exit(1);
-        }
+        safe_write(fd, &address, sizeof(address), "address", dump_filename);
+        safe_write(fd, &size, sizeof(size), "size", dump_filename);
+        safe_write(fd, address, size, "heap contents", dump_filename);
 
-        if (write(fd, &size, sizeof(size)) != sizeof(size)) {
-            fprintf(stderr, "Error writing alloc->size to %s\n", dump_filename);
-            exit(1);
-        }
-
-        if (write(fd, address, size) != size) {
-            fprintf(stderr, "Error writing heap contents from address %p with "
-                    "length %lu to %s\n", address, size, dump_filename);
-            exit(1);
-        }
-    }
-
-    close(fd);
-    free(stack_serialized);
-
-    for (vector<heap_allocation *>::iterator heap_iter =
-            heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
-            heap_iter != heap_end; heap_iter++) {
-        heap_allocation *alloc = *heap_iter;
-
+        // Release any deffered frees
         int refs = alloc->decr_refcount();
         if (refs == 0 && alloc->has_been_freed()) {
             map<void *, heap_allocation *>::iterator in_heap = find_in_heap(
@@ -298,7 +353,12 @@ void *checkpoint_func(void *data) {
             free_helper(in_heap);
         }
     }
+
+    close(fd);
+    free(stack_serialized);
     delete heap_to_checkpoint;
+    delete ctx->stack_tracker;
+    free(ctx);
 
     return NULL;
 }

@@ -7,4 +7,4 @@ if [[ $# != 1 ]]; then
     exit 1
 fi
 
-g++ -include ../libnumdebug.h -I../ -L../ -lnumdebug $1
+g++ -include stdio.h -include ../libnumdebug.h -I../ -L../ -lnumdebug $1

@@ -35,6 +35,8 @@ FUNCTION_START_FILE=func_start.info
 FUNCTION_EXIT_FILE=exit.info
 STACK_FILE=stack.info
 HEAP_FILE=heap.info
+LOC_FILE=loc.info
+GOTO_FILE=goto.info
 INSTRUMENTED_FILE=$(basename ${INFILE})
 INSTRUMENTED_FILE=${INSTRUMENTED_FILE%.*}.transformed.${INSTRUMENTED_FILE##*.}
 
@@ -46,7 +48,10 @@ clang -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_F
 opt -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
 rm ${OBJ_FILE}
 
-python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} ${LINE_INFO_FILE} ${FUNCTION_START_FILE} ${FUNCTION_EXIT_FILE} ${STACK_FILE} ${HEAP_FILE} ${OUT_DIR}/${INSTRUMENTED_FILE}
+python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} \
+           ${LINE_INFO_FILE} ${FUNCTION_START_FILE} ${FUNCTION_EXIT_FILE} \
+           ${STACK_FILE} ${HEAP_FILE} ${LOC_FILE} ${GOTO_FILE} \
+           ${OUT_DIR}/${INSTRUMENTED_FILE}
 
 # cleanup
 # rm ${INSTRUMENTED_FILE}
