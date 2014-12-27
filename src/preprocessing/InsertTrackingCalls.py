@@ -133,14 +133,20 @@ def getStackInsertions(stack_info_file, input_contents):
     insertions = {}
     for line in stack_info_fp:
         tokens = line.split()
+
         line_no = int(tokens[0])
         mangled_name = tokens[1]
         type_size_in_bits = int(tokens[2])
+        is_ptr = int(tokens[3])
+        ptr_fields = tokens[4:]
 
         actual_name = mangled_name.split('____')[1]
 
-        call = 'register_stack_var("' + mangled_name + '", &' + \
-                actual_name + ', ' + str(type_size_in_bits / 8) + '); '
+        call =  'register_stack_var("' + mangled_name + '", &' + \
+                actual_name + ', ' + str(type_size_in_bits / 8) + ', ' + str(is_ptr)
+        for field in ptr_fields:
+            call += ', &' + actual_name + '.' + field
+        call += '); '
 
         if isDeclaration(input_contents[line_no - 1]):
             line_no = line_no + 1

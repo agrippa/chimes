@@ -44,7 +44,7 @@ NUM_DEBUG_HOME=${HOME}/dev/num-debug
 LLVM_HOME=${HOME}/dev/llvm/llvm
 LLVM_INSTALL=${HOME}/dev/llvm/build
 
-clang -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -gline-tables-only
+clang -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -g
 opt -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
 rm ${OBJ_FILE}
 
