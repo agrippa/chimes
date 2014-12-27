@@ -6,6 +6,7 @@
 #include "llvm/Analysis/AliasAnalysis.h"
 #include "llvm/Analysis/AliasSetTracker.h"
 #include "llvm/IR/InstIterator.h"
+#include "llvm/IR/DebugInfo.h"
 
 #include <stdio.h>
 #include <set>
@@ -32,6 +33,9 @@ namespace {
         AllocaInst *alloca;
         BasicBlock *parent;
         std::vector<Instruction *> users;
+
+        bool is_ptr;
+        std::vector<std::string> *struct_ptr_field_names;
     } StackAllocInfo;
 
     typedef struct _CallInfo {
@@ -114,6 +118,7 @@ namespace {
                 std::map<Function *, std::vector<LabeledLoc *> *> *locations);
         void dumpGotoChainsToFile(const char *filename,
                 std::map<Function *, std::vector<LabeledLoc *> *> *locations);
+        std::map<std::string, std::vector<std::string>> *getStructFieldNames(Module &M);
     };
 }
 
@@ -802,6 +807,56 @@ void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
     }
 }
 
+std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
+        Module &M) {
+    std::map<std::string, std::vector<std::string>> *struct_fields =
+        new std::map<std::string, std::vector<std::string>>();
+
+    // Get struct info
+    NamedMDNode *root = NULL;
+    for (Module::named_metadata_iterator md_iter = M.named_metadata_begin(),
+            md_end = M.named_metadata_end(); md_iter != md_end; md_iter++) {
+        NamedMDNode *node = md_iter;
+        if (node->getName().str() == "llvm.dbg.cu") {
+            root = node;
+            break;
+        }
+    }
+    assert(root != NULL);
+    assert(root->getNumOperands() == 1);
+    MDNode *module_info = root->getOperand(0);
+    assert(module_info->getNumOperands() == 7);
+    Metadata *struct_info = module_info->getOperand(3).get();
+    assert(dyn_cast<MDNode>(struct_info));
+    MDNode *struct_info_md = (MDNode *)struct_info;
+
+    for (unsigned int s = 0; s < struct_info_md->getNumOperands(); s++) {
+        assert(dyn_cast<MDNode>(struct_info_md->getOperand(s).get()));
+        MDNode *this_struct = (MDNode *)struct_info_md->getOperand(s).get();
+        DIType di_struct(this_struct);
+
+        // If this isn't a struct, skip it
+        if (!di_struct.isCompositeType()) continue;
+
+        std::string struct_name = di_struct.getName().str();
+        std::vector<std::string> fields;
+
+        assert(this_struct->getNumOperands() >= 5);
+        assert(dyn_cast<MDNode>(this_struct->getOperand(4).get()));
+        MDNode *field_defs = (MDNode *)this_struct->getOperand(4).get();
+        for (unsigned int f = 0; f < field_defs->getNumOperands(); f++) {
+            assert(dyn_cast<MDNode>(field_defs->getOperand(f).get()));
+            MDNode *field = (MDNode *)field_defs->getOperand(f).get();
+            DIType di_field(field);
+            std::string fieldname = di_field.getName().str();
+            fields.push_back(fieldname);
+        }
+
+        assert(struct_fields->find(struct_name) == struct_fields->end());
+        (*struct_fields)[struct_name] = fields;
+    }
+    return struct_fields;
+}
 
 //TODO I don't think this supports stack-allocated arrays yet
 void Play::findStackAllocations(Module &M) {
@@ -810,6 +865,9 @@ void Play::findStackAllocations(Module &M) {
     std::set<std::string> found_variables;
 
     std::vector<StackAllocInfo *> alloc_infos;
+
+    std::map<std::string, std::vector<std::string>> *structFields =
+        getStructFieldNames(M);
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
@@ -826,20 +884,27 @@ void Play::findStackAllocations(Module &M) {
                     std::string varname = alloca->getName().str();
                     uint64_t type_size = layout->getTypeSizeInBits(
                             alloca->getAllocatedType());
-                    assert(type_size % 8 == 0);
+                    assert(type_size % 8 == 0); // even number of bytes
 
+                    // auto-generate llvm stack allocation for return values
                     if (strcmp(varname.c_str(), "retval") == 0) {
                         continue;
                     }
 
                     int is_argument = 0;
                     const char *arg_addr_suffix = ".addr";
-                    if (varname.find(arg_addr_suffix) == varname.length() -
-                            strlen(arg_addr_suffix)) {
+                    size_t found = varname.find(arg_addr_suffix);
+                    if (found != std::string::npos && found ==
+                            varname.length() - strlen(arg_addr_suffix)) {
 
                         varname = varname.substr(0, varname.length() -
                                 strlen(arg_addr_suffix));
 
+                        /*
+                         * double check that we can find a matching argument to
+                         * this function if we think this stack allocation is
+                         * for an argument's address
+                         */
                         for (Function::arg_iterator arg_iter = F->arg_begin(),
                                 arg_end = F->arg_end(); arg_iter != arg_end;
                                 arg_iter++) {
@@ -856,6 +921,9 @@ void Play::findStackAllocations(Module &M) {
                     info->type_size_in_bits = type_size;
                     info->alloca = alloca;
                     info->parent = bb;
+                    info->is_ptr = 0;
+                    info->struct_ptr_field_names =
+                        new std::vector<std::string>();
 
                     for (Value::use_iterator use_iter = alloca->use_begin(),
                             use_end = alloca->use_end(); use_iter != use_end;
@@ -869,6 +937,10 @@ void Play::findStackAllocations(Module &M) {
                         }
                     }
 
+                    /*
+                     * Construct a unique variable name based on the containing
+                     * function and this local's name.
+                     */
                     std::string *unique_varname = new std::string();
                     int permute = 0;
                     do {
@@ -880,12 +952,35 @@ void Play::findStackAllocations(Module &M) {
                     } while (found_variables.find(*unique_varname) != found_variables.end());
 
                     found_variables.insert(*unique_varname);
-                  
+
                     info->varname = unique_varname;
+
+                    Type *ty = alloca->getAllocatedType();
+                    if (ty->isPointerTy()) {
+                        info->is_ptr = 1;
+                    } else if (ty->isStructTy()) {
+                        assert(ty->getStructName().str().find("struct.") == 0);
+                        std::string struct_name = ty->getStructName().str().substr(7);
+
+                        assert(structFields->find(struct_name) != structFields->end());
+                        for (unsigned int i = 0; i < ty->getStructNumElements();
+                                i++) {
+                            Type *field_type = ty->getStructElementType(i);
+                            if (field_type->isPointerTy()) {
+                                std::vector<std::string> fields = (*structFields)[struct_name];
+                                std::string fieldname = fields[i];
+                                info->struct_ptr_field_names->push_back(fieldname);
+                            }
+                        }
+                    }
 
                     if (info->users.size() > 0) {
                         alloc_infos.push_back(info);
                     } else {
+                        /*
+                         * Throw away the info we just generated if this is an
+                         * unused stack allocation
+                         */
                         delete info;
                     }
                 }
@@ -893,11 +988,18 @@ void Play::findStackAllocations(Module &M) {
         }
     }
 
+    /*
+     * Find which line in the original source to insert a stack variable
+     * registration. LLVM doesn't retain information on what line the actual
+     * declaration is on, so we just look for the earliest users in the CFG and
+     * mark those lines.
+     */
     for (std::vector<StackAllocInfo *>::iterator alloc_iter =
             alloc_infos.begin(), alloc_end = alloc_infos.end();
             alloc_iter != alloc_end; alloc_iter++) {
         StackAllocInfo *info = *alloc_iter;
         std::vector<Instruction *> users = info->users;
+        std::vector<std::string> *field_names = info->struct_ptr_field_names;
         BasicBlock *parent = info->parent;
         BasicBlock::iterator i = parent->begin();
         while (i != parent->end()) {
@@ -918,8 +1020,14 @@ void Play::findStackAllocations(Module &M) {
         for (std::set<int>::iterator lines_iter = lines_to_insert_at.begin(),
                 lines_end = lines_to_insert_at.end(); lines_iter != lines_end;
                 lines_iter++) {
-            fprintf(fp, "%d %s %d\n", *lines_iter, info->varname->c_str(),
-                    info->type_size_in_bits);
+            fprintf(fp, "%d %s %d %d ", *lines_iter, info->varname->c_str(),
+                    info->type_size_in_bits, info->is_ptr);
+            for (std::vector<std::string>::iterator field_iter =
+                    field_names->begin(), field_end = field_names->end();
+                    field_iter != field_end; field_iter++) {
+                fprintf(fp, "%s ", field_iter->c_str());
+            }
+            fprintf(fp, "\n");
         }
     }
 
