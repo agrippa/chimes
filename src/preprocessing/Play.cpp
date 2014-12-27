@@ -1260,15 +1260,28 @@ bool Play::runOnModule(Module &M) {
     findHeapAllocations(M);
 
     /*
-     * Now: this next bit is in support of the resumability. We start by assigning a unique integer to every call site, and adding a label to that callsite. This label will have to be a special case prepend inline during the transform pass. We also add a callback in the application right before every call site which allows the runtime library to recreate the stack trace based on callbacks and record them as they happen. The callback must be made right before the call is made because we must know what callsite we are making the call from, we can use the same rm_stack callback to remove functions from the stack that we've returned from. In addition, we have to add unique labels to every call to checkpoint() so that we can jump through the application straight to the call to checkpoint that was used to create this checkpoint.
+     * Now: this next bit is in support of the resumability. We start by
+     * assigning a unique integer to every call site (which includes calls to
+     * checkpoint()) and every stack variable registration site. A label is
+     * added at each of these entities based on its ID. We also add a callback
+     * in the application right before every call site which allows the runtime
+     * library to recreate the stack trace based on callbacks and record them as
+     * they happen. The callback must be made right before the call is made
+     * because we must know what callsite we are making the call from, we can
+     * use the same rm_stack callback to remove functions from the stack that
+     * we've returned from.
      *
-     * This stack generated from pre-call callbacks must be added to the dump files.
+     * This stack generated from pre-call callbacks is added to the checkpoint
+     * files.
      *
-     * Then, in init_numdebug we extract this stack from the dump file (which should be passed as an environment variable to indicated that we're doing a replay instead of a real run). We use the stack's entries to jmp from one callsite to the next, recreating the stack artificially until we get to the final checkpoint callback that was made to create this checkpoint. The application will then call back into the library using checkpoint(), and that's where we reconstruct stack and heap state. We can use a dummy variable inside checkpoint() as a ruler against which to measure stack allocations. The problem with this approach is that it is vulnerable to recompilation: if you recompile and have added some variables to the stack, the offsets won't match anymore and it will fail.
-     *
-     * An alternative technique would rebuild the stack at every callsite based on variable name. This would be more robust against recompilation, but still won't fill in any newly created stack variables. It might be possible to add a programmer-provided callback for this technique at every function, which they can use to initialize new variables, but that would be confusing to use (probably). This also won't handle nested variables with the same name.
-     *
-     * A third technique that combines the two: a unique label is applied to every callsite, checkpoint() call, and register_stack_var() call. We maintain the stack in the same way as described in the first paragraph, but also add jmps from every function entry to all stack variable registrations (to get their addresses), and only after all stack variables are registered do we jump to the next callsite/checkpoint(). That way, by the time we get to the final checkpoint() we know for sure that we have all stack variables precisely identified. We'll still have any new stack variables precisely identified, we just won't have values to fill them with (and can emit a warning based on that).
+     * In replay mode, we also use gotos to immediately visit the sites of all
+     * stack variable registrations in a function, and register their addresses
+     * with the runtime library. The last stack registration to be visited uses
+     * the stack trace we placed in the checkpoint file to decide which callsite
+     * it should not jump to. After that jump, we immediately enter the next
+     * call and repeat the same for the callee. This cycle stops when we finally
+     * jump to the call site of the checkpoint() that created the checkpoint
+     * file we are recovering from.
      */
 
     std::map<Function *, std::vector<LabeledLoc *> *> *locations =
