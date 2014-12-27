@@ -6,6 +6,7 @@
 #include "llvm/Analysis/AliasAnalysis.h"
 #include "llvm/Analysis/AliasSetTracker.h"
 #include "llvm/IR/InstIterator.h"
+#include "llvm/IR/IntrinsicInst.h"
 
 #include <stdio.h>
 #include <set>
@@ -681,6 +682,7 @@ int Play::findStartingLineForFunction(Function *F) {
         for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
                 ++i) {
             Instruction &inst = *i;
+            if (dyn_cast<DbgInfoIntrinsic>(&inst)) continue;
             int line = inst.getDebugLoc().getLine();
             if (line != 0 && (min_func_line == -1 || line < min_func_line)) {
                 min_func_line = line;
@@ -1123,6 +1125,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
             for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
                     ++i) {
                 Instruction &inst = *i;
+                if (dyn_cast<DbgInfoIntrinsic>(&inst)) continue;
 
                 if (dyn_cast<CallInst>(&inst)) {
                     LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
