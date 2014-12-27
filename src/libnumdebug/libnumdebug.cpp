@@ -25,6 +25,7 @@ void alias_group_changed(int group);
 void *malloc_wrapper(size_t nbytes, int group);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
+void onexit();
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
@@ -34,23 +35,22 @@ static map<int, vector<heap_allocation *> *> alias_to_heap;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static uint64_t curr_seq_no = 0;
 
-pthread_t checkpoint_thread;
-pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
-volatile int checkpoint_thread_running = 0;
+static pthread_t checkpoint_thread;
+static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
+static volatile int checkpoint_thread_running = 0;
+static int initialized = 0;
 
 void new_stack() {
+    if (!initialized) {
+        atexit(onexit);
+        initialized = 1;
+    }
     program_stack.push_back(new stack_frame());
 }
 
 void rm_stack() {
     stack_frame *curr = program_stack.back();
     program_stack.pop_back();
-
-    for (map<string, stack_var *>::iterator locals_iter =
-            curr->get_locals().begin(), locals_end = curr->get_locals().end();
-            locals_iter != locals_end; locals_iter++) {
-        delete locals_iter->second;
-    }
 
     delete curr;
 }
@@ -64,7 +64,8 @@ void alias_group_changed(int group) {
 }
 
 static void malloc_helper(void *new_ptr, size_t nbytes, int group) {
-    heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group);
+    heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
+            curr_seq_no);
 
     assert(heap.find(new_ptr) == heap.end());
     heap[new_ptr] = alloc;
@@ -73,6 +74,10 @@ static void malloc_helper(void *new_ptr, size_t nbytes, int group) {
     }
 
     alias_to_heap[group]->push_back(alloc);
+
+    if(heap_sequence_groups.find(curr_seq_no) == heap_sequence_groups.end()) {
+        heap_sequence_groups[curr_seq_no] = new vector<heap_allocation *>();
+    }
     heap_sequence_groups[curr_seq_no]->push_back(alloc);
 }
 
@@ -112,18 +117,26 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
 static void free_helper(map<void *, heap_allocation *>::iterator in_heap) {
     int group = in_heap->second->get_alias_group();
     void *ptr = in_heap->second->get_address();
+    int seq = in_heap->second->get_seq();
 
     vector<heap_allocation *>::iterator in_alias_to_heap =
         std::find(alias_to_heap[group]->begin(), alias_to_heap[group]->end(),
                 in_heap->second);
     assert(in_alias_to_heap != alias_to_heap[group]->end());
 
+    vector<heap_allocation *>::iterator in_heap_sequence_groups =
+        std::find(heap_sequence_groups[seq]->begin(),
+                heap_sequence_groups[seq]->end(), in_heap->second);
+    assert(in_heap_sequence_groups != heap_sequence_groups[seq]->end());
+
     heap.erase(in_heap);
     alias_to_heap[group]->erase(in_alias_to_heap);
+    heap_sequence_groups[seq]->erase(in_heap_sequence_groups);
+    if (heap_sequence_groups[seq]->empty()) {
+        heap_sequence_groups.erase(seq);
+    }
 
     free(ptr);
-
-    delete in_heap->second;
 }
 
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
@@ -182,7 +195,7 @@ void checkpoint() {
     curr_seq_no++;
 
     vector<heap_allocation *> *heap_to_checkpoint =
-        new vector<heap_allocation *>(heap.size());
+        new vector<heap_allocation *>();
     for (map<void *, heap_allocation *>::iterator heap_iter = heap.begin(),
             heap_end = heap.end(); heap_iter != heap_end; heap_iter++) {
         if (!heap_iter->second->has_been_freed()) {
@@ -289,4 +302,12 @@ void *checkpoint_func(void *data) {
     delete heap_to_checkpoint;
 
     return NULL;
+}
+
+void onexit() {
+    pthread_mutex_lock(&checkpoint_mutex);
+    if (checkpoint_thread_running) {
+        pthread_join(checkpoint_thread, NULL);
+    }
+    pthread_mutex_unlock(&checkpoint_mutex);
 }

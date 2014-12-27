@@ -76,9 +76,8 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
         new_stack_frame(&serialization, &serialization_capacity,
                 &serialization_used);
 
-        for (map<string, stack_var *>::iterator locals_iter =
-                frame->get_locals().begin(), locals_end =
-                frame->get_locals().end(); locals_iter != locals_end;
+        for (stack_frame::iterator locals_iter = frame->begin(),
+                locals_end = frame->end(); locals_iter != locals_end;
                 locals_iter++) {
             stack_var *var = locals_iter->second;
 

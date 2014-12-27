@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
         bar(&caller_var2);
     }
 
-    caller_ptr = realloc(caller_ptr, 2 * sizeof(int));
+    caller_ptr = (int *)realloc(caller_ptr, 2 * sizeof(int));
 
     for (i = 0; i < 10; i++) {
         bar(&caller_var2);
