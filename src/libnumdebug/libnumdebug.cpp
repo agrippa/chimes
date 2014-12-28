@@ -76,16 +76,26 @@ void init_numdebug(int nstructs, ...) {
         string struct_name_str(struct_name);
         structs[struct_name_str] = new std::vector<int>();
 
+#ifdef VERBOSE
+        fprintf(stderr, "struct %s offsets:", struct_name_str.c_str());
+#endif
+
         for (int j = 0; j < nfields; j++) {
             int offset = va_arg(vl, int);
             assert(offset >= 0);
             structs[struct_name_str]->push_back(offset);
+#ifdef VERBOSE
+            fprintf(stderr, " %d", offset);
+#endif
         }
     }
     va_end(vl);
 
     char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
+#ifdef VERBOSE
+        fprintf(stderr, "Using checkpoint file %s\n", checkpoint_file);
+#endif
         ____numdebug_replaying = 1;
         int fd = open(checkpoint_file, O_RDONLY);
         assert(fd >= 0);
@@ -93,12 +103,21 @@ void init_numdebug(int nstructs, ...) {
         int trace_len;
         safe_read(fd, &trace_len, sizeof(trace_len), "trace_len",
                 checkpoint_file);
+#ifdef VERBOSE
+        fprintf(stderr, "Trace = {");
+#endif
         for (int i = 0; i < trace_len; i++) {
             int trace_ele;
             safe_read(fd, &trace_ele, sizeof(trace_ele), "trace_ele",
                     checkpoint_file);
             trace.push_back(trace_ele);
+#ifdef VERBOSE
+            fprintf(stderr, " %d", trace_ele);
+#endif
         }
+#ifdef VERBOSE
+        fprintf(stderr, " }\n");
+#endif
 
         // read in stack state
         uint64_t stack_serialized_len;
@@ -266,6 +285,13 @@ void new_stack() {
 
 void calling(int lbl) {
     stack_tracker.push_back(lbl);
+#ifdef VERBOSE
+    fprintf(stderr, "Calling %d: ", lbl);
+    for (unsigned int i = 0; i < stack_tracker.size(); i++) {
+        fprintf(stderr, "%d ", stack_tracker[i]);
+    }
+    fprintf(stderr, "\n");
+#endif
 }
 
 void rm_stack() {
@@ -459,6 +485,8 @@ typedef struct _checkpoint_thread_ctx {
 static void *checkpoint_func(void *data);
 
 void checkpoint() {
+    new_stack();
+
     if (____numdebug_replaying) {
         fprintf(stderr, "Got to the desired checkpoint with a stack size of "
                 "%lu ( ", program_stack.size());
@@ -546,15 +574,20 @@ void checkpoint() {
         ____numdebug_rerunning = 1;
         stack_nesting = 0;
 
+        rm_stack();
         return;
     }
 
-    if (checkpoint_thread_running) return;
+    if (checkpoint_thread_running) {
+        rm_stack();
+        return;
+    }
 
     pthread_mutex_lock(&checkpoint_mutex);
 
     if (checkpoint_thread_running) {
         pthread_mutex_unlock(&checkpoint_mutex);
+        rm_stack();
         return;
     }
 
@@ -601,6 +634,8 @@ void checkpoint() {
     pthread_mutex_unlock(&checkpoint_mutex);
 
     pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
+
+    rm_stack();
 }
 
 static bool is_pointer_type(string type) {
@@ -729,7 +764,6 @@ void *checkpoint_func(void *data) {
         int trace = *trace_iter;
         safe_write(fd, &trace, sizeof(trace), "trace element", dump_filename);
     }
-
     // Write the serialized stack out
     safe_write(fd, &stack_serialized_len, sizeof(stack_serialized_len),
             "stack_serialized_len", dump_filename);
@@ -802,9 +836,21 @@ void *checkpoint_func(void *data) {
 }
 
 void onexit() {
+#ifdef VERBOSE
+    fprintf(stderr, "Locking...\n");
+#endif
     pthread_mutex_lock(&checkpoint_mutex);
+#ifdef VERBOSE
+    fprintf(stderr, "Done\n");
+#endif
     if (checkpoint_thread_running) {
+#ifdef VERBOSE
+        fprintf(stderr, "Joining\n");
+#endif
         pthread_join(checkpoint_thread, NULL);
+#ifdef VERBOSE
+        fprintf(stderr, "Done\n");
+#endif
     }
     pthread_mutex_unlock(&checkpoint_mutex);
 }
