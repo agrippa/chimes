@@ -514,12 +514,12 @@ void checkpoint() {
 #ifdef VERBOSE
         fprintf(stderr, "Got to the desired checkpoint with a stack size of "
                 "%lu ( ", program_stack.size());
-#endif
         for (std::vector<stack_frame *>::iterator i = program_stack.begin(),
                 e = program_stack.end(); i != e; i++) {
             fprintf(stderr, "%d ", (*i)->size());
         }
         fprintf(stderr, ")\n");
+#endif
         
         assert(unpacked_program_stack->size() == program_stack.size());
         /*
