@@ -9,6 +9,7 @@ using namespace std;
 class stack_var {
     private:
         string name;
+        string type;
         void *address;
         size_t size;
         int is_ptr;
@@ -16,12 +17,14 @@ class stack_var {
         void *tmp_buffer;
 
     public:
-        stack_var(const char *set_name, void *set_address, size_t set_size,
-                int set_is_ptr) : name(set_name), address(set_address),
-                size(set_size), is_ptr(set_is_ptr), tmp_buffer(NULL) {
+        stack_var(const char *set_name, const char *set_type, void *set_address,
+                size_t set_size, int set_is_ptr) : name(set_name),
+                type(set_type), address(set_address), size(set_size),
+                is_ptr(set_is_ptr), tmp_buffer(NULL) {
             assert(!is_ptr || size == sizeof(void *));
         }
         string get_name() { return name; }
+        string get_type() { return type; }
         void *get_address() { return address; }
         size_t get_size() { return size; }
         int check_is_ptr() { return is_ptr; }

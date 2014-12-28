@@ -23,8 +23,8 @@ using namespace std;
 // functions defined in this file
 void new_stack();
 void rm_stack();
-void register_stack_var(const char *mangled_name, void *ptr, size_t size,
-        int is_ptr, int n_ptr_fields, ...);
+void register_stack_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...);
 void alias_group_changed(int group);
 void *malloc_wrapper(size_t nbytes, int group);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
@@ -37,6 +37,8 @@ static void safe_read(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
 static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
+static void follow_pointers(void *container, string type,
+        set<void *> *updated);
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
@@ -51,15 +53,36 @@ static uint64_t curr_seq_no = 0;
 
 static vector<stack_frame *> *unpacked_program_stack;
 static vector<already_updated_ptrs *> already_updated;
+static std::map<void *, ptr_and_size *> *old_to_new;
+
+static std::map<std::string, std::vector<int> *> structs;
 
 static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
 
+static int stack_nesting = 0;
 int ____numdebug_replaying = 0;
+int ____numdebug_rerunning = 0;
 
-void init_numdebug() {
+void init_numdebug(int nstructs, ...) {
     atexit(onexit);
+
+    va_list vl;
+    va_start(vl, nstructs);
+    for (int i = 0; i < nstructs; i++) {
+        char *struct_name = va_arg(vl, char *);
+        int nfields = va_arg(vl, int);
+        string struct_name_str(struct_name);
+        structs[struct_name_str] = new std::vector<int>();
+
+        for (int j = 0; j < nfields; j++) {
+            int offset = va_arg(vl, int);
+            assert(offset >= 0);
+            structs[struct_name_str]->push_back(offset);
+        }
+    }
+    va_end(vl);
 
     char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
@@ -92,21 +115,23 @@ void init_numdebug() {
         uint64_t n_heap_allocs;
         safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
                 checkpoint_file);
-        std::map<void *, ptr_and_size *> *old_to_new = new std::map<void *, ptr_and_size *>();
-        std::vector<heap_allocation *> *heap =
+        old_to_new = new std::map<void *, ptr_and_size *>();
+        std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
         for (int i = 0; i < n_heap_allocs; i++) {
             void *old_address;
             size_t size;
+            int group;
 
             safe_read(fd, &old_address, sizeof(old_address), "old_address",
                     checkpoint_file);
             safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
+            safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
 
             void *new_address = malloc(size);
             safe_read(fd, new_address, size, "heap contents", checkpoint_file);
 
-            heap_allocation *alloc = new heap_allocation(old_address, size, 0,
+            heap_allocation *alloc = new heap_allocation(old_address, size, group,
                     0);
 
             int have_type_info;
@@ -139,7 +164,9 @@ void init_numdebug() {
 
             }
 
-            heap->push_back(alloc);
+            new_heap->push_back(alloc);
+            assert(heap.find(alloc->get_address()) == heap.end());
+            heap[alloc->get_address()] = alloc;
             assert(old_to_new->find(old_address) == old_to_new->end());
             (*old_to_new)[old_address] = new ptr_and_size(new_address, size);
         }
@@ -150,8 +177,8 @@ void init_numdebug() {
          * types for allocations. if no types could be identified, this is
          * essentially a no-op.
          */
-        for (std::vector<heap_allocation *>::iterator heap_iter = heap->begin(),
-                heap_end = heap->end(); heap_iter != heap_end; heap_iter++) {
+        for (std::vector<heap_allocation *>::iterator heap_iter = new_heap->begin(),
+                heap_end = new_heap->end(); heap_iter != heap_end; heap_iter++) {
             heap_allocation *alloc = *heap_iter;
             if (alloc->check_have_type_info()) {
                 if (alloc->check_elem_is_ptr()) {
@@ -234,6 +261,7 @@ static void *translate_old_ptr(void *ptr,
 
 void new_stack() {
     program_stack.push_back(new stack_frame());
+    stack_nesting++;
 }
 
 void calling(int lbl) {
@@ -246,6 +274,11 @@ void rm_stack() {
     delete curr;
 
     stack_tracker.pop_back();
+    stack_nesting--;
+
+    if (____numdebug_rerunning && stack_nesting < 0) {
+        exit(0);
+    }
 }
 
 int get_next_call() {
@@ -253,9 +286,10 @@ int get_next_call() {
     return trace[trace_index++];
 }
 
-void register_stack_var(const char *mangled_name, void *ptr, size_t size,
-        int is_ptr, int n_ptr_fields, ...) {
-    stack_var *new_var = new stack_var(mangled_name, ptr, size, is_ptr);
+void register_stack_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...) {
+    stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
+            is_ptr);
 
     va_list vl;
     va_start(vl, n_ptr_fields);
@@ -470,6 +504,7 @@ void checkpoint() {
                 stack_var *dead = found->second;
 
                 assert(live->get_name() == dead->get_name());
+                assert(live->get_type() == dead->get_type());
                 assert(live->get_size() == dead->get_size());
                 assert(live->check_is_ptr() == dead->check_is_ptr());
                 assert(live->get_ptr_offsets()->size() ==
@@ -492,10 +527,26 @@ void checkpoint() {
          * in the heap where other references need updating by following
          * pointers.
          */
+        set<void *> updated;
+        for (vector<stack_frame *>::iterator frame_iter = program_stack.begin(),
+                frame_end = program_stack.end(); frame_iter != frame_end;
+                frame_iter++) {
+            stack_frame *frame = *frame_iter;
+            for (stack_frame::iterator var_iter = frame->begin(),
+                    var_end = frame->end(); var_iter != var_end; var_iter++) {
+                stack_var *var = var_iter->second;
+                string type = var->get_type();
+                void *address = var->get_address();
+
+                follow_pointers(address, type, &updated);
+            }
+        }
 
         ____numdebug_replaying = 0;
+        ____numdebug_rerunning = 1;
+        stack_nesting = 0;
 
-        exit(0);
+        return;
     }
 
     if (checkpoint_thread_running) return;
@@ -550,6 +601,85 @@ void checkpoint() {
     pthread_mutex_unlock(&checkpoint_mutex);
 
     pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
+}
+
+static bool is_pointer_type(string type) {
+    return type[type.length() - 1] == '*';
+}
+
+static bool is_struct_type(string type) {
+    size_t index = type.find("%%struct.");
+    return index != string::npos && index == 0;
+}
+
+static bool is_already_updated(void *ptr) {
+    for (vector<already_updated_ptrs *>::iterator i = already_updated.begin(),
+            e = already_updated.end(); i != e; i++) {
+        already_updated_ptrs *updated = *i;
+        if (updated->satisfies(ptr)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+static void follow_pointers(void *container, string type,
+        set<void *> *updated) {
+    if (updated->find(container) != updated->end()) return;
+
+    if (is_already_updated(container)) return;
+
+    if (is_pointer_type(type)) {
+        void **nested_container = (void **)container;
+        void *new_ptr = translate_old_ptr(*nested_container, old_to_new);
+        if (new_ptr != NULL) {
+            updated->insert(nested_container);
+            *nested_container = new_ptr;
+            follow_pointers(new_ptr, type.substr(0, type.length() - 1),
+                    updated);
+        }
+    } else if (is_struct_type(type)) {
+        size_t open_brace_index = type.find("{");
+        assert(open_brace_index != string::npos);
+        open_brace_index += 2;
+        size_t close_brace_index = type.find("}");
+        assert(close_brace_index != string::npos);
+        close_brace_index -= 1;
+
+        string struct_name = type.substr(8, type.find("=") - 1);
+        std::vector<int> *fields = structs[struct_name];
+        string nested_types = type.substr(open_brace_index, close_brace_index -
+                open_brace_index);
+
+        int field_index = 0;
+        int index = 0;
+        int start = 0;
+        while (index < nested_types.length()) {
+            while (index < nested_types.length() && nested_types[index] != ',') {
+                index++;
+            }
+
+            /*
+             * This requires the offset of every field in every declared struct
+             * to be passed into init_numdebug. This is bad because that assumes
+             * that struct definitions are all defined in the same scope as
+             * main. This is okay for the moment, as we only support single-file
+             * compilation, but should be addressed as a future TODO.
+             */
+            string curr = nested_types.substr(start, index);
+            unsigned char *field_ptr = ((unsigned char *)container) +
+                (*fields)[field_index];
+            follow_pointers((void *)field_ptr, curr, updated);
+
+            start = index + 1;
+            while (start < nested_types.length() && nested_types[start] == ' ') {
+                start++;
+            }
+            index = start;
+            
+            field_index++;
+        }
+    }
 }
 
 static void safe_write(int fd, void *ptr, size_t size, const char *msg,
@@ -617,10 +747,12 @@ void *checkpoint_func(void *data) {
         heap_allocation *alloc = *heap_iter;
         void *address = alloc->get_address();
         size_t size = alloc->get_size();
+        int group = alloc->get_alias_group();
         int have_type_info = alloc->check_have_type_info() ? 1 : 0;
 
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
+        safe_write(fd, &group, sizeof(group), "group", dump_filename);
         safe_write(fd, address, size, "heap contents", dump_filename);
 
         safe_write(fd, &have_type_info, sizeof(have_type_info),

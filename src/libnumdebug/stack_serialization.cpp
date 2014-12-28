@@ -39,12 +39,12 @@ static void new_stack_frame(unsigned char **stream, uint64_t *stream_capacity,
 }
 
 static void new_var(unsigned char **stream, uint64_t *stream_capacity,
-        uint64_t *stream_len, string mangled_name, void *address, size_t size,
-        int is_ptr, std::vector<int> *ptr_offsets) {
+        uint64_t *stream_len, string mangled_name, string type, void *address,
+        size_t size, int is_ptr, std::vector<int> *ptr_offsets) {
     int ptr_offsets_len = ptr_offsets->size();
-    int var_record_size = 1 + (mangled_name.length() + 1) + sizeof(address) +
-        sizeof(size) + sizeof(is_ptr) + sizeof(ptr_offsets_len) +
-        (ptr_offsets_len * sizeof(int)) + size;
+    int var_record_size = 1 + (mangled_name.length() + 1) +
+        (type.length() + 1) + sizeof(address) + sizeof(size) + sizeof(is_ptr) +
+        sizeof(ptr_offsets_len) + (ptr_offsets_len * sizeof(int)) + size;
     ensure_capacity(stream, stream_capacity, *stream_len + var_record_size);
 
     unsigned char *base = (*stream) + *stream_len;
@@ -54,6 +54,10 @@ static void new_var(unsigned char **stream, uint64_t *stream_capacity,
     memcpy(base, mangled_name.c_str(), mangled_name.length());
     base[mangled_name.length()] = '\0';
     base += (mangled_name.length() + 1);
+
+    memcpy(base, type.c_str(), type.length());
+    base[type.length()] = '\0';
+    base += (type.length() + 1);
 
     memcpy(base, &address, sizeof(address));
     base += sizeof(address);
@@ -100,8 +104,8 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
             stack_var *var = locals_iter->second;
 
             new_var(&serialization, &serialization_capacity,
-                    &serialization_used, var->get_name(), var->get_address(),
-                    var->get_size(), var->check_is_ptr(),
+                    &serialization_used, var->get_name(), var->get_type(),
+                    var->get_address(), var->get_size(), var->check_is_ptr(),
                     var->get_ptr_offsets());
         }
     }
@@ -135,7 +139,13 @@ vector<stack_frame *> *deserialize_program_stack(
 
             unsigned char *varname = iter;
 
-            unsigned char *address_ptr = varname;
+            unsigned char *type = iter;
+            while (*type != '\0') {
+                type++;
+            }
+            type++;
+
+            unsigned char *address_ptr = type;
             while (*address_ptr != '\0') {
                 address_ptr++;
             }
@@ -155,8 +165,8 @@ vector<stack_frame *> *deserialize_program_stack(
             unsigned char *ptr_offsets_len_ptr = is_ptr_ptr + sizeof(is_ptr);
             memcpy(&ptr_offsets_len, ptr_offsets_len_ptr, sizeof(ptr_offsets_len));
 
-            stack_var *var = new stack_var((const char *)varname, address,
-                    size, is_ptr);
+            stack_var *var = new stack_var((const char *)varname,
+                    (const char *)type, address, size, is_ptr);
 
             int *ptr_offsets = (int *)(ptr_offsets_len_ptr + sizeof(ptr_offsets_len));
             for (int i = 0; i < ptr_offsets_len; i++) {
