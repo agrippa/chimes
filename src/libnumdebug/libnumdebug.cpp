@@ -803,6 +803,7 @@ void *checkpoint_func(void *data) {
             heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
             heap_iter != heap_end; heap_iter++) {
         heap_allocation *alloc = *heap_iter;
+        assert(alloc->get_tmp_buffer() != NULL);
         void *address = alloc->get_address();
         size_t size = alloc->get_size();
         int group = alloc->get_alias_group();
@@ -811,7 +812,8 @@ void *checkpoint_func(void *data) {
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
         safe_write(fd, &group, sizeof(group), "group", dump_filename);
-        safe_write(fd, address, size, "heap contents", dump_filename);
+        safe_write(fd, alloc->get_tmp_buffer(), size, "heap contents",
+                dump_filename);
 
         safe_write(fd, &have_type_info, sizeof(have_type_info),
                 "have_type_info", dump_filename);
@@ -842,7 +844,7 @@ void *checkpoint_func(void *data) {
         }
 
         // Release any deffered frees
-        free(alloc->get_address());
+        free(alloc->get_tmp_buffer());
     }
 
     close(fd);
