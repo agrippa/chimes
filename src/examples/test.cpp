@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "checkpoint.h"
 
 int bar(int *callee_ptr2) {
@@ -39,5 +40,6 @@ int main(int argc, char **argv) {
     checkpoint();
 
     free(caller_ptr);
+    fprintf(stderr, "Exiting...\n");
     return 0;
 }

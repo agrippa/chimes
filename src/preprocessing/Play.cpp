@@ -1322,14 +1322,22 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
                 Instruction &inst = *i;
                 if (dyn_cast<DbgInfoIntrinsic>(&inst)) continue;
 
-                if (dyn_cast<CallInst>(&inst)) {
-                    LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
-                    loc->id = id++;
-                    loc->type = CALLSITE;
-                    loc->line_no = inst.getDebugLoc().getLine();
-                    assert(loc->line_no != 0);
+                if (CallInst *call = dyn_cast<CallInst>(&inst)) {
+                    Function *callee = call->getCalledFunction();
+                    if (callee->getName().str() == "_Z10checkpointv" ||
+                            callee->getBasicBlockList().size() > 0) {
+                        /*
+                         * is an internal function which we have the definition
+                         * for.
+                         */
+                        LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
+                        loc->id = id++;
+                        loc->type = CALLSITE;
+                        loc->line_no = inst.getDebugLoc().getLine();
+                        assert(loc->line_no != 0);
 
-                    addIfNotExists(loc, F, locations);
+                        addIfNotExists(loc, F, locations);
+                    }
                 }
             }
         }
