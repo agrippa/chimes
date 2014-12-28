@@ -15,6 +15,8 @@
 #include "stack_frame.h"
 #include "heap_allocation.h"
 #include "stack_serialization.h"
+#include "ptr_and_size.h"
+#include "already_updated_ptrs.h"
 
 using namespace std;
 
@@ -33,6 +35,8 @@ static void safe_write(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
 static void safe_read(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
+static void *translate_old_ptr(void *ptr,
+        std::map<void *, ptr_and_size *> *old_to_new);
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
@@ -46,6 +50,7 @@ static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static uint64_t curr_seq_no = 0;
 
 static vector<stack_frame *> *unpacked_program_stack;
+static vector<already_updated_ptrs *> already_updated;
 
 static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -83,11 +88,11 @@ void init_numdebug() {
         unpacked_program_stack = deserialize_program_stack(stack_serialized,
                 stack_serialized_len);
 
-        // TODO read in heap serialization
+        // read in heap serialization
         uint64_t n_heap_allocs;
         safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
                 checkpoint_file);
-        std::map<void *, void *> *old_to_new = new std::map<void *, void *>();
+        std::map<void *, ptr_and_size *> *old_to_new = new std::map<void *, ptr_and_size *>();
         std::vector<heap_allocation *> *heap =
             new std::vector<heap_allocation *>();
         for (int i = 0; i < n_heap_allocs; i++) {
@@ -101,18 +106,130 @@ void init_numdebug() {
             void *new_address = malloc(size);
             safe_read(fd, new_address, size, "heap contents", checkpoint_file);
 
-            heap->push_back(new heap_allocation(old_address, size, 0, 0));
+            heap_allocation *alloc = new heap_allocation(old_address, size, 0,
+                    0);
+
+            int have_type_info;
+            safe_read(fd, &have_type_info, sizeof(have_type_info),
+                    "have_type_info", checkpoint_file);
+            if (have_type_info) {
+                size_t elem_size;
+                int elem_is_ptr, elem_is_struct;
+
+                safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
+                        checkpoint_file);
+                safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+                        checkpoint_file);
+                safe_read(fd, &elem_is_struct, sizeof(elem_is_struct),
+                        "elem_is_struct", checkpoint_file);
+                alloc->add_type_info(elem_size, elem_is_ptr, elem_is_struct);
+
+                if (elem_is_struct) {
+                    int elem_ptr_offsets_len;
+                    safe_read(fd, &elem_ptr_offsets_len,
+                            sizeof(elem_ptr_offsets_len),
+                            "elem_ptr_offsets_len", checkpoint_file);
+                    for (int j = 0; j < elem_ptr_offsets_len; j++) {
+                        int offset;
+                        safe_read(fd, &offset, sizeof(offset), "offset",
+                                checkpoint_file);
+                        alloc->add_pointer_offset(offset);
+                    }
+                }
+
+            }
+
+            heap->push_back(alloc);
             assert(old_to_new->find(old_address) == old_to_new->end());
-            (*old_to_new)[old_address] = new_address;
+            (*old_to_new)[old_address] = new ptr_and_size(new_address, size);
         }
 
+        /*
+         * find pointers in the heap and restore them to point to the correct
+         * object. this process relies on the compilation pass having identified
+         * types for allocations. if no types could be identified, this is
+         * essentially a no-op.
+         */
+        for (std::vector<heap_allocation *>::iterator heap_iter = heap->begin(),
+                heap_end = heap->end(); heap_iter != heap_end; heap_iter++) {
+            heap_allocation *alloc = *heap_iter;
+            if (alloc->check_have_type_info()) {
+                if (alloc->check_elem_is_ptr()) {
+                    /*
+                     * Iterate through all elements of this array and convert
+                     * pointers from old values to new values.
+                     */
+                    assert(alloc->get_size() % sizeof(void *) == 0);
+                    int nelems = alloc->get_size() / sizeof(void *);
+                    void **arr = (void **)(alloc->get_address());
 
-        // TODO find pointers in the heap and restore them to point to the correct object
-        // TODO find pointers in the stack and restore them to point to the correct object
-        // TODO restore non-pointers in the stack to have the correct values
+                    for (int i = 0; i < nelems; i++) {
+                        void *new_ptr = translate_old_ptr(arr[i], old_to_new);
+                        if (new_ptr != NULL) arr[i] = new_ptr;
+                    }
+
+                    already_updated_ptrs *updated = new already_updated_ptrs(
+                            (unsigned char *)arr, sizeof(void *), nelems);
+                    already_updated.push_back(updated);
+
+                } else if (alloc->check_elem_is_struct()) {
+                    int elem_size = alloc->get_elem_size();
+                    std::vector<int> *ptr_field_offsets = alloc->get_ptr_field_offsets();
+                    if (ptr_field_offsets->size() > 0) {
+                        assert(alloc->get_size() % elem_size == 0);
+                        /*
+                         * Iterate through all of the structs in the array and
+                         * convert the pointers at the specified offsets.
+                         */
+                        int nelems = alloc->get_size() / elem_size;
+                        unsigned char *raw_arr = (unsigned char *)(alloc->get_address());
+                        for (int i = 0; i < nelems; i++) {
+                            unsigned char *this_struct = raw_arr + (elem_size * i);
+                            for (std::vector<int>::iterator f_iter =
+                                    ptr_field_offsets->begin(), f_end =
+                                    ptr_field_offsets->end(); f_iter != f_end;
+                                    f_iter++) {
+                                unsigned char *field_address = this_struct + *f_iter;
+                                void **ptr_address = (void **)field_address;
+                                void *new_address = translate_old_ptr(*ptr_address, old_to_new);
+                                if (new_address != NULL) *ptr_address = new_address;
+                            }
+                        }
+
+                        for (std::vector<int>::iterator f_iter =
+                                ptr_field_offsets->begin(), f_end =
+                                ptr_field_offsets->end(); f_iter != f_end;
+                                f_iter++) {
+                            int field_offset = *f_iter;
+                            unsigned char *base = raw_arr + field_offset;
+
+                            already_updated_ptrs *updated =
+                                new already_updated_ptrs(base, elem_size,
+                                        nelems);
+                            already_updated.push_back(updated);
+                        }
+                    }
+                }
+            }
+        }
 
         close(fd);
     }
+}
+
+static void *translate_old_ptr(void *ptr,
+        std::map<void *, ptr_and_size *> *old_to_new) {
+    unsigned char *c_ptr = (unsigned char *)ptr;
+    for (std::map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
+            e = old_to_new->end(); i != e; i++) {
+        ptr_and_size *n = i->second;
+        unsigned char *c_old_ptr = (unsigned char *)(i->first);
+        size_t diff_in_bytes = c_ptr - c_old_ptr;
+        if (diff_in_bytes < n->get_size()) {
+            return ((unsigned char *)n->get_ptr()) + diff_in_bytes;
+        }
+    }
+    return NULL;
 }
 
 void new_stack() {
@@ -166,6 +283,7 @@ static void malloc_helper(void *new_ptr, size_t nbytes, int group,
         for (int i = 0; i < n_ptr_field_offsets; i++) {
             alloc->add_pointer_offset(ptr_field_offsets[i]);
         }
+        if (n_ptr_field_offsets > 0) free(ptr_field_offsets);
     }
 
     assert(heap.find(new_ptr) == heap.end());
@@ -227,7 +345,8 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
         } else {
             // The memory allocation was moved to satisfy this realloc
             int has_type_info = alloc->check_have_type_info();
-            int is_ptr = 0; int is_struct = 0; int n_struct_ptr_fields = 0; int elem_size = 0;
+            int is_ptr = 0; int is_struct = 0; int n_struct_ptr_fields = 0;
+            int elem_size = 0;
             int *ptr_field_offsets = NULL;
             if (has_type_info) {
                 is_ptr = alloc->check_elem_is_ptr();
@@ -316,17 +435,64 @@ void checkpoint() {
         fprintf(stderr, ")\n");
         
         assert(unpacked_program_stack->size() == program_stack.size());
+        /*
+         * restore non-pointers in the stack to have the correct values by
+         * transferring from the deserialized objects into the newly registered
+         * addresses
+         */
+        vector<stack_frame *>::iterator unpacked_iter =
+            unpacked_program_stack->begin();
+        vector<stack_frame *>::iterator unpacked_end =
+            unpacked_program_stack->end();
+        vector<stack_frame *>::iterator real_iter = program_stack.begin();
+        vector<stack_frame *>::iterator real_end = program_stack.end();
+
+        while (unpacked_iter != unpacked_end && real_iter != real_end) {
+            stack_frame *real = *real_iter;
+            stack_frame *unpacked = *unpacked_iter;
+            assert(real->size() == unpacked->size());
+
+            // Matching entries in each frame
+            for (stack_frame::iterator i = real->begin(), e = real->end();
+                    i != e; i++) {
+                assert(unpacked->find(i->first) != unpacked->end());
+            }
+            for (stack_frame::iterator i = unpacked->begin(),
+                    e = unpacked->end(); i != e; i++) {
+                assert(real->find(i->first) != real->end());
+            }
+
+            for (stack_frame::iterator i = real->begin(), e = real->end();
+                    i != e; i++) {
+                string name = i->first;
+                stack_var *live = i->second;
+                stack_frame::iterator found = unpacked->find(name);
+                stack_var *dead = found->second;
+
+                assert(live->get_name() == dead->get_name());
+                assert(live->get_size() == dead->get_size());
+                assert(live->check_is_ptr() == dead->check_is_ptr());
+                assert(live->get_ptr_offsets()->size() ==
+                        dead->get_ptr_offsets()->size());
+                assert(dead->get_tmp_buffer() != NULL);
+
+                memcpy(live->get_address(), dead->get_tmp_buffer(),
+                        live->get_size());
+                dead->clear_tmp_buffer();
+            }
+
+            unpacked_iter++;
+            real_iter++;
+        }
+        assert(unpacked_iter == unpacked_end && real_iter == real_end);
 
         /*
-         * TODO restore stack and heap state from checkpoint file (see TODOs
-         * above about getting it out of the checkpoint file) and updating the
-         * pointers in both the stack and heap. This update will require type
-         * information on the first-level types of all stack and heap
-         * allocations, which will need to be added to the dump file or
-         * callbacks somewhere. We only really care about either the allocation
-         * of pointers (don't really care if they are nested because we only
-         * update the one we're looking at) and structs that contain pointers.
+         * find pointers in the stack and restore them to point to the correct
+         * object. at the same time, use these pointers as indicators of places
+         * in the heap where other references need updating by following
+         * pointers.
          */
+
         ____numdebug_replaying = 0;
 
         exit(0);
@@ -451,10 +617,39 @@ void *checkpoint_func(void *data) {
         heap_allocation *alloc = *heap_iter;
         void *address = alloc->get_address();
         size_t size = alloc->get_size();
+        int have_type_info = alloc->check_have_type_info() ? 1 : 0;
 
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
         safe_write(fd, address, size, "heap contents", dump_filename);
+
+        safe_write(fd, &have_type_info, sizeof(have_type_info),
+                "have_type_info", dump_filename);
+        if (alloc->check_have_type_info()) {
+            size_t elem_size = alloc->get_elem_size();
+            int elem_is_ptr = alloc->check_elem_is_ptr();
+            int elem_is_struct = alloc->check_elem_is_struct();
+
+            safe_write(fd, &elem_size, sizeof(elem_size), "elem_size",
+                    dump_filename);
+            safe_write(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+                    dump_filename);
+            safe_write(fd, &elem_is_struct, sizeof(elem_is_struct),
+                    "elem_is_struct", dump_filename);
+            if (elem_is_struct) {
+                int elem_ptr_offsets_len =
+                    alloc->get_ptr_field_offsets()->size();
+                safe_write(fd, &elem_ptr_offsets_len,
+                        sizeof(elem_ptr_offsets_len), "elem_ptr_offsets_len",
+                        dump_filename);
+                for (int i = 0; i < alloc->get_ptr_field_offsets()->size();
+                        i++) {
+                    int offset = (*alloc->get_ptr_field_offsets())[i];
+                    safe_write(fd, &offset, sizeof(offset), "offset",
+                            dump_filename);
+                }
+            }
+        }
 
         // Release any deffered frees
         int refs = alloc->decr_refcount();

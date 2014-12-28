@@ -21,6 +21,8 @@ class stack_frame {
         iterator end() { return locals.end(); }
         const_iterator end() const { return locals.end(); }
 
+        iterator find(string s) { return locals.find(s); }
+
         int size() { return locals.size(); }
 };
 
