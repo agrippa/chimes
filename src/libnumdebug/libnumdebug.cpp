@@ -84,6 +84,29 @@ void init_numdebug() {
                 stack_serialized_len);
 
         // TODO read in heap serialization
+        uint64_t n_heap_allocs;
+        safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
+                checkpoint_file);
+        std::map<void *, void *> *old_to_new = new std::map<void *, void *>();
+        std::vector<heap_allocation *> *heap =
+            new std::vector<heap_allocation *>();
+        for (int i = 0; i < n_heap_allocs; i++) {
+            void *old_address;
+            size_t size;
+
+            safe_read(fd, &old_address, sizeof(old_address), "old_address",
+                    checkpoint_file);
+            safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
+
+            void *new_address = malloc(size);
+            safe_read(fd, new_address, size, "heap contents", checkpoint_file);
+
+            heap->push_back(new heap_allocation(old_address, size, 0, 0));
+            assert(old_to_new->find(old_address) == old_to_new->end());
+            (*old_to_new)[old_address] = new_address;
+        }
+
+
         // TODO find pointers in the heap and restore them to point to the correct object
         // TODO find pointers in the stack and restore them to point to the correct object
         // TODO restore non-pointers in the stack to have the correct values
@@ -117,6 +140,15 @@ void register_stack_var(const char *mangled_name, void *ptr, size_t size,
         int is_ptr, int n_ptr_fields, ...) {
     stack_var *new_var = new stack_var(mangled_name, ptr, size, is_ptr);
 
+    va_list vl;
+    va_start(vl, n_ptr_fields);
+    for (int i = 0; i < n_ptr_fields; i++) {
+        int offset = va_arg(vl, int);
+        assert(offset >= 0);
+        new_var->add_pointer_offset(offset);
+    }
+    va_end(vl);
+
     program_stack.back()->add_stack_var(new_var);
 }
 
@@ -124,9 +156,17 @@ void alias_group_changed(int group) {
     changed_groups.insert(group);
 }
 
-static void malloc_helper(void *new_ptr, size_t nbytes, int group) {
+static void malloc_helper(void *new_ptr, size_t nbytes, int group,
+        int has_type_info, int is_ptr, int is_struct, int elem_size,
+        int *ptr_field_offsets, int n_ptr_field_offsets) {
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
             curr_seq_no);
+    if (has_type_info) {
+        alloc->add_type_info(elem_size, is_ptr, is_struct);
+        for (int i = 0; i < n_ptr_field_offsets; i++) {
+            alloc->add_pointer_offset(ptr_field_offsets[i]);
+        }
+    }
 
     assert(heap.find(new_ptr) == heap.end());
     heap[new_ptr] = alloc;
@@ -142,11 +182,30 @@ static void malloc_helper(void *new_ptr, size_t nbytes, int group) {
     heap_sequence_groups[curr_seq_no]->push_back(alloc);
 }
 
-void *malloc_wrapper(size_t nbytes, int group) {
+void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...) {
     void *ptr = malloc(nbytes);
 
     if (ptr != NULL) {
-        malloc_helper(ptr, nbytes, group);
+        int is_ptr = 0, is_struct = 0, elem_size = 0, n_ptr_fields = 0;
+        int *ptr_field_offsets = NULL;
+
+        if (has_type_info) {
+            va_list vl;
+            va_start(vl, has_type_info);
+            is_ptr = va_arg(vl, int);
+            is_struct = va_arg(vl, int);
+            if (is_struct) {
+                elem_size = va_arg(vl, int);
+                n_ptr_fields = va_arg(vl, int);
+                ptr_field_offsets = (int *)malloc(sizeof(int) * n_ptr_fields);
+                for (int i = 0; i < n_ptr_fields; i++) {
+                    ptr_field_offsets[i] = va_arg(vl, int);
+                }
+            }
+            va_end(vl);
+        }
+        malloc_helper(ptr, nbytes, group, has_type_info, is_ptr, is_struct,
+                elem_size, ptr_field_offsets, n_ptr_fields);
     }
 
     return ptr;
@@ -167,8 +226,25 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
             alloc->update_size(nbytes);
         } else {
             // The memory allocation was moved to satisfy this realloc
+            int has_type_info = alloc->check_have_type_info();
+            int is_ptr = 0; int is_struct = 0; int n_struct_ptr_fields = 0; int elem_size = 0;
+            int *ptr_field_offsets = NULL;
+            if (has_type_info) {
+                is_ptr = alloc->check_elem_is_ptr();
+                is_struct = alloc->check_elem_is_struct();
+                if (is_struct) {
+                    elem_size = alloc->get_elem_size();
+                    n_struct_ptr_fields = alloc->get_ptr_field_offsets()->size();
+                    ptr_field_offsets = (int *)malloc(sizeof(int) * n_struct_ptr_fields);
+                    for (int i = 0; i < n_struct_ptr_fields; i++) {
+                        ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
+                    }
+                }
+            }
+
             free_wrapper(ptr, group);
-            malloc_helper(new_ptr, nbytes, group);
+            malloc_helper(new_ptr, nbytes, group, has_type_info, is_ptr,
+                    is_struct, elem_size, ptr_field_offsets, n_struct_ptr_fields);
         }
     }
 
