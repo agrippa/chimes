@@ -18,6 +18,7 @@
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
 #include "numdebug_stack.h"
+#include "heap_allocation.h"
 
 using namespace std;
 
@@ -490,11 +491,7 @@ void free_wrapper(void *ptr, int group) {
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     assert(in_heap->second->get_alias_group() == group);
 
-    if (in_heap->second->get_refcount() > 0) {
-        in_heap->second->set_free();
-    } else {
-        free_helper(in_heap);
-    }
+    free_helper(in_heap);
 }
 
 typedef struct _checkpoint_thread_ctx {
@@ -635,14 +632,19 @@ void checkpoint() {
      */
     curr_seq_no++;
 
+    /*
+     * TODO this doesn't actually work because even though we know the
+     * allocations will still be there, the host program may change them and
+     * then we're checkpointing inconsistent data.
+     */
     vector<heap_allocation *> *heap_to_checkpoint =
         new vector<heap_allocation *>();
     for (map<void *, heap_allocation *>::iterator heap_iter = heap.begin(),
             heap_end = heap.end(); heap_iter != heap_end; heap_iter++) {
-        if (!heap_iter->second->has_been_freed()) {
-            heap_to_checkpoint->push_back(heap_iter->second);
-            heap_iter->second->incr_refcount();
-        }
+        heap_allocation *curr = heap_iter->second;
+        heap_allocation *copy = new heap_allocation();
+        curr->copy(copy);
+        heap_to_checkpoint->push_back(copy);
     }
 
     checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
@@ -840,12 +842,7 @@ void *checkpoint_func(void *data) {
         }
 
         // Release any deffered frees
-        int refs = alloc->decr_refcount();
-        if (refs == 0 && alloc->has_been_freed()) {
-            map<void *, heap_allocation *>::iterator in_heap = find_in_heap(
-                    alloc->get_address());
-            free_helper(in_heap);
-        }
+        free(alloc->get_address());
     }
 
     close(fd);
