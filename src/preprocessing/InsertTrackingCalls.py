@@ -20,6 +20,23 @@ def getDeclarations(decl_file):
     return declarations
 
 
+def getStructDict(struct_file):
+    struct_fp = open(struct_file, 'r')
+    d = {}
+
+    for line in struct_fp:
+        tokens = line.split()
+        struct_name = tokens[0]
+
+        assert struct_name not in d.keys()
+        d[struct_name] = []
+        for field in tokens[1:]:
+            d[struct_name].append(field)
+
+    struct_fp.close()
+    return d
+
+
 def splitVariableDeclarations(input_file_contents):
     # remove mixed declaration, definition to avoid jumping over variables with gotos
     line_index = 0
@@ -182,18 +199,24 @@ def getStackInsertions(stack_info_file, input_contents, declarations):
 
         line_no = int(tokens[0])
         mangled_name = tokens[1]
-        type_size_in_bits = int(tokens[2])
-        is_ptr = int(tokens[3])
-        is_struct = int(tokens[4])
+        open_quotes_index = 2
+        close_quotes_index = 3
+        while tokens[close_quotes_index] != '"':
+            close_quotes_index += 1
+        full_type = ''.join(tokens[open_quotes_index + 1:close_quotes_index])
+
+        type_size_in_bits = int(tokens[close_quotes_index + 1])
+        is_ptr = int(tokens[close_quotes_index + 2])
+        is_struct = int(tokens[close_quotes_index + 3])
         struct_type_name = None
         ptr_fields = []
         if is_struct > 0:
-            struct_type_name = tokens[5]
-            ptr_fields = tokens[6:]
+            struct_type_name = tokens[close_quotes_index + 4]
+            ptr_fields = tokens[close_quotes_index + 5:]
 
         actual_name = mangled_name.split('____')[1]
 
-        call =  'register_stack_var("' + mangled_name + '", &' + \
+        call =  'register_stack_var("' + mangled_name + '", "' + full_type + '", &' + \
                 actual_name + ', ' + str(type_size_in_bits / 8) + ', ' + \
                 str(is_ptr) + ', ' + str(is_struct) + ', ' + str(len(ptr_fields))
         for field in ptr_fields:
@@ -273,7 +296,7 @@ def getMallocInsertions(heap_info_file, input_file_contents):
     heap_info_fp.close()
 
 
-def getInitializationInsertions(functions_start_file):
+def getInitializationInsertions(functions_start_file, structs):
     functions_start_fp = open(functions_start_file, 'r')
 
     insertions = {}
@@ -283,8 +306,15 @@ def getInitializationInsertions(functions_start_file):
         tokens = line.split()
         line_no = int(tokens[0])
         fname = tokens[1]
+
         if fname == 'main':
-            insertions[line_no] = 'init_numdebug(); '
+            new_line = 'init_numdebug(' + str(len(structs))
+            for struct_name in structs.keys():
+                new_line = new_line + ', "' + struct_name + '", ' + str(len(structs[struct_name]))
+                for field_name in structs[struct_name]:
+                    new_line = new_line + ', (int)offsetof(struct ' + struct_name + ', ' + field_name + ')'
+            new_line = new_line + '); '
+            insertions[line_no] = new_line
             found = True
             break
 
@@ -348,9 +378,10 @@ if __name__ == '__main__':
     decl_file = sys.argv[10]
     out_file = sys.argv[11]
 
+    structs = getStructDict(struct_file)
     declarations = getDeclarations(decl_file)
     state_change_inserts = getStateChangeInsertions(lines_info_file)
-    initialization_inserts = getInitializationInsertions(functions_start_file)
+    initialization_inserts = getInitializationInsertions(functions_start_file, structs)
     function_start_inserts = getFunctionStartInsertions(functions_start_file)
     function_exit_inserts = getFunctionExitInsertions(function_exits_file)
     input_file_contents = getInputFileContents(input_file)

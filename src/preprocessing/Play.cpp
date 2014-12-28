@@ -39,6 +39,8 @@ namespace {
         bool is_struct;
         std::string struct_type_name;
         std::vector<std::string> *struct_ptr_field_names;
+
+        std::string full_type_name;
     } StackAllocInfo;
 
     typedef struct _CallInfo {
@@ -1005,6 +1007,12 @@ void Play::findStackAllocations(Module &M) {
                         }
                     }
 
+
+                    std::string backing_string;
+                    raw_string_ostream stream(backing_string);
+                    ty->print(stream);
+                    info->full_type_name = stream.str();
+
                     if (info->users.size() > 0) {
                         alloc_infos.push_back(info);
                     } else {
@@ -1051,7 +1059,8 @@ void Play::findStackAllocations(Module &M) {
         for (std::set<int>::iterator lines_iter = lines_to_insert_at.begin(),
                 lines_end = lines_to_insert_at.end(); lines_iter != lines_end;
                 lines_iter++) {
-            fprintf(fp, "%d %s %d %d %d ", *lines_iter, info->varname->c_str(),
+            fprintf(fp, "%d %s \" %s \" %d %d %d ", *lines_iter,
+                    info->varname->c_str(), info->full_type_name.c_str(),
                     info->type_size_in_bits, info->is_ptr, info->is_struct);
             if (info->is_struct) {
                 fprintf(fp, "%s ", info->struct_type_name.c_str());
