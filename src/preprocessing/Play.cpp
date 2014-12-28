@@ -877,14 +877,18 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
         std::vector<std::string> fields;
 
         assert(this_struct->getNumOperands() >= 5);
-        assert(dyn_cast<MDNode>(this_struct->getOperand(4).get()));
-        MDNode *field_defs = (MDNode *)this_struct->getOperand(4).get();
-        for (unsigned int f = 0; f < field_defs->getNumOperands(); f++) {
-            assert(dyn_cast<MDNode>(field_defs->getOperand(f).get()));
-            MDNode *field = (MDNode *)field_defs->getOperand(f).get();
-            DIType di_field(field);
-            std::string fieldname = di_field.getName().str();
-            fields.push_back(fieldname);
+        Metadata *field_defs_metadata = this_struct->getOperand(4).get();
+
+        if (field_defs_metadata != NULL) {
+            assert(dyn_cast<MDNode>(field_defs_metadata));
+            MDNode *field_defs = (MDNode *)field_defs_metadata;
+            for (unsigned int f = 0; f < field_defs->getNumOperands(); f++) {
+                assert(dyn_cast<MDNode>(field_defs->getOperand(f).get()));
+                MDNode *field = (MDNode *)field_defs->getOperand(f).get();
+                DIType di_field(field);
+                std::string fieldname = di_field.getName().str();
+                fields.push_back(fieldname);
+            }
         }
 
         assert(struct_fields->find(struct_name) == struct_fields->end());

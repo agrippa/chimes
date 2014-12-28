@@ -853,6 +853,8 @@ void *checkpoint_func(void *data) {
     delete ctx->stack_tracker;
     free(ctx);
 
+    checkpoint_thread_running = 0;
+
     return NULL;
 }
 
