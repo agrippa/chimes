@@ -18,8 +18,6 @@ using namespace llvm;
 // #define VERBOSE
 
 namespace {
-    const char *stack_info_filename = "stack.info";
-
     typedef enum {CALLSITE, STACK_REGISTRATION} LocationType;
 
     typedef struct _LabeledLoc {
@@ -68,6 +66,7 @@ namespace {
         std::map<Value *, int> value_to_alias_group;
         std::vector<AliasSetGroup *> alias_groups;
         std::map<int, std::set<int>*> line_to_groups_modified;
+        std::map<std::string, int> *function_to_start_line = NULL;
 
         explicit Play(): ModulePass(ID) {
             // errs() << "Initializing Play\n";
@@ -110,19 +109,20 @@ namespace {
                 std::set<int> *to_insert);
         void traverseLookingForFirstUsers(BasicBlock::iterator curr,
                 BasicBlock::iterator end, std::vector<Instruction *> users,
-                std::set<int> *to_insert);
-        int findStartingLineForFunction(Function *F);
+                std::set<int> *to_insert, Module &M);
+        int findStartingLineForFunction(Function *F, Module &M);
         void findHeapAllocations(Module &M);
         int searchUpDefsForAliasSetGroup(Value *val, int nesting);
         std::map<Function *, std::vector<LabeledLoc *> *> *collectUniqueIDs(
-                Module &M);
+                Module &M, const char *decl_info_name);
         bool isFunctionNameEnd(char *fname_end);
         void addIfNotExists(LabeledLoc *loc, Function *containing_function,
                 std::map<Function *, std::vector<LabeledLoc *> *> *locations);
         void dumpLocationsToFile(const char *filename,
                 std::map<Function *, std::vector<LabeledLoc *> *> *locations);
         void dumpGotoChainsToFile(const char *filename,
-                std::map<Function *, std::vector<LabeledLoc *> *> *locations);
+                std::map<Function *, std::vector<LabeledLoc *> *> *locations,
+                Module &M);
         std::map<std::string, std::vector<std::string>> *getStructFieldNames(
                 Module &M);
         void dumpStructInfoToFile(const char *filename, std::map<std::string,
@@ -686,23 +686,48 @@ void Play::dumpFunctionStartingLineTo(const char *filename,
     fclose(fp);
 }
 
-int Play::findStartingLineForFunction(Function *F) {
-    int min_func_line = -1;
-    Function::BasicBlockListType &bblist = F->getBasicBlockList();
-    for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-            bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-        BasicBlock *bb = &*bb_iter;
-        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                ++i) {
-            Instruction &inst = *i;
-            if (dyn_cast<DbgInfoIntrinsic>(&inst)) continue;
-            int line = inst.getDebugLoc().getLine();
-            if (line != 0 && (min_func_line == -1 || line < min_func_line)) {
-                min_func_line = line;
+int Play::findStartingLineForFunction(Function *F, Module &M) {
+
+    if (function_to_start_line == NULL) {
+        function_to_start_line = new std::map<std::string, int >();
+
+        NamedMDNode *root = NULL;
+        for (Module::named_metadata_iterator md_iter = M.named_metadata_begin(),
+                md_end = M.named_metadata_end(); md_iter != md_end; md_iter++) {
+            NamedMDNode *node = md_iter;
+            if (node->getName().str() == "llvm.dbg.cu") {
+                root = node;
+                break;
             }
         }
+        assert(root != NULL);
+        assert(root->getNumOperands() == 1);
+        MDNode *module_info = root->getOperand(0);
+        assert(module_info->getNumOperands() == 7);
+        Metadata *func_info = module_info->getOperand(4).get();
+        assert(dyn_cast<MDNode>(func_info));
+        MDNode *func_info_md = (MDNode *)func_info;
+
+        for (unsigned int f = 0; f < func_info_md->getNumOperands(); f++) {
+            assert(dyn_cast<MDNode>(func_info_md->getOperand(f).get()));
+            MDNode *this_func = (MDNode *)func_info_md->getOperand(f).get();
+            DISubprogram di_func(this_func);
+
+            std::string fname = di_func.getLinkageName();
+            if (fname.empty()) {
+                fname = di_func.getDisplayName();
+            }
+            int line_no = di_func.getLineNumber();
+
+            assert(function_to_start_line->find(fname) ==
+                    function_to_start_line->end());
+            (*function_to_start_line)[fname] = line_no;
+        }
     }
-    return min_func_line;
+
+    assert(function_to_start_line->find(F->getName().str()) !=
+            function_to_start_line->end());
+    return (*function_to_start_line)[F->getName().str()];
 }
 
 void Play::findStartingLinesForAllFunctions(Module &M) {
@@ -714,13 +739,13 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        int min_func_line = findStartingLineForFunction(F);
-
         // Externally defined functions won't have any body info
-        if (min_func_line != -1) {
-            assert(functions.find(min_func_line) == functions.end());
-            functions[min_func_line] = F->getName();
-        }
+        if (F->getBasicBlockList().size() == 0) continue;
+
+        int min_func_line = findStartingLineForFunction(F, M);
+        assert(min_func_line >= 0);
+        assert(functions.find(min_func_line) == functions.end());
+        functions[min_func_line] = F->getName();
     }
 
     dumpFunctionStartingLineTo("func_start.info", functions);
@@ -774,7 +799,7 @@ void Play::traverseUntilNotForIncOrCond(BasicBlock *curr,
 
 void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
         BasicBlock::iterator end, std::vector<Instruction *> users,
-        std::set<int> *to_insert) {
+        std::set<int> *to_insert, Module &M) {
     TerminatorInst *term = curr->getParent()->getTerminator();
 
     while (curr != end) {
@@ -794,7 +819,7 @@ void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
                      */
                     assert(dyn_cast<StoreInst>(curr));
                     to_insert->insert(findStartingLineForFunction(
-                                curr->getParent()->getParent()));
+                                curr->getParent()->getParent(), M));
                 } else {
                     int insert_at = curr->getDebugLoc().getLine();
                     to_insert->insert(insert_at);
@@ -813,7 +838,7 @@ void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
     for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
         traverseLookingForFirstUsers(child->begin(), child->end(), users,
-                to_insert);
+                to_insert, M);
     }
 }
 
@@ -887,9 +912,25 @@ void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
     fclose(fp);
 }
 
+std::string *get_unique_varname(std::string varname, std::string fname,
+        std::set<std::string> *found_variables) {
+
+    std::string *unique_varname = new std::string();
+    int permute = 0;
+    do {
+        std::ostringstream str_stream;
+        str_stream << fname << "____" << varname << "____" << permute;
+        *unique_varname = str_stream.str();
+        permute++;
+    } while (found_variables->find(*unique_varname) != found_variables->end());
+    found_variables->insert(*unique_varname);
+
+    return unique_varname;
+}
+
 //TODO I don't think this supports stack-allocated arrays yet
 void Play::findStackAllocations(Module &M) {
-    FILE *fp = fopen(stack_info_filename, "w");
+    FILE *fp = fopen("stack.info", "w");
     DataLayout *layout = new DataLayout(&M);
     std::set<std::string> found_variables;
 
@@ -972,17 +1013,8 @@ void Play::findStackAllocations(Module &M) {
                      * Construct a unique variable name based on the containing
                      * function and this local's name.
                      */
-                    std::string *unique_varname = new std::string();
-                    int permute = 0;
-                    do {
-                        std::ostringstream str_stream;
-                        str_stream << F->getName().str() << "____" <<
-                            varname << "____" << permute;
-                        *unique_varname = str_stream.str();
-                        permute++;
-                    } while (found_variables.find(*unique_varname) != found_variables.end());
-
-                    found_variables.insert(*unique_varname);
+                    std::string *unique_varname = get_unique_varname(varname,
+                            F->getName().str(), &found_variables);
 
                     info->varname = unique_varname;
 
@@ -1039,39 +1071,19 @@ void Play::findStackAllocations(Module &M) {
         StackAllocInfo *info = *alloc_iter;
         std::vector<Instruction *> users = info->users;
         std::vector<std::string> *field_names = info->struct_ptr_field_names;
-        BasicBlock *parent = info->parent;
-        BasicBlock::iterator i = parent->begin();
-        while (i != parent->end()) {
-            if (AllocaInst *alloc = dyn_cast<AllocaInst>(i)) {
-                if (alloc == info->alloca) {
-                    break;
-                }
-            }
-            i++;
-        }
-        // functions should have something other than stack allocations
-        assert(i != parent->end());
 
-        std::set<int> lines_to_insert_at;
-        traverseLookingForFirstUsers(i, parent->end(), users,
-                &lines_to_insert_at);
-
-        for (std::set<int>::iterator lines_iter = lines_to_insert_at.begin(),
-                lines_end = lines_to_insert_at.end(); lines_iter != lines_end;
-                lines_iter++) {
-            fprintf(fp, "%d %s \" %s \" %d %d %d ", *lines_iter,
-                    info->varname->c_str(), info->full_type_name.c_str(),
-                    info->type_size_in_bits, info->is_ptr, info->is_struct);
-            if (info->is_struct) {
-                fprintf(fp, "%s ", info->struct_type_name.c_str());
-                for (std::vector<std::string>::iterator field_iter =
-                        field_names->begin(), field_end = field_names->end();
-                        field_iter != field_end; field_iter++) {
-                    fprintf(fp, "%s ", field_iter->c_str());
-                }
+        fprintf(fp, "%s \" %s \" %d %d %d ",
+                info->varname->c_str(), info->full_type_name.c_str(),
+                info->type_size_in_bits, info->is_ptr, info->is_struct);
+        if (info->is_struct) {
+            fprintf(fp, "%s ", info->struct_type_name.c_str());
+            for (std::vector<std::string>::iterator field_iter =
+                    field_names->begin(), field_end = field_names->end();
+                    field_iter != field_end; field_iter++) {
+                fprintf(fp, "%s ", field_iter->c_str());
             }
-            fprintf(fp, "\n");
         }
+        fprintf(fp, "\n");
     }
 
     delete layout;
@@ -1262,7 +1274,7 @@ void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
 }
 
 std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
-        Module &M) {
+        Module &M, const char *decl_info_name) {
     std::map<Function *, std::vector<LabeledLoc *> *> *locations =
         new std::map<Function *, std::vector<LabeledLoc *> *>();
     int id = 0;
@@ -1271,7 +1283,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
     ssize_t read;
     size_t len;
     char *line = NULL;
-    FILE *fp = fopen(stack_info_filename, "r");
+    FILE *fp = fopen(decl_info_name, "r");
     while ((read = getline(&line, &len, fp)) != -1) {
         char *end = strchr(line, ' ');
         assert(end != NULL);
@@ -1302,7 +1314,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
         }
         assert(containing_function != NULL);
 
-        int first_line = findStartingLineForFunction(containing_function);
+        int first_line = findStartingLineForFunction(containing_function, M);
         if (first_line != loc->line_no) {
             addIfNotExists(loc, containing_function, locations);
         }
@@ -1367,14 +1379,15 @@ void Play::dumpLocationsToFile(const char *filename,
 }
 
 void Play::dumpGotoChainsToFile(const char *filename,
-        std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
+        std::map<Function *, std::vector<LabeledLoc *> *> *locations,
+        Module &M) {
     FILE *fp = fopen(filename, "w");
 
     for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator i =
             locations->begin(), e = locations->end(); i != e; i++) {
         Function *F = i->first;
         std::vector<LabeledLoc *> *locs = i->second;
-        int start = findStartingLineForFunction(F);
+        int start = findStartingLineForFunction(F, M);
         std::vector<LabeledLoc *> only_stack;
         std::vector<LabeledLoc *> only_calls;
 
@@ -1390,7 +1403,8 @@ void Play::dumpGotoChainsToFile(const char *filename,
 
         fprintf(fp, "%d START %d\n", start, only_stack[0]->id);
         for (unsigned int i = 1; i < only_stack.size(); i++) {
-            fprintf(fp, "%d INTERNAL %d\n", only_stack[i - 1]->line_no, only_stack[i]->id);
+            fprintf(fp, "%d INTERNAL %d\n", only_stack[i - 1]->line_no,
+                    only_stack[i]->id);
         }
 
         if (!only_calls.empty()) {
@@ -1407,6 +1421,7 @@ void Play::dumpGotoChainsToFile(const char *filename,
 
 void Play::collectVariableDeclarations(Module &M, const char *filename) {
     FILE *fp = fopen(filename, "w");
+    std::set<std::string> found_variables;
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
@@ -1422,8 +1437,11 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
                     assert(dbg->getDebugLoc().getLine() != 0);
                     MDNode *var = dbg->getVariable();
                     DIVariable di_var(var);
+                    std::string *unique_varname = get_unique_varname(
+                            di_var.getName().str(), F->getName().str(),
+                            &found_variables);
                     fprintf(fp, "%d %s\n", dbg->getDebugLoc().getLine(),
-                            di_var.getName().str().c_str());
+                            unique_varname->c_str());
                 }
             }
         }
@@ -1517,8 +1535,11 @@ bool Play::runOnModule(Module &M) {
      * file we are recovering from.
      */
 
+    const char *decl_info_name = "decl.info";
+    collectVariableDeclarations(M, decl_info_name);
+
     std::map<Function *, std::vector<LabeledLoc *> *> *locations =
-        collectUniqueIDs(M);
+        collectUniqueIDs(M, decl_info_name);
     errs() << "\nFound " << locations->size() << " functions with locations to "
         "mark\n";
     int count_locations = 0;
@@ -1530,9 +1551,7 @@ bool Play::runOnModule(Module &M) {
     errs() << "Found " << count_locations << " locations to mark\n";
     dumpLocationsToFile("loc.info", locations);
 
-    dumpGotoChainsToFile("goto.info", locations);
-
-    collectVariableDeclarations(M, "decl.info");
+    dumpGotoChainsToFile("goto.info", locations, M);
 
     return false;
 }

@@ -6,18 +6,23 @@ def isDeclaration(line, declarations):
     return line in declarations.keys()
 
 def getDeclarations(decl_file):
-    declarations = {}
+    line_to_decl = {}
+    decl_to_line = {}
+
     decl_fp = open(decl_file, 'r')
     for line in decl_fp:
         tokens = line.split()
         line_no = int(tokens[0])
         varname = tokens[1]
 
-        if line_no not in declarations:
-            declarations[line_no] = []
-        declarations[line_no].append(varname)
+        if line_no not in line_to_decl:
+            line_to_decl[line_no] = []
+        line_to_decl[line_no].append(varname)
+
+        assert varname not in decl_to_line
+        decl_to_line[varname] = line_no
     decl_fp.close()
-    return declarations
+    return (line_to_decl, decl_to_line)
 
 
 def getStructDict(struct_file):
@@ -37,7 +42,7 @@ def getStructDict(struct_file):
     return d
 
 
-def splitVariableDeclarations(input_file_contents):
+def splitVariableDeclarations(input_file_contents, declarations):
     # remove mixed declaration, definition to avoid jumping over variables with gotos
     line_index = 0
     for line in input_file_contents:
@@ -122,7 +127,8 @@ def getGotoInsertions(goto_file, input_contents, declarations):
         if line_type == 'START':
             assert line_no not in insertions
             lbl_id = int(tokens[2])
-            insertions[line_no] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
+            # TODO find actual start of function body, don't just assume it is the first line + 1
+            insertions[line_no + 1] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
         elif line_type == 'INTERNAL':
             if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
@@ -169,7 +175,8 @@ def getFunctionStartInsertions(functions_start_file):
         tokens = line.split()
         line_no = int(tokens[0])
         assert line_no not in insertions.keys()
-        insertions[line_no] = 'new_stack(); '
+        # TODO find actual start of function body, don't just assume it is the first line + 1
+        insertions[line_no + 1] = 'new_stack(); '
 
     functions_start_fp.close()
 
@@ -191,16 +198,16 @@ def getFunctionExitInsertions(function_exits_file):
     return insertions
 
 
-def getStackInsertions(stack_info_file, input_contents, declarations):
+def getStackInsertions(stack_info_file, input_contents, line_to_decl, decl_to_line):
     stack_info_fp = open(stack_info_file, 'r')
     insertions = {}
     for line in stack_info_fp:
         tokens = line.split()
 
-        line_no = int(tokens[0])
-        mangled_name = tokens[1]
-        open_quotes_index = 2
-        close_quotes_index = 3
+        mangled_name = tokens[0]
+        line_no = decl_to_line[mangled_name]
+        open_quotes_index = 1
+        close_quotes_index = 2
         while tokens[close_quotes_index] != '"':
             close_quotes_index += 1
         full_type = ''.join(tokens[open_quotes_index + 1:close_quotes_index])
@@ -223,7 +230,7 @@ def getStackInsertions(stack_info_file, input_contents, declarations):
             call += ', (int)offsetof(struct ' + struct_type_name + ', ' + field + ')'
         call += '); '
 
-        if isDeclaration(line_no, declarations):
+        if isDeclaration(line_no, line_to_decl):
             line_no = line_no + 1
 
         if line_no in insertions.keys():
@@ -314,7 +321,8 @@ def getInitializationInsertions(functions_start_file, structs):
                 for field_name in structs[struct_name]:
                     new_line = new_line + ', (int)offsetof(struct ' + struct_name + ', ' + field_name + ')'
             new_line = new_line + '); '
-            insertions[line_no] = new_line
+            # TODO find actual start of function body, don't just assume it is the first line + 1
+            insertions[line_no + 1] = new_line
             found = True
             break
 
@@ -379,18 +387,20 @@ if __name__ == '__main__':
     out_file = sys.argv[11]
 
     structs = getStructDict(struct_file)
-    declarations = getDeclarations(decl_file)
+    line_to_decl, decl_to_line = getDeclarations(decl_file)
+
     state_change_inserts = getStateChangeInsertions(lines_info_file)
     initialization_inserts = getInitializationInsertions(functions_start_file, structs)
     function_start_inserts = getFunctionStartInsertions(functions_start_file)
     function_exit_inserts = getFunctionExitInsertions(function_exits_file)
     input_file_contents = getInputFileContents(input_file)
-    stack_inserts = getStackInsertions(stack_info_file, input_file_contents, declarations)
+    stack_inserts = getStackInsertions(stack_info_file, input_file_contents, line_to_decl,
+            decl_to_line)
     getMallocInsertions(heap_info_file, input_file_contents)
-    goto_inserts = getGotoInsertions(goto_file, input_file_contents, declarations)
-    stack_tracking_inserts = getLabelInsertions(loc_info_file, input_file_contents, declarations)
+    goto_inserts = getGotoInsertions(goto_file, input_file_contents, line_to_decl)
+    stack_tracking_inserts = getLabelInsertions(loc_info_file, input_file_contents, line_to_decl)
 
-    splitVariableDeclarations(input_file_contents)
+    splitVariableDeclarations(input_file_contents, line_to_decl)
 
     all_insertions = [initialization_inserts,
             stack_tracking_inserts, function_start_inserts, stack_inserts, state_change_inserts,

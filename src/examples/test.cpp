@@ -39,6 +39,8 @@ int main(int argc, char **argv) {
 
     checkpoint();
 
+    printf("*caller_ptr = %d\n", *caller_ptr);
+
     free(caller_ptr);
     fprintf(stderr, "Exiting...\n");
     return 0;
