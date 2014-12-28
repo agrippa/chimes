@@ -151,7 +151,7 @@ void init_numdebug(int nstructs, ...) {
             void *new_address = malloc(size);
             safe_read(fd, new_address, size, "heap contents", checkpoint_file);
 
-            heap_allocation *alloc = new heap_allocation(old_address, size, group,
+            heap_allocation *alloc = new heap_allocation(new_address, size, group,
                     0);
 
             int have_type_info;
@@ -185,8 +185,21 @@ void init_numdebug(int nstructs, ...) {
             }
 
             new_heap->push_back(alloc);
+
             assert(heap.find(alloc->get_address()) == heap.end());
             heap[alloc->get_address()] = alloc;
+
+            if (alias_to_heap.find(group) == alias_to_heap.end()) {
+                alias_to_heap[group] = new vector<heap_allocation *>();
+            }
+            alias_to_heap[group]->push_back(alloc);
+
+            // All restored allocations will have sequence #0
+            if(heap_sequence_groups.find(0) == heap_sequence_groups.end()) {
+                heap_sequence_groups[0] = new vector<heap_allocation *>();
+            }
+            heap_sequence_groups[0]->push_back(alloc);
+
             assert(old_to_new->find(old_address) == old_to_new->end());
             (*old_to_new)[old_address] = new ptr_and_size(new_address, size);
         }
@@ -282,6 +295,9 @@ static void *translate_old_ptr(void *ptr,
 void new_stack() {
     program_stack.push_back(new stack_frame());
     stack_nesting++;
+#ifdef VERBOSE
+    fprintf(stderr, "Incrementing stack depth to %d\n", stack_nesting);
+#endif
 }
 
 void calling(int lbl) {
@@ -302,8 +318,14 @@ void rm_stack() {
 
     stack_tracker.pop();
     stack_nesting--;
+#ifdef VERBOSE
+    fprintf(stderr, "Decrementing stack depth to %d\n", stack_nesting);
+#endif
 
     if (____numdebug_rerunning && stack_nesting < 0) {
+#ifdef VERBOSE
+        fprintf(stderr, "Exiting replay...\n");
+#endif
         exit(0);
     }
 }
@@ -489,8 +511,10 @@ void checkpoint() {
     new_stack();
 
     if (____numdebug_replaying) {
+#ifdef VERBOSE
         fprintf(stderr, "Got to the desired checkpoint with a stack size of "
                 "%lu ( ", program_stack.size());
+#endif
         for (std::vector<stack_frame *>::iterator i = program_stack.begin(),
                 e = program_stack.end(); i != e; i++) {
             fprintf(stderr, "%d ", (*i)->size());
@@ -548,6 +572,7 @@ void checkpoint() {
             unpacked_iter++;
             real_iter++;
         }
+
         assert(unpacked_iter == unpacked_end && real_iter == real_end);
 
         /*
@@ -573,7 +598,7 @@ void checkpoint() {
 
         ____numdebug_replaying = 0;
         ____numdebug_rerunning = 1;
-        stack_nesting = 0;
+        stack_nesting = 1;
 
         rm_stack();
         return;
