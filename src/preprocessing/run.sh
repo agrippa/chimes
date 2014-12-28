@@ -37,6 +37,8 @@ STACK_FILE=stack.info
 HEAP_FILE=heap.info
 LOC_FILE=loc.info
 GOTO_FILE=goto.info
+STRUCT_FILE=struct.info
+DECL_FILE=decl.info
 INSTRUMENTED_FILE=$(basename ${INFILE})
 INSTRUMENTED_FILE=${INSTRUMENTED_FILE%.*}.transformed.${INSTRUMENTED_FILE##*.}
 
@@ -50,8 +52,8 @@ rm ${OBJ_FILE}
 
 python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} \
            ${LINE_INFO_FILE} ${FUNCTION_START_FILE} ${FUNCTION_EXIT_FILE} \
-           ${STACK_FILE} ${HEAP_FILE} ${LOC_FILE} ${GOTO_FILE} \
-           ${OUT_DIR}/${INSTRUMENTED_FILE}
+           ${STACK_FILE} ${HEAP_FILE} ${LOC_FILE} ${GOTO_FILE} ${STRUCT_FILE} \
+           ${DECL_FILE} ${OUT_DIR}/${INSTRUMENTED_FILE}
 
 # cleanup
 # rm ${INSTRUMENTED_FILE}

@@ -36,6 +36,8 @@ namespace {
         std::vector<Instruction *> users;
 
         bool is_ptr;
+        bool is_struct;
+        std::string struct_type_name;
         std::vector<std::string> *struct_ptr_field_names;
     } StackAllocInfo;
 
@@ -119,7 +121,11 @@ namespace {
                 std::map<Function *, std::vector<LabeledLoc *> *> *locations);
         void dumpGotoChainsToFile(const char *filename,
                 std::map<Function *, std::vector<LabeledLoc *> *> *locations);
-        std::map<std::string, std::vector<std::string>> *getStructFieldNames(Module &M);
+        std::map<std::string, std::vector<std::string>> *getStructFieldNames(
+                Module &M);
+        void dumpStructInfoToFile(const char *filename, std::map<std::string,
+                std::vector<std::string>> *struct_fields);
+        void collectVariableDeclarations(Module &M, const char *filename);
     };
 }
 
@@ -860,6 +866,25 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
     return struct_fields;
 }
 
+void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
+        std::vector<std::string>> *struct_fields) {
+    FILE *fp = fopen(filename, "w");
+    for (std::map<std::string, std::vector<std::string>>::iterator struct_iter =
+            struct_fields->begin(), struct_end = struct_fields->end();
+            struct_iter != struct_end; struct_iter++) {
+        std::vector<std::string> fields = struct_iter->second;
+
+        fprintf(fp, "%s ", struct_iter->first.c_str());
+        for (std::vector<std::string>::iterator field_iter = fields.begin(),
+                field_end = fields.end(); field_iter != field_end;
+                field_iter++) {
+            fprintf(fp, "%s ", field_iter->c_str());
+        }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+}
+
 //TODO I don't think this supports stack-allocated arrays yet
 void Play::findStackAllocations(Module &M) {
     FILE *fp = fopen(stack_info_filename, "w");
@@ -870,6 +895,7 @@ void Play::findStackAllocations(Module &M) {
 
     std::map<std::string, std::vector<std::string>> *structFields =
         getStructFieldNames(M);
+    dumpStructInfoToFile("struct.info", structFields);
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
@@ -924,6 +950,7 @@ void Play::findStackAllocations(Module &M) {
                     info->alloca = alloca;
                     info->parent = bb;
                     info->is_ptr = 0;
+                    info->is_struct = 0;
                     info->struct_ptr_field_names =
                         new std::vector<std::string>();
 
@@ -963,6 +990,8 @@ void Play::findStackAllocations(Module &M) {
                     } else if (ty->isStructTy()) {
                         assert(ty->getStructName().str().find("struct.") == 0);
                         std::string struct_name = ty->getStructName().str().substr(7);
+                        info->is_struct = 1;
+                        info->struct_type_name = struct_name;
 
                         assert(structFields->find(struct_name) != structFields->end());
                         for (unsigned int i = 0; i < ty->getStructNumElements();
@@ -1022,12 +1051,15 @@ void Play::findStackAllocations(Module &M) {
         for (std::set<int>::iterator lines_iter = lines_to_insert_at.begin(),
                 lines_end = lines_to_insert_at.end(); lines_iter != lines_end;
                 lines_iter++) {
-            fprintf(fp, "%d %s %d %d ", *lines_iter, info->varname->c_str(),
-                    info->type_size_in_bits, info->is_ptr);
-            for (std::vector<std::string>::iterator field_iter =
-                    field_names->begin(), field_end = field_names->end();
-                    field_iter != field_end; field_iter++) {
-                fprintf(fp, "%s ", field_iter->c_str());
+            fprintf(fp, "%d %s %d %d %d ", *lines_iter, info->varname->c_str(),
+                    info->type_size_in_bits, info->is_ptr, info->is_struct);
+            if (info->is_struct) {
+                fprintf(fp, "%s ", info->struct_type_name.c_str());
+                for (std::vector<std::string>::iterator field_iter =
+                        field_names->begin(), field_end = field_names->end();
+                        field_iter != field_end; field_iter++) {
+                    fprintf(fp, "%s ", field_iter->c_str());
+                }
             }
             fprintf(fp, "\n");
         }
@@ -1075,6 +1107,9 @@ void Play::findHeapAllocations(Module &M) {
     FILE *fp = fopen(filename, "w");
     std::set<int> found_mallocs;
 
+    std::map<std::string, std::vector<std::string>> *structFields =
+        getStructFieldNames(M);
+
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
@@ -1108,6 +1143,12 @@ void Play::findHeapAllocations(Module &M) {
                                 alias_no = searchUpDefsForAliasSetGroup(
                                         callInst->getArgOperand(0), 0);
                             }
+                            /*
+                             * This assert is triggered for variables that are
+                             * never used (e.g. an allocation that is never
+                             * referenced again). TODO rework to print a warning
+                             * or something?
+                             */
                             assert(alias_no >= 0);
 
                             /*
@@ -1118,7 +1159,48 @@ void Play::findHeapAllocations(Module &M) {
                                     found_mallocs.end());
                             found_mallocs.insert(line_no);
 
-                            fprintf(fp, "%d %d\n", line_no, alias_no);
+                            fprintf(fp, "%d %d %s", line_no, alias_no,
+                                    callee_name);
+                            /*
+                             * For trivial cases of a malloc call that is
+                             * immediately cast to its correct type, we add some
+                             * extra type info to the heap allocation metrics to
+                             * help with replay.
+                             */
+                            if (strcmp(callee_name, "malloc") == 0 &&
+                                    callInst->getNumUses() == 1) {
+                                Use& use = *(callInst->use_begin());
+                                User *user = use.getUser();
+
+                                /*
+                                 * Look for a CallInst, followed immediately
+                                 * (and only) by a CastInst.
+                                 */
+                                if (CastInst *cast = dyn_cast<CastInst>(user)) {
+                                    Type *malloc_type = cast->getType();
+                                    assert(malloc_type->isPointerTy());
+                                    Type *base_type = malloc_type->getPointerElementType();
+
+                                    if (base_type->isPointerTy()) {
+                                        fprintf(fp, " 1 0");
+                                    } else if (base_type->isStructTy()) {
+                                        fprintf(fp, " 0 1");
+                                        assert(base_type->getStructName().str().find("struct.") == 0);
+                                        std::string struct_name = base_type->getStructName().str().substr(7);
+                                        fprintf(fp, " %s", struct_name.c_str());
+                                        assert(structFields->find(struct_name) != structFields->end());
+                                        std::vector<std::string> fields = (*structFields)[struct_name];
+                                        for (unsigned int i = 0; i < base_type->getStructNumElements(); i++) {
+                                            Type *field_type = base_type->getStructElementType(i);
+                                            if (field_type->isPointerTy()) {
+                                                std::string fieldname = fields[i];
+                                                fprintf(fp, " %s", fieldname.c_str());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            fprintf(fp, "\n");
                         }
                     }
                 }
@@ -1154,12 +1236,6 @@ void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
             exist_iter++) {
         LabeledLoc *curr = *exist_iter;
         if (curr->line_no == loc->line_no) {
-            /*
-             * Already have decided to label this line, we can skip it. Have to
-             * ensure that any callsites that might also be local variable
-             * declarations (which realistically shouldn't be possible) are
-             * marked as such
-             */
             exists = curr;
             break;
         }
@@ -1168,7 +1244,6 @@ void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
     if (exists != NULL) {
         if (exists->type != loc->type) {
             (*locations)[containing_function]->push_back(loc);
-            // exists->type = BOTH;
         } else {
             free(loc);
         }
@@ -1218,7 +1293,10 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
         }
         assert(containing_function != NULL);
 
-        addIfNotExists(loc, containing_function, locations);
+        int first_line = findStartingLineForFunction(containing_function);
+        if (first_line != loc->line_no) {
+            addIfNotExists(loc, containing_function, locations);
+        }
     }
     free(line);
     fclose(fp);
@@ -1304,6 +1382,33 @@ void Play::dumpGotoChainsToFile(const char *filename,
                 fprintf(fp, "%d ", only_calls[i]->id);
             }
             fprintf(fp, "\n");
+        }
+    }
+
+    fclose(fp);
+}
+
+void Play::collectVariableDeclarations(Module &M, const char *filename) {
+    FILE *fp = fopen(filename, "w");
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                if (DbgDeclareInst *dbg = dyn_cast<DbgDeclareInst>(&inst)) {
+                    assert(dbg->getDebugLoc().getLine() != 0);
+                    MDNode *var = dbg->getVariable();
+                    DIVariable di_var(var);
+                    fprintf(fp, "%d %s\n", dbg->getDebugLoc().getLine(),
+                            di_var.getName().str().c_str());
+                }
+            }
         }
     }
 
@@ -1409,6 +1514,8 @@ bool Play::runOnModule(Module &M) {
     dumpLocationsToFile("loc.info", locations);
 
     dumpGotoChainsToFile("goto.info", locations);
+
+    collectVariableDeclarations(M, "decl.info");
 
     return false;
 }

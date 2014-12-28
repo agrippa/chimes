@@ -39,9 +39,12 @@ static void new_stack_frame(unsigned char **stream, uint64_t *stream_capacity,
 }
 
 static void new_var(unsigned char **stream, uint64_t *stream_capacity,
-        uint64_t *stream_len, string mangled_name, void *address, size_t size) {
+        uint64_t *stream_len, string mangled_name, void *address, size_t size,
+        int is_ptr, std::vector<int> *ptr_offsets) {
+    int ptr_offsets_len = ptr_offsets->size();
     int var_record_size = 1 + (mangled_name.length() + 1) + sizeof(address) +
-        sizeof(size);
+        sizeof(size) + sizeof(is_ptr) + sizeof(ptr_offsets_len) +
+        (ptr_offsets_len * sizeof(int));
     ensure_capacity(stream, stream_capacity, *stream_len + var_record_size);
 
     unsigned char *base = (*stream) + *stream_len;
@@ -57,6 +60,19 @@ static void new_var(unsigned char **stream, uint64_t *stream_capacity,
     
     memcpy(base, &size, sizeof(size));
     base += sizeof(size);
+
+    memcpy(base, &is_ptr, sizeof(is_ptr));
+    base += sizeof(is_ptr);
+
+    memcpy(base, &ptr_offsets_len, sizeof(ptr_offsets_len));
+    base += sizeof(ptr_offsets_len);
+
+    for (std::vector<int>::iterator i = ptr_offsets->begin(),
+            e = ptr_offsets->end(); i != e; i++) {
+        int offset = *i;
+        memcpy(base, &offset, sizeof(offset));
+        base += offset;
+    }
 
     *stream_len += var_record_size;
 }
@@ -83,7 +99,8 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
 
             new_var(&serialization, &serialization_capacity,
                     &serialization_used, var->get_name(), var->get_address(),
-                    var->get_size());
+                    var->get_size(), var->check_is_ptr(),
+                    var->get_ptr_offsets());
         }
     }
 
@@ -128,11 +145,25 @@ vector<stack_frame *> *deserialize_program_stack(
             unsigned char *size_ptr = address_ptr + sizeof(address);
             memcpy(&size, size_ptr, sizeof(size));
 
+            int is_ptr;
+            unsigned char *is_ptr_ptr = size_ptr + sizeof(size);
+            memcpy(&is_ptr, is_ptr_ptr, sizeof(is_ptr));
+
+            int ptr_offsets_len;
+            unsigned char *ptr_offsets_len_ptr = is_ptr_ptr + sizeof(is_ptr);
+            memcpy(&ptr_offsets_len, ptr_offsets_len_ptr, sizeof(ptr_offsets_len));
+
             stack_var *var = new stack_var((const char *)varname, address,
-                    size);
+                    size, is_ptr);
+
+            int *ptr_offsets = (int *)(ptr_offsets_len_ptr + sizeof(ptr_offsets_len));
+            for (int i = 0; i < ptr_offsets_len; i++) {
+                var->add_pointer_offset(ptr_offsets[i]);
+            }
+
             curr->add_stack_var(var);
 
-            iter = size_ptr + sizeof(size);
+            iter = (unsigned char *)(ptr_offsets + ptr_offsets_len);
         } else {
             fprintf(stderr, "Invalid record type in serialized stack: %d\n",
                     marker);

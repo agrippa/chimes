@@ -2,18 +2,64 @@
 import sys
 import os
 
-def isDeclaration(line):
-    types = ['int', 'float', 'double', 'long', 'char']
-    line = line.strip()
+def isDeclaration(line, declarations):
+    return line in declarations.keys()
 
-    # if we have prepended a label, ignore it
-    if line.find('lbl_') == 0:
-        line = ''.join(line.split()[1:])
+def getDeclarations(decl_file):
+    declarations = {}
+    decl_fp = open(decl_file, 'r')
+    for line in decl_fp:
+        tokens = line.split()
+        line_no = int(tokens[0])
+        varname = tokens[1]
 
-    for t in types:
-        if line.find(t) == 0:
-            return True
-    return False
+        if line_no not in declarations:
+            declarations[line_no] = []
+        declarations[line_no].append(varname)
+    decl_fp.close()
+    return declarations
+
+
+def splitVariableDeclarations(input_file_contents):
+    # remove mixed declaration, definition to avoid jumping over variables with gotos
+    line_index = 0
+    for line in input_file_contents:
+        if isDeclaration(line_index + 1, declarations) and '=' in line:
+            index = 0
+            new_decl_line = ''
+            var_to_initializer = {}
+            while index < len(line):
+                if line[index] == '=':
+
+                    var_index = index - 1
+                    while line[var_index].isspace():
+                        var_index -= 1
+                    while line[var_index].isalpha() or line[var_index].isdigit() or \
+                            line[var_index] == '_':
+                        var_index -= 1
+                    var_index += 1
+                    varname = line[var_index:index]
+
+                    init_index = index + 1
+                    nesting = 0
+                    while nesting > 0 or (line[init_index] != ',' and line[init_index] != ';'):
+                        if line[init_index] == '(':
+                            nesting += 1
+                        elif line[init_index] == ')':
+                            nesting -= 1
+                        init_index += 1
+                    var_to_initializer[varname] = line[index + 1:init_index]
+
+                    index = init_index
+                else:
+                    new_decl_line += line[index]
+                    index += 1
+
+            for varname in var_to_initializer.keys():
+                new_decl_line = new_decl_line + varname + ' = ' + var_to_initializer[varname] + '; '
+            input_file_contents[line_index] = new_decl_line
+        line_index += 1
+
 
 def getStateChangeInsertions(lines_info_file):
     lines_fp = open(lines_info_file, 'r')
@@ -47,7 +93,7 @@ def getStateChangeInsertions(lines_info_file):
     return lines_to_insert
 
 
-def getGotoInsertions(goto_file, input_contents):
+def getGotoInsertions(goto_file, input_contents, declarations):
     goto_fp = open(goto_file, 'r')
     insertions = {}
 
@@ -61,14 +107,14 @@ def getGotoInsertions(goto_file, input_contents):
             lbl_id = int(tokens[2])
             insertions[line_no] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
         elif line_type == 'INTERNAL':
-            if isDeclaration(input_contents[line_no - 1]):
+            if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
             assert line_no not in insertions, str(line_no) + ' - ' + input_contents[line_no - 1]
 
             lbl_id = int(tokens[2])
             insertions[line_no] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
         elif line_type == 'FINAL':
-            if isDeclaration(input_contents[line_no - 1]):
+            if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
             assert line_no not in insertions
 
@@ -128,7 +174,7 @@ def getFunctionExitInsertions(function_exits_file):
     return insertions
 
 
-def getStackInsertions(stack_info_file, input_contents):
+def getStackInsertions(stack_info_file, input_contents, declarations):
     stack_info_fp = open(stack_info_file, 'r')
     insertions = {}
     for line in stack_info_fp:
@@ -138,17 +184,23 @@ def getStackInsertions(stack_info_file, input_contents):
         mangled_name = tokens[1]
         type_size_in_bits = int(tokens[2])
         is_ptr = int(tokens[3])
-        ptr_fields = tokens[4:]
+        is_struct = int(tokens[4])
+        struct_type_name = None
+        ptr_fields = []
+        if is_struct > 0:
+            struct_type_name = tokens[5]
+            ptr_fields = tokens[6:]
 
         actual_name = mangled_name.split('____')[1]
 
         call =  'register_stack_var("' + mangled_name + '", &' + \
-                actual_name + ', ' + str(type_size_in_bits / 8) + ', ' + str(is_ptr)
+                actual_name + ', ' + str(type_size_in_bits / 8) + ', ' + \
+                str(is_ptr) + ', ' + str(is_struct) + ', ' + str(len(ptr_fields))
         for field in ptr_fields:
-            call += ', &' + actual_name + '.' + field
+            call += ', (int)offsetof(struct ' + struct_type_name + ', ' + field + ')'
         call += '); '
 
-        if isDeclaration(input_contents[line_no - 1]):
+        if isDeclaration(line_no, declarations):
             line_no = line_no + 1
 
         if line_no in insertions.keys():
@@ -167,19 +219,19 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         tokens = line.split()
         line_no = int(tokens[0])
         alias_group = int(tokens[1])
+        fname = tokens[2]
+        have_type_info = len(tokens) > 3
+        
         file_line = input_file_contents[line_no - 1]
 
-        # Only support single-line malloc calls for now
-        fname = ''
-        if 'malloc' in file_line:
+        # Only support single-line memory management calls for now
+        assert fname in line
+        if fname == 'malloc':
             assert 'realloc' not in line and 'free' not in line
-            fname = 'malloc'
-        elif 'realloc' in file_line:
+        elif fname == 'realloc':
             assert 'malloc' not in line and 'free' not in line
-            fname = 'realloc'
-        elif 'free' in file_line:
+        elif fname == 'free':
             assert 'malloc' not in line and 'realloc' not in line
-            fname = 'free'
 
         assert file_line.find(';') == len(file_line) - 1
 
@@ -192,7 +244,29 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         new_line = new_line + '_wrapper('
 
         args = file_line[:file_line.rfind(')')]
-        new_line = new_line + args + ', ' + str(alias_group) + ');'
+
+        new_line = new_line + args + ', ' + str(alias_group)
+
+        if fname == 'malloc':
+            # TODO pass in extra type info
+            if have_type_info:
+                is_elem_ptr = int(tokens[3])
+                is_elem_struct = int(tokens[4])
+                new_line = new_line + ', 1, ' + str(is_elem_ptr) + ', ' + \
+                        str(is_elem_struct)
+                if is_elem_struct > 0:
+                    struct_type_name = tokens[5]
+                    struct_field_ptrs = tokens[6:]
+                    new_line = new_line + ', (int)sizeof(struct ' + \
+                        struct_type_name + '), ' + str(len(struct_field_ptrs))
+                    for field in struct_field_ptrs:
+                        new_line = new_line + ', (int)offsetof(struct ' + \
+                            struct_type_name + ', ' + field + ')'
+                new_line = new_line + ');'
+            else:
+                new_line = new_line + ', 0);'
+        else:
+            new_line = new_line + ');'
 
         input_file_contents[line_no - 1] = new_line
 
@@ -220,7 +294,7 @@ def getInitializationInsertions(functions_start_file):
     return insertions
 
 
-def getLabelInsertions(loc_info_file, input_file_contents):
+def getLabelInsertions(loc_info_file, input_file_contents, declarations):
     loc_info_fp = open(loc_info_file, 'r')
 
     insertions = {}
@@ -238,7 +312,7 @@ def getLabelInsertions(loc_info_file, input_file_contents):
             input_file_contents[line_no - 1] = 'lbl_' + str(loc_id) + ':' + input_file_contents[line_no - 1]
 
         if loc_type == 'STACK_REGISTRATION' or loc_type == 'BOTH':
-            if isDeclaration(input_file_contents[line_no - 1]):
+            if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
             if line_no not in insertions:
                 insertions[line_no] = ''
@@ -258,8 +332,8 @@ def getInputFileContents(input_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 10:
-        print 'usage: InsertTrackingCalls.py file.c lines.info functions.info exits.info stack.info heap.info loc.info goto.info out.c'
+    if len(sys.argv) != 12:
+        print 'usage: InsertTrackingCalls.py file.c lines.info functions.info exits.info stack.info heap.info loc.info goto.info struct.info decl.info out.c'
         sys.exit(1)
 
     input_file = sys.argv[1]
@@ -270,17 +344,22 @@ if __name__ == '__main__':
     heap_info_file = sys.argv[6]
     loc_info_file = sys.argv[7]
     goto_file = sys.argv[8]
-    out_file = sys.argv[9]
+    struct_file = sys.argv[9]
+    decl_file = sys.argv[10]
+    out_file = sys.argv[11]
 
+    declarations = getDeclarations(decl_file)
     state_change_inserts = getStateChangeInsertions(lines_info_file)
     initialization_inserts = getInitializationInsertions(functions_start_file)
     function_start_inserts = getFunctionStartInsertions(functions_start_file)
     function_exit_inserts = getFunctionExitInsertions(function_exits_file)
     input_file_contents = getInputFileContents(input_file)
-    stack_inserts = getStackInsertions(stack_info_file, input_file_contents)
+    stack_inserts = getStackInsertions(stack_info_file, input_file_contents, declarations)
     getMallocInsertions(heap_info_file, input_file_contents)
-    goto_inserts = getGotoInsertions(goto_file, input_file_contents)
-    stack_tracking_inserts = getLabelInsertions(loc_info_file, input_file_contents)
+    goto_inserts = getGotoInsertions(goto_file, input_file_contents, declarations)
+    stack_tracking_inserts = getLabelInsertions(loc_info_file, input_file_contents, declarations)
+
+    splitVariableDeclarations(input_file_contents)
 
     all_insertions = [initialization_inserts,
             stack_tracking_inserts, function_start_inserts, stack_inserts, state_change_inserts,
@@ -295,45 +374,6 @@ if __name__ == '__main__':
             if line_no in insert_list.keys():
                 to_insert = to_insert + insert_list[line_no]
         input_file_contents.insert(line_no - 1, to_insert.strip())
-
-    # remove mixed declaration, definition to avoid jumping over variables with gotos
-    line_index = 0
-    for line in input_file_contents:
-        if isDeclaration(line) and '=' in line:
-            index = 0
-            new_decl_line = ''
-            var_to_initializer = {}
-            while index < len(line):
-                if line[index] == '=':
-
-                    var_index = index - 1
-                    while line[var_index].isspace():
-                        var_index -= 1
-                    while line[var_index].isalpha() or line[var_index].isdigit() or \
-                            line[var_index] == '_':
-                        var_index -= 1
-                    var_index += 1
-                    varname = line[var_index:index]
-
-                    init_index = index + 1
-                    nesting = 0
-                    while nesting > 0 or (line[init_index] != ',' and line[init_index] != ';'):
-                        if line[init_index] == '(':
-                            nesting += 1
-                        elif line[init_index] == ')':
-                            nesting -= 1
-                        init_index += 1
-                    var_to_initializer[varname] = line[index + 1:init_index]
-
-                    index = init_index
-                else:
-                    new_decl_line += line[index]
-                    index += 1
-
-            for varname in var_to_initializer.keys():
-                new_decl_line = new_decl_line + varname + ' = ' + var_to_initializer[varname] + '; '
-            input_file_contents[line_index] = new_decl_line
-        line_index += 1
 
     out_file_fp = open(out_file, 'w')
     for line in input_file_contents:
