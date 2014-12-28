@@ -17,6 +17,7 @@
 #include "stack_serialization.h"
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
+#include "numdebug_stack.h"
 
 using namespace std;
 
@@ -42,7 +43,7 @@ static void follow_pointers(void *container, string type,
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
-static vector<int> stack_tracker;
+static numdebug_stack stack_tracker;
 static vector<int> trace;
 static int trace_index = 0;
 static set<int> changed_groups;
@@ -284,11 +285,11 @@ void new_stack() {
 }
 
 void calling(int lbl) {
-    stack_tracker.push_back(lbl);
+    stack_tracker.push(lbl);
 #ifdef VERBOSE
     fprintf(stderr, "Calling %d: ", lbl);
     for (unsigned int i = 0; i < stack_tracker.size(); i++) {
-        fprintf(stderr, "%d ", stack_tracker[i]);
+        fprintf(stderr, "%d ", stack_tracker.at(i));
     }
     fprintf(stderr, "\n");
 #endif
@@ -299,7 +300,7 @@ void rm_stack() {
     program_stack.pop_back();
     delete curr;
 
-    stack_tracker.pop_back();
+    stack_tracker.pop();
     stack_nesting--;
 
     if (____numdebug_rerunning && stack_nesting < 0) {
@@ -625,11 +626,7 @@ void checkpoint() {
             &thread_ctx->stack_serialized_len);
     thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
     thread_ctx->stack_tracker = new std::vector<int>();
-    *(thread_ctx->stack_tracker) = stack_tracker;
-    // for (std::vector<int>::iterator i = stack_tracker.begin(),
-    //         e = stack_tracker.end(); i != e; i++) {
-    //     thread_ctx->stack_tracker.push_back(*i);
-    // }
+    stack_tracker.copy(thread_ctx->stack_tracker);
 
     pthread_mutex_unlock(&checkpoint_mutex);
 
