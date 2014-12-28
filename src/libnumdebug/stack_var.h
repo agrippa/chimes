@@ -13,11 +13,12 @@ class stack_var {
         size_t size;
         int is_ptr;
         std::vector<int> ptr_offsets;
+        void *tmp_buffer;
 
     public:
         stack_var(const char *set_name, void *set_address, size_t set_size,
                 int set_is_ptr) : name(set_name), address(set_address),
-                size(set_size), is_ptr(set_is_ptr) {
+                size(set_size), is_ptr(set_is_ptr), tmp_buffer(NULL) {
             assert(!is_ptr || size == sizeof(void *));
         }
         string get_name() { return name; }
@@ -25,6 +26,16 @@ class stack_var {
         size_t get_size() { return size; }
         int check_is_ptr() { return is_ptr; }
         std::vector<int> *get_ptr_offsets() { return &ptr_offsets; }
+
+        void *get_tmp_buffer() { return tmp_buffer; }
+        void set_tmp_buffer(void *set_tmp_buffer) {
+            assert(tmp_buffer == NULL);
+            tmp_buffer = set_tmp_buffer;
+        }
+        void clear_tmp_buffer() {
+            free(tmp_buffer);
+            tmp_buffer = NULL;
+        }
 
         void add_pointer_offset(int offset) {
             assert(!is_ptr);

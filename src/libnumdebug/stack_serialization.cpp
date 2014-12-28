@@ -44,7 +44,7 @@ static void new_var(unsigned char **stream, uint64_t *stream_capacity,
     int ptr_offsets_len = ptr_offsets->size();
     int var_record_size = 1 + (mangled_name.length() + 1) + sizeof(address) +
         sizeof(size) + sizeof(is_ptr) + sizeof(ptr_offsets_len) +
-        (ptr_offsets_len * sizeof(int));
+        (ptr_offsets_len * sizeof(int)) + size;
     ensure_capacity(stream, stream_capacity, *stream_len + var_record_size);
 
     unsigned char *base = (*stream) + *stream_len;
@@ -73,6 +73,8 @@ static void new_var(unsigned char **stream, uint64_t *stream_capacity,
         memcpy(base, &offset, sizeof(offset));
         base += offset;
     }
+
+    memcpy(base, address, size);
 
     *stream_len += var_record_size;
 }
@@ -161,9 +163,15 @@ vector<stack_frame *> *deserialize_program_stack(
                 var->add_pointer_offset(ptr_offsets[i]);
             }
 
+            unsigned char *tmp_buffer_ptr = (unsigned char *)(ptr_offsets +
+                    ptr_offsets_len);
+            void *tmp_buffer = malloc(size);
+            memcpy(tmp_buffer, tmp_buffer_ptr, size);
+            var->set_tmp_buffer(tmp_buffer);
+
             curr->add_stack_var(var);
 
-            iter = (unsigned char *)(ptr_offsets + ptr_offsets_len);
+            iter = tmp_buffer_ptr + size;
         } else {
             fprintf(stderr, "Invalid record type in serialized stack: %d\n",
                     marker);
