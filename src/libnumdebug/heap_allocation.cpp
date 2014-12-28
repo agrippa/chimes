@@ -1,6 +1,8 @@
+#include <vector>
+
 #include "heap_allocation.h"
 
-void heap_allocatin::add_type_info(size_t set_elem_size, int set_elem_is_ptr,
+void heap_allocation::add_type_info(size_t set_elem_size, int set_elem_is_ptr,
         int set_elem_is_struct) {
     assert(!have_type_info);
     assert(!set_elem_is_ptr || set_elem_size == sizeof(void *));
@@ -25,9 +27,10 @@ void heap_allocation::add_pointer_offset(int offset) {
 void heap_allocation::copy(heap_allocation *dst) {
     assert(dst->address == NULL);
 
-    dst->address = (void *)malloc(size);
-    memcpy(dst->address, address, size);
+    dst->tmp_buffer = (void *)malloc(size);
+    memcpy(dst->tmp_buffer, address, size);
 
+    dst->address = address;
     dst->size = size;
     dst->alias_group = alias_group;
     dst->seq = seq;
