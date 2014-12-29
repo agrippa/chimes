@@ -801,9 +801,22 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
         Function *F = &*I;
 
         // Externally defined functions won't have any body info
-        if (F->getBasicBlockList().size() == 0) continue;
+        if (F->getBasicBlockList().size() == 0) {
+            if (F->getName().str() == "main") {
+                errs() << "Externally defined main? huh?\n";
+                exit(1);
+            }
+            continue;
+        }
         // If we don't call checkpoint, we don't need line info
-        if (!callsCheckpoint(F)) continue;
+        if (!callsCheckpoint(F)) {
+            if (F->getName().str() == "main") {
+                errs() << "main() does not directly or indirectly call "
+                    "checkpoint? Are you using the library anywhere?\n";
+                exit(1);
+            }
+            continue;
+        }
 
         int min_func_line = findStartingLineForFunction(F, M);
         assert(min_func_line >= 0);
