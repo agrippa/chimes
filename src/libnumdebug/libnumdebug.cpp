@@ -534,24 +534,29 @@ void checkpoint() {
         while (unpacked_iter != unpacked_end && real_iter != real_end) {
             stack_frame *real = *real_iter;
             stack_frame *unpacked = *unpacked_iter;
-            assert(real->size() == unpacked->size());
 
-            // Matching entries in each frame
-            for (stack_frame::iterator i = real->begin(), e = real->end();
-                    i != e; i++) {
-                assert(unpacked->find(i->first) != unpacked->end());
-            }
+            /*
+             * It is possible that real is larger than unpacked if the
+             * checkpoint run didn't reach some local variable declarations
+             * before this checkpoint was created.
+             */
+            assert(real->size() >= unpacked->size());
+
+            /*
+             * Match entries in the checkpoint to known locals in the running
+             * program
+             */
             for (stack_frame::iterator i = unpacked->begin(),
                     e = unpacked->end(); i != e; i++) {
                 assert(real->find(i->first) != real->end());
             }
 
-            for (stack_frame::iterator i = real->begin(), e = real->end();
-                    i != e; i++) {
+            for (stack_frame::iterator i = unpacked->begin(),
+                    e = unpacked->end(); i != e; i++) {
                 string name = i->first;
-                stack_var *live = i->second;
-                stack_frame::iterator found = unpacked->find(name);
-                stack_var *dead = found->second;
+                stack_var *dead = i->second;
+                stack_frame::iterator found = real->find(name);
+                stack_var *live = found->second;
 
                 assert(live->get_name() == dead->get_name());
                 assert(live->get_type() == dead->get_type());
