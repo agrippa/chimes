@@ -1563,7 +1563,7 @@ int extern const warpSize;
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/crt/storage_class.h" 1 3
 # 251 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 2 3
 # 213 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 2 3
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 __attribute__((global)) __attribute__((__used__)) extern void _Z6kernelPiS_S_i(int *, int *, int *, int);
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h" 1
 # 167 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h"
@@ -6673,34 +6673,34 @@ static __inline__ __attribute__((always_inline)) double fma(double a, double b, 
 }
 # 14071 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2 3
 # 168 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h" 2
-# 15 "./vector_sum.cu" 2
-# 13 "./vector_sum.cu"
+# 14 "../vector_sum.cu" 2
+# 12 "../vector_sum.cu"
 __attribute__((global)) __attribute__((__used__)) void _Z6kernelPiS_S_i(
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 int *A,
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 int *B,
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 int *C,
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 int N){
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 {
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 {
-# 14 "./vector_sum.cu"
+# 13 "../vector_sum.cu"
  int __cuda_local_var_33974_9_non_const_tid;
-# 14 "./vector_sum.cu"
+# 13 "../vector_sum.cu"
 __cuda_local_var_33974_9_non_const_tid = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
-# 15 "./vector_sum.cu"
+# 14 "../vector_sum.cu"
 if (__cuda_local_var_33974_9_non_const_tid < N)
-# 15 "./vector_sum.cu"
+# 14 "../vector_sum.cu"
 {
-# 16 "./vector_sum.cu"
+# 15 "../vector_sum.cu"
 (C[__cuda_local_var_33974_9_non_const_tid]) = ((A[__cuda_local_var_33974_9_non_const_tid]) + (B[__cuda_local_var_33974_9_non_const_tid]));
-# 17 "./vector_sum.cu"
+# 16 "../vector_sum.cu"
 }
-# 18 "./vector_sum.cu"
+# 17 "../vector_sum.cu"
 }
-# 18 "./vector_sum.cu"
+# 17 "../vector_sum.cu"
 }}

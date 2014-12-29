@@ -2,9 +2,9 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "vector_sum.cudafe1.cpp"
-# 1 "./vector_sum.cu"
+# 1 "../vector_sum.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
-# 1 "./vector_sum.cu"
+# 1 "../vector_sum.cu"
 # 61 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h"
 # 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3
 typedef long ptrdiff_t;
@@ -25548,69 +25548,71 @@ extern "C" void flockfile(FILE * ) throw();
 extern "C" int ftrylockfile(FILE * ) throw();
 # 915 "/usr/include/stdio.h" 3
 extern "C" void funlockfile(FILE * ) throw();
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 void kernel(int *A, int *B, int *C, int N) ;
-# 20 "./vector_sum.cu"
+# 19 "../vector_sum.cu"
 int main(int argc, char **argv) {
-# 21 "./vector_sum.cu"
+# 20 "../vector_sum.cu"
+cudaError_t error;
+# 21 "../vector_sum.cu"
 int i;
-# 22 "./vector_sum.cu"
+# 22 "../vector_sum.cu"
 int N = (1024 * 1024);
-# 24 "./vector_sum.cu"
+# 24 "../vector_sum.cu"
 int *h_A, *h_B, *h_C;
-# 25 "./vector_sum.cu"
+# 25 "../vector_sum.cu"
 int *d_A, *d_B, *d_C;
-# 27 "./vector_sum.cu"
+# 27 "../vector_sum.cu"
 h_A = ((int *)malloc(sizeof(int) * N));
-# 28 "./vector_sum.cu"
+# 28 "../vector_sum.cu"
 h_B = ((int *)malloc(sizeof(int) * N));
-# 29 "./vector_sum.cu"
+# 29 "../vector_sum.cu"
 h_C = ((int *)malloc(sizeof(int) * N));
-# 31 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaMalloc((void **)(&d_A), sizeof(int) * N)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 31, cudaGetErrorString(error)); exit(1); } } ;
-# 32 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaMalloc((void **)(&d_B), sizeof(int) * N)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 32, cudaGetErrorString(error)); exit(1); } } ;
-# 33 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaMalloc((void **)(&d_C), sizeof(int) * N)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 33, cudaGetErrorString(error)); exit(1); } } ;
-# 35 "./vector_sum.cu"
+# 31 "../vector_sum.cu"
+cudaMalloc((void **)(&d_A), sizeof(int) * N);
+# 32 "../vector_sum.cu"
+cudaMalloc((void **)(&d_B), sizeof(int) * N);
+# 33 "../vector_sum.cu"
+cudaMalloc((void **)(&d_C), sizeof(int) * N);
+# 35 "../vector_sum.cu"
 for (i = 0; i < N; i++) {
-# 36 "./vector_sum.cu"
+# 36 "../vector_sum.cu"
 (h_A[i]) = i;
-# 37 "./vector_sum.cu"
+# 37 "../vector_sum.cu"
 (h_B[i]) = (2 * i);
-# 38 "./vector_sum.cu"
+# 38 "../vector_sum.cu"
 }
-# 40 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 40, cudaGetErrorString(error)); exit(1); } }
-# 41 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 41, cudaGetErrorString(error)); exit(1); } }
-# 43 "./vector_sum.cu"
+# 40 "../vector_sum.cu"
+cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
+# 41 "../vector_sum.cu"
+cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
+# 43 "../vector_sum.cu"
 int threads_per_block = 128;
-# 44 "./vector_sum.cu"
+# 44 "../vector_sum.cu"
 int blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block;
-# 46 "./vector_sum.cu"
+# 46 "../vector_sum.cu"
 (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? ((void)0) : kernel(d_A, d_B, d_C, N);
-# 48 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 48, cudaGetErrorString(error)); exit(1); } } ;
-# 50 "./vector_sum.cu"
+# 48 "../vector_sum.cu"
+cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
+# 50 "../vector_sum.cu"
 FILE *fp = fopen("dump.out", "w");
-# 51 "./vector_sum.cu"
+# 51 "../vector_sum.cu"
 for (i = 0; i < N; i++) {
-# 52 "./vector_sum.cu"
+# 52 "../vector_sum.cu"
 fprintf(fp, "%d\n", h_C[i]);
-# 53 "./vector_sum.cu"
+# 53 "../vector_sum.cu"
 }
-# 54 "./vector_sum.cu"
+# 54 "../vector_sum.cu"
 fclose(fp);
-# 56 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaFree(d_A)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 56, cudaGetErrorString(error)); exit(1); } } ;
-# 57 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaFree(d_B)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 57, cudaGetErrorString(error)); exit(1); } } ;
-# 58 "./vector_sum.cu"
-{ cudaError_t error; if ((error = cudaFree(d_C)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 58, cudaGetErrorString(error)); exit(1); } } ;
-# 60 "./vector_sum.cu"
+# 56 "../vector_sum.cu"
+cudaFree(d_A);
+# 57 "../vector_sum.cu"
+cudaFree(d_B);
+# 58 "../vector_sum.cu"
+cudaFree(d_C);
+# 60 "../vector_sum.cu"
 return 0;
-# 61 "./vector_sum.cu"
+# 61 "../vector_sum.cu"
 }
 # 1 "vector_sum.cudafe1.stub.c"
 # 1 "vector_sum.cudafe1.stub.c"
@@ -26305,75 +26307,75 @@ asm(
 ".section .nv_fatbin, \"a\"\n"
 ".align 8\n"
 "fatbinData:\n"
-".quad 0x00100001ba55ed50,0x00000000000007e0,0x0000005001010002,0x00000000000005c0\n"
-".quad 0x0000000000000000,0x0000001400010007,0x0000000f00000040,0x0000000000000015\n"
-".quad 0x0000000000000000,0x0000000000000000,0x726f746365762f2e,0x0075632e6d75735f\n"
-".quad 0x33010102464c457f,0x0000000000000007,0x0000000100be0002,0x0000000000000000\n"
-".quad 0x0000000000000514,0x0000000000000314,0x0038004000140514,0x0001000800400003\n"
-".quad 0x7472747368732e00,0x747274732e006261,0x746d79732e006261,0x747865742e006261\n"
-".quad 0x6e72656b365a5f2e,0x5f535f5369506c65,0x6e692e766e2e0069,0x656b365a5f2e6f66\n"
-".quad 0x5f5369506c656e72,0x2e766e2e00695f53,0x5f2e646572616873,0x6c656e72656b365a\n"
-".quad 0x00695f535f536950,0x6f666e692e766e2e,0x6e6f632e766e2e00,0x5f2e30746e617473\n"
-".quad 0x6c656e72656b365a,0x00695f535f536950,0x7472747368732e00,0x747274732e006261\n"
-".quad 0x746d79732e006261,0x656b365a5f006261,0x5f5369506c656e72,0x7865742e00695f53\n"
-".quad 0x72656b365a5f2e74,0x535f5369506c656e,0x692e766e2e00695f,0x6b365a5f2e6f666e\n"
-".quad 0x5369506c656e7265,0x766e2e00695f535f,0x2e6465726168732e,0x656e72656b365a5f\n"
-".quad 0x695f535f5369506c,0x666e692e766e2e00,0x6f632e766e2e006f,0x2e30746e6174736e\n"
-".quad 0x656e72656b365a5f,0x695f535f5369506c,0x006d617261705f00,0x0000000000000000\n"
-".quad 0x0000000000000000,0x0000000000000000,0x000700030000002c,0x0000000000000000\n"
-".quad 0x0000000000000000,0x0006000300000082,0x0000000000000000,0x0000000000000000\n"
-".quad 0x000710120000001b,0x0000000000000000,0x0000000000000090,0x0000000200080a04\n"
-".quad 0x001c1903001c0020,0x00000000000c1704,0x0011f00000180003,0x00000000000c1704\n"
-".quad 0x0021f00000100002,0x00000000000c1704,0x0021f00000080001,0x00000000000c1704\n"
-".quad 0x0021f00000000000,0x0000000c00041e04,0x0000000300081204,0x0008110400000000\n"
-".quad 0x0000000000000003,0x0000000000000000,0x0000000000000000,0x0000000000000000\n"
+".quad 0x00100001ba55ed50,0x00000000000007f0,0x0000005801010002,0x00000000000005c0\n"
+".quad 0x0000000000000000,0x0000001400010007,0x0000001000000040,0x0000000000000015\n"
+".quad 0x0000000000000000,0x0000000000000000,0x6f746365762f2e2e,0x75632e6d75735f72\n"
+".quad 0x0000000000000000,0x33010102464c457f,0x0000000000000007,0x0000000100be0002\n"
+".quad 0x0000000000000000,0x0000000000000514,0x0000000000000314,0x0038004000140514\n"
+".quad 0x0001000800400003,0x7472747368732e00,0x747274732e006261,0x746d79732e006261\n"
+".quad 0x747865742e006261,0x6e72656b365a5f2e,0x5f535f5369506c65,0x6e692e766e2e0069\n"
+".quad 0x656b365a5f2e6f66,0x5f5369506c656e72,0x2e766e2e00695f53,0x5f2e646572616873\n"
+".quad 0x6c656e72656b365a,0x00695f535f536950,0x6f666e692e766e2e,0x6e6f632e766e2e00\n"
+".quad 0x5f2e30746e617473,0x6c656e72656b365a,0x00695f535f536950,0x7472747368732e00\n"
+".quad 0x747274732e006261,0x746d79732e006261,0x656b365a5f006261,0x5f5369506c656e72\n"
+".quad 0x7865742e00695f53,0x72656b365a5f2e74,0x535f5369506c656e,0x692e766e2e00695f\n"
+".quad 0x6b365a5f2e6f666e,0x5369506c656e7265,0x766e2e00695f535f,0x2e6465726168732e\n"
+".quad 0x656e72656b365a5f,0x695f535f5369506c,0x666e692e766e2e00,0x6f632e766e2e006f\n"
+".quad 0x2e30746e6174736e,0x656e72656b365a5f,0x695f535f5369506c,0x006d617261705f00\n"
+".quad 0x0000000000000000,0x0000000000000000,0x0000000000000000,0x000700030000002c\n"
+".quad 0x0000000000000000,0x0000000000000000,0x0006000300000082,0x0000000000000000\n"
+".quad 0x0000000000000000,0x000710120000001b,0x0000000000000000,0x0000000000000090\n"
+".quad 0x0000000200080a04,0x001c1903001c0020,0x00000000000c1704,0x0011f00000180003\n"
+".quad 0x00000000000c1704,0x0021f00000100002,0x00000000000c1704,0x0021f00000080001\n"
+".quad 0x00000000000c1704,0x0021f00000000000,0x0000000c00041e04,0x0000000300081204\n"
+".quad 0x0008110400000000,0x0000000000000003,0x0000000000000000,0x0000000000000000\n"
 ".quad 0x0000000000000000,0x0000000000000000,0x0000000000000000,0x0000000000000000\n"
-".quad 0x00005de400000000,0x94001c0428004404,0x84009c042c000000,0x20001ca32c000000\n"
-".quad 0xe001dc2320044000,0x600081e71b0e4000,0x100161e240000001,0x800220a318000000\n"
-".quad 0x900260e3200b8000,0xa001a0a3208a8000,0x0080a085200b8000,0xb001e0e384000000\n"
-".quad 0xc00120a3208a8000,0x0060e085200b8000,0xd00160e384000000,0x08302003208a8000\n"
-".quad 0x0040208548000000,0x00001de794000000,0x0000000080000000,0x0000000000000000\n"
+".quad 0x0000000000000000,0x00005de400000000,0x94001c0428004404,0x84009c042c000000\n"
+".quad 0x20001ca32c000000,0xe001dc2320044000,0x600081e71b0e4000,0x100161e240000001\n"
+".quad 0x800220a318000000,0x900260e3200b8000,0xa001a0a3208a8000,0x0080a085200b8000\n"
+".quad 0xb001e0e384000000,0xc00120a3208a8000,0x0060e085200b8000,0xd00160e384000000\n"
+".quad 0x08302003208a8000,0x0040208548000000,0x00001de794000000,0x0000000080000000\n"
 ".quad 0x0000000000000000,0x0000000000000000,0x0000000000000000,0x0000000000000000\n"
-".quad 0x0000000000000000,0x0000000000000000,0x0000000100000000,0x0000000000000003\n"
-".quad 0x0000000000000000,0x0000004000000000,0x0000009000000000,0x0000000000000000\n"
-".quad 0x0000000100000000,0x0000000000000000,0x0000000b00000000,0x0000000000000003\n"
-".quad 0x0000000000000000,0x000000d000000000,0x000000a800000000,0x0000000000000000\n"
-".quad 0x0000000100000000,0x0000000000000000,0x0000001300000000,0x0000000000000002\n"
-".quad 0x0000000000000000,0x0000017800000000,0x0000006000000000,0x0000000200000000\n"
-".quad 0x0000000800000002,0x0000001800000000,0x0000003200000000,0x0000000070000000\n"
-".quad 0x0000000000000000,0x000001d800000000,0x0000005800000000,0x0000000300000000\n"
-".quad 0x0000000400000007,0x0000000000000000,0x0000006800000000,0x0000000070000000\n"
-".quad 0x0000000000000000,0x0000023000000000,0x0000001800000000,0x0000000300000000\n"
-".quad 0x0000000400000000,0x0000000000000000,0x0000007100000000,0x0000000200000001\n"
-".quad 0x0000000000000000,0x0000024800000000,0x0000003c00000000,0x0000000000000000\n"
-".quad 0x0000000400000007,0x0000000000000000,0x0000001b00000000,0x0000000600000001\n"
-".quad 0x0000000000000000,0x0000028400000000,0x0000009000000000,0x0000000300000000\n"
-".quad 0x000000040a000003,0x0000000000000000,0x0000000600000000,0x0000051400000005\n"
-".quad 0x0000000000000000,0x0000000000000000,0x000000a800000000,0x000000a800000000\n"
-".quad 0x0000000800000000,0x0000000100000000,0x0000024800000005,0x0000000000000000\n"
-".quad 0x0000000000000000,0x000000cc00000000,0x000000cc00000000,0x0000000800000000\n"
-".quad 0x0000000100000000,0x0000000000000006,0x0000000000000000,0x0000000000000000\n"
-".quad 0x0000000000000000,0x0000000000000000,0x0000000800000000,0x0000000000000000\n"
-".quad 0x0000005801010001,0x0000000000000178,0x0000004000000000,0x0000001400040000\n"
-".quad 0x0000000f00000048,0x0000000000001015,0x0000000000000000,0x00000000000003b2\n"
-".quad 0x0000000000000000,0x726f746365762f2e,0x0075632e6d75735f,0x30836b5b928d9c78\n"
-".quad 0x611b915f97af8618,0xf4632cedaa9e0903,0x826d2122b7760c17,0xbfec4eed24955984\n"
-".quad 0x2f51cebb62abf3ef,0xba421a3be7df7902,0xc269a9bab1941d8f,0xeed472a5309cc202\n"
-".quad 0x72d651a521370478,0xd5b5a4134d153fab,0x283e676aa6514a9b,0xa4f555a9955f497f\n"
-".quad 0xc2b584b7d733f99f,0x3970b934fb651d88,0xa8abc2a1aff03c7a,0x77262a29a38a84e8\n"
-".quad 0xa35aca4aa3308be4,0x8af790f465daf524,0xf500a3172ccf4085,0x952112086197233c\n"
-".quad 0xba7d0f403ec0963c,0x1a68f02fc8ad1a9e,0xc33a3c69e3c0ff0f,0x9aef40c7927febb1\n"
-".quad 0xb25a76af5a420f43,0x6fc4eb75013553f7,0xa6aac90ac0f20679,0x668184cc7e4c11df\n"
-".quad 0xf9d54acb5cab1396,0x1e4e511e3e8b5e37,0xe02ad5d046374ee1,0xac35cc1383db2770\n"
-".quad 0x93317986a88d9aac,0x653476867b09f38c,0x6f62bee7d08768a7,0x24adf59953beaa5a\n"
-".quad 0x3fb9d2fc3c678139,0x65ab1fc2ce676506,0x759083e610a1e6b8,0x45e6b47656971547\n"
-".quad 0xcbce75842c450f9f,0xa775960d0e3f8184,0x8587399d1448d6c9,0xdf272e5189eee2e1\n"
-".quad 0x531953eb007f10f0,0x0000000000000000\n"
+".quad 0x0000000000000000,0x0000000000000000,0x0000000000000000,0x0000000100000000\n"
+".quad 0x0000000000000003,0x0000000000000000,0x0000004000000000,0x0000009000000000\n"
+".quad 0x0000000000000000,0x0000000100000000,0x0000000000000000,0x0000000b00000000\n"
+".quad 0x0000000000000003,0x0000000000000000,0x000000d000000000,0x000000a800000000\n"
+".quad 0x0000000000000000,0x0000000100000000,0x0000000000000000,0x0000001300000000\n"
+".quad 0x0000000000000002,0x0000000000000000,0x0000017800000000,0x0000006000000000\n"
+".quad 0x0000000200000000,0x0000000800000002,0x0000001800000000,0x0000003200000000\n"
+".quad 0x0000000070000000,0x0000000000000000,0x000001d800000000,0x0000005800000000\n"
+".quad 0x0000000300000000,0x0000000400000007,0x0000000000000000,0x0000006800000000\n"
+".quad 0x0000000070000000,0x0000000000000000,0x0000023000000000,0x0000001800000000\n"
+".quad 0x0000000300000000,0x0000000400000000,0x0000000000000000,0x0000007100000000\n"
+".quad 0x0000000200000001,0x0000000000000000,0x0000024800000000,0x0000003c00000000\n"
+".quad 0x0000000000000000,0x0000000400000007,0x0000000000000000,0x0000001b00000000\n"
+".quad 0x0000000600000001,0x0000000000000000,0x0000028400000000,0x0000009000000000\n"
+".quad 0x0000000300000000,0x000000040a000003,0x0000000000000000,0x0000000600000000\n"
+".quad 0x0000051400000005,0x0000000000000000,0x0000000000000000,0x000000a800000000\n"
+".quad 0x000000a800000000,0x0000000800000000,0x0000000100000000,0x0000024800000005\n"
+".quad 0x0000000000000000,0x0000000000000000,0x000000cc00000000,0x000000cc00000000\n"
+".quad 0x0000000800000000,0x0000000100000000,0x0000000000000006,0x0000000000000000\n"
+".quad 0x0000000000000000,0x0000000000000000,0x0000000000000000,0x0000000800000000\n"
+".quad 0x0000000000000000,0x0000006001010001,0x0000000000000178,0x0000004000000000\n"
+".quad 0x0000001400040000,0x0000001000000048,0x0000000000001015,0x0000000000000000\n"
+".quad 0x00000000000003b2,0x0000000000000000,0x6f746365762f2e2e,0x75632e6d75735f72\n"
+".quad 0x0000000000000000,0x30836b5b928d9c78,0x611b915f97af8618,0xf4632cedaa9e0903\n"
+".quad 0x826d2122b7760c17,0xbfec4eed24955984,0x2f51cebb62abf3ef,0xba421a3be7df7902\n"
+".quad 0xc269a9bab1941d8f,0xeed472a5309cc202,0x72d651a521370478,0xd5b5a4134d153fab\n"
+".quad 0x283e676aa6514a9b,0xa4f555a9955f497f,0xc2b584b7d733f99f,0x3970b934fb651d88\n"
+".quad 0xa8abc2a1aff03c7a,0x77262a29a38a84e8,0xa35aca4aa3308be4,0x8af790f465daf524\n"
+".quad 0xf500a3172ccf4085,0x952112086197233c,0xba7d0f403ec0963c,0x1a68f02fc8ad1a9e\n"
+".quad 0xc33a3c69e3c0ff0f,0x9aef40c7927febb1,0xb25a76af5a420f43,0x6fc4eb75013553f7\n"
+".quad 0xa6aac90ac0f20679,0x668184cc7e4c11df,0xf9d54acb5cab1396,0x1e4e511e3e8b5e37\n"
+".quad 0xe02ad5d046374ee1,0xac35cc1383db2770,0x93317986a88d9aac,0x653476867b09f38c\n"
+".quad 0x6f62bee7d08768a7,0x24adf59953beaa5a,0x3fb9d2fc3c678139,0x65ab1fc2ce676506\n"
+".quad 0x759083e610a1e6b8,0x45e6b47656971547,0xcbce75842c450f9f,0xa775960d0e3f8184\n"
+".quad 0x8587399d1448d6c9,0xdf272e5189eee2e1,0x531953eb007f10f0,0x0000000000000000\n"
 ".text");
 
 extern "C" {
 
-extern const unsigned long long fatbinData[254];
+extern const unsigned long long fatbinData[256];
 
 }
 
@@ -26389,9 +26391,9 @@ extern void __device_stub__Z6kernelPiS_S_i(int *, int *, int *, int);
 static void __nv_cudaEntityRegisterCallback(void **);
 static void __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762(void) __attribute__((__constructor__));
 void __device_stub__Z6kernelPiS_S_i(int *__par0, int *__par1, int *__par2, int __par3){if (cudaSetupArgument((void *)(char *)&__par0, sizeof(__par0), (size_t)0UL) != cudaSuccess) return;if (cudaSetupArgument((void *)(char *)&__par1, sizeof(__par1), (size_t)8UL) != cudaSuccess) return;if (cudaSetupArgument((void *)(char *)&__par2, sizeof(__par2), (size_t)16UL) != cudaSuccess) return;if (cudaSetupArgument((void *)(char *)&__par3, sizeof(__par3), (size_t)24UL) != cudaSuccess) return;{ volatile static char *__f __attribute__((unused)); __f = ((char *)((void ( *)(int *, int *, int *, int))kernel)); (void)cudaLaunch(((char *)((void ( *)(int *, int *, int *, int))kernel))); };}
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 void kernel( int *__cuda_0,int *__cuda_1,int *__cuda_2,int __cuda_3)
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 {__device_stub__Z6kernelPiS_S_i( __cuda_0,__cuda_1,__cuda_2,__cuda_3);
 
 

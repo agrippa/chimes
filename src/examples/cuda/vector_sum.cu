@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #define CHECK(call) { \
-    cudaError_t error; \
     if ((error = (call)) != cudaSuccess) { \
         fprintf(stderr, "Error at %s:%d - %s\n", __FILE__, __LINE__, \
                 cudaGetErrorString(error)); \
@@ -18,6 +17,7 @@ __global__ void kernel(int *A, int *B, int *C, int N) {
 }
 
 int main(int argc, char **argv) {
+    cudaError_t error;
     int i;
     int N = 1024 * 1024;
 
@@ -28,24 +28,24 @@ int main(int argc, char **argv) {
     h_B = (int *)malloc(sizeof(int) * N);
     h_C = (int *)malloc(sizeof(int) * N);
 
-    CHECK(cudaMalloc((void **)&d_A, sizeof(int) * N));
-    CHECK(cudaMalloc((void **)&d_B, sizeof(int) * N));
-    CHECK(cudaMalloc((void **)&d_C, sizeof(int) * N));
+    cudaMalloc((void **)&d_A, sizeof(int) * N);
+    cudaMalloc((void **)&d_B, sizeof(int) * N);
+    cudaMalloc((void **)&d_C, sizeof(int) * N);
 
     for (i = 0; i < N; i++) {
         h_A[i] = i;
         h_B[i] = 2 * i;
     }
 
-    CHECK(cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice))
-    CHECK(cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice))
+    cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
 
     int threads_per_block = 128;
     int blocks_per_grid = (N + threads_per_block - 1) / threads_per_block;
 
     kernel<<<blocks_per_grid, threads_per_block>>>(d_A, d_B, d_C, N);
 
-    CHECK(cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost));
+    cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
 
     FILE *fp = fopen("dump.out", "w");
     for (i = 0; i < N; i++) {
@@ -53,9 +53,9 @@ int main(int argc, char **argv) {
     }
     fclose(fp);
 
-    CHECK(cudaFree(d_A));
-    CHECK(cudaFree(d_B));
-    CHECK(cudaFree(d_C));
+    cudaFree(d_A);
+    cudaFree(d_B);
+    cudaFree(d_C);
 
     return 0;
 }
