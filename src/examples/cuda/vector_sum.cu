@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "checkpoint.h"
 
 #define CHECK(call) { \
     if ((error = (call)) != cudaSuccess) { \
@@ -46,6 +47,8 @@ int main(int argc, char **argv) {
     kernel<<<blocks_per_grid, threads_per_block>>>(d_A, d_B, d_C, N);
 
     cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
+
+    checkpoint();
 
     FILE *fp = fopen("dump.out", "w");
     for (i = 0; i < N; i++) {
