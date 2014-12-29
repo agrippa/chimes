@@ -14,6 +14,9 @@ NUM_DEBUG_HOME set to the root directory this repo is cloned to
 1. svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm-src
 2. cd llvm-src/tools && svn co http://llvm.org/svn/llvm-project/cfe/trunk clang
 3. cd llvm-src/projects && svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
-4. mkdir llvm-build
-5. cd llvm-build && ../llvm-src/configure && make
-6. cd llvm-src/lib/Transforms && ln -s ${NUM_DEBUG_HOME}/src/preprocessing/Play && cd Play/ && ./build.sh
+4. git clone git@github.com:agrippa/num-debug.git
+5. cd llvm-src/lib/Transforms && ln -s ${NUM_DEBUG_HOME}/src/preprocessing/Play
+6. Edit llvm-src/lib/Transforms/Makefile to add the Play/ directory to the PARALLEL_DIRS list
+6. Edit llvm-src/lib/Transforms/CMakeLists.txt, appending the line add_subdirectory(Play)
+7. mkdir llvm-build
+8. cd llvm-build && ../llvm-src/configure && make
