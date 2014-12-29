@@ -67,6 +67,7 @@ namespace {
         std::vector<AliasSetGroup *> alias_groups;
         std::map<int, std::set<int>*> line_to_groups_modified;
         std::map<std::string, int> *function_to_start_line = NULL;
+        std::map<Function *, bool> can_call_checkpoint;
 
         explicit Play(): ModulePass(ID) {
             // errs() << "Initializing Play\n";
@@ -128,6 +129,8 @@ namespace {
         void dumpStructInfoToFile(const char *filename, std::map<std::string,
                 std::vector<std::string>> *struct_fields);
         void collectVariableDeclarations(Module &M, const char *filename);
+        bool isCallToCheckpoint(CallInst *call);
+        bool callsCheckpoint(Function *F);
     };
 }
 
@@ -559,6 +562,7 @@ int Play::findMinimumLineInBasicBlock(BasicBlock *curr) {
 
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
         std::set<BasicBlock *>& visited, std::set<int> *parent_groups) {
+    assert(curr != NULL);
 
     if (parent_groups != NULL && parent_groups->size() > 0) {
 
@@ -686,7 +690,64 @@ void Play::dumpFunctionStartingLineTo(const char *filename,
     fclose(fp);
 }
 
+bool Play::isCallToCheckpoint(CallInst *call) {
+    Function *callee = call->getCalledFunction();
+    /*
+     * Callee may be null in cases where we are calling a function via a
+     * function pointer. In these cases, we have to be conservative and don't
+     * really know if the calling function is checkpoint() or a function that
+     * calls checkpoint.
+     *
+     * TODO enable this to default to false with an optimization flag set
+     */
+    if (callee == NULL) return true;
+    else return callee->getName().str() == "_Z10checkpointv";
+}
+
+bool Play::callsCheckpoint(Function *F) {
+    if (can_call_checkpoint.find(F) == can_call_checkpoint.end()) {
+        bool done = false;
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                if (CallInst *call = dyn_cast<CallInst>(&inst)) {
+                    // skip LLVM intrinsics
+                    if (dyn_cast<IntrinsicInst>(call)) continue;
+
+                    if (isCallToCheckpoint(call)) {
+                        can_call_checkpoint[F] = true;
+                        done = true;
+                    } else {
+                        if (callsCheckpoint(call->getCalledFunction())) {
+                            can_call_checkpoint[F] = true;
+                            done = true;
+                        }
+                    }
+                }
+
+                if (done) break;
+            }
+            if (done) break;
+        }
+
+        /*
+         * If we didn't find that this function either calls checkpoint or calls
+         * a function which calls checkpoint, set to false
+         */
+        if (can_call_checkpoint.find(F) == can_call_checkpoint.end()) {
+            can_call_checkpoint[F] = false;
+        }
+    }
+    assert(can_call_checkpoint.find(F) != can_call_checkpoint.end());
+    return can_call_checkpoint[F];
+}
+
 int Play::findStartingLineForFunction(Function *F, Module &M) {
+    assert(F != NULL);
 
     if (function_to_start_line == NULL) {
         function_to_start_line = new std::map<std::string, int >();
@@ -741,6 +802,8 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
 
         // Externally defined functions won't have any body info
         if (F->getBasicBlockList().size() == 0) continue;
+        // If we don't call checkpoint, we don't need line info
+        if (!callsCheckpoint(F)) continue;
 
         int min_func_line = findStartingLineForFunction(F, M);
         assert(min_func_line >= 0);
@@ -758,6 +821,8 @@ void Play::findFunctionExits(Module &M) {
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
+
+        if (!callsCheckpoint(F)) continue;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
@@ -784,6 +849,8 @@ void Play::findFunctionExits(Module &M) {
 
 void Play::traverseUntilNotForIncOrCond(BasicBlock *curr,
         std::set<int> *to_insert) {
+    assert(curr != NULL);
+
     if (curr->getName().str().find("for.inc") == 0 ||
             curr->getName().str().find("for.cond") == 0) {
         TerminatorInst *term = curr->getTerminator();
@@ -806,6 +873,8 @@ void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
         if (std::find(users.begin(), users.end(), curr) != users.end()) {
             // Found a user! now just need to mark the right line and exit
             BasicBlock *parent = curr->getParent();
+            assert(parent != NULL);
+
             if (parent->getName().str().find("for.inc") == 0 ||
                     parent->getName().str().find("for.cond") == 0) {
                 traverseUntilNotForIncOrCond(parent, to_insert);
@@ -862,10 +931,12 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
     MDNode *module_info = root->getOperand(0);
     assert(module_info->getNumOperands() == 7);
     Metadata *struct_info = module_info->getOperand(3).get();
+    assert(struct_info != NULL);
     assert(dyn_cast<MDNode>(struct_info));
     MDNode *struct_info_md = (MDNode *)struct_info;
 
     for (unsigned int s = 0; s < struct_info_md->getNumOperands(); s++) {
+        if (struct_info_md->getOperand(s).get() == NULL) continue;
         assert(dyn_cast<MDNode>(struct_info_md->getOperand(s).get()));
         MDNode *this_struct = (MDNode *)struct_info_md->getOperand(s).get();
         DIType di_struct(this_struct);
@@ -874,6 +945,10 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
         if (!di_struct.isCompositeType()) continue;
 
         std::string struct_name = di_struct.getName().str();
+        if (struct_name.empty()) {
+            // If unnamed, assume it isn't used
+            continue;
+        }
         std::vector<std::string> fields;
 
         assert(this_struct->getNumOperands() >= 5);
@@ -883,7 +958,8 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
             assert(dyn_cast<MDNode>(field_defs_metadata));
             MDNode *field_defs = (MDNode *)field_defs_metadata;
             for (unsigned int f = 0; f < field_defs->getNumOperands(); f++) {
-                assert(dyn_cast<MDNode>(field_defs->getOperand(f).get()));
+                assert(field_defs->getOperand(f).get() != NULL &&
+                        dyn_cast<MDNode>(field_defs->getOperand(f).get()));
                 MDNode *field = (MDNode *)field_defs->getOperand(f).get();
                 DIType di_field(field);
                 std::string fieldname = di_field.getName().str();
@@ -923,7 +999,7 @@ std::string *get_unique_varname(std::string varname, std::string fname,
     int permute = 0;
     do {
         std::ostringstream str_stream;
-        str_stream << fname << "____" << varname << "____" << permute;
+        str_stream << fname << "|" << varname << "|" << permute;
         *unique_varname = str_stream.str();
         permute++;
     } while (found_variables->find(*unique_varname) != found_variables->end());
@@ -1026,19 +1102,24 @@ void Play::findStackAllocations(Module &M) {
                     if (ty->isPointerTy()) {
                         info->is_ptr = 1;
                     } else if (ty->isStructTy()) {
-                        assert(ty->getStructName().str().find("struct.") == 0);
-                        std::string struct_name = ty->getStructName().str().substr(7);
-                        info->is_struct = 1;
-                        info->struct_type_name = struct_name;
+                        StructType *structTy = dyn_cast<StructType>(ty);
+                        assert(structTy != NULL);
 
-                        assert(structFields->find(struct_name) != structFields->end());
-                        for (unsigned int i = 0; i < ty->getStructNumElements();
-                                i++) {
-                            Type *field_type = ty->getStructElementType(i);
-                            if (field_type->isPointerTy()) {
-                                std::vector<std::string> fields = (*structFields)[struct_name];
-                                std::string fieldname = fields[i];
-                                info->struct_ptr_field_names->push_back(fieldname);
+                        if (!structTy->isLiteral()) {
+                            assert(structTy->getStructName().str().find("struct.") == 0);
+                            std::string struct_name = structTy->getStructName().str().substr(7);
+                            info->is_struct = 1;
+                            info->struct_type_name = struct_name;
+
+                            assert(structFields->find(struct_name) != structFields->end());
+                            for (unsigned int i = 0; i < structTy->getStructNumElements();
+                                    i++) {
+                                Type *field_type = structTy->getStructElementType(i);
+                                if (field_type->isPointerTy()) {
+                                    std::vector<std::string> fields = (*structFields)[struct_name];
+                                    std::string fieldname = fields[i];
+                                    info->struct_ptr_field_names->push_back(fieldname);
+                                }
                             }
                         }
                     }
@@ -1148,14 +1229,14 @@ void Play::findHeapAllocations(Module &M) {
                 if (CallInst *callInst = dyn_cast<CallInst>(&inst)) {
                     Function *callee = callInst->getCalledFunction();
                     if (callee) {
-                        int line_no = callInst->getDebugLoc().getLine();
-                        assert(line_no != 0);
                         const char *callee_name =
                             callee->getName().str().c_str();
 
                         if (strcmp(callee_name, "malloc") == 0 ||
                                 strcmp(callee_name, "realloc") == 0 ||
                                 strcmp(callee_name, "free") == 0) {
+                            int line_no = callInst->getDebugLoc().getLine();
+                            assert(line_no != 0);
 
                             int alias_no;
                             if (strcmp(callee_name, "malloc") == 0 ||
@@ -1209,17 +1290,22 @@ void Play::findHeapAllocations(Module &M) {
                                     if (base_type->isPointerTy()) {
                                         fprintf(fp, " 1 0");
                                     } else if (base_type->isStructTy()) {
-                                        fprintf(fp, " 0 1");
-                                        assert(base_type->getStructName().str().find("struct.") == 0);
-                                        std::string struct_name = base_type->getStructName().str().substr(7);
-                                        fprintf(fp, " %s", struct_name.c_str());
-                                        assert(structFields->find(struct_name) != structFields->end());
-                                        std::vector<std::string> fields = (*structFields)[struct_name];
-                                        for (unsigned int i = 0; i < base_type->getStructNumElements(); i++) {
-                                            Type *field_type = base_type->getStructElementType(i);
-                                            if (field_type->isPointerTy()) {
-                                                std::string fieldname = fields[i];
-                                                fprintf(fp, " %s", fieldname.c_str());
+                                        StructType *structTy = dyn_cast<StructType>(base_type);
+                                        assert(structTy != NULL);
+
+                                        if (!structTy->isLiteral()) {
+                                            fprintf(fp, " 0 1");
+                                            assert(structTy->getStructName().str().find("struct.") == 0);
+                                            std::string struct_name = structTy->getStructName().str().substr(7);
+                                            fprintf(fp, " %s", struct_name.c_str());
+                                            assert(structFields->find(struct_name) != structFields->end());
+                                            std::vector<std::string> fields = (*structFields)[struct_name];
+                                            for (unsigned int i = 0; i < structTy->getStructNumElements(); i++) {
+                                                Type *field_type = structTy->getStructElementType(i);
+                                                if (field_type->isPointerTy()) {
+                                                    std::string fieldname = fields[i];
+                                                    fprintf(fp, " %s", fieldname.c_str());
+                                                }
                                             }
                                         }
                                     }
@@ -1289,6 +1375,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
     char *line = NULL;
     FILE *fp = fopen(decl_info_name, "r");
     while ((read = getline(&line, &len, fp)) != -1) {
+
         char *end = strchr(line, ' ');
         assert(end != NULL);
         *end = '\0';
@@ -1300,10 +1387,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
         loc->type = STACK_REGISTRATION;
 
         char *fname = end + 1;
-        char *fname_end = strchr(fname, '_');
-        while (!isFunctionNameEnd(fname_end)) {
-            fname_end = strchr(fname_end + 1, '_');
-        }
+        char *fname_end = strchr(fname, '|');
         *fname_end = '\0';
 
         Function *containing_function = NULL;
@@ -1340,7 +1424,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
 
                 if (CallInst *call = dyn_cast<CallInst>(&inst)) {
                     Function *callee = call->getCalledFunction();
-                    if (callee->getName().str() == "_Z10checkpointv" ||
+                    if (isCallToCheckpoint(call) ||
                             callee->getBasicBlockList().size() > 0) {
                         /*
                          * is an internal function which we have the definition
@@ -1366,6 +1450,8 @@ void Play::dumpLocationsToFile(const char *filename,
         std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
 
     FILE *fp = fopen(filename, "w");
+    int callsite_dumps = 0;
+    int stack_registration_dumps = 0;
 
     for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator loc_iter =
             locations->begin(), loc_end = locations->end(); loc_iter != loc_end;
@@ -1374,10 +1460,23 @@ void Play::dumpLocationsToFile(const char *filename,
         for (std::vector<LabeledLoc *>::iterator iter = curr->begin(),
                 end = curr->end(); iter != end; iter++) {
             LabeledLoc *loc = *iter;
-            fprintf(fp, "%d %d %s\n", loc->line_no, loc->id,
-                    loc->type == CALLSITE ? "CALLSITE" : "STACK_REGISTRATION");
+            if (loc->type == CALLSITE) {
+                fprintf(fp, "%d %d CALLSITE\n", loc->line_no, loc->id);
+                callsite_dumps++;
+            } else if (loc->type == STACK_REGISTRATION) {
+                fprintf(fp, "%d %d STACK_REGISTRATION\n", loc->line_no,
+                        loc->id);
+                stack_registration_dumps++;
+            } else {
+                errs() << "Unexpected location type " << loc->type << "\n";
+                exit(1);
+            }
         }
     }
+
+    errs() << "Dumped " << callsite_dumps << " callsites and " <<
+        stack_registration_dumps << " stack registrations to " <<
+        std::string(filename) << "\n";
 
     fclose(fp);
 }
@@ -1386,18 +1485,22 @@ void Play::dumpGotoChainsToFile(const char *filename,
         std::map<Function *, std::vector<LabeledLoc *> *> *locations,
         Module &M) {
     FILE *fp = fopen(filename, "w");
+    assert(fp != NULL);
 
     for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator i =
             locations->begin(), e = locations->end(); i != e; i++) {
         Function *F = i->first;
         std::vector<LabeledLoc *> *locs = i->second;
         int start = findStartingLineForFunction(F, M);
+
         std::vector<LabeledLoc *> only_stack;
         std::vector<LabeledLoc *> only_calls;
 
         for (std::vector<LabeledLoc *>::iterator loc_iter = locs->begin(),
                 loc_end = locs->end(); loc_iter != loc_end; loc_iter++) {
             LabeledLoc *curr = *loc_iter;
+            assert(curr != NULL);
+
             if (curr->type == STACK_REGISTRATION) {
                 only_stack.push_back(curr);
             } else {
@@ -1405,18 +1508,35 @@ void Play::dumpGotoChainsToFile(const char *filename,
             }
         }
 
-        fprintf(fp, "%d START %d\n", start, only_stack[0]->id);
-        for (unsigned int i = 1; i < only_stack.size(); i++) {
-            fprintf(fp, "%d INTERNAL %d\n", only_stack[i - 1]->line_no,
-                    only_stack[i]->id);
-        }
-
-        if (!only_calls.empty()) {
-            fprintf(fp, "%d FINAL ", only_stack[only_stack.size() - 1]->line_no);
+        if (only_stack.empty() && only_calls.empty()) {
+            // No stack variables and no function calls? Ignore it
+        } else if (only_stack.empty()) {
+            // No stack allocations, but has function calls
+            fprintf(fp, "%d FINAL ", start);
             for (unsigned int i = 0; i < only_calls.size(); i++) {
                 fprintf(fp, "%d ", only_calls[i]->id);
             }
             fprintf(fp, "\n");
+        } else if (only_calls.empty()) {
+            /*
+             * Stack variables but no function calls. In this state, we know
+             * that this function can't call checkpoint or call anything that
+             * calls checkpoint, so skip it entirely.
+             */
+        } else {
+            fprintf(fp, "%d START %d\n", start, only_stack[0]->id);
+            for (unsigned int i = 1; i < only_stack.size(); i++) {
+                fprintf(fp, "%d INTERNAL %d\n", only_stack[i - 1]->line_no,
+                        only_stack[i]->id);
+            }
+
+            if (!only_calls.empty()) {
+                fprintf(fp, "%d FINAL ", only_stack[only_stack.size() - 1]->line_no);
+                for (unsigned int i = 0; i < only_calls.size(); i++) {
+                    fprintf(fp, "%d ", only_calls[i]->id);
+                }
+                fprintf(fp, "\n");
+            }
         }
     }
 
@@ -1438,7 +1558,8 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
                     ++i) {
                 Instruction &inst = *i;
                 if (DbgDeclareInst *dbg = dyn_cast<DbgDeclareInst>(&inst)) {
-                    assert(dbg->getDebugLoc().getLine() != 0);
+                    if (dbg->getDebugLoc().getLine() == 0) continue;
+
                     MDNode *var = dbg->getVariable();
                     DIVariable di_var(var);
                     std::string *unique_varname = get_unique_varname(
@@ -1450,6 +1571,8 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
             }
         }
     }
+
+    errs() << "Found " << found_variables.size() << " variable declarations\n";
 
     fclose(fp);
 }
@@ -1544,7 +1667,7 @@ bool Play::runOnModule(Module &M) {
 
     std::map<Function *, std::vector<LabeledLoc *> *> *locations =
         collectUniqueIDs(M, decl_info_name);
-    errs() << "\nFound " << locations->size() << " functions with locations to "
+    errs() << "Found " << locations->size() << " functions with locations to "
         "mark\n";
     int count_locations = 0;
     for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator loc_iter =
@@ -1553,6 +1676,7 @@ bool Play::runOnModule(Module &M) {
         count_locations += loc_iter->second->size();
     }
     errs() << "Found " << count_locations << " locations to mark\n";
+
     dumpLocationsToFile("loc.info", locations);
 
     dumpGotoChainsToFile("goto.info", locations, M);

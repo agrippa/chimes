@@ -1,4 +1,4 @@
-# 1 "./vector_sum.cu"
+# 1 "../vector_sum.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt                 : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
 # 1
 # 61 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h"
@@ -62739,24 +62739,26 @@ extern "C" void flockfile(FILE * ) throw();
 extern "C" int ftrylockfile(FILE * ) throw(); 
 # 915
 extern "C" void funlockfile(FILE * ) throw(); 
-# 13 "./vector_sum.cu"
+# 12 "../vector_sum.cu"
 void kernel(int *A, int *B, int *C, int N) ;
 #if 0
-# 13
+# 12
 { 
-# 14
+# 13
 int tid = ((blockIdx.x) * (blockDim.x)) + (threadIdx.x); 
-# 15
+# 14
 if (tid < N) { 
-# 16
+# 15
 (C[tid]) = ((A[tid]) + (B[tid])); 
-# 17
+# 16
 }  
-# 18
+# 17
 } 
 #endif
-# 20 "./vector_sum.cu"
+# 19 "../vector_sum.cu"
 int main(int argc, char **argv) { 
+# 20
+cudaError_t error; 
 # 21
 int i; 
 # 22
@@ -62772,11 +62774,11 @@ h_B = ((int *)malloc(sizeof(int) * N));
 # 29
 h_C = ((int *)malloc(sizeof(int) * N)); 
 # 31
-{ cudaError_t error; if ((error = cudaMalloc((void **)(&d_A), sizeof(int) * N)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 31, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaMalloc((void **)(&d_A), sizeof(int) * N); 
 # 32
-{ cudaError_t error; if ((error = cudaMalloc((void **)(&d_B), sizeof(int) * N)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 32, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaMalloc((void **)(&d_B), sizeof(int) * N); 
 # 33
-{ cudaError_t error; if ((error = cudaMalloc((void **)(&d_C), sizeof(int) * N)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 33, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaMalloc((void **)(&d_C), sizeof(int) * N); 
 # 35
 for (i = 0; i < N; i++) { 
 # 36
@@ -62786,9 +62788,9 @@ for (i = 0; i < N; i++) {
 # 38
 }  
 # 40
-{ cudaError_t error; if ((error = cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 40, cudaGetErrorString(error)); exit(1); }  } 
+cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice); 
 # 41
-{ cudaError_t error; if ((error = cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 41, cudaGetErrorString(error)); exit(1); }  } 
+cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice); 
 # 43
 int threads_per_block = 128; 
 # 44
@@ -62796,7 +62798,7 @@ int blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block;
 # 46
 (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? ((void)0) : kernel(d_A, d_B, d_C, N); 
 # 48
-{ cudaError_t error; if ((error = cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 48, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost); 
 # 50
 FILE *fp = fopen("dump.out", "w"); 
 # 51
@@ -62808,11 +62810,11 @@ fprintf(fp, "%d\n", h_C[i]);
 # 54
 fclose(fp); 
 # 56
-{ cudaError_t error; if ((error = cudaFree(d_A)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 56, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaFree(d_A); 
 # 57
-{ cudaError_t error; if ((error = cudaFree(d_B)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 57, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaFree(d_B); 
 # 58
-{ cudaError_t error; if ((error = cudaFree(d_C)) != (cudaSuccess)) { fprintf(stderr, "Error at %s:%d - %s\n", "./vector_sum.cu", 58, cudaGetErrorString(error)); exit(1); }  } ; 
+cudaFree(d_C); 
 # 60
 return 0; 
 # 61
