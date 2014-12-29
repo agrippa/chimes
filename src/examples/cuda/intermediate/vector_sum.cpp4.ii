@@ -1,5 +1,4 @@
 # 1 "../vector_sum.cu"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/cuda_runtime.h" 1
 # 59 "/opt/apps/cuda/6.0.37/bin/..//include/cuda_runtime.h"
@@ -58,17 +57,17 @@ enum __attribute__((device_builtin)) cudaRoundMode
 # 57 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 1
 # 70 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h"
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h" 1 3 4
-# 11 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/syslimits.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/limits.h" 1 3 4
+# 34 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/limits.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/syslimits.h" 1 3 4
 
 
 
 
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h" 1 3 4
-# 122 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/limits.h" 1 3 4
+# 168 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/limits.h" 3 4
 # 1 "/usr/include/limits.h" 1 3 4
 # 145 "/usr/include/limits.h" 3 4
 # 1 "/usr/include/bits/posix1_lim.h" 1 3 4
@@ -92,14 +91,14 @@ enum __attribute__((device_builtin)) cudaRoundMode
 # 1 "/usr/include/bits/stdio_lim.h" 1 3 4
 # 35 "/usr/include/bits/xopen_lim.h" 2 3 4
 # 154 "/usr/include/limits.h" 2 3 4
-# 123 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h" 2 3 4
-# 8 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/syslimits.h" 2 3 4
-# 12 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h" 2 3 4
+# 169 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/limits.h" 2 3 4
+# 8 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/syslimits.h" 2 3 4
+# 35 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include-fixed/limits.h" 2 3 4
 # 71 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 2
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 72 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 2
 # 128 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h"
@@ -2505,7 +2504,7 @@ extern "C" {
 
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 35 "/usr/include/string.h" 2 3 4
 
 
@@ -2962,7 +2961,7 @@ extern "C" {
 
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 39 "/usr/include/time.h" 2 3 4
 
 
@@ -4076,13 +4075,7 @@ extern float tanhf (float __x) throw (); extern float __tanhf (float __x) throw 
 
 
 
-extern void
- sincosf
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (float __x, float *__sinx, float *__cosx) throw (); extern void
- __sincosf
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (float __x, float *__sinx, float *__cosx) throw ()
+extern void sincosf (float __x, float *__sinx, float *__cosx) throw (); extern void __sincosf (float __x, float *__sinx, float *__cosx) throw ()
                                                            ;
 
 
@@ -4398,13 +4391,7 @@ extern long double tanhl (long double __x) throw (); extern long double __tanhl 
 
 
 
-extern void
- sincosl
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (long double __x, long double *__sinx, long double *__cosx) throw (); extern void
- __sincosl
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (long double __x, long double *__sinx, long double *__cosx) throw ()
+extern void sincosl (long double __x, long double *__sinx, long double *__cosx) throw (); extern void __sincosl (long double __x, long double *__sinx, long double *__cosx) throw ()
                                                            ;
 
 
@@ -4738,7 +4725,7 @@ extern int matherr (struct __exception *__exc) throw ();
 # 7771 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 34 "/usr/include/stdlib.h" 2 3 4
 
 extern "C" {
@@ -5051,7 +5038,7 @@ typedef __suseconds_t suseconds_t;
 
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 148 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -5518,7 +5505,7 @@ extern void cfree (void *__ptr) throw ();
 
 # 1 "/usr/include/alloca.h" 1 3 4
 # 25 "/usr/include/alloca.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 26 "/usr/include/alloca.h" 2 3 4
 
 extern "C" {
@@ -5878,37 +5865,48 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 7772 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 1 3
-# 41 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 3
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 1 3
+# 39 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
        
-# 42 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 3
+# 40 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/c++config.h" 1 3
-
-
-# 1 "/usr/include/bits/wordsize.h" 1 3 4
-# 4 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/c++config.h" 2 3
-# 1687 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/c++config.h" 3
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/os_defines.h" 1 3
-# 1688 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/c++config.h" 2 3
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/c++config.h" 1 3
+# 184 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/c++config.h" 3
+namespace std
+{
+  typedef long unsigned int size_t;
+  typedef long int ptrdiff_t;
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/cpu_defines.h" 1 3
-# 1691 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux/bits/c++config.h" 2 3
-# 44 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 2 3
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 1 3
-# 36 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+
+
+}
+# 426 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/c++config.h" 3
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/os_defines.h" 1 3
+# 427 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/c++config.h" 2 3
+
+
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/cpu_defines.h" 1 3
+# 430 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/c++config.h" 2 3
+# 42 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 2 3
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 1 3
+# 35 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
        
-# 37 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
-# 69 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
-namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
+# 36 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+# 68 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
+{
+
 
   template<typename _Iterator, typename _Container>
     class __normal_iterator;
 
+
 }
 
-namespace std __attribute__ ((__visibility__ ("default"))) {
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
 
   struct __true_type { };
   struct __false_type { };
@@ -6008,7 +6006,7 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
       enum { __value = 1 };
       typedef __true_type __type;
     };
-# 194 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 198 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
   template<>
     struct __is_integer<short>
     {
@@ -6219,18 +6217,21 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
       enum { __value = 0 };
       typedef __false_type __type;
     };
-# 417 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 421 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+
 }
-# 45 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 2 3
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/ext/type_traits.h" 1 3
-# 32 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/ext/type_traits.h" 3
+# 43 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 2 3
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/ext/type_traits.h" 1 3
+# 32 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/ext/type_traits.h" 3
        
-# 33 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/ext/type_traits.h" 3
+# 33 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/ext/type_traits.h" 3
 
 
 
 
-namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
+namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
+{
+
 
 
   template<bool, typename>
@@ -6355,68 +6356,66 @@ namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
     struct __promote
     { typedef double __type; };
 
+
+
+
   template<typename _Tp>
     struct __promote<_Tp, false>
-    { typedef _Tp __type; };
+    { };
 
-  template<typename _Tp, typename _Up>
+  template<>
+    struct __promote<long double>
+    { typedef long double __type; };
+
+  template<>
+    struct __promote<double>
+    { typedef double __type; };
+
+  template<>
+    struct __promote<float>
+    { typedef float __type; };
+
+  template<typename _Tp, typename _Up,
+           typename _Tp2 = typename __promote<_Tp>::__type,
+           typename _Up2 = typename __promote<_Up>::__type>
     struct __promote_2
     {
-    private:
-      typedef typename __promote<_Tp>::__type __type1;
-      typedef typename __promote<_Up>::__type __type2;
-
-    public:
-      typedef __typeof__(__type1() + __type2()) __type;
+      typedef __typeof__(_Tp2() + _Up2()) __type;
     };
 
-  template<typename _Tp, typename _Up, typename _Vp>
+  template<typename _Tp, typename _Up, typename _Vp,
+           typename _Tp2 = typename __promote<_Tp>::__type,
+           typename _Up2 = typename __promote<_Up>::__type,
+           typename _Vp2 = typename __promote<_Vp>::__type>
     struct __promote_3
     {
-    private:
-      typedef typename __promote<_Tp>::__type __type1;
-      typedef typename __promote<_Up>::__type __type2;
-      typedef typename __promote<_Vp>::__type __type3;
-
-    public:
-      typedef __typeof__(__type1() + __type2() + __type3()) __type;
+      typedef __typeof__(_Tp2() + _Up2() + _Vp2()) __type;
     };
 
-  template<typename _Tp, typename _Up, typename _Vp, typename _Wp>
+  template<typename _Tp, typename _Up, typename _Vp, typename _Wp,
+           typename _Tp2 = typename __promote<_Tp>::__type,
+           typename _Up2 = typename __promote<_Up>::__type,
+           typename _Vp2 = typename __promote<_Vp>::__type,
+           typename _Wp2 = typename __promote<_Wp>::__type>
     struct __promote_4
     {
-    private:
-      typedef typename __promote<_Tp>::__type __type1;
-      typedef typename __promote<_Up>::__type __type2;
-      typedef typename __promote<_Vp>::__type __type3;
-      typedef typename __promote<_Wp>::__type __type4;
-
-    public:
-      typedef __typeof__(__type1() + __type2() + __type3() + __type4()) __type;
+      typedef __typeof__(_Tp2() + _Up2() + _Vp2() + _Wp2()) __type;
     };
 
+
 }
-# 46 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 2 3
-# 77 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 3
-namespace std __attribute__ ((__visibility__ ("default"))) {
+# 44 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 2 3
+# 75 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
+namespace std __attribute__ ((__visibility__ ("default")))
+{
 
 
-
-  template<typename _Tp>
-    _Tp __cmath_power(_Tp, unsigned int);
-
-  template<typename _Tp>
-    inline _Tp
-    __pow_helper(_Tp __x, int __n)
-    {
-      return __n < 0
-        ? _Tp(1)/__cmath_power(__x, -__n)
-        : __cmath_power(__x, __n);
-    }
 
   inline double
   abs(double __x)
   { return __builtin_fabs(__x); }
+
+
 
   inline float
   abs(float __x)
@@ -6426,7 +6425,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   abs(long double __x)
   { return __builtin_fabsl(__x); }
 
+
+  template<typename _Tp>
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
+    abs(_Tp __x)
+    { return __builtin_fabs(__x); }
+
   using ::acos;
+
 
   inline float
   acos(float __x)
@@ -6436,13 +6444,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   acos(long double __x)
   { return __builtin_acosl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     acos(_Tp __x)
     { return __builtin_acos(__x); }
 
   using ::asin;
+
 
   inline float
   asin(float __x)
@@ -6452,13 +6463,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   asin(long double __x)
   { return __builtin_asinl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     asin(_Tp __x)
     { return __builtin_asin(__x); }
 
   using ::atan;
+
 
   inline float
   atan(float __x)
@@ -6468,13 +6482,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   atan(long double __x)
   { return __builtin_atanl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     atan(_Tp __x)
     { return __builtin_atan(__x); }
 
   using ::atan2;
+
 
   inline float
   atan2(float __y, float __x)
@@ -6484,12 +6501,10 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   atan2(long double __y, long double __x)
   { return __builtin_atan2l(__y, __x); }
 
+
   template<typename _Tp, typename _Up>
     inline
-    typename __gnu_cxx::__promote_2<
-    typename __gnu_cxx::__enable_if<__is_arithmetic<_Tp>::__value
-        && __is_arithmetic<_Up>::__value,
-        _Tp>::__type, _Up>::__type
+    typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
     atan2(_Tp __y, _Up __x)
     {
       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
@@ -6497,6 +6512,7 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
     }
 
   using ::ceil;
+
 
   inline float
   ceil(float __x)
@@ -6506,13 +6522,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   ceil(long double __x)
   { return __builtin_ceill(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     ceil(_Tp __x)
     { return __builtin_ceil(__x); }
 
   using ::cos;
+
 
   inline float
   cos(float __x)
@@ -6522,13 +6541,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   cos(long double __x)
   { return __builtin_cosl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     cos(_Tp __x)
     { return __builtin_cos(__x); }
 
   using ::cosh;
+
 
   inline float
   cosh(float __x)
@@ -6538,13 +6560,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   cosh(long double __x)
   { return __builtin_coshl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     cosh(_Tp __x)
     { return __builtin_cosh(__x); }
 
   using ::exp;
+
 
   inline float
   exp(float __x)
@@ -6554,13 +6579,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   exp(long double __x)
   { return __builtin_expl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     exp(_Tp __x)
     { return __builtin_exp(__x); }
 
   using ::fabs;
+
 
   inline float
   fabs(float __x)
@@ -6570,13 +6598,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   fabs(long double __x)
   { return __builtin_fabsl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     fabs(_Tp __x)
     { return __builtin_fabs(__x); }
 
   using ::floor;
+
 
   inline float
   floor(float __x)
@@ -6586,13 +6617,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   floor(long double __x)
   { return __builtin_floorl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     floor(_Tp __x)
     { return __builtin_floor(__x); }
 
   using ::fmod;
+
 
   inline float
   fmod(float __x, float __y)
@@ -6602,7 +6636,18 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   fmod(long double __x, long double __y)
   { return __builtin_fmodl(__x, __y); }
 
+
+  template<typename _Tp, typename _Up>
+    inline
+    typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+    fmod(_Tp __x, _Up __y)
+    {
+      typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+      return fmod(__type(__x), __type(__y));
+    }
+
   using ::frexp;
+
 
   inline float
   frexp(float __x, int* __exp)
@@ -6612,13 +6657,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   frexp(long double __x, int* __exp)
   { return __builtin_frexpl(__x, __exp); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     frexp(_Tp __x, int* __exp)
     { return __builtin_frexp(__x, __exp); }
 
   using ::ldexp;
+
 
   inline float
   ldexp(float __x, int __exp)
@@ -6628,13 +6676,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   ldexp(long double __x, int __exp)
   { return __builtin_ldexpl(__x, __exp); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
-  ldexp(_Tp __x, int __exp)
-  { return __builtin_ldexp(__x, __exp); }
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
+    ldexp(_Tp __x, int __exp)
+    { return __builtin_ldexp(__x, __exp); }
 
   using ::log;
+
 
   inline float
   log(float __x)
@@ -6644,13 +6695,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   log(long double __x)
   { return __builtin_logl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     log(_Tp __x)
     { return __builtin_log(__x); }
 
   using ::log10;
+
 
   inline float
   log10(float __x)
@@ -6660,13 +6714,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   log10(long double __x)
   { return __builtin_log10l(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     log10(_Tp __x)
     { return __builtin_log10(__x); }
 
   using ::modf;
+
 
   inline float
   modf(float __x, float* __iptr)
@@ -6676,7 +6733,9 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   modf(long double __x, long double* __iptr)
   { return __builtin_modfl(__x, __iptr); }
 
+
   using ::pow;
+
 
   inline float
   pow(float __x, float __y)
@@ -6702,12 +6761,10 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   { return __builtin_powil(__x, __n); }
 
 
+
   template<typename _Tp, typename _Up>
     inline
-    typename __gnu_cxx::__promote_2<
-    typename __gnu_cxx::__enable_if<__is_arithmetic<_Tp>::__value
-        && __is_arithmetic<_Up>::__value,
-        _Tp>::__type, _Up>::__type
+    typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
     pow(_Tp __x, _Up __y)
     {
       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
@@ -6715,6 +6772,7 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
     }
 
   using ::sin;
+
 
   inline float
   sin(float __x)
@@ -6724,13 +6782,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   sin(long double __x)
   { return __builtin_sinl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     sin(_Tp __x)
     { return __builtin_sin(__x); }
 
   using ::sinh;
+
 
   inline float
   sinh(float __x)
@@ -6740,13 +6801,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   sinh(long double __x)
   { return __builtin_sinhl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     sinh(_Tp __x)
     { return __builtin_sinh(__x); }
 
   using ::sqrt;
+
 
   inline float
   sqrt(float __x)
@@ -6756,13 +6820,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   sqrt(long double __x)
   { return __builtin_sqrtl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     sqrt(_Tp __x)
     { return __builtin_sqrt(__x); }
 
   using ::tan;
+
 
   inline float
   tan(float __x)
@@ -6772,13 +6839,16 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   tan(long double __x)
   { return __builtin_tanl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     tan(_Tp __x)
     { return __builtin_tan(__x); }
 
   using ::tanh;
+
 
   inline float
   tanh(float __x)
@@ -6788,16 +6858,21 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   tanh(long double __x)
   { return __builtin_tanhl(__x); }
 
+
   template<typename _Tp>
-    inline typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
-        double>::__type
+    inline
+    typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+                                    double>::__type
     tanh(_Tp __x)
     { return __builtin_tanh(__x); }
 
-}
-# 492 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 3
-namespace std __attribute__ ((__visibility__ ("default"))) {
 
+}
+# 555 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+
+# 805 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
   template<typename _Tp>
     inline typename __gnu_cxx::__enable_if<__is_arithmetic<_Tp>::__value,
         int>::__type
@@ -6907,62 +6982,19 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
       return __builtin_isunordered(__type(__f1), __type(__f2));
     }
 
-}
 
 
-
-
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cmath.tcc" 1 3
-# 35 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cmath.tcc" 3
-namespace std __attribute__ ((__visibility__ ("default"))) {
-
-  template<typename _Tp>
-    inline _Tp
-    __cmath_power(_Tp __x, unsigned int __n)
-    {
-      _Tp __y = __n % 2 ? __x : _Tp(1);
-
-      while (__n >>= 1)
-        {
-          __x = __x * __x;
-          if (__n % 2)
-            __y = __y * __x;
-        }
-
-      return __y;
-    }
 
 }
-# 610 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 2 3
 # 7775 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 1 3
-# 41 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
+# 1 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 1 3
+# 39 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
        
-# 42 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
+# 40 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
+# 114 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
+namespace std __attribute__ ((__visibility__ ("default")))
+{
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstddef" 1 3
-# 41 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstddef" 3
-       
-# 42 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstddef" 3
-
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 45 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstddef" 2 3
-
-
-
-
-namespace std __attribute__ ((__visibility__ ("default"))) {
-
-  using ::ptrdiff_t;
-  using ::size_t;
-
-}
-# 45 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 2 3
-# 100 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
-namespace std __attribute__ ((__visibility__ ("default"))) {
 
   using ::div_t;
   using ::ldiv_t;
@@ -6970,6 +7002,11 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   using ::abort;
   using ::abs;
   using ::atexit;
+
+
+
+
+
   using ::atof;
   using ::atoi;
   using ::atol;
@@ -6988,6 +7025,11 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   using ::mbtowc;
 
   using ::qsort;
+
+
+
+
+
   using ::rand;
   using ::realloc;
   using ::srand;
@@ -7000,15 +7042,30 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   using ::wctomb;
 
 
+
   inline long
-  abs(long __i) { return labs(__i); }
+  abs(long __i) { return __builtin_labs(__i); }
 
   inline ldiv_t
   div(long __i, long __j) { return ldiv(__i, __j); }
 
+
+
+  inline long long
+  abs(long long __x) { return __builtin_llabs (__x); }
+
+
+
+  inline __int128
+  abs(__int128 __x) { return __x >= 0 ? __x : -__x; }
+
+
+
 }
-# 157 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
-namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
+# 196 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
+namespace __gnu_cxx __attribute__ ((__visibility__ ("default")))
+{
+
 
 
   using ::lldiv_t;
@@ -7020,9 +7077,6 @@ namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
   using ::_Exit;
 
 
-  inline long long
-  abs(long long __x) { return __x >= 0 ? __x : -__x; }
-
 
   using ::llabs;
 
@@ -7031,7 +7085,7 @@ namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
   { lldiv_t __q; __q.quot = __n / __d; __q.rem = __n % __d; return __q; }
 
   using ::lldiv;
-# 190 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
+# 228 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
   using ::atoll;
   using ::strtoll;
   using ::strtoull;
@@ -7039,15 +7093,15 @@ namespace __gnu_cxx __attribute__ ((__visibility__ ("default"))) {
   using ::strtof;
   using ::strtold;
 
+
 }
 
-namespace std __attribute__ ((__visibility__ ("default"))) {
-
+namespace std
+{
 
   using ::__gnu_cxx::lldiv_t;
 
   using ::__gnu_cxx::_Exit;
-  using ::__gnu_cxx::abs;
 
   using ::__gnu_cxx::llabs;
   using ::__gnu_cxx::div;
@@ -7058,22 +7112,9 @@ namespace std __attribute__ ((__visibility__ ("default"))) {
   using ::__gnu_cxx::strtoll;
   using ::__gnu_cxx::strtoull;
   using ::__gnu_cxx::strtold;
-
 }
 # 7776 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2
-# 7827 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
-namespace __gnu_cxx
-{
-
-
-extern __attribute__((host)) __attribute__((device)) __attribute__((cudart_builtin)) long long int abs(long long int a);
-
-
-}
-
-
-
-
+# 7839 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
 namespace std
 {
   template<typename T> extern __attribute__((host)) __attribute__((device)) __attribute__((cudart_builtin)) T __pow_helper(T, int);
@@ -7105,7 +7146,16 @@ using std::tan;
 using std::tanh;
 # 8037 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
 namespace std {
-# 8048 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
+
+
+
+
+
+extern __attribute__((host)) __attribute__((device)) __attribute__((cudart_builtin)) long long int abs(long long int);
+
+
+
+
 extern __attribute__((host)) __attribute__((device)) __attribute__((cudart_builtin)) long int abs(long int);
 extern __attribute__((host)) __attribute__((device)) __attribute__((cudart_builtin)) float abs(float);
 extern __attribute__((host)) __attribute__((device)) __attribute__((cudart_builtin)) double abs(double);
@@ -33196,7 +33246,7 @@ extern "C" {
 
 
 
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 35 "/usr/include/stdio.h" 2 3 4
 # 45 "/usr/include/stdio.h" 3 4
 struct _IO_FILE;
@@ -33216,7 +33266,7 @@ typedef struct _IO_FILE __FILE;
 # 32 "/usr/include/libio.h" 3 4
 # 1 "/usr/include/_G_config.h" 1 3 4
 # 15 "/usr/include/_G_config.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 16 "/usr/include/_G_config.h" 2 3 4
 
 
@@ -33256,8 +33306,8 @@ typedef unsigned int _G_uint16_t __attribute__ ((__mode__ (__HI__)));
 typedef unsigned int _G_uint32_t __attribute__ ((__mode__ (__SI__)));
 # 33 "/usr/include/libio.h" 2 3 4
 # 53 "/usr/include/libio.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 1 3 4
-# 40 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 1 3 4
+# 40 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
 # 54 "/usr/include/libio.h" 2 3 4
 # 170 "/usr/include/libio.h" 3 4
@@ -34001,7 +34051,14 @@ extern void funlockfile (FILE *__stream) throw ();
 # 938 "/usr/include/stdio.h" 3 4
 }
 # 2 "../vector_sum.cu" 2
-# 12 "../vector_sum.cu"
+
+# 1 "/scratch/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
+
+
+
+extern void checkpoint();
+# 4 "../vector_sum.cu" 2
+# 13 "../vector_sum.cu"
 __attribute__((global)) void kernel(int *A, int *B, int *C, int N) {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
     if (tid < N) {
@@ -34039,6 +34096,8 @@ int main(int argc, char **argv) {
     kernel<<<blocks_per_grid, threads_per_block>>>(d_A, d_B, d_C, N);
 
     cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
+
+    checkpoint();
 
     FILE *fp = fopen("dump.out", "w");
     for (i = 0; i < N; i++) {

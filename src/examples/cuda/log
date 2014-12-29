@@ -1,1 +1,42 @@
-./generate_intermediate.sh: line 3: nvcc: command not found
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/opt/apps/cuda/6.0.37/bin
+#$ _THERE_=/opt/apps/cuda/6.0.37/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_SIZE_=64
+#$ TOP=/opt/apps/cuda/6.0.37/bin/..
+#$ NVVMIR_LIBRARY_DIR=/opt/apps/cuda/6.0.37/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/opt/apps/cuda/6.0.37/bin/../lib:/opt/apps/gcc/4.8.2/lib64:/opt/apps/gcc/4.8.2/lib:/opt/apps/jdk/1.6/jre/lib/amd64/server/:/home/jmg3/maven-install/lib:/usr/lib:/opt/apps/intel/2011.0.013/lib/intel64/:.:/opt/apps/cuda/driver/lib64:/scratch/jmg3/emtv-hcmpi/src:/home/jmg3/emtv-dropbox/emtv3d-cpu-rev_a/obj:/opt/apps/cuda/6.0.37/lib64:/home/jmg3/hadoop-1.0.3/build/native/Linux-amd64-64/lib:/home/jmg3/snappy-install/lib:/home/jmg3/lzo-install/lib:/opt/apps/jdk/1.7.0.21/lib:/home/jmg3/hadoopcl-aparapi/com.amd.aparapi.jni/dist:/home/jmg3/ant-install/lib:/home/jmg3/libxml2/lib:/projects/vs3/opt/rose-hc//lib:/opt/apps/intel/2011.0.013/lib/intel64/:/opt/apps/openmpi/1.6.5-gcc/lib:/home/jmg3/boost_1_46_0/stage/lib:/home/jmg3/hcTrunk/hc-install/lib:/opt/apps/openmpi/1.6.5-gcc/lib:/opt/apps/intel/2013.1.046/mkl/lib/intel64:/opt/apps/intel/2013.1.046/lib/intel64
+#$ PATH=/opt/apps/cuda/6.0.37/bin/../open64/bin:/opt/apps/cuda/6.0.37/bin/../nvvm/bin:/opt/apps/cuda/6.0.37/bin:/home/jmg3:/opt/apps/gcc/4.8.2/bin:/opt/apps/cuda/6.0.37/bin:/home/jmg3/hadoop-1.0.3/bin:/home/jmg3/scripts:/home/jmg3/maven-install/bin:/usr/bin:/home/jmg3/hjOpenCLBranch/Eclipse-license-code/hj/hj.release/bin:/home/jmg3:/opt/apps/jdk/1.7.0.21/bin:/home/jmg3/ant-install/bin:/opt/apps/openmpi/1.6.5-gcc/bin:/home/jmg3/hcTrunk/hc-install/bin:/opt/apps/openmpi/1.6.5-gcc/bin:/opt/apps/cmake/2.8.12.2//bin:/opt/apps/jdk/1.6/bin:/opt/apps/intel/2013.1.046/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ibutils/bin:/opt/apps/moab/current/bin
+#$ INCLUDES="-I/opt/apps/cuda/6.0.37/bin/..//include"  
+#$ LIBRARIES=  "-L/opt/apps/cuda/6.0.37/bin/..//lib64"
+#$ CUDAFE_FLAGS=
+#$ OPENCC_FLAGS=
+#$ PTXAS_FLAGS=
+#$ rm a_dlink.reg.c
+#$ gcc -D__CUDA_ARCH__=200 -E -x c++     -DCUDA_DOUBLE_MATH_FUNCTIONS  -D__CUDACC__ -D__NVCC__  -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -include "cuda_runtime.h" -m64 -o "vector_sum.cpp1.ii" "../vector_sum.cu" 
+#$ cudafe --allow_managed --m64 --gnu_version=40802 -tused --no_remove_unneeded_entities  --gen_c_file_name "vector_sum.cudafe1.c" --stub_file_name "vector_sum.cudafe1.stub.c" --gen_device_file_name "vector_sum.cudafe1.gpu" --nv_arch "compute_20" --gen_module_id_file --module_id_file_name "vector_sum.module_id" --include_file_name "vector_sum.fatbin.c" "vector_sum.cpp1.ii" 
+../vector_sum.cu(21): warning: variable "error" was declared but never referenced
+
+#$ gcc -D__CUDA_ARCH__=200 -E -x c     -DCUDA_DOUBLE_MATH_FUNCTIONS  -D__CUDACC__ -D__NVCC__ -D__CUDANVVM__  -D__CUDA_PREC_DIV -D__CUDA_PREC_SQRT -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -m64 -o "vector_sum.cpp2.i" "vector_sum.cudafe1.gpu" 
+#$ cudafe -w --allow_managed --m64 --gnu_version=40802 --c  --gen_c_file_name "vector_sum.cudafe2.c" --stub_file_name "vector_sum.cudafe2.stub.c" --gen_device_file_name "vector_sum.cudafe2.gpu" --nv_arch "compute_20" --module_id_file_name "vector_sum.module_id" --include_file_name "vector_sum.fatbin.c" "vector_sum.cpp2.i" 
+#$ gcc -D__CUDA_ARCH__=200 -E -x c     -DCUDA_DOUBLE_MATH_FUNCTIONS  -D__CUDABE__ -D__CUDANVVM__  -D__CUDA_PREC_DIV -D__CUDA_PREC_SQRT -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -m64 -o "vector_sum.cpp3.i" "vector_sum.cudafe2.gpu" 
+#$ filehash -s " " "vector_sum.cpp3.i" > "vector_sum.hash"
+#$ gcc -E -x c++ -D__CUDACC__ -D__NVCC__  -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -include "cuda_runtime.h" -m64 -o "vector_sum.cpp4.ii" "../vector_sum.cu" 
+#$ cudafe++ --allow_managed --m64 --gnu_version=40802 --parse_templates  --gen_c_file_name "vector_sum.cudafe1.cpp" --stub_file_name "vector_sum.cudafe1.stub.c" --module_id_file_name "vector_sum.module_id" "vector_sum.cpp4.ii" 
+../vector_sum.cu(21): warning: variable "error" was declared but never referenced
+
+#$ cicc  -arch compute_20 -m64 -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 -nvvmir-library "/opt/apps/cuda/6.0.37/bin/../nvvm/libdevice/libdevice.compute_20.10.bc" --orig_src_file_name "../vector_sum.cu"  "vector_sum.cpp3.i" -o "vector_sum.ptx"
+#$ ptxas  -arch=sm_20 -m64  "vector_sum.ptx"  -o "vector_sum.sm_20.cubin" 
+#$ fatbinary --create="vector_sum.fatbin" -64 --key="859b34596ce5d50c" --ident="../vector_sum.cu" "--image=profile=sm_20,file=vector_sum.sm_20.cubin" "--image=profile=compute_20,file=vector_sum.ptx" --embedded-fatbin="vector_sum.fatbin.c" --cuda
+#$ gcc -D__CUDA_ARCH__=200 -E -x c++     -DCUDA_DOUBLE_MATH_FUNCTIONS   -D__CUDA_PREC_DIV -D__CUDA_PREC_SQRT -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -m64 -o "vector_sum.cu.cpp.ii" "vector_sum.cudafe1.cpp" 
+#$ gcc -c -x c++ -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -fpreprocessed -m64 -o "vector_sum.o" "vector_sum.cu.cpp.ii" 
+#$ nvlink --arch=sm_20 --register-link-binaries="a_dlink.reg.c" -m64   "-L/opt/apps/cuda/6.0.37/bin/..//lib64" "vector_sum.o"  -o "a_dlink.sm_20.cubin"
+#$ fatbinary --create="a_dlink.fatbin" -64 --key="a_dlink" --ident="../vector_sum.cu " -link "--image=profile=sm_20,file=a_dlink.sm_20.cubin" --embedded-fatbin="a_dlink.fatbin.c" 
+#$ gcc -c -x c++ -DFATBINFILE="\"a_dlink.fatbin.c\"" -DREGISTERLINKBINARYFILE="\"a_dlink.reg.c\"" -I. -I"/scratch/jmg3/num-debug/src/libnumdebug" "-I/opt/apps/cuda/6.0.37/bin/..//include"   -m64 -o "a_dlink.o" "/opt/apps/cuda/6.0.37/bin/crt/link.stub" 
+#$ g++ -m64 -o "a.out" -Wl,--start-group "a_dlink.o" "vector_sum.o"   "-L/opt/apps/cuda/6.0.37/bin/..//lib64" -lcudadevrt  -lcudart_static  -lrt -lpthread  -ldl  -Wl,--end-group 
+vector_sum.o: In function `main':
+vector_sum.cudafe1.cpp:(.text+0x1f8): undefined reference to `checkpoint()'
+collect2: error: ld returned 1 exit status
+# --error 0x1 --
