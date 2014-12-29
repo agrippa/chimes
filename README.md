@@ -16,4 +16,5 @@ NUM_DEBUG_HOME set to the root directory this repo is cloned to
 3. cd llvm-src/projects && svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
 4. mkdir llvm-build
 5. cd llvm-build && ../llvm-src/configure && make
-6. cd llvm-src/lib/Transforms && ln -s ${NUM_DEBUG_HOME}/src/preprocessing/Play && cd Play/ && ./build.sh
+6. git clone git@github.com:agrippa/num-debug.git
+7. cd llvm-src/lib/Transforms && ln -s ${NUM_DEBUG_HOME}/src/preprocessing/Play && cd Play/ && ./build.sh
