@@ -1,5 +1,4 @@
 # 1 "vector_sum.cudafe1.gpu"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "vector_sum.cudafe1.gpu"
 typedef char __nv_bool;
@@ -41,95 +40,107 @@ _XOPEN_,
 _POSIX_,
 # 297 "/usr/include/math.h" 3
 _ISOC_};
-# 124 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 128 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt9__is_voidIvEUt_E {
-# 124 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 128 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt9__is_voidIvE7__valueE = 1};
-# 144 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 148 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIbEUt_E {
-# 144 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 148 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIbE7__valueE = 1};
-# 151 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 155 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIcEUt_E {
-# 151 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 155 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIcE7__valueE = 1};
-# 158 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 162 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIaEUt_E {
-# 158 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 162 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIaE7__valueE = 1};
-# 165 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 169 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIhEUt_E {
-# 165 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 169 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIhE7__valueE = 1};
-# 173 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 177 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIwEUt_E {
-# 173 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 177 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIwE7__valueE = 1};
-# 197 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 201 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIsEUt_E {
-# 197 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 201 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIsE7__valueE = 1};
-# 204 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 208 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerItEUt_E {
-# 204 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 208 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerItE7__valueE = 1};
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 215 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIiEUt_E {
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 215 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIiE7__valueE = 1};
-# 218 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 222 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIjEUt_E {
-# 218 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 222 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIjE7__valueE = 1};
-# 225 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 229 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIlEUt_E {
-# 225 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 229 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIlE7__valueE = 1};
-# 232 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 236 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerImEUt_E {
-# 232 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 236 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerImE7__valueE = 1};
-# 239 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 243 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIxEUt_E {
-# 239 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 243 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIxE7__valueE = 1};
-# 246 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 250 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt12__is_integerIyEUt_E {
-# 246 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 250 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt12__is_integerIyE7__valueE = 1};
-# 264 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 268 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt13__is_floatingIfEUt_E {
-# 264 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 268 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt13__is_floatingIfE7__valueE = 1};
-# 271 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 275 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt13__is_floatingIdEUt_E {
-# 271 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 275 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt13__is_floatingIdE7__valueE = 1};
-# 278 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 282 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt13__is_floatingIeEUt_E {
-# 278 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 282 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt13__is_floatingIeE7__valueE = 1};
-# 354 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 358 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt9__is_charIcEUt_E {
-# 354 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 358 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt9__is_charIcE7__valueE = 1};
-# 362 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 366 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt9__is_charIwEUt_E {
-# 362 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 366 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt9__is_charIwE7__valueE = 1};
-# 377 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 381 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt9__is_byteIcEUt_E {
-# 377 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 381 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt9__is_byteIcE7__valueE = 1};
-# 384 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 388 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt9__is_byteIaEUt_E {
-# 384 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 388 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt9__is_byteIaE7__valueE = 1};
-# 391 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 395 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 enum _ZNSt9__is_byteIhEUt_E {
-# 391 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
+# 395 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 _ZNSt9__is_byteIhE7__valueE = 1};
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3
+# 138 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+enum _ZNSt12__is_integerIeEUt_E {
+# 138 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+_ZNSt12__is_integerIeE7__valueE};
+# 138 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+enum _ZNSt12__is_integerIdEUt_E {
+# 138 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+_ZNSt12__is_integerIdE7__valueE};
+# 138 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+enum _ZNSt12__is_integerIfEUt_E {
+# 138 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+_ZNSt12__is_integerIfE7__valueE};
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3
 typedef unsigned long size_t;
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 1 3
 # 38 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 3
@@ -169,10 +180,10 @@ static __attribute__((device)) void __assert_fail(
 # 249 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 3
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 1 3
 # 56 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h" 1 3
-# 53 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/host_defines.h" 1 3
-# 54 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/device_types.h" 1 3
+# 53 "/opt/apps/cuda/6.0.37/include/device_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/host_defines.h" 1 3
+# 54 "/opt/apps/cuda/6.0.37/include/device_types.h" 2 3
 
 
 
@@ -188,8 +199,8 @@ enum __attribute__((device_builtin)) cudaRoundMode
     cudaRoundMinInf
 };
 # 57 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 1 3
-# 128 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/driver_types.h" 1 3
+# 128 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
 enum __attribute__((device_builtin)) cudaError
 {
 
@@ -216,13 +227,13 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorInitializationError = 3,
-# 163 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 163 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchFailure = 4,
-# 172 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 172 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorPriorLaunchFailure = 5,
-# 182 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 182 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchTimeout = 6,
-# 191 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 191 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchOutOfResources = 7,
 
 
@@ -230,7 +241,7 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorInvalidDeviceFunction = 8,
-# 206 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 206 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorInvalidConfiguration = 9,
 
 
@@ -303,13 +314,13 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorInvalidMemcpyDirection = 21,
-# 287 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 287 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorAddressOfConstant = 22,
-# 296 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 296 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorTextureFetchFailed = 23,
-# 305 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 305 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorTextureNotBound = 24,
-# 314 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 314 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorSynchronizationError = 25,
 
 
@@ -351,7 +362,7 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorNotYetImplemented = 31,
-# 363 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 363 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorMemoryValueTooLarge = 32,
 
 
@@ -375,7 +386,7 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorInsufficientDriver = 35,
-# 398 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 398 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorSetOnActiveProcess = 36,
 
 
@@ -429,7 +440,7 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorDuplicateSurfaceName = 45,
-# 460 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 460 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorDevicesUnavailable = 46,
 
 
@@ -444,7 +455,7 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorNoKernelImageForDevice = 48,
-# 486 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 486 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorIncompatibleDriverContext = 49,
 
 
@@ -556,9 +567,9 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorLaunchFileScopedSurf = 67,
-# 611 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 611 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorSyncDepthExceeded = 68,
-# 623 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 623 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchPendingCountExceeded = 69,
 
 
@@ -571,7 +582,7 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorNotSupported = 71,
-# 643 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 643 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorHardwareStackError = 72,
 
 
@@ -581,9 +592,9 @@ enum __attribute__((device_builtin)) cudaError
 
 
     cudaErrorIllegalInstruction = 73,
-# 660 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 660 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorMisalignedAddress = 74,
-# 671 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 671 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorInvalidAddressSpace = 75,
 
 
@@ -900,7 +911,7 @@ struct __attribute__((device_builtin)) cudaPointerAttributes
 
 
     enum cudaMemoryType memoryType;
-# 997 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 997 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     int device;
 
 
@@ -1190,7 +1201,7 @@ struct __attribute__((device_builtin)) cudaDeviceProp
     int isMultiGpuBoard;
     int multiGpuBoardGroupID;
 };
-# 1361 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 1361 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
 typedef __attribute__((device_builtin)) struct __attribute__((device_builtin)) cudaIpcEventHandle_st
 {
     char reserved[64];
@@ -1203,7 +1214,7 @@ typedef __attribute__((device_builtin)) struct __attribute__((device_builtin)) c
 {
     char reserved[64];
 }cudaIpcMemHandle_t;
-# 1383 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 1383 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
 typedef __attribute__((device_builtin)) enum cudaError cudaError_t;
 
 
@@ -1231,8 +1242,11 @@ typedef __attribute__((device_builtin)) struct CUuuid_st cudaUUID_t;
 
 typedef __attribute__((device_builtin)) enum cudaOutputMode cudaOutputMode_t;
 # 58 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/surface_types.h" 1 3
-# 84 "/opt/apps/cuda/6.0.37/bin/..//include/surface_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/surface_types.h" 1 3
+# 59 "/opt/apps/cuda/6.0.37/include/surface_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/driver_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/surface_types.h" 2 3
+# 84 "/opt/apps/cuda/6.0.37/include/surface_types.h" 3
 enum __attribute__((device_builtin)) cudaSurfaceBoundaryMode
 {
     cudaBoundaryModeZero = 0,
@@ -1265,8 +1279,8 @@ struct __attribute__((device_builtin)) surfaceReference
 
 typedef __attribute__((device_builtin)) unsigned long long cudaSurfaceObject_t;
 # 59 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/texture_types.h" 1 3
-# 84 "/opt/apps/cuda/6.0.37/bin/..//include/texture_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/texture_types.h" 1 3
+# 84 "/opt/apps/cuda/6.0.37/include/texture_types.h" 3
 enum __attribute__((device_builtin)) cudaTextureAddressMode
 {
     cudaAddressModeWrap = 0,
@@ -1393,14 +1407,21 @@ struct __attribute__((device_builtin)) cudaTextureDesc
 
 typedef __attribute__((device_builtin)) unsigned long long cudaTextureObject_t;
 # 60 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 1 3
-# 60 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 1 3
-# 60 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 1 3
-# 60 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 61 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 2 3
-# 96 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/vector_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 1 3
+# 56 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/device_types.h" 1 3
+# 57 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+
+# 1 "/opt/apps/cuda/6.0.37/include/surface_types.h" 1 3
+# 59 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/texture_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/vector_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+# 61 "/opt/apps/cuda/6.0.37/include/vector_types.h" 2 3
+# 96 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
 struct __attribute__((device_builtin)) char1
 {
     signed char x;
@@ -1559,7 +1580,7 @@ struct __attribute__((device_builtin)) float1
 {
     float x;
 };
-# 272 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
+# 272 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
 struct __attribute__((device_builtin)) __attribute__((aligned(8))) float2 { float x; float y; };
 
 
@@ -1634,7 +1655,7 @@ struct __attribute__((device_builtin)) __attribute__((aligned(16))) double4
 {
     double x, y, z, w;
 };
-# 360 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
+# 360 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
 typedef __attribute__((device_builtin)) struct char1 char1;
 typedef __attribute__((device_builtin)) struct uchar1 uchar1;
 typedef __attribute__((device_builtin)) struct char2 char2;
@@ -1711,48 +1732,48 @@ dim3 __attribute__((device_builtin)) extern const blockDim;
 dim3 __attribute__((device_builtin)) extern const gridDim;
 int __attribute__((device_builtin)) extern const warpSize;
 # 251 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/crt/storage_class.h" 1 3
+# 1 "/opt/apps/cuda/6.0.37/include/crt/storage_class.h" 1 3
 # 251 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 2 3
-# 213 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 2 3
+# 214 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 2 3
 # 49 "/usr/include/stdio.h" 3
 typedef struct _IO_FILE FILE;
 # 104 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h"
  __attribute__((device_builtin)) extern __attribute__((device)) int fprintf(FILE *__restrict__, const char *__restrict__, ...);
 # 105 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h"
 extern __attribute__((device)) __attribute__((__malloc__)) __attribute__((__nothrow__)) void *malloc(size_t);
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 __attribute__((global)) extern void _Z6kernelPiS_S_i(int *, int *, int *, int);
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h" 1
 # 167 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h"
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 1 3
-# 14070 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions_dbl_ptx3.h" 1 3
-# 14071 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/math_functions.h" 1 3
+# 14070 "/opt/apps/cuda/6.0.37/include/math_functions.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/math_functions_dbl_ptx3.h" 1 3
+# 14071 "/opt/apps/cuda/6.0.37/include/math_functions.h" 2 3
 # 168 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h" 2
-# 14 "../vector_sum.cu" 2
-# 12 "../vector_sum.cu"
+# 15 "../vector_sum.cu" 2
+# 13 "../vector_sum.cu"
 __attribute__((global)) void _Z6kernelPiS_S_i(
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int *A,
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int *B,
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int *C,
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int N){
-# 12 "../vector_sum.cu"
-{
 # 13 "../vector_sum.cu"
- int __cuda_local_var_33974_9_non_const_tid;
-# 13 "../vector_sum.cu"
-__cuda_local_var_33974_9_non_const_tid = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
-# 14 "../vector_sum.cu"
-if (__cuda_local_var_33974_9_non_const_tid < N)
-# 14 "../vector_sum.cu"
 {
+# 14 "../vector_sum.cu"
+ int __cuda_local_var_34048_9_non_const_tid;
+# 14 "../vector_sum.cu"
+__cuda_local_var_34048_9_non_const_tid = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
 # 15 "../vector_sum.cu"
-(C[__cuda_local_var_33974_9_non_const_tid]) = ((A[__cuda_local_var_33974_9_non_const_tid]) + (B[__cuda_local_var_33974_9_non_const_tid]));
+if (__cuda_local_var_34048_9_non_const_tid < N)
+# 15 "../vector_sum.cu"
+{
 # 16 "../vector_sum.cu"
-}
+(C[__cuda_local_var_34048_9_non_const_tid]) = ((A[__cuda_local_var_34048_9_non_const_tid]) + (B[__cuda_local_var_34048_9_non_const_tid]));
 # 17 "../vector_sum.cu"
+}
+# 18 "../vector_sum.cu"
 }}

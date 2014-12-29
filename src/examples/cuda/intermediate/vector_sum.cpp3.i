@@ -1,8 +1,7 @@
 # 1 "vector_sum.cudafe2.gpu"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "vector_sum.cudafe2.gpu"
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3
 typedef unsigned long size_t;
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 1 3
 # 38 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 3
@@ -18,10 +17,10 @@ typedef unsigned long long __surface_type__;
 # 249 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 3
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 1 3
 # 56 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h" 1 3
-# 53 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/host_defines.h" 1 3
-# 54 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/device_types.h" 1 3
+# 53 "/opt/apps/cuda/6.0.37/include/device_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/host_defines.h" 1 3
+# 54 "/opt/apps/cuda/6.0.37/include/device_types.h" 2 3
 
 
 
@@ -37,8 +36,8 @@ enum cudaRoundMode
     cudaRoundMinInf
 };
 # 57 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 1 3
-# 128 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/driver_types.h" 1 3
+# 128 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
 enum cudaError
 {
 
@@ -65,13 +64,13 @@ enum cudaError
 
 
     cudaErrorInitializationError = 3,
-# 163 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 163 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchFailure = 4,
-# 172 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 172 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorPriorLaunchFailure = 5,
-# 182 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 182 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchTimeout = 6,
-# 191 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 191 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchOutOfResources = 7,
 
 
@@ -79,7 +78,7 @@ enum cudaError
 
 
     cudaErrorInvalidDeviceFunction = 8,
-# 206 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 206 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorInvalidConfiguration = 9,
 
 
@@ -152,13 +151,13 @@ enum cudaError
 
 
     cudaErrorInvalidMemcpyDirection = 21,
-# 287 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 287 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorAddressOfConstant = 22,
-# 296 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 296 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorTextureFetchFailed = 23,
-# 305 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 305 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorTextureNotBound = 24,
-# 314 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 314 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorSynchronizationError = 25,
 
 
@@ -200,7 +199,7 @@ enum cudaError
 
 
     cudaErrorNotYetImplemented = 31,
-# 363 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 363 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorMemoryValueTooLarge = 32,
 
 
@@ -224,7 +223,7 @@ enum cudaError
 
 
     cudaErrorInsufficientDriver = 35,
-# 398 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 398 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorSetOnActiveProcess = 36,
 
 
@@ -278,7 +277,7 @@ enum cudaError
 
 
     cudaErrorDuplicateSurfaceName = 45,
-# 460 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 460 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorDevicesUnavailable = 46,
 
 
@@ -293,7 +292,7 @@ enum cudaError
 
 
     cudaErrorNoKernelImageForDevice = 48,
-# 486 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 486 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorIncompatibleDriverContext = 49,
 
 
@@ -405,9 +404,9 @@ enum cudaError
 
 
     cudaErrorLaunchFileScopedSurf = 67,
-# 611 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 611 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorSyncDepthExceeded = 68,
-# 623 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 623 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorLaunchPendingCountExceeded = 69,
 
 
@@ -420,7 +419,7 @@ enum cudaError
 
 
     cudaErrorNotSupported = 71,
-# 643 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 643 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorHardwareStackError = 72,
 
 
@@ -430,9 +429,9 @@ enum cudaError
 
 
     cudaErrorIllegalInstruction = 73,
-# 660 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 660 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorMisalignedAddress = 74,
-# 671 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 671 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     cudaErrorInvalidAddressSpace = 75,
 
 
@@ -749,7 +748,7 @@ struct cudaPointerAttributes
 
 
     enum cudaMemoryType memoryType;
-# 997 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 997 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
     int device;
 
 
@@ -1039,7 +1038,7 @@ struct cudaDeviceProp
     int isMultiGpuBoard;
     int multiGpuBoardGroupID;
 };
-# 1361 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 1361 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
 typedef struct cudaIpcEventHandle_st
 {
     char reserved[64];
@@ -1052,7 +1051,7 @@ typedef struct cudaIpcMemHandle_st
 {
     char reserved[64];
 }cudaIpcMemHandle_t;
-# 1383 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h" 3
+# 1383 "/opt/apps/cuda/6.0.37/include/driver_types.h" 3
 typedef enum cudaError cudaError_t;
 
 
@@ -1080,8 +1079,11 @@ typedef struct CUuuid_st cudaUUID_t;
 
 typedef enum cudaOutputMode cudaOutputMode_t;
 # 58 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/surface_types.h" 1 3
-# 84 "/opt/apps/cuda/6.0.37/bin/..//include/surface_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/surface_types.h" 1 3
+# 59 "/opt/apps/cuda/6.0.37/include/surface_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/driver_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/surface_types.h" 2 3
+# 84 "/opt/apps/cuda/6.0.37/include/surface_types.h" 3
 enum cudaSurfaceBoundaryMode
 {
     cudaBoundaryModeZero = 0,
@@ -1114,8 +1116,8 @@ struct surfaceReference
 
 typedef unsigned long long cudaSurfaceObject_t;
 # 59 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/texture_types.h" 1 3
-# 84 "/opt/apps/cuda/6.0.37/bin/..//include/texture_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/texture_types.h" 1 3
+# 84 "/opt/apps/cuda/6.0.37/include/texture_types.h" 3
 enum cudaTextureAddressMode
 {
     cudaAddressModeWrap = 0,
@@ -1242,14 +1244,21 @@ struct cudaTextureDesc
 
 typedef unsigned long long cudaTextureObject_t;
 # 60 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 1 3
-# 60 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 1 3
-# 60 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 1 3
-# 60 "/opt/apps/cuda/6.0.37/bin/..//include/builtin_types.h" 2 3
-# 61 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 2 3
-# 96 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/vector_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 1 3
+# 56 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/device_types.h" 1 3
+# 57 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+
+# 1 "/opt/apps/cuda/6.0.37/include/surface_types.h" 1 3
+# 59 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/texture_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/vector_types.h" 1 3
+# 60 "/opt/apps/cuda/6.0.37/include/builtin_types.h" 2 3
+# 61 "/opt/apps/cuda/6.0.37/include/vector_types.h" 2 3
+# 96 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
 struct char1
 {
     signed char x;
@@ -1408,7 +1417,7 @@ struct float1
 {
     float x;
 };
-# 272 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
+# 272 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
 struct __attribute__((aligned(8))) float2 { float x; float y; };
 
 
@@ -1483,7 +1492,7 @@ struct __attribute__((aligned(16))) double4
 {
     double x, y, z, w;
 };
-# 360 "/opt/apps/cuda/6.0.37/bin/..//include/vector_types.h" 3
+# 360 "/opt/apps/cuda/6.0.37/include/vector_types.h" 3
 typedef struct char1 char1;
 typedef struct uchar1 uchar1;
 typedef struct char2 char2;
@@ -1560,17 +1569,17 @@ dim3 extern const blockDim;
 dim3 extern const gridDim;
 int extern const warpSize;
 # 251 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/crt/storage_class.h" 1 3
+# 1 "/opt/apps/cuda/6.0.37/include/crt/storage_class.h" 1 3
 # 251 "/opt/apps/cuda/6.0.37/bin/..//include/crt/device_runtime.h" 2 3
-# 213 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 2 3
-# 12 "../vector_sum.cu"
+# 214 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 2 3
+# 13 "../vector_sum.cu"
 __attribute__((global)) __attribute__((__used__)) extern void _Z6kernelPiS_S_i(int *, int *, int *, int);
 # 1 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h" 1
 # 167 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h"
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 1 3
-# 8474 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/math_constants.h" 1 3
-# 8475 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/math_functions.h" 1 3
+# 8474 "/opt/apps/cuda/6.0.37/include/math_functions.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/math_constants.h" 1 3
+# 8475 "/opt/apps/cuda/6.0.37/include/math_functions.h" 2 3
 
 
 
@@ -1578,423 +1587,423 @@ __attribute__((global)) __attribute__((__used__)) extern void _Z6kernelPiS_S_i(i
 
 
 
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 1 3
-# 65 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 1 3
+# 65 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_sinf(float x);
-# 78 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 78 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_cosf(float x);
-# 105 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 105 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_log2f(float x);
-# 120 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 120 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_tanf(float x);
-# 136 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 136 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 void __nv_fast_sincosf(float x, float *sptr, float *cptr);
-# 187 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 187 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_expf(float x);
-# 220 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 220 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_exp10f(float x);
-# 249 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 249 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_log10f(float x);
-# 294 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 294 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_logf(float x);
-# 338 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 338 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_powf(float x, float y);
-# 351 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 351 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_hadd(int x, int y);
-# 365 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 365 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_rhadd(int x, int y);
-# 378 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 378 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_uhadd(unsigned int x, unsigned int y);
-# 392 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 392 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_urhadd(unsigned int x, unsigned int y);
-# 405 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 405 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsub_rn (float x, float y);
-# 418 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 418 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsub_rz (float x, float y);
-# 431 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 431 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsub_rd (float x, float y);
-# 444 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 444 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsub_ru (float x, float y);
-# 484 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 484 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_frsqrt_rn (float x);
-# 496 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 496 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_ffs(int x);
-# 508 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 508 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_ffsll(long long int x);
-# 520 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 520 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_rintf(float x);
-# 533 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 533 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long int __nv_llrintf(float x);
-# 583 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 583 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_nearbyintf(float x);
-# 596 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 596 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_signbitf(float x);
-# 606 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 606 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_copysignf(float x, float y);
-# 617 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 617 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_finitef(float x);
-# 630 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 630 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_isinff(float x);
-# 642 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 642 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_isnanf(float x);
-# 675 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 675 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_nextafterf(float x, float y);
-# 688 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 688 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_nanf(const signed char *tagp);
-# 730 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 730 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_sinf(float x);
-# 764 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 764 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_cosf(float x);
-# 780 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 780 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 void __nv_sincosf(float x, float *sptr, float *cptr);
-# 841 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 841 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_sinpif(float x);
-# 894 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 894 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_cospif(float x);
-# 925 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 925 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 void __nv_sincospif(float x, float *sptr, float *cptr);
-# 967 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 967 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_tanf(float x);
-# 1019 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1019 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_log2f(float x);
-# 1059 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1059 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_expf(float x);
-# 1081 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1081 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_exp10f(float x);
-# 1113 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1113 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_coshf(float x);
-# 1144 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1144 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_sinhf(float x);
-# 1175 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1175 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_tanhf(float x);
-# 1209 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1209 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_atan2f(float x, float y);
-# 1241 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1241 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_atanf(float x);
-# 1274 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1274 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_asinf(float x);
-# 1298 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1298 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_acosf(float x);
-# 1370 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1370 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_logf(float x);
-# 1422 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1422 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_log10f(float x);
-# 1516 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1516 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_log1pf(float x);
-# 1551 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1551 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_acoshf(float x);
-# 1564 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1564 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_asinhf(float x);
-# 1615 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1615 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_atanhf(float x);
-# 1657 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1657 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_expm1f(float x);
-# 1697 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1697 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_hypotf(float x, float y);
-# 1744 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1744 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_rhypotf(float x, float y);
-# 1826 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1826 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_cbrtf(float x);
-# 1876 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1876 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_rcbrtf(float x);
-# 1915 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1915 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_j0f(float x);
-# 1973 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 1973 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_j1f(float x);
-# 2022 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2022 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_y0f(float x);
-# 2071 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2071 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_y1f(float x);
-# 2121 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2121 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ynf(int n, float x);
-# 2161 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2161 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_jnf(int n, float x);
-# 2188 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2188 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_cyl_bessel_i0f(float x);
-# 2215 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2215 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_cyl_bessel_i1f(float x);
-# 2294 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2294 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_erff(float x);
-# 2352 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2352 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_erfinvf(float x);
-# 2387 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2387 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_erfcf(float x);
-# 2463 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2463 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_erfcxf(float x);
-# 2520 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2520 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_erfcinvf(float x);
-# 2579 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2579 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_normcdfinvf(float x);
-# 2623 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2623 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_normcdff(float x);
-# 2748 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2748 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_lgammaf(float x);
-# 2805 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2805 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ldexpf(float x, int y);
-# 2878 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2878 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_scalbnf(float x, int y);
-# 2954 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 2954 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_frexpf(float x, int *b);
-# 3011 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3011 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_modff(float x, float *b);
-# 3071 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3071 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmodf(float x, float y);
-# 3157 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3157 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_remainderf(float x, float y);
-# 3208 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3208 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_remquof(float x, float y, int* quo);
-# 3363 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3363 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmaf(float x, float y, float z);
-# 3672 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3672 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_powif(float x, int y);
-# 3981 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 3981 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_powi(double x, int y);
-# 4290 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4290 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_powf(float x, float y);
-# 4396 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4396 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_tgammaf(float x);
-# 4410 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4410 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_roundf(float x);
-# 4425 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4425 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long int __nv_llroundf(float x);
-# 4448 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4448 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fdimf(float x, float y);
-# 4475 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4475 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_ilogbf(float x);
-# 4527 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4527 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_logbf(float x);
-# 4539 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4539 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_rint(double x);
-# 4552 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4552 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long int __nv_llrint(double x);
-# 4602 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4602 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_nearbyint(double x);
-# 4615 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4615 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_signbitd(double x);
-# 4628 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4628 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_isfinited(double x);
-# 4641 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4641 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_isinfd(double x);
-# 4653 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4653 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_isnand(double x);
-# 4663 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4663 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_copysign(double x, double y);
-# 4679 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4679 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 void __nv_sincos(double x, double *sptr, double *cptr);
-# 4710 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4710 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 void __nv_sincospi(double x, double *sptr, double *cptr);
-# 4752 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4752 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_sin(double x);
-# 4786 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4786 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_cos(double x);
-# 4847 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4847 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_sinpi(double x);
-# 4900 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4900 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_cospi(double x);
-# 4942 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 4942 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_tan(double x);
-# 5014 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5014 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_log(double x);
-# 5066 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5066 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_log2(double x);
-# 5118 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5118 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_log10(double x);
-# 5212 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5212 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_log1p(double x);
-# 5252 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5252 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_exp(double x);
-# 5274 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5274 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_exp2(double x);
-# 5296 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5296 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_exp10(double x);
-# 5338 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5338 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_expm1(double x);
-# 5370 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5370 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_cosh(double x);
-# 5401 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5401 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_sinh(double x);
-# 5432 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5432 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_tanh(double x);
-# 5466 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5466 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_atan2(double x, double y);
-# 5498 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5498 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_atan(double x);
-# 5531 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5531 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_asin(double x);
-# 5555 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5555 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_acos(double x);
-# 5590 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5590 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_acosh(double x);
-# 5603 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5603 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_asinh(double x);
-# 5654 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5654 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_atanh(double x);
-# 5694 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5694 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_hypot(double x, double y);
-# 5739 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5739 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_rhypot(double x, double y);
-# 5821 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5821 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_cbrt(double x);
-# 5871 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 5871 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_rcbrt(double x);
-# 6180 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6180 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_pow(double x, double y);
-# 6219 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6219 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_j0(double x);
-# 6277 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6277 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_j1(double x);
-# 6326 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6326 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_y0(double x);
-# 6375 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6375 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_y1(double x);
-# 6425 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6425 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_yn(int n, double x);
-# 6465 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6465 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_jn(int n, double x);
-# 6492 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6492 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_cyl_bessel_i0(double x);
-# 6519 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6519 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_cyl_bessel_i1(double x);
-# 6598 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6598 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_erf(double x);
-# 6656 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6656 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_erfinv(double x);
-# 6713 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6713 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_erfcinv(double x);
-# 6772 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6772 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_normcdfinv(double x);
-# 6807 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6807 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_erfc(double x);
-# 6883 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6883 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_erfcx(double x);
-# 6927 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 6927 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_normcdf(double x);
-# 7033 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7033 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_tgamma(double x);
-# 7158 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7158 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_lgamma(double x);
-# 7215 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7215 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ldexp(double x, int y);
-# 7288 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7288 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_scalbn(double x, int y);
-# 7364 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7364 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_frexp(double x, int *b);
-# 7421 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7421 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_modf(double x, double *b);
-# 7481 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7481 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fmod(double x, double y);
-# 7567 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7567 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_remainder(double x, double y);
-# 7618 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7618 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_remquo(double x, double y, int *c);
-# 7651 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7651 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_nextafter(double x, double y);
-# 7664 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7664 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_nan(const signed char *tagp);
-# 7678 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7678 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_round(double x);
-# 7693 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7693 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long int __nv_llround(double x);
-# 7716 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7716 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fdim(double x, double y);
-# 7743 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7743 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_ilogb(double x);
-# 7795 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7795 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_logb(double x);
-# 7950 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7950 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fma(double x, double y, double z);
-# 7960 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7960 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_clz(int x);
-# 7969 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7969 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_clzll(long long x);
-# 7979 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7979 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_popc(int x);
-# 7988 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 7988 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_popcll(long long x);
-# 8013 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8013 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_byte_perm(unsigned int x, unsigned int y, unsigned int z);
-# 8024 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8024 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_min(int x, int y);
-# 8034 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8034 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_umin(unsigned int x, unsigned int y);
-# 8044 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8044 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_llmin(long long x, long long y);
-# 8054 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8054 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_ullmin(unsigned long long x, unsigned long long y);
-# 8065 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8065 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_max(int x, int y);
-# 8075 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8075 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_umax(unsigned int x, unsigned int y);
-# 8085 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8085 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_llmax(long long x, long long y);
-# 8095 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8095 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_ullmax(unsigned long long x, unsigned long long y);
-# 8106 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8106 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_mulhi(int x, int y);
-# 8116 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8116 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_umulhi(unsigned int x, unsigned int y);
-# 8126 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8126 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_mul64hi(long long x, long long y);
-# 8136 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8136 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_umul64hi(unsigned long long x, unsigned long long y);
-# 8147 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8147 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_mul24(int x, int y);
-# 8157 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8157 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_umul24(unsigned int x, unsigned int y);
-# 8167 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8167 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_brev(unsigned int x);
-# 8177 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8177 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_brevll(unsigned long long x);
-# 8246 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8246 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_sad(int x, int y, int z);
-# 8315 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8315 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_usad(unsigned int x, unsigned int y, unsigned int z);
-# 8325 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8325 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_abs(int x);
-# 8336 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8336 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_llabs(long long x);
-# 8409 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8409 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_floorf(float f);
-# 8482 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8482 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_floor(double f);
-# 8524 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8524 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fabsf(float f);
-# 8566 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8566 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fabs(double f);
 
 
 double __nv_rcp64h(double d);
-# 8586 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8586 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fminf(float x, float y);
-# 8603 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8603 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmaxf(float x, float y);
-# 8673 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8673 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_rsqrtf(float x);
-# 8690 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8690 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fmin(double x, double y);
-# 8707 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8707 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fmax(double x, double y);
-# 8777 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8777 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_rsqrt(double x);
-# 8837 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8837 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ceil(double x);
-# 8849 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8849 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_trunc(double x);
-# 8871 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8871 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_exp2f(float x);
-# 8883 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8883 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_truncf(float x);
-# 8943 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8943 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ceilf(float x);
-# 8967 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 8967 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_saturatef(float x);
-# 9121 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 9121 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmaf_rn(float x, float y, float z);
-# 9274 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 9274 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmaf_rz(float x, float y, float z);
-# 9427 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 9427 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmaf_rd(float x, float y, float z);
-# 9580 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 9580 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmaf_ru(float x, float y, float z);
 
 
@@ -2005,247 +2014,247 @@ float __nv_fmaf_ieee_rz(float x, float y, float z);
 float __nv_fmaf_ieee_rd(float x, float y, float z);
 
 float __nv_fmaf_ieee_ru(float x, float y, float z);
-# 9747 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 9747 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fma_rn(double x, double y, double z);
-# 9904 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 9904 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fma_rz(double x, double y, double z);
-# 10061 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10061 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fma_rd(double x, double y, double z);
-# 10218 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10218 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_fma_ru(double x, double y, double z);
-# 10294 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10294 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fast_fdividef(float x, float y);
-# 10306 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10306 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fdiv_rn(float x, float y);
-# 10317 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10317 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fdiv_rz(float x, float y);
-# 10328 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10328 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fdiv_rd(float x, float y);
-# 10339 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10339 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fdiv_ru(float x, float y);
-# 10373 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10373 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_frcp_rn(float x);
-# 10406 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10406 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_frcp_rz(float x);
-# 10439 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10439 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_frcp_rd(float x);
-# 10472 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10472 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_frcp_ru(float x);
-# 10504 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10504 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsqrt_rn(float x);
-# 10535 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10535 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsqrt_rz(float x);
-# 10566 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10566 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsqrt_rd(float x);
-# 10597 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10597 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fsqrt_ru(float x);
-# 10610 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10610 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ddiv_rn(double x, double y);
-# 10622 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10622 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ddiv_rz(double x, double y);
-# 10634 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10634 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ddiv_rd(double x, double y);
-# 10646 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10646 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ddiv_ru(double x, double y);
-# 10681 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10681 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_drcp_rn(double x);
-# 10715 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10715 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_drcp_rz(double x);
-# 10749 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10749 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_drcp_rd(double x);
-# 10783 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10783 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_drcp_ru(double x);
-# 10816 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10816 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dsqrt_rn(double x);
-# 10849 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10849 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dsqrt_rz(double x);
-# 10881 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10881 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dsqrt_rd(double x);
-# 10913 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10913 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dsqrt_ru(double x);
-# 10983 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 10983 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_sqrtf(float x);
-# 11053 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11053 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_sqrt(double x);
-# 11066 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11066 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dadd_rn(double x, double y);
-# 11078 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11078 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dadd_rz(double x, double y);
-# 11090 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11090 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dadd_rd(double x, double y);
-# 11102 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11102 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dadd_ru(double x, double y);
-# 11115 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11115 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dmul_rn(double x, double y);
-# 11127 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11127 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dmul_rz(double x, double y);
-# 11139 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11139 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dmul_rd(double x, double y);
-# 11151 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11151 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_dmul_ru(double x, double y);
-# 11164 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11164 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fadd_rd(float x, float y);
-# 11176 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11176 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fadd_ru(float x, float y);
-# 11189 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11189 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmul_rd(float x, float y);
-# 11201 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11201 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmul_ru(float x, float y);
-# 11214 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11214 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fadd_rn(float x, float y);
-# 11226 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11226 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fadd_rz(float x, float y);
-# 11239 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11239 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmul_rn(float x, float y);
-# 11251 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11251 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_fmul_rz(float x, float y);
-# 11261 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11261 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_double2float_rn(double d);
-# 11270 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11270 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_double2float_rz(double d);
-# 11279 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11279 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_double2float_rd(double d);
-# 11288 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11288 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_double2float_ru(double d);
-# 11298 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11298 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_double2int_rn(double d);
-# 11307 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11307 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_double2int_rz(double d);
-# 11316 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11316 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_double2int_rd(double d);
-# 11325 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11325 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_double2int_ru(double d);
-# 11335 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11335 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_double2uint_rn(double d);
-# 11344 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11344 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_double2uint_rz(double d);
-# 11353 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11353 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_double2uint_rd(double d);
-# 11362 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11362 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_double2uint_ru(double d);
-# 11371 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11371 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_int2double_rn(int i);
-# 11380 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11380 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_uint2double_rn(unsigned int i);
-# 11390 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11390 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_float2int_rn(float in);
-# 11399 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11399 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_float2int_rz(float in);
-# 11408 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11408 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_float2int_rd(float in);
-# 11417 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11417 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_float2int_ru(float in);
-# 11426 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11426 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_float2uint_rn(float in);
-# 11435 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11435 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_float2uint_rz(float in);
-# 11444 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11444 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_float2uint_rd(float in);
-# 11453 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11453 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned int __nv_float2uint_ru(float in);
-# 11463 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11463 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_int2float_rn(int in);
-# 11472 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11472 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_int2float_rz(int in);
-# 11481 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11481 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_int2float_rd(int in);
-# 11490 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11490 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_int2float_ru(int in);
-# 11500 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11500 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_uint2float_rn(unsigned int in);
-# 11509 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11509 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_uint2float_rz(unsigned int in);
-# 11518 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11518 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_uint2float_rd(unsigned int in);
-# 11527 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11527 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_uint2float_ru(unsigned int in);
-# 11538 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11538 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_hiloint2double(int x, int y);
-# 11547 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11547 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_double2loint(double d);
-# 11556 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11556 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_double2hiint(double d);
-# 11566 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11566 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_float2ll_rn(float f);
-# 11575 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11575 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_float2ll_rz(float f);
-# 11584 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11584 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_float2ll_rd(float f);
-# 11593 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11593 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_float2ll_ru(float f);
-# 11602 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11602 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_float2ull_rn(float f);
-# 11611 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11611 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_float2ull_rz(float f);
-# 11620 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11620 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_float2ull_rd(float f);
-# 11629 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11629 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_float2ull_ru(float f);
-# 11639 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11639 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_double2ll_rn(double f);
-# 11648 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11648 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_double2ll_rz(double f);
-# 11657 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11657 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_double2ll_rd(double f);
-# 11666 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11666 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_double2ll_ru(double f);
-# 11676 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11676 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_double2ull_rn(double f);
-# 11685 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11685 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_double2ull_rz(double f);
-# 11694 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11694 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_double2ull_rd(double f);
-# 11703 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11703 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned long long __nv_double2ull_ru(double f);
-# 11713 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11713 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ll2float_rn(long long l);
-# 11722 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11722 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ll2float_rz(long long l);
-# 11731 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11731 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ll2float_rd(long long l);
-# 11740 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11740 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ll2float_ru(long long l);
-# 11750 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11750 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ull2float_rn(unsigned long long l);
-# 11759 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11759 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ull2float_rz(unsigned long long l);
-# 11768 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11768 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ull2float_rd(unsigned long long l);
-# 11777 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11777 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_ull2float_ru(unsigned long long l);
-# 11787 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11787 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ll2double_rn(long long l);
-# 11796 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11796 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ll2double_rz(long long l);
-# 11805 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11805 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ll2double_rd(long long l);
-# 11814 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11814 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ll2double_ru(long long l);
-# 11824 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11824 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ull2double_rn(unsigned long long l);
-# 11833 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11833 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ull2double_rz(unsigned long long l);
-# 11842 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11842 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ull2double_rd(unsigned long long l);
-# 11851 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11851 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_ull2double_ru(unsigned long long l);
-# 11861 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11861 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 unsigned short __nv_float2half_rn(float f);
-# 11870 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11870 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_half2float(unsigned short h);
-# 11879 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11879 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 float __nv_int_as_float(int x);
-# 11889 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11889 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 int __nv_float_as_int(float x);
-# 11899 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11899 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 double __nv_longlong_as_double(long long x);
-# 11909 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions_decls.h" 3
+# 11909 "/opt/apps/cuda/6.0.37/include/device_functions_decls.h" 3
 long long __nv_double_as_longlong (double x);
-# 8483 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2 3
+# 8483 "/opt/apps/cuda/6.0.37/include/math_functions.h" 2 3
 
 
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 1 3
-# 3341 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/device_functions.h" 1 3
+# 3341 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
 static __inline__ __attribute__((always_inline)) int __syncthreads_count(int predicate)
 {
   return __nvvm_bar0_popc(predicate);
@@ -3430,7 +3439,7 @@ static __inline__ __attribute__((always_inline)) double fdivide(double a, double
 {
   return a / b;
 }
-# 4553 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 4553 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
 static __inline__ __attribute__((always_inline)) int __hadd(int a, int b)
 {
   return __nv_hadd(a, b);
@@ -3701,7 +3710,7 @@ unsigned long long int __ullAtomicXor(unsigned long long int *p,
 {
   return __nvvm_atom_xor_gen_ll((volatile long long int *)p, (long long)val);
 }
-# 7291 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 7291 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
 static __inline__ __attribute__((always_inline)) unsigned int __vabs2(unsigned int a)
 {
     unsigned int r;
@@ -3719,7 +3728,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vabs2(unsigned i
          "mov.b32  %0,r;          \n\t"
          "}"
          : "=r"(r) : "r"(a));
-# 7322 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 7322 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     return r;
 }
 
@@ -3743,7 +3752,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vabsss2(unsigned
          "mov.b32  %0,r;          \n\t"
          "}"
          : "=r"(r) : "r"(a));
-# 7362 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 7362 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     return r;
 }
 
@@ -3822,7 +3831,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vaddus2 (unsigne
 static __inline__ __attribute__((always_inline)) unsigned int __vavgs2(unsigned int a, unsigned int b)
 {
     unsigned int r;
-# 7454 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 7454 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     asm ("{                      \n\t"
          ".reg .u32 a,b,c,r,s,t,u,v;\n\t"
          "mov.b32 a,%1;          \n\t"
@@ -3884,7 +3893,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vhaddu2(unsigned
 static __inline__ __attribute__((always_inline)) unsigned int __vcmpeq2(unsigned int a, unsigned int b)
 {
     unsigned int r, c;
-# 7523 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 7523 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     r = a ^ b;
     c = r | 0x80008000;
     r = r ^ c;
@@ -4128,7 +4137,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vcmpltu2(unsigne
 static __inline__ __attribute__((always_inline)) unsigned int __vcmpne2(unsigned int a, unsigned int b)
 {
     unsigned int r, c;
-# 7774 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 7774 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     r = a ^ b;
     c = r | 0x80008000;
     c = c - 0x00010001;
@@ -4631,7 +4640,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vabs4(unsigned i
          "mov.b32  %0,r;          \n\t"
          "}"
          : "=r"(r) : "r"(a));
-# 8290 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8290 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     return r;
 }
 
@@ -4655,7 +4664,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vabsss4(unsigned
          "mov.b32  %0,r;          \n\t"
          "}"
          : "=r"(r) : "r"(a));
-# 8330 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8330 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     return r;
 }
 
@@ -4678,7 +4687,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vadd4(unsigned i
 
 static __inline__ __attribute__((always_inline)) unsigned int __vaddss4 (unsigned int a, unsigned int b)
 {
-# 8388 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8388 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     unsigned int r;
     asm ("{                         \n\t"
          ".reg .u32 a,b,r,s,t,u;    \n\t"
@@ -4701,7 +4710,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vaddss4 (unsigne
          "not.b32  t,t;             \n\t"
          "and.b32  r,r,t;           \n\t"
          "or.b32   r,r,s;           \n\t"
-# 8421 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8421 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
          "mov.b32  %0, r;           \n\t"
          "}"
          : "=r"(r) : "r"(a), "r"(b));
@@ -4711,7 +4720,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vaddss4 (unsigne
 
 static __inline__ __attribute__((always_inline)) unsigned int __vaddus4 (unsigned int a, unsigned int b)
 {
-# 8465 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8465 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     unsigned int r;
     asm ("{                         \n\t"
          ".reg .u32 a,b,r,s,t,m;    \n\t"
@@ -4743,7 +4752,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vaddus4 (unsigne
 static __inline__ __attribute__((always_inline)) unsigned int __vavgs4(unsigned int a, unsigned int b)
 {
     unsigned int r;
-# 8510 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8510 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     asm ("{                      \n\t"
          ".reg .u32 a,b,c,r,s,t,u,v;\n\t"
          "mov.b32 a,%1;          \n\t"
@@ -4805,7 +4814,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vhaddu4(unsigned
 static __inline__ __attribute__((always_inline)) unsigned int __vcmpeq4(unsigned int a, unsigned int b)
 {
     unsigned int c, r;
-# 8579 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8579 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     r = a ^ b;
     c = r | 0x80808080;
     r = r ^ c;
@@ -5069,7 +5078,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vcmpltu4(unsigne
 static __inline__ __attribute__((always_inline)) unsigned int __vcmpne4(unsigned int a, unsigned int b)
 {
     unsigned int r, c;
-# 8850 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 8850 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     r = a ^ b;
     c = r | 0x80808080;
     c = c - 0x01010101;
@@ -5414,7 +5423,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vsub4(unsigned i
 static __inline__ __attribute__((always_inline)) unsigned int __vsubss4(unsigned int a, unsigned int b)
 {
     unsigned int r;
-# 9230 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 9230 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     asm ("{                          \n\t"
          ".reg .u32 a,b,r,s,t,u,v,w; \n\t"
          "mov.b32     a,%1;          \n\t"
@@ -5437,7 +5446,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vsubss4(unsigned
          "not.b32     t,t;           \n\t"
          "and.b32     r,r,t;         \n\t"
          "or.b32      r,r,s;         \n\t"
-# 9263 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 9263 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
          "mov.b32     %0,r;          \n\t"
          "}"
          : "=r"(r) : "r"(a), "r"(b));
@@ -5448,7 +5457,7 @@ static __inline__ __attribute__((always_inline)) unsigned int __vsubss4(unsigned
 static __inline__ __attribute__((always_inline)) unsigned int __vsubus4(unsigned int a, unsigned int b)
 {
     unsigned int r;
-# 9302 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
+# 9302 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
     asm ("{                       \n\t"
          ".reg .u32 a,b,r,s,t,u;  \n\t"
          "mov.b32  a,%1;          \n\t"
@@ -5537,13 +5546,13 @@ static __inline__ __attribute__((always_inline)) unsigned int __vsads4(unsigned 
 
     return r;
 }
-# 9405 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_11_atomic_functions.h" 1 3
-# 9406 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_12_atomic_functions.h" 1 3
-# 9407 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_13_double_functions.h" 1 3
-# 1233 "/opt/apps/cuda/6.0.37/bin/..//include/sm_13_double_functions.h" 3
+# 9405 "/opt/apps/cuda/6.0.37/include/device_functions.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_11_atomic_functions.h" 1 3
+# 9406 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_12_atomic_functions.h" 1 3
+# 9407 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_13_double_functions.h" 1 3
+# 1233 "/opt/apps/cuda/6.0.37/include/sm_13_double_functions.h" 3
 static __inline__ __attribute__((always_inline)) double __dsub_rn(double a, double b)
 {
   double res;
@@ -5571,23 +5580,23 @@ static __inline__ __attribute__((always_inline)) double __dsub_rd(double a, doub
   asm ("sub.rm.f64 %0, %1, %2;" : "=d"(res) : "d"(a), "d"(b));
   return res;
 }
-# 9408 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_20_atomic_functions.h" 1 3
-# 9409 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_32_atomic_functions.h" 1 3
-# 9410 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_35_atomic_functions.h" 1 3
-# 9411 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_20_intrinsics.h" 1 3
-# 9412 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_30_intrinsics.h" 1 3
-# 9413 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_32_intrinsics.h" 1 3
-# 9414 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/sm_35_intrinsics.h" 1 3
-# 9415 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/surface_functions.h" 1 3
-# 4488 "/opt/apps/cuda/6.0.37/bin/..//include/surface_functions.h" 3
+# 9408 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_20_atomic_functions.h" 1 3
+# 9409 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_32_atomic_functions.h" 1 3
+# 9410 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_35_atomic_functions.h" 1 3
+# 9411 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_20_intrinsics.h" 1 3
+# 9412 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_30_intrinsics.h" 1 3
+# 9413 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_32_intrinsics.h" 1 3
+# 9414 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/sm_35_intrinsics.h" 1 3
+# 9415 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/surface_functions.h" 1 3
+# 4488 "/opt/apps/cuda/6.0.37/include/surface_functions.h" 3
 extern uchar1 __surf1Dreadc1(unsigned long long, int, enum cudaSurfaceBoundaryMode);
 extern uchar2 __surf1Dreadc2(unsigned long long, int, enum cudaSurfaceBoundaryMode);
 extern uchar4 __surf1Dreadc4(unsigned long long, int, enum cudaSurfaceBoundaryMode);
@@ -5698,9 +5707,9 @@ extern void __surf2DLayeredwriteu2( uint2 val, unsigned long long, int, int, int
 extern void __surf2DLayeredwriteu4( uint4 val, unsigned long long, int, int, int, enum cudaSurfaceBoundaryMode);
 extern void __surf2DLayeredwritel1(ulonglong1 val, unsigned long long, int, int, int, enum cudaSurfaceBoundaryMode);
 extern void __surf2DLayeredwritel2(ulonglong2 val, unsigned long long, int, int, int, enum cudaSurfaceBoundaryMode);
-# 9416 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/texture_fetch_functions.h" 1 3
-# 3691 "/opt/apps/cuda/6.0.37/bin/..//include/texture_fetch_functions.h" 3
+# 9416 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/texture_fetch_functions.h" 1 3
+# 3691 "/opt/apps/cuda/6.0.37/include/texture_fetch_functions.h" 3
 extern uint4 __utexfetchi1D(unsigned long long, int4);
 extern int4 __itexfetchi1D(unsigned long long, int4);
 extern float4 __ftexfetchi1D(unsigned long long, int4);
@@ -5725,7 +5734,7 @@ extern float4 __ftexfetchl2D(unsigned long long, float4, int);
 extern uint4 __utexfetchlcube(unsigned long long, float4, int);
 extern int4 __itexfetchlcube(unsigned long long, float4, int);
 extern float4 __ftexfetchlcube(unsigned long long, float4, int);
-# 9531 "/opt/apps/cuda/6.0.37/bin/..//include/texture_fetch_functions.h" 3
+# 9531 "/opt/apps/cuda/6.0.37/include/texture_fetch_functions.h" 3
 extern uint4 __utex2Dgather0(unsigned long long, float2);
 extern uint4 __utex2Dgather1(unsigned long long, float2);
 extern uint4 __utex2Dgather2(unsigned long long, float2);
@@ -5776,13 +5785,13 @@ extern float4 __ftexfetchgradl1D(unsigned long long, float4, int, float4, float4
 extern uint4 __utexfetchgradl2D(unsigned long long, float4, int, float4, float4);
 extern int4 __itexfetchgradl2D(unsigned long long, float4, int, float4, float4);
 extern float4 __ftexfetchgradl2D(unsigned long long, float4, int, float4, float4);
-# 9417 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/texture_indirect_functions.h" 1 3
-# 9418 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/surface_indirect_functions.h" 1 3
-# 9419 "/opt/apps/cuda/6.0.37/bin/..//include/device_functions.h" 2 3
-# 8486 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2 3
-# 8501 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 3
+# 9417 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/texture_indirect_functions.h" 1 3
+# 9418 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 1 "/opt/apps/cuda/6.0.37/include/surface_indirect_functions.h" 1 3
+# 9419 "/opt/apps/cuda/6.0.37/include/device_functions.h" 2 3
+# 8486 "/opt/apps/cuda/6.0.37/include/math_functions.h" 2 3
+# 8501 "/opt/apps/cuda/6.0.37/include/math_functions.h" 3
 static __inline__ __attribute__((always_inline)) float rintf(float a)
 {
   return __nv_rintf(a);
@@ -5830,7 +5839,7 @@ static __inline__ __attribute__((always_inline)) int __finitef(float a)
 {
   return __nv_finitef(a);
 }
-# 8558 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 3
+# 8558 "/opt/apps/cuda/6.0.37/include/math_functions.h" 3
 static __inline__ __attribute__((always_inline)) int __isinff(float a)
 {
   return __nv_isinff(a);
@@ -6076,7 +6085,7 @@ static __inline__ __attribute__((always_inline)) float erff(float a)
 {
   return __nv_erff(a);
 }
-# 8821 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 3
+# 8821 "/opt/apps/cuda/6.0.37/include/math_functions.h" 3
 static __inline__ __attribute__((always_inline)) float erfinvf(float a)
 {
   return __nv_erfinvf(a);
@@ -6230,9 +6239,9 @@ static __inline__ __attribute__((always_inline)) float logbf(float a)
 {
   return __nv_logbf(a);
 }
-# 14070 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 3
-# 1 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions_dbl_ptx3.h" 1 3
-# 65 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions_dbl_ptx3.h" 3
+# 14070 "/opt/apps/cuda/6.0.37/include/math_functions.h" 3
+# 1 "/opt/apps/cuda/6.0.37/include/math_functions_dbl_ptx3.h" 1 3
+# 65 "/opt/apps/cuda/6.0.37/include/math_functions_dbl_ptx3.h" 3
 static __inline__ __attribute__((always_inline)) double rint(double a)
 {
   return __nv_rint(a);
@@ -6282,7 +6291,7 @@ static __inline__ __attribute__((always_inline)) int __isnand(double a)
 {
   return __nv_isnand(a);
 }
-# 139 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions_dbl_ptx3.h" 3
+# 139 "/opt/apps/cuda/6.0.37/include/math_functions_dbl_ptx3.h" 3
 static __inline__ __attribute__((always_inline)) int __signbit(double a)
 {
   return __signbitd(a);
@@ -6508,7 +6517,7 @@ static __inline__ __attribute__((always_inline)) double yn(int n, double a)
 {
   return __nv_yn(n, a);
 }
-# 372 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions_dbl_ptx3.h" 3
+# 372 "/opt/apps/cuda/6.0.37/include/math_functions_dbl_ptx3.h" 3
 static __inline__ __attribute__((always_inline)) double jn(int n, double a)
 {
   return __nv_jn(n, a);
@@ -6671,36 +6680,36 @@ static __inline__ __attribute__((always_inline)) double fma(double a, double b, 
 {
   return __nv_fma(a, b, c);
 }
-# 14071 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h" 2 3
+# 14071 "/opt/apps/cuda/6.0.37/include/math_functions.h" 2 3
 # 168 "/opt/apps/cuda/6.0.37/bin/..//include/common_functions.h" 2
-# 14 "../vector_sum.cu" 2
-# 12 "../vector_sum.cu"
+# 15 "../vector_sum.cu" 2
+# 13 "../vector_sum.cu"
 __attribute__((global)) __attribute__((__used__)) void _Z6kernelPiS_S_i(
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int *A,
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int *B,
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int *C,
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 int N){
-# 12 "../vector_sum.cu"
-{
-# 12 "../vector_sum.cu"
+# 13 "../vector_sum.cu"
 {
 # 13 "../vector_sum.cu"
- int __cuda_local_var_33974_9_non_const_tid;
-# 13 "../vector_sum.cu"
-__cuda_local_var_33974_9_non_const_tid = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
-# 14 "../vector_sum.cu"
-if (__cuda_local_var_33974_9_non_const_tid < N)
-# 14 "../vector_sum.cu"
 {
+# 14 "../vector_sum.cu"
+ int __cuda_local_var_34048_9_non_const_tid;
+# 14 "../vector_sum.cu"
+__cuda_local_var_34048_9_non_const_tid = ((int)(((blockIdx.x) * (blockDim.x)) + (threadIdx.x)));
 # 15 "../vector_sum.cu"
-(C[__cuda_local_var_33974_9_non_const_tid]) = ((A[__cuda_local_var_33974_9_non_const_tid]) + (B[__cuda_local_var_33974_9_non_const_tid]));
+if (__cuda_local_var_34048_9_non_const_tid < N)
+# 15 "../vector_sum.cu"
+{
 # 16 "../vector_sum.cu"
-}
+(C[__cuda_local_var_34048_9_non_const_tid]) = ((A[__cuda_local_var_34048_9_non_const_tid]) + (B[__cuda_local_var_34048_9_non_const_tid]));
 # 17 "../vector_sum.cu"
 }
-# 17 "../vector_sum.cu"
+# 18 "../vector_sum.cu"
+}
+# 18 "../vector_sum.cu"
 }}

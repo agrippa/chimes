@@ -1,4 +1,6 @@
 # 1 "../vector_sum.cu"
+#pragma GCC diagnostic ignored "-Wunused-local-typedefs"
+# 1
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt                 : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
 # 1
 # 61 "/opt/apps/cuda/6.0.37/bin/..//include/device_types.h"
@@ -16,9 +18,9 @@ cudaRoundMinInf
 # 67
 }; 
 #endif
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3
 typedef long ptrdiff_t; 
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3
 typedef unsigned long size_t; 
 #include "crt/host_runtime.h"
 # 128 "/opt/apps/cuda/6.0.37/bin/..//include/driver_types.h"
@@ -4094,9 +4096,9 @@ extern "C" float coshf(float ) throw(); extern "C" float __coshf(float ) throw()
 extern "C" float sinhf(float ) throw(); extern "C" float __sinhf(float ) throw(); 
 # 77
 extern "C" float tanhf(float ) throw(); extern "C" float __tanhf(float ) throw(); 
-# 83
+# 82
 extern "C" void sincosf(float , float * , float * ) throw(); 
-# 89 "/usr/include/bits/mathcalls.h" 3
+# 89
 extern "C" float acoshf(float ) throw(); extern "C" float __acoshf(float ) throw(); 
 # 91
 extern "C" float asinhf(float ) throw(); extern "C" float __asinhf(float ) throw(); 
@@ -4256,11 +4258,9 @@ extern "C" long double coshl(long double ) throw(); extern "C" long double __cos
 extern "C" long double sinhl(long double ) throw(); extern "C" long double __sinhl(long double ) throw(); 
 # 77
 extern "C" long double tanhl(long double ) throw(); extern "C" long double __tanhl(long double ) throw(); 
-# 83
-extern "C" void sincosl(long double , long double * , long double * ) throw(); 
-# 83 "/usr/include/bits/mathcalls.h" 3
-extern "C" void __sincosl(long double , long double * , long double * ) throw(); 
-# 89 "/usr/include/bits/mathcalls.h" 3
+# 82
+extern "C" void sincosl(long double , long double * , long double * ) throw(); extern "C" void __sincosl(long double , long double * , long double * ) throw(); 
+# 89
 extern "C" long double acoshl(long double ) throw(); extern "C" long double __acoshl(long double ) throw(); 
 # 91
 extern "C" long double asinhl(long double ) throw(); extern "C" long double __asinhl(long double ) throw(); 
@@ -5224,917 +5224,953 @@ extern "C" int getpt();
 extern "C" int getloadavg(double  [], int ) throw()
 # 949
  __attribute((__nonnull__(1))); 
-# 69 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
-namespace __gnu_cxx __attribute((__visibility__("default"))) { 
-# 71
-template< class _Iterator, class _Container> class __normal_iterator; 
-# 74
+# 184 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/x86_64-unknown-linux-gnu/bits/c++config.h" 3
+namespace std { 
+# 186
+typedef unsigned long size_t; 
+# 187
+typedef long ptrdiff_t; 
+# 192
 }
-# 76
-namespace std __attribute((__visibility__("default"))) { 
-# 78
-struct __true_type { }; 
-# 79
-struct __false_type { }; 
-# 81
-template< bool __T0> 
-# 82
-struct __truth_type { 
-# 83
-typedef __false_type __type; }; 
-# 86
-template<> struct __truth_type< true>  { 
-# 87
-typedef __true_type __type; }; 
-# 91
-template< class _Sp, class _Tp> 
-# 92
-struct __traitor { 
-# 94
-enum { __value = ((bool)_Sp::__value) || ((bool)_Tp::__value)}; 
-# 95
-typedef typename __truth_type< __value> ::__type __type; 
-# 96
-}; 
-# 99
-template< class , class > 
-# 100
-struct __are_same { 
-# 102
-enum { __value}; 
-# 103
-typedef __false_type __type; 
-# 104
-}; 
-# 106
-template< class _Tp> 
-# 107
-struct __are_same< _Tp, _Tp>  { 
-# 109
-enum { __value = 1}; 
-# 110
-typedef __true_type __type; 
-# 111
-}; 
-# 114
-template< class _Tp> 
-# 115
-struct __is_void { 
-# 117
-enum { __value}; 
-# 118
-typedef __false_type __type; 
-# 119
-}; 
-# 122
-template<> struct __is_void< void>  { 
-# 124
-enum { __value = 1}; 
-# 125
-typedef __true_type __type; 
-# 126
-}; 
-# 131
-template< class _Tp> 
-# 132
-struct __is_integer { 
-# 134
-enum { __value}; 
-# 135
-typedef __false_type __type; 
-# 136
-}; 
-# 142
-template<> struct __is_integer< bool>  { 
-# 144
-enum { __value = 1}; 
-# 145
-typedef __true_type __type; 
-# 146
-}; 
-# 149
-template<> struct __is_integer< char>  { 
-# 151
-enum { __value = 1}; 
-# 152
-typedef __true_type __type; 
-# 153
-}; 
-# 156
-template<> struct __is_integer< signed char>  { 
-# 158
-enum { __value = 1}; 
-# 159
-typedef __true_type __type; 
-# 160
-}; 
-# 163
-template<> struct __is_integer< unsigned char>  { 
-# 165
-enum { __value = 1}; 
-# 166
-typedef __true_type __type; 
-# 167
-}; 
-# 171
-template<> struct __is_integer< wchar_t>  { 
-# 173
-enum { __value = 1}; 
-# 174
-typedef __true_type __type; 
-# 175
-}; 
-# 195 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
-template<> struct __is_integer< short>  { 
-# 197
-enum { __value = 1}; 
-# 198
-typedef __true_type __type; 
-# 199
-}; 
-# 202
-template<> struct __is_integer< unsigned short>  { 
-# 204
-enum { __value = 1}; 
-# 205
-typedef __true_type __type; 
-# 206
-}; 
-# 209
-template<> struct __is_integer< int>  { 
-# 211
-enum { __value = 1}; 
-# 212
-typedef __true_type __type; 
-# 213
-}; 
-# 216
-template<> struct __is_integer< unsigned>  { 
-# 218
-enum { __value = 1}; 
-# 219
-typedef __true_type __type; 
-# 220
-}; 
-# 223
-template<> struct __is_integer< long>  { 
-# 225
-enum { __value = 1}; 
-# 226
-typedef __true_type __type; 
-# 227
-}; 
-# 230
-template<> struct __is_integer< unsigned long>  { 
-# 232
-enum { __value = 1}; 
-# 233
-typedef __true_type __type; 
-# 234
-}; 
-# 237
-template<> struct __is_integer< long long>  { 
-# 239
-enum { __value = 1}; 
-# 240
-typedef __true_type __type; 
-# 241
-}; 
-# 244
-template<> struct __is_integer< unsigned long long>  { 
-# 246
-enum { __value = 1}; 
-# 247
-typedef __true_type __type; 
-# 248
-}; 
-# 253
-template< class _Tp> 
-# 254
-struct __is_floating { 
-# 256
-enum { __value}; 
-# 257
-typedef __false_type __type; 
-# 258
-}; 
-# 262
-template<> struct __is_floating< float>  { 
-# 264
-enum { __value = 1}; 
-# 265
-typedef __true_type __type; 
-# 266
-}; 
-# 269
-template<> struct __is_floating< double>  { 
-# 271
-enum { __value = 1}; 
-# 272
-typedef __true_type __type; 
-# 273
-}; 
-# 276
-template<> struct __is_floating< long double>  { 
-# 278
-enum { __value = 1}; 
-# 279
-typedef __true_type __type; 
-# 280
-}; 
-# 285
-template< class _Tp> 
-# 286
-struct __is_pointer { 
-# 288
-enum { __value}; 
-# 289
-typedef __false_type __type; 
-# 290
-}; 
-# 292
-template< class _Tp> 
-# 293
-struct __is_pointer< _Tp *>  { 
-# 295
-enum { __value = 1}; 
-# 296
-typedef __true_type __type; 
-# 297
-}; 
-# 302
-template< class _Tp> 
-# 303
-struct __is_normal_iterator { 
-# 305
-enum { __value}; 
-# 306
-typedef __false_type __type; 
-# 307
-}; 
-# 309
-template< class _Iterator, class _Container> 
-# 310
-struct __is_normal_iterator< __gnu_cxx::__normal_iterator< _Iterator, _Container> >  { 
-# 313
-enum { __value = 1}; 
-# 314
-typedef __true_type __type; 
-# 315
-}; 
-# 320
-template< class _Tp> 
-# 321
-struct __is_arithmetic : public __traitor< __is_integer< _Tp> , __is_floating< _Tp> >  { 
-# 323
-}; 
-# 328
-template< class _Tp> 
-# 329
-struct __is_fundamental : public __traitor< __is_void< _Tp> , __is_arithmetic< _Tp> >  { 
-# 331
-}; 
-# 336
-template< class _Tp> 
-# 337
-struct __is_scalar : public __traitor< __is_arithmetic< _Tp> , __is_pointer< _Tp> >  { 
-# 339
-}; 
-# 344
-template< class _Tp> 
-# 345
-struct __is_char { 
-# 347
-enum { __value}; 
-# 348
-typedef __false_type __type; 
-# 349
-}; 
-# 352
-template<> struct __is_char< char>  { 
-# 354
-enum { __value = 1}; 
-# 355
-typedef __true_type __type; 
-# 356
-}; 
-# 360
-template<> struct __is_char< wchar_t>  { 
-# 362
-enum { __value = 1}; 
-# 363
-typedef __true_type __type; 
-# 364
-}; 
-# 367
-template< class _Tp> 
-# 368
-struct __is_byte { 
-# 370
-enum { __value}; 
-# 371
-typedef __false_type __type; 
-# 372
-}; 
-# 375
-template<> struct __is_byte< char>  { 
-# 377
-enum { __value = 1}; 
-# 378
-typedef __true_type __type; 
-# 379
-}; 
-# 382
-template<> struct __is_byte< signed char>  { 
-# 384
-enum { __value = 1}; 
-# 385
-typedef __true_type __type; 
-# 386
-}; 
-# 389
-template<> struct __is_byte< unsigned char>  { 
-# 391
-enum { __value = 1}; 
-# 392
-typedef __true_type __type; 
-# 393
-}; 
-# 398
-template< class _Tp> 
-# 399
-struct __is_move_iterator { 
-# 401
-enum { __value}; 
-# 402
-typedef __false_type __type; 
-# 403
-}; 
-# 417 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cpp_type_traits.h" 3
-}
-# 37 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/ext/type_traits.h" 3
+# 68 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
 namespace __gnu_cxx __attribute((__visibility__("default"))) { 
-# 40
-template< bool __T1, class > 
-# 41
-struct __enable_if { 
-# 42
-}; 
-# 44
-template< class _Tp> 
-# 45
-struct __enable_if< true, _Tp>  { 
-# 46
-typedef _Tp __type; }; 
-# 50
-template< bool _Cond, class _Iftrue, class _Iffalse> 
-# 51
-struct __conditional_type { 
-# 52
-typedef _Iftrue __type; }; 
-# 54
-template< class _Iftrue, class _Iffalse> 
-# 55
-struct __conditional_type< false, _Iftrue, _Iffalse>  { 
-# 56
-typedef _Iffalse __type; }; 
-# 60
-template< class _Tp> 
-# 61
-struct __add_unsigned { 
-# 64
-private: typedef __enable_if< std::__is_integer< _Tp> ::__value, _Tp>  __if_type; 
-# 67
-public: typedef typename __enable_if< std::__is_integer< _Tp> ::__value, _Tp> ::__type __type; 
-# 68
-}; 
-# 71
-template<> struct __add_unsigned< char>  { 
 # 72
-typedef unsigned char __type; }; 
-# 75
-template<> struct __add_unsigned< signed char>  { 
+template< class _Iterator, class _Container> class __normal_iterator; 
 # 76
-typedef unsigned char __type; }; 
-# 79
-template<> struct __add_unsigned< short>  { 
-# 80
-typedef unsigned short __type; }; 
+}
+# 78
+namespace std __attribute((__visibility__("default"))) { 
+# 82
+struct __true_type { }; 
 # 83
-template<> struct __add_unsigned< int>  { 
-# 84
-typedef unsigned __type; }; 
+struct __false_type { }; 
+# 85
+template< bool __T0> 
+# 86
+struct __truth_type { 
 # 87
-template<> struct __add_unsigned< long>  { 
-# 88
-typedef unsigned long __type; }; 
+typedef __false_type __type; }; 
+# 90
+template<> struct __truth_type< true>  { 
 # 91
-template<> struct __add_unsigned< long long>  { 
-# 92
-typedef unsigned long long __type; }; 
+typedef __true_type __type; }; 
+# 95
+template< class _Sp, class _Tp> 
 # 96
-template<> struct __add_unsigned< bool> ; 
+struct __traitor { 
+# 98
+enum { __value = ((bool)_Sp::__value) || ((bool)_Tp::__value)}; 
 # 99
-template<> struct __add_unsigned< wchar_t> ; 
-# 103
-template< class _Tp> 
-# 104
-struct __remove_unsigned { 
-# 107
-private: typedef __enable_if< std::__is_integer< _Tp> ::__value, _Tp>  __if_type; 
-# 110
-public: typedef typename __enable_if< std::__is_integer< _Tp> ::__value, _Tp> ::__type __type; 
-# 111
+typedef typename __truth_type< __value> ::__type __type; 
+# 100
 }; 
+# 103
+template< class , class > 
+# 104
+struct __are_same { 
+# 106
+enum { __value}; 
+# 107
+typedef __false_type __type; 
+# 108
+}; 
+# 110
+template< class _Tp> 
+# 111
+struct __are_same< _Tp, _Tp>  { 
+# 113
+enum { __value = 1}; 
 # 114
-template<> struct __remove_unsigned< char>  { 
+typedef __true_type __type; 
 # 115
-typedef signed char __type; }; 
+}; 
 # 118
-template<> struct __remove_unsigned< unsigned char>  { 
+template< class _Tp> 
 # 119
-typedef signed char __type; }; 
+struct __is_void { 
+# 121
+enum { __value}; 
 # 122
-template<> struct __remove_unsigned< unsigned short>  { 
+typedef __false_type __type; 
 # 123
-typedef short __type; }; 
+}; 
 # 126
-template<> struct __remove_unsigned< unsigned>  { 
-# 127
-typedef int __type; }; 
+template<> struct __is_void< void>  { 
+# 128
+enum { __value = 1}; 
+# 129
+typedef __true_type __type; 
 # 130
-template<> struct __remove_unsigned< unsigned long>  { 
-# 131
-typedef long __type; }; 
-# 134
-template<> struct __remove_unsigned< unsigned long long>  { 
+}; 
 # 135
-typedef long long __type; }; 
+template< class _Tp> 
+# 136
+struct __is_integer { 
+# 138
+enum { __value}; 
 # 139
-template<> struct __remove_unsigned< bool> ; 
-# 142
-template<> struct __remove_unsigned< wchar_t> ; 
+typedef __false_type __type; 
+# 140
+}; 
 # 146
+template<> struct __is_integer< bool>  { 
+# 148
+enum { __value = 1}; 
+# 149
+typedef __true_type __type; 
+# 150
+}; 
+# 153
+template<> struct __is_integer< char>  { 
+# 155
+enum { __value = 1}; 
+# 156
+typedef __true_type __type; 
+# 157
+}; 
+# 160
+template<> struct __is_integer< signed char>  { 
+# 162
+enum { __value = 1}; 
+# 163
+typedef __true_type __type; 
+# 164
+}; 
+# 167
+template<> struct __is_integer< unsigned char>  { 
+# 169
+enum { __value = 1}; 
+# 170
+typedef __true_type __type; 
+# 171
+}; 
+# 175
+template<> struct __is_integer< wchar_t>  { 
+# 177
+enum { __value = 1}; 
+# 178
+typedef __true_type __type; 
+# 179
+}; 
+# 199 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+template<> struct __is_integer< short>  { 
+# 201
+enum { __value = 1}; 
+# 202
+typedef __true_type __type; 
+# 203
+}; 
+# 206
+template<> struct __is_integer< unsigned short>  { 
+# 208
+enum { __value = 1}; 
+# 209
+typedef __true_type __type; 
+# 210
+}; 
+# 213
+template<> struct __is_integer< int>  { 
+# 215
+enum { __value = 1}; 
+# 216
+typedef __true_type __type; 
+# 217
+}; 
+# 220
+template<> struct __is_integer< unsigned>  { 
+# 222
+enum { __value = 1}; 
+# 223
+typedef __true_type __type; 
+# 224
+}; 
+# 227
+template<> struct __is_integer< long>  { 
+# 229
+enum { __value = 1}; 
+# 230
+typedef __true_type __type; 
+# 231
+}; 
+# 234
+template<> struct __is_integer< unsigned long>  { 
+# 236
+enum { __value = 1}; 
+# 237
+typedef __true_type __type; 
+# 238
+}; 
+# 241
+template<> struct __is_integer< long long>  { 
+# 243
+enum { __value = 1}; 
+# 244
+typedef __true_type __type; 
+# 245
+}; 
+# 248
+template<> struct __is_integer< unsigned long long>  { 
+# 250
+enum { __value = 1}; 
+# 251
+typedef __true_type __type; 
+# 252
+}; 
+# 257
+template< class _Tp> 
+# 258
+struct __is_floating { 
+# 260
+enum { __value}; 
+# 261
+typedef __false_type __type; 
+# 262
+}; 
+# 266
+template<> struct __is_floating< float>  { 
+# 268
+enum { __value = 1}; 
+# 269
+typedef __true_type __type; 
+# 270
+}; 
+# 273
+template<> struct __is_floating< double>  { 
+# 275
+enum { __value = 1}; 
+# 276
+typedef __true_type __type; 
+# 277
+}; 
+# 280
+template<> struct __is_floating< long double>  { 
+# 282
+enum { __value = 1}; 
+# 283
+typedef __true_type __type; 
+# 284
+}; 
+# 289
+template< class _Tp> 
+# 290
+struct __is_pointer { 
+# 292
+enum { __value}; 
+# 293
+typedef __false_type __type; 
+# 294
+}; 
+# 296
+template< class _Tp> 
+# 297
+struct __is_pointer< _Tp *>  { 
+# 299
+enum { __value = 1}; 
+# 300
+typedef __true_type __type; 
+# 301
+}; 
+# 306
+template< class _Tp> 
+# 307
+struct __is_normal_iterator { 
+# 309
+enum { __value}; 
+# 310
+typedef __false_type __type; 
+# 311
+}; 
+# 313
+template< class _Iterator, class _Container> 
+# 314
+struct __is_normal_iterator< __gnu_cxx::__normal_iterator< _Iterator, _Container> >  { 
+# 317
+enum { __value = 1}; 
+# 318
+typedef __true_type __type; 
+# 319
+}; 
+# 324
+template< class _Tp> 
+# 325
+struct __is_arithmetic : public __traitor< __is_integer< _Tp> , __is_floating< _Tp> >  { 
+# 327
+}; 
+# 332
+template< class _Tp> 
+# 333
+struct __is_fundamental : public __traitor< __is_void< _Tp> , __is_arithmetic< _Tp> >  { 
+# 335
+}; 
+# 340
+template< class _Tp> 
+# 341
+struct __is_scalar : public __traitor< __is_arithmetic< _Tp> , __is_pointer< _Tp> >  { 
+# 343
+}; 
+# 348
+template< class _Tp> 
+# 349
+struct __is_char { 
+# 351
+enum { __value}; 
+# 352
+typedef __false_type __type; 
+# 353
+}; 
+# 356
+template<> struct __is_char< char>  { 
+# 358
+enum { __value = 1}; 
+# 359
+typedef __true_type __type; 
+# 360
+}; 
+# 364
+template<> struct __is_char< wchar_t>  { 
+# 366
+enum { __value = 1}; 
+# 367
+typedef __true_type __type; 
+# 368
+}; 
+# 371
+template< class _Tp> 
+# 372
+struct __is_byte { 
+# 374
+enum { __value}; 
+# 375
+typedef __false_type __type; 
+# 376
+}; 
+# 379
+template<> struct __is_byte< char>  { 
+# 381
+enum { __value = 1}; 
+# 382
+typedef __true_type __type; 
+# 383
+}; 
+# 386
+template<> struct __is_byte< signed char>  { 
+# 388
+enum { __value = 1}; 
+# 389
+typedef __true_type __type; 
+# 390
+}; 
+# 393
+template<> struct __is_byte< unsigned char>  { 
+# 395
+enum { __value = 1}; 
+# 396
+typedef __true_type __type; 
+# 397
+}; 
+# 402
+template< class _Tp> 
+# 403
+struct __is_move_iterator { 
+# 405
+enum { __value}; 
+# 406
+typedef __false_type __type; 
+# 407
+}; 
+# 422 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/bits/cpp_type_traits.h" 3
+}
+# 37 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/ext/type_traits.h" 3
+namespace __gnu_cxx __attribute((__visibility__("default"))) { 
+# 42
+template< bool __T1, class > 
+# 43
+struct __enable_if { 
+# 44
+}; 
+# 46
+template< class _Tp> 
+# 47
+struct __enable_if< true, _Tp>  { 
+# 48
+typedef _Tp __type; }; 
+# 52
+template< bool _Cond, class _Iftrue, class _Iffalse> 
+# 53
+struct __conditional_type { 
+# 54
+typedef _Iftrue __type; }; 
+# 56
+template< class _Iftrue, class _Iffalse> 
+# 57
+struct __conditional_type< false, _Iftrue, _Iffalse>  { 
+# 58
+typedef _Iffalse __type; }; 
+# 62
+template< class _Tp> 
+# 63
+struct __add_unsigned { 
+# 66
+private: typedef __enable_if< std::__is_integer< _Tp> ::__value, _Tp>  __if_type; 
+# 69
+public: typedef typename __enable_if< std::__is_integer< _Tp> ::__value, _Tp> ::__type __type; 
+# 70
+}; 
+# 73
+template<> struct __add_unsigned< char>  { 
+# 74
+typedef unsigned char __type; }; 
+# 77
+template<> struct __add_unsigned< signed char>  { 
+# 78
+typedef unsigned char __type; }; 
+# 81
+template<> struct __add_unsigned< short>  { 
+# 82
+typedef unsigned short __type; }; 
+# 85
+template<> struct __add_unsigned< int>  { 
+# 86
+typedef unsigned __type; }; 
+# 89
+template<> struct __add_unsigned< long>  { 
+# 90
+typedef unsigned long __type; }; 
+# 93
+template<> struct __add_unsigned< long long>  { 
+# 94
+typedef unsigned long long __type; }; 
+# 98
+template<> struct __add_unsigned< bool> ; 
+# 101
+template<> struct __add_unsigned< wchar_t> ; 
+# 105
+template< class _Tp> 
+# 106
+struct __remove_unsigned { 
+# 109
+private: typedef __enable_if< std::__is_integer< _Tp> ::__value, _Tp>  __if_type; 
+# 112
+public: typedef typename __enable_if< std::__is_integer< _Tp> ::__value, _Tp> ::__type __type; 
+# 113
+}; 
+# 116
+template<> struct __remove_unsigned< char>  { 
+# 117
+typedef signed char __type; }; 
+# 120
+template<> struct __remove_unsigned< unsigned char>  { 
+# 121
+typedef signed char __type; }; 
+# 124
+template<> struct __remove_unsigned< unsigned short>  { 
+# 125
+typedef short __type; }; 
+# 128
+template<> struct __remove_unsigned< unsigned>  { 
+# 129
+typedef int __type; }; 
+# 132
+template<> struct __remove_unsigned< unsigned long>  { 
+# 133
+typedef long __type; }; 
+# 136
+template<> struct __remove_unsigned< unsigned long long>  { 
+# 137
+typedef long long __type; }; 
+# 141
+template<> struct __remove_unsigned< bool> ; 
+# 144
+template<> struct __remove_unsigned< wchar_t> ; 
+# 148
 template < typename _Type >
     inline bool
     __is_null_pointer ( _Type * __ptr )
     { return __ptr == 0; }
-# 151
+# 153
 template < typename _Type >
     inline bool
     __is_null_pointer ( _Type )
     { return false; }
-# 158
-template< class _Tp, bool __T2 = std::__is_integer< _Tp> ::__value> 
-# 159
-struct __promote { 
 # 160
-typedef double __type; }; 
+template< class _Tp, bool __T2 = std::__is_integer< _Tp> ::__value> 
+# 161
+struct __promote { 
 # 162
-template< class _Tp> 
-# 163
-struct __promote< _Tp, false>  { 
-# 164
-typedef _Tp __type; }; 
-# 166
-template< class _Tp, class _Up> 
+typedef double __type; }; 
 # 167
-struct __promote_2 { 
-# 170
-private: typedef typename __promote< _Tp> ::__type __type1; 
-# 171
-typedef typename __promote< _Up> ::__type __type2; 
-# 174
-public: typedef __typeof__(__type1() + __type2()) __type; 
-# 175
+template< class _Tp> 
+# 168
+struct __promote< _Tp, false>  { 
+# 169
 }; 
+# 172
+template<> struct __promote< long double>  { 
+# 173
+typedef long double __type; }; 
+# 176
+template<> struct __promote< double>  { 
 # 177
-template< class _Tp, class _Up, class _Vp> 
-# 178
-struct __promote_3 { 
+typedef double __type; }; 
+# 180
+template<> struct __promote< float>  { 
 # 181
-private: typedef typename __promote< _Tp> ::__type __type1; 
-# 182
-typedef typename __promote< _Up> ::__type __type2; 
+typedef float __type; }; 
 # 183
-typedef typename __promote< _Vp> ::__type __type3; 
+template< class _Tp, class _Up, class 
+# 184
+_Tp2 = typename __promote< _Tp> ::__type, class 
+# 185
+_Up2 = typename __promote< _Up> ::__type> 
 # 186
-public: typedef __typeof__((__type1() + __type2()) + __type3()) __type; 
-# 187
-}; 
+struct __promote_2 { 
+# 188
+typedef __typeof__(_Tp2() + _Up2()) __type; 
 # 189
-template< class _Tp, class _Up, class _Vp, class _Wp> 
-# 190
-struct __promote_4 { 
-# 193
-private: typedef typename __promote< _Tp> ::__type __type1; 
-# 194
-typedef typename __promote< _Up> ::__type __type2; 
-# 195
-typedef typename __promote< _Vp> ::__type __type3; 
-# 196
-typedef typename __promote< _Wp> ::__type __type4; 
-# 199
-public: typedef __typeof__(((__type1() + __type2()) + __type3()) + __type4()) __type; 
-# 200
 }; 
+# 191
+template< class _Tp, class _Up, class _Vp, class 
+# 192
+_Tp2 = typename __promote< _Tp> ::__type, class 
+# 193
+_Up2 = typename __promote< _Up> ::__type, class 
+# 194
+_Vp2 = typename __promote< _Vp> ::__type> 
+# 195
+struct __promote_3 { 
+# 197
+typedef __typeof__((_Tp2() + _Up2()) + _Vp2()) __type; 
+# 198
+}; 
+# 200
+template< class _Tp, class _Up, class _Vp, class _Wp, class 
+# 201
+_Tp2 = typename __promote< _Tp> ::__type, class 
 # 202
+_Up2 = typename __promote< _Up> ::__type, class 
+# 203
+_Vp2 = typename __promote< _Vp> ::__type, class 
+# 204
+_Wp2 = typename __promote< _Wp> ::__type> 
+# 205
+struct __promote_4 { 
+# 207
+typedef __typeof__(((_Tp2() + _Up2()) + _Vp2()) + _Wp2()) __type; 
+# 208
+}; 
+# 211
 }
-# 77 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 3
+# 75 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
 namespace std __attribute((__visibility__("default"))) { 
 # 81
-template < typename _Tp >
-    _Tp __cmath_power ( _Tp, unsigned int );
-# 84
-template < typename _Tp >
-    inline _Tp
-    __pow_helper ( _Tp __x, int __n )
-    {
-      return __n < 0
-        ? _Tp ( 1 ) / __cmath_power ( __x, - __n )
-        : __cmath_power ( __x, __n );
-    }
-# 94
 inline double abs(double __x) 
-# 95
+# 82
 { return __builtin_fabs(__x); } 
-# 98
+# 87
 inline float abs(float __x) 
-# 99
+# 88
 { return __builtin_fabsf(__x); } 
-# 102
+# 91
 inline long double abs(long double __x) 
-# 103
+# 92
 { return __builtin_fabsl(__x); } 
-# 105
-using ::acos;
-# 108
-inline float acos(float __x) 
-# 109
-{ return __builtin_acosf(__x); } 
-# 112
-inline long double acos(long double __x) 
-# 113
-{ return __builtin_acosl(__x); } 
-# 115
+# 95
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
+    abs ( _Tp __x )
+    { return __builtin_fabs ( __x ); }
+# 102
+using ::acos;
+# 106
+inline float acos(float __x) 
+# 107
+{ return __builtin_acosf(__x); } 
+# 110
+inline long double acos(long double __x) 
+# 111
+{ return __builtin_acosl(__x); } 
+# 114
+template < typename _Tp >
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     acos ( _Tp __x )
     { return __builtin_acos ( __x ); }
 # 121
 using ::asin;
-# 124
-inline float asin(float __x) 
 # 125
+inline float asin(float __x) 
+# 126
 { return __builtin_asinf(__x); } 
-# 128
-inline long double asin(long double __x) 
 # 129
+inline long double asin(long double __x) 
+# 130
 { return __builtin_asinl(__x); } 
-# 131
+# 133
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     asin ( _Tp __x )
     { return __builtin_asin ( __x ); }
-# 137
-using ::atan;
 # 140
-inline float atan(float __x) 
-# 141
-{ return __builtin_atanf(__x); } 
+using ::atan;
 # 144
-inline long double atan(long double __x) 
+inline float atan(float __x) 
 # 145
+{ return __builtin_atanf(__x); } 
+# 148
+inline long double atan(long double __x) 
+# 149
 { return __builtin_atanl(__x); } 
-# 147
+# 152
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     atan ( _Tp __x )
     { return __builtin_atan ( __x ); }
-# 153
+# 159
 using ::atan2;
-# 156
-inline float atan2(float __y, float __x) 
-# 157
-{ return __builtin_atan2f(__y, __x); } 
-# 160
-inline long double atan2(long double __y, long double __x) 
-# 161
-{ return __builtin_atan2l(__y, __x); } 
 # 163
+inline float atan2(float __y, float __x) 
+# 164
+{ return __builtin_atan2f(__y, __x); } 
+# 167
+inline long double atan2(long double __y, long double __x) 
+# 168
+{ return __builtin_atan2l(__y, __x); } 
+# 171
 template < typename _Tp, typename _Up >
     inline
-    typename __gnu_cxx :: __promote_2 <
-    typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value
-        && __is_arithmetic < _Up > :: __value,
-        _Tp > :: __type, _Up > :: __type
+    typename __gnu_cxx :: __promote_2 < _Tp, _Up > :: __type
     atan2 ( _Tp __y, _Up __x )
     {
       typedef typename __gnu_cxx :: __promote_2 < _Tp, _Up > :: __type __type;
       return atan2 ( __type ( __y ), __type ( __x ) );
     }
-# 175
+# 180
 using ::ceil;
-# 178
+# 184
 inline float ceil(float __x) 
-# 179
-{ return __builtin_ceilf(__x); } 
-# 182
-inline long double ceil(long double __x) 
-# 183
-{ return __builtin_ceill(__x); } 
 # 185
+{ return __builtin_ceilf(__x); } 
+# 188
+inline long double ceil(long double __x) 
+# 189
+{ return __builtin_ceill(__x); } 
+# 192
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     ceil ( _Tp __x )
     { return __builtin_ceil ( __x ); }
-# 191
-using ::cos;
-# 194
-inline float cos(float __x) 
-# 195
-{ return __builtin_cosf(__x); } 
-# 198
-inline long double cos(long double __x) 
 # 199
+using ::cos;
+# 203
+inline float cos(float __x) 
+# 204
+{ return __builtin_cosf(__x); } 
+# 207
+inline long double cos(long double __x) 
+# 208
 { return __builtin_cosl(__x); } 
-# 201
+# 211
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     cos ( _Tp __x )
     { return __builtin_cos ( __x ); }
-# 207
+# 218
 using ::cosh;
-# 210
+# 222
 inline float cosh(float __x) 
-# 211
+# 223
 { return __builtin_coshf(__x); } 
-# 214
+# 226
 inline long double cosh(long double __x) 
-# 215
+# 227
 { return __builtin_coshl(__x); } 
-# 217
+# 230
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     cosh ( _Tp __x )
     { return __builtin_cosh ( __x ); }
-# 223
+# 237
 using ::exp;
-# 226
+# 241
 inline float exp(float __x) 
-# 227
-{ return __builtin_expf(__x); } 
-# 230
-inline long double exp(long double __x) 
-# 231
-{ return __builtin_expl(__x); } 
-# 233
-template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
-    exp ( _Tp __x )
-    { return __builtin_exp ( __x ); }
-# 239
-using ::fabs;
 # 242
-inline float fabs(float __x) 
-# 243
-{ return __builtin_fabsf(__x); } 
+{ return __builtin_expf(__x); } 
+# 245
+inline long double exp(long double __x) 
 # 246
-inline long double fabs(long double __x) 
-# 247
-{ return __builtin_fabsl(__x); } 
+{ return __builtin_expl(__x); } 
 # 249
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
+    exp ( _Tp __x )
+    { return __builtin_exp ( __x ); }
+# 256
+using ::fabs;
+# 260
+inline float fabs(float __x) 
+# 261
+{ return __builtin_fabsf(__x); } 
+# 264
+inline long double fabs(long double __x) 
+# 265
+{ return __builtin_fabsl(__x); } 
+# 268
+template < typename _Tp >
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     fabs ( _Tp __x )
     { return __builtin_fabs ( __x ); }
-# 255
+# 275
 using ::floor;
-# 258
+# 279
 inline float floor(float __x) 
-# 259
+# 280
 { return __builtin_floorf(__x); } 
-# 262
+# 283
 inline long double floor(long double __x) 
-# 263
+# 284
 { return __builtin_floorl(__x); } 
-# 265
+# 287
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     floor ( _Tp __x )
     { return __builtin_floor ( __x ); }
-# 271
+# 294
 using ::fmod;
-# 274
+# 298
 inline float fmod(float __x, float __y) 
-# 275
+# 299
 { return __builtin_fmodf(__x, __y); } 
-# 278
+# 302
 inline long double fmod(long double __x, long double __y) 
-# 279
+# 303
 { return __builtin_fmodl(__x, __y); } 
-# 281
-using ::frexp;
-# 284
-inline float frexp(float __x, int *__exp) 
-# 285
-{ return __builtin_frexpf(__x, __exp); } 
-# 288
-inline long double frexp(long double __x, int *__exp) 
-# 289
-{ return __builtin_frexpl(__x, __exp); } 
-# 291
-template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
-    frexp ( _Tp __x, int * __exp )
-    { return __builtin_frexp ( __x, __exp ); }
-# 297
-using ::ldexp;
-# 300
-inline float ldexp(float __x, int __exp) 
-# 301
-{ return __builtin_ldexpf(__x, __exp); } 
-# 304
-inline long double ldexp(long double __x, int __exp) 
-# 305
-{ return __builtin_ldexpl(__x, __exp); } 
-# 307
-template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
-  ldexp ( _Tp __x, int __exp )
-  { return __builtin_ldexp ( __x, __exp ); }
-# 313
-using ::log;
-# 316
-inline float log(float __x) 
-# 317
-{ return __builtin_logf(__x); } 
-# 320
-inline long double log(long double __x) 
-# 321
-{ return __builtin_logl(__x); } 
-# 323
-template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
-    log ( _Tp __x )
-    { return __builtin_log ( __x ); }
-# 329
-using ::log10;
-# 332
-inline float log10(float __x) 
-# 333
-{ return __builtin_log10f(__x); } 
-# 336
-inline long double log10(long double __x) 
-# 337
-{ return __builtin_log10l(__x); } 
-# 339
-template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
-    log10 ( _Tp __x )
-    { return __builtin_log10 ( __x ); }
-# 345
-using ::modf;
-# 348
-inline float modf(float __x, float *__iptr) 
-# 349
-{ return __builtin_modff(__x, __iptr); } 
-# 352
-inline long double modf(long double __x, long double *__iptr) 
-# 353
-{ return __builtin_modfl(__x, __iptr); } 
-# 355
-using ::pow;
-# 358
-inline float pow(float __x, float __y) 
-# 359
-{ return __builtin_powf(__x, __y); } 
-# 362
-inline long double pow(long double __x, long double __y) 
-# 363
-{ return __builtin_powl(__x, __y); } 
-# 369
-inline double pow(double __x, int __i) 
-# 370
-{ return __builtin_powi(__x, __i); } 
-# 373
-inline float pow(float __x, int __n) 
-# 374
-{ return __builtin_powif(__x, __n); } 
-# 377
-inline long double pow(long double __x, int __n) 
-# 378
-{ return __builtin_powil(__x, __n); } 
-# 381
+# 306
 template < typename _Tp, typename _Up >
     inline
-    typename __gnu_cxx :: __promote_2 <
-    typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value
-        && __is_arithmetic < _Up > :: __value,
-        _Tp > :: __type, _Up > :: __type
+    typename __gnu_cxx :: __promote_2 < _Tp, _Up > :: __type
+    fmod ( _Tp __x, _Up __y )
+    {
+      typedef typename __gnu_cxx :: __promote_2 < _Tp, _Up > :: __type __type;
+      return fmod ( __type ( __x ), __type ( __y ) );
+    }
+# 315
+using ::frexp;
+# 319
+inline float frexp(float __x, int *__exp) 
+# 320
+{ return __builtin_frexpf(__x, __exp); } 
+# 323
+inline long double frexp(long double __x, int *__exp) 
+# 324
+{ return __builtin_frexpl(__x, __exp); } 
+# 327
+template < typename _Tp >
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
+    frexp ( _Tp __x, int * __exp )
+    { return __builtin_frexp ( __x, __exp ); }
+# 334
+using ::ldexp;
+# 338
+inline float ldexp(float __x, int __exp) 
+# 339
+{ return __builtin_ldexpf(__x, __exp); } 
+# 342
+inline long double ldexp(long double __x, int __exp) 
+# 343
+{ return __builtin_ldexpl(__x, __exp); } 
+# 346
+template < typename _Tp >
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
+    ldexp ( _Tp __x, int __exp )
+    { return __builtin_ldexp ( __x, __exp ); }
+# 353
+using ::log;
+# 357
+inline float log(float __x) 
+# 358
+{ return __builtin_logf(__x); } 
+# 361
+inline long double log(long double __x) 
+# 362
+{ return __builtin_logl(__x); } 
+# 365
+template < typename _Tp >
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
+    log ( _Tp __x )
+    { return __builtin_log ( __x ); }
+# 372
+using ::log10;
+# 376
+inline float log10(float __x) 
+# 377
+{ return __builtin_log10f(__x); } 
+# 380
+inline long double log10(long double __x) 
+# 381
+{ return __builtin_log10l(__x); } 
+# 384
+template < typename _Tp >
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
+    log10 ( _Tp __x )
+    { return __builtin_log10 ( __x ); }
+# 391
+using ::modf;
+# 395
+inline float modf(float __x, float *__iptr) 
+# 396
+{ return __builtin_modff(__x, __iptr); } 
+# 399
+inline long double modf(long double __x, long double *__iptr) 
+# 400
+{ return __builtin_modfl(__x, __iptr); } 
+# 403
+using ::pow;
+# 407
+inline float pow(float __x, float __y) 
+# 408
+{ return __builtin_powf(__x, __y); } 
+# 411
+inline long double pow(long double __x, long double __y) 
+# 412
+{ return __builtin_powl(__x, __y); } 
+# 418
+inline double pow(double __x, int __i) 
+# 419
+{ return __builtin_powi(__x, __i); } 
+# 422
+inline float pow(float __x, int __n) 
+# 423
+{ return __builtin_powif(__x, __n); } 
+# 426
+inline long double pow(long double __x, int __n) 
+# 427
+{ return __builtin_powil(__x, __n); } 
+# 431
+template < typename _Tp, typename _Up >
+    inline
+    typename __gnu_cxx :: __promote_2 < _Tp, _Up > :: __type
     pow ( _Tp __x, _Up __y )
     {
       typedef typename __gnu_cxx :: __promote_2 < _Tp, _Up > :: __type __type;
       return pow ( __type ( __x ), __type ( __y ) );
     }
-# 393
+# 440
 using ::sin;
-# 396
+# 444
 inline float sin(float __x) 
-# 397
+# 445
 { return __builtin_sinf(__x); } 
-# 400
+# 448
 inline long double sin(long double __x) 
-# 401
+# 449
 { return __builtin_sinl(__x); } 
-# 403
+# 452
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     sin ( _Tp __x )
     { return __builtin_sin ( __x ); }
-# 409
+# 459
 using ::sinh;
-# 412
+# 463
 inline float sinh(float __x) 
-# 413
+# 464
 { return __builtin_sinhf(__x); } 
-# 416
+# 467
 inline long double sinh(long double __x) 
-# 417
+# 468
 { return __builtin_sinhl(__x); } 
-# 419
+# 471
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     sinh ( _Tp __x )
     { return __builtin_sinh ( __x ); }
-# 425
+# 478
 using ::sqrt;
-# 428
+# 482
 inline float sqrt(float __x) 
-# 429
+# 483
 { return __builtin_sqrtf(__x); } 
-# 432
+# 486
 inline long double sqrt(long double __x) 
-# 433
+# 487
 { return __builtin_sqrtl(__x); } 
-# 435
+# 490
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     sqrt ( _Tp __x )
     { return __builtin_sqrt ( __x ); }
-# 441
+# 497
 using ::tan;
-# 444
+# 501
 inline float tan(float __x) 
-# 445
+# 502
 { return __builtin_tanf(__x); } 
-# 448
+# 505
 inline long double tan(long double __x) 
-# 449
+# 506
 { return __builtin_tanl(__x); } 
-# 451
+# 509
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     tan ( _Tp __x )
     { return __builtin_tan ( __x ); }
-# 457
+# 516
 using ::tanh;
-# 460
+# 520
 inline float tanh(float __x) 
-# 461
+# 521
 { return __builtin_tanhf(__x); } 
-# 464
+# 524
 inline long double tanh(long double __x) 
-# 465
+# 525
 { return __builtin_tanhl(__x); } 
-# 467
+# 528
 template < typename _Tp >
-    inline typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
-        double > :: __type
+    inline
+    typename __gnu_cxx :: __enable_if < __is_integer < _Tp > :: __value,
+                                    double > :: __type
     tanh ( _Tp __x )
     { return __builtin_tanh ( __x ); }
-# 473
+# 536
 }
-# 492 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cmath" 3
+# 555 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
 namespace std __attribute((__visibility__("default"))) { 
-# 494
+# 805 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cmath" 3
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6144,7 +6180,7 @@ template < typename _Tp >
       return __builtin_fpclassify ( FP_NAN, FP_INFINITE, FP_NORMAL,
       FP_SUBNORMAL, FP_ZERO, __type ( __f ) );
     }
-# 504
+# 815
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6153,7 +6189,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isfinite ( __type ( __f ) );
     }
-# 513
+# 824
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6162,7 +6198,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isinf ( __type ( __f ) );
     }
-# 522
+# 833
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6171,7 +6207,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isnan ( __type ( __f ) );
     }
-# 531
+# 842
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6180,7 +6216,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isnormal ( __type ( __f ) );
     }
-# 540
+# 851
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6189,7 +6225,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_signbit ( __type ( __f ) );
     }
-# 549
+# 860
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6198,7 +6234,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isgreater ( __type ( __f1 ), __type ( __f2 ) );
     }
-# 558
+# 869
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6207,7 +6243,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isgreaterequal ( __type ( __f1 ), __type ( __f2 ) );
     }
-# 567
+# 878
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6216,7 +6252,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isless ( __type ( __f1 ), __type ( __f2 ) );
     }
-# 576
+# 887
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6225,7 +6261,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_islessequal ( __type ( __f1 ), __type ( __f2 ) );
     }
-# 585
+# 896
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6234,7 +6270,7 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_islessgreater ( __type ( __f1 ), __type ( __f2 ) );
     }
-# 594
+# 905
 template < typename _Tp >
     inline typename __gnu_cxx :: __enable_if < __is_arithmetic < _Tp > :: __value,
         int > :: __type
@@ -6243,170 +6279,136 @@ template < typename _Tp >
       typedef typename __gnu_cxx :: __promote < _Tp > :: __type __type;
       return __builtin_isunordered ( __type ( __f1 ), __type ( __f2 ) );
     }
-# 603
+# 917
 }
-# 35 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/bits/cmath.tcc" 3
+# 114 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
 namespace std __attribute((__visibility__("default"))) { 
-# 37
-template < typename _Tp >
-    inline _Tp
-    __cmath_power ( _Tp __x, unsigned int __n )
-    {
-      _Tp __y = __n % 2 ? __x : _Tp ( 1 );
-
-      while ( __n >>= 1 )
-        {
-          __x = __x * __x;
-          if ( __n % 2 )
-            __y = __y * __x;
-        }
-
-      return __y;
-    }
-# 53
-}
-# 49 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstddef" 3
-namespace std __attribute((__visibility__("default"))) { 
-# 51
-using ::ptrdiff_t;
-# 52
-using ::size_t;
-# 54
-}
-# 100 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
-namespace std __attribute((__visibility__("default"))) { 
-# 102
-using ::div_t;
-# 103
-using ::ldiv_t;
-# 105
-using ::abort;
-# 106
-using ::abs;
-# 107
-using ::atexit;
-# 108
-using ::atof;
-# 109
-using ::atoi;
-# 110
-using ::atol;
-# 111
-using ::bsearch;
-# 112
-using ::calloc;
-# 113
-using ::div;
-# 114
-using ::exit;
-# 115
-using ::free;
-# 116
-using ::getenv;
-# 117
-using ::labs;
 # 118
-using ::ldiv;
+using ::div_t;
 # 119
-using ::malloc;
+using ::ldiv_t;
 # 121
-using ::mblen;
+using ::abort;
 # 122
-using ::mbstowcs;
+using ::abs;
 # 123
-using ::mbtowc;
-# 125
-using ::qsort;
-# 126
-using ::rand;
-# 127
-using ::realloc;
-# 128
-using ::srand;
+using ::atexit;
 # 129
-using ::strtod;
+using ::atof;
 # 130
-using ::strtol;
+using ::atoi;
 # 131
-using ::strtoul;
+using ::atol;
 # 132
-using ::system;
+using ::bsearch;
+# 133
+using ::calloc;
 # 134
-using ::wcstombs;
+using ::div;
 # 135
-using ::wctomb;
+using ::exit;
+# 136
+using ::free;
+# 137
+using ::getenv;
+# 138
+using ::labs;
 # 139
-inline long abs(long __i) { return labs(__i); } 
+using ::ldiv;
+# 140
+using ::malloc;
 # 142
-inline ldiv_t div(long __i, long __j) { return ldiv(__i, __j); } 
+using ::mblen;
+# 143
+using ::mbstowcs;
 # 144
-}
-# 157 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
-namespace __gnu_cxx __attribute((__visibility__("default"))) { 
+using ::mbtowc;
+# 146
+using ::qsort;
+# 152
+using ::rand;
+# 153
+using ::realloc;
+# 154
+using ::srand;
+# 155
+using ::strtod;
+# 156
+using ::strtol;
+# 157
+using ::strtoul;
+# 158
+using ::system;
 # 160
-using ::lldiv_t;
+using ::wcstombs;
+# 161
+using ::wctomb;
 # 166
-using ::_Exit;
-# 170
-inline long long abs(long long __x) { return (__x >= (0)) ? __x : (-__x); } 
-# 173
-using ::llabs;
-# 176
-inline lldiv_t div(long long __n, long long __d) 
-# 177
-{ lldiv_t __q; (__q.quot) = (__n / __d); (__q.rem) = (__n % __d); return __q; } 
+inline long abs(long __i) { return __builtin_labs(__i); } 
+# 169
+inline ldiv_t div(long __i, long __j) { return ldiv(__i, __j); } 
+# 174
+inline long long abs(long long __x) { return __builtin_llabs(__x); } 
 # 179
-using ::lldiv;
-# 190 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/cstdlib" 3
-using ::atoll;
-# 191
-using ::strtoll;
-# 192
-using ::strtoull;
-# 194
-using ::strtof;
-# 195
-using ::strtold;
-# 197
+inline __int128_t abs(__int128_t __x) { return (__x >= (0)) ? __x : (-__x); } 
+# 183
 }
-# 199
-namespace std __attribute((__visibility__("default"))) { 
-# 202
-using __gnu_cxx::lldiv_t;
-# 204
-using __gnu_cxx::_Exit;
-# 205
-using __gnu_cxx::abs;
+# 196 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
+namespace __gnu_cxx __attribute((__visibility__("default"))) { 
+# 201
+using ::lldiv_t;
 # 207
-using __gnu_cxx::llabs;
-# 208
-using __gnu_cxx::div;
-# 209
-using __gnu_cxx::lldiv;
+using ::_Exit;
 # 211
-using __gnu_cxx::atoll;
-# 212
-using __gnu_cxx::strtof;
-# 213
-using __gnu_cxx::strtoll;
+using ::llabs;
 # 214
-using __gnu_cxx::strtoull;
+inline lldiv_t div(long long __n, long long __d) 
 # 215
-using __gnu_cxx::strtold;
+{ lldiv_t __q; (__q.quot) = (__n / __d); (__q.rem) = (__n % __d); return __q; } 
 # 217
+using ::lldiv;
+# 228 "/opt/apps/gcc/4.8.2/include/c++/4.8.2/cstdlib" 3
+using ::atoll;
+# 229
+using ::strtoll;
+# 230
+using ::strtoull;
+# 232
+using ::strtof;
+# 233
+using ::strtold;
+# 236
 }
-# 7827 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
-namespace __gnu_cxx { 
-# 7831
-extern inline long long abs(long long ); 
-# 7834
+# 238
+namespace std { 
+# 241
+using __gnu_cxx::lldiv_t;
+# 243
+using __gnu_cxx::_Exit;
+# 245
+using __gnu_cxx::llabs;
+# 246
+using __gnu_cxx::div;
+# 247
+using __gnu_cxx::lldiv;
+# 249
+using __gnu_cxx::atoll;
+# 250
+using __gnu_cxx::strtof;
+# 251
+using __gnu_cxx::strtoll;
+# 252
+using __gnu_cxx::strtoull;
+# 253
+using __gnu_cxx::strtold;
+# 254
 }
-# 7839
+# 7839 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
 namespace std { 
 # 7841
-template< class T> extern inline T __pow_helper(T, int); 
+template< class T> extern T __pow_helper(T, int); 
 # 7842
-template< class T> extern inline T __cmath_power(T, unsigned); 
+template< class T> extern T __cmath_power(T, unsigned); 
 # 7843
 }
 # 7845
@@ -6457,7 +6459,9 @@ using std::tan;
 using std::tanh;
 # 8037 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
 namespace std { 
-# 8048 "/opt/apps/cuda/6.0.37/bin/..//include/math_functions.h"
+# 8043
+extern inline long long abs(long long); 
+# 8048
 extern inline long abs(long); 
 # 8049
 extern inline float abs(float); 
@@ -62321,7 +62325,7 @@ extern "C" { typedef int _G_int32_t __attribute((__mode__(__SI__))); }
 extern "C" { typedef unsigned short _G_uint16_t __attribute((__mode__(__HI__))); }
 # 56
 extern "C" { typedef unsigned _G_uint32_t __attribute((__mode__(__SI__))); }
-# 40 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 3
+# 40 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 3
 extern "C" { typedef __builtin_va_list __gnuc_va_list; }
 # 170 "/usr/include/libio.h" 3
 struct _IO_jump_t; struct _IO_FILE; 
@@ -62739,85 +62743,89 @@ extern "C" void flockfile(FILE * ) throw();
 extern "C" int ftrylockfile(FILE * ) throw(); 
 # 915
 extern "C" void funlockfile(FILE * ) throw(); 
-# 12 "../vector_sum.cu"
+# 4 "/scratch/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+extern void checkpoint(); 
+# 13 "../vector_sum.cu"
 void kernel(int *A, int *B, int *C, int N) ;
 #if 0
-# 12
-{ 
 # 13
-int tid = ((blockIdx.x) * (blockDim.x)) + (threadIdx.x); 
+{ 
 # 14
-if (tid < N) { 
+int tid = ((blockIdx.x) * (blockDim.x)) + (threadIdx.x); 
 # 15
-(C[tid]) = ((A[tid]) + (B[tid])); 
+if (tid < N) { 
 # 16
-}  
+(C[tid]) = ((A[tid]) + (B[tid])); 
 # 17
+}  
+# 18
 } 
 #endif
-# 19 "../vector_sum.cu"
+# 20 "../vector_sum.cu"
 int main(int argc, char **argv) { 
-# 20
-cudaError_t error; 
 # 21
-int i; 
+cudaError_t error; 
 # 22
+int i; 
+# 23
 int N = (1024 * 1024); 
-# 24
-int *h_A, *h_B, *h_C; 
 # 25
+int *h_A, *h_B, *h_C; 
+# 26
 int *d_A, *d_B, *d_C; 
-# 27
-h_A = ((int *)malloc(sizeof(int) * N)); 
 # 28
-h_B = ((int *)malloc(sizeof(int) * N)); 
+h_A = ((int *)malloc(sizeof(int) * N)); 
 # 29
+h_B = ((int *)malloc(sizeof(int) * N)); 
+# 30
 h_C = ((int *)malloc(sizeof(int) * N)); 
-# 31
-cudaMalloc((void **)(&d_A), sizeof(int) * N); 
 # 32
-cudaMalloc((void **)(&d_B), sizeof(int) * N); 
+cudaMalloc((void **)(&d_A), sizeof(int) * N); 
 # 33
+cudaMalloc((void **)(&d_B), sizeof(int) * N); 
+# 34
 cudaMalloc((void **)(&d_C), sizeof(int) * N); 
-# 35
-for (i = 0; i < N; i++) { 
 # 36
-(h_A[i]) = i; 
-# 37
-(h_B[i]) = (2 * i); 
-# 38
-}  
-# 40
-cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice); 
-# 41
-cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice); 
-# 43
-int threads_per_block = 128; 
-# 44
-int blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block; 
-# 46
-(cudaConfigureCall(blocks_per_grid, threads_per_block)) ? ((void)0) : kernel(d_A, d_B, d_C, N); 
-# 48
-cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost); 
-# 50
-FILE *fp = fopen("dump.out", "w"); 
-# 51
 for (i = 0; i < N; i++) { 
-# 52
-fprintf(fp, "%d\n", h_C[i]); 
-# 53
+# 37
+(h_A[i]) = i; 
+# 38
+(h_B[i]) = (2 * i); 
+# 39
 }  
+# 41
+cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice); 
+# 42
+cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice); 
+# 44
+int threads_per_block = 128; 
+# 45
+int blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block; 
+# 47
+(cudaConfigureCall(blocks_per_grid, threads_per_block)) ? ((void)0) : kernel(d_A, d_B, d_C, N); 
+# 49
+cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost); 
+# 51
+checkpoint(); 
+# 53
+FILE *fp = fopen("dump.out", "w"); 
 # 54
-fclose(fp); 
+for (i = 0; i < N; i++) { 
+# 55
+fprintf(fp, "%d\n", h_C[i]); 
 # 56
-cudaFree(d_A); 
+}  
 # 57
-cudaFree(d_B); 
-# 58
-cudaFree(d_C); 
+fclose(fp); 
+# 59
+cudaFree(d_A); 
 # 60
-return 0; 
+cudaFree(d_B); 
 # 61
+cudaFree(d_C); 
+# 63
+return 0; 
+# 64
 } 
 
 # 1 "vector_sum.cudafe1.stub.c"
