@@ -205,6 +205,10 @@ def getStackInsertions(stack_info_file, input_contents, line_to_decl, decl_to_li
         tokens = line.split()
 
         mangled_name = tokens[0]
+
+        if not mangled_name in decl_to_line.keys():
+            continue
+
         line_no = decl_to_line[mangled_name]
         open_quotes_index = 1
         close_quotes_index = 2
@@ -221,7 +225,7 @@ def getStackInsertions(stack_info_file, input_contents, line_to_decl, decl_to_li
             struct_type_name = tokens[close_quotes_index + 4]
             ptr_fields = tokens[close_quotes_index + 5:]
 
-        actual_name = mangled_name.split('____')[1]
+        actual_name = mangled_name.split('|')[1]
 
         call =  'register_stack_var("' + mangled_name + '", "' + full_type + '", &' + \
                 actual_name + ', ' + str(type_size_in_bits / 8) + ', ' + \
@@ -255,7 +259,7 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         file_line = input_file_contents[line_no - 1]
 
         # Only support single-line memory management calls for now
-        assert fname in line
+        assert fname in file_line, file_line
         if fname == 'malloc':
             assert 'realloc' not in line and 'free' not in line
         elif fname == 'realloc':
@@ -263,7 +267,8 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         elif fname == 'free':
             assert 'malloc' not in line and 'realloc' not in line
 
-        assert file_line.find(';') == len(file_line) - 1
+        assert file_line.find(';') == len(file_line) - 1, \
+            '"' + fname + '" "' + file_line + '"'
 
         func_index = file_line.find(fname)
         new_line = file_line[0:func_index + len(fname)]
