@@ -18,4 +18,4 @@ rm -f *.info
 g++ -include stddef.h -include stdio.h -include ../libnumdebug/libnumdebug.h \
         -I../libnumdebug -L../libnumdebug -lnumdebug $TRANSFORMED_FILE -o $OUT
 
-rm -f $TRANSFORMED_FILE
+# rm -f $TRANSFORMED_FILE
