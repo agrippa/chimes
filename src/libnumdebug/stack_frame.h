@@ -1,6 +1,7 @@
 #ifndef STACK_FRAME_H
 #define STACK_FRAME_H
 
+#include <string>
 #include <map>
 #include "stack_var.h"
 
@@ -24,6 +25,8 @@ class stack_frame {
         iterator find(string s) { return locals.find(s); }
 
         int size() { return locals.size(); }
+
+        string str();
 };
 
 #endif
