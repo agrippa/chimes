@@ -42,9 +42,15 @@ DECL_FILE=decl.info
 INSTRUMENTED_FILE=$(basename ${INFILE})
 INSTRUMENTED_FILE=${INSTRUMENTED_FILE%.*}.transformed.${INSTRUMENTED_FILE##*.}
 
-NUM_DEBUG_HOME=${HOME}/dev/num-debug
-LLVM_HOME=${HOME}/dev/llvm/llvm
-LLVM_INSTALL=${HOME}/dev/llvm/build
+if [[ -z "${NUM_DEBUG_HOME}" ]]; then
+    echo "NUM_DEBUG_HOME must be set"
+    exit 1
+fi
+
+if [[ -z "${LLVM_INSTALL}" ]]; then
+    echo "LLVM_INSTALL must be set"
+    exit 1
+fi
 
 clang -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -g
 opt -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
