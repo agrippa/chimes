@@ -1,3 +1,7 @@
+The vector_sum.cudafe1.cpp file seems most relevant to perform the
+transformation pass on. It's fairly human readable and is late in nvcc's
+compiler passes (is compiled straight to a .o file).
+
 #$ _SPACE_= 
 #$ _CUDART_=cudart
 #$ _HERE_=/opt/apps/cuda/6.0.37/bin
