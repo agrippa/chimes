@@ -20,6 +20,16 @@ using namespace llvm;
 namespace {
     typedef enum {CALLSITE, STACK_REGISTRATION} LocationType;
 
+    typedef struct _SimpleLoc {
+        std::string *filename;
+        int line_no;
+    } SimpleLoc;
+
+    typedef struct _GroupsModifiedAtLine {
+        SimpleLoc loc;
+        std::set<int> *groups;
+    } GroupsModifiedAtLine;
+
     typedef struct _LabeledLoc {
         LocationType type;
         int line_no;
@@ -40,6 +50,8 @@ namespace {
         std::vector<std::string> *struct_ptr_field_names;
 
         std::string full_type_name;
+
+        std::string *filename;
     } StackAllocInfo;
 
     typedef struct _CallInfo {
@@ -66,7 +78,7 @@ namespace {
         std::map<std::string, FunctionInfo *> functions;
         std::map<Value *, int> value_to_alias_group;
         std::vector<AliasSetGroup *> alias_groups;
-        std::map<int, std::set<int>*> line_to_groups_modified;
+        std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
         std::map<std::string, int> *function_to_start_line = NULL;
         std::map<Function *, bool> can_call_checkpoint;
 
@@ -97,8 +109,9 @@ namespace {
         void collectLineToGroupsMapping(Module &M);
         void printLineToGroupsMapping();
         void collectLineToGroupsMappingInFunction(BasicBlock *bb,
-                std::set<BasicBlock *> &visited, std::set<int> *parent_groups);
-        void unionGroups(int line, std::set<int> *groups);
+                std::set<BasicBlock *> &visited, std::set<int> *parent_groups,
+                std::string filename);
+        void unionGroups(int line, std::string filename, std::set<int> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
         void dumpFunctionStartingLineTo(const char *filename,
                 std::map<int, std::string> functions);
@@ -132,6 +145,7 @@ namespace {
         void collectVariableDeclarations(Module &M, const char *filename);
         bool isCallToCheckpoint(CallInst *call);
         bool callsCheckpoint(Function *F);
+        std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
     };
 }
 
@@ -533,17 +547,31 @@ void Play::printValueMappings() {
     errs() << "\n";
 }
 
-void Play::unionGroups(int line, std::set<int> *groups) {
-    if (line_to_groups_modified.find(line) == line_to_groups_modified.end()) {
-        line_to_groups_modified[line] = groups;
+void Play::unionGroups(int line, std::string filename, std::set<int> *groups) {
+
+    std::set<int> *existing = NULL;
+    for (std::vector<GroupsModifiedAtLine *>::iterator i =
+            line_to_groups_modified.begin(), e = line_to_groups_modified.end();
+            i != e; i++) {
+        GroupsModifiedAtLine *curr = *i;
+        if (curr->loc.line_no == line && *(curr->loc.filename) == filename) {
+            existing = curr->groups;
+            break;
+        }
+    }
+
+    if (existing == NULL) {
+        GroupsModifiedAtLine *g = (GroupsModifiedAtLine *)malloc(
+                sizeof(GroupsModifiedAtLine));
+        g->loc.line_no = line;
+        g->loc.filename = new std::string(filename);
+        g->groups = groups;
+        line_to_groups_modified.push_back(g);
     } else {
-        std::map<int, std::set<int>*>::iterator found =
-            line_to_groups_modified.find(line);
-        std::set<int> *curr_groups = found->second;
         for (std::set<int>::iterator parent_iter = groups->begin(),
                 parent_end = groups->end(); parent_iter != parent_end;
                 parent_iter++) {
-            curr_groups->insert(*parent_iter);
+            existing->insert(*parent_iter);
         }
     }
 }
@@ -562,7 +590,8 @@ int Play::findMinimumLineInBasicBlock(BasicBlock *curr) {
 }
 
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
-        std::set<BasicBlock *>& visited, std::set<int> *parent_groups) {
+        std::set<BasicBlock *>& visited, std::set<int> *parent_groups,
+        std::string filename) {
     assert(curr != NULL);
 
     if (parent_groups != NULL && parent_groups->size() > 0) {
@@ -573,12 +602,12 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             TerminatorInst *term = curr->getTerminator();
             for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
                 BasicBlock *child = term->getSuccessor(i);
-                collectLineToGroupsMappingInFunction(child, visited, parent_groups);
+                collectLineToGroupsMappingInFunction(child, visited, parent_groups, filename);
             }
 
         } else {
             int minline = findMinimumLineInBasicBlock(curr);
-            unionGroups(minline, parent_groups);
+            unionGroups(minline, filename, parent_groups);
         }
     }
 
@@ -611,43 +640,69 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
 
         for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
             BasicBlock *child = term->getSuccessor(i);
-            collectLineToGroupsMappingInFunction(child, visited, groups);
+            collectLineToGroupsMappingInFunction(child, visited, groups,
+                    filename);
         }
 
     } else {
         if (groups->size() > 0) {
-            unionGroups(maxline, groups);
+            unionGroups(maxline, filename, groups);
         }
 
         for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
             BasicBlock *child = term->getSuccessor(i);
-            collectLineToGroupsMappingInFunction(child, visited, NULL);
+            collectLineToGroupsMappingInFunction(child, visited, NULL,
+                    filename);
         }
     }
 }
 
+std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
+    for (BasicBlock::iterator i = bb.begin(), e = bb.end(); i != e;
+            ++i) {
+        Instruction &inst = *i;
+        DebugLoc loc = inst.getDebugLoc();
+        if (!loc.isUnknown()) {
+            DIScope scope(loc.getScope(M.getContext()));
+            if (!scope.getFilename().str().empty()) {
+                return scope.getFilename().str();
+            }
+        }
+    }
+    assert(false);
+}
+
+/*
+ * TODO promote alias changes out of basic blocks and to their successors as
+ * much as possible.
+ */
 void Play::collectLineToGroupsMapping(Module& M) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
         std::set<BasicBlock *> visited;
+
         // A function may have no basic blocks if it is defined externally
         if (F->getBasicBlockList().size() > 0) {
             BasicBlock& entry = F->getEntryBlock();
 
-            collectLineToGroupsMappingInFunction(&entry, visited, NULL);
+            std::string filename = findFilenameContainingBB(entry, M);
+
+            collectLineToGroupsMappingInFunction(&entry, visited, NULL, filename);
         }
     }
 }
 
 void Play::printLineToGroupsMapping() {
     errs() << "\n" << line_to_groups_modified.size() << " lines:\n";
-    for (std::map<int, std::set<int>*>::iterator line_iter =
+    for (std::vector<GroupsModifiedAtLine *>::iterator line_iter =
             line_to_groups_modified.begin(), line_end =
             line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
-        std::set<int> *groups = line_iter->second;
+        GroupsModifiedAtLine *curr = *line_iter;
+        std::set<int> *groups = curr->groups;
 
-        errs() << " " << line_iter->first << " -> { ";
+        errs() << " " << *curr->loc.filename << ":" << curr->loc.line_no << " -> { ";
+
         for (std::set<int>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;
                 groups_iter++) {
@@ -661,12 +716,14 @@ void Play::printLineToGroupsMapping() {
 void Play::dumpLineToGroupsMappingTo(const char *filename) {
     FILE *fp = fopen(filename, "w");
 
-    for (std::map<int, std::set<int>*>::iterator line_iter =
+    for (std::vector<GroupsModifiedAtLine *>::iterator line_iter =
             line_to_groups_modified.begin(), line_end =
             line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
-        std::set<int> *groups = line_iter->second;
+        GroupsModifiedAtLine *curr = *line_iter;
+        std::set<int> *groups = curr->groups;
 
-        fprintf(fp, "%d : { ", line_iter->first);
+        fprintf(fp, "%s:%d : { ", curr->loc.filename->c_str(),
+                curr->loc.line_no);
         for (std::set<int>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;
                 groups_iter++) {
@@ -737,7 +794,7 @@ bool Play::callsCheckpoint(Function *F) {
 
         /*
          * If we didn't find that this function either calls checkpoint or calls
-         * a function which calls checkpoint, set to false
+         * a function which calls checkpoint, set to false.
          */
         if (can_call_checkpoint.find(F) == can_call_checkpoint.end()) {
             can_call_checkpoint[F] = false;
@@ -1037,6 +1094,8 @@ void Play::findStackAllocations(Module &M) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
+        if (!callsCheckpoint(F)) continue;
+
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
                 bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
@@ -1145,6 +1204,8 @@ void Play::findStackAllocations(Module &M) {
                     info->full_type_name = stream.str();
 
                     if (info->users.size() > 0) {
+                        info->filename = new std::string(
+                                findFilenameContainingBB(*bb, M));
                         alloc_infos.push_back(info);
                     } else {
                         /*
@@ -1171,9 +1232,10 @@ void Play::findStackAllocations(Module &M) {
         std::vector<Instruction *> users = info->users;
         std::vector<std::string> *field_names = info->struct_ptr_field_names;
 
-        fprintf(fp, "%s \" %s \" %d %d %d ",
-                info->varname->c_str(), info->full_type_name.c_str(),
-                info->type_size_in_bits, info->is_ptr, info->is_struct);
+        fprintf(fp, "%s %s \" %s \" %d %d %d ",
+                info->filename->c_str(), info->varname->c_str(),
+                info->full_type_name.c_str(), info->type_size_in_bits,
+                info->is_ptr, info->is_struct);
         if (info->is_struct) {
             fprintf(fp, "%s ", info->struct_type_name.c_str());
             for (std::vector<std::string>::iterator field_iter =
@@ -1582,6 +1644,8 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
+
+        if (!callsCheckpoint(F)) continue;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
