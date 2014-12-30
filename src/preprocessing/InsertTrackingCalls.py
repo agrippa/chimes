@@ -159,9 +159,11 @@ def getStateChangeInsertions(lines_info_file, original_file):
     lines_to_insert = {}
 
     for line_no in reversed(sorted(lines_info.keys())):
-        to_insert = ''
+        to_insert = 'alias_group_changed(' + str(len(lines_info[line_no]))
+
         for group in lines_info[line_no]:
-            to_insert = to_insert + 'alias_group_changed(' + str(group) + '); '
+            to_insert = to_insert + ', ' + str(group)
+        to_insert = to_insert + '); '
         assert line_no not in lines_to_insert
         lines_to_insert[line_no] = to_insert
 
