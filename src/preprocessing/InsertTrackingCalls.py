@@ -397,7 +397,7 @@ def getLabelInsertions(loc_info_file, input_file_contents, declarations, line_no
         loc_id = int(tokens[1])
         loc_type = tokens[2]
 
-        if loc_type == 'CALLSITE' or loc_type == 'BOTH':
+        if loc_type == 'CALLSITE':
             if line_no not in insertions.keys():
                 insertions[line_no] = ''
             insertions[line_no] += 'calling(' + str(loc_id) + '); '
@@ -406,7 +406,7 @@ def getLabelInsertions(loc_info_file, input_file_contents, declarations, line_no
             line_index = line_no_to_index[line_no]
             input_file_contents[line_index] = 'lbl_' + str(loc_id) + ':' + input_file_contents[line_index]
 
-        if loc_type == 'STACK_REGISTRATION' or loc_type == 'BOTH':
+        if loc_type == 'STACK_REGISTRATION':
             if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
             if line_no not in insertions:
