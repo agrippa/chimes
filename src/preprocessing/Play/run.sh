@@ -56,7 +56,7 @@ clang -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_F
 opt -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
 rm ${OBJ_FILE}
 
-python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} \
+python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} ${INFILE} \
            ${LINE_INFO_FILE} ${FUNCTION_START_FILE} ${FUNCTION_EXIT_FILE} \
            ${STACK_FILE} ${HEAP_FILE} ${LOC_FILE} ${GOTO_FILE} ${STRUCT_FILE} \
            ${DECL_FILE} ${OUT_DIR}/${INSTRUMENTED_FILE}
