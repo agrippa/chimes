@@ -23,6 +23,7 @@ namespace {
     typedef struct _LabeledLoc {
         LocationType type;
         int line_no;
+        std::string *filename;
         int id;
     } LabeledLoc;
 
@@ -1359,7 +1360,7 @@ void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
             exist_end = existing->end(); exist_iter != exist_end;
             exist_iter++) {
         LabeledLoc *curr = *exist_iter;
-        if (curr->line_no == loc->line_no) {
+        if (curr->line_no == loc->line_no && *(curr->filename) == *(loc->filename)) {
             exists = curr;
             break;
         }
@@ -1402,6 +1403,15 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
         char *fname = end + 1;
         char *fname_end = strchr(fname, '|');
         *fname_end = '\0';
+
+        char *filename = fname_end + 1;
+        while (*filename != ' ') filename++;
+        filename++;
+        char *filename_end = filename;
+        while (*filename_end != '\n' && *filename_end != '\0') filename_end++;
+        *filename_end = '\0';
+
+        loc->filename = new std::string(filename);
 
         Function *containing_function = NULL;
         // Find containing function
@@ -1449,7 +1459,13 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
                         loc->line_no = inst.getDebugLoc().getLine();
                         assert(loc->line_no != 0);
 
-                        addIfNotExists(loc, F, locations);
+                        DebugLoc dl = inst.getDebugLoc();
+                        if (!dl.isUnknown()) {
+                            DIScope scope(dl.getScope(M.getContext()));
+                            loc->filename = new std::string(scope.getFilename().str());
+                            assert(!loc->filename->empty());
+                            addIfNotExists(loc, F, locations);
+                        }
                     }
                 }
             }
@@ -1474,11 +1490,11 @@ void Play::dumpLocationsToFile(const char *filename,
                 end = curr->end(); iter != end; iter++) {
             LabeledLoc *loc = *iter;
             if (loc->type == CALLSITE) {
-                fprintf(fp, "%d %d CALLSITE\n", loc->line_no, loc->id);
+                fprintf(fp, "%d %d CALLSITE %s\n", loc->line_no, loc->id, loc->filename->c_str());
                 callsite_dumps++;
             } else if (loc->type == STACK_REGISTRATION) {
-                fprintf(fp, "%d %d STACK_REGISTRATION\n", loc->line_no,
-                        loc->id);
+                fprintf(fp, "%d %d STACK_REGISTRATION %s\n", loc->line_no,
+                        loc->id, loc->filename->c_str());
                 stack_registration_dumps++;
             } else {
                 errs() << "Unexpected location type " << loc->type << "\n";
@@ -1525,7 +1541,7 @@ void Play::dumpGotoChainsToFile(const char *filename,
             // No stack variables and no function calls? Ignore it
         } else if (only_stack.empty()) {
             // No stack allocations, but has function calls
-            fprintf(fp, "%d FINAL ", start);
+            fprintf(fp, "%s %d FINAL ", only_calls[0]->filename->c_str(), start);
             for (unsigned int i = 0; i < only_calls.size(); i++) {
                 fprintf(fp, "%d ", only_calls[i]->id);
             }
@@ -1537,14 +1553,18 @@ void Play::dumpGotoChainsToFile(const char *filename,
              * calls checkpoint, so skip it entirely.
              */
         } else {
-            fprintf(fp, "%d START %d\n", start, only_stack[0]->id);
+            fprintf(fp, "%s %d START %d\n", only_stack[0]->filename->c_str(),
+                    start, only_stack[0]->id);
             for (unsigned int i = 1; i < only_stack.size(); i++) {
-                fprintf(fp, "%d INTERNAL %d\n", only_stack[i - 1]->line_no,
-                        only_stack[i]->id);
+                fprintf(fp, "%s %d INTERNAL %d\n",
+                        only_stack[i - 1]->filename->c_str(),
+                        only_stack[i - 1]->line_no, only_stack[i]->id);
             }
 
             if (!only_calls.empty()) {
-                fprintf(fp, "%d FINAL ", only_stack[only_stack.size() - 1]->line_no);
+                fprintf(fp, "%s %d FINAL ",
+                        only_stack[only_stack.size() - 1]->filename->c_str(),
+                        only_stack[only_stack.size() - 1]->line_no);
                 for (unsigned int i = 0; i < only_calls.size(); i++) {
                     fprintf(fp, "%d ", only_calls[i]->id);
                 }
@@ -1571,15 +1591,17 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
                     ++i) {
                 Instruction &inst = *i;
                 if (DbgDeclareInst *dbg = dyn_cast<DbgDeclareInst>(&inst)) {
-                    if (dbg->getDebugLoc().getLine() == 0) continue;
+                    DebugLoc dl = dbg->getDebugLoc();
+                    if (dl.isUnknown()) continue;
+                    DIScope scope(dl.getScope(M.getContext()));
 
                     MDNode *var = dbg->getVariable();
                     DIVariable di_var(var);
                     std::string *unique_varname = get_unique_varname(
                             di_var.getName().str(), F->getName().str(),
                             &found_variables);
-                    fprintf(fp, "%d %s\n", dbg->getDebugLoc().getLine(),
-                            unique_varname->c_str());
+                    fprintf(fp, "%d %s %s\n", dl.getLine(),
+                            unique_varname->c_str(), scope.getFilename().str().c_str());
                 }
             }
         }
