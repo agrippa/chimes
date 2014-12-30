@@ -116,9 +116,11 @@ namespace {
         void dumpFunctionStartingLineTo(const char *filename,
                 std::map<int, std::string> functions);
 
-        void findStartingLinesForAllFunctions(Module &M);
-        void findFunctionExits(Module &M);
-        void findStackAllocations(Module &M);
+        void findStartingLinesForAllFunctions(Module &M,
+                const char *output_file);
+        void findFunctionExits(Module &M, const char *output_file);
+        void findStackAllocations(Module &M, const char *output_file,
+                const char *struct_info_filename);
         int findMinimumLineInBasicBlock(BasicBlock *curr);
         void traverseUntilNotForIncOrCond(BasicBlock *curr,
                 std::set<int> *to_insert);
@@ -126,7 +128,7 @@ namespace {
                 BasicBlock::iterator end, std::vector<Instruction *> users,
                 std::set<int> *to_insert, Module &M);
         int findStartingLineForFunction(Function *F, Module &M);
-        void findHeapAllocations(Module &M);
+        void findHeapAllocations(Module &M, const char *output_file);
         int searchUpDefsForAliasSetGroup(Value *val, int nesting);
         std::map<Function *, std::vector<LabeledLoc *> *> *collectUniqueIDs(
                 Module &M, const char *decl_info_name);
@@ -849,7 +851,7 @@ int Play::findStartingLineForFunction(Function *F, Module &M) {
     return (*function_to_start_line)[F->getName().str()];
 }
 
-void Play::findStartingLinesForAllFunctions(Module &M) {
+void Play::findStartingLinesForAllFunctions(Module &M, const char *output_file) {
     /*
      * This assumes that for all functions, their declaration and body are on
      * different lines. This may not be true for all functions.
@@ -882,12 +884,11 @@ void Play::findStartingLinesForAllFunctions(Module &M) {
         functions[min_func_line] = F->getName();
     }
 
-    dumpFunctionStartingLineTo("func_start.info", functions);
+    dumpFunctionStartingLineTo(output_file, functions);
 }
 
-void Play::findFunctionExits(Module &M) {
-    const char *exit_filename = "exit.info";
-    FILE *fp = fopen(exit_filename, "w");
+void Play::findFunctionExits(Module &M, const char *output_file) {
+    FILE *fp = fopen(output_file, "w");
     std::vector<int> exits;
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
@@ -1080,8 +1081,9 @@ std::string *get_unique_varname(std::string varname, std::string fname,
 }
 
 //TODO I don't think this supports stack-allocated arrays yet
-void Play::findStackAllocations(Module &M) {
-    FILE *fp = fopen("stack.info", "w");
+void Play::findStackAllocations(Module &M, const char *output_file,
+        const char *struct_info_filename) {
+    FILE *fp = fopen(output_file, "w");
     DataLayout *layout = new DataLayout(&M);
     std::set<std::string> found_variables;
 
@@ -1089,7 +1091,7 @@ void Play::findStackAllocations(Module &M) {
 
     std::map<std::string, std::vector<std::string>> *structFields =
         getStructFieldNames(M);
-    dumpStructInfoToFile("struct.info", structFields);
+    dumpStructInfoToFile(struct_info_filename, structFields);
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
@@ -1284,9 +1286,8 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
     }
 }
 
-void Play::findHeapAllocations(Module &M) {
-    const char *filename = "heap.info";
-    FILE *fp = fopen(filename, "w");
+void Play::findHeapAllocations(Module &M, const char *output_file) {
+    FILE *fp = fopen(output_file, "w");
     std::set<int> found_mallocs;
 
     std::map<std::string, std::vector<std::string>> *structFields =
@@ -1722,11 +1723,11 @@ bool Play::runOnModule(Module &M) {
      * variables belonging to it can be ignored now.
      */
 
-    findStartingLinesForAllFunctions(M);
+    findStartingLinesForAllFunctions(M, "func_start.info");
 
-    findFunctionExits(M);
+    findFunctionExits(M, "exit.info");
 
-    findStackAllocations(M);
+    findStackAllocations(M, "stack.info", "struct.info");
 
     /*
      * Next up: intercept all malloc calls and replace them with a custom
@@ -1734,7 +1735,7 @@ bool Play::runOnModule(Module &M) {
      * this allocation belongs to.
      */
 
-    findHeapAllocations(M);
+    findHeapAllocations(M, "heap.info");
 
     /*
      * Now: this next bit is in support of the resumability. We start by
