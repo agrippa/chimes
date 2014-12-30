@@ -42,11 +42,58 @@ def getStructDict(struct_file):
     return d
 
 
-def splitVariableDeclarations(input_file_contents, declarations):
+def isInt(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+
+def buildLineNumberToIndexMapping(input_file_contents, input_file, original_file):
+    d = {}
+    require_remapping = (input_file != original_file)
+    original_file = '"' + original_file + '"'
+
+    if not require_remapping:
+        for line_no in range(1, len(input_file_contents) + 1):
+            d[line_no] = line_no - 1
+    else:
+        curr_file = ''
+        curr_line = 1
+        index = 0
+
+        for line in input_file_contents:
+            tokens = line.split()
+
+            if len(tokens) == 3 and tokens[0] == '#' and isInt(tokens[1]):
+                curr_file = tokens[2]
+                curr_line = int(tokens[1])
+            elif len(tokens) == 2 and tokens[0] == '#' and isInt(tokens[1]):
+                curr_line = int(tokens[1])
+            else:
+                if curr_file == original_file:
+                    if curr_line not in d.keys():
+                    # # Line no. 1 seems to be a special case and may appear multiple times. We'll just take the last one
+                    # assert curr_line == 1 or curr_line not in d.keys(), 'line no = ' + str(curr_line) + \
+                    #     ' has mapping ' + str(d[curr_line]) + ', trying to insert ' + \
+                    #     'mapping to ' + str(index)
+                        d[curr_line] = index
+                        curr_line += 1
+            index += 1
+
+    return d
+
+
+def splitVariableDeclarations(input_file_contents, declarations, line_no_to_index):
     # remove mixed declaration, definition to avoid jumping over variables with gotos
-    line_index = 0
-    for line in input_file_contents:
-        if isDeclaration(line_index + 1, declarations) and '=' in line:
+
+    # Make sure to only iterate over real source lines
+    for line_no in line_no_to_index.keys():
+        line_index = line_no_to_index[line_no]
+        line = input_file_contents[line_index]
+
+        if isDeclaration(line_no, declarations) and '=' in line:
             index = 0
             new_decl_line = ''
             var_to_initializer = {}
@@ -80,7 +127,6 @@ def splitVariableDeclarations(input_file_contents, declarations):
             for varname in var_to_initializer.keys():
                 new_decl_line = new_decl_line + varname + ' = ' + var_to_initializer[varname] + '; '
             input_file_contents[line_index] = new_decl_line
-        line_index += 1
 
 
 def getStateChangeInsertions(lines_info_file):
@@ -115,7 +161,7 @@ def getStateChangeInsertions(lines_info_file):
     return lines_to_insert
 
 
-def getGotoInsertions(goto_file, input_contents, declarations):
+def getGotoInsertions(goto_file, declarations):
     goto_fp = open(goto_file, 'r')
     insertions = {}
 
@@ -132,7 +178,7 @@ def getGotoInsertions(goto_file, input_contents, declarations):
         elif line_type == 'INTERNAL':
             if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
-            assert line_no not in insertions, str(line_no) + ' - ' + input_contents[line_no - 1]
+            assert line_no not in insertions, str(line_no)
 
             lbl_id = int(tokens[2])
             insertions[line_no] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
@@ -198,7 +244,7 @@ def getFunctionExitInsertions(function_exits_file):
     return insertions
 
 
-def getStackInsertions(stack_info_file, input_contents, line_to_decl, decl_to_line):
+def getStackInsertions(stack_info_file, line_to_decl, decl_to_line):
     stack_info_fp = open(stack_info_file, 'r')
     insertions = {}
     for line in stack_info_fp:
@@ -246,7 +292,8 @@ def getStackInsertions(stack_info_file, input_contents, line_to_decl, decl_to_li
     return insertions
 
 
-def getMallocInsertions(heap_info_file, input_file_contents):
+# WARNING: Modifies the contents of input_file_contents inline, so must be made aware of line numbers
+def getMallocInsertions(heap_info_file, input_file_contents, line_no_to_index):
     heap_info_fp = open(heap_info_file, 'r')
 
     for line in heap_info_fp:
@@ -255,8 +302,10 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         alias_group = int(tokens[1])
         fname = tokens[2]
         have_type_info = len(tokens) > 3
-        
-        file_line = input_file_contents[line_no - 1]
+      
+        assert line_no in line_no_to_index.keys(), str(line_no)
+        line_index = line_no_to_index[line_no]
+        file_line = input_file_contents[line_index].strip()
 
         # Only support single-line memory management calls for now
         assert fname in file_line, file_line
@@ -303,7 +352,7 @@ def getMallocInsertions(heap_info_file, input_file_contents):
         else:
             new_line = new_line + ');'
 
-        input_file_contents[line_no - 1] = new_line
+        input_file_contents[line_index] = new_line
 
     heap_info_fp.close()
 
@@ -337,7 +386,7 @@ def getInitializationInsertions(functions_start_file, structs):
     return insertions
 
 
-def getLabelInsertions(loc_info_file, input_file_contents, declarations):
+def getLabelInsertions(loc_info_file, input_file_contents, declarations, line_no_to_index):
     loc_info_fp = open(loc_info_file, 'r')
 
     insertions = {}
@@ -352,7 +401,10 @@ def getLabelInsertions(loc_info_file, input_file_contents, declarations):
             if line_no not in insertions.keys():
                 insertions[line_no] = ''
             insertions[line_no] += 'calling(' + str(loc_id) + '); '
-            input_file_contents[line_no - 1] = 'lbl_' + str(loc_id) + ':' + input_file_contents[line_no - 1]
+
+            assert line_no in line_no_to_index.keys(), str(line_no)
+            line_index = line_no_to_index[line_no]
+            input_file_contents[line_index] = 'lbl_' + str(loc_id) + ':' + input_file_contents[line_index]
 
         if loc_type == 'STACK_REGISTRATION' or loc_type == 'BOTH':
             if isDeclaration(line_no, declarations):
@@ -375,22 +427,25 @@ def getInputFileContents(input_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 12:
-        print 'usage: InsertTrackingCalls.py file.c lines.info functions.info exits.info stack.info heap.info loc.info goto.info struct.info decl.info out.c'
+    if len(sys.argv) != 13:
+        print 'usage: InsertTrackingCalls.py file.c original.c/cu lines.info functions.info exits.info stack.info heap.info loc.info goto.info struct.info decl.info out.c'
         sys.exit(1)
 
     input_file = sys.argv[1]
-    lines_info_file = sys.argv[2]
-    functions_start_file = sys.argv[3]
-    function_exits_file = sys.argv[4]
-    stack_info_file = sys.argv[5]
-    heap_info_file = sys.argv[6]
-    loc_info_file = sys.argv[7]
-    goto_file = sys.argv[8]
-    struct_file = sys.argv[9]
-    decl_file = sys.argv[10]
-    out_file = sys.argv[11]
+    original_file = sys.argv[2]
+    lines_info_file = sys.argv[3]
+    functions_start_file = sys.argv[4]
+    function_exits_file = sys.argv[5]
+    stack_info_file = sys.argv[6]
+    heap_info_file = sys.argv[7]
+    loc_info_file = sys.argv[8]
+    goto_file = sys.argv[9]
+    struct_file = sys.argv[10]
+    decl_file = sys.argv[11]
+    out_file = sys.argv[12]
 
+    input_file_contents = getInputFileContents(input_file)
+    line_no_to_index = buildLineNumberToIndexMapping(input_file_contents, input_file, original_file)
     structs = getStructDict(struct_file)
     line_to_decl, decl_to_line = getDeclarations(decl_file)
 
@@ -398,14 +453,15 @@ if __name__ == '__main__':
     initialization_inserts = getInitializationInsertions(functions_start_file, structs)
     function_start_inserts = getFunctionStartInsertions(functions_start_file)
     function_exit_inserts = getFunctionExitInsertions(function_exits_file)
-    input_file_contents = getInputFileContents(input_file)
-    stack_inserts = getStackInsertions(stack_info_file, input_file_contents, line_to_decl,
-            decl_to_line)
-    getMallocInsertions(heap_info_file, input_file_contents)
-    goto_inserts = getGotoInsertions(goto_file, input_file_contents, line_to_decl)
-    stack_tracking_inserts = getLabelInsertions(loc_info_file, input_file_contents, line_to_decl)
+    stack_inserts = getStackInsertions(stack_info_file, line_to_decl, decl_to_line)
+    # WARNING: Modifies the contents of input_file_contents inline, so must be made aware of line numbers
+    getMallocInsertions(heap_info_file, input_file_contents, line_no_to_index)
+    goto_inserts = getGotoInsertions(goto_file, line_to_decl)
+    # WARNING: Modifies the contents of input_file_contents inline, so must be made aware of line numbers
+    stack_tracking_inserts = getLabelInsertions(loc_info_file, input_file_contents, line_to_decl, line_no_to_index)
 
-    splitVariableDeclarations(input_file_contents, line_to_decl)
+    # WARNING: Modifies the contents of input_file_contents inline, so must be made aware of line numbers
+    splitVariableDeclarations(input_file_contents, line_to_decl, line_no_to_index)
 
     all_insertions = [initialization_inserts,
             stack_tracking_inserts, function_start_inserts, stack_inserts, state_change_inserts,
@@ -414,12 +470,15 @@ if __name__ == '__main__':
     for insert_list in all_insertions:
         all_lines = all_lines.union(set(insert_list.keys()))
 
+    # WARNING: Modifies the contents of input_file_contents inline, so must be made aware of line numbers
     for line_no in reversed(sorted(list(all_lines))):
         to_insert = ''
         for insert_list in all_insertions:
             if line_no in insert_list.keys():
                 to_insert = to_insert + insert_list[line_no]
-        input_file_contents.insert(line_no - 1, to_insert.strip())
+
+        line_index = line_no_to_index[line_no]
+        input_file_contents.insert(line_index, to_insert.strip())
 
     out_file_fp = open(out_file, 'w')
     for line in input_file_contents:
