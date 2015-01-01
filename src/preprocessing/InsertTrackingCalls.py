@@ -140,11 +140,12 @@ def getStateChangeInsertions(lines_info_file, original_file):
         tokens = line.split(':')
         filename = tokens[0]
         line_no = int(tokens[1].strip())
+        col = int(tokens[2].strip())
 
         if filename != original_file:
             continue
 
-        array = tokens[2]
+        array = tokens[3]
         array = array[array.find('{') + 2:]
         array = array[:array.find('}') - 1]
 
