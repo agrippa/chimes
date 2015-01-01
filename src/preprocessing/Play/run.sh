@@ -26,6 +26,9 @@ if [[ $# != 2 ]]; then
     exit 1
 fi
 
+OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
+CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
+
 INFILE=$1
 OUT_DIR=$2
 BITCODE_FILE=tmp.bc
@@ -52,8 +55,8 @@ if [[ -z "${LLVM_INSTALL}" ]]; then
     exit 1
 fi
 
-clang -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -g
-opt -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
+$CLANG -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -g
+$OPT -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
 rm ${OBJ_FILE}
 
 python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} ${INFILE} \
