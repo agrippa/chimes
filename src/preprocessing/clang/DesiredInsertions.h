@@ -4,6 +4,21 @@
 #include <vector>
 #include <string>
 
+class StructFields {
+public:
+    StructFields(std::string set_name) : name(set_name) {}
+    void add_field(std::string &field) { fields.push_back(field); }
+
+    std::string get_name() { return name; }
+    int num_fields() { return fields.size(); }
+    std::vector<std::string>::iterator begin() { return fields.begin(); }
+    std::vector<std::string>::iterator end() { return fields.end(); }
+
+private:
+    std::string name;
+    std::vector<std::string> fields;
+};
+
 class MatchedLocation {
 public:
     MatchedLocation(int set_line, int set_col, std::string set_filename) :
@@ -15,6 +30,18 @@ public:
 private:
     int line, col;
     std::string filename;
+};
+
+class FunctionStartInsertion {
+public:
+    FunctionStartInsertion(std::string set_func, int set_line) : func(set_func),
+            line_no(set_line) {}
+    std::string get_func() { return func; }
+    int get_line() { return line_no; }
+
+private:
+    std::string func;
+    int line_no;
 };
 
 class StateChangeInsertion {
@@ -38,18 +65,33 @@ private:
 
 class DesiredInsertions {
 public:
-    DesiredInsertions(const char *lines_info_filename) :
-            lines_info_file(lines_info_filename) {
+    DesiredInsertions(const char *lines_info_filename,
+            const char *func_start_info_filename, const char *struct_info_filename) :
+            lines_info_file(lines_info_filename),
+            func_start_info_file(func_start_info_filename),
+            struct_info_file(struct_info_filename) {
         state_change_insertions = parseStateChangeInsertions();
+        function_starts = parseFunctionStartInsertions(&main_line);
+        struct_fields = parseStructs();
     }
     bool contains(int line, int col, std::string &filename);
     std::vector<int> *get_groups(int line, int col, std::string &filename);
+    int get_main_line() { return main_line; }
+    std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
+
+    FunctionStartInsertion *is_function_start(int line);
 
 private:
-        std::string lines_info_file;
+        std::string lines_info_file, func_start_info_file, struct_info_file;
         std::vector<StateChangeInsertion *> *state_change_insertions;
+        std::vector<FunctionStartInsertion *> *function_starts;
+        int main_line;
+        std::vector<StructFields *> *struct_fields;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
+        std::vector<FunctionStartInsertion *> *parseFunctionStartInsertions(
+                int *main_line);
+        std::vector<StructFields *> *parseStructs();
 };
 
 #endif

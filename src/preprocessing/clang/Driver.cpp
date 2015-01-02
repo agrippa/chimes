@@ -33,6 +33,12 @@ using namespace clang::tooling;
 static llvm::cl::OptionCategory ToolingSampleCategory("numdebug options");
 static llvm::cl::opt<std::string> line_info_file("l",
         llvm::cl::desc("Line info filename"), llvm::cl::value_desc("line_file"));
+static llvm::cl::opt<std::string> function_start_file("f",
+        llvm::cl::desc("Function start info filename"),
+        llvm::cl::value_desc("function_start_file"));
+static llvm::cl::opt<std::string> struct_file("s",
+        llvm::cl::desc("Struct info filename"),
+        llvm::cl::value_desc("struct_file"));
 
 DesiredInsertions *insertions = NULL;
 
@@ -87,7 +93,8 @@ int main(int argc, const char **argv) {
   CommonOptionsParser op(argc, argv, ToolingSampleCategory);
   ClangTool Tool(op.getCompilations(), op.getSourcePathList());
 
-  insertions = new DesiredInsertions(line_info_file.c_str());
+  insertions = new DesiredInsertions(line_info_file.c_str(),
+          function_start_file.c_str(), struct_file.c_str());
 
   return Tool.run(newFrontendActionFactory<NumDebugFrontendAction>().get());
 }
