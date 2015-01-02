@@ -42,6 +42,15 @@ static llvm::cl::opt<std::string> struct_file("s",
 static llvm::cl::opt<std::string> function_exits_file("x",
         llvm::cl::desc("Function exits info filename"),
         llvm::cl::value_desc("function_exits_file"));
+static llvm::cl::opt<std::string> stack_allocs_file("a",
+        llvm::cl::desc("Stack allocations info filename"),
+        llvm::cl::value_desc("stack_allocs_file"));
+static llvm::cl::opt<std::string> original_file("i",
+        llvm::cl::desc("Original input file"),
+        llvm::cl::value_desc("original_file"));
+static llvm::cl::opt<std::string> declarations_file("d",
+        llvm::cl::desc("Declarations file"),
+        llvm::cl::value_desc("decl_file"));
 
 DesiredInsertions *insertions = NULL;
 
@@ -96,9 +105,11 @@ int main(int argc, const char **argv) {
   CommonOptionsParser op(argc, argv, ToolingSampleCategory);
   ClangTool Tool(op.getCompilations(), op.getSourcePathList());
 
-  insertions = new DesiredInsertions(line_info_file.c_str(),
+  insertions = new DesiredInsertions(original_file.c_str(),
+          line_info_file.c_str(),
           function_start_file.c_str(), struct_file.c_str(),
-          function_exits_file.c_str());
+          function_exits_file.c_str(), stack_allocs_file.c_str(),
+          declarations_file.c_str());
 
   return Tool.run(newFrontendActionFactory<NumDebugFrontendAction>().get());
 }

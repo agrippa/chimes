@@ -1654,7 +1654,7 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
                     std::string *unique_varname = get_unique_varname(
                             di_var.getName().str(), F->getName().str(),
                             &found_variables);
-                    fprintf(fp, "%d %s %s\n", dl.getLine(),
+                    fprintf(fp, "%d %s %s\n", dl.getLine(), dl.getCol(),
                             unique_varname->c_str(), scope.getFilename().str().c_str());
                 }
             }

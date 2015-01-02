@@ -20,6 +20,9 @@ run:
         -f ${NUM_DEBUG_HOME}/src/examples/cpp/func_start.info \
         -s ${NUM_DEBUG_HOME}/src/examples/cpp/struct.info \
         -x ${NUM_DEBUG_HOME}/src/examples/cpp/exit.info \
+        -i ${NUM_DEBUG_HOME}/src/examples/cpp/test.cpp \
+        -d ${NUM_DEBUG_HOME}/src/examples/cpp/decl.info \
+        -a ${NUM_DEBUG_HOME}/src/examples/cpp/stack.info \
         /Users/mgrossman/dev/num-debug/src/examples/cpp/test.cpp --
 
 clean:
