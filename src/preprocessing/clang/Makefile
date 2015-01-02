@@ -15,7 +15,11 @@ Driver.o: Driver.cpp
 	${GXX} ${GXX_FLAGS} ${INCLUDES} Driver.cpp --compile -fPIC -o Driver.o
 
 run:
-	./${EXE} -extra-arg="-I../../libnumdebug" -l ${NUM_DEBUG_HOME}/src/examples/cpp/lines.info /Users/mgrossman/dev/num-debug/src/examples/cpp/test.cpp --
+	./${EXE} -extra-arg="-I../../libnumdebug" \
+        -l ${NUM_DEBUG_HOME}/src/examples/cpp/lines.info \
+        -f ${NUM_DEBUG_HOME}/src/examples/cpp/func_start.info \
+        -s ${NUM_DEBUG_HOME}/src/examples/cpp/struct.info \
+        /Users/mgrossman/dev/num-debug/src/examples/cpp/test.cpp --
 
 clean:
 	rm *.o ${EXE}

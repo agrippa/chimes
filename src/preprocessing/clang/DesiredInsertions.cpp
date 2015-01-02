@@ -13,9 +13,60 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
-std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertions() {
-    llvm::errs() << "Initializing from " << lines_info_file << "\n";
+std::vector<StructFields *> *DesiredInsertions::parseStructs() {
+    std::ifstream fp;
+    fp.open(func_start_info_file, std::ios::in);
+    std::vector<StructFields *> *fields = new std::vector<StructFields *>();
 
+    std::string line;
+    while (getline(fp, line)) {
+        int name_end = line.find(' ');
+        std::string name = line.substr(0, name_end);
+        StructFields *fields = new StructFields(name);
+
+        line = line.substr(name_end + 1);
+        while (line.find(' ') != std::string::npos) {
+            int end = line.find(' ');
+            std::string field = line.substr(0, end);
+            fields->add_field(field);
+
+            line = line.substr(end + 1);
+        }
+        fields->add_field(line);
+    }
+    return fields;
+}
+
+std::vector<FunctionStartInsertion *> *DesiredInsertions::parseFunctionStartInsertions(int *main_line) {
+    std::ifstream fp;
+    fp.open(func_start_info_file, std::ios::in);
+
+    std::vector<FunctionStartInsertion *> *result =
+        new std::vector<FunctionStartInsertion *>();
+    *main_line = -1;
+
+    std::string line;
+    while (getline(fp, line)) {
+        // 13 main
+        int line_end = line.find(' ');
+        std::string line_no_str = line.substr(0, line_end);
+        int line_no = atoi(line_no_str.c_str());
+        line = line.substr(line_end + 1);
+
+        FunctionStartInsertion *insert =
+            new FunctionStartInsertion(line, line_no);
+        result->push_back(insert);
+
+        if (line == "main") {
+            assert(*main_line == -1);
+            *main_line = line_no;
+        }
+    }
+
+    return result;
+}
+
+std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertions() {
     std::ifstream fp;
     fp.open(lines_info_file, std::ios::in);
 
@@ -86,4 +137,13 @@ std::vector<int> *DesiredInsertions::get_groups(int line, int col,
         }
     }
     assert(false);
+}
+
+FunctionStartInsertion *DesiredInsertions::is_function_start(int line) {
+    for (std::vector<FunctionStartInsertion *>::iterator i =
+            function_starts->begin(), e = function_starts->end(); i != e; i++) {
+        FunctionStartInsertion *s = *i;
+        if (s->get_line() == line) return s;
+    }
+    return NULL;
 }

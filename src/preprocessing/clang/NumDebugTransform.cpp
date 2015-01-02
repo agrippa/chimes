@@ -6,6 +6,7 @@
 
 extern DesiredInsertions *insertions;
 static std::vector<MatchedLocation *> already_matched;
+static bool found_main = false;
 
 bool matched(int line, int col, std::string &filename) {
     for (std::vector<MatchedLocation *>::iterator i = already_matched.begin(),
@@ -34,17 +35,9 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
         unsigned end_line = SM.getPresumedLineNumber(end);
         unsigned end_col = SM.getPresumedColumnNumber(end);
         std::string filename = SM.getFilename(start);
-        // llvm::errs() << "Visiting " << filename << ":" << start_line << ":" <<
-        //     start_col << " -> " << end_line << ":" << end_col << " \"";
-        // s->dump();
-        // llvm::errs() << "\"\n";
 
         if (insertions->contains(start_line, start_col, filename) &&
                 !matched(start_line, start_col, filename)) {
-            llvm::errs() << "Found a match for " << filename << ":" <<
-                start_line << ":" << start_col << "\n";
-            s->dump();
-            llvm::errs() << "\n";
             mark_matched(start_line, start_col, filename);
 
             std::vector<int> *groups = insertions->get_groups(start_line,
@@ -56,7 +49,6 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
                 ss << ", " << *i;
             }
             ss << ")";
-            llvm::errs() << "parent: " << parent->getStmtClassName() << "\n";
             switch (parent->getStmtClass()) {
                 case clang::Stmt::IfStmtClass: {
                     ss << " || ";
@@ -83,6 +75,39 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
                     break;
                 }
             }
+        }
+
+        if (!found_main && start_line == insertions->get_main_line()) {
+            clang::Stmt::const_child_iterator iter = s->child_begin();
+            const clang::Stmt *child = *iter;
+            std::stringstream ss;
+
+            ss << "init_numdebug(" << insertions->get_struct_fields()->size();
+            for (std::vector<StructFields *>::iterator i =
+                    insertions->get_struct_fields()->begin(), e =
+                    insertions->get_struct_fields()->end(); i != e; i++) {
+                StructFields *fields = *i;
+
+                ss << ", \"" << fields->get_name() << "\", " <<
+                    fields->num_fields();
+                for (std::vector<std::string>::iterator ii = fields->begin(),
+                        ee = fields->end(); ii != ee; ii++) {
+                    std::string field_name = *ii;
+                    ss << ", (int)offsetof(struct " << fields->get_name() <<
+                        ", " << field_name << ")";
+                }
+            }
+            ss << "); ";
+            TheRewriter.InsertText(child->getLocStart(), ss.str(), true, true);
+            found_main = true;
+        }
+
+        if (FunctionStartInsertion *insert =
+                insertions->is_function_start(start_line)) {
+            clang::Stmt::const_child_iterator iter = s->child_begin();
+            const clang::Stmt *child = *iter;
+            TheRewriter.InsertText(child->getLocStart(), "new stack(); ", true,
+                    true);
         }
     }
 
