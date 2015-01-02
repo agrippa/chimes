@@ -13,6 +13,19 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
+std::vector<int> *DesiredInsertions::parseFunctionExits() {
+    std::vector<int> *result = new std::vector<int>();
+    std::ifstream fp;
+    fp.open(function_exits_file, std::ios::in);
+
+    std::string line;
+    while (getline(fp, line)) {
+        int line_no = atoi(line.c_str());
+        result->push_back(line_no);
+    }
+    return result;
+}
+
 std::vector<StructFields *> *DesiredInsertions::parseStructs() {
     std::ifstream fp;
     fp.open(func_start_info_file, std::ios::in);
@@ -146,4 +159,14 @@ FunctionStartInsertion *DesiredInsertions::is_function_start(int line) {
         if (s->get_line() == line) return s;
     }
     return NULL;
+}
+
+
+bool DesiredInsertions::is_function_exit(int line) {
+    for (std::vector<int>::iterator i = function_exits->begin(),
+            e = function_exits->end(); i != e; i++) {
+        int line_no = *i;
+        if (line_no == line) return true;
+    }
+    return false;
 }

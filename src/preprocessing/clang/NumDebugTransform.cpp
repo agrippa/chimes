@@ -6,6 +6,7 @@
 
 extern DesiredInsertions *insertions;
 static std::vector<MatchedLocation *> already_matched;
+static std::vector<int> matched_exits;
 static bool found_main = false;
 
 bool matched(int line, int col, std::string &filename) {
@@ -106,8 +107,16 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
                 insertions->is_function_start(start_line)) {
             clang::Stmt::const_child_iterator iter = s->child_begin();
             const clang::Stmt *child = *iter;
-            TheRewriter.InsertText(child->getLocStart(), "new stack(); ", true,
+            TheRewriter.InsertText(child->getLocStart(), "new_stack(); ", true,
                     true);
+        }
+
+        if (insertions->is_function_exit(start_line) &&
+                std::find(matched_exits.begin(), matched_exits.end(),
+                    start_line) == matched_exits.end()) {
+            TheRewriter.InsertText(start, "rm_stack(); ", true,
+                    true);
+            matched_exits.push_back(start_line);
         }
     }
 

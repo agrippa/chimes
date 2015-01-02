@@ -39,6 +39,9 @@ static llvm::cl::opt<std::string> function_start_file("f",
 static llvm::cl::opt<std::string> struct_file("s",
         llvm::cl::desc("Struct info filename"),
         llvm::cl::value_desc("struct_file"));
+static llvm::cl::opt<std::string> function_exits_file("x",
+        llvm::cl::desc("Function exits info filename"),
+        llvm::cl::value_desc("function_exits_file"));
 
 DesiredInsertions *insertions = NULL;
 
@@ -94,7 +97,8 @@ int main(int argc, const char **argv) {
   ClangTool Tool(op.getCompilations(), op.getSourcePathList());
 
   insertions = new DesiredInsertions(line_info_file.c_str(),
-          function_start_file.c_str(), struct_file.c_str());
+          function_start_file.c_str(), struct_file.c_str(),
+          function_exits_file.c_str());
 
   return Tool.run(newFrontendActionFactory<NumDebugFrontendAction>().get());
 }
