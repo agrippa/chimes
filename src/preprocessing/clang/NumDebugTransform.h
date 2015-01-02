@@ -18,6 +18,7 @@ public:
 private:
     clang::Rewriter &TheRewriter;
     clang::SourceManager &SM;
+    const clang::Stmt *parent;
 
     bool alreadyMatched(int line, int col, std::string &filename);
 };
