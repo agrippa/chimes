@@ -27,7 +27,7 @@ void new_stack();
 void rm_stack();
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...);
-void alias_group_changed(int ngroups, ...);
+int alias_group_changed(int ngroups, ...);
 void *malloc_wrapper(size_t nbytes, int group);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
@@ -353,13 +353,14 @@ void register_stack_var(const char *mangled_name, const char *full_type,
     program_stack.back()->add_stack_var(new_var);
 }
 
-void alias_group_changed(int ngroups, ...) {
+int alias_group_changed(int ngroups, ...) {
     va_list vl;
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
         int group = va_arg(vl, int);
         changed_groups.insert(group);
     }
+    return 0;
 }
 
 static void malloc_helper(void *new_ptr, size_t nbytes, int group,

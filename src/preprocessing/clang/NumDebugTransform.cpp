@@ -1,5 +1,8 @@
+#include <sstream>
+
 #include "NumDebugTransform.h"
 #include "DesiredInsertions.h"
+#include <clang/AST/Stmt.h>
 
 extern DesiredInsertions *insertions;
 static std::vector<MatchedLocation *> already_matched;
@@ -43,15 +46,51 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
             s->dump();
             llvm::errs() << "\n";
             mark_matched(start_line, start_col, filename);
-        }
 
-        // TheRewriter.InsertText(start, "hello!", true, true);
+            std::vector<int> *groups = insertions->get_groups(start_line,
+                    start_col, filename);
+            std::stringstream ss;
+            ss << "alias_group_changed(" << groups->size();
+            for (std::vector<int>::iterator i = groups->begin(),
+                    e = groups->end(); i != e; i++) {
+                ss << ", " << *i;
+            }
+            ss << ")";
+            llvm::errs() << "parent: " << parent->getStmtClassName() << "\n";
+            switch (parent->getStmtClass()) {
+                case clang::Stmt::IfStmtClass: {
+                    ss << " || ";
+                    TheRewriter.InsertText(start, ss.str(), true, true);
+                    break;
+                }
+                case clang::Stmt::ForStmtClass: {
+                    const clang::ForStmt *f = clang::dyn_cast<clang::ForStmt>(parent);
+                    if (f->getInit() == s || f->getInc() == s) {
+                        ss << ", ";
+                        TheRewriter.InsertText(start, ss.str(), true, true);
+                    } else if (f->getCond() == s) {
+                        llvm::errs() << "Unsupported\n";
+                        assert(false);
+                    } else {
+                        llvm::errs() << "Unsupported\n";
+                        assert(false);
+                    }
+                    break;
+                }
+                default: {
+                    ss << "; ";
+                    TheRewriter.InsertText(start, ss.str(), true, true);
+                    break;
+                }
+            }
+        }
     }
 
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
             e = s->child_end(); i != e; i++) {
         const clang::Stmt *child = *i;
         if (child != NULL) {
+            parent = s;
             VisitStmt(child);
         }
     }

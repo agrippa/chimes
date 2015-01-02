@@ -110,8 +110,7 @@ namespace {
         void collectLineToGroupsMapping(Module &M);
         void printLineToGroupsMapping();
         void collectLineToGroupsMappingInFunction(BasicBlock *bb,
-                std::set<BasicBlock *> &visited, std::set<int> *parent_groups,
-                std::string filename);
+                std::set<BasicBlock *> &visited, std::string filename);
         void unionGroups(int line, int col, std::string filename, std::set<int> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
         void dumpFunctionStartingLineTo(const char *filename,
@@ -599,29 +598,10 @@ void Play::findMinimumLineInBasicBlock(BasicBlock *curr, int *out_line, int *out
     *out_col = mincol;
 }
 
+// TODO need to account for function calls?
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
-        std::set<BasicBlock *>& visited, std::set<int> *parent_groups,
-        std::string filename) {
+        std::set<BasicBlock *>& visited, std::string filename) {
     assert(curr != NULL);
-
-    if (parent_groups != NULL && parent_groups->size() > 0) {
-
-        if (curr->getName().str().find("for.inc") == 0 ||
-                curr->getName().str().find("for.cond") == 0) {
-
-            TerminatorInst *term = curr->getTerminator();
-            for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-                BasicBlock *child = term->getSuccessor(i);
-                collectLineToGroupsMappingInFunction(child, visited,
-                        parent_groups, filename);
-            }
-
-        } else {
-            int minline, col;
-            findMinimumLineInBasicBlock(curr, &minline, &col);
-            unionGroups(minline, col, filename, parent_groups);
-        }
-    }
 
     // Only analyze each basic block once
     if (visited.find(curr) != visited.end()) {
@@ -657,27 +637,14 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
     assert(maxline != -1);
 
     TerminatorInst *term = curr->getTerminator();
+    if (groups->size() > 0) {
+        unionGroups(maxline, maxcol, filename, groups);
+    }
 
-    // if (curr->getName().str().find("for.inc") == 0 ||
-    //         curr->getName().str().find("for.cond") == 0) {
-
-    //     for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-    //         BasicBlock *child = term->getSuccessor(i);
-    //         collectLineToGroupsMappingInFunction(child, visited, groups,
-    //                 filename);
-    //     }
-
-    // } else {
-        if (groups->size() > 0) {
-            unionGroups(maxline, maxcol, filename, groups);
-        }
-
-        for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-            BasicBlock *child = term->getSuccessor(i);
-            collectLineToGroupsMappingInFunction(child, visited, NULL,
-                    filename);
-        }
-    // }
+    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+        BasicBlock *child = term->getSuccessor(i);
+        collectLineToGroupsMappingInFunction(child, visited, filename);
+    }
 }
 
 std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
@@ -711,8 +678,7 @@ void Play::collectLineToGroupsMapping(Module& M) {
 
             std::string filename = findFilenameContainingBB(entry, M);
 
-            collectLineToGroupsMappingInFunction(&entry, visited, NULL,
-                    filename);
+            collectLineToGroupsMappingInFunction(&entry, visited, filename);
         }
     }
 }

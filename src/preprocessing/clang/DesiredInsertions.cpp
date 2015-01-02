@@ -72,3 +72,18 @@ bool DesiredInsertions::contains(int line, int col, std::string &filename) {
     }
     return false;
 }
+
+
+std::vector<int> *DesiredInsertions::get_groups(int line, int col,
+        std::string &filename) {
+    for (std::vector<StateChangeInsertion *>::iterator i =
+            state_change_insertions->begin(), e =
+            state_change_insertions->end(); i != e; i++) {
+        StateChangeInsertion *insert = *i;
+        if (insert->get_line() == line && insert->get_col() == col &&
+                insert->get_filename() == filename) {
+            return insert->get_groups();
+        }
+    }
+    assert(false);
+}

@@ -27,6 +27,7 @@ public:
     int get_line() { return line_no; }
     int get_col() { return col; }
     std::string get_filename() { return filename; }
+    std::vector<int> *get_groups() { return groups; }
 
 private:
     std::string filename;
@@ -42,6 +43,7 @@ public:
         state_change_insertions = parseStateChangeInsertions();
     }
     bool contains(int line, int col, std::string &filename);
+    std::vector<int> *get_groups(int line, int col, std::string &filename);
 
 private:
         std::string lines_info_file;
