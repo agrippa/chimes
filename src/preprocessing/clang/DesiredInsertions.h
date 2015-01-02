@@ -66,13 +66,17 @@ private:
 class DesiredInsertions {
 public:
     DesiredInsertions(const char *lines_info_filename,
-            const char *func_start_info_filename, const char *struct_info_filename) :
+            const char *func_start_info_filename,
+            const char *struct_info_filename,
+            const char *function_exits_filename) :
             lines_info_file(lines_info_filename),
             func_start_info_file(func_start_info_filename),
-            struct_info_file(struct_info_filename) {
+            struct_info_file(struct_info_filename),
+            function_exits_file(function_exits_filename) {
         state_change_insertions = parseStateChangeInsertions();
         function_starts = parseFunctionStartInsertions(&main_line);
         struct_fields = parseStructs();
+        function_exits = parseFunctionExits();
     }
     bool contains(int line, int col, std::string &filename);
     std::vector<int> *get_groups(int line, int col, std::string &filename);
@@ -80,18 +84,22 @@ public:
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
 
     FunctionStartInsertion *is_function_start(int line);
+    bool is_function_exit(int line);
 
 private:
-        std::string lines_info_file, func_start_info_file, struct_info_file;
+        std::string lines_info_file, func_start_info_file, struct_info_file,
+            function_exits_file;
         std::vector<StateChangeInsertion *> *state_change_insertions;
         std::vector<FunctionStartInsertion *> *function_starts;
         int main_line;
         std::vector<StructFields *> *struct_fields;
+        std::vector<int> *function_exits;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<FunctionStartInsertion *> *parseFunctionStartInsertions(
                 int *main_line);
         std::vector<StructFields *> *parseStructs();
+        std::vector<int> *parseFunctionExits();
 };
 
 #endif
