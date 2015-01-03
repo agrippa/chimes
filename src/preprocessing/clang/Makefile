@@ -23,6 +23,7 @@ run:
         -i ${NUM_DEBUG_HOME}/src/examples/cpp/test.cpp \
         -d ${NUM_DEBUG_HOME}/src/examples/cpp/decl.info \
         -a ${NUM_DEBUG_HOME}/src/examples/cpp/stack.info \
+        -m ${NUM_DEBUG_HOME}/src/examples/cpp/heap.info \
         /Users/mgrossman/dev/num-debug/src/examples/cpp/test.cpp --
 
 clean:

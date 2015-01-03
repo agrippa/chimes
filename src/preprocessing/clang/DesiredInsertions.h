@@ -5,6 +5,50 @@
 #include <string>
 #include <map>
 
+class HeapAlloc {
+public:
+    HeapAlloc(int set_line_no, int set_col, int set_group,
+            std::string set_fname, bool set_have_type_info) :
+            line_no(set_line_no), col(set_col), group(set_group),
+            fname(set_fname), have_type_info(set_have_type_info) {}
+
+    int get_line_no() { return line_no; }
+    int get_col() { return col; }
+    int get_group() { return group; }
+    std::string get_fname() { return fname; }
+    bool get_have_type_info() { return have_type_info; }
+    bool get_is_elem_ptr() { return is_elem_ptr; }
+    bool get_is_elem_struct() { return is_elem_struct; }
+    std::string get_struct_type_name() { return struct_type_name; }
+    std::vector<std::string> *get_struct_field_ptrs() { return struct_field_ptrs; }
+    int get_num_field_ptrs() {
+        assert(struct_field_ptrs != NULL);
+        return struct_field_ptrs->size();
+    }
+
+    void add_type_info(bool set_is_elem_ptr, bool set_is_elem_struct) {
+        is_elem_ptr = set_is_elem_ptr;
+        is_elem_struct = set_is_elem_struct;
+    }
+
+    void add_struct_type_info(std::string set_struct_type_name,
+            std::vector<std::string> *set_struct_field_ptrs) {
+        struct_type_name = set_struct_type_name;
+        struct_field_ptrs = set_struct_field_ptrs;
+    }
+
+private:
+    int line_no;
+    int col;
+    int group;
+    std::string fname;
+    bool have_type_info;
+
+    bool is_elem_ptr, is_elem_struct;
+    std::string struct_type_name;
+    std::vector<std::string> *struct_field_ptrs;
+};
+
 class StackAlloc {
 public:
     StackAlloc(std::string set_enclosing_file, std::string set_mangled_name,
@@ -19,6 +63,10 @@ public:
     std::string get_struct_type_name() { return struct_type_name; }
 
     void add_ptr_field(std::string f) { ptr_fields.push_back(f); }
+    int get_num_ptr_fields() { return ptr_fields.size(); }
+    std::vector<std::string>::iterator ptrs_begin() {
+        return ptr_fields.begin(); }
+    std::vector<std::string>::iterator ptrs_end() { return ptr_fields.end(); }
 
     std::string get_enclosing_file() { return enclosing_file; }
     std::string get_mangled_varname() { return mangled_varname; }
@@ -118,19 +166,22 @@ public:
             const char *func_start_info_filename,
             const char *struct_info_filename,
             const char *function_exits_filename,
-            const char *stack_allocs_filename, const char *decl_filename) :
+            const char *stack_allocs_filename, const char *decl_filename,
+            const char *heap_filename) :
             original_file(set_original_file),
             lines_info_file(lines_info_filename),
             func_start_info_file(func_start_info_filename),
             struct_info_file(struct_info_filename),
             function_exits_file(function_exits_filename),
-            stack_allocs_file(stack_allocs_filename), decl_file(decl_filename) {
+            stack_allocs_file(stack_allocs_filename), decl_file(decl_filename),
+            heap_file(heap_filename) {
         state_change_insertions = parseStateChangeInsertions();
         function_starts = parseFunctionStartInsertions(&main_line);
         struct_fields = parseStructs();
         function_exits = parseFunctionExits();
         declarations = parseDeclarations();
         stack_allocs = parseStackAllocs();
+        heap_allocs = parseHeapAllocs();
     }
 
     bool contains(int line, int col, std::string &filename);
@@ -142,9 +193,12 @@ public:
     FunctionStartInsertion *is_function_start(int line);
     bool is_function_exit(int line);
 
+    StackAlloc *findStackAlloc(std::string mangled_name);
+    HeapAlloc *isMemoryAllocation(int line, int col);
+
 private:
         std::string lines_info_file, func_start_info_file, struct_info_file,
-            function_exits_file, stack_allocs_file, decl_file;
+            function_exits_file, stack_allocs_file, decl_file, heap_file;
         std::string original_file;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
@@ -154,6 +208,7 @@ private:
         std::vector<int> *function_exits;
         std::vector<Declaration *> *declarations;
         std::map<std::string, StackAlloc *> *stack_allocs;
+        std::vector<HeapAlloc *> *heap_allocs;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<FunctionStartInsertion *> *parseFunctionStartInsertions(
@@ -162,6 +217,7 @@ private:
         std::vector<int> *parseFunctionExits();
         std::vector<Declaration *> *parseDeclarations();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
+        std::vector<HeapAlloc *> *parseHeapAllocs();
 };
 
 #endif

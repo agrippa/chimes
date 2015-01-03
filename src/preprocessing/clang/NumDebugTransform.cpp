@@ -4,12 +4,16 @@
 #include "DesiredInsertions.h"
 #include <clang/AST/Stmt.h>
 
+extern std::string constructMangledName(std::string varname);
+
 extern DesiredInsertions *insertions;
+extern std::vector<StackAlloc *> *insert_at_front;
+
 static std::vector<MatchedLocation *> already_matched;
 static std::vector<int> matched_exits;
 static bool found_main = false;
 
-bool matched(int line, int col, std::string &filename) {
+static bool matched(int line, int col, std::string &filename) {
     for (std::vector<MatchedLocation *>::iterator i = already_matched.begin(),
             e = already_matched.end(); i != e; i++) {
         MatchedLocation *loc = *i;
@@ -21,9 +25,35 @@ bool matched(int line, int col, std::string &filename) {
     return false;
 }
 
-void mark_matched(int line, int col, std::string &filename) {
+static void mark_matched(int line, int col, std::string &filename) {
     MatchedLocation *loc = new MatchedLocation(line, col, filename);
     already_matched.push_back(loc);
+}
+
+static std::string constructRegisterStackVar(StackAlloc *alloc) {
+    int first_pipe = alloc->get_mangled_varname().find('|');
+    std::string actual_name = alloc->get_mangled_varname().substr(
+            first_pipe + 1);;
+    actual_name = actual_name.substr(0, actual_name.find('|'));
+
+    std::stringstream ss;
+    ss << " register_stack_var(\"" << alloc->get_mangled_varname() <<
+        "\", \"" << alloc->get_full_type() << "\", &" <<
+        actual_name << ", " << (alloc->get_type_size_in_bits() / 8)
+        << ", " << (alloc->get_is_ptr() ? "1" : "0") << ", " <<
+        (alloc->get_is_struct() ? "1" : "0") << ", " <<
+        alloc->get_num_ptr_fields();
+    for (std::vector<std::string>::iterator ptrs =
+            alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
+            ptrs != ptrs_end; ptrs++) {
+        std::string ptr_field = *ptrs;
+        ss << ", (int)offsetof(struct " <<
+            alloc->get_struct_type_name() << ", " << ptr_field <<
+            ")";
+    }
+    ss << "); ";
+
+    return ss.str();
 }
 
 void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
@@ -36,6 +66,21 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
         unsigned end_line = SM.getPresumedLineNumber(end);
         unsigned end_col = SM.getPresumedColumnNumber(end);
         std::string filename = SM.getFilename(start);
+
+        if (insert_at_front != NULL) {
+            for (std::vector<StackAlloc *>::iterator i =
+                    insert_at_front->begin(), e = insert_at_front->end();
+                    i != e; i++) {
+                StackAlloc *alloc = *i;
+
+                std::string stmt = constructRegisterStackVar(alloc);
+
+                clang::Stmt::const_child_iterator iter = s->child_begin();
+                const clang::Stmt *child = *iter;
+                TheRewriter.InsertText(child->getLocStart(), stmt);
+            }
+            insert_at_front = NULL;
+        }
 
         if (insertions->contains(start_line, start_col, filename) &&
                 !matched(start_line, start_col, filename)) {
@@ -117,6 +162,67 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
             TheRewriter.InsertText(start, "rm_stack(); ", true,
                     true);
             matched_exits.push_back(start_line);
+        }
+
+        if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {
+            const clang::DeclStmt *d = clang::dyn_cast<clang::DeclStmt>(s);
+            for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
+                    e = d->decl_end(); i != e; i++) {
+                clang::Decl *dd = *i;
+                if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
+                    std::string mangled = constructMangledName(v->getName().str());
+                    StackAlloc *alloc = insertions->findStackAlloc(mangled);
+                    if (alloc != NULL) {
+                        TheRewriter.InsertTextAfterToken(end, constructRegisterStackVar(alloc));
+                    }
+                }
+            }
+        }
+
+        if (s->getStmtClass() == clang::Stmt::CallExprClass) {
+            HeapAlloc *alloc = insertions->isMemoryAllocation(start_line,
+                    start_col);
+            if (alloc != NULL) {
+                const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s);
+                assert(call != NULL);
+
+                std::stringstream ss;
+                ss << alloc->get_fname() << "_wrapper";
+                TheRewriter.ReplaceText(start, alloc->get_fname().size(), ss.str());
+
+                std::stringstream ss2;
+                ss2 << ", " << alloc->get_group();
+
+                if (alloc->get_fname() == "malloc") {
+                    if(alloc->get_have_type_info()) {
+                        ss2 << ", 1"; // has type info
+                        ss2 << ", " << (alloc->get_is_elem_ptr() ? "1" : "0") <<
+                            ", " << (alloc->get_is_elem_struct() ? "1" : "0");
+                        if (alloc->get_is_elem_struct()) {
+                            ss2 << "< (int)sizeof(struct " <<
+                                alloc->get_struct_type_name() << ", " <<
+                                alloc->get_num_field_ptrs();
+
+                            std::vector<std::string> *struct_field_ptrs =
+                                alloc->get_struct_field_ptrs();
+                            for (std::vector<std::string>::iterator p_i =
+                                    struct_field_ptrs->begin(), p_e =
+                                    struct_field_ptrs->end(); p_i != p_e; p_i++) {
+                                std::string fieldname = *p_i;
+                                ss2 << ", (int)offsetof(struct " <<
+                                    alloc->get_struct_type_name() << ", " <<
+                                    fieldname << ")";
+                            }
+                        }
+                    } else {
+                        ss2 << ", 0"; // does not have type info
+                    }
+                }
+
+                const clang::Expr *arg = call->getArg(call->getNumArgs() - 1);
+                clang::SourceLocation end_arg = arg->getLocEnd();
+                TheRewriter.InsertTextAfterToken(end_arg, ss2.str());
+            }
         }
     }
 

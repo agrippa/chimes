@@ -1302,6 +1302,7 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                                 strcmp(callee_name, "realloc") == 0 ||
                                 strcmp(callee_name, "free") == 0) {
                             int line_no = callInst->getDebugLoc().getLine();
+                            int col = callInst->getDebugLoc().getCol();
                             assert(line_no != 0);
 
                             int alias_no;
@@ -1331,7 +1332,7 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                                     found_mallocs.end());
                             found_mallocs.insert(line_no);
 
-                            fprintf(fp, "%d %d %s", line_no, alias_no,
+                            fprintf(fp, "%d %d %d %s", line_no, col, alias_no,
                                     callee_name);
                             /*
                              * For trivial cases of a malloc call that is
@@ -1452,7 +1453,12 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
         loc->line_no = line_no;
         loc->type = STACK_REGISTRATION;
 
-        char *fname = end + 1;
+        char *col_str = end + 1;
+        char *col_end = strchr(col_str, ' ');
+        *col_end = '\0';
+        int col = atoi(col_str);
+
+        char *fname = col_end + 1;
         char *fname_end = strchr(fname, '|');
         *fname_end = '\0';
 
@@ -1654,7 +1660,7 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
                     std::string *unique_varname = get_unique_varname(
                             di_var.getName().str(), F->getName().str(),
                             &found_variables);
-                    fprintf(fp, "%d %s %s\n", dl.getLine(), dl.getCol(),
+                    fprintf(fp, "%d %d %s %s\n", dl.getLine(), dl.getCol(),
                             unique_varname->c_str(), scope.getFilename().str().c_str());
                 }
             }
