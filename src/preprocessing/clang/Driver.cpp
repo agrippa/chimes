@@ -51,8 +51,32 @@ static llvm::cl::opt<std::string> original_file("i",
 static llvm::cl::opt<std::string> declarations_file("d",
         llvm::cl::desc("Declarations file"),
         llvm::cl::value_desc("decl_file"));
+static llvm::cl::opt<std::string> heap_file("m",
+        llvm::cl::desc("Heap info file"),
+        llvm::cl::value_desc("heap_file"));
 
 DesiredInsertions *insertions = NULL;
+std::string curr_func;
+std::vector<StackAlloc *> *insert_at_front = NULL;
+
+static std::vector<std::string> created_vars;
+
+std::string constructMangledName(std::string varname) {
+    int count = 0;
+    std::stringstream ss;
+    ss << curr_func << "|" << varname << "|";
+    std::string base = ss.str();
+
+    std::string mangled;
+    do {
+        std::stringstream ss2;
+        ss2 << base << count;
+        mangled = ss2.str();
+        count++;
+    } while(std::find(created_vars.begin(), created_vars.end(), mangled) !=
+            created_vars.end());
+    return mangled;
+}
 
 // Implementation of the ASTConsumer interface for reading an AST produced
 // by the Clang parser.
@@ -65,6 +89,27 @@ public:
   bool HandleTopLevelDecl(DeclGroupRef DR) override {
     for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
       // Traverse the declaration using our AST visitor.
+      Decl *toplevel = *b;
+
+      if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel)) {
+          curr_func = fdecl->getName().str();
+
+          assert(insert_at_front == NULL);
+          insert_at_front = new std::vector<StackAlloc *>();
+
+          for (FunctionDecl::param_iterator i = fdecl->param_begin(),
+                  e = fdecl->param_end(); i != e; i++) {
+              ParmVarDecl *param = *i;
+              std::string mangled = constructMangledName(param->getName().str());
+              StackAlloc *alloc = insertions->findStackAlloc(mangled);
+              if (alloc != NULL) {
+                  insert_at_front->push_back(alloc);
+              }
+          }
+
+          if (insert_at_front->empty()) insert_at_front = NULL;
+      }
+
       if ((*b)->getBody() != NULL) {
           visitor.Visit((*b)->getBody());
       }
@@ -109,7 +154,7 @@ int main(int argc, const char **argv) {
           line_info_file.c_str(),
           function_start_file.c_str(), struct_file.c_str(),
           function_exits_file.c_str(), stack_allocs_file.c_str(),
-          declarations_file.c_str());
+          declarations_file.c_str(), heap_file.c_str());
 
   return Tool.run(newFrontendActionFactory<NumDebugFrontendAction>().get());
 }

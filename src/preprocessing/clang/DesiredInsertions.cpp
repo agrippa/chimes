@@ -14,6 +14,82 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
+std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
+    std::vector<HeapAlloc *> *allocs = new std::vector<HeapAlloc *>();
+
+    std::ifstream fp;
+    fp.open(heap_file, std::ios::in);
+
+    std::string line;
+    while (getline(fp, line)) {
+        int line_no_end = line.find(' ');
+        std::string line_no_str = line.substr(0, line_no_end);
+        int line_no = atoi(line_no_str.c_str());
+        line = line.substr(line_no_end + 1);
+
+        int col_end = line.find(' ');
+        std::string col_str = line.substr(0, col_end);
+        int col = atoi(col_str.c_str());
+        line = line.substr(col_end + 1);
+
+        int group_end = line.find(' ');
+        std::string group_str = line.substr(0, group_end);
+        int group = atoi(group_str.c_str());
+        line = line.substr(group_end + 1);
+
+        std::string fname = line;
+        if (!isalpha(fname[fname.size() - 1])) {
+            fname = fname.substr(0, fname.size() - 1);
+        }
+
+        line = line.substr(fname.size());
+        bool have_type_info = (!line.empty() && line[0] == ' ');
+        HeapAlloc *alloc = new HeapAlloc(line_no, col, group, fname,
+                have_type_info);
+
+        if (have_type_info) {
+            // have more type info
+
+            int is_elem_ptr_end = line.find(' ');
+            std::string is_elem_ptr_str = line.substr(0, is_elem_ptr_end);
+            bool is_elem_ptr = (is_elem_ptr_str == "1" ? true : false);
+            line = line.substr(is_elem_ptr_end + 1);
+
+            int is_elem_struct_end = line.find(' ');
+            std::string is_elem_struct_str = line.substr(0, is_elem_struct_end);
+            bool is_elem_struct = (is_elem_struct_str == "1" ? true : false);
+            line = line.substr(is_elem_struct_end + 1);
+
+            alloc->add_type_info(is_elem_ptr, is_elem_struct);
+
+            if (is_elem_struct) {
+                int struct_type_name_end = line.find(' ');
+                std::string struct_type_name = line.substr(0, struct_type_name_end);
+                line = line.substr(struct_type_name_end + 1);
+
+                std::vector<std::string> *struct_field_ptrs = new std::vector<std::string>();
+                while (1) {
+                    int end = line.find(' ');
+                    if (end == std::string::npos) {
+                        end = line.size();
+                    }
+                    std::string fieldname = line.substr(0, end);
+                    struct_field_ptrs->push_back(fieldname);
+
+                    if (end == line.size()) break;
+                    line = line.substr(end + 1);
+                }
+
+                alloc->add_struct_type_info(struct_type_name, struct_field_ptrs);
+            }
+        }
+
+        allocs->push_back(alloc);
+    }
+
+    return allocs;
+}
+
 std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     std::ifstream fp;
     fp.open(stack_allocs_file, std::ios::in);
@@ -294,4 +370,24 @@ bool DesiredInsertions::is_function_exit(int line) {
         if (line_no == line) return true;
     }
     return false;
+}
+
+
+StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
+    std::map<std::string, StackAlloc *>::iterator iter =
+        stack_allocs->find(mangled_name);
+    if (iter == stack_allocs->end()) return NULL;
+
+    return iter->second;
+}
+
+HeapAlloc *DesiredInsertions::isMemoryAllocation(int line, int col) {
+    for(std::vector<HeapAlloc *>::iterator i = heap_allocs->begin(),
+            e = heap_allocs->end(); i != e; i++) {
+        HeapAlloc *alloc = *i;
+        if (alloc->get_line_no() == line && alloc->get_col() == col) {
+            return alloc;
+        }
+    }
+    return NULL;
 }
