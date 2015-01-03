@@ -54,10 +54,17 @@ static llvm::cl::opt<std::string> declarations_file("d",
 static llvm::cl::opt<std::string> heap_file("m",
         llvm::cl::desc("Heap info file"),
         llvm::cl::value_desc("heap_file"));
+static llvm::cl::opt<std::string> labels_file("b",
+        llvm::cl::desc("Labels info file"),
+        llvm::cl::value_desc("label_file"));
 
 DesiredInsertions *insertions = NULL;
 std::string curr_func;
 std::vector<StackAlloc *> *insert_at_front = NULL;
+int lbl_counter;
+
+extern clang::SourceLocation lastGoto;
+extern bool hasLastGoto;
 
 static std::vector<std::string> created_vars;
 
@@ -82,7 +89,7 @@ std::string constructMangledName(std::string varname) {
 // by the Clang parser.
 class TransformASTConsumer : public ASTConsumer {
 public:
-  TransformASTConsumer(Rewriter &R) : visitor(R) {}
+  TransformASTConsumer(Rewriter &set_R) : visitor(set_R), R(set_R) {}
 
   // Override the method that gets called for each parsed top-level
   // declaration.
@@ -96,6 +103,7 @@ public:
 
           assert(insert_at_front == NULL);
           insert_at_front = new std::vector<StackAlloc *>();
+          lbl_counter = 0;
 
           for (FunctionDecl::param_iterator i = fdecl->param_begin(),
                   e = fdecl->param_end(); i != e; i++) {
@@ -110,16 +118,36 @@ public:
           if (insert_at_front->empty()) insert_at_front = NULL;
       }
 
+      hasLastGoto = false;
       if ((*b)->getBody() != NULL) {
           visitor.Visit((*b)->getBody());
       }
-      // (*b)->dump();
+
+      if (hasLastGoto) {
+          std::stringstream ss;
+          ss << "lbl_" << lbl_counter << ": if (____numdebug_replaying) { "
+              "int dst = get_next_call(); switch(dst) { ";
+          for (std::vector<LabelInfo *>::iterator l_iter =
+                  insertions->labels_begin(), l_end = insertions->labels_end();
+                  l_iter != l_end; l_iter++) {
+              LabelInfo *label = *l_iter;
+              if (label->get_function() == curr_func && label->get_type() == CALLSITE) {
+                  ss << "case(" << label->get_lbl() << ") { goto call_lbl_" <<
+                      label->get_lbl() << "; } ";
+              }
+          }
+          ss << "default: { fprintf(stderr, \"Unknown label %d at %s:%d\\n\", "
+              "dst, __FILE__, __LINE__); exit(1); }";
+          ss << " } } ";
+          R.InsertTextAfterToken(lastGoto, ss.str());
+      }
     }
     return true;
   }
 
 private:
   NumDebugTransform visitor;
+  Rewriter &R;
 };
 
 // For each source file provided to the tool, a new FrontendAction is created.
@@ -154,7 +182,8 @@ int main(int argc, const char **argv) {
           line_info_file.c_str(),
           function_start_file.c_str(), struct_file.c_str(),
           function_exits_file.c_str(), stack_allocs_file.c_str(),
-          declarations_file.c_str(), heap_file.c_str());
+          declarations_file.c_str(), heap_file.c_str(),
+          labels_file.c_str());
 
   return Tool.run(newFrontendActionFactory<NumDebugFrontendAction>().get());
 }

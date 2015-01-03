@@ -14,6 +14,54 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
+std::vector<LabelInfo *> *DesiredInsertions::parseLabels() {
+    std::vector<LabelInfo *> *labels = new std::vector<LabelInfo *>();
+
+    std::ifstream fp;
+    fp.open(labels_file, std::ios::in);
+
+    std::string line;
+    while (getline(fp, line)) {
+       int line_no_end = line.find(' ');
+       std::string line_no_str = line.substr(0, line_no_end);
+       int line_no = atoi(line_no_str.c_str());
+       line = line.substr(line_no_end + 1);
+
+       int col_end = line.find(' ');
+       std::string col_str = line.substr(0, col_end);
+       int col = atoi(col_str.c_str());
+       line = line.substr(col_end + 1);
+
+       int fname_end = line.find(' ');
+       std::string fname = line.substr(0, fname_end);
+       line = line.substr(fname_end + 1);
+
+       int lbl_end = line.find(' ');
+       std::string lbl_str = line.substr(0, lbl_end);
+       int lbl = atoi(lbl_str.c_str());
+       line = line.substr(lbl_end + 1);
+
+       int type_end = line.find(' ');
+       std::string type_str = line.substr(0, type_end);
+       enum LBL_TYPE type;
+       if (type_str == "STACK_REGISTRATION") {
+           type = STACK_REGISTRATION;
+       } else if (type_str == "CALLSITE") {
+           type = CALLSITE;
+       } else {
+           assert(false);
+       }
+       line = line.substr(type_end + 1);
+
+       std::string filename = line;
+
+       labels->push_back(new LabelInfo(line_no, col, lbl, type, filename,
+                   fname));
+    }
+
+    return labels;
+}
+
 std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
     std::vector<HeapAlloc *> *allocs = new std::vector<HeapAlloc *>();
 
@@ -387,6 +435,29 @@ HeapAlloc *DesiredInsertions::isMemoryAllocation(int line, int col) {
         HeapAlloc *alloc = *i;
         if (alloc->get_line_no() == line && alloc->get_col() == col) {
             return alloc;
+        }
+    }
+    return NULL;
+}
+
+int DesiredInsertions::getLabelAssignedFor(int line, int col) {
+    for (std::vector<LabelInfo *>::iterator i = labels->begin(),
+            e = labels->end(); i != e; i++) {
+        LabelInfo *info = *i;
+        if (info->get_line_no() == line && info->get_col() == col) {
+            return info->get_lbl();
+        }
+    }
+    llvm::errs() << "missing " << line << " " << col << "\n";
+    assert(false);
+}
+
+LabelInfo *DesiredInsertions::isLabeledLoc(int line, int col) {
+    for (std::vector<LabelInfo *>::iterator i = labels->begin(),
+            e = labels->end(); i != e; i++) {
+        LabelInfo *info = *i;
+        if (info->get_line_no() == line && info->get_col() == col) {
+            return info;
         }
     }
     return NULL;
