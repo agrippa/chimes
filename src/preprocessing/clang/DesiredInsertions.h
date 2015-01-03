@@ -5,6 +5,31 @@
 #include <string>
 #include <map>
 
+enum LBL_TYPE { STACK_REGISTRATION, CALLSITE };
+
+class LabelInfo {
+public:
+    LabelInfo(int set_line_no, int set_col, int set_lbl, enum LBL_TYPE set_type,
+            std::string set_filename, std::string set_function) :
+            line_no(set_line_no), col(set_col), lbl(set_lbl), type(set_type),
+            filename(set_filename), function(set_function) {}
+
+    int get_line_no() { return line_no; }
+    int get_col() { return col; }
+    int get_lbl() { return lbl; }
+    enum LBL_TYPE get_type() { return type; }
+    std::string get_filename() { return filename; }
+    std::string get_function() { return function; }
+
+private:
+    int line_no;
+    int col;
+    int lbl;
+    enum LBL_TYPE type;
+    std::string filename;
+    std::string function;
+};
+
 class HeapAlloc {
 public:
     HeapAlloc(int set_line_no, int set_col, int set_group,
@@ -167,14 +192,16 @@ public:
             const char *struct_info_filename,
             const char *function_exits_filename,
             const char *stack_allocs_filename, const char *decl_filename,
-            const char *heap_filename) :
+            const char *heap_filename,
+            const char *labels_filename) :
             original_file(set_original_file),
             lines_info_file(lines_info_filename),
             func_start_info_file(func_start_info_filename),
             struct_info_file(struct_info_filename),
             function_exits_file(function_exits_filename),
             stack_allocs_file(stack_allocs_filename), decl_file(decl_filename),
-            heap_file(heap_filename) {
+            heap_file(heap_filename),
+            labels_file(labels_filename) {
         state_change_insertions = parseStateChangeInsertions();
         function_starts = parseFunctionStartInsertions(&main_line);
         struct_fields = parseStructs();
@@ -182,6 +209,7 @@ public:
         declarations = parseDeclarations();
         stack_allocs = parseStackAllocs();
         heap_allocs = parseHeapAllocs();
+        labels = parseLabels();
     }
 
     bool contains(int line, int col, std::string &filename);
@@ -195,10 +223,18 @@ public:
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     HeapAlloc *isMemoryAllocation(int line, int col);
+    int getLabelAssignedFor(int line, int col);
+    LabelInfo *isLabeledLoc(int line, int col);
+    std::vector<LabelInfo *>::iterator labels_begin() { return labels->begin(); }
+    std::vector<LabelInfo *>::iterator labels_end() { return labels->end(); }
+
+    // GotoInfo *shouldAddGotoAt(int line);
+    // GotoInfo *shouldAddGotoAfter(int line, int col);
 
 private:
         std::string lines_info_file, func_start_info_file, struct_info_file,
-            function_exits_file, stack_allocs_file, decl_file, heap_file;
+            function_exits_file, stack_allocs_file, decl_file, heap_file,
+            labels_file;
         std::string original_file;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
@@ -209,6 +245,7 @@ private:
         std::vector<Declaration *> *declarations;
         std::map<std::string, StackAlloc *> *stack_allocs;
         std::vector<HeapAlloc *> *heap_allocs;
+        std::vector<LabelInfo *> *labels;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<FunctionStartInsertion *> *parseFunctionStartInsertions(
@@ -218,6 +255,7 @@ private:
         std::vector<Declaration *> *parseDeclarations();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
         std::vector<HeapAlloc *> *parseHeapAllocs();
+        std::vector<LabelInfo *> *parseLabels();
 };
 
 #endif

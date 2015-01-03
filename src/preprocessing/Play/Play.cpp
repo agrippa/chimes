@@ -34,6 +34,7 @@ namespace {
     typedef struct _LabeledLoc {
         LocationType type;
         int line_no;
+        int col;
         std::string *filename;
         int id;
     } LabeledLoc;
@@ -1413,7 +1414,8 @@ void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
             exist_end = existing->end(); exist_iter != exist_end;
             exist_iter++) {
         LabeledLoc *curr = *exist_iter;
-        if (curr->line_no == loc->line_no && *(curr->filename) == *(loc->filename)) {
+        if (curr->line_no == loc->line_no && curr->col == loc->col &&
+                *(curr->filename) == *(loc->filename)) {
             exists = curr;
             break;
         }
@@ -1448,15 +1450,16 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
         *end = '\0';
         int line_no = atoi(line);
 
-        LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
-        loc->id = id++;
-        loc->line_no = line_no;
-        loc->type = STACK_REGISTRATION;
-
         char *col_str = end + 1;
         char *col_end = strchr(col_str, ' ');
         *col_end = '\0';
         int col = atoi(col_str);
+
+        LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
+        loc->id = id++;
+        loc->line_no = line_no;
+        loc->col = col;
+        loc->type = STACK_REGISTRATION;
 
         char *fname = col_end + 1;
         char *fname_end = strchr(fname, '|');
@@ -1515,6 +1518,7 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
                         loc->id = id++;
                         loc->type = CALLSITE;
                         loc->line_no = inst.getDebugLoc().getLine();
+                        loc->col = inst.getDebugLoc().getCol();
                         assert(loc->line_no != 0);
 
                         DebugLoc dl = inst.getDebugLoc();
@@ -1548,10 +1552,13 @@ void Play::dumpLocationsToFile(const char *filename,
                 end = curr->end(); iter != end; iter++) {
             LabeledLoc *loc = *iter;
             if (loc->type == CALLSITE) {
-                fprintf(fp, "%d %d CALLSITE %s\n", loc->line_no, loc->id, loc->filename->c_str());
+                fprintf(fp, "%d %d %s %d CALLSITE %s\n", loc->line_no, loc->col,
+                        loc_iter->first->getName().str().c_str(), loc->id,
+                        loc->filename->c_str());
                 callsite_dumps++;
             } else if (loc->type == STACK_REGISTRATION) {
-                fprintf(fp, "%d %d STACK_REGISTRATION %s\n", loc->line_no,
+                fprintf(fp, "%d %d %s %d STACK_REGISTRATION %s\n", loc->line_no,
+                        loc->col, loc_iter->first->getName().str().c_str(),
                         loc->id, loc->filename->c_str());
                 stack_registration_dumps++;
             } else {
@@ -1599,7 +1606,7 @@ void Play::dumpGotoChainsToFile(const char *filename,
             // No stack variables and no function calls? Ignore it
         } else if (only_stack.empty()) {
             // No stack allocations, but has function calls
-            fprintf(fp, "%s %d FINAL ", only_calls[0]->filename->c_str(), start);
+            fprintf(fp, "%s %d -1 FINAL ", only_calls[0]->filename->c_str(), start);
             for (unsigned int i = 0; i < only_calls.size(); i++) {
                 fprintf(fp, "%d ", only_calls[i]->id);
             }
@@ -1611,18 +1618,20 @@ void Play::dumpGotoChainsToFile(const char *filename,
              * calls checkpoint, so skip it entirely.
              */
         } else {
-            fprintf(fp, "%s %d START %d\n", only_stack[0]->filename->c_str(),
+            fprintf(fp, "%s %d -1 START %d\n", only_stack[0]->filename->c_str(),
                     start, only_stack[0]->id);
             for (unsigned int i = 1; i < only_stack.size(); i++) {
-                fprintf(fp, "%s %d INTERNAL %d\n",
+                fprintf(fp, "%s %d %d INTERNAL %d\n",
                         only_stack[i - 1]->filename->c_str(),
-                        only_stack[i - 1]->line_no, only_stack[i]->id);
+                        only_stack[i - 1]->line_no, only_stack[i - 1]->col,
+                        only_stack[i]->id);
             }
 
             if (!only_calls.empty()) {
-                fprintf(fp, "%s %d FINAL ",
+                fprintf(fp, "%s %d %d FINAL ",
                         only_stack[only_stack.size() - 1]->filename->c_str(),
-                        only_stack[only_stack.size() - 1]->line_no);
+                        only_stack[only_stack.size() - 1]->line_no,
+                        only_stack[only_stack.size() - 1]->col);
                 for (unsigned int i = 0; i < only_calls.size(); i++) {
                     fprintf(fp, "%d ", only_calls[i]->id);
                 }
@@ -1774,7 +1783,7 @@ bool Play::runOnModule(Module &M) {
 
     dumpLocationsToFile("loc.info", locations);
 
-    dumpGotoChainsToFile("goto.info", locations, M);
+    // dumpGotoChainsToFile("goto.info", locations, M);
 
     return false;
 }

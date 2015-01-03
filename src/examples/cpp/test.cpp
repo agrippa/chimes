@@ -16,7 +16,12 @@ int main(int argc, char **argv) {
     int caller_var = 3;
     int caller_var2 = 4;
     int arr[10];
+    int aa, b; int c;
     foo(&caller_var);
+
+    aa = 3;
+    b = 4;
+    c = 5;
 
     *caller_ptr = 5;
     

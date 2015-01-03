@@ -8,10 +8,31 @@ extern std::string constructMangledName(std::string varname);
 
 extern DesiredInsertions *insertions;
 extern std::vector<StackAlloc *> *insert_at_front;
+extern int lbl_counter;
+clang::SourceLocation lastGoto;
+bool hasLastGoto = false;
 
+static std::vector<int> labels_used;
 static std::vector<MatchedLocation *> already_matched;
 static std::vector<int> matched_exits;
 static bool found_main = false;
+
+class EndLocAndLbl {
+public:
+    EndLocAndLbl(int set_end_line_no, int set_end_col, int set_lbl) :
+        end_line_no(set_end_line_no), end_col(set_end_col), lbl(set_lbl) {}
+
+    int get_end_line_no() { return end_line_no; }
+    int get_end_col() { return end_col; }
+    int get_lbl() { return lbl; }
+
+private:
+    int end_line_no;
+    int end_col;
+    int lbl;
+};
+static std::vector<EndLocAndLbl *> labels;
+static std::map<int, int> assigned_to_used_lbls;
 
 static bool matched(int line, int col, std::string &filename) {
     for (std::vector<MatchedLocation *>::iterator i = already_matched.begin(),
@@ -66,6 +87,51 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
         unsigned end_line = SM.getPresumedLineNumber(end);
         unsigned end_col = SM.getPresumedColumnNumber(end);
         std::string filename = SM.getFilename(start);
+
+        LabelInfo *label_info = insertions->isLabeledLoc(start_line, start_col);
+        if (label_info != NULL) {
+            int lbl = insertions->getLabelAssignedFor(start_line, start_col);
+            if (std::find(labels_used.begin(), labels_used.end(), lbl) ==
+                    labels_used.end()) {
+                std::stringstream ss;
+                ss << " call_lbl_" << lbl << ": ";
+                TheRewriter.InsertText(start, ss.str(), true, true);
+                labels_used.push_back(lbl);
+            }
+        }
+
+        if (!found_main && start_line == insertions->get_main_line()) {
+            clang::Stmt::const_child_iterator iter = s->child_begin();
+            const clang::Stmt *child = *iter;
+            std::stringstream ss;
+
+            ss << "init_numdebug(" << insertions->get_struct_fields()->size();
+            for (std::vector<StructFields *>::iterator i =
+                    insertions->get_struct_fields()->begin(), e =
+                    insertions->get_struct_fields()->end(); i != e; i++) {
+                StructFields *fields = *i;
+
+                ss << ", \"" << fields->get_name() << "\", " <<
+                    fields->num_fields();
+                for (std::vector<std::string>::iterator ii = fields->begin(),
+                        ee = fields->end(); ii != ee; ii++) {
+                    std::string field_name = *ii;
+                    ss << ", (int)offsetof(struct " << fields->get_name() <<
+                        ", " << field_name << ")";
+                }
+            }
+            ss << "); ";
+            TheRewriter.InsertText(child->getLocStart(), ss.str(), true, true);
+            found_main = true;
+        }
+
+        if (FunctionStartInsertion *insert =
+                insertions->is_function_start(start_line)) {
+            clang::Stmt::const_child_iterator iter = s->child_begin();
+            const clang::Stmt *child = *iter;
+            TheRewriter.InsertText(child->getLocStart(), "new_stack(); ", true,
+                    true);
+        }
 
         if (insert_at_front != NULL) {
             for (std::vector<StackAlloc *>::iterator i =
@@ -123,38 +189,6 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
             }
         }
 
-        if (!found_main && start_line == insertions->get_main_line()) {
-            clang::Stmt::const_child_iterator iter = s->child_begin();
-            const clang::Stmt *child = *iter;
-            std::stringstream ss;
-
-            ss << "init_numdebug(" << insertions->get_struct_fields()->size();
-            for (std::vector<StructFields *>::iterator i =
-                    insertions->get_struct_fields()->begin(), e =
-                    insertions->get_struct_fields()->end(); i != e; i++) {
-                StructFields *fields = *i;
-
-                ss << ", \"" << fields->get_name() << "\", " <<
-                    fields->num_fields();
-                for (std::vector<std::string>::iterator ii = fields->begin(),
-                        ee = fields->end(); ii != ee; ii++) {
-                    std::string field_name = *ii;
-                    ss << ", (int)offsetof(struct " << fields->get_name() <<
-                        ", " << field_name << ")";
-                }
-            }
-            ss << "); ";
-            TheRewriter.InsertText(child->getLocStart(), ss.str(), true, true);
-            found_main = true;
-        }
-
-        if (FunctionStartInsertion *insert =
-                insertions->is_function_start(start_line)) {
-            clang::Stmt::const_child_iterator iter = s->child_begin();
-            const clang::Stmt *child = *iter;
-            TheRewriter.InsertText(child->getLocStart(), "new_stack(); ", true,
-                    true);
-        }
 
         if (insertions->is_function_exit(start_line) &&
                 std::find(matched_exits.begin(), matched_exits.end(),
@@ -166,16 +200,37 @@ void NumDebugTransform::VisitStmt(const clang::Stmt *s) {
 
         if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {
             const clang::DeclStmt *d = clang::dyn_cast<clang::DeclStmt>(s);
+            std::stringstream acc;
+
             for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
                     e = d->decl_end(); i != e; i++) {
                 clang::Decl *dd = *i;
                 if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
                     std::string mangled = constructMangledName(v->getName().str());
                     StackAlloc *alloc = insertions->findStackAlloc(mangled);
+   
                     if (alloc != NULL) {
-                        TheRewriter.InsertTextAfterToken(end, constructRegisterStackVar(alloc));
+                        acc << constructRegisterStackVar(alloc);
                     }
                 }
+            }
+
+            if (acc.str().length() > 0) {
+                std::stringstream ss;
+                ss << " lbl_" << lbl_counter++ << ": ";
+
+                std::stringstream ss2;
+                ss2 << " if (____numdebug_replaying { goto lbl_" << (lbl_counter) << "; } ";
+
+                //TODO assign each callsite a unique ID and mark it with that label
+                //TODO count how many stack declarations each function has so that we can figure out when we get to the last one?
+
+                TheRewriter.InsertTextAfterToken(end, ss.str());
+                TheRewriter.InsertTextAfterToken(end, acc.str());
+                TheRewriter.InsertTextAfterToken(end, ss2.str());
+
+                hasLastGoto = true;
+                lastGoto = end;
             }
         }
 
