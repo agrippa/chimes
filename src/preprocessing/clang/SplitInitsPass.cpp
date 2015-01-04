@@ -29,7 +29,7 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                 clang::Decl *dd = *i;
                 if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
    
-                    if (v->hasInit() && !clang::dyn_cast<clang::InitListExpr>(v->getInit())) {
+                    if (v->hasInit() && !clang::dyn_cast<clang::InitListExpr>(v->getInit()) && !clang::dyn_cast<clang::CXXConstructExpr>(v->getInit())) {
                         clang::SourceLocation decl_start = v->getLocStart();
                         clang::SourceLocation decl_end = v->getLocEnd();
                         unsigned int decl_start_line = SM->getPresumedLineNumber(decl_start);

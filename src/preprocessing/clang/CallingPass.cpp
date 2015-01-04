@@ -23,7 +23,7 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
         std::string filename = SM->getFilename(start);
 
         LabelInfo *label_info = insertions->isLabeledLoc(start_line, start_col);
-        if (label_info != NULL) {
+        if (label_info != NULL && label_info->get_type() == CALLSITE) {
             int lbl = insertions->getLabelAssignedFor(start_line, start_col);
             if (std::find(labels_used.begin(), labels_used.end(), lbl) ==
                     labels_used.end()) {
