@@ -336,6 +336,14 @@ int get_next_call() {
     return trace[trace_index++];
 }
 
+/*
+ * TODO support stack arrays:
+ *   Today, the registration of a stack array appears as follows:
+ *     lbl_4: int arr2[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+ *     register_stack_var("main|arr2|0", "[10 x i32]", &arr2, 40, 0, 0, 0);
+ *   This registration would not allow the full recreation of stack state at
+ *   replay.
+ */
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...) {
     stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
