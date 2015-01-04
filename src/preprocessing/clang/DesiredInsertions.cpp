@@ -377,7 +377,6 @@ bool DesiredInsertions::contains(int line, int col, std::string &filename) {
     for (std::vector<StateChangeInsertion *>::iterator i =
             state_change_insertions->begin(), e =
             state_change_insertions->end(); i != e; i++) {
-        llvm::errs() << "comparing " filename << ":" << line << ":" << col << " to " << insert->get_filename() << ":" << insert->get_line() << ":" << insert->get_col() << "\n";
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
                 insert->get_filename() == filename) {
