@@ -225,13 +225,16 @@ int main(int argc, const char **argv) {
 
   std::stringstream ss;
 
-  passes.push_back(new Pass(new MallocPass(), ".malloc"));
   /*
    * This pass can get messed up if the starting columns of basic blocks are
    * shifted. This must be run before any passes that might insert things at the
    * start of lines (e.g. labels).
+   *
+   * This pass also gets messed up if the input filename isn't the original
+   * file.
    */
   passes.push_back(new Pass(new AliasChangedPass(), ".alias"));
+  passes.push_back(new Pass(new MallocPass(), ".malloc"));
   passes.push_back(new Pass(new CallingPass(), ".calling"));
   passes.push_back(new Pass(new StartExitPass(), ".start"));
   passes.push_back(new Pass(new InitPass(), ".init"));
