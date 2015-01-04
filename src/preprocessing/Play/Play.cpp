@@ -81,7 +81,7 @@ namespace {
         std::map<Value *, int> value_to_alias_group;
         std::vector<AliasSetGroup *> alias_groups;
         std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
-        std::map<std::string, int> *function_to_start_line = NULL;
+        std::map<std::string, SimpleLoc *> *function_to_start_line = NULL;
         std::map<std::string, std::string> *function_to_demangled = NULL;
         std::map<Function *, bool> can_call_checkpoint;
 
@@ -129,7 +129,7 @@ namespace {
         void traverseLookingForFirstUsers(BasicBlock::iterator curr,
                 BasicBlock::iterator end, std::vector<Instruction *> users,
                 std::set<int> *to_insert, Module &M);
-        int findStartingLineForFunction(Function *F, Module &M);
+        SimpleLoc *findStartingLineForFunction(Function *F, Module &M);
         void findHeapAllocations(Module &M, const char *output_file);
         int searchUpDefsForAliasSetGroup(Value *val, int nesting);
         std::map<Function *, std::vector<LabeledLoc *> *> *collectUniqueIDs(
@@ -740,18 +740,6 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
     fclose(fp);
 }
 
-void Play::dumpFunctionStartingLineTo(const char *filename,
-        std::map<int, std::string> functions) {
-    FILE *fp = fopen(filename, "w");
-
-    for (std::map<int, std::string>::iterator f_iter = functions.begin(),
-            f_end = functions.end(); f_iter != f_end; f_iter++) {
-        fprintf(fp, "%d %s\n", f_iter->first, f_iter->second.c_str());
-    }
-
-    fclose(fp);
-}
-
 bool Play::isCallToCheckpoint(CallInst *call) {
     Function *callee = call->getCalledFunction();
     /*
@@ -808,11 +796,11 @@ bool Play::callsCheckpoint(Function *F) {
     return can_call_checkpoint[F];
 }
 
-int Play::findStartingLineForFunction(Function *F, Module &M) {
+SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
     assert(F != NULL);
 
     if (function_to_start_line == NULL) {
-        function_to_start_line = new std::map<std::string, int >();
+        function_to_start_line = new std::map<std::string, SimpleLoc *>();
         function_to_demangled = new std::map<std::string, std::string>();
 
         NamedMDNode *root = NULL;
@@ -842,10 +830,14 @@ int Play::findStartingLineForFunction(Function *F, Module &M) {
                 fname = di_func.getDisplayName();
             }
             int line_no = di_func.getLineNumber();
+            std::string filename = di_func.getFilename().str();
 
             assert(function_to_start_line->find(fname) ==
                     function_to_start_line->end());
-            (*function_to_start_line)[fname] = line_no;
+            SimpleLoc *loc = (SimpleLoc *)malloc(sizeof(SimpleLoc));
+            loc->filename = new std::string(filename);
+            loc->line_no = line_no;
+            (*function_to_start_line)[fname] = loc;
 
             assert(function_to_demangled->find(di_func.getDisplayName()) ==
                         function_to_demangled->end());
@@ -859,11 +851,11 @@ int Play::findStartingLineForFunction(Function *F, Module &M) {
 }
 
 void Play::findStartingLinesForAllFunctions(Module &M, const char *output_file) {
+    FILE *fp = fopen(output_file, "w");
     /*
      * This assumes that for all functions, their declaration and body are on
      * different lines. This may not be true for all functions.
      */
-    std::map<int, std::string> functions;
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
@@ -882,18 +874,17 @@ void Play::findStartingLinesForAllFunctions(Module &M, const char *output_file) 
             exit(1);
         }
 
-        int min_func_line = findStartingLineForFunction(F, M);
-        assert(min_func_line >= 0);
-        assert(functions.find(min_func_line) == functions.end());
-        functions[min_func_line] = F->getName();
+        SimpleLoc *line = findStartingLineForFunction(F, M);
+        assert(line->line_no >= 0);
+        fprintf(fp, "%s %d %s\n", line->filename->c_str(), line->line_no,
+                F->getName().str().c_str());
     }
 
-    dumpFunctionStartingLineTo(output_file, functions);
+    fclose(fp);
 }
 
 void Play::findFunctionExits(Module &M, const char *output_file) {
     FILE *fp = fopen(output_file, "w");
-    std::vector<int> exits;
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
@@ -910,10 +901,8 @@ void Play::findFunctionExits(Module &M, const char *output_file) {
                 if (dyn_cast<ReturnInst>(&inst)) {
                     int line = inst.getDebugLoc().getLine();
                     if (line != 0) {
-                        assert(std::find(exits.begin(), exits.end(), line) ==
-                                exits.end());
-                        exits.push_back(line);
-                        fprintf(fp, "%d\n", line);
+                        SimpleLoc *loc = findStartingLineForFunction(F, M);
+                        fprintf(fp, "%s %d\n", loc->filename->c_str(), line);
                     }
                 }
             }
@@ -965,7 +954,7 @@ void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
                      */
                     assert(dyn_cast<StoreInst>(curr));
                     to_insert->insert(findStartingLineForFunction(
-                                curr->getParent()->getParent(), M));
+                                curr->getParent()->getParent(), M)->line_no);
                 } else {
                     int insert_at = curr->getDebugLoc().getLine();
                     to_insert->insert(insert_at);
@@ -1461,61 +1450,6 @@ std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
     int id = 0;
 
     // Collect stack variable registrations from the stack.info file
-    ssize_t read;
-    size_t len;
-    char *line = NULL;
-    FILE *fp = fopen(decl_info_name, "r");
-    while ((read = getline(&line, &len, fp)) != -1) {
-
-        char *end = strchr(line, ' ');
-        assert(end != NULL);
-        *end = '\0';
-        int line_no = atoi(line);
-
-        char *col_str = end + 1;
-        char *col_end = strchr(col_str, ' ');
-        *col_end = '\0';
-        int col = atoi(col_str);
-
-        LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
-        loc->id = id++;
-        loc->line_no = line_no;
-        loc->col = col;
-        loc->type = STACK_REGISTRATION;
-
-        char *fname = col_end + 1;
-        char *fname_end = strchr(fname, '|');
-        *fname_end = '\0';
-
-        char *filename = fname_end + 1;
-        while (*filename != ' ') filename++;
-        filename++;
-        char *filename_end = filename;
-        while (*filename_end != '\n' && *filename_end != '\0') filename_end++;
-        *filename_end = '\0';
-
-        loc->filename = new std::string(filename);
-
-        Function *containing_function = NULL;
-        // Find containing function
-        for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-            Function *F = &*I;
-
-            if (strcmp(fname, F->getName().str().c_str()) == 0) {
-                containing_function = F;
-                break;
-            }
-        }
-        assert(containing_function != NULL);
-
-        int first_line = findStartingLineForFunction(containing_function, M);
-        if (first_line != loc->line_no) {
-            addIfNotExists(loc, containing_function, locations);
-        }
-    }
-    free(line);
-    fclose(fp);
-
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
@@ -1578,11 +1512,6 @@ void Play::dumpLocationsToFile(const char *filename,
                         loc_iter->first->getName().str().c_str(), loc->id,
                         loc->filename->c_str());
                 callsite_dumps++;
-            } else if (loc->type == STACK_REGISTRATION) {
-                fprintf(fp, "%d %d %s %d STACK_REGISTRATION %s\n", loc->line_no,
-                        loc->col, loc_iter->first->getName().str().c_str(),
-                        loc->id, loc->filename->c_str());
-                stack_registration_dumps++;
             } else {
                 errs() << "Unexpected location type " << loc->type << "\n";
                 exit(1);
@@ -1607,7 +1536,7 @@ void Play::dumpGotoChainsToFile(const char *filename,
             locations->begin(), e = locations->end(); i != e; i++) {
         Function *F = i->first;
         std::vector<LabeledLoc *> *locs = i->second;
-        int start = findStartingLineForFunction(F, M);
+        int start = findStartingLineForFunction(F, M)->line_no;
 
         std::vector<LabeledLoc *> only_stack;
         std::vector<LabeledLoc *> only_calls;
