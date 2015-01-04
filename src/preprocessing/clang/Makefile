@@ -5,7 +5,23 @@ LAST_STRUCT_STAGE=struct.register.cpp
 
 GXX_FLAGS=-fno-rtti -O0 -g `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --cxxflags`
 INCLUDES=-I${LLVM_HOME}/tools/clang/include -I${LLVM_INSTALL}/tools/clang/include
-LIBS=-lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lclangEdit -lclangFrontend -lclangFrontendTool -lclangLex -lclangParse -lclangSema -lclangEdit -lclangASTMatchers -lclangRewrite -lclangRewriteFrontend -lclangStaticAnalyzerFrontend -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangSerialization -lclangToolingCore -lclangTooling `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --ldflags --libs --system-libs`
+ARCH=$(uname -s)
+
+ifeq ($(ARCH),Darwin)
+LIBS=-lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lclangEdit \
+	 -lclangFrontend -lclangFrontendTool -lclangLex -lclangParse -lclangSema \
+	 -lclangEdit -lclangASTMatchers -lclangRewrite -lclangRewriteFrontend \
+	 -lclangStaticAnalyzerFrontend -lclangStaticAnalyzerCheckers \
+	 -lclangStaticAnalyzerCore -lclangSerialization -lclangToolingCore \
+	 -lclangTooling `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --ldflags --libs --system-libs`
+else
+LIBS=-Wl,--start-group -lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lclangEdit \
+	 -lclangFrontend -lclangFrontendTool -lclangLex -lclangParse -lclangSema \
+	 -lclangEdit -lclangASTMatchers -lclangRewrite -lclangRewriteFrontend \
+	 -lclangStaticAnalyzerFrontend -lclangStaticAnalyzerCheckers \
+	 -lclangStaticAnalyzerCore -lclangSerialization -lclangToolingCore \
+	 -lclangTooling -Wl,--end-group `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --ldflags --libs --system-libs`
+endif
 
 OBJS=Driver.o DesiredInsertions.o CallingPass.o InitPass.o \
      StartExitPass.o ParentTransform.o AliasChangedPass.o MallocPass.o \

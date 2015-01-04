@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <stdint.h>
 #include "stack_var.h"
 
 using namespace std;

@@ -1,6 +1,7 @@
 #ifndef STACK_VAR_H
 #define STACK_VAR_H
 
+#include <algorithm>
 #include <vector>
 #include <string>
 

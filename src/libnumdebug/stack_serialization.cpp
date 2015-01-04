@@ -1,7 +1,9 @@
 #include <vector>
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 #include "stack_var.h"
 #include "stack_frame.h"
@@ -126,7 +128,7 @@ vector<stack_frame *> *deserialize_program_stack(
     stack_frame *curr = NULL;
     unsigned char *iter = stack_serialized;
 
-    while (iter - stack_serialized < stack_serialized_len) {
+    while ((uint64_t)(iter - stack_serialized) < stack_serialized_len) {
         unsigned char marker = *iter;
         iter++;
 

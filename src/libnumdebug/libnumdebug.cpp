@@ -10,6 +10,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdarg.h>
+#include <string.h>
 
 #include "stack_var.h"
 #include "stack_frame.h"
@@ -33,9 +34,9 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
 void onexit();
 
-static void safe_write(int fd, void *ptr, size_t size, const char *msg,
+static void safe_write(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
-static void safe_read(int fd, void *ptr, size_t size, const char *msg,
+static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
 static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
@@ -46,7 +47,7 @@ static void follow_pointers(void *container, string type,
 static vector<stack_frame *> program_stack;
 static numdebug_stack stack_tracker;
 static vector<int> trace;
-static int trace_index = 0;
+static unsigned int trace_index = 0;
 static set<int> changed_groups;
 static map<void *, heap_allocation *> heap;
 static map<int, vector<heap_allocation *> *> alias_to_heap;
@@ -139,7 +140,7 @@ void init_numdebug(int nstructs, ...) {
         old_to_new = new std::map<void *, ptr_and_size *>();
         std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
-        for (int i = 0; i < n_heap_allocs; i++) {
+        for (unsigned int i = 0; i < n_heap_allocs; i++) {
             void *old_address;
             size_t size;
             int group;
@@ -329,6 +330,11 @@ void rm_stack() {
 #endif
         exit(0);
     }
+}
+
+int peek_next_call() {
+    assert(trace_index < trace.size());
+    return trace[trace_index];
 }
 
 int get_next_call() {
@@ -725,8 +731,8 @@ static void follow_pointers(void *container, string type,
                 open_brace_index);
 
         int field_index = 0;
-        int index = 0;
-        int start = 0;
+        unsigned int index = 0;
+        unsigned int start = 0;
         while (index < nested_types.length()) {
             while (index < nested_types.length() && nested_types[index] != ',') {
                 index++;
@@ -755,7 +761,7 @@ static void follow_pointers(void *container, string type,
     }
 }
 
-static void safe_write(int fd, void *ptr, size_t size, const char *msg,
+static void safe_write(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename) {
     if (write(fd, ptr, size) != size) {
         fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
@@ -763,7 +769,7 @@ static void safe_write(int fd, void *ptr, size_t size, const char *msg,
     }
 }
 
-static void safe_read(int fd, void *ptr, size_t size, const char *msg,
+static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename) {
     if (read(fd, ptr, size) != size) {
         fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
@@ -848,7 +854,7 @@ void *checkpoint_func(void *data) {
                 safe_write(fd, &elem_ptr_offsets_len,
                         sizeof(elem_ptr_offsets_len), "elem_ptr_offsets_len",
                         dump_filename);
-                for (int i = 0; i < alloc->get_ptr_field_offsets()->size();
+                for (unsigned int i = 0; i < alloc->get_ptr_field_offsets()->size();
                         i++) {
                     int offset = (*alloc->get_ptr_field_offsets())[i];
                     safe_write(fd, &offset, sizeof(offset), "offset",

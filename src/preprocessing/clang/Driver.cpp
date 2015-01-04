@@ -150,6 +150,8 @@ public:
 
       hasLastGoto = false;
       if ((*b)->getBody() != NULL) {
+          (*b)->dump();
+          llvm::errs() << "\n";
           visitor->Visit((*b)->getBody());
       }
 
@@ -220,6 +222,7 @@ int main(int argc, const char **argv) {
           labels_file.c_str());
 
   std::string just_filename = original_file.substr(original_file.rfind('/') + 1);
+  std::string input_folder = original_file.substr(0, original_file.rfind('/'));
   assert(just_filename.find(".cpp") == just_filename.length() - 4);
   just_filename = just_filename.substr(0, just_filename.find(".cpp"));
 
@@ -252,6 +255,7 @@ int main(int argc, const char **argv) {
       ClangTool *Tool;
 
       if (first_pass) {
+          llvm::errs() << op.getSourcePathList().size() << "\n";
           Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);
@@ -259,7 +263,7 @@ int main(int argc, const char **argv) {
       }
 
       std::stringstream ss;
-      ss << just_filename << pass->get_suffix() << ".cpp";
+      ss << input_folder << "/" << just_filename << pass->get_suffix() << ".cpp";
       current_output_file = ss.str();
       curr_visitor = pass->get_impl();
 

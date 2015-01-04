@@ -1,6 +1,8 @@
 #ifndef HEAP_ALLOCATION_H
 #define HEAP_ALLOCATION_H
 
+#include <stddef.h>
+#include <stdint.h>
 #include <assert.h>
 
 class heap_allocation {
