@@ -232,7 +232,8 @@ int main(int argc, const char **argv) {
   passes.push_back(new Pass(new MallocPass(), ".malloc"));
   /*
    * This pass can get messed up if the starting columns of basic blocks are
-   * shifted.
+   * shifted. This must be run before any passes that might insert things at the
+   * start of lines (e.g. labels).
    */
   passes.push_back(new Pass(new AliasChangedPass(), ".alias"));
   passes.push_back(new Pass(new CallingPass(), ".calling"));
