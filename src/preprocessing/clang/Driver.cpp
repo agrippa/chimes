@@ -31,7 +31,6 @@
 #include "RegisterStackPass.h"
 #include "MallocPass.h"
 #include "AliasChangedPass.h"
-#include "NumDebugTransform.h"
 #include "DesiredInsertions.h"
 
 using namespace clang;
@@ -137,13 +136,11 @@ public:
                       e = fdecl->param_end(); i != e; i++) {
                   ParmVarDecl *param = *i;
                   std::string mangled = constructMangledName(param->getName().str());
-                  llvm::errs() << "looking for " << mangled << "\n";
                   StackAlloc *alloc = insertions->findStackAlloc(mangled);
                   if (alloc != NULL) {
                       insert_at_front->push_back(alloc);
                   }
               }
-              llvm::errs() << "visiting " << curr_func << "with " << insert_at_front->size() << "parameters\n";
 
               if (insert_at_front->empty()) insert_at_front = NULL;
           } else {
@@ -226,7 +223,6 @@ int main(int argc, const char **argv) {
   assert(just_filename.find(".cpp") == just_filename.length() - 4);
   just_filename = just_filename.substr(0, just_filename.find(".cpp"));
 
-  llvm::errs() << "just_filename = " << just_filename << "\n";
   std::stringstream ss;
 
   passes.push_back(new Pass(new MallocPass(), ".malloc"));
@@ -253,17 +249,9 @@ int main(int argc, const char **argv) {
       ClangTool *Tool;
 
       if (first_pass) {
-          llvm::errs() << "Processing ";
-          for (std::vector<std::string>::iterator it =
-                  op.getSourcePathList().begin(), et =
-                  op.getSourcePathList().end(); it != et; it++) {
-              llvm::errs() << *it << " ";
-          }
-          llvm::errs() << "\n";
           Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);
-          llvm::errs() << "Processing " << current_output_file << "\n";
           Tool = new ClangTool(op.getCompilations(), inputs);
       }
 
