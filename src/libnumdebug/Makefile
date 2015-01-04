@@ -1,5 +1,5 @@
 libnumdebug.so: libnumdebug.cpp stack_serialization.cpp stack_frame.cpp
-	g++ -g -Wall -shared libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
+	g++ -g -fPIC -Wall -shared libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
         numdebug_stack.cpp heap_allocation.cpp -o libnumdebug.so
 clean:
 	rm -f libnumdebug.so

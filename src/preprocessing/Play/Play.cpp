@@ -1307,19 +1307,17 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                 if (CallInst *callInst = dyn_cast<CallInst>(&inst)) {
                     Function *callee = callInst->getCalledFunction();
                     if (callee) {
-                        const char *callee_name =
-                            callee->getName().str().c_str();
 
-                        if (strcmp(callee_name, "malloc") == 0 ||
-                                strcmp(callee_name, "realloc") == 0 ||
-                                strcmp(callee_name, "free") == 0) {
+                        if (callee->getName().str() == "malloc" ||
+                                callee->getName().str() == "realloc" ||
+                                callee->getName().str() == "free") {
                             int line_no = callInst->getDebugLoc().getLine();
                             int col = callInst->getDebugLoc().getCol();
                             assert(line_no != 0);
 
                             int alias_no;
-                            if (strcmp(callee_name, "malloc") == 0 ||
-                                    strcmp(callee_name, "realloc") == 0) {
+                            if (callee->getName().str() == "malloc" ||
+                                    callee->getName().str() == "realloc") {
                                 alias_no = searchDownUsesForAliasSetGroup(
                                         callInst);
                             } else {
@@ -1345,14 +1343,14 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                             found_mallocs.insert(line_no);
 
                             fprintf(fp, "%d %d %d %s", line_no, col, alias_no,
-                                    callee_name);
+                                    callee->getName().str().c_str());
                             /*
                              * For trivial cases of a malloc call that is
                              * immediately cast to its correct type, we add some
                              * extra type info to the heap allocation metrics to
                              * help with replay.
                              */
-                            if (strcmp(callee_name, "malloc") == 0 &&
+                            if (callee->getName().str() == "malloc" &&
                                     callInst->getNumUses() == 1) {
                                 Use& use = *(callInst->use_begin());
                                 User *user = use.getUser();

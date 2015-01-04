@@ -28,6 +28,7 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
             if (std::find(labels_used.begin(), labels_used.end(), lbl) ==
                     labels_used.end()) {
                 std::stringstream ss;
+                //TODO dont add this for functions that are externally defined
                 ss << " call_lbl_" << lbl << ": calling(" << lbl << "); ";
                 TheRewriter->InsertText(start, ss.str(), true, true);
                 labels_used.push_back(lbl);

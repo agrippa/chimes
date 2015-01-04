@@ -1,11 +1,12 @@
 #ifndef LIBNUMDEBUG_H
 #define LIBNUMDEBUG_H
 
-#include <stdlib.h>
+#include <stddef.h>
 
 extern void init_numdebug(int nstructs, ...);
 extern void calling(int lbl);
 extern int get_next_call();
+extern int peek_next_call();
 extern void new_stack();
 extern void rm_stack();
 extern void register_stack_var(const char *mangled_name, const char *full_type,
