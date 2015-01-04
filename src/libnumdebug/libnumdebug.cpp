@@ -651,11 +651,6 @@ void checkpoint() {
      */
     curr_seq_no++;
 
-    /*
-     * TODO this doesn't actually work because even though we know the
-     * allocations will still be there, the host program may change them and
-     * then we're checkpointing inconsistent data.
-     */
     vector<heap_allocation *> *heap_to_checkpoint =
         new vector<heap_allocation *>();
     for (map<void *, heap_allocation *>::iterator heap_iter = heap.begin(),
