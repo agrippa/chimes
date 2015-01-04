@@ -82,6 +82,7 @@ namespace {
         std::vector<AliasSetGroup *> alias_groups;
         std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
         std::map<std::string, int> *function_to_start_line = NULL;
+        std::map<std::string, std::string> *function_to_demangled = NULL;
         std::map<Function *, bool> can_call_checkpoint;
 
         explicit Play(): ModulePass(ID) {
@@ -149,6 +150,8 @@ namespace {
         bool isCallToCheckpoint(CallInst *call);
         bool callsCheckpoint(Function *F);
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
+        std::string *get_unique_varname(std::string varname, std::string fname,
+                std::set<std::string> *found_variables);
     };
 }
 
@@ -800,6 +803,7 @@ int Play::findStartingLineForFunction(Function *F, Module &M) {
 
     if (function_to_start_line == NULL) {
         function_to_start_line = new std::map<std::string, int >();
+        function_to_demangled = new std::map<std::string, std::string>();
 
         NamedMDNode *root = NULL;
         for (Module::named_metadata_iterator md_iter = M.named_metadata_begin(),
@@ -832,6 +836,10 @@ int Play::findStartingLineForFunction(Function *F, Module &M) {
             assert(function_to_start_line->find(fname) ==
                     function_to_start_line->end());
             (*function_to_start_line)[fname] = line_no;
+
+            assert(function_to_demangled->find(di_func.getDisplayName()) ==
+                        function_to_demangled->end());
+            (*function_to_demangled)[fname] = di_func.getDisplayName();
         }
     }
 
@@ -858,13 +866,10 @@ void Play::findStartingLinesForAllFunctions(Module &M, const char *output_file) 
             continue;
         }
         // If we don't call checkpoint, we don't need line info
-        if (!callsCheckpoint(F)) {
-            if (F->getName().str() == "main") {
-                errs() << "main() does not directly or indirectly call "
-                    "checkpoint? Are you using the library anywhere?\n";
-                exit(1);
-            }
-            continue;
+        if (F->getName().str() == "main" && !callsCheckpoint(F)) {
+            errs() << "main() does not directly or indirectly call "
+                "checkpoint? Are you using the library anywhere?\n";
+            exit(1);
         }
 
         int min_func_line = findStartingLineForFunction(F, M);
@@ -883,7 +888,7 @@ void Play::findFunctionExits(Module &M, const char *output_file) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        if (!callsCheckpoint(F)) continue;
+        // if (!callsCheckpoint(F)) continue;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
@@ -1054,14 +1059,18 @@ void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
     fclose(fp);
 }
 
-std::string *get_unique_varname(std::string varname, std::string fname,
+std::string *Play::get_unique_varname(std::string varname, std::string fname,
         std::set<std::string> *found_variables) {
 
     std::string *unique_varname = new std::string();
     int permute = 0;
+    assert(function_to_demangled != NULL &&
+            function_to_demangled->find(fname) !=
+            function_to_demangled->end());
+    std::string correct_fname = (*function_to_demangled)[fname];
     do {
         std::ostringstream str_stream;
-        str_stream << fname << "|" << varname << "|" << permute;
+        str_stream << correct_fname << "|" << varname << "|" << permute;
         *unique_varname = str_stream.str();
         permute++;
     } while (found_variables->find(*unique_varname) != found_variables->end());
@@ -1070,7 +1079,10 @@ std::string *get_unique_varname(std::string varname, std::string fname,
     return unique_varname;
 }
 
-//TODO I don't think this supports stack-allocated arrays yet
+/*
+ * TODO I don't think this supports stack-allocated arrays yet. Related TODO in
+ * libnumdebug.cpp
+ */
 void Play::findStackAllocations(Module &M, const char *output_file,
         const char *struct_info_filename) {
     FILE *fp = fopen(output_file, "w");
@@ -1086,7 +1098,7 @@ void Play::findStackAllocations(Module &M, const char *output_file,
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        if (!callsCheckpoint(F)) continue;
+        // if (!callsCheckpoint(F)) continue;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
