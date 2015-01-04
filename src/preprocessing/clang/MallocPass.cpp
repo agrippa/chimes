@@ -40,8 +40,8 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
                         ss2 << ", " << (alloc->get_is_elem_ptr() ? "1" : "0") <<
                             ", " << (alloc->get_is_elem_struct() ? "1" : "0");
                         if (alloc->get_is_elem_struct()) {
-                            ss2 << "< (int)sizeof(struct " <<
-                                alloc->get_struct_type_name() << ", " <<
+                            ss2 << ", (int)sizeof(struct " <<
+                                alloc->get_struct_type_name() << "), " <<
                                 alloc->get_num_field_ptrs();
 
                             std::vector<std::string> *struct_field_ptrs =

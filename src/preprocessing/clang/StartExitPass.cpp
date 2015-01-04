@@ -28,6 +28,8 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
          */
         if (FunctionStartInsertion *insert =
                 insertions->is_function_start(start_line)) {
+            // may happen if we run against mismatched info and source files
+            assert(!s->children().empty());
             clang::Stmt::const_child_iterator iter = s->child_begin();
             const clang::Stmt *child = *iter;
             TheRewriter->InsertText(child->getLocStart(), "new_stack(); ", true,

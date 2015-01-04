@@ -85,13 +85,16 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
         int group = atoi(group_str.c_str());
         line = line.substr(group_end + 1);
 
-        std::string fname = line;
-        if (!isalpha(fname[fname.size() - 1])) {
-            fname = fname.substr(0, fname.size() - 1);
+        std::string fname;
+        bool have_type_info;
+        if (line.find(' ') == std::string::npos) {
+            fname = line;
+            have_type_info = false;
+        } else {
+            fname = line.substr(0, line.find(' '));
+            line = line.substr(line.find(' ') + 1);
+            have_type_info = true;
         }
-
-        line = line.substr(fname.size());
-        bool have_type_info = (!line.empty() && line[0] == ' ');
         HeapAlloc *alloc = new HeapAlloc(line_no, col, group, fname,
                 have_type_info);
 

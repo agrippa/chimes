@@ -28,7 +28,7 @@ void rm_stack();
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...);
 int alias_group_changed(int ngroups, ...);
-void *malloc_wrapper(size_t nbytes, int group);
+void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
 void onexit();
