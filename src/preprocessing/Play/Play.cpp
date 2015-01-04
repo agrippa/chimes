@@ -602,7 +602,6 @@ void Play::findMinimumLineInBasicBlock(BasicBlock *curr, int *out_line, int *out
     *out_col = mincol;
 }
 
-// TODO need to account for function calls?
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
         std::set<BasicBlock *>& visited, std::string filename) {
     assert(curr != NULL);
@@ -636,6 +635,17 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
                     value_to_alias_group.end());
             int group = value_to_alias_group[store->getPointerOperand()];
             groups->insert(group);
+        } else if (dyn_cast<CallInst>(curr_inst) && !dyn_cast<IntrinsicInst>(curr_inst)) {
+            /*
+             * If we hit a call, we need to register the changes made within a
+             * basic block so that a callee that calls checkpoint() knows to
+             * checkpoint that state.
+             */
+            assert(maxline != -1);
+            if (groups->size() > 0) {
+                unionGroups(maxline, maxcol, filename, groups);
+                groups = new std::set<int>();
+            }
         }
     }
     assert(maxline != -1);

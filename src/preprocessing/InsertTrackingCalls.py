@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# OBSOLETE
 import sys
 import os
 
@@ -452,6 +453,11 @@ if __name__ == '__main__':
     if len(sys.argv) != 13:
         print 'usage: InsertTrackingCalls.py file.c original.c/cu lines.info functions.info exits.info stack.info heap.info loc.info goto.info struct.info decl.info out.c'
         sys.exit(1)
+
+    print 'This implementation of the transformations is obsolete, a clang ' \
+        'frontend is now being used. This implementation is retained purely ' \
+        'for reference.'
+    sys.exit(1)
 
     input_file = sys.argv[1]
     original_file = sys.argv[2]
