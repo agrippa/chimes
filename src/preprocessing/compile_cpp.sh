@@ -29,6 +29,11 @@ if [[ -z ${INPUT} ]]; then
     exit 1
 fi
 
+if [[ ! -f ${INPUT} ]]; then
+    echo 'input is not a file'
+    exit 1
+fi
+
 if [[ "${INPUT:0:1}" != "/" ]]; then
     INPUT=$(pwd)/${INPUT}
 fi

@@ -29,6 +29,11 @@ if [[ -z ${INPUT} ]]; then
     exit 1
 fi
 
+if [[ ! -f ${INPUT} ]]; then
+    echo 'input is not a file'
+    exit 1
+fi
+
 if [[ "${INPUT:0:1}" != "/" ]]; then
     INPUT=$(pwd)/${INPUT}
 fi
@@ -48,8 +53,6 @@ PRE_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.pre
 POST_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.post
 CPP_FILE=${COMPILE_HELPER_WORK_DIR}/log.cpp
 ENV_POST_FILE=${COMPILE_HELPER_WORK_DIR}/log.env.post
-
-echo $WORK_DIR
 
 mkdir ${COMPILE_HELPER_WORK_DIR}
 mkdir ${NVCC_WORK_DIR} && cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
@@ -107,4 +110,6 @@ cat ${ENV_FILE} ${POST_CMD_FILE} > ${ENV_POST_FILE}
 chmod +x ${ENV_POST_FILE}
 cd ${NVCC_WORK_DIR} && ${ENV_POST_FILE}
 
-rm -rf ${WORK_DIR}
+if [[ $KEEP == 0 ]]; then
+    rm -rf ${WORK_DIR}
+fi
