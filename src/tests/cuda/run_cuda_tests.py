@@ -3,13 +3,13 @@ import os.path
 import sys
 from subprocess import Popen, PIPE
 
-tests = [('simple_stencil.cpp', 'simple_stencil.register.cpp')]
+tests = [('vector_sum.cu', '')]
 
 NUM_DEBUG_HOME = os.environ['NUM_DEBUG_HOME']
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
+COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
 EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples'
-CPP_EXAMPLES_DIR = EXAMPLES_DIR + '/cpp'
-CPP_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/cpp'
+CUDA_EXAMPLES_DIR = EXAMPLES_DIR + '/cuda'
+CUDA_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/cuda'
 
 def run_cmd(cmd):
     cmd = cmd.split()
@@ -28,12 +28,12 @@ for t in tests:
     input_file = t[0]
     compare_file = t[1]
 
-    compile_cmd = COMPILE_SCRIPT + ' -k -i ' + CPP_EXAMPLES_DIR + '/' + input_file
+    compile_cmd = COMPILE_SCRIPT + ' -k -i ' + CUDA_EXAMPLES_DIR + '/' + input_file
     stdout, stderr = run_cmd(compile_cmd)
     lines = stdout.split('\n')
     transformed = lines[len(lines) - 2].strip()
 
-    stdout, stderr = run_cmd('diff ' + CPP_TEST_DIR + '/' + compare_file + ' ' + transformed)
+    stdout, stderr = run_cmd('diff ' + CUDA_TEST_DIR + '/' + compare_file + ' ' + transformed)
 
     if len(stdout.strip()) != 0:
         print 'Mismatch in test for ' + input_file
