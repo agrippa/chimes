@@ -142,7 +142,7 @@ private:
 
 class MatchedLocation {
 public:
-    MatchedLocation(int set_line, int set_col, std::string set_filename) :
+    MatchedLocation(int set_line, int set_col, const char *set_filename) :
         line(set_line), col(set_col), filename(set_filename) {}
     int get_line() { return line; }
     int get_col() { return col; }
@@ -212,8 +212,8 @@ public:
         labels = parseLabels();
     }
 
-    bool contains(int line, int col, std::string &filename);
-    std::vector<int> *get_groups(int line, int col, std::string &filename);
+    bool contains(int line, int col, const char *filename);
+    std::vector<int> *get_groups(int line, int col, const char *filename);
     int get_main_line() { return main_line; }
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     std::string get_original_file() { return original_file; }

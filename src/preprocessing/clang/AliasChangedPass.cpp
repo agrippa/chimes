@@ -11,19 +11,20 @@ extern DesiredInsertions *insertions;
 
 static std::vector<MatchedLocation *> already_matched;
 
-static bool matched(int line, int col, std::string &filename) {
+static bool matched(int line, int col, const char *filename) {
+    std::string filename_str(filename);
     for (std::vector<MatchedLocation *>::iterator i = already_matched.begin(),
             e = already_matched.end(); i != e; i++) {
         MatchedLocation *loc = *i;
         if (loc->get_line() == line && loc->get_col() == col &&
-                loc->get_filename() == filename) {
+                loc->get_filename() == filename_str) {
             return true;
         }
     }
     return false;
 }
 
-static void mark_matched(int line, int col, std::string &filename) {
+static void mark_matched(int line, int col, const char *filename) {
     MatchedLocation *loc = new MatchedLocation(line, col, filename);
     already_matched.push_back(loc);
 }
@@ -33,18 +34,18 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation end = s->getLocEnd();
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        unsigned start_line = SM->getPresumedLineNumber(start);
-        unsigned start_col = SM->getPresumedColumnNumber(start);
-        unsigned end_line = SM->getPresumedLineNumber(end);
-        unsigned end_col = SM->getPresumedColumnNumber(end);
-        std::string filename = SM->getFilename(start);
+        clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
+        clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
 
-        if (insertions->contains(start_line, start_col, filename) &&
-                !matched(start_line, start_col, filename)) {
-            mark_matched(start_line, start_col, filename);
+        if (insertions->contains(start_loc.getLine(), start_loc.getColumn(),
+                    start_loc.getFilename()) && !matched(start_loc.getLine(),
+                    start_loc.getColumn(), start_loc.getFilename())) {
+            mark_matched(start_loc.getLine(), start_loc.getColumn(),
+                    start_loc.getFilename());
 
-            std::vector<int> *groups = insertions->get_groups(start_line,
-                    start_col, filename);
+            std::vector<int> *groups = insertions->get_groups(
+                    start_loc.getLine(), start_loc.getColumn(),
+                    start_loc.getFilename());
             std::stringstream ss;
             ss << "alias_group_changed(" << groups->size();
             for (std::vector<int>::iterator i = groups->begin(),
@@ -74,19 +75,13 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                 }
                 default: {
                     ss << "; ";
-                    TheRewriter->InsertText(start, ss.str(), true, true);
+                    InsertAtFront(s, ss.str());
+                    // TheRewriter->InsertText(start, ss.str(), true, true);
                     break;
                 }
             }
         }
     }
 
-    for (clang::Stmt::const_child_iterator i = s->child_begin(),
-            e = s->child_end(); i != e; i++) {
-        const clang::Stmt *child = *i;
-        if (child != NULL) {
-            parent = s;
-            VisitStmt(child);
-        }
-    }
+    visitChildren(s);
 }

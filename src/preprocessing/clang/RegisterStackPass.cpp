@@ -8,9 +8,6 @@
 #include <llvm/Support/raw_ostream.h>
 
 extern DesiredInsertions *insertions;
-extern int lbl_counter;
-clang::SourceLocation lastGoto;
-bool hasLastGoto = false;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -19,11 +16,6 @@ void RegisterStackPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation end = s->getLocEnd();
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        unsigned start_line = SM->getPresumedLineNumber(start);
-        unsigned start_col = SM->getPresumedColumnNumber(start);
-        unsigned end_line = SM->getPresumedLineNumber(end);
-        unsigned end_col = SM->getPresumedColumnNumber(end);
-        std::string filename = SM->getFilename(start);
 
         if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {
             const clang::DeclStmt *d = clang::dyn_cast<clang::DeclStmt>(s);
@@ -48,10 +40,11 @@ void RegisterStackPass::VisitStmt(const clang::Stmt *s) {
 
             if (acc.str().length() > 0) {
                 std::stringstream ss;
-                ss << " lbl_" << lbl_counter++ << ": ";
+                int lbl = getNextRegisterLabel();
+                ss << " lbl_" << lbl << ": ";
 
                 std::stringstream ss2;
-                ss2 << " if (____numdebug_replaying) { goto lbl_" << (lbl_counter) << "; } ";
+                ss2 << " if (____numdebug_replaying) { goto lbl_" << (lbl + 1) << "; } ";
 
                 if (anyInitLists) {
                     TheRewriter->InsertTextBefore(start, ss.str());
@@ -61,19 +54,11 @@ void RegisterStackPass::VisitStmt(const clang::Stmt *s) {
                 TheRewriter->InsertTextAfterToken(end, acc.str());
                 TheRewriter->InsertTextAfterToken(end, ss2.str());
 
-                hasLastGoto = true;
-                lastGoto = end;
+                setLastGoto(end);
             }
         }
 
     }
 
-    for (clang::Stmt::const_child_iterator i = s->child_begin(),
-            e = s->child_end(); i != e; i++) {
-        const clang::Stmt *child = *i;
-        if (child != NULL) {
-            parent = s;
-            VisitStmt(child);
-        }
-    }
+    visitChildren(s);
 }

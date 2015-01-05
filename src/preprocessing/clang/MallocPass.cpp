@@ -16,9 +16,6 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
         unsigned start_line = SM->getPresumedLineNumber(start);
         unsigned start_col = SM->getPresumedColumnNumber(start);
-        unsigned end_line = SM->getPresumedLineNumber(end);
-        unsigned end_col = SM->getPresumedColumnNumber(end);
-        std::string filename = SM->getFilename(start);
 
         if (s->getStmtClass() == clang::Stmt::CallExprClass) {
             HeapAlloc *alloc = insertions->isMemoryAllocation(start_line,
@@ -67,12 +64,5 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
         }
     }
 
-    for (clang::Stmt::const_child_iterator i = s->child_begin(),
-            e = s->child_end(); i != e; i++) {
-        const clang::Stmt *child = *i;
-        if (child != NULL) {
-            parent = s;
-            VisitStmt(child);
-        }
-    }
+    visitChildren(s);
 }

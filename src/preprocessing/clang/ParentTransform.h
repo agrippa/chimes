@@ -18,9 +18,24 @@ public:
         SM = &R.getSourceMgr();
     }
     void setContext(clang::ASTContext &set_Context) { Context = &set_Context; }
+
     virtual void VisitStmt(const clang::Stmt *s) = 0;
     virtual bool usesStackInfo() = 0;
+    virtual bool setsLastGoto() = 0;
+    virtual bool createsRegisterLabels() = 0;
+    virtual bool createsFunctionLabels() = 0;
+    
+    void setLastGoto(clang::SourceLocation last);
+    clang::SourceLocation getLastGoto();
+    bool hasLastGoto();
+    void resetLastGoto();
 
+    int getNumRegisterLabels();
+    int getNumFunctionLabels();
+    void resetRegisterLabels();
+    void resetFunctionLabels();
+
+    clang::SourceManager *getSM() { return SM; }
 protected:
     clang::Rewriter *TheRewriter;
     clang::ASTContext *Context;
@@ -28,6 +43,21 @@ protected:
     const clang::Stmt *parent;
 
     std::string constructRegisterStackVar(StackAlloc *alloc);
+    void visitChildren(const clang::Stmt *s);
+    const clang::Stmt *getParent(const clang::Stmt *s);
+    void setParent(const clang::Stmt *child, const clang::Stmt *parent);
+    void InsertAtFront(const clang::Stmt *s, std::string st);
+
+    int getNextRegisterLabel();
+    int getNextFunctionLabel();
+private:
+    std::map<const clang::Stmt *, const clang::Stmt *> parentMap;
+
+    clang::SourceLocation lastGoto;
+    bool hasGoto = false;
+
+    int curr_register_label = 0;
+    int curr_function_label = 0;
 };
 
 #endif

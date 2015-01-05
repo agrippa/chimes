@@ -9,39 +9,23 @@
 
 extern DesiredInsertions *insertions;
 
-static std::vector<int> labels_used;
-
 void CallingPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        unsigned start_line = SM->getPresumedLineNumber(start);
-        unsigned start_col = SM->getPresumedColumnNumber(start);
-        unsigned end_line = SM->getPresumedLineNumber(end);
-        unsigned end_col = SM->getPresumedColumnNumber(end);
-        std::string filename = SM->getFilename(start);
 
-        LabelInfo *label_info = insertions->isLabeledLoc(start_line, start_col);
-        if (label_info != NULL && label_info->get_type() == CALLSITE) {
-            int lbl = insertions->getLabelAssignedFor(start_line, start_col);
-            if (std::find(labels_used.begin(), labels_used.end(), lbl) ==
-                    labels_used.end()) {
+        if (const clang::CallExpr *call = clang::dyn_cast<const clang::CallExpr>(s)) {
+            const clang::FunctionDecl *decl = call->getDirectCallee();
+            if (decl->getNameAsString() == "checkpoint" ||
+                    (decl->isDefined() && decl->hasBody())) {
                 std::stringstream ss;
-                //TODO dont add this for functions that are externally defined
+                int lbl = getNextFunctionLabel();
                 ss << " call_lbl_" << lbl << ": calling(" << lbl << "); ";
                 TheRewriter->InsertText(start, ss.str(), true, true);
-                labels_used.push_back(lbl);
             }
         }
     }
 
-    for (clang::Stmt::const_child_iterator i = s->child_begin(),
-            e = s->child_end(); i != e; i++) {
-        const clang::Stmt *child = *i;
-        if (child != NULL) {
-            parent = s;
-            VisitStmt(child);
-        }
-    }
+    visitChildren(s);
 }

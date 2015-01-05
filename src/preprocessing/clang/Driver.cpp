@@ -68,13 +68,11 @@ static llvm::cl::opt<std::string> labels_file("b",
 DesiredInsertions *insertions = NULL;
 std::string curr_func;
 std::vector<StackAlloc *> *insert_at_front = NULL;
-int lbl_counter;
-
-extern clang::SourceLocation lastGoto;
-extern bool hasLastGoto;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
+static std::map<std::string, int> num_register_labels;
+static std::map<std::string, int> num_call_labels;
 
 class Pass {
 public:
@@ -105,6 +103,8 @@ std::string constructMangledName(std::string varname) {
         count++;
     } while(std::find(created_vars.begin(), created_vars.end(), mangled) !=
             created_vars.end());
+
+    created_vars.push_back(mangled);
     return mangled;
 }
 
@@ -123,14 +123,20 @@ public:
     for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
       // Traverse the declaration using our AST visitor.
       Decl *toplevel = *b;
+      clang::SourceLocation loc = toplevel->getLocation();
 
-      if (FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel)) {
+      if (isa<FunctionDecl>(toplevel) && toplevel->hasBody() &&
+              visitor->getSM()->isInMainFile(loc)) {
+          FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
+          assert(fdecl != NULL);
           curr_func = fdecl->getNameAsString();
+
+          clang::PresumedLoc pre_loc = visitor->getSM()->getPresumedLoc(loc);
+          std::string filename(pre_loc.getFilename());
 
           if (visitor->usesStackInfo()) {
               assert(insert_at_front == NULL);
               insert_at_front = new std::vector<StackAlloc *>();
-              lbl_counter = 0;
 
               for (FunctionDecl::param_iterator i = fdecl->param_begin(),
                       e = fdecl->param_end(); i != e; i++) {
@@ -146,32 +152,46 @@ public:
           } else {
               insert_at_front = NULL;
           }
-      }
 
-      hasLastGoto = false;
-      if ((*b)->getBody() != NULL) {
-          (*b)->dump();
-          llvm::errs() << "\n";
+          if (visitor->createsRegisterLabels())
+              visitor->resetRegisterLabels();
+          if (visitor->createsFunctionLabels())
+              visitor->resetFunctionLabels();
+          if (visitor->setsLastGoto())
+              visitor->resetLastGoto();
+
+          // (*b)->dump();
+          // llvm::errs() << "\n";
           visitor->Visit((*b)->getBody());
-      }
 
-      if (hasLastGoto) {
-          std::stringstream ss;
-          ss << "lbl_" << lbl_counter << ": if (____numdebug_replaying) { "
-              "int dst = get_next_call(); switch(dst) { ";
-          for (std::vector<LabelInfo *>::iterator l_iter =
-                  insertions->labels_begin(), l_end = insertions->labels_end();
-                  l_iter != l_end; l_iter++) {
-              LabelInfo *label = *l_iter;
-              if (label->get_function() == curr_func && label->get_type() == CALLSITE) {
-                  ss << "case(" << label->get_lbl() << "): { goto call_lbl_" <<
-                      label->get_lbl() << "; } ";
-              }
+          std::stringstream id_str;
+          id_str << filename << ":" << curr_func << ":" << pre_loc.getLine() <<
+              ":" << pre_loc.getColumn();
+
+          if (visitor->createsRegisterLabels()) {
+              assert(num_register_labels.find(id_str.str()) == num_register_labels.end());
+              num_register_labels[id_str.str()] = visitor->getNumRegisterLabels();
           }
-          ss << "default: { fprintf(stderr, \"Unknown label %d at %s:%d\\n\", "
-              "dst, __FILE__, __LINE__); exit(1); }";
-          ss << " } } ";
-          R.InsertTextAfterToken(lastGoto, ss.str());
+
+          if (visitor->createsFunctionLabels()) {
+              assert(num_call_labels.find(id_str.str()) == num_call_labels.end());
+              num_call_labels[id_str.str()] = visitor->getNumFunctionLabels();
+          }
+
+          if (visitor->setsLastGoto() && visitor->hasLastGoto()) {
+              assert(num_register_labels.find(id_str.str()) != num_register_labels.end());
+              assert(num_call_labels.find(id_str.str()) != num_call_labels.end());
+              std::stringstream ss;
+              ss << "lbl_" << num_register_labels[id_str.str()] << ": if (____numdebug_replaying) { "
+                  "int dst = get_next_call(); switch(dst) { ";
+              for (int l = 0; l < num_call_labels[id_str.str()]; l++) {
+                  ss << "case(" << l << "): { goto call_lbl_" << l << "; } ";
+              }
+              ss << "default: { fprintf(stderr, \"Unknown label %d at %s:%d\\n\", "
+                  "dst, __FILE__, __LINE__); exit(1); }";
+              ss << " } } ";
+              R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
+          }
       }
     }
     return true;

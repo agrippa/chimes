@@ -16,6 +16,11 @@ public:
 
     void VisitStmt(const clang::Stmt *s) override;
     bool usesStackInfo() override { return false; }
+    bool setsLastGoto() override { return false; }
+    bool createsRegisterLabels() override { return false; }
+    bool createsFunctionLabels() override { return true; }
+private:
+    bool parent_is_ternary(const clang::Stmt *parent);
 };
 
 #endif
