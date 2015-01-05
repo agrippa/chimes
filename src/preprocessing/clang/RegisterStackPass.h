@@ -16,6 +16,9 @@ public:
 
     void VisitStmt(const clang::Stmt *s) override;
     bool usesStackInfo() override { return false; }
+    bool setsLastGoto() override { return true; }
+    bool createsRegisterLabels() override { return true; }
+    bool createsFunctionLabels() override { return false; }
 };
 
 #endif

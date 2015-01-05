@@ -21,7 +21,6 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
         unsigned start_col = SM->getPresumedColumnNumber(start);
         unsigned end_line = SM->getPresumedLineNumber(end);
         unsigned end_col = SM->getPresumedColumnNumber(end);
-        std::string filename = SM->getFilename(start);
 
         /*
          * Insert new_stack callbacks.
@@ -66,12 +65,5 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
         }
     }
 
-    for (clang::Stmt::const_child_iterator i = s->child_begin(),
-            e = s->child_end(); i != e; i++) {
-        const clang::Stmt *child = *i;
-        if (child != NULL) {
-            parent = s;
-            VisitStmt(child);
-        }
-    }
+    visitChildren(s);
 }

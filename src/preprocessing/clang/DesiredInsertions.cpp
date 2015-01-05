@@ -376,13 +376,14 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
     return result;
 }
 
-bool DesiredInsertions::contains(int line, int col, std::string &filename) {
+bool DesiredInsertions::contains(int line, int col, const char *filename) {
+    std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
             state_change_insertions->begin(), e =
             state_change_insertions->end(); i != e; i++) {
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
-                insert->get_filename() == filename) {
+                insert->get_filename() == filename_str) {
             return true;
         }
     }
@@ -391,13 +392,14 @@ bool DesiredInsertions::contains(int line, int col, std::string &filename) {
 
 
 std::vector<int> *DesiredInsertions::get_groups(int line, int col,
-        std::string &filename) {
+        const char *filename) {
+    std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
             state_change_insertions->begin(), e =
             state_change_insertions->end(); i != e; i++) {
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
-                insert->get_filename() == filename) {
+                insert->get_filename() == filename_str) {
             return insert->get_groups();
         }
     }

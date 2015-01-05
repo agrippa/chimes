@@ -1732,7 +1732,5 @@ bool Play::runOnModule(Module &M) {
 
     dumpLocationsToFile("loc.info", locations);
 
-    // dumpGotoChainsToFile("goto.info", locations, M);
-
     return false;
 }
