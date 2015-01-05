@@ -5,7 +5,7 @@ LAST_STRUCT_STAGE=struct.register.cpp
 
 GXX_FLAGS=-fno-rtti -O0 -g `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --cxxflags`
 INCLUDES=-I${LLVM_HOME}/tools/clang/include -I${LLVM_INSTALL}/tools/clang/include
-ARCH=$(uname -s)
+ARCH=$(shell uname -s)
 
 ifeq ($(ARCH),Darwin)
 LIBS=-lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lclangEdit \
