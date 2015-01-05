@@ -88,4 +88,4 @@ cat ${ENV_FILE} ${POST_CMD_FILE} > ${ENV_POST_FILE}
 chmod +x ${ENV_POST_FILE}
 cd ${NVCC_WORK_DIR} && ${ENV_POST_FILE}
 
-# rm -rf ${WORK_DIR}
+rm -rf ${WORK_DIR}
