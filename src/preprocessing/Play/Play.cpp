@@ -18,7 +18,6 @@ using namespace llvm;
 // #define VERBOSE
 
 namespace {
-    typedef enum {CALLSITE, STACK_REGISTRATION} LocationType;
 
     typedef struct _SimpleLoc {
         std::string *filename;
@@ -30,14 +29,6 @@ namespace {
         SimpleLoc loc;
         std::set<int> *groups;
     } GroupsModifiedAtLine;
-
-    typedef struct _LabeledLoc {
-        LocationType type;
-        int line_no;
-        int col;
-        std::string *filename;
-        int id;
-    } LabeledLoc;
 
     typedef struct _StackAllocInfo {
         std::string *varname;
@@ -115,35 +106,16 @@ namespace {
                 std::set<BasicBlock *> &visited, std::string filename);
         void unionGroups(int line, int col, std::string filename, std::set<int> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
-        void dumpFunctionStartingLineTo(const char *filename,
-                std::map<int, std::string> functions);
 
         void findStackAllocations(Module &M, const char *output_file,
                 const char *struct_info_filename);
-        void findMinimumLineInBasicBlock(BasicBlock *curr, int *out_line, int *out_col);
-        void traverseUntilNotForIncOrCond(BasicBlock *curr,
-                std::set<int> *to_insert);
-        void traverseLookingForFirstUsers(BasicBlock::iterator curr,
-                BasicBlock::iterator end, std::vector<Instruction *> users,
-                std::set<int> *to_insert, Module &M);
         SimpleLoc *findStartingLineForFunction(Function *F, Module &M);
         void findHeapAllocations(Module &M, const char *output_file);
         int searchUpDefsForAliasSetGroup(Value *val, int nesting);
-        std::map<Function *, std::vector<LabeledLoc *> *> *collectUniqueIDs(
-                Module &M, const char *decl_info_name);
-        bool isFunctionNameEnd(char *fname_end);
-        void addIfNotExists(LabeledLoc *loc, Function *containing_function,
-                std::map<Function *, std::vector<LabeledLoc *> *> *locations);
-        void dumpLocationsToFile(const char *filename,
-                std::map<Function *, std::vector<LabeledLoc *> *> *locations);
-        void dumpGotoChainsToFile(const char *filename,
-                std::map<Function *, std::vector<LabeledLoc *> *> *locations,
-                Module &M);
         std::map<std::string, std::vector<std::string>> *getStructFieldNames(
                 Module &M);
         void dumpStructInfoToFile(const char *filename, std::map<std::string,
                 std::vector<std::string>> *struct_fields);
-        void collectVariableDeclarations(Module &M, const char *filename);
         bool isCallToCheckpoint(CallInst *call);
         bool callsCheckpoint(Function *F);
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
@@ -582,23 +554,6 @@ void Play::unionGroups(int line, int col, std::string filename,
     }
 }
 
-void Play::findMinimumLineInBasicBlock(BasicBlock *curr, int *out_line, int *out_col) {
-    int minline = -1;
-    int mincol = -1;
-    for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
-            inst_iter != inst_end; inst_iter++) {
-        Instruction *curr_inst = inst_iter;
-        int line = curr_inst->getDebugLoc().getLine();
-        if (line != 0 && (minline == -1 || line < minline)) {
-            minline = line;
-            mincol = curr_inst->getDebugLoc().getCol();
-        }
-    }
-
-    *out_line = minline;
-    *out_col = mincol;
-}
-
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
         std::set<BasicBlock *>& visited, std::string filename) {
     assert(curr != NULL);
@@ -845,71 +800,6 @@ SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
     assert(function_to_start_line->find(F->getName().str()) !=
             function_to_start_line->end());
     return (*function_to_start_line)[F->getName().str()];
-}
-
-void Play::traverseUntilNotForIncOrCond(BasicBlock *curr,
-        std::set<int> *to_insert) {
-    assert(curr != NULL);
-
-    if (curr->getName().str().find("for.inc") == 0 ||
-            curr->getName().str().find("for.cond") == 0) {
-        TerminatorInst *term = curr->getTerminator();
-        for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-            BasicBlock *child = term->getSuccessor(i);
-            traverseUntilNotForIncOrCond(child, to_insert);
-        }
-    } else {
-        int minline, col;
-        findMinimumLineInBasicBlock(curr, &minline, &col);
-        to_insert->insert(minline);
-    }
-}
-
-void Play::traverseLookingForFirstUsers(BasicBlock::iterator curr,
-        BasicBlock::iterator end, std::vector<Instruction *> users,
-        std::set<int> *to_insert, Module &M) {
-    TerminatorInst *term = curr->getParent()->getTerminator();
-
-    while (curr != end) {
-        if (std::find(users.begin(), users.end(), curr) != users.end()) {
-            // Found a user! now just need to mark the right line and exit
-            BasicBlock *parent = curr->getParent();
-            assert(parent != NULL);
-
-            if (parent->getName().str().find("for.inc") == 0 ||
-                    parent->getName().str().find("for.cond") == 0) {
-                traverseUntilNotForIncOrCond(parent, to_insert);
-            } else {
-                if (curr->getDebugLoc().getLine() == 0) {
-                    /*
-                     * If we have a user with an invalid line, it should be a
-                     * store instruction initializing a stack variable at
-                     * declaration. If that's the case, we just find what line
-                     * this function starts on and insert there.
-                     */
-                    assert(dyn_cast<StoreInst>(curr));
-                    to_insert->insert(findStartingLineForFunction(
-                                curr->getParent()->getParent(), M)->line_no);
-                } else {
-                    int insert_at = curr->getDebugLoc().getLine();
-                    to_insert->insert(insert_at);
-                }
-            }
-            return;
-        }
-        curr++;
-    }
-
-    /*
-     * If not user was found in this basic block, we need to traverse all
-     * successors.
-     */
-    assert(term->getNumSuccessors() > 0);
-    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-        BasicBlock *child = term->getSuccessor(i);
-        traverseLookingForFirstUsers(child->begin(), child->end(), users,
-                to_insert, M);
-    }
 }
 
 std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
@@ -1341,234 +1231,6 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
     fclose(fp);
 }
 
-bool Play::isFunctionNameEnd(char *fname_end) {
-    if (fname_end[0] != '_') return false;
-    if (fname_end[1] != '_') return false;
-    if (fname_end[2] != '_') return false;
-    if (fname_end[3] != '_') return false;
-    return true;
-}
-
-void Play::addIfNotExists(LabeledLoc *loc, Function *containing_function,
-        std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
-
-    if (locations->find(containing_function) == locations->end()) {
-        (*locations)[containing_function] = new std::vector<LabeledLoc *>();
-    }
-
-    LabeledLoc *exists = NULL;
-    std::vector<LabeledLoc *> *existing = (*locations)[containing_function];
-    for (std::vector<LabeledLoc *>::iterator exist_iter = existing->begin(),
-            exist_end = existing->end(); exist_iter != exist_end;
-            exist_iter++) {
-        LabeledLoc *curr = *exist_iter;
-        if (curr->line_no == loc->line_no && curr->col == loc->col &&
-                *(curr->filename) == *(loc->filename)) {
-            exists = curr;
-            break;
-        }
-    }
-
-    if (exists != NULL) {
-        if (exists->type != loc->type) {
-            (*locations)[containing_function]->push_back(loc);
-        } else {
-            free(loc);
-        }
-    } else {
-        (*locations)[containing_function]->push_back(loc);
-    }
-}
-
-std::map<Function *, std::vector<LabeledLoc *> *> *Play::collectUniqueIDs(
-        Module &M, const char *decl_info_name) {
-    std::map<Function *, std::vector<LabeledLoc *> *> *locations =
-        new std::map<Function *, std::vector<LabeledLoc *> *>();
-    int id = 0;
-
-    // Collect stack variable registrations from the stack.info file
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                    ++i) {
-                Instruction &inst = *i;
-                if (dyn_cast<DbgInfoIntrinsic>(&inst)) continue;
-
-                if (CallInst *call = dyn_cast<CallInst>(&inst)) {
-                    Function *callee = call->getCalledFunction();
-                    if (isCallToCheckpoint(call) ||
-                            callee->getBasicBlockList().size() > 0) {
-                        /*
-                         * is an internal function which we have the definition
-                         * for.
-                         */
-                        LabeledLoc *loc = (LabeledLoc *)malloc(sizeof(LabeledLoc));
-                        loc->id = id++;
-                        loc->type = CALLSITE;
-                        loc->line_no = inst.getDebugLoc().getLine();
-                        loc->col = inst.getDebugLoc().getCol();
-                        assert(loc->line_no != 0);
-
-                        DebugLoc dl = inst.getDebugLoc();
-                        if (!dl.isUnknown()) {
-                            DIScope scope(dl.getScope(M.getContext()));
-                            loc->filename = new std::string(scope.getFilename().str());
-                            assert(!loc->filename->empty());
-                            addIfNotExists(loc, F, locations);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    return locations;
-}
-
-void Play::dumpLocationsToFile(const char *filename,
-        std::map<Function *, std::vector<LabeledLoc *> *> *locations) {
-
-    FILE *fp = fopen(filename, "w");
-    int callsite_dumps = 0;
-    int stack_registration_dumps = 0;
-
-    for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator loc_iter =
-            locations->begin(), loc_end = locations->end(); loc_iter != loc_end;
-            loc_iter++) {
-        std::vector<LabeledLoc *> *curr = loc_iter->second;
-        for (std::vector<LabeledLoc *>::iterator iter = curr->begin(),
-                end = curr->end(); iter != end; iter++) {
-            LabeledLoc *loc = *iter;
-            if (loc->type == CALLSITE) {
-                fprintf(fp, "%d %d %s %d CALLSITE %s\n", loc->line_no, loc->col,
-                        loc_iter->first->getName().str().c_str(), loc->id,
-                        loc->filename->c_str());
-                callsite_dumps++;
-            } else {
-                errs() << "Unexpected location type " << loc->type << "\n";
-                exit(1);
-            }
-        }
-    }
-
-    errs() << "Dumped " << callsite_dumps << " callsites and " <<
-        stack_registration_dumps << " stack registrations to " <<
-        std::string(filename) << "\n";
-
-    fclose(fp);
-}
-
-void Play::dumpGotoChainsToFile(const char *filename,
-        std::map<Function *, std::vector<LabeledLoc *> *> *locations,
-        Module &M) {
-    FILE *fp = fopen(filename, "w");
-    assert(fp != NULL);
-
-    for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator i =
-            locations->begin(), e = locations->end(); i != e; i++) {
-        Function *F = i->first;
-        std::vector<LabeledLoc *> *locs = i->second;
-        int start = findStartingLineForFunction(F, M)->line_no;
-
-        std::vector<LabeledLoc *> only_stack;
-        std::vector<LabeledLoc *> only_calls;
-
-        for (std::vector<LabeledLoc *>::iterator loc_iter = locs->begin(),
-                loc_end = locs->end(); loc_iter != loc_end; loc_iter++) {
-            LabeledLoc *curr = *loc_iter;
-            assert(curr != NULL);
-
-            if (curr->type == STACK_REGISTRATION) {
-                only_stack.push_back(curr);
-            } else {
-                only_calls.push_back(curr);
-            }
-        }
-
-        if (only_stack.empty() && only_calls.empty()) {
-            // No stack variables and no function calls? Ignore it
-        } else if (only_stack.empty()) {
-            // No stack allocations, but has function calls
-            fprintf(fp, "%s %d -1 FINAL ", only_calls[0]->filename->c_str(), start);
-            for (unsigned int i = 0; i < only_calls.size(); i++) {
-                fprintf(fp, "%d ", only_calls[i]->id);
-            }
-            fprintf(fp, "\n");
-        } else if (only_calls.empty()) {
-            /*
-             * Stack variables but no function calls. In this state, we know
-             * that this function can't call checkpoint or call anything that
-             * calls checkpoint, so skip it entirely.
-             */
-        } else {
-            fprintf(fp, "%s %d -1 START %d\n", only_stack[0]->filename->c_str(),
-                    start, only_stack[0]->id);
-            for (unsigned int i = 1; i < only_stack.size(); i++) {
-                fprintf(fp, "%s %d %d INTERNAL %d\n",
-                        only_stack[i - 1]->filename->c_str(),
-                        only_stack[i - 1]->line_no, only_stack[i - 1]->col,
-                        only_stack[i]->id);
-            }
-
-            if (!only_calls.empty()) {
-                fprintf(fp, "%s %d %d FINAL ",
-                        only_stack[only_stack.size() - 1]->filename->c_str(),
-                        only_stack[only_stack.size() - 1]->line_no,
-                        only_stack[only_stack.size() - 1]->col);
-                for (unsigned int i = 0; i < only_calls.size(); i++) {
-                    fprintf(fp, "%d ", only_calls[i]->id);
-                }
-                fprintf(fp, "\n");
-            }
-        }
-    }
-
-    fclose(fp);
-}
-
-void Play::collectVariableDeclarations(Module &M, const char *filename) {
-    FILE *fp = fopen(filename, "w");
-    std::set<std::string> found_variables;
-
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-
-        if (!callsCheckpoint(F)) continue;
-
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                    ++i) {
-                Instruction &inst = *i;
-                if (DbgDeclareInst *dbg = dyn_cast<DbgDeclareInst>(&inst)) {
-                    DebugLoc dl = dbg->getDebugLoc();
-                    if (dl.isUnknown()) continue;
-                    DIScope scope(dl.getScope(M.getContext()));
-
-                    MDNode *var = dbg->getVariable();
-                    DIVariable di_var(var);
-                    std::string *unique_varname = get_unique_varname(
-                            di_var.getName().str(), F,
-                            &found_variables, M);
-                    fprintf(fp, "%d %d %s %s\n", dl.getLine(), dl.getCol(),
-                            unique_varname->c_str(), scope.getFilename().str().c_str());
-                }
-            }
-        }
-    }
-
-    errs() << "Found " << found_variables.size() << " variable declarations\n";
-
-    fclose(fp);
-}
-
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
@@ -1624,48 +1286,6 @@ bool Play::runOnModule(Module &M) {
      */
 
     findHeapAllocations(M, "heap.info");
-
-    /*
-     * Now: this next bit is in support of the resumability. We start by
-     * assigning a unique integer to every call site (which includes calls to
-     * checkpoint()) and every stack variable registration site. A label is
-     * added at each of these entities based on its ID. We also add a callback
-     * in the application right before every call site which allows the runtime
-     * library to recreate the stack trace based on callbacks and record them as
-     * they happen. The callback must be made right before the call is made
-     * because we must know what callsite we are making the call from, we can
-     * use the same rm_stack callback to remove functions from the stack that
-     * we've returned from.
-     *
-     * This stack generated from pre-call callbacks is added to the checkpoint
-     * files.
-     *
-     * In replay mode, we also use gotos to immediately visit the sites of all
-     * stack variable registrations in a function, and register their addresses
-     * with the runtime library. The last stack registration to be visited uses
-     * the stack trace we placed in the checkpoint file to decide which callsite
-     * it should not jump to. After that jump, we immediately enter the next
-     * call and repeat the same for the callee. This cycle stops when we finally
-     * jump to the call site of the checkpoint() that created the checkpoint
-     * file we are recovering from.
-     */
-
-    const char *decl_info_name = "decl.info";
-    collectVariableDeclarations(M, decl_info_name);
-
-    std::map<Function *, std::vector<LabeledLoc *> *> *locations =
-        collectUniqueIDs(M, decl_info_name);
-    errs() << "Found " << locations->size() << " functions with locations to "
-        "mark\n";
-    int count_locations = 0;
-    for (std::map<Function *, std::vector<LabeledLoc *> *>::iterator loc_iter =
-            locations->begin(), loc_end = locations->end(); loc_iter != loc_end;
-            loc_iter++) {
-        count_locations += loc_iter->second->size();
-    }
-    errs() << "Found " << count_locations << " locations to mark\n";
-
-    dumpLocationsToFile("loc.info", locations);
 
     return false;
 }
