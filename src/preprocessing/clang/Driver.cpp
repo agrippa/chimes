@@ -159,10 +159,12 @@ public:
               visitor->resetFunctionLabels();
           if (visitor->setsLastGoto())
               visitor->resetLastGoto();
+          visitor->resetRootFlag();
 
           // (*b)->dump();
           // llvm::errs() << "\n";
           visitor->Visit((*b)->getBody());
+          visitor->VisitTopLevel(*b);
 
           std::stringstream id_str;
           std::string demangled_filename = remove_filename_insertions(filename);

@@ -10,7 +10,19 @@
 extern DesiredInsertions *insertions;
 extern std::vector<StackAlloc *> *insert_at_front;
 
-static std::vector<int> matched_exits;
+void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
+    clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
+    if (func != NULL) {
+        const clang::Stmt *body = func->getBody();
+        assert(clang::isa<clang::CompoundStmt>(body));
+        const clang::CompoundStmt *cmpd = clang::dyn_cast<const clang::CompoundStmt>(body);
+        const clang::Stmt *last = cmpd->body_back();
+        if (!clang::isa<clang::ReturnStmt>(last)) {
+            // implicit return at end of void funct
+            TheRewriter->InsertText(cmpd->getLocEnd(), "rm_stack(); ", true, true);
+        }
+    }
+}
 
 void StartExitPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
@@ -21,13 +33,14 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
         unsigned start_col = SM->getPresumedColumnNumber(start);
         unsigned end_line = SM->getPresumedLineNumber(end);
         unsigned end_col = SM->getPresumedColumnNumber(end);
+        clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
+        clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
+        std::string filename = start_loc.getFilename();
 
         /*
          * Insert new_stack callbacks.
          */
-        if (FunctionStartInsertion *insert =
-                insertions->is_function_start(start_line)) {
-            // may happen if we run against mismatched info and source files
+        if (getRootFlag()) {
             assert(!s->children().empty());
             clang::Stmt::const_child_iterator iter = s->child_begin();
             const clang::Stmt *child = *iter;
@@ -56,12 +69,9 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
         /*
          * Insert rm_stack callbacks.
          */
-        if (insertions->is_function_exit(start_line) &&
-                std::find(matched_exits.begin(), matched_exits.end(),
-                    start_line) == matched_exits.end()) {
+        if (clang::isa<clang::ReturnStmt>(s)) {
             TheRewriter->InsertText(start, "rm_stack(); ", true,
                     true);
-            matched_exits.push_back(start_line);
         }
     }
 

@@ -153,6 +153,20 @@ private:
     std::string filename;
 };
 
+class FunctionExit {
+public:
+    FunctionExit(std::string set_filename, int set_line_no, int set_col) :
+        filename(set_filename), line_no(set_line_no), col(set_col) {}
+    std::string get_filename() { return filename; }
+    int get_line_no() { return line_no; }
+    int get_col() { return col; }
+
+private:
+    std::string filename;
+    int line_no;
+    int col;
+};
+
 class FunctionStartInsertion {
 public:
     FunctionStartInsertion(std::string set_filename, std::string set_func,
@@ -221,8 +235,8 @@ public:
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     std::string get_original_file() { return original_file; }
 
-    FunctionStartInsertion *is_function_start(int line);
-    bool is_function_exit(int line);
+    FunctionStartInsertion *is_function_start(std::string filename, int line);
+    FunctionExit *is_function_exit(std::string filename, int line, int col);
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     HeapAlloc *isMemoryAllocation(int line, int col);
@@ -244,7 +258,7 @@ private:
         std::vector<FunctionStartInsertion *> *function_starts;
         int main_line;
         std::vector<StructFields *> *struct_fields;
-        std::vector<int> *function_exits;
+        std::vector<FunctionExit *> *function_exits;
         std::vector<Declaration *> *declarations;
         std::map<std::string, StackAlloc *> *stack_allocs;
         std::vector<HeapAlloc *> *heap_allocs;
@@ -254,7 +268,7 @@ private:
         std::vector<FunctionStartInsertion *> *parseFunctionStartInsertions(
                 int *main_line);
         std::vector<StructFields *> *parseStructs();
-        std::vector<int> *parseFunctionExits();
+        std::vector<FunctionExit *> *parseFunctionExits();
         std::vector<Declaration *> *parseDeclarations();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
         std::vector<HeapAlloc *> *parseHeapAllocs();

@@ -265,15 +265,27 @@ std::vector<Declaration *> *DesiredInsertions::parseDeclarations() {
     return declarations;
 }
 
-std::vector<int> *DesiredInsertions::parseFunctionExits() {
-    std::vector<int> *result = new std::vector<int>();
+std::vector<FunctionExit *> *DesiredInsertions::parseFunctionExits() {
+    std::vector<FunctionExit *> *result = new std::vector<FunctionExit *>();
     std::ifstream fp;
     fp.open(function_exits_file, std::ios::in);
 
     std::string line;
     while (getline(fp, line)) {
-        int line_no = atoi(line.c_str());
-        result->push_back(line_no);
+        // /opt/apps/cuda/6.0.37/include/crt/host_runtime.h 121 5
+        int filename_end = line.find(' ');
+        std::string filename = line.substr(0, filename_end);
+        line = line.substr(filename_end + 1);
+
+        int line_end = line.find(' ');
+        std::string line_str = line.substr(0, line_end);
+        int line_no = atoi(line_str.c_str());
+        line = line.substr(line_end + 1);
+
+        int col = atoi(line.c_str());
+
+        FunctionExit *e = new FunctionExit(filename, line_no, col);
+        result->push_back(e);
     }
     return result;
 }
@@ -412,23 +424,28 @@ std::vector<int> *DesiredInsertions::get_groups(int line, int col,
     assert(false);
 }
 
-FunctionStartInsertion *DesiredInsertions::is_function_start(int line) {
+FunctionStartInsertion *DesiredInsertions::is_function_start(
+        std::string filename, int line) {
     for (std::vector<FunctionStartInsertion *>::iterator i =
             function_starts->begin(), e = function_starts->end(); i != e; i++) {
         FunctionStartInsertion *s = *i;
-        if (s->get_line() == line) return s;
+        if (s->get_filename() == filename && s->get_line() == line) return s;
     }
     return NULL;
 }
 
 
-bool DesiredInsertions::is_function_exit(int line) {
-    for (std::vector<int>::iterator i = function_exits->begin(),
+FunctionExit *DesiredInsertions::is_function_exit(std::string filename,
+        int line, int col) {
+    for (std::vector<FunctionExit *>::iterator i = function_exits->begin(),
             e = function_exits->end(); i != e; i++) {
-        int line_no = *i;
-        if (line_no == line) return true;
+        FunctionExit *ex = *i;
+        if (ex->get_line_no() == line && ex->get_col() == col &&
+                ex->get_filename() == filename) {
+            return ex;
+        }
     }
-    return false;
+    return NULL;
 }
 
 

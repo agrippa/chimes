@@ -30,6 +30,7 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
 }
 
 void ParentTransform::visitChildren(const clang::Stmt *s) {
+    setRootFlag(false);
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
             e = s->child_end(); i != e; i++) {
         const clang::Stmt *child = *i;
@@ -111,4 +112,16 @@ int ParentTransform::getNextFunctionLabel() {
 void ParentTransform::resetFunctionLabels() {
     assert(createsFunctionLabels());
     curr_function_label = 0;
+}
+
+void ParentTransform::resetRootFlag() {
+    root_flag = true;
+}
+
+void ParentTransform::setRootFlag(bool v) {
+    root_flag = v;
+}
+
+bool ParentTransform::getRootFlag() {
+    return root_flag;
 }
