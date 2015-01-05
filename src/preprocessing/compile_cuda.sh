@@ -2,13 +2,36 @@
 
 set -e
 
-if [[ $# != 1 ]]; then
-    echo usage: compile_cuda.sh input.cu
+KEEP=0
+INPUT=
+
+while getopts ":ki:" opt; do
+    case $opt in 
+        i)
+            INPUT=${OPTARG}
+            ;;
+        k)
+            KEEP=1
+            ;;
+        \?)
+            echo "unrecognized option -$OPTARG" >&2
+            exit 1
+            ;;
+        :)
+            echo "option -$OPTARG requires an argument" >&2
+            exit 1
+            ;;
+    esac
+done
+
+if [[ -z ${INPUT} ]]; then
+    echo usage: compile_cuda.sh [-k] -i input.cu
     exit 1
 fi
 
-INPUT=$1
-INPUT=$(pwd)/${INPUT}
+if [[ "${INPUT:0:1}" != "/" ]]; then
+    INPUT=$(pwd)/${INPUT}
+fi
 OUTPUT=$(pwd)/a.out
 
 WORK_DIR=$(mktemp -d)
