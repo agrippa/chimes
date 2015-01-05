@@ -2,16 +2,37 @@
 
 set -e
 
-if [[ $# != 1 ]]; then
-    echo usage: compile_cuda.sh input.cpp
+KEEP=0
+INPUT=
+
+while getopts ":ki:" opt; do
+    case $opt in 
+        i)
+            INPUT=${OPTARG}
+            ;;
+        k)
+            KEEP=1
+            ;;
+        \?)
+            echo "unrecognized option -$OPTARG" >&2
+            exit 1
+            ;;
+        :)
+            echo "option -$OPTARG requires an argument" >&2
+            exit 1
+            ;;
+    esac
+done
+
+if [[ -z ${INPUT} ]]; then
+    echo usage: compile_cpp.sh [-k] -i input.cpp
     exit 1
 fi
 
-INPUT=$1
 INPUT=$(pwd)/${INPUT}
 OUTPUT=$(pwd)/a.out
 
-WORK_DIR=$(mktemp -d)
+WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
 
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
@@ -48,14 +69,10 @@ ${TRANSFORM} \
         -extra-arg="-I${STDDEF_FOLDER}" \
         -extra-arg="-include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h" \
         -l ${WORK_DIR}/lines.info \
-        -f ${WORK_DIR}/func_start.info \
         -s ${WORK_DIR}/struct.info \
-        -x ${WORK_DIR}/exit.info \
-        -i ${INPUT} \
-        -d ${WORK_DIR}/decl.info \
         -a ${WORK_DIR}/stack.info \
+        -i ${INPUT} \
         -m ${WORK_DIR}/heap.info \
-        -b ${WORK_DIR}/loc.info \
         ${INPUT} --
 
 LAST_FILE=$(basename ${INPUT})
@@ -70,4 +87,6 @@ g++ -lpthread -include stddef.h -include stdio.h \
         -I${NUM_DEBUG_HOME}/src/libnumdebug \
         -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${LAST_FILE} -o $OUTPUT
 
-rm -rf ${WORK_DIR}
+if [[ $KEEP == 0 ]]; then
+    rm -rf ${WORK_DIR}
+fi

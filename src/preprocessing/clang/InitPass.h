@@ -14,6 +14,7 @@ class InitPass : public ParentTransform {
 public:
     InitPass() { }
 
+    void VisitTopLevel(clang::Decl *toplevel) override;
     void VisitStmt(const clang::Stmt *s) override;
     bool usesStackInfo() override { return false; }
     bool setsLastGoto() override { return false; }

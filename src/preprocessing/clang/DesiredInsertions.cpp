@@ -14,54 +14,6 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
-std::vector<LabelInfo *> *DesiredInsertions::parseLabels() {
-    std::vector<LabelInfo *> *labels = new std::vector<LabelInfo *>();
-
-    std::ifstream fp;
-    fp.open(labels_file, std::ios::in);
-
-    std::string line;
-    while (getline(fp, line)) {
-       int line_no_end = line.find(' ');
-       std::string line_no_str = line.substr(0, line_no_end);
-       int line_no = atoi(line_no_str.c_str());
-       line = line.substr(line_no_end + 1);
-
-       int col_end = line.find(' ');
-       std::string col_str = line.substr(0, col_end);
-       int col = atoi(col_str.c_str());
-       line = line.substr(col_end + 1);
-
-       int fname_end = line.find(' ');
-       std::string fname = line.substr(0, fname_end);
-       line = line.substr(fname_end + 1);
-
-       int lbl_end = line.find(' ');
-       std::string lbl_str = line.substr(0, lbl_end);
-       int lbl = atoi(lbl_str.c_str());
-       line = line.substr(lbl_end + 1);
-
-       int type_end = line.find(' ');
-       std::string type_str = line.substr(0, type_end);
-       enum LBL_TYPE type;
-       if (type_str == "STACK_REGISTRATION") {
-           type = STACK_REGISTRATION;
-       } else if (type_str == "CALLSITE") {
-           type = CALLSITE;
-       } else {
-           assert(false);
-       }
-       line = line.substr(type_end + 1);
-
-       std::string filename = line;
-
-       labels->push_back(new LabelInfo(line_no, col, lbl, type, filename,
-                   fname));
-    }
-
-    return labels;
-}
-
 std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
     std::vector<HeapAlloc *> *allocs = new std::vector<HeapAlloc *>();
 
@@ -237,62 +189,9 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     return allocs;
 }
 
-std::vector<Declaration *> *DesiredInsertions::parseDeclarations() {
-    std::ifstream fp;
-    fp.open(decl_file, std::ios::in);
-
-    std::vector<Declaration *> *declarations = new std::vector<Declaration *>();
-
-    std::string line;
-    while (getline(fp, line)) {
-        int line_no_end = line.find(' ');
-        std::string line_no_str = line.substr(0, line_no_end);
-        int line_no = atoi(line_no_str.c_str());
-        line = line.substr(line_no_end + 1);
-
-        int col_end = line.find(' ');
-        std::string col_str = line.substr(0, col_end);
-        int col = atoi(col_str.c_str());
-        line = line.substr(col_end + 1);
-
-        int varname_end = line.find(' ');
-        std::string varname = line.substr(0, varname_end);
-
-        Declaration *d = new Declaration(line_no, col, varname);
-        declarations->push_back(d);
-    }
-
-    return declarations;
-}
-
-std::vector<FunctionExit *> *DesiredInsertions::parseFunctionExits() {
-    std::vector<FunctionExit *> *result = new std::vector<FunctionExit *>();
-    std::ifstream fp;
-    fp.open(function_exits_file, std::ios::in);
-
-    std::string line;
-    while (getline(fp, line)) {
-        // /opt/apps/cuda/6.0.37/include/crt/host_runtime.h 121 5
-        int filename_end = line.find(' ');
-        std::string filename = line.substr(0, filename_end);
-        line = line.substr(filename_end + 1);
-
-        int line_end = line.find(' ');
-        std::string line_str = line.substr(0, line_end);
-        int line_no = atoi(line_str.c_str());
-        line = line.substr(line_end + 1);
-
-        int col = atoi(line.c_str());
-
-        FunctionExit *e = new FunctionExit(filename, line_no, col);
-        result->push_back(e);
-    }
-    return result;
-}
-
 std::vector<StructFields *> *DesiredInsertions::parseStructs() {
     std::ifstream fp;
-    fp.open(func_start_info_file, std::ios::in);
+    fp.open(struct_info_file, std::ios::in);
     std::vector<StructFields *> *fields = new std::vector<StructFields *>();
 
     std::string line;
@@ -312,41 +211,6 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
         fields->add_field(line);
     }
     return fields;
-}
-
-std::vector<FunctionStartInsertion *> *DesiredInsertions::parseFunctionStartInsertions(int *main_line) {
-    std::ifstream fp;
-    fp.open(func_start_info_file, std::ios::in);
-
-    std::vector<FunctionStartInsertion *> *result =
-        new std::vector<FunctionStartInsertion *>();
-    *main_line = -1;
-
-    std::string line;
-    while (getline(fp, line)) {
-        // /scratch/jmg3/num-debug/src/preprocessing/../examples/cpp/simple_stencil.cpp 6 main
-        int filename_end = line.find(' ');
-        std::string filename = line.substr(0, filename_end);
-        line = line.substr(filename_end + 1);
-
-        int line_end = line.find(' ');
-        std::string line_no_str = line.substr(0, line_end);
-        int line_no = atoi(line_no_str.c_str());
-        line = line.substr(line_end + 1);
-        
-        std::string function_name = line;
-
-        FunctionStartInsertion *insert =
-            new FunctionStartInsertion(filename, function_name, line_no);
-        result->push_back(insert);
-
-        if (function_name == "main") {
-            assert(*main_line == -1);
-            *main_line = line_no;
-        }
-    }
-
-    return result;
 }
 
 std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertions() {
@@ -424,31 +288,6 @@ std::vector<int> *DesiredInsertions::get_groups(int line, int col,
     assert(false);
 }
 
-FunctionStartInsertion *DesiredInsertions::is_function_start(
-        std::string filename, int line) {
-    for (std::vector<FunctionStartInsertion *>::iterator i =
-            function_starts->begin(), e = function_starts->end(); i != e; i++) {
-        FunctionStartInsertion *s = *i;
-        if (s->get_filename() == filename && s->get_line() == line) return s;
-    }
-    return NULL;
-}
-
-
-FunctionExit *DesiredInsertions::is_function_exit(std::string filename,
-        int line, int col) {
-    for (std::vector<FunctionExit *>::iterator i = function_exits->begin(),
-            e = function_exits->end(); i != e; i++) {
-        FunctionExit *ex = *i;
-        if (ex->get_line_no() == line && ex->get_col() == col &&
-                ex->get_filename() == filename) {
-            return ex;
-        }
-    }
-    return NULL;
-}
-
-
 StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
     std::map<std::string, StackAlloc *>::iterator iter =
         stack_allocs->find(mangled_name);
@@ -463,29 +302,6 @@ HeapAlloc *DesiredInsertions::isMemoryAllocation(int line, int col) {
         HeapAlloc *alloc = *i;
         if (alloc->get_line_no() == line && alloc->get_col() == col) {
             return alloc;
-        }
-    }
-    return NULL;
-}
-
-int DesiredInsertions::getLabelAssignedFor(int line, int col) {
-    for (std::vector<LabelInfo *>::iterator i = labels->begin(),
-            e = labels->end(); i != e; i++) {
-        LabelInfo *info = *i;
-        if (info->get_line_no() == line && info->get_col() == col) {
-            return info->get_lbl();
-        }
-    }
-    llvm::errs() << "missing " << line << " " << col << "\n";
-    assert(false);
-}
-
-LabelInfo *DesiredInsertions::isLabeledLoc(int line, int col) {
-    for (std::vector<LabelInfo *>::iterator i = labels->begin(),
-            e = labels->end(); i != e; i++) {
-        LabelInfo *info = *i;
-        if (info->get_line_no() == line && info->get_col() == col) {
-            return info;
         }
     }
     return NULL;

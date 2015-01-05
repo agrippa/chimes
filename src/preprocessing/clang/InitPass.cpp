@@ -9,17 +9,15 @@
 
 extern DesiredInsertions *insertions;
 
-static bool found_main = false;
+void InitPass::VisitTopLevel(clang::Decl *toplevel) {
+    clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
+    if (func != NULL) {
+        const clang::Stmt *body = func->getBody();
+        assert(clang::isa<clang::CompoundStmt>(body));
+        const clang::CompoundStmt *cmpd = clang::dyn_cast<const clang::CompoundStmt>(body);
 
-void InitPass::VisitStmt(const clang::Stmt *s) {
-    clang::SourceLocation start = s->getLocStart();
-    clang::SourceLocation end = s->getLocEnd();
-
-    if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        unsigned start_line = SM->getPresumedLineNumber(start);
-
-        if (!found_main && start_line == insertions->get_main_line()) {
-            clang::Stmt::const_child_iterator iter = s->child_begin();
+        if (func->getNameAsString() == "main") {
+            clang::Stmt::const_child_iterator iter = cmpd->child_begin();
             const clang::Stmt *child = *iter;
             std::stringstream ss;
 
@@ -40,9 +38,11 @@ void InitPass::VisitStmt(const clang::Stmt *s) {
             }
             ss << "); ";
             TheRewriter->InsertText(child->getLocStart(), ss.str(), true, true);
-            found_main = true;
+            // found_main = true;
+
         }
     }
+}
 
-    visitChildren(s);
+void InitPass::VisitStmt(const clang::Stmt *s) {
 }
