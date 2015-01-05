@@ -29,7 +29,9 @@ if [[ -z ${INPUT} ]]; then
     exit 1
 fi
 
-INPUT=$(pwd)/${INPUT}
+if [[ "${INPUT:0:1}" != "/" ]]; then
+    INPUT=$(pwd)/${INPUT}
+fi
 OUTPUT=$(pwd)/a.out
 
 WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
