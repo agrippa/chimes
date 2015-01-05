@@ -155,12 +155,15 @@ private:
 
 class FunctionStartInsertion {
 public:
-    FunctionStartInsertion(std::string set_func, int set_line) : func(set_func),
+    FunctionStartInsertion(std::string set_filename, std::string set_func,
+            int set_line) : filename(set_filename), func(set_func),
             line_no(set_line) {}
     std::string get_func() { return func; }
     int get_line() { return line_no; }
+    std::string get_filename() { return filename; }
 
 private:
+    std::string filename;
     std::string func;
     int line_no;
 };

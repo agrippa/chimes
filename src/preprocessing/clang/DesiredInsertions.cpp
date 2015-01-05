@@ -312,17 +312,23 @@ std::vector<FunctionStartInsertion *> *DesiredInsertions::parseFunctionStartInse
 
     std::string line;
     while (getline(fp, line)) {
-        // 13 main
+        // /scratch/jmg3/num-debug/src/preprocessing/../examples/cpp/simple_stencil.cpp 6 main
+        int filename_end = line.find(' ');
+        std::string filename = line.substr(0, filename_end);
+        line = line.substr(filename_end + 1);
+
         int line_end = line.find(' ');
         std::string line_no_str = line.substr(0, line_end);
         int line_no = atoi(line_no_str.c_str());
         line = line.substr(line_end + 1);
+        
+        std::string function_name = line;
 
         FunctionStartInsertion *insert =
-            new FunctionStartInsertion(line, line_no);
+            new FunctionStartInsertion(filename, function_name, line_no);
         result->push_back(insert);
 
-        if (line == "main") {
+        if (function_name == "main") {
             assert(*main_line == -1);
             *main_line = line_no;
         }
