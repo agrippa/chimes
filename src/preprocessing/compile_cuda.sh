@@ -39,8 +39,8 @@ python ${NUM_DEBUG_HOME}/src/preprocessing/compile_helper.py \
           ${CMD_FILE} ${ENV_FILE} ${PRE_CMD_FILE} ${POST_CMD_FILE} ${CPP_FILE}
 
 INTERMEDIATE_FILE=${NVCC_WORK_DIR}/$(cat ${CPP_FILE})
-BITCODE_FILE=${FINAL_WORK_DIR}/${NAME}.bc
-TMP_OBJ_FILE=${FINAL_WORK_DIR}/${NAME}.o
+BITCODE_FILE=${FINAL_WORK_DIR}/$(basename ${INPUT}).bc
+TMP_OBJ_FILE=${FINAL_WORK_DIR}/$(basename ${INPUT}).o
 ANALYSIS_LOG_FILE=${FINAL_WORK_DIR}/analysis.log
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname $(which gcc))) -name \
             "stddef.h"))
@@ -63,6 +63,7 @@ cd ${FINAL_WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
 rm ${TMP_OBJ_FILE}
 
 ${TRANSFORM} \
+        -extra-arg="-I${NUM_DEBUG_HOME}/src/libnumdebug" \
         -extra-arg="-I${CUDA_HOME}/include" \
         -extra-arg="-I${STDDEF_FOLDER}" \
         -extra-arg="-include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h" \
@@ -76,7 +77,6 @@ ${TRANSFORM} \
         -m ${FINAL_WORK_DIR}/heap.info \
         -b ${FINAL_WORK_DIR}/loc.info \
         ${INTERMEDIATE_FILE} --
-# TODO use log.post and log.env to compile
 
 LAST_FILE=$(basename ${INTERMEDIATE_FILE})
 EXT="${LAST_FILE##*.}"

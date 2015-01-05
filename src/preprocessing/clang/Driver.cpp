@@ -165,8 +165,9 @@ public:
           visitor->Visit((*b)->getBody());
 
           std::stringstream id_str;
-          id_str << filename << ":" << curr_func << ":" << pre_loc.getLine() <<
-              ":" << pre_loc.getColumn();
+          std::string demangled_filename = remove_filename_insertions(filename);
+          id_str << demangled_filename << ":" << curr_func << ":" <<
+              pre_loc.getLine() << ":" << pre_loc.getColumn();
 
           if (visitor->createsRegisterLabels()) {
               assert(num_register_labels.find(id_str.str()) == num_register_labels.end());
@@ -198,6 +199,23 @@ public:
   }
 
 private:
+  std::string remove_filename_insertions(std::string filename) {
+      for (std::vector<Pass *>::iterator pass_iter = passes.begin(),
+              pass_end = passes.end(); pass_iter != pass_end; pass_iter++) {
+          Pass *pass = *pass_iter;
+          std::string suffix = pass->get_suffix();
+          size_t index = filename.find(suffix);
+          if (index != std::string::npos && index == filename.length() - 4 -
+                  suffix.length()) {
+              std::stringstream ss;
+              ss << filename.substr(0, filename.length() - 4 -
+                      suffix.length()) << ".cpp";
+              return ss.str();
+          }
+      }
+      return filename;
+  }
+
   Rewriter &R;
   ASTContext &Context;
 };
@@ -283,7 +301,8 @@ int main(int argc, const char **argv) {
       }
 
       std::stringstream ss;
-      ss << input_folder << "/" << just_filename << pass->get_suffix() << ".cpp";
+      // ss << input_folder << "/" << just_filename << pass->get_suffix() << ".cpp";
+      ss << just_filename << pass->get_suffix() << ".cpp";
       current_output_file = ss.str();
       curr_visitor = pass->get_impl();
 
