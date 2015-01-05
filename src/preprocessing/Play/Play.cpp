@@ -889,7 +889,13 @@ void Play::findFunctionExits(Module &M, const char *output_file) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
+        if (F->isIntrinsic() || F->getBasicBlockList().empty()) continue;
+        SimpleLoc *loc = findStartingLineForFunction(F, M);
+
         // if (!callsCheckpoint(F)) continue;
+
+        int max_line = -1;
+        int max_col = -1;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
@@ -898,14 +904,25 @@ void Play::findFunctionExits(Module &M, const char *output_file) {
             for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
                     ++i) {
                 Instruction &inst = *i;
+                int line = inst.getDebugLoc().getLine();
+                int col = inst.getDebugLoc().getCol();
+
                 if (dyn_cast<ReturnInst>(&inst)) {
-                    int line = inst.getDebugLoc().getLine();
                     if (line != 0) {
-                        SimpleLoc *loc = findStartingLineForFunction(F, M);
-                        fprintf(fp, "%s %d\n", loc->filename->c_str(), line);
+                        fprintf(fp, "%s %d %d\n", loc->filename->c_str(), line,
+                                col);
                     }
                 }
+
+                if (line != 0 && (max_line == -1 || line > max_line || (line == max_line && col > max_col))) {
+                    max_line = line;
+                    max_col = col;
+                }
             }
+        }
+
+        if (F->getReturnType()->isVoidTy()) {
+            fprintf(fp, "%s %d %d\n", loc->filename->c_str(), max_line, max_col);
         }
     }
 
