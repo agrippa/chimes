@@ -3,7 +3,7 @@ import os.path
 import sys
 from subprocess import Popen, PIPE
 
-tests = [('vector_sum.cu', '')]
+tests = [('vector_sum.cu', 'vector_sum.cudafe1.register.cpp')]
 
 NUM_DEBUG_HOME = os.environ['NUM_DEBUG_HOME']
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
@@ -18,9 +18,11 @@ def run_cmd(cmd):
     result = (p.stdout.read(), p.stderr.read())
 
     if p.returncode != 0:
-        print 'Error running "' + ' '.join(cmd) + '"'
-        print
-        print result[1]
+        print('Error running "' + ' '.join(cmd) + '"')
+        print()
+        print(str(result[0], encoding='utf8'))
+        print()
+        print(str(result[1], encoding='utf8'))
         sys.exit(1)
     return result
 
@@ -30,14 +32,14 @@ for t in tests:
 
     compile_cmd = COMPILE_SCRIPT + ' -k -i ' + CUDA_EXAMPLES_DIR + '/' + input_file
     stdout, stderr = run_cmd(compile_cmd)
-    lines = stdout.split('\n')
+    lines = str(stdout, encoding='utf8').split('\n')
     transformed = lines[len(lines) - 2].strip()
 
     stdout, stderr = run_cmd('diff ' + CUDA_TEST_DIR + '/' + compare_file + ' ' + transformed)
 
     if len(stdout.strip()) != 0:
-        print 'Mismatch in test for ' + input_file
-        print stdout
+        print('Mismatch in test for ' + input_file)
+        print(stdout)
         sys.exit(1)
     else:
         assert os.path.isfile('a.out')
