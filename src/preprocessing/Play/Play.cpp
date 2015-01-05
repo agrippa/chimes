@@ -118,9 +118,6 @@ namespace {
         void dumpFunctionStartingLineTo(const char *filename,
                 std::map<int, std::string> functions);
 
-        void findStartingLinesForAllFunctions(Module &M,
-                const char *output_file);
-        void findFunctionExits(Module &M, const char *output_file);
         void findStackAllocations(Module &M, const char *output_file,
                 const char *struct_info_filename);
         void findMinimumLineInBasicBlock(BasicBlock *curr, int *out_line, int *out_col);
@@ -150,8 +147,8 @@ namespace {
         bool isCallToCheckpoint(CallInst *call);
         bool callsCheckpoint(Function *F);
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
-        std::string *get_unique_varname(std::string varname, std::string fname,
-                std::set<std::string> *found_variables);
+        std::string *get_unique_varname(std::string varname, Function *F,
+                std::set<std::string> *found_variables, Module &M);
     };
 }
 
@@ -850,85 +847,6 @@ SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
     return (*function_to_start_line)[F->getName().str()];
 }
 
-void Play::findStartingLinesForAllFunctions(Module &M, const char *output_file) {
-    FILE *fp = fopen(output_file, "w");
-    /*
-     * This assumes that for all functions, their declaration and body are on
-     * different lines. This may not be true for all functions.
-     */
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-
-        // Externally defined functions won't have any body info
-        if (F->getBasicBlockList().size() == 0) {
-            if (F->getName().str() == "main") {
-                errs() << "Externally defined main? huh?\n";
-                exit(1);
-            }
-            continue;
-        }
-        // If we don't call checkpoint, we don't need line info
-        if (F->getName().str() == "main" && !callsCheckpoint(F)) {
-            errs() << "main() does not directly or indirectly call "
-                "checkpoint? Are you using the library anywhere?\n";
-            exit(1);
-        }
-
-        SimpleLoc *line = findStartingLineForFunction(F, M);
-        assert(line->line_no >= 0);
-        fprintf(fp, "%s %d %s\n", line->filename->c_str(), line->line_no,
-                F->getName().str().c_str());
-    }
-
-    fclose(fp);
-}
-
-void Play::findFunctionExits(Module &M, const char *output_file) {
-    FILE *fp = fopen(output_file, "w");
-
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-
-        if (F->isIntrinsic() || F->getBasicBlockList().empty()) continue;
-        SimpleLoc *loc = findStartingLineForFunction(F, M);
-
-        // if (!callsCheckpoint(F)) continue;
-
-        int max_line = -1;
-        int max_col = -1;
-
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                    ++i) {
-                Instruction &inst = *i;
-                int line = inst.getDebugLoc().getLine();
-                int col = inst.getDebugLoc().getCol();
-
-                if (dyn_cast<ReturnInst>(&inst)) {
-                    if (line != 0) {
-                        fprintf(fp, "%s %d %d\n", loc->filename->c_str(), line,
-                                col);
-                    }
-                }
-
-                if (line != 0 && (max_line == -1 || line > max_line || (line == max_line && col > max_col))) {
-                    max_line = line;
-                    max_col = col;
-                }
-            }
-        }
-
-        if (F->getReturnType()->isVoidTy()) {
-            fprintf(fp, "%s %d %d\n", loc->filename->c_str(), max_line, max_col);
-        }
-    }
-
-    fclose(fp);
-}
-
 void Play::traverseUntilNotForIncOrCond(BasicBlock *curr,
         std::set<int> *to_insert) {
     assert(curr != NULL);
@@ -1075,14 +993,18 @@ void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
     fclose(fp);
 }
 
-std::string *Play::get_unique_varname(std::string varname, std::string fname,
-        std::set<std::string> *found_variables) {
+std::string *Play::get_unique_varname(std::string varname, Function *F,
+        std::set<std::string> *found_variables, Module &M) {
+    std::string fname = F->getName().str();
 
     std::string *unique_varname = new std::string();
     int permute = 0;
-    assert(function_to_demangled != NULL &&
-            function_to_demangled->find(fname) !=
-            function_to_demangled->end());
+
+    if (function_to_demangled == NULL || function_to_demangled->find(fname) ==
+            function_to_demangled->end()) {
+        findStartingLineForFunction(F, M);
+    }
+
     std::string correct_fname = (*function_to_demangled)[fname];
     do {
         std::ostringstream str_stream;
@@ -1187,7 +1109,7 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                      * function and this local's name.
                      */
                     std::string *unique_varname = get_unique_varname(varname,
-                            F->getName().str(), &found_variables);
+                            F, &found_variables, M);
 
                     info->varname = unique_varname;
 
@@ -1633,8 +1555,8 @@ void Play::collectVariableDeclarations(Module &M, const char *filename) {
                     MDNode *var = dbg->getVariable();
                     DIVariable di_var(var);
                     std::string *unique_varname = get_unique_varname(
-                            di_var.getName().str(), F->getName().str(),
-                            &found_variables);
+                            di_var.getName().str(), F,
+                            &found_variables, M);
                     fprintf(fp, "%d %d %s %s\n", dl.getLine(), dl.getCol(),
                             unique_varname->c_str(), scope.getFilename().str().c_str());
                 }
@@ -1692,10 +1614,6 @@ bool Play::runOnModule(Module &M) {
      * add a callback that indicates we are removing a stack frame and any stack
      * variables belonging to it can be ignored now.
      */
-
-    findStartingLinesForAllFunctions(M, "func_start.info");
-
-    findFunctionExits(M, "exit.info");
 
     findStackAllocations(M, "stack.info", "struct.info");
 
