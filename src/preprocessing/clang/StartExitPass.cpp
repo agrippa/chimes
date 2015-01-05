@@ -13,6 +13,7 @@ extern std::vector<StackAlloc *> *insert_at_front;
 void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
     clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
     if (func != NULL) {
+        // Insert rm_stack at end of function's body if this is a void
         const clang::Stmt *body = func->getBody();
         assert(clang::isa<clang::CompoundStmt>(body));
         const clang::CompoundStmt *cmpd = clang::dyn_cast<const clang::CompoundStmt>(body);

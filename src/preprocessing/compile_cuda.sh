@@ -66,14 +66,10 @@ ${TRANSFORM} \
         -extra-arg="-I${STDDEF_FOLDER}" \
         -extra-arg="-include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h" \
         -l ${NVCC_WORK_DIR}/lines.info \
-        -f ${NVCC_WORK_DIR}/func_start.info \
         -s ${NVCC_WORK_DIR}/struct.info \
-        -x ${NVCC_WORK_DIR}/exit.info \
-        -i ${INTERMEDIATE_FILE} \
-        -d ${NVCC_WORK_DIR}/decl.info \
         -a ${NVCC_WORK_DIR}/stack.info \
+        -i ${INTERMEDIATE_FILE} \
         -m ${NVCC_WORK_DIR}/heap.info \
-        -b ${NVCC_WORK_DIR}/loc.info \
         ${INTERMEDIATE_FILE} --
 
 LAST_FILE=$(basename ${INTERMEDIATE_FILE})

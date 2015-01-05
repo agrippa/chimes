@@ -5,31 +5,6 @@
 #include <string>
 #include <map>
 
-enum LBL_TYPE { STACK_REGISTRATION, CALLSITE };
-
-class LabelInfo {
-public:
-    LabelInfo(int set_line_no, int set_col, int set_lbl, enum LBL_TYPE set_type,
-            std::string set_filename, std::string set_function) :
-            line_no(set_line_no), col(set_col), lbl(set_lbl), type(set_type),
-            filename(set_filename), function(set_function) {}
-
-    int get_line_no() { return line_no; }
-    int get_col() { return col; }
-    int get_lbl() { return lbl; }
-    enum LBL_TYPE get_type() { return type; }
-    std::string get_filename() { return filename; }
-    std::string get_function() { return function; }
-
-private:
-    int line_no;
-    int col;
-    int lbl;
-    enum LBL_TYPE type;
-    std::string filename;
-    std::string function;
-};
-
 class HeapAlloc {
 public:
     HeapAlloc(int set_line_no, int set_col, int set_group,
@@ -111,20 +86,6 @@ private:
     std::vector<std::string> ptr_fields;
 };
 
-class Declaration {
-public:
-    Declaration(int set_line_no, int set_col, std::string set_varname) :
-        line_no(set_line_no), col(set_col), varname(set_varname) {}
-    int get_line_no() { return line_no; }
-    int get_col() { return col; }
-    std::string get_varname() { return varname; }
-
-private:
-    int line_no;
-    int col;
-    std::string varname;
-};
-
 class StructFields {
 public:
     StructFields(std::string set_name) : name(set_name) {}
@@ -153,35 +114,6 @@ private:
     std::string filename;
 };
 
-class FunctionExit {
-public:
-    FunctionExit(std::string set_filename, int set_line_no, int set_col) :
-        filename(set_filename), line_no(set_line_no), col(set_col) {}
-    std::string get_filename() { return filename; }
-    int get_line_no() { return line_no; }
-    int get_col() { return col; }
-
-private:
-    std::string filename;
-    int line_no;
-    int col;
-};
-
-class FunctionStartInsertion {
-public:
-    FunctionStartInsertion(std::string set_filename, std::string set_func,
-            int set_line) : filename(set_filename), func(set_func),
-            line_no(set_line) {}
-    std::string get_func() { return func; }
-    int get_line() { return line_no; }
-    std::string get_filename() { return filename; }
-
-private:
-    std::string filename;
-    std::string func;
-    int line_no;
-};
-
 class StateChangeInsertion {
 public:
     StateChangeInsertion(std::string set_filename, int set_line_no, int set_col,
@@ -203,76 +135,40 @@ private:
 
 class DesiredInsertions {
 public:
-    DesiredInsertions(const char *set_original_file,
-            const char *lines_info_filename,
-            const char *func_start_info_filename,
+    DesiredInsertions(const char *lines_info_filename,
             const char *struct_info_filename,
-            const char *function_exits_filename,
-            const char *stack_allocs_filename, const char *decl_filename,
-            const char *heap_filename,
-            const char *labels_filename) :
-            original_file(set_original_file),
+            const char *stack_allocs_filename,
+            const char *heap_filename) :
             lines_info_file(lines_info_filename),
-            func_start_info_file(func_start_info_filename),
             struct_info_file(struct_info_filename),
-            function_exits_file(function_exits_filename),
-            stack_allocs_file(stack_allocs_filename), decl_file(decl_filename),
-            heap_file(heap_filename),
-            labels_file(labels_filename) {
+            stack_allocs_file(stack_allocs_filename),
+            heap_file(heap_filename) {
         state_change_insertions = parseStateChangeInsertions();
-        function_starts = parseFunctionStartInsertions(&main_line);
         struct_fields = parseStructs();
-        function_exits = parseFunctionExits();
-        declarations = parseDeclarations();
         stack_allocs = parseStackAllocs();
         heap_allocs = parseHeapAllocs();
-        labels = parseLabels();
     }
 
     bool contains(int line, int col, const char *filename);
     std::vector<int> *get_groups(int line, int col, const char *filename);
-    int get_main_line() { return main_line; }
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
-    std::string get_original_file() { return original_file; }
-
-    FunctionStartInsertion *is_function_start(std::string filename, int line);
-    FunctionExit *is_function_exit(std::string filename, int line, int col);
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     HeapAlloc *isMemoryAllocation(int line, int col);
-    int getLabelAssignedFor(int line, int col);
-    LabelInfo *isLabeledLoc(int line, int col);
-    std::vector<LabelInfo *>::iterator labels_begin() { return labels->begin(); }
-    std::vector<LabelInfo *>::iterator labels_end() { return labels->end(); }
-
-    // GotoInfo *shouldAddGotoAt(int line);
-    // GotoInfo *shouldAddGotoAfter(int line, int col);
 
 private:
-        std::string lines_info_file, func_start_info_file, struct_info_file,
-            function_exits_file, stack_allocs_file, decl_file, heap_file,
-            labels_file;
-        std::string original_file;
+        std::string lines_info_file, struct_info_file,
+            stack_allocs_file, heap_file;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
-        std::vector<FunctionStartInsertion *> *function_starts;
-        int main_line;
         std::vector<StructFields *> *struct_fields;
-        std::vector<FunctionExit *> *function_exits;
-        std::vector<Declaration *> *declarations;
         std::map<std::string, StackAlloc *> *stack_allocs;
         std::vector<HeapAlloc *> *heap_allocs;
-        std::vector<LabelInfo *> *labels;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
-        std::vector<FunctionStartInsertion *> *parseFunctionStartInsertions(
-                int *main_line);
         std::vector<StructFields *> *parseStructs();
-        std::vector<FunctionExit *> *parseFunctionExits();
-        std::vector<Declaration *> *parseDeclarations();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
         std::vector<HeapAlloc *> *parseHeapAllocs();
-        std::vector<LabelInfo *> *parseLabels();
 };
 
 #endif
