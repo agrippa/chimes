@@ -53,10 +53,16 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                 ss << ", " << *i;
             }
             ss << ")";
+
+            unsigned int inserted_line = start_loc.getLine();
+            unsigned int inserted_col = start_loc.getColumn();
+            unsigned int ninserted;
+
             switch (parent->getStmtClass()) {
                 case clang::Stmt::IfStmtClass: {
                     ss << " || ";
                     TheRewriter->InsertText(start, ss.str(), true, true);
+                    ninserted = ss.str().length();
                     break;
                 }
                 case clang::Stmt::ForStmtClass: {
@@ -64,6 +70,7 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                     if (f->getInit() == s || f->getInc() == s) {
                         ss << ", ";
                         TheRewriter->InsertText(start, ss.str(), true, true);
+                        ninserted = ss.str().length();
                     } else if (f->getCond() == s) {
                         llvm::errs() << "Unsupported\n";
                         assert(false);
@@ -75,11 +82,16 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                 }
                 default: {
                     ss << "; ";
-                    InsertAtFront(s, ss.str());
-                    // TheRewriter->InsertText(start, ss.str(), true, true);
+                    clang::PresumedLoc insert_loc = InsertAtFront(s, ss.str());
+                    inserted_line = insert_loc.getLine();
+                    inserted_col = insert_loc.getColumn();
+                    ninserted = ss.str().length();
                     break;
                 }
             }
+
+            insertions->updateMemoryAllocations(inserted_line, inserted_col,
+                    ninserted);
         }
     }
 

@@ -12,6 +12,7 @@ public:
             line_no(set_line_no), col(set_col), group(set_group),
             fname(set_fname), have_type_info(set_have_type_info) {}
 
+    void incr_col(int i) { col += i; }
     int get_line_no() { return line_no; }
     int get_col() { return col; }
     int get_group() { return group; }
@@ -155,6 +156,8 @@ public:
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     HeapAlloc *isMemoryAllocation(int line, int col);
+    void updateMemoryAllocations(unsigned int line, unsigned int col,
+            unsigned int increment_by);
 
 private:
         std::string lines_info_file, struct_info_file,

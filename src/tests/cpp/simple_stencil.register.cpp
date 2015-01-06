@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 
     for (alias_group_changed(1, 9), iter = 0; iter < niters; alias_group_changed(1, 9), iter++) {
         printf("%d / %d\n", iter + 1, niters);
-        for (alias_group_changed(1, 8), i = 1; i < N - 1; alias_group_changed(1, 8), i++) {
+        for (alias_group_changed(2, -1, 8), i = 1; i < N - 1; alias_group_changed(1, 8), i++) {
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
         }
          int *tmp; lbl_6:  register_stack_var("main|tmp|0", "i32*", &tmp, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_7; }  tmp = curr;  
@@ -27,12 +27,12 @@ int main(int argc, char **argv) {
     }
 
      FILE *fp; lbl_7:  register_stack_var("main|fp|0", "%struct.__sFILE*", &fp, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_8; } lbl_8: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(stderr, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } }  fp = fopen("dump.out", "w");  
-    for (alias_group_changed(2, 8, 11), i = 0; i < N; alias_group_changed(1, 8), i++) {
+    for (alias_group_changed(3, -1, 8, 11), i = 0; i < N; alias_group_changed(1, 8), i++) {
         fprintf(fp, "%d\n", curr[i]);
     }
     fclose(fp);
 
-    free_wrapper(curr, 5);
-    free_wrapper(next, 5);
-    rm_stack(); return 0;
+    alias_group_changed(1, -1); free_wrapper(curr, 5);
+    alias_group_changed(1, 5); free_wrapper(next, 5);
+    alias_group_changed(1, 5); rm_stack(); return 0;
 }

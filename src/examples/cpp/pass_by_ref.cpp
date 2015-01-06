@@ -4,7 +4,7 @@
 extern void foo(int *A);
 
 int main(int argc, char **argv) {
-    int b = 3;
+    int b;
     foo(&b);
-    return 0;
+    return b;
 }

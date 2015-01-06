@@ -17,12 +17,15 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
         unsigned start_line = SM->getPresumedLineNumber(start);
         unsigned start_col = SM->getPresumedColumnNumber(start);
 
-        if (s->getStmtClass() == clang::Stmt::CallExprClass) {
+        if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
             HeapAlloc *alloc = insertions->isMemoryAllocation(start_line,
                     start_col);
             if (alloc != NULL) {
                 const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s);
                 assert(call != NULL);
+
+                const clang::FunctionDecl *callee = call->getDirectCallee();
+                assert(callee->getNameAsString() == alloc->get_fname());
 
                 std::stringstream ss;
                 ss << alloc->get_fname() << "_wrapper";
