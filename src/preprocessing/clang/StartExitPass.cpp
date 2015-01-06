@@ -30,14 +30,6 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation end = s->getLocEnd();
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        unsigned start_line = SM->getPresumedLineNumber(start);
-        unsigned start_col = SM->getPresumedColumnNumber(start);
-        unsigned end_line = SM->getPresumedLineNumber(end);
-        unsigned end_col = SM->getPresumedColumnNumber(end);
-        clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
-        clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
-        std::string filename = start_loc.getFilename();
-
         /*
          * Insert new_stack callbacks.
          */

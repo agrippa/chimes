@@ -306,3 +306,14 @@ HeapAlloc *DesiredInsertions::isMemoryAllocation(int line, int col) {
     }
     return NULL;
 }
+
+void DesiredInsertions::updateMemoryAllocations(unsigned int line,
+        unsigned int col, unsigned int increment_by) {
+    for(std::vector<HeapAlloc *>::iterator i = heap_allocs->begin(),
+            e = heap_allocs->end(); i != e; i++) {
+        HeapAlloc *alloc = *i;
+        if (alloc->get_line_no() == line && alloc->get_col() >= col) {
+            alloc->incr_col(increment_by);
+        }
+    }
+}

@@ -372,7 +372,9 @@ int alias_group_changed(int ngroups, ...) {
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
         int group = va_arg(vl, int);
-        changed_groups.insert(group);
+        if (group != -1) {
+            changed_groups.insert(group);
+        }
     }
     return 0;
 }

@@ -8,6 +8,7 @@
 #include "llvm/IR/InstIterator.h"
 #include "llvm/IR/DebugInfo.h"
 #include "llvm/IR/IntrinsicInst.h"
+#include "llvm/IR/Operator.h"
 
 #include <stdio.h>
 #include <set>
@@ -15,7 +16,7 @@
 
 using namespace llvm;
 
-// #define VERBOSE
+#define VERBOSE
 
 namespace {
 
@@ -121,6 +122,7 @@ namespace {
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
         std::string *get_unique_varname(std::string varname, Function *F,
                 std::set<std::string> *found_variables, Module &M);
+        void findReachable(Module &M);
     };
 }
 
@@ -350,7 +352,6 @@ int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
 #ifdef VERBOSE
         errs() << "  Is a store with pointer \"" << *store->getPointerOperand() << "\"\n";
 #endif
-
         return searchDownUsesForAliasSetGroupHelper(store->getPointerOperand(),
                 nesting + 1, visited);
     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
@@ -370,6 +371,13 @@ int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
             return searchDownUsesForAliasSetGroupHelper(load->getPointerOperand(),
                     nesting - 1, visited);
         }
+    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+#ifdef VERBOSE
+        errs() << "  Is a getelementptr with pointer \"" <<
+            *getele->getPointerOperand() << "\"\n";
+#endif
+        return searchDownUsesForAliasSetGroupHelper(getele->getPointerOperand(),
+                nesting, visited);
     } else {
         return iterateOverUses(val, nesting, visited);
     }
@@ -587,7 +595,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
                     value_to_alias_group.end());
             int group = value_to_alias_group[store->getPointerOperand()];
             groups->insert(group);
-        } else if (dyn_cast<CallInst>(curr_inst) && !dyn_cast<IntrinsicInst>(curr_inst)) {
+        } else if (isa<CallInst>(curr_inst) && !isa<IntrinsicInst>(curr_inst)) {
             /*
              * If we hit a call, we need to register the changes made within a
              * basic block so that a callee that calls checkpoint() knows to
@@ -597,6 +605,31 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             if (groups->size() > 0) {
                 unionGroups(maxline, maxcol, filename, groups);
                 groups = new std::set<int>();
+            }
+            /*
+             * If this call is defined externally and accepts pointers from the
+             * calling program, we have to conservatively assume that those
+             * pointers are modified and update groups to reflect that here.
+             */
+            CallInst *call = dyn_cast<CallInst>(curr_inst);
+            Function *callee = call->getCalledFunction();
+            if (callee->empty()) {
+                int arg_index = 0;
+                for (Function::arg_iterator arg_iter = callee->arg_begin(),
+                        arg_end = callee->arg_end(); arg_iter != arg_end;
+                        arg_iter++) {
+                    Argument *arg = arg_iter;
+                    Type *ty = arg->getType();
+                    if (ty->isPointerTy()) {
+                        int group = searchDownUsesForAliasSetGroup(call->getArgOperand(arg_index));
+                        if (group == -1) {
+                            group = searchUpDefsForAliasSetGroup(call->getArgOperand(arg_index), 0);
+                        }
+                        errs() << "Determined " << group << " " << *(call->getArgOperand(arg_index)) << "\n";
+                        groups->insert(group);
+                    }
+                    arg_index++;
+                }
             }
         }
     }
@@ -1089,18 +1122,27 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
         if (alias_no >= 0) return alias_no;
     }
 
+#ifdef VERBOSE
+    errs() << "Searching up defs from " << *val << "\n";
+#endif
+
     if (AllocaInst *alloc = dyn_cast<AllocaInst>(val)) {
         std::set<Value *> visited;
         return searchDownUsesForAliasSetGroupHelper(alloc, nesting, &visited);
     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
         return searchUpDefsForAliasSetGroup(load->getPointerOperand(),
                 nesting + 1);
+    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+        return searchUpDefsForAliasSetGroup(getele->getPointerOperand(),
+                nesting);
     } else if (dyn_cast<StoreInst>(val)) {
         /*
          * This shouldn't be possible, because store shouldn't be producing any
          * defs. assert(0) here so that if it is possible, we have to debug.
          */
         assert(0);
+        return -1;
+    } else if (isa<Constant>(val)) {
         return -1;
     } else if (User *user = dyn_cast<User>(val)) {
         /*
@@ -1113,6 +1155,31 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
         return searchUpDefsForAliasSetGroup(op, nesting);
     } else {
         return -1;
+    }
+}
+
+void Play::findReachable(Module &M) {
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+
+                if (StoreInst *store = dyn_cast<StoreInst>(&inst)) {
+                    Value *dst = store->getPointerOperand();
+                    Type *dst_type = dst->getType();
+                    if (dst_type->isPointerTy()) {
+                        Value *src = store->getValueOperand();
+                        errs() << "storing " << *src << "\n";
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1286,6 +1353,8 @@ bool Play::runOnModule(Module &M) {
      */
 
     findHeapAllocations(M, "heap.info");
+
+    findReachable(M);
 
     return false;
 }

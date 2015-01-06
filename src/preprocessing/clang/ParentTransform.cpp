@@ -53,7 +53,8 @@ void ParentTransform::setParent(const clang::Stmt *child,
     parentMap[child] = parent;
 }
 
-void ParentTransform::InsertAtFront(const clang::Stmt *s, std::string st) {
+clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
+        std::string st) {
     const clang::Stmt *parent = getParent(s);
     while (!clang::isa<clang::CompoundStmt>(parent)) {
         s = parent;
@@ -61,6 +62,8 @@ void ParentTransform::InsertAtFront(const clang::Stmt *s, std::string st) {
     }
     clang::SourceLocation start = s->getLocStart();
     TheRewriter->InsertText(start, st, true, true);
+
+    return SM->getPresumedLoc(start);
 }
 
 void ParentTransform::setLastGoto(clang::SourceLocation last) {

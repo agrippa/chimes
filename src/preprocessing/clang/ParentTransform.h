@@ -48,7 +48,7 @@ protected:
     void visitChildren(const clang::Stmt *s);
     const clang::Stmt *getParent(const clang::Stmt *s);
     void setParent(const clang::Stmt *child, const clang::Stmt *parent);
-    void InsertAtFront(const clang::Stmt *s, std::string st);
+    clang::PresumedLoc InsertAtFront(const clang::Stmt *s, std::string st);
 
     int getNextRegisterLabel();
     int getNextFunctionLabel();
