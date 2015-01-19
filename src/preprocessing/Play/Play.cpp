@@ -122,7 +122,7 @@ namespace {
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
         std::string *get_unique_varname(std::string varname, Function *F,
                 std::set<std::string> *found_variables, Module &M);
-        void findReachable(Module &M);
+        std::map<int, std::vector<int> *> *findReachable(Module &M);
     };
 }
 
@@ -1158,7 +1158,10 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
     }
 }
 
-void Play::findReachable(Module &M) {
+std::map<int, std::vector<int> *> *Play::findReachable(Module &M) {
+    std::map<int, std::vector<int> *> *stores = new std::map<int,
+        std::vector<int> *>();
+
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
@@ -1174,13 +1177,33 @@ void Play::findReachable(Module &M) {
                     Value *dst = store->getPointerOperand();
                     Type *dst_type = dst->getType();
                     if (dst_type->isPointerTy()) {
-                        Value *src = store->getValueOperand();
-                        errs() << "storing " << *src << "\n";
+                        Value *storing = store->getValueOperand();
+
+                        int storing_group = searchDownUsesForAliasSetGroup(
+                                storing);
+                        if (storing_group == -1) {
+                            storing_group = searchUpDefsForAliasSetGroup(
+                                    storing, 0);
+                        }
+
+                        int dst_group = searchDownUsesForAliasSetGroup(dst);
+                        if (dst_group == -1) {
+                            dst_group = searchUpDefsForAliasSetGroup(
+                                    dst, 0);
+                        }
+
+                        if (storing_group != -1 && dst_group != -1) {
+                            if (stores->find(dst_group) == stores->end()) {
+                                (*stores)[dst_group] = new std::vector<int>();
+                            }
+                            (*stores)[dst_group]->push_back(storing_group);
+                        }
                     }
                 }
             }
         }
     }
+    return stores;
 }
 
 void Play::findHeapAllocations(Module &M, const char *output_file) {
@@ -1354,7 +1377,17 @@ bool Play::runOnModule(Module &M) {
 
     findHeapAllocations(M, "heap.info");
 
-    findReachable(M);
+    errs() << "Storing:\n";
+    std::map<int, std::vector<int> *> *stores = findReachable(M);
+    for (std::map<int, std::vector<int> *>::iterator i = stores->begin(), e = stores->end(); i != e; i++) {
+        int dst = i->first;
+        std::vector<int> *stores = i->second;
+        errs() << "  " << dst << " -> { ";
+        for (std::vector<int>::iterator stores_iter = stores->begin(), stores_end = stores->end(); stores_iter != stores_end; stores_iter++) {
+            errs() << *stores_iter << " ";
+        }
+        errs() << "}\n";
+    }
 
     return false;
 }
