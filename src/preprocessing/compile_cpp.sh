@@ -51,7 +51,8 @@ BITCODE_FILE=${WORK_DIR}/$(basename ${INPUT}).bc
 TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
 ANALYSIS_LOG_FILE=${WORK_DIR}/analysis.log
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname $(which gcc))) -name \
-            "stddef.h"))
+            "stddef.h" 2>/dev/null | head -n 1))
+
 LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib
 if [[ ! -f $LLVM_LIB ]]; then
     LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.so
