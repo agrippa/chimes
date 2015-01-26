@@ -1,0 +1,72 @@
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 10 alias_group_changed(2, 7, 8), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 24 alias_group_changed(1, 8), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 10 alias_group_changed(1, 9), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 35 alias_group_changed(1, 9), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 14 alias_group_changed(2, 8, 12), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 32 alias_group_changed(1, 8), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 alias_group_changed(3, 6, 7, 10); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 10 alias_group_changed(4, 8, 11, 13, 14), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 24 alias_group_changed(1, 8), 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 5 alias_group_changed(1, -1); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 5 alias_group_changed(1, 5); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 alias_group_changed(1, 5); 
+ReplaceText simple_stencil.alias.cpp 11 24 len=6 malloc_wrapper
+InsertTextAfterToken simple_stencil.alias.cpp 11 45 , 5, 0
+ReplaceText simple_stencil.alias.cpp 12 24 len=6 malloc_wrapper
+InsertTextAfterToken simple_stencil.alias.cpp 12 45 , 5, 0
+ReplaceText simple_stencil.alias.cpp 35 33 len=4 free_wrapper
+InsertTextAfterToken simple_stencil.alias.cpp 35 38 , 5
+ReplaceText simple_stencil.alias.cpp 36 32 len=4 free_wrapper
+InsertTextAfterToken simple_stencil.alias.cpp 36 37 , 5
+InsertText simple_stencil.malloc.cpp 26 43  call_lbl_0: calling(0); 
+InsertText simple_stencil.calling.cpp 7 5 new_stack(); 
+InsertText simple_stencil.calling.cpp 7 5  register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); 
+InsertText simple_stencil.calling.cpp 7 5  register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); 
+InsertText simple_stencil.calling.cpp 37 32 rm_stack(); 
+InsertText simple_stencil.start.cpp 7 5 init_numdebug(0); 
+RemoveTextBegin simple_stencil.init.cpp 7 161 
+RemoveTextEnd simple_stencil.init.cpp 7 172 
+InsertTextAfterToken simple_stencil.init.cpp 7 172 int i; int iter; 
+RemoveTextBegin simple_stencil.init.cpp 8 5 
+RemoveTextEnd simple_stencil.init.cpp 8 17 
+InsertTextAfterToken simple_stencil.init.cpp 8 17  int N; N = 1024;  
+RemoveTextBegin simple_stencil.init.cpp 9 5 
+RemoveTextEnd simple_stencil.init.cpp 9 23 
+InsertTextAfterToken simple_stencil.init.cpp 9 23  int niters; niters = 10000;  
+RemoveTextBegin simple_stencil.init.cpp 11 5 
+RemoveTextEnd simple_stencil.init.cpp 11 61 
+InsertTextAfterToken simple_stencil.init.cpp 11 61  int *curr; curr = (int *)malloc_wrapper(N * sizeof(int), 5, 0);  
+RemoveTextBegin simple_stencil.init.cpp 12 5 
+RemoveTextEnd simple_stencil.init.cpp 12 61 
+InsertTextAfterToken simple_stencil.init.cpp 12 61  int *next; next = (int *)malloc_wrapper(N * sizeof(int), 5, 0);  
+RemoveTextBegin simple_stencil.init.cpp 22 9 
+RemoveTextEnd simple_stencil.init.cpp 22 24 
+InsertTextAfterToken simple_stencil.init.cpp 22 24  int *tmp; tmp = curr;  
+RemoveTextBegin simple_stencil.init.cpp 29 5 
+RemoveTextEnd simple_stencil.init.cpp 29 38 
+InsertTextAfterToken simple_stencil.init.cpp 29 38  FILE *fp; fp = fopen("dump.out", "w");  
+InsertTextAfterToken simple_stencil.split.cpp 7 166  lbl_0: 
+InsertTextAfterToken simple_stencil.split.cpp 7 166  register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 7 166  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken simple_stencil.split.cpp 7 176  lbl_1: 
+InsertTextAfterToken simple_stencil.split.cpp 7 176  register_stack_var("main|iter|0", "i32", &iter, 4, 0, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 7 176  if (____numdebug_replaying) { goto lbl_2; } 
+InsertTextAfterToken simple_stencil.split.cpp 8 11  lbl_2: 
+InsertTextAfterToken simple_stencil.split.cpp 8 11  register_stack_var("main|N|0", "i32", &N, 4, 0, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 8 11  if (____numdebug_replaying) { goto lbl_3; } 
+InsertTextAfterToken simple_stencil.split.cpp 9 16  lbl_3: 
+InsertTextAfterToken simple_stencil.split.cpp 9 16  register_stack_var("main|niters|0", "i32", &niters, 4, 0, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 9 16  if (____numdebug_replaying) { goto lbl_4; } 
+InsertTextAfterToken simple_stencil.split.cpp 11 15  lbl_4: 
+InsertTextAfterToken simple_stencil.split.cpp 11 15  register_stack_var("main|curr|0", "i32*", &curr, 8, 1, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 11 15  if (____numdebug_replaying) { goto lbl_5; } 
+InsertTextAfterToken simple_stencil.split.cpp 12 15  lbl_5: 
+InsertTextAfterToken simple_stencil.split.cpp 12 15  register_stack_var("main|next|0", "i32*", &next, 8, 1, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 12 15  if (____numdebug_replaying) { goto lbl_6; } 
+InsertTextAfterToken simple_stencil.split.cpp 22 18  lbl_6: 
+InsertTextAfterToken simple_stencil.split.cpp 22 18  register_stack_var("main|tmp|0", "i32*", &tmp, 8, 1, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 22 18  if (____numdebug_replaying) { goto lbl_7; } 
+InsertTextAfterToken simple_stencil.split.cpp 29 14  lbl_7: 
+InsertTextAfterToken simple_stencil.split.cpp 29 14  register_stack_var("main|fp|0", "%struct.__sFILE*", &fp, 8, 1, 0, 0); 
+InsertTextAfterToken simple_stencil.split.cpp 29 14  if (____numdebug_replaying) { goto lbl_8; } 
+InsertTextAfterToken simple_stencil.split.cpp 29 14 lbl_8: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 

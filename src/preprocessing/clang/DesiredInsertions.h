@@ -7,6 +7,8 @@
 #include <string>
 #include <map>
 
+#include "clang/Basic/SourceManager.h"
+
 extern std::string curr_func;
 
 class HeapAlloc {
@@ -144,12 +146,12 @@ public:
             const char *struct_info_filename,
             const char *stack_allocs_filename,
             const char *heap_filename, const char *original_filename,
-            const char *diagnostic_filename) :
+            const char *diagnostic_filename, const char *working_dirname) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
             heap_file(heap_filename), original_file(original_filename),
-            diagnostic_file(diagnostic_filename) {
+            diagnostic_file(diagnostic_filename), working_dir(working_dirname) {
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
         stack_allocs = parseStackAllocs();
@@ -184,11 +186,12 @@ public:
             func == std::string("__nv_init_managed_rt");
     }
 
-    std::ofstream &diag() { return diagnostics; }
+    void AppendToDiagnostics(std::string action, clang::SourceLocation loc,
+            std::string val, clang::SourceManager &SM);
 
 private:
         std::string lines_info_file, struct_info_file,
-            stack_allocs_file, heap_file, original_file, diagnostic_file;
+            stack_allocs_file, heap_file, original_file, diagnostic_file, working_dir;
         std::ofstream diagnostics;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;

@@ -183,6 +183,8 @@ public:
                   "dst, __FILE__, __LINE__); exit(1); }";
               ss << " } } ";
               R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
+              insertions->AppendToDiagnostics("InsertTextAfterToken",
+                      visitor->getLastGoto(), ss.str(), *visitor->getSM());
           }
       }
     }
@@ -263,7 +265,7 @@ int main(int argc, const char **argv) {
 
   insertions = new DesiredInsertions(line_info_file.c_str(),
           struct_file.c_str(), stack_allocs_file.c_str(), heap_file.c_str(),
-          original_file.c_str(), diag_file.c_str());
+          original_file.c_str(), diag_file.c_str(), working_directory.c_str());
 
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
@@ -321,6 +323,8 @@ int main(int argc, const char **argv) {
 
       first_pass = false;
   }
+
+  delete insertions;
 
   return 0;
 }
