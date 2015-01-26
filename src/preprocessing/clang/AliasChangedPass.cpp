@@ -37,6 +37,7 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
         clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
         clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
 
+        llvm::errs() << "Looked at " << start_loc.getFilename() << " " << start_loc.getLine() << " " << start_loc.getColumn() << "\n";
         if (insertions->contains(start_loc.getLine(), start_loc.getColumn(),
                     start_loc.getFilename()) && !matched(start_loc.getLine(),
                     start_loc.getColumn(), start_loc.getFilename())) {
