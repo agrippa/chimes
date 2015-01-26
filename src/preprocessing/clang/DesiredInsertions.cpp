@@ -317,3 +317,18 @@ void DesiredInsertions::updateMemoryAllocations(unsigned int line,
         }
     }
 }
+
+void DesiredInsertions::AppendToDiagnostics(std::string action,
+        clang::SourceLocation loc, std::string val, clang::SourceManager &SM) {
+    clang::PresumedLoc presumed = SM.getPresumedLoc(loc);
+    const char *path = presumed.getFilename();
+    if (strstr(path, working_dir.c_str()) == path) {
+        const char *filename = path + working_dir.size();
+        if (*filename == '/') filename++;
+        path = filename;
+    }
+
+    diagnostics << action << " " << std::string(path) <<
+        " " << presumed.getLine() << " " << presumed.getColumn() << " " <<
+        val << "\n";
+}

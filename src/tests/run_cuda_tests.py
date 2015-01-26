@@ -2,6 +2,8 @@ import os
 import os.path
 import sys
 from subprocess import Popen, PIPE
+import sys
+from os import listdir
 import tempfile
 
 tests = [('vector_sum.cu', 'vector_sum.cudafe1.register.cpp')]

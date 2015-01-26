@@ -2,6 +2,8 @@
 
 #include <sstream>
 
+extern DesiredInsertions *insertions;
+
 std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
     int first_pipe = alloc->get_mangled_varname().find('|');
     std::string actual_name = alloc->get_mangled_varname().substr(
@@ -62,6 +64,7 @@ clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
     }
     clang::SourceLocation start = s->getLocStart();
     rewriter->InsertText(start, st, true, true);
+    insertions->AppendToDiagnostics("InsertText", start, st, *SM);
 
     return SM->getPresumedLoc(start);
 }
@@ -69,25 +72,34 @@ clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
 void ParentTransform::InsertText(clang::SourceLocation start, std::string s,
         bool insertAfter, bool indent) {
     rewriter->InsertText(start, s, insertAfter, indent);
+    insertions->AppendToDiagnostics("InsertText", start, s, *SM);
 }
 
 void ParentTransform::InsertTextBefore(clang::SourceLocation start,
         std::string s) {
     rewriter->InsertTextBefore(start, s);
+    insertions->AppendToDiagnostics("InsertTextBefore", start, s, *SM);
 }
 
 void ParentTransform::InsertTextAfterToken(clang::SourceLocation start,
         std::string s) {
     rewriter->InsertTextAfterToken(start, s);
+    insertions->AppendToDiagnostics("InsertTextAfterToken", start, s, *SM);
 }
 
 void ParentTransform::RemoveText(clang::SourceRange rng) {
     rewriter->RemoveText(rng);
+    insertions->AppendToDiagnostics("RemoveTextBegin", rng.getBegin(), "", *SM);
+    insertions->AppendToDiagnostics("RemoveTextEnd", rng.getEnd(), "", *SM);
 }
 
 void ParentTransform::ReplaceText(clang::SourceLocation loc, unsigned len,
         std::string new_str) {
     rewriter->ReplaceText(loc, len, new_str);
+
+    std::stringstream ss;
+    ss << "len=" << len << " " << new_str;
+    insertions->AppendToDiagnostics("ReplaceText", loc, ss.str(), *SM);
 }
 
 void ParentTransform::setLastGoto(clang::SourceLocation last) {
