@@ -1,0 +1,32 @@
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 15 : { 32, 33, 34, 35 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 15 : { 37 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 15 : { 38 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 1 : { 39 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 33 1 : { 36 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 34 1 : { 36 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 6 : { 36, 40 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 39 1 : { 36 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 20 : { 40 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 42 1 : { -1, 36 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 2 : { -1, 36, 41, 42 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 1 : { -1, 36 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 6 : { 40, 43, 44, 45 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 56 1 : { -1, 46 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 20 : { 40 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 1 : { -1 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 1 : { -1 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 1 : { -1 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 : { -1 }
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h 419 43 : { 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 19 : { 4, 5, 6, 7 }
+/tmp/numdebug.cT1M3S/nvcc/vector_sum.cudafe1.stub.c 9 42 : { 0 }
+/tmp/numdebug.cT1M3S/nvcc/vector_sum.cudafe1.stub.c 9 122 : { 0 }
+/tmp/numdebug.cT1M3S/nvcc/vector_sum.cudafe1.stub.c 9 156 : { 0 }
+/tmp/numdebug.cT1M3S/nvcc/vector_sum.cudafe1.stub.c 9 191 : { 0 }
+/tmp/numdebug.cT1M3S/nvcc/vector_sum.cudafe1.stub.c 9 226 : { 0 }
+/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { -1, 18 }
+vector_sum.cudafe1.stub.c 2 78 : { -1, 16, 17, 47 }
+vector_sum.cudafe1.stub.c 1 53 : { -1, 12, 13, 48 }
+/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h 239 1 : { -1 }
+/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h 121 42 : { 9, 10 }
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 1 146 : { 14, 15 }
