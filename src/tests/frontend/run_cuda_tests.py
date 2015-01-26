@@ -13,7 +13,7 @@ tests = [ vector_sum ]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
 CUDA_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cuda'
-CUDA_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/cuda'
+CUDA_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/cuda'
 
 if __name__ == '__main__':
     config = parse_argv(sys.argv)
