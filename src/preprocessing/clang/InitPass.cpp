@@ -37,7 +37,7 @@ void InitPass::VisitTopLevel(clang::Decl *toplevel) {
                 }
             }
             ss << "); ";
-            TheRewriter->InsertText(child->getLocStart(), ss.str(), true, true);
+            InsertText(child->getLocStart(), ss.str(), true, true);
         }
     }
 }

@@ -62,9 +62,9 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
             rng.setBegin(decl_start);
             rng.setEnd(decl_end);
 
-            TheRewriter->RemoveText(rng);
+            RemoveText(rng);
 
-            TheRewriter->InsertTextAfterToken(end, acc_decl.str());
+            InsertTextAfterToken(end, acc_decl.str());
         }
     }
     

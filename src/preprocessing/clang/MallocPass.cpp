@@ -29,7 +29,7 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
 
                 std::stringstream ss;
                 ss << alloc->get_fname() << "_wrapper";
-                TheRewriter->ReplaceText(start, alloc->get_fname().size(), ss.str());
+                ReplaceText(start, alloc->get_fname().size(), ss.str());
 
                 std::stringstream ss2;
                 ss2 << ", " << alloc->get_group();
@@ -62,7 +62,7 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
 
                 const clang::Expr *arg = call->getArg(call->getNumArgs() - 1);
                 clang::SourceLocation end_arg = arg->getLocEnd();
-                TheRewriter->InsertTextAfterToken(end_arg, ss2.str());
+                InsertTextAfterToken(end_arg, ss2.str());
             }
         }
     }

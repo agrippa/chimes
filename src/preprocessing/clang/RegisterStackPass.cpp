@@ -47,12 +47,12 @@ void RegisterStackPass::VisitStmt(const clang::Stmt *s) {
                 ss2 << " if (____numdebug_replaying) { goto lbl_" << (lbl + 1) << "; } ";
 
                 if (anyInitLists) {
-                    TheRewriter->InsertTextBefore(start, ss.str());
+                    InsertTextBefore(start, ss.str());
                 } else {
-                    TheRewriter->InsertTextAfterToken(end, ss.str());
+                    InsertTextAfterToken(end, ss.str());
                 }
-                TheRewriter->InsertTextAfterToken(end, acc.str());
-                TheRewriter->InsertTextAfterToken(end, ss2.str());
+                InsertTextAfterToken(end, acc.str());
+                InsertTextAfterToken(end, ss2.str());
 
                 setLastGoto(end);
             }

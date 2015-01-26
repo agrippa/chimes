@@ -22,7 +22,7 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
                 std::stringstream ss;
                 int lbl = getNextFunctionLabel();
                 ss << " call_lbl_" << lbl << ": calling(" << lbl << "); ";
-                TheRewriter->InsertText(start, ss.str(), true, true);
+                InsertText(start, ss.str(), true, true);
             }
         }
     }

@@ -63,7 +63,7 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
             switch (parent->getStmtClass()) {
                 case clang::Stmt::IfStmtClass: {
                     ss << " || ";
-                    TheRewriter->InsertText(start, ss.str(), true, true);
+                    InsertText(start, ss.str(), true, true);
                     ninserted = ss.str().length();
                     break;
                 }
@@ -71,7 +71,7 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                     const clang::ForStmt *f = clang::dyn_cast<clang::ForStmt>(parent);
                     if (f->getInit() == s || f->getInc() == s) {
                         ss << ", ";
-                        TheRewriter->InsertText(start, ss.str(), true, true);
+                        InsertText(start, ss.str(), true, true);
                         ninserted = ss.str().length();
                     } else if (f->getCond() == s) {
                         llvm::errs() << "Unsupported\n";
