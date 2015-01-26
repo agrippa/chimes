@@ -735,7 +735,7 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
         GroupsModifiedAtLine *curr = *line_iter;
         std::set<int> *groups = curr->groups;
 
-        fprintf(fp, "%s:%d:%d : { ", curr->loc.filename->c_str(),
+        fprintf(fp, "%s %d %d : { ", curr->loc.filename->c_str(),
                 curr->loc.line_no, curr->loc.col);
         for (std::set<int>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;

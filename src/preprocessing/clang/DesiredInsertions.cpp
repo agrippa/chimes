@@ -222,12 +222,12 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
 
     std::string line;
     while (getline(fp, line)) {
-        // test.cpp:25:9 : { 2, 3, 4, 5, 6 }
-        int filename_end = line.find(':');
+        // test.cpp 25 9 : { 2, 3, 4, 5, 6 }
+        int filename_end = line.find(' ');
         std::string filename = line.substr(0, filename_end);
         line = line.substr(filename_end + 1);
 
-        int line_no_end = line.find(':');
+        int line_no_end = line.find(' ');
         std::string line_no_str = line.substr(0, line_no_end);
         int line_no = atoi(line_no_str.c_str());
         line = line.substr(line_no_end + 1);
