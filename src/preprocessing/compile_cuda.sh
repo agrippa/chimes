@@ -39,7 +39,8 @@ if [[ "${INPUT:0:1}" != "/" ]]; then
 fi
 OUTPUT=$(pwd)/a.out
 
-WORK_DIR=$(mktemp -d)
+WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+
 NVCC_WORK_DIR=${WORK_DIR}/nvcc
 COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
 
@@ -56,6 +57,7 @@ ENV_POST_FILE=${COMPILE_HELPER_WORK_DIR}/log.env.post
 
 mkdir ${COMPILE_HELPER_WORK_DIR}
 mkdir ${NVCC_WORK_DIR} && cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
+          --pre-include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
           -I${NUM_DEBUG_HOME}/src/libnumdebug \
           -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug --verbose --keep\
           ${INPUT} -o ${OUTPUT} &> ${CMD_FILE}
@@ -67,7 +69,7 @@ BITCODE_FILE=${NVCC_WORK_DIR}/$(basename ${INPUT}).bc
 TMP_OBJ_FILE=${NVCC_WORK_DIR}/$(basename ${INPUT}).o
 ANALYSIS_LOG_FILE=${NVCC_WORK_DIR}/analysis.log
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname $(which gcc))) -name \
-            "stddef.h"))
+            "stddef.h" 2>/dev/null | head -n 1))
 LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib
 if [[ ! -f $LLVM_LIB ]]; then
     LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.so
@@ -87,16 +89,16 @@ cd ${NVCC_WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
 rm ${TMP_OBJ_FILE}
 
 ${TRANSFORM} \
-        -extra-arg="-I${NUM_DEBUG_HOME}/src/libnumdebug" \
-        -extra-arg="-I${CUDA_HOME}/include" \
-        -extra-arg="-I${STDDEF_FOLDER}" \
-        -extra-arg="-include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h" \
         -l ${NVCC_WORK_DIR}/lines.info \
         -s ${NVCC_WORK_DIR}/struct.info \
         -a ${NVCC_WORK_DIR}/stack.info \
-        -i ${INTERMEDIATE_FILE} \
+        -i ${INPUT} \
         -m ${NVCC_WORK_DIR}/heap.info \
-        ${INTERMEDIATE_FILE} --
+        -d ${NVCC_WORK_DIR}/diag.info \
+        -w ${NVCC_WORK_DIR} \
+        -c true \
+        ${INTERMEDIATE_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
+        -I${CUDA_HOME}/include -I${STDDEF_FOLDER}
 
 LAST_FILE=$(basename ${INTERMEDIATE_FILE})
 EXT="${LAST_FILE##*.}"

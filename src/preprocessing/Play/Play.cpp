@@ -633,15 +633,11 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
              */
             CallInst *call = dyn_cast<CallInst>(curr_inst);
             Function *callee = call->getCalledFunction();
-            if (callee->empty()) {
-                int arg_index = 0;
-                for (Function::arg_iterator arg_iter = callee->arg_begin(),
-                        arg_end = callee->arg_end(); arg_iter != arg_end;
-                        arg_iter++) {
-                    Argument *arg = arg_iter;
-                    Type *ty = arg->getType();
-                    if (ty->isPointerTy()) {
-                        Value *toSearch = call->getArgOperand(arg_index);
+            if (callee == NULL || callee->empty()) {
+                for (unsigned int a = 0; a < call->getNumArgOperands(); a++) {
+                    Value *toSearch = call->getArgOperand(a);
+
+                    if (toSearch->getType()->isPointerTy()) {
 #ifdef VERBOSE
                         errs() << "\nStarting search for alias group of " <<
                             *toSearch << "\n";
@@ -656,7 +652,6 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
 #endif
                         groups->insert(group);
                     }
-                    arg_index++;
                 }
             }
         }
@@ -1165,7 +1160,8 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
          */
         if (BinaryOperator *binop = dyn_cast<BinaryOperator>(user)) {
             if (binop->getOpcode() == Instruction::SRem ||
-                    binop->getOpcode() == Instruction::SDiv) {
+                    binop->getOpcode() == Instruction::SDiv ||
+                    binop->getOpcode() == Instruction::Mul) {
                 /*
                  * Taking a remainder of something doesn't have any meaning in
                  * the context of aliases
@@ -1189,6 +1185,7 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
                 }
             } else {
                 // Unsupported binary operator
+                errs() << *binop << "\n";
                 assert(false);
             }
         } else if (CallInst *call = dyn_cast<CallInst>(user)) {

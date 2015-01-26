@@ -10,6 +10,7 @@ Prerequisites:
 1. LLVM_INSTALL set to the llvm-build directory created below
 2. LLVM_HOME set to the llvm-src directory created below
 3. NUM_DEBUG_HOME set to the root directory this repo is cloned to
+4. CUDA_HOME set to the root of your CUDA installation
 
 Installation Steps:
 1. Download LLVM 3.5.1 from http://llvm.org/releases/3.5.1/llvm-3.5.1.src.tar.xz and extract to llvm-src

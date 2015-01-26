@@ -20,7 +20,11 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
         const clang::Stmt *last = cmpd->body_back();
         if (!clang::isa<clang::ReturnStmt>(last)) {
             // implicit return at end of void funct
-            TheRewriter->InsertText(cmpd->getLocEnd(), "rm_stack(); ", true, true);
+            clang::SourceLocation loc = cmpd->getLocStart();
+            clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
+            if (insertions->isMainFile(locloc.getFilename())) {
+                TheRewriter->InsertText(cmpd->getLocEnd(), "rm_stack(); ", true, true);
+            }
         }
     }
 }
@@ -28,8 +32,10 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
 void StartExitPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
+    clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
 
-    if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
+    if (start.isValid() && end.isValid() &&
+            insertions->isMainFile(start_loc.getFilename())) {
         /*
          * Insert new_stack callbacks.
          */

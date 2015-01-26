@@ -72,16 +72,18 @@ cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
 rm ${TMP_OBJ_FILE}
 
 ${TRANSFORM} \
-        -extra-arg="-I${NUM_DEBUG_HOME}/src/libnumdebug" \
-        -extra-arg="-I${CUDA_HOME}/include" \
-        -extra-arg="-I${STDDEF_FOLDER}" \
-        -extra-arg="-include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h" \
         -l ${WORK_DIR}/lines.info \
         -s ${WORK_DIR}/struct.info \
         -a ${WORK_DIR}/stack.info \
         -i ${INPUT} \
         -m ${WORK_DIR}/heap.info \
-        ${INPUT} --
+        -d ${WORK_DIR}/diag.info \
+        -w ${WORK_DIR} \
+        -c false \
+        ${INPUT} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
+        -I${CUDA_HOME}/include \
+        -I${STDDEF_FOLDER} \
+        -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h
 
 LAST_FILE=$(basename ${INPUT})
 EXT="${LAST_FILE##*.}"

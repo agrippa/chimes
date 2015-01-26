@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "checkpoint.h"
+
 extern void foo(int *A);
 
 int main(int argc, char **argv) {
