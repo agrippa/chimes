@@ -47,7 +47,7 @@ def parse_argv(argv):
         if argv[i] == '-k':
             keep = True
         else:
-            print 'Unknown argument ' + argv[i]
+            sys.stderr.write('Unknown argument ' + argv[i] + '\n')
             sys.exit(1)
         i += 1 
 
@@ -83,11 +83,11 @@ def run_cmd(cmd, expect_err):
     os.remove(stderr_filename)
 
     if not expect_err and p.returncode != 0:
-        print('Error running "' + ' '.join(cmd) + '"')
-        print('')
-        print(str(result[0]))
-        print('')
-        print(str(result[1]))
+        sys.stderr.write('Error running "' + ' '.join(cmd) + '"\n')
+        sys.stderr.write('\n')
+        sys.stderr.write(str(result[0]) + '\n')
+        sys.stderr.write('\n')
+        sys.stderr.write(str(result[1]) + '\n')
         sys.exit(1)
 
     return result
@@ -131,13 +131,13 @@ def _diff_files(file1name, file2name, col):
                         diff_resolved = (newline1 == newline2)
 
             if not diff_resolved:
-                print 'ERROR: Mismatch at line ' + str(line_index) + ' of ' + \
-                    file1name + ' and ' + file2name
-                print file1name + ':'
-                print line1[:len(line1) - 1]
-                print file2name + ':'
-                print line2[:len(line2) - 1]
-            sys.exit(1)
+                sys.stderr.write('ERROR: Mismatch at line ' + str(line_index) +
+                        ' of ' + file1name + ' and ' + file2name + '\n')
+                sys.stderr.write(file1name + ':\n')
+                sys.stderr.write(line1[:len(line1) - 1] + '\n')
+                sys.stderr.write(file2name + ':\n')
+                sys.stderr.write(line2[:len(line2) - 1] + '\n')
+                sys.exit(1)
 
         line1 = fp1.readline()
         line2 = fp2.readline()

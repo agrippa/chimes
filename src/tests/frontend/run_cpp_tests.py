@@ -10,7 +10,7 @@ tests = [simple_stencil, pass_by_ref]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cpp'
-CPP_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/cpp'
+CPP_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/cpp'
 
 if __name__ == '__main__':
     config = parse_argv(sys.argv)
