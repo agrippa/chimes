@@ -1,0 +1,17 @@
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:11:10 : { 0, 1, 2, 3, 4 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:12:10 : { 6 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:13:10 : { 7, 8 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:15:5 : { 5 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:13:24 : { 8 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:17:10 : { 9 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:19:14 : { 8, 12 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:21:9 : { 5 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:19:32 : { 8 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:26:9 : { 6, 7, 10 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:17:35 : { 9 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:30:10 : { 8, 11, 13, 14 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:32:5 : { -1, 15 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:30:24 : { 8 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:35:5 : { -1 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:36:5 : { 5 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp:37:5 : { 5 }

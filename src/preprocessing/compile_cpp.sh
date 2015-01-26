@@ -45,7 +45,7 @@ OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 
-echo $WORK_DIR
+echo WORK_DIR = $WORK_DIR
 
 BITCODE_FILE=${WORK_DIR}/$(basename ${INPUT}).bc
 TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
@@ -68,7 +68,7 @@ cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include -I${NUM_DEBUG_HOME}/src/libnumde
 
 echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
 cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
-       ${BITCODE_FILE} > $TMP_OBJ_FILE &> ${ANALYSIS_LOG_FILE}
+       ${BITCODE_FILE} &>${ANALYSIS_LOG_FILE} > $TMP_OBJ_FILE
 rm ${TMP_OBJ_FILE}
 
 ${TRANSFORM} \

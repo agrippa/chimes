@@ -46,7 +46,7 @@ run:
         -m ${NUM_DEBUG_HOME}/src/examples/cpp/heap.info \
         -b ${NUM_DEBUG_HOME}/src/examples/cpp/loc.info \
         /Users/mgrossman/dev/num-debug/src/examples/cpp/test.cpp --
-	g++ -I../../libnumdebug -L../../libnumdebug -include../../libnumdebug/libnumdebug.h -includestddef.h -lnumdebug ${LAST_STAGE}
+	${GXX} -I../../libnumdebug -L../../libnumdebug -include../../libnumdebug/libnumdebug.h -includestddef.h -lnumdebug ${LAST_STAGE}
 run_struct:
 	./${EXE} -extra-arg="-I../../libnumdebug" -extra-arg="-include../../libnumdebug/libnumdebug.h" -extra-arg="-includestddef.h" \
         -l ${NUM_DEBUG_HOME}/src/examples/cpp/lines.info \
@@ -59,12 +59,12 @@ run_struct:
         -m ${NUM_DEBUG_HOME}/src/examples/cpp/heap.info \
         -b ${NUM_DEBUG_HOME}/src/examples/cpp/loc.info \
         /Users/mgrossman/dev/num-debug/src/examples/cpp/struct.cpp --
-	g++ -I../../libnumdebug -L../../libnumdebug -include../../libnumdebug/libnumdebug.h -includestddef.h -lnumdebug ${LAST_STRUCT_STAGE}
+	${GXX} -I../../libnumdebug -L../../libnumdebug -include../../libnumdebug/libnumdebug.h -includestddef.h -lnumdebug ${LAST_STRUCT_STAGE}
 
 
 
 compile:
-	g++ -I../../libnumdebug -L../../libnumdebug -include../../libnumdebug/libnumdebug.h -lnumdebug ${LAST_STAGE}
+	${GXX} -I../../libnumdebug -L../../libnumdebug -include../../libnumdebug/libnumdebug.h -lnumdebug ${LAST_STAGE}
 
 clean:
 	rm *.o ${EXE}

@@ -2,6 +2,7 @@
 #include "llvm/Analysis/CallGraphSCCPass.h"
 #include "llvm/IR/Function.h"
 #include "llvm/IR/Module.h"
+#include "llvm/IR/Metadata.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/Analysis/AliasAnalysis.h"
 #include "llvm/Analysis/AliasSetTracker.h"
@@ -16,7 +17,7 @@
 
 using namespace llvm;
 
-#define VERBOSE
+// #define VERBOSE
 
 namespace {
 
@@ -72,6 +73,7 @@ namespace {
         std::map<std::string, FunctionInfo *> functions;
         std::map<Value *, int> value_to_alias_group;
         std::vector<AliasSetGroup *> alias_groups;
+        int ngroups;
         std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
         std::map<std::string, SimpleLoc *> *function_to_start_line = NULL;
         std::map<std::string, std::string> *function_to_demangled = NULL;
@@ -88,7 +90,7 @@ namespace {
         }
 
     private:
-        void InitializeAliasGroups(AliasAnalysis *AA);
+        int InitializeAliasGroups(AliasAnalysis *AA);
         void traverse(BasicBlock &curr, std::vector<std::string> visited);
         void gatherCallSites(Module &M);
         void combineAliasSetGroups(int merge_into, int merge_from);
@@ -298,6 +300,22 @@ int Play::searchForValueInKnownAliases(Value *val) {
         }
     }
 
+    /*
+     * Constants (e.g. const char * passed to printf) are never modified and are
+     * auto-loaded by the program. However, not assigning them an alias group
+     * leads the application to think it can't find an alias for certain
+     * instructions. Instead, we assign a dummy group to these constants which
+     * is never referenced.
+     */
+    if (isa<GlobalValue>(val)) {
+#ifdef VERBOSE
+        errs() << "Adding " << *val << " as group " << ngroups << "\n";
+#endif
+        int group = ngroups++;
+        value_to_alias_group[val] = group;
+        return group;
+    }
+
     return -1;
 }
 
@@ -385,7 +403,7 @@ int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
     return -1;
 }
 
-void Play::InitializeAliasGroups(AliasAnalysis *AA) {
+int Play::InitializeAliasGroups(AliasAnalysis *AA) {
     int set_count = 0;
     for (std::map<std::string, FunctionInfo *>::iterator it =
             functions.begin(), e = functions.end(); it != e; it++) {
@@ -427,6 +445,8 @@ void Play::InitializeAliasGroups(AliasAnalysis *AA) {
         delete AST;
     }
     errs() << "\n";
+
+    return set_count;
 }
 
 void Play::mergeAliasGroupsInterprocedurally() {
@@ -621,11 +641,19 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
                     Argument *arg = arg_iter;
                     Type *ty = arg->getType();
                     if (ty->isPointerTy()) {
-                        int group = searchDownUsesForAliasSetGroup(call->getArgOperand(arg_index));
+                        Value *toSearch = call->getArgOperand(arg_index);
+#ifdef VERBOSE
+                        errs() << "\nStarting search for alias group of " <<
+                            *toSearch << "\n";
+#endif
+                        int group = searchDownUsesForAliasSetGroup(toSearch);
                         if (group == -1) {
-                            group = searchUpDefsForAliasSetGroup(call->getArgOperand(arg_index), 0);
+                            group = searchUpDefsForAliasSetGroup(toSearch, 0);
                         }
-                        errs() << "Determined " << group << " " << *(call->getArgOperand(arg_index)) << "\n";
+#ifdef VERBOSE
+                        errs() << "Determined " << group << " " << *toSearch <<
+                            "\n";
+#endif
                         groups->insert(group);
                     }
                     arg_index++;
@@ -690,7 +718,8 @@ void Play::printLineToGroupsMapping() {
         GroupsModifiedAtLine *curr = *line_iter;
         std::set<int> *groups = curr->groups;
 
-        errs() << " " << *curr->loc.filename << ":" << curr->loc.line_no << " -> { ";
+        errs() << " " << *curr->loc.filename << ":" << curr->loc.line_no <<
+            ":" << curr->loc.col << " -> { ";
 
         for (std::set<int>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;
@@ -800,15 +829,12 @@ SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
         assert(root != NULL);
         assert(root->getNumOperands() == 1);
         MDNode *module_info = root->getOperand(0);
-        assert(module_info->getNumOperands() == 7);
-        Metadata *func_info = module_info->getOperand(4).get();
-        assert(dyn_cast<MDNode>(func_info));
-        MDNode *func_info_md = (MDNode *)func_info;
+        DICompileUnit module(module_info);
+        DIArray functions = module.getSubprograms();
+        errs() << "Got " << functions.getNumElements() << "\n";
 
-        for (unsigned int f = 0; f < func_info_md->getNumOperands(); f++) {
-            assert(dyn_cast<MDNode>(func_info_md->getOperand(f).get()));
-            MDNode *this_func = (MDNode *)func_info_md->getOperand(f).get();
-            DISubprogram di_func(this_func);
+        for (unsigned int f = 0; f < functions.getNumElements(); f++) {
+            DISubprogram di_func(functions.getElement(f));
 
             std::string fname = di_func.getLinkageName();
             if (fname.empty()) {
@@ -853,17 +879,11 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
     assert(root != NULL);
     assert(root->getNumOperands() == 1);
     MDNode *module_info = root->getOperand(0);
-    assert(module_info->getNumOperands() == 7);
-    Metadata *struct_info = module_info->getOperand(3).get();
-    assert(struct_info != NULL);
-    assert(dyn_cast<MDNode>(struct_info));
-    MDNode *struct_info_md = (MDNode *)struct_info;
+    DICompileUnit module(module_info);
+    DIArray structs = module.getRetainedTypes();
 
-    for (unsigned int s = 0; s < struct_info_md->getNumOperands(); s++) {
-        if (struct_info_md->getOperand(s).get() == NULL) continue;
-        assert(dyn_cast<MDNode>(struct_info_md->getOperand(s).get()));
-        MDNode *this_struct = (MDNode *)struct_info_md->getOperand(s).get();
-        DIType di_struct(this_struct);
+    for (unsigned int s = 0; s < structs.getNumElements(); s++) {
+        DIType di_struct(structs.getElement(s));
 
         // If this isn't a struct, skip it
         if (!di_struct.isCompositeType()) continue;
@@ -875,20 +895,12 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
         }
         std::vector<std::string> fields;
 
-        assert(this_struct->getNumOperands() >= 5);
-        Metadata *field_defs_metadata = this_struct->getOperand(4).get();
-
-        if (field_defs_metadata != NULL) {
-            assert(dyn_cast<MDNode>(field_defs_metadata));
-            MDNode *field_defs = (MDNode *)field_defs_metadata;
-            for (unsigned int f = 0; f < field_defs->getNumOperands(); f++) {
-                assert(field_defs->getOperand(f).get() != NULL &&
-                        dyn_cast<MDNode>(field_defs->getOperand(f).get()));
-                MDNode *field = (MDNode *)field_defs->getOperand(f).get();
-                DIType di_field(field);
-                std::string fieldname = di_field.getName().str();
-                fields.push_back(fieldname);
-            }
+        DICompositeType composite(di_struct);
+        DIArray fields_defs = composite.getTypeArray();
+        for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
+            DIType di_field(fields_defs.getElement(f));
+            std::string fieldname = di_field.getName().str();
+            fields.push_back(fieldname);
         }
 
         assert(struct_fields->find(struct_name) == struct_fields->end());
@@ -1123,7 +1135,8 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
     }
 
 #ifdef VERBOSE
-    errs() << "Searching up defs from " << *val << "\n";
+    errs() << "Searching up defs from " << *val << " nesting=" << nesting <<
+        "\n";
 #endif
 
     if (AllocaInst *alloc = dyn_cast<AllocaInst>(val)) {
@@ -1150,6 +1163,42 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
          * we'll trip it when it actually starts being not true and we'll have
          * to special-case pointer chasing through different instruction types.
          */
+        if (BinaryOperator *binop = dyn_cast<BinaryOperator>(user)) {
+            if (binop->getOpcode() == Instruction::SRem ||
+                    binop->getOpcode() == Instruction::SDiv) {
+                /*
+                 * Taking a remainder of something doesn't have any meaning in
+                 * the context of aliases
+                 */
+                return -1;
+            } else if (binop->getOpcode() == Instruction::Add ||
+                    binop->getOpcode() == Instruction::Sub) {
+                assert(user->getNumOperands() == 2);
+                Value *op1 = user->getOperand(0);
+                Value *op2 = user->getOperand(1);
+                bool op1IsPtr = op1->getType()->isPointerTy();
+                bool op2IsPtr = op2->getType()->isPointerTy();
+                assert(!(op1IsPtr && op2IsPtr)); // not both pointers
+
+                if (op1IsPtr) {
+                    return searchUpDefsForAliasSetGroup(op1, nesting);
+                } else if (op2IsPtr) {
+                    return searchUpDefsForAliasSetGroup(op2, nesting);
+                } else {
+                    return -1;
+                }
+            } else {
+                // Unsupported binary operator
+                assert(false);
+            }
+        } else if (CallInst *call = dyn_cast<CallInst>(user)) {
+            /*
+             * TODO for some calls we should be able to collect the alias groups
+             * that are returned?
+             */
+            return -1;
+        }
+
         assert(user->getNumOperands() == 1);
         Value *op = user->getOperand(0);
         return searchUpDefsForAliasSetGroup(op, nesting);
@@ -1179,18 +1228,40 @@ std::map<int, std::vector<int> *> *Play::findReachable(Module &M) {
                     if (dst_type->isPointerTy()) {
                         Value *storing = store->getValueOperand();
 
+#ifdef VERBOSE
+                        errs() << "\nStarting search down for alias group of " <<
+                            *storing << "\n";
+#endif
                         int storing_group = searchDownUsesForAliasSetGroup(
                                 storing);
                         if (storing_group == -1) {
+#ifdef VERBOSE
+                            errs() << "\nStarting search up for alias group of " <<
+                                *storing << "\n";
+#endif
                             storing_group = searchUpDefsForAliasSetGroup(
                                     storing, 0);
                         }
+#ifdef VERBOSE
+                        errs() << "Determined group " << storing_group << "\n\n";
+#endif
 
+#ifdef VERBOSE
+                        errs() << "\nStarting search down for alias group of " <<
+                            *dst << "\n";
+#endif
                         int dst_group = searchDownUsesForAliasSetGroup(dst);
                         if (dst_group == -1) {
+#ifdef VERBOSE
+                            errs() << "\nStarting search up for alias group of " <<
+                                *dst << "\n";
+#endif
                             dst_group = searchUpDefsForAliasSetGroup(
                                     dst, 0);
                         }
+#ifdef VERBOSE
+                        errs() << "Determined group " << dst_group << "\n\n";
+#endif
 
                         if (storing_group != -1 && dst_group != -1) {
                             if (stores->find(dst_group) == stores->end()) {
@@ -1338,7 +1409,7 @@ bool Play::runOnModule(Module &M) {
 
     AliasAnalysis *AA = &getAnalysis<AliasAnalysis>();
 
-    InitializeAliasGroups(AA);
+    ngroups = InitializeAliasGroups(AA);
 
     mergeAliasGroupsInterprocedurally();
 
@@ -1379,11 +1450,14 @@ bool Play::runOnModule(Module &M) {
 
     errs() << "Storing:\n";
     std::map<int, std::vector<int> *> *stores = findReachable(M);
-    for (std::map<int, std::vector<int> *>::iterator i = stores->begin(), e = stores->end(); i != e; i++) {
+    for (std::map<int, std::vector<int> *>::iterator i = stores->begin(),
+            e = stores->end(); i != e; i++) {
         int dst = i->first;
         std::vector<int> *stores = i->second;
         errs() << "  " << dst << " -> { ";
-        for (std::vector<int>::iterator stores_iter = stores->begin(), stores_end = stores->end(); stores_iter != stores_end; stores_iter++) {
+        for (std::vector<int>::iterator stores_iter = stores->begin(),
+                stores_end = stores->end(); stores_iter != stores_end;
+                stores_iter++) {
             errs() << *stores_iter << " ";
         }
         errs() << "}\n";
