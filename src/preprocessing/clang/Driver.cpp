@@ -42,6 +42,15 @@ static llvm::cl::opt<std::string> original_file("i",
 static llvm::cl::opt<std::string> heap_file("m",
         llvm::cl::desc("Heap info file"),
         llvm::cl::value_desc("heap_file"));
+static llvm::cl::opt<std::string> diag_file("d",
+        llvm::cl::desc("Diagnostics file"),
+        llvm::cl::value_desc("diag_file"));
+static llvm::cl::opt<std::string> working_directory("w",
+        llvm::cl::desc("Working directory"),
+        llvm::cl::value_desc("work_dir"));
+static llvm::cl::opt<std::string> contains_line_markings("c",
+        llvm::cl::desc("Input file contains line markings?"),
+        llvm::cl::value_desc("line_markings"));
 
 DesiredInsertions *insertions = NULL;
 std::string curr_func;
@@ -98,22 +107,24 @@ public:
     visitor->setRewriter(R);
     visitor->setContext(Context);
 
+    // For each top-level function defined
     for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
-      // Traverse the declaration using our AST visitor.
       Decl *toplevel = *b;
       clang::SourceLocation loc = toplevel->getLocation();
+      clang::PresumedLoc presumed = visitor->getSM()->getPresumedLoc(loc);
 
       if (isa<FunctionDecl>(toplevel) && toplevel->hasBody() &&
-              visitor->getSM()->isInMainFile(loc)) {
+              insertions->isMainFile(presumed.getFilename())) {
           FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
           assert(fdecl != NULL);
           curr_func = fdecl->getNameAsString();
+
+          if (insertions->isNvCompilerFunction(curr_func)) continue;
 
           clang::PresumedLoc pre_loc = visitor->getSM()->getPresumedLoc(loc);
           std::string filename(pre_loc.getFilename());
 
           if (visitor->usesStackInfo()) {
-              assert(insert_at_front == NULL);
               insert_at_front = new std::vector<StackAlloc *>();
 
               for (FunctionDecl::param_iterator i = fdecl->param_begin(),
@@ -168,7 +179,7 @@ public:
               for (int l = 0; l < num_call_labels[id_str.str()]; l++) {
                   ss << "case(" << l << "): { goto call_lbl_" << l << "; } ";
               }
-              ss << "default: { fprintf(stderr, \"Unknown label %d at %s:%d\\n\", "
+              ss << "default: { fprintf(__stderrp, \"Unknown label %d at %s:%d\\n\", "
                   "dst, __FILE__, __LINE__); exit(1); }";
               ss << " } } ";
               R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
@@ -204,8 +215,8 @@ private:
 template <class c> class NumDebugFrontendAction : public ASTFrontendAction {
 public:
   NumDebugFrontendAction() {
-      std::error_code code;
-      out = new llvm::raw_fd_ostream(current_output_file, code,
+      std::string code;
+      out = new llvm::raw_fd_ostream(current_output_file.c_str(), code,
               llvm::sys::fs::OpenFlags::F_None);
   }
 
@@ -215,13 +226,10 @@ public:
     out->close();
   }
 
-  std::unique_ptr<ASTConsumer> CreateASTConsumer(CompilerInstance &CI,
+  clang::ASTConsumer *CreateASTConsumer(CompilerInstance &CI,
                                                  StringRef file) override {
     TheRewriter.setSourceMgr(CI.getSourceManager(), CI.getLangOpts());
-    std::unique_ptr<ASTConsumer> consumer =
-        llvm::make_unique<TransformASTConsumer>(TheRewriter,
-                CI.getASTContext());
-    return consumer;
+    return new TransformASTConsumer(TheRewriter, CI.getASTContext());
   }
 
 private:
@@ -229,18 +237,38 @@ private:
   Rewriter TheRewriter;
 };
 
+static void check_opt(llvm::cl::opt<std::string> s, const char *msg) {
+    if (s.size() == 0) {
+        llvm::errs() << *msg << " is required\n";
+        exit(1);
+    }
+}
+
 int main(int argc, const char **argv) {
   CommonOptionsParser op(argc, argv, ToolingSampleCategory);
 
-  insertions = new DesiredInsertions(line_info_file.c_str(),
-          struct_file.c_str(),
-          stack_allocs_file.c_str(),
-          heap_file.c_str());
+  check_opt(line_info_file, "Line info file");
+  check_opt(struct_file, "Struct info file");
+  check_opt(stack_allocs_file, "Stack allocations info file");
+  check_opt(heap_file, "Heap info file");
+  check_opt(original_file, "Original file");
+  check_opt(diag_file, "Diagnostics file");
+  check_opt(working_directory, "Working directory");
+  check_opt(contains_line_markings, "Line markings flag");
 
-  std::string just_filename = original_file.substr(original_file.rfind('/') + 1);
-  std::string input_folder = original_file.substr(0, original_file.rfind('/'));
-  assert(just_filename.find(".cpp") == just_filename.length() - 4);
-  just_filename = just_filename.substr(0, just_filename.find(".cpp"));
+  bool updateFile = true;
+  if (contains_line_markings.compare("true") == 0) {
+      updateFile = false;
+  }
+
+  insertions = new DesiredInsertions(line_info_file.c_str(),
+          struct_file.c_str(), stack_allocs_file.c_str(), heap_file.c_str(),
+          original_file.c_str(), diag_file.c_str());
+
+  assert(op.getSourcePathList().size() == 1);
+  std::string just_filename = op.getSourcePathList()[0].substr(
+          op.getSourcePathList()[0].rfind('/') + 1);
+  just_filename = just_filename.substr(0, just_filename.rfind("."));
 
   std::stringstream ss;
 
@@ -276,11 +304,13 @@ int main(int argc, const char **argv) {
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);
           Tool = new ClangTool(op.getCompilations(), inputs);
+          if (updateFile) {
+              insertions->updateMainFile(current_output_file);
+          }
       }
 
       std::stringstream ss;
-      // ss << input_folder << "/" << just_filename << pass->get_suffix() << ".cpp";
-      ss << just_filename << pass->get_suffix() << ".cpp";
+      ss << working_directory << "/" << just_filename << pass->get_suffix() << ".cpp";
       current_output_file = ss.str();
       curr_visitor = pass->get_impl();
 

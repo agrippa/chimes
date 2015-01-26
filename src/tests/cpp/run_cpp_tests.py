@@ -45,12 +45,12 @@ def run_cmd(cmd, expect_err):
 
 for t in tests:
     compile_cmd = COMPILE_SCRIPT + ' -k -i ' + CPP_EXAMPLES_DIR + '/' + t.input_file
-    stdout, stderr = run_cmd(compile_cmd, t.expect_err)
+    compile_stdout, stderr = run_cmd(compile_cmd, t.expect_err)
     if sys.version_info >= (3, 0):
-        lines = str(stdout, encoding='utf8').split('\n')
+        lines = str(compile_stdout, encoding='utf8').strip().split('\n')
     else:
-        lines = str(stdout).split('\n')
-    transformed = lines[len(lines) - 2].strip()
+        lines = str(compile_stdout).strip().split('\n')
+    transformed = lines[len(lines) - 1].strip()
 
     stdout, stderr = run_cmd('diff ' + CPP_TEST_DIR + '/' + t.compare_file + ' ' + transformed, False)
 

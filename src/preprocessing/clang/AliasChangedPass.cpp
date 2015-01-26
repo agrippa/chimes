@@ -33,12 +33,13 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
 
-    if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
+    if (start.isValid() && end.isValid()) {
         clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
         clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
+        std::string filename_str(start_loc.getFilename());
 
-        llvm::errs() << "Looked at " << start_loc.getFilename() << " " << start_loc.getLine() << " " << start_loc.getColumn() << "\n";
-        if (insertions->contains(start_loc.getLine(), start_loc.getColumn(),
+        if (insertions->isMainFile(start_loc.getFilename()) &&
+                insertions->contains(start_loc.getLine(), start_loc.getColumn(),
                     start_loc.getFilename()) && !matched(start_loc.getLine(),
                     start_loc.getColumn(), start_loc.getFilename())) {
             mark_matched(start_loc.getLine(), start_loc.getColumn(),

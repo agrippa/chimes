@@ -1,9 +1,13 @@
 #ifndef DESIRED_INSERTIONS_H
 #define DESIRED_INSERTIONS_H
 
+#include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include <map>
+
+extern std::string curr_func;
 
 class HeapAlloc {
 public:
@@ -139,15 +143,22 @@ public:
     DesiredInsertions(const char *lines_info_filename,
             const char *struct_info_filename,
             const char *stack_allocs_filename,
-            const char *heap_filename) :
+            const char *heap_filename, const char *original_filename,
+            const char *diagnostic_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
-            heap_file(heap_filename) {
+            heap_file(heap_filename), original_file(original_filename),
+            diagnostic_file(diagnostic_filename) {
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
         stack_allocs = parseStackAllocs();
         heap_allocs = parseHeapAllocs();
+        diagnostics.open(diagnostic_file);
+    }
+
+    ~DesiredInsertions() {
+        diagnostics.close();
     }
 
     bool contains(int line, int col, const char *filename);
@@ -159,9 +170,26 @@ public:
     void updateMemoryAllocations(unsigned int line, unsigned int col,
             unsigned int increment_by);
 
+    void updateMainFile(std::string file) {
+        original_file = file;
+    }
+
+    bool isMainFile(const char *filename) {
+        std::string file(filename);
+        return (original_file == file);
+    }
+
+    bool isNvCompilerFunction(std::string func) {
+        return func == std::string("__nv_save_fatbinhandle_for_managed_rt") ||
+            func == std::string("__nv_init_managed_rt");
+    }
+
+    std::ofstream &diag() { return diagnostics; }
+
 private:
         std::string lines_info_file, struct_info_file,
-            stack_allocs_file, heap_file;
+            stack_allocs_file, heap_file, original_file, diagnostic_file;
+        std::ofstream diagnostics;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
         std::vector<StructFields *> *struct_fields;
