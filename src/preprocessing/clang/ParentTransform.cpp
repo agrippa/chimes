@@ -61,9 +61,33 @@ clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
         parent = getParent(s);
     }
     clang::SourceLocation start = s->getLocStart();
-    TheRewriter->InsertText(start, st, true, true);
+    rewriter->InsertText(start, st, true, true);
 
     return SM->getPresumedLoc(start);
+}
+
+void ParentTransform::InsertText(clang::SourceLocation start, std::string s,
+        bool insertAfter, bool indent) {
+    rewriter->InsertText(start, s, insertAfter, indent);
+}
+
+void ParentTransform::InsertTextBefore(clang::SourceLocation start,
+        std::string s) {
+    rewriter->InsertTextBefore(start, s);
+}
+
+void ParentTransform::InsertTextAfterToken(clang::SourceLocation start,
+        std::string s) {
+    rewriter->InsertTextAfterToken(start, s);
+}
+
+void ParentTransform::RemoveText(clang::SourceRange rng) {
+    rewriter->RemoveText(rng);
+}
+
+void ParentTransform::ReplaceText(clang::SourceLocation loc, unsigned len,
+        std::string new_str) {
+    rewriter->ReplaceText(loc, len, new_str);
 }
 
 void ParentTransform::setLastGoto(clang::SourceLocation last) {

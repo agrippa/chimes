@@ -221,20 +221,20 @@ public:
   }
 
   void EndSourceFileAction() override {
-    SourceManager &SM = TheRewriter.getSourceMgr();
-    TheRewriter.getEditBuffer(SM.getMainFileID()).write(*out);
+    SourceManager &SM = rewriter.getSourceMgr();
+    rewriter.getEditBuffer(SM.getMainFileID()).write(*out);
     out->close();
   }
 
   clang::ASTConsumer *CreateASTConsumer(CompilerInstance &CI,
                                                  StringRef file) override {
-    TheRewriter.setSourceMgr(CI.getSourceManager(), CI.getLangOpts());
-    return new TransformASTConsumer(TheRewriter, CI.getASTContext());
+    rewriter.setSourceMgr(CI.getSourceManager(), CI.getLangOpts());
+    return new TransformASTConsumer(rewriter, CI.getASTContext());
   }
 
 private:
   llvm::raw_fd_ostream *out;
-  Rewriter TheRewriter;
+  Rewriter rewriter;
 };
 
 static void check_opt(llvm::cl::opt<std::string> s, const char *msg) {

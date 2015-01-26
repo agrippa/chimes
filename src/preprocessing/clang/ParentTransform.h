@@ -14,7 +14,7 @@ public:
     ParentTransform() { }
 
     void setRewriter(clang::Rewriter &R) {
-        TheRewriter = &R;
+        rewriter = &R;
         SM = &R.getSourceMgr();
     }
     void setContext(clang::ASTContext &set_Context) { Context = &set_Context; }
@@ -39,7 +39,6 @@ public:
 
     clang::SourceManager *getSM() { return SM; }
 protected:
-    clang::Rewriter *TheRewriter;
     clang::ASTContext *Context;
     clang::SourceManager *SM;
     const clang::Stmt *parent;
@@ -48,7 +47,15 @@ protected:
     void visitChildren(const clang::Stmt *s);
     const clang::Stmt *getParent(const clang::Stmt *s);
     void setParent(const clang::Stmt *child, const clang::Stmt *parent);
+
     clang::PresumedLoc InsertAtFront(const clang::Stmt *s, std::string st);
+    void InsertText(clang::SourceLocation start, std::string s,
+        bool insertAfter, bool indent);
+    void InsertTextBefore(clang::SourceLocation start, std::string s);
+    void InsertTextAfterToken(clang::SourceLocation start, std::string s);
+    void RemoveText(clang::SourceRange rng);
+    void ReplaceText(clang::SourceLocation loc, unsigned len,
+            std::string new_str);
 
     int getNextRegisterLabel();
     int getNextFunctionLabel();
@@ -56,6 +63,7 @@ protected:
     void setRootFlag(bool v);
     bool getRootFlag();
 private:
+    clang::Rewriter *rewriter;
     std::map<const clang::Stmt *, const clang::Stmt *> parentMap;
 
     clang::SourceLocation lastGoto;

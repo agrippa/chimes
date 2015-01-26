@@ -23,7 +23,7 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
             clang::SourceLocation loc = cmpd->getLocStart();
             clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
             if (insertions->isMainFile(locloc.getFilename())) {
-                TheRewriter->InsertText(cmpd->getLocEnd(), "rm_stack(); ", true, true);
+                InsertText(cmpd->getLocEnd(), "rm_stack(); ", true, true);
             }
         }
     }
@@ -43,8 +43,7 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
             assert(!s->children().empty());
             clang::Stmt::const_child_iterator iter = s->child_begin();
             const clang::Stmt *child = *iter;
-            TheRewriter->InsertText(child->getLocStart(), "new_stack(); ", true,
-                    true);
+            InsertText(child->getLocStart(), "new_stack(); ", true, true);
         }
 
         /*
@@ -60,7 +59,7 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
 
                 clang::Stmt::const_child_iterator iter = s->child_begin();
                 const clang::Stmt *child = *iter;
-                TheRewriter->InsertText(child->getLocStart(), stmt);
+                InsertText(child->getLocStart(), stmt, true, true);
             }
             insert_at_front = NULL;
         }
@@ -69,8 +68,7 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
          * Insert rm_stack callbacks.
          */
         if (clang::isa<clang::ReturnStmt>(s)) {
-            TheRewriter->InsertText(start, "rm_stack(); ", true,
-                    true);
+            InsertText(start, "rm_stack(); ", true, true);
         }
     }
 
