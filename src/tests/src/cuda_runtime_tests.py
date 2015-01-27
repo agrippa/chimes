@@ -6,8 +6,9 @@ import sys
 from common import RuntimeTest, parse_argv, NUM_DEBUG_HOME, run_runtime_test, \
          cleanup_runtime_files
 
-BASIC = RuntimeTest('Basic', 'basic.cu', 0)
-TESTS = [BASIC]
+BASIC = RuntimeTest('Basic', 'basic.cu', 0, 1)
+KERNEL = RuntimeTest('Kernel', 'kernel.cu', 0, -1)
+TESTS = [BASIC, KERNEL]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cuda'

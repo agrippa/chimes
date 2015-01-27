@@ -181,7 +181,7 @@ void init_numdebug(int nstructs, ...) {
             }
 
             heap_allocation *alloc = new heap_allocation(new_address, size,
-                    group, is_cuda_alloc, 0);
+                    group, 0, is_cuda_alloc);
 
             int have_type_info;
             safe_read(fd, &have_type_info, sizeof(have_type_info),
@@ -554,6 +554,14 @@ typedef struct _checkpoint_thread_ctx {
     vector<int> *stack_tracker;
 } checkpoint_thread_ctx;
 static void *checkpoint_func(void *data);
+
+void wait_for_checkpoint() {
+    pthread_mutex_lock(&checkpoint_mutex);
+    if (checkpoint_thread_running) {
+        pthread_join(checkpoint_thread, NULL);
+    }
+    pthread_mutex_unlock(&checkpoint_mutex);
+}
 
 void checkpoint() {
     new_stack();
