@@ -1,84 +1,29 @@
-import os
+"""
+Runtime tests for C++ examples, designed to stress the checkpointing and restore
+functionality of the numdebug runtime.
+"""
 import sys
-from common import RuntimeTest, run_cmd, run_test, parse_argv, NUM_DEBUG_HOME, \
-         print_and_abort, copy_environ, get_files_from_compiler_stdout, \
-         NUM_DEBUG_REPLAY_EXIT_CODE
+from common import RuntimeTest, parse_argv, NUM_DEBUG_HOME, run_runtime_test, \
+         cleanup_runtime_files
 
-stack_scalar = RuntimeTest('StackScalar', 'stack_scalar.cpp', 3)
-stack_struct = RuntimeTest('StackStruct', 'stack_struct.cpp', 4)
-nested_stack_scalar = RuntimeTest('NestedStackScalar',
-        'nested_stack_scalar.cpp', 5)
-nested_stack_struct = RuntimeTest('NestedStackStruct',
-        'nested_stack_struct.cpp', 0)
-heap = RuntimeTest('Heap', 'heap.cpp', 42)
-heap_pointers = RuntimeTest('HeapPointers', 'heap_pointers.cpp', 0)
-heap_indirection = RuntimeTest('HeapIndirection', 'heap_indirection.cpp', 0)
-tests = [ stack_scalar, stack_struct, nested_stack_scalar, nested_stack_struct,
-          heap, heap_pointers, heap_indirection ]
+STACK_SCALAR = RuntimeTest('StackScalar', 'stack_scalar.cpp', 3)
+STACK_STRUCT = RuntimeTest('StackStruct', 'stack_struct.cpp', 4)
+NESTED_STACK_SCALAR = RuntimeTest('NestedStackScalar',
+                                  'nested_stack_scalar.cpp', 5)
+NESTED_STACK_STRUCT = RuntimeTest('NestedStackStruct',
+                                  'nested_stack_struct.cpp', 0)
+HEAP = RuntimeTest('Heap', 'heap.cpp', 42)
+HEAP_POINTERS = RuntimeTest('HeapPointers', 'heap_pointers.cpp', 0)
+HEAP_INDIRECTION = RuntimeTest('HeapIndirection', 'heap_indirection.cpp', 0)
+TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
+         HEAP, HEAP_POINTERS, HEAP_INDIRECTION]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
 
 if __name__ == '__main__':
-    config = parse_argv(sys.argv)
-    if config.verbose:
-        print(str(config))
+    CONFIG = parse_argv(sys.argv)
+    cleanup_runtime_files()
 
-    # Clean up any leftover checkpoints from previously failed tests
-    numdebug_files = [f for f in os.listdir('.') if os.path.isfile(f) and
-            f.startswith('numdebug.dump.')]
-    for f in numdebug_files:
-        print('Cleaning up existing checkpoint file ' + f)
-        os.remove(f)
-
-    for t in tests:
-        # Compile the input file into an executable
-        env = copy_environ()
-        compile_cmd = COMPILE_SCRIPT + ' -k -i ' + os.path.join(CPP_INPUTS_DIR,
-                t.input_file)
-        stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
-        transformed, folder = get_files_from_compiler_stdout(stdout)
-
-        if not os.path.isfile('a.out'):
-            sys.stderr.write('Compilation failed to generate an executable\n')
-            sys.exit(1)
-
-        # Test the command without a checkpoint, verify it produces the expected
-        # error code and one checkpoint file.
-        assert 'NUMDEBUG_CHECKPOINT_FILE' not in env
-        stdout, stderr, code = run_cmd('./a.out', True, env=env)
-        if code != t.expected_code:
-            sys.stderr.write('Test ' + t.name + ' expected exit code ' +
-                    str(t.expected_code) + ' but got ' + str(code) + '\n')
-            sys.stderr.write('Folder ' + folder + '\n')
-            print_and_abort(stdout, stderr)
-
-        if not os.path.isfile('numdebug.dump.0'):
-            sys.stderr.write('Test ' + t.name + ' failed to produce a ' +
-                    'checkpoint file\n')
-            sys.stderr.write('Folder ' + folder + '\n')
-            print_and_abort(stdout, stderr)
-
-        if os.path.isfile('numdebug.dump.1'):
-            sys.stderr.write('Test ' + t.name + ' unexpectedly produced more ' +
-                    'than one checkpoint file\n')
-            sys.stderr.write('Folder ' + folder + '\n')
-            print_and_abort(stdout, stderr)
-
-        if config.verbose:
-            print_and_abort(stdout, stderr, abort=False)
-
-        env['NUMDEBUG_CHECKPOINT_FILE'] = 'numdebug.dump.0'
-        stdout, stderr, code = run_cmd('./a.out', True, env=env)
-        if code != NUM_DEBUG_REPLAY_EXIT_CODE:
-            sys.stderr.write('Rerun of test ' + t.name + ' expected exit ' +
-                    'code ' + str(NUM_DEBUG_REPLAY_EXIT_CODE) + ' but got ' +
-                    str(code) + '\n')
-            sys.stderr.write('Folder ' + folder + '\n')
-            print_and_abort(stdout, stderr)
-
-        os.remove('a.out')
-        os.remove('numdebug.dump.0')
-        if not config.keep:
-            run_cmd('rm -rf ' + folder, False)
-        print t.name + ' PASSED'
+    for t in TESTS:
+        run_runtime_test(t, COMPILE_SCRIPT, CPP_INPUTS_DIR, CONFIG)
