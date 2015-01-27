@@ -6,14 +6,21 @@ from common import RuntimeTest, run_cmd, run_test, parse_argv, NUM_DEBUG_HOME, \
 
 stack_scalar = RuntimeTest('StackScalar', 'stack_scalar.cpp', 3)
 stack_struct = RuntimeTest('StackStruct', 'stack_struct.cpp', 4)
-tests = [ stack_scalar, stack_struct ]
+nested_stack_scalar = RuntimeTest('NestedStackScalar',
+        'nested_stack_scalar.cpp', 5)
+nested_stack_struct = RuntimeTest('NestedStackStruct',
+        'nested_stack_struct.cpp', 0)
+heap = RuntimeTest('Heap', 'heap.cpp', 42)
+tests = [ stack_scalar, stack_struct, nested_stack_scalar, nested_stack_struct,
+          heap ]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
 
 if __name__ == '__main__':
     config = parse_argv(sys.argv)
-    print str(config)
+    if config.verbose:
+        print(str(config))
 
     # Clean up any leftover checkpoints from previously failed tests
     numdebug_files = [f for f in os.listdir('.') if os.path.isfile(f) and
