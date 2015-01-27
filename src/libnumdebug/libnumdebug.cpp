@@ -12,6 +12,11 @@
 #include <stdarg.h>
 #include <string.h>
 
+#ifdef CUDA_SUPPORT
+#include <cuda_runtime.h>
+#endif
+
+#include "common.h"
 #include "stack_var.h"
 #include "stack_frame.h"
 #include "heap_allocation.h"
@@ -158,14 +163,22 @@ void init_numdebug(int nstructs, ...) {
             safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
                     "is_cuda_alloc", checkpoint_file);
 
+            void *new_address;
             if (is_cuda_alloc) {
-                fprintf(stderr, "Restoring from a CUDA heap allocation not "
-                        "supported yet\n");
-                exit(1);
-            }
+                void *host_tmp = malloc(size);
+                assert(host_tmp != NULL);
+                safe_read(fd, host_tmp, size, "heap contents", checkpoint_file);
 
-            void *new_address = malloc(size);
-            safe_read(fd, new_address, size, "heap contents", checkpoint_file);
+                CHECK(cudaMalloc((void **)&new_address, size));
+                CHECK(cudaMemcpy(new_address, host_tmp, size,
+                            cudaMemcpyHostToDevice));
+                free(host_tmp);
+            } else {
+                new_address = malloc(size);
+                assert(new_address != NULL);
+                safe_read(fd, new_address, size, "heap contents",
+                        checkpoint_file);
+            }
 
             heap_allocation *alloc = new heap_allocation(new_address, size,
                     group, is_cuda_alloc, 0);
@@ -236,6 +249,7 @@ void init_numdebug(int nstructs, ...) {
                      * pointers from old values to new values.
                      */
                     assert(alloc->get_size() % sizeof(void *) == 0);
+                    assert(!alloc->get_is_cuda_alloc());
                     int nelems = alloc->get_size() / sizeof(void *);
                     void **arr = (void **)(alloc->get_address());
 
@@ -253,6 +267,7 @@ void init_numdebug(int nstructs, ...) {
                     std::vector<int> *ptr_field_offsets = alloc->get_ptr_field_offsets();
                     if (ptr_field_offsets->size() > 0) {
                         assert(alloc->get_size() % elem_size == 0);
+                        assert(!alloc->get_is_cuda_alloc());
                         /*
                          * Iterate through all of the structs in the array and
                          * convert the pointers at the specified offsets.
