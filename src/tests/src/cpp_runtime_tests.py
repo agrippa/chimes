@@ -15,8 +15,10 @@ NESTED_STACK_STRUCT = RuntimeTest('NestedStackStruct',
 HEAP = RuntimeTest('Heap', 'heap.cpp', 42)
 HEAP_POINTERS = RuntimeTest('HeapPointers', 'heap_pointers.cpp', 0)
 HEAP_INDIRECTION = RuntimeTest('HeapIndirection', 'heap_indirection.cpp', 0)
+FREE = RuntimeTest('Free', 'free.cpp', 42)
+REALLOC = RuntimeTest('Realloc', 'realloc.cpp', 42)
 TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
-         HEAP, HEAP_POINTERS, HEAP_INDIRECTION]
+         HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
