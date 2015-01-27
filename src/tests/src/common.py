@@ -203,8 +203,12 @@ def get_files_from_compiler_stdout(compile_stdout):
     else:
         lines = str(compile_stdout).strip().split('\n')
     transformed = lines[len(lines) - 1].strip()
-    folder = transformed[0:transformed.rfind('/')]
-    return (transformed, folder)
+    work_folder = transformed[0:transformed.rfind('/')]
+    root_folder = work_folder
+    # folder may end with /nvcc appended for CUDA compilations
+    if root_folder.endswith('/nvcc'):
+        root_folder = root_folder[0:root_folder.rfind('/')]
+    return (transformed, work_folder, root_folder)
 
 
 def _diff_files(file1name, file2name, col):
@@ -305,7 +309,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     stdout, _, _ = run_cmd(compile_cmd, test.expect_err)
 
     # Get the final output filename and containing folder
-    transformed, folder = get_files_from_compiler_stdout(stdout)
+    transformed, work_folder, root_folder = \
+            get_files_from_compiler_stdout(stdout)
 
     # Diff the test output and the expected output
     diff_cmd = 'diff ' + os.path.join(test_dir_path, test.compare_file) + \
@@ -314,7 +319,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
     if len(stdout.strip()) != 0:
         # If the test and expected output are different, emit a warning
-        diff_file = os.path.join(folder, test.input_file) + '.diff'
+        diff_file = os.path.join(work_folder, test.input_file) + '.diff'
         print('===== Mismatch in output of test for ' + test.input_file +
               ' =====')
         print('===== This may not be an actual error. Mismatched output can ' +
@@ -333,11 +338,11 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     info_dir_path = os.path.join(test_dir_path, test.info_dir)
     for info_file in INFO_FILES.keys():
         expected_output = os.path.join(info_dir_path, info_file)
-        test_output = os.path.join(folder, info_file)
+        test_output = os.path.join(work_folder, info_file)
         _diff_files(expected_output, test_output, INFO_FILES[info_file])
 
     if not config.keep:
-        run_cmd('rm -rf ' + folder, False)
+        run_cmd('rm -rf ' + root_folder, False)
     run_cmd('rm -f a.out', False)
     print test.name + ' PASSED'
 
@@ -360,11 +365,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     compile_cmd = compile_script_path + ' -k -i ' + \
                   os.path.join(inputs_dir, test.input_file)
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
-    _, folder = get_files_from_compiler_stdout(stdout)
-    # get_files_from_compiler_stdout returns a path with /nvcc appended for CUDA
-    # compilations
-    if folder.endswith('/nvcc'):
-        folder = folder[0:folder.rfind('/')]
+    _, work_folder, root_folder = get_files_from_compiler_stdout(stdout)
 
     if not os.path.isfile('a.out'):
         sys.stderr.write('Compilation failed to generate an executable\n')
@@ -378,19 +379,19 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.stderr.write('Test ' + test.name + ' expected exit code ' +
                          str(test.expected_code) + ' but got ' + str(code) +
                          '\n')
-        sys.stderr.write('Folder ' + folder + '\n')
+        sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
     if not os.path.isfile('numdebug.dump.0'):
         sys.stderr.write('Test ' + test.name + ' failed to produce a ' +
                          'checkpoint file\n')
-        sys.stderr.write('Folder ' + folder + '\n')
+        sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
     if os.path.isfile('numdebug.dump.1'):
         sys.stderr.write('Test ' + test.name + ' unexpectedly produced more ' +
                          'than one checkpoint file\n')
-        sys.stderr.write('Folder ' + folder + '\n')
+        sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
     if config.verbose:
@@ -402,11 +403,11 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.stderr.write('Rerun of test ' + test.name + ' expected exit ' +
                          'code ' + str(NUM_DEBUG_REPLAY_EXIT_CODE) +
                          ' but got ' + str(code) + '\n')
-        sys.stderr.write('Folder ' + folder + '\n')
+        sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
     os.remove('a.out')
     os.remove('numdebug.dump.0')
     if not config.keep:
-        run_cmd('rm -rf ' + folder, False)
+        run_cmd('rm -rf ' + root_folder, False)
     print test.name + ' PASSED'

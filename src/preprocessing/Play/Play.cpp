@@ -832,7 +832,6 @@ SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
         MDNode *module_info = root->getOperand(0);
         DICompileUnit module(module_info);
         DIArray functions = module.getSubprograms();
-        errs() << "Got " << functions.getNumElements() << "\n";
 
         for (unsigned int f = 0; f < functions.getNumElements(); f++) {
             DISubprogram di_func(functions.getElement(f));
@@ -1280,7 +1279,7 @@ std::map<int, std::vector<int> *> *Play::findReachable(Module &M) {
     return stores;
 }
 
-static Type *inferAllocationType(CallInst *callInst) {
+static Type *inferHostAllocationType(CallInst *callInst) {
     Type *base_type = NULL;
 
     Use& use = *(callInst->use_begin());
@@ -1361,7 +1360,7 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
      */
     if (callee->getName().str() == "malloc" &&
             callInst->getNumUses() == 1) {
-        Type *base_type = inferAllocationType(callInst);
+        Type *base_type = inferHostAllocationType(callInst);
 
         if (base_type != NULL) {
             if (base_type->isPointerTy()) {
@@ -1375,9 +1374,55 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
     fprintf(fp, "\n");
 }
 
+static Type *inferDeviceAllocationType(CallInst *callInst) {
+    Type *base_type = NULL;
+    assert(callInst->getNumArgOperands() == 2);
+
+    Value *ptr_to_ptr = callInst->getArgOperand(0);
+
+    if (CastInst *cast = dyn_cast<CastInst>(ptr_to_ptr)) {
+        // src is the type that we cast to void** from
+        Type *src = cast->getSrcTy();
+        assert(src->isPointerTy());
+        /*
+         * arr_type is the actual type of the pointer we're filling with a
+         * device address
+         */
+        Type *arr_type = src->getPointerElementType();
+        assert(arr_type->isPointerTy());
+        base_type = arr_type->getPointerElementType();
+    }
+
+    return base_type;
+}
+
 void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
         FILE *fp, std::set<int> &found_mallocs,
         std::map<std::string, std::vector<std::string>> *structFields) {
+    int line_no = callInst->getDebugLoc().getLine();
+    int col = callInst->getDebugLoc().getCol();
+    assert(line_no != 0);
+
+    // no alias information supported on GPU yet
+    fprintf(fp, "%d %d -1 %s", line_no, col, callee->getName().str().c_str());
+
+    // We don't currently support multiple mallocs per line
+    assert(found_mallocs.find(line_no) == found_mallocs.end());
+    found_mallocs.insert(line_no);
+
+    if (callee->getName().str() == "cudaMalloc") {
+        Type *base_type = inferDeviceAllocationType(callInst);
+
+        if (base_type != NULL) {
+            if (base_type->isPointerTy()) {
+                // is_ptr=1, is_struct=0
+                fprintf(fp, " 1 0");
+            } else if (base_type->isStructTy()) {
+                printStructInfo(fp, base_type, structFields);
+            }
+        }
+    }
+    fprintf(fp, "\n");
 }
 
 void Play::findHeapAllocations(Module &M, const char *output_file) {
