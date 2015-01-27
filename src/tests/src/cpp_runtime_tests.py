@@ -5,7 +5,8 @@ from common import RuntimeTest, run_cmd, run_test, parse_argv, NUM_DEBUG_HOME, \
          NUM_DEBUG_REPLAY_EXIT_CODE
 
 stack_scalar = RuntimeTest('StackScalar', 'stack_scalar.cpp', 3)
-tests = [ stack_scalar ]
+stack_struct = RuntimeTest('StackStruct', 'stack_struct.cpp', 4)
+tests = [ stack_scalar, stack_struct ]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'

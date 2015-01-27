@@ -92,6 +92,7 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
     register uint64_t serialization_capacity = initial_serialization_size;
     register uint64_t serialization_used = 0;
 
+    // For each stack frame
     for (vector<stack_frame *>::iterator stack_iter = program_stack->begin(),
             stack_end = program_stack->end(); stack_iter != stack_end;
             stack_iter++) {
@@ -100,6 +101,7 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
         new_stack_frame(&serialization, &serialization_capacity,
                 &serialization_used);
 
+        // For each local
         for (stack_frame::iterator locals_iter = frame->begin(),
                 locals_end = frame->end(); locals_iter != locals_end;
                 locals_iter++) {
@@ -140,12 +142,18 @@ vector<stack_frame *> *deserialize_program_stack(
             assert(curr != NULL);
 
             unsigned char *varname = iter;
+#ifdef VERBOSE
+            fprintf(stderr, "Deserializing variable %s\n", varname);
+#endif
 
             unsigned char *type = iter;
             while (*type != '\0') {
                 type++;
             }
             type++;
+#ifdef VERBOSE
+            fprintf(stderr, "  Type: %s\n", type);
+#endif
 
             unsigned char *address_ptr = type;
             while (*address_ptr != '\0') {
@@ -158,14 +166,23 @@ vector<stack_frame *> *deserialize_program_stack(
             size_t size;
             unsigned char *size_ptr = address_ptr + sizeof(address);
             memcpy(&size, size_ptr, sizeof(size));
+#ifdef VERBOSE
+            fprintf(stderr, "  Size: %lu\n", size);
+#endif
 
             int is_ptr;
             unsigned char *is_ptr_ptr = size_ptr + sizeof(size);
             memcpy(&is_ptr, is_ptr_ptr, sizeof(is_ptr));
+#ifdef VERBOSE
+            fprintf(stderr, "  Is ptr?: %d\n", is_ptr);
+#endif
 
             int ptr_offsets_len;
             unsigned char *ptr_offsets_len_ptr = is_ptr_ptr + sizeof(is_ptr);
             memcpy(&ptr_offsets_len, ptr_offsets_len_ptr, sizeof(ptr_offsets_len));
+#ifdef VERBOSE
+            fprintf(stderr, "  Pointer offsets len: %d\n", ptr_offsets_len);
+#endif
 
             stack_var *var = new stack_var((const char *)varname,
                     (const char *)type, address, size, is_ptr);
