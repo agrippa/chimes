@@ -56,11 +56,13 @@ CPP_FILE=${COMPILE_HELPER_WORK_DIR}/log.cpp
 ENV_POST_FILE=${COMPILE_HELPER_WORK_DIR}/log.env.post
 
 mkdir ${COMPILE_HELPER_WORK_DIR}
+printf 'Compiling with nvcc...'
 mkdir ${NVCC_WORK_DIR} && cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
           --pre-include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
           -I${NUM_DEBUG_HOME}/src/libnumdebug \
           -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug --verbose --keep\
-          ${INPUT} -o ${OUTPUT} &> ${CMD_FILE}
+          ${INPUT} -o ${OUTPUT} &> ${CMD_FILE} || { printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
+printf 'DONE\n'
 python ${NUM_DEBUG_HOME}/src/preprocessing/compile_helper.py \
           ${CMD_FILE} ${ENV_FILE} ${PRE_CMD_FILE} ${POST_CMD_FILE} ${CPP_FILE}
 
