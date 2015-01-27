@@ -35,6 +35,8 @@ void heap_allocation::copy(heap_allocation *dst) {
     assert(dst->address == NULL);
 
     dst->tmp_buffer = (void *)malloc(size);
+    assert(dst->tmp_buffer != NULL);
+
     if (is_cuda_alloc) {
         //TODO make this better
         CHECK(cudaMemcpy(dst->tmp_buffer, address, size,
