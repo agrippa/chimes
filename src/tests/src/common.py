@@ -361,6 +361,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
                   os.path.join(inputs_dir, test.input_file)
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
     _, folder = get_files_from_compiler_stdout(stdout)
+    # get_files_from_compiler_stdout returns a path with /nvcc appended
+    folder = folder[0:folder.rfind('/')]
 
     if not os.path.isfile('a.out'):
         sys.stderr.write('Compilation failed to generate an executable\n')
