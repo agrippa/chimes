@@ -43,6 +43,8 @@ static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
 static void follow_pointers(void *container, string type,
         set<void *> *updated);
+static map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
+static void free_helper(map<void *, heap_allocation *>::iterator in_heap);
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
@@ -475,9 +477,13 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
                 }
             }
 
-            free_wrapper(ptr, group);
+            map<void *, heap_allocation *>::iterator in_heap =
+                find_in_heap(ptr);
+            assert(in_heap->second->get_alias_group() == group);
+            free_helper(in_heap);
             malloc_helper(new_ptr, nbytes, group, has_type_info, is_ptr,
-                    is_struct, elem_size, ptr_field_offsets, n_struct_ptr_fields);
+                    is_struct, elem_size, ptr_field_offsets,
+                    n_struct_ptr_fields);
         }
     }
 
@@ -486,7 +492,6 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
 
 static void free_helper(map<void *, heap_allocation *>::iterator in_heap) {
     int group = in_heap->second->get_alias_group();
-    void *ptr = in_heap->second->get_address();
     int seq = in_heap->second->get_seq();
 
     vector<heap_allocation *>::iterator in_alias_to_heap =
@@ -505,11 +510,9 @@ static void free_helper(map<void *, heap_allocation *>::iterator in_heap) {
     if (heap_sequence_groups[seq]->empty()) {
         heap_sequence_groups.erase(seq);
     }
-
-    free(ptr);
 }
 
-map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
+static map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
     map<void *, heap_allocation *>::iterator in_heap = heap.find(ptr);
     assert(in_heap != heap.end());
     assert(in_heap->second->get_address() == ptr);
@@ -522,6 +525,7 @@ void free_wrapper(void *ptr, int group) {
     assert(in_heap->second->get_alias_group() == group);
 
     free_helper(in_heap);
+    free(ptr);
 }
 
 typedef struct _checkpoint_thread_ctx {
