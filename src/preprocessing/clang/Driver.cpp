@@ -301,7 +301,6 @@ int main(int argc, const char **argv) {
       ClangTool *Tool;
 
       if (first_pass) {
-          llvm::errs() << op.getSourcePathList().size() << "\n";
           Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);

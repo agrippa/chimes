@@ -5,7 +5,11 @@ from subprocess import Popen, PIPE
 from os import listdir
 
 NUM_DEBUG_HOME = os.environ['NUM_DEBUG_HOME']
+NUM_DEBUG_REPLAY_EXIT_CODE = 55
 NUM_DEBUG_WORK_DIR_PREFIX = '/tmp/numdebug'
+
+LD_LIBRARY_VARS = [ 'DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH' ]
+DYLD_PATH = os.path.join(NUM_DEBUG_HOME, 'src', 'libnumdebug')
 
 # Mapping from info file name to a space-delimited column that may cause
 # differences between the test and expected outputs due to different temporary
@@ -21,16 +25,30 @@ class TestConfig:
         self.keep = keep
 
 
-class Test:
+class RuntimeTest:
     """
-    Test defines a single test compilation. input_file is the input cpp/cu file
-    to compile. compare_file is a reference output (which may not match the
-    actual output, depending on the platform each is generated on). info_dir is
-    a directory path that stores reference copies of all .info files, which
-    allow more precise comparisons to be carried out. expect_err indicates if we
-    expect an error during compilation of the final output. At the moment,
-    expect_err is only useful when trying to compile source files that are not
-    standalone programs which error out due to a missing main definition.
+    A test for the runtime system that restores variable values from a
+    checkpoint. Defines the input file to compile, and the expected exit code
+    from running the application. Test applications are expected to include
+    asserts which verify correct behavior.
+    """
+    def __init__(self, name, input_file, expected_code):
+        self.name = name
+        self.input_file = input_file
+        self.expected_code = expected_code
+
+
+class FrontendTest:
+    """
+    FrontendTest defines a single test compilation. input_file is the input
+    cpp/cu file to compile. compare_file is a reference output (which may not
+    match the actual output, depending on the platform each is generated on).
+    info_dir is a directory path that stores reference copies of all .info
+    files, which allow more precise comparisons to be carried out. expect_err
+    indicates if we expect an error during compilation of the final output. At
+    the moment, expect_err is only useful when trying to compile source files
+    that are not standalone programs which error out due to a missing main
+    definition.
     """
     def __init__(self, name, input_file, compare_file, info_dir, expect_err):
         self.name = name
@@ -54,7 +72,30 @@ def parse_argv(argv):
     return TestConfig(keep)
 
 
-def run_cmd(cmd, expect_err):
+def print_and_abort(stdout, stderr):
+    sys.stderr.write('STDOUT:\n')
+    sys.stderr.write(stdout + '\n')
+    sys.stderr.write('STDERR:\n')
+    sys.stderr.write(stderr + '\n')
+    sys.exit(1)
+
+
+def copy_environ():
+    newenv = os.environ.copy()
+
+    # Update dynamic library loading paths for different environments to include
+    # libnumdebug
+    for v in LD_LIBRARY_VARS:
+        value = ''
+        if v in newenv.keys():
+            value = newenv[v]
+        value = DYLD_PATH + ':' + value
+        newenv[v] = value
+
+    return newenv
+
+
+def run_cmd(cmd, expect_err, env=None):
     """
     Execute the provided CLI command, optionally expecting it to return an error
     code.
@@ -64,8 +105,11 @@ def run_cmd(cmd, expect_err):
     stdout_fd, stdout_filename = tempfile.mkstemp(prefix='numdebug.stdout')
     stderr_fd, stderr_filename = tempfile.mkstemp(prefix='numdebug.stderr')
 
+    if env is None:
+        env = os.environ
+
     p = Popen(cmd, stdin=PIPE, stdout=stdout_fd, stderr=stderr_fd,
-            close_fds=True)
+            close_fds=True, env=env)
     p.wait()
 
     os.close(stdout_fd)
@@ -74,7 +118,7 @@ def run_cmd(cmd, expect_err):
     stdout_fp = open(stdout_filename, 'r')
     stderr_fp = open(stderr_filename, 'r')
 
-    result = (stdout_fp.read(), stderr_fp.read())
+    result = (stdout_fp.read(), stderr_fp.read(), p.returncode)
 
     stdout_fp.close()
     stderr_fp.close()
@@ -84,13 +128,21 @@ def run_cmd(cmd, expect_err):
 
     if not expect_err and p.returncode != 0:
         sys.stderr.write('Error running "' + ' '.join(cmd) + '"\n')
-        sys.stderr.write('\n')
-        sys.stderr.write(str(result[0]) + '\n')
-        sys.stderr.write('\n')
-        sys.stderr.write(str(result[1]) + '\n')
-        sys.exit(1)
+        print_and_abort(str(result[0]), str(result[1]))
 
     return result
+
+
+def get_files_from_compiler_stdout(compile_stdout):
+    # Get the final output filename and containing folder
+    if sys.version_info >= (3, 0):
+        lines = str(compile_stdout, encoding='utf8').strip().split('\n')
+    else:
+        lines = str(compile_stdout).strip().split('\n')
+    transformed = lines[len(lines) - 1].strip()
+    folder = transformed[0:transformed.rfind('/')]
+    return (transformed, folder)
+
 
 def _diff_files(file1name, file2name, col):
     fp1 = open(file1name, 'r')
@@ -160,7 +212,7 @@ def run_test(test, compile_script_path, examples_dir_path, test_dir_path,
     Execute a single test.
 
     :param test: The test to run
-    :type test: `class` Test
+    :type test: `class` FrontendTest
     :param compile_script_path: Path to the compilation script for this example
     :type compile_script_path: `str`
     :param examples_dir_path: Path to a directory containing example inputs
@@ -174,18 +226,13 @@ def run_test(test, compile_script_path, examples_dir_path, test_dir_path,
     # Compile the test input while keeping intermediate files
     compile_cmd = compile_script_path + ' -k -i ' + \
             os.path.join(examples_dir_path, test.input_file)
-    compile_stdout, stderr = run_cmd(compile_cmd, test.expect_err)
+    compile_stdout, stderr, code = run_cmd(compile_cmd, test.expect_err)
 
     # Get the final output filename and containing folder
-    if sys.version_info >= (3, 0):
-        lines = str(compile_stdout, encoding='utf8').strip().split('\n')
-    else:
-        lines = str(compile_stdout).strip().split('\n')
-    transformed = lines[len(lines) - 1].strip()
-    folder = transformed[0:transformed.rfind('/')]
+    transformed, folder = get_files_from_compiler_stdout(compile_stdout)
 
     # Diff the test output and the expected output
-    stdout, stderr = run_cmd('diff ' + os.path.join(test_dir_path,
+    stdout, stderr, code = run_cmd('diff ' + os.path.join(test_dir_path,
                 test.compare_file) + ' ' + transformed, False)
 
     if len(stdout.strip()) != 0:

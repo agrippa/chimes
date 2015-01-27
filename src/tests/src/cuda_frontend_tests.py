@@ -1,13 +1,8 @@
 import os
-import os.path
 import sys
-from subprocess import Popen, PIPE
-import sys
-from os import listdir
-import tempfile
-from common import Test, run_cmd, run_test, parse_argv, NUM_DEBUG_HOME
+from common import FrontendTest, run_cmd, run_test, parse_argv, NUM_DEBUG_HOME
 
-vector_sum = Test('VectorSum', 'vector_sum.cu',
+vector_sum = FrontendTest('VectorSum', 'vector_sum.cu',
         'vector_sum.cudafe1.register.cpp', 'vector_sum', False)
 tests = [ vector_sum ]
 
