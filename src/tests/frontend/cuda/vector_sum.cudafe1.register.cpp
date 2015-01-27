@@ -63949,16 +63949,16 @@ extern void new_stack();
 # 11
 extern void rm_stack(); 
 # 12
-extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int n_ptr_fields, ...); 
-# 14
-extern int alias_group_changed(int ngroups, ...); 
+extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...); 
 # 15
-extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...); 
+extern int alias_group_changed(int ngroups, ...); 
 # 16
-extern void *realloc_wrapper(void * ptr, size_t nbytes, int group); 
+extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...); 
 # 17
+extern void *realloc_wrapper(void * ptr, size_t nbytes, int group); 
+# 18
 extern void free_wrapper(void * ptr, int group); 
-# 19
+# 20
 extern int ____numdebug_replaying; 
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list; 
