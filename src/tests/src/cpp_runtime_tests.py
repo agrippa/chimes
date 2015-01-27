@@ -11,8 +11,10 @@ nested_stack_scalar = RuntimeTest('NestedStackScalar',
 nested_stack_struct = RuntimeTest('NestedStackStruct',
         'nested_stack_struct.cpp', 0)
 heap = RuntimeTest('Heap', 'heap.cpp', 42)
+heap_pointers = RuntimeTest('HeapPointers', 'heap_pointers.cpp', 0)
+heap_indirection = RuntimeTest('HeapIndirection', 'heap_indirection.cpp', 0)
 tests = [ stack_scalar, stack_struct, nested_stack_scalar, nested_stack_struct,
-          heap ]
+          heap, heap_pointers, heap_indirection ]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
@@ -52,13 +54,14 @@ if __name__ == '__main__':
             print_and_abort(stdout, stderr)
 
         if not os.path.isfile('numdebug.dump.0'):
-            sys.stderr.write('Test run failed to produce a checkpoint file\n')
+            sys.stderr.write('Test ' + t.name + ' failed to produce a ' +
+                    'checkpoint file\n')
             sys.stderr.write('Folder ' + folder + '\n')
             print_and_abort(stdout, stderr)
 
         if os.path.isfile('numdebug.dump.1'):
-            sys.stderr.write('Test run unexpectedly produced more than one ' +
-                    'checkpoint file\n')
+            sys.stderr.write('Test ' + t.name + ' unexpectedly produced more ' +
+                    'than one checkpoint file\n')
             sys.stderr.write('Folder ' + folder + '\n')
             print_and_abort(stdout, stderr)
 
@@ -75,7 +78,7 @@ if __name__ == '__main__':
             print_and_abort(stdout, stderr)
 
         os.remove('a.out')
+        os.remove('numdebug.dump.0')
         if not config.keep:
-            os.remove('numdebug.dump.0')
             run_cmd('rm -rf ' + folder, False)
         print t.name + ' PASSED'

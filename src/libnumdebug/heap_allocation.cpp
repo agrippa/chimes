@@ -8,7 +8,6 @@
 void heap_allocation::add_type_info(size_t set_elem_size, int set_elem_is_ptr,
         int set_elem_is_struct) {
     assert(!have_type_info);
-    assert(!set_elem_is_ptr || set_elem_size == sizeof(void *));
     if (set_elem_is_ptr) assert(!set_elem_is_struct);
     if (set_elem_is_struct) assert(!set_elem_is_ptr);
 
