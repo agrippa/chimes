@@ -328,7 +328,7 @@ void rm_stack() {
 #ifdef VERBOSE
         fprintf(stderr, "Exiting replay...\n");
 #endif
-        exit(0);
+        exit(55);
     }
 }
 

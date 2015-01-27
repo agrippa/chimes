@@ -1,10 +1,10 @@
 import os
 import sys
-from common import Test, run_cmd, run_test, parse_argv, NUM_DEBUG_HOME
+from common import FrontendTest, run_test, parse_argv, NUM_DEBUG_HOME
 
-simple_stencil = Test('SimpleStencil', 'simple_stencil.cpp',
+simple_stencil = FrontendTest('SimpleStencil', 'simple_stencil.cpp',
         'simple_stencil.register.cpp', 'simple_stencil', False)
-pass_by_ref = Test('PassByRef', 'pass_by_ref.cpp', 'pass_by_ref.register.cpp',
+pass_by_ref = FrontendTest('PassByRef', 'pass_by_ref.cpp', 'pass_by_ref.register.cpp',
         'pass_by_ref', True)
 tests = [simple_stencil, pass_by_ref]
 
