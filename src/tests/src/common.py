@@ -21,8 +21,12 @@ class TestConfig:
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep):
+    def __init__(self, keep, verbose):
         self.keep = keep
+        self.verbose = verbose
+
+    def __str__(self):
+        return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
 
 
 class RuntimeTest:
@@ -60,24 +64,29 @@ class FrontendTest:
 
 def parse_argv(argv):
     keep = False
+    verbose = False
+
     i = 1
     while i < len(argv):
         if argv[i] == '-k':
             keep = True
+        elif argv[i] == '-v':
+            verbose = True
         else:
             sys.stderr.write('Unknown argument ' + argv[i] + '\n')
             sys.exit(1)
         i += 1 
 
-    return TestConfig(keep)
+    return TestConfig(keep, verbose)
 
 
-def print_and_abort(stdout, stderr):
+def print_and_abort(stdout, stderr, abort=True):
     sys.stderr.write('STDOUT:\n')
     sys.stderr.write(stdout + '\n')
     sys.stderr.write('STDERR:\n')
     sys.stderr.write(stderr + '\n')
-    sys.exit(1)
+    if abort:
+        sys.exit(1)
 
 
 def copy_environ():
