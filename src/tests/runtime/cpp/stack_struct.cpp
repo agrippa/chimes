@@ -1,5 +1,4 @@
 #include "checkpoint.h"
-#include <stdio.h>
 #include <assert.h>
 
 struct foo {
@@ -13,7 +12,6 @@ int main(int argc, char **argv) {
     a.b = 4;
 
     checkpoint();
-    fprintf(stderr, "%p %d %d\n", &a, a.a, a.b);
 
     assert(a.a == 3);
     assert(a.b == 4);

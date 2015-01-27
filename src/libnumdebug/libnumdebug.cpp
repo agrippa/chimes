@@ -354,6 +354,12 @@ int get_next_call() {
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
+    // Basic checks in case the code generation breaks
+    assert(is_ptr == 0 || is_ptr == 1);
+    assert(is_struct == 0 || is_struct == 1);
+    assert(n_ptr_fields >= 0);
+    assert(size >= 0);
+
     stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
             is_ptr);
 
