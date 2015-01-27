@@ -7,7 +7,7 @@
 #include "heap_allocation.h"
 
 #ifdef CUDA_SUPPORT
-#include <cuda.h>
+#include <cuda_runtime.h>
 #endif
 
 void heap_allocation::add_type_info(size_t set_elem_size, int set_elem_is_ptr,
