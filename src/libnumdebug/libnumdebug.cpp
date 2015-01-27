@@ -27,7 +27,8 @@ using namespace std;
 void new_stack();
 void rm_stack();
 void register_stack_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...);
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
 int alias_group_changed(int ngroups, ...);
 void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
@@ -351,7 +352,8 @@ int get_next_call() {
  *   replay.
  */
 void register_stack_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int n_ptr_fields, ...) {
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...) {
     stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
             is_ptr);
 

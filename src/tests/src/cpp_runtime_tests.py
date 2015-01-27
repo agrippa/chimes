@@ -13,6 +13,7 @@ CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
 
 if __name__ == '__main__':
     config = parse_argv(sys.argv)
+    print str(config)
 
     # Clean up any leftover checkpoints from previously failed tests
     numdebug_files = [f for f in os.listdir('.') if os.path.isfile(f) and
@@ -54,6 +55,9 @@ if __name__ == '__main__':
             sys.stderr.write('Folder ' + folder + '\n')
             print_and_abort(stdout, stderr)
 
+        if config.verbose:
+            print_and_abort(stdout, stderr, abort=False)
+
         env['NUMDEBUG_CHECKPOINT_FILE'] = 'numdebug.dump.0'
         stdout, stderr, code = run_cmd('./a.out', True, env=env)
         if code != NUM_DEBUG_REPLAY_EXIT_CODE:
@@ -64,6 +68,7 @@ if __name__ == '__main__':
             print_and_abort(stdout, stderr)
 
         os.remove('a.out')
-        os.remove('numdebug.dump.0')
-        run_cmd('rm -rf ' + folder, False)
+        if not config.keep:
+            os.remove('numdebug.dump.0')
+            run_cmd('rm -rf ' + folder, False)
         print t.name + ' PASSED'

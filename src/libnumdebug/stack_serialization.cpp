@@ -49,6 +49,22 @@ static void new_var(unsigned char **stream, uint64_t *stream_capacity,
         sizeof(ptr_offsets_len) + (ptr_offsets_len * sizeof(int)) + size;
     ensure_capacity(stream, stream_capacity, *stream_len + var_record_size);
 
+#ifdef VERBOSE
+    fprintf(stderr, "Serializing variable %s\n", mangled_name.c_str());
+    fprintf(stderr, "  Type: %s\n", type.c_str());
+    fprintf(stderr, "  Size: %lu\n", size);
+    fprintf(stderr, "  Is ptr?: %d\n", is_ptr);
+    fprintf(stderr, "  Pointer offsets len: %d\n", ptr_offsets_len);
+    if (ptr_offsets_len > 0) {
+        int i;
+        fprintf(stderr, "  Pointer offsets: ");
+        for (i = 0; i < ptr_offsets_len; i++) {
+            fprintf(stderr, "%d ", (*ptr_offsets)[i]);
+        }
+        fprintf(stderr, "\n");
+    }
+#endif
+
     unsigned char *base = (*stream) + *stream_len;
     *base = NEW_STACK_VAR;
     base++;
@@ -73,11 +89,10 @@ static void new_var(unsigned char **stream, uint64_t *stream_capacity,
     memcpy(base, &ptr_offsets_len, sizeof(ptr_offsets_len));
     base += sizeof(ptr_offsets_len);
 
-    for (std::vector<int>::iterator i = ptr_offsets->begin(),
-            e = ptr_offsets->end(); i != e; i++) {
-        int offset = *i;
+    for (int i = 0; i < ptr_offsets_len; i++) {
+        int offset = (*ptr_offsets)[i];
         memcpy(base, &offset, sizeof(offset));
-        base += offset;
+        base += sizeof(offset);
     }
 
     memcpy(base, address, size);
@@ -187,10 +202,21 @@ vector<stack_frame *> *deserialize_program_stack(
             stack_var *var = new stack_var((const char *)varname,
                     (const char *)type, address, size, is_ptr);
 
+#ifdef VERBOSE
+            if (ptr_offsets_len > 0) {
+                fprintf(stderr, "  Pointer offsets: ");
+            }
+#endif
             int *ptr_offsets = (int *)(ptr_offsets_len_ptr + sizeof(ptr_offsets_len));
             for (int i = 0; i < ptr_offsets_len; i++) {
+#ifdef VERBOSE
+                fprintf(stderr, "%d ", ptr_offsets[i]);
+#endif
                 var->add_pointer_offset(ptr_offsets[i]);
             }
+#ifdef VERBOSE
+            fprintf(stderr, "\n");
+#endif
 
             unsigned char *tmp_buffer_ptr = (unsigned char *)(ptr_offsets +
                     ptr_offsets_len);
