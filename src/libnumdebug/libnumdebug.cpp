@@ -20,10 +20,7 @@
 #include "already_updated_ptrs.h"
 #include "numdebug_stack.h"
 #include "heap_allocation.h"
-
-#ifdef CUDA_SUPPORT
-#include <driver_types.h>
-#endif
+#include "type_info.h"
 
 using namespace std;
 
@@ -37,12 +34,6 @@ int alias_group_changed(int ngroups, ...);
 void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
-
-#ifdef CUDA_SUPPORT
-cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, int group,
-        int has_type_info, ...);
-cudaError_t cudaFree_wrapper(void *ptr, int group);
-#endif
 
 void onexit();
 
@@ -158,17 +149,26 @@ void init_numdebug(int nstructs, ...) {
             void *old_address;
             size_t size;
             int group;
+            int is_cuda_alloc;
 
             safe_read(fd, &old_address, sizeof(old_address), "old_address",
                     checkpoint_file);
             safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
             safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
+            safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
+                    "is_cuda_alloc", checkpoint_file);
+
+            if (is_cuda_alloc) {
+                fprintf(stderr, "Restoring from a CUDA heap allocation not "
+                        "supported yet\n");
+                exit(1);
+            }
 
             void *new_address = malloc(size);
             safe_read(fd, new_address, size, "heap contents", checkpoint_file);
 
-            heap_allocation *alloc = new heap_allocation(new_address, size, group,
-                    0);
+            heap_allocation *alloc = new heap_allocation(new_address, size,
+                    group, is_cuda_alloc, 0);
 
             int have_type_info;
             safe_read(fd, &have_type_info, sizeof(have_type_info),
@@ -400,11 +400,11 @@ int alias_group_changed(int ngroups, ...) {
     return 0;
 }
 
-static void malloc_helper(void *new_ptr, size_t nbytes, int group,
+void malloc_helper(void *new_ptr, size_t nbytes, int group, int is_cuda_alloc,
         int has_type_info, int is_ptr, int is_struct, int elem_size,
         int *ptr_field_offsets, int n_ptr_field_offsets) {
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
-            curr_seq_no);
+            curr_seq_no, is_cuda_alloc);
     if (has_type_info) {
         alloc->add_type_info(elem_size, is_ptr, is_struct);
         for (int i = 0; i < n_ptr_field_offsets; i++) {
@@ -431,26 +431,17 @@ void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...) {
     void *ptr = malloc(nbytes);
 
     if (ptr != NULL) {
-        int is_ptr = 0, is_struct = 0, elem_size = 0, n_ptr_fields = 0;
-        int *ptr_field_offsets = NULL;
+        numdebug_type_info info; memset(&info, 0x00, sizeof(info));
 
         if (has_type_info) {
             va_list vl;
             va_start(vl, has_type_info);
-            is_ptr = va_arg(vl, int);
-            is_struct = va_arg(vl, int);
-            if (is_struct) {
-                elem_size = va_arg(vl, int);
-                n_ptr_fields = va_arg(vl, int);
-                ptr_field_offsets = (int *)malloc(sizeof(int) * n_ptr_fields);
-                for (int i = 0; i < n_ptr_fields; i++) {
-                    ptr_field_offsets[i] = va_arg(vl, int);
-                }
-            }
+            parse_type_info(vl, &info);
             va_end(vl);
         }
-        malloc_helper(ptr, nbytes, group, has_type_info, is_ptr, is_struct,
-                elem_size, ptr_field_offsets, n_ptr_fields);
+        malloc_helper(ptr, nbytes, group, 0, has_type_info, info.is_ptr,
+                info.is_struct, info.elem_size, info.ptr_field_offsets,
+                info.n_ptr_fields);
     }
 
     return ptr;
@@ -492,7 +483,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
                 find_in_heap(ptr);
             assert(in_heap->second->get_alias_group() == group);
             free_helper(in_heap);
-            malloc_helper(new_ptr, nbytes, group, has_type_info, is_ptr,
+            malloc_helper(new_ptr, nbytes, group, 0, has_type_info, is_ptr,
                     is_struct, elem_size, ptr_field_offsets,
                     n_struct_ptr_fields);
         }
@@ -857,11 +848,14 @@ void *checkpoint_func(void *data) {
         void *address = alloc->get_address();
         size_t size = alloc->get_size();
         int group = alloc->get_alias_group();
+        int is_cuda_alloc = alloc->get_is_cuda_alloc();
         int have_type_info = alloc->check_have_type_info() ? 1 : 0;
 
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
         safe_write(fd, &group, sizeof(group), "group", dump_filename);
+        safe_write(fd, &is_cuda_alloc, sizeof(is_cuda_alloc), "is_cuda_alloc",
+                dump_filename);
         safe_write(fd, alloc->get_tmp_buffer(), size, "heap contents",
                 dump_filename);
 
@@ -927,14 +921,3 @@ void onexit() {
     }
     pthread_mutex_unlock(&checkpoint_mutex);
 }
-
-#ifdef CUDA_SUPPORT
-cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, int group,
-        int has_type_info, ...) {
-    return cudaSuccess;
-}
-
-cudaError_t cudaFree_wrapper(void *ptr, int group) {
-    return cudaSuccess;
-}
-#endif
