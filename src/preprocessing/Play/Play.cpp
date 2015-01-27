@@ -1274,6 +1274,46 @@ std::map<int, std::vector<int> *> *Play::findReachable(Module &M) {
     return stores;
 }
 
+static Type *inferAllocationType(CallInst *callInst) {
+    Type *base_type = NULL;
+
+    Use& use = *(callInst->use_begin());
+    User *user = use.getUser();
+
+    /*
+     * Look for a CallInst, followed immediately
+     * (and only) by a CastInst.
+     */
+    if (CastInst *cast = dyn_cast<CastInst>(user)) {
+        Type *malloc_type = cast->getType();
+        assert(malloc_type->isPointerTy());
+        base_type = malloc_type->getPointerElementType();
+    }
+    return base_type;
+}
+
+static void printStructInfo(FILE *fp, Type *base_type,
+        std::map<std::string, std::vector<std::string>> *structFields) {
+    StructType *structTy = dyn_cast<StructType>(base_type);
+    assert(structTy != NULL);
+
+    if (!structTy->isLiteral()) {
+        fprintf(fp, " 0 1");
+        assert(structTy->getStructName().str().find("struct.") == 0);
+        std::string struct_name = structTy->getStructName().str().substr(7);
+        fprintf(fp, " %s", struct_name.c_str());
+        assert(structFields->find(struct_name) != structFields->end());
+        std::vector<std::string> fields = (*structFields)[struct_name];
+        for (unsigned int i = 0; i < structTy->getStructNumElements(); i++) {
+            Type *field_type = structTy->getStructElementType(i);
+            if (field_type->isPointerTy()) {
+                std::string fieldname = fields[i];
+                fprintf(fp, " %s", fieldname.c_str());
+            }
+        }
+    }
+}
+
 void Play::findHeapAllocations(Module &M, const char *output_file) {
     FILE *fp = fopen(output_file, "w");
     std::set<int> found_mallocs;
@@ -1339,43 +1379,21 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                              */
                             if (callee->getName().str() == "malloc" &&
                                     callInst->getNumUses() == 1) {
-                                Use& use = *(callInst->use_begin());
-                                User *user = use.getUser();
+                                Type *base_type = inferAllocationType(callInst);
 
-                                /*
-                                 * Look for a CallInst, followed immediately
-                                 * (and only) by a CastInst.
-                                 */
-                                if (CastInst *cast = dyn_cast<CastInst>(user)) {
-                                    Type *malloc_type = cast->getType();
-                                    assert(malloc_type->isPointerTy());
-                                    Type *base_type = malloc_type->getPointerElementType();
-
+                                if (base_type != NULL) {
                                     if (base_type->isPointerTy()) {
+                                        // is_ptr=1, is_struct=0
                                         fprintf(fp, " 1 0");
                                     } else if (base_type->isStructTy()) {
-                                        StructType *structTy = dyn_cast<StructType>(base_type);
-                                        assert(structTy != NULL);
-
-                                        if (!structTy->isLiteral()) {
-                                            fprintf(fp, " 0 1");
-                                            assert(structTy->getStructName().str().find("struct.") == 0);
-                                            std::string struct_name = structTy->getStructName().str().substr(7);
-                                            fprintf(fp, " %s", struct_name.c_str());
-                                            assert(structFields->find(struct_name) != structFields->end());
-                                            std::vector<std::string> fields = (*structFields)[struct_name];
-                                            for (unsigned int i = 0; i < structTy->getStructNumElements(); i++) {
-                                                Type *field_type = structTy->getStructElementType(i);
-                                                if (field_type->isPointerTy()) {
-                                                    std::string fieldname = fields[i];
-                                                    fprintf(fp, " %s", fieldname.c_str());
-                                                }
-                                            }
-                                        }
+                                        printStructInfo(fp, base_type, structFields);
                                     }
                                 }
                             }
                             fprintf(fp, "\n");
+                        } else if (callee->getName().str() == "cudaMalloc" ||
+                                callee->getName().str() == "cudaFree") {
+                            //TODO
                         }
                     }
                 }
