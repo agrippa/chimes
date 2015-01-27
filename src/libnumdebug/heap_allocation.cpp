@@ -3,7 +3,12 @@
 
 #include <string.h>
 
+#include "common.h"
 #include "heap_allocation.h"
+
+#ifdef CUDA_SUPPORT
+#include <cuda.h>
+#endif
 
 void heap_allocation::add_type_info(size_t set_elem_size, int set_elem_is_ptr,
         int set_elem_is_struct) {
@@ -30,11 +35,18 @@ void heap_allocation::copy(heap_allocation *dst) {
     assert(dst->address == NULL);
 
     dst->tmp_buffer = (void *)malloc(size);
-    memcpy(dst->tmp_buffer, address, size);
+    if (is_cuda_alloc) {
+        //TODO make this better
+        CHECK(cudaMemcpy(dst->tmp_buffer, address, size,
+                    cudaMemcpyDeviceToHost));
+    } else {
+        memcpy(dst->tmp_buffer, address, size);
+    }
 
     dst->address = address;
     dst->size = size;
     dst->alias_group = alias_group;
+    dst->is_cuda_alloc = is_cuda_alloc;
     dst->seq = seq;
     dst->have_type_info = have_type_info;
     if (have_type_info) {
