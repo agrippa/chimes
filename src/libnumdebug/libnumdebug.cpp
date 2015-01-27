@@ -588,6 +588,10 @@ void checkpoint() {
                         dead->get_ptr_offsets()->size());
                 assert(dead->get_tmp_buffer() != NULL);
 
+#ifdef VERBOSE
+                fprintf(stderr, "Restoring variable %s with size %lu at %p\n",
+                        name.c_str(), live->get_size(), live->get_address());
+#endif
                 memcpy(live->get_address(), dead->get_tmp_buffer(),
                         live->get_size());
                 dead->clear_tmp_buffer();
@@ -810,6 +814,7 @@ void *checkpoint_func(void *data) {
         int trace = *trace_iter;
         safe_write(fd, &trace, sizeof(trace), "trace element", dump_filename);
     }
+
     // Write the serialized stack out
     safe_write(fd, &stack_serialized_len, sizeof(stack_serialized_len),
             "stack_serialized_len", dump_filename);
