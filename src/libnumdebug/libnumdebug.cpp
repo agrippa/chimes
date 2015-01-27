@@ -21,6 +21,10 @@
 #include "numdebug_stack.h"
 #include "heap_allocation.h"
 
+#ifdef CUDA_SUPPORT
+#include <driver_types.h>
+#endif
+
 using namespace std;
 
 // functions defined in this file
@@ -33,6 +37,13 @@ int alias_group_changed(int ngroups, ...);
 void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
 void *realloc_wrapper(void *ptr, size_t nbytes, int group);
 void free_wrapper(void *ptr, int group);
+
+#ifdef CUDA_SUPPORT
+cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, int group,
+        int has_type_info, ...);
+cudaError_t cudaFree_wrapper(void *ptr, int group);
+#endif
+
 void onexit();
 
 static void safe_write(int fd, void *ptr, ssize_t size, const char *msg,
@@ -916,3 +927,14 @@ void onexit() {
     }
     pthread_mutex_unlock(&checkpoint_mutex);
 }
+
+#ifdef CUDA_SUPPORT
+cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, int group,
+        int has_type_info, ...) {
+    return cudaSuccess;
+}
+
+cudaError_t cudaFree_wrapper(void *ptr, int group) {
+    return cudaSuccess;
+}
+#endif

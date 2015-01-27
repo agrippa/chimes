@@ -34,7 +34,8 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
                 std::stringstream ss2;
                 ss2 << ", " << alloc->get_group();
 
-                if (alloc->get_fname() == "malloc") {
+                if (alloc->get_fname() == "malloc" ||
+                        alloc->get_fname() == "cudaMalloc") {
                     if(alloc->get_have_type_info()) {
                         ss2 << ", 1"; // has type info
                         ss2 << ", " << (alloc->get_is_elem_ptr() ? "1" : "0") <<

@@ -63958,7 +63958,11 @@ extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
 extern void *realloc_wrapper(void * ptr, size_t nbytes, int group); 
 # 18
 extern void free_wrapper(void * ptr, int group); 
-# 20
+# 21
+cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, int group, int has_type_info, ...); 
+# 23
+cudaError_t cudaFree_wrapper(void * ptr, int group); 
+# 26
 extern int ____numdebug_replaying; 
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list; 
@@ -64245,11 +64249,11 @@ alias_group_changed(1, 37); h_B = ((int *)malloc_wrapper(sizeof(int) * N, 36, 0)
 # 30
 alias_group_changed(1, 38); h_C = ((int *)malloc_wrapper(sizeof(int) * N, 36, 0)); 
 # 32
-alias_group_changed(1, 39); cudaMalloc((void **)(&d_A), sizeof(int) * N); 
+alias_group_changed(1, 39); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, -1, 0); 
 # 33
-alias_group_changed(1, 36); cudaMalloc((void **)(&d_B), sizeof(int) * N); 
+alias_group_changed(1, 36); cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, -1, 0); 
 # 34
-alias_group_changed(1, 36); cudaMalloc((void **)(&d_C), sizeof(int) * N); 
+alias_group_changed(1, 36); cudaMalloc_wrapper((void **)(&d_C), sizeof(int) * N, -1, 0); 
 # 36
 for (alias_group_changed(2, 36, 40), i = 0; i < N; alias_group_changed(1, 40), i++) { 
 # 37
@@ -64283,11 +64287,11 @@ fprintf(fp, "%d\n", h_C[i]);
 # 57
 fclose(fp); 
 # 59
-alias_group_changed(1, -1); cudaFree(d_A); 
+alias_group_changed(1, -1); cudaFree_wrapper(d_A, -1); 
 # 60
-alias_group_changed(1, -1); cudaFree(d_B); 
+alias_group_changed(1, -1); cudaFree_wrapper(d_B, -1); 
 # 61
-alias_group_changed(1, -1); cudaFree(d_C); 
+alias_group_changed(1, -1); cudaFree_wrapper(d_C, -1); 
 # 63
 alias_group_changed(1, -1); rm_stack(); return 0; 
 # 64
