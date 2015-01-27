@@ -125,6 +125,12 @@ namespace {
         std::string *get_unique_varname(std::string varname, Function *F,
                 std::set<std::string> *found_variables, Module &M);
         std::map<int, std::vector<int> *> *findReachable(Module &M);
+        void handleHostAllocation(CallInst *callInst, Function *callee,
+                FILE *fp, std::set<int> &found_mallocs,
+                std::map<std::string, std::vector<std::string>> *structFields);
+        void handleDeviceAllocation(CallInst *callInst, Function *callee,
+                FILE *fp, std::set<int> &found_mallocs,
+                std::map<std::string, std::vector<std::string>> *structFields);
     };
 }
 
@@ -1314,6 +1320,66 @@ static void printStructInfo(FILE *fp, Type *base_type,
     }
 }
 
+void Play::handleHostAllocation(CallInst *callInst, Function *callee,
+        FILE *fp, std::set<int> &found_mallocs,
+        std::map<std::string, std::vector<std::string>> *structFields) {
+    int line_no = callInst->getDebugLoc().getLine();
+    int col = callInst->getDebugLoc().getCol();
+    assert(line_no != 0);
+
+    int alias_no;
+    if (callee->getName().str() == "malloc" ||
+            callee->getName().str() == "realloc") {
+        alias_no = searchDownUsesForAliasSetGroup(callInst);
+    } else {
+        // free
+        assert(callInst->getNumArgOperands() == 1);
+        alias_no = searchUpDefsForAliasSetGroup(callInst->getArgOperand(0), 0);
+    }
+    /*
+     * This assert is triggered for variables that are
+     * never used (e.g. an allocation that is never
+     * referenced again). TODO rework to print a warning
+     * or something?
+     */
+    assert(alias_no >= 0);
+
+    /*
+     * We don't currently support multiple mallocs per
+     * line
+     */
+    assert(found_mallocs.find(line_no) == found_mallocs.end());
+    found_mallocs.insert(line_no);
+
+    fprintf(fp, "%d %d %d %s", line_no, col, alias_no,
+            callee->getName().str().c_str());
+    /*
+     * For trivial cases of a malloc call that is
+     * immediately cast to its correct type, we add some
+     * extra type info to the heap allocation metrics to
+     * help with replay.
+     */
+    if (callee->getName().str() == "malloc" &&
+            callInst->getNumUses() == 1) {
+        Type *base_type = inferAllocationType(callInst);
+
+        if (base_type != NULL) {
+            if (base_type->isPointerTy()) {
+                // is_ptr=1, is_struct=0
+                fprintf(fp, " 1 0");
+            } else if (base_type->isStructTy()) {
+                printStructInfo(fp, base_type, structFields);
+            }
+        }
+    }
+    fprintf(fp, "\n");
+}
+
+void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
+        FILE *fp, std::set<int> &found_mallocs,
+        std::map<std::string, std::vector<std::string>> *structFields) {
+}
+
 void Play::findHeapAllocations(Module &M, const char *output_file) {
     FILE *fp = fopen(output_file, "w");
     std::set<int> found_mallocs;
@@ -1334,66 +1400,15 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                 if (CallInst *callInst = dyn_cast<CallInst>(&inst)) {
                     Function *callee = callInst->getCalledFunction();
                     if (callee) {
-
                         if (callee->getName().str() == "malloc" ||
                                 callee->getName().str() == "realloc" ||
                                 callee->getName().str() == "free") {
-                            int line_no = callInst->getDebugLoc().getLine();
-                            int col = callInst->getDebugLoc().getCol();
-                            assert(line_no != 0);
-
-                            int alias_no;
-                            if (callee->getName().str() == "malloc" ||
-                                    callee->getName().str() == "realloc") {
-                                alias_no = searchDownUsesForAliasSetGroup(
-                                        callInst);
-                            } else {
-                                // free
-                                assert(callInst->getNumArgOperands() == 1);
-                                alias_no = searchUpDefsForAliasSetGroup(
-                                        callInst->getArgOperand(0), 0);
-                            }
-                            /*
-                             * This assert is triggered for variables that are
-                             * never used (e.g. an allocation that is never
-                             * referenced again). TODO rework to print a warning
-                             * or something?
-                             */
-                            assert(alias_no >= 0);
-
-                            /*
-                             * We don't currently support multiple mallocs per
-                             * line
-                             */
-                            assert(found_mallocs.find(line_no) ==
-                                    found_mallocs.end());
-                            found_mallocs.insert(line_no);
-
-                            fprintf(fp, "%d %d %d %s", line_no, col, alias_no,
-                                    callee->getName().str().c_str());
-                            /*
-                             * For trivial cases of a malloc call that is
-                             * immediately cast to its correct type, we add some
-                             * extra type info to the heap allocation metrics to
-                             * help with replay.
-                             */
-                            if (callee->getName().str() == "malloc" &&
-                                    callInst->getNumUses() == 1) {
-                                Type *base_type = inferAllocationType(callInst);
-
-                                if (base_type != NULL) {
-                                    if (base_type->isPointerTy()) {
-                                        // is_ptr=1, is_struct=0
-                                        fprintf(fp, " 1 0");
-                                    } else if (base_type->isStructTy()) {
-                                        printStructInfo(fp, base_type, structFields);
-                                    }
-                                }
-                            }
-                            fprintf(fp, "\n");
+                            handleHostAllocation(callInst, callee, fp,
+                                    found_mallocs, structFields);
                         } else if (callee->getName().str() == "cudaMalloc" ||
                                 callee->getName().str() == "cudaFree") {
-                            //TODO
+                            handleDeviceAllocation(callInst, callee, fp,
+                                    found_mallocs, structFields);
                         }
                     }
                 }
