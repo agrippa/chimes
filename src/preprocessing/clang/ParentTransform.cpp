@@ -102,6 +102,13 @@ void ParentTransform::ReplaceText(clang::SourceLocation loc, unsigned len,
     insertions->AppendToDiagnostics("ReplaceText", loc, ss.str(), *SM);
 }
 
+void ParentTransform::ReplaceText(clang::SourceRange range, std::string s) {
+    rewriter->ReplaceText(range, s);
+
+    insertions->AppendToDiagnostics("ReplaceTextStart", range.getBegin(), s, *SM);
+    insertions->AppendToDiagnostics("ReplaceTextEnd", range.getEnd(), "", *SM);
+}
+
 void ParentTransform::setLastGoto(clang::SourceLocation last) {
     assert(setsLastGoto());
     hasGoto = true;

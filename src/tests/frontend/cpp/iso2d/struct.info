@@ -1,0 +1,2 @@
+_config nx ny nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
+_source x y freq t 

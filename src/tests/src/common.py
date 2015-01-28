@@ -57,13 +57,24 @@ class FrontendTest(object):
     the moment, expect_err is only useful when trying to compile source files
     that are not standalone programs which error out due to a missing main
     definition.
+
+    includes contains a list of folders that should be added to the include path
+    when building.
+
+    dependencies contains a list of libraries that should be added when
+    building. These are full paths to the library file. We assume that the
+    folder containing that library also has a Makefile for creating that
+    library, and run 'make clean; make' to build it before using it.
     """
-    def __init__(self, name, input_file, compare_file, info_dir, expect_err):
+    def __init__(self, name, input_file, compare_file, info_dir, expect_err,
+            includes=[], dependencies=[]):
         self.name = name
         self.input_file = input_file
         self.compare_file = compare_file
         self.info_dir = info_dir
         self.expect_err = expect_err
+        self.includes = includes
+        self.dependencies = dependencies
 
 
 def parse_argv(argv):
@@ -318,6 +329,26 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     # Compile the test input while keeping intermediate files
     compile_cmd = compile_script_path + ' -k -i ' + \
                   os.path.join(examples_dir_path, test.input_file)
+
+    # Add include folders to the compilation command
+    for include_folder in test.includes:
+        compile_cmd += ' -I ' + include_folder
+
+    # Build any dependencies and add them to the compile command
+    for dependency in test.dependencies:
+        dirname = os.path.dirname(dependency)
+        library = os.path.basename(dependency)
+        assert len(library) > 0, dependency
+        assert library.endswith('.so'), dependency
+        assert library.startswith('lib'), dependency
+
+        makefile_path = os.path.join(dirname, 'Makefile')
+        assert os.path.isfile(makefile_path), makefile_path
+
+        run_cmd('make -C ' + dirname, False)
+        compile_cmd += ' -L ' + os.path.dirname(dependency) + ' -l ' + \
+                       library[3:len(library) - 3]
+
     stdout, _, _ = run_cmd(compile_cmd, test.expect_err)
 
     # Get the final output filename and containing folder

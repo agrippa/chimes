@@ -56,6 +56,7 @@ protected:
     void RemoveText(clang::SourceRange rng);
     void ReplaceText(clang::SourceLocation loc, unsigned len,
             std::string new_str);
+    void ReplaceText(clang::SourceRange range, std::string s);
 
     int getNextRegisterLabel();
     int getNextFunctionLabel();
