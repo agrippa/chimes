@@ -16,7 +16,7 @@
 #include <cuda_runtime.h>
 #endif
 
-#include "common.h"
+#include "numdebug_common.h"
 #include "stack_var.h"
 #include "stack_frame.h"
 #include "heap_allocation.h"

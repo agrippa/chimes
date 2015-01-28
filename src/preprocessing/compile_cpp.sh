@@ -4,11 +4,23 @@ set -e
 
 KEEP=0
 INPUT=
+INCLUDES=
+LIB_PATHS=
+LIBS=
 
-while getopts ":ki:" opt; do
+while getopts ":ki:I:L:l:" opt; do
     case $opt in 
         i)
             INPUT=${OPTARG}
+            ;;
+        I)
+            INCLUDES="${INCLUDES} -I${OPTARG}"
+            ;;
+        L)
+            LIB_PATHS="${LIB_PATHS} -L${OPTARG}"
+            ;;
+        l)
+            LIBS="${LIBS} -l${OPTARG}"
             ;;
         k)
             KEEP=1
@@ -25,7 +37,7 @@ while getopts ":ki:" opt; do
 done
 
 if [[ -z ${INPUT} ]]; then
-    echo usage: compile_cpp.sh [-k] -i input.cpp
+    echo usage: compile_cpp.sh [-k] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
     exit 1
 fi
 
@@ -47,6 +59,7 @@ TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 
 echo WORK_DIR = $WORK_DIR
 
+PREPROCESS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.cpp
 BITCODE_FILE=${WORK_DIR}/$(basename ${INPUT}).bc
 TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
 ANALYSIS_LOG_FILE=${WORK_DIR}/analysis.log
@@ -62,9 +75,17 @@ if [[ ! -f $LLVM_LIB ]]; then
     exit 1
 fi
 
-echo Generating bitcode for ${INPUT} into ${BITCODE_FILE}
-cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include -I${NUM_DEBUG_HOME}/src/libnumdebug -S \
-        -emit-llvm ${INPUT} -o ${BITCODE_FILE} -g
+echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
+cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
+       -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -E ${INPUT} \
+       -o ${PREPROCESS_FILE} -g \
+       -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
+       -include stddef.h -include stdio.h
+
+echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
+cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
+       -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -S -emit-llvm \
+       ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g
 
 echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
 cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -79,23 +100,26 @@ ${TRANSFORM} \
         -m ${WORK_DIR}/heap.info \
         -d ${WORK_DIR}/diag.info \
         -w ${WORK_DIR} \
-        -c false \
-        ${INPUT} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
+        -c true \
+        ${PREPROCESS_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
         -I${CUDA_HOME}/include \
         -I${STDDEF_FOLDER} \
-        -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h
+        $INCLUDES
 
-LAST_FILE=$(basename ${INPUT})
+LAST_FILE=$(basename ${PREPROCESS_FILE})
 EXT="${LAST_FILE##*.}"
 NAME="${LAST_FILE%.*}"
 LAST_FILE=${NAME}.register.${EXT}
+
+echo Postprocessing ${LAST_FILE}
+cd ${WORK_DIR} && g++ -E -include stddef.h ${LAST_FILE} -o ${LAST_FILE}.post && mv ${LAST_FILE}.post ${LAST_FILE}
+
 LAST_FILE=${WORK_DIR}/${LAST_FILE}
 echo $LAST_FILE
 
-g++ -lpthread -include stddef.h -include stdio.h \
-        -include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
-        -I${NUM_DEBUG_HOME}/src/libnumdebug \
-        -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${LAST_FILE} -o $OUTPUT
+g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+        -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${LAST_FILE} -o $OUTPUT \
+        ${INCLUDES} ${LIB_PATHS} ${LIBS}
 
 if [[ $KEEP == 0 ]]; then
     rm -rf ${WORK_DIR}

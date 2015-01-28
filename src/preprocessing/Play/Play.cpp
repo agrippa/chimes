@@ -95,10 +95,11 @@ namespace {
         void gatherCallSites(Module &M);
         void combineAliasSetGroups(int merge_into, int merge_from);
         int searchDownUsesForAliasSetGroup(Value *val);
-        int searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
-                std::set<Value *> *visited);
+        int searchDownUsesForAliasSetGroupHelper(Value *val, Value *parent,
+                int nesting, std::set<Value *> *visited);
         int searchForValueInKnownAliases(Value *val);
-        int iterateOverUses(Value *val, int nesting, std::set<Value *> *visited);
+        int iterateOverUses(Value *val, int nesting,
+                std::set<Value *> *visited);
         void mergeAliasGroupsInterprocedurally();
         void printAliasGroupings();
         void unifyAliasGroupings();
@@ -107,7 +108,8 @@ namespace {
         void printLineToGroupsMapping();
         void collectLineToGroupsMappingInFunction(BasicBlock *bb,
                 std::set<BasicBlock *> &visited, std::string filename);
-        void unionGroups(int line, int col, std::string filename, std::set<int> *groups);
+        void unionGroups(int line, int col,
+                std::string filename, std::set<int> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
 
         void findStackAllocations(Module &M, const char *output_file,
@@ -340,7 +342,7 @@ int Play::iterateOverUses(Value *val, int nesting, std::set<Value *> *visited) {
             use_iter++) {
         Use& use = *use_iter;
 
-        int foundUse = searchDownUsesForAliasSetGroupHelper(use.getUser(),
+        int foundUse = searchDownUsesForAliasSetGroupHelper(use.getUser(), val,
                 nesting, visited);
         if (foundUse != -1) return foundUse;
     }
@@ -350,13 +352,20 @@ int Play::iterateOverUses(Value *val, int nesting, std::set<Value *> *visited) {
 
 int Play::searchDownUsesForAliasSetGroup(Value *val) {
     std::set<Value *> visited;
-    return searchDownUsesForAliasSetGroupHelper(val, 0, &visited);
+
+    int foundThis = searchForValueInKnownAliases(val);
+    if (foundThis != -1) {
+        return foundThis;
+    }
+    return iterateOverUses(val, 0, &visited);
+    // return searchDownUsesForAliasSetGroupHelper(val, NULL, 0, &visited);
 }
 
-int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
-        std::set<Value *> *visited) {
+int Play::searchDownUsesForAliasSetGroupHelper(Value *val, Value *parent,
+        int nesting, std::set<Value *> *visited) {
 #ifdef VERBOSE
-    errs() << "Searching down use chains for group of: \"" << *val << "\"\n";
+    errs() << "Searching down use chains for group of: \"" << *val <<
+        "\" nesting=" << nesting << "\n";
 #endif
 
     if (visited->find(val) != visited->end()) return -1;
@@ -377,12 +386,14 @@ int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
         errs() << "  Is a store with pointer \"" << *store->getPointerOperand() << "\"\n";
 #endif
         return searchDownUsesForAliasSetGroupHelper(store->getPointerOperand(),
-                nesting + 1, visited);
+                NULL, nesting + 1, visited);
     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
 #ifdef VERBOSE
         errs() << "  Is a load with pointer \"" << *load->getPointerOperand() <<
             "\", nesting=" << nesting << "\n";
 #endif
+        return iterateOverUses(val, nesting - 1, visited);
+        /*
         if (nesting == 1) {
             int found = searchForValueInKnownAliases(val);
 #ifdef VERBOSE
@@ -392,16 +403,53 @@ int Play::searchDownUsesForAliasSetGroupHelper(Value *val, int nesting,
 
             return iterateOverUses(val, nesting - 1, visited);
         } else {
-            return searchDownUsesForAliasSetGroupHelper(load->getPointerOperand(),
+            return searchDownUsesForAliasSetGroupHelper(load->getPointerOperand(), NULL,
                     nesting - 1, visited);
         }
+        */
     } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
 #ifdef VERBOSE
         errs() << "  Is a getelementptr with pointer \"" <<
             *getele->getPointerOperand() << "\"\n";
 #endif
-        return searchDownUsesForAliasSetGroupHelper(getele->getPointerOperand(),
-                nesting, visited);
+        return iterateOverUses(val, nesting, visited);
+        // return searchDownUsesForAliasSetGroupHelper(getele->getPointerOperand(),
+        //         NULL, nesting, visited);
+    } else if (CallInst *call = dyn_cast<CallInst>(val)) {
+#ifdef VEROSE
+        errs() << "  Is a call with " << call->getNumArgOperands() <<
+            " arguments\n";
+#endif
+        if (parent != NULL && call->getCalledFunction() != NULL) {
+            unsigned int arg_index = 0;
+            for (; arg_index < call->getNumArgOperands(); arg_index++) {
+                if (call->getArgOperand(arg_index) == parent) {
+                    break;
+                }
+            }
+            assert(arg_index < call->getNumArgOperands());
+
+            Function *callee = call->getCalledFunction();
+            Argument *arg = NULL;
+            unsigned int count_args = 0;
+            for (Function::arg_iterator i = callee->arg_begin(),
+                    e = callee->arg_end(); i != e; i++) {
+                if (count_args == arg_index) {
+                    arg = i;
+                    break;
+                }
+                count_args++;
+            }
+            if (arg == NULL) {
+                assert(callee->isVarArg());
+                return -1;
+            } else {
+                return searchDownUsesForAliasSetGroupHelper(arg, NULL, nesting,
+                        visited);
+            }
+        } else {
+            return -1;
+        }
     } else {
         return iterateOverUses(val, nesting, visited);
     }
@@ -461,7 +509,9 @@ void Play::mergeAliasGroupsInterprocedurally() {
         FunctionInfo *info = it->second;
         std::vector<Argument *> *arguments = info->arguments;
 
-        for (std::vector<CallInfo *>::iterator call_iter = info->passed->begin(), call_end = info->passed->end(); call_iter != call_end; call_iter++) {
+        for (std::vector<CallInfo *>::iterator call_iter =
+                info->passed->begin(), call_end = info->passed->end();
+                call_iter != call_end; call_iter++) {
             CallInfo *call = *call_iter;
             assert(call->passed->size() == arguments->size());
 
@@ -1141,7 +1191,8 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
 
     if (AllocaInst *alloc = dyn_cast<AllocaInst>(val)) {
         std::set<Value *> visited;
-        return searchDownUsesForAliasSetGroupHelper(alloc, nesting, &visited);
+        return searchDownUsesForAliasSetGroupHelper(alloc, NULL, nesting,
+                &visited);
     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
         return searchUpDefsForAliasSetGroup(load->getPointerOperand(),
                 nesting + 1);
@@ -1166,10 +1217,14 @@ int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
         if (BinaryOperator *binop = dyn_cast<BinaryOperator>(user)) {
             if (binop->getOpcode() == Instruction::SRem ||
                     binop->getOpcode() == Instruction::SDiv ||
-                    binop->getOpcode() == Instruction::Mul) {
+                    binop->getOpcode() == Instruction::Mul ||
+                    binop->getOpcode() == Instruction::FSub ||
+                    binop->getOpcode() == Instruction::FDiv ||
+                    binop->getOpcode() == Instruction::FMul ||
+                    binop->getOpcode() == Instruction::FAdd) {
                 /*
-                 * Taking a remainder of something doesn't have any meaning in
-                 * the context of aliases
+                 * Operators that don't have any meaning in the context of
+                 * aliases (e.g. floating-point operations).
                  */
                 return -1;
             } else if (binop->getOpcode() == Instruction::Add ||
@@ -1329,9 +1384,17 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
     int alias_no;
     if (callee->getName().str() == "malloc" ||
             callee->getName().str() == "realloc") {
+#ifdef VERBOSE
+        errs() << "\nStarting search down for alias group of " << *callInst <<
+            "\n";
+#endif
         alias_no = searchDownUsesForAliasSetGroup(callInst);
     } else {
         // free
+#ifdef VERBOSE
+        errs() << "\nStarting search up for alias group of " <<
+            *(callInst->getArgOperand(0)) << "\n";
+#endif
         assert(callInst->getNumArgOperands() == 1);
         alias_no = searchUpDefsForAliasSetGroup(callInst->getArgOperand(0), 0);
     }
@@ -1341,6 +1404,11 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
      * referenced again). TODO rework to print a warning
      * or something?
      */
+#ifdef VERBOSE
+    if (alias_no < 0) {
+        errs() << "Failed to find alias group for " << *callInst << "\n";
+    }
+#endif
     assert(alias_no >= 0);
 
     /*

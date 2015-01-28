@@ -64212,9 +64212,9 @@ extern "C" int vasprintf(char **, const char *, va_list) __attribute((__format__
 extern "C" FILE *zopen(const char *, const char *, int); 
 # 469 "/usr/include/stdio.h" 3
 extern "C" FILE *funopen(const void *, int (*)(void *, char *, int), int (*)(void *, const char *, int), fpos_t (*)(void *, fpos_t, int), int (*)(void *)); 
-# 6 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 4 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
 extern void checkpoint(); 
-# 8
+# 6
 extern void wait_for_checkpoint(); 
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 void kernel(int *A, int *B, int *C, int N) ;
