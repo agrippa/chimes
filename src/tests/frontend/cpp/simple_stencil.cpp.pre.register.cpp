@@ -34,18 +34,19 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
 extern void init_numdebug(int nstructs, ...);
-extern void calling(int lbl);
+extern void calling(int lbl, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack();
+extern void new_stack(int naliases, ...);
 extern void rm_stack();
 extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, int group);
-extern void free_wrapper(void *ptr, int group);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info,
+        ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void free_wrapper(void *ptr, size_t group);
 
 
 
@@ -1705,35 +1706,35 @@ extern void wait_for_checkpoint();
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 
 int main(int argc, char **argv) {
-    init_numdebug(0); new_stack(); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int i; lbl_0: register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } int iter; lbl_1: register_stack_var("main|iter|0", "i32", &iter, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; }
+    init_numdebug(0); new_stack(2, 0UL, 16601824331468926401UL); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int i; lbl_0: register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } int iter; lbl_1: register_stack_var("main|iter|0", "i32", &iter, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; }
      int N; lbl_2: register_stack_var("main|N|0", "i32", &N, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } N = 1024;
      int niters; lbl_3: register_stack_var("main|niters|0", "i32", &niters, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } niters = 10000;
 
-     int *curr; lbl_4: register_stack_var("main|curr|0", "i32*", &curr, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = (int *)malloc_wrapper(N * sizeof(int), 5, 0);
-     int *next; lbl_5: register_stack_var("main|next|0", "i32*", &next, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = (int *)malloc_wrapper(N * sizeof(int), 5, 0);
-    for (alias_group_changed(2, 7, 8), i = 0; i < N; alias_group_changed(1, 8), i++) {
-        curr[i] = next[i] = rand() % 100;
+     int *curr; lbl_4: register_stack_var("main|curr|0", "i32*", &curr, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = (int *)malloc_wrapper(N * sizeof(int), 222071294UL, 0);
+     int *next; lbl_5: register_stack_var("main|next|0", "i32*", &next, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = (int *)malloc_wrapper(N * sizeof(int), 222071294UL, 0);
+    for (alias_group_changed(2, 11429982917709284407UL, 14823988852069429391UL), i = 0; i < N; alias_group_changed(1, 14823988852069429391UL), i++) {
+         call_lbl_0: calling(0, 1, 29UL); curr[i] = next[i] = rand() % 100;
     }
 
-    for (alias_group_changed(1, 9), iter = 0; iter < niters; alias_group_changed(1, 9), iter++) {
-        printf("%d / %d\n", iter + 1, niters);
-        for (alias_group_changed(2, 8, 12), i = 1; i < N - 1; alias_group_changed(1, 8), i++) {
+    for (alias_group_changed(1, 8173156913144094456UL), iter = 0; iter < niters; alias_group_changed(1, 8173156913144094456UL), iter++) {
+         call_lbl_1: calling(1, 3, 0UL, 0UL, 0UL); printf("%d / %d\n", iter + 1, niters);
+        for (alias_group_changed(1, 14823988852069429391UL), i = 1; i < N - 1; alias_group_changed(1, 14823988852069429391UL), i++) {
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
         }
          int *tmp; lbl_6: register_stack_var("main|tmp|0", "i32*", &tmp, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } tmp = curr;
         curr = next;
         next = tmp;
 
-        alias_group_changed(3, 6, 7, 10); call_lbl_0: calling(0); checkpoint();
+        alias_group_changed(3, 672423825553678236UL, 11429982917709284407UL, 16338607484037732862UL); call_lbl_2: calling(2, 1, 9UL); checkpoint();
     }
 
-     FILE *fp; lbl_7: register_stack_var("main|fp|0", "%struct.__sFILE*", &fp, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } lbl_8: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp", 29); exit(1); } } } fp = fopen("dump.out", "w");
-    for (alias_group_changed(4, 8, 11, 13, 14), i = 0; i < N; alias_group_changed(1, 8), i++) {
-        fprintf(fp, "%d\n", curr[i]);
+     FILE *fp; lbl_7: register_stack_var("main|fp|0", "%struct.__sFILE*", &fp, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } lbl_8: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp", 29); exit(1); } } } call_lbl_3: calling(3, 2, 0UL, 0UL); fp = fopen("dump.out", "w");
+    for (alias_group_changed(2, 13586937894978003756UL, 14823988852069429391UL), i = 0; i < N; alias_group_changed(1, 14823988852069429391UL), i++) {
+         call_lbl_4: calling(4, 3, 8902610496293472766UL, 0UL, 0UL); fprintf(fp, "%d\n", curr[i]);
     }
-    fclose(fp);
+     call_lbl_5: calling(5, 1, 8902610496293472766UL); fclose(fp);
 
-    alias_group_changed(1, -1); free_wrapper(curr, 5);
-    alias_group_changed(1, 5); free_wrapper(next, 5);
-    alias_group_changed(1, 5); rm_stack(); return 0;
+    free_wrapper(curr, 222071294UL);
+    free_wrapper(next, 222071294UL);
+    rm_stack(); return 0;
 }

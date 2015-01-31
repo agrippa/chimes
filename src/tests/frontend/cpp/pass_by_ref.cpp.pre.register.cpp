@@ -34,18 +34,19 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
 extern void init_numdebug(int nstructs, ...);
-extern void calling(int lbl);
+extern void calling(int lbl, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack();
+extern void new_stack(int naliases, ...);
 extern void rm_stack();
 extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, int group);
-extern void free_wrapper(void *ptr, int group);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info,
+        ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void free_wrapper(void *ptr, size_t group);
 
 
 
@@ -1707,7 +1708,7 @@ extern void wait_for_checkpoint();
 extern void foo(int *A);
 
 int main(int argc, char **argv) {
-    init_numdebug(0); new_stack(); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int b; lbl_0: register_stack_var("main|b|0", "i32", &b, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp", 9); exit(1); } } }
-    alias_group_changed(3, 0, 1, 2); foo(&b);
-    alias_group_changed(1, 3); rm_stack(); return b;
+    init_numdebug(0); new_stack(2, 0UL, 16601824331468926401UL); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int b; lbl_0: register_stack_var("main|b|0", "i32", &b, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp", 9); exit(1); } } }
+    alias_group_changed(3, 7922000227646604708UL, 10576370107858932335UL, 11418041643978447586UL); call_lbl_0: calling(0, 1, 5137389963215225702UL); foo(&b);
+    rm_stack(); return b;
 }

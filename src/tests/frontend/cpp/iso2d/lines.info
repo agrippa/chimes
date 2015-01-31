@@ -1,37 +1,27 @@
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 74 5 : { 20, 21, 22 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 5 : { -1, 23 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 85 9 : { 24, 25, 26, 27, 28 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 87 9 : { 41 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 88 9 : { 42 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 89 5 : { 43 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 12 : { 29 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 12 : { 30 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 9 : { 31 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 9 : { -1, 20, 44 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 101 13 : { 23 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 103 5 : { 12, 32 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 105 12 : { 12 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 14 : { 33, 34 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 18 : { 35 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 45 : { 35 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 112 9 : { 23, 36 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 121 9 : { 29, 30, 37 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 44 : { 34 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 125 5 : { 38 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 128 5 : { 39 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 9 : { -1, 45 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 133 5 : { 12, 46 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 136 5 : { 12 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 137 5 : { 12 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 138 14 : { 12, 40 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 140 5 : { 23 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 138 37 : { 40 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 143 5 : { 20, 23 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 52 11 : { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 18 : { 10 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 58 22 : { 11, 13, 14, 15 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 66 13 : { 14, 16, 17, 18, 19 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 58 42 : { 15 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 68 9 : { 12 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 33 : { 10 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 52 26 : { 9 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 74 5 : { 7922000227646604708, 10576370107858932335, 11418041643978447586 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 85 9 : { 672423825553678236, 8902610496293472766, 11429982917709284407, 14823988852069429391, 16654564278629891269 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 12 : { 8173156913144094456 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 12 : { 16338607484037732862 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 12 : { 13586937894978003756 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 9 : { 51957547433273402 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 9 : { 11418041643978447586 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 103 5 : { 17714748287745341607 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 14 : { 11369820039177199885, 12708316208628301745 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 18 : { 9062503232652330034 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 45 : { 9062503232652330034 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 112 9 : { 954117171319216583, 18039174303015298977 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 121 9 : { 13586937894978003756, 15061204265717880351, 16338607484037732862 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 44 : { 11369820039177199885 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 125 5 : { 1546598728562811617 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 128 5 : { 6744916278609090727 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 139 14 : { 14481345762226638720 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 139 37 : { 14481345762226638720 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 144 5 : { 11418041643978447586 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 52 11 : { 1668608693594338710, 1723521694037231019, 1774260903000502561, 4668723452388513663, 4739767882222113836, 6702062687271916872, 8137762494474163293, 8937062216085338630, 12562337459743076599, 15313528982794294028 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 18 : { 17434830636394106522 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 58 22 : { 5882646732977231578, 6426100184594887255, 10696432242702619522, 17434653887013021336 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 66 13 : { 464154522176002481, 2805338933568080779, 10696432242702619522, 11563164395897916128, 13125355028925274437 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 58 42 : { 5882646732977231578 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 68 9 : { 954117171319216583 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 33 : { 17434830636394106522 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 52 26 : { 4739767882222113836 }

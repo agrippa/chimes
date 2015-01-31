@@ -29,6 +29,27 @@ static void mark_matched(int line, int col, const char *filename) {
     already_matched.push_back(loc);
 }
 
+void AliasChangedPass::WrapAroundBlock(const clang::Stmt *block,
+        std::string toPrefix, std::string toAppend) {
+    clang::SourceLocation start = block->getLocStart();
+    clang::SourceLocation end = block->getLocEnd();
+
+    if (clang::isa<clang::CompoundStmt>(block)) {
+        InsertText(start, toPrefix, true, true);
+        InsertTextAfterToken(end, toAppend);
+    } else {
+        std::string block_str;
+        llvm::raw_string_ostream block_stream(block_str);
+        block->printPretty(block_stream, NULL, Context->getPrintingPolicy());
+        block_stream.flush();
+
+        std::stringstream new_block;
+        new_block << toPrefix << block_str << toAppend;
+
+        ReplaceText(end, block_str.size(), new_block.str());
+    }
+}
+
 void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
@@ -45,14 +66,14 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
             mark_matched(start_loc.getLine(), start_loc.getColumn(),
                     start_loc.getFilename());
 
-            std::vector<int> *groups = insertions->get_groups(
+            std::vector<size_t> *groups = insertions->get_groups(
                     start_loc.getLine(), start_loc.getColumn(),
                     start_loc.getFilename());
             std::stringstream ss;
             ss << "alias_group_changed(" << groups->size();
-            for (std::vector<int>::iterator i = groups->begin(),
+            for (std::vector<size_t>::iterator i = groups->begin(),
                     e = groups->end(); i != e; i++) {
-                ss << ", " << *i;
+                ss << ", (size_t)(" << *i << "UL)";
             }
             ss << ")";
 
@@ -95,6 +116,32 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
             insertions->updateMemoryAllocations(inserted_line, inserted_col,
                     ninserted);
         }
+    }
+
+    // Insert braces around all if and for statement bodies
+    switch(s->getStmtClass()) {
+        case clang::Stmt::ForStmtClass: {
+            const clang::ForStmt *f = clang::dyn_cast<clang::ForStmt>(s);
+            assert(f);
+            const clang::Stmt *body = f->getBody();
+            WrapAroundBlock(body, "{ ", " }");
+            break;
+        }
+        case clang::Stmt::IfStmtClass: {
+            const clang::IfStmt *f = clang::dyn_cast<clang::IfStmt>(s);
+            assert(f);
+
+            const clang::Stmt *then = f->getThen();
+            WrapAroundBlock(then, "{ ", " }");
+
+            const clang::Stmt *els = f->getElse();
+            if (els) {
+                WrapAroundBlock(els, "{ ", " }");
+            }
+            break;
+        }
+        default:
+            break;
     }
 
     visitChildren(s);

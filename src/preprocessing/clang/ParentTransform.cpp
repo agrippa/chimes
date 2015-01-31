@@ -12,8 +12,8 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
 
     std::stringstream ss;
     ss << " register_stack_var(\"" << alloc->get_mangled_varname() <<
-        "\", \"" << alloc->get_full_type() << "\", &" <<
-        actual_name << ", " << (alloc->get_type_size_in_bits() / 8)
+        "\", \"" << alloc->get_full_type() << "\", (void *)(&" <<
+        actual_name << "), " << (alloc->get_type_size_in_bits() / 8)
         << ", " << (alloc->get_is_ptr() ? "1" : "0") << ", " <<
         (alloc->get_is_struct() ? "1" : "0") << ", " <<
         alloc->get_num_ptr_fields();
@@ -85,6 +85,13 @@ void ParentTransform::InsertTextAfterToken(clang::SourceLocation start,
         std::string s) {
     rewriter->InsertTextAfterToken(start, s);
     insertions->AppendToDiagnostics("InsertTextAfterToken", start, s, *SM);
+}
+
+
+void ParentTransform::InsertTextAfter(clang::SourceLocation start,
+        std::string s) {
+    rewriter->InsertTextAfter(start, s);
+    insertions->AppendToDiagnostics("InsertTextAfter", start, s, *SM);
 }
 
 void ParentTransform::RemoveText(clang::SourceRange rng) {

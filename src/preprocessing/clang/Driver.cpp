@@ -51,6 +51,18 @@ static llvm::cl::opt<std::string> working_directory("w",
 static llvm::cl::opt<std::string> contains_line_markings("c",
         llvm::cl::desc("Input file contains line markings?"),
         llvm::cl::value_desc("line_markings"));
+static llvm::cl::opt<std::string> func_file("f",
+        llvm::cl::desc("Function info file"),
+        llvm::cl::value_desc("func_info"));
+static llvm::cl::opt<std::string> call_file("k",
+        llvm::cl::desc("Callsite info file"),
+        llvm::cl::value_desc("call_info"));
+static llvm::cl::opt<std::string> exit_file("x",
+        llvm::cl::desc("Function exit info file"),
+        llvm::cl::value_desc("exit_info"));
+static llvm::cl::opt<std::string> reachable_file("r",
+        llvm::cl::desc("Reachable info file"),
+        llvm::cl::value_desc("reachable_info"));
 
 DesiredInsertions *insertions = NULL;
 std::string curr_func;
@@ -241,7 +253,7 @@ private:
 
 static void check_opt(llvm::cl::opt<std::string> s, const char *msg) {
     if (s.size() == 0) {
-        llvm::errs() << *msg << " is required\n";
+        llvm::errs() << std::string(msg) << " is required\n";
         exit(1);
     }
 }
@@ -257,20 +269,28 @@ int main(int argc, const char **argv) {
   check_opt(diag_file, "Diagnostics file");
   check_opt(working_directory, "Working directory");
   check_opt(contains_line_markings, "Line markings flag");
+  check_opt(func_file, "Function file");
+  check_opt(call_file, "Callsite file");
+  check_opt(exit_file, "Exit file");
+  check_opt(reachable_file, "Reachable file");
 
   bool updateFile = true;
   if (contains_line_markings.compare("true") == 0) {
       updateFile = false;
   }
 
-  insertions = new DesiredInsertions(line_info_file.c_str(),
-          struct_file.c_str(), stack_allocs_file.c_str(), heap_file.c_str(),
-          original_file.c_str(), diag_file.c_str(), working_directory.c_str());
-
+  std::hash<std::string> str_hash;
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
           op.getSourcePathList()[0].rfind('/') + 1);
   just_filename = just_filename.substr(0, just_filename.rfind("."));
+
+  insertions = new DesiredInsertions(str_hash(op.getSourcePathList()[0]),
+              line_info_file.c_str(), struct_file.c_str(),
+              stack_allocs_file.c_str(), heap_file.c_str(),
+              original_file.c_str(), diag_file.c_str(),
+              working_directory.c_str(), func_file.c_str(), call_file.c_str(),
+              exit_file.c_str(), reachable_file.c_str());
 
   std::stringstream ss;
 
@@ -284,10 +304,14 @@ int main(int argc, const char **argv) {
    */
   passes.push_back(new Pass(new AliasChangedPass(), ".alias"));
   passes.push_back(new Pass(new MallocPass(), ".malloc"));
-  passes.push_back(new Pass(new CallingPass(), ".calling"));
   passes.push_back(new Pass(new StartExitPass(), ".start"));
   passes.push_back(new Pass(new InitPass(), ".init"));
   passes.push_back(new Pass(new SplitInitsPass(), ".split"));
+  /*
+   * It is required that CallingPass run after SplitInitsPass in case a variable
+   * is initialized with a function call.
+   */
+  passes.push_back(new Pass(new CallingPass(), ".calling"));
   passes.push_back(new Pass(new RegisterStackPass(), ".register"));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
