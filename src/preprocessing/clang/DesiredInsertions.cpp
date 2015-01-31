@@ -14,6 +14,141 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
+std::vector<ReachableInfo> *DesiredInsertions::parseReachable() {
+    std::vector<ReachableInfo> *reachable = new std::vector<ReachableInfo>();
+
+    std::ifstream fp;
+    fp.open(reachable_file, std::ios::in);
+    std::string line;
+
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        size_t container = strtoul(line.substr(0, end).c_str(), NULL, 10);
+        line = line.substr(end + 1);
+
+        size_t child = strtoul(line.c_str(), NULL, 10);
+
+        reachable->push_back(ReachableInfo(container, child));
+    }
+    fp.close();
+    return reachable;
+}
+
+std::vector<FunctionExit> *DesiredInsertions::parseFunctionExits() {
+    std::vector<FunctionExit> *result = new std::vector<FunctionExit>();
+
+    std::ifstream fp;
+    fp.open(exit_file, std::ios::in);
+    std::string line;
+
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        int line_no = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        int col = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        size_t alias = strtoul(line.c_str(), NULL, 10);
+        result->push_back(FunctionExit(line_no, col, alias));
+    }
+
+    std::sort(result->begin(), result->end());
+
+    fp.close();
+
+    return result;
+}
+
+std::vector<FunctionArgumentAliasGroups> *DesiredInsertions::parseFunctions() {
+    std::vector<FunctionArgumentAliasGroups> *functions =
+        new std::vector<FunctionArgumentAliasGroups>();
+
+    std::ifstream fp;
+    fp.open(func_file, std::ios::in);
+    std::string line;
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        if (end == std::string::npos) {
+            std::string funcname = line;
+            functions->push_back(FunctionArgumentAliasGroups(funcname));
+        } else {
+            std::string funcname = line.substr(0, end);
+            line = line.substr(end + 1);
+            FunctionArgumentAliasGroups func(funcname);
+
+            end = line.find(' ');
+            while (end != std::string::npos) {
+                size_t alias_no = strtoul(line.substr(0, end).c_str(), NULL,
+                        10);
+                func.add_alias_no(alias_no);
+                line = line.substr(end + 1);
+                end = line.find(' ');
+            }
+            size_t last_alias_no = strtoul(line.c_str(), NULL, 10);
+            func.add_alias_no(last_alias_no);
+
+            functions->push_back(func);
+        }
+    }
+    fp.close();
+
+    return functions;
+}
+
+std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
+    std::vector<AliasesPassedToCallSite> *callsites =
+        new std::vector<AliasesPassedToCallSite>();
+
+    std::ifstream fp;
+    fp.open(call_file, std::ios::in);
+    std::string line;
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        std::string funcname = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        int line_no = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        int col = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        AliasesPassedToCallSite *callsite;
+        end = line.find(' ');
+        if (end == std::string::npos) {
+            size_t alias = strtoul(line.c_str(), NULL, 10);
+
+            callsite = new AliasesPassedToCallSite(funcname, line_no, col, alias);
+        } else {
+            size_t alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
+            line = line.substr(end + 1);
+
+            callsite = new AliasesPassedToCallSite(funcname, line_no, col, alias);
+
+            end = line.find(' ');
+            while (end != std::string::npos) {
+                size_t alias_no = strtoul(line.substr(0, end).c_str(), NULL, 10);
+                callsite->add_alias_no(alias_no);
+                line = line.substr(end + 1);
+                end = line.find(' ');
+            }
+            size_t last_alias_no = strtoul(line.c_str(), NULL, 10);
+            callsite->add_alias_no(last_alias_no);
+        }
+
+        callsites->push_back(*callsite);
+    }
+    fp.close();
+
+    std::sort(callsites->begin(), callsites->end());
+
+    return callsites;
+}
+
 std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
     std::vector<HeapAlloc *> *allocs = new std::vector<HeapAlloc *>();
 
@@ -22,19 +157,19 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
 
     std::string line;
     while (getline(fp, line)) {
-        int line_no_end = line.find(' ');
+        size_t line_no_end = line.find(' ');
         std::string line_no_str = line.substr(0, line_no_end);
         int line_no = atoi(line_no_str.c_str());
         line = line.substr(line_no_end + 1);
 
-        int col_end = line.find(' ');
+        size_t col_end = line.find(' ');
         std::string col_str = line.substr(0, col_end);
         int col = atoi(col_str.c_str());
         line = line.substr(col_end + 1);
 
-        int group_end = line.find(' ');
+        size_t group_end = line.find(' ');
         std::string group_str = line.substr(0, group_end);
-        int group = atoi(group_str.c_str());
+        size_t group = strtoul(group_str.c_str(), NULL, 10);
         line = line.substr(group_end + 1);
 
         std::string fname;
@@ -53,12 +188,12 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
         if (have_type_info) {
             // have more type info
 
-            int is_elem_ptr_end = line.find(' ');
+            size_t is_elem_ptr_end = line.find(' ');
             std::string is_elem_ptr_str = line.substr(0, is_elem_ptr_end);
             bool is_elem_ptr = (is_elem_ptr_str == "1" ? true : false);
             line = line.substr(is_elem_ptr_end + 1);
 
-            int is_elem_struct_end = line.find(' ');
+            size_t is_elem_struct_end = line.find(' ');
             std::string is_elem_struct_str = line.substr(0, is_elem_struct_end);
             bool is_elem_struct = (is_elem_struct_str == "1" ? true : false);
             line = line.substr(is_elem_struct_end + 1);
@@ -66,21 +201,28 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
             alloc->add_type_info(is_elem_ptr, is_elem_struct);
 
             if (is_elem_struct) {
-                int struct_type_name_end = line.find(' ');
-                std::string struct_type_name = line.substr(0, struct_type_name_end);
-                line = line.substr(struct_type_name_end + 1);
+                size_t struct_type_name_end = line.find(' ');
 
-                std::vector<std::string> *struct_field_ptrs = new std::vector<std::string>();
-                while (1) {
-                    int end = line.find(' ');
-                    if (end == std::string::npos) {
-                        end = line.size();
+                std::string struct_type_name;
+                std::vector<std::string> *struct_field_ptrs =
+                    new std::vector<std::string>();
+                if (struct_type_name_end == std::string::npos) {
+                    struct_type_name = line;
+                } else {
+                    struct_type_name = line.substr(0, struct_type_name_end);
+                    line = line.substr(struct_type_name_end + 1);
+
+                    while (1) {
+                        size_t end = line.find(' ');
+                        if (end == std::string::npos) {
+                            end = line.size();
+                        }
+                        std::string fieldname = line.substr(0, end);
+                        struct_field_ptrs->push_back(fieldname);
+
+                        if (end == line.size()) break;
+                        line = line.substr(end + 1);
                     }
-                    std::string fieldname = line.substr(0, end);
-                    struct_field_ptrs->push_back(fieldname);
-
-                    if (end == line.size()) break;
-                    line = line.substr(end + 1);
                 }
 
                 alloc->add_struct_type_info(struct_type_name, struct_field_ptrs);
@@ -237,11 +379,11 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         int col = atoi(col_str.c_str());
         line = line.substr(col_end + 5);
 
-        std::vector<int> *groups = new std::vector<int>();
+        std::vector<size_t> *groups = new std::vector<size_t>();
         while (1) {
             int group_end = find_group_end(&line);
             std::string group_str = line.substr(0, group_end);
-            int group = atoi(group_str.c_str());
+            size_t group = strtoul(group_str.c_str(), NULL, 10);
             groups->push_back(group);
 
             int next_start = group_end + 2;
@@ -273,7 +415,7 @@ bool DesiredInsertions::contains(int line, int col, const char *filename) {
 }
 
 
-std::vector<int> *DesiredInsertions::get_groups(int line, int col,
+std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,
         const char *filename) {
     std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =

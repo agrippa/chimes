@@ -1,11 +1,11 @@
 #include "type_info.h"
 #include <cstdarg>
 
-extern void malloc_helper(void *new_ptr, size_t nbytes, int group,
+extern void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int has_type_info, int is_ptr, int is_struct,
         int elem_size, int *ptr_field_offsets, int n_ptr_field_offsets);
 
-cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, int group,
+cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
         int has_type_info, ...) {
     cudaError_t err = cudaMalloc(ptr, size);
     if (err != cudaSuccess) {
@@ -27,7 +27,7 @@ cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, int group,
     return cudaSuccess;
 }
 
-cudaError_t cudaFree_wrapper(void *ptr, int group) {
+cudaError_t cudaFree_wrapper(void *ptr, size_t group) {
     cudaError_t err = cudaFree(ptr);
     if (err != cudaSuccess) {
         return err;

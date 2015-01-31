@@ -53,6 +53,7 @@ protected:
         bool insertAfter, bool indent);
     void InsertTextBefore(clang::SourceLocation start, std::string s);
     void InsertTextAfterToken(clang::SourceLocation start, std::string s);
+    void InsertTextAfter(clang::SourceLocation start, std::string s);
     void RemoveText(clang::SourceRange rng);
     void ReplaceText(clang::SourceLocation loc, unsigned len,
             std::string new_str);

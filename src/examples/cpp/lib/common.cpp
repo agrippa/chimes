@@ -33,6 +33,7 @@
 #include <sys/time.h>
 #include "common.h"
 #include <math.h>
+#include <assert.h>
 
 static char *progress_buffer = NULL;
 static int progress_length = -1;
@@ -153,11 +154,14 @@ void init_progress(int length, int goal, int disabled) {
         exit(1);
     }
 
+    fprintf(stderr, "PROGRESS_DISABLED = %d\n", disabled);
+
     progress_disabled = disabled;
 
     if (disabled) return;
 
-    progress_buffer = (char *)malloc(sizeof(char) * length);
+    progress_buffer = (char *)malloc(sizeof(char) * (length + 3));
+    assert(progress_buffer != NULL);
     progress_length = length;
     progress_goal = goal;
     progress_num_ticks = 0;

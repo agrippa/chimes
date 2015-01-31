@@ -11,9 +11,13 @@
 #include "llvm/IR/IntrinsicInst.h"
 #include "llvm/IR/Operator.h"
 
+#include "ValueVisitor.h"
+
 #include <stdio.h>
 #include <set>
 #include <sstream>
+#include <functional>
+#include <cxxabi.h>
 
 using namespace llvm;
 
@@ -29,7 +33,7 @@ namespace {
 
     typedef struct _GroupsModifiedAtLine {
         SimpleLoc loc;
-        std::set<int> *groups;
+        std::set<size_t> *groups;
     } GroupsModifiedAtLine;
 
     typedef struct _StackAllocInfo {
@@ -60,27 +64,39 @@ namespace {
         std::vector<CallInfo *> *passed;
     } FunctionInfo;
 
-    struct AliasSetGroup {
-        std::vector<int> group;
+    class ReachableInfo {
+        public:
+            ReachableInfo(std::map<size_t, size_t> set_contains,
+                    std::map<Value *, size_t> set_value_to_alias_group) :
+                contains(set_contains),
+                value_to_alias_group(set_value_to_alias_group) {}
 
-        void addAliasSet(int set);
-        void mergeAliasSet(AliasSetGroup *other);
-        bool contains(int set);
+            std::map<size_t, size_t> get_contains() {
+                return contains;
+            }
+
+            std::map<Value *, size_t> get_value_to_alias_group() {
+                return value_to_alias_group;
+            }
+
+            size_t get_aliases_stored_in(size_t alias) {
+                assert(contains.find(alias) != contains.end());
+                return contains[alias];
+            }
+
+        private:
+            std::map<size_t, size_t> contains;
+            std::map<Value *, size_t> value_to_alias_group;
     };
 
     struct Play : public ModulePass {
         static char ID;
-        std::map<std::string, FunctionInfo *> functions;
-        std::map<Value *, int> value_to_alias_group;
-        std::vector<AliasSetGroup *> alias_groups;
-        int ngroups;
         std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
         std::map<std::string, SimpleLoc *> *function_to_start_line = NULL;
         std::map<std::string, std::string> *function_to_demangled = NULL;
         std::map<Function *, bool> can_call_checkpoint;
 
         explicit Play(): ModulePass(ID) {
-            // errs() << "Initializing Play\n";
         }
 
         bool runOnModule(Module &M) override;
@@ -90,33 +106,38 @@ namespace {
         }
 
     private:
-        int InitializeAliasGroups(AliasAnalysis *AA);
-        void traverse(BasicBlock &curr, std::vector<std::string> visited);
-        void gatherCallSites(Module &M);
-        void combineAliasSetGroups(int merge_into, int merge_from);
-        int searchDownUsesForAliasSetGroup(Value *val);
-        int searchDownUsesForAliasSetGroupHelper(Value *val, Value *parent,
-                int nesting, std::set<Value *> *visited);
-        int searchForValueInKnownAliases(Value *val);
-        int iterateOverUses(Value *val, int nesting,
-                std::set<Value *> *visited);
-        void mergeAliasGroupsInterprocedurally();
-        void printAliasGroupings();
-        void unifyAliasGroupings();
-        void printValueMappings();
-        void collectLineToGroupsMapping(Module &M);
-        void printLineToGroupsMapping();
+        std::hash<std::string> str_hash;
+
+        std::map<Value *, size_t> InitializeAliasGroups(Module &M,
+                AliasAnalysis *AA);
+        void printFunctions(Module &M);
+        void printValuesAndAliasGroups(
+                std::map<Value *, size_t> value_to_alias_group);
+        void dumpFunctionArgumentsToAliasMappings(Module &M,
+                const char *filename, std::map<Value *, size_t> value_to_alias_group);
+        // size_t searchDownUsesForAliasSetGroup(Value *val, std::string fname);
+        // size_t searchDownUsesForAliasSetGroupHelper(Value *val, Value *parent,
+        //         int nesting, std::set<Value *> *visited, std::string fname);
+        size_t searchForValueInKnownAliases(Value *val,
+                std::map<Value *, size_t> value_to_alias_group, bool force = true);
+        // size_t iterateOverUses(Value *val, int nesting,
+        //         std::set<Value *> *visited, std::string fname);
+        void collectLineToGroupsMapping(Module &M,
+                std::map<Value *, size_t> value_to_alias_group);
         void collectLineToGroupsMappingInFunction(BasicBlock *bb,
-                std::set<BasicBlock *> &visited, std::string filename);
+                std::set<BasicBlock *> &visited, std::string filename,
+                std::map<Value *, size_t> value_to_alias_group);
         void unionGroups(int line, int col,
-                std::string filename, std::set<int> *groups);
+                std::string filename, std::set<size_t> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
 
         void findStackAllocations(Module &M, const char *output_file,
                 const char *struct_info_filename);
         SimpleLoc *findStartingLineForFunction(Function *F, Module &M);
-        void findHeapAllocations(Module &M, const char *output_file);
-        int searchUpDefsForAliasSetGroup(Value *val, int nesting);
+        void findHeapAllocations(Module &M, const char *output_file,
+                std::map<Value *, size_t> value_to_alias_group);
+        // size_t searchUpDefsForAliasSetGroup(Value *val, int nesting,
+        //         std::string fname);
         std::map<std::string, std::vector<std::string>> *getStructFieldNames(
                 Module &M);
         void dumpStructInfoToFile(const char *filename, std::map<std::string,
@@ -126,160 +147,48 @@ namespace {
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
         std::string *get_unique_varname(std::string varname, Function *F,
                 std::set<std::string> *found_variables, Module &M);
-        std::map<int, std::vector<int> *> *findReachable(Module &M);
+        // ReachableInfo findReachable(Module &M);
+        void printReachable(ReachableInfo &R);
+        void dumpReachable(ReachableInfo &R, const char *filename);
         void handleHostAllocation(CallInst *callInst, Function *callee,
                 FILE *fp, std::set<int> &found_mallocs,
-                std::map<std::string, std::vector<std::string>> *structFields);
+                std::map<std::string, std::vector<std::string>> *structFields,
+                std::string fname,
+                std::map<Value *, size_t> value_to_alias_group);
         void handleDeviceAllocation(CallInst *callInst, Function *callee,
                 FILE *fp, std::set<int> &found_mallocs,
                 std::map<std::string, std::vector<std::string>> *structFields);
+        // void add_value_to_alias_mapping(Value *val, size_t alias_id,
+        //         std::string fname, bool accept_zero = false);
+        size_t get_hash_for(Function *F, int alias_set);
+        void dumpCallSiteAliases(Module &M, const char *filename,
+                std::map<Value *, size_t> value_to_alias_group);
+        bool isConstantGlobal(Value *val);
+        ReachableInfo propagateAliases(Module &M,
+                std::map<Value *, size_t> initial_value_to_alias_group);
+        std::set<Value *> *collectInitialInstructionsToVisit(Module &M);
+        std::map<Value *, size_t> *collectInitialAliasMappings(Module &M);
+        void findFunctionExits(Module &M, const char *output_file,
+                std::map<Value *, size_t> value_to_alias_group);
     };
 }
 
 char Play::ID = 0;
 static RegisterPass<Play> X("play", "Play Pass");
 
-static FunctionInfo *createFunctionInfo(Function *F) {
-    FunctionInfo *finfo = (FunctionInfo *)malloc(sizeof(FunctionInfo));
-    finfo->func = F;
-    finfo->arguments = new std::vector<Argument *>();
-    finfo->passed = new std::vector<CallInfo *>();
-
-    for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end(); i != e;
-            i++) {
-        Argument &arg = *i;
-        finfo->arguments->push_back(&arg);
-    }
-
-    return finfo;
-}
-
-static CallInfo *createCallInfo(Function *caller, CallInst *call) {
-    CallInfo *callsite = (CallInfo *)malloc(sizeof(CallInfo));
-    callsite->caller = caller;
-    callsite->passed = new std::vector<Value *>();
-
-    for (unsigned int i = 0; i < call->getNumArgOperands(); i++) {
-        Value *arg = call->getArgOperand(i);
-        callsite->passed->push_back(arg);
-    }
-
-    return callsite;
-}
-
-void AliasSetGroup::addAliasSet(int set) {
-    assert(std::find(group.begin(), group.end(), set) == group.end());
-    group.push_back(set);
-}
-
-void AliasSetGroup::mergeAliasSet(AliasSetGroup *other) {
-    for (std::vector<int>::iterator iter = other->group.begin(),
-            e = other->group.end(); iter != e; iter++) {
-        addAliasSet(*iter);
-    }
-}
-
-bool AliasSetGroup::contains(int set) {
-    return std::find(group.begin(), group.end(), set) != group.end();
-}
-
-void Play::combineAliasSetGroups(int merge_into, int merge_from) {
-    AliasSetGroup *target = NULL;
-    AliasSetGroup *src = NULL;
-
-    for (std::vector<AliasSetGroup *>::iterator iter = alias_groups.begin(),
-            e = alias_groups.end(); iter != e; iter++) {
-        AliasSetGroup *group = *iter;
-        if (group->contains(merge_into)) {
-            target = group;
-        }
-        if (group->contains(merge_from)) {
-            src = group;
-        }
-    }
-
-    assert(target != NULL);
-    assert(src != NULL);
-
-    if (target == src) return;
-
-    target->mergeAliasSet(src);
-    std::vector<AliasSetGroup *>::iterator to_remove = std::find(
-            alias_groups.begin(), alias_groups.end(), src);
-    assert(to_remove != alias_groups.end());
-    alias_groups.erase(to_remove);
-    delete src;
-}
-
-void Play::traverse(BasicBlock &curr, std::vector<std::string> visited) {
-    TerminatorInst *term = curr.getTerminator();
-
-    visited.push_back(curr.getName().str());
-
-    errs() << "    BB " << curr.getName().str() << " -> ";
-    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-        BasicBlock *child = term->getSuccessor(i);
-        if (i > 0) errs() << ", ";
-        errs() << child->getName().str();
-    }
-    errs() << "\n";
-
-    for (BasicBlock::iterator i = curr.begin(), e = curr.end(); i != e; ++i) {
-        Instruction &inst = *i;
-        if (CallInst *callInst = dyn_cast<CallInst>(&inst)) {
-            Function *callee = callInst->getCalledFunction();
-            if (callee) {
-                errs() << "      calls " << callee->getName().str() <<
-                    " with " << callInst->getNumArgOperands() << " operands\n";
-
-                std::map<std::string, FunctionInfo *>::iterator it =
-                    functions.find(callee->getName().str());
-                if (it != functions.end()) {
-                    FunctionInfo *finfo = it->second;
-                    CallInfo *site = createCallInfo(curr.getParent(), callInst);
-                    assert(site->passed->size() == finfo->arguments->size());
-                    finfo->passed->push_back(site);
-                }
-
-                if (strcmp(callee->getName().str().c_str(), "malloc") == 0) {
-                    errs() << "        IMPORTANT\n";
-                    for (Value::use_iterator use_iter = callInst->use_begin(),
-                            e = callInst->use_end(); use_iter != e; use_iter++) {
-
-                        if (Instruction *inst_user = dyn_cast<Instruction>((&*use_iter)->getUser())) {
-                            errs() << "        Found a user of " << *callInst <<
-                                ": " << *inst_user << "\n";
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-        BasicBlock *child = term->getSuccessor(i);
-
-        if (std::find(visited.begin(), visited.end(), child->getName().str()) ==
-                visited.end()) {
-            traverse(*child, visited);
-        }
-    }
-}
-
-void Play::gatherCallSites(Module &M) {
+void Play::printFunctions(Module &M) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        if (F == NULL) {
-            // errs() << "  Skipping null function...\n";
-        } else {
+        if (F != NULL && !F->empty()) {
             Function::BasicBlockListType &bblist = F->getBasicBlockList();
             Function::ArgumentListType &arglist = F->getArgumentList();
             errs() << "  Function " << F->getName().str() << ": " <<
                 bblist.size()  << " basic blocks and " << arglist.size() <<
                 " args\n";
             errs() << "    Takes ";
-            for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end(); i != e; i++) {
+            for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end();
+                    i != e; i++) {
                 Argument &arg = *i;
                 if (i != F->arg_begin()) {
                     errs() << ", ";
@@ -287,19 +196,291 @@ void Play::gatherCallSites(Module &M) {
                 errs() << arg.getName() << "(" << *arg.getType() << ")";
             }
             errs() << "\n";
+        }
+    }
+    errs() << "\n";
+}
 
-            functions[F->getName().str()] = createFunctionInfo(F);
+void Play::printValuesAndAliasGroups(
+        std::map<Value *, size_t> value_to_alias_group) {
+    for (std::map<Value *, size_t>::iterator i = value_to_alias_group.begin(),
+            e = value_to_alias_group.end(); i != e; i++) {
+        Value *val = i->first;
+        size_t alias = i->second;
 
-            if (bblist.size() > 0) {
-                std::vector<std::string> visited;
-                traverse(F->getEntryBlock(), visited);
+        errs() << *val << " [" << alias << "]\n";
+    }
+    errs() << "\n";
+}
+
+void Play::dumpReachable(ReachableInfo &reachable, const char *filename) {
+    FILE *fp = fopen(filename, "w");
+
+    std::map<size_t, size_t> contains = reachable.get_contains();
+    for (std::map<size_t, size_t>::iterator i =
+            contains.begin(), e = contains.end(); i != e; i++) {
+        size_t container = i->first;
+        size_t children = i->second;
+
+        fprintf(fp, "%lu %lu\n", container, children);
+    }
+    fclose(fp);
+}
+
+void Play::printReachable(ReachableInfo &reachable) {
+    errs() << "Storing:\n";
+    std::map<size_t, size_t> contains = reachable.get_contains();
+    for (std::map<size_t, size_t>::iterator i =
+            contains.begin(), e = contains.end(); i != e; i++) {
+        size_t dst = i->first;
+        size_t dst_contains = i->second;
+        errs() << "  " << dst << " -> { " << dst_contains << " }\n";
+    }
+    errs() << "\n";
+}
+
+std::set<Value *> *Play::collectInitialInstructionsToVisit(Module &M) {
+    std::set<Value *> *result = new std::set<Value *>();
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+        if (F != NULL && !F->empty()) {
+            Function::BasicBlockListType &bblist = F->getBasicBlockList();
+            for (Function::BasicBlockListType::iterator bb_iter =
+                    bblist.begin(), bb_end = bblist.end(); bb_iter != bb_end;
+                    bb_iter++) {
+                BasicBlock *bb = &*bb_iter;
+                for (BasicBlock::iterator i = bb->begin(), e = bb->end();
+                        i != e; ++i) {
+                    Instruction *inst = &*i;
+                    if (ReturnInst *ret = dyn_cast<ReturnInst>(inst)) {
+                        if (ret->getReturnValue() != NULL &&
+                                ret->getReturnValue()->getType()->isPointerTy()) {
+                            result->insert(inst);
+                        }
+                    } else if (StoreInst *store = dyn_cast<StoreInst>(inst)) {
+                        result->insert(store);
+                    } else if (LoadInst *load = dyn_cast<LoadInst>(inst)) {
+                        result->insert(load);
+                    } else if (CallInst *call = dyn_cast<CallInst>(inst)) {
+                        /*
+                         * Need to visit all calls because they can have side
+                         * effects on passed-by-reference parameters
+                         */
+                        if (!isa<DbgInfoIntrinsic>(call)) {
+                            result->insert(call);
+                        }
+                    }
+                }
             }
         }
     }
+
+    return result;
 }
 
-int Play::searchForValueInKnownAliases(Value *val) {
-    for (std::map<Value *, int>::iterator value_iter =
+std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
+    std::map<Value *, size_t> *mappings = new std::map<Value *, size_t>();
+
+    for (Module::iterator i = M.begin(), e = M.end(); i != e; i++) {
+        Function *F = &*i;
+        
+        for (Function::arg_iterator ai = F->arg_begin(), ae = F->arg_end();
+                ai != ae; ai++) {
+            Argument *A = &*ai;
+            assert(mappings->find(A) == mappings->end());
+            (*mappings)[A] = str_hash(A->getName().str());
+        }
+
+        for (Function::iterator bi = F->begin(), be = F->end(); bi != be; bi++) {
+            BasicBlock *BB = &*bi;
+            for (BasicBlock::iterator ii = BB->begin(), ie = BB->end();
+                    ii != ie; ii++) {
+                Instruction *insn = &*ii;
+                if (isa<AllocaInst>(insn)) {
+                    (*mappings)[insn] = str_hash(insn->getName().str());
+                }
+            }
+        }
+    }
+
+    // Conservatively place globals with the same type into the same alias group
+    std::map<Type *, size_t> global_type_to_alias;
+    errs() << M.getGlobalList().size() << " global(s)\n";
+    for (Module::global_iterator i = M.global_begin(), e = M.global_end();
+            i != e; i++) {
+        GlobalValue *G = &*i;
+        assert(mappings->find(G) == mappings->end());
+
+        if (global_type_to_alias.find(G->getType()) == global_type_to_alias.end()) {
+            size_t alias = str_hash(G->getName().str());
+            (*mappings)[G] = alias;
+            global_type_to_alias[G->getType()] = alias;
+        } else {
+            (*mappings)[G] = global_type_to_alias[G->getType()];
+        }
+    }
+
+    return mappings;
+}
+
+ReachableInfo Play::propagateAliases(Module &M,
+        std::map<Value *, size_t> initial_value_to_alias_group) {
+    std::set<Value *> *initial = collectInitialInstructionsToVisit(M);
+    std::map<Value *, size_t> *initial_alias_mappings = collectInitialAliasMappings(M);
+
+    ValueVisitor visitor(initial, initial_alias_mappings);
+
+    visitor.driver();
+
+    return ReachableInfo(visitor.get_contains(),
+            visitor.get_value_to_alias_group());
+}
+
+bool Play::isConstantGlobal(Value *val) {
+    if (isa<GlobalValue>(val)) {
+        return true;
+    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+        return isConstantGlobal(getele->getPointerOperand());
+     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
+         return isConstantGlobal(load->getPointerOperand());
+    } else {
+        return false;
+    }
+}
+
+static std::string demangledFunctionName(std::string fname) {
+    std::string result;
+
+    if (fname.size() > 2 && fname[0] == '_' && fname[1] == 'Z') {
+        int status;
+        // Mangled function name
+        char *demangled = abi::__cxa_demangle(fname.c_str(), NULL, NULL,
+                &status);
+#ifdef VERBOSE
+        if (status) {
+            errs() << "Failed to demangle " << fname << "\n";
+        }
+#endif
+        assert(status == 0);
+
+        char *end = strchr(demangled, '(');
+        *end = '\0';
+        result = std::string(demangled);
+        free(demangled);
+    } else {
+        result = fname;
+    }
+
+    return result;
+}
+
+void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
+        const char *filename, std::map<Value *, size_t> value_to_alias_group) {
+    FILE *fp = fopen(filename, "w");
+    assert(fp);
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        if (F != NULL && !F->empty()) {
+            std::string demangled = demangledFunctionName(F->getName().str());
+            fprintf(fp, "%s", demangled.c_str());
+
+            for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end();
+                    i != e; i++) {
+                Argument *arg = &*i;
+
+                if (arg->getType()->isPointerTy()) {
+                    size_t alias_no = searchForValueInKnownAliases(arg,
+                            value_to_alias_group);
+                    assert(alias_no > 0);
+
+                    fprintf(fp, " %lu", alias_no);
+                } else {
+                    // Argument is not a pointer
+                    fprintf(fp, " 0");
+                }
+            }
+            fprintf(fp, "\n");
+        }
+    }
+    fclose(fp);
+}
+
+void Play::dumpCallSiteAliases(Module &M, const char *filename,
+        std::map<Value *, size_t> value_to_alias_group) {
+    FILE *fp = fopen(filename, "w");
+    assert(fp);
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        if (F != NULL && !F->empty()) {
+            Function::BasicBlockListType &bblist = F->getBasicBlockList();
+            for (Function::BasicBlockListType::iterator bb_iter =
+                    bblist.begin(), bb_end = bblist.end(); bb_iter != bb_end;
+                    bb_iter++) {
+                BasicBlock *bb = &*bb_iter;
+                for (BasicBlock::iterator i = bb->begin(), e = bb->end();
+                        i != e; ++i) {
+                    Instruction &inst = *i;
+                    if (isa<CallInst>(&inst) && !isa<DbgInfoIntrinsic>(&inst)) {
+                        CallInst *call = dyn_cast<CallInst>(&inst);
+                        assert(call != NULL);
+
+                        Function *callee = call->getCalledFunction();
+                        if (callee == NULL) continue;
+
+                        int line = inst.getDebugLoc().getLine();
+                        int col = inst.getDebugLoc().getCol();
+                        std::string name = callee->getName().str();
+
+                        size_t return_alias = 0;
+                        if (callee->getReturnType()->isPointerTy()) {
+                            /*
+                             * If a function's return value is unused,
+                             * return_alias will be zero.
+                             */
+                            return_alias = searchForValueInKnownAliases(
+                                    call, value_to_alias_group, false);
+                        }
+
+                        fprintf(fp, "%s %d %d %lu", name.c_str(), line, col,
+                                return_alias);
+
+                        for (unsigned i = 0; i < call->getNumArgOperands();
+                                i++) {
+                            Value *param = call->getArgOperand(i);
+                            if (param->getType()->isPointerTy()) {
+                                size_t alias_no = searchForValueInKnownAliases(
+                                        param, value_to_alias_group);
+                                assert(alias_no > 0);
+
+                                fprintf(fp, " %lu", alias_no);
+                            } else {
+                                fprintf(fp, " 0");
+                            }
+                        }
+                        fprintf(fp, "\n");
+                    }
+                }
+            }
+        }
+    }
+
+    fclose(fp);
+}
+
+size_t Play::get_hash_for(Function *F, int alias_set) {
+    std::stringstream ss;
+    ss << F->getName().str() << alias_set;
+    return str_hash(ss.str());
+}
+
+size_t Play::searchForValueInKnownAliases(Value *val,
+        std::map<Value *, size_t> value_to_alias_group, bool force) {
+    for (std::map<Value *, size_t>::iterator value_iter =
             value_to_alias_group.begin(), value_end =
             value_to_alias_group.end(); value_iter != value_end;
             value_iter++) {
@@ -307,309 +488,198 @@ int Play::searchForValueInKnownAliases(Value *val) {
             return value_iter->second;
         }
     }
-
-    /*
-     * Constants (e.g. const char * passed to printf) are never modified and are
-     * auto-loaded by the program. However, not assigning them an alias group
-     * leads the application to think it can't find an alias for certain
-     * instructions. Instead, we assign a dummy group to these constants which
-     * is never referenced.
-     */
-    if (isa<GlobalValue>(val)) {
-#ifdef VERBOSE
-        errs() << "Adding " << *val << " as group " << ngroups << "\n";
-#endif
-        int group = ngroups++;
-        value_to_alias_group[val] = group;
-        return group;
+    if (force) {
+        errs() << *val << "\n";
+        assert(false);
     }
-
-    return -1;
+    return 0;
 }
 
-int Play::iterateOverUses(Value *val, int nesting, std::set<Value *> *visited) {
-#ifdef VERBOSE
-    for (Value::use_iterator use_iter = val->use_begin(),
-            use_end = val->use_end(); use_iter != use_end;
-            use_iter++) {
-        Use& use = *use_iter;
-        errs() << "  Has use \"" << *use.getUser() << "\"\n";
-    }
-#endif
+// size_t Play::iterateOverUses(Value *val, int nesting,
+//         std::set<Value *> *visited, std::string fname) {
+// #ifdef VERBOSE
+//     for (Value::use_iterator use_iter = val->use_begin(),
+//             use_end = val->use_end(); use_iter != use_end;
+//             use_iter++) {
+//         Use& use = *use_iter;
+//         errs() << "  Has use \"" << *use.getUser() << "\"\n";
+//     }
+// #endif
+// 
+//     for (Value::use_iterator use_iter = val->use_begin(),
+//             use_end = val->use_end(); use_iter != use_end;
+//             use_iter++) {
+//         Use& use = *use_iter;
+// 
+//         size_t foundUse = searchDownUsesForAliasSetGroupHelper(use.getUser(),
+//                 val, nesting, visited, fname);
+//         if (foundUse != 0) return foundUse;
+//     }
+// 
+//     return 0;
+// }
 
-    for (Value::use_iterator use_iter = val->use_begin(),
-            use_end = val->use_end(); use_iter != use_end;
-            use_iter++) {
-        Use& use = *use_iter;
+// size_t Play::searchDownUsesForAliasSetGroup(Value *val, std::string fname) {
+//     std::set<Value *> visited;
+//     assert(false);
+// 
+//     size_t foundThis = searchForValueInKnownAliases(val);
+//     if (foundThis != 0) {
+//         return foundThis;
+//     }
+//     return iterateOverUses(val, 0, &visited, fname);
+// }
 
-        int foundUse = searchDownUsesForAliasSetGroupHelper(use.getUser(), val,
-                nesting, visited);
-        if (foundUse != -1) return foundUse;
-    }
+// size_t Play::searchDownUsesForAliasSetGroupHelper(Value *val, Value *parent,
+//         int nesting, std::set<Value *> *visited, std::string fname) {
+// #ifdef VERBOSE
+//     errs() << "Searching down use chains for group of: \"" << *val <<
+//         "\" nesting=" << nesting << "\n";
+// #endif
+// 
+//     if (visited->find(val) != visited->end()) return 0;
+//     visited->insert(val);
+// 
+//     if (nesting == 0) {
+//         size_t foundThis = searchForValueInKnownAliases(val);
+//         if (foundThis != 0) {
+// #ifdef VERBOSE
+//             errs() << "  Found group for \"" << *val << "\"\n";
+// #endif
+//             return foundThis;
+//         }
+//     }
+// 
+//     if (StoreInst *store = dyn_cast<StoreInst>(val)) {
+// #ifdef VERBOSE
+//         errs() << "  Is a store with pointer \"" << *store->getPointerOperand() << "\"\n";
+// #endif
+// //         if (store->getPointerOperand() == parent) {
+// //             /*
+// //              * If this use chain ends with a store to the location we are
+// //              * tracking, that doesn't allow us to find an alias.
+// //              */
+// //             return 0;
+// //         } else if (store->getValueOperand() == parent) {
+// //             //TODO
+// //         } else {
+// // #ifdef VERBOSE
+// //         errs() << "  Parent is " << *parent << "\n";
+// // #endif
+// //             assert(false);
+// //         }
+//         return searchDownUsesForAliasSetGroupHelper(store->getPointerOperand(),
+//                 NULL, nesting + 1, visited, fname);
+//     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
+// #ifdef VERBOSE
+//         errs() << "  Is a load with pointer \"" << *load->getPointerOperand() <<
+//             "\", nesting=" << nesting << "\n";
+// #endif
+//         return iterateOverUses(val, nesting - 1, visited, fname);
+//     } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+// #ifdef VERBOSE
+//         errs() << "  Is a getelementptr with pointer \"" <<
+//             *getele->getPointerOperand() << "\"\n";
+// #endif
+//         return iterateOverUses(val, nesting, visited, fname);
+//     } else if (CallInst *call = dyn_cast<CallInst>(val)) {
+// #ifdef VEROSE
+//         errs() << "  Is a call with " << call->getNumArgOperands() <<
+//             " arguments\n";
+// #endif
+//         if (parent != NULL && call->getCalledFunction() != NULL) {
+//             unsigned int arg_index = 0;
+//             for (; arg_index < call->getNumArgOperands(); arg_index++) {
+//                 if (call->getArgOperand(arg_index) == parent) {
+//                     break;
+//                 }
+//             }
+//             assert(arg_index < call->getNumArgOperands());
+// 
+//             Function *callee = call->getCalledFunction();
+//             Argument *arg = NULL;
+//             unsigned int count_args = 0;
+//             for (Function::arg_iterator i = callee->arg_begin(),
+//                     e = callee->arg_end(); i != e; i++) {
+//                 if (count_args == arg_index) {
+//                     arg = i;
+//                     break;
+//                 }
+//                 count_args++;
+//             }
+//             if (arg == NULL) {
+//                 assert(callee->isVarArg());
+//                 return 0;
+//             } else {
+//                 return searchDownUsesForAliasSetGroupHelper(arg, NULL, nesting,
+//                         visited, fname);
+//             }
+//         } else {
+//             return 0;
+//         }
+//     } else {
+//         return iterateOverUses(val, nesting, visited, fname);
+//     }
+//     
+//     return 0;
+// }
 
-    return -1;
-}
+std::map<Value *, size_t> Play::InitializeAliasGroups(Module &M,
+        AliasAnalysis *AA) {
+    std::map<Value *, size_t> initial_value_to_alias_group;
 
-int Play::searchDownUsesForAliasSetGroup(Value *val) {
-    std::set<Value *> visited;
+    // For each function declared here
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
 
-    int foundThis = searchForValueInKnownAliases(val);
-    if (foundThis != -1) {
-        return foundThis;
-    }
-    return iterateOverUses(val, 0, &visited);
-    // return searchDownUsesForAliasSetGroupHelper(val, NULL, 0, &visited);
-}
+        if (F != NULL && !F->empty()) {
+            int count_alias_sets = 0;
 
-int Play::searchDownUsesForAliasSetGroupHelper(Value *val, Value *parent,
-        int nesting, std::set<Value *> *visited) {
-#ifdef VERBOSE
-    errs() << "Searching down use chains for group of: \"" << *val <<
-        "\" nesting=" << nesting << "\n";
-#endif
+            // Construct alias sets
+            AliasSetTracker *AST = new AliasSetTracker(*AA);
+            for (inst_iterator I = inst_begin(F),
+                    E = inst_end(F); I != E; ++I) {
+                AST->add(&*I);
+            }
 
-    if (visited->find(val) != visited->end()) return -1;
-    visited->insert(val);
+            // Iterate over alias sets within F
+            for (ilist<AliasSet>::iterator iter = AST->begin(),
+                    e = AST->end(); iter != e; iter++) {
+                AliasSet &set = *iter;
+                /*
+                 * Calculate a hash for this function-local alias set and
+                 * associate all values with it
+                 */
+                size_t hash = get_hash_for(F, count_alias_sets++);
 
-    if (nesting == 0) {
-        int foundThis = searchForValueInKnownAliases(val);
-        if (foundThis != -1) {
-#ifdef VERBOSE
-            errs() << "  Found group for \"" << *val << "\"\n";
-#endif
-            return foundThis;
-        }
-    }
+                // Iterate over aliases in a single alias set
+                for (AliasSet::iterator set_iter = set.begin(), e = set.end();
+                        set_iter != e; set_iter++) {
+                    Value *val = set_iter->getValue();
 
-    if (StoreInst *store = dyn_cast<StoreInst>(val)) {
-#ifdef VERBOSE
-        errs() << "  Is a store with pointer \"" << *store->getPointerOperand() << "\"\n";
-#endif
-        return searchDownUsesForAliasSetGroupHelper(store->getPointerOperand(),
-                NULL, nesting + 1, visited);
-    } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
-#ifdef VERBOSE
-        errs() << "  Is a load with pointer \"" << *load->getPointerOperand() <<
-            "\", nesting=" << nesting << "\n";
-#endif
-        return iterateOverUses(val, nesting - 1, visited);
-        /*
-        if (nesting == 1) {
-            int found = searchForValueInKnownAliases(val);
-#ifdef VERBOSE
-            errs() << "    Found group " << found << " for " << *load << "\n";
-#endif
-            if (found != -1) return found;
+                    assert(hash != 0);
+                    assert(val->getType()->isPointerTy());
 
-            return iterateOverUses(val, nesting - 1, visited);
-        } else {
-            return searchDownUsesForAliasSetGroupHelper(load->getPointerOperand(), NULL,
-                    nesting - 1, visited);
-        }
-        */
-    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
-#ifdef VERBOSE
-        errs() << "  Is a getelementptr with pointer \"" <<
-            *getele->getPointerOperand() << "\"\n";
-#endif
-        return iterateOverUses(val, nesting, visited);
-        // return searchDownUsesForAliasSetGroupHelper(getele->getPointerOperand(),
-        //         NULL, nesting, visited);
-    } else if (CallInst *call = dyn_cast<CallInst>(val)) {
-#ifdef VEROSE
-        errs() << "  Is a call with " << call->getNumArgOperands() <<
-            " arguments\n";
-#endif
-        if (parent != NULL && call->getCalledFunction() != NULL) {
-            unsigned int arg_index = 0;
-            for (; arg_index < call->getNumArgOperands(); arg_index++) {
-                if (call->getArgOperand(arg_index) == parent) {
-                    break;
+                    initial_value_to_alias_group[val] = hash;
                 }
             }
-            assert(arg_index < call->getNumArgOperands());
 
-            Function *callee = call->getCalledFunction();
-            Argument *arg = NULL;
-            unsigned int count_args = 0;
-            for (Function::arg_iterator i = callee->arg_begin(),
-                    e = callee->arg_end(); i != e; i++) {
-                if (count_args == arg_index) {
-                    arg = i;
-                    break;
-                }
-                count_args++;
-            }
-            if (arg == NULL) {
-                assert(callee->isVarArg());
-                return -1;
-            } else {
-                return searchDownUsesForAliasSetGroupHelper(arg, NULL, nesting,
-                        visited);
-            }
-        } else {
-            return -1;
+            delete AST;
         }
-    } else {
-        return iterateOverUses(val, nesting, visited);
     }
-    
-    return -1;
+
+    return initial_value_to_alias_group;
 }
 
-int Play::InitializeAliasGroups(AliasAnalysis *AA) {
-    int set_count = 0;
-    for (std::map<std::string, FunctionInfo *>::iterator it =
-            functions.begin(), e = functions.end(); it != e; it++) {
-        std::string funcname = it->first;
-        FunctionInfo *info = it->second;
-
-        AliasSetTracker *AST = new AliasSetTracker(*AA);
-        for (inst_iterator I = inst_begin(info->func),
-                E = inst_end(info->func); I != E; ++I) {
-            AST->add(&*I);
-        }
-
-        errs() << "Have " << info->passed->size() <<
-            " call sites for " << funcname << "\n";
-        // Iterate over alias sets within info->func
-        for (ilist<AliasSet>::iterator iter = AST->begin(),
-                e = AST->end(); iter != e; iter++) {
-            AliasSet &set = *iter;
-            errs() << "  alias set " << set_count << " -> { ";
-            // Iterate over aliases in a single alias set
-            for (AliasSet::iterator set_iter = set.begin(), e = set.end(); set_iter != e; set_iter++) {
-                Value *val = set_iter->getValue();
-                uint64_t size = set_iter->getSize();
-                if (set_iter != set.begin()) errs() << ", ";
-                errs() << "(" << *val << ", " << size << ")";
-
-                value_to_alias_group[val] = set_count;
-            }
-            errs() << " }\n";
-
-            AliasSetGroup *group = new AliasSetGroup();
-            group->addAliasSet(set_count);
-            alias_groups.push_back(group);
-
-            set_count++;
-        }
-        errs() << "  " << AST->getAliasSets().size() << " alias sets\n";
-
-        delete AST;
-    }
-    errs() << "\n";
-
-    return set_count;
-}
-
-void Play::mergeAliasGroupsInterprocedurally() {
-    for (std::map<std::string, FunctionInfo *>::iterator it =
-            functions.begin(), e = functions.end(); it != e; it++) {
-        FunctionInfo *info = it->second;
-        std::vector<Argument *> *arguments = info->arguments;
-
-        for (std::vector<CallInfo *>::iterator call_iter =
-                info->passed->begin(), call_end = info->passed->end();
-                call_iter != call_end; call_iter++) {
-            CallInfo *call = *call_iter;
-            assert(call->passed->size() == arguments->size());
-
-            for (unsigned int arg = 0; arg < arguments->size(); arg++) {
-
-                if (!(*arguments)[arg]->getType()->isPointerTy()) continue;
-
-                Argument *arg_in_callee = (*arguments)[arg];
-                Value *passed_in_caller = (*call->passed)[arg];
-
-                int callee_group = searchDownUsesForAliasSetGroup(arg_in_callee);
-#ifdef VERBOSE
-                errs() << "\n";
-#endif
-                int caller_group = searchDownUsesForAliasSetGroup(passed_in_caller);
-#ifdef VERBOSE
-                errs() << "\n";
-#endif
-
-                assert(caller_group != -1);
-                assert(callee_group != -1);
-
-                combineAliasSetGroups(callee_group, caller_group);
-            }
-        }
-    }
-}
-
-void Play::printAliasGroupings() {
-    errs() << alias_groups.size() << " global alias groups:\n";    
-    for (std::vector<AliasSetGroup *>::iterator group_iter =
-            alias_groups.begin(), group_end = alias_groups.end();
-            group_iter != group_end; group_iter++) {
-        AliasSetGroup *group = *group_iter;
-        errs() << "  { ";
-        for (std::vector<int>::iterator set_iter = group->group.begin(),
-                set_end = group->group.end(); set_iter != set_end; set_iter++) {
-            if (set_iter != group->group.begin()) errs() << ", ";
-            errs() << *set_iter;
-        }
-        errs() << " } {";
-
-        int first = 1;
-        for (std::map<Value *, int>::iterator val_iter =
-                value_to_alias_group.begin(), val_end =
-                value_to_alias_group.end(); val_iter != val_end; val_iter++) {
-            if (std::find(group->group.begin(), group->group.end(),
-                        val_iter->second) != group->group.end()) {
-                if (!first) {
-                    errs() << " |";
-                }
-                errs() << *val_iter->first;
-                first = 0;
-            }
-        }
-        errs() << " }\n";
-    }
-}
-
-void Play::unifyAliasGroupings() {
-    std::map<int, int> mapping;
-
-    int count = 0;
-    for (std::vector<AliasSetGroup *>::iterator group_iter =
-            alias_groups.begin(), group_end = alias_groups.end();
-            group_iter != group_end; group_iter++) {
-        AliasSetGroup *group = *group_iter;
-        for (std::vector<int>::iterator set_iter = group->group.begin(),
-                set_end = group->group.end(); set_iter != set_end; set_iter++) {
-            mapping[*set_iter] = count;
-        }
-        count++;
-    }
-
-    std::map<Value *, int> tmp = value_to_alias_group;
-    for (std::map<Value *, int>::iterator value_iter =
-            value_to_alias_group.begin(), value_end =
-            value_to_alias_group.end(); value_iter != value_end;
-            value_iter++) {
-        value_iter->second = mapping[value_iter->second];
-    }
-}
-
-void Play::printValueMappings() {
-    errs() << "\n" << value_to_alias_group.size() << " values:\n";
-    for (std::map<Value *, int>::iterator value_iter =
-            value_to_alias_group.begin(), value_end =
-            value_to_alias_group.end(); value_iter != value_end;
-            value_iter++) {
-        errs() << *(value_iter->first) << " -> " << value_iter->second << "\n";
-    }
-    errs() << "\n";
-}
-
+/*
+ * Combine these groups with any others that were found to be modified at the
+ * specified line and column in the specified file. Store the merged results in
+ * line_to_groups_modified.
+ */
 void Play::unionGroups(int line, int col, std::string filename,
-        std::set<int> *groups) {
+        std::set<size_t> *groups) {
 
-    std::set<int> *existing = NULL;
+    std::set<size_t> *existing = NULL;
     for (std::vector<GroupsModifiedAtLine *>::iterator i =
             line_to_groups_modified.begin(), e = line_to_groups_modified.end();
             i != e; i++) {
@@ -630,7 +700,7 @@ void Play::unionGroups(int line, int col, std::string filename,
         g->groups = groups;
         line_to_groups_modified.push_back(g);
     } else {
-        for (std::set<int>::iterator parent_iter = groups->begin(),
+        for (std::set<size_t>::iterator parent_iter = groups->begin(),
                 parent_end = groups->end(); parent_iter != parent_end;
                 parent_iter++) {
             existing->insert(*parent_iter);
@@ -639,7 +709,8 @@ void Play::unionGroups(int line, int col, std::string filename,
 }
 
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
-        std::set<BasicBlock *>& visited, std::string filename) {
+        std::set<BasicBlock *>& visited, std::string filename,
+        std::map<Value *, size_t> value_to_alias_group) {
     assert(curr != NULL);
 
     // Only analyze each basic block once
@@ -648,7 +719,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
     }
     visited.insert(curr);
 
-    std::set<int> *groups = new std::set<int>();
+    std::set<size_t> *groups = new std::set<size_t>();
     int maxline = -1;
     int maxcol = -1;
 
@@ -660,6 +731,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
     for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
             inst_iter != inst_end; inst_iter++) {
         Instruction *curr_inst = inst_iter;
+
         int line = curr_inst->getDebugLoc().getLine();
         if (line != 0 && line > maxline) {
             maxline = line;
@@ -667,9 +739,10 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
         }
 
         if (StoreInst *store = dyn_cast<StoreInst>(curr_inst)) {
+            // Mark the destination alias group as modified
             assert(value_to_alias_group.find(store->getPointerOperand()) !=
                     value_to_alias_group.end());
-            int group = value_to_alias_group[store->getPointerOperand()];
+            size_t group = value_to_alias_group[store->getPointerOperand()];
             groups->insert(group);
         } else if (isa<CallInst>(curr_inst) && !isa<IntrinsicInst>(curr_inst)) {
             /*
@@ -680,35 +753,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             assert(maxline != -1);
             if (groups->size() > 0) {
                 unionGroups(maxline, maxcol, filename, groups);
-                groups = new std::set<int>();
-            }
-            /*
-             * If this call is defined externally and accepts pointers from the
-             * calling program, we have to conservatively assume that those
-             * pointers are modified and update groups to reflect that here.
-             */
-            CallInst *call = dyn_cast<CallInst>(curr_inst);
-            Function *callee = call->getCalledFunction();
-            if (callee == NULL || callee->empty()) {
-                for (unsigned int a = 0; a < call->getNumArgOperands(); a++) {
-                    Value *toSearch = call->getArgOperand(a);
-
-                    if (toSearch->getType()->isPointerTy()) {
-#ifdef VERBOSE
-                        errs() << "\nStarting search for alias group of " <<
-                            *toSearch << "\n";
-#endif
-                        int group = searchDownUsesForAliasSetGroup(toSearch);
-                        if (group == -1) {
-                            group = searchUpDefsForAliasSetGroup(toSearch, 0);
-                        }
-#ifdef VERBOSE
-                        errs() << "Determined " << group << " " << *toSearch <<
-                            "\n";
-#endif
-                        groups->insert(group);
-                    }
-                }
+                groups = new std::set<size_t>();
             }
         }
     }
@@ -721,7 +766,8 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
 
     for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
-        collectLineToGroupsMappingInFunction(child, visited, filename);
+        collectLineToGroupsMappingInFunction(child, visited, filename,
+                value_to_alias_group);
     }
 }
 
@@ -744,7 +790,8 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
  * TODO promote alias changes out of basic blocks and to their successors as
  * much as possible.
  */
-void Play::collectLineToGroupsMapping(Module& M) {
+void Play::collectLineToGroupsMapping(Module& M,
+        std::map<Value *, size_t> value_to_alias_group) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
@@ -756,29 +803,9 @@ void Play::collectLineToGroupsMapping(Module& M) {
 
             std::string filename = findFilenameContainingBB(entry, M);
 
-            collectLineToGroupsMappingInFunction(&entry, visited, filename);
+            collectLineToGroupsMappingInFunction(&entry, visited, filename,
+                    value_to_alias_group);
         }
-    }
-}
-
-void Play::printLineToGroupsMapping() {
-    errs() << "\n" << line_to_groups_modified.size() << " lines:\n";
-    for (std::vector<GroupsModifiedAtLine *>::iterator line_iter =
-            line_to_groups_modified.begin(), line_end =
-            line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
-        GroupsModifiedAtLine *curr = *line_iter;
-        std::set<int> *groups = curr->groups;
-
-        errs() << " " << *curr->loc.filename << ":" << curr->loc.line_no <<
-            ":" << curr->loc.col << " -> { ";
-
-        for (std::set<int>::iterator groups_iter = groups->begin(),
-                groups_end = groups->end(); groups_iter != groups_end;
-                groups_iter++) {
-            if (groups_iter != groups->begin()) errs() << ", ";
-            errs() << *groups_iter;
-        }
-        errs() << " }\n";
     }
 }
 
@@ -789,15 +816,15 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
             line_to_groups_modified.begin(), line_end =
             line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
         GroupsModifiedAtLine *curr = *line_iter;
-        std::set<int> *groups = curr->groups;
+        std::set<size_t> *groups = curr->groups;
 
         fprintf(fp, "%s %d %d : { ", curr->loc.filename->c_str(),
                 curr->loc.line_no, curr->loc.col);
-        for (std::set<int>::iterator groups_iter = groups->begin(),
+        for (std::set<size_t>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;
                 groups_iter++) {
             if (groups_iter != groups->begin()) fprintf(fp, ", ");
-            fprintf(fp, "%d", *groups_iter);
+            fprintf(fp, "%lu", *groups_iter);
         }
         fprintf(fp, " }\n");
     }
@@ -1178,161 +1205,196 @@ void Play::findStackAllocations(Module &M, const char *output_file,
     fclose(fp);
 }
 
-int Play::searchUpDefsForAliasSetGroup(Value *val, int nesting) {
-    if (nesting == 0) {
-        int alias_no = searchForValueInKnownAliases(val);
-        if (alias_no >= 0) return alias_no;
-    }
+// size_t Play::searchUpDefsForAliasSetGroup(Value *val, int nesting,
+//         std::string fname) {
+//     assert(false);
+// 
+//     if (nesting == 0) {
+//         size_t alias_no = searchForValueInKnownAliases(val);
+//         if (alias_no != 0) return alias_no;
+//     }
+// 
+// #ifdef VERBOSE
+//     errs() << "Searching up defs from " << *val << " nesting=" << nesting <<
+//         "\n";
+// #endif
+// 
+//     if (AllocaInst *alloc = dyn_cast<AllocaInst>(val)) {
+//         std::set<Value *> visited;
+//         return searchDownUsesForAliasSetGroupHelper(alloc, NULL, nesting,
+//                 &visited, fname);
+//     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
+//         return searchUpDefsForAliasSetGroup(load->getPointerOperand(),
+//                 nesting + 1, fname);
+//     } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+//         return searchUpDefsForAliasSetGroup(getele->getPointerOperand(),
+//                 nesting, fname);
+//     } else if (dyn_cast<StoreInst>(val)) {
+//         /*
+//          * This shouldn't be possible, because store shouldn't be producing any
+//          * defs. assert(0) here so that if it is possible, we have to debug.
+//          */
+//         assert(0);
+//         return 0;
+//     } else if (isa<Constant>(val)) {
+//         return 0;
+//     } else if (User *user = dyn_cast<User>(val)) {
+//         /*
+//          * This isn't true, but assert it for now to get a prototype working so
+//          * we'll trip it when it actually starts being not true and we'll have
+//          * to special-case pointer chasing through different instruction types.
+//          */
+//         if (BinaryOperator *binop = dyn_cast<BinaryOperator>(user)) {
+//             if (binop->getOpcode() == Instruction::SRem ||
+//                     binop->getOpcode() == Instruction::SDiv ||
+//                     binop->getOpcode() == Instruction::Mul ||
+//                     binop->getOpcode() == Instruction::FSub ||
+//                     binop->getOpcode() == Instruction::FDiv ||
+//                     binop->getOpcode() == Instruction::FMul ||
+//                     binop->getOpcode() == Instruction::FAdd) {
+//                 /*
+//                  * Operators that don't have any meaning in the context of
+//                  * aliases (e.g. floating-point operations).
+//                  */
+//                 return 0;
+//             } else if (binop->getOpcode() == Instruction::Add ||
+//                     binop->getOpcode() == Instruction::Sub) {
+//                 assert(user->getNumOperands() == 2);
+//                 Value *op1 = user->getOperand(0);
+//                 Value *op2 = user->getOperand(1);
+//                 bool op1IsPtr = op1->getType()->isPointerTy();
+//                 bool op2IsPtr = op2->getType()->isPointerTy();
+//                 assert(!(op1IsPtr && op2IsPtr)); // not both pointers
+// 
+//                 if (op1IsPtr) {
+//                     return searchUpDefsForAliasSetGroup(op1, nesting, fname);
+//                 } else if (op2IsPtr) {
+//                     return searchUpDefsForAliasSetGroup(op2, nesting, fname);
+//                 } else {
+//                     return 0;
+//                 }
+//             } else {
+//                 // Unsupported binary operator
+//                 errs() << *binop << "\n";
+//                 assert(false);
+//             }
+//         } else if (CallInst *call = dyn_cast<CallInst>(user)) {
+//             /*
+//              * TODO for some calls we should be able to collect the alias groups
+//              * that are returned?
+//              */
+//             return 0;
+//         }
+// 
+//         assert(user->getNumOperands() == 1);
+//         Value *op = user->getOperand(0);
+//         return searchUpDefsForAliasSetGroup(op, nesting, fname);
+//     } else {
+//         return 0;
+//     }
+// }
 
-#ifdef VERBOSE
-    errs() << "Searching up defs from " << *val << " nesting=" << nesting <<
-        "\n";
-#endif
-
-    if (AllocaInst *alloc = dyn_cast<AllocaInst>(val)) {
-        std::set<Value *> visited;
-        return searchDownUsesForAliasSetGroupHelper(alloc, NULL, nesting,
-                &visited);
-    } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
-        return searchUpDefsForAliasSetGroup(load->getPointerOperand(),
-                nesting + 1);
-    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
-        return searchUpDefsForAliasSetGroup(getele->getPointerOperand(),
-                nesting);
-    } else if (dyn_cast<StoreInst>(val)) {
-        /*
-         * This shouldn't be possible, because store shouldn't be producing any
-         * defs. assert(0) here so that if it is possible, we have to debug.
-         */
-        assert(0);
-        return -1;
-    } else if (isa<Constant>(val)) {
-        return -1;
-    } else if (User *user = dyn_cast<User>(val)) {
-        /*
-         * This isn't true, but assert it for now to get a prototype working so
-         * we'll trip it when it actually starts being not true and we'll have
-         * to special-case pointer chasing through different instruction types.
-         */
-        if (BinaryOperator *binop = dyn_cast<BinaryOperator>(user)) {
-            if (binop->getOpcode() == Instruction::SRem ||
-                    binop->getOpcode() == Instruction::SDiv ||
-                    binop->getOpcode() == Instruction::Mul ||
-                    binop->getOpcode() == Instruction::FSub ||
-                    binop->getOpcode() == Instruction::FDiv ||
-                    binop->getOpcode() == Instruction::FMul ||
-                    binop->getOpcode() == Instruction::FAdd) {
-                /*
-                 * Operators that don't have any meaning in the context of
-                 * aliases (e.g. floating-point operations).
-                 */
-                return -1;
-            } else if (binop->getOpcode() == Instruction::Add ||
-                    binop->getOpcode() == Instruction::Sub) {
-                assert(user->getNumOperands() == 2);
-                Value *op1 = user->getOperand(0);
-                Value *op2 = user->getOperand(1);
-                bool op1IsPtr = op1->getType()->isPointerTy();
-                bool op2IsPtr = op2->getType()->isPointerTy();
-                assert(!(op1IsPtr && op2IsPtr)); // not both pointers
-
-                if (op1IsPtr) {
-                    return searchUpDefsForAliasSetGroup(op1, nesting);
-                } else if (op2IsPtr) {
-                    return searchUpDefsForAliasSetGroup(op2, nesting);
-                } else {
-                    return -1;
-                }
-            } else {
-                // Unsupported binary operator
-                errs() << *binop << "\n";
-                assert(false);
-            }
-        } else if (CallInst *call = dyn_cast<CallInst>(user)) {
-            /*
-             * TODO for some calls we should be able to collect the alias groups
-             * that are returned?
-             */
-            return -1;
-        }
-
-        assert(user->getNumOperands() == 1);
-        Value *op = user->getOperand(0);
-        return searchUpDefsForAliasSetGroup(op, nesting);
-    } else {
-        return -1;
-    }
-}
-
-std::map<int, std::vector<int> *> *Play::findReachable(Module &M) {
-    std::map<int, std::vector<int> *> *stores = new std::map<int,
-        std::vector<int> *>();
-
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                    ++i) {
-                Instruction &inst = *i;
-
-                if (StoreInst *store = dyn_cast<StoreInst>(&inst)) {
-                    Value *dst = store->getPointerOperand();
-                    Type *dst_type = dst->getType();
-                    if (dst_type->isPointerTy()) {
-                        Value *storing = store->getValueOperand();
-
-#ifdef VERBOSE
-                        errs() << "\nStarting search down for alias group of " <<
-                            *storing << "\n";
-#endif
-                        int storing_group = searchDownUsesForAliasSetGroup(
-                                storing);
-                        if (storing_group == -1) {
-#ifdef VERBOSE
-                            errs() << "\nStarting search up for alias group of " <<
-                                *storing << "\n";
-#endif
-                            storing_group = searchUpDefsForAliasSetGroup(
-                                    storing, 0);
-                        }
-#ifdef VERBOSE
-                        errs() << "Determined group " << storing_group << "\n\n";
-#endif
-
-#ifdef VERBOSE
-                        errs() << "\nStarting search down for alias group of " <<
-                            *dst << "\n";
-#endif
-                        int dst_group = searchDownUsesForAliasSetGroup(dst);
-                        if (dst_group == -1) {
-#ifdef VERBOSE
-                            errs() << "\nStarting search up for alias group of " <<
-                                *dst << "\n";
-#endif
-                            dst_group = searchUpDefsForAliasSetGroup(
-                                    dst, 0);
-                        }
-#ifdef VERBOSE
-                        errs() << "Determined group " << dst_group << "\n\n";
-#endif
-
-                        if (storing_group != -1 && dst_group != -1) {
-                            if (stores->find(dst_group) == stores->end()) {
-                                (*stores)[dst_group] = new std::vector<int>();
-                            }
-                            (*stores)[dst_group]->push_back(storing_group);
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return stores;
-}
+/*
+ * Builds a mapping from alias groups to alias groups that are directly
+ * reachable by dereferencing them. Basically, if you have a pointer to pointers
+ * that belongs to alias group A and you store second pointer in it which is in
+ * alias group B, this builds a mapping from A->B because the alias group B is
+ * reachable from (but not aliased with) B.
+ */
+// ReachableInfo Play::findReachable(Module &M) {
+//     std::map<size_t, std::vector<size_t> > contains;
+//     std::map<size_t, std::vector<size_t> > stored_in;
+// 
+//     // For each function in this module
+//     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+//         Function *F = &*I;
+// 
+//         // For each basic block
+//         Function::BasicBlockListType &bblist = F->getBasicBlockList();
+//         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+//                 bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+//             BasicBlock *bb = &*bb_iter;
+//             // For each instruction
+//             for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+//                     ++i) {
+//                 Instruction &inst = *i;
+// 
+//                 if (StoreInst *store = dyn_cast<StoreInst>(&inst)) {
+//                     // Memory address we are storing to
+//                     Value *dst = store->getPointerOperand();
+//                     Type *dst_type = dst->getType();
+//                     assert(dst_type->isPointerTy());
+// 
+//                     // Storing a pointer into memory
+//                     if (dst_type->getPointerElementType()->isPointerTy()) {
+// 
+//                         // Pointer value being stored into dst
+//                         Value *storing = store->getValueOperand();
+// 
+// #ifdef VERBOSE
+//                         errs() << "\nStarting search down for alias group of " <<
+//                             *storing << "\n";
+// #endif
+//                         size_t storing_group = searchForValueInKnownAliases(
+//                                 storing);
+//                         assert(storing_group != 0);
+//                         /*
+//                         size_t storing_group = searchDownUsesForAliasSetGroup(
+//                                 storing, F->getName().str());
+//                         if (storing_group == 0) {
+// #ifdef VERBOSE
+//                             errs() << "\nStarting search up for alias group of " <<
+//                                 *storing << "\n";
+// #endif
+//                             storing_group = searchUpDefsForAliasSetGroup(
+//                                     storing, 0, F->getName().str());
+//                         }
+// #ifdef VERBOSE
+//                         errs() << "Determined group " << storing_group << "\n\n";
+// #endif
+//                         */
+// 
+//                         size_t dst_group = searchForValueInKnownAliases(dst);
+//                         assert(dst_group != 0);
+//                         /*
+// #ifdef VERBOSE
+//                         errs() << "\nStarting search down for alias group of " <<
+//                             *dst << "\n";
+// #endif
+//                         size_t dst_group = searchDownUsesForAliasSetGroup(dst,
+//                                 F->getName().str());
+//                         if (dst_group == 0) {
+// #ifdef VERBOSE
+//                             errs() << "\nStarting search up for alias group of " <<
+//                                 *dst << "\n";
+// #endif
+//                             dst_group = searchUpDefsForAliasSetGroup(
+//                                     dst, 0, F->getName().str());
+//                         }
+// #ifdef VERBOSE
+//                         errs() << "Determined group " << dst_group << "\n\n";
+// #endif
+//                         */
+// 
+//                         if (storing_group != 0 && dst_group != 0) {
+//                             if (contains.find(dst_group) == contains.end()) {
+//                                 contains[dst_group] = std::vector<size_t>();
+//                             }
+//                             contains[dst_group].push_back(storing_group);
+// 
+//                             if (stored_in.find(storing_group) == stored_in.end()) {
+//                                 stored_in[storing_group] = std::vector<size_t>();
+//                             }
+//                             stored_in[storing_group].push_back(dst_group);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// 
+//     return ReachableInfo(contains, stored_in);
+// }
 
 static Type *inferHostAllocationType(CallInst *callInst) {
     Type *base_type = NULL;
@@ -1340,10 +1402,7 @@ static Type *inferHostAllocationType(CallInst *callInst) {
     Use& use = *(callInst->use_begin());
     User *user = use.getUser();
 
-    /*
-     * Look for a CallInst, followed immediately
-     * (and only) by a CastInst.
-     */
+    // Look for a CallInst, followed immediately (and only) by a CastInst.
     if (CastInst *cast = dyn_cast<CastInst>(user)) {
         Type *malloc_type = cast->getType();
         assert(malloc_type->isPointerTy());
@@ -1376,28 +1435,23 @@ static void printStructInfo(FILE *fp, Type *base_type,
 
 void Play::handleHostAllocation(CallInst *callInst, Function *callee,
         FILE *fp, std::set<int> &found_mallocs,
-        std::map<std::string, std::vector<std::string>> *structFields) {
+        std::map<std::string, std::vector<std::string>> *structFields,
+        std::string fname, std::map<Value *, size_t> value_to_alias_group) {
     int line_no = callInst->getDebugLoc().getLine();
     int col = callInst->getDebugLoc().getCol();
     assert(line_no != 0);
 
-    int alias_no;
+    size_t alias_no;
     if (callee->getName().str() == "malloc" ||
             callee->getName().str() == "realloc") {
-#ifdef VERBOSE
-        errs() << "\nStarting search down for alias group of " << *callInst <<
-            "\n";
-#endif
-        alias_no = searchDownUsesForAliasSetGroup(callInst);
+        alias_no = searchForValueInKnownAliases(callInst, value_to_alias_group);
     } else {
         // free
-#ifdef VERBOSE
-        errs() << "\nStarting search up for alias group of " <<
-            *(callInst->getArgOperand(0)) << "\n";
-#endif
         assert(callInst->getNumArgOperands() == 1);
-        alias_no = searchUpDefsForAliasSetGroup(callInst->getArgOperand(0), 0);
+        alias_no = searchForValueInKnownAliases(callInst->getArgOperand(0),
+                value_to_alias_group);
     }
+
     /*
      * This assert is triggered for variables that are
      * never used (e.g. an allocation that is never
@@ -1405,11 +1459,11 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
      * or something?
      */
 #ifdef VERBOSE
-    if (alias_no < 0) {
+    if (alias_no == 0) {
         errs() << "Failed to find alias group for " << *callInst << "\n";
     }
 #endif
-    assert(alias_no >= 0);
+    assert(alias_no > 0);
 
     /*
      * We don't currently support multiple mallocs per
@@ -1418,7 +1472,7 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
     assert(found_mallocs.find(line_no) == found_mallocs.end());
     found_mallocs.insert(line_no);
 
-    fprintf(fp, "%d %d %d %s", line_no, col, alias_no,
+    fprintf(fp, "%d %d %lu %s", line_no, col, alias_no,
             callee->getName().str().c_str());
     /*
      * For trivial cases of a malloc call that is
@@ -1472,7 +1526,7 @@ void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
     assert(line_no != 0);
 
     // no alias information supported on GPU yet
-    fprintf(fp, "%d %d -1 %s", line_no, col, callee->getName().str().c_str());
+    fprintf(fp, "%d %d 0 %s", line_no, col, callee->getName().str().c_str());
 
     // We don't currently support multiple mallocs per line
     assert(found_mallocs.find(line_no) == found_mallocs.end());
@@ -1493,12 +1547,15 @@ void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
     fprintf(fp, "\n");
 }
 
-void Play::findHeapAllocations(Module &M, const char *output_file) {
+void Play::findHeapAllocations(Module &M, const char *output_file,
+        std::map<Value *, size_t> value_to_alias_group) {
     FILE *fp = fopen(output_file, "w");
     std::set<int> found_mallocs;
 
     std::map<std::string, std::vector<std::string>> *structFields =
         getStructFieldNames(M);
+
+    errs() << "Heap allocation(s), reallocation(s), free(s):\n";
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
@@ -1516,8 +1573,9 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
                         if (callee->getName().str() == "malloc" ||
                                 callee->getName().str() == "realloc" ||
                                 callee->getName().str() == "free") {
-                            handleHostAllocation(callInst, callee, fp,
-                                    found_mallocs, structFields);
+                            handleHostAllocation(callInst,
+                                    callee, fp, found_mallocs, structFields,
+                                    F->getName().str(), value_to_alias_group);
                         } else if (callee->getName().str() == "cudaMalloc" ||
                                 callee->getName().str() == "cudaFree") {
                             handleDeviceAllocation(callInst, callee, fp,
@@ -1535,6 +1593,38 @@ void Play::findHeapAllocations(Module &M, const char *output_file) {
     fclose(fp);
 }
 
+void Play::findFunctionExits(Module &M, const char *output_file,
+        std::map<Value *, size_t> value_to_alias_group) {
+    FILE *fp = fopen(output_file, "w");
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                    ++i) {
+                Instruction &inst = *i;
+                if (ReturnInst *ret = dyn_cast<ReturnInst>(&inst)) {
+                    if (ret->getReturnValue() == NULL) continue;
+
+                    if (ret->getReturnValue()->getType()->isPointerTy()) {
+                        size_t alias = searchForValueInKnownAliases(ret,
+                                value_to_alias_group);
+                        assert(alias > 0);
+                        fprintf(fp, "%d %d %lu\n", ret->getDebugLoc().getLine(),
+                                ret->getDebugLoc().getCol(), alias);
+                    }
+                }
+            }
+        }
+    }
+
+    fclose(fp);
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
@@ -1548,25 +1638,37 @@ bool Play::runOnModule(Module &M) {
      * to metrics collectors should be inserted in the original source code, as
      * well as the alias sets that should be marked by those calls.
      */
-    gatherCallSites(M);
+    printFunctions(M);
 
     AliasAnalysis *AA = &getAnalysis<AliasAnalysis>();
 
-    ngroups = InitializeAliasGroups(AA);
+    std::map<Value *, size_t> initial_value_to_alias_group =
+        InitializeAliasGroups(M, AA);
 
-    mergeAliasGroupsInterprocedurally();
+    ReachableInfo reachable = propagateAliases(M, initial_value_to_alias_group);
 
-    printAliasGroupings();
+    printValuesAndAliasGroups(reachable.get_value_to_alias_group());
 
-    unifyAliasGroupings();
+    printReachable(reachable);
+    dumpReachable(reachable, "reachable.info");
 
-    printValueMappings();
-
-    collectLineToGroupsMapping(M);
-
-    printLineToGroupsMapping();
+    collectLineToGroupsMapping(M, reachable.get_value_to_alias_group());
 
     dumpLineToGroupsMappingTo("lines.info");
+
+    /*
+     * Dump a file mapping every function name to the alias group each of its
+     * arguments belong to.
+     */
+    dumpFunctionArgumentsToAliasMappings(M, "func.info",
+            reachable.get_value_to_alias_group());
+
+    /*
+     * Dump a file mapping every call site (defined by a function name, line
+     * number, and column number) to the alias groups passed to each of its
+     * parameters, in the parent context.
+     */
+    dumpCallSiteAliases(M, "call.info", reachable.get_value_to_alias_group());
 
     /*
      * This next region is responsible for finding and marking all stack
@@ -1589,22 +1691,9 @@ bool Play::runOnModule(Module &M) {
      * this allocation belongs to.
      */
 
-    findHeapAllocations(M, "heap.info");
+    findHeapAllocations(M, "heap.info", reachable.get_value_to_alias_group());
 
-    errs() << "Storing:\n";
-    std::map<int, std::vector<int> *> *stores = findReachable(M);
-    for (std::map<int, std::vector<int> *>::iterator i = stores->begin(),
-            e = stores->end(); i != e; i++) {
-        int dst = i->first;
-        std::vector<int> *stores = i->second;
-        errs() << "  " << dst << " -> { ";
-        for (std::vector<int>::iterator stores_iter = stores->begin(),
-                stores_end = stores->end(); stores_iter != stores_end;
-                stores_iter++) {
-            errs() << *stores_iter << " ";
-        }
-        errs() << "}\n";
-    }
+    findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group());
 
     return false;
 }

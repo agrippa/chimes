@@ -7,6 +7,8 @@
 #include "clang/Rewrite/Core/Rewriter.h"
 #include "clang/AST/StmtVisitor.h"
 #include "clang/Basic/SourceManager.h"
+#include <clang/AST/ASTContext.h>
+#include <clang/AST/Stmt.h>
 
 #include "ParentTransform.h"
 
@@ -19,6 +21,10 @@ public:
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
+
+private:
+    void WrapAroundBlock(const clang::Stmt *block, std::string toPrefix,
+            std::string toAppend);
 };
 
 #endif

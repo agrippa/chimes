@@ -6,14 +6,94 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <set>
 
 #include "clang/Basic/SourceManager.h"
 
 extern std::string curr_func;
 
+class ReachableInfo {
+    public:
+        ReachableInfo(size_t set_container, size_t set_child) :
+            container(set_container), child(set_child) {}
+
+        size_t get_container() { return container; }
+        size_t get_child() { return child; }
+    private:
+        size_t container;
+        size_t child;
+};
+
+class FunctionExit {
+    public:
+        FunctionExit(int set_line, int set_col, size_t set_alias) :
+            line(set_line), col(set_col), alias(set_alias) {}
+
+        int get_line() { return line; }
+        int get_col() { return col; }
+        size_t get_alias() { return alias; }
+
+        bool operator < (const FunctionExit& other) const {
+            if (line == other.line) {
+                return col < other.col;
+            } else {
+                return line < other.line;
+            }
+        }
+
+    private:
+        int line, col;
+        size_t alias;
+};
+
+class FunctionArgumentAliasGroups {
+    public:
+        FunctionArgumentAliasGroups(std::string set_funcname) :
+            funcname(set_funcname) {}
+
+        std::string get_funcname() { return funcname; }
+        void add_alias_no(size_t alias) { alias_nos.push_back(alias); }
+        unsigned nargs() { return alias_nos.size(); }
+        size_t alias_no_for(int arg) { return alias_nos[arg]; }
+
+    private:
+        std::string funcname;
+        std::vector<size_t> alias_nos;
+};
+
+class AliasesPassedToCallSite {
+    public:
+        AliasesPassedToCallSite(std::string set_funcname, int set_line,
+                int set_col, size_t set_return_alias) : funcname(set_funcname),
+                line(set_line), col(set_col), return_alias(set_return_alias) {}
+
+        std::string get_funcname() { return funcname; }
+        int get_line() { return line; }
+        int get_col() { return col; }
+        void add_alias_no(size_t alias_no) { alias_nos.push_back(alias_no); }
+        int nparams() { return alias_nos.size(); }
+        size_t alias_no_for(int arg) { return alias_nos[arg]; }
+        size_t get_return_alias() { return return_alias; }
+
+        bool operator < (const AliasesPassedToCallSite& other) const {
+            if (line == other.line) {
+                return col < other.col;
+            } else {
+                return line < other.line;
+            }
+        }
+
+    private:
+        std::string funcname;
+        int line;
+        int col;
+        size_t return_alias;
+        std::vector<size_t> alias_nos;
+};
+
 class HeapAlloc {
 public:
-    HeapAlloc(int set_line_no, int set_col, int set_group,
+    HeapAlloc(int set_line_no, int set_col, size_t set_group,
             std::string set_fname, bool set_have_type_info) :
             line_no(set_line_no), col(set_col), group(set_group),
             fname(set_fname), have_type_info(set_have_type_info) {}
@@ -21,7 +101,7 @@ public:
     void incr_col(int i) { col += i; }
     int get_line_no() { return line_no; }
     int get_col() { return col; }
-    int get_group() { return group; }
+    size_t get_group() { return group; }
     std::string get_fname() { return fname; }
     bool get_have_type_info() { return have_type_info; }
     bool get_is_elem_ptr() { return is_elem_ptr; }
@@ -47,7 +127,7 @@ public:
 private:
     int line_no;
     int col;
-    int group;
+    size_t group;
     std::string fname;
     bool have_type_info;
 
@@ -124,38 +204,48 @@ private:
 class StateChangeInsertion {
 public:
     StateChangeInsertion(std::string set_filename, int set_line_no, int set_col,
-            std::vector<int> *set_groups) : filename(set_filename),
+            std::vector<size_t> *set_groups) : filename(set_filename),
             line_no(set_line_no), col(set_col), groups(set_groups) {
     }
 
     int get_line() { return line_no; }
     int get_col() { return col; }
     std::string get_filename() { return filename; }
-    std::vector<int> *get_groups() { return groups; }
+    std::vector<size_t> *get_groups() { return groups; }
 
 private:
     std::string filename;
     int line_no;
     int col;
-    std::vector<int> *groups;
+    std::vector<size_t> *groups;
 };
 
 class DesiredInsertions {
 public:
-    DesiredInsertions(const char *lines_info_filename,
+    DesiredInsertions(size_t set_module_id,
+            const char *lines_info_filename,
             const char *struct_info_filename,
             const char *stack_allocs_filename,
             const char *heap_filename, const char *original_filename,
-            const char *diagnostic_filename, const char *working_dirname) :
+            const char *diagnostic_filename, const char *working_dirname,
+            const char *func_filename, const char *call_filename,
+            const char *exit_filename, const char *reachable_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
             heap_file(heap_filename), original_file(original_filename),
-            diagnostic_file(diagnostic_filename), working_dir(working_dirname) {
+            diagnostic_file(diagnostic_filename), working_dir(working_dirname),
+            func_file(func_filename), call_file(call_filename),
+            exit_file(exit_filename), reachable_file(reachable_filename) {
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
         stack_allocs = parseStackAllocs();
         heap_allocs = parseHeapAllocs();
+        functions = parseFunctions();
+        callsites = parseCallSites();
+        func_exits = parseFunctionExits();
+        reachable = parseReachable();
+        module_id = set_module_id;
         diagnostics.open(diagnostic_file);
     }
 
@@ -164,8 +254,9 @@ public:
     }
 
     bool contains(int line, int col, const char *filename);
-    std::vector<int> *get_groups(int line, int col, const char *filename);
+    std::vector<size_t> *get_groups(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
+    std::vector<ReachableInfo> *get_reachable() { return reachable; }
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     HeapAlloc *isMemoryAllocation(int line, int col);
@@ -189,20 +280,83 @@ public:
     void AppendToDiagnostics(std::string action, clang::SourceLocation loc,
             std::string val, clang::SourceManager &SM);
 
+    AliasesPassedToCallSite findFirstMatchingCallsite(int line) {
+        std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
+        std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
+        while (i != e) {
+            AliasesPassedToCallSite curr = *i;
+            if (curr.get_line() == line) break;
+            i++;
+        }
+        assert(i != e);
+
+        AliasesPassedToCallSite result = *i;
+        callsites->erase(i);
+        return result;
+    }
+
+    FunctionExit *findFirstMatchingFunctionExit(int line) {
+        std::vector<FunctionExit>::iterator i = func_exits->begin();
+        std::vector<FunctionExit>::iterator e = func_exits->end();
+        while (i != e) {
+            FunctionExit curr = *i;
+            if (curr.get_line() == line) break;
+            i++;
+        }
+        if (i == e) {
+            /*
+             * We won't be able to find a matching function exit for returns
+             * with a scalar type.
+             */
+            return NULL;
+        }
+
+        FunctionExit *result = new FunctionExit(*i);
+        func_exits->erase(i);
+        return result;
+    }
+
+    FunctionArgumentAliasGroups findMatchingFunction(std::string func) {
+        for (std::vector<FunctionArgumentAliasGroups>::iterator i =
+                functions->begin(), e = functions->end(); i != e; i++) {
+            FunctionArgumentAliasGroups curr = *i;
+            if (curr.get_funcname() == func) {
+                return curr;
+            }
+        }
+
+        assert(false);
+    }
+
+    size_t get_module_id() {
+        return module_id;
+    }
+
 private:
         std::string lines_info_file, struct_info_file,
-            stack_allocs_file, heap_file, original_file, diagnostic_file, working_dir;
+            stack_allocs_file, heap_file, original_file, diagnostic_file,
+            working_dir, func_file, call_file, exit_file, reachable_file;
         std::ofstream diagnostics;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
         std::vector<StructFields *> *struct_fields;
         std::map<std::string, StackAlloc *> *stack_allocs;
         std::vector<HeapAlloc *> *heap_allocs;
+        std::vector<FunctionArgumentAliasGroups> *functions;
+        std::vector<AliasesPassedToCallSite> *callsites;
+        std::vector<FunctionExit> *func_exits;
+        std::vector<ReachableInfo> *reachable;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
         std::vector<HeapAlloc *> *parseHeapAllocs();
+        std::vector<FunctionArgumentAliasGroups> *parseFunctions();
+        std::vector<AliasesPassedToCallSite> *parseCallSites();
+        std::vector<FunctionExit> *parseFunctionExits();
+        std::vector<ReachableInfo> *parseReachable();
+
+        size_t module_id;
 };
 
 #endif

@@ -17,7 +17,8 @@ DYLD_PATH = os.path.join(NUM_DEBUG_HOME, 'src', 'libnumdebug')
 # differences between the test and expected outputs due to different temporary
 # filenames
 INFO_FILES = {'diag.info': -1, 'heap.info': -1, 'lines.info': 0,
-              'stack.info': 0, 'struct.info': -1}
+              'stack.info': 0, 'struct.info': -1, 'reachable.info': -1,
+              'exit.info': -1, 'call.info': -1, 'func.info': -1}
 
 class TestConfig(object):
     """
@@ -38,12 +39,14 @@ class RuntimeTest(object):
     from running the application. Test applications are expected to include
     asserts which verify correct behavior.
     """
-    def __init__(self, name, input_file, expected_code,
-                 expected_num_checkpoints):
+    def __init__(self, name, input_files, expected_code,
+                 expected_num_checkpoints, includes=[], dependencies=[]):
         self.name = name
-        self.input_file = input_file
+        self.input_files = input_files
         self.expected_code = expected_code
         self.expected_num_checkpoints = expected_num_checkpoints
+        self.includes = includes
+        self.dependencies = dependencies
 
 
 class FrontendTest(object):
@@ -66,15 +69,69 @@ class FrontendTest(object):
     folder containing that library also has a Makefile for creating that
     library, and run 'make clean; make' to build it before using it.
     """
-    def __init__(self, name, input_file, compare_file, info_dir, expect_err,
+    def __init__(self, name, input_files, compare_files, info_dirs, expect_err,
             includes=[], dependencies=[]):
         self.name = name
-        self.input_file = input_file
-        self.compare_file = compare_file
-        self.info_dir = info_dir
+        self.input_files = input_files
+        self.compare_files = compare_files
+        self.info_dirs = info_dirs
         self.expect_err = expect_err
         self.includes = includes
         self.dependencies = dependencies
+
+
+def add_include_paths_to_compile_cmd(compile_cmd, includes):
+    """
+    Add include paths to the provided compile command.
+
+    :param compile_cmd: Current compilation command
+    :type compile_cmd: `str`
+    :param includes: List of include directories
+    :type includes: `list` of `str`
+    :returns: New compile command
+    :rtype: `str`
+    """
+    # Add include folders to the compilation command
+    for include_folder in includes:
+        compile_cmd += ' -I ' + include_folder
+    return compile_cmd
+
+
+def prepare_dependencies(compile_cmd, dependencies, env={}):
+    """
+    Prepare any dependencies for a test and add any necessary arguments to the
+    compilation command.
+
+    :param compile_cmd: Current compilation command
+    :type compile_cmd: `str`
+    :param dependencies: List of library dependencies
+    :type dependencies: `list` of `str`
+    :returns: New compilation command
+    :rtype: `str`
+    """
+    new_library_path=''
+
+    for dependency in dependencies:
+        dirname = os.path.dirname(dependency)
+        library = os.path.basename(dependency)
+        assert len(library) > 0, dependency
+        assert library.endswith('.so'), dependency
+        assert library.startswith('lib'), dependency
+
+        makefile_path = os.path.join(dirname, 'Makefile')
+        assert os.path.isfile(makefile_path), makefile_path
+
+        run_cmd('make -C ' + dirname, False)
+        compile_cmd += ' -L ' + dirname + ' -l ' + library[3:len(library) - 3]
+        new_library_path += dirname + ':'
+
+    for var in LD_LIBRARY_VARS:
+        value = new_library_path
+        if var in env.keys():
+            value += env[var]
+        env[var] = value
+
+    return compile_cmd
 
 
 def parse_argv(argv):
@@ -210,7 +267,7 @@ def cleanup_runtime_files():
         os.remove('a.out')
 
 
-def get_files_from_compiler_stdout(compile_stdout):
+def get_files_from_compiler_stdout(compile_stdout, n_expected_files):
     """
     Parse the final transformed output and working directory of the numdebug
     frontend from the frontend's stdout.
@@ -220,13 +277,18 @@ def get_files_from_compiler_stdout(compile_stdout):
     :returns: tuple of transformed output filename and working directory
     :rtype: `tuple` of `str`
     """
+    assert n_expected_files > 0
     # Get the final output filename and containing folder
     if sys.version_info >= (3, 0):
         lines = str(compile_stdout, encoding='utf8').strip().split('\n')
     else:
         lines = str(compile_stdout).strip().split('\n')
-    transformed = lines[len(lines) - 1].strip()
-    work_folder = transformed[0:transformed.rfind('/')]
+
+    transformed = []
+    for i in range(n_expected_files):
+        transformed.append(lines[len(lines) - n_expected_files + i].strip())
+
+    work_folder = transformed[0][0:transformed[0].rfind('/')]
     root_folder = work_folder
     # folder may end with /nvcc appended for CUDA compilations
     if root_folder.endswith('/nvcc'):
@@ -247,6 +309,14 @@ def _diff_files(file1name, file2name, col):
     :param col: Column containing filename
     :type col: `int`
     """
+    if not os.path.isfile(file1name):
+        sys.stderr.write('Missing file while trying to diff ' + file1name + '\n')
+        sys.exit(1)
+
+    if not os.path.isfile(file2name):
+        sys.stderr.write('Missing file while trying to diff ' + file2name + '\n')
+        sys.exit(1)
+
     fp1 = open(file1name, 'r')
     fp2 = open(file2name, 'r')
 
@@ -327,62 +397,61 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     :type config: `class` TestConfig
     """
     # Compile the test input while keeping intermediate files
-    compile_cmd = compile_script_path + ' -k -i ' + \
-                  os.path.join(examples_dir_path, test.input_file)
+    assert len(test.input_files) == len(test.compare_files)
+    assert len(test.input_files) == len(test.info_dirs)
 
-    # Add include folders to the compilation command
-    for include_folder in test.includes:
-        compile_cmd += ' -I ' + include_folder
+    compile_cmd = compile_script_path + ' -k'
+    for input_file in test.input_files:
+        compile_cmd += ' -i ' + os.path.join(examples_dir_path, input_file)
 
-    # Build any dependencies and add them to the compile command
-    for dependency in test.dependencies:
-        dirname = os.path.dirname(dependency)
-        library = os.path.basename(dependency)
-        assert len(library) > 0, dependency
-        assert library.endswith('.so'), dependency
-        assert library.startswith('lib'), dependency
+    compile_cmd = add_include_paths_to_compile_cmd(compile_cmd, test.includes)
+    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies)
 
-        makefile_path = os.path.join(dirname, 'Makefile')
-        assert os.path.isfile(makefile_path), makefile_path
+    stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err)
 
-        run_cmd('make -C ' + dirname, False)
-        compile_cmd += ' -L ' + os.path.dirname(dependency) + ' -l ' + \
-                       library[3:len(library) - 3]
-
-    stdout, _, _ = run_cmd(compile_cmd, test.expect_err)
+    if config.verbose:
+        print_and_abort(stdout, stderr, abort=False)
 
     # Get the final output filename and containing folder
     transformed, work_folder, root_folder = \
-            get_files_from_compiler_stdout(stdout)
+            get_files_from_compiler_stdout(stdout, len(test.input_files))
+    assert len(transformed) == len(test.input_files)
 
     # Diff the test output and the expected output
-    diff_cmd = 'diff ' + os.path.join(test_dir_path, test.compare_file) + \
-               ' ' + transformed
-    stdout, _, _ = run_cmd(diff_cmd, True)
+    for i in range(len(test.input_files)):
+        diff_cmd = 'diff ' + os.path.join(test_dir_path, test.compare_files[i]) + \
+                   ' ' + transformed[i]
+        stdout, _, _ = run_cmd(diff_cmd, True)
 
-    if len(stdout.strip()) != 0:
-        # If the test and expected output are different, emit a warning
-        diff_file = os.path.join(work_folder, test.input_file) + '.diff'
-        print('===== Mismatch in output of test for ' + test.input_file +
-              ' =====')
-        print('===== This may not be an actual error. Mismatched output can ' +
-              'result from system differences between platforms =====')
-        diff_fp = open(diff_file, 'w')
-        diff_fp.write(stdout)
-        diff_fp.close()
-        print('===== The diff is stored in ' + diff_file + ', use -k to keep ' +
-              'intermediate files and check the diff =====')
+        if len(stdout.strip()) != 0:
+            # If the test and expected output are different, emit a warning
+            diff_file = os.path.join(work_folder, test.input_files[i]) + '.diff'
+            print('===== Mismatch in output of test for ' + test.input_files[i] +
+                  ' =====')
+            print('===== Comparison file is ' + test.compare_files[i] + ' =====')
+            print('===== This may not be an actual error. Mismatched output can ' +
+                  'result from system differences between platforms =====')
+            diff_fp = open(diff_file, 'w')
+            diff_fp.write(stdout)
+            diff_fp.close()
+            print('===== The diff is stored in ' + diff_file + ', use -k to keep ' +
+                  'intermediate files and check the diff =====')
+            print('===== This diff was generated with the command "' + diff_cmd + '" =====')
+            print('')
 
     assert test.expect_err or os.path.isfile('a.out')
-    assert test.info_dir is not None
 
-    # Iterate over the metadat files in info_dir and check them against the
+    # Iterate over the metadata files in info_dir and check them against the
     # files produced by the test
-    info_dir_path = os.path.join(test_dir_path, test.info_dir)
-    for info_file in INFO_FILES.keys():
-        expected_output = os.path.join(info_dir_path, info_file)
-        test_output = os.path.join(work_folder, info_file)
-        _diff_files(expected_output, test_output, INFO_FILES[info_file])
+    for i in range(len(test.input_files)):
+        info_dir = test.info_dirs[i]
+        input_file_base = os.path.basename(test.input_files[i])
+        info_dir_path = os.path.join(test_dir_path, info_dir)
+        for info_file in INFO_FILES.keys():
+            expected_output = os.path.join(info_dir_path, info_file)
+            test_output = os.path.join(work_folder, input_file_base + '.' +
+                                                    info_file)
+            _diff_files(expected_output, test_output, INFO_FILES[info_file])
 
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
@@ -405,8 +474,18 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     """
     # Compile the input file into an executable
     env = copy_environ()
-    compile_cmd = compile_script_path + ' -k -i ' + \
-                  os.path.join(inputs_dir, test.input_file)
+    compile_cmd = compile_script_path + ' -k'
+    if type(test.input_files) is str:
+        compile_cmd += ' -i ' + os.path.join(inputs_dir, test.input_files)
+    elif type(test.input_files) is list:
+        for input_file in test.input_files:
+            compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
+    else:
+        raise Exception('Invalid type for input list')
+
+    compile_cmd = add_include_paths_to_compile_cmd(compile_cmd, test.includes)
+    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
+
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
     _, work_folder, root_folder = get_files_from_compiler_stdout(stdout)
 

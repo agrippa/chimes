@@ -30,15 +30,16 @@
 using namespace std;
 
 // functions defined in this file
-void new_stack();
-void rm_stack();
+void new_stack(size_t module_id, int n_local_arg_aliases,
+        int n_contains_mappings, ...);
+void rm_stack(bool has_return_alias, size_t returned_alias);
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 int alias_group_changed(int ngroups, ...);
-void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
-void *realloc_wrapper(void *ptr, size_t nbytes, int group);
-void free_wrapper(void *ptr, int group);
+void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...);
+void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+void free_wrapper(void *ptr, size_t group);
 
 void onexit();
 
@@ -58,11 +59,18 @@ static vector<stack_frame *> program_stack;
 static numdebug_stack stack_tracker;
 static vector<int> trace;
 static unsigned int trace_index = 0;
-static set<int> changed_groups;
+static set<size_t> changed_groups;
 static map<void *, heap_allocation *> heap;
-static map<int, vector<heap_allocation *> *> alias_to_heap;
+static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
+static vector<size_t> parent_aliases;
+static size_t return_alias;
+static vector<size_t> return_aliases;
+static int calling_lbl = -1;
+static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
+static map<size_t, size_t> contains;
+static set<size_t> initialized_modules;
 
 static vector<stack_frame *> *unpacked_program_stack;
 static vector<already_updated_ptrs *> already_updated;
@@ -77,6 +85,21 @@ static volatile int checkpoint_thread_running = 0;
 static int stack_nesting = 0;
 int ____numdebug_replaying = 0;
 int ____numdebug_rerunning = 0;
+
+static inline bool valid_group(size_t group) {
+    return group > 0;
+}
+
+static bool aliased(size_t group1, size_t group2) {
+    if (group1 == group2) return true;
+
+    if (aliased_groups.find(group1) != aliased_groups.end() &&
+            aliased_groups.find(group2) != aliased_groups.end()) {
+        // Can just do a pointer comparison here
+        return aliased_groups[group1] == aliased_groups[group2];
+    }
+    return false;
+}
 
 void init_numdebug(int nstructs, ...) {
     atexit(onexit);
@@ -102,6 +125,7 @@ void init_numdebug(int nstructs, ...) {
 #endif
         }
     }
+
     va_end(vl);
 
     char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
@@ -153,7 +177,7 @@ void init_numdebug(int nstructs, ...) {
         for (unsigned int i = 0; i < n_heap_allocs; i++) {
             void *old_address;
             size_t size;
-            int group;
+            size_t group;
             int is_cuda_alloc;
 
             safe_read(fd, &old_address, sizeof(old_address), "old_address",
@@ -323,16 +347,149 @@ static void *translate_old_ptr(void *ptr,
     return NULL;
 }
 
-void new_stack() {
+static void merge_alias_groups(size_t alias1, size_t alias2) {
+    assert(valid_group(alias1));
+    assert(valid_group(alias2));
+
+    map<size_t, set<size_t> *>::iterator existing1_iter =
+        aliased_groups.find(alias1);
+    map<size_t, set<size_t> *>::iterator existing2_iter =
+        aliased_groups.find(alias2);
+
+    std::set<size_t> *existing1 = NULL;
+    std::set<size_t> *existing2 = NULL;
+    if (existing1_iter != aliased_groups.end()) {
+        existing1 = existing1_iter->second;
+    }
+    if (existing2_iter != aliased_groups.end()) {
+        existing2 = existing2_iter->second;
+    }
+
+    map<size_t, size_t>::iterator child1_iter = contains.find(alias1);
+    map<size_t, size_t>::iterator child2_iter = contains.find(alias2);
+
+    if (child1_iter != contains.end() && child2_iter != contains.end()) {
+        size_t child1 = child1_iter->second;
+        size_t child2 = child2_iter->second;
+
+        /*
+         * It's possible to get a cycle here if aliases can be their own
+         * children (e.g. if you cast a pointer to store it in itself). This
+         * doesn't really fix the problem except for in trivial cases, so TODO.
+         */
+        if (child1 != alias1 || child2 != alias2) {
+            merge_alias_groups(child1, child2);
+        }
+    }
+
+    if (existing1 == NULL && existing2 == NULL) {
+        // Neither is aliased to anything yet, so alias them to each other only
+        std::set<size_t> *new_aliases = new std::set<size_t>();
+        new_aliases->insert(alias1);
+        new_aliases->insert(alias2);
+        aliased_groups[alias1] = new_aliases;
+        aliased_groups[alias2] = new_aliases;
+    } else if (existing1 != NULL && existing2 != NULL) {
+        if (existing1 == existing2) {
+            /*
+             * We know they're already aliased, and both aliases must already be
+             * in this vector
+             */
+            return;
+        } else {
+            std::set<size_t> *new_groups = new std::set<size_t>();
+            for (std::set<size_t>::iterator i = existing1->begin(),
+                    e = existing1->end(); i != e; i++) {
+                new_groups->insert(*i);
+            }
+            for (std::set<size_t>::iterator i = existing2->begin(),
+                    e = existing2->end(); i != e; i++) {
+                new_groups->insert(*i);
+            }
+
+            for (std::set<size_t>::iterator i = new_groups->begin(),
+                    e = new_groups->end(); i != e; i++) {
+                aliased_groups[*i] = new_groups;
+            }
+        }
+    } else if (existing1 != NULL) {
+        // alias2 is missing
+        existing1->insert(alias2);
+        aliased_groups[alias2] = existing1;
+    } else if (existing2 != NULL) {
+        // alias1 is missing
+        existing2->insert(alias1);
+        aliased_groups[alias1] = existing2;
+    }
+}
+
+void new_stack(size_t module_id, int n_local_arg_aliases,
+        int n_contains_mappings, ...) {
+    assert(program_stack.size() == 0 || calling_lbl >= 0);
+    stack_tracker.push(calling_lbl);
     program_stack.push_back(new stack_frame());
     stack_nesting++;
+
+    /*
+     * If this is the first new_stack, we just entered main and there are no
+     * parent aliases.
+     *
+     * A callee may have fewer arguments than a caller if the callee is a
+     * variable argument function. I'm not sure if variable argument functions
+     * are really supported at the moment, so for now we assert they are equal.
+     */
+    assert(program_stack.size() == 1 || n_local_arg_aliases == parent_aliases.size());
+
+    std::vector<size_t> new_aliases;
+    va_list vl;
+    va_start(vl, n_contains_mappings);
+    for (int i = 0; i < n_local_arg_aliases; i++) {
+        size_t alias = va_arg(vl, size_t);
+        new_aliases.push_back(alias);
+    }
+
+    bool initialized = (initialized_modules.find(module_id) !=
+            initialized_modules.end());
+    for (int i = 0; i < n_contains_mappings; i++) {
+        size_t container = va_arg(vl, size_t);
+        size_t child = va_arg(vl, size_t);
+
+        if (!initialized) {
+            contains[container] = child;
+        }
+    }
+
+    va_end(vl);
+
+    return_aliases.push_back(return_alias);
+
+    if (program_stack.size() > 1) {
+        for (int i = 0; i < n_local_arg_aliases; i++) {
+            if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
+                merge_alias_groups(new_aliases[i], parent_aliases[i]);
+                assert(aliased(new_aliases[i], parent_aliases[i]));
+            }
+        }
+    }
+
 #ifdef VERBOSE
     fprintf(stderr, "Incrementing stack depth to %d\n", stack_nesting);
 #endif
 }
 
-void calling(int lbl) {
-    stack_tracker.push(lbl);
+void calling(int lbl, size_t set_return_alias, int naliases, ...) {
+    calling_lbl = lbl;
+
+    return_alias = set_return_alias;
+    parent_aliases.clear();
+    va_list vl;
+    va_start(vl, naliases);
+    for (int i = 0; i < naliases; i++) {
+        size_t alias = va_arg(vl, size_t);
+        parent_aliases.push_back(alias);
+    }
+    va_end(vl);
+
 #ifdef VERBOSE
     fprintf(stderr, "Calling %d: ", lbl);
     for (unsigned int i = 0; i < stack_tracker.size(); i++) {
@@ -342,10 +499,23 @@ void calling(int lbl) {
 #endif
 }
 
-void rm_stack() {
+void rm_stack(bool has_return_alias, size_t returned_alias) {
     stack_frame *curr = program_stack.back();
     program_stack.pop_back();
     delete curr;
+
+    size_t this_return_alias = return_aliases.back();
+    return_aliases.pop_back();
+
+    /*
+     * We pass returned_alias as 0 here when the value being returned is not a
+     * pointer (in which case we don't care about its aliases).
+     */
+    if (has_return_alias && valid_group(returned_alias)) {
+        assert(valid_group(this_return_alias));
+        merge_alias_groups(this_return_alias, returned_alias);
+        assert(aliased(this_return_alias, returned_alias));
+    }
 
     stack_tracker.pop();
     stack_nesting--;
@@ -407,19 +577,32 @@ int alias_group_changed(int ngroups, ...) {
     va_list vl;
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
-        int group = va_arg(vl, int);
-        if (group != -1) {
-            changed_groups.insert(group);
+        size_t group = va_arg(vl, size_t);
+
+        if (valid_group(group)) {
+            if (aliased_groups.find(group) != aliased_groups.end()) {
+                for (set<size_t>::iterator iter =
+                        aliased_groups[group]->begin(), end =
+                        aliased_groups[group]->end(); iter != end; iter++) {
+                    changed_groups.insert(*iter);
+                }
+            } else {
+                changed_groups.insert(group);
+            }
         }
     }
+    va_end(vl);
     return 0;
 }
 
-void malloc_helper(void *new_ptr, size_t nbytes, int group, int is_cuda_alloc,
-        int has_type_info, int is_ptr, int is_struct, int elem_size,
-        int *ptr_field_offsets, int n_ptr_field_offsets) {
+void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
+        int is_cuda_alloc, int has_type_info, int is_ptr, int is_struct,
+        int elem_size, int *ptr_field_offsets, int n_ptr_field_offsets) {
+    assert(valid_group(group));
+
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
             curr_seq_no, is_cuda_alloc);
+
     if (has_type_info) {
         alloc->add_type_info(elem_size, is_ptr, is_struct);
         for (int i = 0; i < n_ptr_field_offsets; i++) {
@@ -442,7 +625,9 @@ void malloc_helper(void *new_ptr, size_t nbytes, int group, int is_cuda_alloc,
     heap_sequence_groups[curr_seq_no]->push_back(alloc);
 }
 
-void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...) {
+void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...) {
+    assert(valid_group(group));
+
     void *ptr = malloc(nbytes);
 
     if (ptr != NULL) {
@@ -462,7 +647,9 @@ void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...) {
     return ptr;
 }
 
-void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
+void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
+    assert(valid_group(group));
+
     void *new_ptr = realloc(ptr, nbytes);
 
     if (ptr != NULL) {
@@ -508,7 +695,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, int group) {
 }
 
 static void free_helper(map<void *, heap_allocation *>::iterator in_heap) {
-    int group = in_heap->second->get_alias_group();
+    size_t group = in_heap->second->get_alias_group();
     int seq = in_heap->second->get_seq();
 
     vector<heap_allocation *>::iterator in_alias_to_heap =
@@ -537,9 +724,10 @@ static map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
     return in_heap;
 }
 
-void free_wrapper(void *ptr, int group) {
+void free_wrapper(void *ptr, size_t group) {
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
-    assert(in_heap->second->get_alias_group() == group);
+    size_t original_group = in_heap->second->get_alias_group();
+    assert(aliased(original_group, group));
 
     free_helper(in_heap);
     free(ptr);
@@ -564,7 +752,7 @@ void wait_for_checkpoint() {
 }
 
 void checkpoint() {
-    new_stack();
+    new_stack(0, 0, 0);
 
     if (____numdebug_replaying) {
 #ifdef VERBOSE
@@ -665,12 +853,12 @@ void checkpoint() {
         ____numdebug_rerunning = 1;
         stack_nesting = 1;
 
-        rm_stack();
+        rm_stack(false, 0);
         return;
     }
 
     if (checkpoint_thread_running) {
-        rm_stack();
+        rm_stack(false, 0);
         return;
     }
 
@@ -678,7 +866,7 @@ void checkpoint() {
 
     if (checkpoint_thread_running) {
         pthread_mutex_unlock(&checkpoint_mutex);
-        rm_stack();
+        rm_stack(false, 0);
         return;
     }
 
@@ -722,7 +910,7 @@ void checkpoint() {
 
     pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
 
-    rm_stack();
+    rm_stack(false, 0);
 }
 
 static bool is_pointer_type(string type) {
@@ -870,7 +1058,7 @@ void *checkpoint_func(void *data) {
         assert(alloc->get_tmp_buffer() != NULL);
         void *address = alloc->get_address();
         size_t size = alloc->get_size();
-        int group = alloc->get_alias_group();
+        size_t group = alloc->get_alias_group();
         int is_cuda_alloc = alloc->get_is_cuda_alloc();
         int have_type_info = alloc->check_have_type_info() ? 1 : 0;
 

@@ -36,6 +36,7 @@ void InitPass::VisitTopLevel(clang::Decl *toplevel) {
                         ", " << field_name << ")";
                 }
             }
+
             ss << "); ";
             InsertText(child->getLocStart(), ss.str(), true, true);
         }

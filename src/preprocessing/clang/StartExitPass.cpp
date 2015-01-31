@@ -23,7 +23,7 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
             clang::SourceLocation loc = cmpd->getLocStart();
             clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
             if (insertions->isMainFile(locloc.getFilename())) {
-                InsertText(cmpd->getLocEnd(), "rm_stack(); ", true, true);
+                InsertText(cmpd->getLocEnd(), "rm_stack(false, 0UL); ", true, true);
             }
         }
     }
@@ -43,7 +43,26 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
             assert(!s->children().empty());
             clang::Stmt::const_child_iterator iter = s->child_begin();
             const clang::Stmt *child = *iter;
-            InsertText(child->getLocStart(), "new_stack(); ", true, true);
+
+            FunctionArgumentAliasGroups func =
+                insertions->findMatchingFunction(curr_func);
+            std::stringstream ss;
+            ss << "new_stack(" << insertions->get_module_id() << ", " <<
+                func.nargs() << ", " << insertions->get_reachable()->size();
+            for (unsigned i = 0; i < func.nargs(); i++) {
+                ss << ", (size_t)(" << func.alias_no_for(i) << "UL)";
+            }
+
+            for (std::vector<ReachableInfo>::iterator i =
+                    insertions->get_reachable()->begin(),
+                    e = insertions->get_reachable()->end(); i != e; i++) {
+                ReachableInfo curr = *i;
+                ss << ", " << curr.get_container() << "UL, " <<
+                    curr.get_child() << "UL";
+            }
+
+            ss << "); ";
+            InsertText(child->getLocStart(), ss.str(), true, true);
         }
 
         /*
@@ -68,7 +87,15 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
          * Insert rm_stack callbacks.
          */
         if (clang::isa<clang::ReturnStmt>(s)) {
-            InsertText(start, "rm_stack(); ", true, true);
+            FunctionExit *func_exit = insertions->findFirstMatchingFunctionExit(
+                    start_loc.getLine());
+            if (func_exit) {
+                std::stringstream ss;
+                ss << "rm_stack(true, " << func_exit->get_alias() << "UL); ";
+                InsertText(start, ss.str(), true, true);
+            } else {
+                InsertText(start, "rm_stack(false, 0UL); ", true, true);
+            }
         }
     }
 

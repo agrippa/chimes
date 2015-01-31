@@ -33,19 +33,20 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
-extern void init_numdebug(int nstructs, ...);
-extern void calling(int lbl);
+extern void init_numdebug(int nstructs, int naliases, ...);
+extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack();
-extern void rm_stack();
+extern void new_stack(int naliases, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, int group);
-extern void free_wrapper(void *ptr, int group);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info,
+        ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void free_wrapper(void *ptr, size_t group);
 
 
 
@@ -2896,96 +2897,97 @@ static void fwd(float *next, float *curr, float *vsq,
         float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {
 
 #pragma omp parallel for collapse(2)
- new_stack(); register_stack_var("fwd|next|0", "float*", &next, 8, 1, 0, 0); register_stack_var("fwd|curr|0", "float*", &curr, 8, 1, 0, 0); register_stack_var("fwd|vsq|0", "float*", &vsq, 8, 1, 0, 0); register_stack_var("fwd|c_coeff|0", "float*", &c_coeff, 8, 1, 0, 0); register_stack_var("fwd|nx|0", "i32", &nx, 4, 0, 0, 0); register_stack_var("fwd|ny|0", "i32", &ny, 4, 0, 0, 0); register_stack_var("fwd|dimx|0", "i32", &dimx, 4, 0, 0, 0); register_stack_var("fwd|dimy|0", "i32", &dimy, 4, 0, 0, 0); register_stack_var("fwd|radius|0", "i32", &radius, 4, 0, 0, 0); { int y; lbl_0: register_stack_var("fwd|y|0", "i32", &y, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( y = 0; y < ny; alias_group_changed(1, 9), y++) {
-        { int x; lbl_1: register_stack_var("fwd|x|0", "i32", &x, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( x = 0; x < nx; alias_group_changed(1, 10), x++) {
-             int this_offset; lbl_2: register_stack_var("fwd|this_offset|0", "i32", &this_offset, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } this_offset = (((radius) + (y)) * (dimx) + ((radius) + (x)));
+ new_stack(9, (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(1878174483548705945UL), (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("fwd|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("fwd|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("fwd|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("fwd|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); register_stack_var("fwd|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("fwd|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("fwd|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("fwd|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("fwd|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); { int y; lbl_0: register_stack_var("fwd|y|0", "i32", (void *)(&y), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( y = 0; y < ny; alias_group_changed(1, (size_t)(4739767882222113836UL)), y++) { {
+        { int x; lbl_1: register_stack_var("fwd|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( x = 0; x < nx; alias_group_changed(1, (size_t)(17434830636394106522UL)), x++) { {
+             int this_offset; lbl_2: register_stack_var("fwd|this_offset|0", "i32", (void *)(&this_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } this_offset = (((radius) + (y)) * (dimx) + ((radius) + (x)));
 
-             float temp; lbl_3: register_stack_var("fwd|temp|0", "float", &temp, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } temp = 2.F * curr[this_offset] - next[this_offset];
-             float div; lbl_4: register_stack_var("fwd|div|0", "float", &div, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } div = c_coeff[0] * curr[this_offset];
-            { int d; lbl_5: register_stack_var("fwd|d|0", "i32", &d, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } for ( d = 1; d <= radius; alias_group_changed(1, 15), d++) {
-                 int y_pos_offset; lbl_6: register_stack_var("fwd|y_pos_offset|0", "i32", &y_pos_offset, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_7; } y_pos_offset = (((radius) + (y + d)) * (dimx) + ((radius) + (x)));
-                 int y_neg_offset; lbl_7: register_stack_var("fwd|y_neg_offset|0", "i32", &y_neg_offset, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_8; } y_neg_offset = (((radius) + (y - d)) * (dimx) + ((radius) + (x)));
-                 int x_pos_offset; lbl_8: register_stack_var("fwd|x_pos_offset|0", "i32", &x_pos_offset, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_9; } x_pos_offset = (((radius) + (y)) * (dimx) + ((radius) + (x + d)));
-                 int x_neg_offset; lbl_9: register_stack_var("fwd|x_neg_offset|0", "i32", &x_neg_offset, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_10; } lbl_10: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp", 62); exit(1); } } } x_neg_offset = (((radius) + (y)) * (dimx) + ((radius) + (x - d)));
+             float temp; lbl_3: register_stack_var("fwd|temp|0", "float", (void *)(&temp), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } temp = 2.F * curr[this_offset] - next[this_offset];
+             float div; lbl_4: register_stack_var("fwd|div|0", "float", (void *)(&div), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } div = c_coeff[0] * curr[this_offset];
+            { int d; lbl_5: register_stack_var("fwd|d|0", "i32", (void *)(&d), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } for ( d = 1; d <= radius; alias_group_changed(1, (size_t)(5882646732977231578UL)), d++) { {
+                 int y_pos_offset; lbl_6: register_stack_var("fwd|y_pos_offset|0", "i32", (void *)(&y_pos_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_7; } y_pos_offset = (((radius) + (y + d)) * (dimx) + ((radius) + (x)));
+                 int y_neg_offset; lbl_7: register_stack_var("fwd|y_neg_offset|0", "i32", (void *)(&y_neg_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_8; } y_neg_offset = (((radius) + (y - d)) * (dimx) + ((radius) + (x)));
+                 int x_pos_offset; lbl_8: register_stack_var("fwd|x_pos_offset|0", "i32", (void *)(&x_pos_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_9; } x_pos_offset = (((radius) + (y)) * (dimx) + ((radius) + (x + d)));
+                 int x_neg_offset; lbl_9: register_stack_var("fwd|x_neg_offset|0", "i32", (void *)(&x_neg_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_10; } lbl_10: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp", 62); exit(1); } } } x_neg_offset = (((radius) + (y)) * (dimx) + ((radius) + (x - d)));
                 div += c_coeff[d] * (curr[y_pos_offset] +
                         curr[y_neg_offset] + curr[x_pos_offset] +
                         curr[x_neg_offset]);
-            } }
+            } } }
             next[this_offset] = temp + div * vsq[this_offset];
-        } }
-    } }
-rm_stack(); }
+        } } }
+    } } }
+rm_stack(false, 0UL); }
 
 int main( int argc, char *argv[] ) {
-    init_numdebug(0); new_stack(); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); config conf; lbl_0: register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", &conf, 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
-    alias_group_changed(3, 20, 21, 22); setup_config(&conf, argc, argv);
-    alias_group_changed(2, -1, 23); init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
+    init_numdebug(0, 12, 51957547433273402UL, (int)1, 5137389963215225702UL, 1723521694037231019UL, (int)2, 1878174483548705945UL, 12689430095640288602UL, 5137389963215225702UL, (int)2, 1878174483548705945UL, 5137389963215225702UL, 6702062687271916872UL, (int)2, 1878174483548705945UL, 14090327100653073298UL, 8137762494474163293UL, (int)2, 954117171319216583UL, 1878174483548705945UL, 8173156913144094456UL, (int)1, 5137389963215225702UL, 10576370107858932335UL, (int)2, 5137389963215225702UL, 16601824331468926401UL, 12562337459743076599UL, (int)2, 1878174483548705945UL, 12864671220213679431UL, 13586937894978003756UL, (int)1, 5137389963215225702UL, 15061204265717880351UL, (int)1, 5137389963215225702UL, 16338607484037732862UL, (int)1, 5137389963215225702UL, 17714748287745341607UL, (int)2, 5137389963215225702UL, 5475565484623419411UL); new_stack(2, (size_t)(0UL), (size_t)(5137389963215225702UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); config conf; lbl_0: register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
+    alias_group_changed(3, (size_t)(7922000227646604708UL), (size_t)(10576370107858932335UL), (size_t)(11418041643978447586UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(954117171319216583UL)); setup_config(&conf, argc, argv);
+     call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
 
-     float dx; lbl_1: register_stack_var("main|dx|0", "float", &dx, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } dx = 20.F;
-     float dt; lbl_2: register_stack_var("main|dt|0", "float", &dt, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } dt = 0.00200000009F;
+     float dx; lbl_1: register_stack_var("main|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } dx = 20.F;
+     float dt; lbl_2: register_stack_var("main|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } dt = 0.00200000009F;
 
 
-     size_t dimx; lbl_3: register_stack_var("main|dimx|0", "i64", &dimx, 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } dimx = conf.nx + 2 * conf.radius;
-     size_t dimy; lbl_4: register_stack_var("main|dimy|0", "i64", &dimy, 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } dimy = conf.ny + 2 * conf.radius;
-     size_t nbytes; lbl_5: register_stack_var("main|nbytes|0", "i64", &nbytes, 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } nbytes = dimx * dimy * sizeof(float);
+     size_t dimx; lbl_3: register_stack_var("main|dimx|0", "i64", (void *)(&dimx), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } dimx = conf.nx + 2 * conf.radius;
+     size_t dimy; lbl_4: register_stack_var("main|dimy|0", "i64", (void *)(&dimy), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } dimy = conf.ny + 2 * conf.radius;
+     size_t nbytes; lbl_5: register_stack_var("main|nbytes|0", "i64", (void *)(&nbytes), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } nbytes = dimx * dimy * sizeof(float);
 
-    if (alias_group_changed(5, 24, 25, 26, 27, 28) || conf.verbose) {
-        printf("x = %zu, y = %zu\n", dimx, dimy);
-        alias_group_changed(1, 41); printf("nsteps = %d\n", conf.nsteps);
-        alias_group_changed(1, 42); printf("radius = %d\n", conf.radius);
-    }
+    if (alias_group_changed(5, (size_t)(672423825553678236UL), (size_t)(8902610496293472766UL), (size_t)(11429982917709284407UL), (size_t)(14823988852069429391UL), (size_t)(16654564278629891269UL)) || conf.verbose) { {
+         call_lbl_2: calling(2, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); printf("x = %zu, y = %zu\n", dimx, dimy);
+         call_lbl_3: calling(3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); printf("nsteps = %d\n", conf.nsteps);
+         call_lbl_4: calling(4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); printf("radius = %d\n", conf.radius);
+    } }
 
-    float c_coeff[20]; lbl_6: register_stack_var("main|c_coeff|0", "[20 x float]", &c_coeff, 80, 0, 0, 0); if (____numdebug_replaying) { goto lbl_7; }
-     float *curr; lbl_7: register_stack_var("main|curr|0", "float*", &curr, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = (float *)malloc_wrapper(nbytes, 12, 0);
-     float *next; lbl_8: register_stack_var("main|next|0", "float*", &next, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = (float *)malloc_wrapper(nbytes, 12, 0);
-     float *vsq; lbl_9: register_stack_var("main|vsq|0", "float*", &vsq, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = (float *)malloc_wrapper(nbytes, 12, 0);
-    if (alias_group_changed(1, 31) || curr == __null || next == __null || vsq == __null) {
-        fprintf(__stderrp, "Allocations failed\n");
-        alias_group_changed(3, -1, 20, 44); rm_stack(); return 1;
-    }
+     float *c_coeff; lbl_6: register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } c_coeff = (float *)malloc_wrapper(sizeof(float) * 20, 954117171319216583UL, 0);
+     float *curr; lbl_7: register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = (float *)malloc_wrapper(nbytes, 954117171319216583UL, 0);
+     float *next; lbl_8: register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = (float *)malloc_wrapper(nbytes, 954117171319216583UL, 0);
+     float *vsq; lbl_9: register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = (float *)malloc_wrapper(nbytes, 954117171319216583UL, 0);
+    if (alias_group_changed(1, (size_t)(51957547433273402UL)) || curr == __null || next == __null || vsq == __null) { {
+         call_lbl_5: calling(5, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); fprintf(__stderrp, "Allocations failed\n");
+        alias_group_changed(1, (size_t)(11418041643978447586UL)); rm_stack(false, 0UL); return 1;
+    } }
 
-    config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
-     float **srcs; srcs = sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt);
+     call_lbl_6: calling(6, 0UL, 5, (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
+     float **srcs; call_lbl_7: calling(7, 5137389963215225702UL, 4, (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt);
 
-    alias_group_changed(2, 12, 32); init_data(curr, next, vsq, c_coeff, dimx, dimy, dx, dt);
+    alias_group_changed(1, (size_t)(17714748287745341607UL)); call_lbl_8: calling(8, 0UL, 8, (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dx, dt);
 
-     double start; lbl_10: register_stack_var("main|start|0", "double", &start, 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_11; } start = seconds();
-    { int step; lbl_11: register_stack_var("main|step|0", "i32", &step, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_12; } for ( step = 0; step < conf.nsteps; alias_group_changed(1, 34), step++) {
-        { int src; lbl_12: register_stack_var("main|src|0", "i32", &src, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_13; } for ( src = 0; src < conf.nsrcs; alias_group_changed(1, 35), src++) {
-            if (conf.srcs[src].t > step) continue;
-             int src_offset; lbl_13: register_stack_var("main|src_offset|0", "i32", &src_offset, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_14; } src_offset = (((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)));
+     double start; lbl_10: register_stack_var("main|start|0", "double", (void *)(&start), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_11; } call_lbl_9: calling(9, 0UL, 0); start = seconds();
+    { int step; lbl_11: register_stack_var("main|step|0", "i32", (void *)(&step), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_12; } for ( step = 0; step < conf.nsteps; alias_group_changed(1, (size_t)(11369820039177199885UL)), step++) { {
+        { int src; lbl_12: register_stack_var("main|src|0", "i32", (void *)(&src), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_13; } for ( src = 0; src < conf.nsrcs; alias_group_changed(1, (size_t)(9062503232652330034UL)), src++) { {
+            if (conf.srcs[src].t > step) { continue;
+ } int src_offset; lbl_13: register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_14; } src_offset = (((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)));
 
             curr[src_offset] = srcs[src][step];
-        } }
+        } } }
 
-         call_lbl_0: calling(0); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy,
+         call_lbl_10: calling(10, 0UL, 9, (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy,
                 conf.radius);
 
-         float *tmp; lbl_14: register_stack_var("main|tmp|0", "float*", &tmp, 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_15; } tmp = next;
+         float *tmp; lbl_14: register_stack_var("main|tmp|0", "float*", (void *)(&tmp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_15; } tmp = next;
         next = curr;
         curr = tmp;
 
-        alias_group_changed(3, 29, 30, 37); update_progress(step + 1);
-    } }
-     double elapsed_s; lbl_15: register_stack_var("main|elapsed_s|0", "double", &elapsed_s, 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_16; } elapsed_s = seconds() - start;
+        alias_group_changed(3, (size_t)(13586937894978003756UL), (size_t)(15061204265717880351UL), (size_t)(16338607484037732862UL)); call_lbl_11: calling(11, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
+    } } }
+     double elapsed_s; lbl_15: register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_16; } call_lbl_12: calling(12, 0UL, 0); elapsed_s = seconds() - start;
 
-    alias_group_changed(1, 38); finish_progress();
+    alias_group_changed(1, (size_t)(1546598728562811617UL)); call_lbl_13: calling(13, 0UL, 0); finish_progress();
 
-     float point_rate; lbl_16: register_stack_var("main|point_rate|0", "float", &point_rate, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_17; } point_rate = (float)conf.nx * conf.ny / (elapsed_s / conf.nsteps);
-    alias_group_changed(1, 39); fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
+     float point_rate; lbl_16: register_stack_var("main|point_rate|0", "float", (void *)(&point_rate), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_17; } point_rate = (float)conf.nx * conf.ny / (elapsed_s / conf.nsteps);
+    alias_group_changed(1, (size_t)(6744916278609090727UL)); call_lbl_14: calling(14, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
             elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
 
-    if (alias_group_changed(2, -1, 45) || conf.save_text) {
-        save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
-    }
-
-    free_wrapper(curr, 12);
-    alias_group_changed(1, 12); free_wrapper(next, 12);
-    alias_group_changed(1, 12); free_wrapper(vsq, 12);
-    { int i; lbl_17: register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_18; } lbl_18: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp", 138); exit(1); } } } for ( i = 0; i < conf.nsrcs; alias_group_changed(1, 40), i++) {
-        free_wrapper(srcs[i], 23);
+    if (conf.save_text) { {
+         call_lbl_15: calling(15, 0UL, 7, (size_t)(954117171319216583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
     } }
-    free_wrapper(srcs, 23);
 
-    alias_group_changed(2, 20, 23); rm_stack(); return 0;
+    free_wrapper(c_coeff, 954117171319216583UL);
+    free_wrapper(curr, 954117171319216583UL);
+    free_wrapper(next, 954117171319216583UL);
+    free_wrapper(vsq, 954117171319216583UL);
+    { int i; lbl_17: register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_18; } lbl_18: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp", 139); exit(1); } } } for ( i = 0; i < conf.nsrcs; alias_group_changed(1, (size_t)(14481345762226638720UL)), i++) { {
+        free_wrapper(srcs[i], 954117171319216583UL);
+    } } }
+    free_wrapper(srcs, 954117171319216583UL);
+
+    alias_group_changed(1, (size_t)(11418041643978447586UL)); rm_stack(false, 0UL); return 0;
 }

@@ -1,4 +1,4 @@
-# 1 "decl_in_for.cpp.pre.register.cpp"
+# 1 "func_call.cpp.pre.register.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -16,8 +16,8 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 2 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "decl_in_for.cpp.pre.register.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+# 1 "func_call.cpp.pre.register.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 325 "<built-in>" 3
@@ -501,7 +501,7 @@ FILE *funopen(const void *,
 }
 # 4 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
 
 
@@ -1709,13 +1709,16 @@ void *valloc(size_t);
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
+
+int foo(int a) {
+    new_stack(1, 0UL); register_stack_var("foo|a|0", "i32", &a, 4, 0, 0, 0); int b; lbl_0: register_stack_var("foo|b|0", "i32", &b, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } b = a;
+     int c; lbl_1: register_stack_var("foo|c|0", "i32", &c, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 5); exit(1); } } } c = a + b;
+    alias_group_changed(3, 9833117726010733966UL, 10691666889286243735UL, 14720236302514914660UL); rm_stack(); return c;
+}
 
 int main(int argc, char **argv) {
-    init_numdebug(0); new_stack(2, 0UL, 16601824331468926401UL); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int a; lbl_0: register_stack_var("main|a|0", "i32", &a, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = 0;
-    { int i; lbl_1: register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 5); exit(1); } } } for ( i = 0; i < 10; alias_group_changed(1, 16654564278629891269UL), i++) {
-        a += i;
-    } }
-     call_lbl_0: calling(0, 1, 5UL); checkpoint();
-    rm_stack(); return 0;
+    init_numdebug(0); new_stack(2, 0UL, 16601824331468926401UL); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int a; lbl_0: register_stack_var("main|a|0", "i32", &a, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = 3;
+     int b; lbl_1: register_stack_var("main|b|0", "i32", &b, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 11); exit(1); } } } call_lbl_0: calling(0, 1, 0UL); b = foo(a);
+    alias_group_changed(1, 8902610496293472766UL); rm_stack(); return b;
 }

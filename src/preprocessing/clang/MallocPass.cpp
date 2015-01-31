@@ -32,7 +32,7 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
                 ReplaceText(start, alloc->get_fname().size(), ss.str());
 
                 std::stringstream ss2;
-                ss2 << ", " << alloc->get_group();
+                ss2 << ", " << alloc->get_group() << "UL";
 
                 if (alloc->get_fname() == "malloc" ||
                         alloc->get_fname() == "cudaMalloc") {

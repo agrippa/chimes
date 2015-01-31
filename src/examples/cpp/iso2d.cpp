@@ -88,7 +88,7 @@ int main( int argc, char *argv[] ) {
         printf("radius = %d\n", conf.radius);
     }
 
-    TYPE c_coeff[NUM_COEFF];
+    TYPE *c_coeff = (TYPE *)malloc(sizeof(TYPE) * NUM_COEFF);
     TYPE *curr = (TYPE *)malloc(nbytes);
     TYPE *next = (TYPE *)malloc(nbytes);
     TYPE *vsq  = (TYPE *)malloc(nbytes);
@@ -132,6 +132,7 @@ int main( int argc, char *argv[] ) {
         save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
     }
 
+    free(c_coeff);
     free(curr);
     free(next);
     free(vsq);
