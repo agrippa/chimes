@@ -1,13 +1,13 @@
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 10 : { 5137389963215225702, 7922000227646604708, 10576370107858932335, 11418041643978447586, 16654564278629891269 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 10 : { 672423825553678236 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 10 : { 11429982917709284407, 14823988852069429391 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 15 5 : { 8902610496293472766 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 24 : { 14823988852069429391 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 10 : { 8173156913144094456 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 14 : { 14823988852069429391 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 21 9 : { 8902610496293472766 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 32 : { 14823988852069429391 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 : { 672423825553678236, 11429982917709284407, 16338607484037732862 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 35 : { 8173156913144094456 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 10 : { 13586937894978003756, 14823988852069429391 }
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 24 : { 14823988852069429391 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 10 : { 557327200247579733, 1388457574958923572, 15018275423251710358, 16551423137225396134, 17699046973199516026 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 10 : { 6106350031149747834 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 10 : { 15772700233101583677, 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 15 5 : { 11995044644349796100 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 24 : { 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 10 : { 17518635324219924788 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 14 : { 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 21 9 : { 11995044644349796100 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 32 : { 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 : { 6106350031149747834, 14248127759314616947, 15772700233101583677 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 35 : { 17518635324219924788 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 10 : { 8312944838440117739, 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 24 : { 16809019010565379225 }

@@ -32,8 +32,7 @@ ISO2D = FrontendTest('Iso2D',
                      includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                      dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                    'libcommon2d.so')])
-# TESTS = [SIMPLE_STENCIL, PASS_BY_REF, DECL_IN_FOR, FUNC_CALL, ISO2D]
-TESTS = [ISO2D]
+TESTS = [SIMPLE_STENCIL, PASS_BY_REF, DECL_IN_FOR, FUNC_CALL, ISO2D]
 
 
 if __name__ == '__main__':
