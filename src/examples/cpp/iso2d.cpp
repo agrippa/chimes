@@ -39,6 +39,7 @@
 #include <unistd.h>
 #include "common.h"
 #include "common2d.h"
+#include "checkpoint.h"
 
 /*
  * This function advances the state of the system by nsteps timesteps. The 
@@ -128,6 +129,7 @@ int main( int argc, char *argv[] ) {
     fprintf(stderr, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
             elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
 
+    checkpoint();
     if (conf.save_text) {
         save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
     }

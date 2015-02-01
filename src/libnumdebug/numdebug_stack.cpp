@@ -31,3 +31,13 @@ void numdebug_stack::copy(std::vector<int> *dst) {
         dst->push_back(stack[i]);
     }
 }
+
+std::string numdebug_stack::str() {
+    std::stringstream ss;
+    ss << "[";
+    for (int i = 0; i < len; i++) {
+        ss << " " << stack[i];
+    }
+    ss << " ]";
+    return ss.str();
+}

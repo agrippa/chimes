@@ -10,7 +10,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|curr|0 " float* " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|next|0 " float* " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|vsq|0 " float* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|srcs24|0 " float** " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|srcs|0 " float** " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|start|0 " double " 64 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|step|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp main|src|0 " i32 " 32 0 0 

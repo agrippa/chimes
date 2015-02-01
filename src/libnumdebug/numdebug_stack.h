@@ -1,6 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
 
+#include <string>
+#include <sstream>
 #include <vector>
 
 #include <stdlib.h>
@@ -25,6 +27,7 @@ class numdebug_stack {
         void copy(std::vector<int> *dst);
         int size() { return len; }
         int at(int index) { assert(index < len); return stack[index]; }
+        std::string str();
 };
 
 #endif

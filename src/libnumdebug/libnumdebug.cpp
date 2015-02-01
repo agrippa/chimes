@@ -328,6 +328,37 @@ void init_numdebug(int nstructs, ...) {
             }
         }
 
+        unsigned n_contains_mappings;
+        safe_read(fd, &n_contains_mappings, sizeof(n_contains_mappings),
+                "n_contains_mappings", checkpoint_file);
+        for (unsigned i = 0; i < n_contains_mappings; i++) {
+            size_t container, child;
+            safe_read(fd, &container, sizeof(container), "container",
+                    checkpoint_file);
+            safe_read(fd, &child, sizeof(child), "child", checkpoint_file);
+
+            assert(contains.find(container) == contains.end());
+            contains[container] = child;
+        }
+
+        unsigned n_aliased_groups;
+        safe_read(fd, &n_aliased_groups, sizeof(n_aliased_groups),
+                "n_aliased_groups", checkpoint_file);
+        for (unsigned i = 0; i < n_aliased_groups; i++) {
+            std::set<size_t> *groups = new std::set<size_t>();
+            unsigned size;
+            safe_read(fd, &size, sizeof(size), "aliased_groups_size",
+                    checkpoint_file);
+            for (unsigned ii = 0; ii < size; ii++) {
+                size_t group;
+                safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
+                groups->insert(group);
+
+                assert(aliased_groups.find(group) == aliased_groups.end());
+                aliased_groups[group] = groups;
+            }
+        }
+
         close(fd);
     }
 }
@@ -426,7 +457,9 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 void new_stack(size_t module_id, int n_local_arg_aliases,
         int n_contains_mappings, ...) {
     assert(program_stack.size() == 0 || calling_lbl >= 0);
-    stack_tracker.push(calling_lbl);
+    if (calling_lbl >= 0) {
+        stack_tracker.push(calling_lbl);
+    }
     program_stack.push_back(new stack_frame());
     stack_nesting++;
 
@@ -625,6 +658,19 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     heap_sequence_groups[curr_seq_no]->push_back(alloc);
 }
 
+/*
+ * If has_type_info is true, then the first two optional arguments are:
+ *   int is_ptr : whether this allocation contains pointer elements
+ *   int is_struct : whether this allocation contains struct elements
+ *
+ * If is_struct is true, then a list of the fields in the struct elements that
+ * contain pointers is also passed. This list starts with:
+ *   int elem_size : The size of each struct in this allocation
+ *   int n_ptr_fields : The number of pointer fields in this struct
+ *
+ * followed by n_ptr_fields int arguments, each of which is an offset in the
+ * struct at which a pointer can be found.
+ */
 void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...) {
     assert(valid_group(group));
 
@@ -775,19 +821,19 @@ void checkpoint() {
             unpacked_program_stack->begin();
         vector<stack_frame *>::iterator unpacked_end =
             unpacked_program_stack->end();
-        vector<stack_frame *>::iterator real_iter = program_stack.begin();
-        vector<stack_frame *>::iterator real_end = program_stack.end();
+        vector<stack_frame *>::iterator live_iter = program_stack.begin();
+        vector<stack_frame *>::iterator live_end = program_stack.end();
 
-        while (unpacked_iter != unpacked_end && real_iter != real_end) {
-            stack_frame *real = *real_iter;
+        while (unpacked_iter != unpacked_end && live_iter != live_end) {
+            stack_frame *live = *live_iter;
             stack_frame *unpacked = *unpacked_iter;
 
             /*
-             * It is possible that real is larger than unpacked if the
+             * It is possible that live is larger than unpacked if the
              * checkpoint run didn't reach some local variable declarations
              * before this checkpoint was created.
              */
-            assert(real->size() >= unpacked->size());
+            assert(live->size() >= unpacked->size());
 
             /*
              * Match entries in the checkpoint to known locals in the running
@@ -795,14 +841,14 @@ void checkpoint() {
              */
             for (stack_frame::iterator i = unpacked->begin(),
                     e = unpacked->end(); i != e; i++) {
-                assert(real->find(i->first) != real->end());
+                assert(live->find(i->first) != live->end());
             }
 
             for (stack_frame::iterator i = unpacked->begin(),
                     e = unpacked->end(); i != e; i++) {
                 string name = i->first;
                 stack_var *dead = i->second;
-                stack_frame::iterator found = real->find(name);
+                stack_frame::iterator found = live->find(name);
                 stack_var *live = found->second;
 
                 assert(live->get_name() == dead->get_name());
@@ -823,22 +869,27 @@ void checkpoint() {
             }
 
             unpacked_iter++;
-            real_iter++;
+            live_iter++;
         }
 
-        assert(unpacked_iter == unpacked_end && real_iter == real_end);
+        assert(unpacked_iter == unpacked_end && live_iter == live_end);
 
         /*
          * find pointers in the stack and restore them to point to the correct
          * object. at the same time, use these pointers as indicators of places
          * in the heap where other references need updating by following
          * pointers.
+         *
+         * Use updated to track which local variables we've already updated and
+         * skip them.
          */
         set<void *> updated;
+        // For each stack frame
         for (vector<stack_frame *>::iterator frame_iter = program_stack.begin(),
                 frame_end = program_stack.end(); frame_iter != frame_end;
                 frame_iter++) {
             stack_frame *frame = *frame_iter;
+            // For each stack variable in the current frame
             for (stack_frame::iterator var_iter = frame->begin(),
                     var_end = frame->end(); var_iter != var_end; var_iter++) {
                 stack_var *var = var_iter->second;
@@ -1100,6 +1151,42 @@ void *checkpoint_func(void *data) {
 
         // Release any deffered frees
         free(alloc->get_tmp_buffer());
+    }
+
+    unsigned n_contains_mappings = contains.size();
+    safe_write(fd, &n_contains_mappings, sizeof(n_contains_mappings),
+            "n_contains_mappings", dump_filename);
+    // Dump container information to be loaded with the checkpoint
+    for (map<size_t, size_t>::iterator i = contains.begin(), e = contains.end();
+            i != e; i++) {
+        size_t container = i->first;
+        size_t child = i->second;
+        safe_write(fd, &container, sizeof(container), "container",
+                dump_filename);
+        safe_write(fd, &child, sizeof(child), "child", dump_filename);
+    }
+
+    set<set<size_t> *> aliased_groups_ptr;
+    for (map<size_t, set<size_t> *>::iterator i = aliased_groups.begin(),
+            e = aliased_groups.end(); i != e; i++) {
+        aliased_groups_ptr.insert(i->second);
+    }
+
+    unsigned n_aliased_groups = aliased_groups_ptr.size();
+    safe_write(fd, &n_aliased_groups, sizeof(n_aliased_groups),
+            "n_aliased_groups", dump_filename);
+    for (set<set<size_t> *>::iterator i = aliased_groups_ptr.begin(),
+            e = aliased_groups_ptr.end(); i != e; i++) {
+        set<size_t> *curr = *i;
+        unsigned curr_size = curr->size();
+        safe_write(fd, &curr_size, sizeof(curr_size), "curr_size",
+                dump_filename);
+
+        for (set<size_t>::iterator ii = curr->begin(), ee = curr->end();
+                ii != ee; ii++) {
+            size_t group = *ii;
+            safe_write(fd, &group, sizeof(group), "group", dump_filename);
+        }
     }
 
     close(fd);
