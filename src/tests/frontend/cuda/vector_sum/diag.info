@@ -1,105 +1,101 @@
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 1 alias_group_changed(4, 32, 33, 34, 35); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 1 alias_group_changed(1, 37); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 1 alias_group_changed(1, 38); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 1 alias_group_changed(1, 39); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 33 1 alias_group_changed(1, 36); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 34 1 alias_group_changed(1, 36); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 6 alias_group_changed(2, 36, 40), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 20 alias_group_changed(1, 40), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 42 1 alias_group_changed(2, -1, 36); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 1 alias_group_changed(4, -1, 36, 41, 42); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 1 alias_group_changed(2, -1, 36); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 6 alias_group_changed(4, 40, 43, 44, 45), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 20 alias_group_changed(1, 40), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 1 alias_group_changed(1, -1); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 1 alias_group_changed(1, -1); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 1 alias_group_changed(1, -1); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 alias_group_changed(1, -1); 
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 55 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 76 , 36, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 43 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 64 , 36, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 43 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 64 , 36, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 29 len=10 cudaMalloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 71 , -1, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 33 29 len=10 cudaMalloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 33 71 , -1, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 34 29 len=10 cudaMalloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 34 71 , -1, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 29 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 38 , -1
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 29 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 38 , -1
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 29 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 38 , -1
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 33  call_lbl_0: calling(0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1 new_stack(); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1  register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1  register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 29 rm_stack(); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 new_stack(); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_0|0", "i32*", &__cuda_0, 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_1|0", "i32*", &__cuda_1, 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_2|0", "i32*", &__cuda_2, 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_3|0", "i32", &__cuda_3, 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 1 alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 1 alias_group_changed(1, (size_t)(13034356908650733702UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 1 alias_group_changed(1, (size_t)(18097232747524644883UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 1 alias_group_changed(1, (size_t)(4713364512689004448UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 25 { 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 39 1  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 6 alias_group_changed(1, (size_t)(16809019010565379225UL)), 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 20 alias_group_changed(1, (size_t)(16809019010565379225UL)), 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 1 alias_group_changed(2, (size_t)(2906517587857753UL), (size_t)(10516037394037531631UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 25 { 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 56 1  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 6 alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)), 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 20 alias_group_changed(1, (size_t)(16809019010565379225UL)), 
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 174 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 195 , 12461144288208489700UL, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 73 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 29 94 , 16911790603234953566UL, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 73 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 30 94 , 12432285355704167318UL, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 58 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 100 , 0UL, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 33 1 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 33 43 , 0UL, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 34 1 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 34 43 , 0UL, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 1 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 10 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 1 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 10 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 1 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 10 , 0UL
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1 new_stack(10983886093799450781UL, 2, 23, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL, 3617489850581581679UL, 8543576809224315440UL, 4214516574885722508UL, 13629438911791803140UL, 4713364512689004448UL, 12432285355704167318UL, 5956854469140494953UL, 16245677267113222671UL, 6323303540388583539UL, 9877773167732901613UL, 7089989472930211505UL, 13930679126207712666UL, 7229261624878550433UL, 9877773167732901613UL, 7696593959710208457UL, 9877773167732901613UL, 8312944838440117739UL, 6337771489180023308UL, 8315622109923704320UL, 8543576809224315441UL, 10918912294913350599UL, 143077629906096616UL, 11788121732272334146UL, 13930679126207712667UL, 12535508970847451762UL, 15259509928453863544UL, 13034356908650733702UL, 12461144288208489700UL, 13956057025417141307UL, 4403095807090434764UL, 14824238800785570000UL, 9833271297019531733UL, 16415294844621594485UL, 4674896959417115766UL, 16486253991614456787UL, 13930679126207712668UL, 17366101664949010654UL, 8543576809224315439UL, 17598384809721362943UL, 16362704626186430450UL, 17834006590498585836UL, 9877773167732901613UL, 18097232747524644883UL, 16911790603234953566UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 new_stack(10983886093799450781UL, 4, 23, (size_t)(8543576809224315439UL), (size_t)(8543576809224315440UL), (size_t)(8543576809224315441UL), (size_t)(0UL), 1388457574958923572UL, 18293662412874621885UL, 3617489850581581679UL, 8543576809224315440UL, 4214516574885722508UL, 13629438911791803140UL, 4713364512689004448UL, 12432285355704167318UL, 5956854469140494953UL, 16245677267113222671UL, 6323303540388583539UL, 9877773167732901613UL, 7089989472930211505UL, 13930679126207712666UL, 7229261624878550433UL, 9877773167732901613UL, 7696593959710208457UL, 9877773167732901613UL, 8312944838440117739UL, 6337771489180023308UL, 8315622109923704320UL, 8543576809224315441UL, 10918912294913350599UL, 143077629906096616UL, 11788121732272334146UL, 13930679126207712667UL, 12535508970847451762UL, 15259509928453863544UL, 13034356908650733702UL, 12461144288208489700UL, 13956057025417141307UL, 4403095807090434764UL, 14824238800785570000UL, 9833271297019531733UL, 16415294844621594485UL, 4674896959417115766UL, 16486253991614456787UL, 13930679126207712668UL, 17366101664949010654UL, 8543576809224315439UL, 17598384809721362943UL, 16362704626186430450UL, 17834006590498585836UL, 9877773167732901613UL, 18097232747524644883UL, 16911790603234953566UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_0|0", "i32*", (void *)(&__cuda_0), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_1|0", "i32*", (void *)(&__cuda_1), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_2|0", "i32*", (void *)(&__cuda_2), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_3|0", "i32", (void *)(&__cuda_3), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1 init_numdebug(0); 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 157 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 174 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 174 cudaError_t error; 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6 int i; 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 22 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 22  int N; N = (1024 * 1024);  
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 21 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 21 int *h_A; int *h_B; int *h_C; 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 21 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 21 int *d_A; int *d_B; int *d_C; 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 28 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 28  int threads_per_block; threads_per_block = 128;  
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 72 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 72  int blocks_per_grid; blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block;  
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 1 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 34 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 34  FILE *fp; fp = fopen("dump.out", "w");  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1335 cudaError_t error; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1352 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 1 int i; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 1  int N;  N = (1024 * 1024); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 22 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 1 int *h_A; int *h_B; int *h_C; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 21 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 1 int *d_A; int *d_B; int *d_C; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 21 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 1  int threads_per_block;  threads_per_block = 128; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 28 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 1  int blocks_per_grid;  blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 72 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 1  FILE *fp;  fp = fopen("dump.out", "w"); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 34 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 41 1  call_lbl_0: calling(0, 0UL, 4, (size_t)(15259509928453863544UL), (size_t)(12461144288208489700UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 42 1  call_lbl_1: calling(1, 0UL, 4, (size_t)(16362704626186430450UL), (size_t)(16911790603234953566UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 89  call_lbl_2: calling(2, 0UL, 4, (size_t)(15046298603458950784UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 89  call_lbl_3: calling(3, 0UL, 4, (size_t)(14832733179147967965UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 49 1  call_lbl_4: calling(4, 0UL, 4, (size_t)(12432285355704167318UL), (size_t)(13629438911791803140UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 1  call_lbl_5: calling(5, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 13  call_lbl_6: calling(6, 6337771489180023308UL, 2, (size_t)(7451376560946655001UL), (size_t)(9302546641309323898UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 55 1  call_lbl_7: calling(7, 0UL, 3, (size_t)(6337771489180023308UL), (size_t)(10438118436187702648UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 57 1  call_lbl_8: calling(8, 0UL, 1, (size_t)(6337771489180023308UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6  register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6  register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 6  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 7  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 7  register_stack_var("main|N|0", "i32", &N, 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 7  register_stack_var("main|N|0", "i32", (void *)(&N), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 23 7  if (____numdebug_replaying) { goto lbl_2; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 9  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 9  register_stack_var("main|h_A|0", "i32*", &h_A, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 9  register_stack_var("main|h_A|0", "i32*", (void *)(&h_A), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 9  if (____numdebug_replaying) { goto lbl_3; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 19  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 19  register_stack_var("main|h_B|0", "i32*", &h_B, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 19  register_stack_var("main|h_B|0", "i32*", (void *)(&h_B), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 19  if (____numdebug_replaying) { goto lbl_4; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 29  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 29  register_stack_var("main|h_C|0", "i32*", &h_C, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 29  register_stack_var("main|h_C|0", "i32*", (void *)(&h_C), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 29  if (____numdebug_replaying) { goto lbl_5; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  register_stack_var("main|d_A|0", "i32*", &d_A, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  register_stack_var("main|d_A|0", "i32*", (void *)(&d_A), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  if (____numdebug_replaying) { goto lbl_6; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  register_stack_var("main|d_B|0", "i32*", &d_B, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  register_stack_var("main|d_B|0", "i32*", (void *)(&d_B), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  if (____numdebug_replaying) { goto lbl_7; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  register_stack_var("main|d_C|0", "i32*", &d_C, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  register_stack_var("main|d_C|0", "i32*", (void *)(&d_C), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  if (____numdebug_replaying) { goto lbl_8; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 23  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 23  register_stack_var("main|threads_per_block|0", "i32", &threads_per_block, 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 23  register_stack_var("main|threads_per_block|0", "i32", (void *)(&threads_per_block), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 23  if (____numdebug_replaying) { goto lbl_9; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21  register_stack_var("main|blocks_per_grid|0", "i32", &blocks_per_grid, 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21  register_stack_var("main|blocks_per_grid|0", "i32", (void *)(&blocks_per_grid), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21  if (____numdebug_replaying) { goto lbl_10; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  register_stack_var("main|fp|0", "%struct.__sFILE*", &fp, 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  if (____numdebug_replaying) { goto lbl_11; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10 lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10 lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
