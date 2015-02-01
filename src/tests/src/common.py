@@ -24,9 +24,10 @@ class TestConfig(object):
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep, verbose):
+    def __init__(self, keep, verbose, target):
         self.keep = keep
         self.verbose = verbose
+        self.target = target
 
     def __str__(self):
         return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
@@ -40,13 +41,14 @@ class RuntimeTest(object):
     asserts which verify correct behavior.
     """
     def __init__(self, name, input_files, expected_code,
-                 expected_num_checkpoints, includes=[], dependencies=[]):
+                 expected_num_checkpoints, includes=[], dependencies=[], cli_args=None):
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
         self.expected_num_checkpoints = expected_num_checkpoints
         self.includes = includes
         self.dependencies = dependencies
+        self.cli_args = cli_args
 
 
 class FrontendTest(object):
@@ -147,6 +149,7 @@ def parse_argv(argv):
     """
     keep = False
     verbose = False
+    target = None
 
     i = 1
     while i < len(argv):
@@ -154,12 +157,16 @@ def parse_argv(argv):
             keep = True
         elif argv[i] == '-v':
             verbose = True
+        elif argv[i] == '-t':
+            assert len(argv) >= i + 2
+            target = argv[i + 1]
+            i += 1
         else:
             sys.stderr.write('Unknown argument ' + argv[i] + '\n')
             sys.exit(1)
         i += 1
 
-    return TestConfig(keep, verbose)
+    return TestConfig(keep, verbose, target)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -400,6 +407,10 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     assert len(test.input_files) == len(test.compare_files)
     assert len(test.input_files) == len(test.info_dirs)
 
+    if config.target is not None and config.target != test.name:
+        print test.name + ' SKIPPING'
+        return
+
     compile_cmd = compile_script_path + ' -k'
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(examples_dir_path, input_file)
@@ -472,6 +483,10 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     :param config: Configuration information for tests
     :type config: `class` TestConfig
     """
+    if config.target is not None and config.target != test.name:
+        print test.name + ' SKIPPING'
+        return
+
     # Compile the input file into an executable
     env = copy_environ()
     compile_cmd = compile_script_path + ' -k'
@@ -487,16 +502,20 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
 
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
-    _, work_folder, root_folder = get_files_from_compiler_stdout(stdout)
+    _, work_folder, root_folder = get_files_from_compiler_stdout(stdout, len(test.input_files))
 
     if not os.path.isfile('a.out'):
         sys.stderr.write('Compilation failed to generate an executable\n')
         sys.exit(1)
 
+    exec_cmd = './a.out '
+    if test.cli_args is not None:
+        exec_cmd += test.cli_args
+
     # Test the command without a checkpoint, verify it produces the expected
     # error code and one checkpoint file.
     assert 'NUMDEBUG_CHECKPOINT_FILE' not in env
-    stdout, stderr, code = run_cmd('./a.out', True, env=env)
+    stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
     if code != test.expected_code:
         sys.stderr.write('Test ' + test.name + ' expected exit code ' +
                          str(test.expected_code) + ' but got ' + str(code) +
@@ -525,7 +544,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     for checkpoint in numdebug_files:
         env['NUMDEBUG_CHECKPOINT_FILE'] = checkpoint
-        stdout, stderr, code = run_cmd('./a.out', True, env=env)
+        stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
         if code != NUM_DEBUG_REPLAY_EXIT_CODE:
             sys.stderr.write('Rerun of test ' + test.name + ' on checkpoint ' +
                              checkpoint + ' expected exit code ' +

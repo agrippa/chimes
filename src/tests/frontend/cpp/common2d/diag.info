@@ -117,10 +117,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1630  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1630  register_stack_var("init_data|i|0", "i64", (void *)(&i), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1630  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 16  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 16  register_stack_var("init_data|i|1", "i64", (void *)(&i), 8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 16  if (____numdebug_replaying) { goto lbl_2; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  if (____numdebug_replaying) { goto lbl_3; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17 lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140  register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140  if (____numdebug_replaying) { goto lbl_1; } 

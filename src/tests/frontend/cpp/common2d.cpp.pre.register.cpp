@@ -2385,12 +2385,12 @@ void init_data(float *curr, float *next, float *vsq,
     } } }
 
 
-    { size_t i; for ( i = 0; i < dimx * dimy; alias_group_changed(1, (size_t)(15567591489155420624UL)), i++) { {
+    { size_t i; lbl_1: register_stack_var("init_data|i|1", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( i = 0; i < dimx * dimy; alias_group_changed(1, (size_t)(15567591489155420624UL)), i++) { {
         curr[i] = next[i] = 0;
     } } }
 
      call_lbl_0: calling(0, 0UL, 5, (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
-     float scale; lbl_1: register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 40); exit(1); } } } scale = 1. / (dx * dx);
+     float scale; lbl_2: register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 40); exit(1); } } } scale = 1. / (dx * dx);
     h_coeff[0] = -8.541666 * scale;
     h_coeff[1] = 1.600000 * scale;
     h_coeff[2] = -0.200000 * scale;

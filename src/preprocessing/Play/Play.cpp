@@ -127,6 +127,7 @@ namespace {
                 std::string filename, std::set<size_t> *groups);
         void dumpLineToGroupsMappingTo(const char *filename);
 
+        std::map<Value *, std::string> *mapValuesToOriginalVarName(Function *F);
         void findStackAllocations(Module &M, const char *output_file,
                 const char *struct_info_filename);
         SimpleLoc *findStartingLineForFunction(Function *F, Module &M);
@@ -1068,6 +1069,21 @@ std::string *Play::get_unique_varname(std::string varname, Function *F,
     return unique_varname;
 }
 
+std::map<Value *, std::string> *mapValueToOriginalVarname(const Function *F) {
+    std::map<Value *, std::string> *mapping = new std::map<Value *, std::string>();
+    
+    for (const_inst_iterator i = inst_begin(F), e = inst_end(F); i != e; i++) {
+        const Instruction *inst = &*i;
+        if (const DbgDeclareInst* dbgDeclare = dyn_cast<DbgDeclareInst>(inst)) {
+            assert(mapping->find(dbgDeclare->getAddress()) == mapping->end());
+            assert(isa<AllocaInst>(dbgDeclare->getAddress()));
+            (*mapping)[dbgDeclare->getAddress()] = DIVariable(dbgDeclare->getVariable()).getName();
+        }
+    }
+
+    return mapping;
+}
+
 /*
  * TODO I don't think this supports stack-allocated arrays yet. Related TODO in
  * libnumdebug.cpp
@@ -1089,6 +1105,9 @@ void Play::findStackAllocations(Module &M, const char *output_file,
 
         // if (!callsCheckpoint(F)) continue;
 
+        std::map<Value *, std::string> *varname_mapping =
+            mapValueToOriginalVarname(F);
+
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
                 bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
@@ -1107,6 +1126,9 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                     if (strcmp(varname.c_str(), "retval") == 0) {
                         continue;
                     }
+
+                    assert(varname_mapping->find(alloca) != varname_mapping->end());
+                    varname = (*varname_mapping)[alloca];
 
                     int is_argument = 0;
                     const char *arg_addr_suffix = ".addr";
