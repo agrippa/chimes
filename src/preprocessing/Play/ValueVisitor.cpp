@@ -163,7 +163,8 @@ size_t ValueVisitor::visitCall(CallInst *call, Value *prev) {
         }
     }
 
-    if (call->getCalledFunction()->getReturnType()->isPointerTy()) {
+    if (call->getCalledFunction() &&
+            call->getCalledFunction()->getReturnType()->isPointerTy()) {
         return hash_instruction(call);
     } else {
         return 0;

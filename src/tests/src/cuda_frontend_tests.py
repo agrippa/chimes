@@ -5,8 +5,8 @@ transformation features of numdebug.
 import sys
 from common import FrontendTest, run_frontend_test, parse_argv, NUM_DEBUG_HOME
 
-VECTOR_SUM = FrontendTest('VectorSum', 'vector_sum.cu',
-                          'vector_sum.cudafe1.register.cpp', 'vector_sum',
+VECTOR_SUM = FrontendTest('VectorSum', ['vector_sum.cu'],
+                          ['vector_sum.cudafe1.register.cpp'], ['vector_sum'],
                           False)
 TESTS = [VECTOR_SUM]
 

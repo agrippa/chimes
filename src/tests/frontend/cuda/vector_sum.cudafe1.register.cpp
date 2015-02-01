@@ -63939,30 +63939,30 @@ return (err == (cudaSuccess)) ? cudaBindSurfaceToArray(surf, array, desc) : err;
 # 6 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void init_numdebug(int nstructs, ...); 
 # 7
-extern void calling(int lbl); 
+extern void calling(int lbl, size_t set_return_alias, int naliases, ...); 
 # 8
 extern int get_next_call(); 
 # 9
 extern int peek_next_call(); 
 # 10
-extern void new_stack(); 
-# 11
-extern void rm_stack(); 
+extern void new_stack(size_t function_id, int n_local_arg_aliases, int n_contains_mappings, ...); 
 # 12
+extern void rm_stack(bool has_return_alias, size_t returned_alias); 
+# 13
 extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...); 
-# 15
-extern int alias_group_changed(int ngroups, ...); 
 # 16
-extern void *malloc_wrapper(size_t nbytes, int group, int has_type_info, ...); 
+extern int alias_group_changed(int ngroups, ...); 
 # 17
-extern void *realloc_wrapper(void * ptr, size_t nbytes, int group); 
-# 18
-extern void free_wrapper(void * ptr, int group); 
-# 21
-cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, int group, int has_type_info, ...); 
+extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...); 
+# 19
+extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group); 
+# 20
+extern void free_wrapper(void * ptr, size_t group); 
 # 23
-cudaError_t cudaFree_wrapper(void * ptr, int group); 
-# 26
+cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int has_type_info, ...); 
+# 25
+cudaError_t cudaFree_wrapper(void * ptr, size_t group); 
+# 28
 extern int ____numdebug_replaying; 
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list; 
@@ -64212,9 +64212,9 @@ extern "C" int vasprintf(char **, const char *, va_list) __attribute((__format__
 extern "C" FILE *zopen(const char *, const char *, int); 
 # 469 "/usr/include/stdio.h" 3
 extern "C" FILE *funopen(const void *, int (*)(void *, char *, int), int (*)(void *, const char *, int), fpos_t (*)(void *, fpos_t, int), int (*)(void *)); 
-# 4 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 11 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
 extern void checkpoint(); 
-# 6
+# 13
 extern void wait_for_checkpoint(); 
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 void kernel(int *A, int *B, int *C, int N) ;
@@ -64235,67 +64235,67 @@ if (tid < N) {
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 int main(int argc, char **argv) { 
 # 21
-init_numdebug(0); new_stack();  register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0);  register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); cudaError_t error;  
+init_numdebug(0); new_stack(10983886093799450781UL, 2, 23, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL, 3617489850581581679UL, 8543576809224315440UL, 4214516574885722508UL, 13629438911791803140UL, 4713364512689004448UL, 12432285355704167318UL, 5956854469140494953UL, 16245677267113222671UL, 6323303540388583539UL, 9877773167732901613UL, 7089989472930211505UL, 13930679126207712666UL, 7229261624878550433UL, 9877773167732901613UL, 7696593959710208457UL, 9877773167732901613UL, 8312944838440117739UL, 6337771489180023308UL, 8315622109923704320UL, 8543576809224315441UL, 10918912294913350599UL, 143077629906096616UL, 11788121732272334146UL, 13930679126207712667UL, 12535508970847451762UL, 15259509928453863544UL, 13034356908650733702UL, 12461144288208489700UL, 13956057025417141307UL, 4403095807090434764UL, 14824238800785570000UL, 9833271297019531733UL, 16415294844621594485UL, 4674896959417115766UL, 16486253991614456787UL, 13930679126207712668UL, 17366101664949010654UL, 8543576809224315439UL, 17598384809721362943UL, 16362704626186430450UL, 17834006590498585836UL, 9877773167732901613UL, 18097232747524644883UL, 16911790603234953566UL);  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0);  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); cudaError_t error;  
 # 22
-int i; lbl_0:  register_stack_var("main|i|0", "i32", &i, 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_1; }   
+int i; lbl_0:  register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_1; }   
 # 23
- int N; lbl_1:  register_stack_var("main|N|0", "i32", &N, 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_2; }  N = (1024 * 1024);   
+ int N; lbl_1:  register_stack_var("main|N|0", "i32", (void *)(&N), 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_2; }   N = (1024 * 1024);  
 # 25
-int *h_A; lbl_2:  register_stack_var("main|h_A|0", "i32*", &h_A, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_3; }  int *h_B; lbl_3:  register_stack_var("main|h_B|0", "i32*", &h_B, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_4; }  int *h_C; lbl_4:  register_stack_var("main|h_C|0", "i32*", &h_C, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_5; }   
+int *h_A; lbl_2:  register_stack_var("main|h_A|0", "i32*", (void *)(&h_A), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_3; }  int *h_B; lbl_3:  register_stack_var("main|h_B|0", "i32*", (void *)(&h_B), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_4; }  int *h_C; lbl_4:  register_stack_var("main|h_C|0", "i32*", (void *)(&h_C), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_5; }   
 # 26
-int *d_A; lbl_5:  register_stack_var("main|d_A|0", "i32*", &d_A, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_6; }  int *d_B; lbl_6:  register_stack_var("main|d_B|0", "i32*", &d_B, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_7; }  int *d_C; lbl_7:  register_stack_var("main|d_C|0", "i32*", &d_C, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_8; }   
+int *d_A; lbl_5:  register_stack_var("main|d_A|0", "i32*", (void *)(&d_A), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_6; }  int *d_B; lbl_6:  register_stack_var("main|d_B|0", "i32*", (void *)(&d_B), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_7; }  int *d_C; lbl_7:  register_stack_var("main|d_C|0", "i32*", (void *)(&d_C), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_8; }   
 # 28
-alias_group_changed(4, 32, 33, 34, 35); h_A = ((int *)malloc_wrapper(sizeof(int) * N, 36, 0)); 
+alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); h_A = ((int *)malloc_wrapper(sizeof(int) * N, 12461144288208489700UL, 0)); 
 # 29
-alias_group_changed(1, 37); h_B = ((int *)malloc_wrapper(sizeof(int) * N, 36, 0)); 
+alias_group_changed(1, (size_t)(13034356908650733702UL)); h_B = ((int *)malloc_wrapper(sizeof(int) * N, 16911790603234953566UL, 0)); 
 # 30
-alias_group_changed(1, 38); h_C = ((int *)malloc_wrapper(sizeof(int) * N, 36, 0)); 
+alias_group_changed(1, (size_t)(18097232747524644883UL)); h_C = ((int *)malloc_wrapper(sizeof(int) * N, 12432285355704167318UL, 0)); 
 # 32
-alias_group_changed(1, 39); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, -1, 0); 
+alias_group_changed(1, (size_t)(4713364512689004448UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0); 
 # 33
-alias_group_changed(1, 36); cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, -1, 0); 
+cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, 0UL, 0); 
 # 34
-alias_group_changed(1, 36); cudaMalloc_wrapper((void **)(&d_C), sizeof(int) * N, -1, 0); 
+cudaMalloc_wrapper((void **)(&d_C), sizeof(int) * N, 0UL, 0); 
 # 36
-for (alias_group_changed(2, 36, 40), i = 0; i < N; alias_group_changed(1, 40), i++) { 
+for (alias_group_changed(1, (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { { 
 # 37
 (h_A[i]) = i; 
 # 38
 (h_B[i]) = (2 * i); 
 # 39
-}  
+} }  
 # 41
-cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice); 
+ call_lbl_0: calling(0, 0UL, 4, (size_t)(15259509928453863544UL), (size_t)(12461144288208489700UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice); 
 # 42
-alias_group_changed(2, -1, 36); cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice); 
+ call_lbl_1: calling(1, 0UL, 4, (size_t)(16362704626186430450UL), (size_t)(16911790603234953566UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice); 
 # 44
- int threads_per_block; lbl_8:  register_stack_var("main|threads_per_block|0", "i32", &threads_per_block, 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_9; }  threads_per_block = 128;   
+ int threads_per_block; lbl_8:  register_stack_var("main|threads_per_block|0", "i32", (void *)(&threads_per_block), 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_9; }   threads_per_block = 128;  
 # 45
- int blocks_per_grid; lbl_9:  register_stack_var("main|blocks_per_grid|0", "i32", &blocks_per_grid, 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_10; }  blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block;   
+ int blocks_per_grid; lbl_9:  register_stack_var("main|blocks_per_grid|0", "i32", (void *)(&blocks_per_grid), 4, 0, 0, 0);  if (____numdebug_replaying) { goto lbl_10; }   blocks_per_grid = ((N + threads_per_block) - 1) / threads_per_block;  
 # 47
-alias_group_changed(4, -1, 36, 41, 42); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N); 
+alias_group_changed(2, (size_t)(2906517587857753UL), (size_t)(10516037394037531631UL));  call_lbl_2: calling(2, 0UL, 4, (size_t)(15046298603458950784UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL));  call_lbl_3: calling(3, 0UL, 4, (size_t)(14832733179147967965UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N); 
 # 49
-cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost); 
+ call_lbl_4: calling(4, 0UL, 4, (size_t)(12432285355704167318UL), (size_t)(13629438911791803140UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost); 
 # 51
-alias_group_changed(2, -1, 36);  call_lbl_0: calling(0); checkpoint(); 
+ call_lbl_5: calling(5, 0UL, 0); checkpoint(); 
 # 53
- FILE *fp; lbl_10:  register_stack_var("main|fp|0", "%struct.__sFILE*", &fp, 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_11; } lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } }  fp = fopen("dump.out", "w");   
+ FILE *fp; lbl_10:  register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_11; } lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } }    call_lbl_6: calling(6, 6337771489180023308UL, 2, (size_t)(7451376560946655001UL), (size_t)(9302546641309323898UL)); fp = fopen("dump.out", "w");  
 # 54
-for (alias_group_changed(4, 40, 43, 44, 45), i = 0; i < N; alias_group_changed(1, 40), i++) { 
+for (alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { { 
 # 55
-fprintf(fp, "%d\n", h_C[i]); 
+ call_lbl_7: calling(7, 0UL, 3, (size_t)(6337771489180023308UL), (size_t)(10438118436187702648UL), (size_t)(0UL)); fprintf(fp, "%d\n", h_C[i]); 
 # 56
-}  
+} }  
 # 57
-fclose(fp); 
+ call_lbl_8: calling(8, 0UL, 1, (size_t)(6337771489180023308UL)); fclose(fp); 
 # 59
-alias_group_changed(1, -1); cudaFree_wrapper(d_A, -1); 
+cudaFree_wrapper(d_A, 0UL); 
 # 60
-alias_group_changed(1, -1); cudaFree_wrapper(d_B, -1); 
+cudaFree_wrapper(d_B, 0UL); 
 # 61
-alias_group_changed(1, -1); cudaFree_wrapper(d_C, -1); 
+cudaFree_wrapper(d_C, 0UL); 
 # 63
-alias_group_changed(1, -1); rm_stack(); return 0; 
+rm_stack(false, 0UL); return 0; 
 # 64
 } 
 

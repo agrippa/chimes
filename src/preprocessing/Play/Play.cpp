@@ -1127,7 +1127,14 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                         continue;
                     }
 
-                    assert(varname_mapping->find(alloca) != varname_mapping->end());
+                    /*
+                     * There may be stack allocations for temporary variables
+                     * that do not exist in the original source. These can be
+                     * safely ignored.
+                     */
+                    if (varname_mapping->find(alloca) == varname_mapping->end()) {
+                        continue;
+                    }
                     varname = (*varname_mapping)[alloca];
 
                     int is_argument = 0;

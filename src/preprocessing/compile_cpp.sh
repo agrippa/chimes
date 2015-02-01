@@ -2,6 +2,7 @@
 
 set -e
 
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info"
 KEEP=0
 INPUTS=()
 INCLUDES=
@@ -111,7 +112,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     # Save info files off to a unique location
     echo Saving info files
-    for info_file in lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info; do
+    for info_file in ${INFO_FILES}; do
         if [[ ! -f ${WORK_DIR}/${info_file} ]]; then
             echo "Missing info file ${WORK_DIR}/${info_file}"
             exit 1
@@ -134,9 +135,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${WORK_DIR} \
             -c true \
             ${PREPROCESS_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -I${CUDA_HOME}/include \
-            -I${STDDEF_FOLDER} \
-            $INCLUDES
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES
 
     LAST_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${LAST_FILE##*.}"

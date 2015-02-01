@@ -631,7 +631,7 @@ int alias_group_changed(int ngroups, ...) {
 void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
         int is_cuda_alloc, int has_type_info, int is_ptr, int is_struct,
         int elem_size, int *ptr_field_offsets, int n_ptr_field_offsets) {
-    assert(valid_group(group));
+    assert(valid_group(group) || is_cuda_alloc);
 
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
             curr_seq_no, is_cuda_alloc);
