@@ -106,10 +106,6 @@ namespace {
         }
 
     private:
-        std::hash<std::string> str_hash;
-
-        std::map<Value *, size_t> InitializeAliasGroups(Module &M,
-                AliasAnalysis *AA);
         void printFunctions(Module &M);
         void printValuesAndAliasGroups(
                 std::map<Value *, size_t> value_to_alias_group);
@@ -160,13 +156,12 @@ namespace {
                 std::map<std::string, std::vector<std::string>> *structFields);
         // void add_value_to_alias_mapping(Value *val, size_t alias_id,
         //         std::string fname, bool accept_zero = false);
-        size_t get_hash_for(Function *F, int alias_set);
+        // size_t get_hash_for(Function *F, int alias_set);
         void dumpCallSiteAliases(Module &M, const char *filename,
                 std::map<Value *, size_t> value_to_alias_group);
         bool isConstantGlobal(Value *val);
-        ReachableInfo propagateAliases(Module &M,
-                std::map<Value *, size_t> initial_value_to_alias_group);
-        std::set<Value *> *collectInitialInstructionsToVisit(Module &M);
+        ReachableInfo propagateAliases(Module &M);
+        std::vector<Value *> *collectInitialInstructionsToVisit(Module &M);
         std::map<Value *, size_t> *collectInitialAliasMappings(Module &M);
         void findFunctionExits(Module &M, const char *output_file,
                 std::map<Value *, size_t> value_to_alias_group);
@@ -186,16 +181,33 @@ void Play::printFunctions(Module &M) {
             errs() << "  Function " << F->getName().str() << ": " <<
                 bblist.size()  << " basic blocks and " << arglist.size() <<
                 " args\n";
-            errs() << "    Takes ";
-            for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end();
-                    i != e; i++) {
-                Argument &arg = *i;
-                if (i != F->arg_begin()) {
-                    errs() << ", ";
+
+            if (arglist.size() > 0) {
+                errs() << "    Takes ";
+                for (Function::arg_iterator i = F->arg_begin(),
+                        e = F->arg_end(); i != e; i++) {
+                    Argument &arg = *i;
+                    if (i != F->arg_begin()) {
+                        errs() << ", ";
+                    }
+                    errs() << arg.getName() << "(" << *arg.getType() << ")";
                 }
-                errs() << arg.getName() << "(" << *arg.getType() << ")";
+                errs() << "\n";
+            } else {
+                errs() << "    Takes no arguments\n";
             }
-            errs() << "\n";
+
+            if (bblist.size() > 0) {
+                errs() << "    Has basic blocks";
+                for (Function::iterator i = F->begin(), e = F->end(); i != e;
+                        i++) {
+                    BasicBlock *bb = &*i;
+                    errs() << " \"" << bb->getName() << "\"";
+                }
+                errs() << "\n";
+            } else {
+                errs() << "    Has no basic blocks\n";
+            }
         }
     }
     errs() << "\n";
@@ -239,37 +251,71 @@ void Play::printReachable(ReachableInfo &reachable) {
     errs() << "\n";
 }
 
-std::set<Value *> *Play::collectInitialInstructionsToVisit(Module &M) {
-    std::set<Value *> *result = new std::set<Value *>();
+std::vector<Value *> *Play::collectInitialInstructionsToVisit(Module &M) {
+    std::vector<Value *> *result = new std::vector<Value *>();
+
+    /*
+     * We need to keep the ordering of the function and basic block iterator
+     * consistent across executions. While this does not affect the correctness
+     * of the algorithm, it does simplify the testing code knowing that we are
+     * deterministically visiting Values in a certain order. Fortunately,
+     * std::map's elements are implicitly sorted by key when you iterate over
+     * them.
+     */
+    std::map<std::string, Function *> sorted_functions;
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
         if (F != NULL && !F->empty()) {
-            Function::BasicBlockListType &bblist = F->getBasicBlockList();
-            for (Function::BasicBlockListType::iterator bb_iter =
-                    bblist.begin(), bb_end = bblist.end(); bb_iter != bb_end;
-                    bb_iter++) {
-                BasicBlock *bb = &*bb_iter;
-                for (BasicBlock::iterator i = bb->begin(), e = bb->end();
-                        i != e; ++i) {
-                    Instruction *inst = &*i;
-                    if (ReturnInst *ret = dyn_cast<ReturnInst>(inst)) {
-                        if (ret->getReturnValue() != NULL &&
-                                ret->getReturnValue()->getType()->isPointerTy()) {
-                            result->insert(inst);
-                        }
-                    } else if (StoreInst *store = dyn_cast<StoreInst>(inst)) {
-                        result->insert(store);
-                    } else if (LoadInst *load = dyn_cast<LoadInst>(inst)) {
-                        result->insert(load);
-                    } else if (CallInst *call = dyn_cast<CallInst>(inst)) {
-                        /*
-                         * Need to visit all calls because they can have side
-                         * effects on passed-by-reference parameters
-                         */
-                        if (!isa<DbgInfoIntrinsic>(call)) {
-                            result->insert(call);
-                        }
+            assert(F->hasName());
+            assert(sorted_functions.find(F->getName().str()) ==
+                    sorted_functions.end());
+            sorted_functions[F->getName().str()] = F;
+        }
+    }
+
+    for (std::map<std::string, Function *>::iterator fi =
+            sorted_functions.begin(), fe = sorted_functions.end(); fi != fe;
+            fi++) {
+        Function *F = fi->second;
+        // Also need deterministic basic block traversal
+        std::map<std::string, BasicBlock *> sorted_blocks;
+
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter =
+                bblist.begin(), bb_end = bblist.end(); bb_iter != bb_end;
+                bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            if (bb->hasName()) {
+                assert(sorted_blocks.find(bb->getName().str()) ==
+                        sorted_blocks.end());
+                sorted_blocks[bb->getName().str()] = bb;
+            }
+        }
+
+        for (std::map<std::string, BasicBlock *>::iterator bbi =
+                sorted_blocks.begin(), bbe = sorted_blocks.end(); bbi != bbe;
+                bbi++) {
+            BasicBlock *bb = bbi->second;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end();
+                    i != e; ++i) {
+                Instruction *inst = &*i;
+                if (ReturnInst *ret = dyn_cast<ReturnInst>(inst)) {
+                    if (ret->getReturnValue() != NULL &&
+                            ret->getReturnValue()->getType()->isPointerTy()) {
+                        result->push_back(inst);
+                    }
+                } else if (StoreInst *store = dyn_cast<StoreInst>(inst)) {
+                    result->push_back(store);
+                } else if (LoadInst *load = dyn_cast<LoadInst>(inst)) {
+                    result->push_back(load);
+                } else if (CallInst *call = dyn_cast<CallInst>(inst)) {
+                    /*
+                     * Need to visit all calls because they can have side
+                     * effects on passed-by-reference parameters
+                     */
+                    if (!isa<DbgInfoIntrinsic>(call)) {
+                        result->push_back(call);
                     }
                 }
             }
@@ -289,7 +335,7 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
                 ai != ae; ai++) {
             Argument *A = &*ai;
             assert(mappings->find(A) == mappings->end());
-            (*mappings)[A] = str_hash(A->getName().str());
+            (*mappings)[A] = hash_argument(A);
         }
 
         for (Function::iterator bi = F->begin(), be = F->end(); bi != be; bi++) {
@@ -298,7 +344,7 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
                     ii != ie; ii++) {
                 Instruction *insn = &*ii;
                 if (isa<AllocaInst>(insn)) {
-                    (*mappings)[insn] = str_hash(insn->getName().str());
+                    (*mappings)[insn] = hash_instruction(insn);
                 }
             }
         }
@@ -313,7 +359,7 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
         assert(mappings->find(G) == mappings->end());
 
         if (global_type_to_alias.find(G->getType()) == global_type_to_alias.end()) {
-            size_t alias = str_hash(G->getName().str());
+            size_t alias = hash_global(G);
             (*mappings)[G] = alias;
             global_type_to_alias[G->getType()] = alias;
         } else {
@@ -324,9 +370,8 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
     return mappings;
 }
 
-ReachableInfo Play::propagateAliases(Module &M,
-        std::map<Value *, size_t> initial_value_to_alias_group) {
-    std::set<Value *> *initial = collectInitialInstructionsToVisit(M);
+ReachableInfo Play::propagateAliases(Module &M) {
+    std::vector<Value *> *initial = collectInitialInstructionsToVisit(M);
     std::map<Value *, size_t> *initial_alias_mappings = collectInitialAliasMappings(M);
 
     ValueVisitor visitor(initial, initial_alias_mappings);
@@ -470,12 +515,6 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
     }
 
     fclose(fp);
-}
-
-size_t Play::get_hash_for(Function *F, int alias_set) {
-    std::stringstream ss;
-    ss << F->getName().str() << alias_set;
-    return str_hash(ss.str());
 }
 
 size_t Play::searchForValueInKnownAliases(Value *val,
@@ -624,52 +663,52 @@ size_t Play::searchForValueInKnownAliases(Value *val,
 //     return 0;
 // }
 
-std::map<Value *, size_t> Play::InitializeAliasGroups(Module &M,
-        AliasAnalysis *AA) {
-    std::map<Value *, size_t> initial_value_to_alias_group;
-
-    // For each function declared here
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-
-        if (F != NULL && !F->empty()) {
-            int count_alias_sets = 0;
-
-            // Construct alias sets
-            AliasSetTracker *AST = new AliasSetTracker(*AA);
-            for (inst_iterator I = inst_begin(F),
-                    E = inst_end(F); I != E; ++I) {
-                AST->add(&*I);
-            }
-
-            // Iterate over alias sets within F
-            for (ilist<AliasSet>::iterator iter = AST->begin(),
-                    e = AST->end(); iter != e; iter++) {
-                AliasSet &set = *iter;
-                /*
-                 * Calculate a hash for this function-local alias set and
-                 * associate all values with it
-                 */
-                size_t hash = get_hash_for(F, count_alias_sets++);
-
-                // Iterate over aliases in a single alias set
-                for (AliasSet::iterator set_iter = set.begin(), e = set.end();
-                        set_iter != e; set_iter++) {
-                    Value *val = set_iter->getValue();
-
-                    assert(hash != 0);
-                    assert(val->getType()->isPointerTy());
-
-                    initial_value_to_alias_group[val] = hash;
-                }
-            }
-
-            delete AST;
-        }
-    }
-
-    return initial_value_to_alias_group;
-}
+// std::map<Value *, size_t> Play::InitializeAliasGroups(Module &M,
+//         AliasAnalysis *AA) {
+//     std::map<Value *, size_t> initial_value_to_alias_group;
+// 
+//     // For each function declared here
+//     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+//         Function *F = &*I;
+// 
+//         if (F != NULL && !F->empty()) {
+//             int count_alias_sets = 0;
+// 
+//             // Construct alias sets
+//             AliasSetTracker *AST = new AliasSetTracker(*AA);
+//             for (inst_iterator I = inst_begin(F),
+//                     E = inst_end(F); I != E; ++I) {
+//                 AST->add(&*I);
+//             }
+// 
+//             // Iterate over alias sets within F
+//             for (ilist<AliasSet>::iterator iter = AST->begin(),
+//                     e = AST->end(); iter != e; iter++) {
+//                 AliasSet &set = *iter;
+//                 /*
+//                  * Calculate a hash for this function-local alias set and
+//                  * associate all values with it
+//                  */
+//                 size_t hash = get_hash_for(F, count_alias_sets++);
+// 
+//                 // Iterate over aliases in a single alias set
+//                 for (AliasSet::iterator set_iter = set.begin(), e = set.end();
+//                         set_iter != e; set_iter++) {
+//                     Value *val = set_iter->getValue();
+// 
+//                     assert(hash != 0);
+//                     assert(val->getType()->isPointerTy());
+// 
+//                     initial_value_to_alias_group[val] = hash;
+//                 }
+//             }
+// 
+//             delete AST;
+//         }
+//     }
+// 
+//     return initial_value_to_alias_group;
+// }
 
 /*
  * Combine these groups with any others that were found to be modified at the
@@ -1640,12 +1679,7 @@ bool Play::runOnModule(Module &M) {
      */
     printFunctions(M);
 
-    AliasAnalysis *AA = &getAnalysis<AliasAnalysis>();
-
-    std::map<Value *, size_t> initial_value_to_alias_group =
-        InitializeAliasGroups(M, AA);
-
-    ReachableInfo reachable = propagateAliases(M, initial_value_to_alias_group);
+    ReachableInfo reachable = propagateAliases(M);
 
     printValuesAndAliasGroups(reachable.get_value_to_alias_group());
 

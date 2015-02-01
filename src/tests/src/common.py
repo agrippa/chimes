@@ -425,7 +425,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
         if len(stdout.strip()) != 0:
             # If the test and expected output are different, emit a warning
-            diff_file = os.path.join(work_folder, test.input_files[i]) + '.diff'
+            diff_file = os.path.join(work_folder, os.path.basename(test.input_files[i])) + '.diff'
             print('===== Mismatch in output of test for ' + test.input_files[i] +
                   ' =====')
             print('===== Comparison file is ' + test.compare_files[i] + ' =====')

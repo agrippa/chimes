@@ -222,7 +222,7 @@ private:
 
 class DesiredInsertions {
 public:
-    DesiredInsertions(size_t set_module_id,
+    DesiredInsertions(const char *module_name,
             const char *lines_info_filename,
             const char *struct_info_filename,
             const char *stack_allocs_filename,
@@ -245,7 +245,7 @@ public:
         callsites = parseCallSites();
         func_exits = parseFunctionExits();
         reachable = parseReachable();
-        module_id = set_module_id;
+        module_id = hash(module_name);
         diagnostics.open(diagnostic_file);
     }
 
@@ -257,6 +257,13 @@ public:
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
+    size_t hash(const char *s, size_t seed = 0) {
+        size_t hash = seed;
+        while (*s) {
+            hash = hash * 101 + *s++;
+        }
+        return hash;
+    }
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     HeapAlloc *isMemoryAllocation(int line, int col);
