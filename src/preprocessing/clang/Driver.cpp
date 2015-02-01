@@ -279,13 +279,12 @@ int main(int argc, const char **argv) {
       updateFile = false;
   }
 
-  std::hash<std::string> str_hash;
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
           op.getSourcePathList()[0].rfind('/') + 1);
   just_filename = just_filename.substr(0, just_filename.rfind("."));
 
-  insertions = new DesiredInsertions(str_hash(op.getSourcePathList()[0]),
+  insertions = new DesiredInsertions(original_file.c_str(),
               line_info_file.c_str(), struct_file.c_str(),
               stack_allocs_file.c_str(), heap_file.c_str(),
               original_file.c_str(), diag_file.c_str(),

@@ -47,7 +47,7 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
             FunctionArgumentAliasGroups func =
                 insertions->findMatchingFunction(curr_func);
             std::stringstream ss;
-            ss << "new_stack(" << insertions->get_module_id() << ", " <<
+            ss << "new_stack(" << insertions->get_module_id() << "UL, " <<
                 func.nargs() << ", " << insertions->get_reachable()->size();
             for (unsigned i = 0; i < func.nargs(); i++) {
                 ss << ", (size_t)(" << func.alias_no_for(i) << "UL)";
