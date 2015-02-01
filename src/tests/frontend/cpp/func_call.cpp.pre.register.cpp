@@ -34,11 +34,12 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
 extern void init_numdebug(int nstructs, ...);
-extern void calling(int lbl, int naliases, ...);
+extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(int naliases, ...);
-extern void rm_stack();
+extern void new_stack(size_t function_id, int n_local_arg_aliases,
+        int n_contains_mappings, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
@@ -1712,13 +1713,13 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
 
 int foo(int a) {
-    new_stack(1, 0UL); register_stack_var("foo|a|0", "i32", &a, 4, 0, 0, 0); int b; lbl_0: register_stack_var("foo|b|0", "i32", &b, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } b = a;
-     int c; lbl_1: register_stack_var("foo|c|0", "i32", &c, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 5); exit(1); } } } c = a + b;
-    alias_group_changed(3, 9833117726010733966UL, 10691666889286243735UL, 14720236302514914660UL); rm_stack(); return c;
+    new_stack(11267635574997452870UL, 1, 1, (size_t)(0UL), 1388457574958923572UL, 18293662412874621885UL); register_stack_var("foo|a|0", "i32", (void *)(&a), 4, 0, 0, 0); int b; lbl_0: register_stack_var("foo|b|0", "i32", (void *)(&b), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } b = a;
+     int c; lbl_1: register_stack_var("foo|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 5); exit(1); } } } c = a + b;
+    alias_group_changed(3, (size_t)(8933731431696279258UL), (size_t)(10992910250009932515UL), (size_t)(14071540038816566042UL)); rm_stack(false, 0UL); return c;
 }
 
 int main(int argc, char **argv) {
-    init_numdebug(0); new_stack(2, 0UL, 16601824331468926401UL); register_stack_var("main|argc|0", "i32", &argc, 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", &argv, 8, 1, 0, 0); int a; lbl_0: register_stack_var("main|a|0", "i32", &a, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = 3;
-     int b; lbl_1: register_stack_var("main|b|0", "i32", &b, 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 11); exit(1); } } } call_lbl_0: calling(0, 1, 0UL); b = foo(a);
-    alias_group_changed(1, 8902610496293472766UL); rm_stack(); return b;
+    init_numdebug(0); new_stack(11267635574997452870UL, 2, 1, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); int a; lbl_0: register_stack_var("main|a|0", "i32", (void *)(&a), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = 3;
+     int b; lbl_1: register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 11); exit(1); } } } call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); b = foo(a);
+    alias_group_changed(1, (size_t)(2394767282369806426UL)); rm_stack(false, 0UL); return b;
 }
