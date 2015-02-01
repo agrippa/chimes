@@ -42,6 +42,8 @@ class RuntimeTest(object):
     """
     def __init__(self, name, input_files, expected_code,
                  expected_num_checkpoints, includes=[], dependencies=[], cli_args=None):
+        assert expected_num_checkpoints > 0, name
+
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code

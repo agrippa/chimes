@@ -21,7 +21,7 @@ __global__ void vector_add(int *A, int *B, int *C, int N) {
 int main(int argc, char **argv) {
     int i;
     int N = 1024;
-    int iter, iters = 3;
+    int iter, iters = 10;
     int *h_A, *h_B, *h_C;
     int *d_A, *d_B, *d_C;
 
@@ -47,6 +47,7 @@ int main(int argc, char **argv) {
         CHECK(cudaMemcpy(d_B, h_B, N * sizeof(int), cudaMemcpyHostToDevice));
 
         checkpoint();
+        wait_for_checkpoint();
 
         vector_add<<<4, 256>>>(d_A, d_B, d_C, N);
 

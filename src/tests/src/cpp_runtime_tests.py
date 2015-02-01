@@ -23,7 +23,7 @@ REALLOC = RuntimeTest('Realloc', ['realloc.cpp'], 42, 1)
 MULTI_CHECKPOINT = RuntimeTest('MultiCheckpoint', ['multi_checkpoint.cpp'], 100,
                                100)
 ISO2D = RuntimeTest('Iso2D',
-                    ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'], 0, -1,
+                    ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'], 0, 1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                   'libcommon2d.so')], cli_args='-i 1')
