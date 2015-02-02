@@ -50,8 +50,7 @@ static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
 static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
-static void follow_pointers(void *container, string type,
-        set<void *> *updated);
+static void fix_stack_pointer(void *container, string type);
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 void free_helper(void *ptr);
 
@@ -911,7 +910,7 @@ void checkpoint() {
                 string type = var->get_type();
                 void *address = var->get_address();
 
-                follow_pointers(address, type, &updated);
+                fix_stack_pointer(address, type);
             }
         }
 
@@ -988,31 +987,13 @@ static bool is_struct_type(string type) {
     return index != string::npos && index == 0;
 }
 
-static bool is_already_updated(void *ptr) {
-    for (vector<already_updated_ptrs *>::iterator i = already_updated.begin(),
-            e = already_updated.end(); i != e; i++) {
-        already_updated_ptrs *updated = *i;
-        if (updated->satisfies(ptr)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-static void follow_pointers(void *container, string type,
-        set<void *> *updated) {
-    if (updated->find(container) != updated->end()) return;
-
-    if (is_already_updated(container)) return;
+static void fix_stack_pointer(void *container, string type) {
 
     if (is_pointer_type(type)) {
         void **nested_container = (void **)container;
         void *new_ptr = translate_old_ptr(*nested_container, old_to_new);
         if (new_ptr != NULL) {
-            updated->insert(nested_container);
             *nested_container = new_ptr;
-            follow_pointers(new_ptr, type.substr(0, type.length() - 1),
-                    updated);
         }
     } else if (is_struct_type(type)) {
         size_t open_brace_index = type.find("{");
@@ -1047,7 +1028,7 @@ static void follow_pointers(void *container, string type,
             string curr = nested_types.substr(start, index);
             unsigned char *field_ptr = ((unsigned char *)container) +
                 (*fields)[field_index];
-            follow_pointers((void *)field_ptr, curr, updated);
+            fix_stack_pointer((void *)field_ptr, curr);
 
             start = index + 1;
             while (start < nested_types.length() && nested_types[start] == ' ') {
