@@ -9,7 +9,7 @@ from common import RuntimeTest, parse_argv, NUM_DEBUG_HOME, run_runtime_test, \
 BASIC = RuntimeTest('Basic', 'basic.cu', 0, 1)
 KERNEL = RuntimeTest('Kernel', 'kernel.cu', 0, 10)
 INDIRECTION = RuntimeTest('Indirection', 'indirection.cu', 0, 3)
-TESTS = [BASIC, KERNEL]
+TESTS = [BASIC, KERNEL, INDIRECTION]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cuda'
