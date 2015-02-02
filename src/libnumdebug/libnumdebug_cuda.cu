@@ -1,37 +1,130 @@
 #include "type_info.h"
+#include "heap_allocation.h"
+#include "ptr_and_size.h"
+#include "numdebug_common.h"
+#include <map>
 #include <cstdarg>
 
+using namespace std;
+
 extern void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
-        int is_cuda_alloc, int has_type_info, int is_ptr, int is_struct,
-        int elem_size, int *ptr_field_offsets, int n_ptr_field_offsets);
+        int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
+        int *ptr_field_offsets, int n_ptr_field_offsets);
+extern void free_helper(void *ptr);
+extern map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
+
+__global__ void translate_pointers_kernel(void *arr, int nelems, int elem_size,
+        int *ptr_offsets, int n_ptr_offsets, void **old_ptrs, void **new_ptrs,
+        size_t *ptr_size, int n_translations);
 
 cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
-        int has_type_info, ...) {
+        int is_ptr, int is_struct, ...) {
     cudaError_t err = cudaMalloc(ptr, size);
     if (err != cudaSuccess) {
         return err;
     }
 
     numdebug_type_info info; memset(&info, 0x00, sizeof(info));
-    if (has_type_info) {
+    if (is_struct) {
         va_list vl;
-        va_start(vl, has_type_info);
+        va_start(vl, is_struct);
         parse_type_info(vl, &info);
         va_end(vl);
     }
 
-    malloc_helper(*ptr, size, group, 1, has_type_info, info.is_ptr,
-            info.is_struct, info.elem_size, info.ptr_field_offsets,
-            info.n_ptr_fields);
+    malloc_helper(*ptr, size, group, 1, is_ptr, is_struct, info.elem_size,
+            info.ptr_field_offsets, info.n_ptr_fields);
 
     return cudaSuccess;
 }
 
 cudaError_t cudaFree_wrapper(void *ptr, size_t group) {
+    free_helper(ptr);
     cudaError_t err = cudaFree(ptr);
     if (err != cudaSuccess) {
         return err;
     }
 
     return cudaSuccess;
+}
+
+void translate_cuda_pointers(void *d_arr, int nelems, int elem_size,
+        std::vector<int> ptr_offsets, map<void *, ptr_and_size *> *old_to_new) {
+    int *h_ptr_offsets = (int *)malloc(sizeof(int) * ptr_offsets.size());
+    void **h_old = (void **)malloc(sizeof(void *) * old_to_new->size());
+    void **h_new = (void **)malloc(sizeof(void *) * old_to_new->size());
+    size_t *h_size = (size_t *)malloc(sizeof(size_t) * old_to_new->size());
+
+    int *d_ptr_offsets;
+    void **d_old, **d_new;
+    size_t *d_size;
+
+    for (int i = 0; i < ptr_offsets.size(); i++) {
+        h_ptr_offsets[i] = ptr_offsets[i];
+    }
+
+    int index = 0;
+    for (map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
+            e = old_to_new->end(); i != e; i++) {
+        void *old = i->first;
+        ptr_and_size *new_ptr = i->second;
+        h_old[index] = old;
+        h_new[index] = new_ptr->get_ptr();
+        h_size[index] = new_ptr->get_size();
+        index++;
+    }
+
+    CHECK(cudaMalloc((void **)&d_ptr_offsets, sizeof(int) * ptr_offsets.size()));
+    CHECK(cudaMalloc((void **)&d_old, sizeof(void *) * index));
+    CHECK(cudaMalloc((void **)&d_new, sizeof(void *) * index));
+    CHECK(cudaMalloc((void **)&d_size, sizeof(size_t) * index));
+
+    CHECK(cudaMemcpy(d_ptr_offsets, h_ptr_offsets, sizeof(int) * ptr_offsets.size(), cudaMemcpyHostToDevice));
+    CHECK(cudaMemcpy(d_old, h_old, sizeof(void *) * index, cudaMemcpyHostToDevice));
+    CHECK(cudaMemcpy(d_new, h_new, sizeof(void *) * index, cudaMemcpyHostToDevice));
+    CHECK(cudaMemcpy(d_size, h_size, sizeof(size_t) * index, cudaMemcpyHostToDevice));
+
+    int threads = 256;
+    int blocks = (nelems + threads - 1) / threads;
+    translate_pointers_kernel<<<blocks, threads>>>(d_arr, nelems, elem_size,
+            d_ptr_offsets, ptr_offsets.size(), d_old, d_new, d_size, index);
+    CHECK(cudaDeviceSynchronize());
+
+    CHECK(cudaFree(d_ptr_offsets));
+    CHECK(cudaFree(d_old));
+    CHECK(cudaFree(d_new));
+    CHECK(cudaFree(d_size));
+    free(h_ptr_offsets);
+    free(h_old);
+    free(h_new);
+    free(h_size);
+}
+
+__device__ void *translate_ptr(void *ptr, void **old_ptrs, void **new_ptrs,
+        size_t *ptr_size, int n_translations) {
+    int i;
+    unsigned char *c_ptr = (unsigned char *)ptr;
+    for (i = 0; i < n_translations; i++) {
+        unsigned char *old = (unsigned char *)old_ptrs[i];
+        size_t size = ptr_size[i];
+        size_t diff = c_ptr - old;
+        if (diff < size) {
+            return (void *)(((unsigned char *)(new_ptrs[i])) + diff);
+        }
+    }
+    return NULL;
+}
+
+__global__ void translate_pointers_kernel(void *arr, int nelems, int elem_size,
+        int *ptr_offsets, int n_ptr_offsets, void **old_ptrs, void **new_ptrs,
+        size_t *ptr_size, int n_translations) {
+    int i;
+    int tid = blockIdx.x * blockDim.x + threadIdx.x;
+    if (tid >= nelems) return;
+
+    unsigned char *elem_ptr = (unsigned char *)arr + (tid * elem_size);
+    for (i = 0; i < n_ptr_offsets; i++) {
+        void **ptr_ptr = (void **)(elem_ptr + ptr_offsets[i]);
+        translate_ptr(*ptr_ptr, old_ptrs, new_ptrs, ptr_size, n_translations);
+    }
 }

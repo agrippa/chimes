@@ -63953,13 +63953,13 @@ extern void register_stack_var(const char * mangled_name, const char * full_type
 # 16
 extern int alias_group_changed(int ngroups, ...); 
 # 17
-extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...); 
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...); 
 # 19
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group); 
 # 20
 extern void free_wrapper(void * ptr, size_t group); 
 # 23
-cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int has_type_info, ...); 
+cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...); 
 # 25
 cudaError_t cudaFree_wrapper(void * ptr, size_t group); 
 # 28
@@ -64245,17 +64245,17 @@ int *h_A; lbl_2:  register_stack_var("main|h_A|0", "i32*", (void *)(&h_A), 8, 1,
 # 26
 int *d_A; lbl_5:  register_stack_var("main|d_A|0", "i32*", (void *)(&d_A), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_6; }  int *d_B; lbl_6:  register_stack_var("main|d_B|0", "i32*", (void *)(&d_B), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_7; }  int *d_C; lbl_7:  register_stack_var("main|d_C|0", "i32*", (void *)(&d_C), 8, 1, 0, 0);  if (____numdebug_replaying) { goto lbl_8; }   
 # 28
-alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); h_A = ((int *)malloc_wrapper(sizeof(int) * N, 12461144288208489700UL, 0)); 
+alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); h_A = ((int *)malloc_wrapper(sizeof(int) * N, 12461144288208489700UL, 0, 0)); 
 # 29
-alias_group_changed(1, (size_t)(13034356908650733702UL)); h_B = ((int *)malloc_wrapper(sizeof(int) * N, 16911790603234953566UL, 0)); 
+alias_group_changed(1, (size_t)(13034356908650733702UL)); h_B = ((int *)malloc_wrapper(sizeof(int) * N, 16911790603234953566UL, 0, 0)); 
 # 30
-alias_group_changed(1, (size_t)(18097232747524644883UL)); h_C = ((int *)malloc_wrapper(sizeof(int) * N, 12432285355704167318UL, 0)); 
+alias_group_changed(1, (size_t)(18097232747524644883UL)); h_C = ((int *)malloc_wrapper(sizeof(int) * N, 12432285355704167318UL, 0, 0)); 
 # 32
-alias_group_changed(1, (size_t)(4713364512689004448UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0); 
+alias_group_changed(1, (size_t)(4713364512689004448UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0, 0); 
 # 33
-cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, 0UL, 0); 
+cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, 0UL, 0, 0); 
 # 34
-cudaMalloc_wrapper((void **)(&d_C), sizeof(int) * N, 0UL, 0); 
+cudaMalloc_wrapper((void **)(&d_C), sizeof(int) * N, 0UL, 0, 0); 
 # 36
 for (alias_group_changed(1, (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { { 
 # 37

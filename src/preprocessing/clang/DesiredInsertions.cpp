@@ -182,8 +182,7 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
             line = line.substr(line.find(' ') + 1);
             have_type_info = true;
         }
-        HeapAlloc *alloc = new HeapAlloc(line_no, col, group, fname,
-                have_type_info);
+        HeapAlloc *alloc = new HeapAlloc(line_no, col, group, fname);
 
         if (have_type_info) {
             // have more type info

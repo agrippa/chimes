@@ -77,13 +77,13 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 209 46 alias_gr
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 220 28 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 5  }
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 97 27 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 97 47 , 2752442294988640373UL, 1, 0, 1, (int)sizeof(struct _source), 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 97 47 , 2752442294988640373UL, 0, 1, (int)sizeof(struct _source), 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 37 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 66 , 17386119534690992797UL, 1, 1, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 66 , 17386119534690992797UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 135 35 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 135 63 , 16455452247920468155UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 135 63 , 16455452247920468155UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 163 31 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 163 64 , 577070706814357478UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 163 64 , 577070706814357478UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 227 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 227 10 , 577070706814357478UL
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 5 new_stack(7724169104006700302UL, 0, 19, 1387191059008098409UL, 3277977604394879722UL, 4047636378196868974UL, 577070706814357478UL, 4972645299531092553UL, 5827032325616314450UL, 5186300721691170515UL, 3277977604394879722UL, 5997784754333573673UL, 4288610876228433544UL, 6095867792190138415UL, 3433389096703679793UL, 7374354779439216353UL, 2752442294988640373UL, 7503953869617880805UL, 6456531717151425942UL, 8936251819094495589UL, 4995672202021001482UL, 9285280766920217948UL, 2752442294988640373UL, 11007132437992599952UL, 8132302032623108198UL, 11424047330458090375UL, 2008721800625821080UL, 11890416593231187164UL, 8132302032623108198UL, 13982009165439054754UL, 6456531717151425942UL, 14632242022306526605UL, 17386119534690992797UL, 15190893650781371235UL, 9285280766920217948UL, 16334560808348918639UL, 4288610876228433544UL, 16642833800444842057UL, 2685576284420924090UL, 17386119534690992797UL, 16455452247920468155UL); 
@@ -162,8 +162,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 10  i
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 9  source *curr;  curr = (*srcs) + i; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1353  float **src_samples;  src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 1, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1457 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1353  float **src_samples;  src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1454 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 141 7  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 10  i = 0; 
