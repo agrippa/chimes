@@ -44,8 +44,8 @@ extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info,
-        ...);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -1711,8 +1711,8 @@ int main(int argc, char **argv) {
      int N; lbl_2: register_stack_var("main|N|0", "i32", (void *)(&N), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } N = 1024;
      int niters; lbl_3: register_stack_var("main|niters|0", "i32", (void *)(&niters), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } niters = 10000;
 
-     int *curr; lbl_4: register_stack_var("main|curr|0", "i32*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0);
-     int *next; lbl_5: register_stack_var("main|next|0", "i32*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0);
+     int *curr; lbl_4: register_stack_var("main|curr|0", "i32*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0);
+     int *next; lbl_5: register_stack_var("main|next|0", "i32*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0);
     for (alias_group_changed(2, (size_t)(15772700233101583677UL), (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
          call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
     } }

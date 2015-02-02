@@ -16,9 +16,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 3
 InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 10 alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 24 alias_group_changed(1, (size_t)(16809019010565379225UL)), 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 45 , 11995044644349796100UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 45 , 11995044644349796100UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 45 , 11995044644349796100UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 45 , 11995044644349796100UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 10 , 11995044644349796100UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 5 len=4 free_wrapper
@@ -34,10 +34,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 8 5  
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 8 17 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 9 5  int niters;  niters = 10000; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 9 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 5  int *curr;  curr = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 82 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 5  int *next;  next = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 82 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 5  int *curr;  curr = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 85 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 5  int *next;  next = (int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 85 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 9  int *tmp;  tmp = curr; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 24 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 5  FILE *fp;  fp = fopen("dump.out", "w"); 

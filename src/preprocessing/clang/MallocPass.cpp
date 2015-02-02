@@ -36,28 +36,38 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
 
                 if (alloc->get_fname() == "malloc" ||
                         alloc->get_fname() == "cudaMalloc") {
-                    if(alloc->get_have_type_info()) {
-                        ss2 << ", 1"; // has type info
-                        ss2 << ", " << (alloc->get_is_elem_ptr() ? "1" : "0") <<
-                            ", " << (alloc->get_is_elem_struct() ? "1" : "0");
-                        if (alloc->get_is_elem_struct()) {
-                            ss2 << ", (int)sizeof(struct " <<
-                                alloc->get_struct_type_name() << "), " <<
-                                alloc->get_num_field_ptrs();
+                    /*
+                     * This is already asserted while generating heap.info from
+                     * LLVM, but assert here to improve readability and protect
+                     * against parsing errors.
+                     */
+                    assert(!(alloc->get_is_elem_ptr() &&
+                            alloc->get_is_elem_struct()));
+                    if (alloc->get_is_elem_ptr()) {
+                        // elements in allocation are pointers, not structs
+                        ss2 << ", 1, 0";
+                    } else if (alloc->get_is_elem_struct()) {
+                        // elements in allocation are structs, not pointers
+                        ss2 << ", 0, 1";
 
-                            std::vector<std::string> *struct_field_ptrs =
-                                alloc->get_struct_field_ptrs();
-                            for (std::vector<std::string>::iterator p_i =
-                                    struct_field_ptrs->begin(), p_e =
-                                    struct_field_ptrs->end(); p_i != p_e; p_i++) {
-                                std::string fieldname = *p_i;
-                                ss2 << ", (int)offsetof(struct " <<
-                                    alloc->get_struct_type_name() << ", " <<
-                                    fieldname << ")";
-                            }
+                        // Element size for each struct
+                        ss2 << ", (int)sizeof(struct " <<
+                            alloc->get_struct_type_name() << "), " <<
+                            alloc->get_num_field_ptrs();
+
+                        // Offests in struct of all pointer fields
+                        std::vector<std::string> *struct_field_ptrs =
+                            alloc->get_struct_field_ptrs();
+                        for (std::vector<std::string>::iterator p_i =
+                                struct_field_ptrs->begin(), p_e =
+                                struct_field_ptrs->end(); p_i != p_e; p_i++) {
+                            std::string fieldname = *p_i;
+                            ss2 << ", (int)offsetof(struct " <<
+                                alloc->get_struct_type_name() << ", " <<
+                                fieldname << ")";
                         }
                     } else {
-                        ss2 << ", 0"; // does not have type info
+                        ss2 << ", 0, 0";
                     }
                 }
 

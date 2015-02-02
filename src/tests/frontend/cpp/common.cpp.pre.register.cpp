@@ -44,8 +44,8 @@ extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info,
-        ...);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -2534,7 +2534,7 @@ rm_stack(false, 0UL); }
 
 void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
     new_stack(7724169104006700302UL, 5, 19, (size_t)(9285280766920217948UL), (size_t)(2685576284420924090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), 1387191059008098409UL, 3277977604394879722UL, 4047636378196868974UL, 577070706814357478UL, 4972645299531092553UL, 5827032325616314450UL, 5186300721691170515UL, 3277977604394879722UL, 5997784754333573673UL, 4288610876228433544UL, 6095867792190138415UL, 3433389096703679793UL, 7374354779439216353UL, 2752442294988640373UL, 7503953869617880805UL, 6456531717151425942UL, 8936251819094495589UL, 4995672202021001482UL, 9285280766920217948UL, 2752442294988640373UL, 11007132437992599952UL, 8132302032623108198UL, 11424047330458090375UL, 2008721800625821080UL, 11890416593231187164UL, 8132302032623108198UL, 13982009165439054754UL, 6456531717151425942UL, 14632242022306526605UL, 17386119534690992797UL, 15190893650781371235UL, 9285280766920217948UL, 16334560808348918639UL, 4288610876228433544UL, 16642833800444842057UL, 2685576284420924090UL, 17386119534690992797UL, 16455452247920468155UL); register_stack_var("config_sources|srcs|0", "%struct._source**", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("config_sources|nsrcs|0", "i32*", (void *)(&nsrcs), 8, 1, 0, 0); register_stack_var("config_sources|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("config_sources|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("config_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); if (alias_group_changed(5, (size_t)(6406781234504566915UL), (size_t)(8522629736461562909UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16642833800444842057UL)) || *nsrcs == 0) { {
-        *srcs = (source *)malloc_wrapper(sizeof(source), 2752442294988640373UL, 1, 0, 1, (int)sizeof(struct _source), 0);
+        *srcs = (source *)malloc_wrapper(sizeof(source), 2752442294988640373UL, 0, 1, (int)sizeof(struct _source), 0);
         if (alias_group_changed(1, (size_t)(9285280766920217948UL)) || *srcs == __null) { {
              call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
              call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2565,14 +2565,14 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
 rm_stack(false, 0UL); }
 
 float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
-    new_stack(7724169104006700302UL, 4, 19, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), 1387191059008098409UL, 3277977604394879722UL, 4047636378196868974UL, 577070706814357478UL, 4972645299531092553UL, 5827032325616314450UL, 5186300721691170515UL, 3277977604394879722UL, 5997784754333573673UL, 4288610876228433544UL, 6095867792190138415UL, 3433389096703679793UL, 7374354779439216353UL, 2752442294988640373UL, 7503953869617880805UL, 6456531717151425942UL, 8936251819094495589UL, 4995672202021001482UL, 9285280766920217948UL, 2752442294988640373UL, 11007132437992599952UL, 8132302032623108198UL, 11424047330458090375UL, 2008721800625821080UL, 11890416593231187164UL, 8132302032623108198UL, 13982009165439054754UL, 6456531717151425942UL, 14632242022306526605UL, 17386119534690992797UL, 15190893650781371235UL, 9285280766920217948UL, 16334560808348918639UL, 4288610876228433544UL, 16642833800444842057UL, 2685576284420924090UL, 17386119534690992797UL, 16455452247920468155UL); register_stack_var("sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); float **src_samples; lbl_0: register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 1, 0);
+    new_stack(7724169104006700302UL, 4, 19, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), 1387191059008098409UL, 3277977604394879722UL, 4047636378196868974UL, 577070706814357478UL, 4972645299531092553UL, 5827032325616314450UL, 5186300721691170515UL, 3277977604394879722UL, 5997784754333573673UL, 4288610876228433544UL, 6095867792190138415UL, 3433389096703679793UL, 7374354779439216353UL, 2752442294988640373UL, 7503953869617880805UL, 6456531717151425942UL, 8936251819094495589UL, 4995672202021001482UL, 9285280766920217948UL, 2752442294988640373UL, 11007132437992599952UL, 8132302032623108198UL, 11424047330458090375UL, 2008721800625821080UL, 11890416593231187164UL, 8132302032623108198UL, 13982009165439054754UL, 6456531717151425942UL, 14632242022306526605UL, 17386119534690992797UL, 15190893650781371235UL, 9285280766920217948UL, 16334560808348918639UL, 4288610876228433544UL, 16642833800444842057UL, 2685576284420924090UL, 17386119534690992797UL, 16455452247920468155UL); register_stack_var("sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); float **src_samples; lbl_0: register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0);
     if (alias_group_changed(1, (size_t)(14632242022306526605UL)) || src_samples == __null) { {
          call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
 
     { int i; lbl_1: register_stack_var("sample_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 134); exit(1); } } } for ( i = 0; i < nsrcs; alias_group_changed(1, (size_t)(17866036073706292390UL)), i++) { {
-        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 16455452247920468155UL, 0);
+        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 16455452247920468155UL, 0, 0);
         if (alias_group_changed(1, (size_t)(17386119534690992797UL)) || src_samples[i] == __null) { {
              call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
              call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2600,7 +2600,7 @@ void init_progress(int length, int goal, int disabled) {
 
     if (alias_group_changed(1, (size_t)(11193925814866863242UL)) || disabled) { rm_stack(false, 0UL); return;
  }
-    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 577070706814357478UL, 0);
+    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 577070706814357478UL, 1, 0);
     alias_group_changed(1, (size_t)(4047636378196868974UL)); call_lbl_5: calling(5, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_6: calling(6, 0UL, 4, (size_t)(4874333479337244968UL), (size_t)(13066525898772550973UL), (size_t)(0UL), (size_t)(13326478581634804368UL)); (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 164, "progress_buffer != NULL") : (void)0);
     progress_length = length;
     progress_goal = goal;

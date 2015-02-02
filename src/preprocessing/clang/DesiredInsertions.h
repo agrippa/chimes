@@ -94,16 +94,15 @@ class AliasesPassedToCallSite {
 class HeapAlloc {
 public:
     HeapAlloc(int set_line_no, int set_col, size_t set_group,
-            std::string set_fname, bool set_have_type_info) :
-            line_no(set_line_no), col(set_col), group(set_group),
-            fname(set_fname), have_type_info(set_have_type_info) {}
+            std::string set_fname) : line_no(set_line_no), col(set_col),
+            group(set_group), fname(set_fname), is_elem_ptr(false),
+            is_elem_struct(false) {}
 
     void incr_col(int i) { col += i; }
     int get_line_no() { return line_no; }
     int get_col() { return col; }
     size_t get_group() { return group; }
     std::string get_fname() { return fname; }
-    bool get_have_type_info() { return have_type_info; }
     bool get_is_elem_ptr() { return is_elem_ptr; }
     bool get_is_elem_struct() { return is_elem_struct; }
     std::string get_struct_type_name() { return struct_type_name; }
@@ -114,6 +113,9 @@ public:
     }
 
     void add_type_info(bool set_is_elem_ptr, bool set_is_elem_struct) {
+        // The only invalid state is for both to be true
+        assert(!(set_is_elem_ptr && set_is_elem_struct));
+
         is_elem_ptr = set_is_elem_ptr;
         is_elem_struct = set_is_elem_struct;
     }
@@ -129,7 +131,6 @@ private:
     int col;
     size_t group;
     std::string fname;
-    bool have_type_info;
 
     bool is_elem_ptr, is_elem_struct;
     std::string struct_type_name;

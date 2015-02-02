@@ -4,7 +4,7 @@
 #include <cstdarg>
 
 typedef struct _numdebug_type_info {
-    int is_ptr, is_struct, elem_size, n_ptr_fields;
+    int elem_size, n_ptr_fields;
     int *ptr_field_offsets;
 } numdebug_type_info;
 

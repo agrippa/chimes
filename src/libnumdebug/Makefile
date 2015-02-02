@@ -1,6 +1,6 @@
 GXX=g++
 NVCC=nvcc
-GXX_FLAGS=-g -fPIC -Wall
+GXX_FLAGS=-g -fPIC -Wall -stdlib=libstdc++
 NVCC_FLAGS=-g -Xcompiler -fPIC
 SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp numdebug_stack.cpp \
     heap_allocation.cpp type_info.cpp
@@ -18,7 +18,7 @@ ${NUMDEBUG_LIB}: ${SRC} libnumdebug_cuda.o
         -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_HOME}/lib -lcudart
 
 libnumdebug_cuda.o: libnumdebug_cuda.cu
-	${NVCC} ${NVCC_FLAGS} --compile libnumdebug_cuda.cu -o libnumdebug_cuda.o
+	${NVCC} ${NVCC_FLAGS} --compile libnumdebug_cuda.cu -o libnumdebug_cuda.o -DCUDA_SUPPORT
 
 clean:
 	rm -f ${NUMDEBUG_LIB} ${NUMDEBUG_CPP_LIB} libnumdebug_cuda.o

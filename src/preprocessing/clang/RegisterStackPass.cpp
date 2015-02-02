@@ -29,8 +29,6 @@ void RegisterStackPass::VisitStmt(const clang::Stmt *s) {
                     std::string mangled = constructMangledName(v->getName().str());
                     StackAlloc *alloc = insertions->findStackAlloc(mangled);
 
-                    llvm::errs() << "Found stack alloc info " << alloc << " for var " << mangled << "\n";
-
                     if (alloc != NULL) {
                         acc << constructRegisterStackVar(alloc);
                         if (v->hasInit() && clang::dyn_cast<clang::InitListExpr>(v->getInit())) {

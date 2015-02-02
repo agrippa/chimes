@@ -1465,18 +1465,30 @@ void Play::findStackAllocations(Module &M, const char *output_file,
 // }
 
 static Type *inferHostAllocationType(CallInst *callInst) {
-    Type *base_type = NULL;
 
     Use& use = *(callInst->use_begin());
     User *user = use.getUser();
 
-    // Look for a CallInst, followed immediately (and only) by a CastInst.
     if (CastInst *cast = dyn_cast<CastInst>(user)) {
+        /*
+         * Look for a CallInst, followed immediately (and only) by a CastInst
+         * from which we can infer this allocation's type.
+         */
         Type *malloc_type = cast->getType();
         assert(malloc_type->isPointerTy());
-        base_type = malloc_type->getPointerElementType();
+        return malloc_type->getPointerElementType();
+    } else if (StoreInst *store = dyn_cast<StoreInst>(user)) {
+        /*
+         * This value is stored directly to memory, so assume it is whatever the
+         * element type of the target is.
+         */
+        Type *dst_type = store->getPointerOperand()->getType();
+        assert(dst_type->isPointerTy());
+        return dst_type->getPointerElementType();
     }
-    return base_type;
+
+    errs() << *callInst << "\n";
+    assert(false);
 }
 
 static void printStructInfo(FILE *fp, Type *base_type,
@@ -1487,6 +1499,7 @@ static void printStructInfo(FILE *fp, Type *base_type,
     if (!structTy->isLiteral()) {
         fprintf(fp, " 0 1");
         assert(structTy->getStructName().str().find("struct.") == 0);
+
         std::string struct_name = structTy->getStructName().str().substr(7);
         fprintf(fp, " %s", struct_name.c_str());
         assert(structFields->find(struct_name) != structFields->end());
@@ -1498,6 +1511,9 @@ static void printStructInfo(FILE *fp, Type *base_type,
                 fprintf(fp, " %s", fieldname.c_str());
             }
         }
+    } else {
+        // TODO?
+        assert(false);
     }
 }
 
@@ -1535,7 +1551,7 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
 
     /*
      * We don't currently support multiple mallocs per
-     * line
+     * line. TODO.
      */
     assert(found_mallocs.find(line_no) == found_mallocs.end());
     found_mallocs.insert(line_no);
@@ -1548,24 +1564,25 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
      * extra type info to the heap allocation metrics to
      * help with replay.
      */
-    if (callee->getName().str() == "malloc" &&
-            callInst->getNumUses() == 1) {
-        Type *base_type = inferHostAllocationType(callInst);
+    if (callee->getName().str() == "malloc") {
+        if (callInst->getNumUses() == 1) {
+            Type *base_type = inferHostAllocationType(callInst);
 
-        if (base_type != NULL) {
             if (base_type->isPointerTy()) {
                 // is_ptr=1, is_struct=0
                 fprintf(fp, " 1 0");
             } else if (base_type->isStructTy()) {
                 printStructInfo(fp, base_type, structFields);
             }
+        } else {
+            // TODO
+            assert(false);
         }
     }
     fprintf(fp, "\n");
 }
 
 static Type *inferDeviceAllocationType(CallInst *callInst) {
-    Type *base_type = NULL;
     assert(callInst->getNumArgOperands() == 2);
 
     Value *ptr_to_ptr = callInst->getArgOperand(0);
@@ -1580,10 +1597,11 @@ static Type *inferDeviceAllocationType(CallInst *callInst) {
          */
         Type *arr_type = src->getPointerElementType();
         assert(arr_type->isPointerTy());
-        base_type = arr_type->getPointerElementType();
+        return arr_type->getPointerElementType();
     }
 
-    return base_type;
+    errs() << *callInst << "\n";
+    assert(false);
 }
 
 void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
@@ -1603,13 +1621,11 @@ void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
     if (callee->getName().str() == "cudaMalloc") {
         Type *base_type = inferDeviceAllocationType(callInst);
 
-        if (base_type != NULL) {
-            if (base_type->isPointerTy()) {
-                // is_ptr=1, is_struct=0
-                fprintf(fp, " 1 0");
-            } else if (base_type->isStructTy()) {
-                printStructInfo(fp, base_type, structFields);
-            }
+        if (base_type->isPointerTy()) {
+            // is_ptr=1, is_struct=0
+            fprintf(fp, " 1 0");
+        } else if (base_type->isStructTy()) {
+            printStructInfo(fp, base_type, structFields);
         }
     }
     fprintf(fp, "\n");
@@ -1753,7 +1769,6 @@ bool Play::runOnModule(Module &M) {
      * wrapper that takes both the usual malloc arguments, plus the alias group
      * this allocation belongs to.
      */
-
     findHeapAllocations(M, "heap.info", reachable.get_value_to_alias_group());
 
     findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group());

@@ -34,13 +34,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 143 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 141 37 alias_group_changed(1, (size_t)(16809019010565379225UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 5 alias_group_changed(1, (size_t)(17699046973199516026UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 31 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 54 , 10933946544651129952UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 54 , 10933946544651129952UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 28 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 35 , 8391575324692158608UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 35 , 8391575324692158608UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 28 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 35 , 8391575324692158608UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 35 , 8391575324692158608UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 27 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 34 , 8777646764455402125UL, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 34 , 8777646764455402125UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 137 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 137 10 , 10933946544651129952UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 138 5 len=4 free_wrapper
@@ -108,14 +108,14 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 83 5  size_t d
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 83 42 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 84 5  size_t nbytes;  nbytes = dimx * dimy * sizeof(float); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 84 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 5  float *c_coeff;  c_coeff = (float *)malloc_wrapper(sizeof(float) * 20, 10933946544651129952UL, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 92 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 5  float *curr;  curr = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 76 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 5  float *next;  next = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 76 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 5  float *vsq;  vsq = (float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 75 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 5  float *c_coeff;  c_coeff = (float *)malloc_wrapper(sizeof(float) * 20, 10933946544651129952UL, 0, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 95 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 5  float *curr;  curr = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 5  float *next;  next = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 5  float *vsq;  vsq = (float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0, 0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 78 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 102 5  float **srcs;  srcs = sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 102 74 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 5  double start;  start = seconds(); 

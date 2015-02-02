@@ -44,8 +44,8 @@ extern void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info,
-        ...);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -2943,10 +2943,10 @@ int main( int argc, char *argv[] ) {
          call_lbl_4: calling(4, 0UL, 2, (size_t)(14680162346750872809UL), (size_t)(0UL)); printf("radius = %d\n", conf.radius);
     } }
 
-     float *c_coeff; lbl_6: register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } c_coeff = (float *)malloc_wrapper(sizeof(float) * 20, 10933946544651129952UL, 0);
-     float *curr; lbl_7: register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0);
-     float *next; lbl_8: register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0);
-     float *vsq; lbl_9: register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = (float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0);
+     float *c_coeff; lbl_6: register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } c_coeff = (float *)malloc_wrapper(sizeof(float) * 20, 10933946544651129952UL, 0, 0);
+     float *curr; lbl_7: register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0);
+     float *next; lbl_8: register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = (float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0);
+     float *vsq; lbl_9: register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = (float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0, 0);
     if (alias_group_changed(1, (size_t)(16833687143959260136UL)) || curr == __null || next == __null || vsq == __null) { {
          call_lbl_5: calling(5, 0UL, 2, (size_t)(16436254989487132196UL), (size_t)(680289937019984656UL)); fprintf(__stderrp, "Allocations failed\n");
         alias_group_changed(1, (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 1;

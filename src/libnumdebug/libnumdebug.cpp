@@ -14,6 +14,7 @@
 
 #ifdef CUDA_SUPPORT
 #include <cuda_runtime.h>
+#include "libnumdebug_cuda.h"
 #endif
 
 #include "numdebug_common.h"
@@ -51,8 +52,8 @@ static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
 static void follow_pointers(void *container, string type,
         set<void *> *updated);
-static map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
-static void free_helper(map<void *, heap_allocation *>::iterator in_heap);
+map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
+void free_helper(void *ptr);
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
@@ -73,6 +74,10 @@ static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 
 static vector<stack_frame *> *unpacked_program_stack;
+/*
+ * A list of objects specifying what memory locations were updated with
+ * corrected pointers during the sweep over heap allocations.
+ */
 static vector<already_updated_ptrs *> already_updated;
 static std::map<void *, ptr_and_size *> *old_to_new;
 
@@ -178,7 +183,7 @@ void init_numdebug(int nstructs, ...) {
             void *old_address;
             size_t size;
             size_t group;
-            int is_cuda_alloc;
+            int is_cuda_alloc, elem_is_ptr, elem_is_struct;
 
             safe_read(fd, &old_address, sizeof(old_address), "old_address",
                     checkpoint_file);
@@ -186,6 +191,10 @@ void init_numdebug(int nstructs, ...) {
             safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
             safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
                     "is_cuda_alloc", checkpoint_file);
+            safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+                    checkpoint_file);
+            safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
+                    checkpoint_file);
 
             void *new_address;
             if (is_cuda_alloc) {
@@ -205,36 +214,25 @@ void init_numdebug(int nstructs, ...) {
             }
 
             heap_allocation *alloc = new heap_allocation(new_address, size,
-                    group, 0, is_cuda_alloc);
+                    group, 0, is_cuda_alloc, elem_is_ptr, elem_is_struct);
 
-            int have_type_info;
-            safe_read(fd, &have_type_info, sizeof(have_type_info),
-                    "have_type_info", checkpoint_file);
-            if (have_type_info) {
+            if (elem_is_struct) {
                 size_t elem_size;
-                int elem_is_ptr, elem_is_struct;
 
                 safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
                         checkpoint_file);
-                safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
-                        checkpoint_file);
-                safe_read(fd, &elem_is_struct, sizeof(elem_is_struct),
-                        "elem_is_struct", checkpoint_file);
-                alloc->add_type_info(elem_size, elem_is_ptr, elem_is_struct);
+                alloc->add_struct_elem_size(elem_size);
 
-                if (elem_is_struct) {
-                    int elem_ptr_offsets_len;
-                    safe_read(fd, &elem_ptr_offsets_len,
-                            sizeof(elem_ptr_offsets_len),
-                            "elem_ptr_offsets_len", checkpoint_file);
-                    for (int j = 0; j < elem_ptr_offsets_len; j++) {
-                        int offset;
-                        safe_read(fd, &offset, sizeof(offset), "offset",
-                                checkpoint_file);
-                        alloc->add_pointer_offset(offset);
-                    }
+                int elem_ptr_offsets_len;
+                safe_read(fd, &elem_ptr_offsets_len,
+                        sizeof(elem_ptr_offsets_len),
+                        "elem_ptr_offsets_len", checkpoint_file);
+                for (int j = 0; j < elem_ptr_offsets_len; j++) {
+                    int offset;
+                    safe_read(fd, &offset, sizeof(offset), "offset",
+                            checkpoint_file);
+                    alloc->add_pointer_offset(offset);
                 }
-
             }
 
             new_heap->push_back(alloc);
@@ -266,15 +264,22 @@ void init_numdebug(int nstructs, ...) {
         for (std::vector<heap_allocation *>::iterator heap_iter = new_heap->begin(),
                 heap_end = new_heap->end(); heap_iter != heap_end; heap_iter++) {
             heap_allocation *alloc = *heap_iter;
-            if (alloc->check_have_type_info()) {
-                if (alloc->check_elem_is_ptr()) {
-                    /*
-                     * Iterate through all elements of this array and convert
-                     * pointers from old values to new values.
-                     */
-                    assert(alloc->get_size() % sizeof(void *) == 0);
-                    assert(!alloc->get_is_cuda_alloc());
-                    int nelems = alloc->get_size() / sizeof(void *);
+            if (alloc->check_elem_is_ptr()) {
+                /*
+                 * Iterate through all elements of this array and convert
+                 * pointers from old values to new values.
+                 */
+                assert(alloc->get_size() % sizeof(void *) == 0);
+                int nelems = alloc->get_size() / sizeof(void *);
+                if (alloc->get_is_cuda_alloc()) {
+#ifdef CUDA_SUPPORT
+                    vector<int> ptr_offsets; ptr_offsets.push_back(0);
+                    translate_cuda_pointers(alloc->get_address(), nelems,
+                            sizeof(void *), ptr_offsets, old_to_new);
+#else
+                    assert(false);
+#endif
+                } else {
                     void **arr = (void **)(alloc->get_address());
 
                     for (int i = 0; i < nelems; i++) {
@@ -285,18 +290,28 @@ void init_numdebug(int nstructs, ...) {
                     already_updated_ptrs *updated = new already_updated_ptrs(
                             (unsigned char *)arr, sizeof(void *), nelems);
                     already_updated.push_back(updated);
+                }
 
-                } else if (alloc->check_elem_is_struct()) {
-                    int elem_size = alloc->get_elem_size();
-                    std::vector<int> *ptr_field_offsets = alloc->get_ptr_field_offsets();
-                    if (ptr_field_offsets->size() > 0) {
-                        assert(alloc->get_size() % elem_size == 0);
-                        assert(!alloc->get_is_cuda_alloc());
+            } else if (alloc->check_elem_is_struct()) {
+                int elem_size = alloc->get_elem_size();
+                std::vector<int> *ptr_field_offsets = alloc->get_ptr_field_offsets();
+                if (ptr_field_offsets->size() > 0) {
+                    assert(alloc->get_size() % elem_size == 0);
+
+                    int nelems = alloc->get_size() / elem_size;
+                    if (alloc->get_is_cuda_alloc()) {
+#ifdef CUDA_SUPPORT
+                        translate_cuda_pointers(alloc->get_address(),
+                                nelems, elem_size, *ptr_field_offsets,
+                                old_to_new);
+#else
+                        assert(false);
+#endif
+                    } else {
                         /*
                          * Iterate through all of the structs in the array and
                          * convert the pointers at the specified offsets.
                          */
-                        int nelems = alloc->get_size() / elem_size;
                         unsigned char *raw_arr = (unsigned char *)(alloc->get_address());
                         for (int i = 0; i < nelems; i++) {
                             unsigned char *this_struct = raw_arr + (elem_size * i);
@@ -629,15 +644,15 @@ int alias_group_changed(int ngroups, ...) {
 }
 
 void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
-        int is_cuda_alloc, int has_type_info, int is_ptr, int is_struct,
-        int elem_size, int *ptr_field_offsets, int n_ptr_field_offsets) {
+        int is_cuda_alloc, int is_ptr, int is_struct, int elem_size,
+        int *ptr_field_offsets, int n_ptr_field_offsets) {
     assert(valid_group(group) || is_cuda_alloc);
 
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
-            curr_seq_no, is_cuda_alloc);
+            curr_seq_no, is_cuda_alloc, is_ptr, is_struct);
 
-    if (has_type_info) {
-        alloc->add_type_info(elem_size, is_ptr, is_struct);
+    if (is_struct) {
+        alloc->add_struct_elem_size(elem_size);
         for (int i = 0; i < n_ptr_field_offsets; i++) {
             alloc->add_pointer_offset(ptr_field_offsets[i]);
         }
@@ -671,7 +686,8 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  * followed by n_ptr_fields int arguments, each of which is an offset in the
  * struct at which a pointer can be found.
  */
-void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...) {
+void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...) {
     assert(valid_group(group));
 
     void *ptr = malloc(nbytes);
@@ -679,15 +695,14 @@ void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...) {
     if (ptr != NULL) {
         numdebug_type_info info; memset(&info, 0x00, sizeof(info));
 
-        if (has_type_info) {
+        if (is_struct) {
             va_list vl;
-            va_start(vl, has_type_info);
+            va_start(vl, is_struct);
             parse_type_info(vl, &info);
             va_end(vl);
         }
-        malloc_helper(ptr, nbytes, group, 0, has_type_info, info.is_ptr,
-                info.is_struct, info.elem_size, info.ptr_field_offsets,
-                info.n_ptr_fields);
+        malloc_helper(ptr, nbytes, group, 0, is_ptr, is_struct, info.elem_size,
+                info.ptr_field_offsets, info.n_ptr_fields);
     }
 
     return ptr;
@@ -710,37 +725,37 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
             alloc->update_size(nbytes);
         } else {
             // The memory allocation was moved to satisfy this realloc
-            int has_type_info = alloc->check_have_type_info();
             int is_ptr = 0; int is_struct = 0; int n_struct_ptr_fields = 0;
             int elem_size = 0;
             int *ptr_field_offsets = NULL;
-            if (has_type_info) {
-                is_ptr = alloc->check_elem_is_ptr();
-                is_struct = alloc->check_elem_is_struct();
-                if (is_struct) {
-                    elem_size = alloc->get_elem_size();
-                    n_struct_ptr_fields = alloc->get_ptr_field_offsets()->size();
-                    ptr_field_offsets = (int *)malloc(sizeof(int) * n_struct_ptr_fields);
-                    for (int i = 0; i < n_struct_ptr_fields; i++) {
-                        ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
-                    }
+            if (alloc->check_elem_is_ptr()) {
+                is_ptr = 1;
+            } else if (alloc->check_elem_is_struct()) {
+                is_struct = 1;
+                elem_size = alloc->get_elem_size();
+                n_struct_ptr_fields = alloc->get_ptr_field_offsets()->size();
+                ptr_field_offsets = (int *)malloc(sizeof(int) *
+                        n_struct_ptr_fields);
+                for (int i = 0; i < n_struct_ptr_fields; i++) {
+                    ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
                 }
             }
 
             map<void *, heap_allocation *>::iterator in_heap =
                 find_in_heap(ptr);
             assert(in_heap->second->get_alias_group() == group);
-            free_helper(in_heap);
-            malloc_helper(new_ptr, nbytes, group, 0, has_type_info, is_ptr,
-                    is_struct, elem_size, ptr_field_offsets,
-                    n_struct_ptr_fields);
+            free_helper(ptr);
+            malloc_helper(new_ptr, nbytes, group, 0, is_ptr, is_struct,
+                    elem_size, ptr_field_offsets, n_struct_ptr_fields);
         }
     }
 
     return new_ptr;
 }
 
-static void free_helper(map<void *, heap_allocation *>::iterator in_heap) {
+void free_helper(void *ptr) {
+    map<void *, heap_allocation *>::iterator in_heap =
+        find_in_heap(ptr);
     size_t group = in_heap->second->get_alias_group();
     int seq = in_heap->second->get_seq();
 
@@ -762,7 +777,7 @@ static void free_helper(map<void *, heap_allocation *>::iterator in_heap) {
     }
 }
 
-static map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
+map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
     map<void *, heap_allocation *>::iterator in_heap = heap.find(ptr);
     assert(in_heap != heap.end());
     assert(in_heap->second->get_address() == ptr);
@@ -775,7 +790,7 @@ void free_wrapper(void *ptr, size_t group) {
     size_t original_group = in_heap->second->get_alias_group();
     assert(aliased(original_group, group));
 
-    free_helper(in_heap);
+    free_helper(ptr);
     free(ptr);
 }
 
@@ -1024,8 +1039,10 @@ static void follow_pointers(void *container, string type,
              * This requires the offset of every field in every declared struct
              * to be passed into init_numdebug. This is bad because that assumes
              * that struct definitions are all defined in the same scope as
-             * main. This is okay for the moment, as we only support single-file
-             * compilation, but should be addressed as a future TODO.
+             * main. This is okay for the moment, but should be addressed as a
+             * future TODO. Recently, the practice of passing module-specific
+             * information through new_stack was introduced, that would be a
+             * good place to add module-specific struct declarations.
              */
             string curr = nested_types.substr(start, index);
             unsigned char *field_ptr = ((unsigned char *)container) +
@@ -1111,41 +1128,36 @@ void *checkpoint_func(void *data) {
         size_t size = alloc->get_size();
         size_t group = alloc->get_alias_group();
         int is_cuda_alloc = alloc->get_is_cuda_alloc();
-        int have_type_info = alloc->check_have_type_info() ? 1 : 0;
+        int elem_is_ptr = alloc->check_elem_is_ptr();
+        int elem_is_struct = alloc->check_elem_is_struct();
 
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
         safe_write(fd, &group, sizeof(group), "group", dump_filename);
         safe_write(fd, &is_cuda_alloc, sizeof(is_cuda_alloc), "is_cuda_alloc",
                 dump_filename);
+        safe_write(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+                dump_filename);
+        safe_write(fd, &elem_is_struct, sizeof(elem_is_struct),
+                "elem_is_struct", dump_filename);
         safe_write(fd, alloc->get_tmp_buffer(), size, "heap contents",
                 dump_filename);
 
-        safe_write(fd, &have_type_info, sizeof(have_type_info),
-                "have_type_info", dump_filename);
-        if (alloc->check_have_type_info()) {
+        if (elem_is_struct) {
             size_t elem_size = alloc->get_elem_size();
-            int elem_is_ptr = alloc->check_elem_is_ptr();
-            int elem_is_struct = alloc->check_elem_is_struct();
 
             safe_write(fd, &elem_size, sizeof(elem_size), "elem_size",
                     dump_filename);
-            safe_write(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+            int elem_ptr_offsets_len =
+                alloc->get_ptr_field_offsets()->size();
+            safe_write(fd, &elem_ptr_offsets_len,
+                    sizeof(elem_ptr_offsets_len), "elem_ptr_offsets_len",
                     dump_filename);
-            safe_write(fd, &elem_is_struct, sizeof(elem_is_struct),
-                    "elem_is_struct", dump_filename);
-            if (elem_is_struct) {
-                int elem_ptr_offsets_len =
-                    alloc->get_ptr_field_offsets()->size();
-                safe_write(fd, &elem_ptr_offsets_len,
-                        sizeof(elem_ptr_offsets_len), "elem_ptr_offsets_len",
+            for (unsigned int i = 0; i < alloc->get_ptr_field_offsets()->size();
+                    i++) {
+                int offset = (*alloc->get_ptr_field_offsets())[i];
+                safe_write(fd, &offset, sizeof(offset), "offset",
                         dump_filename);
-                for (unsigned int i = 0; i < alloc->get_ptr_field_offsets()->size();
-                        i++) {
-                    int offset = (*alloc->get_ptr_field_offsets())[i];
-                    safe_write(fd, &offset, sizeof(offset), "offset",
-                            dump_filename);
-                }
             }
         }
 
