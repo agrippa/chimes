@@ -125,6 +125,7 @@ __global__ void translate_pointers_kernel(void *arr, int nelems, int elem_size,
     unsigned char *elem_ptr = (unsigned char *)arr + (tid * elem_size);
     for (i = 0; i < n_ptr_offsets; i++) {
         void **ptr_ptr = (void **)(elem_ptr + ptr_offsets[i]);
-        translate_ptr(*ptr_ptr, old_ptrs, new_ptrs, ptr_size, n_translations);
+        void *new_ptr = translate_ptr(*ptr_ptr, old_ptrs, new_ptrs, ptr_size, n_translations);
+        *ptr_ptr = new_ptr;
     }
 }

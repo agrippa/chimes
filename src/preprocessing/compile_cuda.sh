@@ -211,10 +211,8 @@ else
             ${LIBS} -g -O0
 
     if [[ $KEEP == 0 ]]; then
-        echo Removing $WORK_DIR
         rm -rf ${WORK_DIR}
         for f in ${OBJ_FILES[@]}; do
-            echo Removing $f
             rm -f $f
         done
     fi
