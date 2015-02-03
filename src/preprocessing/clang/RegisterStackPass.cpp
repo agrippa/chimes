@@ -46,11 +46,12 @@ void RegisterStackPass::VisitStmt(const clang::Stmt *s) {
                 std::stringstream ss2;
                 ss2 << " if (____numdebug_replaying) { goto lbl_" << (lbl + 1) << "; } ";
 
-                if (anyInitLists) {
-                    InsertTextBefore(start, ss.str());
-                } else {
-                    InsertTextAfterToken(end, ss.str());
-                }
+                InsertTextBefore(start, ss.str());
+                // if (anyInitLists) {
+                //     InsertTextBefore(start, ss.str());
+                // } else {
+                //     InsertTextAfterToken(end, ss.str());
+                // }
                 InsertTextAfterToken(end, acc.str());
                 InsertTextAfterToken(end, ss2.str());
 

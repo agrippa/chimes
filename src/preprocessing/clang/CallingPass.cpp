@@ -50,13 +50,16 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
 
+        // This means we can't support checkpoints from inside constructors
         if (const clang::CallExpr *call =
                 clang::dyn_cast<const clang::CallExpr>(s)) {
+
             const clang::FunctionDecl *decl = call->getDirectCallee();
             std::string callee_name = decl->getNameAsString();
 
             // Not necessary, but helps to limit code clutter
-            if (ignorable.find(callee_name) == ignorable.end()) {
+            if (ignorable.find(callee_name) == ignorable.end() &&
+                    !clang::isa<const clang::CXXConstructExpr>(call)) {
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);
 
                 if (calls_found.find(presumed.getLine()) == calls_found.end()) {

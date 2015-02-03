@@ -1,0 +1,15 @@
+/Users/jmg3/num-debug/src/examples/cuda/dim3.cu main|argc|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cuda/dim3.cu main|argv|0 " i8** " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cuda/dim3.cu main|blocks|0 " %struct.dim3 = type { i32, i32, i32 } " 96 0 1 dim3 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|this|0 " %struct.dim3* " 64 1 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vx|0 " i32 " 32 0 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vy|0 " i32 " 32 0 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vz|0 " i32 " 32 0 0 
+/tmp/numdebug.q5fdPv/nvcc/dim3.cudafe1.stub.c __sti____cudaRegisterAll_12_dim3_cpp1_ii_main|callback_fp|0 " void (i8**)* " 64 1 0 
+/tmp/numdebug.q5fdPv/nvcc/dim3.cudafe1.stub.c __nv_cudaEntityRegisterCallback|__T20|0 " i8** " 64 1 0 
+/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h ____nv_dummy_param_ref|param|0 " i8* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cuda/dim3.cu __nv_save_fatbinhandle_for_managed_rt|in|0 " i8** " 64 1 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|this|1 " %struct.dim3* " 64 1 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vx|1 " i32 " 32 0 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vy|1 " i32 " 32 0 0 
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vz|1 " i32 " 32 0 0 

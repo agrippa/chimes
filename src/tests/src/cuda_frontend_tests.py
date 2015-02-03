@@ -2,17 +2,21 @@
 Frontend tests for CUDA examples, designed to stress the parsing and
 transformation features of numdebug.
 """
+import os
 import sys
 from common import FrontendTest, run_frontend_test, parse_argv, NUM_DEBUG_HOME
+
+COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
+CUDA_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cuda'
+CPP_EXAMPLES_DIR = '../cpp' # relative to CUDA_EXAMPLES_DIR
+CUDA_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/cuda'
 
 VECTOR_SUM = FrontendTest('VectorSum', ['vector_sum.cu'],
                           ['vector_sum.cudafe1.register.cpp'], ['vector_sum'],
                           False)
-TESTS = [VECTOR_SUM]
-
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
-CUDA_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cuda'
-CUDA_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/cuda'
+DIM3 = FrontendTest('Dim3', ['dim3.cu'], ['dim3.cudafe1.register.cpp'],
+                    ['dim3'], False)
+TESTS = [VECTOR_SUM, DIM3]
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

@@ -1,0 +1,6 @@
+_config nx ny nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
+_source x y freq t 
+cudaError                                                                                 
+cudaMemcpyKind      
+dim3 x y z dim3 dim3 operator uint3 
+uint3 x y z 

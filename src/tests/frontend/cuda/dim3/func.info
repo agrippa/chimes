@@ -1,0 +1,8 @@
+main 0 18293662412874621885
+dim3::dim3 9833271297019531733 0 0 0
+__sti____cudaRegisterAll_12_dim3_cpp1_ii_main
+__nv_cudaEntityRegisterCallback 9877773167732901613
+__cudaUnregisterBinaryUtil
+____nv_dummy_param_ref 9877773167732901613
+__nv_save_fatbinhandle_for_managed_rt 9877773167732901613
+dim3::dim3 4674896959417115766 0 0 0

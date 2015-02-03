@@ -4,12 +4,15 @@ set -e
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info"
 KEEP=0
+COMPILE=0
 INPUTS=()
 INCLUDES=
 LIB_PATHS=
 LIBS=
+OUTPUT_FILE=a.out
+WORK_DIR=
 
-while getopts ":ki:I:L:l:" opt; do
+while getopts ":kci:I:L:l:o:w:" opt; do
     case $opt in 
         i)
             INPUTS+=(${OPTARG})
@@ -25,6 +28,15 @@ while getopts ":ki:I:L:l:" opt; do
             ;;
         k)
             KEEP=1
+            ;;
+        c)
+            COMPILE=1
+            ;;
+        w)
+            WORK_DIR=${OPTARG}
+            ;;
+        o)
+            OUTPUT_FILE=${OPTARG}
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -65,9 +77,11 @@ echo ${ABS_INPUTS[@]}
 
 LAST_FILES=()
 OBJ_FILES=()
-OUTPUT=$(pwd)/a.out
+OUTPUT=$(pwd)/${OUTPUT_FILE}
 
-WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+if [[ -z ${WORK_DIR} ]]; then
+    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+fi
 
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
@@ -154,21 +168,32 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${LAST_FILE} \
         -o ${OBJ_FILE} ${INCLUDES} -g -O0
+
+    if [[ ! -f ${OBJ_FILE} ]]; then
+        echo "Missing object file $OBJ_FILE for input $INPUT"
+        exit 1
+    fi
 done
 
 for f in ${LAST_FILES[@]}; do
     echo $f
 done
 
-OBJ_FILE_STR=""
-for f in ${OBJ_FILES[@]}; do
-    OBJ_FILE_STR="${OBJ_FILE_STR} $f"
-done
+if [[ $COMPILE == 1 ]]; then
+    for f in ${OBJ_FILES[@]}; do
+        echo $f
+    done
+else 
+    OBJ_FILE_STR=""
+    for f in ${OBJ_FILES[@]}; do
+        OBJ_FILE_STR="${OBJ_FILE_STR} $f"
+    done
 
-g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-        -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
-        -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} ${LIBS} -g -O0
+    g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+            -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
+            -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} ${LIBS} -g -O0
 
-if [[ $KEEP == 0 ]]; then
-    rm -rf ${WORK_DIR}
+    if [[ $KEEP == 0 ]]; then
+        rm -rf ${WORK_DIR}
+    fi
 fi

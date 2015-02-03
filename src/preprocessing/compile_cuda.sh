@@ -4,12 +4,15 @@ set -e
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info"
 KEEP=0
+COMPILE=0
 INPUTS=()
 INCLUDES=
 LIB_PATHS=
 LIBS=
+OUTPUT_FILE=a.out
+WORK_DIR=
 
-while getopts ":ki:I:L:l:" opt; do
+while getopts ":kci:I:L:l:o:w:" opt; do
     case $opt in 
         i)
             INPUTS+=(${OPTARG})
@@ -25,6 +28,15 @@ while getopts ":ki:I:L:l:" opt; do
             ;;
         k)
             KEEP=1
+            ;;
+        c)
+            COMPILE=1
+            ;;
+        w)
+            WORK_DIR=${OPTARG}
+            ;;
+        o)
+            OUTPUT_FILE=${OPTARG}
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -65,9 +77,11 @@ echo ${ABS_INPUTS[@]}
 
 LAST_FILES=()
 OBJ_FILES=()
-OUTPUT=$(pwd)/a.out
+OUTPUT=$(pwd)/${OUTPUT_FILE}
 
-WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+if [[ -z ${WORK_DIR} ]]; then
+    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+fi
 
 NVCC_WORK_DIR=${WORK_DIR}/nvcc
 COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
@@ -83,13 +97,15 @@ POST_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.post
 CPP_FILE=${COMPILE_HELPER_WORK_DIR}/log.cpp
 ENV_POST_FILE=${COMPILE_HELPER_WORK_DIR}/log.env.post
 
+mkdir -p ${COMPILE_HELPER_WORK_DIR}
+mkdir -p ${NVCC_WORK_DIR}
+
 for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILE=${INPUT}.o
-    mkdir ${COMPILE_HELPER_WORK_DIR}
     printf 'Compiling with nvcc...'
-    mkdir ${NVCC_WORK_DIR} && cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
+    cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
               --pre-include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
-              -I${NUM_DEBUG_HOME}/src/libnumdebug \
+              -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} \
               -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug --verbose --keep \
               --compile -g ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
@@ -154,6 +170,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
     EXT="${LAST_FILE##*.}"
     NAME="${LAST_FILE%.*}"
     LAST_FILE=${NAME}.register.${EXT}
+
+    echo Postprocessing ${LAST_FILE}
+    cd ${NVCC_WORK_DIR} && g++ -E -I${CUDA_HOME}/include -include stddef.h \
+        ${LAST_FILE} -o ${LAST_FILE}.post && mv ${LAST_FILE}.post ${LAST_FILE}
+
     LAST_FILE=$(dirname ${INTERMEDIATE_FILE})/${LAST_FILE}
 
     LAST_FILES+=($LAST_FILE)
@@ -174,16 +195,25 @@ for f in ${LAST_FILES[@]}; do
     echo $f
 done
 
-OBJ_FILE_STR=""
-for f in ${OBJ_FILES[@]}; do
-    OBJ_FILE_STR="${OBJ_FILE_STR} $f"
-done
+if [[ $COMPILE == 1 ]]; then
+    for f in ${OBJ_FILES[@]}; do
+        echo $f
+    done
+else
+    OBJ_FILE_STR=""
+    for f in ${OBJ_FILES[@]}; do
+        OBJ_FILE_STR="${OBJ_FILE_STR} $f"
+    done
 
-g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-        -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
-        -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} \
-        ${LIBS} -g -O0
+    g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+            -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
+            -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} \
+            ${LIBS} -g -O0
 
-if [[ $KEEP == 0 ]]; then
-    rm -rf ${WORK_DIR}
+    if [[ $KEEP == 0 ]]; then
+        rm -rf ${WORK_DIR}
+        for f in ${OBJ_FILES[@]}; do
+            rm -f $f
+        done
+    fi
 fi

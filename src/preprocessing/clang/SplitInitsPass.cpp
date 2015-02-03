@@ -3,6 +3,7 @@
 #include "SplitInitsPass.h"
 #include "DesiredInsertions.h"
 
+#include <clang/AST/DeclCXX.h>
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/Stmt.h>
 #include <llvm/Support/raw_ostream.h>
@@ -40,8 +41,7 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
   
                     // If this local variable declaration has an initializer
                     if (v->hasInit() &&
-                            !clang::isa<clang::InitListExpr>(v->getInit()) &&
-                            !clang::isa<clang::CXXConstructExpr>(v->getInit())) {
+                            !clang::isa<clang::InitListExpr>(v->getInit())) {
                         clang::SourceLocation decl_start = v->getLocStart();
                         clang::SourceLocation decl_end = v->getLocEnd();
                         const clang::Expr *init = v->getInit();
@@ -58,8 +58,22 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                         decl_stream.flush();
 
                         acc_decl << " " << decl_str << "; ";
-                        acc_init << " " << v->getName().str() << " = " <<
-                            init_str << "; ";
+                        /*
+                         * TODO not sure if just checking for zero-length
+                         * argument list is okay.
+                         */
+                        if (clang::isa<clang::CXXConstructExpr>(init)) {
+                            if (((const clang::CXXConstructExpr *)init)->getNumArgs() != 0) {
+                                int i = 0;
+                                while (decl_str[i] != ' ') i++;
+
+                                acc_init << " " << v->getName().str() << " = " <<
+                                    decl_str.substr(0, i) << "(" << init_str << "); ";
+                            }
+                        } else {
+                            acc_init << " " << v->getName().str() << " = (" <<
+                                init_str << "); ";
+                        }
                     } else {
                         /*
                          * No initializer, just a declaration (possibly in a

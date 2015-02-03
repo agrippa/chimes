@@ -1,0 +1,13 @@
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 1 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 1 new_stack(3859550638466940431UL, 2, 8, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL, 1983966042826701852UL, 3871800863148665871UL, 5977518576729644591UL, 9877773167732901613UL, 7229261624878550433UL, 9877773167732901613UL, 7696593959710208457UL, 9877773167732901613UL, 14824238800785570000UL, 9833271297019531733UL, 16415294844621594485UL, 4674896959417115766UL, 17834006590498585836UL, 9877773167732901613UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 1  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 1  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 1 init_numdebug(0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 750  dim3 blocks;  blocks = dim3(4, 256); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 769 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 765  call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 751  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 762  register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 762  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 762 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
