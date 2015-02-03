@@ -61,25 +61,25 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  registe
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 122 1 rm_stack(false, 0UL); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1487  FILE *fp;  fp = fopen(filename, "wb"); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1487  FILE *fp;  fp = (fopen(filename, "wb")); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1519 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 5 {  int y; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 21 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 10  y = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 10  y = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 19 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 9 {  int x; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 19 11  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 14  x = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 14  x = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 23 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1619 {  size_t i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 32 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1624  i = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1624  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1636 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 5 {  size_t i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 37 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 10  i = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 22 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 5  float scale;  scale = 1. / (dx * dx); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 5  float scale;  scale = (1. / (dx * dx)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 33 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1135 int c; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140 
@@ -104,27 +104,27 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 106 13  call_
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 112 13  call_lbl_9: calling(9, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 13  call_lbl_10: calling(10, 0UL, 1, (size_t)(16519385352256392130UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 9  call_lbl_11: calling(11, 0UL, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1496  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1488  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1496  register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 1496  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 13  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 13  register_stack_var("save_text|y|0", "i32", (void *)(&y), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 13  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 17  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 12  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 17  register_stack_var("save_text|x|0", "i32", (void *)(&x), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 17  if (____numdebug_replaying) { goto lbl_3; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 17 lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1630  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1622  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1630  register_stack_var("init_data|i|0", "i64", (void *)(&i), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 1630  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 16  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 16  register_stack_var("init_data|i|1", "i64", (void *)(&i), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 16  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 6  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17  if (____numdebug_replaying) { goto lbl_3; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 17 lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1135  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140  register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 1140 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 

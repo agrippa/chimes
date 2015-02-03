@@ -138,6 +138,12 @@ def prepare_dependencies(compile_cmd, dependencies, env={}):
     return compile_cmd
 
 
+def usage(argv):
+    sys.stderr.write('usage: python ' + argv[0] + ' [-k] [-v] [-t test-name] ' +
+                     '[-h]\n')
+    sys.exit(1)
+
+
 def parse_argv(argv):
     """
     Parse options from CLI arguments. Currently we only support a keep option
@@ -163,9 +169,11 @@ def parse_argv(argv):
             assert len(argv) >= i + 2
             target = argv[i + 1]
             i += 1
+        elif argv[i] == '-h':
+            usage(argv)
         else:
             sys.stderr.write('Unknown argument ' + argv[i] + '\n')
-            sys.exit(1)
+            usage(argv)
         i += 1
 
     return TestConfig(keep, verbose, target)
@@ -462,8 +470,12 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         info_dir_path = os.path.join(test_dir_path, info_dir)
         for info_file in INFO_FILES.keys():
             expected_output = os.path.join(info_dir_path, info_file)
-            test_output = os.path.join(work_folder, input_file_base + '.' +
-                                                    info_file)
+            if input_file_base.endswith('.cu'):
+                test_output = os.path.join(root_folder, 'nvcc', input_file_base + '.' +
+                                                        info_file)
+            else:
+                test_output = os.path.join(root_folder, input_file_base + '.' +
+                                                        info_file)
             _diff_files(expected_output, test_output, INFO_FILES[info_file])
 
     if not config.keep:

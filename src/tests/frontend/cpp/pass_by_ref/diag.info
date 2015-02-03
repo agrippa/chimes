@@ -7,7 +7,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5 init_numde
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 305 int b; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 130  call_lbl_0: calling(0, 0UL, 1, (size_t)(2394767282369806426UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 305  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310  register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 

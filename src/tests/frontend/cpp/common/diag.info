@@ -124,57 +124,57 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 1 rm_stack(
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 220 5 new_stack(7724169104006700302UL, 0, 19, 1387191059008098409UL, 3277977604394879722UL, 4047636378196868974UL, 577070706814357478UL, 4972645299531092553UL, 5827032325616314450UL, 5186300721691170515UL, 3277977604394879722UL, 5997784754333573673UL, 4288610876228433544UL, 6095867792190138415UL, 3433389096703679793UL, 7374354779439216353UL, 2752442294988640373UL, 7503953869617880805UL, 6456531717151425942UL, 8936251819094495589UL, 4995672202021001482UL, 9285280766920217948UL, 2752442294988640373UL, 11007132437992599952UL, 8132302032623108198UL, 11424047330458090375UL, 2008721800625821080UL, 11890416593231187164UL, 8132302032623108198UL, 13982009165439054754UL, 6456531717151425942UL, 14632242022306526605UL, 17386119534690992797UL, 15190893650781371235UL, 9285280766920217948UL, 16334560808348918639UL, 4288610876228433544UL, 16642833800444842057UL, 2685576284420924090UL, 17386119534690992797UL, 16455452247920468155UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 221 9 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 228 1 rm_stack(false, 0UL); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 930 struct timeval tp; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 930  struct timeval tp; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 947 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 5 struct timezone tzp; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 5  struct timezone tzp; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 5  int i;  i = gettimeofday(&tp, &tzp); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 5  int i;  i = (gettimeofday(&tp, &tzp)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 36 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1347  float shift;  shift = -1.55939996F / freq; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1347  float shift;  shift = (-1.55939996F / freq); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1376 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 59 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 10  i = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 9  float time;  time = i * dt + shift; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 9  float time;  time = (i * dt + shift); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 9  float pi_freq_t;  pi_freq_t = 3.14151692F * freq * time; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 9  float pi_freq_t;  pi_freq_t = (3.14151692F * freq * time); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 9  float sqr_pi_freq_t;  sqr_pi_freq_t = pi_freq_t * pi_freq_t; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 9  float sqr_pi_freq_t;  sqr_pi_freq_t = (pi_freq_t * pi_freq_t); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1171  char *x_str;  x_str = optarg; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1171  char *x_str;  x_str = (optarg); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1191 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 5  char *first_comma;  first_comma = strchr(x_str, ','); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 5  char *first_comma;  first_comma = (strchr(x_str, ',')); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 43 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 5  char *y_str;  y_str = first_comma + 1; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 5  char *y_str;  y_str = (first_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 5  char *second_comma;  second_comma = strchr(y_str, ','); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 5  char *second_comma;  second_comma = (strchr(y_str, ',')); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 44 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 5  char *freq_str;  freq_str = second_comma + 1; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 5  char *freq_str;  freq_str = (second_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 38 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 5  char *third_comma;  third_comma = strchr(freq_str, ','); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 5  char *third_comma;  third_comma = (strchr(freq_str, ',')); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 46 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 5  char *time_str;  time_str = third_comma + 1; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 5  char *time_str;  time_str = (third_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 37 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 124 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 10  i = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 9  source *curr;  curr = (*srcs) + i; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 9  source *curr;  curr = ((*srcs) + i); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1353  float **src_samples;  src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1353  float **src_samples;  src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1454 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 141 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 10  i = 0; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1230 int i; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1235 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 1036 int i; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 1041 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 5  double perc_progress;  perc_progress = (double)progress / (double)progress_goal; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 5  double perc_progress;  perc_progress = ((double)progress / (double)progress_goal); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 68 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 5  int ticks;  ticks = (int)(perc_progress * progress_length); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 5  int ticks;  ticks = ((int)(perc_progress * progress_length)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 55 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 14  call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 58 134  call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); 
@@ -220,79 +220,79 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 210 13  call_lb
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 213 9  call_lbl_5: calling(5, 0UL, 3, (size_t)(3433389096703679793UL), (size_t)(13438480215468402012UL), (size_t)(577070706814357478UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 224 5  call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 225 5  call_lbl_1: calling(1, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13482740380279744922UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 947  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 947  register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), 16, 0, 1, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 947  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 24  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 24  register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), 8, 0, 1, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 24  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 11  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 931  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 948  register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), 16, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 948  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 6  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 25  register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), 8, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 25  if (____numdebug_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 6  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 11  register_stack_var("seconds|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 11  if (____numdebug_replaying) { goto lbl_3; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 11 lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1359  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1348  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1359  register_stack_var("ricker_wavelet|shift|0", "float", (void *)(&shift), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 1359  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 13  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 13  register_stack_var("ricker_wavelet|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 13  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 20  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 10  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 20  register_stack_var("ricker_wavelet|time|0", "float", (void *)(&time), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 55 20  if (____numdebug_replaying) { goto lbl_3; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 25  lbl_3: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 10  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 25  register_stack_var("ricker_wavelet|pi_freq_t|0", "float", (void *)(&pi_freq_t), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 25  if (____numdebug_replaying) { goto lbl_4; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 29  lbl_4: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 10  lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 29  register_stack_var("ricker_wavelet|sqr_pi_freq_t|0", "float", (void *)(&sqr_pi_freq_t), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 29  if (____numdebug_replaying) { goto lbl_5; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 29 lbl_5: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1183  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1172  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1183  register_stack_var("parse_source|x_str|0", "i8*", (void *)(&x_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 1183  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 23  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 23  register_stack_var("parse_source|first_comma|0", "i8*", (void *)(&first_comma), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 23  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 17  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 6  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 17  register_stack_var("parse_source|y_str|0", "i8*", (void *)(&y_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 70 17  if (____numdebug_replaying) { goto lbl_3; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 24  lbl_3: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 6  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 24  register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 24  if (____numdebug_replaying) { goto lbl_4; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 20  lbl_4: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 6  lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 20  register_stack_var("parse_source|freq_str|0", "i8*", (void *)(&freq_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 77 20  if (____numdebug_replaying) { goto lbl_5; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 23  lbl_5: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 6  lbl_5: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 23  register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 23  if (____numdebug_replaying) { goto lbl_6; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 20  lbl_6: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 6  lbl_6: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 20  register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 20  if (____numdebug_replaying) { goto lbl_7; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 20 lbl_7: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 13  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 8  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 13  register_stack_var("config_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 13  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 22  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 10  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 22  register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 22  if (____numdebug_replaying) { goto lbl_2; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 22 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1373  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1354  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1373  register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 1373  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 13  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 13  register_stack_var("sample_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 13  if (____numdebug_replaying) { goto lbl_2; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 13 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1235  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1230  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1235  register_stack_var("init_progress|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1235  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 1235 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 1041  lbl_0: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 1036  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 1041  register_stack_var("update_progress|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 1041  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 26  lbl_1: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 26  register_stack_var("update_progress|perc_progress|0", "double", (void *)(&perc_progress), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 26  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 15  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 6  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 15  register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 15  if (____numdebug_replaying) { goto lbl_3; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 194 15 lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 

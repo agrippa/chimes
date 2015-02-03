@@ -20,6 +20,7 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
 #ifdef __NVCC__
+#include <driver_types.h>
 cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
         int is_ptr, int is_struct, ...);
 cudaError_t cudaFree_wrapper(void *ptr, size_t group);
