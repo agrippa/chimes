@@ -6,7 +6,7 @@ if [[ $# != 1 ]]; then
 fi
 
 PYLINT=pylint
-PYLINT_ARGS="--reports=n --disable=too-few-public-methods,too-many-arguments,too-many-locals"
+PYLINT_ARGS="--reports=n --disable=too-few-public-methods,too-many-arguments,too-many-locals,too-many-branches"
 
 if [[ "$1" == "all" ]]; then
     for f in $(ls *.py); do

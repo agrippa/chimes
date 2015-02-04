@@ -26,7 +26,8 @@ ISO2D = RuntimeTest('Iso2D',
                     ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'], 0, 1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
-                                  'libcommon2d.so')], cli_args='-i 1')
+                                               'libcommon2d.so')],
+                    cli_args='-i 1')
 TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
          HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, MULTI_CHECKPOINT,
          ISO2D]
