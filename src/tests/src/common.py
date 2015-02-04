@@ -42,15 +42,21 @@ class RuntimeTest(object):
     asserts which verify correct behavior.
     """
     def __init__(self, name, input_files, expected_code,
-                 expected_num_checkpoints, includes=[], dependencies=[], cli_args=None):
+                 expected_num_checkpoints, includes=None, dependencies=None, cli_args=None):
         assert expected_num_checkpoints > 0, name
 
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
         self.expected_num_checkpoints = expected_num_checkpoints
-        self.includes = includes
-        self.dependencies = dependencies
+        if includes is None:
+            self.includes = []
+        else:
+            self.includes = includes
+        if dependencies is None:
+            self.dependencies = []
+        else:
+            self.dependencies = dependencies
         self.cli_args = cli_args
 
 
@@ -75,17 +81,17 @@ class FrontendTest(object):
     library, and run 'make clean; make' to build it before using it.
     """
     def __init__(self, name, input_files, compare_files, info_dirs, expect_err,
-            includes=[], dependencies=[]):
+                 includes=None, dependencies=None):
         self.name = name
         self.input_files = input_files
         self.compare_files = compare_files
         self.info_dirs = info_dirs
         self.expect_err = expect_err
-        self.includes = includes
-        self.dependencies = dependencies
+        self.includes = [] if includes is None else includes
+        self.dependencies = [] if dependencies is None else dependencies
 
 
-def add_include_paths_to_compile_cmd(compile_cmd, includes):
+def add_include_paths(compile_cmd, includes):
     """
     Add include paths to the provided compile command.
 
@@ -102,7 +108,7 @@ def add_include_paths_to_compile_cmd(compile_cmd, includes):
     return compile_cmd
 
 
-def prepare_dependencies(compile_cmd, dependencies, env={}):
+def prepare_dependencies(compile_cmd, dependencies, env):
     """
     Prepare any dependencies for a test and add any necessary arguments to the
     compilation command.
@@ -114,7 +120,7 @@ def prepare_dependencies(compile_cmd, dependencies, env={}):
     :returns: New compilation command
     :rtype: `str`
     """
-    new_library_path=''
+    new_library_path = ''
 
     for dependency in dependencies:
         dirname = os.path.dirname(dependency)
@@ -140,6 +146,12 @@ def prepare_dependencies(compile_cmd, dependencies, env={}):
 
 
 def usage(argv):
+    """
+    Print usage for this script
+
+    :param argv: CLI arguments
+    :type argv: `list` of `str`
+    """
     sys.stderr.write('usage: python ' + argv[0] + ' [-k] [-v] [-t test-name] ' +
                      '[-h]\n')
     sys.exit(1)
@@ -168,8 +180,8 @@ def parse_argv(argv):
             verbose = True
         elif argv[i] == '-t':
             assert len(argv) >= i + 2
-            for t in argv[i + 1].split(','):
-                targets.append(t)
+            for target in argv[i + 1].split(','):
+                targets.append(target)
             i += 1
         elif argv[i] == '-h':
             usage(argv)
@@ -427,8 +439,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(examples_dir_path, input_file)
 
-    compile_cmd = add_include_paths_to_compile_cmd(compile_cmd, test.includes)
-    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies)
+    compile_cmd = add_include_paths(compile_cmd, test.includes)
+    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, {})
 
     stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err)
 
@@ -483,10 +495,10 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
             expected_output = os.path.join(info_dir_path, info_file)
             if input_file_base.endswith('.cu'):
                 test_output = os.path.join(root_folder, 'nvcc', input_file_base + '.' +
-                                                        info_file)
+                                           info_file)
             else:
                 test_output = os.path.join(root_folder, input_file_base + '.' +
-                                                        info_file)
+                                           info_file)
             _diff_files(expected_output, test_output, INFO_FILES[info_file])
 
     if not config.keep:
@@ -523,7 +535,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     else:
         raise Exception('Invalid type for input list')
 
-    compile_cmd = add_include_paths_to_compile_cmd(compile_cmd, test.includes)
+    compile_cmd = add_include_paths(compile_cmd, test.includes)
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
 
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)

@@ -2,7 +2,6 @@
 Frontend tests for CUDA examples, designed to stress the parsing and
 transformation features of numdebug.
 """
-import os
 import sys
 from common import FrontendTest, run_frontend_test, parse_argv, NUM_DEBUG_HOME
 
