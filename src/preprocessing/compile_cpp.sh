@@ -94,6 +94,7 @@ OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
+NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
 
 echo WORK_DIR = $WORK_DIR
 
@@ -120,12 +121,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g \
            -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
-           -include stddef.h -include stdio.h
+           -include stddef.h -include stdio.h ${NUMDEBUG_DEF}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
            -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -S -emit-llvm \
-           ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g
+           ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${NUMDEBUG_DEF}
 
     echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
     cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -158,7 +159,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${WORK_DIR} \
             -c true \
             ${PREPROCESS_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${NUMDEBUG_DEF}
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -172,7 +173,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
     echo Postprocessing ${FINAL_FILE}
-    cd ${WORK_DIR} && g++ -E -include stddef.h ${FINAL_FILE} \
+    cd ${WORK_DIR} && g++ -E -include stddef.h ${FINAL_FILE} ${NUMDEBUG_DEF} \
         -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
@@ -182,7 +183,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${INCLUDES} -g -O0
+        -o ${OBJ_FILE} ${INCLUDES} -g -O0 ${NUMDEBUG_DEF}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"

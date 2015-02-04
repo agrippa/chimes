@@ -101,6 +101,7 @@ OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
+NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
 
 CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log
 ENV_FILE=${COMPILE_HELPER_WORK_DIR}/log.env
@@ -119,7 +120,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
               --pre-include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
               -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} \
               -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug --verbose --keep \
-              --compile -g ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
+              --compile -g ${NUMDEBUG_DEF} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
     printf 'DONE\n'
     python ${NUM_DEBUG_HOME}/src/preprocessing/compile_helper.py \
@@ -145,7 +146,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
         -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -S -emit-llvm \
-        ${INTERMEDIATE_FILE} -o ${BITCODE_FILE} -g
+        ${INTERMEDIATE_FILE} -o ${BITCODE_FILE} -g ${NUMDEBUG_DEF}
 
     echo Analyzing ${BITCODE_FILE} and dumping info to ${NVCC_WORK_DIR}
     cd ${NVCC_WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -177,7 +178,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${NVCC_WORK_DIR} \
             -c true \
             ${INTERMEDIATE_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES}
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${NUMDEBUG_DEF}
 
     TRANSFORMED_FILE=$(basename ${INTERMEDIATE_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -192,8 +193,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Postprocessing ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && g++ -E -I${CUDA_HOME}/include -include stddef.h \
-        ${FINAL_FILE} -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
-
+        ${NUMDEBUG_DEF} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
+        ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=$(dirname ${INTERMEDIATE_FILE})/${FINAL_FILE}
 
