@@ -39,7 +39,10 @@
 #include <unistd.h>
 #include "common.h"
 #include "common2d.h"
+
+#ifdef __NUMDEBUG_SUPPORT
 #include "checkpoint.h"
+#endif
 
 /*
  * This function advances the state of the system by nsteps timesteps. The 
@@ -119,7 +122,9 @@ int main( int argc, char *argv[] ) {
         next = curr;
         curr = tmp;
 
+#ifdef __NUMDEBUG_SUPPORT
         checkpoint();
+#endif
 
         update_progress(step + 1);
     }

@@ -1,27 +1,27 @@
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 5 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 86 9 : { 1730036212542016532, 1933428909702055326, 3512365080884279303, 3916789489242128784, 5571543899197932560 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 93 12 : { 12835239948587864347 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 12 : { 13776165132426961666 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 12 : { 3920757191841456973 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 96 9 : { 16833687143959260136 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 98 9 : { 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 5 : { 3232826025796191657 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 14 : { 5424025495246047316, 14608951975089488607 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 108 18 : { 4230221212431166864 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 108 45 : { 4230221212431166864 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 113 9 : { 8391575324692158608, 8746935921038613430 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 122 9 : { 2362206228145856531, 3920757191841456973, 13776165132426961666 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 44 : { 5424025495246047316 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 128 5 : { 2124997618683620793 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 5 : { 16557221819836515321 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 142 14 : { 16809019010565379225 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 142 37 : { 16809019010565379225 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 5 : { 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 11 : { 1406537190118695280, 1439420700812193513, 4020147836706855852, 4740125504295099978, 5605394185929330330, 6133022261894537111, 7812062783844714897, 8434292942123894570, 13062136505411396820, 17216818188849725545 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 54 18 : { 3546215367615677073 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 59 22 : { 758094435815140655, 1760539376595026939, 5855332881963460232, 17702871222471266781 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 67 13 : { 142509876040465224, 4266828485354121373, 4608403546164633272, 5855332881963460232, 18247678888939504941 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 59 42 : { 17702871222471266781 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 69 9 : { 3655576263074171224 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 54 33 : { 3546215367615677073 }
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 26 : { 5605394185929330330 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 78 5 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 89 9 : { 1730036212542016532, 1933428909702055326, 3512365080884279303, 3916789489242128784, 5571543899197932560 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 96 12 : { 12835239948587864347 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 12 : { 13776165132426961666 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 98 12 : { 3920757191841456973 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 99 9 : { 16833687143959260136 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 101 9 : { 17699046973199516026 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 5 : { 3232826025796191657 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 110 14 : { 5424025495246047316, 14608951975089488607 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 111 18 : { 4230221212431166864 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 111 45 : { 4230221212431166864 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 116 9 : { 8391575324692158608, 8746935921038613430 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 126 9 : { 2362206228145856531, 3920757191841456973, 13776165132426961666 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 110 44 : { 5424025495246047316 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 133 5 : { 2124997618683620793 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 136 5 : { 16557221819836515321 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 14 : { 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 37 : { 16809019010565379225 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 152 5 : { 17699046973199516026 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 56 11 : { 1406537190118695280, 1439420700812193513, 4020147836706855852, 4740125504295099978, 5605394185929330330, 6133022261894537111, 7812062783844714897, 8434292942123894570, 13062136505411396820, 17216818188849725545 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 57 18 : { 3546215367615677073 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 62 22 : { 758094435815140655, 1760539376595026939, 5855332881963460232, 17702871222471266781 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 70 13 : { 142509876040465224, 4266828485354121373, 4608403546164633272, 5855332881963460232, 18247678888939504941 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 62 42 : { 17702871222471266781 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 72 9 : { 3655576263074171224 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 57 33 : { 3546215367615677073 }
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 56 26 : { 5605394185929330330 }
