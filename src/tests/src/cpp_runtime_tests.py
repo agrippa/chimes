@@ -20,6 +20,7 @@ HEAP_POINTERS = RuntimeTest('HeapPointers', ['heap_pointers.cpp'], 0, 1)
 HEAP_INDIRECTION = RuntimeTest('HeapIndirection', ['heap_indirection.cpp'], 0, 1)
 FREE = RuntimeTest('Free', ['free.cpp'], 42, 1)
 REALLOC = RuntimeTest('Realloc', ['realloc.cpp'], 42, 1)
+GLOBALS = RuntimeTest('Globals', ['globals.cpp'], 7, 1)
 MULTI_CHECKPOINT = RuntimeTest('MultiCheckpoint', ['multi_checkpoint.cpp'], 100,
                                100)
 ISO2D = RuntimeTest('Iso2D',
@@ -30,7 +31,7 @@ ISO2D = RuntimeTest('Iso2D',
                     cli_args='-i 1')
 TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
          HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, MULTI_CHECKPOINT,
-         ISO2D]
+         ISO2D, GLOBALS]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
