@@ -85,6 +85,10 @@ echo ${ABS_INPUTS[@]}
 LAST_FILES=()
 OBJ_FILES=()
 OUTPUT=$(pwd)/${OUTPUT_FILE}
+CUDA_LIB_PATH=${CUDA_HOME}/lib
+if [[ -d ${CUDA_HOME}/lib64 ]]; then
+    CUDA_LIB_PATH=${CUDA_HOME}/lib64
+fi
 
 if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
@@ -222,7 +226,7 @@ else
     done
 
     g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
+            -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_LIB_PATH} -lnumdebug \
             -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} \
             ${LIBS} -g -O0
 
