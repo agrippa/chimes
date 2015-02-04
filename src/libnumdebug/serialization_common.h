@@ -1,6 +1,8 @@
 #ifndef SERIALIZATION_COMMON_H
 #define SERIALIZATION_COMMON_H
 
+#include <stdint.h>
+
 #define NEW_STACK_FRAME 0
 #define NEW_STACK_VAR   1
 

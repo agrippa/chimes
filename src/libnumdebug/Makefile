@@ -1,10 +1,21 @@
 GXX=g++
 NVCC=nvcc
-GXX_FLAGS=-g -fPIC -Wall -stdlib=libstdc++
-NVCC_FLAGS=-g -Xcompiler -fPIC
+GXX_FLAGS=-g -fPIC -Wall
+NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20
 SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
     global_serialization.cpp numdebug_stack.cpp heap_allocation.cpp \
     type_info.cpp serialization_common.cpp
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	FXX_FLAGS += -stdlib=libstdc++
+endif
+
+ifneq ($(wildcard $(CUDA_HOME)/lib64),)
+	CUDA_LIB_PATH = ${CUDA_HOME}/lib64
+else
+	CUDA_LIB_PATH = ${CUDA_HOME}/lib
+endif
 
 NUMDEBUG_LIB=libnumdebug.so
 NUMDEBUG_CPP_LIB=libnumdebug_cpp.so
@@ -16,7 +27,7 @@ ${NUMDEBUG_CPP_LIB}: ${SRC}
 
 ${NUMDEBUG_LIB}: ${SRC} libnumdebug_cuda.o
 	${GXX} ${GXX_FLAGS} -shared ${SRC} libnumdebug_cuda.o -o ${NUMDEBUG_LIB} \
-        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_HOME}/lib -lcudart
+        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} -lcudart
 
 libnumdebug_cuda.o: libnumdebug_cuda.cu
 	${NVCC} ${NVCC_FLAGS} --compile libnumdebug_cuda.cu -o libnumdebug_cuda.o -DCUDA_SUPPORT

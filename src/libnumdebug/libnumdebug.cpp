@@ -32,7 +32,7 @@
 using namespace std;
 
 // functions defined in this file
-void new_stack(int n_local_arg_aliases, ...);
+void new_stack(unsigned n_local_arg_aliases, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias);
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
@@ -499,7 +499,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
     va_end(vl);
 }
 
-void new_stack(int n_local_arg_aliases, ...) {
+void new_stack(unsigned int n_local_arg_aliases, ...) {
     assert(program_stack.size() == 0 || calling_lbl >= 0);
     if (calling_lbl >= 0) {
         stack_tracker.push(calling_lbl);
@@ -520,7 +520,7 @@ void new_stack(int n_local_arg_aliases, ...) {
     std::vector<size_t> new_aliases;
     va_list vl;
     va_start(vl, n_local_arg_aliases);
-    for (int i = 0; i < n_local_arg_aliases; i++) {
+    for (unsigned i = 0; i < n_local_arg_aliases; i++) {
         size_t alias = va_arg(vl, size_t);
         new_aliases.push_back(alias);
     }
@@ -530,7 +530,7 @@ void new_stack(int n_local_arg_aliases, ...) {
     return_aliases.push_back(return_alias);
 
     if (program_stack.size() > 1) {
-        for (int i = 0; i < n_local_arg_aliases; i++) {
+        for (unsigned i = 0; i < n_local_arg_aliases; i++) {
             if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
                 merge_alias_groups(new_aliases[i], parent_aliases[i]);
                 assert(aliased(new_aliases[i], parent_aliases[i]));
