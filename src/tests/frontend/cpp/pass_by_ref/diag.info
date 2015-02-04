@@ -10,4 +10,4 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 130  call_l
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 230  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235  register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } 

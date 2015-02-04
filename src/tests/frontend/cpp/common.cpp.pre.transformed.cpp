@@ -2482,7 +2482,7 @@ static int progress_disabled = 0;
 double seconds() {
     new_stack(0); lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), 16, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; }
       lbl_1: struct timezone tzp; register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), 8, 0, 1, 0); if (____numdebug_replaying) { goto lbl_2; }
-      lbl_2: int i; register_stack_var("seconds|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 47); exit(1); } } } call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); i = (gettimeofday(&tp, &tzp));
+      lbl_2: int i; register_stack_var("seconds|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); i = (gettimeofday(&tp, &tzp));
     alias_group_changed(1, (size_t)(1085571792782596357UL)); rm_stack(false, 0UL); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 }
 
@@ -2492,7 +2492,7 @@ void ricker_wavelet(float *source, int nsteps, float dt, float freq) {
     { lbl_1: int i; register_stack_var("ricker_wavelet|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( i = (0); i < nsteps; alias_group_changed(1, (size_t)(8765741491806222420UL)), i++) { {
           lbl_2: float time; register_stack_var("ricker_wavelet|time|0", "float", (void *)(&time), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } time = (i * dt + shift);
           lbl_3: float pi_freq_t; register_stack_var("ricker_wavelet|pi_freq_t|0", "float", (void *)(&pi_freq_t), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } pi_freq_t = (3.14151692F * freq * time);
-          lbl_4: float sqr_pi_freq_t; register_stack_var("ricker_wavelet|sqr_pi_freq_t|0", "float", (void *)(&sqr_pi_freq_t), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } lbl_5: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 57); exit(1); } } } sqr_pi_freq_t = (pi_freq_t * pi_freq_t);
+          lbl_4: float sqr_pi_freq_t; register_stack_var("ricker_wavelet|sqr_pi_freq_t|0", "float", (void *)(&sqr_pi_freq_t), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } lbl_5: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } sqr_pi_freq_t = (pi_freq_t * pi_freq_t);
         alias_group_changed(3, (size_t)(1838009110135119624UL), (size_t)(14397346785968559525UL), (size_t)(16659523271239593530UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
     } } }
 rm_stack(false, 0UL); }
@@ -2519,7 +2519,7 @@ void parse_source(char *optarg, source *out) {
                 "be x,y,f,t\n");
          call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
-      lbl_6: char *time_str; register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } lbl_7: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 84); exit(1); } } } time_str = (third_comma + 1);
+      lbl_6: char *time_str; register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } lbl_7: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { exit(42); } } } time_str = (third_comma + 1);
     *first_comma = '\0';
     *second_comma = '\0';
     *third_comma = '\0';
@@ -2546,7 +2546,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
 
 
     { lbl_0: int i; register_stack_var("config_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( i = (0); i < *nsrcs; alias_group_changed(1, (size_t)(16182187182034189366UL)), i++) { {
-          lbl_1: source *curr; register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 111); exit(1); } } } curr = ((*srcs) + i);
+          lbl_1: source *curr; register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { exit(42); } } } curr = ((*srcs) + i);
         if (alias_group_changed(1, (size_t)(7374354779439216353UL)) || curr->x < 0 || curr->x >= nx) { {
              call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(3128876572329368717UL)); fprintf(__stderrp, "Invalid x value for source\n");
              call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2569,7 +2569,7 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
 
-    { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 134); exit(1); } } } for ( i = (0); i < nsrcs; alias_group_changed(1, (size_t)(17866036073706292390UL)), i++) { {
+    { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { exit(42); } } } for ( i = (0); i < nsrcs; alias_group_changed(1, (size_t)(17866036073706292390UL)), i++) { {
         src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 16455452247920468155UL, 0, 0);
         if (alias_group_changed(1, (size_t)(17386119534690992797UL)) || src_samples[i] == __null) { {
              call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
@@ -2581,7 +2581,7 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
 }
 
 void init_progress(int length, int goal, int disabled) {
-    new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_progress|length|0", "i32", (void *)(&length), 4, 0, 0, 0); register_stack_var("init_progress|goal|0", "i32", (void *)(&goal), 4, 0, 0, 0); register_stack_var("init_progress|disabled|0", "i32", (void *)(&disabled), 4, 0, 0, 0); lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 146); exit(1); } } }
+    new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_progress|length|0", "i32", (void *)(&length), 4, 0, 0, 0); register_stack_var("init_progress|goal|0", "i32", (void *)(&goal), 4, 0, 0, 0); register_stack_var("init_progress|disabled|0", "i32", (void *)(&disabled), 4, 0, 0, 0); lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { exit(42); } } }
     if (alias_group_changed(3, (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL)) || progress_buffer != __null) { {
          call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1701980738252910445UL)); fprintf(__stderrp, "Progress initialized multiple times\n");
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2627,7 +2627,7 @@ void update_progress(int progress) {
     } }
 
       lbl_1: double perc_progress; register_stack_var("update_progress|perc_progress|0", "double", (void *)(&perc_progress), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } perc_progress = ((double)progress / (double)progress_goal);
-      lbl_2: int ticks; register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 192); exit(1); } } } ticks = ((int)(perc_progress * progress_length));
+      lbl_2: int ticks; register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { exit(42); } } } ticks = ((int)(perc_progress * progress_length));
     if (alias_group_changed(2, (size_t)(11152286784634729525UL), (size_t)(16155725638166610324UL)) || ticks > progress_length) { {
         ticks = progress_length;
     } }

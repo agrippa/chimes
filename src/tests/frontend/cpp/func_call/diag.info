@@ -23,11 +23,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 105 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11  register_stack_var("foo|c|0", "i32", (void *)(&c), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { exit(42); } } } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 10 231  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 10 236  register_stack_var("main|a|0", "i32", (void *)(&a), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 10 236  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 11  register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 11  if (____numdebug_replaying) { goto lbl_2; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 11 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 11 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } 

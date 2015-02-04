@@ -10,4 +10,4 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 366  call_lbl_0: ca
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 352  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 363  register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 363  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 363 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 363 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } 
