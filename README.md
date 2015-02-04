@@ -21,4 +21,4 @@ Installation Steps:
 6. Edit llvm-src/lib/Transforms/Makefile to add the Play/ directory to the PARALLEL_DIRS list
 7. Edit llvm-src/lib/Transforms/CMakeLists.txt, appending the line add_subdirectory(Play)
 8. mkdir llvm-build
-9. cd llvm-build && ../llvm-src/configure && make
+9. cd llvm-build && ../llvm-src/configure --enable-optimized=no && make
