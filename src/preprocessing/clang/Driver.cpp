@@ -63,6 +63,9 @@ static llvm::cl::opt<std::string> exit_file("x",
 static llvm::cl::opt<std::string> reachable_file("r",
         llvm::cl::desc("Reachable info file"),
         llvm::cl::value_desc("reachable_info"));
+static llvm::cl::opt<std::string> module_id_file("o",
+        llvm::cl::desc("Module ID file"),
+        llvm::cl::value_desc("module_info"));
 
 DesiredInsertions *insertions = NULL;
 std::string curr_func;
@@ -121,84 +124,87 @@ public:
 
     // For each top-level function defined
     for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
-      Decl *toplevel = *b;
-      clang::SourceLocation loc = toplevel->getLocation();
-      clang::PresumedLoc presumed = visitor->getSM()->getPresumedLoc(loc);
+        Decl *toplevel = *b;
+        clang::SourceLocation loc = toplevel->getLocation();
+        clang::PresumedLoc presumed = visitor->getSM()->getPresumedLoc(loc);
 
-      if (isa<FunctionDecl>(toplevel) && toplevel->hasBody() &&
-              insertions->isMainFile(presumed.getFilename())) {
-          FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
-          assert(fdecl != NULL);
-          curr_func = fdecl->getNameAsString();
+        if (isa<FunctionDecl>(toplevel)) {
+            if (toplevel->hasBody() &&
+                    insertions->isMainFile(presumed.getFilename())) {
+                FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
+                assert(fdecl != NULL);
+                curr_func = fdecl->getNameAsString();
 
-          if (insertions->isNvCompilerFunction(curr_func)) continue;
+                if (insertions->isNvCompilerFunction(curr_func)) continue;
 
-          clang::PresumedLoc pre_loc = visitor->getSM()->getPresumedLoc(loc);
-          std::string filename(pre_loc.getFilename());
+                clang::PresumedLoc pre_loc =
+                    visitor->getSM()->getPresumedLoc(loc);
+                std::string filename(pre_loc.getFilename());
 
-          if (visitor->usesStackInfo()) {
-              insert_at_front = new std::vector<StackAlloc *>();
+                if (visitor->usesStackInfo()) {
+                    insert_at_front = new std::vector<StackAlloc *>();
 
-              for (FunctionDecl::param_iterator i = fdecl->param_begin(),
-                      e = fdecl->param_end(); i != e; i++) {
-                  ParmVarDecl *param = *i;
-                  std::string mangled = constructMangledName(param->getName().str());
-                  StackAlloc *alloc = insertions->findStackAlloc(mangled);
-                  if (alloc != NULL) {
-                      insert_at_front->push_back(alloc);
-                  }
-              }
+                    for (FunctionDecl::param_iterator i = fdecl->param_begin(),
+                            e = fdecl->param_end(); i != e; i++) {
+                        ParmVarDecl *param = *i;
+                        std::string mangled = constructMangledName(param->getName().str());
+                        StackAlloc *alloc = insertions->findStackAlloc(mangled);
+                        if (alloc != NULL) {
+                            insert_at_front->push_back(alloc);
+                        }
+                    }
 
-              if (insert_at_front->empty()) insert_at_front = NULL;
-          } else {
-              insert_at_front = NULL;
-          }
+                    if (insert_at_front->empty()) insert_at_front = NULL;
+                } else {
+                    insert_at_front = NULL;
+                }
 
-          if (visitor->createsRegisterLabels())
-              visitor->resetRegisterLabels();
-          if (visitor->createsFunctionLabels())
-              visitor->resetFunctionLabels();
-          if (visitor->setsLastGoto())
-              visitor->resetLastGoto();
-          visitor->resetRootFlag();
+                if (visitor->createsRegisterLabels())
+                    visitor->resetRegisterLabels();
+                if (visitor->createsFunctionLabels())
+                    visitor->resetFunctionLabels();
+                if (visitor->setsLastGoto())
+                    visitor->resetLastGoto();
+                visitor->resetRootFlag();
 
-          // (*b)->dump();
-          // llvm::errs() << "\n";
-          visitor->Visit((*b)->getBody());
-          visitor->VisitTopLevel(*b);
+                // (*b)->dump();
+                // llvm::errs() << "\n";
+                visitor->Visit((*b)->getBody());
+                visitor->VisitTopLevel(*b);
 
-          std::stringstream id_str;
-          std::string demangled_filename = remove_filename_insertions(filename);
-          id_str << demangled_filename << ":" << curr_func << ":" <<
-              pre_loc.getLine() << ":" << pre_loc.getColumn();
+                std::stringstream id_str;
+                std::string demangled_filename = remove_filename_insertions(filename);
+                id_str << demangled_filename << ":" << curr_func << ":" <<
+                    pre_loc.getLine() << ":" << pre_loc.getColumn();
 
-          if (visitor->createsRegisterLabels()) {
-              assert(num_register_labels.find(id_str.str()) == num_register_labels.end());
-              num_register_labels[id_str.str()] = visitor->getNumRegisterLabels();
-          }
+                if (visitor->createsRegisterLabels()) {
+                    assert(num_register_labels.find(id_str.str()) == num_register_labels.end());
+                    num_register_labels[id_str.str()] = visitor->getNumRegisterLabels();
+                }
 
-          if (visitor->createsFunctionLabels()) {
-              assert(num_call_labels.find(id_str.str()) == num_call_labels.end());
-              num_call_labels[id_str.str()] = visitor->getNumFunctionLabels();
-          }
+                if (visitor->createsFunctionLabels()) {
+                    assert(num_call_labels.find(id_str.str()) == num_call_labels.end());
+                    num_call_labels[id_str.str()] = visitor->getNumFunctionLabels();
+                }
 
-          if (visitor->setsLastGoto() && visitor->hasLastGoto()) {
-              assert(num_register_labels.find(id_str.str()) != num_register_labels.end());
-              assert(num_call_labels.find(id_str.str()) != num_call_labels.end());
-              std::stringstream ss;
-              ss << "lbl_" << num_register_labels[id_str.str()] << ": if (____numdebug_replaying) { "
-                  "int dst = get_next_call(); switch(dst) { ";
-              for (int l = 0; l < num_call_labels[id_str.str()]; l++) {
-                  ss << "case(" << l << "): { goto call_lbl_" << l << "; } ";
-              }
-              ss << "default: { fprintf(__stderrp, \"Unknown label %d at %s:%d\\n\", "
-                  "dst, __FILE__, __LINE__); exit(1); }";
-              ss << " } } ";
-              R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
-              insertions->AppendToDiagnostics("InsertTextAfterToken",
-                      visitor->getLastGoto(), ss.str(), *visitor->getSM());
-          }
-      }
+                if (visitor->setsLastGoto() && visitor->hasLastGoto()) {
+                    assert(num_register_labels.find(id_str.str()) != num_register_labels.end());
+                    assert(num_call_labels.find(id_str.str()) != num_call_labels.end());
+                    std::stringstream ss;
+                    ss << "lbl_" << num_register_labels[id_str.str()] << ": if (____numdebug_replaying) { "
+                        "int dst = get_next_call(); switch(dst) { ";
+                    for (int l = 0; l < num_call_labels[id_str.str()]; l++) {
+                        ss << "case(" << l << "): { goto call_lbl_" << l << "; } ";
+                    }
+                    ss << "default: { fprintf(__stderrp, \"Unknown label %d at %s:%d\\n\", "
+                        "dst, __FILE__, __LINE__); exit(1); }";
+                    ss << " } } ";
+                    R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
+                    insertions->AppendToDiagnostics("InsertTextAfterToken",
+                            visitor->getLastGoto(), ss.str(), *visitor->getSM());
+                }
+            }
+        }
     }
     return true;
   }
@@ -273,6 +279,7 @@ int main(int argc, const char **argv) {
   check_opt(call_file, "Callsite file");
   check_opt(exit_file, "Exit file");
   check_opt(reachable_file, "Reachable file");
+  check_opt(module_id_file, "Module ID file");
 
   bool updateFile = true;
   if (contains_line_markings.compare("true") == 0) {
@@ -290,6 +297,13 @@ int main(int argc, const char **argv) {
               original_file.c_str(), diag_file.c_str(),
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str());
+
+  // Dump module ID
+  std::ofstream module_id_stream;
+  module_id_stream.open(module_id_file);
+  size_t module_id = insertions->get_module_id();
+  module_id_stream << module_id;
+  module_id_stream.close();
 
   std::stringstream ss;
 

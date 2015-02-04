@@ -1,4 +1,4 @@
-# 1 "common2d.cpp.pre.register.cpp"
+# 1 "common2d.cpp.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -16,7 +16,7 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 2 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "common2d.cpp.pre.register.cpp" 2
+# 1 "common2d.cpp.pre.transformed.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,14 +33,18 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
-extern void init_numdebug(int nstructs, ...);
+extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(size_t function_id, int n_local_arg_aliases,
-        int n_contains_mappings, ...);
+extern void new_stack(int n_local_arg_aliases, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
+        ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
@@ -48,7 +52,7 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 29 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 2 "<command line>" 2
 # 1 "/Users/jmg3/install/llvm-build/Debug+Asserts/bin/../lib/clang/3.5.1/include/stddef.h" 1 3 4
@@ -2353,7 +2357,7 @@ extern void setup_config(config *conf, int argc, char **argv);
 
 void save_text(float *field, const int dimx, const int dimy,
         const int ny, const int nx, const char *filename, int radius) {
-    new_stack(8205091200931170116UL, 7, 16, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL), 2850663618440899500UL, 2106176590813429709UL, 6095867792190138415UL, 12551842837011914585UL, 8040499415410495103UL, 14298515915218321068UL, 8084772600074702260UL, 7102980499878368059UL, 8789740333877504081UL, 2514521167504661862UL, 9189193028991347885UL, 689492555805609218UL, 9299461872755550985UL, 17206168581473135942UL, 11056608174269105890UL, 15305433456608714061UL, 12766984487186336934UL, 14298515915229491771UL, 13356287653763336231UL, 8084772600074702260UL, 13697246817649382652UL, 1514847738530813435UL, 13803245390038478632UL, 1686577910018222429UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 17621417648879593294UL, 8054715398219518601UL, 18224721594452017849UL, 17621417648879593294UL); register_stack_var("save_text|field|0", "float*", (void *)(&field), 8, 1, 0, 0); register_stack_var("save_text|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("save_text|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("save_text|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("save_text|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("save_text|filename|0", "i8*", (void *)(&filename), 8, 1, 0, 0); register_stack_var("save_text|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); fp = (fopen(filename, "wb"));
+    new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); register_stack_var("save_text|field|0", "float*", (void *)(&field), 8, 1, 0, 0); register_stack_var("save_text|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("save_text|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("save_text|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("save_text|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("save_text|filename|0", "i8*", (void *)(&filename), 8, 1, 0, 0); register_stack_var("save_text|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); fp = (fopen(filename, "wb"));
     if (alias_group_changed(1, (size_t)(13697246817649382652UL)) || fp == __null) { {
          call_lbl_1: calling(1, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(1686577910018222429UL)); fprintf(__stderrp, "Failed to open output file %s\n", filename);
          call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2374,7 +2378,7 @@ void init_data(float *curr, float *next, float *vsq,
                 float *h_coeff, const int dimx, const int dimy,
                 const float dx, const float dt) {
 
-    new_stack(8205091200931170116UL, 8, 16, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), 2850663618440899500UL, 2106176590813429709UL, 6095867792190138415UL, 12551842837011914585UL, 8040499415410495103UL, 14298515915218321068UL, 8084772600074702260UL, 7102980499878368059UL, 8789740333877504081UL, 2514521167504661862UL, 9189193028991347885UL, 689492555805609218UL, 9299461872755550985UL, 17206168581473135942UL, 11056608174269105890UL, 15305433456608714061UL, 12766984487186336934UL, 14298515915229491771UL, 13356287653763336231UL, 8084772600074702260UL, 13697246817649382652UL, 1514847738530813435UL, 13803245390038478632UL, 1686577910018222429UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 17621417648879593294UL, 8054715398219518601UL, 18224721594452017849UL, 17621417648879593294UL); register_stack_var("init_data|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("init_data|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("init_data|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("init_data|h_coeff|0", "float*", (void *)(&h_coeff), 8, 1, 0, 0); register_stack_var("init_data|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("init_data|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("init_data|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); register_stack_var("init_data|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); { lbl_0: size_t i; register_stack_var("init_data|i|0", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(3193239025367387070UL)), i++) { {
+    new_stack(8, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_data|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("init_data|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("init_data|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("init_data|h_coeff|0", "float*", (void *)(&h_coeff), 8, 1, 0, 0); register_stack_var("init_data|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("init_data|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("init_data|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); register_stack_var("init_data|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); { lbl_0: size_t i; register_stack_var("init_data|i|0", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(3193239025367387070UL)), i++) { {
         vsq[i] = 2500. * 2500. * dt * dt;
     } } }
 
@@ -2393,14 +2397,14 @@ void init_data(float *curr, float *next, float *vsq,
 rm_stack(false, 0UL); }
 
 void usage(char **argv) {
-    new_stack(8205091200931170116UL, 1, 16, (size_t)(17206168581473135942UL), 2850663618440899500UL, 2106176590813429709UL, 6095867792190138415UL, 12551842837011914585UL, 8040499415410495103UL, 14298515915218321068UL, 8084772600074702260UL, 7102980499878368059UL, 8789740333877504081UL, 2514521167504661862UL, 9189193028991347885UL, 689492555805609218UL, 9299461872755550985UL, 17206168581473135942UL, 11056608174269105890UL, 15305433456608714061UL, 12766984487186336934UL, 14298515915229491771UL, 13356287653763336231UL, 8084772600074702260UL, 13697246817649382652UL, 1514847738530813435UL, 13803245390038478632UL, 1686577910018222429UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 17621417648879593294UL, 8054715398219518601UL, 18224721594452017849UL, 17621417648879593294UL); register_stack_var("usage|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); alias_group_changed(1, (size_t)(9299461872755550985UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
+    new_stack(1, (size_t)(17206168581473135942UL)); register_stack_var("usage|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); alias_group_changed(1, (size_t)(9299461872755550985UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
             argv[0]);
      call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
 rm_stack(false, 0UL); }
 
 void default_config(config *conf) {
-    new_stack(8205091200931170116UL, 1, 16, (size_t)(8084772600074702260UL), 2850663618440899500UL, 2106176590813429709UL, 6095867792190138415UL, 12551842837011914585UL, 8040499415410495103UL, 14298515915218321068UL, 8084772600074702260UL, 7102980499878368059UL, 8789740333877504081UL, 2514521167504661862UL, 9189193028991347885UL, 689492555805609218UL, 9299461872755550985UL, 17206168581473135942UL, 11056608174269105890UL, 15305433456608714061UL, 12766984487186336934UL, 14298515915229491771UL, 13356287653763336231UL, 8084772600074702260UL, 13697246817649382652UL, 1514847738530813435UL, 13803245390038478632UL, 1686577910018222429UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 17621417648879593294UL, 8054715398219518601UL, 18224721594452017849UL, 17621417648879593294UL); register_stack_var("default_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); conf->nx = 2 * 256;
+    new_stack(1, (size_t)(8084772600074702260UL)); register_stack_var("default_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); conf->nx = 2 * 256;
     conf->ny = 2 * 256;
     conf->nsteps = 100;
     conf->save_text = 0;
@@ -2416,7 +2420,7 @@ void default_config(config *conf) {
 rm_stack(false, 0UL); }
 
 void setup_config(config *conf, int argc, char **argv) {
-    new_stack(8205091200931170116UL, 3, 16, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL), 2850663618440899500UL, 2106176590813429709UL, 6095867792190138415UL, 12551842837011914585UL, 8040499415410495103UL, 14298515915218321068UL, 8084772600074702260UL, 7102980499878368059UL, 8789740333877504081UL, 2514521167504661862UL, 9189193028991347885UL, 689492555805609218UL, 9299461872755550985UL, 17206168581473135942UL, 11056608174269105890UL, 15305433456608714061UL, 12766984487186336934UL, 14298515915229491771UL, 13356287653763336231UL, 8084772600074702260UL, 13697246817649382652UL, 1514847738530813435UL, 13803245390038478632UL, 1686577910018222429UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 17621417648879593294UL, 8054715398219518601UL, 18224721594452017849UL, 17621417648879593294UL); register_stack_var("setup_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 72); exit(1); } } }
+    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 72); exit(1); } } }
     opterr = 0;
 
     alias_group_changed(4, (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(18224721594452017849UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);
@@ -2467,3 +2471,11 @@ void setup_config(config *conf, int argc, char **argv) {
          call_lbl_11: calling(11, 0UL, 0); conf->ngpus = getNumCUDADevices();
     } }
 rm_stack(false, 0UL); }
+
+
+static int module_init() {
+    init_module(8205091200931170116UL, 16, 5, 8789740333877504081UL, 2514521167504661862UL, 17621417648879593294UL, 8054715398219518601UL, 13356287653763336231UL, 8084772600074702260UL, 12766984487186336934UL, 14298515915229491771UL, 2850663618440899500UL, 2106176590813429709UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 8084772600074702260UL, 7102980499878368059UL, 11056608174269105890UL, 15305433456608714061UL, 9189193028991347885UL, 689492555805609218UL, 8040499415410495103UL, 14298515915218321068UL, 13697246817649382652UL, 1514847738530813435UL, 9299461872755550985UL, 17206168581473135942UL, 6095867792190138415UL, 12551842837011914585UL, 18224721594452017849UL, 17621417648879593294UL, 13803245390038478632UL, 1686577910018222429UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 11, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    return 0;
+}
+
+static int __libnumdebug_module_init = module_init();

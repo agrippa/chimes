@@ -1,4 +1,4 @@
-# 1 "iso2d.cpp.pre.register.cpp"
+# 1 "common2d.cpp.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -16,8 +16,8 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 2 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "iso2d.cpp.pre.register.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
+# 1 "common2d.cpp.pre.transformed.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 325 "<built-in>" 3
@@ -33,14 +33,18 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
-extern void init_numdebug(int nstructs, ...);
+extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(size_t function_id, int n_local_arg_aliases,
-        int n_contains_mappings, ...);
+extern void new_stack(int n_local_arg_aliases, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
+        ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
@@ -48,7 +52,7 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 29 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 2 "<command line>" 2
 # 1 "/Users/jmg3/install/llvm-build/Debug+Asserts/bin/../lib/clang/3.5.1/include/stddef.h" 1 3 4
@@ -496,8 +500,12 @@ FILE *funopen(const void *,
 }
 # 4 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 35 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common2d.h" 1
+
+
+
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -1691,7 +1699,7 @@ void *valloc(size_t);
 
 
 }
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+# 6 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common2d.h" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 64 "/usr/include/string.h" 3 4
 # 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
@@ -1828,618 +1836,7 @@ int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
 # 1 "/usr/include/string.h" 1 3 4
 # 93 "/usr/include/strings.h" 2 3 4
 # 177 "/usr/include/string.h" 2 3 4
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 1 "/usr/include/math.h" 1 3 4
-# 33 "/usr/include/math.h" 3 4
-extern "C" {
-# 44 "/usr/include/math.h" 3 4
- typedef float float_t;
-    typedef double double_t;
-# 111 "/usr/include/math.h" 3 4
-extern int __math_errhandling(void);
-# 144 "/usr/include/math.h" 3 4
-extern int __fpclassifyf(float);
-extern int __fpclassifyd(double);
-extern int __fpclassifyl(long double);
-# 188 "/usr/include/math.h" 3 4
-inline __attribute__ ((__always_inline__)) int __inline_isfinitef(float);
-inline __attribute__ ((__always_inline__)) int __inline_isfinited(double);
-inline __attribute__ ((__always_inline__)) int __inline_isfinitel(long double);
-inline __attribute__ ((__always_inline__)) int __inline_isinff(float);
-inline __attribute__ ((__always_inline__)) int __inline_isinfd(double);
-inline __attribute__ ((__always_inline__)) int __inline_isinfl(long double);
-inline __attribute__ ((__always_inline__)) int __inline_isnanf(float);
-inline __attribute__ ((__always_inline__)) int __inline_isnand(double);
-inline __attribute__ ((__always_inline__)) int __inline_isnanl(long double);
-inline __attribute__ ((__always_inline__)) int __inline_isnormalf(float);
-inline __attribute__ ((__always_inline__)) int __inline_isnormald(double);
-inline __attribute__ ((__always_inline__)) int __inline_isnormall(long double);
-inline __attribute__ ((__always_inline__)) int __inline_signbitf(float);
-inline __attribute__ ((__always_inline__)) int __inline_signbitd(double);
-inline __attribute__ ((__always_inline__)) int __inline_signbitl(long double);
-
-inline __attribute__ ((__always_inline__)) int __inline_isfinitef(float __x) {
-    return __x == __x && __builtin_fabsf(__x) != __builtin_inff();
-}
-inline __attribute__ ((__always_inline__)) int __inline_isfinited(double __x) {
-    return __x == __x && __builtin_fabs(__x) != __builtin_inf();
-}
-inline __attribute__ ((__always_inline__)) int __inline_isfinitel(long double __x) {
-    return __x == __x && __builtin_fabsl(__x) != __builtin_infl();
-}
-inline __attribute__ ((__always_inline__)) int __inline_isinff(float __x) {
-    return __builtin_fabsf(__x) == __builtin_inff();
-}
-inline __attribute__ ((__always_inline__)) int __inline_isinfd(double __x) {
-    return __builtin_fabs(__x) == __builtin_inf();
-}
-inline __attribute__ ((__always_inline__)) int __inline_isinfl(long double __x) {
-    return __builtin_fabsl(__x) == __builtin_infl();
-}
-inline __attribute__ ((__always_inline__)) int __inline_isnanf(float __x) {
-    return __x != __x;
-}
-inline __attribute__ ((__always_inline__)) int __inline_isnand(double __x) {
-    return __x != __x;
-}
-inline __attribute__ ((__always_inline__)) int __inline_isnanl(long double __x) {
-    return __x != __x;
-}
-inline __attribute__ ((__always_inline__)) int __inline_signbitf(float __x) {
-    union { float __f; unsigned int __u; } __u;
-    __u.__f = __x;
-    return (int)(__u.__u >> 31);
-}
-inline __attribute__ ((__always_inline__)) int __inline_signbitd(double __x) {
-    union { double __f; unsigned long long __u; } __u;
-    __u.__f = __x;
-    return (int)(__u.__u >> 63);
-}
-
-inline __attribute__ ((__always_inline__)) int __inline_signbitl(long double __x) {
-    union {
-        long double __ld;
-        struct{ unsigned long long __m; unsigned short __sexp; } __p;
-    } __u;
-    __u.__ld = __x;
-    return (int)(__u.__p.__sexp >> 15);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __inline_isnormalf(float __x) {
-    return __inline_isfinitef(__x) && __builtin_fabsf(__x) >= 1.17549435e-38F;
-}
-inline __attribute__ ((__always_inline__)) int __inline_isnormald(double __x) {
-    return __inline_isfinited(__x) && __builtin_fabs(__x) >= 2.2250738585072014e-308;
-}
-inline __attribute__ ((__always_inline__)) int __inline_isnormall(long double __x) {
-    return __inline_isfinitel(__x) && __builtin_fabsl(__x) >= 3.36210314311209350626e-4932L;
-}
-# 322 "/usr/include/math.h" 3 4
-extern float acosf(float);
-extern double acos(double);
-extern long double acosl(long double);
-
-extern float asinf(float);
-extern double asin(double);
-extern long double asinl(long double);
-
-extern float atanf(float);
-extern double atan(double);
-extern long double atanl(long double);
-
-extern float atan2f(float, float);
-extern double atan2(double, double);
-extern long double atan2l(long double, long double);
-
-extern float cosf(float);
-extern double cos(double);
-extern long double cosl(long double);
-
-extern float sinf(float);
-extern double sin(double);
-extern long double sinl(long double);
-
-extern float tanf(float);
-extern double tan(double);
-extern long double tanl(long double);
-
-extern float acoshf(float);
-extern double acosh(double);
-extern long double acoshl(long double);
-
-extern float asinhf(float);
-extern double asinh(double);
-extern long double asinhl(long double);
-
-extern float atanhf(float);
-extern double atanh(double);
-extern long double atanhl(long double);
-
-extern float coshf(float);
-extern double cosh(double);
-extern long double coshl(long double);
-
-extern float sinhf(float);
-extern double sinh(double);
-extern long double sinhl(long double);
-
-extern float tanhf(float);
-extern double tanh(double);
-extern long double tanhl(long double);
-
-extern float expf(float);
-extern double exp(double);
-extern long double expl(long double);
-
-extern float exp2f(float);
-extern double exp2(double);
-extern long double exp2l(long double);
-
-extern float expm1f(float);
-extern double expm1(double);
-extern long double expm1l(long double);
-
-extern float logf(float);
-extern double log(double);
-extern long double logl(long double);
-
-extern float log10f(float);
-extern double log10(double);
-extern long double log10l(long double);
-
-extern float log2f(float);
-extern double log2(double);
-extern long double log2l(long double);
-
-extern float log1pf(float);
-extern double log1p(double);
-extern long double log1pl(long double);
-
-extern float logbf(float);
-extern double logb(double);
-extern long double logbl(long double);
-
-extern float modff(float, float *);
-extern double modf(double, double *);
-extern long double modfl(long double, long double *);
-
-extern float ldexpf(float, int);
-extern double ldexp(double, int);
-extern long double ldexpl(long double, int);
-
-extern float frexpf(float, int *);
-extern double frexp(double, int *);
-extern long double frexpl(long double, int *);
-
-extern int ilogbf(float);
-extern int ilogb(double);
-extern int ilogbl(long double);
-
-extern float scalbnf(float, int);
-extern double scalbn(double, int);
-extern long double scalbnl(long double, int);
-
-extern float scalblnf(float, long int);
-extern double scalbln(double, long int);
-extern long double scalblnl(long double, long int);
-
-extern float fabsf(float);
-extern double fabs(double);
-extern long double fabsl(long double);
-
-extern float cbrtf(float);
-extern double cbrt(double);
-extern long double cbrtl(long double);
-
-extern float hypotf(float, float);
-extern double hypot(double, double);
-extern long double hypotl(long double, long double);
-
-extern float powf(float, float);
-extern double pow(double, double);
-extern long double powl(long double, long double);
-
-extern float sqrtf(float);
-extern double sqrt(double);
-extern long double sqrtl(long double);
-
-extern float erff(float);
-extern double erf(double);
-extern long double erfl(long double);
-
-extern float erfcf(float);
-extern double erfc(double);
-extern long double erfcl(long double);
-
-
-
-
-extern float lgammaf(float);
-extern double lgamma(double);
-extern long double lgammal(long double);
-
-extern float tgammaf(float);
-extern double tgamma(double);
-extern long double tgammal(long double);
-
-extern float ceilf(float);
-extern double ceil(double);
-extern long double ceill(long double);
-
-extern float floorf(float);
-extern double floor(double);
-extern long double floorl(long double);
-
-extern float nearbyintf(float);
-extern double nearbyint(double);
-extern long double nearbyintl(long double);
-
-extern float rintf(float);
-extern double rint(double);
-extern long double rintl(long double);
-
-extern long int lrintf(float);
-extern long int lrint(double);
-extern long int lrintl(long double);
-
-extern float roundf(float);
-extern double round(double);
-extern long double roundl(long double);
-
-extern long int lroundf(float);
-extern long int lround(double);
-extern long int lroundl(long double);
-
-
-
-
-extern long long int llrintf(float);
-extern long long int llrint(double);
-extern long long int llrintl(long double);
-
-extern long long int llroundf(float);
-extern long long int llround(double);
-extern long long int llroundl(long double);
-
-
-extern float truncf(float);
-extern double trunc(double);
-extern long double truncl(long double);
-
-extern float fmodf(float, float);
-extern double fmod(double, double);
-extern long double fmodl(long double, long double);
-
-extern float remainderf(float, float);
-extern double remainder(double, double);
-extern long double remainderl(long double, long double);
-
-extern float remquof(float, float, int *);
-extern double remquo(double, double, int *);
-extern long double remquol(long double, long double, int *);
-
-extern float copysignf(float, float);
-extern double copysign(double, double);
-extern long double copysignl(long double, long double);
-
-extern float nanf(const char *);
-extern double nan(const char *);
-extern long double nanl(const char *);
-
-extern float nextafterf(float, float);
-extern double nextafter(double, double);
-extern long double nextafterl(long double, long double);
-
-extern double nexttoward(double, long double);
-extern float nexttowardf(float, long double);
-extern long double nexttowardl(long double, long double);
-
-extern float fdimf(float, float);
-extern double fdim(double, double);
-extern long double fdiml(long double, long double);
-
-extern float fmaxf(float, float);
-extern double fmax(double, double);
-extern long double fmaxl(long double, long double);
-
-extern float fminf(float, float);
-extern double fmin(double, double);
-extern long double fminl(long double, long double);
-
-extern float fmaf(float, float, float);
-extern double fma(double, double, double);
-extern long double fmal(long double, long double, long double);
-# 565 "/usr/include/math.h" 3 4
-extern float __inff(void) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-extern double __inf(void) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-extern long double __infl(void) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-
-extern float __nan(void) __attribute__((availability(macosx,introduced=10.0)));
-# 597 "/usr/include/math.h" 3 4
-extern float __exp10f(float) __attribute__((availability(macosx,introduced=10.9)));
-extern double __exp10(double) __attribute__((availability(macosx,introduced=10.9)));
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) void __sincosf(float __x, float *__sinp, float *__cosp) __attribute__((availability(macosx,introduced=10.9)));
-inline __attribute__ ((__always_inline__)) void __sincos(double __x, double *__sinp, double *__cosp) __attribute__((availability(macosx,introduced=10.9)));
-# 614 "/usr/include/math.h" 3 4
-extern float __cospif(float) __attribute__((availability(macosx,introduced=10.9)));
-extern double __cospi(double) __attribute__((availability(macosx,introduced=10.9)));
-extern float __sinpif(float) __attribute__((availability(macosx,introduced=10.9)));
-extern double __sinpi(double) __attribute__((availability(macosx,introduced=10.9)));
-extern float __tanpif(float) __attribute__((availability(macosx,introduced=10.9)));
-extern double __tanpi(double) __attribute__((availability(macosx,introduced=10.9)));
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) void __sincospif(float __x, float *__sinp, float *__cosp) __attribute__((availability(macosx,introduced=10.9)));
-inline __attribute__ ((__always_inline__)) void __sincospi(double __x, double *__sinp, double *__cosp) __attribute__((availability(macosx,introduced=10.9)));
-
-
-
-
-
-
-struct __float2 { float __sinval; float __cosval; };
-struct __double2 { double __sinval; double __cosval; };
-
-extern struct __float2 __sincosf_stret(float);
-extern struct __double2 __sincos_stret(double);
-extern struct __float2 __sincospif_stret(float);
-extern struct __double2 __sincospi_stret(double);
-
-inline __attribute__ ((__always_inline__)) void __sincosf(float __x, float *__sinp, float *__cosp) {
-    const struct __float2 __stret = __sincosf_stret(__x);
-    *__sinp = __stret.__sinval; *__cosp = __stret.__cosval;
-}
-
-inline __attribute__ ((__always_inline__)) void __sincos(double __x, double *__sinp, double *__cosp) {
-    const struct __double2 __stret = __sincos_stret(__x);
-    *__sinp = __stret.__sinval; *__cosp = __stret.__cosval;
-}
-
-inline __attribute__ ((__always_inline__)) void __sincospif(float __x, float *__sinp, float *__cosp) {
-    const struct __float2 __stret = __sincospif_stret(__x);
-    *__sinp = __stret.__sinval; *__cosp = __stret.__cosval;
-}
-
-inline __attribute__ ((__always_inline__)) void __sincospi(double __x, double *__sinp, double *__cosp) {
-    const struct __double2 __stret = __sincospi_stret(__x);
-    *__sinp = __stret.__sinval; *__cosp = __stret.__cosval;
-}
-
-
-
-
-
-
-extern double j0(double) __attribute__((availability(macosx,introduced=10.0)));
-extern double j1(double) __attribute__((availability(macosx,introduced=10.0)));
-extern double jn(int, double) __attribute__((availability(macosx,introduced=10.0)));
-extern double y0(double) __attribute__((availability(macosx,introduced=10.0)));
-extern double y1(double) __attribute__((availability(macosx,introduced=10.0)));
-extern double yn(int, double) __attribute__((availability(macosx,introduced=10.0)));
-extern double scalb(double, double);
-extern int signgam;
-# 712 "/usr/include/math.h" 3 4
-extern long int rinttol(double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-
-extern long int roundtol(double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-
-extern double drem(double, double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-
-extern int finite(double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-
-extern double gamma(double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-
-extern double significand(double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
-# 737 "/usr/include/math.h" 3 4
-}
-# 38 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 1 "/usr/include/sys/time.h" 1 3 4
-# 75 "/usr/include/sys/time.h" 3 4
-# 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
-# 45 "/usr/include/sys/_types/_fd_def.h" 3 4
-extern "C" {
-typedef struct fd_set {
- __int32_t fds_bits[((((1024) % ((sizeof(__int32_t) * 8))) == 0) ? ((1024) / ((sizeof(__int32_t) * 8))) : (((1024) / ((sizeof(__int32_t) * 8))) + 1))];
-} fd_set;
-}
-
-
-static inline int
-__darwin_fd_isset(int _n, const struct fd_set *_p)
-{
- return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
-}
-# 76 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
-# 30 "/usr/include/sys/_types/_timespec.h" 3 4
-struct timespec
-{
- __darwin_time_t tv_sec;
- long tv_nsec;
-};
-# 77 "/usr/include/sys/time.h" 2 3 4
-
-
-# 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_time_t.h" 3 4
-typedef __darwin_time_t time_t;
-# 80 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
-typedef __darwin_suseconds_t suseconds_t;
-# 81 "/usr/include/sys/time.h" 2 3 4
-
-
-
-
-
-struct itimerval {
- struct timeval it_interval;
- struct timeval it_value;
-};
-# 105 "/usr/include/sys/time.h" 3 4
-# 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
-# 106 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
-# 107 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
-# 108 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
-# 109 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
-# 110 "/usr/include/sys/time.h" 2 3 4
-
-
-
-# 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
-# 114 "/usr/include/sys/time.h" 2 3 4
-# 124 "/usr/include/sys/time.h" 3 4
-struct timezone {
- int tz_minuteswest;
- int tz_dsttime;
-};
-# 167 "/usr/include/sys/time.h" 3 4
-struct clockinfo {
- int hz;
- int tick;
- int tickadj;
- int stathz;
- int profhz;
-};
-
-
-
-
-
-
-# 1 "/usr/include/time.h" 1 3 4
-# 67 "/usr/include/time.h" 3 4
-# 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_clock_t.h" 3 4
-typedef __darwin_clock_t clock_t;
-# 68 "/usr/include/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 69 "/usr/include/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 70 "/usr/include/time.h" 2 3 4
-
-
-
-struct tm {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
- long tm_gmtoff;
- char *tm_zone;
-};
-# 96 "/usr/include/time.h" 3 4
-extern char *tzname[];
-
-
-extern int getdate_err;
-
-extern long timezone __asm("_" "timezone" );
-
-extern int daylight;
-
-extern "C" {
-char *asctime(const struct tm *);
-clock_t clock(void) __asm("_" "clock" );
-char *ctime(const time_t *);
-double difftime(time_t, time_t);
-struct tm *getdate(const char *);
-struct tm *gmtime(const time_t *);
-struct tm *localtime(const time_t *);
-time_t mktime(struct tm *) __asm("_" "mktime" );
-size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime" );
-char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime" );
-time_t time(time_t *);
-
-
-void tzset(void);
-
-
-
-char *asctime_r(const struct tm * , char * );
-char *ctime_r(const time_t *, char *);
-struct tm *gmtime_r(const time_t * , struct tm * );
-struct tm *localtime_r(const time_t * , struct tm * );
-
-
-time_t posix2time(time_t);
-
-
-
-void tzsetwall(void);
-time_t time2posix(time_t);
-time_t timelocal(struct tm * const);
-time_t timegm(struct tm * const);
-
-
-
-int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep" );
-
-}
-# 179 "/usr/include/sys/time.h" 2 3 4
-
-
-extern "C" {
-
-
-int adjtime(const struct timeval *, struct timeval *);
-int futimes(int, const struct timeval *);
-int lutimes(const char *, const struct timeval *) __attribute__((availability(macosx,introduced=10.5)));
-int settimeofday(const struct timeval *, const struct timezone *);
-
-
-int getitimer(int, struct itimerval *);
-int gettimeofday(struct timeval * , void * );
-
-
-
-# 1 "/usr/include/sys/_select.h" 1 3 4
-# 39 "/usr/include/sys/_select.h" 3 4
-int select(int, fd_set * , fd_set * ,
-  fd_set * , struct timeval * )
-
-
-
-
-  __asm("_" "select" "$1050")
-
-
-
-
-  ;
-# 194 "/usr/include/sys/time.h" 2 3 4
-
-int setitimer(int, const struct itimerval * ,
-  struct itimerval * );
-int utimes(const char *, const struct timeval *);
-
-}
-# 39 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+# 7 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common2d.h" 2
 # 1 "/usr/include/unistd.h" 1 3 4
 # 72 "/usr/include/unistd.h" 3 4
 # 1 "/usr/include/sys/unistd.h" 1 3 4
@@ -2688,7 +2085,63 @@ int symlink(const char *, const char *);
 }
 # 634 "/usr/include/unistd.h" 3 4
 # 1 "/usr/include/sys/select.h" 1 3 4
-# 111 "/usr/include/sys/select.h" 3 4
+# 75 "/usr/include/sys/select.h" 3 4
+# 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
+# 45 "/usr/include/sys/_types/_fd_def.h" 3 4
+extern "C" {
+typedef struct fd_set {
+ __int32_t fds_bits[((((1024) % ((sizeof(__int32_t) * 8))) == 0) ? ((1024) / ((sizeof(__int32_t) * 8))) : (((1024) / ((sizeof(__int32_t) * 8))) + 1))];
+} fd_set;
+}
+
+
+static inline int
+__darwin_fd_isset(int _n, const struct fd_set *_p)
+{
+ return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
+}
+# 76 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
+# 30 "/usr/include/sys/_types/_timespec.h" 3 4
+struct timespec
+{
+ __darwin_time_t tv_sec;
+ long tv_nsec;
+};
+# 77 "/usr/include/sys/select.h" 2 3 4
+
+
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_time_t.h" 3 4
+typedef __darwin_time_t time_t;
+# 85 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
+typedef __darwin_suseconds_t suseconds_t;
+# 86 "/usr/include/sys/select.h" 2 3 4
+# 100 "/usr/include/sys/select.h" 3 4
+# 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
+# 101 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
+# 102 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
+# 103 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
+# 104 "/usr/include/sys/select.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
+# 105 "/usr/include/sys/select.h" 2 3 4
+
+
+# 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
+# 108 "/usr/include/sys/select.h" 2 3 4
+
+
+
 extern "C" {
 
 
@@ -2708,6 +2161,22 @@ int pselect(int, fd_set * , fd_set * ,
 
 
 
+
+# 1 "/usr/include/sys/_select.h" 1 3 4
+# 39 "/usr/include/sys/_select.h" 3 4
+int select(int, fd_set * , fd_set * ,
+  fd_set * , struct timeval * )
+
+
+
+
+  __asm("_" "select" "$1050")
+
+
+
+
+  ;
+# 130 "/usr/include/sys/select.h" 2 3 4
 
 }
 # 634 "/usr/include/unistd.h" 2 3 4
@@ -2822,10 +2291,10 @@ int sync_volume_np(const char *, int) __attribute__((availability(macosx,introdu
 extern int optreset;
 
 }
-# 40 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 1
-# 29 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h"
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common_cuda.h" 1
+# 8 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common2d.h" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 1
+# 29 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h"
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common_cuda.h" 1
 
 
 
@@ -2837,7 +2306,7 @@ extern int getNumCUDADevices();
 
 
 }
-# 30 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
+# 30 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 2
 
 typedef struct _source {
     int x, y;
@@ -2855,9 +2324,8 @@ extern float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
 extern void init_progress(int length, int goal, int disabled);
 extern void update_progress(int progress);
 extern void finish_progress();
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common2d.h" 1
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/include/common2d.h"
+# 9 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common2d.h" 2
+
 typedef struct _config {
     int nx, ny;
     int nsteps;
@@ -2872,7 +2340,7 @@ typedef struct _config {
     int progress_width;
     int progress_disabled;
 } config;
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/include/common2d.h"
+# 41 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common2d.h"
 extern void save_text(float *field, const int dimx, const int dimy,
         const int ny, const int nx, const char *filename, int radius);
 extern void init_data(float *curr, float *next, float *vsq,
@@ -2881,115 +2349,133 @@ extern void init_data(float *curr, float *next, float *vsq,
 extern void usage(char **argv);
 extern void default_config(config *conf);
 extern void setup_config(config *conf, int argc, char **argv);
-# 42 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
-# 11 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
-extern void checkpoint();
-
-extern void wait_for_checkpoint();
-# 43 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+# 2 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp" 2
 
 
 
 
 
+void save_text(float *field, const int dimx, const int dimy,
+        const int ny, const int nx, const char *filename, int radius) {
+    new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); register_stack_var("save_text|field|0", "float*", (void *)(&field), 8, 1, 0, 0); register_stack_var("save_text|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("save_text|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("save_text|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("save_text|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("save_text|filename|0", "i8*", (void *)(&filename), 8, 1, 0, 0); register_stack_var("save_text|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); fp = (fopen(filename, "wb"));
+    if (alias_group_changed(1, (size_t)(13697246817649382652UL)) || fp == __null) { {
+         call_lbl_1: calling(1, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(1686577910018222429UL)); fprintf(__stderrp, "Failed to open output file %s\n", filename);
+         call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); exit(1);
+    } }
 
-static void fwd(float *next, float *curr, float *vsq,
-        float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {
-
-#pragma omp parallel for collapse(2)
- new_stack(636351188801416608UL, 9, 14, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), 1388457574958923572UL, 18293662412874621885UL, 1406537190118695280UL, 3655576263063000521UL, 1439420700812193513UL, 16801648339432526018UL, 2362206228145856531UL, 8391575324692158608UL, 3232826025796191657UL, 14723839603729691025UL, 3920757191841456973UL, 8391575324692158608UL, 4740125504295099978UL, 2775809280878473563UL, 6095867792190138415UL, 16436254989487132196UL, 6133022261894537111UL, 3655576263074171224UL, 11444889221438892957UL, 2820914316849208470UL, 12835239948587864347UL, 10933946544651129952UL, 13776165132426961666UL, 8391575324692158608UL, 14723839603729691025UL, 9902380079863583744UL, 16833687143959260136UL, 8777646764455402125UL); register_stack_var("fwd|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("fwd|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("fwd|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("fwd|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); register_stack_var("fwd|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("fwd|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("fwd|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("fwd|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("fwd|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); { lbl_0: int y; register_stack_var("fwd|y|0", "i32", (void *)(&y), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( y = (0); y < ny; alias_group_changed(1, (size_t)(5605394185929330330UL)), y++) { {
-        { lbl_1: int x; register_stack_var("fwd|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( x = (0); x < nx; alias_group_changed(1, (size_t)(3546215367615677073UL)), x++) { {
-              lbl_2: int this_offset; register_stack_var("fwd|this_offset|0", "i32", (void *)(&this_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } this_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x))));
-
-              lbl_3: float temp; register_stack_var("fwd|temp|0", "float", (void *)(&temp), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } temp = (2.F * curr[this_offset] - next[this_offset]);
-              lbl_4: float div; register_stack_var("fwd|div|0", "float", (void *)(&div), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } div = (c_coeff[0] * curr[this_offset]);
-            { lbl_5: int d; register_stack_var("fwd|d|0", "i32", (void *)(&d), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } for ( d = (1); d <= radius; alias_group_changed(1, (size_t)(17702871222471266781UL)), d++) { {
-                  lbl_6: int y_pos_offset; register_stack_var("fwd|y_pos_offset|0", "i32", (void *)(&y_pos_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_7; } y_pos_offset = ((((radius) + (y + d)) * (dimx) + ((radius) + (x))));
-                  lbl_7: int y_neg_offset; register_stack_var("fwd|y_neg_offset|0", "i32", (void *)(&y_neg_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_8; } y_neg_offset = ((((radius) + (y - d)) * (dimx) + ((radius) + (x))));
-                  lbl_8: int x_pos_offset; register_stack_var("fwd|x_pos_offset|0", "i32", (void *)(&x_pos_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_9; } x_pos_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x + d))));
-                  lbl_9: int x_neg_offset; register_stack_var("fwd|x_neg_offset|0", "i32", (void *)(&x_neg_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_10; } lbl_10: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp", 63); exit(1); } } } x_neg_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x - d))));
-                div += c_coeff[d] * (curr[y_pos_offset] +
-                        curr[y_neg_offset] + curr[x_pos_offset] +
-                        curr[x_neg_offset]);
-            } } }
-            next[this_offset] = temp + div * vsq[this_offset];
+    { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( y = (0); y < ny; alias_group_changed(1, (size_t)(8613284754052476370UL)), y++) { {
+        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp", 16); exit(1); } } } for ( x = (0); x < nx; alias_group_changed(1, (size_t)(6554105935738823113UL)), x++) { {
+             call_lbl_3: calling(3, 0UL, 5, (size_t)(1514847738530813435UL), (size_t)(11912630004586522060UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fprintf(fp, "%d %d %.20f\n", y, x,
+                    field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
         } } }
+         call_lbl_4: calling(4, 0UL, 2, (size_t)(1514847738530813435UL), (size_t)(3688673358470470082UL)); fprintf(fp, "\n");
     } } }
+
+     call_lbl_5: calling(5, 0UL, 1, (size_t)(1514847738530813435UL)); fclose(fp);
 rm_stack(false, 0UL); }
 
-int main( int argc, char *argv[] ) {
-    init_numdebug(0); new_stack(636351188801416608UL, 2, 14, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL, 1406537190118695280UL, 3655576263063000521UL, 1439420700812193513UL, 16801648339432526018UL, 2362206228145856531UL, 8391575324692158608UL, 3232826025796191657UL, 14723839603729691025UL, 3920757191841456973UL, 8391575324692158608UL, 4740125504295099978UL, 2775809280878473563UL, 6095867792190138415UL, 16436254989487132196UL, 6133022261894537111UL, 3655576263074171224UL, 11444889221438892957UL, 2820914316849208470UL, 12835239948587864347UL, 10933946544651129952UL, 13776165132426961666UL, 8391575324692158608UL, 14723839603729691025UL, 9902380079863583744UL, 16833687143959260136UL, 8777646764455402125UL); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: config conf; register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(18293662412874621885UL)); setup_config(&conf, argc, argv);
-     call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
+void init_data(float *curr, float *next, float *vsq,
+                float *h_coeff, const int dimx, const int dimy,
+                const float dx, const float dt) {
 
-      lbl_1: float dx; register_stack_var("main|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } dx = (20.F);
-      lbl_2: float dt; register_stack_var("main|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } dt = (0.00200000009F);
-
-
-      lbl_3: size_t dimx; register_stack_var("main|dimx|0", "i64", (void *)(&dimx), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } dimx = (conf.nx + 2 * conf.radius);
-      lbl_4: size_t dimy; register_stack_var("main|dimy|0", "i64", (void *)(&dimy), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } dimy = (conf.ny + 2 * conf.radius);
-      lbl_5: size_t nbytes; register_stack_var("main|nbytes|0", "i64", (void *)(&nbytes), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } nbytes = (dimx * dimy * sizeof(float));
-
-    if (alias_group_changed(5, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(5571543899197932560UL)) || conf.verbose) { {
-         call_lbl_2: calling(2, 0UL, 3, (size_t)(1896088605697880685UL), (size_t)(0UL), (size_t)(0UL)); printf("x = %zu, y = %zu\n", dimx, dimy);
-         call_lbl_3: calling(3, 0UL, 2, (size_t)(14680162346750872809UL), (size_t)(0UL)); printf("nsteps = %d\n", conf.nsteps);
-         call_lbl_4: calling(4, 0UL, 2, (size_t)(14680162346750872809UL), (size_t)(0UL)); printf("radius = %d\n", conf.radius);
-    } }
-
-      lbl_6: float *c_coeff; register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 10933946544651129952UL, 0, 0));
-      lbl_7: float *curr; register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = ((float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0));
-      lbl_8: float *next; register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = ((float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0));
-      lbl_9: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = ((float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0, 0));
-    if (alias_group_changed(1, (size_t)(16833687143959260136UL)) || curr == __null || next == __null || vsq == __null) { {
-         call_lbl_5: calling(5, 0UL, 2, (size_t)(16436254989487132196UL), (size_t)(680289937019984656UL)); fprintf(__stderrp, "Allocations failed\n");
-        alias_group_changed(1, (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 1;
-    } }
-
-     call_lbl_6: calling(6, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
-      lbl_10: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_11; } call_lbl_7: calling(7, 14723839603729691025UL, 4, (size_t)(2820914316849208470UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
-
-    alias_group_changed(1, (size_t)(3232826025796191657UL)); call_lbl_8: calling(8, 0UL, 8, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dx, dt);
-
-      lbl_11: double start; register_stack_var("main|start|0", "double", (void *)(&start), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_12; } call_lbl_9: calling(9, 0UL, 0); start = (seconds());
-    { lbl_12: int step; register_stack_var("main|step|0", "i32", (void *)(&step), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_13; } for ( step = (0); step < conf.nsteps; alias_group_changed(1, (size_t)(5424025495246047316UL)), step++) { {
-        { lbl_13: int src; register_stack_var("main|src|0", "i32", (void *)(&src), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_14; } for ( src = (0); src < conf.nsrcs; alias_group_changed(1, (size_t)(4230221212431166864UL)), src++) { {
-            if (conf.srcs[src].t > step) { continue;
- } lbl_14: int src_offset; register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_15; } src_offset = ((((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x))));
-
-            curr[src_offset] = srcs[src][step];
-        } } }
-
-         call_lbl_10: calling(10, 0UL, 9, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy,
-                conf.radius);
-
-          lbl_15: float *tmp; register_stack_var("main|tmp|0", "float*", (void *)(&tmp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_16; } tmp = (next);
-        next = curr;
-        curr = tmp;
-
-        alias_group_changed(3, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(13776165132426961666UL)); call_lbl_11: calling(11, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
+    new_stack(8, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_data|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("init_data|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("init_data|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("init_data|h_coeff|0", "float*", (void *)(&h_coeff), 8, 1, 0, 0); register_stack_var("init_data|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("init_data|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("init_data|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); register_stack_var("init_data|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); { lbl_0: size_t i; register_stack_var("init_data|i|0", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(3193239025367387070UL)), i++) { {
+        vsq[i] = 2500. * 2500. * dt * dt;
     } } }
-      lbl_16: double elapsed_s; register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_17; } call_lbl_12: calling(12, 0UL, 0); elapsed_s = (seconds() - start);
 
-    alias_group_changed(1, (size_t)(2124997618683620793UL)); call_lbl_13: calling(13, 0UL, 0); finish_progress();
 
-      lbl_17: float point_rate; register_stack_var("main|point_rate|0", "float", (void *)(&point_rate), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_18; } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps));
-    alias_group_changed(1, (size_t)(16557221819836515321UL)); call_lbl_14: calling(14, 0UL, 5, (size_t)(16436254989487132196UL), (size_t)(14989591985071088668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
-            elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
-
-     call_lbl_15: calling(15, 0UL, 0); checkpoint();
-    if (conf.save_text) { {
-         call_lbl_16: calling(16, 0UL, 7, (size_t)(8391575324692158608UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
-    } }
-
-    free_wrapper(c_coeff, 10933946544651129952UL);
-    free_wrapper(curr, 8391575324692158608UL);
-    free_wrapper(next, 8391575324692158608UL);
-    free_wrapper(vsq, 8777646764455402125UL);
-    { lbl_18: int i; register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_19; } lbl_19: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp", 141); exit(1); } } } for ( i = (0); i < conf.nsrcs; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
-        free_wrapper(srcs[i], 9902380079863583744UL);
+    { lbl_1: size_t i; register_stack_var("init_data|i|1", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(15567591489155420624UL)), i++) { {
+        curr[i] = next[i] = 0;
     } } }
-    free_wrapper(srcs, 14723839603729691025UL);
 
-    alias_group_changed(1, (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
+     call_lbl_0: calling(0, 0UL, 5, (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
+      lbl_2: float scale; register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp", 40); exit(1); } } } scale = (1. / (dx * dx));
+    h_coeff[0] = -8.541666 * scale;
+    h_coeff[1] = 1.600000 * scale;
+    h_coeff[2] = -0.200000 * scale;
+    h_coeff[3] = 0.025397 * scale;
+    h_coeff[4] = -0.001785 * scale;
+rm_stack(false, 0UL); }
+
+void usage(char **argv) {
+    new_stack(1, (size_t)(17206168581473135942UL)); register_stack_var("usage|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); alias_group_changed(1, (size_t)(9299461872755550985UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
+            "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
+            argv[0]);
+     call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
+rm_stack(false, 0UL); }
+
+void default_config(config *conf) {
+    new_stack(1, (size_t)(8084772600074702260UL)); register_stack_var("default_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); conf->nx = 2 * 256;
+    conf->ny = 2 * 256;
+    conf->nsteps = 100;
+    conf->save_text = 0;
+    conf->verbose = 0;
+    conf->radius = 4;
+    conf->ngpus = -1;
+
+    conf->srcs = __null;
+    conf->nsrcs = 0;
+
+    conf->progress_width = 80;
+    conf->progress_disabled = 0;
+rm_stack(false, 0UL); }
+
+void setup_config(config *conf, int argc, char **argv) {
+    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp", 72); exit(1); } } }
+    opterr = 0;
+
+    alias_group_changed(4, (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(18224721594452017849UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);
+
+    alias_group_changed(1, (size_t)(5952148420769155456UL)); call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(16519385352256392130UL), (size_t)(295675736814144269UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
+        switch (c) {
+             call_lbl_2: calling(2, 0UL, 1, (size_t)(15305433456608714061UL)); case 'x':
+                conf->nx = atoi(optarg);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+             call_lbl_3: calling(3, 0UL, 1, (size_t)(15305433456608714061UL)); case 'y':
+                conf->ny = atoi(optarg);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+             call_lbl_4: calling(4, 0UL, 1, (size_t)(15305433456608714061UL)); case 'i':
+                conf->nsteps = atoi(optarg);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+            case 'v':
+                conf->verbose = 1;
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+            case 't':
+                conf->save_text = 1;
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+            case 'p':
+                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+                        (conf->nsrcs + 1), 8054715398219518601UL);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); call_lbl_5: calling(5, 0UL, 2, (size_t)(15305433456608714061UL), (size_t)(8054715398219518601UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+                conf->nsrcs++;
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+             call_lbl_6: calling(6, 0UL, 1, (size_t)(15305433456608714061UL)); case 'r':
+                conf->radius = atoi(optarg);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+             call_lbl_7: calling(7, 0UL, 1, (size_t)(15305433456608714061UL)); case 'g':
+                conf->ngpus = atoi(optarg);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+             call_lbl_8: calling(8, 0UL, 1, (size_t)(15305433456608714061UL)); case 'w':
+                conf->progress_width = atoi(optarg);
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+            case 'd':
+                conf->progress_disabled = 1;
+                alias_group_changed(1, (size_t)(17621417648879593294UL)); break;
+             call_lbl_9: calling(9, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(0UL)); case '?':
+                fprintf(__stderrp, "Missing argument to option %c\n", optopt);
+             call_lbl_10: calling(10, 0UL, 1, (size_t)(16519385352256392130UL)); default:
+                usage(argv);
+        }
+    }
+
+    if (conf->ngpus == -1) { {
+         call_lbl_11: calling(11, 0UL, 0); conf->ngpus = getNumCUDADevices();
+    } }
+rm_stack(false, 0UL); }
+
+
+static int module_init() {
+    init_module(17753382416546317923UL, 16, 5, 8789740333877504081UL, 2514521167504661862UL, 17621417648879593294UL, 8054715398219518601UL, 13356287653763336231UL, 8084772600074702260UL, 12766984487186336934UL, 14298515915229491771UL, 2850663618440899500UL, 2106176590813429709UL, 16497600537396980357UL, 16519385352256392130UL, 17206168581473135942UL, 14005911604284787229UL, 8084772600074702260UL, 7102980499878368059UL, 11056608174269105890UL, 15305433456608714061UL, 9189193028991347885UL, 689492555805609218UL, 8040499415410495103UL, 14298515915218321068UL, 13697246817649382652UL, 1514847738530813435UL, 9299461872755550985UL, 17206168581473135942UL, 6095867792190138415UL, 12551842837011914585UL, 18224721594452017849UL, 17621417648879593294UL, 13803245390038478632UL, 1686577910018222429UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 11, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    return 0;
 }
+
+static int __libnumdebug_module_init = module_init();

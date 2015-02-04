@@ -3,10 +3,12 @@
 set -e
 
 script_dir="$(dirname $0)"
+source ${script_dir}/common.sh
 
 KEEP=0
-CU_INPUTS=()
-CPP_INPUTS=()
+INPUTS=()
+# CU_INPUTS=()
+# CPP_INPUTS=()
 OBJ_FILES=()
 LAST_FILES=()
 INCLUDES=
@@ -16,20 +18,12 @@ LINK_LIB_PATHS=
 LIBS=
 LINK_LIBS=
 OUTPUT_FILE=a.out
+VERBOSE=0
 
-while getopts ":ki:I:L:l:" opt; do
+while getopts ":ki:I:L:l:vo:" opt; do
     case $opt in 
         i)
-            BASENAME=$(basename ${OPTARG})
-            EXT="${BASENAME##*.}"
-            if [[ ${EXT} == "cpp" ]]; then
-                CPP_INPUTS+=(${OPTARG})
-            elif [[ ${EXT} == "cu" ]]; then
-                CU_INPUTS+=(${OPTARG})
-            else
-                echo "Unsupported file extension ${EXT}"
-                exit 1
-            fi
+            INPUTS+=(${OPTARG})
             ;;
         I)
             INCLUDES="${INCLUDES} -I ${OPTARG}"
@@ -49,6 +43,9 @@ while getopts ":ki:I:L:l:" opt; do
         o)
             OUTPUT_FILE=${OPTARG}
             ;;
+        v)
+            VERBOSE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -63,64 +60,56 @@ done
 WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
-N_CU_INPUTS=${#CU_INPUTS[@]}
-N_CPP_INPUTS=${#CPP_INPUTS[@]}
-TOTAL=$(echo $N_CU_INPUTS + $N_CPP_INPUTS | bc)
-
-if [ "$TOTAL" == "0" ]; then
-    echo usage: compile.sh [-k] [-I include-path] [-l libname] [-L lib-path] [-o output]-i input.cpp/cu
+if [[ "${#INPUTS[@]}" -eq "0" ]]; then
+    echo usage: compile.sh [-k] [-I include-path] [-l libname] [-L lib-path] [-o output] -i input.cpp/cu
     exit 1
 fi
 
-if [[ $N_CPP_INPUTS -gt 0 ]]; then
-    CPP_INPUTS_STR=""
-    for f in ${CPP_INPUTS[@]}; do
-        CPP_INPUTS_STR="${CPP_INPUTS_STR} -i $f"
-    done
+COMPILER_FLAGS="${INCLUDES} ${LIB_PATHS} ${LIBS}"
+[[ ! $VERBOSE ]] || COMPILER_FLAGS="${COMPILER_FLAGS} -v"
 
-    ${script_dir}/compile_cpp.sh -c ${CPP_INPUTS_STR} ${INCLUDES} ${LIB_PATHS} \
-            ${LIBS} -w ${WORK_DIR} > ${WORK_DIR}/cpp.log
+for INPUT in ${INPUTS[@]}; do
+    BASENAME=$(basename ${INPUT})
+    EXT="${INPUT##*.}"
+    LOG_FILE=
 
-    for f in $(cat ${WORK_DIR}/cpp.log | tail -n ${N_CPP_INPUTS}); do
-        OBJ_FILES+=($f)
-    done
+    if [[ ${EXT} == "cpp" ]]; then
+        # CPP file
+        LOG_FILE=${WORK_DIR}/cpp.log
+        COMPILE_CPP_CMD="${script_dir}/compile_cpp.sh -c -i ${INPUT} \
+                         ${COMPILER_FLAGS} -w ${WORK_DIR}"
+        [[ ! $VERBOSE ]] || echo $COMPILE_CPP_CMD
+        ${COMPILE_CPP_CMD} > ${LOG_FILE}
+    elif [[ ${EXT} == "cu" ]]; then
+        # CU file
+        LOG_FILE=${WORK_DIR}/cu.log
+        COMPILE_CU_CMD="${script_dir}/compile_cuda.sh -c -i ${INPUT} \
+                        ${COMPILER_FLAGS} -w ${WORK_DIR}"
+        [[ ! $VERBOSE ]] || echo $COMPILE_CU_CMD
+        $COMPILE_CU_CMD > ${LOG_FILE}
+    else
+        echo "Unsupported file extension ${EXT}"
+        exit 1
+    fi
 
-    LINES=$(cat ${WORK_DIR}/cpp.log | wc -l)
-    WANT_LINES=$(echo $LINES - $N_CPP_INPUTS | bc)
-    for f in $(head -n $WANT_LINES ${WORK_DIR}/cpp.log | tail -n $N_CPP_INPUTS); do
-        LAST_FILES+=($f)
-    done
-fi
+    OBJ_FILES+=($(tail -n 1 ${LOG_FILE}))
 
-if [[ $N_CU_INPUTS -gt 0 ]]; then
-    CU_INPUTS_STR=""
-    for f in ${CU_INPUTS[@]}; do
-        CU_INPUTS_STR="${CU_INPUTS_STR} -i $f"
-    done
-
-    ${script_dir}/compile_cuda.sh -c ${CU_INPUTS_STR} ${INCLUDES} ${LIB_PATHS} \
-            ${LIBS} -w ${WORK_DIR} > ${WORK_DIR}/cu.log
-
-    for f in $(cat ${WORK_DIR}/cu.log | tail -n ${N_CU_INPUTS}); do
-        OBJ_FILES+=($f)
-    done
-
-    LINES=$(cat ${WORK_DIR}/cu.log | wc -l)
-    WANT_LINES=$(echo $LINES - $N_CU_INPUTS | bc)
-    for f in $(head -n $WANT_LINES ${WORK_DIR}/cu.log | tail -n $N_CU_INPUTS); do
-        LAST_FILES+=($f)
-    done
-fi
+    LINES=$(cat ${LOG_FILE} | wc -l)
+    WANT_LINES=$(echo $LINES - 1 | bc)
+    LAST_FILES+=($(head -n $WANT_LINES ${LOG_FILE} | tail -n 1))
+done
 
 OBJ_FILE_STR=""
 for f in ${OBJ_FILES[@]}; do
     OBJ_FILE_STR="${OBJ_FILE_STR} $f"
 done
 
-g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+LINK_CMD="g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
         -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
         -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${LINK_INCLUDES} ${LINK_LIB_PATHS} \
-        ${LINK_LIBS} -g -O0
+        ${LINK_LIBS} -g -O0"
+[[ ! $VERBOSE ]] || echo $LINK_CMD
+$LINK_CMD
 
 for f in ${LAST_FILES[@]}; do
     echo $f

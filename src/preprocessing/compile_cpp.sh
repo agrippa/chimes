@@ -2,7 +2,10 @@
 
 set -e
 
-INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info"
+script_dir="$(dirname $0)"
+source ${script_dir}/common.sh
+
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 KEEP=0
 COMPILE=0
 INPUTS=()
@@ -11,17 +14,18 @@ LIB_PATHS=
 LIBS=
 OUTPUT_FILE=a.out
 WORK_DIR=
+VERBOSE=0
 
-while getopts ":kci:I:L:l:o:w:" opt; do
+while getopts ":kci:I:L:l:o:w:v" opt; do
     case $opt in 
         i)
-            INPUTS+=(${OPTARG})
+            INPUTS+=($(get_absolute_path ${OPTARG}))
             ;;
         I)
-            INCLUDES="${INCLUDES} -I${OPTARG}"
+            INCLUDES="${INCLUDES} -I$(get_absolute_path ${OPTARG})"
             ;;
         L)
-            LIB_PATHS="${LIB_PATHS} -L${OPTARG}"
+            LIB_PATHS="${LIB_PATHS} -L$(get_absolute_path ${OPTARG})"
             ;;
         l)
             LIBS="${LIBS} -l${OPTARG}"
@@ -38,6 +42,9 @@ while getopts ":kci:I:L:l:o:w:" opt; do
         o)
             OUTPUT_FILE=${OPTARG}
             ;;
+        v)
+            VERBOSE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -50,7 +57,7 @@ while getopts ":kci:I:L:l:o:w:" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cpp.sh [-k] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
+    echo usage: compile_cpp.sh [-c] [-k] [-I include-path] [-l libname] [-L lib-path] [-v] -i input.cpp
     exit 1
 fi
 
@@ -86,6 +93,7 @@ fi
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
+MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
 
 echo WORK_DIR = $WORK_DIR
 
@@ -146,27 +154,34 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -k ${INFO_FILE_PREFIX}.call.info \
             -x ${INFO_FILE_PREFIX}.exit.info \
             -r ${INFO_FILE_PREFIX}.reachable.info \
+            -o ${INFO_FILE_PREFIX}.module.info \
             -w ${WORK_DIR} \
             -c true \
             ${PREPROCESS_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES
 
-    LAST_FILE=$(basename ${PREPROCESS_FILE})
-    EXT="${LAST_FILE##*.}"
-    NAME="${LAST_FILE%.*}"
-    LAST_FILE=${NAME}.register.${EXT}
+    TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
+    EXT="${TRANSFORMED_FILE##*.}"
+    NAME="${TRANSFORMED_FILE%.*}"
+    TRANSFORMED_FILE=${NAME}.register.${EXT}
+    FINAL_FILE=${NAME}.transformed.${EXT}
 
-    echo Postprocessing ${LAST_FILE}
-    cd ${WORK_DIR} && g++ -E -include stddef.h ${LAST_FILE} \
-        -o ${LAST_FILE}.post && mv ${LAST_FILE}.post ${LAST_FILE}
+    echo Setting up module initialization for ${TRANSFORMED_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} ${TRANSFORMED_FILE} ${FINAL_FILE} \
+        ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
+        ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
-    LAST_FILE=${WORK_DIR}/${LAST_FILE}
-    OBJ_FILE=${LAST_FILE}.o
+    echo Postprocessing ${FINAL_FILE}
+    cd ${WORK_DIR} && g++ -E -include stddef.h ${FINAL_FILE} \
+        -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
 
-    LAST_FILES+=($LAST_FILE)
+    FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
+    OBJ_FILE=${FINAL_FILE}.o
+
+    LAST_FILES+=($FINAL_FILE)
     OBJ_FILES+=($OBJ_FILE)
 
-    g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${LAST_FILE} \
+    g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${FINAL_FILE} \
         -o ${OBJ_FILE} ${INCLUDES} -g -O0
 
     if [[ ! -f ${OBJ_FILE} ]]; then
@@ -183,7 +198,7 @@ if [[ $COMPILE == 1 ]]; then
     for f in ${OBJ_FILES[@]}; do
         echo $f
     done
-else 
+else
     OBJ_FILE_STR=""
     for f in ${OBJ_FILES[@]}; do
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"

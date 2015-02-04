@@ -46,22 +46,14 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
 
             FunctionArgumentAliasGroups func =
                 insertions->findMatchingFunction(curr_func);
+
             std::stringstream ss;
-            ss << "new_stack(" << insertions->get_module_id() << "UL, " <<
-                func.nargs() << ", " << insertions->get_reachable()->size();
+            ss << "new_stack(" << func.nargs();
             for (unsigned i = 0; i < func.nargs(); i++) {
                 ss << ", (size_t)(" << func.alias_no_for(i) << "UL)";
             }
-
-            for (std::vector<ReachableInfo>::iterator i =
-                    insertions->get_reachable()->begin(),
-                    e = insertions->get_reachable()->end(); i != e; i++) {
-                ReachableInfo curr = *i;
-                ss << ", " << curr.get_container() << "UL, " <<
-                    curr.get_child() << "UL";
-            }
-
             ss << "); ";
+
             InsertText(child->getLocStart(), ss.str(), true, true);
         }
 

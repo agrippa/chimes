@@ -166,6 +166,8 @@ namespace {
         std::map<Value *, size_t> *collectInitialAliasMappings(Module &M);
         void findFunctionExits(Module &M, const char *output_file,
                 std::map<Value *, size_t> value_to_alias_group);
+        void findGlobals(Module &M, const char *filename);
+        std::map<std::string, std::string> *mapGlobalsToOriginalName(Module &M);
     };
 }
 
@@ -369,6 +371,92 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
     }
 
     return mappings;
+}
+
+void Play::findGlobals(Module &M, const char *filename) {
+    DataLayout *layout = new DataLayout(&M);
+
+    std::set<std::string> excluded_globals;
+    excluded_globals.insert("__cudaFatCubinHandle");
+    excluded_globals.insert("__nv_fatbinhandle_for_managed_rt");
+
+    std::map<std::string, std::string> *global_names =
+        mapGlobalsToOriginalName(M);
+    std::map<std::string, std::vector<std::string>> *structFields =
+        getStructFieldNames(M);
+
+    FILE *fp = fopen(filename, "w");
+    assert(fp);
+
+    for (Module::global_iterator i = M.global_begin(), e = M.global_end();
+            i != e; i++) {
+        GlobalValue *G = &*i;
+        if (GlobalVariable *var = dyn_cast<GlobalVariable>(G)) {
+
+            if (var->isConstant() || global_names->find(var->getName().str()) ==
+                    global_names->end()) continue;
+
+            assert(global_names->find(var->getName().str()) !=
+                    global_names->end());
+            std::string varname = (*global_names)[var->getName().str()];
+
+            if (excluded_globals.find(varname) != excluded_globals.end()) {
+                continue;
+            }
+
+            Type *type = var->getType();
+            std::string backing_string;
+            raw_string_ostream stream(backing_string);
+            type->print(stream);
+            stream.flush();
+
+            size_t type_size = layout->getTypeSizeInBits(var->getType());
+            int is_ptr = 0;
+            int is_struct = 0;
+            std::string struct_name;
+            std::vector<std::string> struct_ptr_field_names;
+
+            if (type->isPointerTy()) {
+                is_ptr = 1;
+            } else if (type->isStructTy()) {
+                is_struct = 1;
+
+                StructType *structTy = dyn_cast<StructType>(type);
+                assert(structTy != NULL);
+
+                if (!structTy->isLiteral()) {
+                    assert(structTy->getStructName().str().find("struct.") ==
+                            0);
+                    struct_name = structTy->getStructName().str().substr(7);
+
+                    for (unsigned int i = 0;
+                            i < structTy->getStructNumElements(); i++) {
+                        Type *field_type = structTy->getStructElementType(i);
+                        if (field_type->isPointerTy()) {
+                            std::vector<std::string> fields = (*structFields)[struct_name];
+                            struct_ptr_field_names.push_back(fields[i]);
+                        }
+                    }
+                }
+            }
+            // Variable name, Full type, type size in bits, is ptr?, is struct?
+            fprintf(fp, "%s \" %s \" %lu %d %d ", varname.c_str(),
+                    backing_string.c_str(), type_size, is_ptr, is_struct);
+            if (is_struct) {
+                fprintf(fp, "%s ", struct_name.c_str());
+                for (std::vector<std::string>::iterator field_iter =
+                        struct_ptr_field_names.begin(), field_end =
+                        struct_ptr_field_names.end(); field_iter != field_end;
+                        field_iter++) {
+                    fprintf(fp, "%s ", field_iter->c_str());
+                }
+            }
+            fprintf(fp, "\n");
+        }
+    }
+
+    fclose(fp);
+
 }
 
 ReachableInfo Play::propagateAliases(Module &M) {
@@ -978,11 +1066,7 @@ SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
     return (*function_to_start_line)[F->getName().str()];
 }
 
-std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
-        Module &M) {
-    std::map<std::string, std::vector<std::string>> *struct_fields =
-        new std::map<std::string, std::vector<std::string>>();
-
+static DICompileUnit getCompileUnitFor(Module &M) {
     // Get struct info
     NamedMDNode *root = NULL;
     for (Module::named_metadata_iterator md_iter = M.named_metadata_begin(),
@@ -997,6 +1081,37 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
     assert(root->getNumOperands() == 1);
     MDNode *module_info = root->getOperand(0);
     DICompileUnit module(module_info);
+    return module;
+}
+
+std::map<std::string, std::string> *Play::mapGlobalsToOriginalName(Module &M) {
+    std::map<std::string, std::string> *global_mapping =
+        new std::map<std::string, std::string>();
+    DICompileUnit module = getCompileUnitFor(M);
+    DIArray globals = module.getGlobalVariables();
+
+    for (unsigned int g = 0; g < globals.getNumElements(); g++) {
+        DIGlobalVariable di_global(globals.getElement(g));
+        if (di_global.getLinkageName().size() == 0) {
+            // Use display name as linkage name too
+            (*global_mapping)[di_global.getDisplayName()] =
+                di_global.getDisplayName();
+        } else {
+            assert(global_mapping->find(di_global.getLinkageName()) ==
+                    global_mapping->end());
+            (*global_mapping)[di_global.getLinkageName()] =
+                di_global.getDisplayName();
+        }
+    }
+    return global_mapping;
+}
+
+std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
+        Module &M) {
+    std::map<std::string, std::vector<std::string>> *struct_fields =
+        new std::map<std::string, std::vector<std::string>>();
+
+    DICompileUnit module = getCompileUnitFor(M);
     DIArray structs = module.getRetainedTypes();
 
     for (unsigned int s = 0; s < structs.getNumElements(); s++) {
@@ -1015,9 +1130,12 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
         DICompositeType composite(di_struct);
         DIArray fields_defs = composite.getTypeArray();
         for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
-            DIType di_field(fields_defs.getElement(f));
-            std::string fieldname = di_field.getName().str();
-            fields.push_back(fieldname);
+            if (fields_defs.getElement(f).getTag() == dwarf::DW_TAG_member) {
+                DIType di_field(fields_defs.getElement(f));
+                std::string fieldname = di_field.getName().str();
+                errs() << struct_name << " " << fieldname << "\n";
+                fields.push_back(fieldname);
+            }
         }
 
         assert(struct_fields->find(struct_name) == struct_fields->end());
@@ -1223,6 +1341,7 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                     std::string backing_string;
                     raw_string_ostream stream(backing_string);
                     ty->print(stream);
+                    stream.flush();
                     info->full_type_name = stream.str();
 
                     if (info->users.size() > 0) {
@@ -1484,7 +1603,11 @@ static Type *inferHostAllocationType(CallInst *callInst) {
          */
         Type *dst_type = store->getPointerOperand()->getType();
         assert(dst_type->isPointerTy());
-        return dst_type->getPointerElementType();
+        // Type of the allocation
+        Type *dst_element_type = dst_type->getPointerElementType();
+        // must be true because we're storing the output of malloc in dst
+        assert(dst_element_type->isPointerTy());
+        return dst_element_type->getPointerElementType();
     }
 
     errs() << *callInst << "\n";
@@ -1772,6 +1895,8 @@ bool Play::runOnModule(Module &M) {
     findHeapAllocations(M, "heap.info", reachable.get_value_to_alias_group());
 
     findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group());
+
+    findGlobals(M, "globals.info");
 
     return false;
 }

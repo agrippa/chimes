@@ -22,6 +22,7 @@
 #include "stack_frame.h"
 #include "heap_allocation.h"
 #include "stack_serialization.h"
+#include "global_serialization.h"
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
 #include "numdebug_stack.h"
@@ -31,8 +32,7 @@
 using namespace std;
 
 // functions defined in this file
-void new_stack(size_t module_id, int n_local_arg_aliases,
-        int n_contains_mappings, ...);
+void new_stack(int n_local_arg_aliases, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias);
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
@@ -50,7 +50,7 @@ static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
 static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
-static void fix_stack_pointer(void *container, string type);
+static void fix_stack_or_global_pointer(void *container, string type);
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 void free_helper(void *ptr);
 
@@ -71,8 +71,10 @@ static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
+static map<std::string, stack_var *> global_vars;
 
 static vector<stack_frame *> *unpacked_program_stack;
+static map<std::string, stack_var *> *unpacked_global_vars;
 /*
  * A list of objects specifying what memory locations were updated with
  * corrected pointers during the sweep over heap allocations.
@@ -105,32 +107,8 @@ static bool aliased(size_t group1, size_t group2) {
     return false;
 }
 
-void init_numdebug(int nstructs, ...) {
+void init_numdebug() {
     atexit(onexit);
-
-    va_list vl;
-    va_start(vl, nstructs);
-    for (int i = 0; i < nstructs; i++) {
-        char *struct_name = va_arg(vl, char *);
-        int nfields = va_arg(vl, int);
-        string struct_name_str(struct_name);
-        structs[struct_name_str] = new std::vector<int>();
-
-#ifdef VERBOSE
-        fprintf(stderr, "struct %s offsets:", struct_name_str.c_str());
-#endif
-
-        for (int j = 0; j < nfields; j++) {
-            int offset = va_arg(vl, int);
-            assert(offset >= 0);
-            structs[struct_name_str]->push_back(offset);
-#ifdef VERBOSE
-            fprintf(stderr, " %d", offset);
-#endif
-        }
-    }
-
-    va_end(vl);
 
     char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
@@ -170,6 +148,17 @@ void init_numdebug(int nstructs, ...) {
                 "stack_serialized", checkpoint_file);
         unpacked_program_stack = deserialize_program_stack(stack_serialized,
                 stack_serialized_len);
+
+        // read in globals state
+        uint64_t globals_serialized_len;
+        safe_read(fd, &globals_serialized_len, sizeof(globals_serialized_len),
+                "globals_serialized_len", checkpoint_file);
+        unsigned char *globals_serialized = (unsigned char *)malloc(
+                globals_serialized_len);
+        safe_read(fd, globals_serialized, globals_serialized_len,
+                "globals_serialized", checkpoint_file);
+        unpacked_global_vars = deserialize_globals(globals_serialized,
+                globals_serialized_len);
 
         // read in heap serialization
         uint64_t n_heap_allocs;
@@ -468,8 +457,49 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     }
 }
 
-void new_stack(size_t module_id, int n_local_arg_aliases,
-        int n_contains_mappings, ...) {
+void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
+
+    bool replay = (getenv("NUMDEBUG_CHECKPOINT_FILE") != NULL);
+    va_list vl;
+    va_start(vl, nstructs);
+
+    bool initialized = (initialized_modules.find(module_id) !=
+            initialized_modules.end());
+    assert(!initialized);
+
+    for (int i = 0; i < n_contains_mappings; i++) {
+        size_t container = va_arg(vl, size_t);
+        size_t child = va_arg(vl, size_t);
+
+        if (!replay) {
+            contains[container] = child;
+        }
+    }
+
+    for (int i = 0; i < nstructs; i++) {
+        char *struct_name = va_arg(vl, char *);
+        int nfields = va_arg(vl, int);
+        string struct_name_str(struct_name);
+        structs[struct_name_str] = new std::vector<int>();
+
+#ifdef VERBOSE
+        fprintf(stderr, "struct %s offsets:", struct_name_str.c_str());
+#endif
+
+        for (int j = 0; j < nfields; j++) {
+            int offset = va_arg(vl, int);
+            assert(offset >= 0);
+            structs[struct_name_str]->push_back(offset);
+#ifdef VERBOSE
+            fprintf(stderr, " %d", offset);
+#endif
+        }
+    }
+
+    va_end(vl);
+}
+
+void new_stack(int n_local_arg_aliases, ...) {
     assert(program_stack.size() == 0 || calling_lbl >= 0);
     if (calling_lbl >= 0) {
         stack_tracker.push(calling_lbl);
@@ -489,21 +519,10 @@ void new_stack(size_t module_id, int n_local_arg_aliases,
 
     std::vector<size_t> new_aliases;
     va_list vl;
-    va_start(vl, n_contains_mappings);
+    va_start(vl, n_local_arg_aliases);
     for (int i = 0; i < n_local_arg_aliases; i++) {
         size_t alias = va_arg(vl, size_t);
         new_aliases.push_back(alias);
-    }
-
-    bool initialized = (initialized_modules.find(module_id) !=
-            initialized_modules.end());
-    for (int i = 0; i < n_contains_mappings; i++) {
-        size_t container = va_arg(vl, size_t);
-        size_t child = va_arg(vl, size_t);
-
-        if (!initialized) {
-            contains[container] = child;
-        }
     }
 
     va_end(vl);
@@ -588,6 +607,24 @@ int get_next_call() {
     return trace[trace_index++];
 }
 
+static stack_var *get_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, va_list vl) {
+    // Basic checks in case the code generation breaks
+    assert(is_ptr == 0 || is_ptr == 1);
+    assert(is_struct == 0 || is_struct == 1);
+    assert(n_ptr_fields >= 0);
+    assert(size >= 0);
+
+    stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
+            is_ptr);
+    for (int i = 0; i < n_ptr_fields; i++) {
+        int offset = va_arg(vl, int);
+        assert(offset >= 0);
+        new_var->add_pointer_offset(offset);
+    }
+    return new_var;
+}
+
 /*
  * TODO support stack arrays:
  *   Today, the registration of a stack array appears as follows:
@@ -599,25 +636,27 @@ int get_next_call() {
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
-    // Basic checks in case the code generation breaks
-    assert(is_ptr == 0 || is_ptr == 1);
-    assert(is_struct == 0 || is_struct == 1);
-    assert(n_ptr_fields >= 0);
-    assert(size >= 0);
-
-    stack_var *new_var = new stack_var(mangled_name, full_type, ptr, size,
-            is_ptr);
-
     va_list vl;
     va_start(vl, n_ptr_fields);
-    for (int i = 0; i < n_ptr_fields; i++) {
-        int offset = va_arg(vl, int);
-        assert(offset >= 0);
-        new_var->add_pointer_offset(offset);
-    }
+    stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
+            is_struct, n_ptr_fields, vl);
     va_end(vl);
 
     program_stack.back()->add_stack_var(new_var);
+}
+
+void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...) {
+    va_list vl;
+    va_start(vl, n_ptr_fields);
+    stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
+            is_struct, n_ptr_fields, vl);
+    va_end(vl);
+
+    std::string mangled_name_str(mangled_name);
+    assert(global_vars.find(mangled_name_str) == global_vars.end());
+    global_vars[mangled_name_str] = new_var;
 }
 
 int alias_group_changed(int ngroups, ...) {
@@ -795,7 +834,9 @@ void free_wrapper(void *ptr, size_t group) {
 
 typedef struct _checkpoint_thread_ctx {
     unsigned char *stack_serialized;
+    unsigned char *globals_serialized;
     uint64_t stack_serialized_len;
+    uint64_t globals_serialized_len;
 
     vector<heap_allocation *> *heap_to_checkpoint;
 
@@ -811,8 +852,25 @@ void wait_for_checkpoint() {
     pthread_mutex_unlock(&checkpoint_mutex);
 }
 
+static void update_live_var(string name, stack_var *dead, stack_var *live) {
+
+    assert(live->get_name() == dead->get_name());
+    assert(live->get_type() == dead->get_type());
+    assert(live->get_size() == dead->get_size());
+    assert(live->check_is_ptr() == dead->check_is_ptr());
+    assert(live->get_ptr_offsets()->size() == dead->get_ptr_offsets()->size());
+    assert(dead->get_tmp_buffer() != NULL);
+
+#ifdef VERBOSE
+    fprintf(stderr, "Restoring variable %s with size %lu at %p\n", name.c_str(),
+            live->get_size(), live->get_address());
+#endif
+    memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
+    dead->clear_tmp_buffer();
+}
+
 void checkpoint() {
-    new_stack(0, 0, 0);
+    new_stack(0);
 
     if (____numdebug_replaying) {
 #ifdef VERBOSE
@@ -826,21 +884,23 @@ void checkpoint() {
 #endif
         
         assert(unpacked_program_stack->size() == program_stack.size());
+        assert(unpacked_global_vars->size() == global_vars.size());
         /*
          * restore non-pointers in the stack to have the correct values by
          * transferring from the deserialized objects into the newly registered
          * addresses
          */
-        vector<stack_frame *>::iterator unpacked_iter =
+        vector<stack_frame *>::iterator unpacked_stack_iter =
             unpacked_program_stack->begin();
-        vector<stack_frame *>::iterator unpacked_end =
+        vector<stack_frame *>::iterator unpacked_stack_end =
             unpacked_program_stack->end();
-        vector<stack_frame *>::iterator live_iter = program_stack.begin();
-        vector<stack_frame *>::iterator live_end = program_stack.end();
+        vector<stack_frame *>::iterator live_stack_iter = program_stack.begin();
+        vector<stack_frame *>::iterator live_stack_end = program_stack.end();
 
-        while (unpacked_iter != unpacked_end && live_iter != live_end) {
-            stack_frame *live = *live_iter;
-            stack_frame *unpacked = *unpacked_iter;
+        while (unpacked_stack_iter != unpacked_stack_end &&
+                live_stack_iter != live_stack_end) {
+            stack_frame *live = *live_stack_iter;
+            stack_frame *unpacked = *unpacked_stack_iter;
 
             /*
              * It is possible that live is larger than unpacked if the
@@ -856,37 +916,38 @@ void checkpoint() {
             for (stack_frame::iterator i = unpacked->begin(),
                     e = unpacked->end(); i != e; i++) {
                 assert(live->find(i->first) != live->end());
-            }
 
-            for (stack_frame::iterator i = unpacked->begin(),
-                    e = unpacked->end(); i != e; i++) {
                 string name = i->first;
                 stack_var *dead = i->second;
                 stack_frame::iterator found = live->find(name);
                 stack_var *live = found->second;
 
-                assert(live->get_name() == dead->get_name());
-                assert(live->get_type() == dead->get_type());
-                assert(live->get_size() == dead->get_size());
-                assert(live->check_is_ptr() == dead->check_is_ptr());
-                assert(live->get_ptr_offsets()->size() ==
-                        dead->get_ptr_offsets()->size());
-                assert(dead->get_tmp_buffer() != NULL);
-
-#ifdef VERBOSE
-                fprintf(stderr, "Restoring variable %s with size %lu at %p\n",
-                        name.c_str(), live->get_size(), live->get_address());
-#endif
-                memcpy(live->get_address(), dead->get_tmp_buffer(),
-                        live->get_size());
-                dead->clear_tmp_buffer();
+                update_live_var(name, dead, live);
             }
 
-            unpacked_iter++;
-            live_iter++;
+            unpacked_stack_iter++;
+            live_stack_iter++;
         }
 
-        assert(unpacked_iter == unpacked_end && live_iter == live_end);
+        assert(unpacked_stack_iter == unpacked_stack_end &&
+                live_stack_iter == live_stack_end);
+
+        /*
+         * Verify all of the globals that we unpacked are also in the live
+         * running program, then update them.
+         */
+        for (map<string, stack_var *>::iterator i =
+                unpacked_global_vars->begin(), e = unpacked_global_vars->end();
+                i != e; i++) {
+            assert(global_vars.find(i->first) != global_vars.end());
+
+            string name = i->first;
+            stack_var *dead = i->second;
+            stack_frame::iterator found = global_vars.find(name);
+            stack_var *live = found->second;
+
+            update_live_var(name, dead, live);
+        }
 
         /*
          * find pointers in the stack and restore them to point to the correct
@@ -907,11 +968,16 @@ void checkpoint() {
             for (stack_frame::iterator var_iter = frame->begin(),
                     var_end = frame->end(); var_iter != var_end; var_iter++) {
                 stack_var *var = var_iter->second;
-                string type = var->get_type();
-                void *address = var->get_address();
-
-                fix_stack_pointer(address, type);
+                fix_stack_or_global_pointer(var->get_address(),
+                        var->get_type());
             }
+        }
+
+        for (map<string, stack_var *>::iterator globals_iter =
+                global_vars.begin(), globals_end = global_vars.end();
+                globals_iter != globals_end; globals_iter++) {
+            stack_var *var = globals_iter->second;
+            fix_stack_or_global_pointer(var->get_address(), var->get_type());
         }
 
         ____numdebug_replaying = 0;
@@ -967,6 +1033,8 @@ void checkpoint() {
             sizeof(checkpoint_thread_ctx));
     thread_ctx->stack_serialized = serialize_program_stack(&program_stack,
             &thread_ctx->stack_serialized_len);
+    thread_ctx->globals_serialized = serialize_globals(&global_vars,
+            &thread_ctx->globals_serialized_len);
     thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
     thread_ctx->stack_tracker = new std::vector<int>();
     stack_tracker.copy(thread_ctx->stack_tracker);
@@ -983,11 +1051,11 @@ static bool is_pointer_type(string type) {
 }
 
 static bool is_struct_type(string type) {
-    size_t index = type.find("%%struct.");
+    size_t index = type.find("%struct.");
     return index != string::npos && index == 0;
 }
 
-static void fix_stack_pointer(void *container, string type) {
+static void fix_stack_or_global_pointer(void *container, string type) {
 
     if (is_pointer_type(type)) {
         void **nested_container = (void **)container;
@@ -1003,7 +1071,9 @@ static void fix_stack_pointer(void *container, string type) {
         assert(close_brace_index != string::npos);
         close_brace_index -= 1;
 
-        string struct_name = type.substr(8, type.find("=") - 1);
+        string struct_name = type.substr(8);
+        struct_name = struct_name.substr(0, struct_name.find("=") - 1);
+
         std::vector<int> *fields = structs[struct_name];
         string nested_types = type.substr(open_brace_index, close_brace_index -
                 open_brace_index);
@@ -1025,10 +1095,10 @@ static void fix_stack_pointer(void *container, string type) {
              * information through new_stack was introduced, that would be a
              * good place to add module-specific struct declarations.
              */
-            string curr = nested_types.substr(start, index);
+            string curr = nested_types.substr(start, index - start);
             unsigned char *field_ptr = ((unsigned char *)container) +
                 (*fields)[field_index];
-            fix_stack_pointer((void *)field_ptr, curr);
+            fix_stack_or_global_pointer((void *)field_ptr, curr);
 
             start = index + 1;
             while (start < nested_types.length() && nested_types[start] == ' ') {
@@ -1061,6 +1131,8 @@ void *checkpoint_func(void *data) {
     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
     unsigned char *stack_serialized = ctx->stack_serialized;
     uint64_t stack_serialized_len = ctx->stack_serialized_len;
+    unsigned char *globals_serialized = ctx->globals_serialized;
+    uint64_t globals_serialized_len = ctx->globals_serialized_len;
     vector<heap_allocation *> *heap_to_checkpoint = ctx->heap_to_checkpoint;
 
     /*
@@ -1093,7 +1165,13 @@ void *checkpoint_func(void *data) {
     safe_write(fd, &stack_serialized_len, sizeof(stack_serialized_len),
             "stack_serialized_len", dump_filename);
     safe_write(fd, stack_serialized, ctx->stack_serialized_len,
-            "stack_serialized_len", dump_filename);
+            "stack_serialized", dump_filename);
+
+    // Write the serialized globals out
+    safe_write(fd, &globals_serialized_len, sizeof(globals_serialized_len),
+            "globals_serialized_len", dump_filename);
+    safe_write(fd, globals_serialized, ctx->globals_serialized_len,
+            "globals_serialized", dump_filename);
 
     // Write the heap allocations out (all of them, for now)
     uint64_t n_heap_allocs = heap_to_checkpoint->size();

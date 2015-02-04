@@ -2,8 +2,9 @@ GXX=g++
 NVCC=nvcc
 GXX_FLAGS=-g -fPIC -Wall -stdlib=libstdc++
 NVCC_FLAGS=-g -Xcompiler -fPIC
-SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp numdebug_stack.cpp \
-    heap_allocation.cpp type_info.cpp
+SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
+    global_serialization.cpp numdebug_stack.cpp heap_allocation.cpp \
+    type_info.cpp serialization_common.cpp
 
 NUMDEBUG_LIB=libnumdebug.so
 NUMDEBUG_CPP_LIB=libnumdebug_cpp.so

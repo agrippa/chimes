@@ -1,13 +1,13 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 5 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5 new_stack(12387876047547725256UL, 2, 1, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 11 5 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5 init_numdebug(0); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 305 int b; 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5 init_numdebug(); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 230 int b; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 130  call_lbl_0: calling(0, 0UL, 1, (size_t)(2394767282369806426UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 305  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310  register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 310 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 230  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235  register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 235 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, __FILE__, __LINE__); exit(1); } } } 
