@@ -8,7 +8,6 @@ from subprocess import Popen, PIPE
 
 NUM_DEBUG_HOME = os.environ['NUM_DEBUG_HOME']
 NUM_DEBUG_REPLAY_EXIT_CODE = 55
-NUM_DEBUG_WORK_DIR_PREFIX = '/tmp/numdebug'
 
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(NUM_DEBUG_HOME, 'src', 'libnumdebug')
@@ -309,11 +308,7 @@ def get_files_from_compiler_stdout(compile_stdout, n_expected_files):
     :rtype: `tuple` of `str`
     """
     assert n_expected_files > 0
-    # Get the final output filename and containing folder
-    if sys.version_info >= (3, 0):
-        lines = str(compile_stdout, encoding='utf8').strip().split('\n')
-    else:
-        lines = str(compile_stdout).strip().split('\n')
+    lines = str(compile_stdout).strip().split('\n')
 
     transformed = []
     for i in range(n_expected_files):
@@ -367,23 +362,22 @@ def _diff_files(file1name, file2name, col):
                 col1 = cols1[col]
                 col2 = cols2[col]
 
-                if col1.find(NUM_DEBUG_WORK_DIR_PREFIX) == 0 and \
-                        col2.find(NUM_DEBUG_WORK_DIR_PREFIX) == 0:
-                    col1 = col1[len(NUM_DEBUG_WORK_DIR_PREFIX):]
-                    col1 = col1[col1.find('/') + 1:]
-                    col2 = col2[len(NUM_DEBUG_WORK_DIR_PREFIX):]
-                    col2 = col2[col2.find('/') + 1:]
+                path_components1 = col1.split('/')
+                path_components2 = col2.split('/')
 
-                    if col1 == col2:
-                        # paths match if you ignore the randomly generated /tmp/
-                        # directories. remove the potential cause for the
-                        # mismatch and try again.
-                        cols1[col] = ''
-                        cols2[col] = ''
-                        newline1 = ' '.join(cols1)
-                        newline2 = ' '.join(cols2)
+                last_path_component1 = path_components1[len(path_components1) - 1]
+                last_path_component2 = path_components2[len(path_components2) - 1]
 
-                        diff_resolved = (newline1 == newline2)
+                if last_path_component1 == last_path_component2:
+                    # paths match in the last component so assume it is close
+                    # enough. remove the potential cause for the mismatch and
+                    # try again.
+                    cols1[col] = ''
+                    cols2[col] = ''
+                    newline1 = ' '.join(cols1)
+                    newline2 = ' '.join(cols2)
+
+                    diff_resolved = (newline1 == newline2)
 
             if not diff_resolved:
                 sys.stderr.write('ERROR: Mismatch at line ' + str(line_index) +
