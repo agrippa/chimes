@@ -2888,12 +2888,15 @@ extern void usage(char **argv);
 extern void default_config(config *conf);
 extern void setup_config(config *conf, int argc, char **argv);
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+
+
 # 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
 # 11 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
-# 43 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+# 45 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+
 
 
 
@@ -2973,7 +2976,9 @@ int main( int argc, char *argv[] ) {
         next = curr;
         curr = tmp;
 
+
         alias_group_changed(3, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(13776165132426961666UL)); call_lbl_11: calling(11, 0UL, 0); checkpoint();
+
 
          call_lbl_12: calling(12, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
     } } }
