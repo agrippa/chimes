@@ -6,8 +6,16 @@ extern "C" {
 
 int getNumCUDADevices() {
     int ndevices;
-    CHECK(cudaGetDeviceCount(&ndevices));
-    return ndevices;
+    cudaError_t err = cudaGetDeviceCount(&ndevices);
+    if (err == cudaErrorNoDevice) {
+        return 0;
+    } else if (err == cudaSuccess) {
+        return ndevices;
+    } else {
+        fprintf(stderr, "Unexpected error in getNumCUDADevices: %s\n",
+                cudaGetErrorString(err));
+        exit(1);
+    }
 }
 
 #ifdef __cplusplus
