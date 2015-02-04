@@ -400,11 +400,13 @@ def _diff_files(file1name, file2name, col):
         line_index += 1
 
     if len(line1) == 0 and len(line2) != 0:
-        print 'ERROR: Extra lines in ' + file2name + ' compared to ' + file1name
+        print('ERROR: Extra lines in ' + file2name + ' compared to ' +
+              file1name)
         exit(1)
 
     if len(line2) == 0 and len(line1) != 0:
-        print 'ERROR: Extra lines in ' + file1name + ' compared to ' + file2name
+        print('ERROR: Extra lines in ' + file1name + ' compared to ' +
+              file2name)
         exit(1)
 
     fp1.close()
@@ -432,7 +434,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     assert len(test.input_files) == len(test.info_dirs)
 
     if len(config.targets) > 0 and test.name not in config.targets:
-        print test.name + ' SKIPPING'
+        print(test.name + ' SKIPPING')
         return
 
     compile_cmd = compile_script_path + ' -k'
@@ -504,7 +506,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
     run_cmd('rm -f a.out', False)
-    print test.name + ' PASSED'
+    print(test.name + ' PASSED')
 
 
 def run_runtime_test(test, compile_script_path, inputs_dir, config):
@@ -521,7 +523,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     :type config: `class` TestConfig
     """
     if len(config.targets) > 0 and test.name not in config.targets:
-        print test.name + ' SKIPPING'
+        print(test.name + ' SKIPPING')
         return
 
     # Compile the input file into an executable
@@ -595,4 +597,5 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     os.remove('a.out')
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
-    print test.name + ' PASSED (' + str(len(numdebug_files)) + ' checkpoint(s))'
+    print(test.name + ' PASSED (' + str(len(numdebug_files)) +
+          ' checkpoint(s))')
