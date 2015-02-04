@@ -96,8 +96,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     LAST_FILES+=($INPUT)
     OBJ_FILES+=($OBJ_FILE)
 
-    g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${INPUT} -o ${OBJ_FILE} \
-        ${INCLUDES} -g -O0
+    g++ --compile ${INPUT} -o ${OBJ_FILE} ${INCLUDES} -g -O0
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"
@@ -119,9 +118,8 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
-            -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} ${LIBS} -g -O0
+    g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} \
+        ${LIBS} -g -O0
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
