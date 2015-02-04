@@ -8,7 +8,7 @@ SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
-	FXX_FLAGS += -stdlib=libstdc++
+	GXX_FLAGS += -stdlib=libstdc++
 endif
 
 ifneq ($(wildcard $(CUDA_HOME)/lib64),)
