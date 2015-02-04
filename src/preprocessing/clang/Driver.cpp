@@ -196,8 +196,7 @@ public:
                     for (int l = 0; l < num_call_labels[id_str.str()]; l++) {
                         ss << "case(" << l << "): { goto call_lbl_" << l << "; } ";
                     }
-                    ss << "default: { fprintf(__stderrp, \"Unknown label %d at %s:%d\\n\", "
-                        "dst, __FILE__, __LINE__); exit(1); }";
+                    ss << "default: { exit(42); }";
                     ss << " } } ";
                     R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
                     insertions->AppendToDiagnostics("InsertTextAfterToken",

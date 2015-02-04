@@ -2364,7 +2364,7 @@ void save_text(float *field, const int dimx, const int dimy,
     } }
 
     { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( y = (0); y < ny; alias_group_changed(1, (size_t)(8613284754052476370UL)), y++) { {
-        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 16); exit(1); } } } for ( x = (0); x < nx; alias_group_changed(1, (size_t)(6554105935738823113UL)), x++) { {
+        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { exit(42); } } } for ( x = (0); x < nx; alias_group_changed(1, (size_t)(6554105935738823113UL)), x++) { {
              call_lbl_3: calling(3, 0UL, 5, (size_t)(1514847738530813435UL), (size_t)(11912630004586522060UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fprintf(fp, "%d %d %.20f\n", y, x,
                     field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
         } } }
@@ -2388,7 +2388,7 @@ void init_data(float *curr, float *next, float *vsq,
     } } }
 
      call_lbl_0: calling(0, 0UL, 5, (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
-      lbl_2: float scale; register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 40); exit(1); } } } scale = (1. / (dx * dx));
+      lbl_2: float scale; register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } scale = (1. / (dx * dx));
     h_coeff[0] = -8.541666 * scale;
     h_coeff[1] = 1.600000 * scale;
     h_coeff[2] = -0.200000 * scale;
@@ -2420,7 +2420,7 @@ void default_config(config *conf) {
 rm_stack(false, 0UL); }
 
 void setup_config(config *conf, int argc, char **argv) {
-    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp", 72); exit(1); } } }
+    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } }
     opterr = 0;
 
     alias_group_changed(4, (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(18224721594452017849UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);
