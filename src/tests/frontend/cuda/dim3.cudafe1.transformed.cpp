@@ -3,6 +3,7 @@
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
 # 1 "<command line>" 1
+
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
 # 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
@@ -14,7 +15,7 @@ typedef long int ptrdiff_t;
 
 
 typedef long unsigned int size_t;
-# 2 "<command line>" 2
+# 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "dim3.cudafe1.transformed.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
