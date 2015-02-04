@@ -30,8 +30,8 @@ ISO2D = RuntimeTest('Iso2D',
                                                'libcommon2d.so')],
                     cli_args='-i 1')
 TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
-         HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, MULTI_CHECKPOINT,
-         ISO2D, GLOBALS]
+         HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, GLOBALS,
+         MULTI_CHECKPOINT, ISO2D]
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
