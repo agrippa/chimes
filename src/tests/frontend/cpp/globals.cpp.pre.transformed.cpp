@@ -3,6 +3,7 @@
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
 # 1 "<command line>" 1
+
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
 # 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
@@ -14,7 +15,7 @@ typedef long int ptrdiff_t;
 
 
 typedef long unsigned int size_t;
-# 2 "<command line>" 2
+# 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "globals.cpp.pre.transformed.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
@@ -22,6 +23,7 @@ typedef long unsigned int size_t;
 # 1 "<built-in>" 3
 # 325 "<built-in>" 3
 # 1 "<command line>" 1
+
 # 1 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 1
 
 
@@ -54,9 +56,9 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 # 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
-# 2 "<command line>" 2
-# 1 "/Users/jmg3/install/llvm-build/Debug+Asserts/bin/../lib/clang/3.5.1/include/stddef.h" 1 3 4
 # 3 "<command line>" 2
+# 1 "/Users/jmg3/install/llvm-build/Debug+Asserts/bin/../lib/clang/3.5.1/include/stddef.h" 1 3 4
+# 4 "<command line>" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -498,7 +500,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 4 "<command line>" 2
+# 5 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
 
