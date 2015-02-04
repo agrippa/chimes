@@ -7,7 +7,7 @@ extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(int n_local_arg_aliases, ...);
+extern void new_stack(unsigned n_local_arg_aliases, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
