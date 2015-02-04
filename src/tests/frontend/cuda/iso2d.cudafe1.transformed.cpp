@@ -26500,7 +26500,7 @@ extern int get_next_call();
 # 9 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int peek_next_call();
 # 10 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void new_stack(int n_local_arg_aliases, ...);
+extern void new_stack(unsigned n_local_arg_aliases, ...);
 # 11 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
 # 13 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"

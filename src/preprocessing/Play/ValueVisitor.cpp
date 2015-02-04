@@ -180,18 +180,6 @@ void ValueVisitor::markAllUses(Value *val, size_t alias) {
     }
 }
 
-static const Function *getContainingFunction(Value *val) {
-    if (Instruction *insn = dyn_cast<Instruction>(val)) {
-        const BasicBlock *bb = insn->getParent();
-        return bb->getParent();
-    } else if (Argument *arg = dyn_cast<Argument>(val)) {
-        return arg->getParent();
-    } else {
-        errs() << "Unsupported " << *val << "\n";
-        assert(false);
-    }
-}
-
 void ValueVisitor::clearAlias(Value *val, size_t expected_alias) {
     std::map<Value *, size_t>::iterator found = value_to_alias_group.find(val);
 #ifdef VERBOSE
@@ -265,16 +253,6 @@ static std::map<size_t, size_t> translate(
         }
     }
     return new_m;
-}
-
-static void updateMarks(std::vector<Mark> *marks, size_t from, size_t to) {
-    for (std::vector<Mark>::iterator i = marks->begin(), e = marks->end();
-            i != e; i++) {
-        Mark *mark = &*i;
-        if (mark->get_alias() == from) {
-            mark->update_alias(to);
-        }
-    }
 }
 
 void ValueVisitor::mergeAliasGroups(size_t from, size_t to) {
