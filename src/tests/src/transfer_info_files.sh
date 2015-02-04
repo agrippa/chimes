@@ -5,6 +5,6 @@ if [[ $# != 2 ]]; then
     exit 1
 fi
 
-for file in diag.info heap.info lines.info stack.info struct.info reachable.info exit.info call.info func.info; do
+for file in call.info diag.info exit.info func.info globals.info heap.info lines.info module.info reachable.info stack.info struct.info; do
     cp $1.$file $2/$file
 done

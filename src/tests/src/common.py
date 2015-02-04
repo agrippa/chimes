@@ -16,18 +16,19 @@ DYLD_PATH = os.path.join(NUM_DEBUG_HOME, 'src', 'libnumdebug')
 # Mapping from info file name to a space-delimited column that may cause
 # differences between the test and expected outputs due to different temporary
 # filenames
-INFO_FILES = {'diag.info': -1, 'heap.info': -1, 'lines.info': 0,
-              'stack.info': 0, 'struct.info': -1, 'reachable.info': -1,
-              'exit.info': -1, 'call.info': -1, 'func.info': -1}
+INFO_FILES = {'call.info': -1, 'diag.info': -1, 'exit.info': -1,
+              'func.info': -1, 'globals.info': -1, 'heap.info': -1,
+              'lines.info': 0, 'module.info': -1, 'reachable.info': -1,
+              'stack.info': 0, 'struct.info': -1}
 
 class TestConfig(object):
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep, verbose, target):
+    def __init__(self, keep, verbose, targets):
         self.keep = keep
         self.verbose = verbose
-        self.target = target
+        self.targets = targets
 
     def __str__(self):
         return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
@@ -157,7 +158,7 @@ def parse_argv(argv):
     """
     keep = False
     verbose = False
-    target = None
+    targets = []
 
     i = 1
     while i < len(argv):
@@ -167,7 +168,8 @@ def parse_argv(argv):
             verbose = True
         elif argv[i] == '-t':
             assert len(argv) >= i + 2
-            target = argv[i + 1]
+            for t in argv[i + 1].split(','):
+                targets.append(t)
             i += 1
         elif argv[i] == '-h':
             usage(argv)
@@ -176,7 +178,7 @@ def parse_argv(argv):
             usage(argv)
         i += 1
 
-    return TestConfig(keep, verbose, target)
+    return TestConfig(keep, verbose, targets)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -417,7 +419,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     assert len(test.input_files) == len(test.compare_files)
     assert len(test.input_files) == len(test.info_dirs)
 
-    if config.target is not None and config.target != test.name:
+    if len(config.targets) > 0 and test.name not in config.targets:
         print test.name + ' SKIPPING'
         return
 
@@ -440,8 +442,17 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
     # Diff the test output and the expected output
     for i in range(len(test.input_files)):
-        diff_cmd = 'diff ' + os.path.join(test_dir_path, test.compare_files[i]) + \
-                   ' ' + transformed[i]
+        correct_file = os.path.join(test_dir_path, test.compare_files[i])
+
+        if not os.path.isfile(correct_file):
+            sys.stderr.write('Missing file ' + correct_file + '\n')
+            sys.exit(1)
+
+        if not os.path.isfile(transformed[i]):
+            sys.stderr.write('Missing file ' + transformed[i] + '\n')
+            sys.exit(1)
+
+        diff_cmd = 'diff ' + correct_file + ' ' + transformed[i]
         stdout, _, _ = run_cmd(diff_cmd, True)
 
         if len(stdout.strip()) != 0:
@@ -497,7 +508,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     :param config: Configuration information for tests
     :type config: `class` TestConfig
     """
-    if config.target is not None and config.target != test.name:
+    if len(config.targets) > 0 and test.name not in config.targets:
         print test.name + ' SKIPPING'
         return
 

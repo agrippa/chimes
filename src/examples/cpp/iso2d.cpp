@@ -119,6 +119,8 @@ int main( int argc, char *argv[] ) {
         next = curr;
         curr = tmp;
 
+        checkpoint();
+
         update_progress(step + 1);
     }
     double elapsed_s = seconds() - start;
@@ -129,7 +131,6 @@ int main( int argc, char *argv[] ) {
     fprintf(stderr, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
             elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
 
-    checkpoint();
     if (conf.save_text) {
         save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
     }

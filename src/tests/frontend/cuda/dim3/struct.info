@@ -1,2 +1,2 @@
-dim3 x y z dim3 dim3 operator uint3 
+dim3 x y z 
 uint3 x y z 

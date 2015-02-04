@@ -1,4 +1,4 @@
-# 1 "vector_sum.cudafe1.register.cpp"
+# 1 "vector_sum.cudafe1.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -16,7 +16,7 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 2 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "vector_sum.cudafe1.register.cpp" 2
+# 1 "vector_sum.cudafe1.transformed.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26492,7 +26492,7 @@ return (err == (cudaSuccess)) ? cudaBindSurfaceToArray(surf, array, desc) : err;
 # 1617 "/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h"
 }
 # 6 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void init_numdebug(int nstructs, ...);
+extern void init_numdebug();
 # 7 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 # 8 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
@@ -26500,24 +26500,28 @@ extern int get_next_call();
 # 9 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int peek_next_call();
 # 10 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void new_stack(size_t function_id, int n_local_arg_aliases, int n_contains_mappings, ...);
-# 12 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void new_stack(int n_local_arg_aliases, ...);
+# 11 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
 # 13 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void rm_stack(bool has_return_alias, size_t returned_alias);
+# 14 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 16 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern int alias_group_changed(int ngroups, ...);
 # 17 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 19 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
+extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
 # 20 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void free_wrapper(void * ptr, size_t group);
+extern int alias_group_changed(int ngroups, ...);
+# 21 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
+# 23 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
 # 24 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void free_wrapper(void * ptr, size_t group);
+# 28 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 30 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 29 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
@@ -26776,7 +26780,7 @@ void kernel(int *A, int *B, int *C, int N) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 int main(int argc, char **argv) {
 # 21 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-init_numdebug(0); new_stack(10983886093799450781UL, 2, 23, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL, 3617489850581581679UL, 8543576809224315440UL, 4214516574885722508UL, 13629438911791803140UL, 4713364512689004448UL, 12432285355704167318UL, 5956854469140494953UL, 16245677267113222671UL, 6323303540388583539UL, 9877773167732901613UL, 7089989472930211505UL, 13930679126207712666UL, 7229261624878550433UL, 9877773167732901613UL, 7696593959710208457UL, 9877773167732901613UL, 8312944838440117739UL, 6337771489180023308UL, 8315622109923704320UL, 8543576809224315441UL, 10918912294913350599UL, 143077629906096616UL, 11788121732272334146UL, 13930679126207712667UL, 12535508970847451762UL, 15259509928453863544UL, 13034356908650733702UL, 12461144288208489700UL, 13956057025417141307UL, 4403095807090434764UL, 14824238800785570000UL, 9833271297019531733UL, 16415294844621594485UL, 4674896959417115766UL, 16486253991614456787UL, 13930679126207712668UL, 17366101664949010654UL, 8543576809224315439UL, 17598384809721362943UL, 16362704626186430450UL, 17834006590498585836UL, 9877773167732901613UL, 18097232747524644883UL, 16911790603234953566UL); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); cudaError_t error;
+init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); cudaError_t error;
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; }
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -27680,3 +27684,11 @@ static void __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762(void) { __cu
 # 2 "vector_sum.cudafe1.stub.c" 2
 # 1 "vector_sum.cudafe1.stub.c"
 
+
+
+static int module_init() {
+    init_module(10983886093799450781UL, 23, 7, 7229261624878550433UL, 9877773167732901613UL, 10918912294913350599UL, 143077629906096616UL, 4713364512689004448UL, 12432285355704167318UL, 6323303540388583539UL, 9877773167732901613UL, 17366101664949010654UL, 8543576809224315439UL, 5956854469140494953UL, 16245677267113222671UL, 16415294844621594485UL, 4674896959417115766UL, 3617489850581581679UL, 8543576809224315440UL, 14824238800785570000UL, 9833271297019531733UL, 12535508970847451762UL, 15259509928453863544UL, 7089989472930211505UL, 13930679126207712666UL, 17834006590498585836UL, 9877773167732901613UL, 16486253991614456787UL, 13930679126207712668UL, 18097232747524644883UL, 16911790603234953566UL, 7696593959710208457UL, 9877773167732901613UL, 8312944838440117739UL, 6337771489180023308UL, 17598384809721362943UL, 16362704626186430450UL, 11788121732272334146UL, 13930679126207712667UL, 4214516574885722508UL, 13629438911791803140UL, 8315622109923704320UL, 8543576809224315441UL, 1388457574958923572UL, 18293662412874621885UL, 13034356908650733702UL, 12461144288208489700UL, 13956057025417141307UL, 4403095807090434764UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
+    return 0;
+}
+
+static int __libnumdebug_module_init = module_init();

@@ -3,14 +3,18 @@
 
 #include <stddef.h>
 
-extern void init_numdebug(int nstructs, ...);
+extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(size_t function_id, int n_local_arg_aliases,
-        int n_contains_mappings, ...);
+extern void new_stack(int n_local_arg_aliases, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
+        ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);

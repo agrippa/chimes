@@ -2,7 +2,10 @@
 
 set -e
 
-INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info"
+script_dir="$(dirname $0)"
+source ${script_dir}/common.sh
+
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 KEEP=0
 COMPILE=0
 INPUTS=()
@@ -11,17 +14,18 @@ LIB_PATHS=
 LIBS=
 OUTPUT_FILE=a.out
 WORK_DIR=
+VERBOSE=0
 
-while getopts ":kci:I:L:l:o:w:" opt; do
+while getopts ":kci:I:L:l:o:w:v" opt; do
     case $opt in 
         i)
-            INPUTS+=(${OPTARG})
+            INPUTS+=($(get_absolute_path ${OPTARG}))
             ;;
         I)
-            INCLUDES="${INCLUDES} -I${OPTARG}"
+            INCLUDES="${INCLUDES} -I$(get_absolute_path ${OPTARG})"
             ;;
         L)
-            LIB_PATHS="${LIB_PATHS} -L${OPTARG}"
+            LIB_PATHS="${LIB_PATHS} -L$(get_absolute_path ${OPTARG})"
             ;;
         l)
             LIBS="${LIBS} -l${OPTARG}"
@@ -38,6 +42,9 @@ while getopts ":kci:I:L:l:o:w:" opt; do
         o)
             OUTPUT_FILE=${OPTARG}
             ;;
+        v)
+            VERBOSE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -50,7 +57,7 @@ while getopts ":kci:I:L:l:o:w:" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cuda.sh [-k] [-I include-path] [-l libname] [-L lib-path] -i input.cu
+    echo usage: compile_cuda.sh [-c] [-k] [-I include-path] [-l libname] [-L lib-path] [-v] -i input.cu
     exit 1
 fi
 
@@ -89,6 +96,7 @@ COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
+MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
 
 CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log
 ENV_FILE=${COMPILE_HELPER_WORK_DIR}/log.env
@@ -161,26 +169,34 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -k ${INFO_FILE_PREFIX}.call.info \
             -x ${INFO_FILE_PREFIX}.exit.info \
             -r ${INFO_FILE_PREFIX}.reachable.info \
+            -o ${INFO_FILE_PREFIX}.module.info \
             -w ${NVCC_WORK_DIR} \
             -c true \
             ${INTERMEDIATE_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES}
 
-    LAST_FILE=$(basename ${INTERMEDIATE_FILE})
-    EXT="${LAST_FILE##*.}"
-    NAME="${LAST_FILE%.*}"
-    LAST_FILE=${NAME}.register.${EXT}
+    TRANSFORMED_FILE=$(basename ${INTERMEDIATE_FILE})
+    EXT="${TRANSFORMED_FILE##*.}"
+    NAME="${TRANSFORMED_FILE%.*}"
+    TRANSFORMED_FILE=${NAME}.register.${EXT}
+    FINAL_FILE=${NAME}.transformed.${EXT}
 
-    echo Postprocessing ${LAST_FILE}
+    echo Setting up module initialization for ${TRANSFORMED_FILE}
+    cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} ${TRANSFORMED_FILE} ${FINAL_FILE} \
+        ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
+        ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
+
+    echo Postprocessing ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && g++ -E -I${CUDA_HOME}/include -include stddef.h \
-        ${LAST_FILE} -o ${LAST_FILE}.post && mv ${LAST_FILE}.post ${LAST_FILE}
+        ${FINAL_FILE} -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
 
-    LAST_FILE=$(dirname ${INTERMEDIATE_FILE})/${LAST_FILE}
 
-    LAST_FILES+=($LAST_FILE)
+    FINAL_FILE=$(dirname ${INTERMEDIATE_FILE})/${FINAL_FILE}
+
+    LAST_FILES+=($FINAL_FILE)
     OBJ_FILES+=($OBJ_FILE)
 
-    cp ${LAST_FILE} ${INTERMEDIATE_FILE}
+    cp ${FINAL_FILE} ${INTERMEDIATE_FILE}
     cat ${ENV_FILE} ${POST_CMD_FILE} > ${ENV_POST_FILE}
     chmod +x ${ENV_POST_FILE}
     cd ${NVCC_WORK_DIR} && ${ENV_POST_FILE}

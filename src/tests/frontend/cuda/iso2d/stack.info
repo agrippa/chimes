@@ -54,14 +54,14 @@
 /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu fwd_kernel|__cuda_5|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu fwd_kernel|__cuda_6|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu fwd_kernel|__cuda_7|0 " i32 " 32 0 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par0|0 " float* " 64 1 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par1|0 " float* " 64 1 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par2|0 " float* " 64 1 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par3|0 " float* " 64 1 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par4|0 " i32 " 32 0 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par5|0 " i32 " 32 0 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par6|0 " i32 " 32 0 0 
-/tmp/numdebug.95GPSx/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par7|0 " i32 " 32 0 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par0|0 " float* " 64 1 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par1|0 " float* " 64 1 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par2|0 " float* " 64 1 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par3|0 " float* " 64 1 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par4|0 " i32 " 32 0 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par5|0 " i32 " 32 0 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par6|0 " i32 " 32 0 0 
+/tmp/numdebug.afvV2b/nvcc/iso2d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiii|__par7|0 " i32 " 32 0 0 
 /Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h cudaLaunch<char>|func|0 " i8* " 64 1 0 
 iso2d.cudafe1.stub.c __sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad|callback_fp|0 " void (i8**)* " 64 1 0 
 iso2d.cudafe1.stub.c __nv_cudaEntityRegisterCallback|__T23|0 " i8** " 64 1 0 

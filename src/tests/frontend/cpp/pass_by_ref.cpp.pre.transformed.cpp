@@ -1,4 +1,4 @@
-# 1 "pass_by_ref.cpp.pre.register.cpp"
+# 1 "pass_by_ref.cpp.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -16,7 +16,7 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 2 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "pass_by_ref.cpp.pre.register.cpp" 2
+# 1 "pass_by_ref.cpp.pre.transformed.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,14 +33,18 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
-extern void init_numdebug(int nstructs, ...);
+extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(size_t function_id, int n_local_arg_aliases,
-        int n_contains_mappings, ...);
+extern void new_stack(int n_local_arg_aliases, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
+        ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern int alias_group_changed(int ngroups, ...);
@@ -48,7 +52,7 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 29 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 2 "<command line>" 2
 # 1 "/Users/jmg3/install/llvm-build/Debug+Asserts/bin/../lib/clang/3.5.1/include/stddef.h" 1 3 4
@@ -1703,7 +1707,15 @@ extern void wait_for_checkpoint();
 extern void foo(int *A);
 
 int main(int argc, char **argv) {
-    init_numdebug(0); new_stack(12387876047547725256UL, 2, 1, (size_t)(0UL), (size_t)(18293662412874621885UL), 1388457574958923572UL, 18293662412874621885UL); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int b; register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp", 9); exit(1); } } }
+    init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int b; register_stack_var("main|b|0", "i32", (void *)(&b), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { fprintf(__stderrp, "Unknown label %d at %s:%d\n", dst, "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp", 9); exit(1); } } }
     alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(2394767282369806426UL)); foo(&b);
     rm_stack(false, 0UL); return b;
 }
+
+
+static int module_init() {
+    init_module(12387876047547725256UL, 1, 0, 1388457574958923572UL, 18293662412874621885UL);
+    return 0;
+}
+
+static int __libnumdebug_module_init = module_init();

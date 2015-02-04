@@ -154,8 +154,6 @@ void init_progress(int length, int goal, int disabled) {
         exit(1);
     }
 
-    fprintf(stderr, "PROGRESS_DISABLED = %d\n", disabled);
-
     progress_disabled = disabled;
 
     if (disabled) return;
