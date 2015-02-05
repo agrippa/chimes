@@ -825,15 +825,14 @@ void free_helper(void *ptr) {
                 in_heap->second);
     assert(in_alias_to_heap != alias_to_heap[group]->end());
 
+    vector<heap_allocation *> *seq_allocs = heap_sequence_groups[seq];
     vector<heap_allocation *>::iterator in_heap_sequence_groups =
-        std::find(heap_sequence_groups[seq]->begin(),
-                heap_sequence_groups[seq]->end(), in_heap->second);
-    assert(in_heap_sequence_groups != heap_sequence_groups[seq]->end());
+        std::find(seq_allocs->begin(), seq_allocs->end(), in_heap->second);
+    assert(in_heap_sequence_groups != seq_allocs->end());
 
     heap.erase(in_heap);
     alias_to_heap[group]->erase(in_alias_to_heap);
 
-    vector<heap_allocation *> *seq_allocs = heap_sequence_groups[seq];
     seq_allocs->erase(in_heap_sequence_groups);
     if (seq_allocs->empty()) {
         heap_sequence_groups.erase(seq);
