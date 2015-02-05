@@ -6,9 +6,8 @@ script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 
 KEEP=0
+PROFILE=0
 INPUTS=()
-# CU_INPUTS=()
-# CPP_INPUTS=()
 OBJ_FILES=()
 LAST_FILES=()
 INCLUDES=
@@ -20,7 +19,7 @@ LINK_LIBS=
 OUTPUT_FILE=a.out
 VERBOSE=0
 
-while getopts ":ki:I:L:l:vo:" opt; do
+while getopts ":ki:I:L:l:vo:p" opt; do
     case $opt in 
         i)
             INPUTS+=(${OPTARG})
@@ -46,6 +45,9 @@ while getopts ":ki:I:L:l:vo:" opt; do
         v)
             VERBOSE=1
             ;;
+        p)
+            PROFILE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -61,12 +63,13 @@ WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile.sh [-k] [-I include-path] [-l libname] [-L lib-path] [-o output] -i input.cpp/cu
+    echo usage: compile.sh [-k] [-v] [-p] [-I include-path] [-l libname] [-L lib-path] [-o output] -i input.cpp/cu
     exit 1
 fi
 
 COMPILER_FLAGS="${INCLUDES} ${LIB_PATHS} ${LIBS}"
 [[ ! $VERBOSE ]] || COMPILER_FLAGS="${COMPILER_FLAGS} -v"
+[[ ! $PROFILE ]] || COMPILER_FLAGS="${COMPILER_FLAGS} -p"
 
 for INPUT in ${INPUTS[@]}; do
     BASENAME=$(basename ${INPUT})

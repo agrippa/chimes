@@ -7,6 +7,7 @@ source ${script_dir}/common.sh
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 KEEP=0
+PROFILE=0
 COMPILE=0
 INPUTS=()
 INCLUDES=
@@ -16,7 +17,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 
-while getopts ":kci:I:L:l:o:w:v" opt; do
+while getopts ":kci:I:L:l:o:w:vp" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -45,6 +46,9 @@ while getopts ":kci:I:L:l:o:w:v" opt; do
         v)
             VERBOSE=1
             ;;
+        p)
+            PROFILE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -57,7 +61,7 @@ while getopts ":kci:I:L:l:o:w:v" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cuda.sh [-c] [-k] [-I include-path] [-l libname] [-L lib-path] [-v] -i input.cu
+    echo usage: compile_cuda.sh [-c] [-k] [-p] [-v] [-I include-path] [-l libname] [-L lib-path] -i input.cu
     exit 1
 fi
 
@@ -103,6 +107,9 @@ TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
 NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
 
+GXX_FLAGS="-g -O0 ${INCLUDES}"
+[[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
+
 CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log
 ENV_FILE=${COMPILE_HELPER_WORK_DIR}/log.env
 PRE_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.pre
@@ -118,9 +125,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
     printf 'Compiling with nvcc...'
     cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
               --pre-include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
-              -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} \
+              -I${NUM_DEBUG_HOME}/src/libnumdebug ${GXX_FLAGS} \
               -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug --verbose --keep \
-              --compile -g ${NUMDEBUG_DEF} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
+              --compile ${NUMDEBUG_DEF} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
     printf 'DONE\n'
     python ${NUM_DEBUG_HOME}/src/preprocessing/compile_helper.py \
@@ -228,8 +235,8 @@ else
 
     g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_LIB_PATH} -lnumdebug \
-            -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} \
-            ${LIBS} -g -O0
+            -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${LIB_PATHS} \
+            ${LIBS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

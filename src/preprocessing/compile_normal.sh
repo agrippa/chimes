@@ -7,6 +7,7 @@ source ${script_dir}/common.sh
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 KEEP=0
+PROFILE=0
 COMPILE=0
 INPUTS=()
 INCLUDES=
@@ -16,7 +17,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 
-while getopts ":kci:I:L:l:o:w:v" opt; do
+while getopts ":kci:I:L:l:o:w:vp" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -45,6 +46,9 @@ while getopts ":kci:I:L:l:o:w:v" opt; do
         v)
             VERBOSE=1
             ;;
+        p)
+            PROFILE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -57,7 +61,7 @@ while getopts ":kci:I:L:l:o:w:v" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cpp.sh [-c] [-k] [-I include-path] [-l libname] [-L lib-path] [-v] -i input.cpp
+    echo usage: compile_normal.sh [-c] [-k] [-v] [-p] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
     exit 1
 fi
 
@@ -90,13 +94,16 @@ if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
 fi
 
+GXX_FLAGS="${INCLUDES} -g -O0"
+[[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
+
 for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILE=${INPUT}.o
 
     LAST_FILES+=($INPUT)
     OBJ_FILES+=($OBJ_FILE)
 
-    g++ --compile ${INPUT} -o ${OBJ_FILE} ${INCLUDES} -g -O0
+    g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"
@@ -118,8 +125,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} \
-        ${LIBS} -g -O0
+    g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
