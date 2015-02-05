@@ -27,7 +27,7 @@ ${NUMDEBUG_CPP_LIB}: ${SRC}
 
 ${NUMDEBUG_LIB}: ${SRC} libnumdebug_cuda.o
 	${GXX} ${GXX_FLAGS} -shared ${SRC} libnumdebug_cuda.o -o ${NUMDEBUG_LIB} \
-        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} -lcudart -D__NUMDEBUG_PROFILE
+        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} -lcudart
 
 libnumdebug_cuda.o: libnumdebug_cuda.cu
 	${NVCC} ${NVCC_FLAGS} --compile libnumdebug_cuda.cu -o libnumdebug_cuda.o -DCUDA_SUPPORT
