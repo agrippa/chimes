@@ -7,6 +7,7 @@ source ${script_dir}/common.sh
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 KEEP=0
+PROFILE=0
 COMPILE=0
 INPUTS=()
 INCLUDES=
@@ -16,7 +17,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 
-while getopts ":kci:I:L:l:o:w:v" opt; do
+while getopts ":kci:I:L:l:o:w:vp" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -45,6 +46,9 @@ while getopts ":kci:I:L:l:o:w:v" opt; do
         v)
             VERBOSE=1
             ;;
+        p)
+            PROFILE=1
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -57,7 +61,7 @@ while getopts ":kci:I:L:l:o:w:v" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cpp.sh [-c] [-k] [-I include-path] [-l libname] [-L lib-path] [-v] -i input.cpp
+    echo usage: compile_cpp.sh [-c] [-k] [-p] [-v] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
     exit 1
 fi
 
@@ -95,6 +99,9 @@ CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
 NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
+
+GXX_FLAGS="-g -O0 ${INCLUDES}"
+[[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 echo WORK_DIR = $WORK_DIR
 
@@ -183,7 +190,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${INCLUDES} -g -O0 ${NUMDEBUG_DEF}
+        -o ${OBJ_FILE} ${GXX_FLAGS} ${NUMDEBUG_DEF}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"
@@ -207,7 +214,7 @@ else
 
     g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
-            -o ${OUTPUT} ${INCLUDES} ${LIB_PATHS} ${LIBS} -g -O0
+            -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
