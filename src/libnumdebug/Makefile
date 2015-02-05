@@ -4,7 +4,7 @@ GXX_FLAGS=-g -fPIC -Wall
 NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20
 SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
     global_serialization.cpp numdebug_stack.cpp heap_allocation.cpp \
-    type_info.cpp serialization_common.cpp
+    type_info.cpp serialization_common.cpp perf_profile.cpp
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
@@ -27,7 +27,7 @@ ${NUMDEBUG_CPP_LIB}: ${SRC}
 
 ${NUMDEBUG_LIB}: ${SRC} libnumdebug_cuda.o
 	${GXX} ${GXX_FLAGS} -shared ${SRC} libnumdebug_cuda.o -o ${NUMDEBUG_LIB} \
-        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} -lcudart
+        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} -lcudart -D__NUMDEBUG_PROFILE
 
 libnumdebug_cuda.o: libnumdebug_cuda.cu
 	${NVCC} ${NVCC_FLAGS} --compile libnumdebug_cuda.cu -o libnumdebug_cuda.o -DCUDA_SUPPORT
