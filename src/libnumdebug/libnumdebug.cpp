@@ -445,6 +445,8 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
                     e = new_groups->end(); i != e; i++) {
                 aliased_groups[*i] = new_groups;
             }
+
+            delete existing1; delete existing2;
         }
     } else if (existing1 != NULL) {
         // alias2 is missing
@@ -480,7 +482,17 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
         char *struct_name = va_arg(vl, char *);
         int nfields = va_arg(vl, int);
         string struct_name_str(struct_name);
-        structs[struct_name_str] = new std::vector<int>();
+        /*
+         * We may receive struct information from multiple modules, resulting in
+         * repeated inserts of the same struct definition. We use the first
+         * definition to insert an entry into structs, and then check all future
+         * definitions against it.
+         */
+        bool insert_new = false;
+        if (structs.find(struct_name_str) == structs.end()) {
+            insert_new = true;
+            structs[struct_name_str] = new std::vector<int>();
+        }
 
 #ifdef VERBOSE
         fprintf(stderr, "struct %s offsets:", struct_name_str.c_str());
@@ -489,7 +501,11 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
         for (int j = 0; j < nfields; j++) {
             int offset = va_arg(vl, int);
             assert(offset >= 0);
-            structs[struct_name_str]->push_back(offset);
+            if (insert_new) {
+                structs[struct_name_str]->push_back(offset);
+            } else {
+                assert(structs[struct_name_str]->at(j) == offset);
+            }
 #ifdef VERBOSE
             fprintf(stderr, " %d", offset);
 #endif
@@ -608,7 +624,8 @@ int get_next_call() {
 }
 
 static stack_var *get_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, va_list vl) {
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        va_list vl) {
     // Basic checks in case the code generation breaks
     assert(is_ptr == 0 || is_ptr == 1);
     assert(is_struct == 0 || is_struct == 1);
@@ -636,6 +653,12 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
+    // Skip the expensive stack var creation if we can
+    if (program_stack.back()->stack_var_exists(std::string(mangled_name),
+                ptr)) {
+        return;
+    }
+
     va_list vl;
     va_start(vl, n_ptr_fields);
     stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
@@ -809,9 +832,12 @@ void free_helper(void *ptr) {
 
     heap.erase(in_heap);
     alias_to_heap[group]->erase(in_alias_to_heap);
-    heap_sequence_groups[seq]->erase(in_heap_sequence_groups);
-    if (heap_sequence_groups[seq]->empty()) {
+
+    vector<heap_allocation *> *seq_allocs = heap_sequence_groups[seq];
+    seq_allocs->erase(in_heap_sequence_groups);
+    if (seq_allocs->empty()) {
         heap_sequence_groups.erase(seq);
+        delete seq_allocs;
     }
 }
 
@@ -1262,6 +1288,13 @@ void *checkpoint_func(void *data) {
 
     close(fd);
     free(stack_serialized);
+    free(globals_serialized);
+    for (vector<heap_allocation *>::iterator heap_iter =
+            heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
+            heap_iter != heap_end; heap_iter++) {
+        heap_allocation *curr = *heap_iter;
+        delete curr;
+    }
     delete heap_to_checkpoint;
     delete ctx->stack_tracker;
     free(ctx);

@@ -13,7 +13,16 @@ class stack_frame {
         map<string, stack_var *> locals;
     public:
         stack_frame() { }
+        ~stack_frame() {
+            for (map<string, stack_var *>::iterator i = locals.begin(),
+                    e = locals.end(); i != e; i++) {
+                stack_var *var = i->second;
+                delete var;
+            }
+        }
+
         void add_stack_var(stack_var *var);
+        bool stack_var_exists(std::string name, void *address);
 
         typedef map<string, stack_var *>::iterator iterator;
         typedef map<string, stack_var *>::const_iterator const_iterator;
