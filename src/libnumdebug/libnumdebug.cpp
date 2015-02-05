@@ -17,6 +17,10 @@
 #include "libnumdebug_cuda.h"
 #endif
 
+#ifdef __NUMDEBUG_PROFILE
+#include "perf_profile.h"
+#endif
+
 #include "numdebug_common.h"
 #include "stack_var.h"
 #include "stack_frame.h"
@@ -72,6 +76,18 @@ static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
+
+#ifdef __NUMDEBUG_PROFILE
+enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
+    INIT_MODULE, REGISTER_GLOBAL_VAR, ALIAS_GROUP_CHANGED, MALLOC_WRAPPER,
+    REALLOC_WRAPPER, FREE_WRAPPER, N_LABELS };
+static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
+    "register_stack_var", "calling", "init_module", "register_global_var",
+    "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
+    "free_wrapper" };
+
+perf_profile pp(PROFILE_LABELS, N_LABELS);
+#endif
 
 static vector<stack_frame *> *unpacked_program_stack;
 static map<std::string, stack_var *> *unpacked_global_vars;
@@ -460,6 +476,9 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(INIT_MODULE);
+#endif
 
     bool replay = (getenv("NUMDEBUG_CHECKPOINT_FILE") != NULL);
     va_list vl;
@@ -513,9 +532,16 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
     }
 
     va_end(vl);
+
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(INIT_MODULE);
+#endif
 }
 
 void new_stack(unsigned int n_local_arg_aliases, ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(NEW_STACK);
+#endif
     assert(program_stack.size() == 0 || calling_lbl >= 0);
     if (calling_lbl >= 0) {
         stack_tracker.push(calling_lbl);
@@ -557,9 +583,15 @@ void new_stack(unsigned int n_local_arg_aliases, ...) {
 #ifdef VERBOSE
     fprintf(stderr, "Incrementing stack depth to %d\n", stack_nesting);
 #endif
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(NEW_STACK);
+#endif
 }
 
 void calling(int lbl, size_t set_return_alias, int naliases, ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(CALLING);
+#endif
     calling_lbl = lbl;
 
     return_alias = set_return_alias;
@@ -579,9 +611,15 @@ void calling(int lbl, size_t set_return_alias, int naliases, ...) {
     }
     fprintf(stderr, "\n");
 #endif
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(CALLING);
+#endif
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(RM_STACK);
+#endif
     stack_frame *curr = program_stack.back();
     program_stack.pop_back();
     delete curr;
@@ -611,6 +649,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 #endif
         exit(55);
     }
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(RM_STACK);
+#endif
 }
 
 int peek_next_call() {
@@ -653,24 +694,32 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 void register_stack_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(REGISTER_STACK_VAR);
+#endif
     // Skip the expensive stack var creation if we can
-    if (program_stack.back()->stack_var_exists(std::string(mangled_name),
+    if (!program_stack.back()->stack_var_exists(std::string(mangled_name),
                 ptr)) {
-        return;
+
+        va_list vl;
+        va_start(vl, n_ptr_fields);
+        stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
+                is_struct, n_ptr_fields, vl);
+        va_end(vl);
+
+        program_stack.back()->add_stack_var(new_var);
     }
-
-    va_list vl;
-    va_start(vl, n_ptr_fields);
-    stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
-            is_struct, n_ptr_fields, vl);
-    va_end(vl);
-
-    program_stack.back()->add_stack_var(new_var);
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(REGISTER_STACK_VAR);
+#endif
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(REGISTER_GLOBAL_VAR);
+#endif
     va_list vl;
     va_start(vl, n_ptr_fields);
     stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
@@ -680,9 +729,16 @@ void register_global_var(const char *mangled_name, const char *full_type,
     std::string mangled_name_str(mangled_name);
     assert(global_vars.find(mangled_name_str) == global_vars.end());
     global_vars[mangled_name_str] = new_var;
+
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(REGISTER_GLOBAL_VAR);
+#endif
 }
 
 int alias_group_changed(int ngroups, ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(ALIAS_GROUP_CHANGED);
+#endif
     va_list vl;
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
@@ -701,6 +757,9 @@ int alias_group_changed(int ngroups, ...) {
         }
     }
     va_end(vl);
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(ALIAS_GROUP_CHANGED);
+#endif
     return 0;
 }
 
@@ -749,6 +808,9 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  */
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(MALLOC_WRAPPER);
+#endif
     assert(valid_group(group));
 
     void *ptr = malloc(nbytes);
@@ -766,10 +828,16 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
                 info.ptr_field_offsets, info.n_ptr_fields);
     }
 
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(MALLOC_WRAPPER);
+#endif
     return ptr;
 }
 
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(REALLOC_WRAPPER);
+#endif
     assert(valid_group(group));
 
     void *new_ptr = realloc(ptr, nbytes);
@@ -811,6 +879,9 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
         }
     }
 
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(REALLOC_WRAPPER);
+#endif
     return new_ptr;
 }
 
@@ -849,12 +920,18 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 }
 
 void free_wrapper(void *ptr, size_t group) {
+#ifdef __NUMDEBUG_PROFILE
+    pp.start_timer(FREE_WRAPPER);
+#endif
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     size_t original_group = in_heap->second->get_alias_group();
     assert(aliased(original_group, group));
 
     free_helper(ptr);
     free(ptr);
+#ifdef __NUMDEBUG_PROFILE
+    pp.stop_timer(FREE_WRAPPER);
+#endif
 }
 
 typedef struct _checkpoint_thread_ctx {
@@ -1321,4 +1398,7 @@ void onexit() {
 #endif
     }
     pthread_mutex_unlock(&checkpoint_mutex);
+#ifdef __NUMDEBUG_PROFILE
+    fprintf(stderr, "%s\n", pp.tostr().c_str());
+#endif
 }
