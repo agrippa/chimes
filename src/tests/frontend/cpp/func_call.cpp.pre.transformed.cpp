@@ -1714,8 +1714,9 @@ extern void wait_for_checkpoint();
 
 int foo(int a) {
     new_stack(1, (size_t)(0UL)); register_stack_var("foo|a|0", "i32", (void *)(&a), 4, 0, 0, 0); lbl_0: int b; register_stack_var("foo|b|0", "i32", (void *)(&b), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } b = (a);
-      lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { exit(42); } } } c = (a + b);
-    alias_group_changed(3, (size_t)(8933731431696279258UL), (size_t)(10992910250009932515UL), (size_t)(14071540038816566042UL)); rm_stack(false, 0UL); return c;
+      lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } c = (a + b);
+    alias_group_changed(3, (size_t)(8933731431696279258UL), (size_t)(10992910250009932515UL), (size_t)(14071540038816566042UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+    rm_stack(false, 0UL); return c;
 }
 
 int main(int argc, char **argv) {

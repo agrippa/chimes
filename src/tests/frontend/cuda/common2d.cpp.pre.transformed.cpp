@@ -2359,14 +2359,14 @@ extern void setup_config(config *conf, int argc, char **argv);
 
 void save_text(float *field, const int dimx, const int dimy,
         const int ny, const int nx, const char *filename, int radius) {
-    new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); register_stack_var("save_text|field|0", "float*", (void *)(&field), 8, 1, 0, 0); register_stack_var("save_text|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("save_text|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("save_text|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("save_text|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("save_text|filename|0", "i8*", (void *)(&filename), 8, 1, 0, 0); register_stack_var("save_text|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); fp = (fopen(filename, "wb"));
+    new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); FILE *fp; call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); fp = (fopen(filename, "wb"));
     if (alias_group_changed(1, (size_t)(13697246817649382652UL)) || fp == __null) { {
          call_lbl_1: calling(1, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(1686577910018222429UL)); fprintf(__stderrp, "Failed to open output file %s\n", filename);
          call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
 
-    { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( y = (0); y < ny; alias_group_changed(1, (size_t)(8613284754052476370UL)), y++) { {
-        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { exit(42); } } } for ( x = (0); x < nx; alias_group_changed(1, (size_t)(6554105935738823113UL)), x++) { {
+    { int y; for ( y = (0); y < ny; alias_group_changed(1, (size_t)(8613284754052476370UL)), y++) { {
+        { int x; for ( x = (0); x < nx; alias_group_changed(1, (size_t)(6554105935738823113UL)), x++) { {
              call_lbl_3: calling(3, 0UL, 5, (size_t)(1514847738530813435UL), (size_t)(11912630004586522060UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fprintf(fp, "%d %d %.20f\n", y, x,
                     field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
         } } }
@@ -2380,17 +2380,17 @@ void init_data(float *curr, float *next, float *vsq,
                 float *h_coeff, const int dimx, const int dimy,
                 const float dx, const float dt) {
 
-    new_stack(8, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_data|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("init_data|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("init_data|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("init_data|h_coeff|0", "float*", (void *)(&h_coeff), 8, 1, 0, 0); register_stack_var("init_data|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("init_data|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("init_data|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); register_stack_var("init_data|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); { lbl_0: size_t i; register_stack_var("init_data|i|0", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(3193239025367387070UL)), i++) { {
+    new_stack(8, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); { size_t i; for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(3193239025367387070UL)), i++) { {
         vsq[i] = 2500. * 2500. * dt * dt;
     } } }
 
 
-    { lbl_1: size_t i; register_stack_var("init_data|i|1", "i64", (void *)(&i), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(15567591489155420624UL)), i++) { {
+    { size_t i; for ( i = (0); i < dimx * dimy; alias_group_changed(1, (size_t)(15567591489155420624UL)), i++) { {
         curr[i] = next[i] = 0;
     } } }
 
      call_lbl_0: calling(0, 0UL, 5, (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
-      lbl_2: float scale; register_stack_var("init_data|scale|0", "float", (void *)(&scale), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } scale = (1. / (dx * dx));
+     float scale; scale = (1. / (dx * dx));
     h_coeff[0] = -8.541666 * scale;
     h_coeff[1] = 1.600000 * scale;
     h_coeff[2] = -0.200000 * scale;
@@ -2399,14 +2399,14 @@ void init_data(float *curr, float *next, float *vsq,
 rm_stack(false, 0UL); }
 
 void usage(char **argv) {
-    new_stack(1, (size_t)(17206168581473135942UL)); register_stack_var("usage|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); alias_group_changed(1, (size_t)(9299461872755550985UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
+    new_stack(1, (size_t)(17206168581473135942UL)); alias_group_changed(1, (size_t)(9299461872755550985UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
             argv[0]);
      call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
 rm_stack(false, 0UL); }
 
 void default_config(config *conf) {
-    new_stack(1, (size_t)(8084772600074702260UL)); register_stack_var("default_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); conf->nx = 2 * 256;
+    new_stack(1, (size_t)(8084772600074702260UL)); conf->nx = 2 * 256;
     conf->ny = 2 * 256;
     conf->nsteps = 100;
     conf->save_text = 0;
@@ -2422,7 +2422,7 @@ void default_config(config *conf) {
 rm_stack(false, 0UL); }
 
 void setup_config(config *conf, int argc, char **argv) {
-    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } }
+    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); int c;
     opterr = 0;
 
     alias_group_changed(4, (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(18224721594452017849UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);
