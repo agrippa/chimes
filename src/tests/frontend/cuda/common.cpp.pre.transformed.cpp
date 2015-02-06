@@ -2482,46 +2482,46 @@ static int progress_num_ticks = -1;
 static int progress_disabled = 0;
 
 double seconds() {
-    new_stack(0); struct timeval tp;
-     struct timezone tzp;
-     int i; call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); i = (gettimeofday(&tp, &tzp));
+    new_stack(0); lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), 16, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; }
+      lbl_1: struct timezone tzp; register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), 8, 0, 1, 0); if (____numdebug_replaying) { goto lbl_2; }
+      lbl_2: int i; register_stack_var("seconds|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); i = (gettimeofday(&tp, &tzp));
     alias_group_changed(1, (size_t)(1085571792782596357UL)); rm_stack(false, 0UL); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 }
 
 void ricker_wavelet(float *source, int nsteps, float dt, float freq) {
-    new_stack(4, (size_t)(2008721800625821080UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); float shift; shift = (-1.55939996F / freq);
+    new_stack(4, (size_t)(2008721800625821080UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("ricker_wavelet|source|0", "float*", (void *)(&source), 8, 1, 0, 0); register_stack_var("ricker_wavelet|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("ricker_wavelet|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); register_stack_var("ricker_wavelet|freq|0", "float", (void *)(&freq), 4, 0, 0, 0); lbl_0: float shift; register_stack_var("ricker_wavelet|shift|0", "float", (void *)(&shift), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } shift = (-1.55939996F / freq);
 
-    { int i; for ( i = (0); i < nsteps; alias_group_changed(1, (size_t)(8765741491806222420UL)), i++) { {
-         float time; time = (i * dt + shift);
-         float pi_freq_t; pi_freq_t = (3.14151692F * freq * time);
-         float sqr_pi_freq_t; sqr_pi_freq_t = (pi_freq_t * pi_freq_t);
+    { lbl_1: int i; register_stack_var("ricker_wavelet|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( i = (0); i < nsteps; alias_group_changed(1, (size_t)(8765741491806222420UL)), i++) { {
+          lbl_2: float time; register_stack_var("ricker_wavelet|time|0", "float", (void *)(&time), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } time = (i * dt + shift);
+          lbl_3: float pi_freq_t; register_stack_var("ricker_wavelet|pi_freq_t|0", "float", (void *)(&pi_freq_t), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } pi_freq_t = (3.14151692F * freq * time);
+          lbl_4: float sqr_pi_freq_t; register_stack_var("ricker_wavelet|sqr_pi_freq_t|0", "float", (void *)(&sqr_pi_freq_t), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } lbl_5: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } sqr_pi_freq_t = (pi_freq_t * pi_freq_t);
         alias_group_changed(3, (size_t)(1838009110135119624UL), (size_t)(14397346785968559525UL), (size_t)(16659523271239593530UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
     } } }
 rm_stack(false, 0UL); }
 
 void parse_source(char *optarg, source *out) {
-    new_stack(2, (size_t)(4288610876228433544UL), (size_t)(4995672202021001482UL)); char *x_str; x_str = (optarg);
-     char *first_comma; call_lbl_0: calling(0, 6456531717151425942UL, 2, (size_t)(4288610876228433544UL), (size_t)(0UL)); first_comma = (strchr(x_str, ','));
+    new_stack(2, (size_t)(4288610876228433544UL), (size_t)(4995672202021001482UL)); register_stack_var("parse_source|optarg|0", "i8*", (void *)(&optarg), 8, 1, 0, 0); register_stack_var("parse_source|out|0", "%struct._source*", (void *)(&out), 8, 1, 0, 0); lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", "i8*", (void *)(&x_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } x_str = (optarg);
+      lbl_1: char *first_comma; register_stack_var("parse_source|first_comma|0", "i8*", (void *)(&first_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } call_lbl_0: calling(0, 6456531717151425942UL, 2, (size_t)(4288610876228433544UL), (size_t)(0UL)); first_comma = (strchr(x_str, ','));
     if (alias_group_changed(1, (size_t)(7503953869617880805UL)) || first_comma == __null) { {
          call_lbl_1: calling(1, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); fprintf(__stderrp, "Improperly formatted argument to -p, must "
                 "be x,y,f,t\n");
          call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
-     char *y_str; y_str = (first_comma + 1);
-     char *second_comma; call_lbl_3: calling(3, 3277977604394879722UL, 2, (size_t)(6456531717151425942UL), (size_t)(0UL)); second_comma = (strchr(y_str, ','));
+      lbl_2: char *y_str; register_stack_var("parse_source|y_str|0", "i8*", (void *)(&y_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_3; } y_str = (first_comma + 1);
+      lbl_3: char *second_comma; register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_4; } call_lbl_3: calling(3, 3277977604394879722UL, 2, (size_t)(6456531717151425942UL), (size_t)(0UL)); second_comma = (strchr(y_str, ','));
     if (alias_group_changed(1, (size_t)(1387191059008098409UL)) || second_comma == __null) { {
          call_lbl_4: calling(4, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); fprintf(__stderrp, "Improperly formatted argument to -p, must "
                 "be x,y,f,t\n");
          call_lbl_5: calling(5, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
-     char *freq_str; freq_str = (second_comma + 1);
-     char *third_comma; call_lbl_6: calling(6, 8132302032623108198UL, 2, (size_t)(3277977604394879722UL), (size_t)(0UL)); third_comma = (strchr(freq_str, ','));
+      lbl_4: char *freq_str; register_stack_var("parse_source|freq_str|0", "i8*", (void *)(&freq_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } freq_str = (second_comma + 1);
+      lbl_5: char *third_comma; register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } call_lbl_6: calling(6, 8132302032623108198UL, 2, (size_t)(3277977604394879722UL), (size_t)(0UL)); third_comma = (strchr(freq_str, ','));
     if (alias_group_changed(1, (size_t)(11007132437992599952UL)) || third_comma == __null) { {
          call_lbl_7: calling(7, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); fprintf(__stderrp, "Improperly formatted argument to -p, must "
                 "be x,y,f,t\n");
          call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
-     char *time_str; time_str = (third_comma + 1);
+      lbl_6: char *time_str; register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } lbl_7: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { exit(42); } } } time_str = (third_comma + 1);
     *first_comma = '\0';
     *second_comma = '\0';
     *third_comma = '\0';
@@ -2533,7 +2533,7 @@ void parse_source(char *optarg, source *out) {
 rm_stack(false, 0UL); }
 
 void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
-    new_stack(5, (size_t)(9285280766920217948UL), (size_t)(2685576284420924090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (alias_group_changed(5, (size_t)(6406781234504566915UL), (size_t)(8522629736461562909UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16642833800444842057UL)) || *nsrcs == 0) { {
+    new_stack(5, (size_t)(9285280766920217948UL), (size_t)(2685576284420924090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("config_sources|srcs|0", "%struct._source**", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("config_sources|nsrcs|0", "i32*", (void *)(&nsrcs), 8, 1, 0, 0); register_stack_var("config_sources|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("config_sources|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("config_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); if (alias_group_changed(5, (size_t)(6406781234504566915UL), (size_t)(8522629736461562909UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16642833800444842057UL)) || *nsrcs == 0) { {
         *srcs = (source *)malloc_wrapper(sizeof(source), 2752442294988640373UL, 0, 1, (int)sizeof(struct _source), 0);
         if (alias_group_changed(1, (size_t)(9285280766920217948UL)) || *srcs == __null) { {
              call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
@@ -2547,8 +2547,8 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
     } }
 
 
-    { int i; for ( i = (0); i < *nsrcs; alias_group_changed(1, (size_t)(16182187182034189366UL)), i++) { {
-         source *curr; curr = ((*srcs) + i);
+    { lbl_0: int i; register_stack_var("config_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( i = (0); i < *nsrcs; alias_group_changed(1, (size_t)(16182187182034189366UL)), i++) { {
+          lbl_1: source *curr; register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { exit(42); } } } curr = ((*srcs) + i);
         if (alias_group_changed(1, (size_t)(7374354779439216353UL)) || curr->x < 0 || curr->x >= nx) { {
              call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(3128876572329368717UL)); fprintf(__stderrp, "Invalid x value for source\n");
              call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2565,13 +2565,13 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
 rm_stack(false, 0UL); }
 
 float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
-    new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0));
+    new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0));
     if (alias_group_changed(1, (size_t)(14632242022306526605UL)) || src_samples == __null) { {
          call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
 
-    { int i; for ( i = (0); i < nsrcs; alias_group_changed(1, (size_t)(17866036073706292390UL)), i++) { {
+    { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { exit(42); } } } for ( i = (0); i < nsrcs; alias_group_changed(1, (size_t)(17866036073706292390UL)), i++) { {
         src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 16455452247920468155UL, 0, 0);
         if (alias_group_changed(1, (size_t)(17386119534690992797UL)) || src_samples[i] == __null) { {
              call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
@@ -2583,7 +2583,7 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
 }
 
 void init_progress(int length, int goal, int disabled) {
-    new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); int i;
+    new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_progress|length|0", "i32", (void *)(&length), 4, 0, 0, 0); register_stack_var("init_progress|goal|0", "i32", (void *)(&goal), 4, 0, 0, 0); register_stack_var("init_progress|disabled|0", "i32", (void *)(&disabled), 4, 0, 0, 0); lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { exit(42); } } }
     if (alias_group_changed(3, (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL)) || progress_buffer != __null) { {
          call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1701980738252910445UL)); fprintf(__stderrp, "Progress initialized multiple times\n");
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
@@ -2616,7 +2616,7 @@ void init_progress(int length, int goal, int disabled) {
 rm_stack(false, 0UL); }
 
 void update_progress(int progress) {
-    new_stack(1, (size_t)(0UL)); int i;
+    new_stack(1, (size_t)(0UL)); register_stack_var("update_progress|progress|0", "i32", (void *)(&progress), 4, 0, 0, 0); lbl_0: int i; register_stack_var("update_progress|i|0", "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; }
 
     if (alias_group_changed(1, (size_t)(7452125661963734140UL)) || progress_disabled) { {
         rm_stack(false, 0UL); return;
@@ -2628,8 +2628,8 @@ void update_progress(int progress) {
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
 
-     double perc_progress; perc_progress = ((double)progress / (double)progress_goal);
-     int ticks; ticks = ((int)(perc_progress * progress_length));
+      lbl_1: double perc_progress; register_stack_var("update_progress|perc_progress|0", "double", (void *)(&perc_progress), 8, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } perc_progress = ((double)progress / (double)progress_goal);
+      lbl_2: int ticks; register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { exit(42); } } } ticks = ((int)(perc_progress * progress_length));
     if (alias_group_changed(2, (size_t)(11152286784634729525UL), (size_t)(16155725638166610324UL)) || ticks > progress_length) { {
         ticks = progress_length;
     } }
