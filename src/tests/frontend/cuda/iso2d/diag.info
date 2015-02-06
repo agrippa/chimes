@@ -108,6 +108,14 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 80 59 rm_stack(false
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 104 59 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 179 59 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2 new_stack(8, (size_t)(9871466261360856280UL), (size_t)(9871466261360856281UL), (size_t)(9871466261360856282UL), (size_t)(9871466261360856283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_0|0", "float*", (void *)(&__cuda_0), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_1|0", "float*", (void *)(&__cuda_1), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_2|0", "float*", (void *)(&__cuda_2), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_3|0", "float*", (void *)(&__cuda_3), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_4|0", "i32", (void *)(&__cuda_4), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_5|0", "i32", (void *)(&__cuda_5), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_6|0", "i32", (void *)(&__cuda_6), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2  register_stack_var("fwd_kernel|__cuda_7|0", "i32", (void *)(&__cuda_7), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 65 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 68 1 init_numdebug(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 68 226  config conf; 

@@ -134,9 +134,9 @@ namespace {
                 Module &M);
         void dumpStructInfoToFile(const char *filename, std::map<std::string,
                 std::vector<std::string>> *struct_fields);
-        bool isCallToCheckpoint(CallInst *call);
-        bool callsCheckpoint(Function *F);
-        CALLS_CHECKPOINT callsCheckpointHelper(Function *F,
+        bool isCheckpoint(Function *callee);
+        CALLS_CHECKPOINT mayCreateCheckpoint(Function *F);
+        CALLS_CHECKPOINT mayCreateCheckpointHelper(Function *F,
                 std::set<Instruction *> *visited);
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
         std::string *get_unique_varname(std::string varname, Function *F,
@@ -695,10 +695,14 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
              * basic block so that a callee that calls checkpoint() knows to
              * checkpoint that state.
              */
-            assert(maxline != -1);
-            if (groups->size() > 0) {
-                unionGroups(maxline, maxcol, filename, groups);
-                groups = new std::set<size_t>();
+            CallInst *call = dyn_cast<CallInst>(curr_inst);
+            Function *callee = call->getCalledFunction();
+            if (mayCreateCheckpoint(callee) != DOES_NOT) {
+                assert(maxline != -1);
+                if (groups->size() > 0) {
+                    unionGroups(maxline, maxcol, filename, groups);
+                    groups = new std::set<size_t>();
+                }
             }
         }
     }
@@ -777,57 +781,58 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
     fclose(fp);
 }
 
-bool Play::isCallToCheckpoint(CallInst *call) {
-    Function *callee = call->getCalledFunction();
-    /*
-     * Callee may be null in cases where we are calling a function via a
-     * function pointer. In these cases, we have to be conservative and don't
-     * really know if the calling function is checkpoint() or a function that
-     * calls checkpoint.
-     *
-     * TODO enable this to default to false with an optimization flag set
-     */
-    if (callee == NULL) return true;
-    else return callee->getName().str() == "_Z10checkpointv";
+bool Play::isCheckpoint(Function *callee) {
+    return callee->getName().str() == "_Z10checkpointv";
 }
 
-CALLS_CHECKPOINT Play::callsCheckpointHelper(Function *F,
+CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
         std::set<Instruction *> *visited) {
+    if (F == NULL) return MAY;
+
     if (can_call_checkpoint.find(F) != can_call_checkpoint.end()) {
         return can_call_checkpoint[F];
     }
 
     CALLS_CHECKPOINT result = DOES_NOT;
 
-    Function::BasicBlockListType &bblist = F->getBasicBlockList();
-    for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-            bb_end = bblist.end(); result != DOES && bb_iter != bb_end; bb_iter++) {
-        BasicBlock *bb = &*bb_iter;
-        for (BasicBlock::iterator i = bb->begin(), e = bb->end();
-                result != DOES && i != e; ++i) {
-            Instruction *inst = &*i;
+    if (isCheckpoint(F)) {
+        result = DOES;
+    } else if (F->empty()) {
+        result = MAY;
+    } else {
+        Function::BasicBlockListType &bblist = F->getBasicBlockList();
+        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+                bb_end = bblist.end(); result != DOES && bb_iter != bb_end;
+                bb_iter++) {
+            BasicBlock *bb = &*bb_iter;
+            for (BasicBlock::iterator i = bb->begin(), e = bb->end();
+                    result != DOES && i != e; ++i) {
+                Instruction *inst = &*i;
 
-            if (visited->find(inst) != visited->end()) {
-                continue;
-            }
+                if (visited->find(inst) != visited->end()) {
+                    continue;
+                }
 
-            if (CallInst *call = dyn_cast<CallInst>(inst)) {
-                // skip LLVM intrinsics
-                if (isa<IntrinsicInst>(call)) continue;
+                if (CallInst *call = dyn_cast<CallInst>(inst)) {
+                    // skip LLVM intrinsics
+                    if (isa<IntrinsicInst>(call)) continue;
 
-                Function *child = call->getCalledFunction();
+                    Function *child = call->getCalledFunction();
 
-                if (isCallToCheckpoint(call)) {
-                    result = DOES;
-                } else if (child == NULL || child->empty()) {
-                    result = MAY;
-                } else {
-                    CALLS_CHECKPOINT child_result = callsCheckpointHelper(child,
-                            visited);
-                    if (child_result == DOES) {
-                        result = DOES;
-                    } else if (child_result == MAY) {
+                    if (child == NULL) {
                         result = MAY;
+                    } else if (isCheckpoint(child)) {
+                        result = DOES;
+                    } else if (child->empty()) {
+                        result = MAY;
+                    } else {
+                        CALLS_CHECKPOINT child_result =
+                            mayCreateCheckpointHelper(child, visited);
+                        if (child_result == DOES) {
+                            result = DOES;
+                        } else if (child_result == MAY) {
+                            result = MAY;
+                        }
                     }
                 }
             }
@@ -838,9 +843,9 @@ CALLS_CHECKPOINT Play::callsCheckpointHelper(Function *F,
     return result;
 }
 
-bool Play::callsCheckpoint(Function *F) {
+CALLS_CHECKPOINT Play::mayCreateCheckpoint(Function *F) {
     std::set<Instruction *> visited;
-    return callsCheckpointHelper(F, &visited);
+    return mayCreateCheckpointHelper(F, &visited);
 }
 
 SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
@@ -1056,7 +1061,7 @@ void Play::findStackAllocations(Module &M, const char *output_file,
          * variables can be alive when a call to checkpoint() is made, and only
          * checkpointing those. TODO.
          */
-        if (callsCheckpoint(F) == DOES_NOT) continue;
+        if (mayCreateCheckpoint(F) == DOES_NOT) continue;
 
         std::map<Value *, std::string> *varname_mapping =
             mapValueToOriginalVarname(F);

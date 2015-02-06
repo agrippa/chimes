@@ -26779,9 +26779,9 @@ extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 int main(int argc, char **argv) {
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); lbl_0: dim3 blocks; register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); blocks = dim3(4, 256);
+init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: dim3 blocks; register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); blocks = dim3(4, 256);
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
- call_lbl_1: calling(1, 0UL, 0); checkpoint();
+alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 rm_stack(false, 0UL); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
