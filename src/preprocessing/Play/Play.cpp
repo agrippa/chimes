@@ -25,6 +25,8 @@ using namespace llvm;
 
 namespace {
 
+    enum CALLS_CHECKPOINT { DOES = 0, DOES_NOT = 1, MAY = 2 };
+
     typedef struct _SimpleLoc {
         std::string *filename;
         int line_no;
@@ -94,7 +96,7 @@ namespace {
         std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
         std::map<std::string, SimpleLoc *> *function_to_start_line = NULL;
         std::map<std::string, std::string> *function_to_demangled = NULL;
-        std::map<Function *, bool> can_call_checkpoint;
+        std::map<Function *, CALLS_CHECKPOINT> can_call_checkpoint;
 
         explicit Play(): ModulePass(ID) {
         }
@@ -134,6 +136,8 @@ namespace {
                 std::vector<std::string>> *struct_fields);
         bool isCallToCheckpoint(CallInst *call);
         bool callsCheckpoint(Function *F);
+        CALLS_CHECKPOINT callsCheckpointHelper(Function *F,
+                std::set<Instruction *> *visited);
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
         std::string *get_unique_varname(std::string varname, Function *F,
                 std::set<std::string> *found_variables, Module &M);
@@ -787,46 +791,56 @@ bool Play::isCallToCheckpoint(CallInst *call) {
     else return callee->getName().str() == "_Z10checkpointv";
 }
 
-bool Play::callsCheckpoint(Function *F) {
-    if (can_call_checkpoint.find(F) == can_call_checkpoint.end()) {
-        bool done = false;
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
-                    ++i) {
-                Instruction &inst = *i;
-                if (CallInst *call = dyn_cast<CallInst>(&inst)) {
-                    // skip LLVM intrinsics
-                    if (dyn_cast<IntrinsicInst>(call)) continue;
+CALLS_CHECKPOINT Play::callsCheckpointHelper(Function *F,
+        std::set<Instruction *> *visited) {
+    if (can_call_checkpoint.find(F) != can_call_checkpoint.end()) {
+        return can_call_checkpoint[F];
+    }
 
-                    if (isCallToCheckpoint(call)) {
-                        can_call_checkpoint[F] = true;
-                        done = true;
-                    } else {
-                        if (callsCheckpoint(call->getCalledFunction())) {
-                            can_call_checkpoint[F] = true;
-                            done = true;
-                        }
+    CALLS_CHECKPOINT result = DOES_NOT;
+
+    Function::BasicBlockListType &bblist = F->getBasicBlockList();
+    for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+            bb_end = bblist.end(); result != DOES && bb_iter != bb_end; bb_iter++) {
+        BasicBlock *bb = &*bb_iter;
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end();
+                result != DOES && i != e; ++i) {
+            Instruction *inst = &*i;
+
+            if (visited->find(inst) != visited->end()) {
+                continue;
+            }
+
+            if (CallInst *call = dyn_cast<CallInst>(inst)) {
+                // skip LLVM intrinsics
+                if (isa<IntrinsicInst>(call)) continue;
+
+                Function *child = call->getCalledFunction();
+
+                if (isCallToCheckpoint(call)) {
+                    result = DOES;
+                } else if (child == NULL || child->empty()) {
+                    result = MAY;
+                } else {
+                    CALLS_CHECKPOINT child_result = callsCheckpointHelper(child,
+                            visited);
+                    if (child_result == DOES) {
+                        result = DOES;
+                    } else if (child_result == MAY) {
+                        result = MAY;
                     }
                 }
-
-                if (done) break;
             }
-            if (done) break;
-        }
-
-        /*
-         * If we didn't find that this function either calls checkpoint or calls
-         * a function which calls checkpoint, set to false.
-         */
-        if (can_call_checkpoint.find(F) == can_call_checkpoint.end()) {
-            can_call_checkpoint[F] = false;
         }
     }
-    assert(can_call_checkpoint.find(F) != can_call_checkpoint.end());
-    return can_call_checkpoint[F];
+
+    can_call_checkpoint[F] = result;
+    return result;
+}
+
+bool Play::callsCheckpoint(Function *F) {
+    std::set<Instruction *> visited;
+    return callsCheckpointHelper(F, &visited);
 }
 
 SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
@@ -1034,7 +1048,15 @@ void Play::findStackAllocations(Module &M, const char *output_file,
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        // if (!callsCheckpoint(F)) continue;
+        /*
+         * At the moment, I try to remove unnecessary stack variable
+         * registrations by just skipping any functions which cannot be on the
+         * stack when a checkpoint() call is made. This could be improved using
+         * variable live range analysis to figure out exactly which stack
+         * variables can be alive when a call to checkpoint() is made, and only
+         * checkpointing those. TODO.
+         */
+        if (callsCheckpoint(F) == DOES_NOT) continue;
 
         std::map<Value *, std::string> *varname_mapping =
             mapValueToOriginalVarname(F);
@@ -1047,13 +1069,12 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                     ++i) {
                 Instruction &inst = *i;
                 if (AllocaInst *alloca = dyn_cast<AllocaInst>(&inst)) {
-                    // int array_size = alloca->getArraySize();
                     std::string varname = alloca->getName().str();
                     uint64_t type_size = layout->getTypeSizeInBits(
                             alloca->getAllocatedType());
                     assert(type_size % 8 == 0); // even number of bytes
 
-                    // auto-generate llvm stack allocation for return values
+                    // auto-generated llvm stack allocation for return values
                     if (strcmp(varname.c_str(), "retval") == 0) {
                         continue;
                     }

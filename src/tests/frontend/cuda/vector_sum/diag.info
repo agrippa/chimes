@@ -34,10 +34,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1  register_
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 new_stack(4, (size_t)(8543576809224315439UL), (size_t)(8543576809224315440UL), (size_t)(8543576809224315441UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_0|0", "i32*", (void *)(&__cuda_0), 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_1|0", "i32*", (void *)(&__cuda_1), 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_2|0", "i32*", (void *)(&__cuda_2), 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2  register_stack_var("kernel|__cuda_3|0", "i32", (void *)(&__cuda_3), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1 init_numdebug(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 226 cudaError_t error; 

@@ -3,6 +3,7 @@
 int foo(int a) {
     int b = a;
     int c = a + b;
+    checkpoint();
     return c;
 }
 

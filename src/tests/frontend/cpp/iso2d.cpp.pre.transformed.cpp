@@ -2907,17 +2907,17 @@ static void fwd(float *next, float *curr, float *vsq,
         float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {
 
 #pragma omp parallel for collapse(2)
- new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("fwd|next|0", "float*", (void *)(&next), 8, 1, 0, 0); register_stack_var("fwd|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); register_stack_var("fwd|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); register_stack_var("fwd|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); register_stack_var("fwd|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("fwd|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("fwd|dimx|0", "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("fwd|dimy|0", "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("fwd|radius|0", "i32", (void *)(&radius), 4, 0, 0, 0); { lbl_0: int y; register_stack_var("fwd|y|0", "i32", (void *)(&y), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } for ( y = (0); y < ny; alias_group_changed(1, (size_t)(5605394185929330330UL)), y++) { {
-        { lbl_1: int x; register_stack_var("fwd|x|0", "i32", (void *)(&x), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( x = (0); x < nx; alias_group_changed(1, (size_t)(3546215367615677073UL)), x++) { {
-              lbl_2: int this_offset; register_stack_var("fwd|this_offset|0", "i32", (void *)(&this_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } this_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x))));
+ new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); { int y; for ( y = (0); y < ny; alias_group_changed(1, (size_t)(5605394185929330330UL)), y++) { {
+        { int x; for ( x = (0); x < nx; alias_group_changed(1, (size_t)(3546215367615677073UL)), x++) { {
+             int this_offset; this_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x))));
 
-              lbl_3: float temp; register_stack_var("fwd|temp|0", "float", (void *)(&temp), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } temp = (2.F * curr[this_offset] - next[this_offset]);
-              lbl_4: float div; register_stack_var("fwd|div|0", "float", (void *)(&div), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_5; } div = (c_coeff[0] * curr[this_offset]);
-            { lbl_5: int d; register_stack_var("fwd|d|0", "i32", (void *)(&d), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_6; } for ( d = (1); d <= radius; alias_group_changed(1, (size_t)(17702871222471266781UL)), d++) { {
-                  lbl_6: int y_pos_offset; register_stack_var("fwd|y_pos_offset|0", "i32", (void *)(&y_pos_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_7; } y_pos_offset = ((((radius) + (y + d)) * (dimx) + ((radius) + (x))));
-                  lbl_7: int y_neg_offset; register_stack_var("fwd|y_neg_offset|0", "i32", (void *)(&y_neg_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_8; } y_neg_offset = ((((radius) + (y - d)) * (dimx) + ((radius) + (x))));
-                  lbl_8: int x_pos_offset; register_stack_var("fwd|x_pos_offset|0", "i32", (void *)(&x_pos_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_9; } x_pos_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x + d))));
-                  lbl_9: int x_neg_offset; register_stack_var("fwd|x_neg_offset|0", "i32", (void *)(&x_neg_offset), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_10; } lbl_10: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { exit(42); } } } x_neg_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x - d))));
+             float temp; temp = (2.F * curr[this_offset] - next[this_offset]);
+             float div; div = (c_coeff[0] * curr[this_offset]);
+            { int d; for ( d = (1); d <= radius; alias_group_changed(1, (size_t)(17702871222471266781UL)), d++) { {
+                 int y_pos_offset; y_pos_offset = ((((radius) + (y + d)) * (dimx) + ((radius) + (x))));
+                 int y_neg_offset; y_neg_offset = ((((radius) + (y - d)) * (dimx) + ((radius) + (x))));
+                 int x_pos_offset; x_pos_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x + d))));
+                 int x_neg_offset; x_neg_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x - d))));
                 div += c_coeff[d] * (curr[y_pos_offset] +
                         curr[y_neg_offset] + curr[x_pos_offset] +
                         curr[x_neg_offset]);
