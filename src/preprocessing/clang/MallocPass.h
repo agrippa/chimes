@@ -11,6 +11,23 @@
 
 #include "ParentTransform.h"
 
+class FoundAlloc {
+    public:
+        FoundAlloc(int set_col, const clang::CallExpr *set_call) : col(set_col),
+                call(set_call) {}
+
+        int get_col() { return col; }
+        const clang::CallExpr *get_call() { return call; }
+
+        bool operator < (const FoundAlloc& other) const {
+            return col < other.col;
+        }
+
+    private:
+        unsigned col;
+        const clang::CallExpr *call;
+};
+
 class MallocPass : public ParentTransform {
 public:
     MallocPass() {
@@ -22,12 +39,14 @@ public:
     }
 
     void VisitStmt(const clang::Stmt *s) override;
+    void VisitTopLevel(clang::Decl *toplevel) override;
     bool usesStackInfo() override { return false; }
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
 private:
     std::set<std::string> supportedAllocationFunctions;
+    std::map<unsigned, std::map<std::string, std::vector<FoundAlloc> *> *> found_allocs;
 };
 
 #endif

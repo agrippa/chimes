@@ -9,28 +9,30 @@
 
 extern DesiredInsertions *insertions;
 
-void MallocPass::VisitStmt(const clang::Stmt *s) {
-    clang::SourceLocation start = s->getLocStart();
-    clang::SourceLocation end = s->getLocEnd();
+void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
+    for (std::map<unsigned, std::map<std::string, std::vector<FoundAlloc> *> *>::iterator i = found_allocs.begin(), e = found_allocs.end(); i != e; i++) {
+        unsigned line = i->first;
+        std::map<std::string, std::vector<FoundAlloc> *> *per_line = i->second;
 
-    if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        unsigned start_line = SM->getPresumedLineNumber(start);
-        unsigned start_col = SM->getPresumedColumnNumber(start);
+        for (std::map<std::string, std::vector<FoundAlloc> *>::iterator ii =
+                per_line->begin(), ee = per_line->end(); ii != ee; ii++) {
+            std::string funcname = ii->first;
+            std::vector<FoundAlloc> *per_func = ii->second;
 
-        if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
-            const clang::FunctionDecl *callee = call->getDirectCallee();
+            std::sort(per_func->begin(), per_func->end());
 
-            HeapAlloc alloc;
-            bool found = insertions->findNextMatchingMemoryAllocation(
-                    start_line, callee->getNameAsString(), &alloc);
-            if (supportedAllocationFunctions.find(callee->getNameAsString()) !=
-                    supportedAllocationFunctions.end()) {
-                assert(found);
-            } else {
-                assert(!found);
-            }
+            for (std::vector<FoundAlloc>::iterator iii = per_func->begin(),
+                    eee = per_func->end(); iii != eee; iii++) {
+                FoundAlloc found = *iii;
+                const clang::CallExpr *call = found.get_call();
+                const clang::FunctionDecl *callee = call->getDirectCallee();
+                clang::SourceLocation start = call->getLocStart();
 
-            if (found) {
+                HeapAlloc alloc;
+                bool found_info = insertions->findNextMatchingMemoryAllocation(
+                        line, callee->getNameAsString(), &alloc);
+                assert(found_info);
+
                 assert(callee->getNameAsString() == alloc.get_fname());
 
                 std::stringstream ss;
@@ -80,6 +82,40 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
                 const clang::Expr *arg = call->getArg(call->getNumArgs() - 1);
                 clang::SourceLocation end_arg = arg->getLocEnd();
                 InsertTextAfterToken(end_arg, ss2.str());
+            }
+        }
+    }
+
+    found_allocs.clear();
+}
+
+void MallocPass::VisitStmt(const clang::Stmt *s) {
+    clang::SourceLocation start = s->getLocStart();
+    clang::SourceLocation end = s->getLocEnd();
+
+    if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
+        unsigned start_line = SM->getPresumedLineNumber(start);
+        unsigned start_col = SM->getPresumedColumnNumber(start);
+
+        if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
+            const clang::FunctionDecl *callee = call->getDirectCallee();
+            std::string funcname = callee->getNameAsString();
+
+            if (supportedAllocationFunctions.find(funcname) !=
+                    supportedAllocationFunctions.end()) {
+                if (found_allocs.find(start_line) == found_allocs.end()) {
+                    found_allocs[start_line] = new std::map<std::string,
+                            std::vector<FoundAlloc> *>();
+                }
+                std::map<std::string, std::vector<FoundAlloc> *> *per_line =
+                    found_allocs[start_line];
+
+                if (per_line->find(funcname) == per_line->end()) {
+                    (*per_line)[funcname] = new std::vector<FoundAlloc>();
+                }
+                std::vector<FoundAlloc> *per_func = (*per_line)[funcname];
+
+                per_func->push_back(FoundAlloc(start_col, call));
             }
         }
     }
