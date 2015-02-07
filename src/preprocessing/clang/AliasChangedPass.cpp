@@ -34,6 +34,9 @@ void AliasChangedPass::WrapAroundBlock(const clang::Stmt *block,
     clang::SourceLocation start = block->getLocStart();
     clang::SourceLocation end = block->getLocEnd();
 
+    clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
+    clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
+
     if (clang::isa<clang::CompoundStmt>(block)) {
         InsertText(start, toPrefix, true, true);
         InsertTextAfterToken(end, toAppend);
@@ -112,9 +115,6 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                     break;
                 }
             }
-
-            insertions->updateMemoryAllocations(inserted_line, inserted_col,
-                    ninserted);
         }
     }
 

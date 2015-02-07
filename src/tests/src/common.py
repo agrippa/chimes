@@ -90,6 +90,24 @@ class FrontendTest(object):
         self.dependencies = [] if dependencies is None else dependencies
 
 
+def construct_simple_frontend_test(src_name):
+    """
+    For very simple frontend tests with a single input, we can auto-generate the
+    FrontendTest class for it.
+
+    :param src_name: Source file name
+    :type src_name: `str`
+    :returns: A FrontendTest object
+    :rtype: `class` FrontendTest
+    """
+    test_name = src_name[:src_name.rfind('.')]
+    test_name = ''.join([t.capitalize() for t in test_name.split('_')])
+    expected_output = src_name + '.pre.transformed.cpp'
+    info_folder_name = src_name[:src_name.rfind('.')]
+    return FrontendTest(test_name, [src_name], [expected_output],
+                        [info_folder_name], False)
+
+
 def add_include_paths(compile_cmd, includes):
     """
     Add include paths to the provided compile command.
@@ -550,6 +568,10 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
 
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
+
+    if config.verbose:
+        print_and_abort(stdout, stderr, abort=False)
+
     _, work_folder, root_folder = get_files_from_compiler_stdout(stdout, len(test.input_files))
 
     if not os.path.isfile('a.out'):

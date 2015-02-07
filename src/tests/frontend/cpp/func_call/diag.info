@@ -1,13 +1,12 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 5 alias_group_changed(3, (size_t)(8933731431696279258UL), (size_t)(10992910250009932515UL), (size_t)(14071540038816566042UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 12 5 alias_group_changed(4, (size_t)(335588464056153169UL), (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 13 5 alias_group_changed(1, (size_t)(2394767282369806426UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 5 new_stack(1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 5  register_stack_var("foo|a|0", "i32", (void *)(&a), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 5 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 5 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 5  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 5  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 13 62 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 13 5 alias_group_changed(1, (size_t)(2394767282369806426UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 5 init_numdebug(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 99  int b;  b = (a); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 108 

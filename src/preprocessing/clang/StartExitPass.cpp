@@ -9,6 +9,7 @@
 
 extern DesiredInsertions *insertions;
 extern std::vector<StackAlloc *> *insert_at_front;
+extern std::string curr_func;
 
 void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
     clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
@@ -23,10 +24,34 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
             clang::SourceLocation loc = cmpd->getLocStart();
             clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
             if (insertions->isMainFile(locloc.getFilename())) {
-                InsertText(cmpd->getLocEnd(), "rm_stack(false, 0UL); ", true, true);
+                InsertText(cmpd->getLocEnd(), constructFunctionEndingStmts(),
+                        true, true);
             }
         }
     }
+}
+
+std::string StartExitPass::constructFunctionEndingStmts() {
+    FunctionExit *info = insertions->getFunctionExitInfo(curr_func);
+    std::set<size_t> groups_changed =
+        info->get_groups_changed_at_termination();
+
+    std::stringstream ss;
+    if (groups_changed.size() > 0) {
+        ss << "alias_group_changed(" << groups_changed.size();
+        for (std::set<size_t>::iterator i = groups_changed.begin(),
+                e = groups_changed.end(); i != e; i++) {
+            ss << ", (size_t)(" << *i << "UL)";
+        }
+        ss << "); ";
+    }
+
+    if (info->get_return_alias() == 0) {
+        ss << "rm_stack(false, 0UL); ";
+    } else {
+        ss << "rm_stack(true, " << info->get_return_alias() << "UL); ";
+    }
+    return ss.str();
 }
 
 void StartExitPass::VisitStmt(const clang::Stmt *s) {
@@ -79,15 +104,7 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
          * Insert rm_stack callbacks.
          */
         if (clang::isa<clang::ReturnStmt>(s)) {
-            FunctionExit *func_exit = insertions->findFirstMatchingFunctionExit(
-                    start_loc.getLine());
-            if (func_exit) {
-                std::stringstream ss;
-                ss << "rm_stack(true, " << func_exit->get_alias() << "UL); ";
-                InsertText(start, ss.str(), true, true);
-            } else {
-                InsertText(start, "rm_stack(false, 0UL); ", true, true);
-            }
+            InsertText(start, constructFunctionEndingStmts(), true, true);
         }
     }
 

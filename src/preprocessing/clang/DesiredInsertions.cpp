@@ -34,8 +34,9 @@ std::vector<ReachableInfo> *DesiredInsertions::parseReachable() {
     return reachable;
 }
 
-std::vector<FunctionExit> *DesiredInsertions::parseFunctionExits() {
-    std::vector<FunctionExit> *result = new std::vector<FunctionExit>();
+std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
+    std::map<std::string, FunctionExit *> *result =
+        new std::map<std::string, FunctionExit *>();
 
     std::ifstream fp;
     fp.open(exit_file, std::ios::in);
@@ -43,18 +44,35 @@ std::vector<FunctionExit> *DesiredInsertions::parseFunctionExits() {
 
     while (getline(fp, line)) {
         size_t end = line.find(' ');
-        int line_no = atoi(line.substr(0, end).c_str());
+        std::string funcname = line.substr(0, end);
         line = line.substr(end + 1);
 
         end = line.find(' ');
-        int col = atoi(line.substr(0, end).c_str());
-        line = line.substr(end + 1);
 
-        size_t alias = strtoul(line.c_str(), NULL, 10);
-        result->push_back(FunctionExit(line_no, col, alias));
+        if (end == std::string::npos) {
+            // No terminating aliases
+            size_t return_alias = strtoul(line.c_str(), NULL, 10);
+            FunctionExit *info = new FunctionExit(return_alias);
+            (*result)[funcname] = info;
+        } else {
+            // At least one terminating alias
+            size_t return_alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
+            line = line.substr(end + 1);
+            FunctionExit *info = new FunctionExit(return_alias);
+
+            end = line.find(' ');
+            while (end != std::string::npos) {
+                size_t alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
+                info->add_changed_group_at_term(alias);
+                line = line.substr(end + 1);
+                end = line.find(' ');
+            }
+            size_t alias = strtoul(line.c_str(), NULL, 10);
+            info->add_changed_group_at_term(alias);
+
+            (*result)[funcname] = info;
+        }
     }
-
-    std::sort(result->begin(), result->end());
 
     fp.close();
 
@@ -149,8 +167,9 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
     return callsites;
 }
 
-std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
-    std::vector<HeapAlloc *> *allocs = new std::vector<HeapAlloc *>();
+std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInsertions::parseHeapAllocs() {
+    std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *allocs =
+        new std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *>();
 
     std::ifstream fp;
     fp.open(heap_file, std::ios::in);
@@ -182,7 +201,7 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
             line = line.substr(line.find(' ') + 1);
             have_type_info = true;
         }
-        HeapAlloc *alloc = new HeapAlloc(line_no, col, group, fname);
+        HeapAlloc alloc(line_no, col, group, fname);
 
         if (have_type_info) {
             // have more type info
@@ -197,7 +216,7 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
             bool is_elem_struct = (is_elem_struct_str == "1" ? true : false);
             line = line.substr(is_elem_struct_end + 1);
 
-            alloc->add_type_info(is_elem_ptr, is_elem_struct);
+            alloc.add_type_info(is_elem_ptr, is_elem_struct);
 
             if (is_elem_struct) {
                 size_t struct_type_name_end = line.find(' ');
@@ -224,11 +243,32 @@ std::vector<HeapAlloc *> *DesiredInsertions::parseHeapAllocs() {
                     }
                 }
 
-                alloc->add_struct_type_info(struct_type_name, struct_field_ptrs);
+                alloc.add_struct_type_info(struct_type_name, struct_field_ptrs);
             }
         }
 
-        allocs->push_back(alloc);
+        if (allocs->find(line_no) == allocs->end()) {
+            (*allocs)[line_no] = new std::map<std::string, std::vector<HeapAlloc> *>();
+        }
+        std::map<std::string, std::vector<HeapAlloc> *> *for_line =
+            (*allocs)[line_no];
+
+        if (for_line->find(fname) == for_line->end()) {
+            (*for_line)[fname] = new std::vector<HeapAlloc>();
+        }
+        std::vector<HeapAlloc> *for_func = (*for_line)[fname];
+
+        for_func->push_back(alloc);
+    }
+
+    for (std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *>::iterator i = allocs->begin(), e = allocs->end(); i != e; i++) {
+        std::map<std::string, std::vector<HeapAlloc> *> *curr_line = i->second;
+
+        for (std::map<std::string, std::vector<HeapAlloc> *>::iterator ii =
+                curr_line->begin(), ee = curr_line->end(); ii != ee; ii++) {
+            std::vector<HeapAlloc> *for_func = ii->second;
+            std::sort(for_func->begin(), for_func->end());
+        }
     }
 
     return allocs;
@@ -437,26 +477,28 @@ StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
     return iter->second;
 }
 
-HeapAlloc *DesiredInsertions::isMemoryAllocation(int line, int col) {
-    for(std::vector<HeapAlloc *>::iterator i = heap_allocs->begin(),
-            e = heap_allocs->end(); i != e; i++) {
-        HeapAlloc *alloc = *i;
-        if (alloc->get_line_no() == line && alloc->get_col() == col) {
-            return alloc;
-        }
+bool DesiredInsertions::findNextMatchingMemoryAllocation(int line,
+        std::string func, HeapAlloc *ret) {
+    if (heap_allocs->find(line) == heap_allocs->end()) {
+        return false;
     }
-    return NULL;
-}
 
-void DesiredInsertions::updateMemoryAllocations(unsigned int line,
-        unsigned int col, unsigned int increment_by) {
-    for(std::vector<HeapAlloc *>::iterator i = heap_allocs->begin(),
-            e = heap_allocs->end(); i != e; i++) {
-        HeapAlloc *alloc = *i;
-        if (alloc->get_line_no() == line && alloc->get_col() >= col) {
-            alloc->incr_col(increment_by);
-        }
+    std::map<std::string, std::vector<HeapAlloc> *> *for_line =
+        (*heap_allocs)[line];
+    if (for_line->find(func) == for_line->end()) {
+        return false;
     }
+
+    std::vector<HeapAlloc> *for_func = (*for_line)[func];
+
+    if (for_func->size() == 0) {
+        return false;
+    }
+
+    std::vector<HeapAlloc>::iterator front = for_func->begin();
+    *ret = *front;
+    for_func->erase(front);
+    return true;
 }
 
 void DesiredInsertions::AppendToDiagnostics(std::string action,

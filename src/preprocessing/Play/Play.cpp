@@ -124,13 +124,12 @@ namespace {
                 const char *filename, std::map<Value *, size_t> value_to_alias_group);
         size_t searchForValueInKnownAliases(Value *val,
                 std::map<Value *, size_t> value_to_alias_group, bool force = true);
-        void collectLineToGroupsMapping(Module &M,
-                std::map<Value *, size_t> value_to_alias_group,
-                std::map<BasicBlock *, std::pair<int, int> > maxlines);
+        std::map<Function *, std::set<size_t> *> *collectLineToGroupsMapping(
+                Module &M, std::map<Value *, size_t> value_to_alias_group);
         void collectLineToGroupsMappingInFunction(BasicBlock *curr,
-                std::set<std::string> *visited, std::string filename,
+                std::set<BasicBlock *> *visited, std::string filename,
                 std::map<Value *, size_t> value_to_alias_group,
-                std::map<BasicBlock *, std::pair<int, int> > bb_maxes);
+                std::set<size_t> *changed_at_termination);
         void unionGroups(int line, int col,
                 std::string filename, std::set<size_t> *groups, std::string reason);
         void unionGroups(int line, int col, std::string filename,
@@ -172,14 +171,15 @@ namespace {
         std::vector<Value *> *collectInitialInstructionsToVisit(Module &M);
         std::map<Value *, size_t> *collectInitialAliasMappings(Module &M);
         void findFunctionExits(Module &M, const char *output_file,
-                std::map<Value *, size_t> value_to_alias_group);
+                std::map<Value *, size_t> value_to_alias_group,
+                std::map<Function *, std::set<size_t> *> *func_to_groups_changed);
         void findGlobals(Module &M, const char *filename);
         std::map<std::string, std::string> *mapGlobalsToOriginalName(Module &M);
-        std::map<BasicBlock *, std::pair<int, int> > collectBBToMaxLineColMapping(Module &M);
-        void propagateGroupsDown(BasicBlock *curr,
-                std::string filename, std::set<size_t> *groups,
-                std::map<BasicBlock *, std::pair<int, int> > bb_maxes,
-                std::set<BasicBlock *> *visited);
+        void propagateGroupsDown(BasicBlock *curr, std::string filename,
+                std::set<size_t> *groups, std::set<BasicBlock *> *visited,
+                std::set<size_t> *changed_at_termination);
+        std::string getFunctionName(Function *F, Module &M);
+        std::string getFunctionDisplayName(Function *F, Module &M);
     };
 }
 
@@ -264,41 +264,6 @@ void Play::printReachable(ReachableInfo &reachable) {
         errs() << "  " << dst << " -> { " << dst_contains << " }\n";
     }
     errs() << "\n";
-}
-
-
-std::map<BasicBlock *, std::pair<int, int> > Play::collectBBToMaxLineColMapping(Module &M) {
-    std::map<BasicBlock *, std::pair<int, int> > max_lines_and_cols;
-
-    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
-        Function *F = &*I;
-        Function::BasicBlockListType &bblist = F->getBasicBlockList();
-        for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
-            BasicBlock *bb = &*bb_iter;
-
-            int maxline = -1;
-            int maxcol = -1;
-
-            for (BasicBlock::iterator inst_iter = bb->begin(), inst_end = bb->end();
-                    inst_iter != inst_end; inst_iter++) {
-                Instruction *curr_inst = inst_iter;
-
-                int line = curr_inst->getDebugLoc().getLine();
-                if (line != 0 && line > maxline) {
-                    maxline = line;
-                    maxcol = curr_inst->getDebugLoc().getCol();
-                }
-            }
-
-            assert(maxline != -1);
-            assert(max_lines_and_cols.find(bb) == max_lines_and_cols.end());
-
-            max_lines_and_cols[bb] = std::pair<int, int>(maxline, maxcol);
-        }
-    }
-
-    return max_lines_and_cols;
 }
 
 std::vector<Value *> *Play::collectInitialInstructionsToVisit(Module &M) {
@@ -693,10 +658,6 @@ void Play::unionGroups(int line, int col, std::string filename,
         reason_str << "anon";
     } else {
         reason_str << reason->getName().str();
-        errs() << reason->getName().str() << "\n";
-        for (unsigned i = 0; i < reason->getName().str().size(); i++) {
-            errs() << (int)(reason->getName().str()[i]) << "\n";
-        }
     }
 
     unionGroups(line, col, filename, groups, reason_str.str());
@@ -740,9 +701,8 @@ void Play::unionGroups(int line, int col, std::string filename,
 }
 
 void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
-        std::set<size_t> *groups,
-        std::map<BasicBlock *, std::pair<int, int> > bb_maxes,
-        std::set<BasicBlock *> *visited) {
+        std::set<size_t> *groups, std::set<BasicBlock *> *visited,
+        std::set<size_t> *changed_at_termination) {
     if (visited->find(curr) != visited->end()) {
         /*
          * We have looped back around from the original basic block to itself or
@@ -777,42 +737,30 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
     TerminatorInst *term = curr->getTerminator();
     if (term->getNumSuccessors() == 0) {
         // Terminating basic block for a function, so mark this
-        unionGroups(bb_maxes[curr].first, bb_maxes[curr].second, filename,
-                groups, true, false, curr->getParent());
+        for (std::set<size_t>::iterator i = groups->begin(), e =
+                groups->end(); i != e; i++) {
+            changed_at_termination->insert(*i);
+        }
     } else {
         for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
             BasicBlock *child = term->getSuccessor(i);
-            propagateGroupsDown(child, filename, groups, bb_maxes, visited);
+            propagateGroupsDown(child, filename, groups, visited,
+                    changed_at_termination);
         }
     }
 }
 
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
-        std::set<std::string> *visited, std::string filename,
+        std::set<BasicBlock *> *visited, std::string filename,
         std::map<Value *, size_t> value_to_alias_group,
-        std::map<BasicBlock *, std::pair<int, int> > bb_maxes) {
+        std::set<size_t> *changed_at_termination) {
     assert(curr != NULL);
 
-    if (curr->getName().str().size() == 0) {
-        /*
-         * If this is an unnamed block it should have no comments, and we can
-         * jump straight through it
-         */
-        assert(curr->getInstList().size() == 1); // just the terminator
-        TerminatorInst *term = curr->getTerminator();
-        for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
-            BasicBlock *child = term->getSuccessor(i);
-            collectLineToGroupsMappingInFunction(child, visited, filename,
-                    value_to_alias_group, bb_maxes);
-        }
-        return;
-    }
-
     // Only analyze each basic block once
-    if (visited->find(curr->getName().str()) != visited->end()) {
+    if (visited->find(curr) != visited->end()) {
         return;
     }
-    visited->insert(curr->getName().str());
+    visited->insert(curr);
 
     std::set<size_t> *groups = new std::set<size_t>();
 
@@ -856,19 +804,21 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             std::set<BasicBlock *> propagation_visited;
             for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
                 BasicBlock *child = term->getSuccessor(i);
-                propagateGroupsDown(child, filename, groups, bb_maxes,
-                        &propagation_visited);
+                propagateGroupsDown(child, filename, groups,
+                        &propagation_visited, changed_at_termination);
             }
         } else {
-            unionGroups(bb_maxes[curr].first, bb_maxes[curr].second, filename,
-                    groups, false, false, curr->getParent());
+            for (std::set<size_t>::iterator i = groups->begin(), e =
+                    groups->end(); i != e; i++) {
+                changed_at_termination->insert(*i);
+            }
         }
     }
 
     for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
         collectLineToGroupsMappingInFunction(child, visited, filename,
-                value_to_alias_group, bb_maxes);
+                value_to_alias_group, changed_at_termination);
     }
 }
 
@@ -944,24 +894,30 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
  *
  * God I hope this alias change tracking becomes useful for large applications..
  */
-void Play::collectLineToGroupsMapping(Module& M,
-        std::map<Value *, size_t> value_to_alias_group,
-        std::map<BasicBlock *, std::pair<int, int> > bb_maxes) {
+std::map<Function *, std::set<size_t> *> *Play::collectLineToGroupsMapping(
+        Module& M, std::map<Value *, size_t> value_to_alias_group) {
+    std::map<Function *, std::set<size_t> *> *result =
+        new std::map<Function *, std::set<size_t> *>();
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        std::set<std::string> visited;
+        std::set<BasicBlock *> visited;
 
         // A function may have no basic blocks if it is defined externally
         if (F->getBasicBlockList().size() > 0) {
             BasicBlock& entry = F->getEntryBlock();
 
             std::string filename = findFilenameContainingBB(entry, M);
+            std::set<size_t> *changed_at_termination = new std::set<size_t>();
 
             collectLineToGroupsMappingInFunction(&entry, &visited, filename,
-                    value_to_alias_group, bb_maxes);
+                    value_to_alias_group, changed_at_termination);
+
+            (*result)[F] = changed_at_termination;
         }
     }
+
+    return result;
 }
 
 void Play::dumpLineToGroupsMappingTo(const char *filename) {
@@ -1225,6 +1181,18 @@ void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
     fclose(fp);
 }
 
+std::string Play::getFunctionDisplayName(Function *F, Module &M) {
+    std::string fname = F->getName().str();
+
+    if (function_to_demangled == NULL || function_to_demangled->find(fname) ==
+            function_to_demangled->end()) {
+        findStartingLineForFunction(F, M);
+    }
+
+    assert(function_to_demangled->find(fname) != function_to_demangled->end());
+    return (*function_to_demangled)[fname];
+}
+
 std::string *Play::get_unique_varname(std::string varname, Function *F,
         std::set<std::string> *found_variables, Module &M) {
     std::string fname = F->getName().str();
@@ -1232,12 +1200,7 @@ std::string *Play::get_unique_varname(std::string varname, Function *F,
     std::string *unique_varname = new std::string();
     int permute = 0;
 
-    if (function_to_demangled == NULL || function_to_demangled->find(fname) ==
-            function_to_demangled->end()) {
-        findStartingLineForFunction(F, M);
-    }
-
-    std::string correct_fname = (*function_to_demangled)[fname];
+    std::string correct_fname = getFunctionDisplayName(F, M);
     do {
         std::ostringstream str_stream;
         str_stream << correct_fname << "|" << varname << "|" << permute;
@@ -1678,12 +1641,33 @@ void Play::findHeapAllocations(Module &M, const char *output_file,
     fclose(fp);
 }
 
+std::string Play::getFunctionName(Function *F, Module &M) {
+    return getFunctionDisplayName(F, M);
+}
+
+static void printGroupsChanged(FILE *fp, Function *F,
+        std::map<Function *, std::set<size_t> *> *func_to_groups_changed) {
+    assert(func_to_groups_changed->find(F) != func_to_groups_changed->end());
+    std::set<size_t> *changed = (*func_to_groups_changed)[F];
+
+    for (std::set<size_t>::iterator i = changed->begin(), e = changed->end();
+            i != e; i++) {
+        size_t curr = *i;
+        fprintf(fp, " %lu", curr);
+    }
+}
+
 void Play::findFunctionExits(Module &M, const char *output_file,
-        std::map<Value *, size_t> value_to_alias_group) {
+        std::map<Value *, size_t> value_to_alias_group,
+        std::map<Function *, std::set<size_t> *> *func_to_groups_changed) {
     FILE *fp = fopen(output_file, "w");
 
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
+
+        if (F->empty()) continue;
+
+        bool ret_inst_found = false;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
@@ -1693,18 +1677,29 @@ void Play::findFunctionExits(Module &M, const char *output_file,
                     ++i) {
                 Instruction &inst = *i;
                 if (ReturnInst *ret = dyn_cast<ReturnInst>(&inst)) {
-                    if (ret->getReturnValue() == NULL) continue;
+                    // Only one RET per function
+                    assert(!ret_inst_found);
+                    ret_inst_found = true;
 
-                    if (ret->getReturnValue()->getType()->isPointerTy()) {
-                        size_t alias = searchForValueInKnownAliases(ret,
+                    if (ret->getReturnValue() != NULL &&
+                            ret->getReturnValue()->getType()->isPointerTy()) {
+                        size_t ret_alias = searchForValueInKnownAliases(ret,
                                 value_to_alias_group);
-                        assert(alias > 0);
-                        fprintf(fp, "%d %d %lu\n", ret->getDebugLoc().getLine(),
-                                ret->getDebugLoc().getCol(), alias);
+                        assert(ret_alias > 0);
+                        fprintf(fp, "%s %lu", getFunctionName(F, M).c_str(), ret_alias);
+                    } else {
+                        fprintf(fp, "%s 0", getFunctionName(F, M).c_str());
                     }
                 }
             }
         }
+
+        if (!ret_inst_found) {
+            fprintf(fp, "%s 0", getFunctionName(F, M).c_str());
+        }
+
+        printGroupsChanged(fp, F, func_to_groups_changed);
+        fprintf(fp, "\n");
     }
 
     fclose(fp);
@@ -1733,11 +1728,8 @@ bool Play::runOnModule(Module &M) {
     printReachable(reachable);
     dumpReachable(reachable, "reachable.info");
 
-    std::map<BasicBlock *, std::pair<int, int> > bb_maxes =
-        collectBBToMaxLineColMapping(M);
-
-    collectLineToGroupsMapping(M, reachable.get_value_to_alias_group(),
-            bb_maxes);
+    std::map<Function *, std::set<size_t> *> *func_to_groups_changed =
+        collectLineToGroupsMapping(M, reachable.get_value_to_alias_group());
 
     dumpLineToGroupsMappingTo("lines.info");
 
@@ -1777,7 +1769,8 @@ bool Play::runOnModule(Module &M) {
      */
     findHeapAllocations(M, "heap.info", reachable.get_value_to_alias_group());
 
-    findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group());
+    findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group(),
+            func_to_groups_changed);
 
     findGlobals(M, "globals.info");
 

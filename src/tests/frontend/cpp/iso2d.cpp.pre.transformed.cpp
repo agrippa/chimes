@@ -2925,7 +2925,7 @@ static void fwd(float *next, float *curr, float *vsq,
             next[this_offset] = temp + div * vsq[this_offset];
         } } }
     } } }
-rm_stack(false, 0UL); }
+alias_group_changed(20, (size_t)(142509876040465224UL), (size_t)(758094435815140655UL), (size_t)(1406537190118695280UL), (size_t)(1439420700812193513UL), (size_t)(1760539376595026939UL), (size_t)(3546215367615677073UL), (size_t)(3655576263074171224UL), (size_t)(4020147836706855852UL), (size_t)(4266828485354121373UL), (size_t)(4608403546164633272UL), (size_t)(4740125504295099978UL), (size_t)(5605394185929330330UL), (size_t)(5855332881963460232UL), (size_t)(6133022261894537111UL), (size_t)(7812062783844714897UL), (size_t)(8434292942123894570UL), (size_t)(13062136505411396820UL), (size_t)(17216818188849725545UL), (size_t)(17702871222471266781UL), (size_t)(18247678888939504941UL)); rm_stack(false, 0UL); }
 
 int main( int argc, char *argv[] ) {
     init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: config conf; register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
@@ -2952,10 +2952,10 @@ int main( int argc, char *argv[] ) {
       lbl_9: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = ((float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0, 0));
     if (curr == __null || next == __null || vsq == __null) { {
          call_lbl_5: calling(5, 0UL, 2, (size_t)(16436254989487132197UL), (size_t)(680289937019984656UL)); fprintf(__stderrp, "Allocations failed\n");
-        rm_stack(false, 0UL); return 1;
+        alias_group_changed(12, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 1;
     } }
 
-    alias_group_changed(12, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); call_lbl_6: calling(6, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
+    alias_group_changed(9, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16833687143959260136UL)); call_lbl_6: calling(6, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
       lbl_10: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_11; } call_lbl_7: calling(7, 14723839603729691025UL, 4, (size_t)(2820914316849208470UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
 
     alias_group_changed(1, (size_t)(3232826025796191657UL)); call_lbl_8: calling(8, 0UL, 8, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dx, dt);
@@ -3003,7 +3003,7 @@ int main( int argc, char *argv[] ) {
     } } }
     free_wrapper(srcs, 14723839603729691025UL);
 
-    rm_stack(false, 0UL); return 0;
+    alias_group_changed(12, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
 }
 
 

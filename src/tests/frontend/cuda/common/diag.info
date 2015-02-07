@@ -1,89 +1,80 @@
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 48 5 alias_group_changed(1, (size_t)(1085571792782596357UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 54 38 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 59 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 54 33 alias_group_changed(1, (size_t)(8765741491806222420UL)), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 9 alias_group_changed(3, (size_t)(1838009110135119624UL), (size_t)(14397346785968559525UL), (size_t)(16659523271239593530UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 9 alias_group_changed(10, (size_t)(1245668952459180081UL), (size_t)(1838009110135119624UL), (size_t)(2008721800625821080UL), (size_t)(4226562647247638785UL), (size_t)(8765741491806222420UL), (size_t)(11424047330458090375UL), (size_t)(14397346785968559525UL), (size_t)(16555843550090687416UL), (size_t)(16659523271239593530UL), (size_t)(17214330647054485194UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 64 5 alias_group_changed(3, (size_t)(5997784754333573673UL), (size_t)(8936251819094495589UL), (size_t)(16334560808348918639UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 65 32 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 69 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 65 9 alias_group_changed(1, (size_t)(7503953869617880805UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 5 alias_group_changed(1, (size_t)(13982009165439054754UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 68 9 alias_group_changed(2, (size_t)(7503953869617880805UL), (size_t)(13982009165439054754UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 5 alias_group_changed(2, (size_t)(7503953869617880805UL), (size_t)(13982009165439054754UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 72 33 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 76 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 72 9 alias_group_changed(1, (size_t)(1387191059008098409UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 5 alias_group_changed(1, (size_t)(5186300721691170515UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 75 9 alias_group_changed(2, (size_t)(1387191059008098409UL), (size_t)(5186300721691170515UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 5 alias_group_changed(2, (size_t)(1387191059008098409UL), (size_t)(5186300721691170515UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 79 32 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 83 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 79 9 alias_group_changed(1, (size_t)(11007132437992599952UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 5 alias_group_changed(4, (size_t)(3277977604394879722UL), (size_t)(6456531717151425942UL), (size_t)(8132302032623108198UL), (size_t)(11890416593231187164UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 82 9 alias_group_changed(5, (size_t)(3277977604394879722UL), (size_t)(6456531717151425942UL), (size_t)(8132302032623108198UL), (size_t)(11007132437992599952UL), (size_t)(11890416593231187164UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 5 alias_group_changed(5, (size_t)(3277977604394879722UL), (size_t)(6456531717151425942UL), (size_t)(8132302032623108198UL), (size_t)(11007132437992599952UL), (size_t)(11890416593231187164UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 90 5 alias_group_changed(1, (size_t)(4995672202021001482UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 91 5 alias_group_changed(1, (size_t)(4995672202021001482UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 92 5 alias_group_changed(1, (size_t)(4995672202021001482UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 22 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 107 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 9 alias_group_changed(5, (size_t)(6406781234504566915UL), (size_t)(8522629736461562909UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16642833800444842057UL)) || 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 98 30 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 101 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 98 13 alias_group_changed(1, (size_t)(9285280766920217948UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 100 13 alias_group_changed(10, (size_t)(2685576284420924090UL), (size_t)(2752442294988640373UL), (size_t)(6406781234504566915UL), (size_t)(7374354779439216353UL), (size_t)(8522629736461562909UL), (size_t)(9285280766920217948UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16182187182034189366UL), (size_t)(16642833800444842057UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 38 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 124 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 33 alias_group_changed(1, (size_t)(16182187182034189366UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 112 43 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 115 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 112 13 alias_group_changed(1, (size_t)(7374354779439216353UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 114 13 alias_group_changed(10, (size_t)(2685576284420924090UL), (size_t)(2752442294988640373UL), (size_t)(6406781234504566915UL), (size_t)(7374354779439216353UL), (size_t)(8522629736461562909UL), (size_t)(9285280766920217948UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16182187182034189366UL), (size_t)(16642833800444842057UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 116 43 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 119 9  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 118 13 alias_group_changed(10, (size_t)(2685576284420924090UL), (size_t)(2752442294988640373UL), (size_t)(6406781234504566915UL), (size_t)(7374354779439216353UL), (size_t)(8522629736461562909UL), (size_t)(9285280766920217948UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16182187182034189366UL), (size_t)(16642833800444842057UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 120 47 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 123 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5 alias_group_changed(4, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(18281605317195734986UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 122 13 alias_group_changed(10, (size_t)(2685576284420924090UL), (size_t)(2752442294988640373UL), (size_t)(6406781234504566915UL), (size_t)(7374354779439216353UL), (size_t)(8522629736461562909UL), (size_t)(9285280766920217948UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16182187182034189366UL), (size_t)(16642833800444842057UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 129 32 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 132 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 129 9 alias_group_changed(1, (size_t)(14632242022306526605UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 131 9 alias_group_changed(7, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(14632242022306526605UL), (size_t)(17386119534690992797UL), (size_t)(17866036073706292390UL), (size_t)(18281605317195734986UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 37 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 141 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 32 alias_group_changed(1, (size_t)(17866036073706292390UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 136 39 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 139 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 136 13 alias_group_changed(1, (size_t)(17386119534690992797UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 138 13 alias_group_changed(7, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(14632242022306526605UL), (size_t)(17386119534690992797UL), (size_t)(17866036073706292390UL), (size_t)(18281605317195734986UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 140 9 alias_group_changed(7, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(14632242022306526605UL), (size_t)(17386119534690992797UL), (size_t)(17866036073706292390UL), (size_t)(18281605317195734986UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 147 36 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 150 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 147 9 alias_group_changed(3, (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 149 9 alias_group_changed(5, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 152 23 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 155 5  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 154 9 alias_group_changed(5, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 19 len=8 { return;
  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 9 alias_group_changed(1, (size_t)(11193925814866863242UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 5 alias_group_changed(1, (size_t)(4047636378196868974UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 5 alias_group_changed(5, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 171 35 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 173 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 171 10 alias_group_changed(3, (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(17419974122101928524UL)), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 171 30 alias_group_changed(1, (size_t)(17419974122101928524UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 181 28 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 183 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 181 9 alias_group_changed(1, (size_t)(7452125661963734140UL)) || 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 185 36 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 189 5  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 188 9 alias_group_changed(3, (size_t)(7452125661963734140UL), (size_t)(11152286784634729525UL), (size_t)(16155725638166610324UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 193 34 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 195 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 193 9 alias_group_changed(2, (size_t)(11152286784634729525UL), (size_t)(16155725638166610324UL)) || 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 197 37 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 200 5  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 199 9 alias_group_changed(3, (size_t)(7452125661963734140UL), (size_t)(11152286784634729525UL), (size_t)(16155725638166610324UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 202 37 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 212 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 203 41 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 205 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 203 14 alias_group_changed(1, (size_t)(1593413819852114407UL)), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 203 36 alias_group_changed(1, (size_t)(1593413819852114407UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 207 51 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 209 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 207 14 alias_group_changed(1, (size_t)(1593413819852114407UL)), 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 207 46 alias_group_changed(1, (size_t)(1593413819852114407UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 218 28 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 220 5  }
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 97 27 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 97 47 , 2752442294988640373UL, 0, 1, (int)sizeof(struct _source), 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 194 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 223 , 17386119534690992797UL, 1, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 37 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 66 , 17386119534690992797UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 135 35 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 135 63 , 16455452247920468155UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 161 31 len=6 malloc_wrapper
@@ -91,40 +82,40 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.c
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 225 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 225 10 , 12675187840154511571UL
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 45 5 new_stack(0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 48 62 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 48 5 alias_group_changed(1, (size_t)(1085571792782596357UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 5 new_stack(4, (size_t)(2008721800625821080UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 5  register_stack_var("ricker_wavelet|source|0", "float*", (void *)(&source), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 5  register_stack_var("ricker_wavelet|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 5  register_stack_var("ricker_wavelet|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 5  register_stack_var("ricker_wavelet|freq|0", "float", (void *)(&freq), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 60 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 60 1 alias_group_changed(7, (size_t)(1245668952459180081UL), (size_t)(2008721800625821080UL), (size_t)(4226562647247638785UL), (size_t)(8765741491806222420UL), (size_t)(11424047330458090375UL), (size_t)(16555843550090687416UL), (size_t)(17214330647054485194UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 63 5 new_stack(2, (size_t)(4288610876228433544UL), (size_t)(4995672202021001482UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 63 5  register_stack_var("parse_source|optarg|0", "i8*", (void *)(&optarg), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 63 5  register_stack_var("parse_source|out|0", "%struct._source*", (void *)(&out), 8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 93 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 93 1 alias_group_changed(1, (size_t)(4995672202021001482UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 5 new_stack(5, (size_t)(9285280766920217948UL), (size_t)(2685576284420924090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 5  register_stack_var("config_sources|srcs|0", "%struct._source**", (void *)(&srcs), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 5  register_stack_var("config_sources|nsrcs|0", "i32*", (void *)(&nsrcs), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 5  register_stack_var("config_sources|nx|0", "i32", (void *)(&nx), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 5  register_stack_var("config_sources|ny|0", "i32", (void *)(&ny), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 5  register_stack_var("config_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 125 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 125 1 alias_group_changed(10, (size_t)(2685576284420924090UL), (size_t)(2752442294988640373UL), (size_t)(6406781234504566915UL), (size_t)(7374354779439216353UL), (size_t)(8522629736461562909UL), (size_t)(9285280766920217948UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16182187182034189366UL), (size_t)(16642833800444842057UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5 new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5  register_stack_var("sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5  register_stack_var("sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5  register_stack_var("sample_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5  register_stack_var("sample_sources|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 142 5 rm_stack(true, 17386119534690992797UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 142 5 alias_group_changed(6, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(14632242022306526605UL), (size_t)(17866036073706292390UL), (size_t)(18281605317195734986UL)); rm_stack(true, 17386119534690992797UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 146 5 new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 146 5  register_stack_var("init_progress|length|0", "i32", (void *)(&length), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 146 5  register_stack_var("init_progress|goal|0", "i32", (void *)(&goal), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 146 5  register_stack_var("init_progress|disabled|0", "i32", (void *)(&disabled), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 81 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 176 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 21 alias_group_changed(7, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(17419974122101928524UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 176 1 alias_group_changed(7, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(17419974122101928524UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 179 5 new_stack(1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 179 5  register_stack_var("update_progress|progress|0", "i32", (void *)(&progress), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 182 9 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 215 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 182 9 alias_group_changed(6, (size_t)(1593413819852114407UL), (size_t)(7452125661963734140UL), (size_t)(11152286784634729525UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(16155725638166610324UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 215 1 alias_group_changed(6, (size_t)(1593413819852114407UL), (size_t)(7452125661963734140UL), (size_t)(11152286784634729525UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(16155725638166610324UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 218 5 new_stack(0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 219 9 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 226 1 rm_stack(false, 0UL); 
@@ -152,12 +143,12 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 6
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 64 167 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 70 5  char *y_str;  y_str = (first_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 70 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 63  char *second_comma;  second_comma = (strchr(y_str, ',')); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 102 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 96  char *second_comma;  second_comma = (strchr(y_str, ',')); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 135 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 77 5  char *freq_str;  freq_str = (second_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 77 38 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 62  char *third_comma;  third_comma = (strchr(freq_str, ',')); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 103 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 95  char *third_comma;  third_comma = (strchr(freq_str, ',')); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 136 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 5  char *time_str;  time_str = (third_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 37 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 5 {  int i; 
@@ -166,8 +157,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 1
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111 9  source *curr;  curr = ((*srcs) + i); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 599  float **src_samples;  src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 700 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 442  float **src_samples;  src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0)); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 543 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 141 7  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 10  i = (0); 
@@ -181,44 +172,44 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 191
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 192 5  int ticks;  ticks = ((int)(perc_progress * progress_length)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 192 55 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 47 14  call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 134  call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 369  call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 64 150  call_lbl_0: calling(0, 6456531717151425942UL, 2, (size_t)(4288610876228433544UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 66 9  call_lbl_1: calling(1, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 68 9  call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 85  call_lbl_3: calling(3, 3277977604394879722UL, 2, (size_t)(6456531717151425942UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 68 100  call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 118  call_lbl_3: calling(3, 3277977604394879722UL, 2, (size_t)(6456531717151425942UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 73 9  call_lbl_4: calling(4, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 75 9  call_lbl_5: calling(5, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 83  call_lbl_6: calling(6, 8132302032623108198UL, 2, (size_t)(3277977604394879722UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 75 99  call_lbl_5: calling(5, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 116  call_lbl_6: calling(6, 8132302032623108198UL, 2, (size_t)(3277977604394879722UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 80 9  call_lbl_7: calling(7, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 82 9  call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 162  call_lbl_9: calling(9, 0UL, 1, (size_t)(4288610876228433544UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 82 200  call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 196  call_lbl_9: calling(9, 0UL, 1, (size_t)(4288610876228433544UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 90 62  call_lbl_10: calling(10, 0UL, 1, (size_t)(6456531717151425942UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 91 62  call_lbl_11: calling(11, 0UL, 1, (size_t)(3277977604394879722UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 92 62  call_lbl_12: calling(12, 0UL, 1, (size_t)(8132302032623108198UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 99 13  call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 100 13  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 100 372  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 113 13  call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(3128876572329368717UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 114 13  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 114 372  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 117 13  call_lbl_4: calling(4, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(3128876572329368717UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 118 13  call_lbl_5: calling(5, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 118 372  call_lbl_5: calling(5, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 121 13  call_lbl_6: calling(6, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(3128876572329368717UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 122 13  call_lbl_7: calling(7, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 122 372  call_lbl_7: calling(7, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 130 9  call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 131 9  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 131 268  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 137 13  call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 138 13  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 140 9  call_lbl_4: calling(4, 0UL, 4, (size_t)(16455452247920468155UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 138 272  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 140 268  call_lbl_4: calling(4, 0UL, 4, (size_t)(16455452247920468155UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 148 9  call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1701980738252910445UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 149 9  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 149 201  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 153 9  call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1048733268009356568UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 154 9  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 62  call_lbl_4: calling(4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 62  call_lbl_5: calling(5, 0UL, 4, (size_t)(4874333479337244968UL), (size_t)(17465472399038220708UL), (size_t)(0UL), (size_t)(13271497296974192061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 154 201  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 197  call_lbl_4: calling(4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 197  call_lbl_5: calling(5, 0UL, 4, (size_t)(4874333479337244968UL), (size_t)(17465472399038220708UL), (size_t)(0UL), (size_t)(13271497296974192061UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 175 5  call_lbl_6: calling(6, 0UL, 3, (size_t)(3433389096703679793UL), (size_t)(13754369679585716016UL), (size_t)(12675187840154511571UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 186 9  call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(5063325847332520444UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 188 9  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 188 134  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 198 9  call_lbl_2: calling(2, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(6920278918034904113UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 199 9  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 199 134  call_lbl_3: calling(3, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 208 13  call_lbl_4: calling(4, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(8191263634422753161UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 211 9  call_lbl_5: calling(5, 0UL, 3, (size_t)(3433389096703679793UL), (size_t)(13754369679585716016UL), (size_t)(12675187840154511571UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 222 5  call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); 
@@ -258,15 +249,15 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.c
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 70 6  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 70 17  register_stack_var("parse_source|y_str|0", "i8*", (void *)(&y_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 70 17  if (____numdebug_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 64  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 82  register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 82  if (____numdebug_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 97  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 115  register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 115  if (____numdebug_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 77 6  lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 77 20  register_stack_var("parse_source|freq_str|0", "i8*", (void *)(&freq_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 77 20  if (____numdebug_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 63  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 80  register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 80  if (____numdebug_replaying) { goto lbl_6; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 96  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 113  register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 113  if (____numdebug_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 6  lbl_6: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 20  register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 20  if (____numdebug_replaying) { goto lbl_7; } 
@@ -278,9 +269,9 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 1
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111 22  register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111 22  if (____numdebug_replaying) { goto lbl_2; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111 22 lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { exit(42); } } } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 600  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 619  register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 619  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 443  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 462  register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 462  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 13  register_stack_var("sample_sources|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 13  if (____numdebug_replaying) { goto lbl_2; } 
