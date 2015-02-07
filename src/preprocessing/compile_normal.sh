@@ -98,12 +98,19 @@ GXX_FLAGS="${INCLUDES} -g -O0"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 for INPUT in ${ABS_INPUTS[@]}; do
+    BASENAME=$(basename ${INPUT})
+    EXT="${INPUT##*.}"
+
     OBJ_FILE=${INPUT}.o
 
     LAST_FILES+=($INPUT)
     OBJ_FILES+=($OBJ_FILE)
 
-    g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS}
+    if [[ ${EXT} == "cpp" ]]; then
+        g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS}
+    elif [[ ${EXT} == "cu" ]]; then
+        nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE}
+    fi
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"
@@ -125,7 +132,8 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS}
+    g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
+        ${GXX_FLAGS} -L${CUDA_HOME}/lib -lcudart
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

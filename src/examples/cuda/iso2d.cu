@@ -39,7 +39,9 @@
 #include <unistd.h>
 #include "common.h"
 #include "common2d.h"
+#ifdef __NUMDEBUG_SUPPORT
 #include "checkpoint.h"
+#endif
 
 #define BDIMX   32
 #define BDIMY   16
@@ -138,11 +140,13 @@ int main( int argc, char *argv[] ) {
         fwd_kernel<<<grid, block>>>(d_next, d_curr, d_vsq, d_c_coeff,
                 conf.nx, conf.ny, dimx, conf.radius);
 
-        checkpoint();
-
         TYPE *tmp = d_next;
         d_next = d_curr;
         d_curr = tmp;
+
+#ifdef __NUMDEBUG_SUPPORT
+        checkpoint();
+#endif
 
         update_progress(step + 1);
     }
