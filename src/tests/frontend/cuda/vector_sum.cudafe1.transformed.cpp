@@ -26791,19 +26791,19 @@ init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  lbl_5: int *d_A; register_stack_var("main|d_A|0", "i32*", (void *)(&d_A), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } lbl_6: int *d_B; register_stack_var("main|d_B|0", "i32*", (void *)(&d_B), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } lbl_7: int *d_C; register_stack_var("main|d_C|0", "i32*", (void *)(&d_C), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; }
 # 28 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); h_A = ((int *)malloc_wrapper(sizeof(int) * N, 12461144288208489700UL, 0, 0));
+h_A = ((int *)malloc_wrapper(sizeof(int) * N, 12461144288208489700UL, 0, 0));
 # 29 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(1, (size_t)(13034356908650733702UL)); h_B = ((int *)malloc_wrapper(sizeof(int) * N, 16911790603234953566UL, 0, 0));
+h_B = ((int *)malloc_wrapper(sizeof(int) * N, 16911790603234953566UL, 0, 0));
 # 30 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(1, (size_t)(18097232747524644883UL)); h_C = ((int *)malloc_wrapper(sizeof(int) * N, 12432285355704167318UL, 0, 0));
+h_C = ((int *)malloc_wrapper(sizeof(int) * N, 12432285355704167318UL, 0, 0));
 # 32 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(1, (size_t)(4713364512689004448UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0, 0);
+alias_group_changed(7, (size_t)(1388457574958923572UL), (size_t)(4713364512689004448UL), (size_t)(13034356908650733702UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL), (size_t)(18097232747524644883UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0, 0);
 # 33 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, 0UL, 0, 0);
 # 34 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaMalloc_wrapper((void **)(&d_C), sizeof(int) * N, 0UL, 0, 0);
 # 36 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-for (alias_group_changed(1, (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
+for (i = 0; i < N; i++) { {
 # 37 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 (h_A[i]) = i;
 # 38 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26811,7 +26811,7 @@ for (alias_group_changed(1, (size_t)(16809019010565379225UL)), i = 0; i < N; ali
 # 39 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 } }
 # 41 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_0: calling(0, 0UL, 4, (size_t)(15259509928453863544UL), (size_t)(12461144288208489700UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
+alias_group_changed(3, (size_t)(12461144288208489700UL), (size_t)(16809019010565379225UL), (size_t)(16911790603234953566UL)); call_lbl_0: calling(0, 0UL, 4, (size_t)(15259509928453863544UL), (size_t)(12461144288208489700UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
 # 42 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  call_lbl_1: calling(1, 0UL, 4, (size_t)(16362704626186430450UL), (size_t)(16911790603234953566UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
 # 44 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26827,7 +26827,7 @@ alias_group_changed(2, (size_t)(2906517587857753UL), (size_t)(105160373940375316
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  lbl_10: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_11; } lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { exit(42); } } } call_lbl_6: calling(6, 6337771489180023308UL, 2, (size_t)(7451376560946655001UL), (size_t)(9302546641309323898UL)); fp = (fopen("dump.out", "w"));
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-for (alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
+for (i = 0; i < N; i++) { {
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  call_lbl_7: calling(7, 0UL, 3, (size_t)(6337771489180023308UL), (size_t)(10438118436187702648UL), (size_t)(0UL)); fprintf(fp, "%d\n", h_C[i]);
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26835,7 +26835,7 @@ for (alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(1680901901
 # 57 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  call_lbl_8: calling(8, 0UL, 1, (size_t)(6337771489180023308UL)); fclose(fp);
 # 59 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-cudaFree_wrapper(d_A, 0UL);
+alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)); cudaFree_wrapper(d_A, 0UL);
 # 60 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaFree_wrapper(d_B, 0UL);
 # 61 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

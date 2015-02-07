@@ -26,24 +26,20 @@ class ReachableInfo {
 
 class FunctionExit {
     public:
-        FunctionExit(int set_line, int set_col, size_t set_alias) :
-            line(set_line), col(set_col), alias(set_alias) {}
+        FunctionExit(size_t set_return_alias) :
+            return_alias(set_return_alias) {}
 
-        int get_line() { return line; }
-        int get_col() { return col; }
-        size_t get_alias() { return alias; }
-
-        bool operator < (const FunctionExit& other) const {
-            if (line == other.line) {
-                return col < other.col;
-            } else {
-                return line < other.line;
-            }
+        size_t get_return_alias() { return return_alias; }
+        std::set<size_t> get_groups_changed_at_termination() {
+            return groups_changed_at_termination;
+        }
+        void add_changed_group_at_term(size_t group) {
+            groups_changed_at_termination.insert(group);
         }
 
     private:
-        int line, col;
-        size_t alias;
+        size_t return_alias;
+        std::set<size_t> groups_changed_at_termination;
 };
 
 class FunctionArgumentAliasGroups {
@@ -93,6 +89,7 @@ class AliasesPassedToCallSite {
 
 class HeapAlloc {
 public:
+    HeapAlloc() { }
     HeapAlloc(int set_line_no, int set_col, size_t set_group,
             std::string set_fname) : line_no(set_line_no), col(set_col),
             group(set_group), fname(set_fname), is_elem_ptr(false),
@@ -124,6 +121,14 @@ public:
             std::vector<std::string> *set_struct_field_ptrs) {
         struct_type_name = set_struct_type_name;
         struct_field_ptrs = set_struct_field_ptrs;
+    }
+
+    bool operator < (const HeapAlloc& other) const {
+        if (line_no == other.line_no) {
+            return col < other.col;
+        } else {
+            return line_no < other.line_no;
+        }
     }
 
 private:
@@ -187,19 +192,6 @@ public:
 private:
     std::string name;
     std::vector<std::string> fields;
-};
-
-class MatchedLocation {
-public:
-    MatchedLocation(int set_line, int set_col, const char *set_filename) :
-        line(set_line), col(set_col), filename(set_filename) {}
-    int get_line() { return line; }
-    int get_col() { return col; }
-    std::string get_filename() { return filename; }
-
-private:
-    int line, col;
-    std::string filename;
 };
 
 class StateChangeInsertion {
@@ -267,9 +259,8 @@ public:
     }
 
     StackAlloc *findStackAlloc(std::string mangled_name);
-    HeapAlloc *isMemoryAllocation(int line, int col);
-    void updateMemoryAllocations(unsigned int line, unsigned int col,
-            unsigned int increment_by);
+    bool findNextMatchingMemoryAllocation(int line, std::string func,
+            HeapAlloc *ret);
 
     void updateMainFile(std::string file) {
         original_file = file;
@@ -288,6 +279,11 @@ public:
     void AppendToDiagnostics(std::string action, clang::SourceLocation loc,
             std::string val, clang::SourceManager &SM);
 
+    FunctionExit *getFunctionExitInfo(std::string funcname) {
+        assert(func_exits->find(funcname) != func_exits->end());
+        return func_exits->at(funcname);
+    }
+
     AliasesPassedToCallSite findFirstMatchingCallsite(int line) {
         std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
         std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
@@ -300,27 +296,6 @@ public:
 
         AliasesPassedToCallSite result = *i;
         callsites->erase(i);
-        return result;
-    }
-
-    FunctionExit *findFirstMatchingFunctionExit(int line) {
-        std::vector<FunctionExit>::iterator i = func_exits->begin();
-        std::vector<FunctionExit>::iterator e = func_exits->end();
-        while (i != e) {
-            FunctionExit curr = *i;
-            if (curr.get_line() == line) break;
-            i++;
-        }
-        if (i == e) {
-            /*
-             * We won't be able to find a matching function exit for returns
-             * with a scalar type.
-             */
-            return NULL;
-        }
-
-        FunctionExit *result = new FunctionExit(*i);
-        func_exits->erase(i);
         return result;
     }
 
@@ -349,19 +324,19 @@ private:
         std::vector<StateChangeInsertion *> *state_change_insertions;
         std::vector<StructFields *> *struct_fields;
         std::map<std::string, StackAlloc *> *stack_allocs;
-        std::vector<HeapAlloc *> *heap_allocs;
+        std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *heap_allocs;
         std::vector<FunctionArgumentAliasGroups> *functions;
         std::vector<AliasesPassedToCallSite> *callsites;
-        std::vector<FunctionExit> *func_exits;
+        std::map<std::string, FunctionExit *> *func_exits;
         std::vector<ReachableInfo> *reachable;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
-        std::vector<HeapAlloc *> *parseHeapAllocs();
+        std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *parseHeapAllocs();
         std::vector<FunctionArgumentAliasGroups> *parseFunctions();
         std::vector<AliasesPassedToCallSite> *parseCallSites();
-        std::vector<FunctionExit> *parseFunctionExits();
+        std::map<std::string, FunctionExit *> *parseFunctionExits();
         std::vector<ReachableInfo> *parseReachable();
 
         size_t module_id;

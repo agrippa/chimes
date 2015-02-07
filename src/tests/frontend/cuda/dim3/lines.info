@@ -1,6 +1,2 @@
 /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 1 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z10checkpointv
-/Developer/NVIDIA/CUDA-6.5/include/vector_types.h 419 43 : { 376502165718905071, 3436781488796912260, 4674896959417115766, 5626575887285586994, 8686855210363594183, 10876649608852268917, 13936928931930276106, 14824238800785570000, 16415294844621594485 } direct:term:_ZN4dim3C1Ejjj
-/tmp/numdebug.rRbze1/nvcc/dim3.cudafe1.stub.c 9 65 : { 1983966042826701852, 7696593959710208457 } direct:call:NULL
-/tmp/numdebug.rRbze1/nvcc/dim3.cudafe1.stub.c 8 52 : { 5977518576729644591, 7696593959710208457 } direct:term:_ZL31__nv_cudaEntityRegisterCallbackPPv
-/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h 121 42 : { 7696593959710208457, 17834006590498585836 } direct:term:_ZL22____nv_dummy_param_refPv
-/Users/jmg3/num-debug/src/examples/cuda/dim3.cu 1 146 : { 7229261624878550433, 7696593959710208457 } direct:term:_ZL37__nv_save_fatbinhandle_for_managed_rtPPv
+/tmp/numdebug.ZUaBf5/nvcc/dim3.cudafe1.stub.c 9 65 : { 1983966042826701852, 7696593959710208457 } direct:call:NULL

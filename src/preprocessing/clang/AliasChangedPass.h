@@ -12,6 +12,19 @@
 
 #include "ParentTransform.h"
 
+class MatchedLocation {
+public:
+    MatchedLocation(int set_line, int set_col, const char *set_filename) :
+        line(set_line), col(set_col), filename(set_filename) {}
+    int get_line() { return line; }
+    int get_col() { return col; }
+    std::string get_filename() { return filename; }
+
+private:
+    int line, col;
+    std::string filename;
+};
+
 class AliasChangedPass : public ParentTransform {
 public:
     AliasChangedPass() { }
