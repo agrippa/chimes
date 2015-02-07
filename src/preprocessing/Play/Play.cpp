@@ -40,8 +40,6 @@ namespace {
         std::string *reason;
     } GroupsModifiedAtLine;
 
-
-
     typedef struct _StackAllocInfo {
         std::string *varname;
         int type_size_in_bits;
