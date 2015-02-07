@@ -838,9 +838,6 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
 }
 
 /*
- * TODO promote alias changes out of basic blocks and to their successors as
- * much as possible.
- *
  * One annoying thing about LLVM's IR is that it has the ability to refactor
  * separate return statements in the source into a single RetInst in SSA form.
  * This means that even though there is only one TerminatorInst in the function

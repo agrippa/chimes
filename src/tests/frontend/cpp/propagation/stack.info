@@ -1,0 +1,3 @@
+/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp main|argc|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp main|argv|0 " i8** " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp main|A|0 " i32* " 64 1 0 
