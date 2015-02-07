@@ -11,6 +11,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 91 5 alias_group_cha
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 98 1 alias_group_changed(3, (size_t)(3920757191841456973UL), (size_t)(13776165132426961666UL), (size_t)(16833687143959260136UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 99 1 alias_group_changed(1, (size_t)(13776165132426961666UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 100 1 alias_group_changed(1, (size_t)(3920757191841456973UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 1 alias_group_changed(1, (size_t)(16833687143959260136UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 102 70 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 105 1  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 102 5 alias_group_changed(1, (size_t)(12835239948587864347UL)) || 
@@ -24,6 +25,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 115 90 {
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 115 276  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 116 108 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 116 294  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 3 alias_group_changed(1, (size_t)(5578711921516348101UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 109 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 295  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 109 { 
@@ -40,11 +42,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 136 3  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 39 alias_group_changed(1, (size_t)(4230221212431166864UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 131 36 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 131 48  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 3 alias_group_changed(1, (size_t)(8746935921038613430UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 143 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 329  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 147 1 alias_group_changed(3, (size_t)(2362206228145856531UL), (size_t)(3059869403021773121UL), (size_t)(11651205536145820044UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 76 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 262  }
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 3 alias_group_changed(1, (size_t)(5626833308757261620UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 109 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 295  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 155 1 alias_group_changed(1, (size_t)(16588917083811119147UL)); 
@@ -70,8 +74,8 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 99 76 len=6 malloc_
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 99 83 , 10388895706923212532UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 100 74 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 100 81 , 10388895706923212532UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 27 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 53 , 14484979114545697019UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 85 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 111 , 14484979114545697019UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 113 23 len=10 cudaMalloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 113 54 , 0UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 114 23 len=10 cudaMalloc_wrapper
@@ -132,8 +136,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 89 1  size_t n
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 89 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 97 1  float *curr;  float *next;  float *vsq;  curr = ((__null));  next = ((__null));  vsq = ((__null)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 97 58 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 1  float *c_coeff;  c_coeff = ((float *)malloc_wrapper(sizeof(float) * (20), 14484979114545697019UL, 0, 0)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 93 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 59  float *c_coeff;  c_coeff = ((float *)malloc_wrapper(sizeof(float) * (20), 14484979114545697019UL, 0, 0)); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 151 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 108 1  float **srcs;  srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 108 70 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 112 1 float *d_curr; float *d_next; float *d_vsq; float *d_c_coeff; 
@@ -152,8 +156,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 119 1  dim3 gr
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 119 56 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 121 1  double mem_start;  mem_start = (seconds()); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 121 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 3  cudaError_t error;  error = (cudaMemcpy(d_curr, curr, nbytes, cudaMemcpyHostToDevice)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 60  cudaError_t error;  error = (cudaMemcpy(d_curr, curr, nbytes, cudaMemcpyHostToDevice)); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 136 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 3  cudaError_t error;  error = (cudaMemcpy(d_next, next, nbytes, cudaMemcpyHostToDevice)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 79 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 125 3  cudaError_t error;  error = (cudaMemcpy(d_vsq, vsq, nbytes, cudaMemcpyHostToDevice)); 
@@ -172,16 +176,16 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 6  src = (
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 17 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 132 1  int src_offset;  src_offset = ((((conf.radius) + (((conf.srcs)[src]).y)) * dimx) + ((conf.radius) + (((conf.srcs)[src]).x))); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 132 110 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 3  cudaError_t error;  error = (cudaMemcpy(d_curr + src_offset, (srcs[src]) + step, sizeof(float), cudaMemcpyHostToDevice)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 113 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 60  cudaError_t error;  error = (cudaMemcpy(d_curr + src_offset, (srcs[src]) + step, sizeof(float), cudaMemcpyHostToDevice)); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 170 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 143 1  float *tmp;  tmp = (d_next); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 143 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 3  cudaError_t error;  error = (cudaDeviceSynchronize()); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 150 1  double compute_s;  compute_s = (seconds() - start); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 150 37 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 3  cudaError_t error;  error = (cudaMemcpy(curr, d_curr, nbytes, cudaMemcpyDeviceToHost)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 60  cudaError_t error;  error = (cudaMemcpy(curr, d_curr, nbytes, cudaMemcpyDeviceToHost)); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 136 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 153 1  double total_s;  total_s = (seconds() - mem_start); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 153 39 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 157 1  float point_rate;  point_rate = ((((float)(conf.nx)) * (conf.ny)) / (compute_s / (conf.nsteps))); 
@@ -228,11 +232,11 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 116 318  call_lbl_26
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 118 15  call_lbl_27: calling(27, 0UL, 4, (size_t)(15645691691649367162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 119 14  call_lbl_28: calling(28, 0UL, 4, (size_t)(8708672926538531461UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 121 21  call_lbl_29: calling(29, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 24  call_lbl_30: calling(30, 9500108000743839739UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 125  call_lbl_31: calling(31, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 220  call_lbl_32: calling(32, 0UL, 4, (size_t)(8481295902369080264UL), (size_t)(10388895706923212532UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 220  call_lbl_33: calling(33, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 300  call_lbl_34: calling(34, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(9500108000743839739UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 81  call_lbl_30: calling(30, 9500108000743839739UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 182  call_lbl_31: calling(31, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 277  call_lbl_32: calling(32, 0UL, 4, (size_t)(8481295902369080264UL), (size_t)(10388895706923212532UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 277  call_lbl_33: calling(33, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 357  call_lbl_34: calling(34, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(9500108000743839739UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 24  call_lbl_35: calling(35, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 125  call_lbl_36: calling(36, 12423446800325587020UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 220  call_lbl_37: calling(37, 0UL, 4, (size_t)(8481295902369080264UL), (size_t)(10388895706923212532UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -249,11 +253,11 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 126 240  call_lbl_47
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 126 240  call_lbl_48: calling(48, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 126 320  call_lbl_49: calling(49, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(8120259870464400343UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 128 17  call_lbl_50: calling(50, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 24  call_lbl_51: calling(51, 13508309741563677205UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 159  call_lbl_52: calling(52, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 254  call_lbl_53: calling(53, 0UL, 4, (size_t)(8481295902369080264UL), (size_t)(3333411823610283339UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 254  call_lbl_54: calling(54, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 334  call_lbl_55: calling(55, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(13508309741563677205UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 81  call_lbl_51: calling(51, 13508309741563677205UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 216  call_lbl_52: calling(52, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 311  call_lbl_53: calling(53, 0UL, 4, (size_t)(8481295902369080264UL), (size_t)(3333411823610283339UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 311  call_lbl_54: calling(54, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 391  call_lbl_55: calling(55, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(13508309741563677205UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 138 1  call_lbl_56: calling(56, 0UL, 5, (size_t)(10738398682868926875UL), (size_t)(15645691691649367162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 138 1  call_lbl_57: calling(57, 0UL, 5, (size_t)(14832733179147967965UL), (size_t)(8708672926538531461UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 141 1  call_lbl_58: calling(58, 0UL, 0); 
@@ -264,11 +268,11 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 187  call_lbl_62
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 187  call_lbl_63: calling(63, 7952794923981582667UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 267  call_lbl_64: calling(64, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 150 21  call_lbl_65: calling(65, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 24  call_lbl_66: calling(66, 11853673242271134336UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 125  call_lbl_67: calling(67, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 220  call_lbl_68: calling(68, 0UL, 4, (size_t)(10388895706923212532UL), (size_t)(8481295902369080264UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 220  call_lbl_69: calling(69, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 300  call_lbl_70: calling(70, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(11853673242271134336UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 81  call_lbl_66: calling(66, 11853673242271134336UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 182  call_lbl_67: calling(67, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 277  call_lbl_68: calling(68, 0UL, 4, (size_t)(10388895706923212532UL), (size_t)(8481295902369080264UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 277  call_lbl_69: calling(69, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(7809567070099283787UL), (size_t)(6039728114843679779UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 357  call_lbl_70: calling(70, 0UL, 4, (size_t)(12847752882672603379UL), (size_t)(117510245257636965UL), (size_t)(0UL), (size_t)(11853673242271134336UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 153 19  call_lbl_71: calling(71, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 155 59  call_lbl_72: calling(72, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 158 59  call_lbl_73: calling(73, 0UL, 5, (size_t)(12847752882672603379UL), (size_t)(2389779503988117873UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -316,9 +320,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 97 27  if 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 97 30  lbl_8: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 97 40  register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 97 40  if (____numdebug_replaying) { goto lbl_9; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 2  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 16  register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 16  if (____numdebug_replaying) { goto lbl_10; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 60  lbl_9: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 74  register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 74  if (____numdebug_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 108 2  lbl_10: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 108 14  register_stack_var("main|srcs|0", "float**", (void *)(&srcs), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 108 14  if (____numdebug_replaying) { goto lbl_11; } 
@@ -355,9 +359,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 119 11  if
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 121 2  lbl_21: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 121 18  register_stack_var("main|mem_start|0", "double", (void *)(&mem_start), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 121 18  if (____numdebug_replaying) { goto lbl_22; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 4  lbl_22: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 21  register_stack_var("main|error|4", "i32", (void *)(&error), 4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 21  if (____numdebug_replaying) { goto lbl_23; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 61  lbl_22: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 78  register_stack_var("main|error|4", "i32", (void *)(&error), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 78  if (____numdebug_replaying) { goto lbl_23; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 4  lbl_23: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 21  register_stack_var("main|error|5", "i32", (void *)(&error), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 21  if (____numdebug_replaying) { goto lbl_24; } 
@@ -379,9 +383,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 11  if
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 132 2  lbl_29: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 132 16  register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 132 16  if (____numdebug_replaying) { goto lbl_30; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 4  lbl_30: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 21  register_stack_var("main|error|8", "i32", (void *)(&error), 4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 21  if (____numdebug_replaying) { goto lbl_31; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 61  lbl_30: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 78  register_stack_var("main|error|8", "i32", (void *)(&error), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 78  if (____numdebug_replaying) { goto lbl_31; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 143 2  lbl_31: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 143 12  register_stack_var("main|tmp|0", "float*", (void *)(&tmp), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 143 12  if (____numdebug_replaying) { goto lbl_32; } 
@@ -391,9 +395,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 21  if
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 150 2  lbl_33: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 150 18  register_stack_var("main|compute_s|0", "double", (void *)(&compute_s), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 150 18  if (____numdebug_replaying) { goto lbl_34; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 4  lbl_34: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 21  register_stack_var("main|error|10", "i32", (void *)(&error), 4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 21  if (____numdebug_replaying) { goto lbl_35; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 61  lbl_34: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 78  register_stack_var("main|error|10", "i32", (void *)(&error), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 78  if (____numdebug_replaying) { goto lbl_35; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 153 2  lbl_35: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 153 16  register_stack_var("main|total_s|0", "double", (void *)(&total_s), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 153 16  if (____numdebug_replaying) { goto lbl_36; } 

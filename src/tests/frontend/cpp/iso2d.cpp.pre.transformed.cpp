@@ -2947,9 +2947,9 @@ int main( int argc, char *argv[] ) {
     } }
 
       lbl_6: float *c_coeff; register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 10933946544651129952UL, 0, 0));
-      lbl_7: float *curr; register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = ((float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0));
-      lbl_8: float *next; register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = ((float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0));
-      lbl_9: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = ((float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0, 0));
+    alias_group_changed(1, (size_t)(12835239948587864347UL)); lbl_7: float *curr; register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } curr = ((float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0));
+    alias_group_changed(1, (size_t)(13776165132426961666UL)); lbl_8: float *next; register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_9; } next = ((float *)malloc_wrapper(nbytes, 8391575324692158608UL, 0, 0));
+    alias_group_changed(1, (size_t)(3920757191841456973UL)); lbl_9: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_10; } vsq = ((float *)malloc_wrapper(nbytes, 8777646764455402125UL, 0, 0));
     if (alias_group_changed(1, (size_t)(16833687143959260136UL)) || curr == __null || next == __null || vsq == __null) { {
          call_lbl_5: calling(5, 0UL, 2, (size_t)(16436254989487132197UL), (size_t)(680289937019984656UL)); fprintf(__stderrp, "Allocations failed\n");
         alias_group_changed(1, (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 1;

@@ -1711,8 +1711,8 @@ int main(int argc, char **argv) {
       lbl_2: int N; register_stack_var("main|N|0", "i32", (void *)(&N), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } N = (1024);
       lbl_3: int niters; register_stack_var("main|niters|0", "i32", (void *)(&niters), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } niters = (10000);
 
-      lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
-      lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
+    alias_group_changed(5, (size_t)(557327200247579733UL), (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
+    alias_group_changed(1, (size_t)(6106350031149747834UL)); lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
     for (alias_group_changed(2, (size_t)(15772700233101583677UL), (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
          call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
     } }

@@ -350,6 +350,9 @@ def _diff_files(file1name, file2name, col):
     line2 = fp2.readline()
     line_index = 1
 
+    any_mismatch = False
+    first_mismatch = True
+
     while len(line1) != 0 and len(line2) != 0:
 
         if line1 != line2:
@@ -380,31 +383,43 @@ def _diff_files(file1name, file2name, col):
                     diff_resolved = (newline1 == newline2)
 
             if not diff_resolved:
-                sys.stderr.write('ERROR: Mismatch at line ' + str(line_index) +
-                                 ' of ' + file1name + ' and ' + file2name +
-                                 '\n')
-                sys.stderr.write(file1name + ':\n')
-                sys.stderr.write(line1[:len(line1) - 1] + '\n')
-                sys.stderr.write(file2name + ':\n')
-                sys.stderr.write(line2[:len(line2) - 1] + '\n')
-                sys.exit(1)
+                any_mismatch = True
+                if first_mismatch:
+                    sys.stderr.write('ERROR: Mismatch between ' + file1name +
+                                     ' ' + file2name + ':\n')
+                    first_mismatch = False
+
+                sys.stderr.write(str(line_index) + ' :\n')
+                sys.stderr.write('  Old| ' + line1[:len(line1) - 1] + '\n')
+                sys.stderr.write('  New| ' + line2[:len(line2) - 1] + '\n')
 
         line1 = fp1.readline()
         line2 = fp2.readline()
         line_index += 1
 
+    line_mismatch = False
+
     if len(line1) == 0 and len(line2) != 0:
-        print('ERROR: Extra lines in ' + file2name + ' compared to ' +
-              file1name)
-        exit(1)
+        sys.stderr.write('ERROR: Extra lines in ' + file2name + ' compared to ' +
+              file1name + ' starting at ' + str(line_index) + '\n')
+        while len(line2) > 0:
+            sys.stderr.write('       ' + line2)
+            line2 = fp2.readline()
+        line_mismatch = True
 
     if len(line2) == 0 and len(line1) != 0:
-        print('ERROR: Extra lines in ' + file1name + ' compared to ' +
-              file2name)
-        exit(1)
+        sys.stderr.write('ERROR: Extra lines in ' + file1name + ' compared to ' +
+              file2name + ' starting at ' + str(line_index) + '\n')
+        while len(line1) > 0:
+            sys.stderr.write('       ' + line1)
+            line1 = fp1.readline()
+        line_mismatch = True
 
     fp1.close()
     fp2.close()
+
+    if any_mismatch or line_mismatch:
+        sys.exit(1)
 
 def run_frontend_test(test, compile_script_path, examples_dir_path,
                       test_dir_path, config):
