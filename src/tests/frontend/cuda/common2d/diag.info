@@ -1,3 +1,4 @@
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 5 alias_group_changed(7, (size_t)(2020512955842300876UL), (size_t)(2850663618440899500UL), (size_t)(4237632752881298404UL), (size_t)(13388633992466173602UL), (size_t)(13803245390038478632UL), (size_t)(15217183307985170569UL), (size_t)(17434303105024168097UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 10 23 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 13 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 10 9 alias_group_changed(1, (size_t)(13697246817649382652UL)) || 
@@ -52,8 +53,8 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5  register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5  register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 122 1 rm_stack(false, 0UL); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 708  FILE *fp;  fp = (fopen(filename, "wb")); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 740 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 967  FILE *fp;  fp = (fopen(filename, "wb")); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 999 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 15 5 {  int y; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 21 7  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 15 10  y = (0); 
@@ -74,7 +75,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 40 33 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 356 int c; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 361 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 720  call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 979  call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 11 9  call_lbl_1: calling(1, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(1686577910018222429UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 12 9  call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 17 13  call_lbl_3: calling(3, 0UL, 5, (size_t)(1514847738530813435UL), (size_t)(11912630004586522060UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -95,9 +96,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 106 1
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 112 13  call_lbl_9: calling(9, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 114 13  call_lbl_10: calling(10, 0UL, 1, (size_t)(16519385352256392130UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 9  call_lbl_11: calling(11, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 709  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 717  register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 717  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 968  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 976  register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 976  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 15 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 15 13  register_stack_var("save_text|y|0", "i32", (void *)(&y), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 15 13  if (____numdebug_replaying) { goto lbl_2; } 

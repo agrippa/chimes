@@ -1,45 +1,48 @@
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 1 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 75 1 : { 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 80 1 : { 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 91 5 : { 1730036212542016532, 1933428909702055326, 3512365080884279303, 3916789489242128784, 5571543899197932560 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 98 18 : { 3920757191841456973, 13776165132426961666, 16833687143959260136 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 99 18 : { 13776165132426961666 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 100 17 : { 3920757191841456973 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 8 : { 16833687143959260136 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 102 5 : { 12835239948587864347 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 104 1 : { 17699046973199516026 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 110 1 : { 5966976715334990815 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 113 15 : { 10720908999533024854 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 114 15 : { 11295363248594229723 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 115 15 : { 12239881450840834390 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 116 15 : { 13184399653087439057 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 15 : { 3918889054879105136, 5578711921516348101 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 15 : { 4863407257125709803 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 125 15 : { 5807925459372314470 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 126 15 : { 5973020843067749248 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 129 10 : { 5424025495246047316, 14608951975089488607 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 10 : { 4230221212431166864 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 39 : { 4230221212431166864 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 15 : { 8746935921038613430, 15069977195861850717 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 147 1 : { 2362206228145856531, 3059869403021773121, 11651205536145820044 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 129 42 : { 5424025495246047316 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 15 : { 17903531802601664718 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 15 : { 5626833308757261620, 6578842386079677540 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 155 1 : { 16588917083811119147 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 158 1 : { 16557221819836515321 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 169 10 : { 16809019010565379225 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 169 35 : { 16809019010565379225 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 174 15 : { 8881219364899502386 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 175 15 : { 8967084656012830083 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 176 15 : { 11970781676573088007 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 177 15 : { 14974478697133345931 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 179 1 : { 17699046973199516026 }
-/Developer/NVIDIA/CUDA-6.5/include/vector_types.h 419 43 : { 376502165718905071, 3436781488796912260, 4674896959417115766, 5626575887285586994, 8686855210363594183, 10876649608852268917, 13936928931930276106, 14824238800785570000, 16415294844621594485 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2 : { 2999276324123592547, 3820513325768733222, 4005350375701555020, 5011424427279517493, 6017498478857479966, 9070587047335415145, 11767109956344920992, 17017183677911602915 }
-/tmp/numdebug.4d8Swz/nvcc/iso2d.cudafe1.stub.c 9 54 : { 570823365062843192, 2019425663376303981, 3025499714954266454, 4031573766532228927, 5037647818110191400, 5820897086629525115, 8517419995639030962, 13767493717205712885 }
-/tmp/numdebug.4d8Swz/nvcc/iso2d.cudafe1.stub.c 9 0 : { 17959211414858178465 }
-/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 13616108440065869276 }
-iso2d.cudafe1.stub.c 2 73 : { 7696593959710208457, 15239200874633992475 }
-iso2d.cudafe1.stub.c 1 53 : { 1625171281046460898, 7696593959710208457 }
-/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h 121 42 : { 7696593959710208457, 17834006590498585836 }
-/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 1 146 : { 7229261624878550433, 7696593959710208457 }
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 1 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z12setup_configP7_configiPPc
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 75 1 : { 17699046973199516026 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 80 1 : { 17699046973199516026 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 91 5 : { 1730036212542016532, 1933428909702055326, 3512365080884279303, 3916789489242128784, 5571543899197932560 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 98 18 : { 3920757191841456973, 13776165132426961666, 16833687143959260136 } direct:call:malloc
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 99 18 : { 13776165132426961666 } direct:call:malloc
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 100 17 : { 3920757191841456973 } direct:call:malloc
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 101 27 : { 16833687143959260136 } direct:call:malloc
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 102 5 : { 12835239948587864347 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 104 1 : { 17699046973199516026 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 110 1 : { 5966976715334990815 } direct:call:_Z9init_dataPfS_S_S_iiff
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 113 15 : { 10720908999533024854 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 114 15 : { 11295363248594229723 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 115 15 : { 12239881450840834390 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 116 15 : { 13184399653087439057 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 23 : { 5578711921516348101 } direct:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 123 15 : { 3918889054879105136 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 124 15 : { 4863407257125709803 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 125 15 : { 5807925459372314470 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 126 15 : { 5973020843067749248 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 129 10 : { 5424025495246047316, 14608951975089488607 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 10 : { 4230221212431166864 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 130 39 : { 4230221212431166864 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 23 : { 8746935921038613430 } direct:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 134 15 : { 15069977195861850717 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 147 1 : { 2362206228145856531, 3059869403021773121, 11651205536145820044 } direct:call:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 129 42 : { 5424025495246047316 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 149 15 : { 17903531802601664718 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 23 : { 5626833308757261620 } direct:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 152 15 : { 6578842386079677540 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 155 1 : { 16588917083811119147 } direct:call:_Z15finish_progressv
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 158 1 : { 16557221819836515321 } direct:call:fprintf
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 169 10 : { 16809019010565379225 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 169 35 : { 16809019010565379225 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 174 15 : { 8881219364899502386 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 175 15 : { 8967084656012830083 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 176 15 : { 11970781676573088007 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 177 15 : { 14974478697133345931 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 179 1 : { 17699046973199516026 } direct:term:main
+/Developer/NVIDIA/CUDA-6.5/include/vector_types.h 419 43 : { 376502165718905071, 3436781488796912260, 4674896959417115766, 5626575887285586994, 8686855210363594183, 10876649608852268917, 13936928931930276106, 14824238800785570000, 16415294844621594485 } direct:term:_ZN4dim3C1Ejjj
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 48 2 : { 2999276324123592547, 3820513325768733222, 4005350375701555020, 5011424427279517493, 6017498478857479966, 9070587047335415145, 11767109956344920992, 17017183677911602915 } direct:call:_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii
+/tmp/numdebug.5HBma7/nvcc/iso2d.cudafe1.stub.c 9 155 : { 570823365062843192, 2019425663376303981, 3025499714954266454, 4031573766532228927, 5037647818110191400, 5820897086629525115, 8517419995639030962, 13767493717205712885 } direct:call:cudaSetupArgument
+/tmp/numdebug.5HBma7/nvcc/iso2d.cudafe1.stub.c 9 0 : { 17959211414858178465 } direct:call:_ZN37_GLOBAL__N__13_iso2d_cpp1_ii_2fcd0cad10cudaLaunchIcEE9cudaErrorPT_
+/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 13616108440065869276 } direct:call:cudaLaunch
+iso2d.cudafe1.stub.c 2 73 : { 7696593959710208457, 15239200874633992475 } direct:call:NULL
+iso2d.cudafe1.stub.c 1 138 : { 1625171281046460898, 7696593959710208457 } direct:call:__cudaRegisterFunction
+/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h 121 42 : { 7696593959710208457, 17834006590498585836 } direct:term:_ZL22____nv_dummy_param_refPv
+/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 1 146 : { 7229261624878550433, 7696593959710208457 } direct:term:_ZL37__nv_save_fatbinhandle_for_managed_rtPPv

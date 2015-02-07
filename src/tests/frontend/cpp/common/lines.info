@@ -1,42 +1,42 @@
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 48 5 : { 1085571792782596357 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 14 : { 1245668952459180081, 4226562647247638785, 8765741491806222420, 11424047330458090375, 16555843550090687416, 17214330647054485194 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 58 9 : { 1838009110135119624, 14397346785968559525, 16659523271239593530 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 59 5 : { 2008721800625821080 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 33 : { 8765741491806222420 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 11 : { 5997784754333573673, 8936251819094495589, 16334560808348918639 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 65 9 : { 7503953869617880805 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 11 : { 13982009165439054754 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 72 9 : { 1387191059008098409 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 11 : { 5186300721691170515 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 79 9 : { 11007132437992599952 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 89 14 : { 3277977604394879722, 6456531717151425942, 8132302032623108198, 11890416593231187164 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 90 14 : { 4995672202021001482 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 91 17 : { 4995672202021001482 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 92 14 : { 4995672202021001482 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 93 1 : { 4995672202021001482 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 96 9 : { 6406781234504566915, 8522629736461562909, 13772703458028244832, 15190893650781371235, 16642833800444842057 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 98 13 : { 9285280766920217948 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 107 5 : { 2685576284420924090, 2752442294988640373 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 14 : { 16182187182034189366 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 112 13 : { 7374354779439216353 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 33 : { 16182187182034189366 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 13 : { 4972645299531092553, 7547608872137199987, 7867438819795547955, 18281605317195734986 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 129 9 : { 14632242022306526605 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 14 : { 17866036073706292390 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 136 13 : { 17386119534690992797 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 32 : { 17866036073706292390 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 147 9 : { 5624763593374234384, 10327675655215703295, 10864129096542978442 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 159 9 : { 11193925814866863242 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 162 6 : { 4047636378196868974 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 171 10 : { 11193925814866863242, 12675187840154511571, 17419974122101928524 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 173 5 : { 12675187840154511571 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 171 30 : { 17419974122101928524 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 9 : { 7452125661963734140 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 9 : { 11152286784634729525, 16155725638166610324 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 195 5 : { 16155725638166610324 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 203 14 : { 1593413819852114407 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 205 9 : { 12675187840154511571 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 203 36 : { 1593413819852114407 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 207 14 : { 1593413819852114407 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 207 46 : { 1593413819852114407 }
-/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 215 1 : { 11193925814866863242 }
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 48 5 : { 1085571792782596357 } direct:term:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 14 : { 1245668952459180081, 4226562647247638785, 8765741491806222420, 11424047330458090375, 16555843550090687416, 17214330647054485194 } direct:term:_Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 58 56 : { 1838009110135119624, 14397346785968559525, 16659523271239593530 } direct:call:exp
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 59 5 : { 2008721800625821080 } direct:term:_Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 33 : { 8765741491806222420 } direct:term:_Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 25 : { 5997784754333573673, 8936251819094495589, 16334560808348918639 } direct:call:strchr
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 65 9 : { 7503953869617880805 } direct:term:_Z12parse_sourcePcP7_source
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 71 26 : { 13982009165439054754 } direct:call:strchr
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 72 9 : { 1387191059008098409 } direct:term:_Z12parse_sourcePcP7_source
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 25 : { 5186300721691170515 } direct:call:strchr
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 79 9 : { 11007132437992599952 } direct:term:_Z12parse_sourcePcP7_source
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 89 14 : { 3277977604394879722, 6456531717151425942, 8132302032623108198, 11890416593231187164 } direct:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 90 14 : { 4995672202021001482 } direct:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 91 17 : { 4995672202021001482 } direct:call:atof
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 92 14 : { 4995672202021001482 } direct:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 93 1 : { 4995672202021001482 } direct:term:_Z12parse_sourcePcP7_source
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 96 9 : { 6406781234504566915, 8522629736461562909, 13772703458028244832, 15190893650781371235, 16642833800444842057 } direct:term:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 98 13 : { 9285280766920217948 } direct:term:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 107 5 : { 2685576284420924090, 2752442294988640373 } direct:term:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 14 : { 16182187182034189366 } direct:term:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 112 13 : { 7374354779439216353 } direct:term:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 33 : { 16182187182034189366 } direct:term:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 37 : { 4972645299531092553, 7547608872137199987, 7867438819795547955, 18281605317195734986 } direct:call:malloc
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 129 9 : { 14632242022306526605 } direct:term:_Z14sample_sourcesP7_sourceiif
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 14 : { 17866036073706292390 } direct:term:_Z14sample_sourcesP7_sourceiif
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 136 13 : { 17386119534690992797 } direct:term:_Z14sample_sourcesP7_sourceiif
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 32 : { 17866036073706292390 } direct:term:_Z14sample_sourcesP7_sourceiif
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 147 9 : { 5624763593374234384, 10327675655215703295, 10864129096542978442 } direct:term:_Z13init_progressiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 159 9 : { 11193925814866863242 } direct:term:_Z13init_progressiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 162 6 : { 4047636378196868974 } direct:term:_Z13init_progressiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 171 10 : { 11193925814866863242, 12675187840154511571, 17419974122101928524 } direct:term:_Z13init_progressiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 173 5 : { 12675187840154511571 } direct:term:_Z13init_progressiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 171 30 : { 17419974122101928524 } direct:term:_Z13init_progressiii
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 181 9 : { 7452125661963734140 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 193 9 : { 11152286784634729525, 16155725638166610324 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 195 5 : { 16155725638166610324 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 203 14 : { 1593413819852114407 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 205 9 : { 12675187840154511571 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 203 36 : { 1593413819852114407 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 207 14 : { 1593413819852114407 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 207 46 : { 1593413819852114407 } direct:term:_Z15update_progressi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 215 1 : { 11193925814866863242 } direct:term:_Z15update_progressi

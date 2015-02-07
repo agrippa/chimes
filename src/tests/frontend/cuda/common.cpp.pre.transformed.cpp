@@ -2501,21 +2501,21 @@ rm_stack(false, 0UL); }
 
 void parse_source(char *optarg, source *out) {
     new_stack(2, (size_t)(4288610876228433544UL), (size_t)(4995672202021001482UL)); register_stack_var("parse_source|optarg|0", "i8*", (void *)(&optarg), 8, 1, 0, 0); register_stack_var("parse_source|out|0", "%struct._source*", (void *)(&out), 8, 1, 0, 0); lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", "i8*", (void *)(&x_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } x_str = (optarg);
-      lbl_1: char *first_comma; register_stack_var("parse_source|first_comma|0", "i8*", (void *)(&first_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } call_lbl_0: calling(0, 6456531717151425942UL, 2, (size_t)(4288610876228433544UL), (size_t)(0UL)); first_comma = (strchr(x_str, ','));
+    alias_group_changed(3, (size_t)(5997784754333573673UL), (size_t)(8936251819094495589UL), (size_t)(16334560808348918639UL)); lbl_1: char *first_comma; register_stack_var("parse_source|first_comma|0", "i8*", (void *)(&first_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } call_lbl_0: calling(0, 6456531717151425942UL, 2, (size_t)(4288610876228433544UL), (size_t)(0UL)); first_comma = (strchr(x_str, ','));
     if (alias_group_changed(1, (size_t)(7503953869617880805UL)) || first_comma == __null) { {
          call_lbl_1: calling(1, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); fprintf(__stderrp, "Improperly formatted argument to -p, must "
                 "be x,y,f,t\n");
          call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
       lbl_2: char *y_str; register_stack_var("parse_source|y_str|0", "i8*", (void *)(&y_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_3; } y_str = (first_comma + 1);
-      lbl_3: char *second_comma; register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_4; } call_lbl_3: calling(3, 3277977604394879722UL, 2, (size_t)(6456531717151425942UL), (size_t)(0UL)); second_comma = (strchr(y_str, ','));
+    alias_group_changed(1, (size_t)(13982009165439054754UL)); lbl_3: char *second_comma; register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_4; } call_lbl_3: calling(3, 3277977604394879722UL, 2, (size_t)(6456531717151425942UL), (size_t)(0UL)); second_comma = (strchr(y_str, ','));
     if (alias_group_changed(1, (size_t)(1387191059008098409UL)) || second_comma == __null) { {
          call_lbl_4: calling(4, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); fprintf(__stderrp, "Improperly formatted argument to -p, must "
                 "be x,y,f,t\n");
          call_lbl_5: calling(5, 0UL, 1, (size_t)(0UL)); exit(1);
     } }
       lbl_4: char *freq_str; register_stack_var("parse_source|freq_str|0", "i8*", (void *)(&freq_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } freq_str = (second_comma + 1);
-      lbl_5: char *third_comma; register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } call_lbl_6: calling(6, 8132302032623108198UL, 2, (size_t)(3277977604394879722UL), (size_t)(0UL)); third_comma = (strchr(freq_str, ','));
+    alias_group_changed(1, (size_t)(5186300721691170515UL)); lbl_5: char *third_comma; register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } call_lbl_6: calling(6, 8132302032623108198UL, 2, (size_t)(3277977604394879722UL), (size_t)(0UL)); third_comma = (strchr(freq_str, ','));
     if (alias_group_changed(1, (size_t)(11007132437992599952UL)) || third_comma == __null) { {
          call_lbl_7: calling(7, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(13066525898772550973UL)); fprintf(__stderrp, "Improperly formatted argument to -p, must "
                 "be x,y,f,t\n");
@@ -2565,7 +2565,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
 rm_stack(false, 0UL); }
 
 float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
-    new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0));
+    new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); alias_group_changed(4, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(18281605317195734986UL)); lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0));
     if (alias_group_changed(1, (size_t)(14632242022306526605UL)) || src_samples == __null) { {
          call_lbl_0: calling(0, 0UL, 2, (size_t)(3433389096703679793UL), (size_t)(1120098738696514263UL)); fprintf(__stderrp, "Allocation failed\n");
          call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); exit(1);

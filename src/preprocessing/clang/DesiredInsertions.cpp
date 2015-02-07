@@ -385,9 +385,9 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
             size_t group = strtoul(group_str.c_str(), NULL, 10);
             groups->push_back(group);
 
-            int next_start = group_end + 2;
-            if (next_start >= line.length()) break;
-            else line = line.substr(group_end + 2);
+            if (line[group_end + 1] == '}') break;
+
+            line = line.substr(group_end + 2);
         }
 
         StateChangeInsertion *change = new StateChangeInsertion(filename,
