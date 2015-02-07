@@ -26825,15 +26825,15 @@ alias_group_changed(2, (size_t)(2906517587857753UL), (size_t)(105160373940375316
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  call_lbl_5: calling(5, 0UL, 0); checkpoint();
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_10: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_11; } lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { exit(42); } } } call_lbl_6: calling(6, 6337771489180023308UL, 2, (size_t)(7451376560946655001UL), (size_t)(9302546641309323898UL)); fp = (fopen("dump.out", "w"));
+ lbl_10: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_11; } lbl_11: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 for (i = 0; i < N; i++) { {
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_7: calling(7, 0UL, 3, (size_t)(6337771489180023308UL), (size_t)(10438118436187702648UL), (size_t)(0UL)); fprintf(fp, "%d\n", h_C[i]);
+fprintf(fp, "%d\n", h_C[i]);
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 } }
 # 57 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_8: calling(8, 0UL, 1, (size_t)(6337771489180023308UL)); fclose(fp);
+ call_lbl_6: calling(6, 0UL, 1, (size_t)(6337771489180023308UL)); fclose(fp);
 # 59 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)); cudaFree_wrapper(d_A, 0UL);
 # 60 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

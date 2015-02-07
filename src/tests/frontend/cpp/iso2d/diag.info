@@ -125,21 +125,16 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 10  i = (0
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 19 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 78 130  call_lbl_0: calling(0, 0UL, 3, (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(18293662412874621885UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 79 5  call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 90 9  call_lbl_2: calling(2, 0UL, 3, (size_t)(1896088605697880685UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 91 9  call_lbl_3: calling(3, 0UL, 2, (size_t)(14680162346750872809UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 92 9  call_lbl_4: calling(4, 0UL, 2, (size_t)(14680162346750872809UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 100 9  call_lbl_5: calling(5, 0UL, 2, (size_t)(16436254989487132197UL), (size_t)(680289937019984656UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 329  call_lbl_6: calling(6, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 105 21  call_lbl_7: calling(7, 14723839603729691025UL, 4, (size_t)(2820914316849208470UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 62  call_lbl_8: calling(8, 0UL, 8, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 109 21  call_lbl_9: calling(9, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 118 9  call_lbl_10: calling(10, 0UL, 9, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 126 299  call_lbl_11: calling(11, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 9  call_lbl_12: calling(12, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 315  call_lbl_13: calling(13, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 133 62  call_lbl_14: calling(14, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 136 5  call_lbl_15: calling(15, 0UL, 5, (size_t)(16436254989487132197UL), (size_t)(14989591985071088668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 140 67  call_lbl_16: calling(16, 0UL, 7, (size_t)(8391575324692158608UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 329  call_lbl_2: calling(2, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 105 21  call_lbl_3: calling(3, 14723839603729691025UL, 4, (size_t)(2820914316849208470UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 107 62  call_lbl_4: calling(4, 0UL, 8, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 109 21  call_lbl_5: calling(5, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 118 9  call_lbl_6: calling(6, 0UL, 9, (size_t)(8391575324692158608UL), (size_t)(8391575324692158608UL), (size_t)(8777646764455402125UL), (size_t)(10933946544651129952UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 126 299  call_lbl_7: calling(7, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 9  call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 315  call_lbl_9: calling(9, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 133 62  call_lbl_10: calling(10, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 140 67  call_lbl_11: calling(11, 0UL, 7, (size_t)(8391575324692158608UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 231  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 242  register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)offsetof(struct _config, srcs)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 242  if (____numdebug_replaying) { goto lbl_1; } 
@@ -197,4 +192,4 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 135 22  if
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 8  lbl_18: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 13  register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 13  if (____numdebug_replaying) { goto lbl_19; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 13 lbl_19: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { exit(42); } } } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 13 lbl_19: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } } 

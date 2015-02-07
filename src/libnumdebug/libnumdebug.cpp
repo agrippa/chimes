@@ -67,7 +67,6 @@ static set<size_t> changed_groups;
 static map<void *, heap_allocation *> heap;
 static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
-static vector<size_t> parent_aliases;
 static size_t return_alias;
 static vector<size_t> return_aliases;
 static int calling_lbl = -1;
@@ -76,6 +75,11 @@ static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
+
+#define PARENT_ALIASES_INIT_SIZE    1024
+static size_t *parent_aliases = NULL;
+static size_t parent_aliases_capacity = 0;
+static size_t parent_aliases_length = 0;
 
 #ifdef __NUMDEBUG_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
@@ -125,6 +129,10 @@ static bool aliased(size_t group1, size_t group2) {
 
 void init_numdebug() {
     atexit(onexit);
+
+    parent_aliases = (size_t *)malloc(sizeof(size_t) *
+            PARENT_ALIASES_INIT_SIZE);
+    parent_aliases_capacity = PARENT_ALIASES_INIT_SIZE;
 
     char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
@@ -557,7 +565,8 @@ void new_stack(unsigned int n_local_arg_aliases, ...) {
      * variable argument function. I'm not sure if variable argument functions
      * are really supported at the moment, so for now we assert they are equal.
      */
-    assert(program_stack.size() == 1 || n_local_arg_aliases == parent_aliases.size());
+    assert(program_stack.size() == 1 || n_local_arg_aliases ==
+            parent_aliases_length);
 
     std::vector<size_t> new_aliases;
     va_list vl;
@@ -593,16 +602,21 @@ void calling(int lbl, size_t set_return_alias, int naliases, ...) {
     pp.start_timer(CALLING);
 #endif
     calling_lbl = lbl;
-
     return_alias = set_return_alias;
-    parent_aliases.clear();
+
+    if (parent_aliases_capacity < naliases) {
+        parent_aliases_capacity *= 2;
+        parent_aliases = (size_t *)realloc(parent_aliases, sizeof(size_t) *
+                parent_aliases_capacity);
+    }
+
     va_list vl;
     va_start(vl, naliases);
     for (int i = 0; i < naliases; i++) {
-        size_t alias = va_arg(vl, size_t);
-        parent_aliases.push_back(alias);
+        parent_aliases[i] = va_arg(vl, size_t);
     }
     va_end(vl);
+    parent_aliases_length = naliases;
 
 #ifdef VERBOSE
     fprintf(stderr, "Calling %d: ", lbl);
@@ -745,15 +759,7 @@ int alias_group_changed(int ngroups, ...) {
         size_t group = va_arg(vl, size_t);
 
         if (valid_group(group)) {
-            if (aliased_groups.find(group) != aliased_groups.end()) {
-                for (set<size_t>::iterator iter =
-                        aliased_groups[group]->begin(), end =
-                        aliased_groups[group]->end(); iter != end; iter++) {
-                    changed_groups.insert(*iter);
-                }
-            } else {
-                changed_groups.insert(group);
-            }
+            changed_groups.insert(group);
         }
     }
     va_end(vl);
@@ -1130,6 +1136,23 @@ void checkpoint() {
         curr->copy(copy);
         heap_to_checkpoint->push_back(copy);
     }
+
+    //TODO use change aliases to reduce checkpoint size
+    set<size_t> all_changed;
+    for (set<size_t>::iterator i = changed_groups.begin(), e =
+            changed_groups.end(); i != e; i++) {
+        size_t group = *i;
+        if (aliased_groups.find(group) != aliased_groups.end()) {
+            for (set<size_t>::iterator iter =
+                    aliased_groups[group]->begin(), end =
+                    aliased_groups[group]->end(); iter != end; iter++) {
+                changed_groups.insert(*iter);
+            }
+        } else {
+            changed_groups.insert(group);
+        }
+    }
+    changed_groups.clear();
 
     checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
             sizeof(checkpoint_thread_ctx));
