@@ -1,13 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 24 : { 557327200247579733, 1388457574958923572, 15018275423251710358, 16551423137225396134, 17699046973199516026 } direct:call:malloc
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 24 : { 6106350031149747834 } direct:call:malloc
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 10 : { 15772700233101583677, 16809019010565379225 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 15 5 : { 11995044644349796100 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 24 : { 16809019010565379225 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 10 : { 17518635324219924788 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 14 : { 16809019010565379225 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 21 9 : { 11995044644349796100 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 32 : { 16809019010565379225 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 : { 6106350031149747834, 14248127759314616947, 15772700233101583677 } direct:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 35 : { 17518635324219924788 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 10 : { 8312944838440117739, 16809019010565379225 } direct:term:main
-/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 24 : { 16809019010565379225 } direct:term:main
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 : { 557327200247579733, 1388457574958923572, 6106350031149747834, 8312944838440117739, 11995044644349796100, 14248127759314616947, 15018275423251710358, 15772700233101583677, 16551423137225396134, 16809019010565379225, 17518635324219924788, 17699046973199516026 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 : { 557327200247579733, 1388457574958923572, 6106350031149747834, 8312944838440117739, 11995044644349796100, 14248127759314616947, 15018275423251710358, 15772700233101583677, 16551423137225396134, 16809019010565379225, 17518635324219924788, 17699046973199516026 } prop:term:main

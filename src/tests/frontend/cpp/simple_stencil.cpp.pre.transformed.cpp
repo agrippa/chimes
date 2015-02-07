@@ -1711,33 +1711,33 @@ int main(int argc, char **argv) {
       lbl_2: int N; register_stack_var("main|N|0", "i32", (void *)(&N), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } N = (1024);
       lbl_3: int niters; register_stack_var("main|niters|0", "i32", (void *)(&niters), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } niters = (10000);
 
-    alias_group_changed(5, (size_t)(557327200247579733UL), (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16551423137225396134UL), (size_t)(17699046973199516026UL)); lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
-    alias_group_changed(1, (size_t)(6106350031149747834UL)); lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
-    for (alias_group_changed(2, (size_t)(15772700233101583677UL), (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
+      lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
+      lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
+    for (i = 0; i < N; i++) { {
          call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
     } }
 
-    for (alias_group_changed(1, (size_t)(17518635324219924788UL)), iter = 0; iter < niters; alias_group_changed(1, (size_t)(17518635324219924788UL)), iter++) { {
+    for (iter = 0; iter < niters; iter++) { {
          call_lbl_1: calling(1, 0UL, 3, (size_t)(5004225684789836247UL), (size_t)(0UL), (size_t)(0UL)); printf("%d / %d\n", iter + 1, niters);
-        for (alias_group_changed(1, (size_t)(16809019010565379225UL)), i = 1; i < N - 1; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
+        for (i = 1; i < N - 1; i++) { {
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
         } }
           lbl_6: int *tmp; register_stack_var("main|tmp|0", "i32*", (void *)(&tmp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } tmp = (curr);
         curr = next;
         next = tmp;
 
-        alias_group_changed(3, (size_t)(6106350031149747834UL), (size_t)(14248127759314616947UL), (size_t)(15772700233101583677UL)); call_lbl_2: calling(2, 0UL, 0); checkpoint();
+        alias_group_changed(12, (size_t)(557327200247579733UL), (size_t)(1388457574958923572UL), (size_t)(6106350031149747834UL), (size_t)(8312944838440117739UL), (size_t)(11995044644349796100UL), (size_t)(14248127759314616947UL), (size_t)(15018275423251710358UL), (size_t)(15772700233101583677UL), (size_t)(16551423137225396134UL), (size_t)(16809019010565379225UL), (size_t)(17518635324219924788UL), (size_t)(17699046973199516026UL)); call_lbl_2: calling(2, 0UL, 0); checkpoint();
     } }
 
       lbl_7: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_8; } lbl_8: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { exit(42); } } } call_lbl_3: calling(3, 9184046638531852096UL, 2, (size_t)(5004225684789836247UL), (size_t)(2134856999956632435UL)); fp = (fopen("dump.out", "w"));
-    for (alias_group_changed(2, (size_t)(8312944838440117739UL), (size_t)(16809019010565379225UL)), i = 0; i < N; alias_group_changed(1, (size_t)(16809019010565379225UL)), i++) { {
+    for (i = 0; i < N; i++) { {
          call_lbl_4: calling(4, 0UL, 3, (size_t)(9184046638531852096UL), (size_t)(13619243249212628193UL), (size_t)(0UL)); fprintf(fp, "%d\n", curr[i]);
     } }
      call_lbl_5: calling(5, 0UL, 1, (size_t)(9184046638531852096UL)); fclose(fp);
 
     free_wrapper(curr, 11995044644349796100UL);
     free_wrapper(next, 11995044644349796100UL);
-    rm_stack(false, 0UL); return 0;
+    alias_group_changed(12, (size_t)(557327200247579733UL), (size_t)(1388457574958923572UL), (size_t)(6106350031149747834UL), (size_t)(8312944838440117739UL), (size_t)(11995044644349796100UL), (size_t)(14248127759314616947UL), (size_t)(15018275423251710358UL), (size_t)(15772700233101583677UL), (size_t)(16551423137225396134UL), (size_t)(16809019010565379225UL), (size_t)(17518635324219924788UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
 }
 
 
