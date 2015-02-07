@@ -96,8 +96,7 @@ namespace {
     struct Play : public ModulePass {
         static char ID;
         std::vector<GroupsModifiedAtLine *> line_to_groups_modified;
-        std::map<std::string, SimpleLoc *> *function_to_start_line = NULL;
-        std::map<std::string, std::string> *function_to_demangled = NULL;
+        std::map<std::string, std::string> function_to_demangled;
         std::map<Function *, CALLS_CHECKPOINT> can_call_checkpoint;
 
         explicit Play(): ModulePass(ID) {
@@ -138,7 +137,6 @@ namespace {
         std::map<Value *, std::string> *mapValuesToOriginalVarName(Function *F);
         void findStackAllocations(Module &M, const char *output_file,
                 const char *struct_info_filename);
-        SimpleLoc *findStartingLineForFunction(Function *F, Module &M);
         void findHeapAllocations(Module &M, const char *output_file,
                 std::map<Value *, size_t> value_to_alias_group);
         std::map<std::string, std::vector<std::string>> *getStructFieldNames(
@@ -150,7 +148,7 @@ namespace {
         CALLS_CHECKPOINT mayCreateCheckpointHelper(Function *F,
                 std::set<Instruction *> *visited);
         std::string findFilenameContainingBB(BasicBlock &bb, Module &M);
-        std::string *get_unique_varname(std::string varname, Function *F,
+        std::string *getUniqueVarname(std::string varname, Function *F,
                 std::set<std::string> *found_variables, Module &M);
         void printReachable(ReachableInfo &R);
         void dumpReachable(ReachableInfo &R, const char *filename);
@@ -164,7 +162,6 @@ namespace {
                 std::map<std::string, std::vector<std::string>> *structFields);
         void dumpCallSiteAliases(Module &M, const char *filename,
                 std::map<Value *, size_t> value_to_alias_group);
-        bool isConstantGlobal(Value *val);
         ReachableInfo propagateAliases(Module &M);
         std::vector<Value *> *collectInitialInstructionsToVisit(Module &M);
         std::map<Value *, size_t> *collectInitialAliasMappings(Module &M);
@@ -176,7 +173,6 @@ namespace {
         void propagateGroupsDown(BasicBlock *curr, std::string filename,
                 std::set<size_t> *groups, std::set<BasicBlock *> *visited,
                 std::set<size_t> *changed_at_termination);
-        std::string getFunctionName(Function *F, Module &M);
         std::string getFunctionDisplayName(Function *F, Module &M);
     };
 }
@@ -466,7 +462,6 @@ void Play::findGlobals(Module &M, const char *filename) {
     }
 
     fclose(fp);
-
 }
 
 ReachableInfo Play::propagateAliases(Module &M) {
@@ -479,18 +474,6 @@ ReachableInfo Play::propagateAliases(Module &M) {
 
     return ReachableInfo(visitor.get_contains(),
             visitor.get_value_to_alias_group());
-}
-
-bool Play::isConstantGlobal(Value *val) {
-    if (isa<GlobalValue>(val)) {
-        return true;
-    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
-        return isConstantGlobal(getele->getPointerOperand());
-     } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
-         return isConstantGlobal(load->getPointerOperand());
-    } else {
-        return false;
-    }
 }
 
 static std::string demangledFunctionName(std::string fname) {
@@ -838,7 +821,7 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
 /*
  * One annoying thing about LLVM's IR is that it has the ability to refactor
  * separate return statements in the source into a single RetInst in SSA form.
- * This means that even though there is only one TerminatorInst in the function
+ * This means that even though there is only one TerminatorInst in a function
  * with zero successors, there are actual multiple places in the source code
  * where we want to insert an alias_group_changed call right before returning.
  *
@@ -847,25 +830,19 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
  * RetInst (which is okay for correctness, but may indicate that more has
  * changed than the host application has actually modified). More importantly,
  * this means that we need to make aliases that have been marked changed at the
- * terminator a special case and mark them changed during transformation at any
- * point where we insert rm_stack for this function.
- *
- * This is a problem today in finding function exists and marking the return
- * value with the appropriate alias. I was assuming that findFunctionExits was
- * finding all return statements in the source code, but it is often only
- * finding the single RetInst.
+ * terminator of a function a special case and mark them changed during
+ * transformation at any point where we insert rm_stack for a function.
  *
  * To solve this we need to both set the return alias appropriate for functions
  * returning pointer values and set the aliases changed at the end of the
  * function appropriately. It seems that we also need to handle a few cases (and
  * rely on un-defined LLVM behavior).
  *
- * The aliases changed at the terminator should be added to the exits.info file
- * and for every return statement found during the transformation pass, we
- * should prepend an alias_group_changed call before the rm_stack call with
- * these alias groups passed in. The exit.info will also now have to map from
- * function name to values, rather than the current line:col mapping it uses
- * today (as this is unusable).
+ * The aliases changed at the terminator is added to the exits.info file.
+ * For every return statement found during the transformation pass, we
+ * prepend an alias_group_changed call before the rm_stack call with
+ * these alias groups passed in. The exit.info maps from function name to
+ * values.
  *
  * A function in LLVM always seems to have a single return point, regardless of
  * how many implicit or explicit return statements it has or whether it is
@@ -879,15 +856,13 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
  * The basic block then does a load from retval and returns that value. As a
  * result, all possible values that could be returned will be aliased together
  * by the contains relationship with retval and there will only ever be a single
- * return alias for any function.
+ * return alias for a given function.
  *
- * Therefore, exit.info should map from function name to the set of alias groups
- * that may be changed but not recorded at the termination of this function and
+ * Therefore, exit.info maps from function name to the set of alias groups
+ * that may be changed but not recorded at the termination of this function, and
  * to this single return alias. Then, we simply need to ensure that the function
  * name used to do a lookup during transformation and the one used to record the
  * mapping during the analysis stage are the same.
- *
- * God I hope this alias change tracking becomes useful for large applications..
  */
 std::map<Function *, std::set<size_t> *> *Play::collectLineToGroupsMapping(
         Module& M, std::map<Value *, size_t> value_to_alias_group) {
@@ -1030,56 +1005,6 @@ CALLS_CHECKPOINT Play::mayCreateCheckpoint(Function *F) {
     return mayCreateCheckpointHelper(F, &visited);
 }
 
-SimpleLoc *Play::findStartingLineForFunction(Function *F, Module &M) {
-    assert(F != NULL);
-
-    if (function_to_start_line == NULL) {
-        function_to_start_line = new std::map<std::string, SimpleLoc *>();
-        function_to_demangled = new std::map<std::string, std::string>();
-
-        NamedMDNode *root = NULL;
-        for (Module::named_metadata_iterator md_iter = M.named_metadata_begin(),
-                md_end = M.named_metadata_end(); md_iter != md_end; md_iter++) {
-            NamedMDNode *node = md_iter;
-            if (node->getName().str() == "llvm.dbg.cu") {
-                root = node;
-                break;
-            }
-        }
-        assert(root != NULL);
-        assert(root->getNumOperands() == 1);
-        MDNode *module_info = root->getOperand(0);
-        DICompileUnit module(module_info);
-        DIArray functions = module.getSubprograms();
-
-        for (unsigned int f = 0; f < functions.getNumElements(); f++) {
-            DISubprogram di_func(functions.getElement(f));
-
-            std::string fname = di_func.getLinkageName();
-            if (fname.empty()) {
-                fname = di_func.getDisplayName();
-            }
-            int line_no = di_func.getLineNumber();
-            std::string filename = di_func.getFilename().str();
-
-            assert(function_to_start_line->find(fname) ==
-                    function_to_start_line->end());
-            SimpleLoc *loc = (SimpleLoc *)malloc(sizeof(SimpleLoc));
-            loc->filename = new std::string(filename);
-            loc->line_no = line_no;
-            (*function_to_start_line)[fname] = loc;
-
-            assert(function_to_demangled->find(di_func.getDisplayName()) ==
-                        function_to_demangled->end());
-            (*function_to_demangled)[fname] = di_func.getDisplayName();
-        }
-    }
-
-    assert(function_to_start_line->find(F->getName().str()) !=
-            function_to_start_line->end());
-    return (*function_to_start_line)[F->getName().str()];
-}
-
 static DICompileUnit getCompileUnitFor(Module &M) {
     // Get struct info
     NamedMDNode *root = NULL;
@@ -1179,16 +1104,41 @@ void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
 std::string Play::getFunctionDisplayName(Function *F, Module &M) {
     std::string fname = F->getName().str();
 
-    if (function_to_demangled == NULL || function_to_demangled->find(fname) ==
-            function_to_demangled->end()) {
-        findStartingLineForFunction(F, M);
+    if (function_to_demangled.find(fname) == function_to_demangled.end()) {
+        NamedMDNode *root = NULL;
+        for (Module::named_metadata_iterator md_iter = M.named_metadata_begin(),
+                md_end = M.named_metadata_end(); md_iter != md_end; md_iter++) {
+            NamedMDNode *node = md_iter;
+            if (node->getName().str() == "llvm.dbg.cu") {
+                root = node;
+                break;
+            }
+        }
+        assert(root != NULL);
+        assert(root->getNumOperands() == 1);
+        MDNode *module_info = root->getOperand(0);
+        DICompileUnit module(module_info);
+        DIArray functions = module.getSubprograms();
+
+        for (unsigned int f = 0; f < functions.getNumElements(); f++) {
+            DISubprogram di_func(functions.getElement(f));
+
+            std::string fname = di_func.getLinkageName();
+            if (fname.empty()) {
+                fname = di_func.getDisplayName();
+            }
+
+            assert(function_to_demangled.find(di_func.getDisplayName()) ==
+                        function_to_demangled.end());
+            function_to_demangled[fname] = di_func.getDisplayName();
+        }
     }
 
-    assert(function_to_demangled->find(fname) != function_to_demangled->end());
-    return (*function_to_demangled)[fname];
+    assert(function_to_demangled.find(fname) != function_to_demangled.end());
+    return function_to_demangled[fname];
 }
 
-std::string *Play::get_unique_varname(std::string varname, Function *F,
+std::string *Play::getUniqueVarname(std::string varname, Function *F,
         std::set<std::string> *found_variables, Module &M) {
     std::string fname = F->getName().str();
 
@@ -1207,15 +1157,18 @@ std::string *Play::get_unique_varname(std::string varname, Function *F,
     return unique_varname;
 }
 
-std::map<Value *, std::string> *mapValueToOriginalVarname(const Function *F) {
-    std::map<Value *, std::string> *mapping = new std::map<Value *, std::string>();
+static std::map<Value *, std::string> *mapValueToOriginalVarname(
+        const Function *F) {
+    std::map<Value *, std::string> *mapping =
+        new std::map<Value *, std::string>();
     
     for (const_inst_iterator i = inst_begin(F), e = inst_end(F); i != e; i++) {
         const Instruction *inst = &*i;
         if (const DbgDeclareInst* dbgDeclare = dyn_cast<DbgDeclareInst>(inst)) {
             assert(mapping->find(dbgDeclare->getAddress()) == mapping->end());
             assert(isa<AllocaInst>(dbgDeclare->getAddress()));
-            (*mapping)[dbgDeclare->getAddress()] = DIVariable(dbgDeclare->getVariable()).getName();
+            (*mapping)[dbgDeclare->getAddress()] =
+                DIVariable(dbgDeclare->getVariable()).getName();
         }
     }
 
@@ -1333,7 +1286,7 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                      * Construct a unique variable name based on the containing
                      * function and this local's name.
                      */
-                    std::string *unique_varname = get_unique_varname(varname,
+                    std::string *unique_varname = getUniqueVarname(varname,
                             F, &found_variables, M);
 
                     info->varname = unique_varname;
@@ -1636,10 +1589,6 @@ void Play::findHeapAllocations(Module &M, const char *output_file,
     fclose(fp);
 }
 
-std::string Play::getFunctionName(Function *F, Module &M) {
-    return getFunctionDisplayName(F, M);
-}
-
 static void printGroupsChanged(FILE *fp, Function *F,
         std::map<Function *, std::set<size_t> *> *func_to_groups_changed) {
     assert(func_to_groups_changed->find(F) != func_to_groups_changed->end());
@@ -1681,16 +1630,19 @@ void Play::findFunctionExits(Module &M, const char *output_file,
                         size_t ret_alias = searchForValueInKnownAliases(ret,
                                 value_to_alias_group);
                         assert(ret_alias > 0);
-                        fprintf(fp, "%s %lu", getFunctionName(F, M).c_str(), ret_alias);
+                        fprintf(fp, "%s %lu",
+                                getFunctionDisplayName(F, M).c_str(),
+                                ret_alias);
                     } else {
-                        fprintf(fp, "%s 0", getFunctionName(F, M).c_str());
+                        fprintf(fp, "%s 0",
+                                getFunctionDisplayName(F, M).c_str());
                     }
                 }
             }
         }
 
         if (!ret_inst_found) {
-            fprintf(fp, "%s 0", getFunctionName(F, M).c_str());
+            fprintf(fp, "%s 0", getFunctionDisplayName(F, M).c_str());
         }
 
         printGroupsChanged(fp, F, func_to_groups_changed);
