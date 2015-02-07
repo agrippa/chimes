@@ -1,35 +1,27 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 5 alias_group_changed(7, (size_t)(2020512955842300876UL), (size_t)(2850663618440899500UL), (size_t)(4237632752881298404UL), (size_t)(13388633992466173602UL), (size_t)(13803245390038478632UL), (size_t)(15217183307985170569UL), (size_t)(17434303105024168097UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 10 23 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 13 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 10 9 alias_group_changed(1, (size_t)(13697246817649382652UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 12 9 alias_group_changed(10, (size_t)(2020512955842300876UL), (size_t)(2850663618440899500UL), (size_t)(4237632752881298404UL), (size_t)(6554105935738823113UL), (size_t)(8613284754052476370UL), (size_t)(13388633992466173602UL), (size_t)(13697246817649382652UL), (size_t)(13803245390038478632UL), (size_t)(15217183307985170569UL), (size_t)(17434303105024168097UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 34 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 21 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 29 alias_group_changed(1, (size_t)(8613284754052476370UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 38 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 19 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 16 33 alias_group_changed(1, (size_t)(6554105935738823113UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 46 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 32 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 30 41 alias_group_changed(1, (size_t)(3193239025367387070UL)), 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 46 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 37 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 35 41 alias_group_changed(1, (size_t)(15567591489155420624UL)), 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 49 5 alias_group_changed(1, (size_t)(9299461872755550985UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 5 alias_group_changed(4, (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(18224721594452017849UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 5 alias_group_changed(1, (size_t)(5952148420769155456UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 81 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 84 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 87 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 90 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 93 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 99 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 102 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 105 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 108 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 111 17 alias_group_changed(1, (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 52 5 alias_group_changed(1, (size_t)(9299461872755550985UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 5 alias_group_changed(6, (size_t)(5952148420769155456UL), (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(17621417648879593294UL), (size_t)(18224721594452017849UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 79 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 82 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 85 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 17 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 100 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 103 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 106 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 13 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 119 28 { 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 121 5  }
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 9 alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 95 40 len=7 realloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 96 41 , 8054715398219518601UL
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 5 new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); 
@@ -53,8 +45,8 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  registe
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  register_stack_var("setup_config|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  register_stack_var("setup_config|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 122 1 rm_stack(false, 0UL); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 967  FILE *fp;  fp = (fopen(filename, "wb")); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 999 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 708  FILE *fp;  fp = (fopen(filename, "wb")); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 740 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 5 {  int y; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 21 7  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 10  y = (0); 
@@ -75,30 +67,30 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 5  f
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 33 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 356 int c; 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 361 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 979  call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 720  call_lbl_0: calling(0, 1514847738530813435UL, 2, (size_t)(1686577910018222429UL), (size_t)(1920704166721253160UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 11 9  call_lbl_1: calling(1, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(1686577910018222429UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 12 9  call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 12 369  call_lbl_2: calling(2, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 17 13  call_lbl_3: calling(3, 0UL, 5, (size_t)(1514847738530813435UL), (size_t)(11912630004586522060UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 20 9  call_lbl_4: calling(4, 0UL, 2, (size_t)(1514847738530813435UL), (size_t)(3688673358470470082UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 23 5  call_lbl_5: calling(5, 0UL, 1, (size_t)(1514847738530813435UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 39 5  call_lbl_0: calling(0, 0UL, 5, (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 49 184  call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 52 5  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 49 127  call_lbl_0: calling(0, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(17673580968545557130UL), (size_t)(14005911604284787229UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 52 62  call_lbl_1: calling(1, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 5  call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 222  call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(16519385352256392130UL), (size_t)(295675736814144269UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 79 13  call_lbl_2: calling(2, 0UL, 1, (size_t)(15305433456608714061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 82 13  call_lbl_3: calling(3, 0UL, 1, (size_t)(15305433456608714061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 85 13  call_lbl_4: calling(4, 0UL, 1, (size_t)(15305433456608714061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 75  call_lbl_5: calling(5, 0UL, 2, (size_t)(15305433456608714061UL), (size_t)(8054715398219518601UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 100 13  call_lbl_6: calling(6, 0UL, 1, (size_t)(15305433456608714061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 103 13  call_lbl_7: calling(7, 0UL, 1, (size_t)(15305433456608714061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 106 13  call_lbl_8: calling(8, 0UL, 1, (size_t)(15305433456608714061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 232  call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(16519385352256392130UL), (size_t)(295675736814144269UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 79 104  call_lbl_2: calling(2, 0UL, 1, (size_t)(15305433456608714061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 82 104  call_lbl_3: calling(3, 0UL, 1, (size_t)(15305433456608714061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 85 104  call_lbl_4: calling(4, 0UL, 1, (size_t)(15305433456608714061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 108  call_lbl_5: calling(5, 0UL, 2, (size_t)(15305433456608714061UL), (size_t)(8054715398219518601UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 100 104  call_lbl_6: calling(6, 0UL, 1, (size_t)(15305433456608714061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 103 104  call_lbl_7: calling(7, 0UL, 1, (size_t)(15305433456608714061UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 106 104  call_lbl_8: calling(8, 0UL, 1, (size_t)(15305433456608714061UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 112 13  call_lbl_9: calling(9, 0UL, 3, (size_t)(12551842837011914585UL), (size_t)(10942567111713916525UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 13  call_lbl_10: calling(10, 0UL, 1, (size_t)(16519385352256392130UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 9  call_lbl_11: calling(11, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 968  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 976  register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 976  if (____numdebug_replaying) { goto lbl_1; } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 104  call_lbl_10: calling(10, 0UL, 1, (size_t)(16519385352256392130UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 100  call_lbl_11: calling(11, 0UL, 0); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 709  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 717  register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 717  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 13  register_stack_var("save_text|y|0", "i32", (void *)(&y), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 13  if (____numdebug_replaying) { goto lbl_2; } 

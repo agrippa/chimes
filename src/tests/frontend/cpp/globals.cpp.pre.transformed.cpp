@@ -1719,9 +1719,9 @@ const char *hello_world = "hello world";
 
 int main(int argc, char **argv) {
     init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); a = 4;
-    alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(13741044057938436313UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 2, (size_t)(1964925809983401054UL), (size_t)(13257195304767247654UL)); printf("%s\n", hello_world);
+     call_lbl_0: calling(0, 0UL, 2, (size_t)(1964925809983401054UL), (size_t)(13257195304767247654UL)); printf("%s\n", hello_world);
      call_lbl_1: calling(1, 0UL, 1, (size_t)(579172693352632385UL)); printf("auto global\n");
-     call_lbl_2: calling(2, 0UL, 0); checkpoint();
+    alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(13741044057938436313UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_2: calling(2, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return b + a;
 }
 

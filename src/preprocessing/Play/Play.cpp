@@ -40,6 +40,8 @@ namespace {
         std::string *reason;
     } GroupsModifiedAtLine;
 
+
+
     typedef struct _StackAllocInfo {
         std::string *varname;
         int type_size_in_bits;
@@ -110,6 +112,11 @@ namespace {
         }
 
     private:
+        void initKnownFunctions();
+        bool isKnownFunction(Function *F);
+        CALLS_CHECKPOINT knownFunctionCreatesCheckpoint(Function *F);
+        std::map<std::string, CALLS_CHECKPOINT> doesFunctionCreateCheckpoint;
+
         void printFunctions(Module &M);
         void printValuesAndAliasGroups(
                 std::map<Value *, size_t> value_to_alias_group);
@@ -686,6 +693,10 @@ void Play::unionGroups(int line, int col, std::string filename,
         reason_str << "anon";
     } else {
         reason_str << reason->getName().str();
+        errs() << reason->getName().str() << "\n";
+        for (unsigned i = 0; i < reason->getName().str().size(); i++) {
+            errs() << (int)(reason->getName().str()[i]) << "\n";
+        }
     }
 
     unionGroups(line, col, filename, groups, reason_str.str());
@@ -841,17 +852,17 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
 
     TerminatorInst *term = curr->getTerminator();
     if (groups->size() > 0) {
-        // if (term->getNumSuccessors() > 0) {
-        //     std::set<BasicBlock *> propagation_visited;
-        //     for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
-        //         BasicBlock *child = term->getSuccessor(i);
-        //         propagateGroupsDown(child, filename, groups, bb_maxes,
-        //                 &propagation_visited);
-        //     }
-        // } else {
+        if (term->getNumSuccessors() > 0) {
+            std::set<BasicBlock *> propagation_visited;
+            for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
+                BasicBlock *child = term->getSuccessor(i);
+                propagateGroupsDown(child, filename, groups, bb_maxes,
+                        &propagation_visited);
+            }
+        } else {
             unionGroups(bb_maxes[curr].first, bb_maxes[curr].second, filename,
                     groups, false, false, curr->getParent());
-        // }
+        }
     }
 
     for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
@@ -879,6 +890,59 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
 /*
  * TODO promote alias changes out of basic blocks and to their successors as
  * much as possible.
+ *
+ * One annoying thing about LLVM's IR is that it has the ability to refactor
+ * separate return statements in the source into a single RetInst in SSA form.
+ * This means that even though there is only one TerminatorInst in the function
+ * with zero successors, there are actual multiple places in the source code
+ * where we want to insert an alias_group_changed call right before returning.
+ *
+ * First of all, this results in the alias_group_changed call that we generate
+ * being a union of all aliases changed across all possible control paths to the
+ * RetInst (which is okay for correctness, but may indicate that more has
+ * changed than the host application has actually modified). More importantly,
+ * this means that we need to make aliases that have been marked changed at the
+ * terminator a special case and mark them changed during transformation at any
+ * point where we insert rm_stack for this function.
+ *
+ * This is a problem today in finding function exists and marking the return
+ * value with the appropriate alias. I was assuming that findFunctionExits was
+ * finding all return statements in the source code, but it is often only
+ * finding the single RetInst.
+ *
+ * To solve this we need to both set the return alias appropriate for functions
+ * returning pointer values and set the aliases changed at the end of the
+ * function appropriately. It seems that we also need to handle a few cases (and
+ * rely on un-defined LLVM behavior).
+ *
+ * The aliases changed at the terminator should be added to the exits.info file
+ * and for every return statement found during the transformation pass, we
+ * should prepend an alias_group_changed call before the rm_stack call with
+ * these alias groups passed in. The exit.info will also now have to map from
+ * function name to values, rather than the current line:col mapping it uses
+ * today (as this is unusable).
+ *
+ * A function in LLVM always seems to have a single return point, regardless of
+ * how many implicit or explicit return statements it has or whether it is
+ * returning a value or void. If no return statement exists and an implicit
+ * return occurs at the end of a function, LLVM inserts an explicit RetInst in
+ * the SSA form at the end of the function. If there are multiple points of
+ * return, a single RetInst is inserted at the end of the function with jumps to
+ * that basic block. If there are multiple points of return and a value is
+ * returned, then LLVM introduces a temporary register with an alloca called
+ * 'retval' and before jumping to the return basic block does a store on retval.
+ * The basic block then does a load from retval and returns that value. As a
+ * result, all possible values that could be returned will be aliased together
+ * by the contains relationship with retval and there will only ever be a single
+ * return alias for any function.
+ *
+ * Therefore, exit.info should map from function name to the set of alias groups
+ * that may be changed but not recorded at the termination of this function and
+ * to this single return alias. Then, we simply need to ensure that the function
+ * name used to do a lookup during transformation and the one used to record the
+ * mapping during the analysis stage are the same.
+ *
+ * God I hope this alias change tracking becomes useful for large applications..
  */
 void Play::collectLineToGroupsMapping(Module& M,
         std::map<Value *, size_t> value_to_alias_group,
@@ -927,6 +991,29 @@ bool Play::isCheckpoint(Function *callee) {
     return callee->getName().str() == "_Z10checkpointv";
 }
 
+void Play::initKnownFunctions() {
+    doesFunctionCreateCheckpoint["rand"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["printf"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["fprintf"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["\x01_fopen"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["fclose"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["malloc"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["free"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["realloc"] = DOES_NOT;
+}
+
+bool Play::isKnownFunction(Function *F) {
+    return doesFunctionCreateCheckpoint.find(F->getName().str()) !=
+        doesFunctionCreateCheckpoint.end();
+}
+
+CALLS_CHECKPOINT Play::knownFunctionCreatesCheckpoint(Function *F) {
+    assert(isKnownFunction(F));
+    return doesFunctionCreateCheckpoint[F->getName().str()];
+}
+
 CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
         std::set<Instruction *> *visited) {
     if (F == NULL) return MAY;
@@ -939,6 +1026,8 @@ CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
 
     if (isCheckpoint(F)) {
         result = DOES;
+    } else if (isKnownFunction(F)) {
+        result = knownFunctionCreatesCheckpoint(F);
     } else if (F->empty()) {
         result = MAY;
     } else {
@@ -1627,6 +1716,7 @@ void Play::findFunctionExits(Module &M, const char *output_file,
  *  graphs (i.e. functions) in reverse depth traversal order.
  */
 bool Play::runOnModule(Module &M) {
+    initKnownFunctions();
 
     /*
      * This first section of code groups values into alias sets, finds all alias
