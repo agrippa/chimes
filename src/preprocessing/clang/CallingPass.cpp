@@ -44,7 +44,8 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
     std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
         "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
         "init_numdebug", "new_stack", "rm_stack", "register_stack_var",
-        "alias_group_changed"};
+        "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
+        "atoi", "atof", "fopen", "getopt"};
     std::set<std::string> ignorable(ignorable_arr,
             ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
 
@@ -57,7 +58,10 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
             const clang::FunctionDecl *decl = call->getDirectCallee();
             std::string callee_name = decl->getNameAsString();
 
-            // Not necessary, but helps to limit code clutter
+            /*
+             * Not necessary, but helps to limit code clutter and reduce
+             * overhead
+             */
             if (ignorable.find(callee_name) == ignorable.end() &&
                     !clang::isa<const clang::CXXConstructExpr>(call)) {
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);
@@ -68,8 +72,6 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
                 int lbl = getNextFunctionLabel();
                 calls_found[presumed.getLine()].push_back(CallLocation(
                             presumed.getColumn(), lbl, call));
-
-                // InsertAtFront(call, ss.str());
             }
         }
     }
