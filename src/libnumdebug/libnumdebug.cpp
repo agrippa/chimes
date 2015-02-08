@@ -597,7 +597,7 @@ void new_stack(unsigned int n_local_arg_aliases, ...) {
 #endif
 }
 
-void calling(int lbl, size_t set_return_alias, int naliases, ...) {
+void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(CALLING);
 #endif
@@ -612,7 +612,7 @@ void calling(int lbl, size_t set_return_alias, int naliases, ...) {
 
     va_list vl;
     va_start(vl, naliases);
-    for (int i = 0; i < naliases; i++) {
+    for (unsigned i = 0; i < naliases; i++) {
         parent_aliases[i] = va_arg(vl, size_t);
     }
     va_end(vl);
