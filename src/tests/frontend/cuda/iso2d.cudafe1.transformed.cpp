@@ -26495,7 +26495,7 @@ return (err == (cudaSuccess)) ? cudaBindSurfaceToArray(surf, array, desc) : err;
 # 6 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void init_numdebug();
 # 7 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void calling(int lbl, size_t set_return_alias, int naliases, ...);
+extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 # 8 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int get_next_call();
 # 9 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
