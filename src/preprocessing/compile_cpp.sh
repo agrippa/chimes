@@ -95,6 +95,7 @@ if [[ -z ${WORK_DIR} ]]; then
 fi
 
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
+GXX=${GXX:-/usr/bin/g++}
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
@@ -124,7 +125,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     fi
 
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
+    cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
            -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g \
            -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
@@ -180,7 +181,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
     echo Postprocessing ${FINAL_FILE}
-    cd ${WORK_DIR} && g++ -E -include stddef.h ${FINAL_FILE} ${NUMDEBUG_DEF} \
+    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${NUMDEBUG_DEF} \
         -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
@@ -189,7 +190,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     LAST_FILES+=($FINAL_FILE)
     OBJ_FILES+=($OBJ_FILE)
 
-    g++ --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${FINAL_FILE} \
+    ${GXX} --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${FINAL_FILE} \
         -o ${OBJ_FILE} ${GXX_FLAGS} ${NUMDEBUG_DEF}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
@@ -212,7 +213,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+    ${GXX} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
             -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS}
 

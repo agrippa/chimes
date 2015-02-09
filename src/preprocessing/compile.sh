@@ -67,6 +67,12 @@ if [[ "${#INPUTS[@]}" -eq "0" ]]; then
     exit 1
 fi
 
+# Before anything we need to figure out the C compiler used by nvcc
+mkdir -p ${WORK_DIR}/tmp
+echo 'int main(int argc, char **argv) { return 0; }' > ${WORK_DIR}/tmp/tmp.cu
+GXX=$(nvcc -arch=sm_20 --verbose --compile ${WORK_DIR}/tmp/tmp.cu -dryrun 2>&1 | tail -n 1 | awk '{ print $2 }')
+rm -rf ${WORK_DIR}/tmp
+
 COMPILER_FLAGS="${INCLUDES} ${LIB_PATHS} ${LIBS}"
 [[ ! $VERBOSE ]] || COMPILER_FLAGS="${COMPILER_FLAGS} -v"
 [[ ! $PROFILE ]] || COMPILER_FLAGS="${COMPILER_FLAGS} -p"
@@ -107,7 +113,7 @@ for f in ${OBJ_FILES[@]}; do
     OBJ_FILE_STR="${OBJ_FILE_STR} $f"
 done
 
-LINK_CMD="g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+LINK_CMD="${GXX} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
         -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
         -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${LINK_INCLUDES} ${LINK_LIB_PATHS} \
         ${LINK_LIBS} -g -O0"

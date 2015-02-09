@@ -3,9 +3,9 @@ import os
 import sys
 
 if __name__ == '__main__':
-    if len(sys.argv) != 6:
+    if len(sys.argv) != 7:
         print('usage: compile_helper.py cmd-file env-file pre-cmds-file '
-                'post-cmds-file cpp-file')
+                'post-cmds-file cpp-file compiler-file')
         sys.exit(1)
 
     cmd_file = sys.argv[1]
@@ -13,21 +13,25 @@ if __name__ == '__main__':
     pre_cmd_file = sys.argv[3]
     post_cmd_file = sys.argv[4]
     cpp_file = sys.argv[5]
+    compiler_file = sys.argv[6]
 
     env_file_fp = open(env_file, 'w')
     pre_cmd_file_fp = open(pre_cmd_file, 'w')
     post_cmd_file_fp = open(post_cmd_file, 'w')
     cpp_file_fp = open(cpp_file, 'w')
+    compiler_file_fp = open(compiler_file, 'w')
 
     env = True
     pre = False
     post = False
     include_inserted = False
+    last_line = None
     cmd_file_fp = open(cmd_file, 'r')
 
     for line in cmd_file_fp:
         if line.find('#$ ') == 0:
             line = line[3:]
+            last_line = line
 
             if line.find('rm') != 0:
                 if env:
@@ -66,8 +70,13 @@ if __name__ == '__main__':
                 cudafe_file = cudafe_file[:len(cudafe_file) - 1]
                 cpp_file_fp.write(cudafe_file)
 
+    assert last_line is not None
+    cpp_compiler = last_line.split()[0]
+    compiler_file_fp.write(cpp_compiler)
+
     pre_cmd_file_fp.close()
     post_cmd_file_fp.close()
     cpp_file_fp.close()
+    compiler_file_fp.close();
 
     cmd_file_fp.close()
