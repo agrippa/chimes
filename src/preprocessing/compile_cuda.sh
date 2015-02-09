@@ -115,7 +115,9 @@ ENV_FILE=${COMPILE_HELPER_WORK_DIR}/log.env
 PRE_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.pre
 POST_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.post
 CPP_FILE=${COMPILE_HELPER_WORK_DIR}/log.cpp
+CPP_COMPILER_FILE=${COMPILE_HELPER_WORK_DIR}/compiler
 ENV_POST_FILE=${COMPILE_HELPER_WORK_DIR}/log.env.post
+CPP_COMPILER=
 
 mkdir -p ${COMPILE_HELPER_WORK_DIR}
 mkdir -p ${NVCC_WORK_DIR}
@@ -131,7 +133,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
     printf 'DONE\n'
     python ${NUM_DEBUG_HOME}/src/preprocessing/compile_helper.py \
-              ${CMD_FILE} ${ENV_FILE} ${PRE_CMD_FILE} ${POST_CMD_FILE} ${CPP_FILE}
+              ${CMD_FILE} ${ENV_FILE} ${PRE_CMD_FILE} ${POST_CMD_FILE} \
+              ${CPP_FILE} ${CPP_COMPILER_FILE}
+    CPP_COMPILER=$(cat ${CPP_COMPILER_FILE})
 
     INFO_FILE_PREFIX=${NVCC_WORK_DIR}/$(basename ${INPUT})
     INTERMEDIATE_FILE=${NVCC_WORK_DIR}/$(cat ${CPP_FILE})
@@ -199,7 +203,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
     echo Postprocessing ${FINAL_FILE}
-    cd ${NVCC_WORK_DIR} && g++ -E -I${CUDA_HOME}/include -include stddef.h \
+    cd ${NVCC_WORK_DIR} && ${CPP_COMPILER} -E -I${CUDA_HOME}/include -include stddef.h \
         ${NUMDEBUG_DEF} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
         ${FINAL_FILE}.post ${FINAL_FILE}
 
@@ -233,7 +237,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    g++ -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
+    ${CPP_COMPILER} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_LIB_PATH} -lnumdebug \
             -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${LIB_PATHS} \
             ${LIBS}
