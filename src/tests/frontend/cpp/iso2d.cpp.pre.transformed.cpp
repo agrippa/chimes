@@ -2912,8 +2912,7 @@ extern void wait_for_checkpoint();
 static void fwd(float *next, float *curr, float *vsq,
         float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {
 
-#pragma omp parallel for collapse(2)
- new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); { int y; for ( y = (0); y < ny; y++) { {
+    new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); { int y; for ( y = (0); y < ny; y++) { {
         { int x; for ( x = (0); x < nx; x++) { {
              int this_offset; this_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x))));
 

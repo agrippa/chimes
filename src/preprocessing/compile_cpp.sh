@@ -16,8 +16,9 @@ LIBS=
 OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
+LINKER_FLAGS=
 
-while getopts ":kci:I:L:l:o:w:vp" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -48,6 +49,9 @@ while getopts ":kci:I:L:l:o:w:vp" opt; do
             ;;
         p)
             PROFILE=1
+            ;;
+        x)
+            LINKER_FLAGS="${LINKER_FLAGS} ${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -98,6 +102,7 @@ OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 GXX=${GXX:-/usr/bin/g++}
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
+OMP_FINDER=${NUM_DEBUG_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
 NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
 
@@ -123,6 +128,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
         echo "Missing LLVMPlay lib"
         exit 1
     fi
+
+    echo Looking for OpenMP pragmas in ${INPUT}
+    cd ${WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
 
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
@@ -166,6 +174,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -o ${INFO_FILE_PREFIX}.module.info \
             -w ${WORK_DIR} \
             -c true \
+            -t ${INFO_FILE_PREFIX}.omp.info \
             ${PREPROCESS_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${NUMDEBUG_DEF}
 
@@ -215,7 +224,7 @@ else
 
     ${GXX} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
-            -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS}
+            -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

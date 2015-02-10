@@ -12,6 +12,22 @@
 
 extern std::string curr_func;
 
+class OpenMPPragma {
+    public:
+        OpenMPPragma(unsigned set_line, unsigned set_col,
+                std::string set_pragma) : line(set_line), col(set_col),
+                pragma(set_pragma) { }
+
+        unsigned get_line() { return line; }
+        unsigned get_column() { return col; }
+        std::string get_pragma() { return pragma; }
+
+    private:
+        unsigned line;
+        unsigned col;
+        std::string pragma;
+};
+
 class ReachableInfo {
     public:
         ReachableInfo(size_t set_container, size_t set_child) :
@@ -222,14 +238,16 @@ public:
             const char *heap_filename, const char *original_filename,
             const char *diagnostic_filename, const char *working_dirname,
             const char *func_filename, const char *call_filename,
-            const char *exit_filename, const char *reachable_filename) :
+            const char *exit_filename, const char *reachable_filename,
+            const char *omp_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
             heap_file(heap_filename), original_file(original_filename),
             diagnostic_file(diagnostic_filename), working_dir(working_dirname),
             func_file(func_filename), call_file(call_filename),
-            exit_file(exit_filename), reachable_file(reachable_filename) {
+            exit_file(exit_filename), reachable_file(reachable_filename),
+            omp_file(omp_filename) {
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
         stack_allocs = parseStackAllocs();
@@ -239,6 +257,7 @@ public:
         func_exits = parseFunctionExits();
         reachable = parseReachable();
         module_id = hash(module_name);
+        omp_pragmas = parseOMPPragmas();
         diagnostics.open(diagnostic_file);
     }
 
@@ -318,7 +337,8 @@ public:
 private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
-            working_dir, func_file, call_file, exit_file, reachable_file;
+            working_dir, func_file, call_file, exit_file, reachable_file,
+            omp_file;
         std::ofstream diagnostics;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
@@ -329,6 +349,7 @@ private:
         std::vector<AliasesPassedToCallSite> *callsites;
         std::map<std::string, FunctionExit *> *func_exits;
         std::vector<ReachableInfo> *reachable;
+        std::vector<OpenMPPragma> *omp_pragmas;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
@@ -338,6 +359,7 @@ private:
         std::vector<AliasesPassedToCallSite> *parseCallSites();
         std::map<std::string, FunctionExit *> *parseFunctionExits();
         std::vector<ReachableInfo> *parseReachable();
+        std::vector<OpenMPPragma> *parseOMPPragmas();
 
         size_t module_id;
 };
