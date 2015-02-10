@@ -66,6 +66,9 @@ static llvm::cl::opt<std::string> reachable_file("r",
 static llvm::cl::opt<std::string> module_id_file("o",
         llvm::cl::desc("Module ID file"),
         llvm::cl::value_desc("module_info"));
+static llvm::cl::opt<std::string> omp_file("t",
+        llvm::cl::desc("OpenMP file"),
+        llvm::cl::value_desc("omp_info"));
 
 DesiredInsertions *insertions = NULL;
 std::string curr_func;
@@ -279,6 +282,7 @@ int main(int argc, const char **argv) {
   check_opt(exit_file, "Exit file");
   check_opt(reachable_file, "Reachable file");
   check_opt(module_id_file, "Module ID file");
+  check_opt(omp_file, "OpenMP file");
 
   bool updateFile = true;
   if (contains_line_markings.compare("true") == 0) {
@@ -295,7 +299,7 @@ int main(int argc, const char **argv) {
               stack_allocs_file.c_str(), heap_file.c_str(),
               original_file.c_str(), diag_file.c_str(),
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
-              exit_file.c_str(), reachable_file.c_str());
+              exit_file.c_str(), reachable_file.c_str(), omp_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;

@@ -18,7 +18,7 @@ DYLD_PATH = os.path.join(NUM_DEBUG_HOME, 'src', 'libnumdebug')
 INFO_FILES = {'call.info': -1, 'diag.info': -1, 'exit.info': -1,
               'func.info': -1, 'globals.info': -1, 'heap.info': -1,
               'lines.info': 0, 'module.info': -1, 'reachable.info': -1,
-              'stack.info': 0, 'struct.info': -1}
+              'stack.info': 0, 'struct.info': -1, 'omp.info': -1}
 
 class TestConfig(object):
     """
@@ -28,6 +28,14 @@ class TestConfig(object):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
+        self.custom_compiler = None
+        self.custom_compiler_flags = []
+
+    def add_custom_compiler_flag(self, f):
+        self.custom_compiler_flags.append(f)
+
+    def set_custom_compiler(self, s):
+        self.custom_compiler = s
 
     def __str__(self):
         return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
@@ -88,6 +96,23 @@ class FrontendTest(object):
         self.expect_err = expect_err
         self.includes = [] if includes is None else includes
         self.dependencies = [] if dependencies is None else dependencies
+
+
+def find_file(name, path):
+    """
+    Search for a file with the specified name, under the specified directory.
+
+    :param name: Name of the file to find
+    :type name: `str`
+    :param path: Path under which to search
+    :type path: `str`
+    :returns: Absolute path of the first match
+    :rtype: `str`
+    """
+    for root, dirs, files in os.walk(path):
+        if name in files:
+            return os.path.join(root, name)
+    return None
 
 
 def construct_simple_frontend_test(src_name):
@@ -464,14 +489,22 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         print(test.name + ' SKIPPING')
         return
 
+    env = copy_environ()
+    if config.custom_compiler is not None:
+        env['GXX'] = config.custom_compiler
+
     compile_cmd = compile_script_path + ' -k'
+
+    for flag in config.custom_compiler_flags:
+        compile_cmd += ' -x ' + flag
+
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(examples_dir_path, input_file)
 
     compile_cmd = add_include_paths(compile_cmd, test.includes)
-    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, {})
+    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
 
-    stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err)
+    stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err, env=env)
 
     if config.verbose:
         print_and_abort(stdout, stderr, abort=False)

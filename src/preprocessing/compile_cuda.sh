@@ -16,6 +16,7 @@ LIBS=
 OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
+LINKER_FLAGS=
 
 while getopts ":kci:I:L:l:o:w:vp" opt; do
     case $opt in 
@@ -48,6 +49,9 @@ while getopts ":kci:I:L:l:o:w:vp" opt; do
             ;;
         p)
             PROFILE=1
+            ;;
+        x)
+            LINKER_FLAGS="${LINKER_FLAGS} ${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -104,6 +108,7 @@ COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
 TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
+OMP_FINDER=${NUM_DEBUG_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
 NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
 
@@ -154,6 +159,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
         exit 1
     fi
 
+    echo Looking for OpenMP pragmas in ${INPUT}
+    cd ${NVCC_WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
+
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
         -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -S -emit-llvm \
@@ -188,6 +196,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -o ${INFO_FILE_PREFIX}.module.info \
             -w ${NVCC_WORK_DIR} \
             -c true \
+            -t ${INFO_FILE_PREFIX}.omp.info \
             ${INTERMEDIATE_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${NUMDEBUG_DEF}
 
@@ -240,7 +249,7 @@ else
     ${CPP_COMPILER} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
             -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_LIB_PATH} -lnumdebug \
             -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${LIB_PATHS} \
-            ${LIBS}
+            ${LIBS} ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

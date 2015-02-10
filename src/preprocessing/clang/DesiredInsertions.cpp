@@ -14,6 +14,29 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
+std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
+    std::vector<OpenMPPragma> *pragmas = new std::vector<OpenMPPragma>();
+
+    std::ifstream fp;
+    fp.open(omp_file, std::ios::in);
+    std::string line;
+
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        unsigned line_no = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        unsigned col = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        pragmas->push_back(OpenMPPragma(line_no, col, line));
+    }
+    fp.close();
+
+    return pragmas;
+}
+
 std::vector<ReachableInfo> *DesiredInsertions::parseReachable() {
     std::vector<ReachableInfo> *reachable = new std::vector<ReachableInfo>();
 
