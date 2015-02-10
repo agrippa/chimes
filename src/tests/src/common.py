@@ -12,6 +12,8 @@ NUM_DEBUG_REPLAY_EXIT_CODE = 55
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(NUM_DEBUG_HOME, 'src', 'libnumdebug')
 
+FRONTEND_WORKING_DIR = '/tmp/numdebug-frontend'
+
 # Mapping from info file name to a space-delimited column that may cause
 # differences between the test and expected outputs due to different temporary
 # filenames
@@ -113,6 +115,25 @@ def find_file(name, path):
         if name in files:
             return os.path.join(root, name)
     return None
+
+
+def clean_and_create_folder(folder):
+    """
+    The end result of this function is an empty directory. This function will
+    either create it, or clean it out if it already exists.
+
+    :param folder: Folder to create/clean
+    :type folder: `str`
+    """
+    if not os.path.isdir(folder):
+        os.mkdir(folder)
+    else:
+        for fl in os.listdir(folder):
+            path = os.path.join(folder, fl)
+            try:
+                os.unlink(file_path)
+            except Exception, e:
+                pass
 
 
 def construct_simple_frontend_test(src_name):
@@ -493,7 +514,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     if config.custom_compiler is not None:
         env['GXX'] = config.custom_compiler
 
-    compile_cmd = compile_script_path + ' -k'
+    clean_and_create_folder(FRONTEND_WORKING_DIR)
+    compile_cmd = compile_script_path + ' -k -w ' + FRONTEND_WORKING_DIR
 
     for flag in config.custom_compiler_flags:
         compile_cmd += ' -x ' + flag

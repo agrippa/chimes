@@ -18,8 +18,9 @@ LIBS=
 LINK_LIBS=
 OUTPUT_FILE=a.out
 VERBOSE=0
+WORK_DIR=
 
-while getopts ":ki:I:L:l:vo:p" opt; do
+while getopts ":ki:I:L:l:vo:pw:" opt; do
     case $opt in 
         i)
             INPUTS+=(${OPTARG})
@@ -48,6 +49,9 @@ while getopts ":ki:I:L:l:vo:p" opt; do
         p)
             PROFILE=1
             ;;
+        w)
+            WORK_DIR=${OPTARG}
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -59,7 +63,9 @@ while getopts ":ki:I:L:l:vo:p" opt; do
     esac
 done
 
-WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+if [[ -z ${WORK_DIR} ]]; then
+    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+fi
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
