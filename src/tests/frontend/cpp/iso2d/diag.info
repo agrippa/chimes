@@ -48,8 +48,8 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 149 10 , 1
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 55 5 new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 73 1 alias_group_changed(20, (size_t)(142509876040465224UL), (size_t)(758094435815140655UL), (size_t)(1406537190118695280UL), (size_t)(1439420700812193513UL), (size_t)(1760539376595026939UL), (size_t)(3546215367615677073UL), (size_t)(3655576263074171224UL), (size_t)(4020147836706855852UL), (size_t)(4266828485354121373UL), (size_t)(4608403546164633272UL), (size_t)(4740125504295099978UL), (size_t)(5605394185929330330UL), (size_t)(5855332881963460232UL), (size_t)(6133022261894537111UL), (size_t)(7812062783844714897UL), (size_t)(8434292942123894570UL), (size_t)(13062136505411396820UL), (size_t)(17216818188849725545UL), (size_t)(17702871222471266781UL), (size_t)(18247678888939504941UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 100 9 alias_group_changed(12, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 151 5 alias_group_changed(12, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5 init_numdebug(); 
@@ -79,8 +79,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 64 17  int x_p
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 64 86 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 65 17  int x_neg_offset;  x_neg_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x - d)))); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 65 86 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 230  config conf; 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 241 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 282  config conf; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 293 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 5  float dx;  dx = (20.F); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 81 5  float dt;  dt = (0.00200000009F); 
@@ -135,61 +135,61 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 128 9  call_lbl_8: c
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 130 315  call_lbl_9: calling(9, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 132 62  call_lbl_10: calling(10, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 139 67  call_lbl_11: calling(11, 0UL, 7, (size_t)(8391575324692158608UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 231  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 242  register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)offsetof(struct _config, srcs)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 242  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 283  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 294  register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)offsetof(struct _config, srcs)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 294  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 6  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 14  register_stack_var("main|dx|0", "float", (void *)(&dx), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 14  register_stack_var("main|dx|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dx), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 14  if (____numdebug_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 81 6  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 81 14  register_stack_var("main|dt|0", "float", (void *)(&dt), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 81 14  register_stack_var("main|dt|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dt), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 81 14  if (____numdebug_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 84 6  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 84 17  register_stack_var("main|dimx|0", "i64", (void *)(&dimx), 8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 84 17  register_stack_var("main|dimx|0", LIBNUMDEBUG_THREAD_NUM(), "i64", (void *)(&dimx), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 84 17  if (____numdebug_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 85 6  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 85 17  register_stack_var("main|dimy|0", "i64", (void *)(&dimy), 8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 85 17  register_stack_var("main|dimy|0", LIBNUMDEBUG_THREAD_NUM(), "i64", (void *)(&dimy), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 85 17  if (____numdebug_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 86 6  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 86 19  register_stack_var("main|nbytes|0", "i64", (void *)(&nbytes), 8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 86 19  register_stack_var("main|nbytes|0", LIBNUMDEBUG_THREAD_NUM(), "i64", (void *)(&nbytes), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 86 19  if (____numdebug_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 6  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 20  register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 20  register_stack_var("main|c_coeff|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&c_coeff), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 94 20  if (____numdebug_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 6  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 17  register_stack_var("main|curr|0", "float*", (void *)(&curr), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 17  register_stack_var("main|curr|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&curr), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 95 17  if (____numdebug_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 96 6  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 96 17  register_stack_var("main|next|0", "float*", (void *)(&next), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 96 17  register_stack_var("main|next|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&next), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 96 17  if (____numdebug_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 6  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 16  register_stack_var("main|vsq|0", "float*", (void *)(&vsq), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 16  register_stack_var("main|vsq|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&vsq), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 97 16  if (____numdebug_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 6  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 18  register_stack_var("main|srcs|0", "float**", (void *)(&srcs), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 18  register_stack_var("main|srcs|0", LIBNUMDEBUG_THREAD_NUM(), "float**", (void *)(&srcs), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 104 18  if (____numdebug_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 108 6  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 108 18  register_stack_var("main|start|0", "double", (void *)(&start), 8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 108 18  register_stack_var("main|start|0", LIBNUMDEBUG_THREAD_NUM(), "double", (void *)(&start), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 108 18  if (____numdebug_replaying) { goto lbl_12; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 109 8  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 109 16  register_stack_var("main|step|0", "i32", (void *)(&step), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 109 16  register_stack_var("main|step|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&step), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 109 16  if (____numdebug_replaying) { goto lbl_13; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 110 12  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 110 19  register_stack_var("main|src|0", "i32", (void *)(&src), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 110 19  register_stack_var("main|src|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&src), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 110 19  if (____numdebug_replaying) { goto lbl_14; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 112 16  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 112 30  register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 112 30  register_stack_var("main|src_offset|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&src_offset), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 112 30  if (____numdebug_replaying) { goto lbl_15; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 120 10  lbl_15: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 120 20  register_stack_var("main|tmp|0", "float*", (void *)(&tmp), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 120 20  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&tmp), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 120 20  if (____numdebug_replaying) { goto lbl_16; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 130 296  lbl_16: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 130 312  register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), 8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 130 312  register_stack_var("main|elapsed_s|0", LIBNUMDEBUG_THREAD_NUM(), "double", (void *)(&elapsed_s), 8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 130 312  if (____numdebug_replaying) { goto lbl_17; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 134 6  lbl_17: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 134 22  register_stack_var("main|point_rate|0", "float", (void *)(&point_rate), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 134 22  register_stack_var("main|point_rate|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&point_rate), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 134 22  if (____numdebug_replaying) { goto lbl_18; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 8  lbl_18: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 13  register_stack_var("main|i|0", "i32", (void *)(&i), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 13  register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 13  if (____numdebug_replaying) { goto lbl_19; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 13 lbl_19: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } } 

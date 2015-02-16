@@ -12,9 +12,10 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
 
     std::stringstream ss;
     ss << " register_stack_var(\"" << alloc->get_mangled_varname() <<
-        "\", \"" << alloc->get_full_type() << "\", (void *)(&" <<
-        actual_name << "), " << (alloc->get_type_size_in_bits() / 8)
-        << ", " << (alloc->get_is_ptr() ? "1" : "0") << ", " <<
+        "\", LIBNUMDEBUG_THREAD_NUM(), \"" << alloc->get_full_type() <<
+        "\", (void *)(&" << actual_name << "), " <<
+        (alloc->get_type_size_in_bits() / 8) << ", " <<
+        (alloc->get_is_ptr() ? "1" : "0") << ", " <<
         (alloc->get_is_struct() ? "1" : "0") << ", " <<
         alloc->get_num_ptr_fields();
     for (std::vector<std::string>::iterator ptrs =

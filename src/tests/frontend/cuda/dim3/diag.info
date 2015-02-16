@@ -1,14 +1,14 @@
 InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 1 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 7 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1 init_numdebug(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 226  dim3 blocks;  blocks = dim3(4, 256); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 245 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 241  call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 278  dim3 blocks;  blocks = dim3(4, 256); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 297 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 293  call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 126  call_lbl_1: calling(1, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 227  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 238  register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 238  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 238 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 279  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 290  register_stack_var("main|blocks|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 290  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 290 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 

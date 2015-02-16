@@ -31,9 +31,9 @@ extern void new_stack(unsigned n_local_arg_aliases, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
+extern void register_stack_var(const char *mangled_name, unsigned thread,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
@@ -42,7 +42,16 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 34 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+}
+inline unsigned LIBNUMDEBUG_THREAD_NUM() { return omp_get_thread_num(); }
+
+
+
+
+
 extern int ____numdebug_replaying;
 # 1 "<command-line>" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
@@ -585,8 +594,11 @@ extern int omp_is_initial_device (void) throw ();
 # 3 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp" 2
 
 int main(int argc, char **argv) {
+# 5 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 #pragma omp parallel
-    init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); {
+# 5 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
+
+    init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); {
         alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 2, (size_t)(11663623011982921864UL), (size_t)(0UL)); printf("hello from %d\n", omp_get_thread_num());
     }
 

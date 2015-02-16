@@ -6,8 +6,8 @@ SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
     global_serialization.cpp numdebug_stack.cpp heap_allocation.cpp \
     type_info.cpp serialization_common.cpp perf_profile.cpp
 
-UNAME_S := $(shell uname -s)
-ifeq ($(UNAME_S),Darwin)
+IS_CLANG := $(shell clang++ --version | grep clang | wc -l)
+ifeq ($(IS_CLANG),1)
 	GXX_FLAGS += -stdlib=libstdc++
 endif
 
