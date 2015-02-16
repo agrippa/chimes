@@ -1723,16 +1723,16 @@ extern void wait_for_checkpoint();
 
 int a = 3;
 
-void haha_this_sux2() {
-    new_stack(0); if (a) { {
+void haha_this_sux2() {new_stack(0);
+    if (a) { {
         rm_stack(false, 0UL); return;
     } } else { {
         rm_stack(false, 0UL); return;
     } }
 rm_stack(false, 0UL); }
 
-int main(int argc, char **argv) {init_numdebug();
-    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); call_lbl_0: calling(0, 0UL, 0); haha_this_sux2();
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+     call_lbl_0: calling(0, 0UL, 0); haha_this_sux2();
     alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return 0;
 }

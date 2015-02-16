@@ -1715,8 +1715,8 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 
-int main(int argc, char **argv) {init_numdebug();
-    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int i; register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: int iter; register_stack_var("main|iter|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&iter), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; }
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+     lbl_0: int i; register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: int iter; register_stack_var("main|iter|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&iter), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; }
       lbl_2: int N; register_stack_var("main|N|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&N), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } N = (1024);
       lbl_3: int niters; register_stack_var("main|niters|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&niters), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } niters = (10000);
 

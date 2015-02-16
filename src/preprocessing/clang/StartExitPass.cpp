@@ -13,11 +13,41 @@ extern std::string curr_func;
 
 void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
     clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
-    if (func != NULL) {
+    if (func != NULL && func->isThisDeclarationADefinition()) {
+        clang::SourceLocation declEnd = func->getBody()->getLocStart();
+
+        FunctionArgumentAliasGroups funcAliases =
+            insertions->findMatchingFunction(curr_func);
+
+        std::stringstream ss;
+        ss << "new_stack(" << funcAliases.nargs();
+        for (unsigned i = 0; i < funcAliases.nargs(); i++) {
+            ss << ", (size_t)(" << funcAliases.alias_no_for(i) << "UL)";
+        }
+        ss << "); ";
+
+        /*
+         * Insert stack registrations for parameters to functions.
+         */
+        if (insert_at_front != NULL) {
+            for (std::vector<StackAlloc *>::iterator i =
+                    insert_at_front->begin(), e = insert_at_front->end();
+                    i != e; i++) {
+                StackAlloc *alloc = *i;
+
+                std::string stmt = constructRegisterStackVar(alloc);
+                ss << stmt;
+            }
+            insert_at_front = NULL;
+        }
+
+        InsertTextAfterToken(declEnd, ss.str());
+
         // Insert rm_stack at end of function's body if this is a void
         const clang::Stmt *body = func->getBody();
         assert(clang::isa<clang::CompoundStmt>(body));
-        const clang::CompoundStmt *cmpd = clang::dyn_cast<const clang::CompoundStmt>(body);
+        const clang::CompoundStmt *cmpd =
+            clang::dyn_cast<const clang::CompoundStmt>(body);
         const clang::Stmt *last = cmpd->body_back();
         if (!clang::isa<clang::ReturnStmt>(last)) {
             // implicit return at end of void funct
@@ -61,45 +91,6 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
 
     if (start.isValid() && end.isValid() &&
             insertions->isMainFile(start_loc.getFilename())) {
-        /*
-         * Insert new_stack callbacks.
-         */
-        if (getRootFlag()) {
-            assert(!s->children().empty());
-            clang::Stmt::const_child_iterator iter = s->child_begin();
-            const clang::Stmt *child = *iter;
-
-            FunctionArgumentAliasGroups func =
-                insertions->findMatchingFunction(curr_func);
-
-            std::stringstream ss;
-            ss << "new_stack(" << func.nargs();
-            for (unsigned i = 0; i < func.nargs(); i++) {
-                ss << ", (size_t)(" << func.alias_no_for(i) << "UL)";
-            }
-            ss << "); ";
-
-            InsertText(child->getLocStart(), ss.str(), true, true);
-        }
-
-        /*
-         * Insert stack registrations for parameters to functions.
-         */
-        if (insert_at_front != NULL) {
-            for (std::vector<StackAlloc *>::iterator i =
-                    insert_at_front->begin(), e = insert_at_front->end();
-                    i != e; i++) {
-                StackAlloc *alloc = *i;
-
-                std::string stmt = constructRegisterStackVar(alloc);
-
-                clang::Stmt::const_child_iterator iter = s->child_begin();
-                const clang::Stmt *child = *iter;
-                InsertText(child->getLocStart(), stmt, true, true);
-            }
-            insert_at_front = NULL;
-        }
-
         /*
          * Insert rm_stack callbacks.
          */

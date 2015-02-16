@@ -26895,9 +26895,9 @@ void fwd_kernel(float *next, float *curr, float *vsq, float *c_coeff, int
 # 50 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 nx, int ny, int dimx, int radius) ;
 # 69 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-int main(int argc, char *argv[]) {init_numdebug();
+int main(int argc, char *argv[]) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
 # 70 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: config conf; register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
+ lbl_0: config conf; register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
 # 71 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(18293662412874621885UL)); setup_config(&conf, argc, argv);
 # 72 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"

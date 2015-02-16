@@ -2913,9 +2913,9 @@ extern void wait_for_checkpoint();
 
 
 static void fwd(float *next, float *curr, float *vsq,
-        float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {
+        float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL));
 
-    new_stack(9, (size_t)(3655576263074171224UL), (size_t)(3655576263063000521UL), (size_t)(2775809280878473563UL), (size_t)(16801648339432526018UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); { int y; for ( y = (0); y < ny; y++) { {
+    { int y; for ( y = (0); y < ny; y++) { {
         { int x; for ( x = (0); x < nx; x++) { {
              int this_offset; this_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x))));
 
@@ -2935,8 +2935,8 @@ static void fwd(float *next, float *curr, float *vsq,
     } } }
 alias_group_changed(20, (size_t)(142509876040465224UL), (size_t)(758094435815140655UL), (size_t)(1406537190118695280UL), (size_t)(1439420700812193513UL), (size_t)(1760539376595026939UL), (size_t)(3546215367615677073UL), (size_t)(3655576263074171224UL), (size_t)(4020147836706855852UL), (size_t)(4266828485354121373UL), (size_t)(4608403546164633272UL), (size_t)(4740125504295099978UL), (size_t)(5605394185929330330UL), (size_t)(5855332881963460232UL), (size_t)(6133022261894537111UL), (size_t)(7812062783844714897UL), (size_t)(8434292942123894570UL), (size_t)(13062136505411396820UL), (size_t)(17216818188849725545UL), (size_t)(17702871222471266781UL), (size_t)(18247678888939504941UL)); rm_stack(false, 0UL); }
 
-int main( int argc, char *argv[] ) {init_numdebug();
-    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: config conf; register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
+int main( int argc, char *argv[] ) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+      lbl_0: config conf; register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____numdebug_replaying) { goto lbl_1; }
     alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(18293662412874621885UL)); setup_config(&conf, argc, argv);
      call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
 

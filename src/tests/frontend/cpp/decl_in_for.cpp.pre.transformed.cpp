@@ -1721,8 +1721,8 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 
-int main(int argc, char **argv) {init_numdebug();
-    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int a; register_stack_var("main|a|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&a), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = (0);
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+      lbl_0: int a; register_stack_var("main|a|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&a), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = (0);
     { lbl_1: int i; register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( i = (0); i < 10; i++) { {
         a += i;
     } } }
