@@ -11,6 +11,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 16 5 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5 init_numdebug(); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 282  call_lbl_0: calling(0, 0UL, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 33 init_numdebug(); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 265  call_lbl_0: calling(0, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 130  call_lbl_1: calling(1, 0UL, 0); 

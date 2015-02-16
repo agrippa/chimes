@@ -1734,8 +1734,8 @@ void bar(int *A, int *B) {
     alias_group_changed(4, (size_t)(4370387167843700367UL), (size_t)(9068519427185823008UL), (size_t)(14930464334111296496UL), (size_t)(14930464334111296497UL)); rm_stack(false, 0UL); return;
 }
 
-int main(int argc, char **argv) {
-    init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int *A; register_stack_var("main|A|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&A), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 13342117654489805937UL, 0, 0));
+int main(int argc, char **argv) {init_numdebug();
+    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int *A; register_stack_var("main|A|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&A), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 13342117654489805937UL, 0, 0));
       lbl_1: int *B; register_stack_var("main|B|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&B), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 4940031483844375921UL, 0, 0));
 
      call_lbl_0: calling(0, 0UL, 2, (size_t)(13342117654489805937UL), (size_t)(4940031483844375921UL)); bar(A, B);
