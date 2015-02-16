@@ -3,8 +3,8 @@
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 2 : { 2906517587857753, 10516037394037531631 } direct:call:cudaConfigureCall
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 1 : { 8312944838440117739, 16809019010565379225 } prop:call:cudaFree
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 : { 3617489850581581679, 3619468317180386219, 8315622109923704320, 17366101664949010654 } direct:call:_Z30__device_stub__Z6kernelPiS_S_iPiS_S_i
-/tmp/numdebug.W936jm/nvcc/vector_sum.cudafe1.stub.c 9 88 : { 7089989472930211505, 11788121732272334146, 16486253991614456787, 17033160884135713154 } direct:call:cudaSetupArgument
-/tmp/numdebug.W936jm/nvcc/vector_sum.cudafe1.stub.c 9 226 : { 5956854469140494953 } direct:call:_ZN42_GLOBAL__N__18_vector_sum_cpp1_ii_36d5b76210cudaLaunchIcEE9cudaErrorPT_
+/tmp/numdebug-frontend/nvcc/vector_sum.cudafe1.stub.c 9 88 : { 7089989472930211505, 11788121732272334146, 16486253991614456787, 17033160884135713154 } direct:call:cudaSetupArgument
+/tmp/numdebug-frontend/nvcc/vector_sum.cudafe1.stub.c 9 226 : { 5956854469140494953 } direct:call:_ZN42_GLOBAL__N__18_vector_sum_cpp1_ii_36d5b76210cudaLaunchIcEE9cudaErrorPT_
 /Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 13956057025417141307 } direct:call:cudaLaunch
 vector_sum.cudafe1.stub.c 2 78 : { 7696593959710208457, 10918912294913350599 } direct:call:NULL
 vector_sum.cudafe1.stub.c 1 138 : { 6323303540388583539, 7696593959710208457 } direct:call:__cudaRegisterFunction

@@ -4,7 +4,7 @@ transformation features of numdebug.
 """
 import os
 import sys
-from common import FrontendTest, run_frontend_test, parse_argv, \
+from common import run_frontend_test, parse_argv, \
                    NUM_DEBUG_HOME, construct_simple_frontend_test, find_file
 
 COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'

@@ -49,9 +49,9 @@ extern void new_stack(unsigned n_local_arg_aliases, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
+extern void register_stack_var(const char *mangled_name, unsigned thread,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
@@ -60,7 +60,10 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 40 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
+
+
 extern int ____numdebug_replaying;
 # 3 "<command line>" 2
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4

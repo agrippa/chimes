@@ -38,9 +38,9 @@ using namespace std;
 // functions defined in this file
 void new_stack(unsigned n_local_arg_aliases, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias);
-void register_stack_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
+void register_stack_var(const char *mangled_name, unsigned thread,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
 int alias_group_changed(int ngroups, ...);
 void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...);
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
@@ -705,9 +705,9 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
  *   This registration would not allow the full recreation of stack state at
  *   replay.
  */
-void register_stack_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...) {
+void register_stack_var(const char *mangled_name, unsigned thread,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(REGISTER_STACK_VAR);
 #endif

@@ -3,6 +3,7 @@ Common functionality for functional tests.
 """
 import os
 import sys
+import shutil
 import tempfile
 from subprocess import Popen, PIPE
 
@@ -26,18 +27,32 @@ class TestConfig(object):
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep, verbose, targets):
+    def __init__(self, keep, verbose, targets, update_tests):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
         self.custom_compiler = None
         self.custom_compiler_flags = []
+        self.update_tests = update_tests
 
-    def add_custom_compiler_flag(self, f):
-        self.custom_compiler_flags.append(f)
+    def add_custom_compiler_flag(self, flag):
+        """
+        Add a compiler flag to the compilation command.
 
-    def set_custom_compiler(self, s):
-        self.custom_compiler = s
+        :param flag: Flag to add
+        :type flag: `str`
+        """
+        self.custom_compiler_flags.append(flag)
+
+    def set_custom_compiler(self, compiler):
+        """
+        Set base compiler to use for compilation (set using the GXX env
+        variable).
+
+        :param compiler: Compiler to force.
+        :type compiler: `str`
+        """
+        self.custom_compiler = compiler
 
     def __str__(self):
         return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
@@ -111,7 +126,7 @@ def find_file(name, path):
     :returns: Absolute path of the first match
     :rtype: `str`
     """
-    for root, dirs, files in os.walk(path):
+    for root, _, files in os.walk(path):
         if name in files:
             return os.path.join(root, name)
     return None
@@ -128,12 +143,9 @@ def clean_and_create_folder(folder):
     if not os.path.isdir(folder):
         os.mkdir(folder)
     else:
-        for fl in os.listdir(folder):
-            path = os.path.join(folder, fl)
-            try:
-                os.unlink(file_path)
-            except Exception, e:
-                pass
+        for to_delete in os.listdir(folder):
+            path = os.path.join(folder, to_delete)
+            os.unlink(path)
 
 
 def construct_simple_frontend_test(src_name):
@@ -233,6 +245,7 @@ def parse_argv(argv):
     """
     keep = False
     verbose = False
+    update_tests = False
     targets = []
 
     i = 1
@@ -241,6 +254,8 @@ def parse_argv(argv):
             keep = True
         elif argv[i] == '-v':
             verbose = True
+        elif argv[i] == '-u':
+            update_tests = True
         elif argv[i] == '-t':
             assert len(argv) >= i + 2
             for target in argv[i + 1].split(','):
@@ -253,7 +268,7 @@ def parse_argv(argv):
             usage(argv)
         i += 1
 
-    return TestConfig(keep, verbose, targets)
+    return TestConfig(keep, verbose, targets, update_tests)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -299,36 +314,47 @@ def copy_environ():
     return newenv
 
 
-def run_cmd(cmd, expect_err, env=None):
+def run_cmd(cmd, expect_err, env=None, interactive=False):
     """
     Execute the provided CLI command, optionally expecting it to return an error
     code.
     """
     cmd = cmd.split()
 
-    stdout_fd, stdout_filename = tempfile.mkstemp(prefix='numdebug.stdout')
-    stderr_fd, stderr_filename = tempfile.mkstemp(prefix='numdebug.stderr')
+    stdin_fd = None
+    stdout_fd = None
+    stderr_fd = None
+    stdout_filename = None
+    stderr_filename = None
+
+    if not interactive:
+        stdin_fd = PIPE
+        stdout_fd, stdout_filename = tempfile.mkstemp(prefix='numdebug.stdout')
+        stderr_fd, stderr_filename = tempfile.mkstemp(prefix='numdebug.stderr')
 
     if env is None:
         env = os.environ
 
-    child = Popen(cmd, stdin=PIPE, stdout=stdout_fd, stderr=stderr_fd,
+    child = Popen(cmd, stdin=stdin_fd, stdout=stdout_fd, stderr=stderr_fd,
                   close_fds=True, env=env)
     child.wait()
 
-    os.close(stdout_fd)
-    os.close(stderr_fd)
+    if not interactive:
+        os.close(stdout_fd)
+        os.close(stderr_fd)
 
-    stdout_fp = open(stdout_filename, 'r')
-    stderr_fp = open(stderr_filename, 'r')
+        stdout_fp = open(stdout_filename, 'r')
+        stderr_fp = open(stderr_filename, 'r')
 
-    result = (stdout_fp.read(), stderr_fp.read(), child.returncode)
+        result = (stdout_fp.read(), stderr_fp.read(), child.returncode)
 
-    stdout_fp.close()
-    stderr_fp.close()
+        stdout_fp.close()
+        stderr_fp.close()
 
-    os.remove(stdout_filename)
-    os.remove(stderr_filename)
+        os.remove(stdout_filename)
+        os.remove(stderr_filename)
+    else:
+        result = ('', '', child.returncode)
 
     if not expect_err and child.returncode != 0:
         sys.stderr.write('Error running "' + ' '.join(cmd) + '"\n')
@@ -386,105 +412,6 @@ def get_files_from_compiler_stdout(compile_stdout, n_expected_files):
     return (transformed, work_folder, root_folder)
 
 
-def _diff_files(file1name, file2name, col):
-    """
-    Compare two files line-by-line. If col != -1, it marks a space-delimited
-    column in the text that contains a path which may be randomly different from
-    previous runs (and which can be ignored).
-
-    :param file1name: First file to compare
-    :type file1name: `str`
-    :param file2name: Second file to compare
-    :type file2name: `str`
-    :param col: Column containing filename
-    :type col: `int`
-    """
-    if not os.path.isfile(file1name):
-        sys.stderr.write('Missing file while trying to diff ' + file1name + '\n')
-        sys.exit(1)
-
-    if not os.path.isfile(file2name):
-        sys.stderr.write('Missing file while trying to diff ' + file2name + '\n')
-        sys.exit(1)
-
-    fp1 = open(file1name, 'r')
-    fp2 = open(file2name, 'r')
-
-    line1 = fp1.readline()
-    line2 = fp2.readline()
-    line_index = 1
-
-    any_mismatch = False
-    first_mismatch = True
-
-    while len(line1) != 0 and len(line2) != 0:
-
-        if line1 != line2:
-            diff_resolved = False
-            # Try to resolve difference as a matter of different temporary paths
-            if col != -1:
-                cols1 = line1.split(' ')
-                cols2 = line2.split(' ')
-
-                col1 = cols1[col]
-                col2 = cols2[col]
-
-                path_components1 = col1.split('/')
-                path_components2 = col2.split('/')
-
-                last_path_component1 = path_components1[len(path_components1) - 1]
-                last_path_component2 = path_components2[len(path_components2) - 1]
-
-                if last_path_component1 == last_path_component2:
-                    # paths match in the last component so assume it is close
-                    # enough. remove the potential cause for the mismatch and
-                    # try again.
-                    cols1[col] = ''
-                    cols2[col] = ''
-                    newline1 = ' '.join(cols1)
-                    newline2 = ' '.join(cols2)
-
-                    diff_resolved = (newline1 == newline2)
-
-            if not diff_resolved:
-                any_mismatch = True
-                if first_mismatch:
-                    sys.stderr.write('ERROR: Mismatch between ' + file1name +
-                                     ' ' + file2name + ':\n')
-                    first_mismatch = False
-
-                sys.stderr.write(str(line_index) + ' :\n')
-                sys.stderr.write('  Old| ' + line1[:len(line1) - 1] + '\n')
-                sys.stderr.write('  New| ' + line2[:len(line2) - 1] + '\n')
-
-        line1 = fp1.readline()
-        line2 = fp2.readline()
-        line_index += 1
-
-    line_mismatch = False
-
-    if len(line1) == 0 and len(line2) != 0:
-        sys.stderr.write('ERROR: Extra lines in ' + file2name + ' compared to ' +
-              file1name + ' starting at ' + str(line_index) + '\n')
-        while len(line2) > 0:
-            sys.stderr.write('       ' + line2)
-            line2 = fp2.readline()
-        line_mismatch = True
-
-    if len(line2) == 0 and len(line1) != 0:
-        sys.stderr.write('ERROR: Extra lines in ' + file1name + ' compared to ' +
-              file2name + ' starting at ' + str(line_index) + '\n')
-        while len(line1) > 0:
-            sys.stderr.write('       ' + line1)
-            line1 = fp1.readline()
-        line_mismatch = True
-
-    fp1.close()
-    fp2.close()
-
-    if any_mismatch or line_mismatch:
-        sys.exit(1)
-
 def run_frontend_test(test, compile_script_path, examples_dir_path,
                       test_dir_path, config):
     """
@@ -526,69 +453,114 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     compile_cmd = add_include_paths(compile_cmd, test.includes)
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
 
+    # Try building the test
     stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err, env=env)
 
     if config.verbose:
         print_and_abort(stdout, stderr, abort=False)
+
+    assert test.expect_err or os.path.isfile('a.out')
 
     # Get the final output filename and containing folder
     transformed, work_folder, root_folder = \
             get_files_from_compiler_stdout(stdout, len(test.input_files))
     assert len(transformed) == len(test.input_files)
 
+    any_failures = False
     # Diff the test output and the expected output
     for i in range(len(test.input_files)):
+        files_to_compare = []
+
+        # Compare the final output of the compile command to the expected final
+        # output
         correct_file = os.path.join(test_dir_path, test.compare_files[i])
+        files_to_compare.append((correct_file, transformed[i]))
 
-        if not os.path.isfile(correct_file):
-            sys.stderr.write('Missing file ' + correct_file + '\n')
-            sys.exit(1)
-
-        if not os.path.isfile(transformed[i]):
-            sys.stderr.write('Missing file ' + transformed[i] + '\n')
-            sys.exit(1)
-
-        diff_cmd = 'diff ' + correct_file + ' ' + transformed[i]
-        stdout, _, _ = run_cmd(diff_cmd, True)
-
-        if len(stdout.strip()) != 0:
-            # If the test and expected output are different, emit a warning
-            diff_file = os.path.join(work_folder, os.path.basename(test.input_files[i])) + '.diff'
-            print('===== Mismatch in output of test for ' + test.input_files[i] +
-                  ' =====')
-            print('===== Comparison file is ' + test.compare_files[i] + ' =====')
-            print('===== This may not be an actual error. Mismatched output can ' +
-                  'result from system differences between platforms =====')
-            diff_fp = open(diff_file, 'w')
-            diff_fp.write(stdout)
-            diff_fp.close()
-            print('===== The diff is stored in ' + diff_file + ', use -k to keep ' +
-                  'intermediate files and check the diff =====')
-            print('===== This diff was generated with the command "' + diff_cmd + '" =====')
-            print('')
-
-    assert test.expect_err or os.path.isfile('a.out')
-
-    # Iterate over the metadata files in info_dir and check them against the
-    # files produced by the test
-    for i in range(len(test.input_files)):
+        # Compare the info files generated by the compile command
         info_dir = test.info_dirs[i]
         input_file_base = os.path.basename(test.input_files[i])
         info_dir_path = os.path.join(test_dir_path, info_dir)
         for info_file in INFO_FILES.keys():
             expected_output = os.path.join(info_dir_path, info_file)
             if input_file_base.endswith('.cu'):
-                test_output = os.path.join(root_folder, 'nvcc', input_file_base + '.' +
-                                           info_file)
+                test_output = os.path.join(root_folder, 'nvcc',
+                                           input_file_base + '.' + info_file)
             else:
                 test_output = os.path.join(root_folder, input_file_base + '.' +
                                            info_file)
-            _diff_files(expected_output, test_output, INFO_FILES[info_file])
+            files_to_compare.append((expected_output, test_output))
+
+
+        failure = False
+        diff_file = os.path.join(work_folder,
+                                 os.path.basename(test.input_files[i])) + '.diff'
+        diff_fp = open(diff_file, 'w')
+
+        for comparison in files_to_compare:
+            correct = comparison[0]
+            generated = comparison[1]
+
+            if not os.path.isfile(correct):
+                sys.stderr.write('FATAL: Missing file ' + correct + '\n')
+                sys.exit(1)
+
+            if not os.path.isfile(generated):
+                sys.stderr.write('FATAL: Missing file ' + generated + '\n')
+                sys.exit(1)
+
+            diff_cmd = 'diff ' + correct + ' ' + generated
+            stdout, _, _ = run_cmd(diff_cmd, True)
+
+            if len(stdout.strip()) != 0:
+                diff_fp.write('===== Correct:   ' + correct + ' =====\n')
+                diff_fp.write('===== Generated: ' + generated + ' =====\n')
+                diff_fp.write('\n')
+                diff_fp.write(stdout)
+                diff_fp.write('\n')
+                failure = True
+                any_failures = True
+
+        diff_fp.close()
+
+        if failure:
+            if config.update_tests:
+                run_cmd('view +1 ' + diff_file, False, interactive=True)
+
+                do_update = False
+                valid_input = False
+                while not valid_input:
+                    selection = raw_input('Update test? [y/n]: ')
+
+                    if selection == 'y':
+                        do_update = True
+                        valid_input = True
+                    elif selection == 'n':
+                        do_update = False
+                        valid_input = True
+
+                if do_update:
+                    for comparison in files_to_compare:
+                        correct = comparison[0]
+                        generated = comparison[1]
+
+                        shutil.copyfile(generated, correct)
+                else:
+                    print(test.name + ' FAILED')
+                    print(diff_file)
+                    sys.exit(1)
+            else:
+                print(test.name + ' FAILED')
+                print(diff_file)
+                sys.exit(1)
 
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
     run_cmd('rm -f a.out', False)
-    print(test.name + ' PASSED')
+
+    if any_failures:
+        print(test.name + ' UPDATED')
+    else:
+        print(test.name + ' PASSED')
 
 
 def run_runtime_test(test, compile_script_path, inputs_dir, config):
@@ -630,7 +602,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     _, work_folder, root_folder = get_files_from_compiler_stdout(stdout, len(test.input_files))
 
     if not os.path.isfile('a.out'):
-        sys.stderr.write('Compilation failed to generate an executable\n')
+        sys.stderr.write('FATAL: Compilation failed to generate an executable\n')
         sys.exit(1)
 
     exec_cmd = './a.out '

@@ -5,21 +5,21 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_re
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 5 new_stack(0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 6 5 alias_group_changed(1, (size_t)(2512725157308058073UL)); rm_stack(true, 17562964499866615488UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5  register_stack_var("main|argc|0", "i32", (void *)(&argc), 4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5  register_stack_var("main|argv|0", "i8**", (void *)(&argv), 8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 12 5 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5 init_numdebug(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 19  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 17562964499866615488UL, 0, 0)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 97 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 355  void *tmp;  tmp = (haha_this_sux_part_deux()); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 392 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 368  call_lbl_0: calling(0, 17472360066938258657UL, 0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 407  void *tmp;  tmp = (haha_this_sux_part_deux()); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 444 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 420  call_lbl_0: calling(0, 17472360066938258657UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 62  call_lbl_1: calling(1, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 20  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 26  register_stack_var("haha_this_sux_part_deux|A|0", "i32*", (void *)(&A), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 26  register_stack_var("haha_this_sux_part_deux|A|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&A), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 26  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 26 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { exit(42); } } } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 356  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 365  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 365  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 365 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 408  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 417  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&tmp), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 417  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 417 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 

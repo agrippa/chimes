@@ -45,7 +45,7 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
         "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
         "init_numdebug", "new_stack", "rm_stack", "register_stack_var",
         "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
-        "atoi", "atof", "fopen", "getopt"};
+        "atoi", "atof", "fopen", "getopt", "LIBNUMDEBUG_THREAD_NUM"};
     std::set<std::string> ignorable(ignorable_arr,
             ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
 

@@ -135,7 +135,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
            -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -E ${INPUT} \
-           -o ${PREPROCESS_FILE} -g \
+           -o ${PREPROCESS_FILE} -g ${LINKER_FLAGS} \
            -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
            -include stddef.h -include stdio.h ${NUMDEBUG_DEF}
 
