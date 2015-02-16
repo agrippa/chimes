@@ -2,5 +2,5 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 7 5 ne
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 alias_group_changed(1, (size_t)(17022099875991519016UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5 init_numdebug(); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 85  call_lbl_0: calling(0, 0UL, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 init_numdebug(); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 68  call_lbl_0: calling(0, 0UL, 0); 

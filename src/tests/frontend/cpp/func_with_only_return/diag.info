@@ -5,12 +5,12 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 10 5 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5 init_numdebug(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 282  void *tmp;  tmp = (haha_this_sux()); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 309 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 295  call_lbl_0: calling(0, 18019193851472295513UL, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 init_numdebug(); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 265  void *tmp;  tmp = (haha_this_sux()); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 292 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 278  call_lbl_0: calling(0, 18019193851472295513UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 163  call_lbl_1: calling(1, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 283  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 292  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&tmp), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 292  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 292 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 266  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 275  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&tmp), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 275  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 275 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 

@@ -140,12 +140,10 @@ def clean_and_create_folder(folder):
     :param folder: Folder to create/clean
     :type folder: `str`
     """
-    if not os.path.isdir(folder):
-        os.mkdir(folder)
-    else:
-        for to_delete in os.listdir(folder):
-            path = os.path.join(folder, to_delete)
-            os.unlink(path)
+    if os.path.isdir(folder):
+        shutil.rmtree(folder)
+
+    os.mkdir(folder)
 
 
 def construct_simple_frontend_test(src_name):

@@ -1713,8 +1713,8 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp" 2
 
-int main(int argc, char **argv) {
-    init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int *A; register_stack_var("main|A|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&A), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 13342117654489805934UL, 0, 0));
+int main(int argc, char **argv) {init_numdebug();
+    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int *A; register_stack_var("main|A|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&A), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 13342117654489805934UL, 0, 0));
     A[0] = 3;
     A[1] = 4;
 

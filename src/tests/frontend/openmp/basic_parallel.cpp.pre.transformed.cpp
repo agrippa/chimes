@@ -593,12 +593,12 @@ extern int omp_is_initial_device (void) throw ();
 }
 # 3 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp" 2
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) {init_numdebug();
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 #pragma omp parallel
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 
-    init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); {
+    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); {
         alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 2, (size_t)(11663623011982921864UL), (size_t)(0UL)); printf("hello from %d\n", omp_get_thread_num());
     }
 

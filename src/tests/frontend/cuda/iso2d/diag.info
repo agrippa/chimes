@@ -133,9 +133,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 50 2  register_stack
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 50 2  register_stack_var("fwd_kernel|__cuda_6|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&__cuda_6), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 50 2  register_stack_var("fwd_kernel|__cuda_7|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&__cuda_7), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 67 1 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 1 init_numdebug(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 278  config conf; 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 289 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 34 init_numdebug(); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 261  config conf; 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 272 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 85 1  float dx;  dx = ((20.F)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 85 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 86 1  float dt;  dt = ((0.00200000009F)); 
@@ -253,9 +253,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 178 342  call_lbl_35
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 179 307  call_lbl_36: calling(36, 0UL, 1, (size_t)(8481295902369080263UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 180 307  call_lbl_37: calling(37, 0UL, 1, (size_t)(1946078156869997898UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 181 312  call_lbl_38: calling(38, 0UL, 1, (size_t)(2775963859867729258UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 279  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 290  register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)offsetof(struct _config, srcs)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 290  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 262  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 273  register_stack_var("main|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), 56, 0, 1, 1, (int)offsetof(struct _config, srcs)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 273  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 85 2  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 85 10  register_stack_var("main|dx|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dx), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 85 10  if (____numdebug_replaying) { goto lbl_2; } 

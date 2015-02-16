@@ -5,17 +5,17 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 5 new_stack(
 InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 5  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 5  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 9 5 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 5 init_numdebug(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 282  int a;  a = (0); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 291 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 3 33 init_numdebug(); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 265  int a;  a = (0); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 274 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 7 7  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 19 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 8 196  call_lbl_0: calling(0, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 283  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 288  register_stack_var("main|a|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&a), 4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 288  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 266  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 271  register_stack_var("main|a|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&a), 4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 271  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 8  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 13  register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 13  if (____numdebug_replaying) { goto lbl_2; } 

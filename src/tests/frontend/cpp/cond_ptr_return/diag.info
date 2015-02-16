@@ -11,18 +11,18 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 5 new_s
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 5  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 5  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 18 5 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 5 init_numdebug(); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 33 init_numdebug(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 19  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 14788649179430747748UL, 0, 0)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 97 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 407  void *tmp;  tmp = (foo()); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 424 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 420  call_lbl_0: calling(0, 7988338345923788884UL, 0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 390  void *tmp;  tmp = (foo()); 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 407 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 403  call_lbl_0: calling(0, 7988338345923788884UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 62  call_lbl_1: calling(1, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 20  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 26  register_stack_var("foo|A|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&A), 8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 26  if (____numdebug_replaying) { goto lbl_1; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 26 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { default: { exit(42); } } } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 408  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 417  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&tmp), 8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 417  if (____numdebug_replaying) { goto lbl_1; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 417 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 391  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 400  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&tmp), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 400  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 400 lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } 
