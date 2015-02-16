@@ -2490,15 +2490,15 @@ static int progress_goal = -1;
 static int progress_num_ticks = -1;
 static int progress_disabled = 0;
 
-double seconds() {
-    new_stack(0); lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.timeval = type { i64, i32 }", (void *)(&tp), 16, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; }
+double seconds() {new_stack(0);
+      lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.timeval = type { i64, i32 }", (void *)(&tp), 16, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; }
       lbl_1: struct timezone tzp; register_stack_var("seconds|tzp|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.timezone = type { i32, i32 }", (void *)(&tzp), 8, 0, 1, 0); if (____numdebug_replaying) { goto lbl_2; }
       lbl_2: int i; register_stack_var("seconds|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } lbl_3: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 2, (size_t)(4488477306313555832UL), (size_t)(3341935053789107007UL)); i = (gettimeofday(&tp, &tzp));
     alias_group_changed(1, (size_t)(1085571792782596357UL)); rm_stack(false, 0UL); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 }
 
-void ricker_wavelet(float *source, int nsteps, float dt, float freq) {
-    new_stack(4, (size_t)(2008721800625821080UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("ricker_wavelet|source|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&source), 8, 1, 0, 0); register_stack_var("ricker_wavelet|nsteps|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("ricker_wavelet|dt|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dt), 4, 0, 0, 0); register_stack_var("ricker_wavelet|freq|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&freq), 4, 0, 0, 0); lbl_0: float shift; register_stack_var("ricker_wavelet|shift|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&shift), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } shift = (-1.55939996F / freq);
+void ricker_wavelet(float *source, int nsteps, float dt, float freq) {new_stack(4, (size_t)(2008721800625821080UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("ricker_wavelet|source|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&source), 8, 1, 0, 0); register_stack_var("ricker_wavelet|nsteps|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("ricker_wavelet|dt|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dt), 4, 0, 0, 0); register_stack_var("ricker_wavelet|freq|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&freq), 4, 0, 0, 0);
+      lbl_0: float shift; register_stack_var("ricker_wavelet|shift|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&shift), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } shift = (-1.55939996F / freq);
 
     { lbl_1: int i; register_stack_var("ricker_wavelet|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( i = (0); i < nsteps; i++) { {
           lbl_2: float time; register_stack_var("ricker_wavelet|time|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&time), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } time = (i * dt + shift);
@@ -2508,8 +2508,8 @@ void ricker_wavelet(float *source, int nsteps, float dt, float freq) {
     } } }
 alias_group_changed(7, (size_t)(1245668952459180081UL), (size_t)(2008721800625821080UL), (size_t)(4226562647247638785UL), (size_t)(8765741491806222420UL), (size_t)(11424047330458090375UL), (size_t)(16555843550090687416UL), (size_t)(17214330647054485194UL)); rm_stack(false, 0UL); }
 
-void parse_source(char *optarg, source *out) {
-    new_stack(2, (size_t)(4288610876228433544UL), (size_t)(4995672202021001482UL)); register_stack_var("parse_source|optarg|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&optarg), 8, 1, 0, 0); register_stack_var("parse_source|out|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._source*", (void *)(&out), 8, 1, 0, 0); lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&x_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } x_str = (optarg);
+void parse_source(char *optarg, source *out) {new_stack(2, (size_t)(4288610876228433544UL), (size_t)(4995672202021001482UL)); register_stack_var("parse_source|optarg|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&optarg), 8, 1, 0, 0); register_stack_var("parse_source|out|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._source*", (void *)(&out), 8, 1, 0, 0);
+      lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&x_str), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } x_str = (optarg);
     alias_group_changed(3, (size_t)(5997784754333573673UL), (size_t)(8936251819094495589UL), (size_t)(16334560808348918639UL)); lbl_1: char *first_comma; register_stack_var("parse_source|first_comma|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&first_comma), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_2; } first_comma = (strchr(x_str, ','));
     if (first_comma == __null) { {
         fprintf(__stderrp, "Improperly formatted argument to -p, must "
@@ -2541,8 +2541,8 @@ void parse_source(char *optarg, source *out) {
     alias_group_changed(1, (size_t)(4995672202021001482UL)); out->t = atoi(time_str);
 alias_group_changed(1, (size_t)(4995672202021001482UL)); rm_stack(false, 0UL); }
 
-void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
-    new_stack(5, (size_t)(9285280766920217948UL), (size_t)(2685576284420924090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("config_sources|srcs|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._source**", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("config_sources|nsrcs|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&nsrcs), 8, 1, 0, 0); register_stack_var("config_sources|nx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("config_sources|ny|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("config_sources|nsteps|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsteps), 4, 0, 0, 0); if (*nsrcs == 0) { {
+void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack(5, (size_t)(9285280766920217948UL), (size_t)(2685576284420924090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("config_sources|srcs|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._source**", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("config_sources|nsrcs|0", LIBNUMDEBUG_THREAD_NUM(), "i32*", (void *)(&nsrcs), 8, 1, 0, 0); register_stack_var("config_sources|nx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("config_sources|ny|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("config_sources|nsteps|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsteps), 4, 0, 0, 0);
+    if (*nsrcs == 0) { {
         *srcs = (source *)malloc_wrapper(sizeof(source), 2752442294988640373UL, 0, 1, (int)sizeof(struct _source), 0);
         if (*srcs == __null) { {
             fprintf(__stderrp, "Allocation failed\n");
@@ -2573,8 +2573,8 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
     } } }
 alias_group_changed(10, (size_t)(2685576284420924090UL), (size_t)(2752442294988640373UL), (size_t)(6406781234504566915UL), (size_t)(7374354779439216353UL), (size_t)(8522629736461562909UL), (size_t)(9285280766920217948UL), (size_t)(13772703458028244832UL), (size_t)(15190893650781371235UL), (size_t)(16182187182034189366UL), (size_t)(16642833800444842057UL)); rm_stack(false, 0UL); }
 
-float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
-    new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("sample_sources|srcs|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dt), 4, 0, 0, 0); lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", LIBNUMDEBUG_THREAD_NUM(), "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0));
+float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack(4, (size_t)(5827032325616314450UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("sample_sources|srcs|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._source*", (void *)(&srcs), 8, 1, 0, 0); register_stack_var("sample_sources|nsrcs|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsrcs), 4, 0, 0, 0); register_stack_var("sample_sources|nsteps|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nsteps), 4, 0, 0, 0); register_stack_var("sample_sources|dt|0", LIBNUMDEBUG_THREAD_NUM(), "float", (void *)(&dt), 4, 0, 0, 0);
+      lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", LIBNUMDEBUG_THREAD_NUM(), "float**", (void *)(&src_samples), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 17386119534690992797UL, 1, 0));
     if (src_samples == __null) { {
         fprintf(__stderrp, "Allocation failed\n");
         alias_group_changed(7, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(14632242022306526605UL), (size_t)(17386119534690992797UL), (size_t)(17866036073706292390UL), (size_t)(18281605317195734986UL)); exit(1);
@@ -2591,8 +2591,8 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {
     alias_group_changed(6, (size_t)(4972645299531092553UL), (size_t)(7547608872137199987UL), (size_t)(7867438819795547955UL), (size_t)(14632242022306526605UL), (size_t)(17866036073706292390UL), (size_t)(18281605317195734986UL)); rm_stack(true, 17386119534690992797UL); return src_samples;
 }
 
-void init_progress(int length, int goal, int disabled) {
-    new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_progress|length|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&length), 4, 0, 0, 0); register_stack_var("init_progress|goal|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&goal), 4, 0, 0, 0); register_stack_var("init_progress|disabled|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&disabled), 4, 0, 0, 0); lbl_0: int i; register_stack_var("init_progress|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
+void init_progress(int length, int goal, int disabled) {new_stack(3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); register_stack_var("init_progress|length|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&length), 4, 0, 0, 0); register_stack_var("init_progress|goal|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&goal), 4, 0, 0, 0); register_stack_var("init_progress|disabled|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&disabled), 4, 0, 0, 0);
+     lbl_0: int i; register_stack_var("init_progress|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
     if (progress_buffer != __null) { {
         fprintf(__stderrp, "Progress initialized multiple times\n");
         alias_group_changed(5, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL)); exit(1);
@@ -2624,8 +2624,8 @@ void init_progress(int length, int goal, int disabled) {
     fprintf(__stderrp, "%s", progress_buffer);
 alias_group_changed(7, (size_t)(4047636378196868974UL), (size_t)(5624763593374234384UL), (size_t)(10327675655215703295UL), (size_t)(10864129096542978442UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(17419974122101928524UL)); rm_stack(false, 0UL); }
 
-void update_progress(int progress) {
-    new_stack(1, (size_t)(0UL)); register_stack_var("update_progress|progress|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&progress), 4, 0, 0, 0); lbl_0: int i; register_stack_var("update_progress|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; }
+void update_progress(int progress) {new_stack(1, (size_t)(0UL)); register_stack_var("update_progress|progress|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&progress), 4, 0, 0, 0);
+     lbl_0: int i; register_stack_var("update_progress|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; }
 
     if (progress_disabled) { {
         alias_group_changed(6, (size_t)(1593413819852114407UL), (size_t)(7452125661963734140UL), (size_t)(11152286784634729525UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(16155725638166610324UL)); rm_stack(false, 0UL); return;
@@ -2663,8 +2663,8 @@ void update_progress(int progress) {
     progress_num_ticks = ticks;
 alias_group_changed(6, (size_t)(1593413819852114407UL), (size_t)(7452125661963734140UL), (size_t)(11152286784634729525UL), (size_t)(11193925814866863242UL), (size_t)(12675187840154511571UL), (size_t)(16155725638166610324UL)); rm_stack(false, 0UL); }
 
-void finish_progress() {
-    new_stack(0); if (progress_disabled) { {
+void finish_progress() {new_stack(0);
+    if (progress_disabled) { {
         rm_stack(false, 0UL); return;
     } }
 

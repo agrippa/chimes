@@ -15,16 +15,7 @@ void InitPass::VisitTopLevel(clang::Decl *toplevel) {
             func->isThisDeclarationADefinition()) {
         clang::SourceLocation end = func->getBody()->getLocStart();
 
-        // const clang::Stmt *body = func->getBody();
-        // assert(clang::isa<clang::CompoundStmt>(body));
-        // const clang::CompoundStmt *cmpd =
-        //     clang::dyn_cast<const clang::CompoundStmt>(body);
-
-        // clang::Stmt::const_child_iterator iter = cmpd->child_begin();
-        // const clang::Stmt *child = *iter;
-
         InsertTextAfterToken(end, "init_numdebug(); ");
-        // InsertText(end, "init_numdebug(); ", true, true);
     }
 }
 

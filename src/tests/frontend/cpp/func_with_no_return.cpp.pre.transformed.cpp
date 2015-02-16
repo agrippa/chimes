@@ -1715,12 +1715,12 @@ extern void wait_for_checkpoint();
 
 int a = 3;
 
-void haha_this_sux_part_canc() {
-    new_stack(0); a = 4;
+void haha_this_sux_part_canc() {new_stack(0);
+    a = 4;
 alias_group_changed(1, (size_t)(17022099875991519016UL)); rm_stack(false, 0UL); }
 
-int main(int argc, char **argv) {init_numdebug();
-    new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); call_lbl_0: calling(0, 0UL, 0); haha_this_sux_part_canc();
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL));
+     call_lbl_0: calling(0, 0UL, 0); haha_this_sux_part_canc();
     alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
 }
 

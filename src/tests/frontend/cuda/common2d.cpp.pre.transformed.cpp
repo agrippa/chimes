@@ -2367,8 +2367,8 @@ extern void setup_config(config *conf, int argc, char **argv);
 
 
 void save_text(float *field, const int dimx, const int dimy,
-        const int ny, const int nx, const char *filename, int radius) {
-    new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); register_stack_var("save_text|field|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&field), 8, 1, 0, 0); register_stack_var("save_text|dimx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("save_text|dimy|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("save_text|ny|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("save_text|nx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("save_text|filename|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&filename), 8, 1, 0, 0); register_stack_var("save_text|radius|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&radius), 4, 0, 0, 0); lbl_0: FILE *fp; register_stack_var("save_text|fp|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
+        const int ny, const int nx, const char *filename, int radius) {new_stack(7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL)); register_stack_var("save_text|field|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&field), 8, 1, 0, 0); register_stack_var("save_text|dimx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&dimx), 4, 0, 0, 0); register_stack_var("save_text|dimy|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&dimy), 4, 0, 0, 0); register_stack_var("save_text|ny|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&ny), 4, 0, 0, 0); register_stack_var("save_text|nx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nx), 4, 0, 0, 0); register_stack_var("save_text|filename|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&filename), 8, 1, 0, 0); register_stack_var("save_text|radius|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&radius), 4, 0, 0, 0);
+      lbl_0: FILE *fp; register_stack_var("save_text|fp|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.__sFILE*", (void *)(&fp), 8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
     if (fp == __null) { {
         fprintf(__stderrp, "Failed to open output file %s\n", filename);
         alias_group_changed(8, (size_t)(2020512955842300876UL), (size_t)(2850663618440899500UL), (size_t)(4237632752881298404UL), (size_t)(13388633992466173602UL), (size_t)(13697246817649382652UL), (size_t)(13803245390038478632UL), (size_t)(15217183307985170569UL), (size_t)(17434303105024168097UL)); exit(1);
@@ -2387,9 +2387,9 @@ alias_group_changed(10, (size_t)(2020512955842300876UL), (size_t)(28506636184408
 
 void init_data(float *curr, float *next, float *vsq,
                 float *h_coeff, const int dimx, const int dimy,
-                const float dx, const float dt) {
+                const float dx, const float dt) {new_stack(8, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL));
 
-    new_stack(8, (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); { size_t i; for ( i = (0); i < dimx * dimy; i++) { {
+    { size_t i; for ( i = (0); i < dimx * dimy; i++) { {
         vsq[i] = 2500. * 2500. * dt * dt;
     } } }
 
@@ -2407,15 +2407,15 @@ void init_data(float *curr, float *next, float *vsq,
     h_coeff[4] = -0.001785 * scale;
 alias_group_changed(15, (size_t)(544479075814006532UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(3193239025367387070UL), (size_t)(5794552797380688455UL), (size_t)(8040499415410495103UL), (size_t)(8789740333877504081UL), (size_t)(9189193028991347885UL), (size_t)(12766984487186336934UL), (size_t)(13159983195668392989UL), (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(15129190013534662473UL), (size_t)(15148981951274329520UL), (size_t)(15567591489155420624UL)); rm_stack(false, 0UL); }
 
-void usage(char **argv) {
-    new_stack(1, (size_t)(17206168581473135942UL)); register_stack_var("usage|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
+void usage(char **argv) {new_stack(1, (size_t)(17206168581473135942UL)); register_stack_var("usage|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+    fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
             argv[0]);
     alias_group_changed(1, (size_t)(9299461872755550985UL)); exit(1);
 rm_stack(false, 0UL); }
 
-void default_config(config *conf) {
-    new_stack(1, (size_t)(8084772600074702260UL)); conf->nx = 2 * 256;
+void default_config(config *conf) {new_stack(1, (size_t)(8084772600074702260UL));
+    conf->nx = 2 * 256;
     conf->ny = 2 * 256;
     conf->nsteps = 100;
     conf->save_text = 0;
@@ -2430,8 +2430,8 @@ void default_config(config *conf) {
     conf->progress_disabled = 0;
 alias_group_changed(2, (size_t)(8084772600074702260UL), (size_t)(13356287653763336231UL)); rm_stack(false, 0UL); }
 
-void setup_config(config *conf, int argc, char **argv) {
-    new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); lbl_0: int c; register_stack_var("setup_config|c|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
+void setup_config(config *conf, int argc, char **argv) {new_stack(3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL)); register_stack_var("setup_config|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config*", (void *)(&conf), 8, 1, 0, 0); register_stack_var("setup_config|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("setup_config|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+     lbl_0: int c; register_stack_var("setup_config|c|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&c), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
     opterr = 0;
 
      call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);
