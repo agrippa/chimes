@@ -16,9 +16,8 @@
 #include "ParentTransform.h"
 #include "InitPass.h"
 #include "StartExitPass.h"
-#include "CallingPass.h"
+#include "OMPPass.h"
 #include "SplitInitsPass.h"
-#include "RegisterStackPass.h"
 #include "MallocPass.h"
 #include "AliasChangedPass.h"
 #include "DesiredInsertions.h"
@@ -71,7 +70,9 @@ static llvm::cl::opt<std::string> omp_file("t",
         llvm::cl::value_desc("omp_info"));
 
 DesiredInsertions *insertions = NULL;
+std::map<std::string, OMPTree *> ompTrees;
 std::string curr_func;
+FunctionDecl *curr_func_decl = NULL;
 std::vector<StackAlloc *> *insert_at_front = NULL;
 
 static std::vector<std::string> created_vars;
@@ -93,6 +94,14 @@ private:
 
 ParentTransform *curr_visitor = NULL;
 std::vector<Pass *> passes;
+
+std::string stmtToString(const clang::Stmt *S, ASTContext *Context) {
+    std::string str;
+    llvm::raw_string_ostream stream(str);
+    S->printPretty(stream, NULL, Context->getPrintingPolicy());
+    stream.flush();
+    return str;
+}
 
 std::string constructMangledName(std::string varname) {
     int count = 0;
@@ -132,11 +141,13 @@ public:
         clang::PresumedLoc presumed = visitor->getSM()->getPresumedLoc(loc);
 
         if (isa<FunctionDecl>(toplevel)) {
-            if (toplevel->hasBody() &&
+            FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
+
+            if (fdecl->isThisDeclarationADefinition() &&
                     insertions->isMainFile(presumed.getFilename())) {
-                FunctionDecl *fdecl = clang::dyn_cast<FunctionDecl>(toplevel);
                 assert(fdecl != NULL);
                 curr_func = fdecl->getNameAsString();
+                curr_func_decl = fdecl;
 
                 if (insertions->isNvCompilerFunction(curr_func)) continue;
 
@@ -162,49 +173,34 @@ public:
                     insert_at_front = NULL;
                 }
 
+                std::stringstream id_str;
+                std::string demangled_filename =
+                    remove_filename_insertions(filename);
+                id_str << demangled_filename << ":" << curr_func << ":" <<
+                    pre_loc.getLine() << ":" << pre_loc.getColumn();
+
+                if (visitor->createsOMPTree())
+                    visitor->resetOMPTree();
                 if (visitor->createsRegisterLabels())
                     visitor->resetRegisterLabels();
-                if (visitor->createsFunctionLabels())
-                    visitor->resetFunctionLabels();
+                if (visitor->createsFunctionLabels()) {
+                    int nlabels;
+                    if (num_call_labels.find(id_str.str()) == num_call_labels.end()) {
+                        nlabels = 0;
+                    } else {
+                        nlabels = num_call_labels[id_str.str()];
+                    }
+                    visitor->resetFunctionLabels(nlabels);
+                }
                 if (visitor->setsLastGoto())
                     visitor->resetLastGoto();
                 visitor->resetRootFlag();
 
+                // llvm::errs() << curr_func << ":\n";
                 // (*b)->dump();
-                // llvm::errs() << "\n";
+                // llvm::errs() << "\n\n";
                 visitor->Visit((*b)->getBody());
                 visitor->VisitTopLevel(*b);
-
-                std::stringstream id_str;
-                std::string demangled_filename = remove_filename_insertions(filename);
-                id_str << demangled_filename << ":" << curr_func << ":" <<
-                    pre_loc.getLine() << ":" << pre_loc.getColumn();
-
-                if (visitor->createsRegisterLabels()) {
-                    assert(num_register_labels.find(id_str.str()) == num_register_labels.end());
-                    num_register_labels[id_str.str()] = visitor->getNumRegisterLabels();
-                }
-
-                if (visitor->createsFunctionLabels()) {
-                    assert(num_call_labels.find(id_str.str()) == num_call_labels.end());
-                    num_call_labels[id_str.str()] = visitor->getNumFunctionLabels();
-                }
-
-                if (visitor->setsLastGoto() && visitor->hasLastGoto()) {
-                    assert(num_register_labels.find(id_str.str()) != num_register_labels.end());
-                    assert(num_call_labels.find(id_str.str()) != num_call_labels.end());
-                    std::stringstream ss;
-                    ss << "lbl_" << num_register_labels[id_str.str()] << ": if (____numdebug_replaying) { "
-                        "int dst = get_next_call(); switch(dst) { ";
-                    for (int l = 0; l < num_call_labels[id_str.str()]; l++) {
-                        ss << "case(" << l << "): { goto call_lbl_" << l << "; } ";
-                    }
-                    ss << "default: { exit(42); }";
-                    ss << " } } ";
-                    R.InsertTextAfterToken(visitor->getLastGoto(), ss.str());
-                    insertions->AppendToDiagnostics("InsertTextAfterToken",
-                            visitor->getLastGoto(), ss.str(), *visitor->getSM());
-                }
             }
         }
     }
@@ -324,11 +320,11 @@ int main(int argc, const char **argv) {
   passes.push_back(new Pass(new InitPass(), ".init"));
   passes.push_back(new Pass(new SplitInitsPass(), ".split"));
   /*
-   * It is required that CallingPass run after SplitInitsPass in case a variable
-   * is initialized with a function call.
+   * It is required that OMPPass run after SplitInitsPass in case a variable
+   * is initialized with a function call, which would cause problems with
+   * inserting jumps to that call.
    */
-  passes.push_back(new Pass(new CallingPass(), ".calling"));
-  passes.push_back(new Pass(new RegisterStackPass(), ".register"));
+  passes.push_back(new Pass(new OMPPass(), ".register"));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
       NumDebugFrontendAction<TransformASTConsumer>>();

@@ -26501,7 +26501,7 @@ extern int get_next_call();
 # 9 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int peek_next_call();
 # 10 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void new_stack(unsigned n_local_arg_aliases, ...);
+extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 # 11 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
 # 13 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
@@ -26518,13 +26518,19 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_stru
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
 # 24 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void free_wrapper(void * ptr, size_t group);
+# 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+# 27 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void register_thread_local_stack_vars(unsigned nlocals, ...);
 # 28 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void leaving_omp_parallel();
+# 32 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 30 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 34 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 40 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
-# 43 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 47 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
@@ -26779,9 +26785,9 @@ extern void checkpoint();
 # 13 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
 extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
- lbl_0: dim3 blocks; register_stack_var("main|blocks|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), 12, 0, 1, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); blocks = dim3(4, 256);
+ lbl_0: dim3 blocks; register_stack_var("main|blocks|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); blocks = dim3(4, 256);
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"

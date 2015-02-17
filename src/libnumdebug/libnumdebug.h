@@ -7,7 +7,7 @@ extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, ...);
+extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -22,6 +22,10 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
+
+extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned nlocals, ...);
+extern void leaving_omp_parallel();
 
 #ifdef __NVCC__
 #include <driver_types.h>

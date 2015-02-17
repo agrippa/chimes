@@ -45,7 +45,7 @@ extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, ...);
+extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -60,7 +60,11 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 40 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+
+extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned nlocals, ...);
+extern void leaving_omp_parallel();
+# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
 
 
@@ -1715,11 +1719,11 @@ extern void wait_for_checkpoint();
 
 int a = 3;
 
-void haha_this_sux_part_canc() {new_stack(0);
+void haha_this_sux_part_canc() {new_stack(0, 0); if (____numdebug_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     a = 4;
 alias_group_changed(1, (size_t)(17022099875991519016UL)); rm_stack(false, 0UL); }
 
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL));
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, 0, (size_t)(0UL), (size_t)(18293662412874621885UL)); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
      call_lbl_0: calling(0, 0UL, 0); haha_this_sux_part_canc();
     alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
 }

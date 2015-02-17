@@ -30,7 +30,94 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
         unsigned col = atoi(line.substr(0, end).c_str());
         line = line.substr(end + 1);
 
-        pragmas->push_back(OpenMPPragma(line_no, col, line));
+        std::string pragma = line;
+
+        line = line.substr(line.find(' ') + 1);
+        assert(line.find("omp") == 0);
+
+        // Only support the parallel pragma at the moment
+        line = line.substr(line.find(' ') + 1);
+        assert(line.find("parallel") == 0);
+
+        end = line.find(' ');
+        if (end == std::string::npos) {
+            pragmas->push_back(OpenMPPragma(line_no, col, line, "parallel"));
+        } else {
+            OpenMPPragma pragma(line_no, col, line, "parallel");
+            std::string clauses = line.substr(end + 1);
+
+            std::vector<std::string> split_clauses;
+            std::stringstream acc;
+            int paren_depth = 0;
+            int start = 0;
+            int index = 0;
+
+            while (index < clauses.size()) {
+                if (clauses[index] == ' ' && paren_depth == 0) {
+                    split_clauses.push_back(clauses.substr(start,
+                                index - start));
+                    index++;
+                    while (index < clauses.size() && index == ' ') {
+                        index++;
+                    }
+                    start = index;
+                } else {
+                    if (clauses[index] == '(') paren_depth++;
+                    else if (clauses[index] == ')') paren_depth--;
+                    index++;
+                }
+            }
+            if (index != start) {
+                split_clauses.push_back(clauses.substr(start));
+            }
+
+            for (std::vector<std::string>::iterator i = split_clauses.begin(),
+                    e = split_clauses.end(); i != e; i++) {
+                std::string clause = *i;
+
+                if (clause.find("(") == std::string::npos) {
+                    pragma.add_clause(clause, std::vector<std::string>());
+                } else {
+                    size_t open = clause.find("(");
+                    assert(open != std::string::npos);
+
+                    std::string args = clause.substr(open + 1);
+
+                    size_t close = args.find_last_of(")");
+                    assert(close != std::string::npos);
+
+                    args = args.substr(0, close);
+
+                    std::string clause_name = clause.substr(0, open);
+
+                    std::vector<std::string> clause_args;
+                    int args_index = 0;
+                    int args_start = 0;
+                    while (args_index < args.size()) {
+                        if (args[args_index] == ',') {
+                            clause_args.push_back(args.substr(args_start,
+                                        args_index - args_start));
+                            args_index++;
+                            while (args_index < args.size() &&
+                                    args[args_index] == ' ') {
+                                args_index++;
+                            }
+                            args_start = args_index;
+                        } else {
+                            args_index++;
+                        }
+                    }
+
+                    if (args_start != args_index) {
+                        clause_args.push_back(args.substr(args_start));
+                    }
+
+                    pragma.add_clause(clause_name, clause_args);
+                }
+            }
+
+            pragmas->push_back(pragma);
+        }
     }
     fp.close();
 
@@ -537,4 +624,30 @@ void DesiredInsertions::AppendToDiagnostics(std::string action,
     diagnostics << action << " " << std::string(path) <<
         " " << presumed.getLine() << " " << presumed.getColumn() << " " <<
         val << "\n";
+}
+
+std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
+        clang::FunctionDecl *decl, clang::SourceManager &SM) {
+    std::vector<OpenMPPragma> *result = new std::vector<OpenMPPragma>();
+    if (!decl->hasBody()) return result;
+
+    clang::SourceLocation start = decl->getBody()->getLocStart();
+    clang::SourceLocation end = decl->getBody()->getLocEnd();
+
+    clang::PresumedLoc start_loc = SM.getPresumedLoc(start);
+    clang::PresumedLoc end_loc = SM.getPresumedLoc(end);
+
+    for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
+            e = omp_pragmas->end(); i != e; i++) {
+        OpenMPPragma curr = *i;
+
+        bool before = (curr.get_line() < start_loc.getLine());
+        bool after = (curr.get_line() > end_loc.getLine());
+
+        if (!before && !after) {
+            result->push_back(curr);
+        }
+    }
+
+    return result;
 }

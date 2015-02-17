@@ -22,9 +22,9 @@ LIBS=-Wl,--start-group -lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lc
 	 -lclangTooling -Wl,--end-group `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --ldflags --libs --system-libs`
 endif
 
-OBJS=Driver.o DesiredInsertions.o CallingPass.o InitPass.o \
+OBJS=Driver.o DesiredInsertions.o InitPass.o \
      StartExitPass.o ParentTransform.o AliasChangedPass.o MallocPass.o \
-     RegisterStackPass.o SplitInitsPass.o
+     SplitInitsPass.o OMPPass.o OMPTree.o
 
 ${EXE}: ${OBJS}
 	${GXX} ${GXX_FLAGS} ${INCLUDES} ${OBJS} -o ${EXE} ${LIBS}

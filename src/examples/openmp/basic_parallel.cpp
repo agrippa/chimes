@@ -1,10 +1,20 @@
 #include <stdio.h>
 #include <omp.h>
+#include <checkpoint.h>
+
+void foo() {
+    checkpoint();
+}
 
 int main(int argc, char **argv) {
-#pragma omp parallel
+    int a = 3;
+    int b = 4;
+    int c = 5;
+#pragma omp parallel firstprivate(a) private(b, c)
     {
-        printf("hello from %d\n", omp_get_thread_num());
+        int inside = 6;
+        printf("hello from %d : %d\n", omp_get_thread_num(), inside);
+        foo();
     }
 
     return 0;

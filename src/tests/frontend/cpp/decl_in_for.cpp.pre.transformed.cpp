@@ -45,7 +45,7 @@ extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int peek_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, ...);
+extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -60,7 +60,11 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
-# 40 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+
+extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned nlocals, ...);
+extern void leaving_omp_parallel();
+# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
 
 
@@ -1721,9 +1725,9 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL)); register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0); register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0);
-      lbl_0: int a; register_stack_var("main|a|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&a), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = (0);
-    { lbl_1: int i; register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), 4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } lbl_2: if (____numdebug_replaying) { int dst = get_next_call(); switch(dst) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( i = (0); i < 10; i++) { {
+int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
+      lbl_0: int a; register_stack_var("main|a|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = (0);
+    { lbl_1: int i; register_stack_var("main|i|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( i = (0); i < 10; i++) { {
         a += i;
     } } }
     alias_group_changed(5, (size_t)(335588464056153169UL), (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16809019010565379225UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
