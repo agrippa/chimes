@@ -1,2 +1,4 @@
-omp_get_thread_num 7 35 0
-printf 7 9 0 11663623011982921864 0
+_Z10checkpointv 6 5 0
+omp_get_thread_num 16 40 0
+printf 16 9 0 8396681479545676539 0 0
+_Z3foov 17 9 0

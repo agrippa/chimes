@@ -1,5 +1,6 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 12 5 alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(13741044057938436313UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 13 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 33 new_stack(2, (size_t)(0UL), (size_t)(18293662412874621885UL));  register_stack_var("main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), 4, 0, 0, 0);  register_stack_var("main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), 8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 33 new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 33 init_numdebug(); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 12 164  call_lbl_0: calling(0, 0UL, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 286  if (____numdebug_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 

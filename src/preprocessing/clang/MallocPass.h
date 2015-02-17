@@ -44,6 +44,7 @@ public:
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
+    bool createsOMPTree() override { return false; }
 private:
     std::set<std::string> supportedAllocationFunctions;
     std::map<unsigned, std::map<std::string, std::vector<FoundAlloc> *> *> found_allocs;

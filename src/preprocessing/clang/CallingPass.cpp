@@ -9,6 +9,7 @@
 #include <llvm/Support/raw_ostream.h>
 
 extern DesiredInsertions *insertions;
+extern std::map<std::string, OMPTree *> ompTrees;
 
 void CallingPass::VisitTopLevel(clang::Decl *toplevel) {
     for (std::map<unsigned, std::vector<CallLocation>>::iterator i =
@@ -18,6 +19,12 @@ void CallingPass::VisitTopLevel(clang::Decl *toplevel) {
         for (std::vector<CallLocation>::iterator ii = i->second.begin(),
                 ee = i->second.end(); ii != ee; ii++) {
             CallLocation loc = *ii;
+
+            assert(ompTrees.find(curr_func) != ompTrees.end());
+            OMPTree *tree = ompTrees[curr_func];
+            tree->add_function_call(loc.get_call(), loc.get_label(),
+                    getParentMap());
+
             AliasesPassedToCallSite callsite =
                 insertions->findFirstMatchingCallsite(i->first);
 
@@ -45,13 +52,14 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
         "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
         "init_numdebug", "new_stack", "rm_stack", "register_stack_var",
         "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
-        "atoi", "atof", "fopen", "getopt", "LIBNUMDEBUG_THREAD_NUM"};
+        "atoi", "atof", "fopen", "getopt", "LIBNUMDEBUG_THREAD_NUM",
+        "entering_omp_parallel", "leaving_omp_parallel",
+        "register_thread_local_stack_vars", "omp_get_thread_num"};
     std::set<std::string> ignorable(ignorable_arr,
             ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
 
-        // This means we can't support checkpoints from inside constructors
         if (const clang::CallExpr *call =
                 clang::dyn_cast<const clang::CallExpr>(s)) {
 
@@ -60,14 +68,18 @@ void CallingPass::VisitStmt(const clang::Stmt *s) {
 
             /*
              * Not necessary, but helps to limit code clutter and reduce
-             * overhead
+             * overhead.
+             *
+             * This means we can't support checkpoints from inside constructors
              */
             if (ignorable.find(callee_name) == ignorable.end() &&
                     !clang::isa<const clang::CXXConstructExpr>(call)) {
+
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);
 
                 if (calls_found.find(presumed.getLine()) == calls_found.end()) {
-                    calls_found[presumed.getLine()] = std::vector<CallLocation>();
+                    calls_found[presumed.getLine()] =
+                        std::vector<CallLocation>();
                 }
                 int lbl = getNextFunctionLabel();
                 calls_found[presumed.getLine()].push_back(CallLocation(

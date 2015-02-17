@@ -4,20 +4,21 @@
 
 extern DesiredInsertions *insertions;
 
-std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
+std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     int first_pipe = alloc->get_mangled_varname().find('|');
     std::string actual_name = alloc->get_mangled_varname().substr(
             first_pipe + 1);;
     actual_name = actual_name.substr(0, actual_name.find('|'));
 
     std::stringstream ss;
-    ss << " register_stack_var(\"" << alloc->get_mangled_varname() <<
+    ss << "\"" << alloc->get_mangled_varname() <<
         "\", LIBNUMDEBUG_THREAD_NUM(), \"" << alloc->get_full_type() <<
         "\", (void *)(&" << actual_name << "), " <<
-        (alloc->get_type_size_in_bits() / 8) << ", " <<
+        "(size_t)" << (alloc->get_type_size_in_bits() / 8) << ", " <<
         (alloc->get_is_ptr() ? "1" : "0") << ", " <<
         (alloc->get_is_struct() ? "1" : "0") << ", " <<
         alloc->get_num_ptr_fields();
+
     for (std::vector<std::string>::iterator ptrs =
             alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
             ptrs != ptrs_end; ptrs++) {
@@ -26,8 +27,13 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
             alloc->get_struct_type_name() << ", " << ptr_field <<
             ")";
     }
-    ss << "); ";
+    return ss.str();
+}
 
+std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
+    std::stringstream ss;
+    ss << " register_stack_var(" << constructRegisterStackVarArgs(alloc) <<
+        "); ";
     return ss.str();
 
 }
@@ -148,6 +154,11 @@ int ParentTransform::getNextRegisterLabel() {
     return curr_register_label++;
 }
 
+OMPTree *ParentTransform::getOMPTree() {
+    assert(createsOMPTree());
+    return ompTree;
+}
+
 void ParentTransform::resetRegisterLabels() {
     assert(createsRegisterLabels());
     curr_register_label = 0;
@@ -163,13 +174,17 @@ int ParentTransform::getNextFunctionLabel() {
     return curr_function_label++;
 }
 
-void ParentTransform::resetFunctionLabels() {
+void ParentTransform::resetFunctionLabels(int nlabels) {
     assert(createsFunctionLabels());
-    curr_function_label = 0;
+    curr_function_label = nlabels;
 }
 
 void ParentTransform::resetRootFlag() {
     root_flag = true;
+}
+
+void ParentTransform::resetOMPTree() {
+    ompTree = new OMPTree(SM, Context);
 }
 
 void ParentTransform::setRootFlag(bool v) {

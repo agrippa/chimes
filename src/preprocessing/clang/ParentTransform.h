@@ -8,6 +8,7 @@
 #include "clang/Basic/SourceManager.h"
 
 #include "DesiredInsertions.h"
+#include "OMPTree.h"
 
 class ParentTransform : public clang::ConstStmtVisitor<ParentTransform> {
 public:
@@ -24,8 +25,9 @@ public:
     virtual bool setsLastGoto() = 0;
     virtual bool createsRegisterLabels() = 0;
     virtual bool createsFunctionLabels() = 0;
+    virtual bool createsOMPTree() = 0;
     virtual void VisitTopLevel(clang::Decl *toplevel) {}
-    
+
     void setLastGoto(clang::SourceLocation last);
     clang::SourceLocation getLastGoto();
     bool hasLastGoto();
@@ -33,9 +35,11 @@ public:
 
     int getNumRegisterLabels();
     int getNumFunctionLabels();
+    OMPTree *getOMPTree();
     void resetRegisterLabels();
-    void resetFunctionLabels();
+    void resetFunctionLabels(int nlabels);
     void resetRootFlag();
+    void resetOMPTree();
 
     clang::SourceManager *getSM() { return SM; }
 protected:
@@ -43,6 +47,7 @@ protected:
     clang::SourceManager *SM;
     const clang::Stmt *parent;
 
+    std::string constructRegisterStackVarArgs(StackAlloc *alloc);
     std::string constructRegisterStackVar(StackAlloc *alloc);
     void visitChildren(const clang::Stmt *s);
     const clang::Stmt *getParent(const clang::Stmt *s);
@@ -64,6 +69,12 @@ protected:
 
     void setRootFlag(bool v);
     bool getRootFlag();
+
+    OMPTree *ompTree;
+    std::map<const clang::Stmt *, const clang::Stmt *> *getParentMap() {
+        return &parentMap;
+    }
+
 private:
     clang::Rewriter *rewriter;
     std::map<const clang::Stmt *, const clang::Stmt *> parentMap;

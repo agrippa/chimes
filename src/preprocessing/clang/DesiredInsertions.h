@@ -8,6 +8,8 @@
 #include <map>
 #include <set>
 
+#include "clang/AST/Decl.h"
+#include "clang/AST/Stmt.h"
 #include "clang/Basic/SourceManager.h"
 
 extern std::string curr_func;
@@ -15,17 +17,32 @@ extern std::string curr_func;
 class OpenMPPragma {
     public:
         OpenMPPragma(unsigned set_line, unsigned set_col,
-                std::string set_pragma) : line(set_line), col(set_col),
-                pragma(set_pragma) { }
+                std::string set_pragma, std::string set_pragma_name) :
+                line(set_line), col(set_col), pragma(set_pragma),
+                pragma_name(set_pragma_name) { }
+
+        void add_clause(std::string clause_name,
+                std::vector<std::string> clause_arguments) {
+            assert(clauses.find(clause_name) == clauses.end());
+            clauses[clause_name] = clause_arguments;
+        }
 
         unsigned get_line() { return line; }
         unsigned get_column() { return col; }
         std::string get_pragma() { return pragma; }
 
+        std::string get_pragma_name() { return pragma_name; }
+        std::map<std::string, std::vector<std::string> > get_clauses() {
+            return clauses;
+        }
+
     private:
         unsigned line;
         unsigned col;
         std::string pragma;
+
+        std::string pragma_name;
+        std::map<std::string, std::vector<std::string> > clauses;
 };
 
 class ReachableInfo {
@@ -269,6 +286,8 @@ public:
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
+    std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
+            clang::SourceManager &SM);
     size_t hash(const char *s, size_t seed = 0) {
         size_t hash = seed;
         while (*s) {
@@ -311,6 +330,7 @@ public:
             if (curr.get_line() == line) break;
             i++;
         }
+
         assert(i != e);
 
         AliasesPassedToCallSite result = *i;

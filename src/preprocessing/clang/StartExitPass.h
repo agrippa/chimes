@@ -20,6 +20,7 @@ public:
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
+    bool createsOMPTree() override { return false; }
 
     std::string constructFunctionEndingStmts();
 };

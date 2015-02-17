@@ -20,11 +20,11 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
             insertions->findMatchingFunction(curr_func);
 
         std::stringstream ss;
-        ss << "new_stack(" << funcAliases.nargs();
+        ss << "new_stack(" << funcAliases.nargs() << ", " <<
+            (insert_at_front == NULL ? 0 : insert_at_front->size());
         for (unsigned i = 0; i < funcAliases.nargs(); i++) {
             ss << ", (size_t)(" << funcAliases.alias_no_for(i) << "UL)";
         }
-        ss << "); ";
 
         /*
          * Insert stack registrations for parameters to functions.
@@ -35,11 +35,13 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
                     i != e; i++) {
                 StackAlloc *alloc = *i;
 
-                std::string stmt = constructRegisterStackVar(alloc);
-                ss << stmt;
+                std::string args = constructRegisterStackVarArgs(alloc);
+                ss << ", " << args;
             }
             insert_at_front = NULL;
         }
+
+        ss << "); ";
 
         InsertTextAfterToken(declEnd, ss.str());
 

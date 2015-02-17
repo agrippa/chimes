@@ -36,7 +36,7 @@
 using namespace std;
 
 // functions defined in this file
-void new_stack(unsigned n_local_arg_aliases, ...);
+void new_stack(unsigned n_local_arg_aliases, unsigned n_args, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias);
 void register_stack_var(const char *mangled_name, unsigned thread,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -57,6 +57,9 @@ static void *translate_old_ptr(void *ptr,
 static void fix_stack_or_global_pointer(void *container, string type);
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 void free_helper(void *ptr);
+static stack_var *get_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        va_list vl);
 
 // global data structures that must persist across library calls
 static vector<stack_frame *> program_stack;
@@ -75,6 +78,7 @@ static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
+static std::vector<void *> parent_vars;
 
 #define PARENT_ALIASES_INIT_SIZE    1024
 static size_t *parent_aliases = NULL;
@@ -546,7 +550,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #endif
 }
 
-void new_stack(unsigned int n_local_arg_aliases, ...) {
+void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(NEW_STACK);
 #endif
@@ -570,13 +574,11 @@ void new_stack(unsigned int n_local_arg_aliases, ...) {
 
     std::vector<size_t> new_aliases;
     va_list vl;
-    va_start(vl, n_local_arg_aliases);
+    va_start(vl, nargs);
     for (unsigned i = 0; i < n_local_arg_aliases; i++) {
         size_t alias = va_arg(vl, size_t);
         new_aliases.push_back(alias);
     }
-
-    va_end(vl);
 
     return_aliases.push_back(return_alias);
 
@@ -588,6 +590,23 @@ void new_stack(unsigned int n_local_arg_aliases, ...) {
             }
         }
     }
+
+    for (unsigned i = 0; i < nargs; i++) {
+        const char *mangled_name = va_arg(vl, const char *);
+        // TODO
+        unsigned thread = va_arg(vl, unsigned);
+        const char *full_type = va_arg(vl, const char *);
+        void *ptr = va_arg(vl, void *);
+        size_t size = va_arg(vl, size_t);
+        int is_ptr = va_arg(vl, int);
+        int is_struct = va_arg(vl, int);
+        int n_ptr_fields = va_arg(vl, int);
+        stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
+                is_struct, n_ptr_fields, vl);
+        program_stack.back()->add_stack_var(new_var);
+    }
+
+    va_end(vl);
 
 #ifdef VERBOSE
     fprintf(stderr, "Incrementing stack depth to %d\n", stack_nesting);
@@ -978,7 +997,7 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
 }
 
 void checkpoint() {
-    new_stack(0);
+    new_stack(0, 0);
 
     if (____numdebug_replaying) {
 #ifdef VERBOSE
@@ -1401,6 +1420,28 @@ void *checkpoint_func(void *data) {
     checkpoint_thread_running = 0;
 
     return NULL;
+}
+
+void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
+    parent_vars.clear();
+
+    stack_tracker.push(lbl);
+
+    va_list vl;
+    va_start(vl, nlocals);
+
+    for (unsigned i = 0; i < nlocals; i++) {
+        void *addr = va_arg(vl, void *);
+        parent_vars.push_back(addr);
+    }
+
+    va_end(vl);
+}
+
+void register_thread_local_stack_vars(unsigned nlocals, ...) {
+}
+
+void leaving_omp_parallel() {
 }
 
 void onexit() {

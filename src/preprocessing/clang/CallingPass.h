@@ -40,6 +40,7 @@ public:
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return true; }
+    bool createsOMPTree() override { return false; }
 private:
     bool parent_is_ternary(const clang::Stmt *parent);
 
