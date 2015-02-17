@@ -24,7 +24,8 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread, unsigned nlocals,
+        ...);
 extern void leaving_omp_parallel();
 
 #ifdef __NVCC__

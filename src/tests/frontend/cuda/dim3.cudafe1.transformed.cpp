@@ -26521,16 +26521,16 @@ extern void free_wrapper(void * ptr, size_t group);
 # 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 # 27 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void register_thread_local_stack_vars(unsigned nlocals, ...);
-# 28 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern void register_thread_local_stack_vars(unsigned thread, unsigned nlocals, ...);
+# 29 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void leaving_omp_parallel();
-# 32 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 34 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 35 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 45 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
-# 47 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 48 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;

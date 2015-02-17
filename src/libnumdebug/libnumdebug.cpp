@@ -1438,7 +1438,7 @@ void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
     va_end(vl);
 }
 
-void register_thread_local_stack_vars(unsigned nlocals, ...) {
+void register_thread_local_stack_vars(unsigned thread, unsigned nlocals, ...) {
 }
 
 void leaving_omp_parallel() {

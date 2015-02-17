@@ -237,7 +237,7 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
         InsertTextAfterToken(pre_loc, entering_ss.str());
 
         std::stringstream register_ss;
-        register_ss << " register_thread_local_stack_vars(" << private_vars.size();
+        register_ss << " register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             register_ss << ", &" << *varsi;
