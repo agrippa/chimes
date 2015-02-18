@@ -11,7 +11,7 @@ extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name, unsigned thread,
+extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -23,9 +23,9 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
-extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread, unsigned nlocals,
-        ...);
+extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern unsigned register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
 
 #ifdef __NVCC__

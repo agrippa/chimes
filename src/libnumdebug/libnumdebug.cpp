@@ -26,6 +26,7 @@
 #include "stack_frame.h"
 #include "heap_allocation.h"
 #include "stack_serialization.h"
+#include "thread_serialization.h"
 #include "global_serialization.h"
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
@@ -60,9 +61,10 @@ void free_helper(void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl);
+static std::vector<stack_frame *> *get_my_stack();
 
 // global data structures that must persist across library calls
-static vector<stack_frame *> program_stack;
+// static vector<stack_frame *> program_stack;
 static numdebug_stack stack_tracker;
 static vector<int> trace;
 static unsigned int trace_index = 0;
@@ -79,6 +81,38 @@ static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
 static std::vector<void *> parent_vars;
+
+/*
+ * A mapping from the libnumdebug-assigned thread ID to the program stack for
+ * that thread.
+ */
+static std::map<unsigned, std::vector<stack_frame *> *> program_stacks;
+static pthread_mutex_t program_stacks_mutex = PTHREAD_MUTEX_INITIALIZER;
+
+/*
+ * A mapping from the pthread library's representation of a thread to our
+ * internal representation, an unsigned integer.
+ */
+static std::map<pthread_t, unsigned> pthread_to_id;
+static pthread_mutex_t pthread_to_id_mutex = PTHREAD_MUTEX_INITIALIZER;
+
+/*
+ * A mapping from a thread to 1) its parent thread, and 2) its offset from that
+ * parent thread. Each child of a given thread will have a unique offset. For
+ * the case of nested OMP parallel regions, this offset is the thread num of the
+ * child thread.
+ */
+static std::map<unsigned, pair<unsigned, unsigned> > child_to_parent_threads;
+static pthread_mutex_t child_to_parent_threads_mutex =
+        PTHREAD_MUTEX_INITIALIZER;
+
+/*
+ * count_threads is used to assign every pthread created a unique ID that we use
+ * internally to represent each thread. 0 is reserved for main thread before
+ * first OMP region, so we start from 1.
+ */
+static unsigned count_threads = 1;
+static pthread_mutex_t count_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 #define PARENT_ALIASES_INIT_SIZE    1024
 static size_t *parent_aliases = NULL;
@@ -97,8 +131,9 @@ static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
 
-static vector<stack_frame *> *unpacked_program_stack;
+static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
 static map<std::string, stack_var *> *unpacked_global_vars;
+static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
 /*
  * A list of objects specifying what memory locations were updated with
  * corrected pointers during the sweep over heap allocations.
@@ -133,6 +168,11 @@ static bool aliased(size_t group1, size_t group2) {
 
 void init_numdebug() {
     atexit(onexit);
+
+    pthread_t self = pthread_self();
+    assert(pthread_to_id.size() == 0);
+    pthread_to_id[self] = 0;
+    program_stacks[0] = new std::vector<stack_frame *>();
 
     parent_aliases = (size_t *)malloc(sizeof(size_t) *
             PARENT_ALIASES_INIT_SIZE);
@@ -174,7 +214,7 @@ void init_numdebug() {
                 stack_serialized_len);
         safe_read(fd, stack_serialized, stack_serialized_len,
                 "stack_serialized", checkpoint_file);
-        unpacked_program_stack = deserialize_program_stack(stack_serialized,
+        unpacked_program_stacks = deserialize_program_stacks(stack_serialized,
                 stack_serialized_len);
 
         // read in globals state
@@ -187,6 +227,19 @@ void init_numdebug() {
                 "globals_serialized", checkpoint_file);
         unpacked_global_vars = deserialize_globals(globals_serialized,
                 globals_serialized_len);
+
+        // read in thread state
+        uint64_t thread_hierarchy_serialized_len;
+        safe_read(fd, &thread_hierarchy_serialized_len,
+                sizeof(thread_hierarchy_serialized_len),
+                "thread_hierarchy_serialized_len", checkpoint_file);
+        unsigned char *thread_hierarchy_serialized = (unsigned char *)malloc(
+                thread_hierarchy_serialized_len);
+        safe_read(fd, thread_hierarchy_serialized,
+                thread_hierarchy_serialized_len, "thread_hierarchy_serialized",
+                checkpoint_file);
+        unpacked_thread_hierarchy = deserialize_thread_hierarchy(
+                thread_hierarchy_serialized, thread_hierarchy_serialized_len);
 
         // read in heap serialization
         uint64_t n_heap_allocs;
@@ -554,11 +607,12 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(NEW_STACK);
 #endif
-    assert(program_stack.size() == 0 || calling_lbl >= 0);
+    std::vector<stack_frame *> *program_stack = get_my_stack();
+    assert(program_stack->size() == 0 || calling_lbl >= 0);
     if (calling_lbl >= 0) {
         stack_tracker.push(calling_lbl);
     }
-    program_stack.push_back(new stack_frame());
+    program_stack->push_back(new stack_frame());
     stack_nesting++;
 
     /*
@@ -569,7 +623,7 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
      * variable argument function. I'm not sure if variable argument functions
      * are really supported at the moment, so for now we assert they are equal.
      */
-    assert(program_stack.size() == 1 || n_local_arg_aliases ==
+    assert(program_stack->size() == 1 || n_local_arg_aliases ==
             parent_aliases_length);
 
     std::vector<size_t> new_aliases;
@@ -582,7 +636,7 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 
     return_aliases.push_back(return_alias);
 
-    if (program_stack.size() > 1) {
+    if (program_stack->size() > 1) {
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
             if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
                 merge_alias_groups(new_aliases[i], parent_aliases[i]);
@@ -593,8 +647,6 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 
     for (unsigned i = 0; i < nargs; i++) {
         const char *mangled_name = va_arg(vl, const char *);
-        // TODO
-        unsigned thread = va_arg(vl, unsigned);
         const char *full_type = va_arg(vl, const char *);
         void *ptr = va_arg(vl, void *);
         size_t size = va_arg(vl, size_t);
@@ -603,7 +655,7 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
         int n_ptr_fields = va_arg(vl, int);
         stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
                 is_struct, n_ptr_fields, vl);
-        program_stack.back()->add_stack_var(new_var);
+        program_stack->back()->add_stack_var(new_var);
     }
 
     va_end(vl);
@@ -653,8 +705,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(RM_STACK);
 #endif
-    stack_frame *curr = program_stack.back();
-    program_stack.pop_back();
+    std::vector<stack_frame *> *program_stack = get_my_stack();
+    stack_frame *curr = program_stack->back();
+    program_stack->pop_back();
     delete curr;
 
     size_t this_return_alias = return_aliases.back();
@@ -724,14 +777,15 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
  *   This registration would not allow the full recreation of stack state at
  *   replay.
  */
-void register_stack_var(const char *mangled_name, unsigned thread,
+void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(REGISTER_STACK_VAR);
 #endif
     // Skip the expensive stack var creation if we can
-    if (!program_stack.back()->stack_var_exists(std::string(mangled_name),
+    std::vector<stack_frame *> *program_stack = get_my_stack();
+    if (!program_stack->back()->stack_var_exists(std::string(mangled_name),
                 ptr)) {
 
         va_list vl;
@@ -740,7 +794,7 @@ void register_stack_var(const char *mangled_name, unsigned thread,
                 is_struct, n_ptr_fields, vl);
         va_end(vl);
 
-        program_stack.back()->add_stack_var(new_var);
+        program_stack->back()->add_stack_var(new_var);
     }
 #ifdef __NUMDEBUG_PROFILE
     pp.stop_timer(REGISTER_STACK_VAR);
@@ -960,10 +1014,12 @@ void free_wrapper(void *ptr, size_t group) {
 }
 
 typedef struct _checkpoint_thread_ctx {
-    unsigned char *stack_serialized;
+    unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
-    uint64_t stack_serialized_len;
+    unsigned char *thread_hierarchy_serialized;
+    uint64_t stacks_serialized_len;
     uint64_t globals_serialized_len;
+    uint64_t thread_hierarchy_serialized_len;
 
     vector<heap_allocation *> *heap_to_checkpoint;
 
@@ -996,6 +1052,52 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
     dead->clear_tmp_buffer();
 }
 
+static void restore_program_stack(vector<stack_frame *> *unpacked,
+        vector<stack_frame *> *real) {
+
+    assert(unpacked->size() == real->size());
+
+    vector<stack_frame *>::iterator unpacked_stack_iter = unpacked->begin();
+    vector<stack_frame *>::iterator unpacked_stack_end = unpacked->end();
+    vector<stack_frame *>::iterator live_stack_iter = real->begin();
+    vector<stack_frame *>::iterator live_stack_end = real->end();
+
+    while (unpacked_stack_iter != unpacked_stack_end &&
+            live_stack_iter != live_stack_end) {
+        stack_frame *live = *live_stack_iter;
+        stack_frame *unpacked = *unpacked_stack_iter;
+
+        /*
+         * It is possible that live is larger than unpacked if the
+         * checkpoint run didn't reach some local variable declarations
+         * before this checkpoint was created.
+         */
+        assert(live->size() >= unpacked->size());
+
+        /*
+         * Match entries in the checkpoint to known locals in the running
+         * program
+         */
+        for (stack_frame::iterator i = unpacked->begin(),
+                e = unpacked->end(); i != e; i++) {
+            assert(live->find(i->first) != live->end());
+
+            string name = i->first;
+            stack_var *dead = i->second;
+            stack_frame::iterator found = live->find(name);
+            stack_var *live = found->second;
+
+            update_live_var(name, dead, live);
+        }
+
+        unpacked_stack_iter++;
+        live_stack_iter++;
+    }
+
+    assert(unpacked_stack_iter == unpacked_stack_end &&
+            live_stack_iter == live_stack_end);
+}
+
 void checkpoint() {
     new_stack(0, 0);
 
@@ -1009,55 +1111,26 @@ void checkpoint() {
         }
         fprintf(stderr, ")\n");
 #endif
-        
-        assert(unpacked_program_stack->size() == program_stack.size());
+       
+        // Assert same number of threads
+        assert(unpacked_program_stacks->size() == program_stacks.size());
         assert(unpacked_global_vars->size() == global_vars.size());
         /*
          * restore non-pointers in the stack to have the correct values by
          * transferring from the deserialized objects into the newly registered
          * addresses
          */
-        vector<stack_frame *>::iterator unpacked_stack_iter =
-            unpacked_program_stack->begin();
-        vector<stack_frame *>::iterator unpacked_stack_end =
-            unpacked_program_stack->end();
-        vector<stack_frame *>::iterator live_stack_iter = program_stack.begin();
-        vector<stack_frame *>::iterator live_stack_end = program_stack.end();
 
-        while (unpacked_stack_iter != unpacked_stack_end &&
-                live_stack_iter != live_stack_end) {
-            stack_frame *live = *live_stack_iter;
-            stack_frame *unpacked = *unpacked_stack_iter;
+        for (map<unsigned, vector<stack_frame *> *>::iterator stacks_iter =
+                unpacked_program_stacks->begin(), stacks_end =
+                unpacked_program_stacks->end(); stacks_iter != stacks_end;
+                stacks_iter++) {
+            unsigned tid = stacks_iter->first;
+            assert(program_stacks.find(tid) != program_stacks.end());
 
-            /*
-             * It is possible that live is larger than unpacked if the
-             * checkpoint run didn't reach some local variable declarations
-             * before this checkpoint was created.
-             */
-            assert(live->size() >= unpacked->size());
-
-            /*
-             * Match entries in the checkpoint to known locals in the running
-             * program
-             */
-            for (stack_frame::iterator i = unpacked->begin(),
-                    e = unpacked->end(); i != e; i++) {
-                assert(live->find(i->first) != live->end());
-
-                string name = i->first;
-                stack_var *dead = i->second;
-                stack_frame::iterator found = live->find(name);
-                stack_var *live = found->second;
-
-                update_live_var(name, dead, live);
-            }
-
-            unpacked_stack_iter++;
-            live_stack_iter++;
+            restore_program_stack((*unpacked_program_stacks)[tid],
+                    program_stacks[tid]);
         }
-
-        assert(unpacked_stack_iter == unpacked_stack_end &&
-                live_stack_iter == live_stack_end);
 
         /*
          * Verify all of the globals that we unpacked are also in the live
@@ -1087,16 +1160,23 @@ void checkpoint() {
          */
         set<void *> updated;
         // For each stack frame
-        for (vector<stack_frame *>::iterator frame_iter = program_stack.begin(),
-                frame_end = program_stack.end(); frame_iter != frame_end;
-                frame_iter++) {
-            stack_frame *frame = *frame_iter;
-            // For each stack variable in the current frame
-            for (stack_frame::iterator var_iter = frame->begin(),
-                    var_end = frame->end(); var_iter != var_end; var_iter++) {
-                stack_var *var = var_iter->second;
-                fix_stack_or_global_pointer(var->get_address(),
-                        var->get_type());
+        for (map<unsigned, vector<stack_frame *> *>::iterator stacks_iter =
+                program_stacks.begin(), stacks_end = program_stacks.end();
+                stacks_iter != stacks_end; stacks_iter++) {
+            vector<stack_frame *> *stack = stacks_iter->second;
+
+            for (vector<stack_frame *>::iterator frame_iter =
+                    stack->begin(), frame_end = stack->end();
+                    frame_iter != frame_end; frame_iter++) {
+                stack_frame *frame = *frame_iter;
+                // For each stack variable in the current frame
+                for (stack_frame::iterator var_iter = frame->begin(),
+                        var_end = frame->end(); var_iter != var_end;
+                        var_iter++) {
+                    stack_var *var = var_iter->second;
+                    fix_stack_or_global_pointer(var->get_address(),
+                            var->get_type());
+                }
             }
         }
 
@@ -1175,10 +1255,13 @@ void checkpoint() {
 
     checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
             sizeof(checkpoint_thread_ctx));
-    thread_ctx->stack_serialized = serialize_program_stack(&program_stack,
-            &thread_ctx->stack_serialized_len);
+    thread_ctx->stacks_serialized = serialize_program_stacks(&program_stacks,
+            &thread_ctx->stacks_serialized_len);
     thread_ctx->globals_serialized = serialize_globals(&global_vars,
             &thread_ctx->globals_serialized_len);
+    thread_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
+            &child_to_parent_threads,
+            &thread_ctx->thread_hierarchy_serialized_len);
     thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
     thread_ctx->stack_tracker = new std::vector<int>();
     stack_tracker.copy(thread_ctx->stack_tracker);
@@ -1273,10 +1356,14 @@ static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
 
 void *checkpoint_func(void *data) {
     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
-    unsigned char *stack_serialized = ctx->stack_serialized;
-    uint64_t stack_serialized_len = ctx->stack_serialized_len;
+    unsigned char *stacks_serialized = ctx->stacks_serialized;
+    uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
     unsigned char *globals_serialized = ctx->globals_serialized;
     uint64_t globals_serialized_len = ctx->globals_serialized_len;
+    unsigned char *thread_hierarchy_serialized =
+        ctx->thread_hierarchy_serialized;
+    uint64_t thread_hierarchy_serialized_len =
+        ctx->thread_hierarchy_serialized_len;
     vector<heap_allocation *> *heap_to_checkpoint = ctx->heap_to_checkpoint;
 
     /*
@@ -1306,16 +1393,23 @@ void *checkpoint_func(void *data) {
     }
 
     // Write the serialized stack out
-    safe_write(fd, &stack_serialized_len, sizeof(stack_serialized_len),
-            "stack_serialized_len", dump_filename);
-    safe_write(fd, stack_serialized, ctx->stack_serialized_len,
-            "stack_serialized", dump_filename);
+    safe_write(fd, &stacks_serialized_len, sizeof(stacks_serialized_len),
+            "stacks_serialized_len", dump_filename);
+    safe_write(fd, stacks_serialized, ctx->stacks_serialized_len,
+            "stacks_serialized", dump_filename);
 
     // Write the serialized globals out
     safe_write(fd, &globals_serialized_len, sizeof(globals_serialized_len),
             "globals_serialized_len", dump_filename);
-    safe_write(fd, globals_serialized, ctx->globals_serialized_len,
+    safe_write(fd, globals_serialized, globals_serialized_len,
             "globals_serialized", dump_filename);
+
+    // Write out the thread hierarchy
+    safe_write(fd, &thread_hierarchy_serialized_len,
+            sizeof(thread_hierarchy_serialized_len),
+            "thread_hierarchy_serialized_len", dump_filename);
+    safe_write(fd, thread_hierarchy_serialized, thread_hierarchy_serialized_len,
+            "thread_hierarchy_serialized", dump_filename);
 
     // Write the heap allocations out (all of them, for now)
     uint64_t n_heap_allocs = heap_to_checkpoint->size();
@@ -1405,8 +1499,9 @@ void *checkpoint_func(void *data) {
     }
 
     close(fd);
-    free(stack_serialized);
+    free(stacks_serialized);
     free(globals_serialized);
+    free(thread_hierarchy_serialized);
     for (vector<heap_allocation *>::iterator heap_iter =
             heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
             heap_iter != heap_end; heap_iter++) {
@@ -1422,7 +1517,7 @@ void *checkpoint_func(void *data) {
     return NULL;
 }
 
-void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
+unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
     parent_vars.clear();
 
     stack_tracker.push(lbl);
@@ -1436,12 +1531,98 @@ void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
     }
 
     va_end(vl);
+
+    pthread_t self = pthread_self();
+
+    assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+    unsigned self_id = pthread_to_id[self];
+    assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+
+    return self_id;
 }
 
-void register_thread_local_stack_vars(unsigned thread, unsigned nlocals, ...) {
+unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
+        unsigned nlocals, ...) {
+    unsigned global_tid;
+    pthread_t self = pthread_self();
+
+    if (____numdebug_replaying) {
+        /*
+         * Use the loaded thread hierarchy to figure out what ID this thread was
+         * assigned previously.
+         */
+        bool found = false;
+        for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
+                unpacked_thread_hierarchy->begin(), e =
+                unpacked_thread_hierarchy->end(); i != e; i++) {
+            unsigned id = i->first;
+            pair<unsigned, unsigned> info = i->second;
+            unsigned stored_parent = info.first;
+            unsigned stored_relation = info.second;
+
+            if (relation == stored_relation && parent == stored_parent) {
+                global_tid = id;
+                found = true;
+                break;
+            }
+        }
+        assert(found);
+
+        assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+        if (pthread_to_id.find(self) == pthread_to_id.end()) {
+            pthread_to_id[self] = global_tid;
+        } else {
+            assert(global_tid == pthread_to_id[self]);
+        }
+        assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+    } else {
+        assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+        if (pthread_to_id.find(self) == pthread_to_id.end()) {
+            assert(pthread_mutex_lock(&count_threads_mutex) == 0);
+            global_tid = count_threads++;
+            assert(pthread_mutex_unlock(&count_threads_mutex) == 0);
+
+            pthread_to_id[self] = global_tid;
+        } else {
+            global_tid = pthread_to_id[self];
+        }
+        assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+    }
+
+    assert(pthread_mutex_lock(&child_to_parent_threads_mutex));
+    if (child_to_parent_threads.find(global_tid) !=
+            child_to_parent_threads.end()) {
+        // A thread may be a parent of itself
+        assert(child_to_parent_threads[global_tid].first == global_tid);
+        assert(child_to_parent_threads[global_tid].second == 0);
+        assert(parent == global_tid);
+        assert(relation == 0);
+    } else {
+        child_to_parent_threads[global_tid] = pair<unsigned, unsigned>(parent,
+                relation);
+    }
+    assert(pthread_mutex_unlock(&child_to_parent_threads_mutex));
+
+    return global_tid;
 }
 
 void leaving_omp_parallel() {
+}
+
+static std::vector<stack_frame *> *get_my_stack() {
+    pthread_t self = pthread_self();
+
+    assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+    assert(pthread_to_id.find(self) != pthread_to_id.end());
+    unsigned self_id = pthread_to_id[self];
+    assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+
+    assert(pthread_mutex_lock(&program_stacks_mutex) == 0);
+    assert(program_stacks.find(self_id) != program_stacks.end());
+    std::vector<stack_frame *> *stack = program_stacks[self_id];
+    assert(pthread_mutex_unlock(&program_stacks_mutex) == 0);
+
+    return stack;
 }
 
 void onexit() {

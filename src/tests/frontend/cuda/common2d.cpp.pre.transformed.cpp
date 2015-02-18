@@ -49,7 +49,7 @@ extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name, unsigned thread,
+extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -61,9 +61,9 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
-extern void entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread, unsigned nlocals,
-        ...);
+extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern unsigned register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
 # 45 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
@@ -2372,15 +2372,15 @@ extern void setup_config(config *conf, int argc, char **argv);
 
 
 void save_text(float *field, const int dimx, const int dimy,
-        const int ny, const int nx, const char *filename, int radius) {new_stack(7, 7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL), "save_text|field|0", LIBNUMDEBUG_THREAD_NUM(), "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|dimy|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_text|ny|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
-      lbl_0: FILE *fp; register_stack_var("save_text|fp|0", LIBNUMDEBUG_THREAD_NUM(), "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
+        const int ny, const int nx, const char *filename, int radius) {new_stack(7, 7, (size_t)(2106176590813429709UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(1686577910018222429UL), (size_t)(0UL), "save_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
+      lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
     if (fp == __null) { {
         fprintf(__stderrp, "Failed to open output file %s\n", filename);
         alias_group_changed(8, (size_t)(2020512955842300876UL), (size_t)(2850663618440899500UL), (size_t)(4237632752881298404UL), (size_t)(13388633992466173602UL), (size_t)(13697246817649382652UL), (size_t)(13803245390038478632UL), (size_t)(15217183307985170569UL), (size_t)(17434303105024168097UL)); exit(1);
     } }
 
-    { lbl_1: int y; register_stack_var("save_text|y|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) { {
-        { lbl_2: int x; register_stack_var("save_text|x|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) { {
+    { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) { {
+        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) { {
             fprintf(fp, "%d %d %.20f\n", y, x,
                     field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
         } } }
@@ -2412,7 +2412,7 @@ void init_data(float *curr, float *next, float *vsq,
     h_coeff[4] = -0.001785 * scale;
 alias_group_changed(15, (size_t)(544479075814006532UL), (size_t)(689492555805609218UL), (size_t)(2514521167504661862UL), (size_t)(3193239025367387070UL), (size_t)(5794552797380688455UL), (size_t)(8040499415410495103UL), (size_t)(8789740333877504081UL), (size_t)(9189193028991347885UL), (size_t)(12766984487186336934UL), (size_t)(13159983195668392989UL), (size_t)(14298515915218321068UL), (size_t)(14298515915229491771UL), (size_t)(15129190013534662473UL), (size_t)(15148981951274329520UL), (size_t)(15567591489155420624UL)); rm_stack(false, 0UL); }
 
-void usage(char **argv) {new_stack(1, 1, (size_t)(17206168581473135942UL), "usage|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+void usage(char **argv) {new_stack(1, 1, (size_t)(17206168581473135942UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
             argv[0]);
@@ -2435,8 +2435,8 @@ void default_config(config *conf) {new_stack(1, 0, (size_t)(8084772600074702260U
     conf->progress_disabled = 0;
 alias_group_changed(2, (size_t)(8084772600074702260UL), (size_t)(13356287653763336231UL)); rm_stack(false, 0UL); }
 
-void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL), "setup_config|conf|0", LIBNUMDEBUG_THREAD_NUM(), "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
-     lbl_0: int c; register_stack_var("setup_config|c|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
+void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
+     lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
     opterr = 0;
 
      call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);

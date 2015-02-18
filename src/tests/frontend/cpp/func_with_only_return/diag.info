@@ -2,7 +2,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 5 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 4 5 rm_stack(true, 14788649179430747748UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 23 new_stack(0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 10 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 init_numdebug(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5  void *tmp;  tmp = (haha_this_sux()); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 32 
@@ -10,6 +10,6 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_retur
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 18  call_lbl_0: calling(0, 18019193851472295513UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 163  call_lbl_1: calling(1, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 15  register_stack_var("main|tmp|0", LIBNUMDEBUG_THREAD_NUM(), "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 15  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 15  if (____numdebug_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 286  if (____numdebug_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 234  if (____numdebug_replaying) { goto lbl_0; } 
