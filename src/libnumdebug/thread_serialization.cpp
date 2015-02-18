@@ -3,35 +3,49 @@
 #include <assert.h>
 #include <string.h>
 
+#include "thread_ctx.h"
+
 using namespace std;
 
 unsigned char *serialize_thread_hierarchy(
-        map<unsigned, pair<unsigned, unsigned> > *child_to_parent_threads,
+        map<unsigned, thread_ctx *> *thread_ctxs,
         uint64_t *out_len) {
-    unsigned int nthreads = child_to_parent_threads->size();
+    unsigned int nthreads = thread_ctxs->size();
     uint64_t len = nthreads * 3 * sizeof(unsigned);
     unsigned char *serialized = (unsigned char *)malloc(len);
 
     unsigned char *iter = serialized;
-    for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
-            child_to_parent_threads->begin(), e =
-            child_to_parent_threads->end(); i != e; i++) {
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs->begin(),
+            e = thread_ctxs->end(); i != e; i++) {
         unsigned thread = i->first;
-        pair<unsigned, unsigned> info = i->second;
-        unsigned parent = info.first;
-        unsigned relation = info.second;
+        thread_ctx *ctx = i->second;
+        if (!ctx->has_parent()) {
+            /*
+             * The main thread may not have a parent if this is a
+             * single-threaded program (or if we are not checkpointing inside a
+             * parallel region. However, it may have a parent because pthreads
+             * are re-used by OMP for nested parallel regions.
+             */
+            assert(thread == 0);
+            nthreads--;
+        } else {
+            unsigned parent = ctx->get_parent();
+            unsigned relation = ctx->get_relation_to_parent();
 
-        memcpy(iter, &thread, sizeof(thread));
-        iter += sizeof(thread);
+            memcpy(iter, &thread, sizeof(thread));
+            iter += sizeof(thread);
 
-        memcpy(iter, &parent, sizeof(parent));
-        iter += sizeof(parent);
+            memcpy(iter, &parent, sizeof(parent));
+            iter += sizeof(parent);
 
-        memcpy(iter, &relation, sizeof(relation));
-        iter += sizeof(parent);
+            memcpy(iter, &relation, sizeof(relation));
+            iter += sizeof(parent);
+        }
     }
 
+    len = nthreads * 3 * sizeof(unsigned);
     assert(iter == serialized + len);
+    serialized = (unsigned char *)realloc(serialized, len);
 
     *out_len = len;
     return serialized;
