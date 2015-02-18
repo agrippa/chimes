@@ -73,19 +73,19 @@ static thread_ctx *get_context_for(unsigned tid);
 static numdebug_stack stack_tracker;
 static vector<int> trace;
 static unsigned int trace_index = 0;
-static set<size_t> changed_groups;
+
 static map<void *, heap_allocation *> heap;
+static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
+
 static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static size_t return_alias;
 static vector<size_t> return_aliases;
-static int calling_lbl = -1;
 static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
-static map<unsigned, vector<void *> > parent_vars;
 
 static map<unsigned, thread_ctx *> thread_ctxs;
 static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
@@ -607,9 +607,11 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #endif
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
-    assert(program_stack->size() == 0 || calling_lbl >= 0);
-    if (calling_lbl >= 0) {
-        stack_tracker.push(calling_lbl);
+
+    int calling_label = ctx->get_calling_label();
+    assert(program_stack->size() == 0 || calling_label >= 0);
+    if (calling_label >= 0) {
+        stack_tracker.push(calling_label);
     }
     program_stack->push_back(new stack_frame());
     ctx->increment_stack_nesting();
@@ -668,7 +670,8 @@ void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(CALLING);
 #endif
-    calling_lbl = lbl;
+    thread_ctx *ctx = get_my_context();
+    ctx->set_calling_label(lbl);
     return_alias = set_return_alias;
 
     if (parent_aliases_capacity < naliases) {
@@ -826,7 +829,7 @@ int alias_group_changed(int ngroups, ...) {
         size_t group = va_arg(vl, size_t);
 
         if (valid_group(group)) {
-            changed_groups.insert(group);
+            get_my_context()->add_changed_group(group);
         }
     }
     va_end(vl);
@@ -852,8 +855,11 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
         if (n_ptr_field_offsets > 0) free(ptr_field_offsets);
     }
 
+    assert(pthread_rwlock_wrlock(&heap_lock) == 0);
     assert(heap.find(new_ptr) == heap.end());
     heap[new_ptr] = alloc;
+    assert(pthread_rwlock_unlock(&heap_lock) == 0);
+
     if (alias_to_heap.find(group) == alias_to_heap.end()) {
         alias_to_heap[group] = new vector<heap_allocation *>();
     }
@@ -916,8 +922,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
     void *new_ptr = realloc(ptr, nbytes);
 
     if (ptr != NULL) {
-        map<void *, heap_allocation *>::iterator alloc_ptr = heap.find(ptr);
-        assert(alloc_ptr != heap.end());
+        map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap(ptr);
 
         heap_allocation *alloc = alloc_ptr->second;
         assert(alloc->get_alias_group() == group);
@@ -974,7 +979,10 @@ void free_helper(void *ptr) {
         std::find(seq_allocs->begin(), seq_allocs->end(), in_heap->second);
     assert(in_heap_sequence_groups != seq_allocs->end());
 
+    assert(pthread_rwlock_wrlock(&heap_lock) == 0);
     heap.erase(in_heap);
+    assert(pthread_rwlock_unlock(&heap_lock) == 0);
+
     alias_to_heap[group]->erase(in_alias_to_heap);
 
     seq_allocs->erase(in_heap_sequence_groups);
@@ -985,8 +993,12 @@ void free_helper(void *ptr) {
 }
 
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
+
+    assert(pthread_rwlock_rdlock(&heap_lock) == 0);
     map<void *, heap_allocation *>::iterator in_heap = heap.find(ptr);
     assert(in_heap != heap.end());
+    assert(pthread_rwlock_unlock(&heap_lock) == 0);
+
     assert(in_heap->second->get_address() == ptr);
 
     return in_heap;
@@ -1241,21 +1253,29 @@ void checkpoint() {
             }
 
             //TODO use change aliases to reduce checkpoint size
-            set<size_t> all_changed;
-            for (set<size_t>::iterator i = changed_groups.begin(), e =
-                    changed_groups.end(); i != e; i++) {
-                size_t group = *i;
-                if (aliased_groups.find(group) != aliased_groups.end()) {
-                    for (set<size_t>::iterator iter =
-                            aliased_groups[group]->begin(), end =
-                            aliased_groups[group]->end(); iter != end; iter++) {
-                        changed_groups.insert(*iter);
+            set<size_t> *all_changed = new set<size_t>();
+            for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+                    e = thread_ctxs.end(); i != e; i++) {
+                thread_ctx *ctx = i->second;
+                set<size_t> *changed = ctx->get_changed_groups();
+
+                for (set<size_t>::iterator ii = changed->begin(),
+                        ee = changed->end(); ii != ee; ii++) {
+                    size_t group = *ii;
+
+                    if (aliased_groups.find(group) != aliased_groups.end()) {
+                        for (set<size_t>::iterator iter =
+                                aliased_groups[group]->begin(), end =
+                                aliased_groups[group]->end(); iter != end;
+                                iter++) {
+                            all_changed->insert(*iter);
+                        }
+                    } else {
+                        all_changed->insert(group);
                     }
-                } else {
-                    changed_groups.insert(group);
                 }
+                ctx->clear_changed_groups();
             }
-            changed_groups.clear();
 
             checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
                     sizeof(checkpoint_thread_ctx));
@@ -1529,7 +1549,8 @@ void *checkpoint_func(void *data) {
 }
 
 unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
-    parent_vars[get_my_tid()].clear();
+    thread_ctx *ctx = get_my_context();
+    ctx->clear_parent_vars();
 
     stack_tracker.push(lbl);
 
@@ -1538,7 +1559,7 @@ unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
 
     for (unsigned i = 0; i < nlocals; i++) {
         void *addr = va_arg(vl, void *);
-        parent_vars[get_my_tid()].push_back(addr);
+        ctx->add_parent_var(addr);
     }
 
     va_end(vl);
@@ -1641,17 +1662,15 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
     stack->push_back(new stack_frame());
     ctx->increment_stack_nesting();
 
-    vector<stack_frame *> *parent_stack = get_stack_for(parent);
-
-    assert(parent_vars.find(parent) != parent_vars.end());
-    vector<void *> parent_locals = parent_vars[parent];
-    assert(parent_locals.size() == nlocals);
+    thread_ctx *parent_ctx = get_context_for(parent);
+    vector<stack_frame *> *parent_stack = parent_ctx->get_stack();
+    assert(parent_ctx->parent_vars_size() == nlocals);
 
     va_list vl;
     va_start(vl, nlocals);
     for (unsigned l = 0; l < nlocals; l++) {
         void *child_addr = va_arg(vl, void *);
-        void *parent_addr = parent_locals[l];
+        void *parent_addr = parent_ctx->get_parent_var(l);
         stack_var *parent_var = find_var(parent_addr, parent_stack);
         assert(parent_var);
 
