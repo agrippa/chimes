@@ -62,6 +62,7 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl);
 static std::vector<stack_frame *> *get_my_stack();
+static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
 
 // global data structures that must persist across library calls
@@ -81,7 +82,7 @@ static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
 static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
-static std::vector<void *> parent_vars;
+static map<unsigned, vector<void *> > parent_vars;
 
 /*
  * A mapping from the libnumdebug-assigned thread ID to the program stack for
@@ -1537,7 +1538,7 @@ void *checkpoint_func(void *data) {
 }
 
 unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
-    parent_vars.clear();
+    parent_vars[get_my_tid()].clear();
 
     stack_tracker.push(lbl);
 
@@ -1546,18 +1547,29 @@ unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
 
     for (unsigned i = 0; i < nlocals; i++) {
         void *addr = va_arg(vl, void *);
-        parent_vars.push_back(addr);
+        parent_vars[get_my_tid()].push_back(addr);
     }
 
     va_end(vl);
 
-    pthread_t self = pthread_self();
+    return get_my_tid();
+}
 
-    assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
-    unsigned self_id = pthread_to_id[self];
-    assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+static stack_var *find_var(void *addr,
+        vector<stack_frame *> *parent_stack) {
+    for (vector<stack_frame *>::reverse_iterator i = parent_stack->rbegin(),
+            e = parent_stack->rend(); i != e; i++) {
+        stack_frame *frame = *i;
 
-    return self_id;
+        for (stack_frame::iterator ii = frame->begin(), ee = frame->end();
+                ii != ee; ii++) {
+            string name = ii->first;
+            stack_var *info = ii->second;
+
+            if (info->get_address() == addr) return info;
+        }
+    }
+    return NULL;
 }
 
 unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
@@ -1630,10 +1642,91 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
     }
     assert(pthread_mutex_unlock(&child_to_parent_threads_mutex) == 0);
 
+    std::vector<stack_frame *> *stack;
+    if (program_stacks.find(get_my_tid()) == program_stacks.end()) {
+        stack = new std::vector<stack_frame *>();
+        program_stacks[get_my_tid()] = stack;
+    } else {
+        stack = program_stacks[get_my_tid()];
+    }
+    stack->push_back(new stack_frame());
+    stack_nesting[get_my_tid()]++;
+
+    vector<stack_frame *> *parent_stack = program_stacks[parent];
+
+    assert(parent_vars.find(parent) != parent_vars.end());
+    vector<void *> parent_locals = parent_vars[parent];
+    assert(parent_locals.size() == nlocals);
+
+    va_list vl;
+    va_start(vl, nlocals);
+    for (unsigned l = 0; l < nlocals; l++) {
+        void *child_addr = va_arg(vl, void *);
+        void *parent_addr = parent_locals[l];
+        stack_var *parent_var = find_var(parent_addr, parent_stack);
+        assert(parent_var);
+
+        stack_var *child_var = new stack_var(parent_var->get_name().c_str(),
+                parent_var->get_type().c_str(), child_addr,
+                parent_var->get_size(), parent_var->check_is_ptr());
+        for (vector<int>::iterator i = parent_var->get_ptr_offsets()->begin(),
+                e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
+            child_var->add_pointer_offset(*i);
+        }
+        stack->back()->add_stack_var(child_var);
+    }
+    va_end(vl);
+
     return global_tid;
 }
 
 void leaving_omp_parallel() {
+    unsigned parent = get_my_tid();
+
+    vector<map<unsigned, pair<unsigned, unsigned> >::iterator> to_erase;
+
+    for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
+            child_to_parent_threads.begin(), e = child_to_parent_threads.end();
+            i != e; i++) {
+        unsigned thread = i->first;
+        unsigned this_parent = i->second.first;
+        if (this_parent == parent) {
+            // This is a child thread that just exited, clean it up
+            vector<stack_frame *> *program_stack = get_stack_for(thread);
+            stack_frame *curr = program_stack->back();
+            program_stack->pop_back();
+            delete curr;
+
+            if (program_stacks[thread]->size() == 0) {
+                program_stacks.erase(program_stacks.find(thread));
+
+                vector<map<pthread_t, unsigned>::iterator> pthreads_to_delete;
+                for (map<pthread_t, unsigned>::iterator ii =
+                        pthread_to_id.begin(), ee = pthread_to_id.end();
+                        ii != ee; ii++) {
+                    if (ii->second == thread) {
+                        pthreads_to_delete.push_back(ii);
+                    }
+                }
+
+                for (vector<map<pthread_t, unsigned>::iterator>::iterator ii =
+                        pthreads_to_delete.begin(), ee = pthreads_to_delete.end();
+                        ii != ee; ii++) {
+                    map<pthread_t, unsigned>::iterator target = *ii;
+                    pthread_to_id.erase(target);
+                }
+
+                to_erase.push_back(child_to_parent_threads.find(thread));
+            }
+        }
+    }
+
+    for (vector<map<unsigned,
+                pair<unsigned, unsigned> >::iterator>::iterator i =
+                to_erase.begin(), e = to_erase.end(); i != e; i++) {
+        map<unsigned, pair<unsigned, unsigned> >::iterator target = *i;
+        child_to_parent_threads.erase(target);
+    }
 }
 
 static unsigned get_my_tid() {
@@ -1647,15 +1740,17 @@ static unsigned get_my_tid() {
     return self_id;
 }
 
-static std::vector<stack_frame *> *get_my_stack() {
-    unsigned self_id = get_my_tid();
-
+static std::vector<stack_frame *> *get_stack_for(unsigned self_id) {
     assert(pthread_mutex_lock(&program_stacks_mutex) == 0);
     assert(program_stacks.find(self_id) != program_stacks.end());
     std::vector<stack_frame *> *stack = program_stacks[self_id];
     assert(pthread_mutex_unlock(&program_stacks_mutex) == 0);
 
     return stack;
+}
+
+static std::vector<stack_frame *> *get_my_stack() {
+    return get_stack_for(get_my_tid());
 }
 
 void onexit() {
