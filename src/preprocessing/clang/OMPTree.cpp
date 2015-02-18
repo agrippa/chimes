@@ -81,6 +81,8 @@ OMPRegion *OMPTree::find_containing_region(const clang::Stmt *d) {
         if (isBetween(loc, region->get_start(), region->get_end())) {
             return region;
         }
+
+        if (region->get_parent() != NULL) todo.push_back(region->get_parent());
     }
     return NULL;
 }
@@ -123,7 +125,13 @@ std::string OMPTree::region_str(OMPRegion *region) {
         calls_in_region = calls_in_regions[region]->size();
     }
 
-    ss << "{lbl=" << region->get_lbl() << ", " << calls_in_region << " calls}";
+    ss << "{lbl=" << region->get_lbl() << ", " << calls_in_region <<
+        " calls, children=[";
+    for (std::vector<OMPRegion *>::iterator i = region->get_children().begin(),
+            e = region->get_children().end(); i != e; i++) {
+        ss << " " << (*i)->get_lbl();
+    }
+    ss << " ]}";
 
     return ss.str();
 }

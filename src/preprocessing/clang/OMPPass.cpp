@@ -226,8 +226,10 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         //TODO kinda hacky....
         std::stringstream entering_ss;
-        entering_ss << "; call_lbl_" << lbl << ": entering_omp_parallel(" << lbl
-            << ", " << private_vars.size();
+        entering_ss << "; " <<
+            "call_lbl_" << lbl << ": " <<
+            "unsigned ____numdebug_parent_thread = entering_omp_parallel(" <<
+            lbl << ", " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             entering_ss << ", &" << *varsi;
@@ -237,7 +239,9 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
         InsertTextAfterToken(pre_loc, entering_ss.str());
 
         std::stringstream register_ss;
-        register_ss << " register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), " << private_vars.size();
+        register_ss << " const unsigned ____numdebug_global_tid = " <<
+            "register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), " <<
+            "____numdebug_parent_thread, " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             register_ss << ", &" << *varsi;

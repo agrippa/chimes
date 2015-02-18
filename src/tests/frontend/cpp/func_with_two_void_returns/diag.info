@@ -8,9 +8,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 23 new_stack(0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 11 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 16 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 33 new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", LIBNUMDEBUG_THREAD_NUM(), "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", LIBNUMDEBUG_THREAD_NUM(), "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 33 new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 33 init_numdebug(); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 39  if (____numdebug_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5  call_lbl_0: calling(0, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 130  call_lbl_1: calling(1, 0UL, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 286  if (____numdebug_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 234  if (____numdebug_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } }  } 

@@ -1,43 +1,25 @@
-# 1 "cond_ptr_return.cpp.pre.transformed.cpp"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 175 "<built-in>" 3
-# 1 "<command line>" 1
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "nested_parallel.cpp.pre.transformed.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 147 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "cond_ptr_return.cpp.pre.transformed.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 175 "<built-in>" 3
-# 1 "<command line>" 1
-
+# 1 "<command-line>" 2
+# 1 "nested_parallel.cpp.pre.transformed.cpp"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
+# 1 "/tmp/numdebug-frontend//"
+# 1 "<built-in>"
+# 1 "<command-line>"
 # 1 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 1
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 147 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
 
@@ -65,14 +47,20 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern unsigned register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 45 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
+# 39 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+}
+inline unsigned LIBNUMDEBUG_THREAD_NUM() { return omp_get_thread_num(); }
+
+
+
 
 
 extern int ____numdebug_replaying;
-# 3 "<command line>" 2
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 4 "<command line>" 2
+# 1 "<command-line>" 2
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 1 "<command-line>" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -191,8 +179,6 @@ typedef __uint32_t __darwin_useconds_t;
 typedef unsigned char __darwin_uuid_t[16];
 typedef char __darwin_uuid_string_t[37];
 
-
-
 # 1 "/usr/include/sys/_pthread/_pthread_types.h" 1 3 4
 # 57 "/usr/include/sys/_pthread/_pthread_types.h" 3 4
 struct __darwin_pthread_handler_rec {
@@ -281,7 +267,7 @@ typedef __darwin_va_list va_list;
 # 37 "/usr/include/sys/stdio.h" 3 4
 extern "C" {
 
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
+int renameat(int, const char *, int, const char *) ;
 
 }
 # 76 "/usr/include/stdio.h" 2 3 4
@@ -347,19 +333,19 @@ char *fgets(char * , int, FILE *);
 
 
 
-FILE *fopen(const char * , const char * ) __asm("_" "fopen");
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
 
 int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
 int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs") ;
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
 size_t fread(void * , size_t, size_t, FILE * );
 FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen") ;
+                 FILE * ) __asm("_" "freopen" );
 int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
 int fseek(FILE *, long, int);
 int fsetpos(FILE *, const fpos_t *);
 long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite") ;
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
 int getc(FILE *);
 int getchar(void);
 char *gets(char *);
@@ -398,7 +384,7 @@ char *ctermid(char *);
 
 
 
-FILE *fdopen(int, const char *) __asm("_" "fdopen");
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
 
 int fileno(FILE *);
 }
@@ -408,7 +394,7 @@ int pclose(FILE *);
 
 
 
-FILE *popen(const char *, const char *) __asm("_" "popen");
+FILE *popen(const char *, const char *) __asm("_" "popen" );
 
 }
 # 336 "/usr/include/stdio.h" 3 4
@@ -449,7 +435,7 @@ int putw(int, FILE *);
 
 __attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
 
-char *tempnam(const char *, const char *) __asm("_" "tempnam") ;
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
 }
 # 411 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
@@ -478,10 +464,10 @@ typedef __darwin_ssize_t ssize_t;
 # 437 "/usr/include/stdio.h" 2 3 4
 
 extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
 }
 
 
@@ -514,9 +500,105 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 5 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp" 2
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
+
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/omp.h" 1 3 4
+# 34 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/omp.h" 3 4
+typedef struct
+{
+  unsigned char _x[64]
+    __attribute__((__aligned__(8)));
+} omp_lock_t;
+
+typedef struct
+{
+  unsigned char _x[80]
+    __attribute__((__aligned__(8)));
+} omp_nest_lock_t;
+
+
+typedef enum omp_sched_t
+{
+  omp_sched_static = 1,
+  omp_sched_dynamic = 2,
+  omp_sched_guided = 3,
+  omp_sched_auto = 4
+} omp_sched_t;
+
+typedef enum omp_proc_bind_t
+{
+  omp_proc_bind_false = 0,
+  omp_proc_bind_true = 1,
+  omp_proc_bind_master = 2,
+  omp_proc_bind_close = 3,
+  omp_proc_bind_spread = 4
+} omp_proc_bind_t;
+
+
+extern "C" {
+
+
+
+
+
+extern void omp_set_num_threads (int) throw ();
+extern int omp_get_num_threads (void) throw ();
+extern int omp_get_max_threads (void) throw ();
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_procs (void) throw ();
+
+extern int omp_in_parallel (void) throw ();
+
+extern void omp_set_dynamic (int) throw ();
+extern int omp_get_dynamic (void) throw ();
+
+extern void omp_set_nested (int) throw ();
+extern int omp_get_nested (void) throw ();
+
+extern void omp_init_lock (omp_lock_t *) throw ();
+extern void omp_destroy_lock (omp_lock_t *) throw ();
+extern void omp_set_lock (omp_lock_t *) throw ();
+extern void omp_unset_lock (omp_lock_t *) throw ();
+extern int omp_test_lock (omp_lock_t *) throw ();
+
+extern void omp_init_nest_lock (omp_nest_lock_t *) throw ();
+extern void omp_destroy_nest_lock (omp_nest_lock_t *) throw ();
+extern void omp_set_nest_lock (omp_nest_lock_t *) throw ();
+extern void omp_unset_nest_lock (omp_nest_lock_t *) throw ();
+extern int omp_test_nest_lock (omp_nest_lock_t *) throw ();
+
+extern double omp_get_wtime (void) throw ();
+extern double omp_get_wtick (void) throw ();
+
+extern void omp_set_schedule (omp_sched_t, int) throw ();
+extern void omp_get_schedule (omp_sched_t *, int *) throw ();
+extern int omp_get_thread_limit (void) throw ();
+extern void omp_set_max_active_levels (int) throw ();
+extern int omp_get_max_active_levels (void) throw ();
+extern int omp_get_level (void) throw ();
+extern int omp_get_ancestor_thread_num (int) throw ();
+extern int omp_get_team_size (int) throw ();
+extern int omp_get_active_level (void) throw ();
+
+extern int omp_in_final (void) throw ();
+
+extern int omp_get_cancellation (void) throw ();
+extern omp_proc_bind_t omp_get_proc_bind (void) throw ();
+
+extern void omp_set_default_device (int) throw ();
+extern int omp_get_default_device (void) throw ();
+extern int omp_get_num_devices (void) throw ();
+extern int omp_get_num_teams (void) throw ();
+extern int omp_get_team_num (void) throw ();
+
+extern int omp_is_initial_device (void) throw ();
+
+
+}
+# 3 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
+# 9 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -526,8 +608,6 @@ typedef enum {
  P_PID,
  P_PGID
 } idtype_t;
-
-
 
 
 
@@ -986,8 +1066,7 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 155 "/usr/include/sys/signal.h" 2 3 4
+
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1067,43 +1146,43 @@ void (*signal(int, void (*)(int)))(int);
 # 110 "/usr/include/sys/wait.h" 2 3 4
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 72 "/usr/include/sys/resource.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 1 3 4
-# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 3 4
-# 1 "/usr/include/stdint.h" 1 3 4
-# 18 "/usr/include/stdint.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 1 3 4
+# 9 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 1 3 4
+# 27 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 3 4
 # 1 "/usr/include/sys/_types/_int8_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int8_t.h" 3 4
 typedef signed char int8_t;
-# 19 "/usr/include/stdint.h" 2 3 4
+# 28 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int16_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int16_t.h" 3 4
 typedef short int16_t;
-# 20 "/usr/include/stdint.h" 2 3 4
+# 29 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int32_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int32_t.h" 3 4
 typedef int int32_t;
-# 21 "/usr/include/stdint.h" 2 3 4
+# 30 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int64_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int64_t.h" 3 4
 typedef long long int64_t;
-# 22 "/usr/include/stdint.h" 2 3 4
+# 31 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 # 1 "/usr/include/_types/_uint8_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint8_t.h" 3 4
 typedef unsigned char uint8_t;
-# 24 "/usr/include/stdint.h" 2 3 4
+# 33 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint16_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint16_t.h" 3 4
 typedef unsigned short uint16_t;
-# 25 "/usr/include/stdint.h" 2 3 4
+# 34 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint32_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint32_t.h" 3 4
 typedef unsigned int uint32_t;
-# 26 "/usr/include/stdint.h" 2 3 4
+# 35 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint64_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint64_t.h" 3 4
 typedef unsigned long long uint64_t;
-# 27 "/usr/include/stdint.h" 2 3 4
+# 36 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 
 typedef int8_t int_least8_t;
@@ -1130,28 +1209,26 @@ typedef uint64_t uint_fast64_t;
 
 
 
-
-
 # 1 "/usr/include/sys/_types/_intptr_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_intptr_t.h" 3 4
 typedef __darwin_intptr_t intptr_t;
-# 54 "/usr/include/stdint.h" 2 3 4
+# 63 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uintptr_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uintptr_t.h" 3 4
 typedef unsigned long uintptr_t;
-# 55 "/usr/include/stdint.h" 2 3 4
+# 64 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 
 
 # 1 "/usr/include/_types/_intmax_t.h" 1 3 4
 # 32 "/usr/include/_types/_intmax_t.h" 3 4
 typedef long int intmax_t;
-# 59 "/usr/include/stdint.h" 2 3 4
+# 68 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uintmax_t.h" 1 3 4
 # 32 "/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
-# 60 "/usr/include/stdint.h" 2 3 4
-# 65 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 2 3 4
+# 69 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
+# 10 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 2 3 4
 # 73 "/usr/include/sys/resource.h" 2 3 4
 
 
@@ -1168,14 +1245,7 @@ struct timeval
  __darwin_suseconds_t tv_usec;
 };
 # 81 "/usr/include/sys/resource.h" 2 3 4
-
-
-
-
-
-
-
-
+# 89 "/usr/include/sys/resource.h" 3 4
 typedef __uint64_t rlim_t;
 # 152 "/usr/include/sys/resource.h" 3 4
 struct rusage {
@@ -1305,15 +1375,15 @@ struct proc_rlimit_control_wakeupmon {
 extern "C" {
 int getpriority(int, id_t);
 
-int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
+int getiopolicy_np(int, int) ;
 
-int getrlimit(int, struct rlimit *) __asm("_" "getrlimit") ;
+int getrlimit(int, struct rlimit *) __asm("_" "getrlimit" );
 int getrusage(int, struct rusage *);
 int setpriority(int, id_t, int);
 
-int setiopolicy_np(int, int, int) __attribute__((availability(macosx,introduced=10.5)));
+int setiopolicy_np(int, int, int) ;
 
-int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit") ;
+int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 }
 # 111 "/usr/include/sys/wait.h" 2 3 4
 # 186 "/usr/include/sys/wait.h" 3 4
@@ -1343,21 +1413,21 @@ _OSSwapInt32(
 )
 {
 
-    return __builtin_bswap32(_data);
 
 
-
+    __asm__ ("bswap   %0" : "+r" (_data));
+    return _data;
 
 }
-
-
+# 91 "/usr/include/libkern/i386/_OSByteOrder.h" 3 4
 static inline
 __uint64_t
 _OSSwapInt64(
     __uint64_t _data
 )
 {
-    return __builtin_bswap64(_data);
+    __asm__ ("bswap   %0" : "+r" (_data));
+    return _data;
 }
 # 67 "/usr/include/libkern/_OSByteOrder.h" 2 3 4
 # 131 "/usr/include/sys/_endian.h" 2 3 4
@@ -1410,10 +1480,10 @@ union wait {
 };
 # 247 "/usr/include/sys/wait.h" 3 4
 extern "C" {
-pid_t wait(int *) __asm("_" "wait") ;
-pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid") ;
+pid_t wait(int *) __asm("_" "wait" );
+pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid" );
 
-int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid") ;
+int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid" );
 
 
 pid_t wait3(int *, int, struct rusage *);
@@ -1423,23 +1493,12 @@ pid_t wait4(pid_t, int *, int, struct rusage *);
 # 66 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/alloca.h" 1 3 4
-# 29 "/usr/include/alloca.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 30 "/usr/include/alloca.h" 2 3 4
-
+# 31 "/usr/include/alloca.h" 3 4
 extern "C" {
 void *alloca(size_t);
 }
 # 68 "/usr/include/stdlib.h" 2 3 4
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 74 "/usr/include/stdlib.h" 2 3 4
-
-
+# 76 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/_types/_ct_rune_t.h" 1 3 4
 # 31 "/usr/include/sys/_types/_ct_rune_t.h" 3 4
 typedef __darwin_ct_rune_t ct_rune_t;
@@ -1468,12 +1527,6 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
-
-
-
-
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1506,14 +1559,14 @@ void *malloc(size_t);
 int mblen(const char *, size_t);
 size_t mbstowcs(wchar_t * , const char * , size_t);
 int mbtowc(wchar_t * , const char * , size_t);
-int posix_memalign(void **, size_t, size_t) __attribute__((availability(macosx,introduced=10.6)));
+int posix_memalign(void **, size_t, size_t) ;
 void qsort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 int rand(void);
 void *realloc(void *, size_t);
 void srand(unsigned);
-double strtod(const char *, char **) __asm("_" "strtod") ;
-float strtof(const char *, char **) __asm("_" "strtof") ;
+double strtod(const char *, char **) __asm("_" "strtod" );
+float strtof(const char *, char **) __asm("_" "strtof" );
 long strtol(const char *, char **, int);
 long double
   strtold(const char *, char **);
@@ -1527,7 +1580,7 @@ unsigned long
 unsigned long long
   strtoull(const char *, char **, int);
 
-int system(const char *) __asm("_" "system") __attribute__((availability(macosx,introduced=10.0)));
+int system(const char *) __asm("_" "system" ) ;
 size_t wcstombs(char * , const wchar_t * , size_t);
 int wctomb(char *, wchar_t);
 
@@ -1556,7 +1609,7 @@ long mrand48(void);
 long nrand48(unsigned short[3]);
 int posix_openpt(int);
 char *ptsname(int);
-int putenv(char *) __asm("_" "putenv") ;
+int putenv(char *) __asm("_" "putenv" );
 long random(void);
 int rand_r(unsigned *);
 
@@ -1566,9 +1619,9 @@ char *realpath(const char * , char * ) __asm("_" "realpath" "$DARWIN_EXTSN");
 
 unsigned short
  *seed48(unsigned short[3]);
-int setenv(const char *, const char *, int) __asm("_" "setenv") ;
+int setenv(const char *, const char *, int) __asm("_" "setenv" );
 
-void setkey(const char *) __asm("_" "setkey") ;
+void setkey(const char *) __asm("_" "setkey" );
 
 
 
@@ -1581,9 +1634,7 @@ void srandom(unsigned);
 
 int unlockpt(int);
 
-int unsetenv(const char *) __asm("_" "unsetenv") ;
-
-
+int unsetenv(const char *) __asm("_" "unsetenv" );
 
 
 
@@ -1631,14 +1682,14 @@ typedef __darwin_mode_t mode_t;
 
 u_int32_t arc4random(void);
 void arc4random_addrandom(unsigned char * , int );
-void arc4random_buf(void * , size_t ) __attribute__((availability(macosx,introduced=10.7)));
+void arc4random_buf(void * , size_t ) ;
 void arc4random_stir(void);
 u_int32_t
-  arc4random_uniform(u_int32_t ) __attribute__((availability(macosx,introduced=10.7)));
+  arc4random_uniform(u_int32_t ) ;
 
-int atexit_b(void (^)(void)) __attribute__((availability(macosx,introduced=10.6)));
-void *bsearch_b(const void *, const void *, size_t,
-     size_t, int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
+
 
 
 
@@ -1653,7 +1704,7 @@ int cgetset(const char *);
 int cgetstr(char *, const char *, char **);
 int cgetustr(char *, const char *, char **);
 
-int daemon(int, int) __asm("_" "daemon" "$1050") __attribute__((availability(macosx,introduced=10.0,deprecated=10.5)));
+int daemon(int, int) __asm("_" "daemon" "$1050") __attribute__((deprecated));
 char *devname(dev_t, mode_t);
 char *devname_r(dev_t, mode_t, char *buf, int len);
 char *getbsize(int *, long *);
@@ -1664,26 +1715,26 @@ const char
 int heapsort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 
-int heapsort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 int mergesort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 
-int mergesort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void psort(void *, size_t, size_t,
-     int (*)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+     int (*)(const void *, const void *)) ;
 
-void psort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void psort_r(void *, size_t, size_t, void *,
-     int (*)(void *, const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+     int (*)(void *, const void *, const void *)) ;
 
-void qsort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void qsort_r(void *, size_t, size_t, void *,
      int (*)(void *, const void *, const void *));
@@ -1710,34 +1761,39 @@ void *valloc(size_t);
 
 
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
-# 11 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 10 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 2
+
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp" 2
-
-void *foo() {new_stack(0, 0); if (____numdebug_replaying) { goto lbl_0; }
-      lbl_0: int *A; register_stack_var("foo|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 14788649179430747748UL, 0, 0));
-    A[0] = 1;
-
-    if (A[0] == 3) { {
-        alias_group_changed(3, (size_t)(1033287854950310476UL), (size_t)(12536050798107062784UL), (size_t)(14788649179430747748UL)); rm_stack(true, 14788649179430747748UL); return A;
-    } }
-
-    alias_group_changed(3, (size_t)(1033287854950310476UL), (size_t)(12536050798107062784UL), (size_t)(14788649179430747748UL)); rm_stack(true, 14788649179430747748UL); return __null;
-}
+# 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
 
 int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 7988338345923788884UL, 0); tmp = (foo());
-    alias_group_changed(1, (size_t)(9132794705087058270UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = (3);
+      lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } b = (4);
+      lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { exit(42); } } } c = (5); call_lbl_1: unsigned ____numdebug_parent_thread = entering_omp_parallel(1, 3, &a, &b, &c);
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
+#pragma omp parallel firstprivate(a) private(b, c)
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
+
+    { const unsigned ____numdebug_global_tid = register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 3, &a, &b, &c); if (____numdebug_replaying) { goto lbl_3; }
+          lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { exit(42); } } } inside = (6); call_lbl_2: unsigned ____numdebug_parent_thread = entering_omp_parallel(2, 1, &inside);
+# 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
+#pragma omp parallel private(inside)
+# 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
+
+        { const unsigned ____numdebug_global_tid = register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 1, &inside); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+            alias_group_changed(7, (size_t)(335588464056153169UL), (size_t)(1388457574958923572UL), (size_t)(2394767282369806426UL), (size_t)(4453946100683459683UL), (size_t)(6213761567678051020UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
+             call_lbl_0: calling(0, 0UL, 0); checkpoint();
+        } leaving_omp_parallel();
+    } leaving_omp_parallel();
+
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(8715185705475396311UL, 4, 0, 12536050798107062784UL, 14788649179430747748UL, 9132794705087058270UL, 7988338345923788884UL, 1033287854950310476UL, 14788649179430747748UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(2139544371637214106UL, 1, 0, 1388457574958923572UL, 18293662412874621885UL);
     return 0;
 }
 

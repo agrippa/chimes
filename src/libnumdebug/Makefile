@@ -4,7 +4,8 @@ GXX_FLAGS=-g -fPIC -Wall
 NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20
 SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
     global_serialization.cpp numdebug_stack.cpp heap_allocation.cpp \
-    type_info.cpp serialization_common.cpp perf_profile.cpp
+    type_info.cpp serialization_common.cpp perf_profile.cpp \
+    thread_serialization.cpp
 
 IS_CLANG := $(shell clang++ --version | grep clang | wc -l)
 ifeq ($(IS_CLANG),1)

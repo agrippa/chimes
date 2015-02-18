@@ -57,6 +57,44 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
     return serialization;
 }
 
+unsigned char *serialize_program_stacks(
+        map<unsigned, vector<stack_frame *> *> *program_stacks,
+        uint64_t *out_len) {
+    unsigned nthreads = program_stacks->size();
+    unsigned char *serialized = (unsigned char *)malloc(sizeof(nthreads));
+    uint64_t total_len = sizeof(nthreads);
+    memcpy(serialized, &nthreads, sizeof(nthreads));
+
+    for (map<unsigned, vector<stack_frame *> *>::iterator i =
+            program_stacks->begin(), e = program_stacks->end(); i != e; i++) {
+        unsigned thread_id = i->first;
+        vector<stack_frame *> *stack = i->second;
+
+        uint64_t stack_serialized_len;
+        unsigned char *stack_serialized = serialize_program_stack(stack,
+                &stack_serialized_len);
+
+        size_t new_len = total_len + sizeof(thread_id) +
+            sizeof(stack_serialized_len) + stack_serialized_len;
+        serialized = (unsigned char *)realloc(serialized, new_len);
+
+        unsigned char *base = serialized + total_len;
+        memcpy(base, &thread_id, sizeof(thread_id));
+        base += sizeof(thread_id);
+
+        memcpy(base, &stack_serialized_len, sizeof(stack_serialized_len));
+        base += sizeof(stack_serialized_len);
+
+        memcpy(base, stack_serialized, stack_serialized_len);
+        free(stack_serialized);
+
+        total_len = new_len;
+    }
+
+    *out_len = total_len;
+    return serialized;
+}
+
 vector<stack_frame *> *deserialize_program_stack(
         unsigned char *stack_serialized, uint64_t stack_serialized_len) {
     vector<stack_frame *> *stack = new vector<stack_frame *>();
@@ -82,4 +120,35 @@ vector<stack_frame *> *deserialize_program_stack(
     }
 
     return stack;
+}
+
+map<unsigned, vector<stack_frame *> *> *deserialize_program_stacks(
+        unsigned char *stacks_serialized, uint64_t stacks_serialized_len) {
+    map<unsigned, vector<stack_frame *> *> *result =
+        new map<unsigned, vector<stack_frame *> *>();
+
+    unsigned char *local = stacks_serialized;
+    unsigned nthreads;
+    memcpy(&nthreads, local, sizeof(nthreads));
+    local += sizeof(nthreads);
+
+    for (unsigned i = 0; i < nthreads; i++) {
+        unsigned thread_id;
+        memcpy(&thread_id, local, sizeof(thread_id));
+        local += sizeof(thread_id);
+
+        uint64_t stack_serialized_len;
+        memcpy(&stack_serialized_len, local, sizeof(stack_serialized_len));
+        local += sizeof(stack_serialized_len);
+
+        vector<stack_frame *> *stack = deserialize_program_stack(local,
+                stack_serialized_len);
+
+        assert(result->find(thread_id) == result->end());
+        (*result)[thread_id] = stack;
+
+        local += stack_serialized_len;
+    }
+
+    return result;
 }

@@ -12,7 +12,7 @@ OMP_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/openmp'
 OMP_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/openmp'
 OMP_H = find_file('omp.h', '/usr/')
 
-SIMPLE_TESTS = ['basic_parallel.cpp']
+SIMPLE_TESTS = ['basic_parallel.cpp', 'nested_parallel.cpp']
 
 TESTS = []
 for simple in SIMPLE_TESTS:

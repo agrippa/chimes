@@ -11,9 +11,8 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     actual_name = actual_name.substr(0, actual_name.find('|'));
 
     std::stringstream ss;
-    ss << "\"" << alloc->get_mangled_varname() <<
-        "\", LIBNUMDEBUG_THREAD_NUM(), \"" << alloc->get_full_type() <<
-        "\", (void *)(&" << actual_name << "), " <<
+    ss << "\"" << alloc->get_mangled_varname() << "\", \"" <<
+        alloc->get_full_type() << "\", (void *)(&" << actual_name << "), " <<
         "(size_t)" << (alloc->get_type_size_in_bits() / 8) << ", " <<
         (alloc->get_is_ptr() ? "1" : "0") << ", " <<
         (alloc->get_is_struct() ? "1" : "0") << ", " <<
