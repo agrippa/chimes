@@ -62,6 +62,7 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl);
 static std::vector<stack_frame *> *get_my_stack();
+static unsigned get_my_tid();
 
 // global data structures that must persist across library calls
 // static vector<stack_frame *> program_stack;
@@ -114,6 +115,14 @@ static pthread_mutex_t child_to_parent_threads_mutex =
 static unsigned count_threads = 1;
 static pthread_mutex_t count_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 
+/*
+ * Count threads that have hit the checkpoint so that we know when all are
+ * inside.
+ */
+static unsigned threads_in_checkpoint = 0;
+static pthread_mutex_t threads_in_checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t threads_in_checkpoint_cond = PTHREAD_COND_INITIALIZER;
+
 #define PARENT_ALIASES_INIT_SIZE    1024
 static size_t *parent_aliases = NULL;
 static size_t parent_aliases_capacity = 0;
@@ -147,7 +156,7 @@ static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
 
-static int stack_nesting = 0;
+static map<unsigned, int> stack_nesting;
 int ____numdebug_replaying = 0;
 int ____numdebug_rerunning = 0;
 
@@ -173,6 +182,7 @@ void init_numdebug() {
     assert(pthread_to_id.size() == 0);
     pthread_to_id[self] = 0;
     program_stacks[0] = new std::vector<stack_frame *>();
+    stack_nesting[0] = 0;
 
     parent_aliases = (size_t *)malloc(sizeof(size_t) *
             PARENT_ALIASES_INIT_SIZE);
@@ -613,7 +623,7 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
         stack_tracker.push(calling_lbl);
     }
     program_stack->push_back(new stack_frame());
-    stack_nesting++;
+    stack_nesting[get_my_tid()]++;
 
     /*
      * If this is the first new_stack, we just entered main and there are no
@@ -660,9 +670,6 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 
     va_end(vl);
 
-#ifdef VERBOSE
-    fprintf(stderr, "Incrementing stack depth to %d\n", stack_nesting);
-#endif
 #ifdef __NUMDEBUG_PROFILE
     pp.stop_timer(NEW_STACK);
 #endif
@@ -724,12 +731,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
     }
 
     stack_tracker.pop();
-    stack_nesting--;
-#ifdef VERBOSE
-    fprintf(stderr, "Decrementing stack depth to %d\n", stack_nesting);
-#endif
+    stack_nesting[get_my_tid()]--;
 
-    if (____numdebug_rerunning && stack_nesting < 0) {
+    if (____numdebug_rerunning && stack_nesting[get_my_tid()] < 0) {
 #ifdef VERBOSE
         fprintf(stderr, "Exiting replay...\n");
 #endif
@@ -1028,11 +1032,11 @@ typedef struct _checkpoint_thread_ctx {
 static void *checkpoint_func(void *data);
 
 void wait_for_checkpoint() {
-    pthread_mutex_lock(&checkpoint_mutex);
+    assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
     if (checkpoint_thread_running) {
         pthread_join(checkpoint_thread, NULL);
     }
-    pthread_mutex_unlock(&checkpoint_mutex);
+    assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 }
 
 static void update_live_var(string name, stack_var *dead, stack_var *live) {
@@ -1101,6 +1105,23 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
 void checkpoint() {
     new_stack(0, 0);
 
+    assert(pthread_mutex_lock(&threads_in_checkpoint_mutex) == 0);
+    unsigned thread_count = ++threads_in_checkpoint;
+    while (threads_in_checkpoint < pthread_to_id.size()) {
+        assert(pthread_cond_wait(&threads_in_checkpoint_cond,
+                    &threads_in_checkpoint_mutex) == 0);
+    }
+    bool last_thread = (thread_count == pthread_to_id.size());
+    if (last_thread) threads_in_checkpoint = 0;
+
+    /*
+     * On replay, the last thread to hit the checkpoint will skip the wait loop
+     * above, enter this region, perform all the restores, and then set
+     * ____numdebug_replaying to zero so that no other thread enters here.
+     *
+     * Otherwise, the last thread will launch the checkpointing logic and all
+     * other threads will be prevented from entering there.
+     */
     if (____numdebug_replaying) {
 #ifdef VERBOSE
         fprintf(stderr, "Got to the desired checkpoint with a stack size of "
@@ -1189,86 +1210,84 @@ void checkpoint() {
 
         ____numdebug_replaying = 0;
         ____numdebug_rerunning = 1;
-        stack_nesting = 1;
+        for (map<unsigned, int>::iterator i = stack_nesting.begin(),
+                e = stack_nesting.end(); i != e; i++) {
+            i->second = 1;
+        }
+    } else if (last_thread && !checkpoint_thread_running) {
+        assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
-        rm_stack(false, 0);
-        return;
-    }
-
-    if (checkpoint_thread_running) {
-        rm_stack(false, 0);
-        return;
-    }
-
-    pthread_mutex_lock(&checkpoint_mutex);
-
-    if (checkpoint_thread_running) {
-        pthread_mutex_unlock(&checkpoint_mutex);
-        rm_stack(false, 0);
-        return;
-    }
-
-    checkpoint_thread_running = 1;
-
-    /*
-     * At this stage we assume we only have a single stack to checkpoint and it
-     * belongs to the calling thread, so those addresses will remain valid for
-     * checkpointing as long as we're still here. Therefore, we must checkpoint
-     * stack variables from here before returning.
-     *
-     * However, because we control heap allocations through the
-     * malloc/realloc/free wrappers, we can ensure they are only freed once they
-     * have been fully checkpointed. We can return from this function and allow
-     * the host application to mess with the heap however much it likes. We just
-     * need to be sure we know exactly which heap state we need to checkpoint,
-     * and which we don't. That information is maintained by the heap sequence
-     * groups.
-     */
-    curr_seq_no++;
-
-    vector<heap_allocation *> *heap_to_checkpoint =
-        new vector<heap_allocation *>();
-    for (map<void *, heap_allocation *>::iterator heap_iter = heap.begin(),
-            heap_end = heap.end(); heap_iter != heap_end; heap_iter++) {
-        heap_allocation *curr = heap_iter->second;
-        heap_allocation *copy = new heap_allocation();
-        curr->copy(copy);
-        heap_to_checkpoint->push_back(copy);
-    }
-
-    //TODO use change aliases to reduce checkpoint size
-    set<size_t> all_changed;
-    for (set<size_t>::iterator i = changed_groups.begin(), e =
-            changed_groups.end(); i != e; i++) {
-        size_t group = *i;
-        if (aliased_groups.find(group) != aliased_groups.end()) {
-            for (set<size_t>::iterator iter =
-                    aliased_groups[group]->begin(), end =
-                    aliased_groups[group]->end(); iter != end; iter++) {
-                changed_groups.insert(*iter);
-            }
+        if (checkpoint_thread_running) {
+            assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
         } else {
-            changed_groups.insert(group);
+            checkpoint_thread_running = 1;
+
+            /*
+             * At this stage we assume we only have a single stack to checkpoint and it
+             * belongs to the calling thread, so those addresses will remain valid for
+             * checkpointing as long as we're still here. Therefore, we must checkpoint
+             * stack variables from here before returning.
+             *
+             * However, because we control heap allocations through the
+             * malloc/realloc/free wrappers, we can ensure they are only freed once they
+             * have been fully checkpointed. We can return from this function and allow
+             * the host application to mess with the heap however much it likes. We just
+             * need to be sure we know exactly which heap state we need to checkpoint,
+             * and which we don't. That information is maintained by the heap sequence
+             * groups.
+             */
+            curr_seq_no++;
+
+            vector<heap_allocation *> *heap_to_checkpoint =
+                new vector<heap_allocation *>();
+            for (map<void *, heap_allocation *>::iterator heap_iter = heap.begin(),
+                    heap_end = heap.end(); heap_iter != heap_end; heap_iter++) {
+                heap_allocation *curr = heap_iter->second;
+                heap_allocation *copy = new heap_allocation();
+                curr->copy(copy);
+                heap_to_checkpoint->push_back(copy);
+            }
+
+            //TODO use change aliases to reduce checkpoint size
+            set<size_t> all_changed;
+            for (set<size_t>::iterator i = changed_groups.begin(), e =
+                    changed_groups.end(); i != e; i++) {
+                size_t group = *i;
+                if (aliased_groups.find(group) != aliased_groups.end()) {
+                    for (set<size_t>::iterator iter =
+                            aliased_groups[group]->begin(), end =
+                            aliased_groups[group]->end(); iter != end; iter++) {
+                        changed_groups.insert(*iter);
+                    }
+                } else {
+                    changed_groups.insert(group);
+                }
+            }
+            changed_groups.clear();
+
+            checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
+                    sizeof(checkpoint_thread_ctx));
+            thread_ctx->stacks_serialized = serialize_program_stacks(&program_stacks,
+                    &thread_ctx->stacks_serialized_len);
+            thread_ctx->globals_serialized = serialize_globals(&global_vars,
+                    &thread_ctx->globals_serialized_len);
+            thread_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
+                    &child_to_parent_threads,
+                    &thread_ctx->thread_hierarchy_serialized_len);
+            thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
+            thread_ctx->stack_tracker = new std::vector<int>();
+            stack_tracker.copy(thread_ctx->stack_tracker);
+
+            assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+
+            pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
         }
     }
-    changed_groups.clear();
 
-    checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
-            sizeof(checkpoint_thread_ctx));
-    thread_ctx->stacks_serialized = serialize_program_stacks(&program_stacks,
-            &thread_ctx->stacks_serialized_len);
-    thread_ctx->globals_serialized = serialize_globals(&global_vars,
-            &thread_ctx->globals_serialized_len);
-    thread_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
-            &child_to_parent_threads,
-            &thread_ctx->thread_hierarchy_serialized_len);
-    thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
-    thread_ctx->stack_tracker = new std::vector<int>();
-    stack_tracker.copy(thread_ctx->stack_tracker);
-
-    pthread_mutex_unlock(&checkpoint_mutex);
-
-    pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
+    if (last_thread) {
+        assert(pthread_cond_broadcast(&threads_in_checkpoint_cond) == 0);
+    }
+    assert(pthread_mutex_unlock(&threads_in_checkpoint_mutex) == 0);
 
     rm_stack(false, 0);
 }
@@ -1568,9 +1587,16 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
         }
         assert(found);
 
+        assert(pthread_mutex_lock(&count_threads_mutex) == 0);
+        if (global_tid + 1 > count_threads) {
+            count_threads = global_tid + 1;
+        }
+        assert(pthread_mutex_unlock(&count_threads_mutex) == 0);
+
         assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
             pthread_to_id[self] = global_tid;
+            stack_nesting[global_tid] = 0;
         } else {
             assert(global_tid == pthread_to_id[self]);
         }
@@ -1583,13 +1609,14 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
             assert(pthread_mutex_unlock(&count_threads_mutex) == 0);
 
             pthread_to_id[self] = global_tid;
+            stack_nesting[global_tid] = 0;
         } else {
             global_tid = pthread_to_id[self];
         }
         assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
     }
 
-    assert(pthread_mutex_lock(&child_to_parent_threads_mutex));
+    assert(pthread_mutex_lock(&child_to_parent_threads_mutex) == 0);
     if (child_to_parent_threads.find(global_tid) !=
             child_to_parent_threads.end()) {
         // A thread may be a parent of itself
@@ -1601,7 +1628,7 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
         child_to_parent_threads[global_tid] = pair<unsigned, unsigned>(parent,
                 relation);
     }
-    assert(pthread_mutex_unlock(&child_to_parent_threads_mutex));
+    assert(pthread_mutex_unlock(&child_to_parent_threads_mutex) == 0);
 
     return global_tid;
 }
@@ -1609,13 +1636,19 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
 void leaving_omp_parallel() {
 }
 
-static std::vector<stack_frame *> *get_my_stack() {
+static unsigned get_my_tid() {
     pthread_t self = pthread_self();
 
     assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
     assert(pthread_to_id.find(self) != pthread_to_id.end());
     unsigned self_id = pthread_to_id[self];
     assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+
+    return self_id;
+}
+
+static std::vector<stack_frame *> *get_my_stack() {
+    unsigned self_id = get_my_tid();
 
     assert(pthread_mutex_lock(&program_stacks_mutex) == 0);
     assert(program_stacks.find(self_id) != program_stacks.end());
@@ -1629,7 +1662,7 @@ void onexit() {
 #ifdef VERBOSE
     fprintf(stderr, "Locking...\n");
 #endif
-    pthread_mutex_lock(&checkpoint_mutex);
+    assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 #ifdef VERBOSE
     fprintf(stderr, "Done\n");
 #endif
@@ -1642,7 +1675,7 @@ void onexit() {
         fprintf(stderr, "Done\n");
 #endif
     }
-    pthread_mutex_unlock(&checkpoint_mutex);
+    assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 #ifdef __NUMDEBUG_PROFILE
     fprintf(stderr, "%s\n", pp.tostr().c_str());
 #endif
