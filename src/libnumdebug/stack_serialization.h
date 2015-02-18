@@ -1,6 +1,8 @@
 #ifndef STACK_SERIALIZATION_H
 #define STACK_SERIALIZATION_H
 
+#include "thread_ctx.h"
+
 unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
         uint64_t *out_len);
 vector<stack_frame *> *deserialize_program_stack(
@@ -9,7 +11,7 @@ vector<stack_frame *> *deserialize_program_stack(
 map<unsigned, vector<stack_frame *> *> *deserialize_program_stacks(
         unsigned char *stacks_serialized, uint64_t stacks_serialized_len);
 unsigned char *serialize_program_stacks(
-        map<unsigned, vector<stack_frame *> *> *program_stacks,
+        map<unsigned, thread_ctx *> *thread_ctxs,
         uint64_t *out_len);
 
 #endif

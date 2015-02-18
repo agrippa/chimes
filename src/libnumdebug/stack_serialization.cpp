@@ -9,6 +9,7 @@
 #include "stack_frame.h"
 #include "stack_serialization.h"
 #include "serialization_common.h"
+#include "thread_ctx.h"
 
 static void new_stack_frame(unsigned char **stream, uint64_t *stream_capacity,
         uint64_t *stream_len) {
@@ -58,17 +59,18 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
 }
 
 unsigned char *serialize_program_stacks(
-        map<unsigned, vector<stack_frame *> *> *program_stacks,
+        map<unsigned, thread_ctx *> *thread_ctxs,
         uint64_t *out_len) {
-    unsigned nthreads = program_stacks->size();
+    unsigned nthreads = thread_ctxs->size();
     unsigned char *serialized = (unsigned char *)malloc(sizeof(nthreads));
     uint64_t total_len = sizeof(nthreads);
     memcpy(serialized, &nthreads, sizeof(nthreads));
 
-    for (map<unsigned, vector<stack_frame *> *>::iterator i =
-            program_stacks->begin(), e = program_stacks->end(); i != e; i++) {
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs->begin(),
+            e = thread_ctxs->end(); i != e; i++) {
         unsigned thread_id = i->first;
-        vector<stack_frame *> *stack = i->second;
+        thread_ctx *ctx = i->second;
+        vector<stack_frame *> *stack = ctx->get_stack();
 
         uint64_t stack_serialized_len;
         unsigned char *stack_serialized = serialize_program_stack(stack,

@@ -33,6 +33,7 @@
 #include "numdebug_stack.h"
 #include "heap_allocation.h"
 #include "type_info.h"
+#include "thread_ctx.h"
 
 using namespace std;
 
@@ -64,6 +65,8 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
+static thread_ctx *get_my_context();
+static thread_ctx *get_context_for(unsigned tid);
 
 // global data structures that must persist across library calls
 // static vector<stack_frame *> program_stack;
@@ -84,12 +87,8 @@ static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
 static map<unsigned, vector<void *> > parent_vars;
 
-/*
- * A mapping from the libnumdebug-assigned thread ID to the program stack for
- * that thread.
- */
-static std::map<unsigned, std::vector<stack_frame *> *> program_stacks;
-static pthread_mutex_t program_stacks_mutex = PTHREAD_MUTEX_INITIALIZER;
+static map<unsigned, thread_ctx *> thread_ctxs;
+static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * A mapping from the pthread library's representation of a thread to our
@@ -97,16 +96,6 @@ static pthread_mutex_t program_stacks_mutex = PTHREAD_MUTEX_INITIALIZER;
  */
 static std::map<pthread_t, unsigned> pthread_to_id;
 static pthread_mutex_t pthread_to_id_mutex = PTHREAD_MUTEX_INITIALIZER;
-
-/*
- * A mapping from a thread to 1) its parent thread, and 2) its offset from that
- * parent thread. Each child of a given thread will have a unique offset. For
- * the case of nested OMP parallel regions, this offset is the thread num of the
- * child thread.
- */
-static std::map<unsigned, pair<unsigned, unsigned> > child_to_parent_threads;
-static pthread_mutex_t child_to_parent_threads_mutex =
-        PTHREAD_MUTEX_INITIALIZER;
 
 /*
  * count_threads is used to assign every pthread created a unique ID that we use
@@ -157,7 +146,6 @@ static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
 
-static map<unsigned, int> stack_nesting;
 int ____numdebug_replaying = 0;
 int ____numdebug_rerunning = 0;
 
@@ -182,8 +170,7 @@ void init_numdebug() {
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
     pthread_to_id[self] = 0;
-    program_stacks[0] = new std::vector<stack_frame *>();
-    stack_nesting[0] = 0;
+    thread_ctxs[0] = new thread_ctx(self);
 
     parent_aliases = (size_t *)malloc(sizeof(size_t) *
             PARENT_ALIASES_INIT_SIZE);
@@ -618,13 +605,14 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(NEW_STACK);
 #endif
-    std::vector<stack_frame *> *program_stack = get_my_stack();
+    thread_ctx *ctx = get_my_context();
+    std::vector<stack_frame *> *program_stack = ctx->get_stack();
     assert(program_stack->size() == 0 || calling_lbl >= 0);
     if (calling_lbl >= 0) {
         stack_tracker.push(calling_lbl);
     }
     program_stack->push_back(new stack_frame());
-    stack_nesting[get_my_tid()]++;
+    ctx->increment_stack_nesting();
 
     /*
      * If this is the first new_stack, we just entered main and there are no
@@ -713,7 +701,8 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(RM_STACK);
 #endif
-    std::vector<stack_frame *> *program_stack = get_my_stack();
+    thread_ctx *ctx = get_my_context();
+    std::vector<stack_frame *> *program_stack = ctx->get_stack();
     stack_frame *curr = program_stack->back();
     program_stack->pop_back();
     delete curr;
@@ -732,9 +721,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
     }
 
     stack_tracker.pop();
-    stack_nesting[get_my_tid()]--;
+    ctx->decrement_stack_nesting();
 
-    if (____numdebug_rerunning && stack_nesting[get_my_tid()] < 0) {
+    if (____numdebug_rerunning && ctx->get_stack_nesting() < 0) {
 #ifdef VERBOSE
         fprintf(stderr, "Exiting replay...\n");
 #endif
@@ -1135,7 +1124,7 @@ void checkpoint() {
 #endif
        
         // Assert same number of threads
-        assert(unpacked_program_stacks->size() == program_stacks.size());
+        assert(unpacked_program_stacks->size() == thread_ctxs.size());
         assert(unpacked_global_vars->size() == global_vars.size());
         /*
          * restore non-pointers in the stack to have the correct values by
@@ -1148,10 +1137,10 @@ void checkpoint() {
                 unpacked_program_stacks->end(); stacks_iter != stacks_end;
                 stacks_iter++) {
             unsigned tid = stacks_iter->first;
-            assert(program_stacks.find(tid) != program_stacks.end());
+            assert(thread_ctxs.find(tid) != thread_ctxs.end());
 
             restore_program_stack((*unpacked_program_stacks)[tid],
-                    program_stacks[tid]);
+                    thread_ctxs[tid]->get_stack());
         }
 
         /*
@@ -1182,10 +1171,11 @@ void checkpoint() {
          */
         set<void *> updated;
         // For each stack frame
-        for (map<unsigned, vector<stack_frame *> *>::iterator stacks_iter =
-                program_stacks.begin(), stacks_end = program_stacks.end();
+        for (map<unsigned, thread_ctx *>::iterator stacks_iter =
+                thread_ctxs.begin(), stacks_end = thread_ctxs.end();
                 stacks_iter != stacks_end; stacks_iter++) {
-            vector<stack_frame *> *stack = stacks_iter->second;
+            thread_ctx *ctx = stacks_iter->second;
+            vector<stack_frame *> *stack = ctx->get_stack();
 
             for (vector<stack_frame *>::iterator frame_iter =
                     stack->begin(), frame_end = stack->end();
@@ -1211,9 +1201,10 @@ void checkpoint() {
 
         ____numdebug_replaying = 0;
         ____numdebug_rerunning = 1;
-        for (map<unsigned, int>::iterator i = stack_nesting.begin(),
-                e = stack_nesting.end(); i != e; i++) {
-            i->second = 1;
+        for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+                e = thread_ctxs.end(); i != e; i++) {
+            thread_ctx *ctx = i->second;
+            ctx->set_stack_nesting(1);
         }
     } else if (last_thread && !checkpoint_thread_running) {
         assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
@@ -1268,12 +1259,12 @@ void checkpoint() {
 
             checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
                     sizeof(checkpoint_thread_ctx));
-            thread_ctx->stacks_serialized = serialize_program_stacks(&program_stacks,
+            thread_ctx->stacks_serialized = serialize_program_stacks(&thread_ctxs,
                     &thread_ctx->stacks_serialized_len);
             thread_ctx->globals_serialized = serialize_globals(&global_vars,
                     &thread_ctx->globals_serialized_len);
             thread_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
-                    &child_to_parent_threads,
+                    &thread_ctxs,
                     &thread_ctx->thread_hierarchy_serialized_len);
             thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
             thread_ctx->stack_tracker = new std::vector<int>();
@@ -1599,6 +1590,10 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
         }
         assert(found);
 
+        /*
+         * Update count_threads so that on replay we don't have any thread ID
+         * collisions.
+         */
         assert(pthread_mutex_lock(&count_threads_mutex) == 0);
         if (global_tid + 1 > count_threads) {
             count_threads = global_tid + 1;
@@ -1607,8 +1602,11 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
 
         assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
+            assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+            thread_ctxs[global_tid] = new thread_ctx(self);
+            assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+
             pthread_to_id[self] = global_tid;
-            stack_nesting[global_tid] = 0;
         } else {
             assert(global_tid == pthread_to_id[self]);
         }
@@ -1616,43 +1614,34 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
     } else {
         assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
+            /*
+             * If this thread is being launched for the first time here, first
+             * get a globally unique ID for it.
+             */
             assert(pthread_mutex_lock(&count_threads_mutex) == 0);
             global_tid = count_threads++;
             assert(pthread_mutex_unlock(&count_threads_mutex) == 0);
 
+            // Then create a thread ctx for it
+            assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+            thread_ctxs[global_tid] = new thread_ctx(self);
+            assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+
+            // Store the mapping from pthread_t to self
             pthread_to_id[self] = global_tid;
-            stack_nesting[global_tid] = 0;
         } else {
             global_tid = pthread_to_id[self];
         }
         assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
     }
 
-    assert(pthread_mutex_lock(&child_to_parent_threads_mutex) == 0);
-    if (child_to_parent_threads.find(global_tid) !=
-            child_to_parent_threads.end()) {
-        // A thread may be a parent of itself
-        assert(child_to_parent_threads[global_tid].first == global_tid);
-        assert(child_to_parent_threads[global_tid].second == 0);
-        assert(parent == global_tid);
-        assert(relation == 0);
-    } else {
-        child_to_parent_threads[global_tid] = pair<unsigned, unsigned>(parent,
-                relation);
-    }
-    assert(pthread_mutex_unlock(&child_to_parent_threads_mutex) == 0);
-
-    std::vector<stack_frame *> *stack;
-    if (program_stacks.find(get_my_tid()) == program_stacks.end()) {
-        stack = new std::vector<stack_frame *>();
-        program_stacks[get_my_tid()] = stack;
-    } else {
-        stack = program_stacks[get_my_tid()];
-    }
+    thread_ctx *ctx = get_my_context();
+    ctx->push_parent(parent, relation);
+    std::vector<stack_frame *> *stack = ctx->get_stack();
     stack->push_back(new stack_frame());
-    stack_nesting[get_my_tid()]++;
+    ctx->increment_stack_nesting();
 
-    vector<stack_frame *> *parent_stack = program_stacks[parent];
+    vector<stack_frame *> *parent_stack = get_stack_for(parent);
 
     assert(parent_vars.find(parent) != parent_vars.end());
     vector<void *> parent_locals = parent_vars[parent];
@@ -1683,50 +1672,40 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
 void leaving_omp_parallel() {
     unsigned parent = get_my_tid();
 
-    vector<map<unsigned, pair<unsigned, unsigned> >::iterator> to_erase;
+    vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
-    for (map<unsigned, pair<unsigned, unsigned> >::iterator i =
-            child_to_parent_threads.begin(), e = child_to_parent_threads.end();
-            i != e; i++) {
-        unsigned thread = i->first;
-        unsigned this_parent = i->second.first;
-        if (this_parent == parent) {
-            // This is a child thread that just exited, clean it up
-            vector<stack_frame *> *program_stack = get_stack_for(thread);
+    assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+            e = thread_ctxs.end(); i != e; i++) {
+        thread_ctx *ctx = i->second;
+
+        if (ctx->get_parent() == parent) {
+            ctx->pop_parent();
+            vector<stack_frame *> *program_stack = ctx->get_stack();
             stack_frame *curr = program_stack->back();
             program_stack->pop_back();
             delete curr;
 
-            if (program_stacks[thread]->size() == 0) {
-                program_stacks.erase(program_stacks.find(thread));
+            if (program_stack->size() == 0) {
+                // Erase this thread
+                map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
+                        ctx->get_pthread());
+                assert(found != pthread_to_id.end());
+                pthread_to_id.erase(found);
 
-                vector<map<pthread_t, unsigned>::iterator> pthreads_to_delete;
-                for (map<pthread_t, unsigned>::iterator ii =
-                        pthread_to_id.begin(), ee = pthread_to_id.end();
-                        ii != ee; ii++) {
-                    if (ii->second == thread) {
-                        pthreads_to_delete.push_back(ii);
-                    }
-                }
-
-                for (vector<map<pthread_t, unsigned>::iterator>::iterator ii =
-                        pthreads_to_delete.begin(), ee = pthreads_to_delete.end();
-                        ii != ee; ii++) {
-                    map<pthread_t, unsigned>::iterator target = *ii;
-                    pthread_to_id.erase(target);
-                }
-
-                to_erase.push_back(child_to_parent_threads.find(thread));
+                to_erase.push_back(i);
             }
         }
     }
 
-    for (vector<map<unsigned,
-                pair<unsigned, unsigned> >::iterator>::iterator i =
-                to_erase.begin(), e = to_erase.end(); i != e; i++) {
-        map<unsigned, pair<unsigned, unsigned> >::iterator target = *i;
-        child_to_parent_threads.erase(target);
+    for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
+            to_erase.begin(), e = to_erase.end(); i != e; i++) {
+        map<unsigned, thread_ctx *>::iterator curr = *i;
+        thread_ctxs.erase(curr);
     }
+
+    assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 }
 
 static unsigned get_my_tid() {
@@ -1740,13 +1719,21 @@ static unsigned get_my_tid() {
     return self_id;
 }
 
-static std::vector<stack_frame *> *get_stack_for(unsigned self_id) {
-    assert(pthread_mutex_lock(&program_stacks_mutex) == 0);
-    assert(program_stacks.find(self_id) != program_stacks.end());
-    std::vector<stack_frame *> *stack = program_stacks[self_id];
-    assert(pthread_mutex_unlock(&program_stacks_mutex) == 0);
+static thread_ctx *get_context_for(unsigned tid) {
+    assert(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
+    assert(thread_ctxs.find(tid) != thread_ctxs.end());
 
-    return stack;
+    thread_ctx *result = thread_ctxs[tid];
+    assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+    return result;
+}
+
+static thread_ctx *get_my_context() {
+    return get_context_for(get_my_tid());
+}
+
+static std::vector<stack_frame *> *get_stack_for(unsigned tid) {
+    return get_context_for(tid)->get_stack();
 }
 
 static std::vector<stack_frame *> *get_my_stack() {
