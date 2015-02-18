@@ -580,14 +580,16 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     # Compile the input file into an executable
     env = copy_environ()
+    if config.custom_compiler is not None:
+        env['GXX'] = config.custom_compiler
+
     compile_cmd = compile_script_path + ' -k'
-    if type(test.input_files) is str:
-        compile_cmd += ' -i ' + os.path.join(inputs_dir, test.input_files)
-    elif type(test.input_files) is list:
-        for input_file in test.input_files:
-            compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
-    else:
-        raise Exception('Invalid type for input list')
+
+    for flag in config.custom_compiler_flags:
+        compile_cmd += ' -x ' + flag
+
+    for input_file in test.input_files:
+        compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
 
     compile_cmd = add_include_paths(compile_cmd, test.includes)
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
