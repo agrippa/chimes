@@ -36,7 +36,6 @@ void heap_allocation::copy(heap_allocation *dst) {
     dst->size = size;
     dst->alias_group = alias_group;
     dst->is_cuda_alloc = is_cuda_alloc;
-    dst->seq = seq;
     dst->elem_is_ptr = elem_is_ptr;
     dst->elem_is_struct = elem_is_struct;
 

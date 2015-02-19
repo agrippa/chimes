@@ -85,11 +85,18 @@ static map<void *, heap_allocation *> heap;
 static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 
-
-static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
+/*
+ * Mapping from heap groups to the other heap groups they may be aliased with.
+ */
 static map<size_t, set<size_t> *> aliased_groups;
-static uint64_t curr_seq_no = 0;
+static pthread_rwlock_t aliased_groups_lock = PTHREAD_RWLOCK_INITIALIZER;
+
+/*
+ * List of globally registered variables. This includes anything that isn't
+ * declared inside a function.
+ */
 static map<std::string, stack_var *> global_vars;
+static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * A mapping from alias groups to the alias group that they may contain (in the
@@ -176,14 +183,19 @@ static inline bool valid_group(size_t group) {
 }
 
 static bool aliased(size_t group1, size_t group2) {
-    if (group1 == group2) return true;
-
-    if (aliased_groups.find(group1) != aliased_groups.end() &&
-            aliased_groups.find(group2) != aliased_groups.end()) {
-        // Can just do a pointer comparison here
-        return aliased_groups[group1] == aliased_groups[group2];
+    bool result = false;
+    if (group1 == group2) {
+        result = true;
+    } else {
+        assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+        if (aliased_groups.find(group1) != aliased_groups.end() &&
+                aliased_groups.find(group2) != aliased_groups.end()) {
+            // Can just do a pointer comparison here
+            result = aliased_groups[group1] == aliased_groups[group2];
+        }
+        assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
     }
-    return false;
+    return result;
 }
 
 void init_numdebug() {
@@ -305,7 +317,7 @@ void init_numdebug() {
             }
 
             heap_allocation *alloc = new heap_allocation(new_address, size,
-                    group, 0, is_cuda_alloc, elem_is_ptr, elem_is_struct);
+                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
 
             if (elem_is_struct) {
                 size_t elem_size;
@@ -335,12 +347,6 @@ void init_numdebug() {
                 alias_to_heap[group] = new vector<heap_allocation *>();
             }
             alias_to_heap[group]->push_back(alloc);
-
-            // All restored allocations will have sequence #0
-            if(heap_sequence_groups.find(0) == heap_sequence_groups.end()) {
-                heap_sequence_groups[0] = new vector<heap_allocation *>();
-            }
-            heap_sequence_groups[0]->push_back(alloc);
 
             assert(old_to_new->find(old_address) == old_to_new->end());
             (*old_to_new)[old_address] = new ptr_and_size(new_address, size);
@@ -673,7 +679,10 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
     if (program_stack->size() > 1) {
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
             if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
+                assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
                 merge_alias_groups(new_aliases[i], parent_aliases[i]);
+                assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+
                 assert(aliased(new_aliases[i], parent_aliases[i]));
             }
         }
@@ -744,7 +753,10 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
      */
     if (has_return_alias && valid_group(returned_alias)) {
         assert(valid_group(this_return_alias));
+        assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
         merge_alias_groups(this_return_alias, returned_alias);
+        assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+
         assert(aliased(this_return_alias, returned_alias));
     }
 
@@ -834,8 +846,11 @@ void register_global_var(const char *mangled_name, const char *full_type,
     va_end(vl);
 
     std::string mangled_name_str(mangled_name);
+
+    assert(pthread_rwlock_wrlock(&globals_lock) == 0);
     assert(global_vars.find(mangled_name_str) == global_vars.end());
     global_vars[mangled_name_str] = new_var;
+    assert(pthread_rwlock_unlock(&globals_lock) == 0);
 
 #ifdef __NUMDEBUG_PROFILE
     pp.stop_timer(REGISTER_GLOBAL_VAR);
@@ -868,7 +883,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     assert(valid_group(group) || is_cuda_alloc);
 
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
-            curr_seq_no, is_cuda_alloc, is_ptr, is_struct);
+            is_cuda_alloc, is_ptr, is_struct);
 
     if (is_struct) {
         alloc->add_struct_elem_size(elem_size);
@@ -886,11 +901,6 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     }
     alias_to_heap[group]->push_back(alloc);
     assert(pthread_rwlock_unlock(&heap_lock) == 0);
-
-    if(heap_sequence_groups.find(curr_seq_no) == heap_sequence_groups.end()) {
-        heap_sequence_groups[curr_seq_no] = new vector<heap_allocation *>();
-    }
-    heap_sequence_groups[curr_seq_no]->push_back(alloc);
 }
 
 /*
@@ -988,13 +998,6 @@ void free_helper(void *ptr) {
     map<void *, heap_allocation *>::iterator in_heap =
         find_in_heap(ptr);
     size_t group = in_heap->second->get_alias_group();
-    int seq = in_heap->second->get_seq();
-
-
-    vector<heap_allocation *> *seq_allocs = heap_sequence_groups[seq];
-    vector<heap_allocation *>::iterator in_heap_sequence_groups =
-        std::find(seq_allocs->begin(), seq_allocs->end(), in_heap->second);
-    assert(in_heap_sequence_groups != seq_allocs->end());
 
     // Update heap metadata
     assert(pthread_rwlock_wrlock(&heap_lock) == 0);
@@ -1006,12 +1009,6 @@ void free_helper(void *ptr) {
 
     heap.erase(in_heap);
     assert(pthread_rwlock_unlock(&heap_lock) == 0);
-
-    seq_allocs->erase(in_heap_sequence_groups);
-    if (seq_allocs->empty()) {
-        heap_sequence_groups.erase(seq);
-        delete seq_allocs;
-    }
 }
 
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
@@ -1250,25 +1247,26 @@ void checkpoint() {
             checkpoint_thread_running = 1;
 
             /*
-             * At this stage we assume we only have a single stack to checkpoint and it
-             * belongs to the calling thread, so those addresses will remain valid for
-             * checkpointing as long as we're still here. Therefore, we must checkpoint
-             * stack variables from here before returning.
+             * At this stage we assume we only have a single stack to checkpoint
+             * and it belongs to the calling thread, so those addresses will
+             * remain valid for checkpointing as long as we're still here.
+             * Therefore, we must checkpoint stack variables from here before
+             * returning.
              *
              * However, because we control heap allocations through the
-             * malloc/realloc/free wrappers, we can ensure they are only freed once they
-             * have been fully checkpointed. We can return from this function and allow
-             * the host application to mess with the heap however much it likes. We just
-             * need to be sure we know exactly which heap state we need to checkpoint,
-             * and which we don't. That information is maintained by the heap sequence
-             * groups.
+             * malloc/realloc/free wrappers, we can ensure they are only freed
+             * once they have been fully checkpointed. We can return from this
+             * function and allow the host application to mess with the heap
+             * however much it likes. We just need to be sure we know exactly
+             * which heap state we need to checkpoint, and which we don't. That
+             * information is maintained by the heap sequence groups.
              */
-            curr_seq_no++;
 
             vector<heap_allocation *> *heap_to_checkpoint =
                 new vector<heap_allocation *>();
-            for (map<void *, heap_allocation *>::iterator heap_iter = heap.begin(),
-                    heap_end = heap.end(); heap_iter != heap_end; heap_iter++) {
+            for (map<void *, heap_allocation *>::iterator heap_iter =
+                    heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
+                    heap_iter++) {
                 heap_allocation *curr = heap_iter->second;
                 heap_allocation *copy = new heap_allocation();
                 curr->copy(copy);
@@ -1299,6 +1297,7 @@ void checkpoint() {
                 }
                 ctx->clear_changed_groups();
             }
+            delete all_changed;
 
             checkpoint_thread_ctx *checkpoint_ctx = (checkpoint_thread_ctx *)malloc(
                     sizeof(checkpoint_thread_ctx));
@@ -1557,6 +1556,7 @@ void *checkpoint_func(void *data) {
         safe_write(fd, &child, sizeof(child), "child", dump_filename);
     }
 
+    assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
     set<set<size_t> *> aliased_groups_ptr;
     for (map<size_t, set<size_t> *>::iterator i = aliased_groups.begin(),
             e = aliased_groups.end(); i != e; i++) {
@@ -1579,6 +1579,7 @@ void *checkpoint_func(void *data) {
             safe_write(fd, &group, sizeof(group), "group", dump_filename);
         }
     }
+    assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
     close(fd);
     free(stacks_serialized);
