@@ -82,9 +82,10 @@ static map<unsigned, unsigned> trace_indices;
  * Globally shared heap representation used by all threads.
  */
 static map<void *, heap_allocation *> heap;
+static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 
-static map<size_t, vector<heap_allocation *> *> alias_to_heap;
+
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
@@ -855,13 +856,11 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     assert(pthread_rwlock_wrlock(&heap_lock) == 0);
     assert(heap.find(new_ptr) == heap.end());
     heap[new_ptr] = alloc;
-    assert(pthread_rwlock_unlock(&heap_lock) == 0);
-
     if (alias_to_heap.find(group) == alias_to_heap.end()) {
         alias_to_heap[group] = new vector<heap_allocation *>();
     }
-
     alias_to_heap[group]->push_back(alloc);
+    assert(pthread_rwlock_unlock(&heap_lock) == 0);
 
     if(heap_sequence_groups.find(curr_seq_no) == heap_sequence_groups.end()) {
         heap_sequence_groups[curr_seq_no] = new vector<heap_allocation *>();
@@ -966,21 +965,22 @@ void free_helper(void *ptr) {
     size_t group = in_heap->second->get_alias_group();
     int seq = in_heap->second->get_seq();
 
-    vector<heap_allocation *>::iterator in_alias_to_heap =
-        std::find(alias_to_heap[group]->begin(), alias_to_heap[group]->end(),
-                in_heap->second);
-    assert(in_alias_to_heap != alias_to_heap[group]->end());
 
     vector<heap_allocation *> *seq_allocs = heap_sequence_groups[seq];
     vector<heap_allocation *>::iterator in_heap_sequence_groups =
         std::find(seq_allocs->begin(), seq_allocs->end(), in_heap->second);
     assert(in_heap_sequence_groups != seq_allocs->end());
 
+    // Update heap metadata
     assert(pthread_rwlock_wrlock(&heap_lock) == 0);
+    vector<heap_allocation *>::iterator in_alias_to_heap =
+        std::find(alias_to_heap[group]->begin(), alias_to_heap[group]->end(),
+                in_heap->second);
+    assert(in_alias_to_heap != alias_to_heap[group]->end());
+    alias_to_heap[group]->erase(in_alias_to_heap);
+
     heap.erase(in_heap);
     assert(pthread_rwlock_unlock(&heap_lock) == 0);
-
-    alias_to_heap[group]->erase(in_alias_to_heap);
 
     seq_allocs->erase(in_heap_sequence_groups);
     if (seq_allocs->empty()) {
