@@ -1,7 +1,6 @@
 GXX=g++
 EXE=transform
 
-# GXX_FLAGS=-fno-rtti -O0 -g `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --cxxflags`
 GXX_FLAGS=-O0 -g `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --cxxflags`
 INCLUDES=-I${LLVM_HOME}/tools/clang/include -I${LLVM_INSTALL}/tools/clang/include
 ARCH=$(shell uname -s)
