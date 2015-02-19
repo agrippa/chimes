@@ -43,7 +43,7 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-extern unsigned register_thread_local_stack_vars(unsigned thread,
+extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
 # 38 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
@@ -1779,7 +1779,7 @@ int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL),
 #pragma omp parallel firstprivate(a) private(b, c)
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 
-    { const unsigned ____numdebug_global_tid = register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 3, &a, &b, &c); if (____numdebug_replaying) { goto lbl_3; }
+    { register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 3, &a, &b, &c); if (____numdebug_replaying) { goto lbl_3; }
           lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } inside = (6);
         alias_group_changed(7, (size_t)(335588464056153169UL), (size_t)(1388457574958923572UL), (size_t)(2394767282369806426UL), (size_t)(4453946100683459683UL), (size_t)(6213761567678051020UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
          call_lbl_0: calling(0, 0UL, 0); foo();
