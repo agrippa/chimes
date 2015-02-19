@@ -2977,7 +2977,6 @@ int main( int argc, char *argv[] ) {init_numdebug(); new_stack(2, 2, (size_t)(0U
         { lbl_13: int src; register_stack_var("main|src|0", "i32", (void *)(&src), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_14; } for ( src = (0); src < conf.nsrcs; src++) { {
             if (conf.srcs[src].t > step) { continue;
  } lbl_14: int src_offset; register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_15; } src_offset = ((((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x))));
-
             curr[src_offset] = srcs[src][step];
         } } }
 
