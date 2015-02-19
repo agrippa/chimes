@@ -26519,7 +26519,7 @@ extern void free_wrapper(void * ptr, size_t group);
 # 25 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 # 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern unsigned register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
 # 28 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void leaving_omp_parallel();
 # 32 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"

@@ -62,6 +62,7 @@ void free_helper(void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl);
+
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
@@ -1637,7 +1638,7 @@ static stack_var *find_var(void *addr,
     return NULL;
 }
 
-unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
+void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         unsigned nlocals, ...) {
     unsigned global_tid;
     pthread_t self = pthread_self();
@@ -1737,8 +1738,6 @@ unsigned register_thread_local_stack_vars(unsigned relation, unsigned parent,
         stack->back()->add_stack_var(child_var);
     }
     va_end(vl);
-
-    return global_tid;
 }
 
 void leaving_omp_parallel() {
