@@ -1,4 +1,4 @@
-GXX=/usr/bin/g++
+GXX=g++
 EXE=transform
 
 # GXX_FLAGS=-fno-rtti -O0 -g `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --cxxflags`
