@@ -89,8 +89,15 @@ static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
-static map<size_t, size_t> contains;
 static map<std::string, stack_var *> global_vars;
+
+/*
+ * A mapping from alias groups to the alias group that they may contain (in the
+ * case of indirect references with nested pointers or structs with contain
+ * pointers.
+ */
+static map<size_t, size_t> contains;
+static pthread_rwlock_t contains_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * Track which modules have had their metadata initialized already, thread-safe.
@@ -98,6 +105,10 @@ static map<std::string, stack_var *> global_vars;
 static set<size_t> initialized_modules;
 static pthread_mutex_t module_mutex = PTHREAD_MUTEX_INITIALIZER;
 
+/*
+ * Thread-specific information tracked by each thread, e.g. program stack,
+ * trace, etc.
+ */
 static map<unsigned, thread_ctx *> thread_ctxs;
 static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
 
@@ -491,10 +502,13 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
         existing2 = existing2_iter->second;
     }
 
+    assert(pthread_rwlock_rdlock(&contains_lock) == 0);
     map<size_t, size_t>::iterator child1_iter = contains.find(alias1);
     map<size_t, size_t>::iterator child2_iter = contains.find(alias2);
+    map<size_t, size_t>::iterator end = contains.end();
+    assert(pthread_rwlock_unlock(&contains_lock) == 0);
 
-    if (child1_iter != contains.end() && child2_iter != contains.end()) {
+    if (child1_iter != end && child2_iter != end) {
         size_t child1 = child1_iter->second;
         size_t child2 = child2_iter->second;
 
@@ -566,6 +580,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
     assert(!initialized);
     initialized_modules.insert(module_id);
 
+    assert(pthread_rwlock_wrlock(&contains_lock) == 0);
     for (int i = 0; i < n_contains_mappings; i++) {
         size_t container = va_arg(vl, size_t);
         size_t child = va_arg(vl, size_t);
@@ -574,6 +589,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
             contains[container] = child;
         }
     }
+    assert(pthread_rwlock_unlock(&contains_lock) == 0);
 
     for (int i = 0; i < nstructs; i++) {
         char *struct_name = va_arg(vl, char *);
@@ -1034,6 +1050,7 @@ typedef struct _checkpoint_thread_ctx {
     uint64_t thread_hierarchy_serialized_len;
 
     vector<heap_allocation *> *heap_to_checkpoint;
+    map<size_t, size_t> *contains;
 
     map<unsigned, vector<int> *> *stack_trackers;
 } checkpoint_thread_ctx;
@@ -1293,6 +1310,7 @@ void checkpoint() {
                     &thread_ctxs,
                     &checkpoint_ctx->thread_hierarchy_serialized_len);
             checkpoint_ctx->heap_to_checkpoint = heap_to_checkpoint;
+
             checkpoint_ctx->stack_trackers = new map<unsigned, vector<int> *>();
             for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
                     te = thread_ctxs.end(); ti != te; ti++) {
@@ -1301,6 +1319,14 @@ void checkpoint() {
                 (*checkpoint_ctx->stack_trackers)[thread] = new vector<int>();
                 info->get_stack_tracker().copy(checkpoint_ctx->stack_trackers->at(thread));
             }
+
+            checkpoint_ctx->contains = new map<size_t, size_t>();
+            assert(pthread_rwlock_rdlock(&contains_lock) == 0);
+            for (map<size_t, size_t>::iterator i = contains.begin(),
+                    e = contains.end(); i != e; i++) {
+                (*checkpoint_ctx->contains)[i->first] = i->second;
+            }
+            assert(pthread_rwlock_unlock(&contains_lock) == 0);
 
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
@@ -1408,6 +1434,7 @@ void *checkpoint_func(void *data) {
     uint64_t thread_hierarchy_serialized_len =
         ctx->thread_hierarchy_serialized_len;
     vector<heap_allocation *> *heap_to_checkpoint = ctx->heap_to_checkpoint;
+    map<size_t, size_t> *contains = ctx->contains;
 
     /*
      * Until we implement the planned client-server architecture, just dump
@@ -1517,11 +1544,11 @@ void *checkpoint_func(void *data) {
         free(alloc->get_tmp_buffer());
     }
 
-    unsigned n_contains_mappings = contains.size();
+    unsigned n_contains_mappings = contains->size();
     safe_write(fd, &n_contains_mappings, sizeof(n_contains_mappings),
             "n_contains_mappings", dump_filename);
     // Dump container information to be loaded with the checkpoint
-    for (map<size_t, size_t>::iterator i = contains.begin(), e = contains.end();
+    for (map<size_t, size_t>::iterator i = contains->begin(), e = contains->end();
             i != e; i++) {
         size_t container = i->first;
         size_t child = i->second;
@@ -1565,6 +1592,7 @@ void *checkpoint_func(void *data) {
     }
     delete heap_to_checkpoint;
     delete ctx->stack_trackers;
+    delete contains;
     free(ctx);
 
     checkpoint_thread_running = 0;
