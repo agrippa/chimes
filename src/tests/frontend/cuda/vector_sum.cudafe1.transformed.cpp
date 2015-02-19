@@ -26499,38 +26499,36 @@ extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 # 8 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int get_next_call();
 # 9 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern int peek_next_call();
-# 10 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
-# 11 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 10 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
-# 13 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 12 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-# 14 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 13 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 17 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 16 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 20 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 19 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int alias_group_changed(int ngroups, ...);
-# 21 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 20 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 23 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 22 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
-# 24 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 23 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void free_wrapper(void * ptr, size_t group);
-# 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 25 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-# 27 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern unsigned register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
-# 29 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 28 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern void leaving_omp_parallel();
-# 33 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 32 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 35 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 34 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 45 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
-# 48 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 47 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern int ____numdebug_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;

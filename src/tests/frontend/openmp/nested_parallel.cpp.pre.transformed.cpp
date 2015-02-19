@@ -26,7 +26,6 @@ typedef long unsigned int size_t;
 extern void init_numdebug();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
-extern int peek_next_call();
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
@@ -47,7 +46,7 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern unsigned register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 39 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 38 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }

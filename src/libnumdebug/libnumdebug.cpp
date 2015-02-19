@@ -69,18 +69,23 @@ static thread_ctx *get_my_context();
 static thread_ctx *get_context_for(unsigned tid);
 
 // global data structures that must persist across library calls
-// static vector<stack_frame *> program_stack;
-static numdebug_stack stack_tracker;
-static vector<int> trace;
-static unsigned int trace_index = 0;
 
+/*
+ * trace is used during replay to store the trace of calls or parallel regions
+ * from the previous execution, and is then used to replay that trace. This
+ * basically stores the old contents of stack_tracker.
+ */
+static map<unsigned, vector<int> > traces;
+static map<unsigned, unsigned> trace_indices;
+
+/*
+ * Globally shared heap representation used by all threads.
+ */
 static map<void *, heap_allocation *> heap;
 static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 static map<size_t, vector<heap_allocation *> *> alias_to_heap;
 static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
-static size_t return_alias;
-static vector<size_t> return_aliases;
 static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
@@ -185,24 +190,26 @@ void init_numdebug() {
         int fd = open(checkpoint_file, O_RDONLY);
         assert(fd >= 0);
 
-        int trace_len;
-        safe_read(fd, &trace_len, sizeof(trace_len), "trace_len",
+        int nthreads;
+        safe_read(fd, &nthreads, sizeof(nthreads), "nthreads",
                 checkpoint_file);
-#ifdef VERBOSE
-        fprintf(stderr, "Trace = {");
-#endif
-        for (int i = 0; i < trace_len; i++) {
-            int trace_ele;
-            safe_read(fd, &trace_ele, sizeof(trace_ele), "trace_ele",
+        for (int i = 0; i < nthreads; i++) {
+            unsigned thread;
+            safe_read(fd, &thread, sizeof(thread), "thread", checkpoint_file);
+
+            traces[thread] = vector<int>();
+            trace_indices[thread] = 0;
+
+            int trace_len;
+            safe_read(fd, &trace_len, sizeof(trace_len), "trace_len",
                     checkpoint_file);
-            trace.push_back(trace_ele);
-#ifdef VERBOSE
-            fprintf(stderr, " %d", trace_ele);
-#endif
+            for (int j = 0; j < trace_len; j++) {
+                int trace_ele;
+                safe_read(fd, &trace_ele, sizeof(trace_ele), "trace_ele",
+                        checkpoint_file);
+                traces[thread].push_back(trace_ele);
+            }
         }
-#ifdef VERBOSE
-        fprintf(stderr, " }\n");
-#endif
 
         // read in stack state
         uint64_t stack_serialized_len;
@@ -611,7 +618,7 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
     int calling_label = ctx->get_calling_label();
     assert(program_stack->size() == 0 || calling_label >= 0);
     if (calling_label >= 0) {
-        stack_tracker.push(calling_label);
+        ctx->get_stack_tracker().push(calling_label);
     }
     program_stack->push_back(new stack_frame());
     ctx->increment_stack_nesting();
@@ -635,7 +642,7 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
         new_aliases.push_back(alias);
     }
 
-    return_aliases.push_back(return_alias);
+    ctx->push_return_alias();
 
     if (program_stack->size() > 1) {
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
@@ -672,7 +679,7 @@ void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
 #endif
     thread_ctx *ctx = get_my_context();
     ctx->set_calling_label(lbl);
-    return_alias = set_return_alias;
+    ctx->set_return_alias(set_return_alias);
 
     if (parent_aliases_capacity < naliases) {
         parent_aliases_capacity *= 2;
@@ -688,13 +695,6 @@ void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
     va_end(vl);
     parent_aliases_length = naliases;
 
-#ifdef VERBOSE
-    fprintf(stderr, "Calling %d: ", lbl);
-    for (unsigned int i = 0; i < stack_tracker.size(); i++) {
-        fprintf(stderr, "%d ", stack_tracker.at(i));
-    }
-    fprintf(stderr, "\n");
-#endif
 #ifdef __NUMDEBUG_PROFILE
     pp.stop_timer(CALLING);
 #endif
@@ -710,8 +710,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
     program_stack->pop_back();
     delete curr;
 
-    size_t this_return_alias = return_aliases.back();
-    return_aliases.pop_back();
+    size_t this_return_alias = ctx->pop_return_alias();
 
     /*
      * We pass returned_alias as 0 here when the value being returned is not a
@@ -723,7 +722,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
         assert(aliased(this_return_alias, returned_alias));
     }
 
-    stack_tracker.pop();
+    ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
 
     if (____numdebug_rerunning && ctx->get_stack_nesting() < 0) {
@@ -737,14 +736,12 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 #endif
 }
 
-int peek_next_call() {
-    assert(trace_index < trace.size());
-    return trace[trace_index];
-}
-
 int get_next_call() {
-    assert(trace_index < trace.size());
-    return trace[trace_index++];
+    int tid = get_my_tid();
+    assert(trace_indices[tid] < traces[tid].size());
+    int ele = traces[tid][trace_indices[tid]];
+    trace_indices[tid] = trace_indices[tid] + 1;
+    return ele;
 }
 
 static stack_var *get_var(const char *mangled_name, const char *full_type,
@@ -1029,7 +1026,7 @@ typedef struct _checkpoint_thread_ctx {
 
     vector<heap_allocation *> *heap_to_checkpoint;
 
-    vector<int> *stack_tracker;
+    map<unsigned, vector<int> *> *stack_trackers;
 } checkpoint_thread_ctx;
 static void *checkpoint_func(void *data);
 
@@ -1277,22 +1274,28 @@ void checkpoint() {
                 ctx->clear_changed_groups();
             }
 
-            checkpoint_thread_ctx *thread_ctx = (checkpoint_thread_ctx *)malloc(
+            checkpoint_thread_ctx *checkpoint_ctx = (checkpoint_thread_ctx *)malloc(
                     sizeof(checkpoint_thread_ctx));
-            thread_ctx->stacks_serialized = serialize_program_stacks(&thread_ctxs,
-                    &thread_ctx->stacks_serialized_len);
-            thread_ctx->globals_serialized = serialize_globals(&global_vars,
-                    &thread_ctx->globals_serialized_len);
-            thread_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
+            checkpoint_ctx->stacks_serialized = serialize_program_stacks(&thread_ctxs,
+                    &checkpoint_ctx->stacks_serialized_len);
+            checkpoint_ctx->globals_serialized = serialize_globals(&global_vars,
+                    &checkpoint_ctx->globals_serialized_len);
+            checkpoint_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
                     &thread_ctxs,
-                    &thread_ctx->thread_hierarchy_serialized_len);
-            thread_ctx->heap_to_checkpoint = heap_to_checkpoint;
-            thread_ctx->stack_tracker = new std::vector<int>();
-            stack_tracker.copy(thread_ctx->stack_tracker);
+                    &checkpoint_ctx->thread_hierarchy_serialized_len);
+            checkpoint_ctx->heap_to_checkpoint = heap_to_checkpoint;
+            checkpoint_ctx->stack_trackers = new map<unsigned, vector<int> *>();
+            for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
+                    te = thread_ctxs.end(); ti != te; ti++) {
+                unsigned thread = ti->first;
+                thread_ctx *info = ti->second;
+                (*checkpoint_ctx->stack_trackers)[thread] = new vector<int>();
+                info->get_stack_tracker().copy(checkpoint_ctx->stack_trackers->at(thread));
+            }
 
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
-            pthread_create(&checkpoint_thread, NULL, checkpoint_func, thread_ctx);
+            pthread_create(&checkpoint_thread, NULL, checkpoint_func, checkpoint_ctx);
         }
     }
 
@@ -1414,13 +1417,25 @@ void *checkpoint_func(void *data) {
     }
 
     // Write the trace of function calls out
-    int trace_len = ctx->stack_tracker->size();
-    safe_write(fd, &trace_len, sizeof(trace_len), "trace length", dump_filename);
-    for (std::vector<int>::iterator trace_iter = ctx->stack_tracker->begin(),
-            trace_end = ctx->stack_tracker->end(); trace_iter != trace_end;
-            trace_iter++) {
-        int trace = *trace_iter;
-        safe_write(fd, &trace, sizeof(trace), "trace element", dump_filename);
+    int nthreads = ctx->stack_trackers->size();
+    safe_write(fd, &nthreads, sizeof(nthreads), "nthreads", dump_filename);
+    for (map<unsigned, vector<int> *>::iterator i =
+            ctx->stack_trackers->begin(), e = ctx->stack_trackers->end();
+            i != e; i++) {
+        unsigned thread = i->first;
+        vector<int> *trace = i->second;
+
+        safe_write(fd, &thread, sizeof(thread), "thread", dump_filename);
+        int trace_len = trace->size();
+        safe_write(fd, &trace_len, sizeof(trace_len), "trace length",
+                dump_filename);
+        for (std::vector<int>::iterator trace_iter = trace->begin(),
+                trace_end = trace->end(); trace_iter != trace_end;
+                trace_iter++) {
+            int trace = *trace_iter;
+            safe_write(fd, &trace, sizeof(trace), "trace element",
+                    dump_filename);
+        }
     }
 
     // Write the serialized stack out
@@ -1540,7 +1555,7 @@ void *checkpoint_func(void *data) {
         delete curr;
     }
     delete heap_to_checkpoint;
-    delete ctx->stack_tracker;
+    delete ctx->stack_trackers;
     free(ctx);
 
     checkpoint_thread_running = 0;
@@ -1552,7 +1567,7 @@ unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
     thread_ctx *ctx = get_my_context();
     ctx->clear_parent_vars();
 
-    stack_tracker.push(lbl);
+    ctx->get_stack_tracker().push(lbl);
 
     va_list vl;
     va_start(vl, nlocals);
