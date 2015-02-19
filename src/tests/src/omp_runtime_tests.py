@@ -18,6 +18,7 @@ OMP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/openmp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
+    # CONFIG.set_custom_compiler('/opt/apps/gcc/4.8.2/bin/g++')
     CONFIG.set_custom_compiler('/usr/local/bin/g++')
     CONFIG.add_custom_compiler_flag('-fopenmp')
     cleanup_runtime_files()

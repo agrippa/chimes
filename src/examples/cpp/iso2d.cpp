@@ -109,8 +109,7 @@ int main( int argc, char *argv[] ) {
     for (int step = 0; step < conf.nsteps; step++) {
         for (int src = 0; src < conf.nsrcs; src++) {
             if (conf.srcs[src].t > step) continue;
-            int src_offset = POINT_OFFSET(conf.srcs[src].x, conf.srcs[src].y,
-                    dimx, conf.radius);
+            int src_offset = POINT_OFFSET(conf.srcs[src].x, conf.srcs[src].y, dimx, conf.radius);
             curr[src_offset] = srcs[src][step];
         }
 
