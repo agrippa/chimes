@@ -90,8 +90,13 @@ static map<uint64_t, vector<heap_allocation *> *> heap_sequence_groups;
 static map<size_t, set<size_t> *> aliased_groups;
 static uint64_t curr_seq_no = 0;
 static map<size_t, size_t> contains;
-static set<size_t> initialized_modules;
 static map<std::string, stack_var *> global_vars;
+
+/*
+ * Track which modules have had their metadata initialized already, thread-safe.
+ */
+static set<size_t> initialized_modules;
+static pthread_mutex_t module_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static map<unsigned, thread_ctx *> thread_ctxs;
 static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
@@ -550,6 +555,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #ifdef __NUMDEBUG_PROFILE
     pp.start_timer(INIT_MODULE);
 #endif
+    assert(pthread_mutex_lock(&module_mutex) == 0);
 
     bool replay = (getenv("NUMDEBUG_CHECKPOINT_FILE") != NULL);
     va_list vl;
@@ -558,6 +564,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
     bool initialized = (initialized_modules.find(module_id) !=
             initialized_modules.end());
     assert(!initialized);
+    initialized_modules.insert(module_id);
 
     for (int i = 0; i < n_contains_mappings; i++) {
         size_t container = va_arg(vl, size_t);
@@ -603,6 +610,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
     }
 
     va_end(vl);
+
+    assert(pthread_mutex_unlock(&module_mutex) == 0);
 
 #ifdef __NUMDEBUG_PROFILE
     pp.stop_timer(INIT_MODULE);
