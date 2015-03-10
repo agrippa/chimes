@@ -7,7 +7,7 @@ SRC=libnumdebug.cpp stack_frame.cpp stack_serialization.cpp \
     type_info.cpp serialization_common.cpp perf_profile.cpp \
     thread_serialization.cpp
 
-IS_CLANG := $(shell clang++ --version | grep clang | wc -l)
+IS_CLANG := $(shell ${GXX} --version 2>&1 | grep clang | wc -l | bc)
 ifeq ($(IS_CLANG),1)
 	GXX_FLAGS += -stdlib=libstdc++
 endif

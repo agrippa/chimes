@@ -1,7 +1,5 @@
-num-debug
+CHIMES: CHeckpointing In-MEmory State
 =========
-
-Automating Numerical Analysis
 
 Setup:
 ======
