@@ -3,11 +3,11 @@
 
 #include <cstdarg>
 
-typedef struct _numdebug_type_info {
+typedef struct _chimes_type_info {
     int elem_size, n_ptr_fields;
     int *ptr_field_offsets;
-} numdebug_type_info;
+} chimes_type_info;
 
-extern void parse_type_info(va_list vl, numdebug_type_info *info);
+extern void parse_type_info(va_list vl, chimes_type_info *info);
 
 #endif

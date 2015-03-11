@@ -26492,44 +26492,44 @@ return (err == (cudaSuccess)) ? cudaBindSurfaceToArray(surf, array, desc) : err;
 }
 # 1617 "/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h"
 }
-# 6 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern void init_numdebug();
-# 7 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void init_chimes();
+# 7 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
-# 8 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 8 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int get_next_call();
-# 9 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
-# 10 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
-# 12 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-# 13 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 13 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 16 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 19 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 19 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int alias_group_changed(int ngroups, ...);
-# 20 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 20 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 22 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
-# 23 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 23 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void free_wrapper(void * ptr, size_t group);
-# 25 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-# 26 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
-# 28 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel();
-# 32 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 34 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
-# 47 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-extern int ____numdebug_replaying;
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
 # 39 "/usr/include/sys/stdio.h" 3
@@ -26778,14 +26778,14 @@ extern "C" int vasprintf(char **, const char *, va_list) __attribute((__format__
 extern "C" FILE *zopen(const char *, const char *, int);
 # 469 "/usr/include/stdio.h" 3
 extern "C" FILE *funopen(const void *, int (*)(void *, char *, int), int (*)(void *, const char *, int), fpos_t (*)(void *, fpos_t, int), int (*)(void *));
-# 11 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 extern void checkpoint();
-# 13 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 13 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
- lbl_0: dim3 blocks; register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); blocks = dim3(4, 256);
+ lbl_0: dim3 blocks; register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 4, (size_t)(12790679029093952597UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); blocks = dim3(4, 256);
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
@@ -27586,4 +27586,4 @@ static int module_init() {
     return 0;
 }
 
-static int __libnumdebug_module_init = module_init();
+static int __libchimes_module_init = module_init();

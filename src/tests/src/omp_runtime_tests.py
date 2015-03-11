@@ -1,10 +1,10 @@
 """
 Runtime tests for OMP examples, designed to stress the checkpointing and restore
-functionality of the numdebug runtime.
+functionality of the chimes runtime.
 """
 import os
 import sys
-from common import RuntimeTest, parse_argv, NUM_DEBUG_HOME, run_runtime_test, \
+from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files, find_file
 
 OMP_H = find_file('omp.h', '/usr/')
@@ -13,8 +13,8 @@ BASIC_PARALLEL = RuntimeTest('BasicParallel', ['basic_parallel.cpp'], 0, 1,
                              includes=[os.path.dirname(OMP_H)])
 TESTS = [BASIC_PARALLEL]
 
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
-OMP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/openmp'
+COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
+OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

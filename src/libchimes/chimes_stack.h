@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-class numdebug_stack {
+class chimes_stack {
     private:
         int *stack;
         int capacity;
@@ -16,7 +16,7 @@ class numdebug_stack {
 
         void ensure_capacity(int len);
     public:
-        numdebug_stack() {
+        chimes_stack() {
             stack = (int *)malloc(1024 * sizeof(int));
             capacity = 1024;
             len = 0;

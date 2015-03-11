@@ -1177,7 +1177,7 @@ static std::map<Value *, std::string> *mapValueToOriginalVarname(
 
 /*
  * TODO I don't think this supports stack-allocated arrays yet. Related TODO in
- * libnumdebug.cpp
+ * libchimes.cpp
  */
 void Play::findStackAllocations(Module &M, const char *output_file,
         const char *struct_info_filename) {

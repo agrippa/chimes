@@ -3,7 +3,7 @@
 
 #include <string.h>
 
-#include "numdebug_common.h"
+#include "chimes_common.h"
 #include "heap_allocation.h"
 
 #ifdef CUDA_SUPPORT

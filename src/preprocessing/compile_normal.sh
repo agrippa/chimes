@@ -91,7 +91,7 @@ OBJ_FILES=()
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
 if [[ -z ${WORK_DIR} ]]; then
-    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+    WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
 GXX_FLAGS="${INCLUDES} -g -O0"

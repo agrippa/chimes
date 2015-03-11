@@ -7,7 +7,7 @@
 
 #include "stack_frame.h"
 #include "heap_allocation.h"
-#include "numdebug_stack.h"
+#include "chimes_stack.h"
 
 class thread_ctx {
     public:
@@ -50,7 +50,7 @@ class thread_ctx {
         void set_calling_label(int label) { calling_label = label; }
         int get_calling_label() { return calling_label; }
 
-        numdebug_stack &get_stack_tracker() { return stack_tracker; }
+        chimes_stack &get_stack_tracker() { return stack_tracker; }
 
         void push_return_alias() { return_aliases.push_back(return_alias); }
         size_t pop_return_alias() {
@@ -75,7 +75,7 @@ class thread_ctx {
          * During normal execution, has every function call and parallel region
          * entry recorded in it so that these transitions can be replayed later.
          */
-        numdebug_stack stack_tracker;
+        chimes_stack stack_tracker;
 
         size_t return_alias;
         vector<size_t> return_aliases;

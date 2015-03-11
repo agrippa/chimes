@@ -15,10 +15,10 @@
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu kernel|__cuda_1|0 " i32* " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu kernel|__cuda_2|0 " i32* " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu kernel|__cuda_3|0 " i32 " 32 0 0 
-/tmp/numdebug-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par0|0 " i32* " 64 1 0 
-/tmp/numdebug-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par1|0 " i32* " 64 1 0 
-/tmp/numdebug-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par2|0 " i32* " 64 1 0 
-/tmp/numdebug-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par3|0 " i32 " 32 0 0 
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par0|0 " i32* " 64 1 0 
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par1|0 " i32* " 64 1 0 
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par2|0 " i32* " 64 1 0 
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par3|0 " i32 " 32 0 0 
 /Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h cudaLaunch<char>|func|0 " i8* " 64 1 0 
 vector_sum.cudafe1.stub.c __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0 " void (i8**)* " 64 1 0 
 vector_sum.cudafe1.stub.c __nv_cudaEntityRegisterCallback|__T24|0 " i8** " 64 1 0 

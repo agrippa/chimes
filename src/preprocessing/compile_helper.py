@@ -45,7 +45,7 @@ if __name__ == '__main__':
                     assert not env and not pre and post
                     if not include_inserted and line.find('gcc') == 0:
                         line = line[3:]
-                        line = 'gcc -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h ' + line
+                        line = 'gcc -include${CHIMES_HOME}/src/libchimes/libchimes.h ' + line
                         include_inserted = True
                     post_cmd_file_fp.write(line)
 

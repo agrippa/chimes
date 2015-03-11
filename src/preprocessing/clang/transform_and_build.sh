@@ -21,7 +21,7 @@ LAST_STAGE=${CONTAINING_FOLDER}/${LAST_STAGE}
         -extra-arg="-I{$CONTAINING_FOLDER}" \
         -extra-arg="-I${CUDA_HOME}/include" \
         -extra-arg="-I/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include" \
-        -extra-arg="-include../../libnumdebug/libnumdebug.h" \
+        -extra-arg="-include../../libchimes/libchimes.h" \
         -l ${INFO_DIR}/lines.info \
         -f ${INFO_DIR}/func_start.info \
         -s ${INFO_DIR}/struct.info \
@@ -33,6 +33,6 @@ LAST_STAGE=${CONTAINING_FOLDER}/${LAST_STAGE}
         -b ${INFO_DIR}/loc.info \
         ${INPUT} --
 
-g++ -I../../libnumdebug -L../../libnumdebug \
-        -include../../libnumdebug/libnumdebug.h -includestddef.h -lnumdebug \
+g++ -I../../libchimes -L../../libchimes \
+        -include../../libchimes/libchimes.h -includestddef.h -lchimes \
         ${LAST_STAGE}

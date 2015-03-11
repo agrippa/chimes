@@ -43,9 +43,9 @@ void RegisterStackPass::handleDecl(const clang::DeclStmt *d,
 
         std::stringstream ss2;
         if (force != NULL) {
-            ss2 << " if (____numdebug_replaying) { " << *force << " } ";
+            ss2 << " if (____chimes_replaying) { " << *force << " } ";
         } else {
-            ss2 << " if (____numdebug_replaying) { goto lbl_" << (lbl + 1) <<
+            ss2 << " if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
                 "; } ";
         }
 

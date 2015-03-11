@@ -40,7 +40,7 @@
 #include "common.h"
 #include "common2d.h"
 
-#ifdef __NUMDEBUG_SUPPORT
+#ifdef __CHIMES_SUPPORT
 #include "checkpoint.h"
 #endif
 
@@ -120,7 +120,7 @@ int main( int argc, char *argv[] ) {
         next = curr;
         curr = tmp;
 
-#ifdef __NUMDEBUG_SUPPORT
+#ifdef __CHIMES_SUPPORT
         checkpoint();
 #endif
 

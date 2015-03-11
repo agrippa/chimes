@@ -1,9 +1,9 @@
-#ifndef LIBNUMDEBUG_H
-#define LIBNUMDEBUG_H
+#ifndef LIBCHIMES_H
+#define LIBCHIMES_H
 
 #include <stddef.h>
 
-extern void init_numdebug();
+extern void init_chimes();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -38,12 +38,12 @@ cudaError_t cudaFree_wrapper(void *ptr, size_t group);
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return omp_get_thread_num(); }
-#define LIBNUMDEBUG_THREAD_NUM  omp_get_thread_num()
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+#define LIBCHIMES_THREAD_NUM  omp_get_thread_num()
 #else
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 #endif
 
-extern int ____numdebug_replaying;
+extern int ____chimes_replaying;
 
 #endif

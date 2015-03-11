@@ -1,13 +1,13 @@
 """
 Runtime tests for C++ examples, designed to stress the checkpointing and restore
-functionality of the numdebug runtime.
+functionality of the chimes runtime.
 """
 import os
 import sys
-from common import RuntimeTest, parse_argv, NUM_DEBUG_HOME, run_runtime_test, \
+from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files
 
-CPP_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cpp'
+CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
 STACK_SCALAR = RuntimeTest('StackScalar', ['stack_scalar.cpp'], 3, 1)
 STACK_STRUCT = RuntimeTest('StackStruct', ['stack_struct.cpp'], 4, 1)
@@ -33,8 +33,8 @@ TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
          HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, GLOBALS,
          MULTI_CHECKPOINT, ISO2D]
 
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
-CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cpp'
+COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
+CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

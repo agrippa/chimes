@@ -95,16 +95,16 @@ OBJ_FILES=()
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
 if [[ -z ${WORK_DIR} ]]; then
-    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+    WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 GXX=${GXX:-/usr/bin/g++}
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
-TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
-OMP_FINDER=${NUM_DEBUG_HOME}/src/preprocessing/openmp/openmp_finder.py
-MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
-NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
+TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
+OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
+CHIMES_DEF=-D__CHIMES_SUPPORT
 
 GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
@@ -134,15 +134,15 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
-           -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -E ${INPUT} \
+           -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g ${LINKER_FLAGS} \
-           -include${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
-           -include stddef.h -include stdio.h ${NUMDEBUG_DEF}
+           -include${CHIMES_HOME}/src/libchimes/libchimes.h \
+           -include stddef.h -include stdio.h ${CHIMES_DEF}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
-           -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -S -emit-llvm \
-           ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${NUMDEBUG_DEF}
+           -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
+           ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF}
 
     echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
     cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -175,8 +175,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${WORK_DIR} \
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
-            ${PREPROCESS_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${NUMDEBUG_DEF}
+            ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF}
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -190,7 +190,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
     echo Postprocessing ${FINAL_FILE}
-    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${NUMDEBUG_DEF} \
+    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} \
         -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
@@ -199,8 +199,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     LAST_FILES+=($FINAL_FILE)
     OBJ_FILES+=($OBJ_FILE)
 
-    ${GXX} --compile -I${NUM_DEBUG_HOME}/src/libnumdebug ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${GXX_FLAGS} ${NUMDEBUG_DEF}
+    ${GXX} --compile -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
+        -o ${OBJ_FILE} ${GXX_FLAGS} ${CHIMES_DEF}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"
@@ -222,8 +222,8 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${GXX} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug ${OBJ_FILE_STR} \
+    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
+            -L${CHIMES_HOME}/src/libchimes -lchimes ${OBJ_FILE_STR} \
             -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then

@@ -99,7 +99,7 @@ if [[ -d ${CUDA_HOME}/lib64 ]]; then
 fi
 
 if [[ -z ${WORK_DIR} ]]; then
-    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+    WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
 NVCC_WORK_DIR=${WORK_DIR}/nvcc
@@ -107,10 +107,10 @@ COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
 
 OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
 CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
-TRANSFORM=${NUM_DEBUG_HOME}/src/preprocessing/clang/transform
-OMP_FINDER=${NUM_DEBUG_HOME}/src/preprocessing/openmp/openmp_finder.py
-MODULE_INIT=${NUM_DEBUG_HOME}/src/preprocessing/module_init/module_init.py
-NUMDEBUG_DEF=-D__NUMDEBUG_SUPPORT
+TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
+OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
+CHIMES_DEF=-D__CHIMES_SUPPORT
 
 GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
@@ -131,13 +131,13 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILE=${INPUT}.o
     printf 'Compiling with nvcc...'
     cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
-              --pre-include ${NUM_DEBUG_HOME}/src/libnumdebug/libnumdebug.h \
-              -I${NUM_DEBUG_HOME}/src/libnumdebug ${GXX_FLAGS} \
-              -L${NUM_DEBUG_HOME}/src/libnumdebug -lnumdebug --verbose --keep \
-              --compile ${NUMDEBUG_DEF} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
+              --pre-include ${CHIMES_HOME}/src/libchimes/libchimes.h \
+              -I${CHIMES_HOME}/src/libchimes ${GXX_FLAGS} \
+              -L${CHIMES_HOME}/src/libchimes -lchimes --verbose --keep \
+              --compile ${CHIMES_DEF} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
     printf 'DONE\n'
-    python ${NUM_DEBUG_HOME}/src/preprocessing/compile_helper.py \
+    python ${CHIMES_HOME}/src/preprocessing/compile_helper.py \
               ${CMD_FILE} ${ENV_FILE} ${PRE_CMD_FILE} ${POST_CMD_FILE} \
               ${CPP_FILE} ${CPP_COMPILER_FILE}
     CPP_COMPILER=$(cat ${CPP_COMPILER_FILE})
@@ -164,8 +164,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
-        -I${NUM_DEBUG_HOME}/src/libnumdebug ${INCLUDES} -S -emit-llvm \
-        ${INTERMEDIATE_FILE} -o ${BITCODE_FILE} -g ${NUMDEBUG_DEF}
+        -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
+        ${INTERMEDIATE_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF}
 
     echo Analyzing ${BITCODE_FILE} and dumping info to ${NVCC_WORK_DIR}
     cd ${NVCC_WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -197,8 +197,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${NVCC_WORK_DIR} \
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
-            ${INTERMEDIATE_FILE} -- -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${NUMDEBUG_DEF}
+            ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${CHIMES_DEF}
 
     TRANSFORMED_FILE=$(basename ${INTERMEDIATE_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -213,7 +213,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Postprocessing ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && ${CPP_COMPILER} -E -I${CUDA_HOME}/include -include stddef.h \
-        ${NUMDEBUG_DEF} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
+        ${CHIMES_DEF} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
         ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=$(dirname ${INTERMEDIATE_FILE})/${FINAL_FILE}
@@ -246,8 +246,8 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${CPP_COMPILER} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-            -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_LIB_PATH} -lnumdebug \
+    ${CPP_COMPILER} -lpthread -I${CHIMES_HOME}/src/libchimes \
+            -L${CHIMES_HOME}/src/libchimes -L${CUDA_LIB_PATH} -lchimes \
             -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${LIB_PATHS} \
             ${LIBS} ${LINKER_FLAGS}
 
