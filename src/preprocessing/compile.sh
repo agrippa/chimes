@@ -84,6 +84,7 @@ COMPILER_FLAGS="${INCLUDES} ${LIB_PATHS} ${LIBS}"
 [[ ! $PROFILE ]] || COMPILER_FLAGS="${COMPILER_FLAGS} -p"
 
 for INPUT in ${INPUTS[@]}; do
+    [[ ! $VERBOSE ]] || echo Compiling $INPUT
     BASENAME=$(basename ${INPUT})
     EXT="${INPUT##*.}"
     LOG_FILE=
@@ -94,14 +95,32 @@ for INPUT in ${INPUTS[@]}; do
         COMPILE_CPP_CMD="${script_dir}/compile_cpp.sh -c -i ${INPUT} \
                          ${COMPILER_FLAGS} -w ${WORK_DIR}"
         [[ ! $VERBOSE ]] || echo $COMPILE_CPP_CMD
+
+        set +e
         ${COMPILE_CPP_CMD} > ${LOG_FILE}
+        ERR=$?
+        if [[ ! $ERR ]]; then
+            echo "Failed compiling $INPUT"
+            cat $LOG_FILE
+            exit 1
+        fi
+        set -e
     elif [[ ${EXT} == "cu" ]]; then
         # CU file
         LOG_FILE=${WORK_DIR}/cu.log
         COMPILE_CU_CMD="${script_dir}/compile_cuda.sh -c -i ${INPUT} \
                         ${COMPILER_FLAGS} -w ${WORK_DIR}"
         [[ ! $VERBOSE ]] || echo $COMPILE_CU_CMD
+
+        set +e
         $COMPILE_CU_CMD > ${LOG_FILE}
+        ERR=$?
+        if [[ ! $ERR ]]; then
+            echo "Failed compiling $INPUT $?"
+            cat $LOG_FILE
+            exit 1
+        fi
+        set -e
     else
         echo "Unsupported file extension ${EXT}"
         exit 1
@@ -114,11 +133,14 @@ for INPUT in ${INPUTS[@]}; do
     LAST_FILES+=($(head -n $WANT_LINES ${LOG_FILE} | tail -n 1))
 done
 
+[[ ! $VERBOSE ]] || echo Done compiling
+
 OBJ_FILE_STR=""
 for f in ${OBJ_FILES[@]}; do
     OBJ_FILE_STR="${OBJ_FILE_STR} $f"
 done
 
+[[ ! $VERBOSE ]] || echo Linking...
 LINK_CMD="${GXX} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
         -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
         -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${LINK_INCLUDES} ${LINK_LIB_PATHS} \
