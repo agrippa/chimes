@@ -189,20 +189,20 @@ def getGotoInsertions(goto_file, declarations, original_file):
             assert line_no not in insertions
             lbl_id = int(tokens[3])
             # TODO find actual start of function body, don't just assume it is the first line + 1
-            insertions[line_no + 1] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
+            insertions[line_no + 1] = 'if (____chimes_replaying) { goto lbl_' + str(lbl_id) + '; } '
         elif line_type == 'INTERNAL':
             if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
             assert line_no not in insertions, str(line_no)
 
             lbl_id = int(tokens[3])
-            insertions[line_no] = 'if (____numdebug_replaying) { goto lbl_' + str(lbl_id) + '; } '
+            insertions[line_no] = 'if (____chimes_replaying) { goto lbl_' + str(lbl_id) + '; } '
         elif line_type == 'FINAL':
             if isDeclaration(line_no, declarations):
                 line_no = line_no + 1
             assert line_no not in insertions
 
-            to_insert =  'if (____numdebug_replaying) { '
+            to_insert =  'if (____chimes_replaying) { '
             to_insert +=     'int dst = get_next_call(); '
             to_insert +=     'switch(dst) { '
             for t in tokens[3:]:
@@ -388,7 +388,7 @@ def getInitializationInsertions(functions_start_file, structs):
         fname = tokens[1]
 
         if fname == 'main':
-            new_line = 'init_numdebug(' + str(len(structs))
+            new_line = 'init_chimes(' + str(len(structs))
             for struct_name in structs.keys():
                 new_line = new_line + ', "' + struct_name + '", ' + str(len(structs[struct_name]))
                 for field_name in structs[struct_name]:

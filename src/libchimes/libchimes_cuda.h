@@ -1,5 +1,5 @@
-#ifndef LIBNUMDEBUG_CUDA_H
-#define LIBNUMDEBUG_CUDA_H
+#ifndef LIBCHIMES_CUDA_H
+#define LIBCHIMES_CUDA_H
 
 #include <map>
 #include <vector>

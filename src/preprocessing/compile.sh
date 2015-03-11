@@ -64,7 +64,7 @@ while getopts ":ki:I:L:l:vo:pw:" opt; do
 done
 
 if [[ -z ${WORK_DIR} ]]; then
-    WORK_DIR=$(mktemp -d /tmp/numdebug.XXXXXX)
+    WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
@@ -141,8 +141,8 @@ for f in ${OBJ_FILES[@]}; do
 done
 
 [[ ! $VERBOSE ]] || echo Linking...
-LINK_CMD="${GXX} -lpthread -I${NUM_DEBUG_HOME}/src/libnumdebug \
-        -L${NUM_DEBUG_HOME}/src/libnumdebug -L${CUDA_HOME}/lib -lnumdebug \
+LINK_CMD="${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
+        -L${CHIMES_HOME}/src/libchimes -L${CUDA_HOME}/lib -lchimes \
         -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${LINK_INCLUDES} ${LINK_LIB_PATHS} \
         ${LINK_LIBS} -g -O0"
 [[ ! $VERBOSE ]] || echo $LINK_CMD

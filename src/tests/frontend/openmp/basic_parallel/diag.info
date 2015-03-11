@@ -3,7 +3,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cp
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 7 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 20 5 rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 33 new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 33 init_numdebug(); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 10 5  int a;  a = (3); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 10 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 11 5  int b;  b = (4); 
@@ -13,22 +13,22 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 1
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 9  int inside;  inside = (6); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 23 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 5  call_lbl_0: calling(0, 0UL, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 5 28  if (____numdebug_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 20 ; call_lbl_1: unsigned ____numdebug_parent_thread = entering_omp_parallel(1, 3, &a, &b, &c)
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5  register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 3, &a, &b, &c); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 5 28  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 20 ; call_lbl_1: unsigned ____chimes_parent_thread = entering_omp_parallel(1, 3, &a, &b, &c)
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 3, &a, &b, &c); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  leaving_omp_parallel(); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 9  call_lbl_0: calling(0, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 10 6  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 10 11  register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 10 11  if (____numdebug_replaying) { goto lbl_1; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 10 11  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 11 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 11 11  register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 11 11  if (____numdebug_replaying) { goto lbl_2; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 11 11  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 6  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 11  register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 11  if (____numdebug_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 234  if (____numdebug_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 11  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { exit(42); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 232  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 10  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 20  register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 20  if (____numdebug_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 6  if (____numdebug_replaying) { goto lbl_3; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 20  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 6  if (____chimes_replaying) { goto lbl_3; } 

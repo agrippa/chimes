@@ -14,14 +14,14 @@
 
 #ifdef CUDA_SUPPORT
 #include <cuda_runtime.h>
-#include "libnumdebug_cuda.h"
+#include "libchimes_cuda.h"
 #endif
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
 #include "perf_profile.h"
 #endif
 
-#include "numdebug_common.h"
+#include "chimes_common.h"
 #include "stack_var.h"
 #include "stack_frame.h"
 #include "heap_allocation.h"
@@ -30,7 +30,7 @@
 #include "global_serialization.h"
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
-#include "numdebug_stack.h"
+#include "chimes_stack.h"
 #include "heap_allocation.h"
 #include "type_info.h"
 #include "thread_ctx.h"
@@ -148,7 +148,7 @@ static size_t *parent_aliases = NULL;
 static size_t parent_aliases_capacity = 0;
 static size_t parent_aliases_length = 0;
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     INIT_MODULE, REGISTER_GLOBAL_VAR, ALIAS_GROUP_CHANGED, MALLOC_WRAPPER,
     REALLOC_WRAPPER, FREE_WRAPPER, N_LABELS };
@@ -176,8 +176,8 @@ static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
 
-int ____numdebug_replaying = 0;
-int ____numdebug_rerunning = 0;
+int ____chimes_replaying = 0;
+int ____chimes_rerunning = 0;
 
 static inline bool valid_group(size_t group) {
     return group > 0;
@@ -199,7 +199,7 @@ static bool aliased(size_t group1, size_t group2) {
     return result;
 }
 
-void init_numdebug() {
+void init_chimes() {
     atexit(onexit);
 
     pthread_t self = pthread_self();
@@ -211,12 +211,12 @@ void init_numdebug() {
             PARENT_ALIASES_INIT_SIZE);
     parent_aliases_capacity = PARENT_ALIASES_INIT_SIZE;
 
-    char *checkpoint_file = getenv("NUMDEBUG_CHECKPOINT_FILE");
+    char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
 #ifdef VERBOSE
         fprintf(stderr, "Using checkpoint file %s\n", checkpoint_file);
 #endif
-        ____numdebug_replaying = 1;
+        ____chimes_replaying = 1;
         int fd = open(checkpoint_file, O_RDONLY);
         assert(fd >= 0);
 
@@ -573,12 +573,12 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(INIT_MODULE);
 #endif
     assert(pthread_mutex_lock(&module_mutex) == 0);
 
-    bool replay = (getenv("NUMDEBUG_CHECKPOINT_FILE") != NULL);
+    bool replay = (getenv("CHIMES_CHECKPOINT_FILE") != NULL);
     va_list vl;
     va_start(vl, nstructs);
 
@@ -636,13 +636,13 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 
     assert(pthread_mutex_unlock(&module_mutex) == 0);
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(INIT_MODULE);
 #endif
 }
 
 void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(NEW_STACK);
 #endif
     thread_ctx *ctx = get_my_context();
@@ -704,13 +704,13 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 
     va_end(vl);
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(NEW_STACK);
 #endif
 }
 
 void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(CALLING);
 #endif
     thread_ctx *ctx = get_my_context();
@@ -731,13 +731,13 @@ void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
     va_end(vl);
     parent_aliases_length = naliases;
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(CALLING);
 #endif
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(RM_STACK);
 #endif
     thread_ctx *ctx = get_my_context();
@@ -764,13 +764,13 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
     ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
 
-    if (____numdebug_rerunning && ctx->get_stack_nesting() < 0) {
+    if (____chimes_rerunning && ctx->get_stack_nesting() < 0) {
 #ifdef VERBOSE
         fprintf(stderr, "Exiting replay...\n");
 #endif
         exit(55);
     }
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(RM_STACK);
 #endif
 }
@@ -813,7 +813,7 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(REGISTER_STACK_VAR);
 #endif
     // Skip the expensive stack var creation if we can
@@ -829,7 +829,7 @@ void register_stack_var(const char *mangled_name,
 
         program_stack->back()->add_stack_var(new_var);
     }
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(REGISTER_STACK_VAR);
 #endif
 }
@@ -837,7 +837,7 @@ void register_stack_var(const char *mangled_name,
 void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(REGISTER_GLOBAL_VAR);
 #endif
     va_list vl;
@@ -853,13 +853,13 @@ void register_global_var(const char *mangled_name, const char *full_type,
     global_vars[mangled_name_str] = new_var;
     assert(pthread_rwlock_unlock(&globals_lock) == 0);
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(REGISTER_GLOBAL_VAR);
 #endif
 }
 
 int alias_group_changed(int ngroups, ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(ALIAS_GROUP_CHANGED);
 #endif
     va_list vl;
@@ -872,7 +872,7 @@ int alias_group_changed(int ngroups, ...) {
         }
     }
     va_end(vl);
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(ALIAS_GROUP_CHANGED);
 #endif
     return 0;
@@ -919,7 +919,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  */
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(MALLOC_WRAPPER);
 #endif
     assert(valid_group(group));
@@ -927,7 +927,7 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
     void *ptr = malloc(nbytes);
 
     if (ptr != NULL) {
-        numdebug_type_info info; memset(&info, 0x00, sizeof(info));
+        chimes_type_info info; memset(&info, 0x00, sizeof(info));
 
         if (is_struct) {
             va_list vl;
@@ -939,14 +939,14 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
                 info.ptr_field_offsets, info.n_ptr_fields);
     }
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(MALLOC_WRAPPER);
 #endif
     return ptr;
 }
 
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(REALLOC_WRAPPER);
 #endif
     assert(valid_group(group));
@@ -989,7 +989,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
         }
     }
 
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(REALLOC_WRAPPER);
 #endif
     return new_ptr;
@@ -1025,7 +1025,7 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 }
 
 void free_wrapper(void *ptr, size_t group) {
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.start_timer(FREE_WRAPPER);
 #endif
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
@@ -1034,7 +1034,7 @@ void free_wrapper(void *ptr, size_t group) {
 
     free_helper(ptr);
     free(ptr);
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     pp.stop_timer(FREE_WRAPPER);
 #endif
 }
@@ -1140,12 +1140,12 @@ void checkpoint() {
     /*
      * On replay, the last thread to hit the checkpoint will skip the wait loop
      * above, enter this region, perform all the restores, and then set
-     * ____numdebug_replaying to zero so that no other thread enters here.
+     * ____chimes_replaying to zero so that no other thread enters here.
      *
      * Otherwise, the last thread will launch the checkpointing logic and all
      * other threads will be prevented from entering there.
      */
-    if (____numdebug_replaying) {
+    if (____chimes_replaying) {
 #ifdef VERBOSE
         fprintf(stderr, "Got to the desired checkpoint with a stack size of "
                 "%lu ( ", program_stack.size());
@@ -1232,8 +1232,8 @@ void checkpoint() {
             fix_stack_or_global_pointer(var->get_address(), var->get_type());
         }
 
-        ____numdebug_replaying = 0;
-        ____numdebug_rerunning = 1;
+        ____chimes_replaying = 0;
+        ____chimes_rerunning = 1;
         for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
                 e = thread_ctxs.end(); i != e; i++) {
             thread_ctx *ctx = i->second;
@@ -1384,7 +1384,7 @@ static void fix_stack_or_global_pointer(void *container, string type) {
 
             /*
              * This requires the offset of every field in every declared struct
-             * to be passed into init_numdebug. This is bad because that assumes
+             * to be passed into init_chimes. This is bad because that assumes
              * that struct definitions are all defined in the same scope as
              * main. This is okay for the moment, but should be addressed as a
              * future TODO. Recently, the practice of passing module-specific
@@ -1444,11 +1444,11 @@ void *checkpoint_func(void *data) {
     // Find a unique file for this checkpoint
     int count = 0;
     char dump_filename[256];
-    sprintf(dump_filename, "numdebug.dump.%d", count);
+    sprintf(dump_filename, "chimes.%d.ckpt", count);
     int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     while (fd < 0) {
         count++;
-        sprintf(dump_filename, "numdebug.dump.%d", count);
+        sprintf(dump_filename, "chimes.%d.ckpt", count);
         fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     }
 
@@ -1643,7 +1643,7 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     unsigned global_tid;
     pthread_t self = pthread_self();
 
-    if (____numdebug_replaying) {
+    if (____chimes_replaying) {
         /*
          * Use the loaded thread hierarchy to figure out what ID this thread was
          * assigned previously.
@@ -1829,7 +1829,7 @@ void onexit() {
 #endif
     }
     assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-#ifdef __NUMDEBUG_PROFILE
+#ifdef __CHIMES_PROFILE
     fprintf(stderr, "%s\n", pp.tostr().c_str());
 #endif
 }

@@ -24,7 +24,7 @@ typedef long unsigned int size_t;
 # 175 "<built-in>" 3
 # 1 "<command line>" 1
 
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 1
+# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
@@ -39,9 +39,9 @@ typedef long int ptrdiff_t;
 
 
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
+# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
-extern void init_numdebug();
+extern void init_chimes();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -64,11 +64,11 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
-extern int ____numdebug_replaying;
+extern int ____chimes_replaying;
 # 3 "<command line>" 2
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
 # 4 "<command line>" 2
@@ -517,7 +517,7 @@ FILE *funopen(const void *,
 # 1 "<built-in>" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
 
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
+# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
 
 
 
@@ -1719,7 +1719,7 @@ void *valloc(size_t);
 
 
 }
-# 10 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 2
+# 10 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
@@ -1730,7 +1730,7 @@ int a;
 int b = 3;
 const char *hello_world = "hello world";
 
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
     a = 4;
     printf("%s\n", hello_world);
     printf("auto global\n");
@@ -1747,4 +1747,4 @@ static int module_init() {
     return 0;
 }
 
-static int __libnumdebug_module_init = module_init();
+static int __libchimes_module_init = module_init();

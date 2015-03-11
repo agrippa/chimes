@@ -39,7 +39,7 @@
 #include <unistd.h>
 #include "common.h"
 #include "common2d.h"
-#ifdef __NUMDEBUG_SUPPORT
+#ifdef __CHIMES_SUPPORT
 #include "checkpoint.h"
 #endif
 
@@ -144,7 +144,7 @@ int main( int argc, char *argv[] ) {
         d_next = d_curr;
         d_curr = tmp;
 
-#ifdef __NUMDEBUG_SUPPORT
+#ifdef __CHIMES_SUPPORT
         checkpoint();
 #endif
 

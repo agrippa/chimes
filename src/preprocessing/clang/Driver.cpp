@@ -26,7 +26,7 @@ using namespace clang;
 using namespace clang::driver;
 using namespace clang::tooling;
 
-static llvm::cl::OptionCategory ToolingSampleCategory("numdebug options");
+static llvm::cl::OptionCategory ToolingSampleCategory("chimes options");
 static llvm::cl::opt<std::string> line_info_file("l",
         llvm::cl::desc("Line info filename"), llvm::cl::value_desc("line_file"));
 static llvm::cl::opt<std::string> struct_file("s",

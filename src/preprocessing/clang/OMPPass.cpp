@@ -68,9 +68,9 @@ std::string OMPPass::handleDecl(const clang::DeclStmt *d,
 
         std::stringstream ss2;
         if (force != NULL) {
-            ss2 << " if (____numdebug_replaying) { " << *force << " } ";
+            ss2 << " if (____chimes_replaying) { " << *force << " } ";
         } else {
-            ss2 << " if (____numdebug_replaying) { goto lbl_" << (lbl + 1) <<
+            ss2 << " if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
                 "; } ";
         }
 
@@ -141,12 +141,12 @@ void OMPPass::VisitRegion(OMPRegion *region) {
         }
 
         std::stringstream entry_ss;
-        entry_ss << " if (____numdebug_replaying) { goto " << first_label <<
+        entry_ss << " if (____chimes_replaying) { goto " << first_label <<
             "; } ";
         InsertTextAfterToken(toInsertAt.getLocWithOffset(1), entry_ss.str());
     } else {
         std::stringstream entry_ss;
-        entry_ss << " if (____numdebug_replaying) { " << transition_str <<
+        entry_ss << " if (____chimes_replaying) { " << transition_str <<
             " } ";
         /*
          * Increment past the semicolon at the end of the function call. This is
@@ -228,7 +228,7 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
         std::stringstream entering_ss;
         entering_ss << "; " <<
             "call_lbl_" << lbl << ": " <<
-            "unsigned ____numdebug_parent_thread = entering_omp_parallel(" <<
+            "unsigned ____chimes_parent_thread = entering_omp_parallel(" <<
             lbl << ", " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
@@ -240,8 +240,8 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         std::stringstream register_ss;
         register_ss << " " <<
-            "register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), " <<
-            "____numdebug_parent_thread, " << private_vars.size();
+            "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
+            "____chimes_parent_thread, " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             register_ss << ", &" << *varsi;
@@ -302,9 +302,9 @@ void OMPPass::VisitStmt(const clang::Stmt *s) {
 
     std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
         "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
-        "init_numdebug", "new_stack", "rm_stack", "register_stack_var",
+        "init_chimes", "new_stack", "rm_stack", "register_stack_var",
         "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
-        "atoi", "atof", "fopen", "getopt", "LIBNUMDEBUG_THREAD_NUM",
+        "atoi", "atof", "fopen", "getopt", "LIBCHIMES_THREAD_NUM",
         "entering_omp_parallel", "leaving_omp_parallel",
         "register_thread_local_stack_vars", "omp_get_thread_num"};
     std::set<std::string> ignorable(ignorable_arr,

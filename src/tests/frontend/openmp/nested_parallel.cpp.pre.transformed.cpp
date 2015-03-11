@@ -9,10 +9,10 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "nested_parallel.cpp.pre.transformed.cpp"
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-# 1 "/tmp/numdebug-frontend//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 1
+# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
@@ -21,9 +21,9 @@ typedef long unsigned int size_t;
 typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
+# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
-extern void init_numdebug();
+extern void init_chimes();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -46,17 +46,17 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 38 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
+# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
 
 
 
 
 
-extern int ____numdebug_replaying;
+extern int ____chimes_replaying;
 # 1 "<command-line>" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
 # 1 "<command-line>" 2
@@ -596,8 +596,8 @@ extern int omp_is_initial_device (void) throw ();
 
 }
 # 3 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
-# 9 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 9 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -1760,28 +1760,28 @@ void *valloc(size_t);
 
 
 }
-# 10 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 2
+# 10 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 2
 
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
 
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
-      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } a = (3);
-      lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; } b = (4);
-      lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { exit(42); } } } c = (5); call_lbl_1: unsigned ____numdebug_parent_thread = entering_omp_parallel(1, 3, &a, &b, &c);
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3);
+      lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } b = (4);
+      lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { exit(42); } } } c = (5); call_lbl_1: unsigned ____chimes_parent_thread = entering_omp_parallel(1, 3, &a, &b, &c);
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 #pragma omp parallel firstprivate(a) private(b, c)
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 
-    { register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 3, &a, &b, &c); if (____numdebug_replaying) { goto lbl_3; }
-          lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { exit(42); } } } inside = (6); call_lbl_2: unsigned ____numdebug_parent_thread = entering_omp_parallel(2, 1, &inside);
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_3; }
+          lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { exit(42); } } } inside = (6); call_lbl_2: unsigned ____chimes_parent_thread = entering_omp_parallel(2, 1, &inside);
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 #pragma omp parallel private(inside)
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 
-        { register_thread_local_stack_vars(LIBNUMDEBUG_THREAD_NUM(), ____numdebug_parent_thread, 1, &inside); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 1, &inside); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
             alias_group_changed(7, (size_t)(335588464056153169UL), (size_t)(1388457574958923572UL), (size_t)(2394767282369806426UL), (size_t)(4453946100683459683UL), (size_t)(6213761567678051020UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
              call_lbl_0: calling(0, 0UL, 0); checkpoint();
         } leaving_omp_parallel();
@@ -1796,4 +1796,4 @@ static int module_init() {
     return 0;
 }
 
-static int __libnumdebug_module_init = module_init();
+static int __libchimes_module_init = module_init();

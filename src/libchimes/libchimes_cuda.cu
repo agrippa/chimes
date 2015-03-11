@@ -1,7 +1,7 @@
 #include "type_info.h"
 #include "heap_allocation.h"
 #include "ptr_and_size.h"
-#include "numdebug_common.h"
+#include "chimes_common.h"
 #include <map>
 #include <cstdarg>
 
@@ -24,7 +24,7 @@ cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
         return err;
     }
 
-    numdebug_type_info info; memset(&info, 0x00, sizeof(info));
+    chimes_type_info info; memset(&info, 0x00, sizeof(info));
     if (is_struct) {
         va_list vl;
         va_start(vl, is_struct);

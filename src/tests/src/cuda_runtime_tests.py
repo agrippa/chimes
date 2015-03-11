@@ -1,9 +1,9 @@
 """
 Runtime tests for CUDA examples, designed to stress the checkpointing and
-restore functionality of the numdebug runtime.
+restore functionality of the chimes runtime.
 """
 import sys
-from common import RuntimeTest, parse_argv, NUM_DEBUG_HOME, run_runtime_test, \
+from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files
 
 BASIC = RuntimeTest('Basic', ['basic.cu'], 0, 1)
@@ -11,8 +11,8 @@ KERNEL = RuntimeTest('Kernel', ['kernel.cu'], 0, 10)
 INDIRECTION = RuntimeTest('Indirection', ['indirection.cu'], 0, 3)
 TESTS = [BASIC, KERNEL, INDIRECTION]
 
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cuda.sh'
-CPP_INPUTS_DIR = NUM_DEBUG_HOME + '/src/tests/runtime/cuda'
+COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cuda.sh'
+CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cuda'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

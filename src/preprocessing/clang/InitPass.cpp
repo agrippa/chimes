@@ -15,7 +15,7 @@ void InitPass::VisitTopLevel(clang::Decl *toplevel) {
             func->isThisDeclarationADefinition()) {
         clang::SourceLocation end = func->getBody()->getLocStart();
 
-        InsertTextAfterToken(end, "init_numdebug(); ");
+        InsertTextAfterToken(end, "init_chimes(); ");
     }
 }
 

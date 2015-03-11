@@ -1,15 +1,15 @@
 """
 Frontend tests for C++ examples, designed to stress the parsing and
-transformation features of numdebug.
+transformation features of chimes.
 """
 import os
 import sys
 from common import FrontendTest, run_frontend_test, parse_argv, \
-                   NUM_DEBUG_HOME, construct_simple_frontend_test
+                   CHIMES_HOME, construct_simple_frontend_test
 
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile_cpp.sh'
-CPP_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cpp'
-CPP_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/cpp'
+COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
+CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
+CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/cpp'
 
 PASS_BY_REF = FrontendTest('PassByRef', ['pass_by_ref.cpp'],
                            ['pass_by_ref.cpp.pre.transformed.cpp'], ['pass_by_ref'],

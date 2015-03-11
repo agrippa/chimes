@@ -166,7 +166,7 @@ if __name__ == '__main__':
         output_file.write(');\n')
     output_file.write('    return 0;\n')
     output_file.write('}\n\n')
-    output_file.write('static int __libnumdebug_module_init = module_init();\n\n')
+    output_file.write('static int __libchimes_module_init = module_init();\n\n')
 
     input_file.close()
     output_file.close()

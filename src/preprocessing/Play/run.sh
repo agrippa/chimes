@@ -16,7 +16,7 @@
 # Example usage:
 #
 #   $ ./run.sh ~/dev/num-debug/src/examples/test.cpp \
-#             /Users/mgrossman/dev/num-debug/src/libnumdebug/examples/
+#             /Users/mgrossman/dev/num-debug/src/libchimes/examples/
 #
 
 set -e
@@ -45,8 +45,8 @@ DECL_FILE=decl.info
 INSTRUMENTED_FILE=$(basename ${INFILE})
 INSTRUMENTED_FILE=${INSTRUMENTED_FILE%.*}.transformed.${INSTRUMENTED_FILE##*.}
 
-if [[ -z "${NUM_DEBUG_HOME}" ]]; then
-    echo "NUM_DEBUG_HOME must be set"
+if [[ -z "${CHIMES_HOME}" ]]; then
+    echo "CHIMES_HOME must be set"
     exit 1
 fi
 
@@ -55,11 +55,11 @@ if [[ -z "${LLVM_INSTALL}" ]]; then
     exit 1
 fi
 
-$CLANG -I${NUM_DEBUG_HOME}/src/libnumdebug -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -g
+$CLANG -I${CHIMES_HOME}/src/libchimes -S -emit-llvm ${INFILE} -o ${BITCODE_FILE} -g
 $OPT -basicaa -load ${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib -play < ${BITCODE_FILE} > ${OBJ_FILE}
 rm ${OBJ_FILE}
 
-# python ${NUM_DEBUG_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} ${INFILE} \
+# python ${CHIMES_HOME}/src/preprocessing/InsertTrackingCalls.py ${INFILE} ${INFILE} \
 #            ${LINE_INFO_FILE} ${FUNCTION_START_FILE} ${FUNCTION_EXIT_FILE} \
 #            ${STACK_FILE} ${HEAP_FILE} ${LOC_FILE} ${GOTO_FILE} ${STRUCT_FILE} \
 #            ${DECL_FILE} ${OUT_DIR}/${INSTRUMENTED_FILE}

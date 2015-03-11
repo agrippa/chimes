@@ -24,7 +24,7 @@ typedef long unsigned int size_t;
 # 175 "<built-in>" 3
 # 1 "<command line>" 1
 
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 1
+# 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
@@ -39,9 +39,9 @@ typedef long int ptrdiff_t;
 
 
 typedef long unsigned int size_t;
-# 5 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h" 2
+# 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
-extern void init_numdebug();
+extern void init_chimes();
 extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -64,11 +64,11 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 44 "/Users/jmg3/num-debug/src/libnumdebug/libnumdebug.h"
-inline unsigned LIBNUMDEBUG_THREAD_NUM() { return 0; }
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
-extern int ____numdebug_replaying;
+extern int ____chimes_replaying;
 # 3 "<command line>" 2
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
 # 4 "<command line>" 2
@@ -1712,20 +1712,20 @@ void *valloc(size_t);
 }
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 
-# 1 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h" 1
-# 11 "/Users/jmg3/num-debug/src/libnumdebug/checkpoint.h"
+# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 
-int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_0; }
-     lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_1; } lbl_1: int iter; register_stack_var("main|iter|0", "i32", (void *)(&iter), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_2; }
-      lbl_2: int N; register_stack_var("main|N|0", "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_3; } N = (1024);
-      lbl_3: int niters; register_stack_var("main|niters|0", "i32", (void *)(&niters), (size_t)4, 0, 0, 0); if (____numdebug_replaying) { goto lbl_4; } niters = (10000);
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+     lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int iter; register_stack_var("main|iter|0", "i32", (void *)(&iter), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; }
+      lbl_2: int N; register_stack_var("main|N|0", "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } N = (1024);
+      lbl_3: int niters; register_stack_var("main|niters|0", "i32", (void *)(&niters), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } niters = (10000);
 
-      lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
-      lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
+      lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
+      lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 11995044644349796100UL, 0, 0));
     for (i = 0; i < N; i++) { {
          call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
     } }
@@ -1735,14 +1735,14 @@ int main(int argc, char **argv) {init_numdebug(); new_stack(2, 2, (size_t)(0UL),
         for (i = 1; i < N - 1; i++) { {
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
         } }
-          lbl_6: int *tmp; register_stack_var("main|tmp|0", "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { goto lbl_7; } tmp = (curr);
+          lbl_6: int *tmp; register_stack_var("main|tmp|0", "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } tmp = (curr);
         curr = next;
         next = tmp;
 
         alias_group_changed(11, (size_t)(557327200247579733UL), (size_t)(1388457574958923572UL), (size_t)(6106350031149747834UL), (size_t)(11995044644349796100UL), (size_t)(14248127759314616947UL), (size_t)(15018275423251710358UL), (size_t)(15772700233101583677UL), (size_t)(16551423137225396134UL), (size_t)(16809019010565379225UL), (size_t)(17518635324219924788UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
     } }
 
-      lbl_7: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____numdebug_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
+      lbl_7: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
     for (i = 0; i < N; i++) { {
         fprintf(fp, "%d\n", curr[i]);
     } }
@@ -1759,4 +1759,4 @@ static int module_init() {
     return 0;
 }
 
-static int __libnumdebug_module_init = module_init();
+static int __libchimes_module_init = module_init();

@@ -1,6 +1,6 @@
-#include "numdebug_stack.h"
+#include "chimes_stack.h"
 
-void numdebug_stack::ensure_capacity(int target) {
+void chimes_stack::ensure_capacity(int target) {
     if (capacity >= target) {
         return;
     }
@@ -14,25 +14,25 @@ void numdebug_stack::ensure_capacity(int target) {
     capacity = new_capacity;
 }
 
-void numdebug_stack::push(int e) {
+void chimes_stack::push(int e) {
     ensure_capacity(len + 1);
 
     stack[len++] = e;
 }
 
-int numdebug_stack::pop() {
+int chimes_stack::pop() {
     int val = stack[len - 1];
     len--;
     return val;
 }
 
-void numdebug_stack::copy(std::vector<int> *dst) {
+void chimes_stack::copy(std::vector<int> *dst) {
     for (int i = 0; i < len; i++) {
         dst->push_back(stack[i]);
     }
 }
 
-std::string numdebug_stack::str() {
+std::string chimes_stack::str() {
     std::stringstream ss;
     ss << "[";
     for (int i = 0; i < len; i++) {

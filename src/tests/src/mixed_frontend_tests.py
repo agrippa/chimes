@@ -1,15 +1,15 @@
 """
 Frontend tests for CUDA examples, designed to stress the parsing and
-transformation features of numdebug.
+transformation features of chimes.
 """
 import os
 import sys
-from common import FrontendTest, run_frontend_test, parse_argv, NUM_DEBUG_HOME
+from common import FrontendTest, run_frontend_test, parse_argv, CHIMES_HOME
 
-COMPILE_SCRIPT = NUM_DEBUG_HOME + '/src/preprocessing/compile.sh'
-CUDA_EXAMPLES_DIR = NUM_DEBUG_HOME + '/src/examples/cuda'
+COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile.sh'
+CUDA_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cuda'
 CPP_EXAMPLES_DIR = '../cpp' # relative to CUDA_EXAMPLES_DIR
-CUDA_TEST_DIR = NUM_DEBUG_HOME + '/src/tests/frontend/cuda'
+CUDA_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/cuda'
 
 ISO2D = FrontendTest('Iso2D',
                      ['iso2d.cu', CPP_EXAMPLES_DIR + '/lib/common.cpp',
