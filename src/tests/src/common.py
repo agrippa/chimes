@@ -5,6 +5,7 @@ import os
 import sys
 import shutil
 import tempfile
+import platform
 from subprocess import Popen, PIPE
 
 CHIMES_HOME = os.environ['CHIMES_HOME']
@@ -113,6 +114,13 @@ class FrontendTest(object):
         self.expect_err = expect_err
         self.includes = [] if includes is None else includes
         self.dependencies = [] if dependencies is None else dependencies
+
+
+def get_platform_directory():
+    """
+    Get the platform-specific subdirectory for the frontend tests.
+    """
+    return platform.system()
 
 
 def find_file(name, path):

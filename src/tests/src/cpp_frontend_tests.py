@@ -5,11 +5,13 @@ transformation features of chimes.
 import os
 import sys
 from common import FrontendTest, run_frontend_test, parse_argv, \
-                   CHIMES_HOME, construct_simple_frontend_test
+                   CHIMES_HOME, construct_simple_frontend_test, \
+                   get_platform_directory
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
-CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/cpp'
+CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
+               get_platform_directory() + '/cpp'
 
 PASS_BY_REF = FrontendTest('PassByRef', ['pass_by_ref.cpp'],
                            ['pass_by_ref.cpp.pre.transformed.cpp'], ['pass_by_ref'],

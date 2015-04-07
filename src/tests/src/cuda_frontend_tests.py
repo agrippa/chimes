@@ -3,12 +3,14 @@ Frontend tests for CUDA examples, designed to stress the parsing and
 transformation features of chimes.
 """
 import sys
-from common import FrontendTest, run_frontend_test, parse_argv, CHIMES_HOME
+from common import FrontendTest, run_frontend_test, parse_argv, CHIMES_HOME, \
+                   get_platform_directory
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cuda.sh'
 CUDA_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cuda'
 CPP_EXAMPLES_DIR = '../cpp' # relative to CUDA_EXAMPLES_DIR
-CUDA_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/cuda'
+CUDA_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
+                get_platform_directory() + '/cuda'
 
 VECTOR_SUM = FrontendTest('VectorSum', ['vector_sum.cu'],
                           ['vector_sum.cudafe1.transformed.cpp'], ['vector_sum'],
