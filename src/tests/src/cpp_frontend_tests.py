@@ -39,11 +39,23 @@ ISO2D = FrontendTest('Iso2D',
                      includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                      dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                 'libcommon2d.so')])
+ISO3D = FrontendTest('Iso3D',
+                     ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'],
+                     ['iso3d.cpp.pre.transformed.cpp',
+                      'common.cpp.pre.transformed.cpp',
+                      'common3d.cpp.pre.transformed.cpp'],
+                     ['iso3d', 'common', 'common3d'],
+                     False,
+                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
+                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
+                                                'libcommon2d.so')])
+
 
 TESTS = [PASS_BY_REF]
 for simple in SIMPLE_TESTS:
     TESTS.append(construct_simple_frontend_test(simple))
 TESTS.append(ISO2D)
+TESTS.append(ISO3D)
 
 
 if __name__ == '__main__':

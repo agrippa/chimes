@@ -1,0 +1,14 @@
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 12 9 : { 1254147978383576318, 2922653694141958230, 4359786824679902598, 10070197379301083460, 11962065739929496395, 12206729749981155450, 16116219678429679998, 16119324046284827923, 17212139461496178318 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 53 5 : { 9299461872755550985 } direct:call:exit
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 79 17 : { 5952148420769155456, 13074077825309627352, 13158819563366888467, 16497600537396980357, 17621417648879593294, 18224721594452017849 } prop:call:_getopt
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 120 17 : { 5952148420769155456, 17621417648879593294 } prop:call:_Z5usagePPc
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 82 28 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 85 28 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 88 28 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 91 32 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 97 35 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 102 17 : { 5952148420769155456, 17621417648879593294 } prop:call:_Z12parse_sourcePcP7_source
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 106 32 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 109 31 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 112 40 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 125 23 : { 5952148420769155456, 17621417648879593294 } prop:call:getNumCUDADevices
