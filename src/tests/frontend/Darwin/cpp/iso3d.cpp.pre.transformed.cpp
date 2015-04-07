@@ -2904,6 +2904,15 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp" 2
 
 
+# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+# 45 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp" 2
+
+
+
 
 
 
@@ -2972,7 +2981,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
     } }
 
     alias_group_changed(10, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(7630722717511585817UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16833687143959260136UL)); call_lbl_2: calling(2, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
-      lbl_11: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_3: calling(3, 13963731660044139802UL, 4, (size_t)(1684045228540769931UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
+      lbl_11: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_3: calling(3, 13963731660044139894UL, 4, (size_t)(1684045228540769931UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
 
     alias_group_changed(1, (size_t)(6260459933904493830UL)); call_lbl_4: calling(4, 0UL, 9, (size_t)(5743826591483403587UL), (size_t)(5743826591483403587UL), (size_t)(13500098221715200020UL), (size_t)(13180664836399372012UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt);
 
@@ -2992,18 +3001,22 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
         next = curr;
         curr = tmp;
 
-        alias_group_changed(8, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(4230221212431166864UL), (size_t)(5424025495246047316UL), (size_t)(5743826591483403587UL), (size_t)(8746935921038613430UL), (size_t)(13776165132426961666UL), (size_t)(14608951975089488607UL)); call_lbl_7: calling(7, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
-    } } }
-    alias_group_changed(8, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(4230221212431166864UL), (size_t)(5424025495246047316UL), (size_t)(5743826591483403587UL), (size_t)(8746935921038613430UL), (size_t)(13776165132426961666UL), (size_t)(14608951975089488607UL)); lbl_17: double elapsed_s; register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } call_lbl_8: calling(8, 0UL, 0); elapsed_s = (seconds() - start);
 
-    alias_group_changed(1, (size_t)(2124997618683620793UL)); call_lbl_9: calling(9, 0UL, 0); finish_progress();
+        alias_group_changed(8, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(4230221212431166864UL), (size_t)(5424025495246047316UL), (size_t)(5743826591483403587UL), (size_t)(8746935921038613430UL), (size_t)(13776165132426961666UL), (size_t)(14608951975089488607UL)); call_lbl_7: calling(7, 0UL, 0); checkpoint();
+
+
+         call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
+    } } }
+    alias_group_changed(8, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(4230221212431166864UL), (size_t)(5424025495246047316UL), (size_t)(5743826591483403587UL), (size_t)(8746935921038613430UL), (size_t)(13776165132426961666UL), (size_t)(14608951975089488607UL)); lbl_17: double elapsed_s; register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } call_lbl_9: calling(9, 0UL, 0); elapsed_s = (seconds() - start);
+
+    alias_group_changed(1, (size_t)(2124997618683620793UL)); call_lbl_10: calling(10, 0UL, 0); finish_progress();
 
       lbl_18: float point_rate; register_stack_var("main|point_rate|0", "float", (void *)(&point_rate), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps));
     fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
             elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
 
     if (conf.save_text != -1) { {
-        alias_group_changed(1, (size_t)(16557221819836515321UL)); call_lbl_10: calling(10, 0UL, 8, (size_t)(5743826591483403587UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); save_layer_text(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx,
+        alias_group_changed(1, (size_t)(16557221819836515321UL)); call_lbl_11: calling(11, 0UL, 8, (size_t)(5743826591483403587UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); save_layer_text(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx,
                 "snap.text", conf.radius);
     } }
 
@@ -3011,17 +3024,17 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
     free_wrapper(curr, 5743826591483403587UL);
     free_wrapper(next, 5743826591483403587UL);
     free_wrapper(vsq, 13500098221715200020UL);
-    { lbl_19: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { exit(42); } } } for ( i = (0); i < conf.nsrcs; i++) { {
-        free_wrapper(srcs[i], 10167393815624040222UL);
+    { lbl_19: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } } for ( i = (0); i < conf.nsrcs; i++) { {
+        free_wrapper(srcs[i], 10167393815624040314UL);
     } } }
-    free_wrapper(srcs, 13963731660044139802UL);
+    free_wrapper(srcs, 13963731660044139894UL);
 
     alias_group_changed(13, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(7630722717511585817UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(636351199311517109UL, 14, 2, 11272468684151533304UL, 2195831390833324257UL, 11444889221438892957UL, 1684045228540769931UL, 15537155775784154646UL, 418041589631575463UL, 13776165132426961666UL, 5743826591483403587UL, 16833687143959260136UL, 13500098221715200020UL, 3920757191841456973UL, 5743826591483403587UL, 12733324398711892151UL, 14087205798434806760UL, 13963731660044139802UL, 10167393815624040222UL, 12835239948587864347UL, 13180664836399372012UL, 2362206228145856531UL, 5743826591483403587UL, 1388457574958923572UL, 18293662412874621885UL, 1816896773850444861UL, 418041589642746166UL, 6095867792190138415UL, 8511723456706306349UL, 6260459933904493830UL, 13963731660044139802UL, "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    init_module(636351199311517109UL, 14, 2, 11272468684151533304UL, 2195831390833324257UL, 11444889221438892957UL, 1684045228540769931UL, 15537155775784154646UL, 418041589631575463UL, 13776165132426961666UL, 5743826591483403587UL, 16833687143959260136UL, 13500098221715200020UL, 3920757191841456973UL, 5743826591483403587UL, 12733324398711892151UL, 14087205798434806760UL, 12835239948587864347UL, 13180664836399372012UL, 2362206228145856531UL, 5743826591483403587UL, 1388457574958923572UL, 18293662412874621885UL, 1816896773850444861UL, 418041589642746166UL, 6095867792190138415UL, 8511723456706306350UL, 6260459933904493830UL, 13963731660044139894UL, 13963731660044139894UL, 10167393815624040314UL, "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
     return 0;
 }
 
