@@ -6,6 +6,7 @@ script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
+ENABLE_OMP=1
 KEEP=0
 PROFILE=0
 COMPILE=0
@@ -18,7 +19,7 @@ WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
 
-while getopts ":kci:I:L:l:o:w:vp" opt; do
+while getopts ":kci:I:L:l:o:w:vps" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -53,6 +54,9 @@ while getopts ":kci:I:L:l:o:w:vp" opt; do
         x)
             LINKER_FLAGS="${LINKER_FLAGS} ${OPTARG}"
             ;;
+        s)
+            ENABLE_OMP=0
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -65,7 +69,7 @@ while getopts ":kci:I:L:l:o:w:vp" opt; do
 done
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
-    echo usage: compile_cuda.sh [-c] [-k] [-p] [-v] [-I include-path] [-l libname] [-L lib-path] -i input.cu
+    echo usage: compile_cuda.sh [-c] [-k] [-p] [-v] [-s] [-I include-path] [-l libname] [-L lib-path] -i input.cu
     exit 1
 fi
 
@@ -159,8 +163,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
         exit 1
     fi
 
-    echo Looking for OpenMP pragmas in ${INPUT}
-    cd ${NVCC_WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
+    if [[ $ENABLE_OMP == 1 ]]; then
+        echo Looking for OpenMP pragmas in ${INPUT}
+        cd ${NVCC_WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
+    else
+        touch ${INFO_FILE_PREFIX}.omp.info
+    fi
 
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
