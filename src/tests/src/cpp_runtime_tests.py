@@ -29,9 +29,15 @@ ISO2D = RuntimeTest('Iso2D',
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
                     cli_args='-i 1')
+ISO3D = RuntimeTest('Iso3D',
+                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, 1,
+                    includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
+                    dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
+                                               'libcommon2d.so')],
+                    cli_args='-i 1')
 TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
          HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, GLOBALS,
-         MULTI_CHECKPOINT, ISO2D]
+         MULTI_CHECKPOINT, ISO2D, ISO3D]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
