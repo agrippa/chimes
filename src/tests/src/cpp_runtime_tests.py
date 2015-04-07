@@ -11,6 +11,7 @@ CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
 STACK_SCALAR = RuntimeTest('StackScalar', ['stack_scalar.cpp'], 3, 1)
 STACK_STRUCT = RuntimeTest('StackStruct', ['stack_struct.cpp'], 4, 1)
+STACK_ARRAY = RuntimeTest('StackArray', ['stack_array.cpp'], 44, 1)
 NESTED_STACK_SCALAR = RuntimeTest('NestedStackScalar',
                                   ['nested_stack_scalar.cpp'], 5, 1)
 NESTED_STACK_STRUCT = RuntimeTest('NestedStackStruct',
@@ -35,9 +36,9 @@ ISO3D = RuntimeTest('Iso3D',
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
                     cli_args='-i 1')
-TESTS = [STACK_SCALAR, STACK_STRUCT, NESTED_STACK_SCALAR, NESTED_STACK_STRUCT,
-         HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, GLOBALS,
-         MULTI_CHECKPOINT, ISO2D, ISO3D]
+TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
+         NESTED_STACK_STRUCT, HEAP, HEAP_POINTERS, HEAP_INDIRECTION, FREE,
+         REALLOC, GLOBALS, MULTI_CHECKPOINT, ISO2D, ISO3D]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
