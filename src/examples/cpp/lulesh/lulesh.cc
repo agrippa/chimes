@@ -156,6 +156,10 @@ Additional BSD Notice
 #include <iostream>
 #include <unistd.h>
 
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
+
 #if _OPENMP
 # include <omp.h>
 #endif
@@ -2777,6 +2781,10 @@ int main(int argc, char *argv[])
          printf("cycle = %d, time = %e, dt=%e\n",
                 locDom->cycle(), double(locDom->time()), double(locDom->deltatime()) ) ;
       }
+
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
    }
 
    // Use reduced max elapsed time
