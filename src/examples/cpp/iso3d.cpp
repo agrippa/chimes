@@ -40,6 +40,10 @@
 #include "common.h"
 #include "common3d.h"
 
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
+
 /*
  * This function advances the state of the system by nsteps timesteps. The 
  * curr is the current state of the system.
@@ -128,6 +132,10 @@ int main( int argc, char *argv[] ) {
         TYPE *tmp = next;
         next = curr;
         curr = tmp;
+
+#ifdef __CHIMES_SUPPORT
+        checkpoint();
+#endif
 
         update_progress(step + 1);
     }
