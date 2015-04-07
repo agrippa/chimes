@@ -11,12 +11,18 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     actual_name = actual_name.substr(0, actual_name.find('|'));
 
     std::stringstream ss;
-    ss << "\"" << alloc->get_mangled_varname() << "\", \"" <<
-        alloc->get_full_type() << "\", (void *)(&" << actual_name << "), " <<
-        "(size_t)" << (alloc->get_type_size_in_bits() / 8) << ", " <<
-        (alloc->get_is_ptr() ? "1" : "0") << ", " <<
-        (alloc->get_is_struct() ? "1" : "0") << ", " <<
-        alloc->get_num_ptr_fields();
+    ss << "\"" << alloc->get_mangled_varname() << "\", ";
+    ss << "\"" << alloc->get_full_type() << "\", ";
+    if ((alloc->get_full_type())[0] == '[') {
+        // Stack array
+        ss << "(void *)(" << actual_name << "), ";
+    } else {
+        ss << "(void *)(&" << actual_name << "), ";
+    }
+    ss << "(size_t)" << (alloc->get_type_size_in_bits() / 8) << ", ";
+    ss << (alloc->get_is_ptr() ? "1" : "0") << ", ";
+    ss << (alloc->get_is_struct() ? "1" : "0") << ", ";
+    ss << alloc->get_num_ptr_fields();
 
     for (std::vector<std::string>::iterator ptrs =
             alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
