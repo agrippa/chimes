@@ -1,1 +1,1 @@
-/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 5 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z3fooPi
+/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 5 : { 1, 2, 3 } direct:call:_Z3fooPi

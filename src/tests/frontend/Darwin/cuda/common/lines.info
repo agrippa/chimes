@@ -1,23 +1,23 @@
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 56 : { 1245668952459180081, 1838009110135119624, 2008721800625821080, 4226562647247638785, 8765741491806222420, 11424047330458090375, 14397346785968559525, 16555843550090687416, 16659523271239593530, 17214330647054485194 } prop:call:exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 64 25 : { 5997784754333573673, 8936251819094495589, 16334560808348918639 } direct:call:strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 68 9 : { 7503953869617880805, 13982009165439054754 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 26 : { 7503953869617880805, 13982009165439054754 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 75 9 : { 1387191059008098409, 5186300721691170515 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 25 : { 1387191059008098409, 5186300721691170515 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 82 9 : { 3277977604394879722, 6456531717151425942, 8132302032623108198, 11007132437992599952, 11890416593231187164 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 14 : { 3277977604394879722, 6456531717151425942, 8132302032623108198, 11007132437992599952, 11890416593231187164 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 90 14 : { 4995672202021001482 } direct:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 91 17 : { 4995672202021001482 } direct:call:atof
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 92 14 : { 4995672202021001482 } direct:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 100 13 : { 2685576284420924090, 2752442294988640373, 6406781234504566915, 7374354779439216353, 8522629736461562909, 9285280766920217948, 13772703458028244832, 15190893650781371235, 16182187182034189366, 16642833800444842057 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 114 13 : { 2685576284420924090, 2752442294988640373, 6406781234504566915, 7374354779439216353, 8522629736461562909, 9285280766920217948, 13772703458028244832, 15190893650781371235, 16182187182034189366, 16642833800444842057 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 118 13 : { 2685576284420924090, 2752442294988640373, 6406781234504566915, 7374354779439216353, 8522629736461562909, 9285280766920217948, 13772703458028244832, 15190893650781371235, 16182187182034189366, 16642833800444842057 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 122 13 : { 2685576284420924090, 2752442294988640373, 6406781234504566915, 7374354779439216353, 8522629736461562909, 9285280766920217948, 13772703458028244832, 15190893650781371235, 16182187182034189366, 16642833800444842057 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 131 9 : { 4972645299531092553, 7547608872137199987, 7867438819795547955, 14632242022306526605, 17386119534690992797, 17866036073706292390, 18281605317195734986 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 138 13 : { 4972645299531092553, 7547608872137199987, 7867438819795547955, 14632242022306526605, 17386119534690992797, 17866036073706292390, 18281605317195734986 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 140 9 : { 4972645299531092553, 7547608872137199987, 7867438819795547955, 14632242022306526605, 17386119534690992797, 17866036073706292390, 18281605317195734986 } prop:call:_Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 149 9 : { 4047636378196868974, 5624763593374234384, 10327675655215703295, 10864129096542978442, 11193925814866863242 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 154 9 : { 4047636378196868974, 5624763593374234384, 10327675655215703295, 10864129096542978442, 11193925814866863242 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 58 : { 4047636378196868974, 5624763593374234384, 10327675655215703295, 10864129096542978442, 11193925814866863242 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 188 9 : { 7452125661963734140, 11152286784634729525, 16155725638166610324 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 199 9 : { 7452125661963734140, 11152286784634729525, 16155725638166610324 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 56 : { 23, 24, 25, 26, 27, 28, 29, 30, 31, 92 } prop:call:exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 64 25 : { 97, 98, 99 } direct:call:strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 68 9 : { 100, 101 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 26 : { 100, 101 } prop:call:strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 75 9 : { 102, 103 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 25 : { 102, 103 } prop:call:strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 82 9 : { 104, 105, 115, 155, 174 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 14 : { 104, 105, 115, 155, 174 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 90 14 : { 187 } direct:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 91 17 : { 187 } direct:call:atof
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 92 14 : { 187 } direct:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 100 13 : { 195, 196, 197, 198, 199, 200, 201, 261, 317, 318 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 114 13 : { 195, 196, 197, 198, 199, 200, 201, 261, 317, 318 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 118 13 : { 195, 196, 197, 198, 199, 200, 201, 261, 317, 318 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 122 13 : { 195, 196, 197, 198, 199, 200, 201, 261, 317, 318 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 131 9 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 138 13 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 140 9 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:_Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 149 9 : { 404, 405, 406, 612, 615 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 154 9 : { 404, 405, 406, 612, 615 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 58 : { 404, 405, 406, 612, 615 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 188 9 : { 502, 504, 505 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 199 9 : { 502, 504, 505 } prop:call:exit

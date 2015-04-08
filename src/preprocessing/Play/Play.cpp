@@ -12,6 +12,7 @@
 #include "llvm/IR/Operator.h"
 
 #include "ValueVisitor.h"
+#include "Hasher.h"
 
 #include <stdio.h>
 #include <utility>
@@ -162,9 +163,9 @@ namespace {
                 std::map<std::string, std::vector<std::string>> *structFields);
         void dumpCallSiteAliases(Module &M, const char *filename,
                 std::map<Value *, size_t> value_to_alias_group);
-        ReachableInfo propagateAliases(Module &M);
+        ReachableInfo propagateAliases(Module &M, Hasher *H);
         std::vector<Value *> *collectInitialInstructionsToVisit(Module &M);
-        std::map<Value *, size_t> *collectInitialAliasMappings(Module &M);
+        std::map<Value *, size_t> *collectInitialAliasMappings(Module &M, Hasher *H);
         void findFunctionExits(Module &M, const char *output_file,
                 std::map<Value *, size_t> value_to_alias_group,
                 std::map<Function *, std::set<size_t> *> *func_to_groups_changed);
@@ -174,6 +175,7 @@ namespace {
                 std::set<size_t> *groups, std::set<BasicBlock *> *visited,
                 std::set<size_t> *changed_at_termination);
         std::string *getFunctionDisplayName(Function *F, Module &M);
+        Hasher *calculate_hashes(Module &M);
     };
 }
 
@@ -338,7 +340,8 @@ std::vector<Value *> *Play::collectInitialInstructionsToVisit(Module &M) {
     return result;
 }
 
-std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
+std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M,
+        Hasher *H) {
     std::map<Value *, size_t> *mappings = new std::map<Value *, size_t>();
 
     for (Module::iterator i = M.begin(), e = M.end(); i != e; i++) {
@@ -348,7 +351,7 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
                 ai != ae; ai++) {
             Argument *A = &*ai;
             assert(mappings->find(A) == mappings->end());
-            (*mappings)[A] = hash_argument(A);
+            (*mappings)[A] = H->get(A);
         }
 
         for (Function::iterator bi = F->begin(), be = F->end(); bi != be; bi++) {
@@ -358,7 +361,7 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
                         ii != ie; ii++) {
                     Instruction *insn = &*ii;
                     if (isa<AllocaInst>(insn)) {
-                        (*mappings)[insn] = hash_instruction(insn);
+                        (*mappings)[insn] = H->get(insn);
                     }
                 }
             }
@@ -374,7 +377,7 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
         assert(mappings->find(G) == mappings->end());
 
         if (global_type_to_alias.find(G->getType()) == global_type_to_alias.end()) {
-            size_t alias = hash_global(G);
+            size_t alias = H->get(G);
             (*mappings)[G] = alias;
             global_type_to_alias[G->getType()] = alias;
         } else {
@@ -470,12 +473,12 @@ void Play::findGlobals(Module &M, const char *filename) {
     fclose(fp);
 }
 
-ReachableInfo Play::propagateAliases(Module &M) {
+ReachableInfo Play::propagateAliases(Module &M, Hasher *H) {
     std::vector<Value *> *initial = collectInitialInstructionsToVisit(M);
     std::map<Value *, size_t> *initial_alias_mappings =
-        collectInitialAliasMappings(M);
+        collectInitialAliasMappings(M, H);
 
-    ValueVisitor visitor(initial, initial_alias_mappings);
+    ValueVisitor visitor(initial, initial_alias_mappings, &M, H);
 
     visitor.driver();
 
@@ -1082,12 +1085,10 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
             if (fields_defs.getElement(f).getTag() == dwarf::DW_TAG_member) {
                 DIType di_field(fields_defs.getElement(f));
                 std::string fieldname = di_field.getName().str();
-                errs() << "  "  << fieldname << "\n";
                 fields.push_back(fieldname);
             }
         }
 
-        errs() << struct_name << "\n";
         (*struct_fields)[struct_name] = fields;
     }
     return struct_fields;
@@ -1146,7 +1147,6 @@ std::string *Play::getFunctionDisplayName(Function *F, Module &M) {
         }
     }
 
-    errs() << fname << "\n";
     if (function_to_demangled.find(fname) != function_to_demangled.end()) {
         return &(function_to_demangled[fname]);
     } else {
@@ -1673,12 +1673,38 @@ void Play::findFunctionExits(Module &M, const char *output_file,
     fclose(fp);
 }
 
+Hasher *Play::calculate_hashes(Module &M) {
+    Hasher *hashes = new Hasher();
+
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+        for (inst_iterator i = inst_begin(F), e = inst_end(F); i != e; ++i) {
+            Instruction *curr = &*i;
+            hashes->add(curr);
+        }
+
+        for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end();
+                i != e; i++) {
+            hashes->add(&*i);
+        }
+    }
+
+    for (Module::global_iterator i = M.global_begin(), e = M.global_end();
+            i != e; i++) {
+        hashes->add(&*i);
+    }
+
+    return hashes;
+}
+
 /*
  *  CallGraphSCC always has a size of 1 expect for recursive call graphs.
  *  However, we still have the guarantee that we are passed single-element call
  *  graphs (i.e. functions) in reverse depth traversal order.
  */
 bool Play::runOnModule(Module &M) {
+    Hasher *hashes = calculate_hashes(M);
+
     initKnownFunctions();
 
     /*
@@ -1687,15 +1713,11 @@ bool Play::runOnModule(Module &M) {
      * to metrics collectors should be inserted in the original source code, as
      * well as the alias sets that should be marked by those calls.
      */
-    printFunctions(M);
 
     findGlobals(M, "globals.info");
 
-    ReachableInfo reachable = propagateAliases(M);
+    ReachableInfo reachable = propagateAliases(M, hashes);
 
-    printValuesAndAliasGroups(reachable.get_value_to_alias_group());
-
-    printReachable(reachable);
     dumpReachable(reachable, "reachable.info");
 
     std::map<Function *, std::set<size_t> *> *func_to_groups_changed =
@@ -1741,6 +1763,12 @@ bool Play::runOnModule(Module &M) {
 
     findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group(),
             func_to_groups_changed);
+
+#ifdef VERBOSE
+    printFunctions(M);
+    printValuesAndAliasGroups(reachable.get_value_to_alias_group());
+    printReachable(reachable);
+#endif
 
     return false;
 }

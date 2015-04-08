@@ -1,7 +1,7 @@
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 5 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z12setup_configP7_configiPPc
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 103 5 : { 1730036212542016532, 1933428909702055326, 3512365080884279303, 3916789489242128784, 3920757191841456973, 5571543899197932560, 12835239948587864347, 13776165132426961666, 16833687143959260136 } prop:call:_Z14config_sourcesPP7_sourcePiiii
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 5 : { 3232826025796191657 } direct:call:_Z9init_dataPfS_S_S_iiff
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 124 9 : { 2362206228145856531, 3920757191841456973, 4230221212431166864, 5424025495246047316, 8391575324692158608, 8746935921038613430, 13776165132426961666, 14608951975089488607 } prop:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 24 : { 2362206228145856531, 3920757191841456973, 4230221212431166864, 5424025495246047316, 8391575324692158608, 8746935921038613430, 13776165132426961666, 14608951975089488607 } prop:call:_Z7secondsv
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 5 : { 2124997618683620793 } direct:call:_Z15finish_progressv
-/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 138 9 : { 16557221819836515321 } prop:call:_Z9save_textPfiiiiPKci
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 5 : { 1, 2, 3 } direct:call:_Z12setup_configP7_configiPPc
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 103 5 : { 5, 6, 7, 8, 9, 10, 11, 12, 13 } prop:call:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 106 5 : { 14 } direct:call:_Z9init_dataPfS_S_S_iiff
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 124 9 : { 11, 12, 15, 16, 17, 18, 19, 220 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 24 : { 11, 12, 15, 16, 17, 18, 19, 220 } prop:call:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 5 : { 20 } direct:call:_Z15finish_progressv
+/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 138 9 : { 21 } prop:call:_Z9save_textPfiiiiPKci

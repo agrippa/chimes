@@ -1,12 +1,12 @@
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 12 9 : { 2020512955842300876, 2850663618440899500, 4237632752881298404, 13388633992466173602, 13697246817649382652, 13803245390038478632, 15217183307985170569, 17434303105024168097 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 52 5 : { 9299461872755550985 } direct:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 77 17 : { 5952148420769155456, 13074077825309627352, 13158819563366888467, 16497600537396980357, 17621417648879593294, 18224721594452017849 } prop:call:_getopt
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 17 : { 5952148420769155456, 17621417648879593294 } prop:call:_Z5usagePPc
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 80 28 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 83 28 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 86 32 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 17 : { 5952148420769155456, 17621417648879593294 } prop:call:_Z12parse_sourcePcP7_source
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 101 32 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 104 31 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 107 40 : { 5952148420769155456, 17621417648879593294 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 23 : { 5952148420769155456, 17621417648879593294 } prop:call:getNumCUDADevices
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 12 9 : { 1, 2, 3, 4, 5, 6, 7, 8 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 52 5 : { 235 } direct:call:exit
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 77 17 : { 285, 286, 287, 288, 406, 423 } prop:call:_getopt
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 17 : { 288, 406 } prop:call:_Z5usagePPc
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 80 28 : { 288, 406 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 83 28 : { 288, 406 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 86 32 : { 288, 406 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 17 : { 288, 406 } prop:call:_Z12parse_sourcePcP7_source
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 101 32 : { 288, 406 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 104 31 : { 288, 406 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 107 40 : { 288, 406 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 23 : { 288, 406 } prop:call:getNumCUDADevices

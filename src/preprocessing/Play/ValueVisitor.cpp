@@ -1,6 +1,6 @@
 #include "ValueVisitor.h"
 
-#define VERBOSE
+// #define VERBOSE
 
 using namespace llvm;
 
@@ -69,7 +69,7 @@ size_t ValueVisitor::visitLandingPad(LandingPadInst *land, Value *prev) {
      * TODO is it possible the exception value passed in is aliased with
      * something? For now, just say no.
      */
-    return hash_landing_pad(land);
+    return H->get(land);
 }
 
 size_t ValueVisitor::visitExtractValue(ExtractValueInst *ex, Value *prev) {
@@ -87,7 +87,7 @@ size_t ValueVisitor::visitExtractValue(ExtractValueInst *ex, Value *prev) {
         if (contains.find(loading_from_group) != contains.end()) {
             loading_into_group = contains[loading_from_group];
         } else {
-            loading_into_group = hash_instruction(ex);
+            loading_into_group = H->get(ex);
         }
         storesReferencesToGroup(loading_from_group, loading_into_group);
         return loading_into_group;
@@ -116,7 +116,7 @@ size_t ValueVisitor::visitPhi(PHINode *phi, Value *prev) {
 }
 
 size_t ValueVisitor::visitConstant(Constant *cons, Value *prev) {
-    return hash_constant(cons);
+    return H->get(cons);
 }
 
 size_t ValueVisitor::visitBinary(BinaryOperator *bin, Value *prev) {
@@ -191,7 +191,7 @@ size_t ValueVisitor::visitLoad(LoadInst *load, Value *prev) {
         if (contains.find(loading_from_group) != contains.end()) {
             loading_into_group = contains[loading_from_group];
         } else {
-            loading_into_group = hash_instruction(load);
+            loading_into_group = H->get(load);
         }
         storesReferencesToGroup(loading_from_group, loading_into_group);
         return loading_into_group;
@@ -222,7 +222,7 @@ size_t ValueVisitor::visitCall(CallInst *call, Value *prev) {
 
     if (call->getCalledFunction() &&
             call->getCalledFunction()->getReturnType()->isPointerTy()) {
-        return hash_instruction(call);
+        return H->get(call);
     } else {
         return 0;
     }

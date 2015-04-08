@@ -1726,31 +1726,31 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
 
 
-void bar(int *A, int *B) {new_stack(2, 0, (size_t)(14930464334111296496UL), (size_t)(14930464334111296497UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+void bar(int *A, int *B) {new_stack(2, 0, (size_t)(21UL), (size_t)(22UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     A[0] = 3;
 
     if (A[0] == 3) { {
-        alias_group_changed(4, (size_t)(4370387167843700367UL), (size_t)(9068519427185823008UL), (size_t)(14930464334111296496UL), (size_t)(14930464334111296497UL)); rm_stack(false, 0UL); return;
+        alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
     } }
 
     B[0] = 3;
 
-    alias_group_changed(4, (size_t)(4370387167843700367UL), (size_t)(9068519427185823008UL), (size_t)(14930464334111296496UL), (size_t)(14930464334111296497UL)); rm_stack(false, 0UL); return;
+    alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
 }
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 13342117654489805937UL, 0, 0));
-      lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 4940031483844375921UL, 0, 0));
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(49UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+      lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 36UL, 0, 0));
+      lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 40UL, 0, 0));
 
-     call_lbl_0: calling(0, 0UL, 2, (size_t)(13342117654489805937UL), (size_t)(4940031483844375921UL)); bar(A, B);
-    alias_group_changed(5, (size_t)(1388457574958923572UL), (size_t)(4008084115075384316UL), (size_t)(15018275423251710358UL), (size_t)(17391952349911024751UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+     call_lbl_0: calling(0, 0UL, 2, (size_t)(36UL), (size_t)(40UL)); bar(A, B);
+    alias_group_changed(5, (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
 
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(7569268050213511355UL, 5, 0, 4008084115075384316UL, 4940031483844375921UL, 9068519427185823008UL, 14930464334111296497UL, 4370387167843700367UL, 14930464334111296496UL, 17391952349911024751UL, 13342117654489805937UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(7569268050213511355UL, 5, 0, 1UL, 21UL, 27UL, 49UL, 2UL, 22UL, 28UL, 36UL, 29UL, 40UL);
     return 0;
 }
 

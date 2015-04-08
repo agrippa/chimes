@@ -2372,11 +2372,11 @@ extern void setup_config(config *conf, int argc, char **argv);
 
 
 void save_layer_text(float *field, int z, const int dimx, const int dimy,
-        const int ny, const int nx, const char *filename, int radius) {new_stack(8, 8, (size_t)(13650547825225023287UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13230949144429816007UL), (size_t)(0UL), "save_layer_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_layer_text|z|0", "i32", (void *)(&z), (size_t)4, 0, 0, 0, "save_layer_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_layer_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_layer_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_layer_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_layer_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_layer_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+        const int ny, const int nx, const char *filename, int radius) {new_stack(8, 8, (size_t)(95UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(101UL), (size_t)(0UL), "save_layer_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_layer_text|z|0", "i32", (void *)(&z), (size_t)4, 0, 0, 0, "save_layer_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_layer_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_layer_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_layer_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_layer_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_layer_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
       lbl_0: FILE *fp; register_stack_var("save_layer_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
     if (fp == __null) { {
         fprintf(__stderrp, "Failed to open output file %s\n", filename);
-        alias_group_changed(9, (size_t)(1254147978383576318UL), (size_t)(2922653694141958230UL), (size_t)(4359786824679902598UL), (size_t)(10070197379301083460UL), (size_t)(11962065739929496395UL), (size_t)(12206729749981155450UL), (size_t)(16116219678429679998UL), (size_t)(16119324046284827923UL), (size_t)(17212139461496178318UL)); exit(1);
+        alias_group_changed(9, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); exit(1);
     } }
 
     { lbl_1: int y; register_stack_var("save_layer_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) { {
@@ -2387,13 +2387,13 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
         fprintf(fp, "\n");
     } } }
 
-     call_lbl_0: calling(0, 0UL, 1, (size_t)(10881995850202707256UL)); fclose(fp);
-alias_group_changed(11, (size_t)(1254147978383576318UL), (size_t)(2922653694141958230UL), (size_t)(3319018465585646203UL), (size_t)(4359786824679902598UL), (size_t)(5378197283899299460UL), (size_t)(10070197379301083460UL), (size_t)(11962065739929496395UL), (size_t)(12206729749981155450UL), (size_t)(16116219678429679998UL), (size_t)(16119324046284827923UL), (size_t)(17212139461496178318UL)); rm_stack(false, 0UL); }
+     call_lbl_0: calling(0, 0UL, 1, (size_t)(30UL)); fclose(fp);
+alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL)); rm_stack(false, 0UL); }
 
 void init_data(float *curr, float *next, float *vsq,
                 float *h_coeff,
                 const int dimx, const int dimy, const int dimz,
-                const float dx, const float dt) {new_stack(9, 0, (size_t)(7723627015536440789UL), (size_t)(7723627015547611492UL), (size_t)(10852292350142767735UL), (size_t)(11945502090373065099UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+                const float dx, const float dt) {new_stack(9, 0, (size_t)(241UL), (size_t)(242UL), (size_t)(243UL), (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
 
     { size_t i; for ( i = (0); i < dimx * dimy * dimz; i++) { {
         vsq[i] = 2500. * 2500. * dt * dt;
@@ -2404,23 +2404,23 @@ void init_data(float *curr, float *next, float *vsq,
         curr[i] = next[i] = 0;
     } } }
 
-     call_lbl_0: calling(0, 0UL, 5, (size_t)(11945502090373065099UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
+     call_lbl_0: calling(0, 0UL, 5, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
      float scale; scale = (1. / (dx * dx));
     h_coeff[0] = -8.541666 * scale;
     h_coeff[1] = 1.600000 * scale;
     h_coeff[2] = -0.200000 * scale;
     h_coeff[3] = 0.025397 * scale;
     h_coeff[4] = -0.001785 * scale;
-alias_group_changed(16, (size_t)(1022659356414690731UL), (size_t)(3133066956700663206UL), (size_t)(3184326597088664935UL), (size_t)(3714233188989146442UL), (size_t)(4173262247364689633UL), (size_t)(5102273774566932690UL), (size_t)(7723627015536440789UL), (size_t)(7723627015547611492UL), (size_t)(8964306910555828365UL), (size_t)(10852292350142767735UL), (size_t)(11812528038643542222UL), (size_t)(11945502090373065099UL), (size_t)(14214380632122510288UL), (size_t)(14742918358348400516UL), (size_t)(15978563177534077026UL), (size_t)(16726615051318138246UL)); rm_stack(false, 0UL); }
+alias_group_changed(16, (size_t)(111UL), (size_t)(112UL), (size_t)(113UL), (size_t)(114UL), (size_t)(115UL), (size_t)(116UL), (size_t)(117UL), (size_t)(118UL), (size_t)(119UL), (size_t)(120UL), (size_t)(121UL), (size_t)(122UL), (size_t)(241UL), (size_t)(242UL), (size_t)(243UL), (size_t)(244UL)); rm_stack(false, 0UL); }
 
-void usage(char **argv) {new_stack(1, 1, (size_t)(17206168581473135942UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+void usage(char **argv) {new_stack(1, 1, (size_t)(266UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     fprintf(__stderrp, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
             "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
             argv[0]);
-    alias_group_changed(1, (size_t)(9299461872755550985UL)); exit(1);
+    alias_group_changed(1, (size_t)(255UL)); exit(1);
 rm_stack(false, 0UL); }
 
-void default_config(config *conf) {new_stack(1, 0, (size_t)(8084772600074702260UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+void default_config(config *conf) {new_stack(1, 0, (size_t)(307UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     conf->nx = 2 * 256;
     conf->ny = 2 * 256;
     conf->nz = 2 * 256;
@@ -2435,47 +2435,47 @@ void default_config(config *conf) {new_stack(1, 0, (size_t)(8084772600074702260U
 
     conf->progress_width = 80;
     conf->progress_disabled = 0;
-alias_group_changed(2, (size_t)(8084772600074702260UL), (size_t)(13356287653763336231UL)); rm_stack(false, 0UL); }
+alias_group_changed(2, (size_t)(267UL), (size_t)(307UL)); rm_stack(false, 0UL); }
 
-void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(17621417648879593294UL), (size_t)(0UL), (size_t)(16519385352256392130UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(437UL), (size_t)(0UL), (size_t)(439UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
      lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
     opterr = 0;
 
-     call_lbl_0: calling(0, 0UL, 1, (size_t)(17621417648879593294UL)); default_config(conf);
+     call_lbl_0: calling(0, 0UL, 1, (size_t)(437UL)); default_config(conf);
 
-    alias_group_changed(6, (size_t)(5952148420769155456UL), (size_t)(13074077825309627352UL), (size_t)(13158819563366888467UL), (size_t)(16497600537396980357UL), (size_t)(17621417648879593294UL), (size_t)(18224721594452017849UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
+    alias_group_changed(6, (size_t)(308UL), (size_t)(309UL), (size_t)(310UL), (size_t)(311UL), (size_t)(437UL), (size_t)(454UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
         switch (c) {
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'x':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'x':
                 conf->nx = atoi(optarg);
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'y':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'y':
                 conf->ny = atoi(optarg);
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'z':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'z':
                 conf->nz = atoi(optarg);
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'i':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'i':
                 conf->nsteps = atoi(optarg);
                 break;
             case 'v':
                 conf->verbose = 1;
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 't':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 't':
                 conf->save_text = atoi(optarg);
                 break;
             case 'p':
                 conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
-                        (conf->nsrcs + 1), 18185214392570118435UL);
-                alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); call_lbl_1: calling(1, 0UL, 2, (size_t)(15305433456608714062UL), (size_t)(18185214392570118435UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+                        (conf->nsrcs + 1), 367UL);
+                alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_1: calling(1, 0UL, 2, (size_t)(331UL), (size_t)(367UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
                 conf->nsrcs++;
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'r':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'r':
                 conf->radius = atoi(optarg);
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'g':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'g':
                 conf->ngpus = atoi(optarg);
                 break;
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); case 'w':
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'w':
                 conf->progress_width = atoi(optarg);
                 break;
             case 'd':
@@ -2483,19 +2483,19 @@ void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)
                 break;
             case '?':
                 fprintf(__stderrp, "Missing argument to option %c\n", optopt);
-            alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); call_lbl_2: calling(2, 0UL, 1, (size_t)(16519385352256392130UL)); default:
+            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_2: calling(2, 0UL, 1, (size_t)(439UL)); default:
                 usage(argv);
         }
     }
 
     if (conf->ngpus == -1) { {
-        alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
+        alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
     } }
-alias_group_changed(2, (size_t)(5952148420769155456UL), (size_t)(17621417648879593294UL)); rm_stack(false, 0UL); }
+alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); rm_stack(false, 0UL); }
 
 
 static int module_init() {
-    init_module(17753382427056418424UL, 16, 5, 15978563177534077026UL, 11945502090373065099UL, 17621417648879593294UL, 18185214392570118435UL, 14742918358348400516UL, 7723627015536440789UL, 11812528038643542222UL, 10852292350142767735UL, 13356287653763336231UL, 8084772600074702260UL, 17206168581473135942UL, 14005911604284787321UL, 9299461872755550985UL, 17206168581473135942UL, 16497600537396980357UL, 16519385352256392130UL, 1254147978383576318UL, 13650547825225023287UL, 8084772600074702260UL, 7102980499878368059UL, 12206729749981155450UL, 13230949144429816007UL, 11056608174269105890UL, 15305433456608714062UL, 16116219678429679998UL, 10881995850202707256UL, 6095867792190138415UL, 6289306707994511807UL, 18224721594452017849UL, 17621417648879593294UL, 1022659356414690731UL, 7723627015547611492UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    init_module(17753382427056418424UL, 16, 5, 308UL, 437UL, 449UL, 418UL, 7UL, 101UL, 310UL, 439UL, 456UL, 331UL, 307UL, 459UL, 1UL, 95UL, 114UL, 244UL, 111UL, 241UL, 266UL, 261UL, 113UL, 243UL, 112UL, 242UL, 9UL, 30UL, 267UL, 307UL, 437UL, 367UL, 255UL, 266UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
     return 0;
 }
 

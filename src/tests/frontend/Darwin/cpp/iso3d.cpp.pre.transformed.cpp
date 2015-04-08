@@ -2919,7 +2919,7 @@ extern void wait_for_checkpoint();
 
 static void fwd(float *next, float *curr, float *vsq,
         float *c_coeff, int nx, int ny, int nz, int dimx, int dimy, int dimz,
-        int radius) {new_stack(11, 0, (size_t)(418041589642746166UL), (size_t)(418041589631575463UL), (size_t)(2195831390833324257UL), (size_t)(14087205798434806760UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+        int radius) {new_stack(11, 0, (size_t)(726UL), (size_t)(727UL), (size_t)(728UL), (size_t)(729UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
 
     { int z; for ( z = (0); z < nz; z++) { {
         { int y; for ( y = (0); y < ny; y++) { {
@@ -2949,11 +2949,11 @@ static void fwd(float *next, float *curr, float *vsq,
             } } }
         } } }
     } } }
-alias_group_changed(25, (size_t)(292278058120541022UL), (size_t)(418041589642746166UL), (size_t)(881749644673538658UL), (size_t)(1816896773850444861UL), (size_t)(2829188911298078885UL), (size_t)(3911788235788748743UL), (size_t)(3933907233526097839UL), (size_t)(5993086051839751096UL), (size_t)(8052264870153404353UL), (size_t)(8292882556451460265UL), (size_t)(8828346275249726428UL), (size_t)(9161861957355430666UL), (size_t)(11272468684151533304UL), (size_t)(12733324398711892151UL), (size_t)(13589978340084900792UL), (size_t)(13931553400895412691UL), (size_t)(14078419996816408351UL), (size_t)(14273128461705924590UL), (size_t)(14966636121980327896UL), (size_t)(15537155775784154646UL), (size_t)(15555813380796026310UL), (size_t)(17108458587931618436UL), (size_t)(18055872010209068840UL), (size_t)(18090563088381687547UL), (size_t)(18397447071019580739UL)); rm_stack(false, 0UL); }
+alias_group_changed(25, (size_t)(403UL), (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(408UL), (size_t)(409UL), (size_t)(410UL), (size_t)(411UL), (size_t)(412UL), (size_t)(413UL), (size_t)(414UL), (size_t)(415UL), (size_t)(416UL), (size_t)(417UL), (size_t)(418UL), (size_t)(419UL), (size_t)(420UL), (size_t)(421UL), (size_t)(422UL), (size_t)(423UL), (size_t)(424UL), (size_t)(425UL), (size_t)(426UL), (size_t)(726UL)); rm_stack(false, 0UL); }
 
-int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(372UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
       lbl_0: config conf; register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; }
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(18293662412874621885UL)); setup_config(&conf, argc, argv);
+    alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(4UL), (size_t)(0UL), (size_t)(372UL)); setup_config(&conf, argc, argv);
      call_lbl_1: calling(1, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
 
       lbl_1: float dx; register_stack_var("main|dx|0", "float", (void *)(&dx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } dx = (20.F);
@@ -2971,19 +2971,19 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
         printf("radius = %d\n", conf.radius);
     } }
 
-      lbl_7: float *c_coeff; register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 13180664836399372012UL, 0, 0));
-      lbl_8: float *curr; register_stack_var("main|curr|0", "float*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_9; } curr = ((float *)malloc_wrapper(nbytes, 5743826591483403587UL, 0, 0));
-      lbl_9: float *next; register_stack_var("main|next|0", "float*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } next = ((float *)malloc_wrapper(nbytes, 5743826591483403587UL, 0, 0));
-      lbl_10: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } vsq = ((float *)malloc_wrapper(nbytes, 13500098221715200020UL, 0, 0));
+      lbl_7: float *c_coeff; register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 247UL, 0, 0));
+      lbl_8: float *curr; register_stack_var("main|curr|0", "float*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_9; } curr = ((float *)malloc_wrapper(nbytes, 244UL, 0, 0));
+      lbl_9: float *next; register_stack_var("main|next|0", "float*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } next = ((float *)malloc_wrapper(nbytes, 244UL, 0, 0));
+      lbl_10: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } vsq = ((float *)malloc_wrapper(nbytes, 246UL, 0, 0));
     if (curr == __null || next == __null || vsq == __null) { {
         fprintf(__stderrp, "Allocations failed\n");
-        alias_group_changed(13, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(7630722717511585817UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 1;
+        alias_group_changed(13, (size_t)(1UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL), (size_t)(12UL), (size_t)(13UL), (size_t)(14UL), (size_t)(22UL), (size_t)(23UL)); rm_stack(false, 0UL); return 1;
     } }
 
-    alias_group_changed(10, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(7630722717511585817UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16833687143959260136UL)); call_lbl_2: calling(2, 0UL, 5, (size_t)(11444889221438892957UL), (size_t)(11444889221438892957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
-      lbl_11: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_3: calling(3, 13963731660044139894UL, 4, (size_t)(1684045228540769931UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
+    alias_group_changed(10, (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL), (size_t)(12UL), (size_t)(13UL), (size_t)(14UL)); call_lbl_2: calling(2, 0UL, 5, (size_t)(4UL), (size_t)(4UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
+      lbl_11: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_3: calling(3, 354UL, 4, (size_t)(180UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
 
-    alias_group_changed(1, (size_t)(6260459933904493830UL)); call_lbl_4: calling(4, 0UL, 9, (size_t)(5743826591483403587UL), (size_t)(5743826591483403587UL), (size_t)(13500098221715200020UL), (size_t)(13180664836399372012UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt);
+    alias_group_changed(1, (size_t)(15UL)); call_lbl_4: calling(4, 0UL, 9, (size_t)(244UL), (size_t)(244UL), (size_t)(246UL), (size_t)(247UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt);
 
       lbl_12: double start; register_stack_var("main|start|0", "double", (void *)(&start), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } call_lbl_5: calling(5, 0UL, 0); start = (seconds());
     { lbl_13: int step; register_stack_var("main|step|0", "i32", (void *)(&step), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } for ( step = (0); step < conf.nsteps; step++) { {
@@ -2994,7 +2994,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
             curr[src_offset] = srcs[src][step];
         } } }
 
-         call_lbl_6: calling(6, 0UL, 11, (size_t)(5743826591483403587UL), (size_t)(5743826591483403587UL), (size_t)(13500098221715200020UL), (size_t)(13180664836399372012UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz,
+         call_lbl_6: calling(6, 0UL, 11, (size_t)(244UL), (size_t)(244UL), (size_t)(246UL), (size_t)(247UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz,
                 dimx, dimy, dimz, conf.radius);
 
           lbl_16: float *tmp; register_stack_var("main|tmp|0", "float*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_17; } tmp = (next);
@@ -3002,39 +3002,39 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
         curr = tmp;
 
 
-        alias_group_changed(8, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(4230221212431166864UL), (size_t)(5424025495246047316UL), (size_t)(5743826591483403587UL), (size_t)(8746935921038613430UL), (size_t)(13776165132426961666UL), (size_t)(14608951975089488607UL)); call_lbl_7: calling(7, 0UL, 0); checkpoint();
+        alias_group_changed(8, (size_t)(12UL), (size_t)(13UL), (size_t)(16UL), (size_t)(17UL), (size_t)(18UL), (size_t)(19UL), (size_t)(20UL), (size_t)(244UL)); call_lbl_7: calling(7, 0UL, 0); checkpoint();
 
 
          call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
     } } }
-    alias_group_changed(8, (size_t)(2362206228145856531UL), (size_t)(3920757191841456973UL), (size_t)(4230221212431166864UL), (size_t)(5424025495246047316UL), (size_t)(5743826591483403587UL), (size_t)(8746935921038613430UL), (size_t)(13776165132426961666UL), (size_t)(14608951975089488607UL)); lbl_17: double elapsed_s; register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } call_lbl_9: calling(9, 0UL, 0); elapsed_s = (seconds() - start);
+    alias_group_changed(8, (size_t)(12UL), (size_t)(13UL), (size_t)(16UL), (size_t)(17UL), (size_t)(18UL), (size_t)(19UL), (size_t)(20UL), (size_t)(244UL)); lbl_17: double elapsed_s; register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } call_lbl_9: calling(9, 0UL, 0); elapsed_s = (seconds() - start);
 
-    alias_group_changed(1, (size_t)(2124997618683620793UL)); call_lbl_10: calling(10, 0UL, 0); finish_progress();
+    alias_group_changed(1, (size_t)(21UL)); call_lbl_10: calling(10, 0UL, 0); finish_progress();
 
       lbl_18: float point_rate; register_stack_var("main|point_rate|0", "float", (void *)(&point_rate), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps));
     fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
             elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
 
     if (conf.save_text != -1) { {
-        alias_group_changed(1, (size_t)(16557221819836515321UL)); call_lbl_11: calling(11, 0UL, 8, (size_t)(5743826591483403587UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16207153531780936403UL), (size_t)(0UL)); save_layer_text(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx,
+        alias_group_changed(1, (size_t)(22UL)); call_lbl_11: calling(11, 0UL, 8, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(753UL), (size_t)(0UL)); save_layer_text(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx,
                 "snap.text", conf.radius);
     } }
 
-    free_wrapper(c_coeff, 13180664836399372012UL);
-    free_wrapper(curr, 5743826591483403587UL);
-    free_wrapper(next, 5743826591483403587UL);
-    free_wrapper(vsq, 13500098221715200020UL);
+    free_wrapper(c_coeff, 247UL);
+    free_wrapper(curr, 244UL);
+    free_wrapper(next, 244UL);
+    free_wrapper(vsq, 246UL);
     { lbl_19: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } } for ( i = (0); i < conf.nsrcs; i++) { {
-        free_wrapper(srcs[i], 10167393815624040314UL);
+        free_wrapper(srcs[i], 356UL);
     } } }
-    free_wrapper(srcs, 13963731660044139894UL);
+    free_wrapper(srcs, 354UL);
 
-    alias_group_changed(13, (size_t)(1730036212542016532UL), (size_t)(1933428909702055326UL), (size_t)(3512365080884279303UL), (size_t)(3916789489242128784UL), (size_t)(3920757191841456973UL), (size_t)(5571543899197932560UL), (size_t)(7630722717511585817UL), (size_t)(12835239948587864347UL), (size_t)(13776165132426961666UL), (size_t)(16557221819836515321UL), (size_t)(16809019010565379225UL), (size_t)(16833687143959260136UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
+    alias_group_changed(13, (size_t)(1UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL), (size_t)(12UL), (size_t)(13UL), (size_t)(14UL), (size_t)(22UL), (size_t)(23UL)); rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(636351199311517109UL, 14, 2, 11272468684151533304UL, 2195831390833324257UL, 11444889221438892957UL, 1684045228540769931UL, 15537155775784154646UL, 418041589631575463UL, 13776165132426961666UL, 5743826591483403587UL, 16833687143959260136UL, 13500098221715200020UL, 3920757191841456973UL, 5743826591483403587UL, 12733324398711892151UL, 14087205798434806760UL, 12835239948587864347UL, 13180664836399372012UL, 2362206228145856531UL, 5743826591483403587UL, 1388457574958923572UL, 18293662412874621885UL, 1816896773850444861UL, 418041589642746166UL, 6095867792190138415UL, 8511723456706306350UL, 6260459933904493830UL, 13963731660044139894UL, 13963731660044139894UL, 10167393815624040314UL, "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    init_module(636351199311517109UL, 14, 2, 11UL, 247UL, 13UL, 244UL, 12UL, 244UL, 15UL, 354UL, 14UL, 246UL, 406UL, 729UL, 405UL, 728UL, 404UL, 727UL, 3UL, 372UL, 354UL, 356UL, 403UL, 726UL, 4UL, 180UL, 20UL, 244UL, 750UL, 302UL, "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
     return 0;
 }
 

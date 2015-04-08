@@ -1718,25 +1718,25 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp" 2
 
 void *foo() {new_stack(0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int *A; register_stack_var("foo|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 14788649179430747748UL, 0, 0));
+      lbl_0: int *A; register_stack_var("foo|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 42UL, 0, 0));
     A[0] = 1;
 
     if (A[0] == 3) { {
-        alias_group_changed(3, (size_t)(1033287854950310476UL), (size_t)(12536050798107062784UL), (size_t)(14788649179430747748UL)); rm_stack(true, 14788649179430747748UL); return A;
+        alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(42UL)); rm_stack(true, 42UL); return A;
     } }
 
-    alias_group_changed(3, (size_t)(1033287854950310476UL), (size_t)(12536050798107062784UL), (size_t)(14788649179430747748UL)); rm_stack(true, 14788649179430747748UL); return __null;
+    alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(42UL)); rm_stack(true, 42UL); return __null;
 }
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 7988338345923788884UL, 0); tmp = (foo());
-    alias_group_changed(1, (size_t)(9132794705087058270UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(41UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+    alias_group_changed(3, (size_t)(26UL), (size_t)(27UL), (size_t)(28UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 36UL, 0); tmp = (foo());
+    alias_group_changed(1, (size_t)(29UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(8715185705475396311UL, 4, 0, 12536050798107062784UL, 14788649179430747748UL, 9132794705087058270UL, 7988338345923788884UL, 1033287854950310476UL, 14788649179430747748UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(8715185705475396311UL, 4, 0, 1UL, 42UL, 2UL, 42UL, 28UL, 41UL, 29UL, 36UL);
     return 0;
 }
 

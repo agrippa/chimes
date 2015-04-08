@@ -1,1 +1,1 @@
-/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 14 44 : { 335588464056153169, 1388457574958923572, 2394767282369806426, 4453946100683459683, 6213761567678051020, 15018275423251710358, 17699046973199516026 } direct:call:omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 14 44 : { 1, 2, 3, 4, 5, 6, 7 } direct:call:omp_get_thread_num

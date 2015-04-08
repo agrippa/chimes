@@ -1717,28 +1717,28 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp" 2
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 13342117654489805934UL, 0, 0));
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(43UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+      lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 11UL, 0, 0));
     A[0] = 3;
     A[1] = 4;
 
     if (A[0] == 3) { {
-        alias_group_changed(5, (size_t)(1388457574958923572UL), (size_t)(13342117654489805934UL), (size_t)(15018275423251710358UL), (size_t)(17391952349911024751UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 1;
+        alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); rm_stack(false, 0UL); return 1;
     } }
 
     A[2] = 5;
 
     if (A[0] == 2) { {
-        alias_group_changed(5, (size_t)(1388457574958923572UL), (size_t)(13342117654489805934UL), (size_t)(15018275423251710358UL), (size_t)(17391952349911024751UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
-        alias_group_changed(5, (size_t)(1388457574958923572UL), (size_t)(13342117654489805934UL), (size_t)(15018275423251710358UL), (size_t)(17391952349911024751UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 2;
+        alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+        alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); rm_stack(false, 0UL); return 2;
     } }
 
-    alias_group_changed(5, (size_t)(1388457574958923572UL), (size_t)(13342117654489805934UL), (size_t)(15018275423251710358UL), (size_t)(17391952349911024751UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 3;
+    alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); rm_stack(false, 0UL); return 3;
 }
 
 
 static int module_init() {
-    init_module(16469201489461360415UL, 2, 0, 17391952349911024751UL, 13342117654489805934UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(16469201489461360415UL, 2, 0, 3UL, 43UL, 4UL, 11UL);
     return 0;
 }
 
