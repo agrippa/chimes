@@ -19,4 +19,12 @@ Installation Steps:
 6. Edit llvm-src/lib/Transforms/Makefile to add the Play/ directory to the PARALLEL_DIRS list
 7. Edit llvm-src/lib/Transforms/CMakeLists.txt, appending the line add_subdirectory(Play)
 8. mkdir llvm-build
-9. cd llvm-build && ../llvm-src/configure --enable-optimized=no && make
+9. cd llvm-build && ../llvm-src/configure --enable-optimized=no --enable-profiling=yes && make
+
+When building, you must build LLVM with the GNU compilers to enable profiling.
+If your machine defaults to something else (e.g. clang on MacOS) then you can
+explicitly force LLVM to be built with GNU by setting the CC, CXX, and CPP
+environment variables. For example, on my Mac:
+
+CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
+    ../llvm-src/configure --enable-optimized=no --enable-profiling=yes

@@ -173,12 +173,16 @@ namespace {
         void propagateGroupsDown(BasicBlock *curr, std::string filename,
                 std::set<size_t> *groups, std::set<BasicBlock *> *visited,
                 std::set<size_t> *changed_at_termination);
-        std::string getFunctionDisplayName(Function *F, Module &M);
+        std::string *getFunctionDisplayName(Function *F, Module &M);
     };
 }
 
 char Play::ID = 0;
 static RegisterPass<Play> X("play", "Play Pass");
+
+static bool basicBlockIsValid(BasicBlock *BB) {
+    return BB->getName().str().size() > 0;
+}
 
 void Play::printFunctions(Module &M) {
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
@@ -349,11 +353,13 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M) {
 
         for (Function::iterator bi = F->begin(), be = F->end(); bi != be; bi++) {
             BasicBlock *BB = &*bi;
-            for (BasicBlock::iterator ii = BB->begin(), ie = BB->end();
-                    ii != ie; ii++) {
-                Instruction *insn = &*ii;
-                if (isa<AllocaInst>(insn)) {
-                    (*mappings)[insn] = hash_instruction(insn);
+            if (basicBlockIsValid(BB)) {
+                for (BasicBlock::iterator ii = BB->begin(), ie = BB->end();
+                        ii != ie; ii++) {
+                    Instruction *insn = &*ii;
+                    if (isa<AllocaInst>(insn)) {
+                        (*mappings)[insn] = hash_instruction(insn);
+                    }
                 }
             }
         }
@@ -466,7 +472,8 @@ void Play::findGlobals(Module &M, const char *filename) {
 
 ReachableInfo Play::propagateAliases(Module &M) {
     std::vector<Value *> *initial = collectInitialInstructionsToVisit(M);
-    std::map<Value *, size_t> *initial_alias_mappings = collectInitialAliasMappings(M);
+    std::map<Value *, size_t> *initial_alias_mappings =
+        collectInitialAliasMappings(M);
 
     ValueVisitor visitor(initial, initial_alias_mappings);
 
@@ -815,6 +822,7 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
             }
         }
     }
+    errs() << "\"" << bb.getName() << "\"";
     assert(false);
 }
 
@@ -877,13 +885,15 @@ std::map<Function *, std::set<size_t> *> *Play::collectLineToGroupsMapping(
         if (F->getBasicBlockList().size() > 0) {
             BasicBlock& entry = F->getEntryBlock();
 
-            std::string filename = findFilenameContainingBB(entry, M);
-            std::set<size_t> *changed_at_termination = new std::set<size_t>();
+            if (basicBlockIsValid(&entry)) {
+                std::string filename = findFilenameContainingBB(entry, M);
+                std::set<size_t> *changed_at_termination = new std::set<size_t>();
 
-            collectLineToGroupsMappingInFunction(&entry, &visited, filename,
-                    value_to_alias_group, changed_at_termination);
+                collectLineToGroupsMappingInFunction(&entry, &visited, filename,
+                        value_to_alias_group, changed_at_termination);
 
-            (*result)[F] = changed_at_termination;
+                (*result)[F] = changed_at_termination;
+            }
         }
     }
 
@@ -1072,11 +1082,12 @@ std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
             if (fields_defs.getElement(f).getTag() == dwarf::DW_TAG_member) {
                 DIType di_field(fields_defs.getElement(f));
                 std::string fieldname = di_field.getName().str();
+                errs() << "  "  << fieldname << "\n";
                 fields.push_back(fieldname);
             }
         }
 
-        assert(struct_fields->find(struct_name) == struct_fields->end());
+        errs() << struct_name << "\n";
         (*struct_fields)[struct_name] = fields;
     }
     return struct_fields;
@@ -1101,7 +1112,7 @@ void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
     fclose(fp);
 }
 
-std::string Play::getFunctionDisplayName(Function *F, Module &M) {
+std::string *Play::getFunctionDisplayName(Function *F, Module &M) {
     std::string fname = F->getName().str();
 
     if (function_to_demangled.find(fname) == function_to_demangled.end()) {
@@ -1129,13 +1140,18 @@ std::string Play::getFunctionDisplayName(Function *F, Module &M) {
             }
 
             assert(function_to_demangled.find(di_func.getDisplayName()) ==
-                        function_to_demangled.end());
+                    function_to_demangled.end() ||
+                    function_to_demangled[fname] == di_func.getDisplayName());
             function_to_demangled[fname] = di_func.getDisplayName();
         }
     }
 
-    assert(function_to_demangled.find(fname) != function_to_demangled.end());
-    return function_to_demangled[fname];
+    errs() << fname << "\n";
+    if (function_to_demangled.find(fname) != function_to_demangled.end()) {
+        return &(function_to_demangled[fname]);
+    } else {
+        return NULL;
+    }
 }
 
 std::string *Play::getUniqueVarname(std::string varname, Function *F,
@@ -1145,10 +1161,10 @@ std::string *Play::getUniqueVarname(std::string varname, Function *F,
     std::string *unique_varname = new std::string();
     int permute = 0;
 
-    std::string correct_fname = getFunctionDisplayName(F, M);
+    std::string *correct_fname = getFunctionDisplayName(F, M);
     do {
         std::ostringstream str_stream;
-        str_stream << correct_fname << "|" << varname << "|" << permute;
+        str_stream << *correct_fname << "|" << varname << "|" << permute;
         *unique_varname = str_stream.str();
         permute++;
     } while (found_variables->find(*unique_varname) != found_variables->end());
@@ -1166,9 +1182,11 @@ static std::map<Value *, std::string> *mapValueToOriginalVarname(
         const Instruction *inst = &*i;
         if (const DbgDeclareInst* dbgDeclare = dyn_cast<DbgDeclareInst>(inst)) {
             assert(mapping->find(dbgDeclare->getAddress()) == mapping->end());
-            assert(isa<AllocaInst>(dbgDeclare->getAddress()));
-            (*mapping)[dbgDeclare->getAddress()] =
-                DIVariable(dbgDeclare->getVariable()).getName();
+            if (dbgDeclare->getAddress() != NULL) {
+                assert(isa<AllocaInst>(dbgDeclare->getAddress()));
+                (*mapping)[dbgDeclare->getAddress()] =
+                    DIVariable(dbgDeclare->getVariable()).getName();
+            }
         }
     }
 
@@ -1211,6 +1229,8 @@ void Play::findStackAllocations(Module &M, const char *output_file,
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
                 bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
             BasicBlock *bb = &*bb_iter;
+            if (!basicBlockIsValid(bb)) continue;
+
             for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
                     ++i) {
                 Instruction &inst = *i;
@@ -1297,14 +1317,13 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                     } else if (ty->isStructTy()) {
                         StructType *structTy = dyn_cast<StructType>(ty);
                         assert(structTy != NULL);
+                        std::string struct_name = structTy->getStructName().str().substr(7);
 
-                        if (!structTy->isLiteral()) {
+                        if (structFields->find(struct_name) != structFields->end() && !structTy->isLiteral()) {
                             assert(structTy->getStructName().str().find("struct.") == 0);
-                            std::string struct_name = structTy->getStructName().str().substr(7);
                             info->is_struct = 1;
                             info->struct_type_name = struct_name;
 
-                            assert(structFields->find(struct_name) != structFields->end());
                             for (unsigned int i = 0; i < structTy->getStructNumElements();
                                     i++) {
                                 Type *field_type = structTy->getStructElementType(i);
@@ -1611,6 +1630,10 @@ void Play::findFunctionExits(Module &M, const char *output_file,
 
         if (F->empty()) continue;
 
+        std::string *display_name = getFunctionDisplayName(F, M);
+
+        if (display_name == NULL) continue;
+
         bool ret_inst_found = false;
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
@@ -1630,19 +1653,17 @@ void Play::findFunctionExits(Module &M, const char *output_file,
                         size_t ret_alias = searchForValueInKnownAliases(ret,
                                 value_to_alias_group);
                         assert(ret_alias > 0);
-                        fprintf(fp, "%s %lu",
-                                getFunctionDisplayName(F, M).c_str(),
+                        fprintf(fp, "%s %lu", display_name->c_str(),
                                 ret_alias);
                     } else {
-                        fprintf(fp, "%s 0",
-                                getFunctionDisplayName(F, M).c_str());
+                        fprintf(fp, "%s 0", display_name->c_str());
                     }
                 }
             }
         }
 
         if (!ret_inst_found) {
-            fprintf(fp, "%s 0", getFunctionDisplayName(F, M).c_str());
+            fprintf(fp, "%s 0", display_name->c_str());
         }
 
         printGroupsChanged(fp, F, func_to_groups_changed);
@@ -1667,6 +1688,8 @@ bool Play::runOnModule(Module &M) {
      * well as the alias sets that should be marked by those calls.
      */
     printFunctions(M);
+
+    findGlobals(M, "globals.info");
 
     ReachableInfo reachable = propagateAliases(M);
 
@@ -1718,8 +1741,6 @@ bool Play::runOnModule(Module &M) {
 
     findFunctionExits(M, "exit.info", reachable.get_value_to_alias_group(),
             func_to_groups_changed);
-
-    findGlobals(M, "globals.info");
 
     return false;
 }
