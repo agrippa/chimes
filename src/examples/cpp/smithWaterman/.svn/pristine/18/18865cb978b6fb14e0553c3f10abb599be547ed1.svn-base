@@ -1,0 +1,23 @@
+SRC1=smith_waterman_for_performance
+SRC2=smith_waterman_nested_for_performance
+
+TARGET=$(SRC1)
+
+NPROC=8
+POLICY=wf
+HCR_OPT=-$(POLICY) -nproc $(NPROC)
+CFLAGS=-O3
+LINK=-L$(HC_HOME)/lib -lpthread -lhc -lxml2
+HCC_OPT=$(CFLAGS) -I$(HC_HOME)/include/hc $(LINK)
+
+
+all-test: compile run
+
+compile:
+	hcc $(CFLAGS) $(TARGET).hc -o$(TARGET)
+
+run:
+	./$(TARGET) $(HCR_OPT) string1.txt string2.txt 2 2
+
+clean:
+	-rm -Rf rose_*  *.o $(TARGET) a.out
