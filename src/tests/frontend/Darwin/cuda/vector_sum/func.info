@@ -1,11 +1,11 @@
-main 0 18293662412874621885
-dim3::dim3 9833271297019531733 0 0 0
-kernel 8543576809224315439 8543576809224315440 8543576809224315441 0
-__device_stub__Z6kernelPiS_S_i 13930679126207712666 13930679126207712667 13930679126207712668 0
-cudaError  4403095807090434764
+main 0 189
+dim3::dim3 223 0 0 0
+kernel 250 251 252 0
+__device_stub__Z6kernelPiS_S_i 296 297 298 0
+cudaError  309
 __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762
-__nv_cudaEntityRegisterCallback 9877773167732901613
+__nv_cudaEntityRegisterCallback 345
 __cudaUnregisterBinaryUtil
-____nv_dummy_param_ref 9877773167732901613
-__nv_save_fatbinhandle_for_managed_rt 9877773167732901613
-dim3::dim3 4674896959417115766 0 0 0
+____nv_dummy_param_ref 345
+__nv_save_fatbinhandle_for_managed_rt 345
+dim3::dim3 387 0 0 0

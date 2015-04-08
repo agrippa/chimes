@@ -1735,15 +1735,15 @@ void haha_this_sux2() {new_stack(0, 0); if (____chimes_replaying) { switch(get_n
     } }
 rm_stack(false, 0UL); }
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(19UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
      call_lbl_0: calling(0, 0UL, 0); haha_this_sux2();
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+    alias_group_changed(3, (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(14214025774788400666UL, 1, 0, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(14214025774788400666UL, 1, 0, 9UL, 19UL);
     register_global_var("global|a", "i32*", (void *)(&a), 8, 1, 0, 0);
     return 0;
 }

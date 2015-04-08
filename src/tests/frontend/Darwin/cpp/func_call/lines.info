@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 5 : { 8933731431696279258, 10992910250009932515, 14071540038816566042 } direct:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 12 13 : { 335588464056153169, 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z3fooi
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 5 : { 1, 2, 3 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 12 13 : { 20, 21, 22, 23 } direct:call:_Z3fooi

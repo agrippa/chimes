@@ -1734,25 +1734,25 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 }
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp" 2
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(84UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
      lbl_0: int a[] = { 1, 2, 3, 4, 5 }; register_stack_var("main|a|0", "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { exit(42); } } }
     a[4] = a[0];
     a[3] = a[1];
 
-    alias_group_changed(4, (size_t)(424735251410178013UL), (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+    alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
 
-     call_lbl_1: calling(1, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_2: calling(2, 0UL, 4, (size_t)(14945720649268830746UL), (size_t)(2672213485628753933UL), (size_t)(0UL), (size_t)(18317411980667886002UL)); (__builtin_expect(!(a[0] == 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 11, "a[0] == 5") : (void)0);
-     call_lbl_3: calling(3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_4: calling(4, 0UL, 4, (size_t)(14945720649268830746UL), (size_t)(2672213485628753933UL), (size_t)(0UL), (size_t)(18317411980667886002UL)); (__builtin_expect(!(a[1] == 4), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 12, "a[1] == 4") : (void)0);
-     call_lbl_5: calling(5, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_6: calling(6, 0UL, 4, (size_t)(14945720649268830746UL), (size_t)(2672213485628753933UL), (size_t)(0UL), (size_t)(18317411980667886002UL)); (__builtin_expect(!(a[2] == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 13, "a[2] == 3") : (void)0);
-     call_lbl_7: calling(7, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_8: calling(8, 0UL, 4, (size_t)(14945720649268830746UL), (size_t)(2672213485628753933UL), (size_t)(0UL), (size_t)(18317411980667886002UL)); (__builtin_expect(!(a[3] == 2), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 14, "a[3] == 2") : (void)0);
-     call_lbl_9: calling(9, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_10: calling(10, 0UL, 4, (size_t)(14945720649268830746UL), (size_t)(2672213485628753933UL), (size_t)(0UL), (size_t)(18317411980667886002UL)); (__builtin_expect(!(a[4] == 1), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 15, "a[4] == 1") : (void)0);
+     call_lbl_1: calling(1, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_2: calling(2, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); (__builtin_expect(!(a[0] == 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 11, "a[0] == 5") : (void)0);
+     call_lbl_3: calling(3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_4: calling(4, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); (__builtin_expect(!(a[1] == 4), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 12, "a[1] == 4") : (void)0);
+     call_lbl_5: calling(5, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_6: calling(6, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); (__builtin_expect(!(a[2] == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 13, "a[2] == 3") : (void)0);
+     call_lbl_7: calling(7, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_8: calling(8, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); (__builtin_expect(!(a[3] == 2), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 14, "a[3] == 2") : (void)0);
+     call_lbl_9: calling(9, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_10: calling(10, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); (__builtin_expect(!(a[4] == 1), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 15, "a[4] == 1") : (void)0);
 
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(7686840342758601595UL, 1, 0, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(7686840342758601595UL, 1, 0, 3UL, 84UL);
     return 0;
 }
 

@@ -1730,17 +1730,17 @@ int a;
 int b = 3;
 const char *hello_world = "hello world";
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(19UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
     a = 4;
     printf("%s\n", hello_world);
     printf("auto global\n");
-    alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(13741044057938436313UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+    alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(23UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return b + a;
 }
 
 
 static int module_init() {
-    init_module(9397157703034130343UL, 2, 0, 1006641403932715804UL, 13257195304767247654UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(9397157703034130343UL, 2, 0, 3UL, 19UL, 26UL, 10UL);
     register_global_var("global|a", "i32*", (void *)(&a), 8, 1, 0, 0);
     register_global_var("global|b", "i32*", (void *)(&b), 8, 1, 0, 0);
     register_global_var("global|hello_world", "i8**", (void *)(&hello_world), 8, 1, 0, 0);

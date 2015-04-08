@@ -14,6 +14,8 @@
 #include "llvm/IR/IntrinsicInst.h"
 #include "llvm/IR/Operator.h"
 
+#include "Hasher.h"
+
 #include <stdio.h>
 #include <set>
 #include <sstream>
@@ -22,51 +24,70 @@
 
 using namespace llvm;
 
-inline size_t hash(std::string category, std::string parent, std::string tohash,
-        size_t seed = 0) {
-    std::stringstream ss;
-    ss << category << ":" << parent << ":" << tohash;
-    std::string s = ss.str();
+// inline size_t hash(std::string category, std::string parent, std::string tohash,
+//         size_t seed = 0) {
+//     std::stringstream ss;
+//     ss << category << ":" << parent << ":" << tohash;
+//     std::string s = ss.str();
+// 
+//     size_t hash = seed;
+//     for (unsigned int i = 0; i < s.size(); i++) {
+//         hash = hash * 101 + s[i];
+//     }
+//     return hash;
+// }
+// 
+// inline std::string pretty_print(Value *V) {
+//     std::string s;
+//     llvm::raw_string_ostream ss(s);
+//     V->print(ss);
+//     ss.flush();
+//     return s;
+// }
 
-    size_t hash = seed;
-    for (unsigned int i = 0; i < s.size(); i++) {
-        hash = hash * 101 + s[i];
-    }
-    return hash;
-}
+/*
+ * The hashing functions below assume that for every single logical Instruction,
+ * it is always associated with the same address (Instruction*) in a single
+ * execution and no other loglcal Instructions are associated with the same
+ * address (i.e. that memory isn't freed and re-used). The second case isn't
+ * necessary: it just means that there will be incorrect aliasing. The first
+ * case is a requirement.
+ */
 
-inline std::string pretty_print(Value *V) {
-    std::string s;
-    llvm::raw_string_ostream ss(s);
-    V->print(ss);
-    ss.flush();
-    return s;
-}
-
-inline size_t hash_landing_pad(LandingPadInst *land) {
-    return hash("landingpad", "", pretty_print(land));
-}
-
-inline size_t hash_constant(Constant *C) {
-    return hash("constant", "", pretty_print(C));
-}
-
-inline size_t hash_function(Function *F) {
-    return hash("function", "", pretty_print(F));
-}
-
-inline size_t hash_argument(Argument *A) {
-    return hash("arg", A->getParent()->getName().str(), pretty_print(A));
-}
-
-inline size_t hash_global(GlobalValue *G) {
-    return hash("global", "", pretty_print(G));
-}
-
-inline size_t hash_instruction(Instruction *I) {
-    return hash("insn", I->getParent()->getParent()->getName().str(),
-            pretty_print(I));
-}
+// inline size_t hash_ptr(void *ptr, Module *M) {
+//     return (size_t)((unsigned char *)ptr - (unsigned char *)M);
+// }
+// 
+// inline size_t hash_landing_pad(LandingPadInst *land, Module *M) {
+//     return hash_ptr(land, M);
+//     // return hash("landingpad", "", pretty_print(land));
+// }
+// 
+// inline size_t hash_constant(Constant *C, Module *M) {
+//     return hash_ptr(C, M);
+//     // return hash("constant", "", pretty_print(C));
+// }
+// 
+// inline size_t hash_function(Function *F, Module *M) {
+//     return hash_ptr(F, M);
+//     // return hash("function", "", pretty_print(F));
+// }
+// 
+// inline size_t hash_argument(Argument *A, Module *M) {
+//     return hash_ptr(A, M);
+//     // return hash("arg", A->getParent()->getName().str(), pretty_print(A));
+// }
+// 
+// inline size_t hash_global(GlobalValue *G, Module *M) {
+//     return hash_ptr(G, M);
+//     // return hash("global", "", pretty_print(G));
+// }
+// 
+// inline size_t hash_instruction(Instruction *I, Module *M) {
+//     return hash_ptr(I, M);
+//     // return hash("insn", I->getParent()->getParent()->getName().str(),
+//     //         pretty_print(I));
+// }
 
 class Mark {
     public:
@@ -91,7 +112,11 @@ class Mark {
 class ValueVisitor {
     public:
         ValueVisitor(std::vector<Value *> *initial_insns,
-                std::map<Value *, size_t> *initial_mappings) {
+                std::map<Value *, size_t> *initial_mappings, Module *setM,
+                Hasher *setH) {
+            M = setM;
+            H = setH;
+
             for (std::map<Value *, size_t>::iterator i =
                     initial_mappings->begin(), e = initial_mappings->end();
                     i != e; i++) {
@@ -114,6 +139,9 @@ class ValueVisitor {
         }
 
     private:
+        Module *M;
+        Hasher *H;
+
         size_t visit(Value *val, Value *prev);
         size_t visitCast(CastInst *cast, Value *prev);
         size_t visitGEP(GEPOperator *getele, Value *prev);

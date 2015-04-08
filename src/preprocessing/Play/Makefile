@@ -11,5 +11,7 @@ EXPORTED_SYMBOL_FILE = $(PROJ_SRC_DIR)/Play.exports
 endif
 endif
 
+ENABLE_PROFILING=1
+
 include $(LEVEL)/Makefile.common
 

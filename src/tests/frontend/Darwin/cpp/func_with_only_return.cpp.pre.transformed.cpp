@@ -1726,18 +1726,18 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp" 2
 
 void *haha_this_sux() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    rm_stack(true, 14788649179430747748UL); return __null;
+    rm_stack(true, 20UL); return __null;
 }
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 18019193851472295513UL, 0); tmp = (haha_this_sux());
-    alias_group_changed(4, (size_t)(1388457574958923572UL), (size_t)(9132794705087058270UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(17UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+      lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 12UL, 0); tmp = (haha_this_sux());
+    alias_group_changed(4, (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(2786831167442144598UL, 2, 0, 9132794705087058270UL, 18019193851472295513UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(2786831167442144598UL, 2, 0, 5UL, 12UL, 4UL, 17UL);
     return 0;
 }
 

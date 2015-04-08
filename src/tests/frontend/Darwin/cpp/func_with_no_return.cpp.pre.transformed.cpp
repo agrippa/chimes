@@ -1721,16 +1721,16 @@ int a = 3;
 
 void haha_this_sux_part_canc() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     a = 4;
-alias_group_changed(1, (size_t)(17022099875991519016UL)); rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(17UL)); rm_stack(false, 0UL); }
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 0, (size_t)(0UL), (size_t)(18293662412874621885UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 0, (size_t)(0UL), (size_t)(14UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
      call_lbl_0: calling(0, 0UL, 0); haha_this_sux_part_canc();
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); rm_stack(false, 0UL); return 0;
+    alias_group_changed(3, (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(1556987170722293705UL, 1, 0, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(1556987170722293705UL, 1, 0, 5UL, 14UL);
     register_global_var("global|a", "i32*", (void *)(&a), 8, 1, 0, 0);
     return 0;
 }

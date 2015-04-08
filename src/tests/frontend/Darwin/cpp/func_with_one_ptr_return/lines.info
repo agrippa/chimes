@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 17 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z23haha_this_sux_part_deuxv
-/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 5 : { 9132794705087058270 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 17 : { 12, 13, 14 } direct:call:_Z23haha_this_sux_part_deuxv
+/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 5 : { 15 } direct:call:_Z10checkpointv

@@ -1725,18 +1725,18 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(31UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
       lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (0);
     { lbl_1: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( i = (0); i < 10; i++) { {
         a += i;
     } } }
-    alias_group_changed(5, (size_t)(335588464056153169UL), (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(16809019010565379225UL), (size_t)(17699046973199516026UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+    alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(7772930474166261535UL, 1, 0, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(7772930474166261535UL, 1, 0, 3UL, 31UL);
     return 0;
 }
 

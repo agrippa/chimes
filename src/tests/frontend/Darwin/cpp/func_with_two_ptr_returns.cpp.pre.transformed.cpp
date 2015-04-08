@@ -1718,23 +1718,23 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp" 2
 
 void *haha_this_sux_part_trois() {new_stack(0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int *A; register_stack_var("haha_this_sux_part_trois|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 14788649179430747748UL, 0, 0));
+      lbl_0: int *A; register_stack_var("haha_this_sux_part_trois|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 39UL, 0, 0));
     if (A[0]) { {
-        alias_group_changed(2, (size_t)(5477639890179289877UL), (size_t)(14049150163468684209UL)); rm_stack(true, 14788649179430747748UL); return A;
+        alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(true, 39UL); return A;
     } } else { {
-        alias_group_changed(2, (size_t)(5477639890179289877UL), (size_t)(14049150163468684209UL)); rm_stack(true, 14788649179430747748UL); return __null;
+        alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(true, 39UL); return __null;
     } }
-alias_group_changed(2, (size_t)(5477639890179289877UL), (size_t)(14049150163468684209UL)); rm_stack(true, 14788649179430747748UL); }
+alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(true, 39UL); }
 
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(18293662412874621885UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-    alias_group_changed(3, (size_t)(1388457574958923572UL), (size_t)(15018275423251710358UL), (size_t)(17699046973199516026UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 12940356565660290681UL, 0); tmp = (haha_this_sux_part_trois());
-    alias_group_changed(1, (size_t)(9132794705087058270UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(38UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+    alias_group_changed(3, (size_t)(23UL), (size_t)(24UL), (size_t)(25UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 33UL, 0); tmp = (haha_this_sux_part_trois());
+    alias_group_changed(1, (size_t)(26UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
     rm_stack(false, 0UL); return 0;
 }
 
 
 static int module_init() {
-    init_module(16401429439071256598UL, 4, 0, 14049150163468684209UL, 14788649179430747748UL, 9132794705087058270UL, 12940356565660290681UL, 5477639890179289877UL, 14788649179430747748UL, 1388457574958923572UL, 18293662412874621885UL);
+    init_module(16401429439071256598UL, 4, 0, 1UL, 39UL, 25UL, 38UL, 26UL, 33UL, 2UL, 39UL);
     return 0;
 }
 

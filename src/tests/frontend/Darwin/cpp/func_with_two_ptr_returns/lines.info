@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 14 17 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z24haha_this_sux_part_troisv
-/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 5 : { 9132794705087058270 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 14 17 : { 23, 24, 25 } direct:call:_Z24haha_this_sux_part_troisv
+/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 5 : { 26 } direct:call:_Z10checkpointv

@@ -1,46 +1,46 @@
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 1 : { 1388457574958923572, 15018275423251710358, 17699046973199516026 } direct:call:_Z12setup_configP7_configiPPc
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 1 : { 1730036212542016532, 1933428909702055326, 3512365080884279303, 3916789489242128784, 3920757191841456973, 5571543899197932560, 7630722717511585817, 12835239948587864347, 13776165132426961666, 16833687143959260136 } prop:call:_Z14config_sourcesPP7_sourcePiiii
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 1 : { 13657717907870968881 } direct:call:_Z9init_dataPfS_S_S_iiiff
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 240 : { 10720908999533024854 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 23 : { 10720908999533024854 } prop:call:cudaMalloc
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 240 : { 12239881450840834390 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 23 : { 12239881450840834390 } prop:call:cudaMalloc
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 239 : { 13184399653087439057 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 23 : { 13184399653087439057 } prop:call:cudaMalloc
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 0 : { 14128917855334043724 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 20 : { 14128917855334043724 } prop:call:_Z7secondsv
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 23 : { 5578711921516348101 } direct:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 0 : { 4863407257125709803 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 23 : { 4863407257125709803 } prop:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 0 : { 5807925459372314470 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 23 : { 5807925459372314470 } prop:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 0 : { 5973020843067749248 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 23 : { 5973020843067749248 } prop:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 0 : { 3999707315867423688 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 16 : { 3999707315867423688 } prop:call:_Z7secondsv
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 23 : { 4230221212431166864, 5424025495246047316, 8746935921038613430, 12840655963727753537, 14608951975089488607 } prop:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 2 : { 4230221212431166864, 5424025495246047316, 8746935921038613430, 12840655963727753537, 14608951975089488607 } prop:call:cudaConfigureCall
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 23 : { 4230221212431166864, 5424025495246047316, 8746935921038613430, 12840655963727753537, 14608951975089488607 } prop:call:cudaDeviceSynchronize
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 0 : { 12840655963727753537 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 1 : { 2362206228145856531, 3059869403021773121, 11651205536145820044 } direct:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 225 : { 16874736477647943825 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 20 : { 16874736477647943825 } prop:call:_Z7secondsv
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 23 : { 5626833308757261620 } direct:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 0 : { 5550047061125956647 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 18 : { 5550047061125956647 } prop:call:_Z7secondsv
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 1 : { 16588917083811119147 } direct:call:_Z15finish_progressv
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 1 : { 16557221819836515321, 16809019010565379225 } prop:call:_Z15save_layer_textPfiiiiiPKci
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 23 : { 16557221819836515321, 16809019010565379225 } prop:call:cudaFree
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 218 : { 560226968937773132 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 23 : { 560226968937773132 } prop:call:cudaFree
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 218 : { 646092260051100829 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 23 : { 646092260051100829 } prop:call:cudaFree
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 217 : { 3649789280611358753 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 23 : { 3649789280611358753 } prop:call:cudaFree
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 221 : { 6653486301171616677 } prop:call:cudaGetErrorString
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 50 2 : { 2528949047569446835, 5082499860126622911, 7779022769136128758, 11237650426060367649, 12243724477638330122, 13029096490702810681, 13249798529216292595, 14255872580794255068, 15725619399712316528, 18279170212269492604 } direct:call:_Z42__device_stub__Z10fwd_kernelPfS_S_S_iiiiiiPfS_S_S_iiiiii
-/tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c 9 181 : { 4532324399364136267, 7228847308373642114, 9782398120930818190, 12478921029940324037, 12896744292964250923, 13902818344542213396, 14908892396120175869, 15032471842497500113, 15914966447698138342, 17728994751507005960 } direct:call:cudaSetupArgument
-/tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c 9 0 : { 5069045775135983367 } direct:call:_ZN37_GLOBAL__N__13_iso3d_cpp1_ii_d397baaf10cudaLaunchIcEE9cudaErrorPT_
-/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 10721712829254564895 } direct:call:cudaLaunch
-iso3d.cudafe1.stub.c 2 73 : { 7696593959710208457, 9876978714228737634 } direct:call:NULL
-iso3d.cudafe1.stub.c 1 138 : { 1625171281046460898, 7696593959710208457 } direct:call:__cudaRegisterFunction
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 1 : { 1, 2, 3 } direct:call:_Z12setup_configP7_configiPPc
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 1 : { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 } prop:call:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 1 : { 15 } direct:call:_Z9init_dataPfS_S_S_iiiff
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 240 : { 20 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 23 : { 20 } prop:call:cudaMalloc
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 240 : { 21 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 23 : { 21 } prop:call:cudaMalloc
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 239 : { 22 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 23 : { 22 } prop:call:cudaMalloc
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 0 : { 23 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 20 : { 23 } prop:call:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 23 : { 26 } direct:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 0 : { 27 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 23 : { 27 } prop:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 0 : { 28 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 23 : { 28 } prop:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 0 : { 29 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 23 : { 29 } prop:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 0 : { 30 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 16 : { 30 } prop:call:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 23 : { 31, 32, 33, 34, 35 } prop:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 2 : { 31, 32, 33, 34, 35 } prop:call:cudaConfigureCall
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 23 : { 31, 32, 33, 34, 35 } prop:call:cudaDeviceSynchronize
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 0 : { 35 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 1 : { 16, 17, 40 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 225 : { 41 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 20 : { 41 } prop:call:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 23 : { 42 } direct:call:cudaMemcpy
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 0 : { 43 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 18 : { 43 } prop:call:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 1 : { 44 } direct:call:_Z15finish_progressv
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 1 : { 45, 46 } prop:call:_Z15save_layer_textPfiiiiiPKci
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 23 : { 45, 46 } prop:call:cudaFree
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 218 : { 47 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 23 : { 47 } prop:call:cudaFree
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 218 : { 48 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 23 : { 48 } prop:call:cudaFree
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 217 : { 49 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 23 : { 49 } prop:call:cudaFree
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 221 : { 50 } prop:call:cudaGetErrorString
+/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 50 2 : { 809, 810, 811, 812, 813, 814, 815, 816, 817, 818 } direct:call:_Z42__device_stub__Z10fwd_kernelPfS_S_S_iiiiiiPfS_S_S_iiiiii
+/tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c 9 181 : { 872, 873, 874, 875, 876, 877, 878, 879, 880, 881 } direct:call:cudaSetupArgument
+/tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c 9 0 : { 1069 } direct:call:_ZN37_GLOBAL__N__13_iso3d_cpp1_ii_d397baaf10cudaLaunchIcEE9cudaErrorPT_
+/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 969 } direct:call:cudaLaunch
+iso3d.cudafe1.stub.c 2 73 : { 976, 1071 } direct:call:NULL
+iso3d.cudafe1.stub.c 1 138 : { 987, 1071 } direct:call:__cudaRegisterFunction
