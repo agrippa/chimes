@@ -18,8 +18,9 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
+DEFINES=
 
-while getopts ":kci:I:L:l:o:w:vpx:s" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:sD:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -56,6 +57,9 @@ while getopts ":kci:I:L:l:o:w:vpx:s" opt; do
             ;;
         s)
             ENABLE_OMP=0
+            ;;
+        D)
+            DEFINES="$DEFINES -D${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -102,13 +106,14 @@ if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
-OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
+OPT=$(find_opt)
 GXX=${GXX:-/usr/bin/g++}
-CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
+CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
+LLVM_LIB=$(get_llvm_lib)
 
 GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
@@ -124,15 +129,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
     STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname $(which gcc))) -name \
                 "stddef.h" 2>/dev/null | head -n 1))
 
-    LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib
-    if [[ ! -f $LLVM_LIB ]]; then
-        LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.so
-    fi
-    if [[ ! -f $LLVM_LIB ]]; then
-        echo "Missing LLVMPlay lib"
-        exit 1
-    fi
-
     if [[ $ENABLE_OMP == 1 ]]; then
         echo Looking for OpenMP pragmas in ${INPUT}
         cd ${WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
@@ -145,12 +141,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g ${LINKER_FLAGS} \
            -include${CHIMES_HOME}/src/libchimes/libchimes.h \
-           -include stddef.h -include stdio.h ${CHIMES_DEF}
+           -include stddef.h -include stdio.h ${CHIMES_DEF} ${DEFINES}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
-           ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF}
+           ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF} ${DEFINES}
 
     echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
     cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -184,7 +180,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF}
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -198,7 +194,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
     echo Postprocessing ${FINAL_FILE}
-    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} \
+    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \
         -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
@@ -208,7 +204,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     ${GXX} --compile -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${GXX_FLAGS} ${CHIMES_DEF}
+        -o ${OBJ_FILE} ${GXX_FLAGS} ${CHIMES_DEF} ${DEFINES}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"

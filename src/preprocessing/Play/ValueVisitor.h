@@ -43,6 +43,10 @@ inline std::string pretty_print(Value *V) {
     return s;
 }
 
+inline size_t hash_landing_pad(LandingPadInst *land) {
+    return hash("landingpad", "", pretty_print(land));
+}
+
 inline size_t hash_constant(Constant *C) {
     return hash("constant", "", pretty_print(C));
 }
@@ -123,13 +127,13 @@ class ValueVisitor {
         size_t visitCmp(CmpInst *cmp, Value *prev);
         size_t visitBinary(BinaryOperator *bin, Value *prev);
         size_t visitConstant(Constant *cons, Value *prev);
+        size_t visitPhi(PHINode *phi, Value *prev);
+        size_t visitExtractValue(ExtractValueInst *ex, Value *prev);
+        size_t visitLandingPad(LandingPadInst *land, Value *prev);
 
         void storesReferencesToGroup(size_t container, size_t child);
-        void markAllUses(Value *val, size_t alias);
         size_t searchForValueInKnownAliases(Value *val);
         bool setAlias(Value *val, Value *prev, size_t alias);
-        void clearAlias(Value *val, size_t expected_alias);
-
         /*
          * Stores a mapping from alias groups to the alias groups that can be
          * directly reached by dereferencing them. For example if you have an

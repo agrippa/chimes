@@ -18,6 +18,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
+DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vps" opt; do
     case $opt in 
@@ -56,6 +57,9 @@ while getopts ":kci:I:L:l:o:w:vps" opt; do
             ;;
         s)
             ENABLE_OMP=0
+            ;;
+        D)
+            DEFINES="$DEFINES -D${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -109,12 +113,13 @@ fi
 NVCC_WORK_DIR=${WORK_DIR}/nvcc
 COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
 
-OPT=${LLVM_INSTALL}/Debug+Asserts/bin/opt
-CLANG=${LLVM_INSTALL}/Debug+Asserts/bin/clang
+OPT=$(find_opt)
+CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
+LLVM_LIB=$(get_llvm_lib)
 
 GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
@@ -138,7 +143,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
               --pre-include ${CHIMES_HOME}/src/libchimes/libchimes.h \
               -I${CHIMES_HOME}/src/libchimes ${GXX_FLAGS} \
               -L${CHIMES_HOME}/src/libchimes -lchimes --verbose --keep \
-              --compile ${CHIMES_DEF} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
+              --compile ${CHIMES_DEF} ${DEFINES} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
     printf 'DONE\n'
     python ${CHIMES_HOME}/src/preprocessing/compile_helper.py \
@@ -154,15 +159,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
     STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname $(which gcc))) -name \
                 "stddef.h" 2>/dev/null | head -n 1))
 
-    LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.dylib
-    if [[ ! -f $LLVM_LIB ]]; then
-        LLVM_LIB=${LLVM_INSTALL}/Debug+Asserts/lib/LLVMPlay.so
-    fi
-    if [[ ! -f $LLVM_LIB ]]; then
-        echo "Missing LLVMPlay lib"
-        exit 1
-    fi
-
     if [[ $ENABLE_OMP == 1 ]]; then
         echo Looking for OpenMP pragmas in ${INPUT}
         cd ${NVCC_WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
@@ -173,7 +169,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
         -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
-        ${INTERMEDIATE_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF}
+        ${INTERMEDIATE_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF} ${DEFINES}
 
     echo Analyzing ${BITCODE_FILE} and dumping info to ${NVCC_WORK_DIR}
     cd ${NVCC_WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
@@ -206,7 +202,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
             ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${CHIMES_DEF}
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
     TRANSFORMED_FILE=$(basename ${INTERMEDIATE_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -221,7 +217,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Postprocessing ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && ${CPP_COMPILER} -E -I${CUDA_HOME}/include -include stddef.h \
-        ${CHIMES_DEF} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
+        ${CHIMES_DEF} ${DEFINES} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
         ${FINAL_FILE}.post ${FINAL_FILE}
 
     FINAL_FILE=$(dirname ${INTERMEDIATE_FILE})/${FINAL_FILE}

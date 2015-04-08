@@ -46,6 +46,12 @@ size_t ValueVisitor::visit(Value *val, Value *prev) {
         alias = visitBinary(bin, prev);
     } else if (Constant *cons = dyn_cast<Constant>(val)) {
         alias = visitConstant(cons, prev);
+    } else if (PHINode *phi = dyn_cast<PHINode>(val)) {
+        alias = visitPhi(phi, prev);
+    } else if (ExtractValueInst *ex = dyn_cast<ExtractValueInst>(val)) {
+        alias = visitExtractValue(ex, prev);
+    } else if (LandingPadInst *land = dyn_cast<LandingPadInst>(val)) {
+        alias = visitLandingPad(land, prev);
     } else {
         errs() << "Unsupported " << *val << "\n";
         assert(false);
@@ -56,6 +62,57 @@ size_t ValueVisitor::visit(Value *val, Value *prev) {
     }
 
     return alias;
+}
+
+size_t ValueVisitor::visitLandingPad(LandingPadInst *land, Value *prev) {
+    /*
+     * TODO is it possible the exception value passed in is aliased with
+     * something? For now, just say no.
+     */
+    return hash_landing_pad(land);
+}
+
+size_t ValueVisitor::visitExtractValue(ExtractValueInst *ex, Value *prev) {
+    // If loading a field from a struct/array that has a pointer type
+    if (ex->getType()->isPointerTy()) {
+        /*
+         * TODO For now, we conservatively assume that any pointer loaded from
+         * an aggregate type is the same as any other pointer loaded from the
+         * same aggregate type. This simplifies the analysis, and makes it
+         * similar to how we treat LD/ST operations.
+         */
+        Value *agg = ex->getAggregateOperand();
+        size_t loading_from_group = visit(agg, ex);
+        size_t loading_into_group;
+        if (contains.find(loading_from_group) != contains.end()) {
+            loading_into_group = contains[loading_from_group];
+        } else {
+            loading_into_group = hash_instruction(ex);
+        }
+        storesReferencesToGroup(loading_from_group, loading_into_group);
+        return loading_into_group;
+    } else {
+        return 0;
+    }
+}
+
+size_t ValueVisitor::visitPhi(PHINode *phi, Value *prev) {
+    size_t mergeToAlias = 0;
+    bool aliasSet = false;
+
+    for (unsigned int i = 0; i < phi->getNumIncomingValues(); i++) {
+        Value *parent = phi->getIncomingValue(i);
+        size_t alias = visit(parent, phi);
+
+        if (!aliasSet) {
+            mergeToAlias = alias;
+            aliasSet = true;
+        } else {
+            mergeAliasGroups(alias, mergeToAlias);
+        }
+    }
+
+    return mergeToAlias;
 }
 
 size_t ValueVisitor::visitConstant(Constant *cons, Value *prev) {
@@ -169,28 +226,6 @@ size_t ValueVisitor::visitCall(CallInst *call, Value *prev) {
     } else {
         return 0;
     }
-}
-
-void ValueVisitor::markAllUses(Value *val, size_t alias) {
-    for (Value::use_iterator use_iter = val->use_begin(),
-            use_end = val->use_end(); use_iter != use_end;
-            use_iter++) {
-        Use& use = *use_iter;
-        add(use.getUser(), val, alias, true);
-    }
-}
-
-void ValueVisitor::clearAlias(Value *val, size_t expected_alias) {
-    std::map<Value *, size_t>::iterator found = value_to_alias_group.find(val);
-#ifdef VERBOSE
-    errs() << "Clearing alias for [" << *val << "], was " << expected_alias <<
-        "\n";
-#endif
-
-    assert(found != value_to_alias_group.end());
-    assert(value_to_alias_group[val] == expected_alias);
-
-    value_to_alias_group.erase(found);
 }
 
 bool ValueVisitor::setAlias(Value *val, Value *setter, size_t alias) {
