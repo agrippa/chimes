@@ -62,10 +62,10 @@ fprintf 142 145 0 599 1064 1065 0
 cudaGetErrorString 142 0 465 0
 fprintf 142 240 0 599 1066 0 465
 exit 142 0 0 0
-llvm.memcpy.p0i8.p0i8.i64 146 2 0 36 25 0 0 0
-llvm.memcpy.p0i8.p0i8.i64 146 2 0 37 24 0 0 0
-llvm.memcpy.p0i8.p0i8.i64 146 2 0 38 36 0 0 0
-llvm.memcpy.p0i8.p0i8.i64 146 2 0 39 37 0 0 0
+memcpy 146 2 0 36 25 0
+memcpy 146 2 0 37 24 0
+memcpy 146 2 0 38 36 0
+memcpy 146 2 0 39 37 0
 cudaConfigureCall 146 2 0 0 0 0 0 0 1086
 _Z10fwd_kernelPfS_S_S_iiiiii 146 46 0 517 517 500 501 0 0 0 0 0 0
 _Z10checkpointv 153 1 0

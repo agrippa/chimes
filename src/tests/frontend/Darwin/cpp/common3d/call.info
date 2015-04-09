@@ -4,7 +4,7 @@ exit 12 9 0 0
 fprintf 17 13 0 30 451 0 0 0
 fprintf 20 9 0 30 452
 fclose 23 5 0 30
-llvm.memset.p0i8.i64 40 5 0 244 0 0 0 0
+memset 40 5 0 244 0 0
 fprintf 50 5 0 418 453 261
 exit 53 5 0 0
 _Z14default_configP7_config 77 5 0 437

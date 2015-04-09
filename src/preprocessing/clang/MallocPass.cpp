@@ -10,6 +10,7 @@
 extern DesiredInsertions *insertions;
 
 void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
+    // For each line that has a memory allocation or free statement
     for (std::map<unsigned, std::map<std::string, std::vector<FoundAlloc> *> *>::iterator i = found_allocs.begin(), e = found_allocs.end(); i != e; i++) {
         unsigned line = i->first;
         std::map<std::string, std::vector<FoundAlloc> *> *per_line = i->second;

@@ -562,15 +562,37 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                 for (BasicBlock::iterator i = bb->begin(), e = bb->end();
                         i != e; ++i) {
                     Instruction &inst = *i;
-                    if (isa<CallInst>(&inst) && !isa<DbgInfoIntrinsic>(&inst)) {
+                    int line = inst.getDebugLoc().getLine();
+                    int col = inst.getDebugLoc().getCol();
+
+                    if (isa<MemSetInst>(&inst)) {
+                        // Assume this maps to memset
+                        MemSetInst *memset = dyn_cast<MemSetInst>(&inst);
+                        assert(memset != NULL);
+
+                        fprintf(fp, "memset %d %d 0 %lu 0 0\n", line, col,
+                                searchForValueInKnownAliases(memset->getDest(),
+                                    value_to_alias_group));
+
+                    } else if (isa<MemTransferInst>(&inst)) {
+                        //TODO
+                        MemTransferInst *transfer = dyn_cast<MemTransferInst>(&inst);
+                        assert(transfer != NULL);
+
+                        fprintf(fp, "memcpy %d %d 0 %lu %lu 0\n", line, col,
+                                searchForValueInKnownAliases(transfer->getDest(),
+                                    value_to_alias_group),
+                                searchForValueInKnownAliases(transfer->getSource(),
+                                    value_to_alias_group));
+
+                    } else if (isa<CallInst>(&inst) &&
+                            !isa<IntrinsicInst>(&inst)) {
                         CallInst *call = dyn_cast<CallInst>(&inst);
                         assert(call != NULL);
 
                         Function *callee = call->getCalledFunction();
                         if (callee == NULL) continue;
 
-                        int line = inst.getDebugLoc().getLine();
-                        int col = inst.getDebugLoc().getCol();
                         std::string name = callee->getName().str();
 
                         size_t return_alias = 0;

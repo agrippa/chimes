@@ -12,6 +12,7 @@
 extern DesiredInsertions *insertions;
 extern std::string stmtToString(const clang::Stmt *S, clang::ASTContext *Context);
 extern clang::FunctionDecl *curr_func_decl;
+extern std::set<std::string> *ignorable;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -263,7 +264,8 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
             ompTree->add_function_call(loc.get_call(), loc.get_label());
 
             AliasesPassedToCallSite callsite =
-                insertions->findFirstMatchingCallsite(i->first);
+                insertions->findFirstMatchingCallsite(i->first,
+                        loc.get_call()->getDirectCallee()->getNameAsString());
 
             std::stringstream ss;
             ss << " call_lbl_" << loc.get_label() << ": calling(" <<
@@ -299,16 +301,6 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
 void OMPPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
-
-    std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
-        "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
-        "init_chimes", "new_stack", "rm_stack", "register_stack_var",
-        "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
-        "atoi", "atof", "fopen", "getopt", "LIBCHIMES_THREAD_NUM",
-        "entering_omp_parallel", "leaving_omp_parallel",
-        "register_thread_local_stack_vars", "omp_get_thread_num"};
-    std::set<std::string> ignorable(ignorable_arr,
-            ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(end)) {
         clang::PresumedLoc presumed_start = SM->getPresumedLoc(start);
@@ -364,7 +356,7 @@ void OMPPass::VisitStmt(const clang::Stmt *s) {
              *
              * This means we can't support checkpoints from inside constructors
              */
-            if (ignorable.find(callee_name) == ignorable.end() &&
+            if (ignorable->find(callee_name) == ignorable->end() &&
                     !clang::isa<const clang::CXXConstructExpr>(call)) {
 
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);

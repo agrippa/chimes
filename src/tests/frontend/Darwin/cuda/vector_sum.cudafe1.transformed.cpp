@@ -26825,7 +26825,7 @@ alias_group_changed(3, (size_t)(5UL), (size_t)(38UL), (size_t)(44UL)); call_lbl_
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  lbl_9: int blocks_per_grid; register_stack_var("main|blocks_per_grid|0", "i32", (void *)(&blocks_per_grid), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } blocks_per_grid = (((N + threads_per_block) - 1) / threads_per_block);
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(2, (size_t)(13UL), (size_t)(14UL)); call_lbl_2: calling(2, 0UL, 4, (size_t)(16UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); call_lbl_3: calling(3, 0UL, 4, (size_t)(15UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N);
+alias_group_changed(2, (size_t)(13UL), (size_t)(14UL)); call_lbl_2: calling(2, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(411UL)); call_lbl_3: calling(3, 0UL, 4, (size_t)(140UL), (size_t)(141UL), (size_t)(148UL), (size_t)(0UL)); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N);
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  call_lbl_4: calling(4, 0UL, 4, (size_t)(146UL), (size_t)(148UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

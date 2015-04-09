@@ -322,33 +322,10 @@ public:
         return func_exits->at(funcname);
     }
 
-    AliasesPassedToCallSite findFirstMatchingCallsite(int line) {
-        std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
-        std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
-        while (i != e) {
-            AliasesPassedToCallSite curr = *i;
-            if (curr.get_line() == line) break;
-            i++;
-        }
+    AliasesPassedToCallSite findFirstMatchingCallsite(int line,
+            std::string callee_name);
 
-        assert(i != e);
-
-        AliasesPassedToCallSite result = *i;
-        callsites->erase(i);
-        return result;
-    }
-
-    FunctionArgumentAliasGroups findMatchingFunction(std::string func) {
-        for (std::vector<FunctionArgumentAliasGroups>::iterator i =
-                functions->begin(), e = functions->end(); i != e; i++) {
-            FunctionArgumentAliasGroups curr = *i;
-            if (curr.get_funcname() == func) {
-                return curr;
-            }
-        }
-
-        assert(false);
-    }
+    FunctionArgumentAliasGroups findMatchingFunction(std::string func);
 
     size_t get_module_id() {
         return module_id;

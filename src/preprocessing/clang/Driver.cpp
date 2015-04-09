@@ -80,6 +80,21 @@ static std::string current_output_file;
 static std::map<std::string, int> num_register_labels;
 static std::map<std::string, int> num_call_labels;
 
+/*
+ * __builtin_expect and operator= are an abuse of this array's intended purpose
+ * as a list of functions which we don't need to worry about modifying their
+ * inputs.
+ */
+std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
+    "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
+    "init_chimes", "new_stack", "rm_stack", "register_stack_var",
+    "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
+    "atoi", "atof", "fopen", "getopt", "LIBCHIMES_THREAD_NUM",
+    "entering_omp_parallel", "leaving_omp_parallel",
+    "register_thread_local_stack_vars", "omp_get_thread_num",
+    "__builtin_expect", "operator="};
+std::set<std::string> *ignorable = NULL;
+
 class Pass {
 public:
     Pass(ParentTransform *set_impl,
@@ -279,6 +294,9 @@ int main(int argc, const char **argv) {
   check_opt(reachable_file, "Reachable file");
   check_opt(module_id_file, "Module ID file");
   check_opt(omp_file, "OpenMP file");
+
+  ignorable = new std::set<std::string>(ignorable_arr,
+          ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
 
   bool updateFile = true;
   if (contains_line_markings.compare("true") == 0) {
