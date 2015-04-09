@@ -2596,7 +2596,7 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack
 }
 
 void init_progress(int length, int goal, int disabled) {new_stack(3, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "init_progress|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0, "init_progress|goal|0", "i32", (void *)(&goal), (size_t)4, 0, 0, 0, "init_progress|disabled|0", "i32", (void *)(&disabled), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-     lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
+     lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
     if (progress_buffer != __null) { {
         fprintf(__stderrp, "Progress initialized multiple times\n");
         alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); exit(1);
@@ -2612,7 +2612,7 @@ void init_progress(int length, int goal, int disabled) {new_stack(3, 3, (size_t)
     if (disabled) { alias_group_changed(7, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(457UL), (size_t)(612UL), (size_t)(615UL)); rm_stack(false, 0UL); return;
  }
     progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 457UL, 0, 0);
-    alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); call_lbl_0: calling(0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); call_lbl_1: calling(1, 0UL, 4, (size_t)(616UL), (size_t)(607UL), (size_t)(0UL), (size_t)(618UL)); (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
+    alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); call_lbl_0: calling(0, 0UL, 4, (size_t)(616UL), (size_t)(607UL), (size_t)(0UL), (size_t)(618UL)); (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
     progress_length = length;
     progress_goal = goal;
     progress_num_ticks = 0;

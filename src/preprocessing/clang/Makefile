@@ -1,7 +1,15 @@
-GXX=g++
+# This should only be run with the same compiler as LLVM/Clang was compiled with
+# (which may not be the system default). You can force it to be a custom
+# compiler by setting a GXX environment variable, e.g.:
+#
+# GXX=/usr/local/bin/g++ make
+#
+
+GXX?=/usr/bin/g++
 EXE=transform
 
-GXX_FLAGS=-O0 -g `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --cxxflags`
+LLVM_CONFIG=$(shell find ${LLVM_INSTALL}/**/bin -name llvm-config)
+GXX_FLAGS=-O0 -g `${LLVM_CONFIG} --cxxflags`
 INCLUDES=-I${LLVM_HOME}/tools/clang/include -I${LLVM_INSTALL}/tools/clang/include
 ARCH=$(shell uname -s)
 
@@ -11,19 +19,19 @@ LIBS=-lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lclangEdit \
 	 -lclangEdit -lclangASTMatchers -lclangRewrite -lclangRewriteFrontend \
 	 -lclangStaticAnalyzerFrontend -lclangStaticAnalyzerCheckers \
 	 -lclangStaticAnalyzerCore -lclangSerialization \
-	 -lclangTooling `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --ldflags --libs --system-libs`
+	 -lclangTooling `${LLVM_CONFIG} --ldflags --libs --system-libs`
 else
 LIBS=-Wl,--start-group -lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lclangEdit \
 	 -lclangFrontend -lclangFrontendTool -lclangLex -lclangParse -lclangSema \
 	 -lclangEdit -lclangASTMatchers -lclangRewrite -lclangRewriteFrontend \
 	 -lclangStaticAnalyzerFrontend -lclangStaticAnalyzerCheckers \
 	 -lclangStaticAnalyzerCore -lclangSerialization \
-	 -lclangTooling -Wl,--end-group `${LLVM_INSTALL}/Debug+Asserts/bin/llvm-config --ldflags --libs --system-libs`
+	 -lclangTooling -Wl,--end-group `${LLVM_CONFIG} --ldflags --libs --system-libs`
 endif
 
 OBJS=Driver.o DesiredInsertions.o InitPass.o \
      StartExitPass.o ParentTransform.o AliasChangedPass.o MallocPass.o \
-     SplitInitsPass.o OMPPass.o OMPTree.o
+     SplitInitsPass.o OMPPass.o OMPTree.o CallingPass.cpp
 
 ${EXE}: ${OBJS}
 	${GXX} ${GXX_FLAGS} ${INCLUDES} ${OBJS} -o ${EXE} ${LIBS}

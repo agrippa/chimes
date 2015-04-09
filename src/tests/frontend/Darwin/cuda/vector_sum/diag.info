@@ -48,8 +48,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 1  FIL
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 34 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 41 72  call_lbl_0: calling(0, 0UL, 4, (size_t)(140UL), (size_t)(38UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 42 1  call_lbl_1: calling(1, 0UL, 4, (size_t)(141UL), (size_t)(44UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 57  call_lbl_2: calling(2, 0UL, 4, (size_t)(16UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 57  call_lbl_3: calling(3, 0UL, 4, (size_t)(15UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 57  call_lbl_2: calling(2, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(411UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 57  call_lbl_3: calling(3, 0UL, 4, (size_t)(140UL), (size_t)(141UL), (size_t)(148UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 49 1  call_lbl_4: calling(4, 0UL, 4, (size_t)(146UL), (size_t)(148UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 1  call_lbl_5: calling(5, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 57 1  call_lbl_6: calling(6, 0UL, 1, (size_t)(156UL)); 

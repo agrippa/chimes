@@ -651,3 +651,51 @@ std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
 
     return result;
 }
+
+AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
+        std::string callee_name) {
+    std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
+    std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
+    while (i != e) {
+        AliasesPassedToCallSite curr = *i;
+        if (curr.get_line() == line) {
+            if (curr.get_funcname().find(callee_name) != std::string::npos) {
+                /*
+                 * TODO This is super ugly. The callee_name passed here is the
+                 * name as it appears in the source code. The function name
+                 * stored in curr is a mangled name (some C++ mangling
+                 * convention? not sure). Here, we just wait for the first match
+                 * where the user-visible name is a substring of the mangled
+                 * name.
+                 */
+                break;
+            }
+        }
+        i++;
+    }
+
+    if (i == e) {
+        llvm::errs() << "Unable to find match for " << callee_name <<
+            " on line " << line << "\n";
+        assert(false);
+    }
+
+    AliasesPassedToCallSite result = *i;
+    callsites->erase(i);
+    return result;
+}
+
+FunctionArgumentAliasGroups DesiredInsertions::findMatchingFunction(
+        std::string func) {
+    for (std::vector<FunctionArgumentAliasGroups>::iterator i =
+            functions->begin(), e = functions->end(); i != e; i++) {
+        FunctionArgumentAliasGroups curr = *i;
+        if (curr.get_funcname() == func) {
+            return curr;
+        }
+    }
+
+    llvm::errs() << func << "\n";
+    assert(false);
+}
+

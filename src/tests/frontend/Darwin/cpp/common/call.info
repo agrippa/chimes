@@ -34,7 +34,6 @@ exit 149 9 0 0
 fprintf 153 9 0 120 614
 exit 154 9 0 0
 malloc 161 31 457 0
-llvm.expect.i64 162 6 0 0 0
 __assert_rtn 162 58 0 616 607 0 618
 fprintf 175 5 0 120 622 457
 fprintf 186 9 0 120 623

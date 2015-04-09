@@ -69,7 +69,7 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 16 12  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 16 17  register_stack_var("save_layer_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 16 17  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 8 773  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 40 5  call_lbl_0: calling(0, 0UL, 5, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 40 5  call_lbl_0: calling(0, 0UL, 3, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 29 208  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 49 119  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 56 68  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 

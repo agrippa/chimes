@@ -2404,7 +2404,7 @@ void init_data(float *curr, float *next, float *vsq,
         curr[i] = next[i] = 0;
     } } }
 
-     call_lbl_0: calling(0, 0UL, 5, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
+     call_lbl_0: calling(0, 0UL, 3, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
      float scale; scale = (1. / (dx * dx));
     h_coeff[0] = -8.541666 * scale;
     h_coeff[1] = 1.600000 * scale;

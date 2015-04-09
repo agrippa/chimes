@@ -8,8 +8,8 @@ cudaMemcpy 41 1 0 140 38 0 0
 cudaMemcpy 42 1 0 141 44 0 0
 _ZN4dim3C1Ejjj 47 2 0 15 0 0 0
 _ZN4dim3C1Ejjj 47 2 0 16 0 0 0
-llvm.memcpy.p0i8.p0i8.i64 47 2 0 17 15 0 0 0
-llvm.memcpy.p0i8.p0i8.i64 47 2 0 18 16 0 0 0
+memcpy 47 2 0 17 15 0
+memcpy 47 2 0 18 16 0
 cudaConfigureCall 47 2 0 0 0 0 0 0 411
 _Z6kernelPiS_S_i 47 69 0 140 141 148 0
 cudaMemcpy 49 1 0 146 148 0 0

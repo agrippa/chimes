@@ -31,6 +31,16 @@ static void mark_matched(int line, int col, const char *filename) {
 
 void AliasChangedPass::WrapAroundBlock(const clang::Stmt *block,
         std::string toPrefix, std::string toAppend) {
+
+    if (clang::isa<clang::IfStmt>(block)) {
+        /*
+         * It seems it is possible this gets passed a full IfStmt as the body of
+         * an 'else' in the case of an 'else if'.
+         */
+        const clang::IfStmt *nested = clang::dyn_cast<const clang::IfStmt>(block);
+        block = nested->getThen();
+    }
+
     clang::SourceLocation start = block->getLocStart();
     clang::SourceLocation end = block->getLocEnd();
 
