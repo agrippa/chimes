@@ -57,7 +57,16 @@ void ParentTransform::visitChildren(const clang::Stmt *s) {
 }
 
 const clang::Stmt *ParentTransform::getParent(const clang::Stmt *s) {
-    assert(parentMap.find(s) != parentMap.end());
+    if (parentMap.find(s) == parentMap.end()) {
+        std::string s_str;
+        llvm::raw_string_ostream s_stream(s_str);
+        s->printPretty(s_stream, NULL, Context->getPrintingPolicy());
+        s_stream.flush();
+
+        llvm::errs() << "No parent found for \"" << s_str << "\"\n";
+        assert(false);
+    }
+
     return parentMap[s];
 }
 
@@ -81,6 +90,38 @@ clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
     return SM->getPresumedLoc(start);
 }
 
+clang::SourceLocation ParentTransform::getStartOfNextStmt(
+        const clang::Stmt *s) {
+    const clang::Stmt *parent = getParent(s);
+    while (!clang::isa<clang::CompoundStmt>(parent)) {
+        s = parent;
+        parent = getParent(s);
+    }
+
+    const clang::CompoundStmt *parent_cmpd = clang::dyn_cast<clang::CompoundStmt>(parent);
+    assert(parent_cmpd != NULL);
+
+    const clang::Stmt *found_next = NULL;
+    clang::CompoundStmt::const_body_iterator i = parent_cmpd->body_begin();
+    clang::CompoundStmt::const_body_iterator e = parent_cmpd->body_end();
+    while (i != e) {
+        const clang::Stmt *curr = *i;
+        if (curr == s) {
+            break;
+        }
+        i++;
+    }
+    assert(i != e);
+    i++;
+    if (i == e) {
+        // No statement after this one
+        return parent_cmpd->getRBracLoc();
+    } else {
+        const clang::Stmt *next = *i;
+        return next->getLocStart();
+    }
+}
+
 void ParentTransform::InsertText(clang::SourceLocation start, std::string s,
         bool insertAfter, bool indent) {
     rewriter->InsertText(start, s, insertAfter, indent);
@@ -98,7 +139,6 @@ void ParentTransform::InsertTextAfterToken(clang::SourceLocation start,
     rewriter->InsertTextAfterToken(start, s);
     insertions->AppendToDiagnostics("InsertTextAfterToken", start, s, *SM);
 }
-
 
 void ParentTransform::InsertTextAfter(clang::SourceLocation start,
         std::string s) {

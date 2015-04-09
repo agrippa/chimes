@@ -54,6 +54,7 @@ protected:
     void setParent(const clang::Stmt *child, const clang::Stmt *parent);
 
     clang::PresumedLoc InsertAtFront(const clang::Stmt *s, std::string st);
+    clang::SourceLocation getStartOfNextStmt(const clang::Stmt *s);
     void InsertText(clang::SourceLocation start, std::string s,
         bool insertAfter, bool indent);
     void InsertTextBefore(clang::SourceLocation start, std::string s);

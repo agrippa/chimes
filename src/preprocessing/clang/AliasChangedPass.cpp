@@ -6,6 +6,7 @@
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/Stmt.h>
 #include <llvm/Support/raw_ostream.h>
+#include <llvm/ADT/ArrayRef.h>
 
 extern DesiredInsertions *insertions;
 
@@ -30,14 +31,14 @@ static void mark_matched(int line, int col, const char *filename) {
 }
 
 void AliasChangedPass::WrapAroundBlock(const clang::Stmt *block,
-        std::string toPrefix, std::string toAppend) {
-
+        std::string toPrefix, std::string toAppend, const clang::Stmt *parent) {
     if (clang::isa<clang::IfStmt>(block)) {
         /*
          * It seems it is possible this gets passed a full IfStmt as the body of
          * an 'else' in the case of an 'else if'.
          */
         const clang::IfStmt *nested = clang::dyn_cast<const clang::IfStmt>(block);
+        parent = nested;
         block = nested->getThen();
     }
 
@@ -48,6 +49,10 @@ void AliasChangedPass::WrapAroundBlock(const clang::Stmt *block,
     clang::PresumedLoc end_loc = SM->getPresumedLoc(end);
 
     if (clang::isa<clang::CompoundStmt>(block)) {
+        /*
+         * TODO is this necessary? Will compound statments all already have
+         * braces around them?
+         */
         InsertText(start, toPrefix, true, true);
         InsertTextAfterToken(end, toAppend);
     } else {
@@ -59,7 +64,7 @@ void AliasChangedPass::WrapAroundBlock(const clang::Stmt *block,
         std::stringstream new_block;
         new_block << toPrefix << block_str << toAppend;
 
-        ReplaceText(end, block_str.size(), new_block.str());
+        ReplaceText(clang::SourceRange(start, end), new_block.str());
     }
 }
 
@@ -134,7 +139,23 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
             const clang::ForStmt *f = clang::dyn_cast<clang::ForStmt>(s);
             assert(f);
             const clang::Stmt *body = f->getBody();
-            WrapAroundBlock(body, "{ ", " }");
+            if (!clang::isa<clang::CompoundStmt>(body)) {
+                std::string for_str;
+                llvm::raw_string_ostream for_stream(for_str);
+
+                for_stream << "for (";
+                f->getInit()->printPretty(for_stream, NULL, Context->getPrintingPolicy());
+                for_stream << "; ";
+                f->getCond()->printPretty(for_stream, NULL, Context->getPrintingPolicy());
+                for_stream << "; ";
+                f->getInc()->printPretty(for_stream, NULL, Context->getPrintingPolicy());
+                for_stream << ") { ";
+                f->getBody()->printPretty(for_stream, NULL, Context->getPrintingPolicy());
+                for_stream << "; }";
+                for_stream.flush();
+
+                ReplaceText(clang::SourceRange(f->getSourceRange(), for_str);
+            }
             break;
         }
         case clang::Stmt::IfStmtClass: {
@@ -142,11 +163,11 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
             assert(f);
 
             const clang::Stmt *then = f->getThen();
-            WrapAroundBlock(then, "{ ", " }");
+            WrapAroundBlock(then, "{ ", " }", f);
 
             const clang::Stmt *els = f->getElse();
             if (els) {
-                WrapAroundBlock(els, "{ ", " }");
+                WrapAroundBlock(els, "{ ", " }", f);
             }
             break;
         }

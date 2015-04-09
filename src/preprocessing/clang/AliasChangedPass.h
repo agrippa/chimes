@@ -38,7 +38,7 @@ public:
 
 private:
     void WrapAroundBlock(const clang::Stmt *block, std::string toPrefix,
-            std::string toAppend);
+            std::string toAppend, const clang::Stmt *parent);
 };
 
 #endif
