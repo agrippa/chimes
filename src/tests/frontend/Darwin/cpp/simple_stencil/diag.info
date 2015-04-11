@@ -1,12 +1,4 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 13 29 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 15 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 17 43 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 27 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 19 37 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 21 9  }
 InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(27UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 30 29 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 32 5  }
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 24 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 45 , 27UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 24 len=6 malloc_wrapper

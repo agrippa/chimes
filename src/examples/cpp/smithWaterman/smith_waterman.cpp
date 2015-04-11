@@ -3,6 +3,10 @@
 #include <sys/time.h>
 #include <time.h>
 
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
+
 #define GAP_PENALTY -1
 #define TRANSITION_PENALTY -2
 #define TRANSVERSION_PENALTY -4
@@ -204,6 +208,10 @@ int main ( int argc, char* argv[] ) {
                 	tile_diag[diag_index] = local_matrix[tile_height][tile_width];
 				}
 			}
+
+#ifdef __CHIMES_SUPPORT
+       checkpoint();
+#endif
 		}
 	//}
 

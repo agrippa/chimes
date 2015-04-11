@@ -1719,11 +1719,11 @@ extern void wait_for_checkpoint();
 
 void *haha_this_sux_part_trois() {new_stack(0, 0); if (____chimes_replaying) { goto lbl_0; }
       lbl_0: int *A; register_stack_var("haha_this_sux_part_trois|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 39UL, 0, 0));
-    if (A[0]) { {
+    if (A[0]) {
         alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(true, 39UL); return A;
-    } } else { {
+    } else {
         alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(true, 39UL); return __null;
-    } }
+    }
 alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(true, 39UL); }
 
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(38UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }

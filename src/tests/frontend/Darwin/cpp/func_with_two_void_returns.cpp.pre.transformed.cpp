@@ -1728,11 +1728,11 @@ extern void wait_for_checkpoint();
 int a = 3;
 
 void haha_this_sux2() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    if (a) { {
+    if (a) {
         rm_stack(false, 0UL); return;
-    } } else { {
+    } else {
         rm_stack(false, 0UL); return;
-    } }
+    }
 rm_stack(false, 0UL); }
 
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(19UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }

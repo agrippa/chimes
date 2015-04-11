@@ -1,4 +1,4 @@
-# 1 "common3d.cpp.pre.transformed.cpp"
+# 1 "smith_waterman.cpp.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -17,8 +17,8 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "common3d.cpp.pre.transformed.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
+# 1 "smith_waterman.cpp.pre.transformed.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 175 "<built-in>" 3
@@ -515,11 +515,7 @@ FILE *funopen(const void *,
 }
 # 5 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 1
-
-
-
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
@@ -1714,393 +1710,9 @@ void *valloc(size_t);
 
 
 }
-# 6 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 2
-# 1 "/usr/include/string.h" 1 3 4
-# 64 "/usr/include/string.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 65 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 66 "/usr/include/string.h" 2 3 4
-
-
-
-extern "C" {
-void *memchr(const void *, int, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memcpy(void *, const void *, size_t);
-void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
-char *strcat(char *, const char *);
-char *strchr(const char *, int);
-int strcmp(const char *, const char *);
-int strcoll(const char *, const char *);
-char *strcpy(char *, const char *);
-size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror") ;
-size_t strlen(const char *);
-char *strncat(char *, const char *, size_t);
-int strncmp(const char *, const char *, size_t);
-char *strncpy(char *, const char *, size_t);
-char *strpbrk(const char *, const char *);
-char *strrchr(const char *, int);
-size_t strspn(const char *, const char *);
-char *strstr(const char *, const char *);
-char *strtok(char *, const char *);
-size_t strxfrm(char *, const char *, size_t);
-}
-# 103 "/usr/include/string.h" 3 4
-extern "C" {
-char *strtok_r(char *, const char *, char **);
-}
-# 115 "/usr/include/string.h" 3 4
-extern "C" {
-int strerror_r(int, char *, size_t);
-char *strdup(const char *);
-void *memccpy(void *, const void *, int, size_t);
-}
-# 129 "/usr/include/string.h" 3 4
-extern "C" {
-char *stpcpy(char *, const char *);
-char *stpncpy(char *, const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strndup(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-size_t strnlen(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strsignal(int sig);
-}
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 142 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 143 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-
-
-
-
-extern "C" {
-void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern8(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern16(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-
-char *strcasestr(const char *, const char *);
-char *strnstr(const char *, const char *, size_t);
-size_t strlcat(char *, const char *, size_t);
-size_t strlcpy(char *, const char *, size_t);
-void strmode(int, char *);
-char *strsep(char **, const char *);
-
-
-void swab(const void * , void * , ssize_t);
-}
-
-
-
-
-
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 65 "/usr/include/strings.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 66 "/usr/include/strings.h" 2 3 4
-
-extern "C" {
-
-
-int bcmp(const void *, const void *, size_t) ;
-void bcopy(const void *, void *, size_t) ;
-void bzero(void *, size_t) ;
-char *index(const char *, int) ;
-char *rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-}
-
-
-
-extern "C" {
-int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-int fls(int) __attribute__((availability(macosx,introduced=10.5)));
-int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-# 1 "/usr/include/string.h" 1 3 4
-# 93 "/usr/include/strings.h" 2 3 4
-# 177 "/usr/include/string.h" 2 3 4
-# 7 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 2
-# 1 "/usr/include/unistd.h" 1 3 4
-# 72 "/usr/include/unistd.h" 3 4
-# 1 "/usr/include/sys/unistd.h" 1 3 4
-# 84 "/usr/include/sys/unistd.h" 3 4
-# 1 "/usr/include/sys/_types/_posix_vdisable.h" 1 3 4
-# 85 "/usr/include/sys/unistd.h" 2 3 4
-# 122 "/usr/include/sys/unistd.h" 3 4
-# 1 "/usr/include/sys/_types/_seek_set.h" 1 3 4
-# 123 "/usr/include/sys/unistd.h" 2 3 4
-# 132 "/usr/include/sys/unistd.h" 3 4
-struct accessx_descriptor {
- unsigned int ad_name_offset;
- int ad_flags;
- int ad_pad[2];
-};
-# 179 "/usr/include/sys/unistd.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 180 "/usr/include/sys/unistd.h" 2 3 4
-
-
-
-extern "C" {
-
-int getattrlistbulk(int, void *, void *, size_t, uint64_t) __attribute__((availability(macosx,introduced=10.10)));
-
-}
-
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 195 "/usr/include/sys/unistd.h" 2 3 4
-
-
-
-# 1 "/usr/include/sys/_types/_gid_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_gid_t.h" 3 4
-typedef __darwin_gid_t gid_t;
-# 199 "/usr/include/sys/unistd.h" 2 3 4
-
-
-extern "C" {
-
-int faccessat(int, const char *, int, int) __attribute__((availability(macosx,introduced=10.10)));
-int fchownat(int, const char *, uid_t, gid_t, int) __attribute__((availability(macosx,introduced=10.10)));
-int linkat(int, const char *, int, const char *, int) __attribute__((availability(macosx,introduced=10.10)));
-ssize_t readlinkat(int, const char *, char *, size_t) __attribute__((availability(macosx,introduced=10.10)));
-int symlinkat(const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
-int unlinkat(int, const char *, int) __attribute__((availability(macosx,introduced=10.10)));
-int getattrlistat(int, const char *, void *, void *, size_t, unsigned long) __attribute__((availability(macosx,introduced=10.10)));
-
-}
-# 73 "/usr/include/unistd.h" 2 3 4
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 81 "/usr/include/unistd.h" 2 3 4
-
-
-# 1 "/usr/include/sys/_types/_useconds_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_useconds_t.h" 3 4
-typedef __darwin_useconds_t useconds_t;
-# 84 "/usr/include/unistd.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 85 "/usr/include/unistd.h" 2 3 4
-# 423 "/usr/include/unistd.h" 3 4
-extern "C" {
-void _exit(int) __attribute__((noreturn));
-int access(const char *, int);
-unsigned int
-  alarm(unsigned int);
-int chdir(const char *);
-int chown(const char *, uid_t, gid_t);
-
-int close(int) __asm("_" "close") ;
-
-int dup(int);
-int dup2(int, int);
-int execl(const char *, const char *, ...);
-int execle(const char *, const char *, ...);
-int execlp(const char *, const char *, ...);
-int execv(const char *, char * const *);
-int execve(const char *, char * const *, char * const *);
-int execvp(const char *, char * const *);
-pid_t fork(void);
-long fpathconf(int, int);
-char *getcwd(char *, size_t);
-gid_t getegid(void);
-uid_t geteuid(void);
-gid_t getgid(void);
-
-
-
-int getgroups(int, gid_t []);
-
-char *getlogin(void);
-pid_t getpgrp(void);
-pid_t getpid(void);
-pid_t getppid(void);
-uid_t getuid(void);
-int isatty(int);
-int link(const char *, const char *);
-off_t lseek(int, off_t, int);
-long pathconf(const char *, int);
-
-int pause(void) __asm("_" "pause") ;
-
-int pipe(int [2]);
-
-ssize_t read(int, void *, size_t) __asm("_" "read") ;
-
-int rmdir(const char *);
-int setgid(gid_t);
-int setpgid(pid_t, pid_t);
-pid_t setsid(void);
-int setuid(uid_t);
-
-unsigned int
-  sleep(unsigned int) __asm("_" "sleep") ;
-
-long sysconf(int);
-pid_t tcgetpgrp(int);
-int tcsetpgrp(int, pid_t);
-char *ttyname(int);
-
-
-int ttyname_r(int, char *, size_t) __asm("_" "ttyname_r") ;
-
-
-
-
-int unlink(const char *);
-
-ssize_t write(int, const void *, size_t) __asm("_" "write") ;
-}
-# 500 "/usr/include/unistd.h" 3 4
-extern "C" {
-size_t confstr(int, char *, size_t) __asm("_" "confstr") ;
-
-int getopt(int, char * const [], const char *) __asm("_" "getopt") ;
-
-extern char *optarg;
-extern int optind, opterr, optopt;
-}
-# 525 "/usr/include/unistd.h" 3 4
- extern "C" {
-
-
-
-
-
-__attribute__((deprecated))
-
-void *brk(const void *);
-int chroot(const char *) ;
-
-
-char *crypt(const char *, const char *);
-
-
-
-
-
-
-void encrypt(char *, int) __asm("_" "encrypt") ;
-
-
-
-int fchdir(int);
-long gethostid(void);
-pid_t getpgid(pid_t);
-pid_t getsid(pid_t);
-
-
-
-int getdtablesize(void) ;
-int getpagesize(void) __attribute__((const)) ;
-char *getpass(const char *) ;
-
-
-
-
-char *getwd(char *) ;
-
-
-int lchown(const char *, uid_t, gid_t) __asm("_" "lchown") ;
-
-int lockf(int, int, off_t) __asm("_" "lockf") ;
-
-int nice(int) __asm("_" "nice") ;
-
-ssize_t pread(int, void *, size_t, off_t) __asm("_" "pread") ;
-
-ssize_t pwrite(int, const void *, size_t, off_t) __asm("_" "pwrite") ;
-
-
-
-
-
-
-__attribute__((deprecated))
-
-void *sbrk(int);
-
-
-
-pid_t setpgrp(void) __asm("_" "setpgrp") ;
-
-
-
-
-int setregid(gid_t, gid_t) __asm("_" "setregid") ;
-
-int setreuid(uid_t, uid_t) __asm("_" "setreuid") ;
-
-void swab(const void * , void * , ssize_t);
-void sync(void);
-int truncate(const char *, off_t);
-useconds_t ualarm(useconds_t, useconds_t);
-int usleep(useconds_t) __asm("_" "usleep") ;
-pid_t vfork(void);
-
-
-int fsync(int) __asm("_" "fsync") ;
-
-int ftruncate(int, off_t);
-int getlogin_r(char *, size_t);
-}
-# 618 "/usr/include/unistd.h" 3 4
-extern "C" {
-int fchown(int, uid_t, gid_t);
-int gethostname(char *, size_t);
-ssize_t readlink(const char * , char * , size_t);
-int setegid(gid_t);
-int seteuid(uid_t);
-int symlink(const char *, const char *);
-}
-# 634 "/usr/include/unistd.h" 3 4
-# 1 "/usr/include/sys/select.h" 1 3 4
-# 75 "/usr/include/sys/select.h" 3 4
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
+# 1 "/usr/include/sys/time.h" 1 3 4
+# 75 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
 # 45 "/usr/include/sys/_types/_fd_def.h" 3 4
 extern "C" {
@@ -2115,7 +1727,7 @@ __darwin_fd_isset(int _n, const struct fd_set *_p)
 {
  return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
 }
-# 76 "/usr/include/sys/select.h" 2 3 4
+# 76 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
 # 30 "/usr/include/sys/_types/_timespec.h" 3 4
 struct timespec
@@ -2123,57 +1735,149 @@ struct timespec
  __darwin_time_t tv_sec;
  long tv_nsec;
 };
-# 77 "/usr/include/sys/select.h" 2 3 4
-
-
-
-
-
+# 77 "/usr/include/sys/time.h" 2 3 4
 
 
 # 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_time_t.h" 3 4
 typedef __darwin_time_t time_t;
-# 85 "/usr/include/sys/select.h" 2 3 4
+# 80 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
 typedef __darwin_suseconds_t suseconds_t;
-# 86 "/usr/include/sys/select.h" 2 3 4
-# 100 "/usr/include/sys/select.h" 3 4
+# 81 "/usr/include/sys/time.h" 2 3 4
+
+
+
+
+
+struct itimerval {
+ struct timeval it_interval;
+ struct timeval it_value;
+};
+# 105 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
-# 101 "/usr/include/sys/select.h" 2 3 4
+# 106 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
-# 102 "/usr/include/sys/select.h" 2 3 4
+# 107 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
-# 103 "/usr/include/sys/select.h" 2 3 4
+# 108 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
-# 104 "/usr/include/sys/select.h" 2 3 4
+# 109 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
-# 105 "/usr/include/sys/select.h" 2 3 4
+# 110 "/usr/include/sys/time.h" 2 3 4
+
 
 
 # 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
-# 108 "/usr/include/sys/select.h" 2 3 4
+# 114 "/usr/include/sys/time.h" 2 3 4
+# 124 "/usr/include/sys/time.h" 3 4
+struct timezone {
+ int tz_minuteswest;
+ int tz_dsttime;
+};
+# 167 "/usr/include/sys/time.h" 3 4
+struct clockinfo {
+ int hz;
+ int tick;
+ int tickadj;
+ int stathz;
+ int profhz;
+};
 
+
+
+
+
+
+# 1 "/usr/include/time.h" 1 3 4
+# 67 "/usr/include/time.h" 3 4
+# 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_clock_t.h" 3 4
+typedef __darwin_clock_t clock_t;
+# 68 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 69 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 70 "/usr/include/time.h" 2 3 4
+
+
+
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long tm_gmtoff;
+ char *tm_zone;
+};
+# 96 "/usr/include/time.h" 3 4
+extern char *tzname[];
+
+
+extern int getdate_err;
+
+extern long timezone __asm("_" "timezone") ;
+
+extern int daylight;
+
+extern "C" {
+char *asctime(const struct tm *);
+clock_t clock(void) __asm("_" "clock") ;
+char *ctime(const time_t *);
+double difftime(time_t, time_t);
+struct tm *getdate(const char *);
+struct tm *gmtime(const time_t *);
+struct tm *localtime(const time_t *);
+time_t mktime(struct tm *) __asm("_" "mktime") ;
+size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime") ;
+char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime") ;
+time_t time(time_t *);
+
+
+void tzset(void);
+
+
+
+char *asctime_r(const struct tm * , char * );
+char *ctime_r(const time_t *, char *);
+struct tm *gmtime_r(const time_t * , struct tm * );
+struct tm *localtime_r(const time_t * , struct tm * );
+
+
+time_t posix2time(time_t);
+
+
+
+void tzsetwall(void);
+time_t time2posix(time_t);
+time_t timelocal(struct tm * const);
+time_t timegm(struct tm * const);
+
+
+
+int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep") ;
+
+}
+# 179 "/usr/include/sys/time.h" 2 3 4
 
 
 extern "C" {
 
 
-int pselect(int, fd_set * , fd_set * ,
-  fd_set * , const struct timespec * ,
-  const sigset_t * )
+int adjtime(const struct timeval *, struct timeval *);
+int futimes(int, const struct timeval *);
+int lutimes(const char *, const struct timeval *) __attribute__((availability(macosx,introduced=10.5)));
+int settimeofday(const struct timeval *, const struct timezone *);
 
 
-
-
-  __asm("_" "pselect" "$1050")
-
-
-
-
-  ;
-
+int getitimer(int, struct itimerval *);
+int gettimeofday(struct timeval * , void * );
 
 
 
@@ -2191,311 +1895,275 @@ int select(int, fd_set * , fd_set * ,
 
 
   ;
-# 130 "/usr/include/sys/select.h" 2 3 4
+# 194 "/usr/include/sys/time.h" 2 3 4
+
+int setitimer(int, const struct itimerval * ,
+  struct itimerval * );
+int utimes(const char *, const struct timeval *);
 
 }
-# 634 "/usr/include/unistd.h" 2 3 4
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
 
 
 
-# 1 "/usr/include/sys/_types/_uuid_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_uuid_t.h" 3 4
-typedef __darwin_uuid_t uuid_t;
-# 638 "/usr/include/unistd.h" 2 3 4
+# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
 
-extern "C" {
-void _Exit(int) __attribute__((noreturn));
-int accessx_np(const struct accessx_descriptor *, size_t, int *, uid_t);
-int acct(const char *);
-int add_profil(char *, size_t, unsigned long, unsigned int);
-void endusershell(void);
-int execvP(const char *, const char *, char * const *);
-char *fflagstostr(unsigned long);
-int getdomainname(char *, int);
-int getgrouplist(const char *, int, int *, int *);
+extern void wait_for_checkpoint();
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
 
 
 
 
 
 
-# 1 "/usr/include/gethostuuid.h" 1 3 4
-# 39 "/usr/include/gethostuuid.h" 3 4
-int gethostuuid(uuid_t, const struct timespec *) __attribute__((availability(macosx,introduced=10.5)));
-# 654 "/usr/include/unistd.h" 2 3 4
 
+signed char* string_1;
+signed char* string_2;
 
+int tile_width;
+int tile_height;
 
+int n_tiles_x;
+int n_tiles_y;
 
-mode_t getmode(const void *, mode_t);
-int getpeereid(int, uid_t *, gid_t *);
-int getsgroups_np(int *, uuid_t);
-char *getusershell(void);
-int getwgroups_np(int *, uuid_t);
-int initgroups(const char *, int);
-int iruserok(unsigned long, int, const char *, const char *);
-int iruserok_sa(const void *, int, int, const char *, const char *);
-int issetugid(void);
-char *mkdtemp(char *);
-int mknod(const char *, mode_t, dev_t);
-int mkpath_np(const char *path, mode_t omode) __attribute__((availability(macosx,introduced=10.8)));
-int mkstemp(char *);
-int mkstemps(char *, int);
-char *mktemp(char *);
-int nfssvc(int, void *);
-int profil(char *, size_t, unsigned long, unsigned int);
-int pthread_setugid_np(uid_t, gid_t);
-int pthread_getugid_np( uid_t *, gid_t *);
-int rcmd(char **, int, const char *, const char *, const char *, int *);
-int rcmd_af(char **, int, const char *, const char *, const char *, int *,
-  int);
-int reboot(int);
-int revoke(const char *);
-int rresvport(int *);
-int rresvport_af(int *, int);
-int ruserok(const char *, int, const char *, const char *);
-int setdomainname(const char *, int);
-int setgroups(int, const gid_t *);
-void sethostid(long);
-int sethostname(const char *, int);
+int ** tile_edges_x;
+int ** tile_edges_y;
+int * tile_diag;
 
-void setkey(const char *) __asm("_" "setkey") ;
+int nthreads;
+int *** worker_tiles;
 
+enum Nucleotide {GAP=0, ADENINE, CYTOSINE, GUANINE, THYMINE};
 
-
-int setlogin(const char *);
-void *setmode(const char *) __asm("_" "setmode");
-int setrgid(gid_t);
-int setruid(uid_t);
-int setsgroups_np(int, const uuid_t);
-void setusershell(void);
-int setwgroups_np(int, const uuid_t);
-int strtofflags(char **, unsigned long *, unsigned long *);
-int swapon(const char *);
-int syscall(int, ...);
-int ttyslot(void);
-int undelete(const char *);
-int unwhiteout(const char *);
-void *valloc(size_t);
-
-extern char *suboptarg;
-int getsubopt(char **, char * const *, char **);
-
-
-
-int fgetattrlist(int,void*,void*,size_t,unsigned int) __attribute__((availability(macosx,introduced=10.6)));
-int fsetattrlist(int,void*,void*,size_t,unsigned int) __attribute__((availability(macosx,introduced=10.6)));
-int getattrlist(const char*,void*,void*,size_t,unsigned int) __asm("_" "getattrlist") ;
-int setattrlist(const char*,void*,void*,size_t,unsigned int) __asm("_" "setattrlist") ;
-int exchangedata(const char*,const char*,unsigned int);
-int getdirentriesattr(int,void*,void*,size_t,unsigned int*,unsigned int*,unsigned int*,unsigned int);
-# 731 "/usr/include/unistd.h" 3 4
-struct fssearchblock;
-struct searchstate;
-
-int searchfs(const char *, struct fssearchblock *, unsigned long *, unsigned int, unsigned int, struct searchstate *);
-int fsctl(const char *,unsigned long,void*,unsigned int);
-int ffsctl(int,unsigned long,void*,unsigned int) __attribute__((availability(macosx,introduced=10.6)));
-
-
-
-
-int fsync_volume_np(int, int) __attribute__((availability(macosx,introduced=10.8)));
-int sync_volume_np(const char *, int) __attribute__((availability(macosx,introduced=10.8)));
-
-extern int optreset;
-
-}
-# 8 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 1
-# 29 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h"
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common_cuda.h" 1
-
-
-
-
-extern "C" {
-
-
-extern int getNumCUDADevices();
-
-
-}
-# 30 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 2
-
-typedef struct _source {
-    int x, y;
-    float freq;
-    int t;
-} source;
-
-extern double seconds();
-extern void ricker_wavelet(float *source, int nsteps, float dt, float freq);
-extern void parse_source(char *optarg, source *out);
-extern void config_sources(source **srcs, int *nsrcs, int dimx, int dimy,
-        int nsteps);
-extern float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
-
-extern void init_progress(int length, int goal, int disabled);
-extern void update_progress(int progress);
-extern void finish_progress();
-# 9 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 2
-
-typedef struct _config {
-    int nx, ny, nz;
-    int nsteps;
-    int save_text;
-    int verbose;
-    int radius;
-    int ngpus;
-
-    source *srcs;
-    int nsrcs;
-
-    int progress_width;
-    int progress_disabled;
-} config;
-# 39 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h"
-extern void save_layer_text(float *field, int z, const int dimx, const int dimy,
-        const int ny, const int nx, const char *filename, int radius);
-extern void init_data(float *curr, float *next, float *vsq,
-                float *h_coeff,
-                const int dimx, const int dimy, const int dimz,
-                const float dx, const float dt);
-extern void usage(char **argv);
-extern void default_config(config *conf);
-extern void setup_config(config *conf, int argc, char **argv);
-# 2 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp" 2
-
-
-
-
-
-void save_layer_text(float *field, int z, const int dimx, const int dimy,
-        const int ny, const int nx, const char *filename, int radius) {new_stack(8, 8, (size_t)(95UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(101UL), (size_t)(0UL), "save_layer_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_layer_text|z|0", "i32", (void *)(&z), (size_t)4, 0, 0, 0, "save_layer_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_layer_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_layer_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_layer_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_layer_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_layer_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: FILE *fp; register_stack_var("save_layer_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
-    if (fp == __null) {
-        fprintf(__stderrp, "Failed to open output file %s\n", filename);
-        alias_group_changed(9, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); exit(1);
+signed char char_mapping ( char c ) {new_stack(1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+     signed char to_be_returned; to_be_returned = (-1);
+    switch(c) {
+        case '_': to_be_returned = GAP; break;
+        case 'A': to_be_returned = ADENINE; break;
+        case 'C': to_be_returned = CYTOSINE; break;
+        case 'G': to_be_returned = GUANINE; break;
+        case 'T': to_be_returned = THYMINE; break;
     }
+    alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(false, 0UL); return to_be_returned;
+}
 
-    { lbl_1: int y; register_stack_var("save_layer_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) {
-        { lbl_2: int x; register_stack_var("save_layer_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) {
-            fprintf(fp, "%d %d %.20f\n", y, x,
-                    field[(((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x)))]);
-        } }
-        fprintf(fp, "\n");
-    } }
-
-     call_lbl_0: calling(0, 0UL, 1, (size_t)(30UL)); fclose(fp);
-alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL)); rm_stack(false, 0UL); }
-
-void init_data(float *curr, float *next, float *vsq,
-                float *h_coeff,
-                const int dimx, const int dimy, const int dimz,
-                const float dx, const float dt) {new_stack(9, 0, (size_t)(241UL), (size_t)(242UL), (size_t)(243UL), (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
-
-    { size_t i; for ( i = (0); i < dimx * dimy * dimz; i++) {
-        vsq[i] = 2500. * 2500. * dt * dt;
-    } }
-
-
-    { size_t i; for ( i = (0); i < dimx * dimy * dimz; i++) {
-        curr[i] = next[i] = 0;
-    } }
-
-     call_lbl_0: calling(0, 0UL, 3, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
-     float scale; scale = (1. / (dx * dx));
-    h_coeff[0] = -8.541666 * scale;
-    h_coeff[1] = 1.600000 * scale;
-    h_coeff[2] = -0.200000 * scale;
-    h_coeff[3] = 0.025397 * scale;
-    h_coeff[4] = -0.001785 * scale;
-alias_group_changed(16, (size_t)(111UL), (size_t)(112UL), (size_t)(113UL), (size_t)(114UL), (size_t)(115UL), (size_t)(116UL), (size_t)(117UL), (size_t)(118UL), (size_t)(119UL), (size_t)(120UL), (size_t)(121UL), (size_t)(122UL), (size_t)(241UL), (size_t)(242UL), (size_t)(243UL), (size_t)(244UL)); rm_stack(false, 0UL); }
-
-void usage(char **argv) {new_stack(1, 1, (size_t)(266UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    fprintf(__stderrp, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
-            "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
-            argv[0]);
-    alias_group_changed(1, (size_t)(255UL)); exit(1);
-rm_stack(false, 0UL); }
-
-void default_config(config *conf) {new_stack(1, 0, (size_t)(307UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    conf->nx = 2 * 256;
-    conf->ny = 2 * 256;
-    conf->nz = 2 * 256;
-    conf->nsteps = 100;
-    conf->save_text = -1;
-    conf->verbose = 0;
-    conf->radius = 4;
-    conf->ngpus = -1;
-
-    conf->srcs = __null;
-    conf->nsrcs = 0;
-
-    conf->progress_width = 80;
-    conf->progress_disabled = 0;
-alias_group_changed(2, (size_t)(267UL), (size_t)(307UL)); rm_stack(false, 0UL); }
-
-void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(437UL), (size_t)(0UL), (size_t)(439UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-     lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
-    opterr = 0;
-
-     call_lbl_0: calling(0, 0UL, 1, (size_t)(437UL)); default_config(conf);
-
-    alias_group_changed(6, (size_t)(308UL), (size_t)(309UL), (size_t)(310UL), (size_t)(311UL), (size_t)(437UL), (size_t)(454UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
-        switch (c) {
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'x':
-                conf->nx = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'y':
-                conf->ny = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'z':
-                conf->nz = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'i':
-                conf->nsteps = atoi(optarg);
-                break;
-            case 'v':
-                conf->verbose = 1;
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 't':
-                conf->save_text = atoi(optarg);
-                break;
-            case 'p':
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
-                        (conf->nsrcs + 1), 367UL);
-                alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_1: calling(1, 0UL, 2, (size_t)(331UL), (size_t)(367UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
-                conf->nsrcs++;
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'r':
-                conf->radius = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'g':
-                conf->ngpus = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'w':
-                conf->progress_width = atoi(optarg);
-                break;
-            case 'd':
-                conf->progress_disabled = 1;
-                break;
-            case '?':
-                fprintf(__stderrp, "Missing argument to option %c\n", optopt);
-            alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_2: calling(2, 0UL, 1, (size_t)(439UL)); default:
-                usage(argv);
+void print_matrix ( int** matrix, int n_rows, int n_columns ) {new_stack(3, 3, (size_t)(76UL), (size_t)(0UL), (size_t)(0UL), "print_matrix|matrix|0", "i32**", (void *)(&matrix), (size_t)8, 1, 0, 0, "print_matrix|n_rows|0", "i32", (void *)(&n_rows), (size_t)4, 0, 0, 0, "print_matrix|n_columns|0", "i32", (void *)(&n_columns), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+     lbl_0: int i; register_stack_var("print_matrix|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int j; register_stack_var("print_matrix|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+    for ( i = 0; i < n_rows; ++i ) {
+        for ( j = 0; j < n_columns; ++j ) {
+            fprintf(__stdoutp, "%d ", matrix[i][j]);
         }
+        fprintf(__stdoutp, "\n");
     }
+    fprintf(__stdoutp,"--------------------------------\n");
+alias_group_changed(5, (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL)); rm_stack(false, 0UL); }
 
-    if (conf->ngpus == -1) {
-        alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
+static char alignment_score_matrix[5][5] =
+{
+    {-1,-1,-1,-1,-1},
+    {-1,2,-4,-2,-4},
+    {-1,-4, 2,-4,-2},
+    {-1,-2,-4, 2,-4},
+    {-1,-4,-2,-4, 2}
+};
+
+size_t clear_whitespaces_do_mapping ( signed char* buffer, long size ) {new_stack(2, 0, (size_t)(123UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+     size_t non_ws_index; size_t traverse_index; non_ws_index = (0); traverse_index = (0);
+
+    while ( traverse_index < size ) {
+         char curr_char; curr_char = (buffer[traverse_index]);
+        switch ( curr_char ) {
+             call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); case 'A': case 'C': case 'G': case 'T':
+
+                buffer[non_ws_index++] = char_mapping(curr_char);
+                break;
+        }
+        ++traverse_index;
     }
-alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); rm_stack(false, 0UL); }
+    alias_group_changed(6, (size_t)(81UL), (size_t)(82UL), (size_t)(83UL), (size_t)(84UL), (size_t)(85UL), (size_t)(123UL)); rm_stack(false, 0UL); return non_ws_index;
+}
+
+signed char* read_file( FILE* file, size_t* n_chars ) {new_stack(2, 2, (size_t)(165UL), (size_t)(166UL), "read_file|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "read_file|n_chars|0", "i64*", (void *)(&n_chars), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+    alias_group_changed(2, (size_t)(125UL), (size_t)(126UL)); call_lbl_0: calling(0, 0UL, 3, (size_t)(165UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 2);
+      lbl_0: long file_size; register_stack_var("read_file|file_size|0", "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_1: calling(1, 0UL, 1, (size_t)(165UL)); file_size = (ftell(file));
+    alias_group_changed(1, (size_t)(127UL)); call_lbl_2: calling(2, 0UL, 3, (size_t)(165UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 0);
+
+      lbl_1: signed char *file_buffer; register_stack_var("read_file|file_buffer|0", "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 146UL, 0, 0));
+
+    alias_group_changed(1, (size_t)(128UL)); lbl_2: size_t n_read_from_file; register_stack_var("read_file|n_read_from_file|0", "i64", (void *)(&n_read_from_file), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { exit(42); } } } call_lbl_3: calling(3, 0UL, 4, (size_t)(146UL), (size_t)(0UL), (size_t)(0UL), (size_t)(165UL)); n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file));
+    file_buffer[file_size] = '\n';
+
+
+     call_lbl_4: calling(4, 0UL, 2, (size_t)(146UL), (size_t)(0UL)); *n_chars = clear_whitespaces_do_mapping(file_buffer, file_size);
+    alias_group_changed(3, (size_t)(129UL), (size_t)(146UL), (size_t)(166UL)); rm_stack(true, 146UL); return file_buffer;
+}
+
+int find_diag(int row, int col) {new_stack(2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+ alias_group_changed(2, (size_t)(176UL), (size_t)(177UL)); rm_stack(false, 0UL); return (n_tiles_y - 1) + (col - row);
+}
+
+int main ( int argc, char* argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(972UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+     lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int j; register_stack_var("main|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; }
+   lbl_2: int nthreads; register_stack_var("main|nthreads|0", "i32", (void *)(&nthreads), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } nthreads = (1);
+
+ if ( argc < 5 ) {
+  fprintf(__stderrp, "Usage: %s fileName1 fileName2 tileWidth tileHeight\n", argv[0]);
+  alias_group_changed(6, (size_t)(191UL), (size_t)(192UL), (size_t)(193UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL)); exit(1);
+ }
+
+   lbl_3: char *file_name_1; register_stack_var("main|file_name_1|0", "i8*", (void *)(&file_name_1), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } file_name_1 = (argv[1]);
+   lbl_4: char *file_name_2; register_stack_var("main|file_name_2|0", "i8*", (void *)(&file_name_2), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } file_name_2 = (argv[2]);
+
+    alias_group_changed(6, (size_t)(191UL), (size_t)(192UL), (size_t)(193UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL)); tile_width = (int) atoi (argv[3]);
+    alias_group_changed(1, (size_t)(982UL)); tile_height = (int) atoi (argv[4]);
+
+   lbl_5: FILE *file_1; register_stack_var("main|file_1|0", "%struct.__sFILE*", (void *)(&file_1), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } file_1 = (fopen(file_name_1, "r"));
+ if (!file_1) { fprintf(__stderrp, "could not open file %s\n",file_name_1); alias_group_changed(3, (size_t)(199UL), (size_t)(200UL), (size_t)(982UL)); exit(1); }
+   lbl_6: size_t n_char_in_file_1; register_stack_var("main|n_char_in_file_1|0", "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } n_char_in_file_1 = (0);
+ alias_group_changed(3, (size_t)(199UL), (size_t)(200UL), (size_t)(982UL)); call_lbl_0: calling(0, 656UL, 2, (size_t)(261UL), (size_t)(200UL)); string_1 = read_file(file_1, &n_char_in_file_1);
+ fprintf(__stdoutp, "Size of input string 1 is %u\n", (unsigned)n_char_in_file_1 );
+
+   lbl_7: FILE *file_2; register_stack_var("main|file_2|0", "%struct.__sFILE*", (void *)(&file_2), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } file_2 = (fopen(file_name_2, "r"));
+ if (!file_2) { fprintf(__stderrp, "could not open file %s\n",file_name_2); alias_group_changed(3, (size_t)(201UL), (size_t)(202UL), (size_t)(980UL)); exit(1); }
+   lbl_8: size_t n_char_in_file_2; register_stack_var("main|n_char_in_file_2|0", "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } n_char_in_file_2 = (0);
+ alias_group_changed(3, (size_t)(201UL), (size_t)(202UL), (size_t)(980UL)); call_lbl_1: calling(1, 656UL, 2, (size_t)(282UL), (size_t)(202UL)); string_2 = read_file(file_2, &n_char_in_file_2);
+ fprintf(__stdoutp, "Size of input string 2 is %u\n", (unsigned)n_char_in_file_2 );
+
+ fprintf(__stdoutp, "Tile width is %d\n", tile_width);
+ fprintf(__stdoutp, "Tile height is %d\n", tile_height);
+
+ if (n_char_in_file_1 % tile_width)
+  { fprintf(__stderrp, "tile width does not evenly divide string1\n"); alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); exit(1); }
+
+ if (n_char_in_file_2 % tile_height)
+  { fprintf(__stderrp, "tile height does not evenly divide string2\n"); alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); exit(1); }
+
+ n_tiles_x = n_char_in_file_1/tile_width;
+ n_tiles_y = n_char_in_file_2/tile_height;
+
+
+ tile_diag = (int*)malloc_wrapper(sizeof(int)*(n_tiles_x + n_tiles_y - 1), 403UL, 0, 0);
+
+ tile_edges_x = (int**)malloc_wrapper(sizeof(int*)*n_tiles_x, 367UL, 1, 0);
+ for (i = 0; i < n_tiles_x; i++) {
+  tile_edges_x[i] = (int*)malloc_wrapper(sizeof(int)*(tile_width), 363UL, 0, 0);
+  for (j = 0; j < tile_width; j++) {
+tile_edges_x[i][j] = -1 * (i * tile_width + j); };
+   call_lbl_2: calling(2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); tile_diag[find_diag(0,i)] = -1*(i*tile_width);
+ }
+
+ tile_edges_y = (int**)malloc_wrapper(sizeof(int*)*n_tiles_y, 367UL, 1, 0);
+ for (i = 0; i < n_tiles_y; i++) {
+  tile_edges_y[i] = (int*)malloc_wrapper(sizeof(int)*(tile_height), 363UL, 0, 0);
+  for (j = 0; j < tile_height; j++) {
+tile_edges_y[i][j] = -1 * (i * tile_height + j); };
+   call_lbl_3: calling(3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); tile_diag[find_diag(i,0)] = -1*(i*tile_height);
+ }
+
+ worker_tiles = (int***)malloc_wrapper(sizeof(int**)*nthreads, 494UL, 1, 0);
+ for (i = 0; i < nthreads; i++) {
+  worker_tiles[i] = (int**)malloc_wrapper(sizeof(int*)*(tile_height+1), 755UL, 1, 0);
+  for (j = 0; j < tile_height + 1; j++) {
+worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 508UL, 0, 0); };
+ }
+
+      lbl_9: struct timeval begin; register_stack_var("main|begin|0", "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_10; } lbl_10: struct timeval end; register_stack_var("main|end|0", "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_11; }
+    alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); call_lbl_4: calling(4, 0UL, 2, (size_t)(203UL), (size_t)(1008UL)); gettimeofday(&begin,0);
+
+
+  for ( i = 0; i < n_tiles_y; i++ ) {
+   for ( j = 0; j < n_tiles_x; j++ ) {
+
+    {
+      lbl_11: int ii; register_stack_var("main|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } lbl_12: int jj; register_stack_var("main|jj|0", "i32", (void *)(&jj), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; }
+       lbl_13: int threadId; register_stack_var("main|threadId|0", "i32", (void *)(&threadId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } threadId = (0);
+       lbl_14: int **local_matrix; register_stack_var("main|local_matrix|0", "i32**", (void *)(&local_matrix), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_15; } local_matrix = (worker_tiles[threadId]);
+       lbl_15: int *tile_edge_x; register_stack_var("main|tile_edge_x|0", "i32*", (void *)(&tile_edge_x), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_16; } tile_edge_x = (tile_edges_x[j]);
+       lbl_16: int *tile_edge_y; register_stack_var("main|tile_edge_y|0", "i32*", (void *)(&tile_edge_y), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_17; } tile_edge_y = (tile_edges_y[i]);
+       lbl_17: int diag_index; register_stack_var("main|diag_index|0", "i32", (void *)(&diag_index), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } call_lbl_5: calling(5, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); diag_index = (find_diag(i, j));
+
+                 for (ii = 1; ii < tile_height + 1; ++ii) {
+local_matrix[ii][0] = tile_edge_y[ii - 1]; };
+
+                 for (jj = 1; jj < tile_width + 1; ++jj) {
+local_matrix[0][jj] = tile_edge_x[jj - 1]; };
+
+                 local_matrix[0][0] = tile_diag[diag_index];
+
+                 for ( ii = 1; ii < tile_height+1; ++ii ) {
+                     for ( jj = 1; jj < tile_width+1; ++jj ) {
+                           lbl_18: signed char char_from_1; register_stack_var("main|char_from_1|0", "i8", (void *)(&char_from_1), (size_t)1, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } char_from_1 = (string_1[(j) * tile_width + jj - 1]);
+                           lbl_19: signed char char_from_2; register_stack_var("main|char_from_2|0", "i8", (void *)(&char_from_2), (size_t)1, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } char_from_2 = (string_2[(i) * tile_height + ii - 1]);
+
+                           lbl_20: int diag_score; register_stack_var("main|diag_score|0", "i32", (void *)(&diag_score), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]);
+                           lbl_21: int left_score; register_stack_var("main|left_score|0", "i32", (void *)(&left_score), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]);
+                           lbl_22: int top_score; register_stack_var("main|top_score|0", "i32", (void *)(&top_score), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]);
+
+                           lbl_23: int bigger_of_left_top; register_stack_var("main|bigger_of_left_top|0", "i32", (void *)(&bigger_of_left_top), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } bigger_of_left_top = ((left_score > top_score) ? left_score : top_score);
+                         local_matrix[ii][jj] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
+                     }
+                 }
+
+                 for (ii = 1; ii < tile_height + 1; ++ii) {
+tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; };
+
+                 for (jj = 1; jj < tile_width + 1; ++jj) {
+tile_edge_x[jj - 1] = local_matrix[tile_height][jj]; };
+
+                 tile_diag[diag_index] = local_matrix[tile_height][tile_width];
+    }
+   }
+
+
+       alias_group_changed(18, (size_t)(194UL), (size_t)(195UL), (size_t)(205UL), (size_t)(206UL), (size_t)(207UL), (size_t)(208UL), (size_t)(209UL), (size_t)(210UL), (size_t)(211UL), (size_t)(212UL), (size_t)(213UL), (size_t)(214UL), (size_t)(215UL), (size_t)(216UL), (size_t)(217UL), (size_t)(363UL), (size_t)(403UL), (size_t)(757UL)); call_lbl_6: calling(6, 0UL, 0); checkpoint();
+
+  }
+
+
+    alias_group_changed(18, (size_t)(194UL), (size_t)(195UL), (size_t)(205UL), (size_t)(206UL), (size_t)(207UL), (size_t)(208UL), (size_t)(209UL), (size_t)(210UL), (size_t)(211UL), (size_t)(212UL), (size_t)(213UL), (size_t)(214UL), (size_t)(215UL), (size_t)(216UL), (size_t)(217UL), (size_t)(363UL), (size_t)(403UL), (size_t)(757UL)); call_lbl_7: calling(7, 0UL, 2, (size_t)(204UL), (size_t)(1008UL)); gettimeofday(&end,0);
+    fprintf(__stdoutp, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
+
+   lbl_24: int diag_zero; register_stack_var("main|diag_zero|0", "i32", (void *)(&diag_zero), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } call_lbl_8: calling(8, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); diag_zero = (find_diag(0, 0));
+      lbl_25: int score; register_stack_var("main|score|0", "i32", (void *)(&score), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { exit(42); } } } score = (tile_diag[diag_zero]);
+    fprintf(__stdoutp, "score: %d\n", score);
+
+ for (i = 0; i < n_tiles_x; i++) {
+free_wrapper(tile_edges_x[i], 363UL); };
+ free_wrapper(tile_edges_x, 367UL);
+
+ for (i = 0; i < n_tiles_y; i++) {
+free_wrapper(tile_edges_y[i], 363UL); };
+ free_wrapper(tile_edges_y, 367UL);
+
+ free_wrapper(tile_diag, 403UL);
+
+ for (i = 0; i < nthreads; i++) {
+  for (j = 0; j < tile_height + 1; j++) {
+free_wrapper(worker_tiles[i][j], 757UL); };
+  free_wrapper(worker_tiles[i], 755UL);
+ }
+ free_wrapper(worker_tiles, 494UL);
+
+    alias_group_changed(4, (size_t)(194UL), (size_t)(195UL), (size_t)(218UL), (size_t)(219UL)); rm_stack(false, 0UL); return 0;
+}
 
 
 static int module_init() {
-    init_module(17753382427056418424UL, 16, 5, 308UL, 437UL, 449UL, 418UL, 7UL, 101UL, 310UL, 439UL, 456UL, 331UL, 307UL, 459UL, 1UL, 95UL, 114UL, 244UL, 111UL, 241UL, 266UL, 261UL, 113UL, 243UL, 112UL, 242UL, 9UL, 30UL, 267UL, 307UL, 437UL, 367UL, 255UL, 266UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    init_module(2568646267985525997UL, 23, 5, 988UL, 403UL, 199UL, 261UL, 198UL, 242UL, 210UL, 363UL, 197UL, 242UL, 986UL, 367UL, 193UL, 972UL, 494UL, 755UL, 81UL, 123UL, 25UL, 76UL, 972UL, 242UL, 367UL, 363UL, 980UL, 656UL, 201UL, 282UL, 991UL, 50UL, 990UL, 494UL, 755UL, 757UL, 209UL, 363UL, 208UL, 755UL, 76UL, 57UL, 125UL, 165UL, 126UL, 166UL, 128UL, 146UL, "Nucleotide", 0, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "timeval", 2, (int)__builtin_offsetof(struct timeval, tv_sec), (int)__builtin_offsetof(struct timeval, tv_usec));
+    register_global_var("global|string_1", "i8**", (void *)(&string_1), 8, 1, 0, 0);
+    register_global_var("global|string_2", "i8**", (void *)(&string_2), 8, 1, 0, 0);
+    register_global_var("global|tile_width", "i32*", (void *)(&tile_width), 8, 1, 0, 0);
+    register_global_var("global|tile_height", "i32*", (void *)(&tile_height), 8, 1, 0, 0);
+    register_global_var("global|n_tiles_x", "i32*", (void *)(&n_tiles_x), 8, 1, 0, 0);
+    register_global_var("global|n_tiles_y", "i32*", (void *)(&n_tiles_y), 8, 1, 0, 0);
+    register_global_var("global|tile_edges_x", "i32***", (void *)(&tile_edges_x), 8, 1, 0, 0);
+    register_global_var("global|tile_edges_y", "i32***", (void *)(&tile_edges_y), 8, 1, 0, 0);
+    register_global_var("global|tile_diag", "i32**", (void *)(&tile_diag), 8, 1, 0, 0);
+    register_global_var("global|nthreads", "i32*", (void *)(&nthreads), 8, 1, 0, 0);
+    register_global_var("global|worker_tiles", "i32****", (void *)(&worker_tiles), 8, 1, 0, 0);
+    register_global_var("global|alignment_score_matrix", "[5 x [5 x i8]]*", (void *)(&alignment_score_matrix), 8, 1, 0, 0);
     return 0;
 }
 

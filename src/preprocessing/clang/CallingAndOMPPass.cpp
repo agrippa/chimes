@@ -1,13 +1,18 @@
 #include <sstream>
 #include <set>
 
-#include "OMPPass.h"
+#include "CallingAndOMPPass.h"
 #include "DesiredInsertions.h"
 
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/Stmt.h>
 #include <clang/AST/Decl.h>
 #include <llvm/Support/raw_ostream.h>
+
+/**
+ * This pass is responsible for setting up the intra-function jumps for both OMP
+ * regions and for regular function calls.
+ */
 
 extern DesiredInsertions *insertions;
 extern std::string stmtToString(const clang::Stmt *S, clang::ASTContext *Context);
@@ -16,7 +21,7 @@ extern std::set<std::string> *ignorable;
 
 extern std::string constructMangledName(std::string varname);
 
-std::map<clang::VarDecl *, StackAlloc *> OMPPass::hasValidDeclarations(
+std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations(
         const clang::DeclStmt *d) {
     std::map<clang::VarDecl *, StackAlloc *> allocs;
 
@@ -36,7 +41,7 @@ std::map<clang::VarDecl *, StackAlloc *> OMPPass::hasValidDeclarations(
     return allocs;
 }
 
-std::string OMPPass::handleDecl(const clang::DeclStmt *d,
+std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
         std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force) {
     clang::SourceLocation start = d->getLocStart();
     clang::SourceLocation end = d->getLocEnd();
@@ -86,7 +91,7 @@ std::string OMPPass::handleDecl(const clang::DeclStmt *d,
 }
 
 // region may be NULL
-void OMPPass::VisitRegion(OMPRegion *region) {
+void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     std::vector<OMPRegion *> children = ompTree->get_all_children(region);
     std::vector<ContainedFunctionCall> *calls = ompTree->get_contained_calls(
             region);
@@ -116,8 +121,8 @@ void OMPPass::VisitRegion(OMPRegion *region) {
      */
     clang::SourceLocation toInsertAt;
     if (region == NULL) {
-        assert(new_stack_calls.find(curr_func) != new_stack_calls.end());
-        const clang::CallExpr *new_stack_call = new_stack_calls[curr_func];
+        assert(new_stack_calls.find(curr_func_decl) != new_stack_calls.end());
+        const clang::CallExpr *new_stack_call = new_stack_calls[curr_func_decl];
         toInsertAt = new_stack_call->getLocEnd();
     } else {
         toInsertAt = region->get_start();
@@ -163,9 +168,9 @@ void OMPPass::VisitRegion(OMPRegion *region) {
     }
 }
 
-void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
+void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
-    if (new_stack_calls.find(curr_func) == new_stack_calls.end()) {
+    if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
         /*
          * We may reach this point without a new_stack() call detected in the
          * case of CUDA compilation for functions that are defined externally to
@@ -221,8 +226,8 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
         int lbl = getNextFunctionLabel();
 
         OMPRegion *region = new OMPRegion(pragma.get_line(),
-                pragma.get_column(), post->getLocStart(), post->getLocEnd(),
-                pragma_name, clauses, lbl);
+                post->getLocStart(), post->getLocEnd(), pragma_name, clauses,
+                lbl);
         ompTree->add_region(region);
 
         //TODO kinda hacky....
@@ -253,18 +258,26 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
         InsertTextAfterToken(post_loc, " leaving_omp_parallel(); ");
     }
 
-    for (std::map<unsigned, std::vector<CallLocation>>::iterator i =
+    std::vector<Line*> sorted_lines; // for deterministic code generation
+    for (std::map<Line*, std::vector<CallLocation>>::iterator i =
             calls_found.begin(), e = calls_found.end(); i != e; i++) {
-        std::sort(i->second.begin(), i->second.end());
+        sorted_lines.push_back(i->first);
+    }
+    std::sort(sorted_lines.begin(), sorted_lines.end(), line_ptr_comparator);
 
-        for (std::vector<CallLocation>::iterator ii = i->second.begin(),
-                ee = i->second.end(); ii != ee; ii++) {
+    for (std::vector<Line*>::iterator i = sorted_lines.begin(),
+            e = sorted_lines.end(); i != e; i++) {
+        std::vector<CallLocation> calls = calls_found[*i];
+        std::sort(calls.begin(), calls.end());
+
+        for (std::vector<CallLocation>::iterator ii = calls.begin(),
+                ee = calls.end(); ii != ee; ii++) {
             CallLocation loc = *ii;
 
             ompTree->add_function_call(loc.get_call(), loc.get_label());
 
             AliasesPassedToCallSite callsite =
-                insertions->findFirstMatchingCallsite(i->first,
+                insertions->findFirstMatchingCallsite(*i,
                         loc.get_call()->getDirectCallee()->getNameAsString());
 
             std::stringstream ss;
@@ -298,7 +311,7 @@ void OMPPass::VisitTopLevel(clang::Decl *toplevel) {
     vars_to_classify.clear();
 }
 
-void OMPPass::VisitStmt(const clang::Stmt *s) {
+void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
 
@@ -312,7 +325,7 @@ void OMPPass::VisitStmt(const clang::Stmt *s) {
                 e = omp_pragmas->end(); i != e; i++) {
             OpenMPPragma pragma = *i;
 
-            if (presumed_end.getLine() < pragma.get_line()) {
+            if (presumed_end.getLine() < pragma.get_line()->get()) {
                 if (predecessors.find(pragma.get_line()) ==
                         predecessors.end()) {
                     predecessors[pragma.get_line()] = s;
@@ -328,7 +341,7 @@ void OMPPass::VisitStmt(const clang::Stmt *s) {
                 }
             }
 
-            if (presumed_start.getLine() >= pragma.get_line()) {
+            if (presumed_start.getLine() >= pragma.get_line()->get()) {
                 if (successors.find(pragma.get_line()) == successors.end()) {
                     successors[pragma.get_line()] = s;
                 } else {
@@ -360,20 +373,24 @@ void OMPPass::VisitStmt(const clang::Stmt *s) {
                     !clang::isa<const clang::CXXConstructExpr>(call)) {
 
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);
+                Line* line_no = lines.get(presumed.getLine());
 
-                if (calls_found.find(presumed.getLine()) == calls_found.end()) {
-                    calls_found[presumed.getLine()] =
+                if (calls_found.find(line_no) == calls_found.end()) {
+                    calls_found[line_no] =
                         std::vector<CallLocation>();
                 }
                 int lbl = getNextFunctionLabel();
-                calls_found[presumed.getLine()].push_back(CallLocation(
+                calls_found[line_no].push_back(CallLocation(
                             presumed.getColumn(), lbl, call));
             }
 
             if (callee_name == "new_stack") {
-                assert(new_stack_calls.find(curr_func) ==
-                        new_stack_calls.end());
-                new_stack_calls[curr_func] = call;
+                if (new_stack_calls.find(curr_func_decl) !=
+                        new_stack_calls.end()) {
+                    llvm::errs() << curr_func << "\n";
+                    assert(false);
+                }
+                new_stack_calls[curr_func_decl] = call;
             }
         }
 

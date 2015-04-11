@@ -1729,9 +1729,9 @@ extern void wait_for_checkpoint();
 void bar(int *A, int *B) {new_stack(2, 0, (size_t)(21UL), (size_t)(22UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
     A[0] = 3;
 
-    if (A[0] == 3) { {
+    if (A[0] == 3) {
         alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
-    } }
+    }
 
     B[0] = 3;
 

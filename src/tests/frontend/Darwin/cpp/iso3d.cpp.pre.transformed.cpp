@@ -2921,13 +2921,13 @@ static void fwd(float *next, float *curr, float *vsq,
         float *c_coeff, int nx, int ny, int nz, int dimx, int dimy, int dimz,
         int radius) {new_stack(11, 0, (size_t)(726UL), (size_t)(727UL), (size_t)(728UL), (size_t)(729UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
 
-    { int z; for ( z = (0); z < nz; z++) { {
-        { int y; for ( y = (0); y < ny; y++) { {
-            { int x; for ( x = (0); x < nx; x++) { {
+    { int z; for ( z = (0); z < nz; z++) {
+        { int y; for ( y = (0); y < ny; y++) {
+            { int x; for ( x = (0); x < nx; x++) {
                  int this_offset; this_offset = ((((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x))));
                  float temp; temp = (2.F * curr[this_offset] - next[this_offset]);
                  float div; div = (c_coeff[0] * curr[this_offset]);
-                { int d; for ( d = (1); d <= radius; d++) { {
+                { int d; for ( d = (1); d <= radius; d++) {
                      int z_pos_offset; z_pos_offset = ((((radius) + (z + d)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x))));
 
                      int z_neg_offset; z_neg_offset = ((((radius) + (z - d)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x))));
@@ -2944,11 +2944,11 @@ static void fwd(float *next, float *curr, float *vsq,
                             curr[z_neg_offset] + curr[y_pos_offset] +
                             curr[y_neg_offset] + curr[x_pos_offset] +
                             curr[x_neg_offset]);
-                } } }
+                } }
                 next[this_offset] = temp + div * vsq[this_offset];
-            } } }
-        } } }
-    } } }
+            } }
+        } }
+    } }
 alias_group_changed(25, (size_t)(403UL), (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(408UL), (size_t)(409UL), (size_t)(410UL), (size_t)(411UL), (size_t)(412UL), (size_t)(413UL), (size_t)(414UL), (size_t)(415UL), (size_t)(416UL), (size_t)(417UL), (size_t)(418UL), (size_t)(419UL), (size_t)(420UL), (size_t)(421UL), (size_t)(422UL), (size_t)(423UL), (size_t)(424UL), (size_t)(425UL), (size_t)(426UL), (size_t)(726UL)); rm_stack(false, 0UL); }
 
 int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(372UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
@@ -2965,20 +2965,20 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
       lbl_5: size_t dimz; register_stack_var("main|dimz|0", "i64", (void *)(&dimz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } dimz = (conf.nz + 2 * conf.radius);
       lbl_6: size_t nbytes; register_stack_var("main|nbytes|0", "i64", (void *)(&nbytes), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } nbytes = (dimx * dimy * dimz * sizeof(float));
 
-    if (conf.verbose) { {
+    if (conf.verbose) {
         printf("x = %zu, y = %zu, z = %zu\n", dimx, dimy, dimz);
         printf("nsteps = %d\n", conf.nsteps);
         printf("radius = %d\n", conf.radius);
-    } }
+    }
 
       lbl_7: float *c_coeff; register_stack_var("main|c_coeff|0", "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 247UL, 0, 0));
       lbl_8: float *curr; register_stack_var("main|curr|0", "float*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_9; } curr = ((float *)malloc_wrapper(nbytes, 244UL, 0, 0));
       lbl_9: float *next; register_stack_var("main|next|0", "float*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } next = ((float *)malloc_wrapper(nbytes, 244UL, 0, 0));
       lbl_10: float *vsq; register_stack_var("main|vsq|0", "float*", (void *)(&vsq), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } vsq = ((float *)malloc_wrapper(nbytes, 246UL, 0, 0));
-    if (curr == __null || next == __null || vsq == __null) { {
+    if (curr == __null || next == __null || vsq == __null) {
         fprintf(__stderrp, "Allocations failed\n");
         alias_group_changed(13, (size_t)(1UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL), (size_t)(12UL), (size_t)(13UL), (size_t)(14UL), (size_t)(22UL), (size_t)(23UL)); rm_stack(false, 0UL); return 1;
-    } }
+    }
 
     alias_group_changed(10, (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL), (size_t)(12UL), (size_t)(13UL), (size_t)(14UL)); call_lbl_2: calling(2, 0UL, 5, (size_t)(4UL), (size_t)(4UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
       lbl_11: float **srcs; register_stack_var("main|srcs|0", "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_3: calling(3, 354UL, 4, (size_t)(180UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt));
@@ -2986,13 +2986,13 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
     alias_group_changed(1, (size_t)(15UL)); call_lbl_4: calling(4, 0UL, 9, (size_t)(244UL), (size_t)(244UL), (size_t)(246UL), (size_t)(247UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt);
 
       lbl_12: double start; register_stack_var("main|start|0", "double", (void *)(&start), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } call_lbl_5: calling(5, 0UL, 0); start = (seconds());
-    { lbl_13: int step; register_stack_var("main|step|0", "i32", (void *)(&step), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } for ( step = (0); step < conf.nsteps; step++) { {
-        { lbl_14: int src; register_stack_var("main|src|0", "i32", (void *)(&src), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } for ( src = (0); src < conf.nsrcs; src++) { {
-            if (conf.srcs[src].t > step) { continue;
- } lbl_15: int src_offset; register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } src_offset = ((((conf.radius) + (0)) * (dimy) * (dimx) + ((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x))));
+    { lbl_13: int step; register_stack_var("main|step|0", "i32", (void *)(&step), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } for ( step = (0); step < conf.nsteps; step++) {
+        { lbl_14: int src; register_stack_var("main|src|0", "i32", (void *)(&src), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } for ( src = (0); src < conf.nsrcs; src++) {
+            if (conf.srcs[src].t > step) {continue;; };
+              lbl_15: int src_offset; register_stack_var("main|src_offset|0", "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } src_offset = ((((conf.radius) + (0)) * (dimy) * (dimx) + ((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x))));
 
             curr[src_offset] = srcs[src][step];
-        } } }
+        } }
 
          call_lbl_6: calling(6, 0UL, 11, (size_t)(244UL), (size_t)(244UL), (size_t)(246UL), (size_t)(247UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz,
                 dimx, dimy, dimz, conf.radius);
@@ -3006,7 +3006,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
 
 
          call_lbl_8: calling(8, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
-    } } }
+    } }
     alias_group_changed(8, (size_t)(12UL), (size_t)(13UL), (size_t)(16UL), (size_t)(17UL), (size_t)(18UL), (size_t)(19UL), (size_t)(20UL), (size_t)(244UL)); lbl_17: double elapsed_s; register_stack_var("main|elapsed_s|0", "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } call_lbl_9: calling(9, 0UL, 0); elapsed_s = (seconds() - start);
 
     alias_group_changed(1, (size_t)(21UL)); call_lbl_10: calling(10, 0UL, 0); finish_progress();
@@ -3015,18 +3015,18 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack(2, 2, (size_t)(0UL)
     fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
             elapsed_s, elapsed_s / conf.nsteps, point_rate / 1000000.f);
 
-    if (conf.save_text != -1) { {
+    if (conf.save_text != -1) {
         alias_group_changed(1, (size_t)(22UL)); call_lbl_11: calling(11, 0UL, 8, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(753UL), (size_t)(0UL)); save_layer_text(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx,
                 "snap.text", conf.radius);
-    } }
+    }
 
     free_wrapper(c_coeff, 247UL);
     free_wrapper(curr, 244UL);
     free_wrapper(next, 244UL);
     free_wrapper(vsq, 246UL);
-    { lbl_19: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } } for ( i = (0); i < conf.nsrcs; i++) { {
+    { lbl_19: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { exit(42); } } } for ( i = (0); i < conf.nsrcs; i++) {
         free_wrapper(srcs[i], 356UL);
-    } } }
+    } }
     free_wrapper(srcs, 354UL);
 
     alias_group_changed(13, (size_t)(1UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL), (size_t)(12UL), (size_t)(13UL), (size_t)(14UL), (size_t)(22UL), (size_t)(23UL)); rm_stack(false, 0UL); return 0;

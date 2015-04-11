@@ -512,6 +512,38 @@ static std::string demangledFunctionName(std::string fname) {
     return result;
 }
 
+/*
+ * Takes a templated function that has been made concrete by types, e.g.:
+ *
+ * double* Allocate<double>
+ *
+ * and converts it to just the base function name:
+ *
+ * Allocate
+ */
+static std::string removeTemplatedMangling(std::string fname) {
+    llvm::errs() << fname << "\n";
+
+    size_t space_index = fname.rfind(' ');
+    if (space_index == std::string::npos) {
+        return fname;
+    }
+    size_t close_template_index = fname.rfind('>');
+    if (close_template_index != fname.length() - 1) {
+        return fname;
+    }
+
+    std::string without_return_type = fname.substr(space_index + 1);
+    llvm::errs() << "  " << without_return_type << "\n";
+
+    size_t template_index = without_return_type.find('<');
+    assert(template_index != std::string::npos);
+    std::string without_template = without_return_type.substr(0, template_index);
+    llvm::errs() << "  " << without_template << "\n";
+
+    return without_template;
+}
+
 void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
         const char *filename, std::map<Value *, size_t> value_to_alias_group) {
     FILE *fp = fopen(filename, "w");
@@ -522,6 +554,7 @@ void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
 
         if (F != NULL && !F->empty()) {
             std::string demangled = demangledFunctionName(F->getName().str());
+            demangled = removeTemplatedMangling(demangled);
             fprintf(fp, "%s", demangled.c_str());
 
             for (Function::arg_iterator i = F->arg_begin(), e = F->arg_end();

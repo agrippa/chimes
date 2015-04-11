@@ -16,7 +16,7 @@
 #include "ParentTransform.h"
 #include "InitPass.h"
 #include "StartExitPass.h"
-#include "OMPPass.h"
+#include "CallingAndOMPPass.h"
 #include "SplitInitsPass.h"
 #include "MallocPass.h"
 #include "AliasChangedPass.h"
@@ -92,7 +92,8 @@ std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
     "atoi", "atof", "fopen", "getopt", "LIBCHIMES_THREAD_NUM",
     "entering_omp_parallel", "leaving_omp_parallel",
     "register_thread_local_stack_vars", "omp_get_thread_num",
-    "__builtin_expect", "operator="};
+    "__builtin_expect", "operator=", "sqrtf", "sqrtl", "cbrtf", "cbrtl",
+    "fabsf", "fabs", "fabsl"};
 std::set<std::string> *ignorable = NULL;
 
 class Pass {
@@ -327,22 +328,23 @@ int main(int argc, const char **argv) {
   /*
    * This pass can get messed up if the starting columns of basic blocks are
    * shifted. This must be run before any passes that might insert things at the
-   * start of lines (e.g. labels).
+   * start of lines (e.g. labels). This is the only pass that uses the actual
+   * column number.
    *
    * This pass also gets messed up if the input filename isn't the original
    * file.
    */
-  passes.push_back(new Pass(new AliasChangedPass(), ".alias"));
-  passes.push_back(new Pass(new MallocPass(), ".malloc"));
-  passes.push_back(new Pass(new StartExitPass(), ".start"));
-  passes.push_back(new Pass(new InitPass(), ".init"));
-  passes.push_back(new Pass(new SplitInitsPass(), ".split"));
+  passes.push_back(new Pass(new AliasChangedPass(insertions->get_lines()), ".alias"));
+  passes.push_back(new Pass(new MallocPass(insertions->get_lines()), ".malloc"));
+  passes.push_back(new Pass(new StartExitPass(insertions->get_lines()), ".start"));
+  passes.push_back(new Pass(new InitPass(insertions->get_lines()), ".init"));
+  passes.push_back(new Pass(new SplitInitsPass(insertions->get_lines()), ".split"));
   /*
-   * It is required that OMPPass run after SplitInitsPass in case a variable
-   * is initialized with a function call, which would cause problems with
-   * inserting jumps to that call.
+   * It is required that CallingAndOMPPass run after SplitInitsPass in case a
+   * variable is initialized with a function call, which would cause problems
+   * with inserting jumps to that call.
    */
-  passes.push_back(new Pass(new OMPPass(), ".register"));
+  passes.push_back(new Pass(new CallingAndOMPPass(insertions->get_lines()), ".register"));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
       NumDebugFrontendAction<TransformASTConsumer>>();

@@ -1,76 +1,28 @@
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 54 38 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 59 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 58 9 alias_group_changed(10, (size_t)(23UL), (size_t)(24UL), (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL), (size_t)(30UL), (size_t)(31UL), (size_t)(92UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 64 5 alias_group_changed(3, (size_t)(97UL), (size_t)(98UL), (size_t)(99UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 65 32 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 69 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 68 9 alias_group_changed(2, (size_t)(100UL), (size_t)(101UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 71 5 alias_group_changed(2, (size_t)(100UL), (size_t)(101UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 72 33 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 76 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 75 9 alias_group_changed(2, (size_t)(102UL), (size_t)(103UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 5 alias_group_changed(2, (size_t)(102UL), (size_t)(103UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 79 32 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 83 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 82 9 alias_group_changed(5, (size_t)(104UL), (size_t)(105UL), (size_t)(115UL), (size_t)(155UL), (size_t)(174UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 89 5 alias_group_changed(5, (size_t)(104UL), (size_t)(105UL), (size_t)(115UL), (size_t)(155UL), (size_t)(174UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 90 5 alias_group_changed(1, (size_t)(187UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 91 5 alias_group_changed(1, (size_t)(187UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 92 5 alias_group_changed(1, (size_t)(187UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 96 22 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 107 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 98 30 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 101 9  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 100 13 alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 38 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 124 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 112 43 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 115 9  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 114 13 alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 116 43 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 119 9  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 118 13 alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 120 47 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 123 9  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 122 13 alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 129 32 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 132 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 131 9 alias_group_changed(7, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL), (size_t)(341UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 37 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 141 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 136 39 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 139 9  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 138 13 alias_group_changed(7, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL), (size_t)(341UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 140 9 alias_group_changed(7, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL), (size_t)(341UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 147 36 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 150 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 149 9 alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 152 23 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 155 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 154 9 alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); 
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 19 len=8 { return;
- }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 5 if (disabled) {return;; }
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 19 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 162 5 alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 171 35 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 173 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 181 28 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 183 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 185 36 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 189 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 188 9 alias_group_changed(3, (size_t)(502UL), (size_t)(504UL), (size_t)(505UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 193 34 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 195 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 197 37 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 200 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 199 9 alias_group_changed(3, (size_t)(502UL), (size_t)(504UL), (size_t)(505UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 202 37 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 212 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 203 41 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 205 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 207 51 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 209 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 218 28 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 220 5  }
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 97 27 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 97 47 , 261UL, 0, 1, (int)sizeof(struct _source), 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 37 len=6 malloc_wrapper
@@ -91,7 +43,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.c
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 125 1 alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 142 5 alias_group_changed(6, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL)); rm_stack(true, 341UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 127 71 new_stack(4, 4, (size_t)(400UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), (size_t)8, 1, 0, 0, "sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), (size_t)4, 0, 0, 0, "sample_sources|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0, "sample_sources|dt|0", "float", (void *)(&dt), (size_t)4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 21 alias_group_changed(7, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(457UL), (size_t)(612UL), (size_t)(615UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 159 20 alias_group_changed(7, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(457UL), (size_t)(612UL), (size_t)(615UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 145 56 new_stack(3, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "init_progress|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0, "init_progress|goal|0", "i32", (void *)(&goal), (size_t)4, 0, 0, 0, "init_progress|disabled|0", "i32", (void *)(&disabled), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 176 1 alias_group_changed(7, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(457UL), (size_t)(612UL), (size_t)(615UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 182 9 alias_group_changed(6, (size_t)(457UL), (size_t)(502UL), (size_t)(503UL), (size_t)(504UL), (size_t)(505UL), (size_t)(615UL)); rm_stack(false, 0UL); 
@@ -109,7 +61,7 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 47 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 5  float shift;  shift = (-1.55939996F / freq); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 52 34 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 54 5 {  int i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 59 7  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 59 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 54 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 54 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 55 9  float time;  time = (i * dt + shift); 
@@ -133,7 +85,7 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 78 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 5  char *time_str;  time_str = (third_comma + 1); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 84 37 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 5 {  int i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 124 7  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 124 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 110 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111 9  source *curr;  curr = ((*srcs) + i); 
@@ -141,7 +93,7 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 111
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 5  float **src_samples;  src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 341UL, 1, 0)); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 128 89 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 5 {  int i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 141 7  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 141 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 134 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp 146 5 int i; 

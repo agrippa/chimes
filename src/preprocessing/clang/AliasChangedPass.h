@@ -14,20 +14,21 @@
 
 class MatchedLocation {
 public:
-    MatchedLocation(int set_line, int set_col, const char *set_filename) :
+    MatchedLocation(Line *set_line, int set_col, const char *set_filename) :
         line(set_line), col(set_col), filename(set_filename) {}
-    int get_line() { return line; }
+    Line* get_line() { return line; }
     int get_col() { return col; }
     std::string get_filename() { return filename; }
 
 private:
-    int line, col;
+    Line *line;
+    int col;
     std::string filename;
 };
 
 class AliasChangedPass : public ParentTransform {
 public:
-    AliasChangedPass() { }
+    AliasChangedPass(LineNoSet& set_lines) : ParentTransform(set_lines) { }
 
     void VisitStmt(const clang::Stmt *s) override;
     bool usesStackInfo() override { return false; }
@@ -39,6 +40,12 @@ public:
 private:
     void WrapAroundBlock(const clang::Stmt *block, std::string toPrefix,
             std::string toAppend, const clang::Stmt *parent);
+    int startingLine(const clang::Stmt *stmt);
+    int endingLine(const clang::Stmt *stmt);
+    int countLines(std::string s, llvm::raw_string_ostream& stream);
+    void addNecessaryLines(int curr_line, int target,
+            llvm::raw_string_ostream &stream);
+    std::string to_string(const clang::Stmt *stmt);
 };
 
 #endif

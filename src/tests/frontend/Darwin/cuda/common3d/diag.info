@@ -1,14 +1,4 @@
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 10 23 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 13 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 12 9 alias_group_changed(9, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 15 34 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 21 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 38 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 19 9  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 53 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 33 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 53 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 38 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 53 5 alias_group_changed(1, (size_t)(255UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 79 5 alias_group_changed(6, (size_t)(308UL), (size_t)(309UL), (size_t)(310UL), (size_t)(311UL), (size_t)(437UL), (size_t)(454UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 81 13 alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); 
@@ -21,8 +11,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 105 1
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 108 13 alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 111 13 alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 119 13 alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 124 28 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 126 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 125 9 alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 100 40 len=7 realloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 101 41 , 367UL
@@ -39,19 +27,19 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 127 1
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 9 37 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 15 5 {  int y; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 21 7  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 21 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 15 10  y = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 15 19 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 9 {  int x; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 19 11  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 19 9  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 14  x = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 23 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 5 {  size_t i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 33 7  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 33 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 22 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 5 {  size_t i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 38 7  }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 38 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 10  i = (0); 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 22 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 41 5  float scale;  scale = (1. / (dx * dx)); 

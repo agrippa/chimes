@@ -2373,18 +2373,18 @@ extern void setup_config(config *conf, int argc, char **argv);
 void save_text(float *field, const int dimx, const int dimy,
         const int ny, const int nx, const char *filename, int radius) {new_stack(7, 7, (size_t)(84UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(89UL), (size_t)(0UL), "save_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
       lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
-    if (fp == __null) { {
+    if (fp == __null) {
         fprintf(__stderrp, "Failed to open output file %s\n", filename);
         alias_group_changed(8, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL)); exit(1);
-    } }
+    }
 
-    { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) { {
-        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) { {
+    { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) {
+        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) {
             fprintf(fp, "%d %d %.20f\n", y, x,
                     field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
-        } } }
+        } }
         fprintf(fp, "\n");
-    } } }
+    } }
 
      call_lbl_0: calling(0, 0UL, 1, (size_t)(27UL)); fclose(fp);
 alias_group_changed(10, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL)); rm_stack(false, 0UL); }
@@ -2393,14 +2393,14 @@ void init_data(float *curr, float *next, float *vsq,
                 float *h_coeff, const int dimx, const int dimy,
                 const float dx, const float dt) {new_stack(8, 0, (size_t)(222UL), (size_t)(223UL), (size_t)(224UL), (size_t)(225UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
 
-    { size_t i; for ( i = (0); i < dimx * dimy; i++) { {
+    { size_t i; for ( i = (0); i < dimx * dimy; i++) {
         vsq[i] = 2500. * 2500. * dt * dt;
-    } } }
+    } }
 
 
-    { size_t i; for ( i = (0); i < dimx * dimy; i++) { {
+    { size_t i; for ( i = (0); i < dimx * dimy; i++) {
         curr[i] = next[i] = 0;
-    } } }
+    } }
 
      call_lbl_0: calling(0, 0UL, 3, (size_t)(225UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
      float scale; scale = (1. / (dx * dx));
@@ -2482,9 +2482,9 @@ void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)
         }
     }
 
-    if (conf->ngpus == -1) { {
+    if (conf->ngpus == -1) {
         alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
-    } }
+    }
 alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); rm_stack(false, 0UL); }
 
 

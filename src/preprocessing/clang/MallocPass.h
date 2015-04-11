@@ -30,7 +30,7 @@ class FoundAlloc {
 
 class MallocPass : public ParentTransform {
 public:
-    MallocPass() {
+    MallocPass(LineNoSet& set_lines) : ParentTransform(set_lines) {
         supportedAllocationFunctions.insert("malloc");
         supportedAllocationFunctions.insert("realloc");
         supportedAllocationFunctions.insert("free");
@@ -47,7 +47,9 @@ public:
     bool createsOMPTree() override { return false; }
 private:
     std::set<std::string> supportedAllocationFunctions;
-    std::map<unsigned, std::map<std::string, std::vector<FoundAlloc> *> *> found_allocs;
+
+    // Mapping from line number -> function name -> function call information
+    std::map<Line*, std::map<std::string, std::vector<FoundAlloc> *> *> found_allocs;
 };
 
 #endif

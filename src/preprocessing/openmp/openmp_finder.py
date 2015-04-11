@@ -16,7 +16,6 @@ if __name__ == '__main__':
     line = input_fp.readline()
     while len(line) > 0:
         # For efficiency, quickly filter out all but preprocessor lines
-        column = line.find('#')
         line = line.strip()
 
         if len(line) > 0 and line[0] == '#':
@@ -30,8 +29,7 @@ if __name__ == '__main__':
                     line = line.strip()
                     acc = acc[:len(acc) - 1].strip() # trim the last \
                     acc += ' ' + line
-                sys.stdout.write(str(starting_line_no) + ' ' + str(column) + \
-                                ' ' + acc + '\n')
+                sys.stdout.write(str(starting_line_no) + ' ' + acc + '\n')
 
         line = input_fp.readline()
         line_no += 1

@@ -1,10 +1,6 @@
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 1 alias_group_changed(7, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 36 25 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 39 1  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 41 1 alias_group_changed(3, (size_t)(5UL), (size_t)(38UL), (size_t)(44UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 1 alias_group_changed(2, (size_t)(13UL), (size_t)(14UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 54 25 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 56 1  }
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 1 alias_group_changed(2, (size_t)(5UL), (size_t)(19UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 alias_group_changed(4, (size_t)(232UL), (size_t)(233UL), (size_t)(234UL), (size_t)(235UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 28 15 len=6 malloc_wrapper
