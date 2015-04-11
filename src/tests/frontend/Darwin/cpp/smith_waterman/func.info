@@ -1,0 +1,6 @@
+char_mapping 0
+print_matrix 76 0 0
+clear_whitespaces_do_mapping 123 0
+read_file 165 166
+find_diag 0 0
+main 0 972

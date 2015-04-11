@@ -1722,16 +1722,16 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
     A[0] = 3;
     A[1] = 4;
 
-    if (A[0] == 3) { {
+    if (A[0] == 3) {
         alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); rm_stack(false, 0UL); return 1;
-    } }
+    }
 
     A[2] = 5;
 
-    if (A[0] == 2) { {
+    if (A[0] == 2) {
         alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
         alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); rm_stack(false, 0UL); return 2;
-    } }
+    }
 
     alias_group_changed(5, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(11UL)); rm_stack(false, 0UL); return 3;
 }

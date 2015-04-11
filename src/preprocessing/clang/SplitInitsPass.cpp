@@ -36,7 +36,7 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                     e = d->decl_end(); i != e; i++) {
                 clang::Decl *dd = *i;
 
-                // If we are declaring a local variable
+                // If we are declaring a local variable (otherwise do nothing)
                 if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
   
                     // If this local variable declaration has an initializer
@@ -95,8 +95,6 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
             clang::SourceRange rng;
             rng.setBegin(decl_start);
             rng.setEnd(decl_end);
-
-            // RemoveText(rng);
 
             switch (parent->getStmtClass()) {
                 case clang::Stmt::ForStmtClass: {

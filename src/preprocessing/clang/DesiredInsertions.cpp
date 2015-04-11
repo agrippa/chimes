@@ -26,13 +26,10 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
         unsigned line_no = atoi(line.substr(0, end).c_str());
         line = line.substr(end + 1);
 
-        end = line.find(' ');
-        unsigned col = atoi(line.substr(0, end).c_str());
-        line = line.substr(end + 1);
-
         std::string pragma = line;
 
         line = line.substr(line.find(' ') + 1);
+        llvm::errs() << "\"" << line << "\"\n";
         assert(line.find("omp") == 0);
 
         // Only support the parallel pragma at the moment
@@ -41,9 +38,9 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
 
         end = line.find(' ');
         if (end == std::string::npos) {
-            pragmas->push_back(OpenMPPragma(line_no, col, line, "parallel"));
+            pragmas->push_back(OpenMPPragma(lines.get(line_no), line, "parallel"));
         } else {
-            OpenMPPragma pragma(line_no, col, line, "parallel");
+            OpenMPPragma pragma(lines.get(line_no), line, "parallel");
             std::string clauses = line.substr(end + 1);
 
             std::vector<std::string> split_clauses;
@@ -250,12 +247,14 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
         if (end == std::string::npos) {
             size_t alias = strtoul(line.c_str(), NULL, 10);
 
-            callsite = new AliasesPassedToCallSite(funcname, line_no, col, alias);
+            callsite = new AliasesPassedToCallSite(funcname, lines.get(line_no),
+                    col, alias);
         } else {
             size_t alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
             line = line.substr(end + 1);
 
-            callsite = new AliasesPassedToCallSite(funcname, line_no, col, alias);
+            callsite = new AliasesPassedToCallSite(funcname, lines.get(line_no),
+                    col, alias);
 
             end = line.find(' ');
             while (end != std::string::npos) {
@@ -277,9 +276,9 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
     return callsites;
 }
 
-std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInsertions::parseHeapAllocs() {
-    std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *allocs =
-        new std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *>();
+std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInsertions::parseHeapAllocs() {
+    std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *allocs =
+        new std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *>();
 
     std::ifstream fp;
     fp.open(heap_file, std::ios::in);
@@ -288,7 +287,7 @@ std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInserti
     while (getline(fp, line)) {
         size_t line_no_end = line.find(' ');
         std::string line_no_str = line.substr(0, line_no_end);
-        int line_no = atoi(line_no_str.c_str());
+        Line* line_no = lines.get(atoi(line_no_str.c_str()));
         line = line.substr(line_no_end + 1);
 
         size_t col_end = line.find(' ');
@@ -371,7 +370,7 @@ std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInserti
         for_func->push_back(alloc);
     }
 
-    for (std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *>::iterator i = allocs->begin(), e = allocs->end(); i != e; i++) {
+    for (std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *>::iterator i = allocs->begin(), e = allocs->end(); i != e; i++) {
         std::map<std::string, std::vector<HeapAlloc> *> *curr_line = i->second;
 
         for (std::map<std::string, std::vector<HeapAlloc> *>::iterator ii =
@@ -541,7 +540,7 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         }
 
         StateChangeInsertion *change = new StateChangeInsertion(filename,
-                line_no, col, groups);
+                lines.get(line_no), col, groups);
         result->push_back(change);
     }
 
@@ -549,7 +548,7 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
     return result;
 }
 
-bool DesiredInsertions::contains(int line, int col, const char *filename) {
+bool DesiredInsertions::contains(Line* line, int col, const char *filename) {
     std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
             state_change_insertions->begin(), e =
@@ -557,6 +556,7 @@ bool DesiredInsertions::contains(int line, int col, const char *filename) {
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
                 insert->get_filename() == filename_str) {
+            assert(insert->get_line()->get() == line->get());
             return true;
         }
     }
@@ -564,7 +564,7 @@ bool DesiredInsertions::contains(int line, int col, const char *filename) {
 }
 
 
-std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,
+std::vector<size_t> *DesiredInsertions::get_groups(Line* line, int col,
         const char *filename) {
     std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
@@ -573,6 +573,7 @@ std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
                 insert->get_filename() == filename_str) {
+            assert(insert->get_line()->get() == line->get());
             return insert->get_groups();
         }
     }
@@ -587,7 +588,7 @@ StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
     return iter->second;
 }
 
-bool DesiredInsertions::findNextMatchingMemoryAllocation(int line,
+bool DesiredInsertions::findNextMatchingMemoryAllocation(Line *line,
         std::string func, HeapAlloc *ret) {
     if (heap_allocs->find(line) == heap_allocs->end()) {
         return false;
@@ -641,8 +642,8 @@ std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
             e = omp_pragmas->end(); i != e; i++) {
         OpenMPPragma curr = *i;
 
-        bool before = (curr.get_line() < start_loc.getLine());
-        bool after = (curr.get_line() > end_loc.getLine());
+        bool before = (curr.get_line()->get() < start_loc.getLine());
+        bool after = (curr.get_line()->get() > end_loc.getLine());
 
         if (!before && !after) {
             result->push_back(curr);
@@ -652,13 +653,15 @@ std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
     return result;
 }
 
-AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
+AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(Line* line,
         std::string callee_name) {
     std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
     std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
     while (i != e) {
         AliasesPassedToCallSite curr = *i;
         if (curr.get_line() == line) {
+            assert(curr.get_line()->get() == line->get());
+
             if (curr.get_funcname().find(callee_name) != std::string::npos) {
                 /*
                  * TODO This is super ugly. The callee_name passed here is the
@@ -693,9 +696,39 @@ FunctionArgumentAliasGroups DesiredInsertions::findMatchingFunction(
         if (curr.get_funcname() == func) {
             return curr;
         }
+
+        size_t template_index = curr.get_funcname().find('<');
+        if (template_index != std::string::npos) {
+            std::string without_template = curr.get_funcname().substr(0,
+                    template_index);
+            if (without_template == func) {
+                return curr;
+            }
+        }
     }
 
     llvm::errs() << func << "\n";
     assert(false);
+}
+
+FunctionExit *DesiredInsertions::getFunctionExitInfo(std::string funcname) {
+    if (func_exits->find(funcname) == func_exits->end()) {
+        for (std::map<std::string, FunctionExit *>::iterator i =
+                func_exits->begin(), e = func_exits->end(); i != e; i++) {
+            std::string curr = i->first;
+            size_t template_index = curr.find('<');
+            // Remove type parameters to see if its a match
+            if (template_index != std::string::npos) {
+                std::string without_template = curr.substr(0, template_index);
+                if (without_template == funcname) {
+                    return i->second;
+                }
+            }
+        }
+        llvm::errs() << "Unable to find function exit for \"" << funcname <<
+            "\"\n";
+        assert(false);
+    }
+    return func_exits->at(funcname);
 }
 

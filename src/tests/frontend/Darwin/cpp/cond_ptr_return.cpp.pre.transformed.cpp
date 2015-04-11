@@ -1721,9 +1721,9 @@ void *foo() {new_stack(0, 0); if (____chimes_replaying) { goto lbl_0; }
       lbl_0: int *A; register_stack_var("foo|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 42UL, 0, 0));
     A[0] = 1;
 
-    if (A[0] == 3) { {
+    if (A[0] == 3) {
         alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(42UL)); rm_stack(true, 42UL); return A;
-    } }
+    }
 
     alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(42UL)); rm_stack(true, 42UL); return __null;
 }

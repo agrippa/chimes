@@ -1726,26 +1726,26 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
 
       lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 27UL, 0, 0));
       lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 27UL, 0, 0));
-    for (i = 0; i < N; i++) { {
+    for (i = 0; i < N; i++) {
          call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
-    } }
+    }
 
-    for (iter = 0; iter < niters; iter++) { {
+    for (iter = 0; iter < niters; iter++) {
         printf("%d / %d\n", iter + 1, niters);
-        for (i = 1; i < N - 1; i++) { {
+        for (i = 1; i < N - 1; i++) {
             next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
-        } }
+        }
           lbl_6: int *tmp; register_stack_var("main|tmp|0", "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } tmp = (curr);
         curr = next;
         next = tmp;
 
         alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(27UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
-    } }
+    }
 
       lbl_7: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
-    for (i = 0; i < N; i++) { {
+    for (i = 0; i < N; i++) {
         fprintf(fp, "%d\n", curr[i]);
-    } }
+    }
      call_lbl_2: calling(2, 0UL, 1, (size_t)(129UL)); fclose(fp);
 
     free_wrapper(curr, 27UL);

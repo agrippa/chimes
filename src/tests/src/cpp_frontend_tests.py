@@ -50,13 +50,18 @@ ISO3D = FrontendTest('Iso3D',
                      includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                      dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                 'libcommon2d.so')])
-
+SMITH_WATERMAN = FrontendTest('SmithWaterman',
+                              ['smithWaterman/smith_waterman.cpp'],
+                              ['smith_waterman.cpp.pre.transformed.cpp'],
+                              ['smith_waterman'],
+                              False)
 
 TESTS = [PASS_BY_REF]
 for simple in SIMPLE_TESTS:
     TESTS.append(construct_simple_frontend_test(simple))
 TESTS.append(ISO2D)
 TESTS.append(ISO3D)
+TESTS.append(SMITH_WATERMAN)
 
 
 if __name__ == '__main__':

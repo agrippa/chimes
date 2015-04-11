@@ -3,6 +3,7 @@
 
 #include "clang/AST/AST.h"
 #include "clang/Basic/SourceManager.h"
+#include "LineNoSet.h"
 
 #include <vector>
 
@@ -21,10 +22,10 @@ class ContainedFunctionCall {
 
 class OMPRegion {
     public:
-        OMPRegion(int set_line, int set_col, clang::SourceLocation set_start,
+        OMPRegion(Line* set_line, clang::SourceLocation set_start,
                 clang::SourceLocation set_end, std::string set_pragma_name,
                 std::map<std::string, std::vector<std::string> > set_clauses,
-                int set_lbl) : parent(NULL), line(set_line), col(set_col),
+                int set_lbl) : parent(NULL), line(set_line),
         start(set_start), end(set_end), pragma_name(set_pragma_name),
         clauses(set_clauses), lbl(set_lbl) {}
 
@@ -39,8 +40,7 @@ class OMPRegion {
     private:
         OMPRegion *parent;
         std::vector<OMPRegion *> children;
-        int line;
-        int col;
+        Line* line;
         clang::SourceLocation start, end;
         std::string pragma_name;
         std::map<std::string, std::vector<std::string> > clauses;

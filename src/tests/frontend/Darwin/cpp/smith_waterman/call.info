@@ -1,0 +1,55 @@
+fprintf 49 13 0 50 992 0
+fprintf 51 9 0 50 993
+fprintf 53 5 0 50 994
+_Z12char_mappingc 73 42 0 0
+fseek 82 5 0 165 0 0
+ftell 83 22 0 165
+fseek 84 5 0 165 0 0
+malloc 86 47 146 0
+fread 88 31 0 146 0 0 165
+_Z28clear_whitespaces_do_mappingPal 92 16 0 146 0
+fprintf 105 3 0 50 996 242
+exit 106 3 0 0
+atoi 112 24 0 242
+atoi 113 25 0 242
+_fopen 115 17 261 242 993
+fprintf 116 17 0 50 998 242
+exit 116 77 0 0
+_Z9read_fileP7__sFILEPm 118 13 656 261 200
+fprintf 119 2 0 50 999 0
+_fopen 121 17 282 242 993
+fprintf 122 17 0 50 998 242
+exit 122 77 0 0
+_Z9read_fileP7__sFILEPm 124 13 656 282 202
+fprintf 125 2 0 50 999 0
+fprintf 127 2 0 50 1001 0
+fprintf 128 2 0 50 1002 0
+fprintf 131 5 0 50 1003
+exit 131 72 0 0
+fprintf 134 5 0 50 1004
+exit 134 73 0 0
+malloc 140 20 403 0
+malloc 142 24 367 0
+malloc 144 27 363 0
+_Z9find_diagii 147 13 0 0 0
+malloc 150 24 367 0
+malloc 152 27 363 0
+_Z9find_diagii 155 13 0 0 0
+malloc 158 25 494 0
+malloc 160 28 755 0
+malloc 162 31 508 0
+gettimeofday 166 5 0 203 1008
+_Z9find_diagii 178 23 0 0 0
+_Z10checkpointv 213 8 0
+gettimeofday 218 5 0 204 1008
+fprintf 219 5 0 50 1006 0
+_Z9find_diagii 221 18 0 0 0
+fprintf 223 5 0 50 1007 0
+free 226 3 0 363
+free 227 2 0 367
+free 230 3 0 363
+free 231 2 0 367
+free 233 2 0 403
+free 237 4 0 757
+free 238 3 0 755
+free 240 2 0 494

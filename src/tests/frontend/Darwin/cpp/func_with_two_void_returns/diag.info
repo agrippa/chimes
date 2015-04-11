@@ -1,7 +1,3 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 6 12 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 8 5  }
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 8 12 { 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 10 5  }
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 5 alias_group_changed(3, (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 7 9 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 9 9 rm_stack(false, 0UL); 
