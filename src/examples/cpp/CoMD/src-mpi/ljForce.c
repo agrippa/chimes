@@ -69,7 +69,6 @@
 #include "mytype.h"
 #include "parallel.h"
 #include "linkCells.h"
-#include "memUtils.h"
 #include "CoMDTypes.h"
 
 #define POT_SHIFT 1.0
@@ -100,7 +99,7 @@ void ljDestroy(BasePotential** inppot)
    if ( ! inppot ) return;
    LjPotential* pot = (LjPotential*)(*inppot);
    if ( ! pot ) return;
-   comdFree(pot);
+   free(pot);
    *inppot = NULL;
 
    return;
@@ -109,7 +108,7 @@ void ljDestroy(BasePotential** inppot)
 /// Initialize an Lennard Jones potential for Copper.
 BasePotential* initLjPot(void)
 {
-   LjPotential *pot = (LjPotential*)comdMalloc(sizeof(LjPotential));
+   LjPotential *pot = (LjPotential*)malloc(sizeof(LjPotential));
    pot->force = ljForce;
    pot->print = ljPrint;
    pot->destroy = ljDestroy;

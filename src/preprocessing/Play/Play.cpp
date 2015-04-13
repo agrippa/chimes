@@ -522,8 +522,6 @@ static std::string demangledFunctionName(std::string fname) {
  * Allocate
  */
 static std::string removeTemplatedMangling(std::string fname) {
-    llvm::errs() << fname << "\n";
-
     size_t space_index = fname.rfind(' ');
     if (space_index == std::string::npos) {
         return fname;
