@@ -996,6 +996,7 @@ void Play::initKnownFunctions() {
     doesFunctionCreateCheckpoint["malloc"] = DOES_NOT;
     doesFunctionCreateCheckpoint["free"] = DOES_NOT;
     doesFunctionCreateCheckpoint["realloc"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["calloc"] = DOES_NOT;
 }
 
 bool Play::isKnownFunction(Function *F) {
@@ -1513,6 +1514,7 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
 
     size_t alias_no;
     if (callee->getName().str() == "malloc" ||
+            callee->getName().str() == "calloc" ||
             callee->getName().str() == "realloc") {
         alias_no = searchForValueInKnownAliases(callInst, value_to_alias_group);
     } else {
@@ -1550,7 +1552,8 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
      * extra type info to the heap allocation metrics to
      * help with replay.
      */
-    if (callee->getName().str() == "malloc") {
+    if (callee->getName().str() == "malloc" ||
+            callee->getName().str() == "calloc") {
         if (callInst->getNumUses() == 1) {
             Type *base_type = inferHostAllocationType(callInst);
 
@@ -1642,6 +1645,7 @@ void Play::findHeapAllocations(Module &M, const char *output_file,
                     if (callee) {
                         if (callee->getName().str() == "malloc" ||
                                 callee->getName().str() == "realloc" ||
+                                callee->getName().str() == "calloc" ||
                                 callee->getName().str() == "free") {
                             handleHostAllocation(callInst,
                                     callee, fp, found_mallocs, structFields,

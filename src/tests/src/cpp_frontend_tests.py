@@ -29,7 +29,8 @@ SIMPLE_TESTS = ['simple_stencil.cpp',
                 'propagation.cpp',
                 'cond_ptr_return.cpp',
                 'stack_array.cpp',
-                'multi_line_decl.cpp']
+                'multi_line_decl.cpp',
+                'calloc.cpp']
 
 ISO2D = FrontendTest('Iso2D',
                      ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'],
