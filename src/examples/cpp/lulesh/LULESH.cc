@@ -69,6 +69,10 @@ Additional BSD Notice
 #include <sys/time.h>
 #include <string.h>
 
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
+
 //#define LULESH_SHOW_PROGRESS 1
 
 enum { VolumeError = -1, QStopError = -2 } ;
@@ -2877,6 +2881,10 @@ int main(int argc, char *argv[])
 #if LULESH_SHOW_PROGRESS
       printf("time = %e, dt=%e\n",
              double(mesh.time), double(mesh.deltatime) ) ;
+#endif
+
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
 #endif
    }
 

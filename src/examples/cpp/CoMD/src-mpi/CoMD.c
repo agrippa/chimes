@@ -60,6 +60,10 @@
 #include "timestep.h"
 #include "constants.h"
 
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
+
 #define REDIRECT_OUTPUT 0
 #define   MIN(A,B) ((A) < (B) ? (A) : (B))
 
@@ -123,6 +127,10 @@ int main(int argc, char** argv)
       stopTimer(timestepTimer);
 
       iStep += printRate;
+
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
    }
    profileStop(loopTimer);
 
