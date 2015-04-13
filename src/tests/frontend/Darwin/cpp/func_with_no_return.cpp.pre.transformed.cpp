@@ -1716,16 +1716,24 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp" 2
-
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 int a = 3;
-
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 void haha_this_sux_part_canc() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    a = 4;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
+ a = 4;
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 alias_group_changed(1, (size_t)(17UL)); rm_stack(false, 0UL); }
-
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 0, (size_t)(0UL), (size_t)(14UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
-     call_lbl_0: calling(0, 0UL, 0); haha_this_sux_part_canc();
-    alias_group_changed(3, (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); rm_stack(false, 0UL); return 0;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
+ call_lbl_0: calling(0, 0UL, 0); haha_this_sux_part_canc();
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
+ alias_group_changed(3, (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); rm_stack(false, 0UL); return 0;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 }
 
 

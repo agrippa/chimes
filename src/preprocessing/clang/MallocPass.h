@@ -30,7 +30,7 @@ class FoundAlloc {
 
 class MallocPass : public ParentTransform {
 public:
-    MallocPass(LineNoSet& set_lines) : ParentTransform(set_lines) {
+    MallocPass() {
         supportedAllocationFunctions.insert("malloc");
         supportedAllocationFunctions.insert("realloc");
         supportedAllocationFunctions.insert("free");
@@ -49,7 +49,8 @@ private:
     std::set<std::string> supportedAllocationFunctions;
 
     // Mapping from line number -> function name -> function call information
-    std::map<Line*, std::map<std::string, std::vector<FoundAlloc> *> *> found_allocs;
+    std::map<int, std::map<std::string, std::vector<FoundAlloc> *> *>
+        found_allocs;
 };
 
 #endif

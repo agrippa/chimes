@@ -12,7 +12,7 @@
 
 class InitPass : public ParentTransform {
 public:
-    InitPass(LineNoSet& set_lines) : ParentTransform(set_lines) { }
+    InitPass() { }
 
     void VisitTopLevel(clang::Decl *toplevel) override;
     void VisitStmt(const clang::Stmt *s) override;

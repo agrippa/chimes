@@ -2365,126 +2365,227 @@ extern void usage(char **argv);
 extern void default_config(config *conf);
 extern void setup_config(config *conf, int argc, char **argv);
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp" 2
-
-
-
-
-
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void save_text(float *field, const int dimx, const int dimy,
-        const int ny, const int nx, const char *filename, int radius) {new_stack(7, 7, (size_t)(84UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(89UL), (size_t)(0UL), "save_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
-    if (fp == __null) {
-        fprintf(__stderrp, "Failed to open output file %s\n", filename);
-        alias_group_changed(8, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL)); exit(1);
-    }
-
-    { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) {
-        { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) {
-            fprintf(fp, "%d %d %.20f\n", y, x,
-                    field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
-        } }
-        fprintf(fp, "\n");
-    } }
-
-     call_lbl_0: calling(0, 0UL, 1, (size_t)(27UL)); fclose(fp);
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ const int ny, const int nx, const char *filename, int radius) {new_stack(7, 7, (size_t)(84UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(89UL), (size_t)(0UL), "save_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ if (fp == __null) {
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(__stderrp, "Failed to open output file %s\n", filename);
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(8, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL)); exit(1);
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) {
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) {
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(fp, "%d %d %.20f\n", y, x,
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(fp, "\n");
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ call_lbl_0: calling(0, 0UL, 1, (size_t)(27UL)); fclose(fp);
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 alias_group_changed(10, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL)); rm_stack(false, 0UL); }
-
+# 25 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 26 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void init_data(float *curr, float *next, float *vsq,
-                float *h_coeff, const int dimx, const int dimy,
-                const float dx, const float dt) {new_stack(8, 0, (size_t)(222UL), (size_t)(223UL), (size_t)(224UL), (size_t)(225UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
-
-    { size_t i; for ( i = (0); i < dimx * dimy; i++) {
-        vsq[i] = 2500. * 2500. * dt * dt;
-    } }
-
-
-    { size_t i; for ( i = (0); i < dimx * dimy; i++) {
-        curr[i] = next[i] = 0;
-    } }
-
-     call_lbl_0: calling(0, 0UL, 3, (size_t)(225UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
-     float scale; scale = (1. / (dx * dx));
-    h_coeff[0] = -8.541666 * scale;
-    h_coeff[1] = 1.600000 * scale;
-    h_coeff[2] = -0.200000 * scale;
-    h_coeff[3] = 0.025397 * scale;
-    h_coeff[4] = -0.001785 * scale;
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ float *h_coeff, const int dimx, const int dimy,
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ const float dx, const float dt) {new_stack(8, 0, (size_t)(222UL), (size_t)(223UL), (size_t)(224UL), (size_t)(225UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+# 29 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 30 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { size_t i; for ( i = (0); i < dimx * dimy; i++) {
+# 31 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ vsq[i] = 2500. * 2500. * dt * dt;
+# 32 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 33 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 34 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 35 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { size_t i; for ( i = (0); i < dimx * dimy; i++) {
+# 36 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ curr[i] = next[i] = 0;
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 38 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 39 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ call_lbl_0: calling(0, 0UL, 3, (size_t)(225UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
+# 40 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ float scale; scale = (1. / (dx * dx));
+# 41 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[0] = -8.541666 * scale;
+# 42 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[1] = 1.600000 * scale;
+# 43 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[2] = -0.200000 * scale;
+# 44 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[3] = 0.025397 * scale;
+# 45 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[4] = -0.001785 * scale;
+# 46 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 alias_group_changed(15, (size_t)(99UL), (size_t)(100UL), (size_t)(101UL), (size_t)(102UL), (size_t)(103UL), (size_t)(104UL), (size_t)(105UL), (size_t)(106UL), (size_t)(107UL), (size_t)(108UL), (size_t)(109UL), (size_t)(222UL), (size_t)(223UL), (size_t)(224UL), (size_t)(225UL)); rm_stack(false, 0UL); }
-
+# 47 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 48 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void usage(char **argv) {new_stack(1, 1, (size_t)(246UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
-            "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
-            argv[0]);
-    alias_group_changed(1, (size_t)(235UL)); exit(1);
+# 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
+# 50 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
+# 51 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ argv[0]);
+# 52 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(1, (size_t)(235UL)); exit(1);
+# 53 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 rm_stack(false, 0UL); }
-
+# 54 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 55 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void default_config(config *conf) {new_stack(1, 0, (size_t)(284UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    conf->nx = 2 * 256;
-    conf->ny = 2 * 256;
-    conf->nsteps = 100;
-    conf->save_text = 0;
-    conf->verbose = 0;
-    conf->radius = 4;
-    conf->ngpus = -1;
-
-    conf->srcs = __null;
-    conf->nsrcs = 0;
-
-    conf->progress_width = 80;
-    conf->progress_disabled = 0;
+# 56 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nx = 2 * 256;
+# 57 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ny = 2 * 256;
+# 58 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsteps = 100;
+# 59 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->save_text = 0;
+# 60 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->verbose = 0;
+# 61 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->radius = 4;
+# 62 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ngpus = -1;
+# 63 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 64 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->srcs = __null;
+# 65 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsrcs = 0;
+# 66 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 67 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_width = 80;
+# 68 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_disabled = 0;
+# 69 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 alias_group_changed(2, (size_t)(247UL), (size_t)(284UL)); rm_stack(false, 0UL); }
-
+# 70 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 71 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(406UL), (size_t)(0UL), (size_t)(408UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-     lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
-    opterr = 0;
-
-     call_lbl_0: calling(0, 0UL, 1, (size_t)(406UL)); default_config(conf);
-
-    alias_group_changed(6, (size_t)(285UL), (size_t)(286UL), (size_t)(287UL), (size_t)(288UL), (size_t)(406UL), (size_t)(423UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
-        switch (c) {
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'x':
-                conf->nx = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'y':
-                conf->ny = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'i':
-                conf->nsteps = atoi(optarg);
-                break;
-            case 'v':
-                conf->verbose = 1;
-                break;
-            case 't':
-                conf->save_text = 1;
-                break;
-            case 'p':
-                conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
-                        (conf->nsrcs + 1), 336UL);
-                alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_1: calling(1, 0UL, 2, (size_t)(308UL), (size_t)(336UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
-                conf->nsrcs++;
-                break;
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'r':
-                conf->radius = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'g':
-                conf->ngpus = atoi(optarg);
-                break;
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'w':
-                conf->progress_width = atoi(optarg);
-                break;
-            case 'd':
-                conf->progress_disabled = 1;
-                break;
-            case '?':
-                fprintf(__stderrp, "Missing argument to option %c\n", optopt);
-            alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_2: calling(2, 0UL, 1, (size_t)(408UL)); default:
-                usage(argv);
-        }
-    }
-
-    if (conf->ngpus == -1) {
-        alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
-    }
+# 72 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
+# 73 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ opterr = 0;
+# 74 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 75 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ call_lbl_0: calling(0, 0UL, 1, (size_t)(406UL)); default_config(conf);
+# 76 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 77 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(6, (size_t)(285UL), (size_t)(286UL), (size_t)(287UL), (size_t)(288UL), (size_t)(406UL), (size_t)(423UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
+# 78 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ switch (c) {
+# 79 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'x':
+# 80 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nx = atoi(optarg);
+# 81 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 82 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'y':
+# 83 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ny = atoi(optarg);
+# 84 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 85 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'i':
+# 86 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsteps = atoi(optarg);
+# 87 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 88 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'v':
+# 89 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->verbose = 1;
+# 90 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 91 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 't':
+# 92 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->save_text = 1;
+# 93 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 94 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'p':
+# 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+# 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ (conf->nsrcs + 1), 336UL);
+# 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_1: calling(1, 0UL, 2, (size_t)(308UL), (size_t)(336UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+# 98 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsrcs++;
+# 99 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 100 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'r':
+# 101 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->radius = atoi(optarg);
+# 102 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 103 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'g':
+# 104 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ngpus = atoi(optarg);
+# 105 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 106 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); case 'w':
+# 107 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_width = atoi(optarg);
+# 108 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 109 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'd':
+# 110 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_disabled = 1;
+# 111 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 112 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case '?':
+# 113 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(__stderrp, "Missing argument to option %c\n", optopt);
+# 114 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_2: calling(2, 0UL, 1, (size_t)(408UL)); default:
+# 115 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ usage(argv);
+# 116 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 117 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 118 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 119 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ if (conf->ngpus == -1) {
+# 120 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
+# 121 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 alias_group_changed(2, (size_t)(288UL), (size_t)(406UL)); rm_stack(false, 0UL); }
 
 

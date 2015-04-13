@@ -106,14 +106,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
     LAST_FILES+=($INPUT)
     OBJ_FILES+=($OBJ_FILE)
 
-    if [[ ${EXT} == "cpp" ]]; then
+    if [[ ${EXT} == "cpp" || ${EXT} == "cc" ]]; then
         g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS}
     elif [[ ${EXT} == "cu" ]]; then
         nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE}
     fi
 
     if [[ ! -f ${OBJ_FILE} ]]; then
-        echo "Missing object file $OBJ_FILE for input $INPUT"
+        echo "Missing object file $OBJ_FILE for input $INPUT, possibly an unsupported file extension?"
         exit 1
     fi
 done

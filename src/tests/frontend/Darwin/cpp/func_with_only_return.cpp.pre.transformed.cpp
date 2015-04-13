@@ -1724,15 +1724,23 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp" 2
-
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 void *haha_this_sux() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    rm_stack(true, 20UL); return __null;
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+ rm_stack(true, 20UL); return __null;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 }
-
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(17UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 12UL, 0); tmp = (haha_this_sux());
-    alias_group_changed(4, (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
-    rm_stack(false, 0UL); return 0;
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+ lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } call_lbl_0: calling(0, 12UL, 0); tmp = (haha_this_sux());
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+ alias_group_changed(4, (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+ rm_stack(false, 0UL); return 0;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 }
 
 

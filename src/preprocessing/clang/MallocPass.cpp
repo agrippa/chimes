@@ -10,19 +10,11 @@
 extern DesiredInsertions *insertions;
 
 void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
-    // For each line that has a memory allocation or free statement
    
-    std::vector<Line*> sorted_lines; // for deterministic code generation
-    for (std::map<Line*, std::map<std::string, std::vector<FoundAlloc> *> *>::iterator i = found_allocs.begin(), e = found_allocs.end(); i != e; i++) {
-        sorted_lines.push_back(i->first);
-    }
-    std::sort(sorted_lines.begin(), sorted_lines.end(), line_ptr_comparator);
-
-    for (std::vector<Line*>::iterator i = sorted_lines.begin(),
-            e = sorted_lines.end(); i != e; i++) {
-        Line *line = *i;
-        std::map<std::string, std::vector<FoundAlloc> *> *per_line =
-            found_allocs[line];
+    // For each line that has a memory allocation or free statement
+    for (std::map<int, std::map<std::string, std::vector<FoundAlloc> *> *>::iterator i = found_allocs.begin(), e = found_allocs.end(); i != e; i++) {
+        int line = i->first;
+        std::map<std::string, std::vector<FoundAlloc> *> *per_line = i->second;
 
         for (std::map<std::string, std::vector<FoundAlloc> *>::iterator ii =
                 per_line->begin(), ee = per_line->end(); ii != ee; ii++) {
@@ -43,7 +35,7 @@ void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
                         line, callee->getNameAsString(), &alloc);
                 if (!found_info) {
                     llvm::errs() << "Failed to find memory allocation on " <<
-                        "line " << line->get() << " with name " <<
+                        "line " << line << " with name " <<
                         callee->getNameAsString() << "\n";
                     assert(false);
                 }
@@ -109,7 +101,7 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation end = s->getLocEnd();
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(start)) {
-        Line* start_line = lines.get(SM->getPresumedLineNumber(start));
+        int start_line = SM->getPresumedLineNumber(start);
         int start_col = SM->getPresumedColumnNumber(start);
 
         if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {

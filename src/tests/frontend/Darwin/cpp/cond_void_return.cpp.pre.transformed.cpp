@@ -1724,28 +1724,43 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
-
-
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 void bar(int *A, int *B) {new_stack(2, 0, (size_t)(21UL), (size_t)(22UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    A[0] = 3;
-
-    if (A[0] == 3) {
-        alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
-    }
-
-    B[0] = 3;
-
-    alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ A[0] = 3;
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ if (A[0] == 3) {
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ }
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ B[0] = 3;
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(21UL), (size_t)(22UL)); rm_stack(false, 0UL); return;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
-
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(49UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 36UL, 0, 0));
-      lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 40UL, 0, 0));
-
-     call_lbl_0: calling(0, 0UL, 2, (size_t)(36UL), (size_t)(40UL)); bar(A, B);
-    alias_group_changed(5, (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
-
-    rm_stack(false, 0UL); return 0;
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 36UL, 0, 0));
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 40UL, 0, 0));
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ call_lbl_0: calling(0, 0UL, 2, (size_t)(36UL), (size_t)(40UL)); bar(A, B);
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ alias_group_changed(5, (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ rm_stack(false, 0UL); return 0;
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
 
 

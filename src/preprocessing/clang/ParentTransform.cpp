@@ -239,3 +239,13 @@ void ParentTransform::setRootFlag(bool v) {
 bool ParentTransform::getRootFlag() {
     return root_flag;
 }
+
+int ParentTransform::startingLine(const clang::Stmt *stmt) {
+    return SM->getPresumedLoc(stmt->getLocStart()).getLine();
+}
+
+int ParentTransform::endingLine(const clang::Stmt *stmt) {
+    return SM->getPresumedLoc(stmt->getLocEnd()).getLine();
+}
+
+

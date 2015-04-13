@@ -6,6 +6,8 @@
 #include <fstream>
 #include <sstream>
 
+using namespace std;
+
 static int find_group_end(std::string *s) {
     int find = s->find(',');
     if (find != std::string::npos) return find;
@@ -29,7 +31,6 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
         std::string pragma = line;
 
         line = line.substr(line.find(' ') + 1);
-        llvm::errs() << "\"" << line << "\"\n";
         assert(line.find("omp") == 0);
 
         // Only support the parallel pragma at the moment
@@ -38,9 +39,9 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
 
         end = line.find(' ');
         if (end == std::string::npos) {
-            pragmas->push_back(OpenMPPragma(lines.get(line_no), line, "parallel"));
+            pragmas->push_back(OpenMPPragma(line_no, line, "parallel"));
         } else {
-            OpenMPPragma pragma(lines.get(line_no), line, "parallel");
+            OpenMPPragma pragma(line_no, line, "parallel");
             std::string clauses = line.substr(end + 1);
 
             std::vector<std::string> split_clauses;
@@ -247,13 +248,13 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
         if (end == std::string::npos) {
             size_t alias = strtoul(line.c_str(), NULL, 10);
 
-            callsite = new AliasesPassedToCallSite(funcname, lines.get(line_no),
+            callsite = new AliasesPassedToCallSite(funcname, line_no,
                     col, alias);
         } else {
             size_t alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
             line = line.substr(end + 1);
 
-            callsite = new AliasesPassedToCallSite(funcname, lines.get(line_no),
+            callsite = new AliasesPassedToCallSite(funcname, line_no,
                     col, alias);
 
             end = line.find(' ');
@@ -276,9 +277,9 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
     return callsites;
 }
 
-std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInsertions::parseHeapAllocs() {
-    std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *allocs =
-        new std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *>();
+std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInsertions::parseHeapAllocs() {
+    std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *allocs =
+        new std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *>();
 
     std::ifstream fp;
     fp.open(heap_file, std::ios::in);
@@ -287,7 +288,7 @@ std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInser
     while (getline(fp, line)) {
         size_t line_no_end = line.find(' ');
         std::string line_no_str = line.substr(0, line_no_end);
-        Line* line_no = lines.get(atoi(line_no_str.c_str()));
+        int line_no = atoi(line_no_str.c_str());
         line = line.substr(line_no_end + 1);
 
         size_t col_end = line.find(' ');
@@ -370,7 +371,8 @@ std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInser
         for_func->push_back(alloc);
     }
 
-    for (std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *>::iterator i = allocs->begin(), e = allocs->end(); i != e; i++) {
+    for (map<int, map<string, vector<HeapAlloc> *> *>::iterator i =
+            allocs->begin(), e = allocs->end(); i != e; i++) {
         std::map<std::string, std::vector<HeapAlloc> *> *curr_line = i->second;
 
         for (std::map<std::string, std::vector<HeapAlloc> *>::iterator ii =
@@ -540,7 +542,7 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         }
 
         StateChangeInsertion *change = new StateChangeInsertion(filename,
-                lines.get(line_no), col, groups);
+                line_no, col, groups);
         result->push_back(change);
     }
 
@@ -548,7 +550,7 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
     return result;
 }
 
-bool DesiredInsertions::contains(Line* line, int col, const char *filename) {
+bool DesiredInsertions::contains(int line, int col, const char *filename) {
     std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
             state_change_insertions->begin(), e =
@@ -556,7 +558,6 @@ bool DesiredInsertions::contains(Line* line, int col, const char *filename) {
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
                 insert->get_filename() == filename_str) {
-            assert(insert->get_line()->get() == line->get());
             return true;
         }
     }
@@ -564,7 +565,7 @@ bool DesiredInsertions::contains(Line* line, int col, const char *filename) {
 }
 
 
-std::vector<size_t> *DesiredInsertions::get_groups(Line* line, int col,
+std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,
         const char *filename) {
     std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
@@ -573,7 +574,6 @@ std::vector<size_t> *DesiredInsertions::get_groups(Line* line, int col,
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
                 insert->get_filename() == filename_str) {
-            assert(insert->get_line()->get() == line->get());
             return insert->get_groups();
         }
     }
@@ -588,7 +588,7 @@ StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
     return iter->second;
 }
 
-bool DesiredInsertions::findNextMatchingMemoryAllocation(Line *line,
+bool DesiredInsertions::findNextMatchingMemoryAllocation(int line,
         std::string func, HeapAlloc *ret) {
     if (heap_allocs->find(line) == heap_allocs->end()) {
         return false;
@@ -642,8 +642,8 @@ std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
             e = omp_pragmas->end(); i != e; i++) {
         OpenMPPragma curr = *i;
 
-        bool before = (curr.get_line()->get() < start_loc.getLine());
-        bool after = (curr.get_line()->get() > end_loc.getLine());
+        bool before = (curr.get_line() < start_loc.getLine());
+        bool after = (curr.get_line() > end_loc.getLine());
 
         if (!before && !after) {
             result->push_back(curr);
@@ -653,26 +653,23 @@ std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
     return result;
 }
 
-AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(Line* line,
+AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
         std::string callee_name) {
     std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
     std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
     while (i != e) {
         AliasesPassedToCallSite curr = *i;
-        if (curr.get_line() == line) {
-            assert(curr.get_line()->get() == line->get());
-
-            if (curr.get_funcname().find(callee_name) != std::string::npos) {
-                /*
-                 * TODO This is super ugly. The callee_name passed here is the
-                 * name as it appears in the source code. The function name
-                 * stored in curr is a mangled name (some C++ mangling
-                 * convention? not sure). Here, we just wait for the first match
-                 * where the user-visible name is a substring of the mangled
-                 * name.
-                 */
-                break;
-            }
+        if (curr.get_line() == line &&
+                curr.get_funcname().find(callee_name) != std::string::npos) {
+            /*
+             * TODO This is super ugly. The callee_name passed here is the
+             * name as it appears in the source code. The function name
+             * stored in curr is a mangled name (some C++ mangling
+             * convention? not sure). Here, we just wait for the first match
+             * where the user-visible name is a substring of the mangled
+             * name.
+             */
+            break;
         }
         i++;
     }
@@ -732,3 +729,136 @@ FunctionExit *DesiredInsertions::getFunctionExitInfo(std::string funcname) {
     return func_exits->at(funcname);
 }
 
+void DesiredInsertions::add_line_collapse(int start, int end) {
+    if (start == end) return;
+
+    std::vector<CollapsedLines>::iterator i = transforms.begin();
+    std::vector<CollapsedLines>::iterator e = transforms.end();
+    while (i != e && i->get_start() < start) {
+        i++;
+    }
+
+    if (i == e) {
+        transforms.push_back(CollapsedLines(start, end));
+    } else {
+        if (start == i->get_start()) {
+            // Merge overlapping
+            i->update_end(end > i->get_end() ? end : i->get_end());
+        } else {
+            /*
+             * i->get_start() > start. Either:
+             *   1. the old range is directly adjacent to the new range (and
+             *      must be greater than), in which case we merge the two into
+             *      one.
+             *   2. the new range entirely encloses the old range (in which case
+             *      we replace the current entry with the new entry).
+             *   3. there is no overlap (and we assert it cannot be a partial
+             *      overlap), in which case we just insert a new range.
+             */
+            if (i->get_start() == end) {
+                // Merge neighbors, with the new range starting lower
+                i->update_start(start);
+            } else if (i->get_end() < end) {
+                // current range is entirely enclosed by new range
+                i->update_start(start);
+                i->update_end(end);
+            } else {
+                assert(i->get_start() > end);
+                transforms.insert(i, CollapsedLines(start, end));
+            }
+        }
+    }
+}
+
+int DesiredInsertions::lookup_new_line(int line) {
+    int match = -1;
+    int diff = 0;
+
+    std::vector<CollapsedLines>::iterator i = transforms.begin();
+    std::vector<CollapsedLines>::iterator e = transforms.end();
+
+    while (i != e && i->get_start() < line) {
+        if (line > i->get_start() && line <= i->get_end()) {
+            return i->get_start();
+        }
+        i++;
+    }
+    
+    return line;
+}
+
+void DesiredInsertions::update_line_numbers() {
+
+    // Update state change insertion info
+    for (std::vector<StateChangeInsertion *>::iterator i =
+            state_change_insertions->begin(), e =
+            state_change_insertions->end(); i != e; i++) {
+        StateChangeInsertion *insert = *i;
+        insert->update_line(lookup_new_line(insert->get_line()));
+    }
+    
+    // Update heap allocation line info
+    map<int, map<string, vector<HeapAlloc> *> *> *new_heap_allocs =
+        new map<int, map<string, vector<HeapAlloc> *> *>();
+    for (map<int, map<string, vector<HeapAlloc> *> *>::iterator i =
+            heap_allocs->begin(), e = heap_allocs->end(); i != e; i++) {
+        int new_line = lookup_new_line(i->first);
+        map<string, vector<HeapAlloc> *> *allocs_on_line = i->second;
+
+        // Insert if there isn't an entry for this line yet
+        if (new_heap_allocs->find(new_line) == new_heap_allocs->end()) {
+            (*new_heap_allocs)[new_line] =
+                new map<string, vector<HeapAlloc> *>();
+        }
+        map<string, vector<HeapAlloc> *> *new_allocs_on_line =
+            (*new_heap_allocs)[new_line];
+
+        for (map<string, vector<HeapAlloc> *>::iterator ii =
+                allocs_on_line->begin(), ee = allocs_on_line->end(); ii != ee;
+                ii++) {
+            string funcname = ii->first;
+            vector<HeapAlloc> *allocs = ii->second;
+
+            if (new_allocs_on_line->find(funcname) ==
+                    new_allocs_on_line->end()) {
+                (*new_allocs_on_line)[funcname] = new vector<HeapAlloc>();
+            }
+            vector<HeapAlloc> *new_allocs = (*new_allocs_on_line)[funcname];
+
+            for (vector<HeapAlloc>::iterator iii = allocs->begin(),
+                    eee = allocs->end(); iii != eee; iii++) {
+                new_allocs->push_back(*iii);
+            }
+        }
+    }
+
+    for (map<int, map<string, vector<HeapAlloc> *> *>::iterator i =
+            new_heap_allocs->begin(), e = new_heap_allocs->end(); i != e; i++) {
+        map<string, vector<HeapAlloc> *> *for_line = i->second;
+        for (map<string, vector<HeapAlloc> *>::iterator ii = for_line->begin(),
+                ee = for_line->end(); ii != ee; ii++) {
+            vector<HeapAlloc> *per_func = ii->second;
+            std::sort(per_func->begin(), per_func->end());
+        }
+    }
+    heap_allocs = new_heap_allocs; // update with new line numbers
+
+    /*
+     * Update aliases passed line info. Don't resort callsites because every
+     * statement should still be in the same order, some will just have their
+     * lines merged together.
+     */
+    for (vector<AliasesPassedToCallSite>::iterator i = callsites->begin(),
+            e = callsites->end(); i != e; i++) {
+        int new_line = lookup_new_line(i->get_line());
+        i->update_line(new_line);
+    }
+    
+    // Update OMP pragma line info
+    for (vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
+            e = omp_pragmas->end(); i != e; i++) {
+        i->update_line(lookup_new_line(i->get_line()));
+    }
+
+    transforms.clear();
+}

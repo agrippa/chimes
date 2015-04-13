@@ -1724,18 +1724,29 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
-
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 int foo(int a) {new_stack(1, 1, (size_t)(0UL), "foo|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int b; register_stack_var("foo|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b = (a);
-      lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } c = (a + b);
-    alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
-    rm_stack(false, 0UL); return c;
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ lbl_0: int b; register_stack_var("foo|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b = (a);
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } c = (a + b);
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ rm_stack(false, 0UL); return c;
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 }
-
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(39UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3);
-    alias_group_changed(4, (size_t)(20UL), (size_t)(21UL), (size_t)(22UL), (size_t)(23UL)); lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); b = (foo(a));
-    alias_group_changed(1, (size_t)(24UL)); rm_stack(false, 0UL); return b;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3);
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ alias_group_changed(4, (size_t)(20UL), (size_t)(21UL), (size_t)(22UL), (size_t)(23UL)); lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); b = (foo(a));
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
+ alias_group_changed(1, (size_t)(24UL)); rm_stack(false, 0UL); return b;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 }
 
 

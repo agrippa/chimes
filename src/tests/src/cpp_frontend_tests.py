@@ -28,7 +28,8 @@ SIMPLE_TESTS = ['simple_stencil.cpp',
                 'cond_void_return.cpp',
                 'propagation.cpp',
                 'cond_ptr_return.cpp',
-                'stack_array.cpp']
+                'stack_array.cpp',
+                'multi_line_decl.cpp']
 
 ISO2D = FrontendTest('Iso2D',
                      ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'],
@@ -55,6 +56,8 @@ SMITH_WATERMAN = FrontendTest('SmithWaterman',
                               ['smith_waterman.cpp.pre.transformed.cpp'],
                               ['smith_waterman'],
                               False)
+LULESH = FrontendTest('Lulesh', ['lulesh/LULESH.cc'],
+                      ['LULESH.cc.pre.transformed.cpp'], ['lulesh'], False)
 
 TESTS = [PASS_BY_REF]
 for simple in SIMPLE_TESTS:
@@ -62,6 +65,7 @@ for simple in SIMPLE_TESTS:
 TESTS.append(ISO2D)
 TESTS.append(ISO3D)
 TESTS.append(SMITH_WATERMAN)
+TESTS.append(LULESH)
 
 
 if __name__ == '__main__':

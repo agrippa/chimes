@@ -10,38 +10,28 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.c
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 124 2 alias_group_changed(3, (size_t)(201UL), (size_t)(202UL), (size_t)(980UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 131 72 alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 134 73 alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 145 3 for (j = 0; j < tile_width; j++) { 
-tile_edges_x[i][j] = -1 * (i * tile_width + j); }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 145 3 for (j = 0; j < tile_width; j++) { tile_edges_x[i][j] = -1 * (i * tile_width + j); }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 146 43 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 153 3 for (j = 0; j < tile_height; j++) { 
-tile_edges_y[i][j] = -1 * (i * tile_height + j); }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 153 3 for (j = 0; j < tile_height; j++) { tile_edges_y[i][j] = -1 * (i * tile_height + j); }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 154 44 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 3 for (j = 0; j < tile_height + 1; j++) { 
-worker_tiles[i][j] = (int *)malloc(sizeof(int) * (tile_width + 1)); }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 3 for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc(sizeof(int) * (tile_width + 1)); }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 162 64 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 166 5 alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 180 18 for (ii = 1; ii < tile_height + 1; ++ii) { 
-local_matrix[ii][0] = tile_edge_y[ii - 1]; }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 180 18 for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 181 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 183 18 for (jj = 1; jj < tile_width + 1; ++jj) { 
-local_matrix[0][jj] = tile_edge_x[jj - 1]; }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 183 18 for (jj = 1; jj < tile_width + 1; ++jj) { local_matrix[0][jj] = tile_edge_x[jj - 1]; }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 184 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 202 18 for (ii = 1; ii < tile_height + 1; ++ii) { 
-tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 202 18 for (ii = 1; ii < tile_height + 1; ++ii) { tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 203 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 205 18 for (jj = 1; jj < tile_width + 1; ++jj) { 
-tile_edge_x[jj - 1] = local_matrix[tile_height][jj]; }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 205 18 for (jj = 1; jj < tile_width + 1; ++jj) { tile_edge_x[jj - 1] = local_matrix[tile_height][jj]; }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 206 70 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 8 alias_group_changed(18, (size_t)(194UL), (size_t)(195UL), (size_t)(205UL), (size_t)(206UL), (size_t)(207UL), (size_t)(208UL), (size_t)(209UL), (size_t)(210UL), (size_t)(211UL), (size_t)(212UL), (size_t)(213UL), (size_t)(214UL), (size_t)(215UL), (size_t)(216UL), (size_t)(217UL), (size_t)(363UL), (size_t)(403UL), (size_t)(757UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 218 5 alias_group_changed(18, (size_t)(194UL), (size_t)(195UL), (size_t)(205UL), (size_t)(206UL), (size_t)(207UL), (size_t)(208UL), (size_t)(209UL), (size_t)(210UL), (size_t)(211UL), (size_t)(212UL), (size_t)(213UL), (size_t)(214UL), (size_t)(215UL), (size_t)(216UL), (size_t)(217UL), (size_t)(363UL), (size_t)(403UL), (size_t)(757UL)); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 2 for (i = 0; i < n_tiles_x; i++) { 
-free(tile_edges_x[i]); }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 2 for (i = 0; i < n_tiles_x; i++) { free(tile_edges_x[i]); }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 226 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 2 for (i = 0; i < n_tiles_y; i++) { 
-free(tile_edges_y[i]); }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 2 for (i = 0; i < n_tiles_y; i++) { free(tile_edges_y[i]); }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 230 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 3 for (j = 0; j < tile_height + 1; j++) { 
-free(worker_tiles[i][j]); }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 3 for (j = 0; j < tile_height + 1; j++) { free(worker_tiles[i][j]); }
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 237 27 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 47 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 86 , 146UL, 0, 0
@@ -59,20 +49,20 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 158 46 , 494UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 160 28 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 160 62 , 755UL, 1, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 162 29 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 162 65 , 508UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 226 1 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 226 20 , 363UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 71 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 107 , 508UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 36 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 55 , 363UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 227 2 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 227 7 , 367UL
-ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 230 1 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 230 20 , 363UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 36 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 55 , 363UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 231 2 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 231 7 , 367UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 233 2 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 233 7 , 403UL
-ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 237 1 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 237 23 , 757UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 43 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 65 , 757UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 238 3 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 238 22 , 755UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 240 2 len=4 free_wrapper

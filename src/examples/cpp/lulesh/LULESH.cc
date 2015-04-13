@@ -99,6 +99,7 @@ inline real8  FABS(real8  arg) { return fabs(arg) ; }
 /* array interface from underlying implementation.          */
 /************************************************************/
 
+
 struct Mesh {
 
 /* This first implementation allows for runnable code */
@@ -108,101 +109,6 @@ struct Mesh {
 /* manner. */
 
 // public:
-
-   /**************/
-   /* Allocation */
-   /**************/
-
-   void AllocateNodalPersistent(size_t size)
-   {
-      x = (Real_t *)malloc(size * sizeof(Real_t));
-      y = (Real_t *)malloc(size * sizeof(Real_t));
-      z = (Real_t *)malloc(size * sizeof(Real_t));
-
-      xd = (Real_t *)malloc(size * sizeof(Real_t));
-      yd = (Real_t *)malloc(size * sizeof(Real_t));
-      zd = (Real_t *)malloc(size * sizeof(Real_t));
-      memset(xd, 0x00, size * sizeof(Real_t));
-      memset(yd, 0x00, size * sizeof(Real_t));
-      memset(zd, 0x00, size * sizeof(Real_t));
-
-      xdd = (Real_t *)malloc(size * sizeof(Real_t));
-      ydd = (Real_t *)malloc(size * sizeof(Real_t));
-      zdd = (Real_t *)malloc(size * sizeof(Real_t));
-      memset(xdd, 0x00, size * sizeof(Real_t));
-      memset(ydd, 0x00, size * sizeof(Real_t));
-      memset(zdd, 0x00, size * sizeof(Real_t));
-
-      fx = (Real_t *)malloc(size * sizeof(Real_t));
-      fy = (Real_t *)malloc(size * sizeof(Real_t));
-      fz = (Real_t *)malloc(size * sizeof(Real_t));
-
-      nodalMass = (Real_t *)malloc(size * sizeof(Real_t));
-      memset(nodalMass, 0x00, size * sizeof(Real_t));
-   }
-
-   void AllocateElemPersistent(size_t size)
-   {
-      matElemlist = (Index_t *)malloc(size * sizeof(Index_t));
-      nodelist = (Index_t*)malloc(size * 8 * sizeof(Index_t));
-
-      lxim   = (Index_t*)malloc(size * sizeof(Index_t));
-      lxip   = (Index_t*)malloc(size * sizeof(Index_t));
-      letam  = (Index_t*)malloc(size * sizeof(Index_t));
-      letap  = (Index_t*)malloc(size * sizeof(Index_t));
-      lzetam = (Index_t*)malloc(size * sizeof(Index_t));
-      lzetap = (Index_t*)malloc(size * sizeof(Index_t));
-
-      elemBC = (Int_t *)malloc(size * sizeof(Int_t));
-
-      e = (Real_t *)malloc(size * sizeof(Real_t));
-      memset(e, 0x00, size * sizeof(Real_t));
-
-      p = (Real_t*)malloc(size * sizeof(Real_t));
-      memset(p, 0x00, size * sizeof(Real_t));
-      q = (Real_t*)malloc(size * sizeof(Real_t));
-      ql= (Real_t*)malloc(size * sizeof(Real_t));
-      qq= (Real_t*)malloc(size * sizeof(Real_t));
-
-      v = (Real_t *)malloc(size * sizeof(Real_t));
-      for (int i = 0; i < size; i++) v[i] = 1.0;
-
-      volo = (Real_t*)malloc(size * sizeof(Real_t));
-      delv = (Real_t*)malloc(size * sizeof(Real_t));
-      vdov = (Real_t*)malloc(size * sizeof(Real_t));
-
-      arealg = (Real_t *)malloc(size * sizeof(Real_t));
-  
-      ss = (Real_t*)malloc(size * sizeof(Real_t));
-
-      elemMass = (Real_t*)malloc(size * sizeof(Real_t));
-   }
-
-   /* Temporaries should not be initialized in bulk but */
-   /* this is a runnable placeholder for now */
-   void AllocateElemTemporary(size_t size)
-   {
-      dxx = (Real_t*)malloc(size * sizeof(Real_t));
-      dyy = (Real_t*)malloc(size * sizeof(Real_t));
-      dzz = (Real_t*)malloc(size * sizeof(Real_t));
-
-      delv_xi   = (Real_t*)malloc(size * sizeof(Real_t));
-      delv_eta  = (Real_t*)malloc(size * sizeof(Real_t));
-      delv_zeta = (Real_t*)malloc(size * sizeof(Real_t));
-
-      delx_xi  = (Real_t*)malloc(size * sizeof(Real_t));
-      delx_eta = (Real_t*)malloc(size * sizeof(Real_t));
-      delx_zeta= (Real_t*)malloc(size * sizeof(Real_t));
-
-      vnew = (Real_t*)malloc(size * sizeof(Real_t));
-   }
-
-   void AllocateNodesets(size_t size)
-   {
-      symmX = (Index_t*)malloc(size * sizeof(Index_t));
-      symmY = (Index_t*)malloc(size * sizeof(Index_t));
-      symmZ = (Index_t*)malloc(size * sizeof(Index_t));
-   }
    
    /**********/
    /* Access */
@@ -435,6 +341,104 @@ struct Mesh {
    Index_t   numElem ;         /* Elements/Nodes in this domain */
    Index_t   numNode ;
 } mesh ;
+
+
+   /**************/
+   /* Allocation */
+   /**************/
+
+   void AllocateNodalPersistent(Mesh *mesh, size_t size)
+   {
+      mesh->x = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->y = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->z = (Real_t *)malloc(size * sizeof(Real_t));
+
+      mesh->xd = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->yd = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->zd = (Real_t *)malloc(size * sizeof(Real_t));
+      memset(mesh->xd, 0x00, size * sizeof(Real_t));
+      memset(mesh->yd, 0x00, size * sizeof(Real_t));
+      memset(mesh->zd, 0x00, size * sizeof(Real_t));
+
+      mesh->xdd = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->ydd = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->zdd = (Real_t *)malloc(size * sizeof(Real_t));
+      memset(mesh->xdd, 0x00, size * sizeof(Real_t));
+      memset(mesh->ydd, 0x00, size * sizeof(Real_t));
+      memset(mesh->zdd, 0x00, size * sizeof(Real_t));
+
+      mesh->fx = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->fy = (Real_t *)malloc(size * sizeof(Real_t));
+      mesh->fz = (Real_t *)malloc(size * sizeof(Real_t));
+
+      mesh->nodalMass = (Real_t *)malloc(size * sizeof(Real_t));
+      memset(mesh->nodalMass, 0x00, size * sizeof(Real_t));
+   }
+
+   void AllocateElemPersistent(Mesh *mesh, size_t size)
+   {
+      mesh->matElemlist = (Index_t *)malloc(size * sizeof(Index_t));
+      mesh->nodelist = (Index_t*)malloc(size * 8 * sizeof(Index_t));
+
+      mesh->lxim   = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->lxip   = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->letam  = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->letap  = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->lzetam = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->lzetap = (Index_t*)malloc(size * sizeof(Index_t));
+
+      mesh->elemBC = (Int_t *)malloc(size * sizeof(Int_t));
+
+      mesh->e = (Real_t *)malloc(size * sizeof(Real_t));
+      memset(mesh->e, 0x00, size * sizeof(Real_t));
+
+      mesh->p = (Real_t*)malloc(size * sizeof(Real_t));
+      memset(mesh->p, 0x00, size * sizeof(Real_t));
+      mesh->q = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->ql= (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->qq= (Real_t*)malloc(size * sizeof(Real_t));
+
+      mesh->v = (Real_t *)malloc(size * sizeof(Real_t));
+      for (int i = 0; i < size; i++) (mesh->v)[i] = 1.0;
+
+      mesh->volo = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->delv = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->vdov = (Real_t*)malloc(size * sizeof(Real_t));
+
+      mesh->arealg = (Real_t *)malloc(size * sizeof(Real_t));
+  
+      mesh->ss = (Real_t*)malloc(size * sizeof(Real_t));
+
+      mesh->elemMass = (Real_t*)malloc(size * sizeof(Real_t));
+   }
+
+   /* Temporaries should not be initialized in bulk but */
+   /* this is a runnable placeholder for now */
+   void AllocateElemTemporary(Mesh *mesh, size_t size)
+   {
+      mesh->dxx = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->dyy = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->dzz = (Real_t*)malloc(size * sizeof(Real_t));
+
+      mesh->delv_xi   = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->delv_eta  = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->delv_zeta = (Real_t*)malloc(size * sizeof(Real_t));
+
+      mesh->delx_xi  = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->delx_eta = (Real_t*)malloc(size * sizeof(Real_t));
+      mesh->delx_zeta= (Real_t*)malloc(size * sizeof(Real_t));
+
+      mesh->vnew = (Real_t*)malloc(size * sizeof(Real_t));
+   }
+
+   void AllocateNodesets(Mesh *mesh, size_t size)
+   {
+      mesh->symmX = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->symmY = (Index_t*)malloc(size * sizeof(Index_t));
+      mesh->symmZ = (Index_t*)malloc(size * sizeof(Index_t));
+   }
+
+
 
 
 /* Stuff needed for boundary conditions */
@@ -1586,7 +1590,7 @@ Real_t CalcElemVolume( const Real_t x0, const Real_t x1,
 }
 
 static inline
-Real_t CalcElemVolume( const Real_t x[8], const Real_t y[8], const Real_t z[8] )
+Real_t CalcElemVolumeWrapper( const Real_t x[8], const Real_t y[8], const Real_t z[8] )
 {
 return CalcElemVolume( x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7],
                        y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7],
@@ -1662,15 +1666,15 @@ static inline
 void CalcElemVelocityGrandient( const Real_t* const xvel,
                                 const Real_t* const yvel,
                                 const Real_t* const zvel,
-                                const Real_t b[][8],
+                                Real_t b[][8],
                                 const Real_t detJ,
                                 Real_t* const d )
 {
   Real_t inv_detJ = Real_t(1.0) / detJ ;
   Real_t dyddx, dxddy, dzddx, dxddz, dzddy, dyddz;
-  const Real_t* const pfx = b[0];
-  const Real_t* const pfy = b[1];
-  const Real_t* const pfz = b[2];
+  Real_t* pfx = b[0];
+  Real_t* pfy = b[1];
+  Real_t* pfz = b[2];
 
   d[0] = inv_detJ * ( pfx[0] * (xvel[0]-xvel[6])
                      + pfx[1] * (xvel[1]-xvel[7])
@@ -1739,7 +1743,7 @@ void CalcKinematicsForElems( Index_t numElem, Real_t dt )
   {
     Real_t volume ;
     Real_t relativeVolume ;
-    const Index_t* const elemToNode = &mesh.nodelist[8 * k] ;
+    Index_t* elemToNode = &mesh.nodelist[8 * k] ;
 
     // get nodal coordinates from global arrays and copy into local arrays.
     for( Index_t lnode=0 ; lnode<8 ; ++lnode )
@@ -1751,7 +1755,7 @@ void CalcKinematicsForElems( Index_t numElem, Real_t dt )
     }
 
     // volume calculations
-    volume = CalcElemVolume(x_local, y_local, z_local );
+    volume = CalcElemVolumeWrapper(x_local, y_local, z_local );
     relativeVolume = volume / mesh.volo[k];
     mesh.vnew[k] = relativeVolume ;
     mesh.delv[k] = relativeVolume - mesh.v[k] ;
@@ -1833,7 +1837,7 @@ void CalcMonotonicQGradientsForElems()
 {
 #define SUM4(a,b,c,d) (a + b + c + d)
    Index_t numElem = mesh.numElem ;
-   const Real_t ptiny = Real_t(1.e-36) ;
+   Real_t ptiny = Real_t(1.e-36) ;
 
    for (Index_t i = 0 ; i < numElem ; ++i ) {
       Real_t ax,ay,az ;
@@ -2120,7 +2124,7 @@ void CalcMonotonicQForElems()
    //
    // initialize parameters
    // 
-   const Real_t ptiny        = Real_t(1.e-36) ;
+   Real_t ptiny        = Real_t(1.e-36) ;
    Real_t monoq_max_slope    = mesh.monoq_max_slope ;
    Real_t monoq_limiter_mult = mesh.monoq_limiter_mult ;
 
@@ -2216,7 +2220,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
                         Real_t eosvmax,
                         Index_t length)
 {
-   const Real_t sixth = Real_t(1.0) / Real_t(6.0) ;
+   Real_t sixth = Real_t(1.0) / Real_t(6.0) ;
    Real_t *pHalfStep = (Real_t*)malloc(sizeof(Real_t)*length) ;
 
    for (Index_t i = 0 ; i < length ; ++i) {
@@ -2541,7 +2545,7 @@ void UpdateVolumesForElems()
 static inline
 void LagrangeElements()
 {
-  const Real_t deltatime = mesh.deltatime ;
+  Real_t deltatime = mesh.deltatime ;
 
   CalcLagrangeElements(deltatime) ;
 
@@ -2679,11 +2683,11 @@ int main(int argc, char *argv[])
 
    /* allocate field memory */
 
-   mesh.AllocateElemPersistent(mesh.numElem) ;
-   mesh.AllocateElemTemporary (mesh.numElem) ;
+   AllocateElemPersistent(&mesh, mesh.numElem) ;
+   AllocateElemTemporary (&mesh, mesh.numElem) ;
 
-   mesh.AllocateNodalPersistent(mesh.numNode) ;
-   mesh.AllocateNodesets(edgeNodes*edgeNodes) ;
+   AllocateNodalPersistent(&mesh, mesh.numNode) ;
+   AllocateNodesets(&mesh, edgeNodes*edgeNodes) ;
 
 
    /* initialize nodal coordinates */
@@ -2790,7 +2794,7 @@ int main(int argc, char *argv[])
       }
 
       // volume calculations
-      Real_t volume = CalcElemVolume(x_local, y_local, z_local );
+      Real_t volume = CalcElemVolumeWrapper(x_local, y_local, z_local );
       mesh.volo[i] = volume ;
       mesh.elemMass[i] = volume ;
       for (Index_t j=0; j<8; ++j) {

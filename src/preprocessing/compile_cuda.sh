@@ -118,6 +118,7 @@ CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
+INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
@@ -165,6 +166,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
     else
         touch ${INFO_FILE_PREFIX}.omp.info
     fi
+
+    echo Inserting line pragmas in ${INTERMEDIATE_FILE}
+    cd ${NVCC_WORK_DIR} && cat ${INTERMEDIATE_FILE} | python ${INSERT_LINES} \
+        ${INPUT} > ${INTERMEDIATE_FILE}.lines
+    mv ${INTERMEDIATE_FILE}.lines ${INTERMEDIATE_FILE}
 
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \

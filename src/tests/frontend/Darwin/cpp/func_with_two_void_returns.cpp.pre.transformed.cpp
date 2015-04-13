@@ -1724,21 +1724,34 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp" 2
-
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 int a = 3;
-
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 void haha_this_sux2() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
-    if (a) {
-        rm_stack(false, 0UL); return;
-    } else {
-        rm_stack(false, 0UL); return;
-    }
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ if (a) {
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ rm_stack(false, 0UL); return;
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ } else {
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ rm_stack(false, 0UL); return;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ }
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 rm_stack(false, 0UL); }
-
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(19UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
-     call_lbl_0: calling(0, 0UL, 0); haha_this_sux2();
-    alias_group_changed(3, (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
-    rm_stack(false, 0UL); return 0;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ call_lbl_0: calling(0, 0UL, 0); haha_this_sux2();
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ alias_group_changed(3, (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
+ rm_stack(false, 0UL); return 0;
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 }
 
 
