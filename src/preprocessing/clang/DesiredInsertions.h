@@ -11,13 +11,13 @@
 #include "clang/AST/Decl.h"
 #include "clang/AST/Stmt.h"
 #include "clang/Basic/SourceManager.h"
-#include "LineNoSet.h"
+#include "CollapsedLines.h"
 
 extern std::string curr_func;
 
 class OpenMPPragma {
     public:
-        OpenMPPragma(Line* set_line,
+        OpenMPPragma(int set_line,
                 std::string set_pragma, std::string set_pragma_name) :
                 line(set_line), pragma(set_pragma),
                 pragma_name(set_pragma_name) { }
@@ -28,7 +28,8 @@ class OpenMPPragma {
             clauses[clause_name] = clause_arguments;
         }
 
-        Line* get_line() { return line; }
+        int get_line() { return line; }
+        void update_line(int set_line) { line = set_line; }
         std::string get_pragma() { return pragma; }
 
         std::string get_pragma_name() { return pragma_name; }
@@ -37,7 +38,7 @@ class OpenMPPragma {
         }
 
     private:
-        Line* line;
+        int line;
         std::string pragma;
 
         std::string pragma_name;
@@ -91,28 +92,29 @@ class FunctionArgumentAliasGroups {
 
 class AliasesPassedToCallSite {
     public:
-        AliasesPassedToCallSite(std::string set_funcname, Line* set_line,
+        AliasesPassedToCallSite(std::string set_funcname, int set_line,
                 int set_col, size_t set_return_alias) : funcname(set_funcname),
                 line(set_line), col(set_col), return_alias(set_return_alias) {}
 
         std::string get_funcname() { return funcname; }
-        Line* get_line() { return line; }
+        int get_line() { return line; }
+        void update_line(int set_line) { line = set_line; }
         void add_alias_no(size_t alias_no) { alias_nos.push_back(alias_no); }
         int nparams() { return alias_nos.size(); }
         size_t alias_no_for(int arg) { return alias_nos[arg]; }
         size_t get_return_alias() { return return_alias; }
 
         bool operator < (const AliasesPassedToCallSite& other) const {
-            if (line->get() == other.line->get()) {
+            if (line == other.line) {
                 return col < other.col;
             } else {
-                return line->get() < other.line->get();
+                return line < other.line;
             }
         }
 
     private:
         std::string funcname;
-        Line* line;
+        int line;
         int col;
         size_t return_alias;
         std::vector<size_t> alias_nos;
@@ -121,13 +123,13 @@ class AliasesPassedToCallSite {
 class HeapAlloc {
 public:
     HeapAlloc() { }
-    HeapAlloc(Line* set_line_no, int set_col, size_t set_group,
+    HeapAlloc(int set_line_no, int set_col, size_t set_group,
             std::string set_fname) : line_no(set_line_no), col(set_col),
             group(set_group), fname(set_fname), is_elem_ptr(false),
             is_elem_struct(false) {}
 
     void incr_col(int i) { col += i; }
-    Line *get_line_no() { return line_no; }
+    int get_line_no() { return line_no; }
     int get_col() { return col; }
     size_t get_group() { return group; }
     std::string get_fname() { return fname; }
@@ -155,15 +157,15 @@ public:
     }
 
     bool operator < (const HeapAlloc& other) const {
-        if (line_no->get() == other.line_no->get()) {
+        if (line_no == other.line_no) {
             return col < other.col;
         } else {
-            return line_no->get() < other.line_no->get();
+            return line_no < other.line_no;
         }
     }
 
 private:
-    Line* line_no;
+    int line_no;
     int col;
     size_t group;
     std::string fname;
@@ -225,21 +227,27 @@ private:
     std::vector<std::string> fields;
 };
 
+/*
+ * This class can store an explicit line number without updating it because it
+ * is only used in the first pass (before any line number changes can be
+ * introduced).
+ */
 class StateChangeInsertion {
 public:
-    StateChangeInsertion(std::string set_filename, Line* set_line_no, int set_col,
+    StateChangeInsertion(std::string set_filename, int set_line_no, int set_col,
             std::vector<size_t> *set_groups) : filename(set_filename),
             line_no(set_line_no), col(set_col), groups(set_groups) {
     }
 
-    Line* get_line() { return line_no; }
+    int get_line() { return line_no; }
     int get_col() { return col; }
+    void update_line(int set_line) { line_no = set_line; }
     std::string get_filename() { return filename; }
     std::vector<size_t> *get_groups() { return groups; }
 
 private:
     std::string filename;
-    Line* line_no;
+    int line_no;
     int col;
     std::vector<size_t> *groups;
 };
@@ -280,8 +288,8 @@ public:
         diagnostics.close();
     }
 
-    bool contains(Line* line, int col, const char *filename);
-    std::vector<size_t> *get_groups(Line* line, int col, const char *filename);
+    bool contains(int line, int col, const char *filename);
+    std::vector<size_t> *get_groups(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
     std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
@@ -295,7 +303,7 @@ public:
     }
 
     StackAlloc *findStackAlloc(std::string mangled_name);
-    bool findNextMatchingMemoryAllocation(Line* line, std::string func,
+    bool findNextMatchingMemoryAllocation(int line, std::string func,
             HeapAlloc *ret);
 
     void updateMainFile(std::string file) {
@@ -316,15 +324,17 @@ public:
             std::string val, clang::SourceManager &SM);
 
     FunctionExit *getFunctionExitInfo(std::string funcname);
-    AliasesPassedToCallSite findFirstMatchingCallsite(Line* line,
+    AliasesPassedToCallSite findFirstMatchingCallsite(int line,
             std::string callee_name);
     FunctionArgumentAliasGroups findMatchingFunction(std::string func);
+
+    void add_line_collapse(int start, int end);
+    int lookup_new_line(int line);
+    void update_line_numbers();
 
     size_t get_module_id() {
         return module_id;
     }
-
-    LineNoSet& get_lines() { return lines; }
 
 private:
         std::string lines_info_file, struct_info_file,
@@ -333,12 +343,12 @@ private:
             omp_file;
         std::ofstream diagnostics;
 
-        LineNoSet lines;
+        std::vector<CollapsedLines> transforms;
 
         std::vector<StateChangeInsertion *> *state_change_insertions;
         std::vector<StructFields *> *struct_fields;
         std::map<std::string, StackAlloc *> *stack_allocs;
-        std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *heap_allocs;
+        std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *heap_allocs;
         std::vector<FunctionArgumentAliasGroups> *functions;
         std::vector<AliasesPassedToCallSite> *callsites;
         std::map<std::string, FunctionExit *> *func_exits;
@@ -348,7 +358,7 @@ private:
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
         std::map<std::string, StackAlloc *> *parseStackAllocs();
-        std::map<Line*, std::map<std::string, std::vector<HeapAlloc> *> *> *parseHeapAllocs();
+        std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *parseHeapAllocs();
         std::vector<FunctionArgumentAliasGroups> *parseFunctions();
         std::vector<AliasesPassedToCallSite> *parseCallSites();
         std::map<std::string, FunctionExit *> *parseFunctionExits();

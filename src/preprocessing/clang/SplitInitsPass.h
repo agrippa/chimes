@@ -12,7 +12,7 @@
 
 class SplitInitsPass : public ParentTransform {
 public:
-    SplitInitsPass(LineNoSet& set_lines) : ParentTransform(set_lines) { }
+    SplitInitsPass() { }
 
     void VisitStmt(const clang::Stmt *s) override;
     bool usesStackInfo() override { return false; }

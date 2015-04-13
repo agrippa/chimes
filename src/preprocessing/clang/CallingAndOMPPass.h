@@ -45,7 +45,7 @@ class CallLocation {
 
 class CallingAndOMPPass : public ParentTransform {
 public:
-    CallingAndOMPPass(LineNoSet& set_lines) : ParentTransform(set_lines) { }
+    CallingAndOMPPass() { }
 
     void VisitStmt(const clang::Stmt *s) override;
     void VisitTopLevel(clang::Decl *toplevel) override;
@@ -59,7 +59,7 @@ public:
 private:
     std::map<clang::VarDecl *, StackAlloc *> hasValidDeclarations(
             const clang::DeclStmt *d);
-    std::map<Line*, std::vector<CallLocation>> calls_found;
+    std::map<int, std::vector<CallLocation>> calls_found;
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
@@ -69,8 +69,8 @@ private:
      * safe to use a line here because no more than one pragma can appear on
      * each line.
      */
-    std::map<Line *, const clang::Stmt *> predecessors;
-    std::map<Line *, const clang::Stmt *> successors;
+    std::map<int, const clang::Stmt *> predecessors;
+    std::map<int, const clang::Stmt *> successors;
 
     std::string handleDecl(const clang::DeclStmt *d,
             std::map<clang::VarDecl *, StackAlloc *> allocs,

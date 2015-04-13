@@ -334,17 +334,17 @@ int main(int argc, const char **argv) {
    * This pass also gets messed up if the input filename isn't the original
    * file.
    */
-  passes.push_back(new Pass(new AliasChangedPass(insertions->get_lines()), ".alias"));
-  passes.push_back(new Pass(new MallocPass(insertions->get_lines()), ".malloc"));
-  passes.push_back(new Pass(new StartExitPass(insertions->get_lines()), ".start"));
-  passes.push_back(new Pass(new InitPass(insertions->get_lines()), ".init"));
-  passes.push_back(new Pass(new SplitInitsPass(insertions->get_lines()), ".split"));
+  passes.push_back(new Pass(new AliasChangedPass(), ".alias"));
+  passes.push_back(new Pass(new MallocPass(), ".malloc"));
+  passes.push_back(new Pass(new StartExitPass(), ".start"));
+  passes.push_back(new Pass(new InitPass(), ".init"));
+  passes.push_back(new Pass(new SplitInitsPass(), ".split"));
   /*
    * It is required that CallingAndOMPPass run after SplitInitsPass in case a
    * variable is initialized with a function call, which would cause problems
    * with inserting jumps to that call.
    */
-  passes.push_back(new Pass(new CallingAndOMPPass(insertions->get_lines()), ".register"));
+  passes.push_back(new Pass(new CallingAndOMPPass(), ".register"));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
       NumDebugFrontendAction<TransformASTConsumer>>();
@@ -377,6 +377,8 @@ int main(int argc, const char **argv) {
       if (err) return err;
 
       first_pass = false;
+
+      insertions->update_line_numbers();
   }
 
   delete insertions;

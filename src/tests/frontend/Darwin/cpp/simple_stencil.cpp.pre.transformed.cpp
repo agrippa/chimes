@@ -516,6 +516,7 @@ FILE *funopen(const void *,
 # 5 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
@@ -1711,6 +1712,7 @@ void *valloc(size_t);
 
 }
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 
 # 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
 # 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
@@ -1718,39 +1720,67 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
-
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(151UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-     lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int iter; register_stack_var("main|iter|0", "i32", (void *)(&iter), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; }
-      lbl_2: int N; register_stack_var("main|N|0", "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } N = (1024);
-      lbl_3: int niters; register_stack_var("main|niters|0", "i32", (void *)(&niters), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } niters = (10000);
-
-      lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 27UL, 0, 0));
-      lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 27UL, 0, 0));
-    for (i = 0; i < N; i++) {
-         call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
-    }
-
-    for (iter = 0; iter < niters; iter++) {
-        printf("%d / %d\n", iter + 1, niters);
-        for (i = 1; i < N - 1; i++) {
-            next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
-        }
-          lbl_6: int *tmp; register_stack_var("main|tmp|0", "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } tmp = (curr);
-        curr = next;
-        next = tmp;
-
-        alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(27UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
-    }
-
-      lbl_7: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
-    for (i = 0; i < N; i++) {
-        fprintf(fp, "%d\n", curr[i]);
-    }
-     call_lbl_2: calling(2, 0UL, 1, (size_t)(129UL)); fclose(fp);
-
-    free_wrapper(curr, 27UL);
-    free_wrapper(next, 27UL);
-    alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(11UL), (size_t)(27UL)); rm_stack(false, 0UL); return 0;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int iter; register_stack_var("main|iter|0", "i32", (void *)(&iter), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; }
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_2: int N; register_stack_var("main|N|0", "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } N = (1024);
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_3: int niters; register_stack_var("main|niters|0", "i32", (void *)(&niters), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } niters = (10000);
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_4: int *curr; register_stack_var("main|curr|0", "i32*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } curr = ((int *)malloc_wrapper(N * sizeof(int), 27UL, 0, 0));
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_5: int *next; register_stack_var("main|next|0", "i32*", (void *)(&next), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } next = ((int *)malloc_wrapper(N * sizeof(int), 27UL, 0, 0));
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (i = 0; i < N; i++) {
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ call_lbl_0: calling(0, 0UL, 0); curr[i] = next[i] = rand() % 100;
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (iter = 0; iter < niters; iter++) {
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ printf("%d / %d\n", iter + 1, niters);
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (i = 1; i < N - 1; i++) {
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_6: int *tmp; register_stack_var("main|tmp|0", "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } tmp = (curr);
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ curr = next;
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ next = tmp;
+# 25 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 26 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(27UL)); call_lbl_1: calling(1, 0UL, 0); checkpoint();
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 29 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ lbl_7: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
+# 30 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (i = 0; i < N; i++) {
+# 31 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ fprintf(fp, "%d\n", curr[i]);
+# 32 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 33 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ call_lbl_2: calling(2, 0UL, 1, (size_t)(129UL)); fclose(fp);
+# 34 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 35 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ free_wrapper(curr, 27UL);
+# 36 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ free_wrapper(next, 27UL);
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(11UL), (size_t)(27UL)); rm_stack(false, 0UL); return 0;
+# 38 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 }
 
 

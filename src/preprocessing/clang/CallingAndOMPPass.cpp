@@ -258,16 +258,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         InsertTextAfterToken(post_loc, " leaving_omp_parallel(); ");
     }
 
-    std::vector<Line*> sorted_lines; // for deterministic code generation
-    for (std::map<Line*, std::vector<CallLocation>>::iterator i =
+    for (std::map<int, std::vector<CallLocation>>::iterator i =
             calls_found.begin(), e = calls_found.end(); i != e; i++) {
-        sorted_lines.push_back(i->first);
-    }
-    std::sort(sorted_lines.begin(), sorted_lines.end(), line_ptr_comparator);
-
-    for (std::vector<Line*>::iterator i = sorted_lines.begin(),
-            e = sorted_lines.end(); i != e; i++) {
-        std::vector<CallLocation> calls = calls_found[*i];
+        std::vector<CallLocation> calls = i->second;
         std::sort(calls.begin(), calls.end());
 
         for (std::vector<CallLocation>::iterator ii = calls.begin(),
@@ -277,7 +270,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             ompTree->add_function_call(loc.get_call(), loc.get_label());
 
             AliasesPassedToCallSite callsite =
-                insertions->findFirstMatchingCallsite(*i,
+                insertions->findFirstMatchingCallsite(i->first,
                         loc.get_call()->getDirectCallee()->getNameAsString());
 
             std::stringstream ss;
@@ -325,7 +318,7 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                 e = omp_pragmas->end(); i != e; i++) {
             OpenMPPragma pragma = *i;
 
-            if (presumed_end.getLine() < pragma.get_line()->get()) {
+            if (presumed_end.getLine() < pragma.get_line()) {
                 if (predecessors.find(pragma.get_line()) ==
                         predecessors.end()) {
                     predecessors[pragma.get_line()] = s;
@@ -341,7 +334,7 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                 }
             }
 
-            if (presumed_start.getLine() >= pragma.get_line()->get()) {
+            if (presumed_start.getLine() >= pragma.get_line()) {
                 if (successors.find(pragma.get_line()) == successors.end()) {
                     successors[pragma.get_line()] = s;
                 } else {
@@ -373,7 +366,7 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                     !clang::isa<const clang::CXXConstructExpr>(call)) {
 
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);
-                Line* line_no = lines.get(presumed.getLine());
+                int line_no = presumed.getLine();
 
                 if (calls_found.find(line_no) == calls_found.end()) {
                     calls_found[line_no] =

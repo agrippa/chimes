@@ -112,6 +112,7 @@ CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
+INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
@@ -142,6 +143,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -o ${PREPROCESS_FILE} -g ${LINKER_FLAGS} \
            -include${CHIMES_HOME}/src/libchimes/libchimes.h \
            -include stddef.h -include stdio.h ${CHIMES_DEF} ${DEFINES}
+
+    echo Inserting line pragmas in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
+           ${PREPROCESS_FILE}.lines
+    mv ${PREPROCESS_FILE}.lines ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \

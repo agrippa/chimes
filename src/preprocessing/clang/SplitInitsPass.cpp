@@ -105,13 +105,16 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                         full_decl << "{ " << acc_decl.str();
                         InsertAtFront(f, full_decl.str());
                         InsertTextAfterToken(f->getLocEnd(), " }");
-                        // InsertTextAfterToken(end, acc_init.str());
                         ReplaceText(rng, acc_init.str());
+                        insertions->add_line_collapse(
+                                startingLine(f->getInit()),
+                                endingLine(f->getInit()));
                     } else {
                         std::stringstream complete;
                         complete << acc_decl.str() << acc_init.str();
                         ReplaceText(rng, complete.str());
-                        // InsertTextAfterToken(end, complete.str());
+                        insertions->add_line_collapse(startingLine(s),
+                                endingLine(s));
                     }
                     break;
                 }
@@ -119,7 +122,8 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                     std::stringstream complete;
                     complete << acc_decl.str() << acc_init.str();
                     ReplaceText(rng, complete.str());
-                    // InsertTextAfterToken(end, complete.str());
+                    insertions->add_line_collapse(startingLine(s),
+                            endingLine(s));
                     break;
                 }
             }

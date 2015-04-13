@@ -12,7 +12,7 @@
 
 class ParentTransform : public clang::ConstStmtVisitor<ParentTransform> {
 public:
-    ParentTransform(LineNoSet& set_lines) : lines(set_lines) { }
+    ParentTransform() { }
 
     void setRewriter(clang::Rewriter &R) {
         rewriter = &R;
@@ -46,7 +46,6 @@ protected:
     clang::ASTContext *Context;
     clang::SourceManager *SM;
     const clang::Stmt *parent;
-    LineNoSet &lines;
 
     std::string constructRegisterStackVarArgs(StackAlloc *alloc);
     std::string constructRegisterStackVar(StackAlloc *alloc);
@@ -76,6 +75,9 @@ protected:
     std::map<const clang::Stmt *, const clang::Stmt *> *getParentMap() {
         return &parentMap;
     }
+
+    int startingLine(const clang::Stmt *stmt);
+    int endingLine(const clang::Stmt *stmt);
 
 private:
     clang::Rewriter *rewriter;

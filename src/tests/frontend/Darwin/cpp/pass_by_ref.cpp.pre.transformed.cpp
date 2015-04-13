@@ -516,6 +516,7 @@ FILE *funopen(const void *,
 # 5 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
@@ -1711,6 +1712,7 @@ void *valloc(size_t);
 
 }
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp" 2
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 
 # 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
 # 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
@@ -1718,14 +1720,21 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp" 2
-
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 extern void foo(int *A);
-
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(16UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-     lbl_0: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
-    alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(4UL)); foo(&b);
-     call_lbl_1: calling(1, 0UL, 0); checkpoint();
-    rm_stack(false, 0UL); return b;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ lbl_0: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } } }
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 1, (size_t)(4UL)); foo(&b);
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ call_lbl_1: calling(1, 0UL, 0); checkpoint();
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ rm_stack(false, 0UL); return b;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 }
 
 
