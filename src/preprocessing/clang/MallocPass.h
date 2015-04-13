@@ -32,6 +32,7 @@ class MallocPass : public ParentTransform {
 public:
     MallocPass() {
         supportedAllocationFunctions.insert("malloc");
+        supportedAllocationFunctions.insert("calloc");
         supportedAllocationFunctions.insert("realloc");
         supportedAllocationFunctions.insert("free");
         supportedAllocationFunctions.insert("cudaMalloc");

@@ -7,14 +7,17 @@
 #include <clang/AST/Stmt.h>
 #include <llvm/Support/raw_ostream.h>
 
+using namespace std;
+
 extern DesiredInsertions *insertions;
 
 void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
    
     // For each line that has a memory allocation or free statement
-    for (std::map<int, std::map<std::string, std::vector<FoundAlloc> *> *>::iterator i = found_allocs.begin(), e = found_allocs.end(); i != e; i++) {
+    for (map<int, map<string, vector<FoundAlloc> *> *>::iterator i =
+            found_allocs.begin(), e = found_allocs.end(); i != e; i++) {
         int line = i->first;
-        std::map<std::string, std::vector<FoundAlloc> *> *per_line = i->second;
+        map<string, vector<FoundAlloc> *> *per_line = i->second;
 
         for (std::map<std::string, std::vector<FoundAlloc> *>::iterator ii =
                 per_line->begin(), ee = per_line->end(); ii != ee; ii++) {
@@ -50,6 +53,7 @@ void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
                 ss2 << ", " << alloc.get_group() << "UL";
 
                 if (alloc.get_fname() == "malloc" ||
+                        alloc.get_fname() == "calloc" ||
                         alloc.get_fname() == "cudaMalloc") {
                     /*
                      * This is already asserted while generating heap.info from

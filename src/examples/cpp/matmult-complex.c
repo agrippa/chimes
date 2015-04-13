@@ -2,6 +2,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
+#include "checkpoint.h"
+
 #define OFFSET(i, j, interior) ((i) * (interior) + (j))
 
 static void usage(char **argv) {
@@ -21,6 +23,7 @@ static void matmult(int **A, int **B, int **C, int M, int N, int P) {
             }
             C[i][j] = sum;
         }
+        checkpoint();
     }
 }
 

@@ -44,7 +44,10 @@ void register_stack_var(const char *mangled_name, unsigned thread,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 int alias_group_changed(int ngroups, ...);
-void *malloc_wrapper(size_t nbytes, size_t group, int has_type_info, ...);
+void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
+        ...);
+void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 void free_wrapper(void *ptr, size_t group);
 
@@ -151,11 +154,11 @@ static size_t parent_aliases_length = 0;
 #ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     INIT_MODULE, REGISTER_GLOBAL_VAR, ALIAS_GROUP_CHANGED, MALLOC_WRAPPER,
-    REALLOC_WRAPPER, FREE_WRAPPER, N_LABELS };
+    REALLOC_WRAPPER, FREE_WRAPPER, CALLOC_WRAPPER, N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
     "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
-    "free_wrapper" };
+    "free_wrapper", "calloc_wrapper" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
@@ -943,6 +946,35 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
     pp.stop_timer(MALLOC_WRAPPER);
 #endif
     return ptr;
+}
+
+void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...) {
+#ifdef __CHIMES_PROFILE
+    pp.start_timer(CALLOC_WRAPPER);
+#endif
+    assert(valid_group(group));
+
+    void *ptr = calloc(num, size);
+
+    if (ptr != NULL) {
+        chimes_type_info info; memset(&info, 0x00, sizeof(info));
+
+        if (is_struct) {
+            va_list vl;
+            va_start(vl, is_struct);
+            parse_type_info(vl, &info);
+            va_end(vl);
+        }
+        malloc_helper(ptr, num * size, group, 0, is_ptr, is_struct,
+                info.elem_size, info.ptr_field_offsets, info.n_ptr_fields);
+    }
+
+#ifdef __CHIMES_PROFILE
+    pp.stop_timer(CALLOC_WRAPPER);
+#endif
+    return ptr;
+
 }
 
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
