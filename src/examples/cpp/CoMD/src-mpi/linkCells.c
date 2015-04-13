@@ -67,7 +67,6 @@
 #include <math.h>
 
 #include "parallel.h"
-#include "memUtils.h"
 #include "decomposition.h"
 #include "performanceTimers.h"
 #include "CoMDTypes.h"
@@ -83,7 +82,7 @@ static void getTuple(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp);
 LinkCell* initLinkCells(const Domain* domain, real_t cutoff)
 {
    assert(domain);
-   LinkCell* ll = comdMalloc(sizeof(LinkCell));
+   LinkCell* ll = malloc(sizeof(LinkCell));
 
    for (int i = 0; i < 3; i++)
    {
@@ -102,7 +101,7 @@ LinkCell* initLinkCells(const Domain* domain, real_t cutoff)
 
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
    
-   ll->nAtoms = comdMalloc(ll->nTotalBoxes*sizeof(int));
+   ll->nAtoms = malloc(ll->nTotalBoxes*sizeof(int));
    for (int iBox=0; iBox<ll->nTotalBoxes; ++iBox)
       ll->nAtoms[iBox] = 0;
 
@@ -115,8 +114,8 @@ void destroyLinkCells(LinkCell** boxes)
    if (! boxes) return;
    if (! *boxes) return;
 
-   comdFree((*boxes)->nAtoms);
-   comdFree(*boxes);
+   free((*boxes)->nAtoms);
+   free(*boxes);
    *boxes = NULL;
 
    return;
