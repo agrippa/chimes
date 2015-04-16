@@ -81,7 +81,7 @@ void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
                                 struct_field_ptrs->begin(), p_e =
                                 struct_field_ptrs->end(); p_i != p_e; p_i++) {
                             std::string fieldname = *p_i;
-                            ss2 << ", (int)offsetof(struct " <<
+                            ss2 << ", (int)__builtin_offsetof(struct " <<
                                 alloc.get_struct_type_name() << ", " <<
                                 fieldname << ")";
                         }
@@ -110,23 +110,25 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
 
         if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
             const clang::FunctionDecl *callee = call->getDirectCallee();
-            std::string funcname = callee->getNameAsString();
+            if (callee != NULL) {
+                std::string funcname = callee->getNameAsString();
 
-            if (supportedAllocationFunctions.find(funcname) !=
-                    supportedAllocationFunctions.end()) {
-                if (found_allocs.find(start_line) == found_allocs.end()) {
-                    found_allocs[start_line] = new std::map<std::string,
-                            std::vector<FoundAlloc> *>();
+                if (supportedAllocationFunctions.find(funcname) !=
+                        supportedAllocationFunctions.end()) {
+                    if (found_allocs.find(start_line) == found_allocs.end()) {
+                        found_allocs[start_line] = new std::map<std::string,
+                        std::vector<FoundAlloc> *>();
+                    }
+                    std::map<std::string, std::vector<FoundAlloc> *> *per_line =
+                        found_allocs[start_line];
+
+                    if (per_line->find(funcname) == per_line->end()) {
+                        (*per_line)[funcname] = new std::vector<FoundAlloc>();
+                    }
+                    std::vector<FoundAlloc> *per_func = (*per_line)[funcname];
+
+                    per_func->push_back(FoundAlloc(start_col, call));
                 }
-                std::map<std::string, std::vector<FoundAlloc> *> *per_line =
-                    found_allocs[start_line];
-
-                if (per_line->find(funcname) == per_line->end()) {
-                    (*per_line)[funcname] = new std::vector<FoundAlloc>();
-                }
-                std::vector<FoundAlloc> *per_func = (*per_line)[funcname];
-
-                per_func->push_back(FoundAlloc(start_col, call));
             }
         }
     }

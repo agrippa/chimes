@@ -1,0 +1,14 @@
+initEamPot 26
+eamForce 0 128 130 131 132 133 134 135 136 137 138 139 140 144 166 984
+eamPrint 0 985 986 987
+eamDestroy 0 1032 1033 1068
+eamReadSetfl 0 1321
+eamReadFuncfl 0 1579
+typeNotSupported 0
+eamBcastPotential 0
+fileNotFound 0
+initInterpolationObject 1760 1725 1726 1727 1728 1729 1730 1758 1760
+notAlloyReady 0
+bcastInterpolationObject 0
+destroyInterpolationObject 0 1978 1986 2017
+interpolate 0 2031 2036 2037 2183 2184

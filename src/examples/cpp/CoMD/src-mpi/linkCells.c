@@ -82,7 +82,7 @@ static void getTuple(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp);
 LinkCell* initLinkCells(const Domain* domain, real_t cutoff)
 {
    assert(domain);
-   LinkCell* ll = malloc(sizeof(LinkCell));
+   LinkCell* ll = (LinkCell*)malloc(sizeof(LinkCell));
 
    for (int i = 0; i < 3; i++)
    {
@@ -101,7 +101,7 @@ LinkCell* initLinkCells(const Domain* domain, real_t cutoff)
 
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
    
-   ll->nAtoms = malloc(ll->nTotalBoxes*sizeof(int));
+   ll->nAtoms = (int*)malloc(ll->nTotalBoxes*sizeof(int));
    for (int iBox=0; iBox<ll->nTotalBoxes; ++iBox)
       ll->nAtoms[iBox] = 0;
 
@@ -133,10 +133,13 @@ int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes)
    getTuple(boxes, iBox, &ix, &iy, &iz);
    
    int count = 0;
-   for (int i=ix-1; i<=ix+1; i++)
-      for (int j=iy-1; j<=iy+1; j++)
-         for (int k=iz-1; k<=iz+1; k++)
+   for (int i=ix-1; i<=ix+1; i++) {
+      for (int j=iy-1; j<=iy+1; j++) {
+         for (int k=iz-1; k<=iz+1; k++) {
             nbrBoxes[count++] = getBoxFromTuple(boxes,i,j,k);
+         }
+      }
+   }
    
    return count;
 }
@@ -310,8 +313,8 @@ int maxOccupancy(LinkCell* boxes)
 /// re-order atoms within a link cell.
 void copyAtom(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int jBox)
 {
-   const int iOff = MAXATOMS*iBox+iAtom;
-   const int jOff = MAXATOMS*jBox+jAtom;
+   int iOff = MAXATOMS*iBox+iAtom;
+   int jOff = MAXATOMS*jBox+jAtom;
    atoms->gid[jOff] = atoms->gid[iOff];
    atoms->iSpecies[jOff] = atoms->iSpecies[iOff];
    memcpy(atoms->r[jOff], atoms->r[iOff], sizeof(real3));

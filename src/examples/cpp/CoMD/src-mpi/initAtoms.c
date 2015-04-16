@@ -21,7 +21,7 @@ static void computeVcm(SimFlat* s, real_t vcm[3]);
 /// initial atom positions and momenta.
 Atoms* initAtoms(LinkCell* boxes)
 {
-   Atoms* atoms = malloc(sizeof(Atoms));
+   Atoms* atoms = (Atoms*)malloc(sizeof(Atoms));
 
    int maxTotalAtoms = MAXATOMS*boxes->nTotalBoxes;
 

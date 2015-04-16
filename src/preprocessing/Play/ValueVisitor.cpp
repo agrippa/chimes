@@ -52,6 +52,11 @@ size_t ValueVisitor::visit(Value *val, Value *prev) {
         alias = visitExtractValue(ex, prev);
     } else if (LandingPadInst *land = dyn_cast<LandingPadInst>(val)) {
         alias = visitLandingPad(land, prev);
+    } else if (SelectInst *slct = dyn_cast<SelectInst>(val)) {
+        alias = visitSelect(slct, prev);
+    } else if (isa<CmpInst>(val)) {
+        // A compare instruction always simply returns a boolean value
+        alias = 0;
     } else {
         errs() << "Unsupported " << *val << "\n";
         assert(false);
@@ -94,6 +99,18 @@ size_t ValueVisitor::visitExtractValue(ExtractValueInst *ex, Value *prev) {
     } else {
         return 0;
     }
+}
+
+// Similar to PHI
+size_t ValueVisitor::visitSelect(SelectInst *slct, Value *prev) {
+    size_t mergeToAlias = 0;
+
+    if (slct->getType()->isPointerTy()) {
+        mergeToAlias = visit(slct->getTrueValue(), slct);
+        mergeAliasGroups(visit(slct->getFalseValue(), slct), mergeToAlias);
+    }
+
+    return mergeToAlias;
 }
 
 size_t ValueVisitor::visitPhi(PHINode *phi, Value *prev) {

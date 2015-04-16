@@ -606,7 +606,6 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                                     value_to_alias_group));
 
                     } else if (isa<MemTransferInst>(&inst)) {
-                        //TODO
                         MemTransferInst *transfer = dyn_cast<MemTransferInst>(&inst);
                         assert(transfer != NULL);
 
@@ -622,12 +621,17 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                         assert(call != NULL);
 
                         Function *callee = call->getCalledFunction();
-                        if (callee == NULL) continue;
 
-                        std::string name = callee->getName().str();
+                        std::string name;
+                        if (callee == NULL) {
+                            // Call through function pointer
+                            name = "anon";
+                        } else {
+                            name = callee->getName().str();
+                        }
 
                         size_t return_alias = 0;
-                        if (callee->getReturnType()->isPointerTy()) {
+                        if (call->getType()->isPointerTy()) {
                             /*
                              * If a function's return value is unused,
                              * return_alias will be zero.
@@ -1237,7 +1241,8 @@ static std::map<Value *, std::string> *mapValueToOriginalVarname(
         if (const DbgDeclareInst* dbgDeclare = dyn_cast<DbgDeclareInst>(inst)) {
             assert(mapping->find(dbgDeclare->getAddress()) == mapping->end());
             if (dbgDeclare->getAddress() != NULL) {
-                assert(isa<AllocaInst>(dbgDeclare->getAddress()));
+                assert(isa<AllocaInst>(dbgDeclare->getAddress()) ||
+                        isa<Argument>(dbgDeclare->getAddress()));
                 (*mapping)[dbgDeclare->getAddress()] =
                     DIVariable(dbgDeclare->getVariable()).getName();
             }

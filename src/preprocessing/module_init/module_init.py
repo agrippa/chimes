@@ -148,7 +148,8 @@ if __name__ == '__main__':
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
                       str(len(reachable)) + ', ' + str(len(structs)))
     for k in reachable.keys():
-        output_file.write(', ' + k + 'UL, ' + reachable[k] + 'UL')
+        output_file.write(', ' + module_id_str + 'UL + ' + k + 'UL, ' +
+                          module_id_str + 'UL + ' + reachable[k] + 'UL')
     for s in structs:
         output_file.write(', "' + s.name + '", ' + str(len(s.fields)))
         for field in s.fields:

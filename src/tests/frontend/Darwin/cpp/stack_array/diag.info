@@ -1,16 +1,11 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 5 alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 5 alias_group_changed(4, (size_t)(7686840342758601596UL), (size_t)(7686840342758601597UL), (size_t)(7686840342758601598UL), (size_t)(7686840342758601599UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 17 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 33 new_stack(2, 2, (size_t)(0UL), (size_t)(84UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(7686840342758601679UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 int a[] = { 1, 2, 3, 4, 5 }; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 int a[] = { 1, 2, 3, 4, 5 }; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 89  call_lbl_0: calling(0, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 11 5  call_lbl_1: calling(1, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 12 5  call_lbl_2: calling(2, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 13 5  call_lbl_3: calling(3, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 14 5  call_lbl_4: calling(4, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 15 5  call_lbl_5: calling(5, 0UL, 4, (size_t)(99UL), (size_t)(100UL), (size_t)(0UL), (size_t)(101UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 161  call_lbl_3: calling((void*)&checkpoint, 3, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32  register_stack_var("main|a|0", "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 214  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 248  if (____chimes_replaying) { goto lbl_0; } 

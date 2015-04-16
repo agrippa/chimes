@@ -12,7 +12,7 @@
 class thread_ctx {
     public:
         thread_ctx(pthread_t set_pthread) : pthread(set_pthread),
-                stack_nesting(0), calling_label(-1) {}
+                stack_nesting(0), calling_label(-1), func_ptr(NULL) {}
 
         std::vector<stack_frame *> *get_stack() { return &program_stack; }
         void push_parent(unsigned parent, unsigned relation) {
@@ -50,6 +50,9 @@ class thread_ctx {
         void set_calling_label(int label) { calling_label = label; }
         int get_calling_label() { return calling_label; }
 
+        void set_func_ptr(void *ptr) { func_ptr = ptr; }
+        void *get_func_ptr() { return func_ptr; }
+
         chimes_stack &get_stack_tracker() { return stack_tracker; }
 
         void push_return_alias() { return_aliases.push_back(return_alias); }
@@ -70,6 +73,7 @@ class thread_ctx {
         int stack_nesting;
         set<size_t> changed_groups;
         int calling_label;
+        void *func_ptr;
 
         /*
          * During normal execution, has every function call and parallel region

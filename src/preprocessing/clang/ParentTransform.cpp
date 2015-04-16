@@ -28,7 +28,7 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
             alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
             ptrs != ptrs_end; ptrs++) {
         std::string ptr_field = *ptrs;
-        ss << ", (int)offsetof(struct " <<
+        ss << ", (int)__builtin_offsetof(struct " <<
             alloc->get_struct_type_name() << ", " << ptr_field <<
             ")";
     }
@@ -56,14 +56,17 @@ void ParentTransform::visitChildren(const clang::Stmt *s) {
     }
 }
 
+std::string ParentTransform::stmtToString(const clang::Stmt* s) {
+    std::string s_str;
+    llvm::raw_string_ostream s_stream(s_str);
+    s->printPretty(s_stream, NULL, Context->getPrintingPolicy());
+    s_stream.flush();
+    return s_str;
+}
+
 const clang::Stmt *ParentTransform::getParent(const clang::Stmt *s) {
     if (parentMap.find(s) == parentMap.end()) {
-        std::string s_str;
-        llvm::raw_string_ostream s_stream(s_str);
-        s->printPretty(s_stream, NULL, Context->getPrintingPolicy());
-        s_stream.flush();
-
-        llvm::errs() << "No parent found for \"" << s_str << "\"\n";
+        llvm::errs() << "No parent found for \"" << stmtToString(s) << "\"\n";
         assert(false);
     }
 

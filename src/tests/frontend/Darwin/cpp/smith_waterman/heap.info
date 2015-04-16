@@ -6,12 +6,12 @@
 152 27 363 malloc
 158 25 494 malloc 1 0
 160 28 755 malloc 1 0
-162 31 508 malloc
-226 3 363 free
+161 71 508 malloc
+225 36 363 free
 227 2 367 free
-230 3 363 free
+229 36 363 free
 231 2 367 free
 233 2 403 free
-237 4 757 free
+236 43 757 free
 238 3 755 free
 240 2 494 free

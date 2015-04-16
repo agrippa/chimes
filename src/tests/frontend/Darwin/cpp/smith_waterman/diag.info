@@ -1,180 +1,160 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 82 5 alias_group_changed(2, (size_t)(125UL), (size_t)(126UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 84 5 alias_group_changed(1, (size_t)(127UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 5 alias_group_changed(1, (size_t)(128UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 106 3 alias_group_changed(6, (size_t)(191UL), (size_t)(192UL), (size_t)(193UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 112 5 alias_group_changed(6, (size_t)(191UL), (size_t)(192UL), (size_t)(193UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 113 5 alias_group_changed(1, (size_t)(982UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 116 77 alias_group_changed(3, (size_t)(199UL), (size_t)(200UL), (size_t)(982UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 118 2 alias_group_changed(3, (size_t)(199UL), (size_t)(200UL), (size_t)(982UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 122 77 alias_group_changed(3, (size_t)(201UL), (size_t)(202UL), (size_t)(980UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 124 2 alias_group_changed(3, (size_t)(201UL), (size_t)(202UL), (size_t)(980UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 131 72 alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 134 73 alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 145 3 for (j = 0; j < tile_width; j++) { tile_edges_x[i][j] = -1 * (i * tile_width + j); }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 146 43 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 153 3 for (j = 0; j < tile_height; j++) { tile_edges_y[i][j] = -1 * (i * tile_height + j); }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 154 44 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 3 for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc(sizeof(int) * (tile_width + 1)); }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 162 64 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 166 5 alias_group_changed(12, (size_t)(194UL), (size_t)(195UL), (size_t)(363UL), (size_t)(367UL), (size_t)(403UL), (size_t)(494UL), (size_t)(755UL), (size_t)(980UL), (size_t)(982UL), (size_t)(986UL), (size_t)(988UL), (size_t)(990UL)); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 180 18 for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 181 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 183 18 for (jj = 1; jj < tile_width + 1; ++jj) { local_matrix[0][jj] = tile_edge_x[jj - 1]; }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 184 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 202 18 for (ii = 1; ii < tile_height + 1; ++ii) { tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 203 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 205 18 for (jj = 1; jj < tile_width + 1; ++jj) { tile_edge_x[jj - 1] = local_matrix[tile_height][jj]; }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 206 70 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 8 alias_group_changed(18, (size_t)(194UL), (size_t)(195UL), (size_t)(205UL), (size_t)(206UL), (size_t)(207UL), (size_t)(208UL), (size_t)(209UL), (size_t)(210UL), (size_t)(211UL), (size_t)(212UL), (size_t)(213UL), (size_t)(214UL), (size_t)(215UL), (size_t)(216UL), (size_t)(217UL), (size_t)(363UL), (size_t)(403UL), (size_t)(757UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 218 5 alias_group_changed(18, (size_t)(194UL), (size_t)(195UL), (size_t)(205UL), (size_t)(206UL), (size_t)(207UL), (size_t)(208UL), (size_t)(209UL), (size_t)(210UL), (size_t)(211UL), (size_t)(212UL), (size_t)(213UL), (size_t)(214UL), (size_t)(215UL), (size_t)(216UL), (size_t)(217UL), (size_t)(363UL), (size_t)(403UL), (size_t)(757UL)); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 2 for (i = 0; i < n_tiles_x; i++) { free(tile_edges_x[i]); }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 226 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 2 for (i = 0; i < n_tiles_y; i++) { free(tile_edges_y[i]); }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 230 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 3 for (j = 0; j < tile_height + 1; j++) { free(worker_tiles[i][j]); }
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 237 27 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 82 5 alias_group_changed(2, (size_t)(2568646267985526122UL), (size_t)(2568646267985526123UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 84 5 alias_group_changed(1, (size_t)(2568646267985526124UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 5 alias_group_changed(1, (size_t)(2568646267985526125UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 106 3 alias_group_changed(6, (size_t)(2568646267985526188UL), (size_t)(2568646267985526189UL), (size_t)(2568646267985526190UL), (size_t)(2568646267985526193UL), (size_t)(2568646267985526194UL), (size_t)(2568646267985526195UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 112 5 alias_group_changed(6, (size_t)(2568646267985526188UL), (size_t)(2568646267985526189UL), (size_t)(2568646267985526190UL), (size_t)(2568646267985526193UL), (size_t)(2568646267985526194UL), (size_t)(2568646267985526195UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 113 5 alias_group_changed(1, (size_t)(2568646267985526979UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 116 77 alias_group_changed(3, (size_t)(2568646267985526196UL), (size_t)(2568646267985526197UL), (size_t)(2568646267985526979UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 118 2 alias_group_changed(3, (size_t)(2568646267985526196UL), (size_t)(2568646267985526197UL), (size_t)(2568646267985526979UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 122 77 alias_group_changed(3, (size_t)(2568646267985526198UL), (size_t)(2568646267985526199UL), (size_t)(2568646267985526977UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 124 2 alias_group_changed(3, (size_t)(2568646267985526198UL), (size_t)(2568646267985526199UL), (size_t)(2568646267985526977UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 131 72 alias_group_changed(12, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526364UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526491UL), (size_t)(2568646267985526752UL), (size_t)(2568646267985526977UL), (size_t)(2568646267985526979UL), (size_t)(2568646267985526983UL), (size_t)(2568646267985526985UL), (size_t)(2568646267985526987UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 134 73 alias_group_changed(12, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526364UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526491UL), (size_t)(2568646267985526752UL), (size_t)(2568646267985526977UL), (size_t)(2568646267985526979UL), (size_t)(2568646267985526983UL), (size_t)(2568646267985526985UL), (size_t)(2568646267985526987UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 166 5 alias_group_changed(12, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526364UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526491UL), (size_t)(2568646267985526752UL), (size_t)(2568646267985526977UL), (size_t)(2568646267985526979UL), (size_t)(2568646267985526983UL), (size_t)(2568646267985526985UL), (size_t)(2568646267985526987UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 8 alias_group_changed(18, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526754UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 218 5 alias_group_changed(18, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526754UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 47 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 86 , 146UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 86 , 2568646267985526143UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 140 20 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 140 65 , 403UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 140 65 , 2568646267985526400UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 142 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 142 44 , 367UL, 1, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 142 44 , 2568646267985526364UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 144 27 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 144 57 , 363UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 144 57 , 2568646267985526360UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 150 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 150 44 , 367UL, 1, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 150 44 , 2568646267985526364UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 152 27 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 152 58 , 363UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 152 58 , 2568646267985526360UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 158 25 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 158 46 , 494UL, 1, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 158 46 , 2568646267985526491UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 160 28 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 160 62 , 755UL, 1, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 160 62 , 2568646267985526752UL, 1, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 71 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 107 , 508UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 161 107 , 2568646267985526505UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 36 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 55 , 363UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 225 55 , 2568646267985526360UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 227 2 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 227 7 , 367UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 227 7 , 2568646267985526364UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 36 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 55 , 363UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 229 55 , 2568646267985526360UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 231 2 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 231 7 , 367UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 231 7 , 2568646267985526364UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 233 2 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 233 7 , 403UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 233 7 , 2568646267985526400UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 43 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 65 , 757UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 236 65 , 2568646267985526754UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 238 3 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 238 22 , 755UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 238 22 , 2568646267985526752UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 240 2 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 240 7 , 494UL
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 42 5 alias_group_changed(2, (size_t)(1UL), (size_t)(2UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 33 37 new_stack(1, 0, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 45 63 new_stack(3, 3, (size_t)(76UL), (size_t)(0UL), (size_t)(0UL), "print_matrix|matrix|0", "i32**", (void *)(&matrix), (size_t)8, 1, 0, 0, "print_matrix|n_rows|0", "i32", (void *)(&n_rows), (size_t)4, 0, 0, 0, "print_matrix|n_columns|0", "i32", (void *)(&n_columns), (size_t)4, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 54 1 alias_group_changed(5, (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 78 5 alias_group_changed(6, (size_t)(81UL), (size_t)(82UL), (size_t)(83UL), (size_t)(84UL), (size_t)(85UL), (size_t)(123UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 65 72 new_stack(2, 0, (size_t)(123UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 93 5 alias_group_changed(3, (size_t)(129UL), (size_t)(146UL), (size_t)(166UL)); rm_stack(true, 146UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 81 55 new_stack(2, 2, (size_t)(165UL), (size_t)(166UL), "read_file|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "read_file|n_chars|0", "i64*", (void *)(&n_chars), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 97 2 alias_group_changed(2, (size_t)(176UL), (size_t)(177UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 96 33 new_stack(2, 0, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 242 5 alias_group_changed(4, (size_t)(194UL), (size_t)(195UL), (size_t)(218UL), (size_t)(219UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 100 37 new_stack(2, 2, (size_t)(0UL), (size_t)(972UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 240 7 , 2568646267985526491UL
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 42 5 alias_group_changed(2, (size_t)(2568646267985525998UL), (size_t)(2568646267985525999UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 33 37 new_stack((void *)(&char_mapping), 1, 0, (size_t)(0UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 45 63 new_stack((void *)(&print_matrix), 3, 3, (size_t)(2568646267985526073UL), (size_t)(0UL), (size_t)(0UL), "print_matrix|matrix|0", "i32**", (void *)(&matrix), (size_t)8, 1, 0, 0, "print_matrix|n_rows|0", "i32", (void *)(&n_rows), (size_t)4, 0, 0, 0, "print_matrix|n_columns|0", "i32", (void *)(&n_columns), (size_t)4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 54 1 alias_group_changed(5, (size_t)(2568646267985526022UL), (size_t)(2568646267985526023UL), (size_t)(2568646267985526024UL), (size_t)(2568646267985526025UL), (size_t)(2568646267985526026UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 78 5 alias_group_changed(6, (size_t)(2568646267985526078UL), (size_t)(2568646267985526079UL), (size_t)(2568646267985526080UL), (size_t)(2568646267985526081UL), (size_t)(2568646267985526082UL), (size_t)(2568646267985526120UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 65 72 new_stack((void *)(&clear_whitespaces_do_mapping), 2, 0, (size_t)(2568646267985526120UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 93 5 alias_group_changed(3, (size_t)(2568646267985526126UL), (size_t)(2568646267985526143UL), (size_t)(2568646267985526163UL)); rm_stack(true, 2568646267985526143UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 81 55 new_stack((void *)(&read_file), 2, 2, (size_t)(2568646267985526162UL), (size_t)(2568646267985526163UL), "read_file|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "read_file|n_chars|0", "i64*", (void *)(&n_chars), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 97 2 alias_group_changed(2, (size_t)(2568646267985526173UL), (size_t)(2568646267985526174UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 96 33 new_stack((void *)(&find_diag), 2, 0, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 242 5 alias_group_changed(4, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526215UL), (size_t)(2568646267985526216UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 100 37 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2568646267985526969UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 100 37 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 34 5  signed char to_be_returned;  to_be_returned = (-1); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 34 5  signed char to_be_returned;  to_be_returned = (-1) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 34 36 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 5 int i; int j; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 5 int i; int j; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 66 5  size_t non_ws_index;  size_t traverse_index;  non_ws_index = (0);  traverse_index = (0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 66 5  size_t non_ws_index;  size_t traverse_index;  non_ws_index = (0)  ; traverse_index = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 66 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 69 9  char curr_char;  curr_char = (buffer[traverse_index]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 69 9  char curr_char;  curr_char = (buffer[traverse_index]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 69 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 5  long file_size;  file_size = (ftell(file)); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 5  long file_size;  file_size = (ftell(file)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 5  signed char *file_buffer;  file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 146UL, 0, 0)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 109 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 46  size_t n_read_from_file;  n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 128 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 101 5 int i; int j; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 5  signed char *file_buffer;  file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2568646267985526143UL, 0, 0)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 125 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 62  size_t n_read_from_file;  n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 144 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 101 5 int i; int j; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 101 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 102 2  int nthreads;  nthreads = (1); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 102 2  int nthreads;  nthreads = (1) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 102 18 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 109 2  char *file_name_1;  file_name_1 = (argv[1]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 109 2  char *file_name_1;  file_name_1 = (argv[1]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 109 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 110 2  char *file_name_2;  file_name_2 = (argv[2]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 110 2  char *file_name_2;  file_name_2 = (argv[2]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 110 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 115 2  FILE *file_1;  file_1 = (fopen(file_name_1, "r")); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 115 2  FILE *file_1;  file_1 = (fopen(file_name_1, "r")) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 115 40 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 2  size_t n_char_in_file_1;  n_char_in_file_1 = (0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 2  size_t n_char_in_file_1;  n_char_in_file_1 = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 121 2  FILE *file_2;  file_2 = (fopen(file_name_2, "r")); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 121 2  FILE *file_2;  file_2 = (fopen(file_name_2, "r")) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 121 40 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 2  size_t n_char_in_file_2;  n_char_in_file_2 = (0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 2  size_t n_char_in_file_2;  n_char_in_file_2 = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 5  struct timeval begin;  struct timeval end; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 5  struct timeval begin;  struct timeval end; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 173 6 int ii; int jj; 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 173 6 int ii; int jj; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 173 16 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 174 6  int threadId;  threadId = (0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 174 6  int threadId;  threadId = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 174 22 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 175 6  int **local_matrix;  local_matrix = (worker_tiles[threadId]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 175 6  int **local_matrix;  local_matrix = (worker_tiles[threadId]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 175 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 176 6  int *tile_edge_x;  tile_edge_x = (tile_edges_x[j]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 176 6  int *tile_edge_x;  tile_edge_x = (tile_edges_x[j]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 176 41 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 177 6  int *tile_edge_y;  tile_edge_y = (tile_edges_y[i]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 177 6  int *tile_edge_y;  tile_edge_y = (tile_edges_y[i]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 177 41 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 178 6  int diag_index;  diag_index = (find_diag(i, j)); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 178 6  int diag_index;  diag_index = (find_diag(i, j)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 178 37 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 190 26  signed char char_from_1;  char_from_1 = (string_1[(j) * tile_width + jj - 1]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 190 26  signed char char_from_1;  char_from_1 = (string_1[(j) * tile_width + jj - 1]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 190 81 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 191 26  signed char char_from_2;  char_from_2 = (string_2[(i) * tile_height + ii - 1]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 191 26  signed char char_from_2;  char_from_2 = (string_2[(i) * tile_height + ii - 1]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 191 82 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 193 26  int diag_score;  diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 193 26  int diag_score;  diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 193 118 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 194 26  int left_score;  left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 194 26  int left_score;  left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 194 109 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 195 26  int top_score;  top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 195 26  int top_score;  top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 195 108 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 197 26  int bigger_of_left_top;  bigger_of_left_top = ((left_score > top_score) ? left_score : top_score); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 197 26  int bigger_of_left_top;  bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 197 100 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 221 2  int diag_zero;  diag_zero = (find_diag(0, 0)); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 221 2  int diag_zero;  diag_zero = (find_diag(0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 221 32 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 5  int score;  score = (tile_diag[diag_zero]); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 5  int score;  score = (tile_diag[diag_zero]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 37 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 33 68  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 33 93  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 10  register_stack_var("print_matrix|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 10  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 12  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 17  register_stack_var("print_matrix|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 17  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 45 346  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 71 13  call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 65 120  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 82 63  call_lbl_0: calling(0, 0UL, 3, (size_t)(165UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 23  call_lbl_1: calling(1, 0UL, 1, (size_t)(165UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 84 46  call_lbl_2: calling(2, 0UL, 3, (size_t)(165UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 73  call_lbl_3: calling(3, 0UL, 4, (size_t)(146UL), (size_t)(0UL), (size_t)(0UL), (size_t)(165UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 92 5  call_lbl_4: calling(4, 0UL, 2, (size_t)(146UL), (size_t)(0UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 17  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 45 388  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 71 13  call_lbl_1: calling((void*)&char_mapping, 1, 0UL, 1, (size_t)(0UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 65 177  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 82 95  call_lbl_2: calling((void*)&fseek, 2, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 23  call_lbl_3: calling((void*)&ftell, 3, 0UL, 1, (size_t)(2568646267985526162UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 84 62  call_lbl_5: calling((void*)&fseek, 5, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 89  call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 92 5  call_lbl_9: calling((void*)&clear_whitespaces_do_mapping, 9, 0UL, 2, (size_t)(2568646267985526143UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 6  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 20  register_stack_var("read_file|file_size|0", "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 20  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 30  register_stack_var("read_file|file_buffer|0", "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 30  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 47  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 70  register_stack_var("read_file|n_read_from_file|0", "i64", (void *)(&n_read_from_file), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 70  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 81 253  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 96 79  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 118 77  call_lbl_0: calling(0, 656UL, 2, (size_t)(261UL), (size_t)(200UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 124 77  call_lbl_1: calling(1, 656UL, 2, (size_t)(282UL), (size_t)(202UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 147 3  call_lbl_2: calling(2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 155 3  call_lbl_3: calling(3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 166 234  call_lbl_4: calling(4, 0UL, 2, (size_t)(203UL), (size_t)(1008UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 178 24  call_lbl_5: calling(5, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 339  call_lbl_6: calling(6, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 218 336  call_lbl_7: calling(7, 0UL, 2, (size_t)(204UL), (size_t)(1008UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 221 19  call_lbl_8: calling(8, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 63  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 86  register_stack_var("read_file|n_read_from_file|0", "i64", (void *)(&n_read_from_file), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 86  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 81 307  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 96 101  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 118 125  call_lbl_14: calling((void*)&read_file, 14, 2568646267985526653UL, 2, (size_t)(2568646267985526258UL), (size_t)(2568646267985526197UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 124 125  call_lbl_21: calling((void*)&read_file, 21, 2568646267985526653UL, 2, (size_t)(2568646267985526279UL), (size_t)(2568646267985526199UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 147 3  call_lbl_34: calling((void*)&find_diag, 34, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 155 3  call_lbl_37: calling((void*)&find_diag, 37, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 166 426  call_lbl_42: calling((void*)&gettimeofday, 42, 0UL, 2, (size_t)(2568646267985526200UL), (size_t)(2568646267985527005UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 178 24  call_lbl_43: calling((void*)&find_diag, 43, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 627  call_lbl_45: calling((void*)&checkpoint, 45, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 218 624  call_lbl_47: calling((void*)&gettimeofday, 47, 0UL, 2, (size_t)(2568646267985526201UL), (size_t)(2568646267985527005UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 221 19  call_lbl_49: calling((void*)&find_diag, 49, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 101 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 101 10  register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 101 10  if (____chimes_replaying) { goto lbl_1; } 
@@ -252,5 +232,5 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 221 16  if (____chimes_replaying) { goto lbl_25; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 6  lbl_25: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 15  register_stack_var("main|score|0", "i32", (void *)(&score), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 15  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 100 219  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 222 15  if (____chimes_replaying) {  switch(get_next_call()) { case(14): { goto call_lbl_14; } case(21): { goto call_lbl_21; } case(34): { goto call_lbl_34; } case(37): { goto call_lbl_37; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(45): { goto call_lbl_45; } case(47): { goto call_lbl_47; } case(49): { goto call_lbl_49; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 100 252  if (____chimes_replaying) { goto lbl_0; } 

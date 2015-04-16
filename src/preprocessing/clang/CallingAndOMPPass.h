@@ -26,18 +26,20 @@ class DeclarationInfo {
 
 class CallLocation {
     public:
-        CallLocation(int set_col, int set_label,
-                const clang::CallExpr *set_call) : col(set_col),
-                label(set_label), call(set_call) {}
+        CallLocation(std::string set_funcname, int set_col, int set_label,
+                const clang::CallExpr *set_call) : funcname(set_funcname),
+                col(set_col), label(set_label), call(set_call) {}
         int get_col() { return col; }
         int get_label() { return label; }
         const clang::CallExpr *get_call() { return call; }
+        std::string get_funcname() { return funcname; }
 
         bool operator < (const CallLocation& other) const {
             return col < other.col;
         }
 
     private:
+        std::string funcname;
         int col;
         int label;
         const clang::CallExpr *call;

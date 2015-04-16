@@ -38,7 +38,8 @@
 using namespace std;
 
 // functions defined in this file
-void new_stack(unsigned n_local_arg_aliases, unsigned n_args, ...);
+void new_stack(void *func_ptr, unsigned n_local_arg_aliases, unsigned n_args,
+        ...);
 void rm_stack(bool has_return_alias, size_t returned_alias);
 void register_stack_var(const char *mangled_name, unsigned thread,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -92,7 +93,7 @@ static pthread_rwlock_t heap_lock = PTHREAD_RWLOCK_INITIALIZER;
 /*
  * Mapping from heap groups to the other heap groups they may be aliased with.
  */
-static map<size_t, set<size_t> *> aliased_groups;
+static map<size_t, vector<size_t> *> aliased_groups;
 static pthread_rwlock_t aliased_groups_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
@@ -186,18 +187,24 @@ static inline bool valid_group(size_t group) {
     return group > 0;
 }
 
-static bool aliased(size_t group1, size_t group2) {
+static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
     bool result = false;
     if (group1 == group2) {
         result = true;
     } else {
-        assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+        if (need_to_lock) {
+            assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+        }
+
         if (aliased_groups.find(group1) != aliased_groups.end() &&
                 aliased_groups.find(group2) != aliased_groups.end()) {
             // Can just do a pointer comparison here
-            result = aliased_groups[group1] == aliased_groups[group2];
+            result = (aliased_groups[group1] == aliased_groups[group2]);
         }
-        assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+
+        if (need_to_lock) {
+            assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+        }
     }
     return result;
 }
@@ -461,14 +468,14 @@ void init_chimes() {
         safe_read(fd, &n_aliased_groups, sizeof(n_aliased_groups),
                 "n_aliased_groups", checkpoint_file);
         for (unsigned i = 0; i < n_aliased_groups; i++) {
-            std::set<size_t> *groups = new std::set<size_t>();
+            std::vector<size_t> *groups = new std::vector<size_t>();
             unsigned size;
             safe_read(fd, &size, sizeof(size), "aliased_groups_size",
                     checkpoint_file);
             for (unsigned ii = 0; ii < size; ii++) {
                 size_t group;
                 safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
-                groups->insert(group);
+                groups->push_back(group);
 
                 assert(aliased_groups.find(group) == aliased_groups.end());
                 aliased_groups[group] = groups;
@@ -498,27 +505,19 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     assert(valid_group(alias1));
     assert(valid_group(alias2));
 
-    map<size_t, set<size_t> *>::iterator existing1_iter =
-        aliased_groups.find(alias1);
-    map<size_t, set<size_t> *>::iterator existing2_iter =
-        aliased_groups.find(alias2);
-
-    std::set<size_t> *existing1 = NULL;
-    std::set<size_t> *existing2 = NULL;
-    if (existing1_iter != aliased_groups.end()) {
-        existing1 = existing1_iter->second;
-    }
-    if (existing2_iter != aliased_groups.end()) {
-        existing2 = existing2_iter->second;
-    }
+    if (aliased(alias1, alias2, false)) return;
 
     assert(pthread_rwlock_rdlock(&contains_lock) == 0);
     map<size_t, size_t>::iterator child1_iter = contains.find(alias1);
     map<size_t, size_t>::iterator child2_iter = contains.find(alias2);
     map<size_t, size_t>::iterator end = contains.end();
-    assert(pthread_rwlock_unlock(&contains_lock) == 0);
 
-    if (child1_iter != end && child2_iter != end) {
+    // TODO Need to update contains anytime you merge alias groups so that 
+    if (child1_iter != end && child2_iter == end) {
+        contains[alias2] = contains[alias1];
+    } else if (child1_iter == end && child2_iter != end) {
+        contains[alias1] = contains[alias2];
+    } else if (child1_iter != end && child2_iter != end) {
         size_t child1 = child1_iter->second;
         size_t child2 = child2_iter->second;
 
@@ -531,12 +530,27 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
             merge_alias_groups(child1, child2);
         }
     }
+    assert(pthread_rwlock_unlock(&contains_lock) == 0);
+
+    map<size_t, vector<size_t> *>::iterator existing1_iter =
+        aliased_groups.find(alias1);
+    map<size_t, vector<size_t> *>::iterator existing2_iter =
+        aliased_groups.find(alias2);
+
+    std::vector<size_t> *existing1 = NULL;
+    std::vector<size_t> *existing2 = NULL;
+    if (existing1_iter != aliased_groups.end()) {
+        existing1 = existing1_iter->second;
+    }
+    if (existing2_iter != aliased_groups.end()) {
+        existing2 = existing2_iter->second;
+    }
 
     if (existing1 == NULL && existing2 == NULL) {
         // Neither is aliased to anything yet, so alias them to each other only
-        std::set<size_t> *new_aliases = new std::set<size_t>();
-        new_aliases->insert(alias1);
-        new_aliases->insert(alias2);
+        std::vector<size_t> *new_aliases = new std::vector<size_t>();
+        new_aliases->push_back(alias1);
+        new_aliases->push_back(alias2);
         aliased_groups[alias1] = new_aliases;
         aliased_groups[alias2] = new_aliases;
     } else if (existing1 != NULL && existing2 != NULL) {
@@ -547,30 +561,32 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
              */
             return;
         } else {
-            std::set<size_t> *new_groups = new std::set<size_t>();
-            for (std::set<size_t>::iterator i = existing1->begin(),
-                    e = existing1->end(); i != e; i++) {
-                new_groups->insert(*i);
+            std::vector<size_t> *new_groups = new std::vector<size_t>();
+            for (unsigned int i = 0; i < existing1->size(); i++) {
+                if (std::find(new_groups->begin(), new_groups->end(),
+                            existing1->at(i)) == new_groups->end()) {
+                    new_groups->push_back(existing1->at(i));
+                }
             }
-            for (std::set<size_t>::iterator i = existing2->begin(),
-                    e = existing2->end(); i != e; i++) {
-                new_groups->insert(*i);
+            for (unsigned int i = 0; i < existing2->size(); i++) {
+                if (std::find(new_groups->begin(), new_groups->end(),
+                            existing2->at(i)) == new_groups->end()) {
+                    new_groups->push_back(existing2->at(i));
+                }
             }
 
-            for (std::set<size_t>::iterator i = new_groups->begin(),
+            for (std::vector<size_t>::iterator i = new_groups->begin(),
                     e = new_groups->end(); i != e; i++) {
                 aliased_groups[*i] = new_groups;
             }
-
-            delete existing1; delete existing2;
         }
     } else if (existing1 != NULL) {
         // alias2 is missing
-        existing1->insert(alias2);
+        existing1->push_back(alias2);
         aliased_groups[alias2] = existing1;
     } else if (existing2 != NULL) {
         // alias1 is missing
-        existing2->insert(alias1);
+        existing2->push_back(alias1);
         aliased_groups[alias1] = existing2;
     }
 }
@@ -596,6 +612,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
         size_t child = va_arg(vl, size_t);
 
         if (!replay) {
+            assert(contains.find(container) == contains.end());
             contains[container] = child;
         }
     }
@@ -644,12 +661,19 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #endif
 }
 
-void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
+void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
+        unsigned int nargs, ...) {
 #ifdef __CHIMES_PROFILE
     pp.start_timer(NEW_STACK);
 #endif
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
+
+    if (program_stack->size() > 0 && func_ptr != ctx->get_func_ptr()) {
+        fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
+                "function that we entered (%p). Possibly passed through a "
+                "third-party library.\n", ctx->get_func_ptr(), func_ptr);
+    }
 
     int calling_label = ctx->get_calling_label();
     assert(program_stack->size() == 0 || calling_label >= 0);
@@ -667,30 +691,39 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
      * variable argument function. I'm not sure if variable argument functions
      * are really supported at the moment, so for now we assert they are equal.
      */
-    assert(program_stack->size() == 1 || n_local_arg_aliases ==
-            parent_aliases_length);
-
-    std::vector<size_t> new_aliases;
     va_list vl;
     va_start(vl, nargs);
-    for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-        size_t alias = va_arg(vl, size_t);
-        new_aliases.push_back(alias);
-    }
 
-    ctx->push_return_alias();
+    if (program_stack->size() != 1 &&
+            n_local_arg_aliases != parent_aliases_length) {
+        fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
+                "expected aliases (%u), ignoring\n", parent_aliases_length,
+                n_local_arg_aliases);
 
-    if (program_stack->size() > 1) {
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-            if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
-                assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
-                merge_alias_groups(new_aliases[i], parent_aliases[i]);
-                assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+            va_arg(vl, size_t);
+        }
+    } else {
+        std::vector<size_t> new_aliases;
+        for (unsigned i = 0; i < n_local_arg_aliases; i++) {
+            size_t alias = va_arg(vl, size_t);
+            new_aliases.push_back(alias);
+        }
 
-                assert(aliased(new_aliases[i], parent_aliases[i]));
+        if (program_stack->size() > 1) {
+            for (unsigned i = 0; i < n_local_arg_aliases; i++) {
+                if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
+                    assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
+                    merge_alias_groups(new_aliases[i], parent_aliases[i]);
+                    assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+
+                    assert(aliased(new_aliases[i], parent_aliases[i], true));
+                }
             }
         }
     }
+
+    ctx->push_return_alias();
 
     for (unsigned i = 0; i < nargs; i++) {
         const char *mangled_name = va_arg(vl, const char *);
@@ -712,11 +745,12 @@ void new_stack(unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #endif
 }
 
-void calling(int lbl, size_t set_return_alias, unsigned naliases, ...) {
+void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned naliases, ...) {
 #ifdef __CHIMES_PROFILE
     pp.start_timer(CALLING);
 #endif
     thread_ctx *ctx = get_my_context();
+    ctx->set_func_ptr(func_ptr);
     ctx->set_calling_label(lbl);
     ctx->set_return_alias(set_return_alias);
 
@@ -761,7 +795,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
         merge_alias_groups(this_return_alias, returned_alias);
         assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
-        assert(aliased(this_return_alias, returned_alias));
+        assert(aliased(this_return_alias, returned_alias, true));
     }
 
     ctx->get_stack_tracker().pop();
@@ -1062,7 +1096,7 @@ void free_wrapper(void *ptr, size_t group) {
 #endif
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     size_t original_group = in_heap->second->get_alias_group();
-    assert(aliased(original_group, group));
+    assert(aliased(original_group, group, true));
 
     free_helper(ptr);
     free(ptr);
@@ -1158,7 +1192,7 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
 }
 
 void checkpoint() {
-    new_stack(0, 0);
+    new_stack((void *)checkpoint, 0, 0);
 
     assert(pthread_mutex_lock(&threads_in_checkpoint_mutex) == 0);
     unsigned thread_count = ++threads_in_checkpoint;
@@ -1318,7 +1352,7 @@ void checkpoint() {
                     size_t group = *ii;
 
                     if (aliased_groups.find(group) != aliased_groups.end()) {
-                        for (set<size_t>::iterator iter =
+                        for (vector<size_t>::iterator iter =
                                 aliased_groups[group]->begin(), end =
                                 aliased_groups[group]->end(); iter != end;
                                 iter++) {
@@ -1590,8 +1624,8 @@ void *checkpoint_func(void *data) {
     }
 
     assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
-    set<set<size_t> *> aliased_groups_ptr;
-    for (map<size_t, set<size_t> *>::iterator i = aliased_groups.begin(),
+    set<vector<size_t> *> aliased_groups_ptr;
+    for (map<size_t, vector<size_t> *>::iterator i = aliased_groups.begin(),
             e = aliased_groups.end(); i != e; i++) {
         aliased_groups_ptr.insert(i->second);
     }
@@ -1599,14 +1633,14 @@ void *checkpoint_func(void *data) {
     unsigned n_aliased_groups = aliased_groups_ptr.size();
     safe_write(fd, &n_aliased_groups, sizeof(n_aliased_groups),
             "n_aliased_groups", dump_filename);
-    for (set<set<size_t> *>::iterator i = aliased_groups_ptr.begin(),
+    for (set<vector<size_t> *>::iterator i = aliased_groups_ptr.begin(),
             e = aliased_groups_ptr.end(); i != e; i++) {
-        set<size_t> *curr = *i;
+        vector<size_t> *curr = *i;
         unsigned curr_size = curr->size();
         safe_write(fd, &curr_size, sizeof(curr_size), "curr_size",
                 dump_filename);
 
-        for (set<size_t>::iterator ii = curr->begin(), ee = curr->end();
+        for (vector<size_t>::iterator ii = curr->begin(), ee = curr->end();
                 ii != ee; ii++) {
             size_t group = *ii;
             safe_write(fd, &group, sizeof(group), "group", dump_filename);
@@ -1809,6 +1843,10 @@ void leaving_omp_parallel() {
     }
 
     assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+}
+
+void chimes_error() {
+    exit(42);
 }
 
 static unsigned get_my_tid() {

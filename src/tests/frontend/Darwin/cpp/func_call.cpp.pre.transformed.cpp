@@ -42,9 +42,11 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
+        unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -57,6 +59,8 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -64,16 +68,37 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+
+extern void chimes_error();
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
 extern int ____chimes_replaying;
 # 3 "<command line>" 2
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 4 "<command line>" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+
+
+
+
+
+
+
+
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 61 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 151 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 152 "/usr/include/Availability.h" 2 3 4
+# 62 "/usr/include/stdlib.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -81,17 +106,7 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -263,270 +278,8 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 64 "/usr/include/stdlib.h" 2 3 4
 
-
-
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen");
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs") ;
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen") ;
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite") ;
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen");
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen");
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam") ;
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 5 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
-
-
-
-
-
-
-
-
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1726,32 +1479,32 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
-int foo(int a) {new_stack(1, 1, (size_t)(0UL), "foo|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int foo(int a) {new_stack((void *)(&foo), 1, 1, (size_t)(0UL), "foo|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- lbl_0: int b; register_stack_var("foo|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b = (a);
+ lbl_0: int b; register_stack_var("foo|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b = (a) ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } c = (a + b);
+ lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } c = (a + b) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+ alias_group_changed(3, (size_t)(11267635574997452871UL), (size_t)(11267635574997452872UL), (size_t)(11267635574997452873UL)); call_lbl_2: calling((void*)&checkpoint, 2, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  rm_stack(false, 0UL); return c;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(39UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(11267635574997452909UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3);
+ lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- alias_group_changed(4, (size_t)(20UL), (size_t)(21UL), (size_t)(22UL), (size_t)(23UL)); lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); b = (foo(a));
+ alias_group_changed(4, (size_t)(11267635574997452890UL), (size_t)(11267635574997452891UL), (size_t)(11267635574997452892UL), (size_t)(11267635574997452893UL)); lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } call_lbl_3: calling((void*)&foo, 3, 0UL, 1, (size_t)(0UL)); b = (foo(a)) ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- alias_group_changed(1, (size_t)(24UL)); rm_stack(false, 0UL); return b;
+ alias_group_changed(1, (size_t)(11267635574997452894UL)); rm_stack(false, 0UL); return b;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 }
 
 
 static int module_init() {
-    init_module(11267635574997452870UL, 1, 0, 22UL, 39UL);
+    init_module(11267635574997452870UL, 1, 0, 11267635574997452870UL + 22UL, 11267635574997452870UL + 39UL);
     return 0;
 }
 

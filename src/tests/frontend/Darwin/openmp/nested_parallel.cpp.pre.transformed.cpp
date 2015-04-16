@@ -24,9 +24,11 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
+        unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -39,6 +41,8 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -46,7 +50,9 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+
+extern void chimes_error();
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
@@ -58,8 +64,7 @@ inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
 
 extern int ____chimes_replaying;
 # 1 "<command-line>" 2
-# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
-# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -499,10 +504,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-
+# 2 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/omp.h" 1 3 4
 # 34 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/omp.h" 3 4
 typedef struct
@@ -1769,13 +1771,13 @@ extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(27UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2139544371637214133UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3);
+      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-      lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } b = (4);
+      lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } b = (4) ;
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-      lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { exit(42); } } } c = (5); call_lbl_1: unsigned ____chimes_parent_thread = entering_omp_parallel(1, 3, &a, &b, &c);
+      lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } c = (5); call_lbl_7: unsigned ____chimes_parent_thread = entering_omp_parallel(7, 3, &a, &b, &c) ;
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
@@ -1785,7 +1787,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
 # 10 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
     { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_3; }
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-          lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { exit(42); } } } inside = (6); call_lbl_2: unsigned ____chimes_parent_thread = entering_omp_parallel(2, 1, &inside);
+          lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } default: { chimes_error(); } } } inside = (6); call_lbl_8: unsigned ____chimes_parent_thread = entering_omp_parallel(8, 1, &inside) ;
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
@@ -1793,11 +1795,11 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 1, &inside); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 1, &inside); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-            alias_group_changed(7, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
+            alias_group_changed(7, (size_t)(2139544371637214107UL), (size_t)(2139544371637214108UL), (size_t)(2139544371637214109UL), (size_t)(2139544371637214110UL), (size_t)(2139544371637214111UL), (size_t)(2139544371637214112UL), (size_t)(2139544371637214113UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-             call_lbl_0: calling(0, 0UL, 0); checkpoint();
+             call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
         } leaving_omp_parallel();
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
@@ -1810,7 +1812,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
 
 
 static int module_init() {
-    init_module(2139544371637214106UL, 1, 0, 3UL, 27UL);
+    init_module(2139544371637214106UL, 1, 0, 2139544371637214106UL + 3UL, 2139544371637214106UL + 27UL);
     return 0;
 }
 

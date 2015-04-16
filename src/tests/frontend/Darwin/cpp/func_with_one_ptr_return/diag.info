@@ -1,23 +1,23 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5 alias_group_changed(3, (size_t)(12UL), (size_t)(13UL), (size_t)(14UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 5 alias_group_changed(1, (size_t)(15UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5 alias_group_changed(3, (size_t)(651168722096376627UL), (size_t)(651168722096376628UL), (size_t)(651168722096376629UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 5 alias_group_changed(1, (size_t)(651168722096376630UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 21 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 42 , 3UL, 0, 0
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 6 5 alias_group_changed(1, (size_t)(1UL)); rm_stack(true, 3UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 33 new_stack(0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 42 , 651168722096376618UL, 0, 0
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 6 5 alias_group_changed(1, (size_t)(651168722096376616UL)); rm_stack(true, 651168722096376618UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 33 new_stack((void *)(&haha_this_sux_part_deux), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 12 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 33 new_stack(2, 2, (size_t)(0UL), (size_t)(27UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(651168722096376642UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 3UL, 0, 0)); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 64 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 77  void *tmp;  tmp = (haha_this_sux_part_deux()); 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 114 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 651168722096376618UL, 0, 0)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 81 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 125  void *tmp;  tmp = (haha_this_sux_part_deux()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 162 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 6  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 12  register_stack_var("haha_this_sux_part_deux|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 12  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 49  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 90  call_lbl_0: calling(0, 22UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 45  call_lbl_1: calling(1, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 78  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 87  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 87  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } default: { exit(42); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 214  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 5 12  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 85  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 138  call_lbl_3: calling((void*)&haha_this_sux_part_deux, 3, 651168722096376637UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 61  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 126  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 135  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 135  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 247  if (____chimes_replaying) { goto lbl_0; } 

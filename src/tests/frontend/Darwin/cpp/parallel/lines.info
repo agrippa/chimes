@@ -1,0 +1,4 @@
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 14 : { 15 } prop:call:time
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 57 23 : { 16 } direct:call:ctime
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 60 4 : { 17, 29 } direct:call:fflush
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 106 46 : { 61, 62, 63, 64, 65, 66 } prop:call:__assert_rtn

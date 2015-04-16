@@ -271,6 +271,7 @@ public:
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
             omp_file(omp_filename) {
+        module_id = hash(module_name);
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
         stack_allocs = parseStackAllocs();
@@ -279,7 +280,6 @@ public:
         callsites = parseCallSites();
         func_exits = parseFunctionExits();
         reachable = parseReachable();
-        module_id = hash(module_name);
         omp_pragmas = parseOMPPragmas();
         diagnostics.open(diagnostic_file);
     }
@@ -294,13 +294,9 @@ public:
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
     std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
             clang::SourceManager &SM);
-    size_t hash(const char *s, size_t seed = 0) {
-        size_t hash = seed;
-        while (*s) {
-            hash = hash * 101 + *s++;
-        }
-        return hash;
-    }
+
+    size_t hash(const char *s, size_t seed = 0);
+    size_t unique_alias(size_t alias);
 
     StackAlloc *findStackAlloc(std::string mangled_name);
     bool findNextMatchingMemoryAllocation(int line, std::string func,
@@ -327,14 +323,13 @@ public:
     AliasesPassedToCallSite findFirstMatchingCallsite(int line,
             std::string callee_name);
     FunctionArgumentAliasGroups findMatchingFunction(std::string func);
+    FunctionArgumentAliasGroups* findMatchingFunctionNullReturn(
+            std::string func);
 
     void add_line_collapse(int start, int end);
     int lookup_new_line(int line);
     void update_line_numbers();
-
-    size_t get_module_id() {
-        return module_id;
-    }
+    size_t get_module_id();
 
 private:
         std::string lines_info_file, struct_info_file,

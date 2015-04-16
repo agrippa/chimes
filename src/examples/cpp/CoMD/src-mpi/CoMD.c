@@ -109,8 +109,8 @@ int main(int argc, char** argv)
    timestampBarrier("Starting simulation\n");
 
    // This is the CoMD main loop
-   const int nSteps = sim->nSteps;
-   const int printRate = sim->printRate;
+   int nSteps = sim->nSteps;
+   int printRate = sim->printRate;
    int iStep = 0;
    profileStart(loopTimer);
    for (; iStep<nSteps;)
