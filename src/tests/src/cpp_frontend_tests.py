@@ -16,7 +16,8 @@ CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
 PASS_BY_REF = FrontendTest('PassByRef', ['pass_by_ref.cpp'],
                            ['pass_by_ref.cpp.pre.transformed.cpp'], ['pass_by_ref'],
                            True)
-SIMPLE_TESTS = ['braces.cpp',
+SIMPLE_TESTS = ['switch.cpp',
+                'braces.cpp',
                 'struct.cpp',
                 'simple_stencil.cpp',
                 'decl_in_for.cpp',
@@ -88,6 +89,11 @@ COMD = FrontendTest('CoMD',
                      'mycommand', 'performanceTimers', 'timestep',
                      'cmdLineParser', 'eam', 'initAtoms', 'ljForce', 'parallel',
                      'random', 'yamlOutput'], False)
+UTS = FrontendTest('UTS', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
+                   ['brg_sha1.c.pre.transformed.cpp',
+                    'uts.c.pre.transformed.cpp',
+                    'uts_shm.c.pre.transformed.cpp'],
+                   ['brg_sha1', 'uts', 'uts_shm'], False, extra_cli_args='-s -D BRG_RNG')
 
 
 TESTS = [PASS_BY_REF]
@@ -98,6 +104,7 @@ TESTS.append(ISO3D)
 TESTS.append(SMITH_WATERMAN)
 TESTS.append(LULESH)
 TESTS.append(COMD)
+TESTS.append(UTS)
 
 
 if __name__ == '__main__':

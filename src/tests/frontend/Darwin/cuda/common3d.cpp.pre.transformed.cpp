@@ -2509,27 +2509,27 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 80 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  switch (c) {
 # 81 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'x':
+ case 'x':
 # 82 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->nx = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->nx = atoi(optarg);
 # 83 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 84 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'y':
+ case 'y':
 # 85 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->ny = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->ny = atoi(optarg);
 # 86 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 87 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'z':
+ case 'z':
 # 88 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->nz = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->nz = atoi(optarg);
 # 89 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 90 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'i':
+ case 'i':
 # 91 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->nsteps = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->nsteps = atoi(optarg);
 # 92 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 93 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2539,9 +2539,9 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 95 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 96 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 't':
+ case 't':
 # 97 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->save_text = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->save_text = atoi(optarg);
 # 98 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 99 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2557,21 +2557,21 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 104 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 105 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'r':
+ case 'r':
 # 106 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->radius = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->radius = atoi(optarg);
 # 107 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 108 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'g':
+ case 'g':
 # 109 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->ngpus = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->ngpus = atoi(optarg);
 # 110 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 111 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'w':
+ case 'w':
 # 112 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->progress_width = atoi(optarg);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); conf->progress_width = atoi(optarg);
 # 113 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 114 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"

@@ -1,13 +1,13 @@
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 12 9 alias_group_changed(8, (size_t)(17753382416546317924UL), (size_t)(17753382416546317925UL), (size_t)(17753382416546317926UL), (size_t)(17753382416546317927UL), (size_t)(17753382416546317928UL), (size_t)(17753382416546317929UL), (size_t)(17753382416546317930UL), (size_t)(17753382416546317931UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 52 5 alias_group_changed(1, (size_t)(17753382416546318158UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 77 5 alias_group_changed(6, (size_t)(17753382416546318208UL), (size_t)(17753382416546318209UL), (size_t)(17753382416546318210UL), (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL), (size_t)(17753382416546318346UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 79 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 82 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 85 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 80 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 83 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 86 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 100 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 103 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 106 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 101 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 104 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 107 17 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 114 13 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 9 alias_group_changed(2, (size_t)(17753382416546318211UL), (size_t)(17753382416546318329UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 95 40 len=7 realloc_wrapper

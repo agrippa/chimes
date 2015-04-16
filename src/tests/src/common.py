@@ -106,7 +106,7 @@ class FrontendTest(object):
     library, and run 'make clean; make' to build it before using it.
     """
     def __init__(self, name, input_files, compare_files, info_dirs, expect_err,
-                 includes=None, dependencies=None):
+                 includes=None, dependencies=None, extra_cli_args=None):
         self.name = name
         self.input_files = input_files
         self.compare_files = compare_files
@@ -114,6 +114,7 @@ class FrontendTest(object):
         self.expect_err = expect_err
         self.includes = [] if includes is None else includes
         self.dependencies = [] if dependencies is None else dependencies
+        self.extra_cli_args = '' if extra_cli_args is None else extra_cli_args
 
 
 def get_platform_directory():
@@ -448,7 +449,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         env['GXX'] = config.custom_compiler
 
     clean_and_create_folder(FRONTEND_WORKING_DIR)
-    compile_cmd = compile_script_path + ' -k -w ' + FRONTEND_WORKING_DIR
+    compile_cmd = compile_script_path + ' -k -w ' + FRONTEND_WORKING_DIR + \
+                  ' ' + test.extra_cli_args
 
     for flag in config.custom_compiler_flags:
         compile_cmd += ' -x ' + flag

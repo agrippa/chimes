@@ -327,7 +327,8 @@ int uts_paramsToStr(char *strBuf, int ind) {
 
 // show parameter settings
 void uts_printParams() {
-  char strBuf[5000] = "";
+  char strBuf[5000];
+  strBuf[0] = '\0';
   int  ind = 0;
 
   if (verbose > 0) {

@@ -283,9 +283,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
                 std::stringstream ss;
                 ss << " call_lbl_" << loc.get_label() << ": calling((void*)" <<
-                    func_symbol << ", " <<
-                    loc.get_label() << ", " << callsite.get_return_alias() <<
-                    "UL, " << callsite.nparams();
+                    func_symbol << ", " << loc.get_label() << ", " <<
+                    callsite.get_return_alias() << "UL, " << callsite.nparams();
                 for (unsigned a = 0; a < callsite.nparams(); a++) {
                     ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
                 }

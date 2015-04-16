@@ -3399,7 +3399,7 @@ void eamReadSetfl(EamPotential* pot, const char* dir, const char* potName)
 # 637 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  lbl_0: char tmp[4096]; register_stack_var("eamReadSetfl|tmp|0", "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 638 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
- alias_group_changed(3, (size_t)(684635133602953593UL), (size_t)(684635133602953594UL), (size_t)(684635133602953595UL)); call_lbl_2: calling((void*)&sprintf, 2, 0UL, 4, (size_t)(684635133602953596UL), (size_t)(684635133602954715UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL)); sprintf(tmp, "%s/%s", dir, potName);
+ alias_group_changed(3, (size_t)(684635133602953593UL), (size_t)(684635133602953594UL), (size_t)(684635133602953595UL)); sprintf(tmp, "%s/%s", dir, potName);
 # 639 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 640 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  lbl_1: FILE *potFile; register_stack_var("eamReadSetfl|potFile|0", "%struct.__sFILE*", (void *)(&potFile), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } potFile = (fopen(tmp, "r")) ;
@@ -3486,7 +3486,7 @@ void eamReadSetfl(EamPotential* pot, const char* dir, const char* potName)
 # 695 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  {
 # 696 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
- lbl_19: real_t r; register_stack_var("eamReadSetfl|r|0", "double", (void *)(&r), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } default: { chimes_error(); } } } r = (x0 + ii * dR) ;
+ lbl_19: real_t r; register_stack_var("eamReadSetfl|r|0", "double", (void *)(&r), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } default: { chimes_error(); } } } r = (x0 + ii * dR) ;
 # 697 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  buf[ii] /= r;
 # 698 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -3514,7 +3514,7 @@ void eamReadFuncfl(EamPotential* pot, const char* dir, const char* potName)
  lbl_0: char tmp[4096]; register_stack_var("eamReadFuncfl|tmp|0", "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 756 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 757 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
- alias_group_changed(3, (size_t)(684635133602953846UL), (size_t)(684635133602953847UL), (size_t)(684635133602953848UL)); call_lbl_2: calling((void*)&sprintf, 2, 0UL, 4, (size_t)(684635133602953849UL), (size_t)(684635133602954715UL), (size_t)(684635133602954102UL), (size_t)(684635133602954103UL)); sprintf(tmp, "%s/%s", dir, potName);
+ alias_group_changed(3, (size_t)(684635133602953846UL), (size_t)(684635133602953847UL), (size_t)(684635133602953848UL)); sprintf(tmp, "%s/%s", dir, potName);
 # 758 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  lbl_1: FILE *potFile; register_stack_var("eamReadFuncfl|potFile|0", "%struct.__sFILE*", (void *)(&potFile), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } potFile = (fopen(tmp, "r")) ;
 # 759 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -3598,7 +3598,7 @@ void eamReadFuncfl(EamPotential* pot, const char* dir, const char* potName)
 # 807 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 808 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 809 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
- { lbl_19: int ii; register_stack_var("eamReadFuncfl|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } default: { chimes_error(); } } } for ( ii = (0) ;ii < nR; ++ii) { alias_group_changed(2, (size_t)(684635133602953868UL), (size_t)(684635133602954101UL)); call_lbl_26: calling((void*)&fscanf, 26, 0UL, 3, (size_t)(684635133602953882UL), (size_t)(684635133602954714UL), (size_t)(684635133602953961UL)); fscanf(potFile, "%lg", buf + ii); } };
+ { lbl_19: int ii; register_stack_var("eamReadFuncfl|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } default: { chimes_error(); } } } for ( ii = (0) ;ii < nR; ++ii) { alias_group_changed(2, (size_t)(684635133602953868UL), (size_t)(684635133602954101UL)); call_lbl_26: calling((void*)&fscanf, 26, 0UL, 3, (size_t)(684635133602953882UL), (size_t)(684635133602954714UL), (size_t)(684635133602953961UL)); fscanf(potFile, "%lg", buf + ii); } };
 # 811 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
  alias_group_changed(2, (size_t)(684635133602953868UL), (size_t)(684635133602954101UL)); call_lbl_28: calling((void*)&initInterpolationObject, 28, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); pot->rho = initInterpolationObject(nR, x0, dR, buf);
 # 812 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"

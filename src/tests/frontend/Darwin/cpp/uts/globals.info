@@ -1,0 +1,13 @@
+uts_trees_str " [3 x i8*]* " 64 1 0 
+uts_geoshapes_str " [4 x i8*]* " 64 1 0 
+type " i32* " 64 1 0 
+b_0 " double* " 64 1 0 
+rootId " i32* " 64 1 0 
+nonLeafBF " i32* " 64 1 0 
+nonLeafProb " double* " 64 1 0 
+gen_mx " i32* " 64 1 0 
+shape_fn " i32* " 64 1 0 
+shiftDepth " double* " 64 1 0 
+computeGranularity " i32* " 64 1 0 
+debug " i32* " 64 1 0 
+verbose " i32* " 64 1 0 

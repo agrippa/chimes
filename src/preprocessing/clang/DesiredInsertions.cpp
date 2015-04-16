@@ -703,7 +703,7 @@ AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
 
     if (i == e) {
         llvm::errs() << "Unable to find match for call site on line " << line <<
-            "\n";
+            " with name " << callee_name << "\n";
         assert(false);
     }
 

@@ -82,7 +82,8 @@ void ParentTransform::setParent(const clang::Stmt *child,
 clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
         std::string st) {
     const clang::Stmt *parent = getParent(s);
-    while (!clang::isa<clang::CompoundStmt>(parent)) {
+    while (!clang::isa<clang::CompoundStmt>(parent) &&
+            !clang::isa<clang::CaseStmt>(parent)) {
         s = parent;
         parent = getParent(s);
     }

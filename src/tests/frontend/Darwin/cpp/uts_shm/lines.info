@@ -1,0 +1,38 @@
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 328 10 : { 26, 27 } direct:call:sprintf
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 329 0 : { 27 } direct:call:sprintf
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 424 3 : { 77 } direct:call:exit
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 473 3 : { 103 } direct:call:exit
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 496 5 : { 112, 113, 114, 203 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 519 32 : { 206, 207 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 521 84 : { 206, 207 } prop:call:rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 534 28 : { 311, 312 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 537 99 : { 311, 312 } prop:call:rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 547 28 : { 360, 361, 410 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 551 95 : { 360, 361, 410 } prop:call:rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 560 28 : { 411 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 573 107 : { 442, 443 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 607 34 : { 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 761, 1134 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 610 36 : { 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 761, 1134 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 631 55 : { 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 761, 1134 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 671 16 : { 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 761, 1134 } prop:call:rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 714 17 : { 803 } direct:call:_Z10uts_wctimev
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 727 33 : { 851, 852 } prop:call:_Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 731 10 : { 851, 852 } prop:call:_Z10uts_wctimev
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 952 3 : { 938, 939 } direct:call:_Z12uts_initRootP6node_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 999 17 : { 952, 953, 954, 955 } direct:call:_Z15uts_numChildrenP6node_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1000 15 : { 956 } direct:call:_Z13uts_childTypeP6node_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1006 15 : { 957, 958, 959, 1057, 1058 } prop:call:_Z10ss_topPosnP12stealStack_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1026 9 : { 957, 958, 959, 1057, 1058 } prop:call:rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1028 7 : { 957, 958, 959, 1057, 1058 } prop:call:_Z7ss_pushP12stealStack_tP6node_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1140 7 : { 1065 } prop:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1180 7 : { 1222, 1223, 1226, 1227, 1228 } prop:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1216 7 : { 1222, 1223, 1226, 1227, 1228 } prop:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1233 5 : { 1222, 1223, 1226, 1227, 1228 } prop:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1186 2 : { 1224 } prop:call:_Z11genChildrenP6node_tS0_P12stealStack_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1195 9 : { 1224 } prop:call:_Z6ss_popP12stealStack_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1220 14 : { 1227, 1228 } prop:call:_Z8ss_stealP12stealStack_tii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1325 3 : { 1323, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332, 1333, 1334, 1335, 1336, 1337 } prop:call:_Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1487 3 : { 1730, 1731, 1732 } direct:call:_Z15uts_parseParamsiPPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1530 5 : { 1737, 1790 } direct:call:_Z7ss_initP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1546 5 : { 1734 } direct:call:_Z13parTreeSearchP12stealStack_t
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1560 7 : { 1735, 1736 } direct:call:_Z9showStatsd
