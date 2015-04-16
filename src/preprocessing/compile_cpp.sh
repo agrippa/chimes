@@ -110,6 +110,7 @@ OPT=$(find_opt)
 GXX=${GXX:-/usr/bin/g++}
 CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
+BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
@@ -119,6 +120,9 @@ LLVM_LIB=$(get_llvm_lib)
 GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
+STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
+            "stddef.h" 2>/dev/null | head -n 1))
+
 echo WORK_DIR = $WORK_DIR
 
 for INPUT in ${ABS_INPUTS[@]}; do
@@ -127,8 +131,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
     BITCODE_FILE=${WORK_DIR}/$(basename ${INPUT}).bc
     TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
     ANALYSIS_LOG_FILE=${WORK_DIR}/$(basename ${INPUT}).analysis.log
-    STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname $(which gcc))) -name \
-                "stddef.h" 2>/dev/null | head -n 1))
 
     if [[ $ENABLE_OMP == 1 ]]; then
         echo Looking for OpenMP pragmas in ${INPUT}
@@ -142,12 +144,21 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g ${LINKER_FLAGS} \
            -include${CHIMES_HOME}/src/libchimes/libchimes.h \
-           -include stddef.h -include stdio.h ${CHIMES_DEF} ${DEFINES}
+           ${CHIMES_DEF} ${DEFINES}
+
+           # -include stddef.h -include stdio.h \
 
     echo Inserting line pragmas in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
            ${PREPROCESS_FILE}.lines
-    mv ${PREPROCESS_FILE}.lines ${PREPROCESS_FILE}
+    cp ${PREPROCESS_FILE}.lines ${PREPROCESS_FILE}
+
+    echo Inserting braces in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${BRACE_INSERT} -o ${PREPROCESS_FILE}.braces \
+        ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+        -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
+    cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \

@@ -124,6 +124,7 @@ cudaSetupArgument 9 0 0 833 0 0
 _ZN37_GLOBAL__N__13_iso2d_cpp1_ii_2fcd0cad10cudaLaunchIcEE9cudaErrorPT_ 9 0 0 1014
 cudaLaunch 1510 8 0 911
 __cudaRegisterFatBinary 2 73 947 1019
+anon 2 73 0 947
 atexit 2 73 0 1021
 _ZL37__nv_save_fatbinhandle_for_managed_rtPPv 1 92 0 947
 __cudaRegisterFunction 1 138 0 947 1014 1010 1010 0 1016 1016 1017 1017 1018

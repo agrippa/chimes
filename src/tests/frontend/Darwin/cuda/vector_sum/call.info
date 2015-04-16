@@ -29,6 +29,7 @@ cudaSetupArgument 9 191 0 263 0 0
 _ZN42_GLOBAL__N__18_vector_sum_cpp1_ii_36d5b76210cudaLaunchIcEE9cudaErrorPT_ 9 226 0 403
 cudaLaunch 1510 8 0 309
 __cudaRegisterFatBinary 2 78 345 408
+anon 2 78 0 345
 atexit 2 78 0 410
 _ZL37__nv_save_fatbinhandle_for_managed_rtPPv 1 92 0 345
 __cudaRegisterFunction 1 138 0 345 403 399 399 0 405 405 406 406 407

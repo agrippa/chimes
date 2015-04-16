@@ -42,9 +42,11 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
+        unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -57,6 +59,8 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -64,14 +68,20 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+
+extern void chimes_error();
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
 extern int ____chimes_replaying;
 # 3 "<command line>" 2
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 4 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 1
+
+
+
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -513,14 +523,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 5 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 1
-
-
-
-
+# 5 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2374,22 +2377,22 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- const int ny, const int nx, const char *filename, int radius) {new_stack(8, 8, (size_t)(95UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(101UL), (size_t)(0UL), "save_layer_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_layer_text|z|0", "i32", (void *)(&z), (size_t)4, 0, 0, 0, "save_layer_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_layer_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_layer_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_layer_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_layer_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_layer_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+ const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_layer_text), 8, 8, (size_t)(17753382427056418519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382427056418525UL), (size_t)(0UL), "save_layer_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_layer_text|z|0", "i32", (void *)(&z), (size_t)4, 0, 0, 0, "save_layer_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_layer_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_layer_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_layer_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_layer_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_layer_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 9 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- lbl_0: FILE *fp; register_stack_var("save_layer_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb"));
+ lbl_0: FILE *fp; register_stack_var("save_layer_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  if (fp == __null) {
 # 11 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  fprintf(__stderrp, "Failed to open output file %s\n", filename);
 # 12 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(9, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); exit(1);
+ alias_group_changed(9, (size_t)(17753382427056418425UL), (size_t)(17753382427056418426UL), (size_t)(17753382427056418427UL), (size_t)(17753382427056418428UL), (size_t)(17753382427056418429UL), (size_t)(17753382427056418430UL), (size_t)(17753382427056418431UL), (size_t)(17753382427056418432UL), (size_t)(17753382427056418433UL)); exit(1);
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  }
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- { lbl_1: int y; register_stack_var("save_layer_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0); y < ny; y++) {
+ { lbl_1: int y; register_stack_var("save_layer_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0) ; y < ny; y++) {
 # 16 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- { lbl_2: int x; register_stack_var("save_layer_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( x = (0); x < nx; x++) {
+ { lbl_2: int x; register_stack_var("save_layer_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } for ( x = (0) ; x < nx; x++) {
 # 17 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  fprintf(fp, "%d %d %.20f\n", y, x,
 # 18 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2402,9 +2405,9 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
  } }
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- call_lbl_0: calling(0, 0UL, 1, (size_t)(30UL)); fclose(fp);
+ call_lbl_7: calling((void*)&fclose, 7, 0UL, 1, (size_t)(17753382427056418454UL)); fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(11, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(4UL), (size_t)(5UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL), (size_t)(10UL), (size_t)(11UL)); rm_stack(false, 0UL); }
+alias_group_changed(11, (size_t)(17753382427056418425UL), (size_t)(17753382427056418426UL), (size_t)(17753382427056418427UL), (size_t)(17753382427056418428UL), (size_t)(17753382427056418429UL), (size_t)(17753382427056418430UL), (size_t)(17753382427056418431UL), (size_t)(17753382427056418432UL), (size_t)(17753382427056418433UL), (size_t)(17753382427056418434UL), (size_t)(17753382427056418435UL)); rm_stack(false, 0UL); }
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void init_data(float *curr, float *next, float *vsq,
@@ -2413,10 +2416,10 @@ void init_data(float *curr, float *next, float *vsq,
 # 28 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  const int dimx, const int dimy, const int dimz,
 # 29 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- const float dx, const float dt) {new_stack(9, 0, (size_t)(241UL), (size_t)(242UL), (size_t)(243UL), (size_t)(244UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+ const float dx, const float dt) {new_stack((void *)(&init_data), 9, 0, (size_t)(17753382427056418665UL), (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
 # 30 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 31 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- { size_t i; for ( i = (0); i < dimx * dimy * dimz; i++) {
+ { size_t i; for ( i = (0) ; i < dimx * dimy * dimz; i++) {
 # 32 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  vsq[i] = 2500. * 2500. * dt * dt;
 # 33 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2424,16 +2427,16 @@ void init_data(float *curr, float *next, float *vsq,
 # 34 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 35 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 36 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- { size_t i; for ( i = (0); i < dimx * dimy * dimz; i++) {
+ { size_t i; for ( i = (0) ; i < dimx * dimy * dimz; i++) {
 # 37 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  curr[i] = next[i] = 0;
 # 38 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  } }
 # 39 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 40 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- call_lbl_0: calling(0, 0UL, 3, (size_t)(244UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
+ call_lbl_1: calling((void*)&memset, 1, 0UL, 3, (size_t)(17753382427056418668UL), (size_t)(0UL), (size_t)(0UL)); memset(h_coeff, 0, 20 * sizeof(float));
 # 41 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- float scale; scale = (1. / (dx * dx));
+ float scale; scale = (1. / (dx * dx)) ;
 # 42 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  h_coeff[0] = -8.541666 * scale;
 # 43 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2445,10 +2448,10 @@ void init_data(float *curr, float *next, float *vsq,
 # 46 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  h_coeff[4] = -0.001785 * scale;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(16, (size_t)(111UL), (size_t)(112UL), (size_t)(113UL), (size_t)(114UL), (size_t)(115UL), (size_t)(116UL), (size_t)(117UL), (size_t)(118UL), (size_t)(119UL), (size_t)(120UL), (size_t)(121UL), (size_t)(122UL), (size_t)(241UL), (size_t)(242UL), (size_t)(243UL), (size_t)(244UL)); rm_stack(false, 0UL); }
+alias_group_changed(16, (size_t)(17753382427056418535UL), (size_t)(17753382427056418536UL), (size_t)(17753382427056418537UL), (size_t)(17753382427056418538UL), (size_t)(17753382427056418539UL), (size_t)(17753382427056418540UL), (size_t)(17753382427056418541UL), (size_t)(17753382427056418542UL), (size_t)(17753382427056418543UL), (size_t)(17753382427056418544UL), (size_t)(17753382427056418545UL), (size_t)(17753382427056418546UL), (size_t)(17753382427056418665UL), (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL)); rm_stack(false, 0UL); }
 # 48 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-void usage(char **argv) {new_stack(1, 1, (size_t)(266UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+void usage(char **argv) {new_stack((void *)(&usage), 1, 1, (size_t)(17753382427056418690UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 50 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  fprintf(__stderrp, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2456,12 +2459,12 @@ void usage(char **argv) {new_stack(1, 1, (size_t)(266UL), "usage|argv|0", "i8**"
 # 52 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  argv[0]);
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(1, (size_t)(255UL)); exit(1);
+ alias_group_changed(1, (size_t)(17753382427056418679UL)); exit(1);
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 rm_stack(false, 0UL); }
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-void default_config(config *conf) {new_stack(1, 0, (size_t)(307UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } }
+void default_config(config *conf) {new_stack((void *)(&default_config), 1, 0, (size_t)(17753382427056418731UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 57 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nx = 2 * 256;
 # 58 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2489,42 +2492,42 @@ void default_config(config *conf) {new_stack(1, 0, (size_t)(307UL)); if (____chi
 # 70 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->progress_disabled = 0;
 # 71 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(2, (size_t)(267UL), (size_t)(307UL)); rm_stack(false, 0UL); }
+alias_group_changed(2, (size_t)(17753382427056418691UL), (size_t)(17753382427056418731UL)); rm_stack(false, 0UL); }
 # 72 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 73 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)(437UL), (size_t)(0UL), (size_t)(439UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setup_config), 3, 3, (size_t)(17753382427056418861UL), (size_t)(0UL), (size_t)(17753382427056418863UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { exit(42); } } }
+ lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } default: { chimes_error(); } } } ;
 # 75 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  opterr = 0;
 # 76 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 77 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- call_lbl_0: calling(0, 0UL, 1, (size_t)(437UL)); default_config(conf);
+ call_lbl_1: calling((void*)&default_config, 1, 0UL, 1, (size_t)(17753382427056418861UL)); default_config(conf);
 # 78 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 79 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(6, (size_t)(308UL), (size_t)(309UL), (size_t)(310UL), (size_t)(311UL), (size_t)(437UL), (size_t)(454UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
+ alias_group_changed(6, (size_t)(17753382427056418732UL), (size_t)(17753382427056418733UL), (size_t)(17753382427056418734UL), (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL), (size_t)(17753382427056418878UL)); while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
 # 80 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  switch (c) {
 # 81 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'x':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'x':
 # 82 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nx = atoi(optarg);
 # 83 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 84 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'y':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'y':
 # 85 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->ny = atoi(optarg);
 # 86 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 87 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'z':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'z':
 # 88 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nz = atoi(optarg);
 # 89 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 90 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'i':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'i':
 # 91 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nsteps = atoi(optarg);
 # 92 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2536,7 +2539,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)
 # 95 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 96 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 't':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 't':
 # 97 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->save_text = atoi(optarg);
 # 98 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2546,27 +2549,27 @@ void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)
 # 100 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
 # 101 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- (conf->nsrcs + 1), 367UL);
+ (conf->nsrcs + 1), 17753382427056418791UL);
 # 102 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_1: calling(1, 0UL, 2, (size_t)(331UL), (size_t)(367UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); call_lbl_16: calling((void*)&parse_source, 16, 0UL, 2, (size_t)(17753382427056418755UL), (size_t)(17753382427056418791UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 103 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nsrcs++;
 # 104 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 105 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'r':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'r':
 # 106 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->radius = atoi(optarg);
 # 107 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 108 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'g':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'g':
 # 109 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->ngpus = atoi(optarg);
 # 110 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  break;
 # 111 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); case 'w':
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); case 'w':
 # 112 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->progress_width = atoi(optarg);
 # 113 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2582,7 +2585,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)
 # 118 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  fprintf(__stderrp, "Missing argument to option %c\n", optopt);
 # 119 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_2: calling(2, 0UL, 1, (size_t)(439UL)); default:
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); call_lbl_25: calling((void*)&usage, 25, 0UL, 1, (size_t)(17753382427056418863UL)); default:
 # 120 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  usage(argv);
 # 121 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2593,15 +2596,15 @@ void setup_config(config *conf, int argc, char **argv) {new_stack(3, 3, (size_t)
 # 124 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  if (conf->ngpus == -1) {
 # 125 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); call_lbl_3: calling(3, 0UL, 0); conf->ngpus = getNumCUDADevices();
+ alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); call_lbl_27: calling((void*)&getNumCUDADevices, 27, 0UL, 0); conf->ngpus = getNumCUDADevices();
 # 126 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  }
 # 127 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(2, (size_t)(311UL), (size_t)(437UL)); rm_stack(false, 0UL); }
+alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); rm_stack(false, 0UL); }
 
 
 static int module_init() {
-    init_module(17753382427056418424UL, 16, 5, 308UL, 437UL, 449UL, 418UL, 7UL, 101UL, 310UL, 439UL, 456UL, 331UL, 307UL, 459UL, 1UL, 95UL, 114UL, 244UL, 111UL, 241UL, 266UL, 261UL, 113UL, 243UL, 112UL, 242UL, 9UL, 30UL, 267UL, 307UL, 437UL, 367UL, 255UL, 266UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
+    init_module(17753382427056418424UL, 16, 5, 17753382427056418424UL + 308UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 449UL, 17753382427056418424UL + 418UL, 17753382427056418424UL + 7UL, 17753382427056418424UL + 101UL, 17753382427056418424UL + 310UL, 17753382427056418424UL + 439UL, 17753382427056418424UL + 456UL, 17753382427056418424UL + 331UL, 17753382427056418424UL + 307UL, 17753382427056418424UL + 459UL, 17753382427056418424UL + 1UL, 17753382427056418424UL + 95UL, 17753382427056418424UL + 114UL, 17753382427056418424UL + 244UL, 17753382427056418424UL + 111UL, 17753382427056418424UL + 241UL, 17753382427056418424UL + 266UL, 17753382427056418424UL + 261UL, 17753382427056418424UL + 113UL, 17753382427056418424UL + 243UL, 17753382427056418424UL + 112UL, 17753382427056418424UL + 242UL, 17753382427056418424UL + 9UL, 17753382427056418424UL + 30UL, 17753382427056418424UL + 267UL, 17753382427056418424UL + 307UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 367UL, 17753382427056418424UL + 255UL, 17753382427056418424UL + 266UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, (int)__builtin_offsetof(struct _config, nx), (int)__builtin_offsetof(struct _config, ny), (int)__builtin_offsetof(struct _config, nz), (int)__builtin_offsetof(struct _config, nsteps), (int)__builtin_offsetof(struct _config, save_text), (int)__builtin_offsetof(struct _config, verbose), (int)__builtin_offsetof(struct _config, radius), (int)__builtin_offsetof(struct _config, ngpus), (int)__builtin_offsetof(struct _config, srcs), (int)__builtin_offsetof(struct _config, nsrcs), (int)__builtin_offsetof(struct _config, progress_width), (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t));
     return 0;
 }
 

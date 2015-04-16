@@ -26496,40 +26496,44 @@ return (err == (cudaSuccess)) ? cudaBindSurfaceToArray(surf, array, desc) : err;
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_chimes();
 # 7 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
-# 8 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int get_next_call();
+extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned naliases, ...);
 # 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern int get_next_call();
 # 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
+extern void new_stack(void * func_ptr, unsigned n_local_arg_aliases, unsigned nargs, ...);
 # 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
+# 14 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-# 13 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 15 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 18 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 19 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int alias_group_changed(int ngroups, ...);
-# 20 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
 # 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
-# 23 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void free_wrapper(void * ptr, size_t group);
-# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
+# 24 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
 # 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
+# 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void free_wrapper(void * ptr, size_t group);
+# 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+# 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
-# 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void leaving_omp_parallel();
 # 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
+extern void leaving_omp_parallel();
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void chimes_error();
+# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
+# 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
@@ -26789,25 +26793,25 @@ void kernel(int *A, int *B, int *C, int N) ;
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(189UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(10983886093799450970UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 21 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-cudaError_t error;
+cudaError_t error; ;
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; }
+ lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_1: int N; register_stack_var("main|N|0", "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } N = ((1024 * 1024));
+ lbl_1: int N; register_stack_var("main|N|0", "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } N = ((1024 * 1024)) ;
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_2: int *h_A; register_stack_var("main|h_A|0", "i32*", (void *)(&h_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int *h_B; register_stack_var("main|h_B|0", "i32*", (void *)(&h_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int *h_C; register_stack_var("main|h_C|0", "i32*", (void *)(&h_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; }
+ lbl_2: int *h_A; register_stack_var("main|h_A|0", "i32*", (void *)(&h_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int *h_B; register_stack_var("main|h_B|0", "i32*", (void *)(&h_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int *h_C; register_stack_var("main|h_C|0", "i32*", (void *)(&h_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_5: int *d_A; register_stack_var("main|d_A|0", "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int *d_B; register_stack_var("main|d_B|0", "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: int *d_C; register_stack_var("main|d_C|0", "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; }
+ lbl_5: int *d_A; register_stack_var("main|d_A|0", "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int *d_B; register_stack_var("main|d_B|0", "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: int *d_C; register_stack_var("main|d_C|0", "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } ;
 # 28 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-h_A = ((int *)malloc_wrapper(sizeof(int) * N, 38UL, 0, 0));
+h_A = ((int *)malloc_wrapper(sizeof(int) * N, 10983886093799450819UL, 0, 0));
 # 29 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-h_B = ((int *)malloc_wrapper(sizeof(int) * N, 44UL, 0, 0));
+h_B = ((int *)malloc_wrapper(sizeof(int) * N, 10983886093799450825UL, 0, 0));
 # 30 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-h_C = ((int *)malloc_wrapper(sizeof(int) * N, 146UL, 0, 0));
+h_C = ((int *)malloc_wrapper(sizeof(int) * N, 10983886093799450927UL, 0, 0));
 # 32 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(7, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(6UL), (size_t)(7UL), (size_t)(8UL), (size_t)(9UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0, 0);
+alias_group_changed(7, (size_t)(10983886093799450782UL), (size_t)(10983886093799450783UL), (size_t)(10983886093799450784UL), (size_t)(10983886093799450787UL), (size_t)(10983886093799450788UL), (size_t)(10983886093799450789UL), (size_t)(10983886093799450790UL)); cudaMalloc_wrapper((void **)(&d_A), sizeof(int) * N, 0UL, 0, 0);
 # 33 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaMalloc_wrapper((void **)(&d_B), sizeof(int) * N, 0UL, 0, 0);
 # 34 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26821,21 +26825,21 @@ for (i = 0; i < N; i++) {
 # 39 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 }
 # 41 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(3, (size_t)(5UL), (size_t)(38UL), (size_t)(44UL)); call_lbl_0: calling(0, 0UL, 4, (size_t)(140UL), (size_t)(38UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
+alias_group_changed(3, (size_t)(10983886093799450786UL), (size_t)(10983886093799450819UL), (size_t)(10983886093799450825UL)); call_lbl_10: calling((void*)&cudaMemcpy, 10, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450819UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
 # 42 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_1: calling(1, 0UL, 4, (size_t)(141UL), (size_t)(44UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
+ call_lbl_11: calling((void*)&cudaMemcpy, 11, 0UL, 4, (size_t)(10983886093799450922UL), (size_t)(10983886093799450825UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
 # 44 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_8: int threads_per_block; register_stack_var("main|threads_per_block|0", "i32", (void *)(&threads_per_block), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } threads_per_block = (128);
+ lbl_8: int threads_per_block; register_stack_var("main|threads_per_block|0", "i32", (void *)(&threads_per_block), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } threads_per_block = (128) ;
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_9: int blocks_per_grid; register_stack_var("main|blocks_per_grid|0", "i32", (void *)(&blocks_per_grid), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } blocks_per_grid = (((N + threads_per_block) - 1) / threads_per_block);
+ lbl_9: int blocks_per_grid; register_stack_var("main|blocks_per_grid|0", "i32", (void *)(&blocks_per_grid), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } blocks_per_grid = (((N + threads_per_block) - 1) / threads_per_block) ;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(2, (size_t)(13UL), (size_t)(14UL)); call_lbl_2: calling(2, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(411UL)); call_lbl_3: calling(3, 0UL, 4, (size_t)(140UL), (size_t)(141UL), (size_t)(148UL), (size_t)(0UL)); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N);
+alias_group_changed(2, (size_t)(10983886093799450794UL), (size_t)(10983886093799450795UL)); call_lbl_13: calling((void*)&cudaConfigureCall, 13, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10983886093799451192UL)); call_lbl_14: calling((void*)&kernel, 14, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450922UL), (size_t)(10983886093799450929UL), (size_t)(0UL)); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N);
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_4: calling(4, 0UL, 4, (size_t)(146UL), (size_t)(148UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
+ call_lbl_15: calling((void*)&cudaMemcpy, 15, 0UL, 4, (size_t)(10983886093799450927UL), (size_t)(10983886093799450929UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_5: calling(5, 0UL, 0); checkpoint();
+ call_lbl_16: calling((void*)&checkpoint, 16, 0UL, 0); checkpoint();
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_10: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { exit(42); } } } fp = (fopen("dump.out", "w"));
+ lbl_10: FILE *fp; register_stack_var("main|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } fp = (fopen("dump.out", "w")) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 for (i = 0; i < N; i++) {
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26843,9 +26847,9 @@ fprintf(fp, "%d\n", h_C[i]);
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 }
 # 57 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_6: calling(6, 0UL, 1, (size_t)(156UL)); fclose(fp);
+ call_lbl_19: calling((void*)&fclose, 19, 0UL, 1, (size_t)(10983886093799450937UL)); fclose(fp);
 # 59 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(2, (size_t)(5UL), (size_t)(19UL)); cudaFree_wrapper(d_A, 0UL);
+alias_group_changed(2, (size_t)(10983886093799450786UL), (size_t)(10983886093799450800UL)); cudaFree_wrapper(d_A, 0UL);
 # 60 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaFree_wrapper(d_B, 0UL);
 # 61 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -27698,7 +27702,7 @@ static void __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762(void) { __cu
 
 
 static int module_init() {
-    init_module(10983886093799450781UL, 23, 7, 338UL, 345UL, 310UL, 409UL, 396UL, 345UL, 394UL, 403UL, 234UL, 252UL, 232UL, 250UL, 233UL, 251UL, 3UL, 189UL, 347UL, 345UL, 7UL, 38UL, 9UL, 146UL, 8UL, 44UL, 364UL, 387UL, 205UL, 223UL, 303UL, 309UL, 262UL, 298UL, 261UL, 297UL, 260UL, 296UL, 321UL, 345UL, 11UL, 141UL, 10UL, 140UL, 12UL, 148UL, 19UL, 156UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
+    init_module(10983886093799450781UL, 23, 7, 10983886093799450781UL + 338UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 310UL, 10983886093799450781UL + 409UL, 10983886093799450781UL + 396UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 394UL, 10983886093799450781UL + 403UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 252UL, 10983886093799450781UL + 232UL, 10983886093799450781UL + 250UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 251UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 189UL, 10983886093799450781UL + 347UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 146UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 44UL, 10983886093799450781UL + 364UL, 10983886093799450781UL + 387UL, 10983886093799450781UL + 205UL, 10983886093799450781UL + 223UL, 10983886093799450781UL + 303UL, 10983886093799450781UL + 309UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 298UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 297UL, 10983886093799450781UL + 260UL, 10983886093799450781UL + 296UL, 10983886093799450781UL + 321UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 11UL, 10983886093799450781UL + 141UL, 10983886093799450781UL + 10UL, 10983886093799450781UL + 140UL, 10983886093799450781UL + 12UL, 10983886093799450781UL + 148UL, 10983886093799450781UL + 19UL, 10983886093799450781UL + 156UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
     return 0;
 }
 

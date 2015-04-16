@@ -1,1 +1,21 @@
 1. Add support for const stack variables
+2. Add support for function pointers. Currently, if a function pointer is stored
+   on the stack/heap and included in a checkpoint it won't be restored to the
+   correct address based on the actual function it was pointing at... This is
+   not an easy problem.
+3. Support resuming from inside functions that are passed directly as parameters
+   to another function (e.g. resume from bar when you call foo(bar())). The
+   simplest way to fix this is probably by inserting temporary variables before
+   the function call. Replacing their use in the AST? this would require an
+   extension to the current line number modification framework to allow the
+   extension of single line statements to multi-line statements.
+4. We currently get the function pointer of the current function as a way of
+   verifying that the callee is using alias data intended for it (and that it
+   isn't passing through some arbitrary 3rd party library first). However, this
+   stops working if a local variable hides the function pointer inside the
+   callee, e.g.:
+
+       void foo(int foo) { ... }
+
+   To fix this, we can do a renaming of the local variable during the code
+   generation phase.

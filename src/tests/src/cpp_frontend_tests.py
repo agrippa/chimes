@@ -16,7 +16,9 @@ CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
 PASS_BY_REF = FrontendTest('PassByRef', ['pass_by_ref.cpp'],
                            ['pass_by_ref.cpp.pre.transformed.cpp'], ['pass_by_ref'],
                            True)
-SIMPLE_TESTS = ['simple_stencil.cpp',
+SIMPLE_TESTS = ['braces.cpp',
+                'struct.cpp',
+                'simple_stencil.cpp',
                 'decl_in_for.cpp',
                 'func_call.cpp',
                 'globals.cpp',
@@ -59,6 +61,34 @@ SMITH_WATERMAN = FrontendTest('SmithWaterman',
                               False)
 LULESH = FrontendTest('Lulesh', ['lulesh/LULESH.cc'],
                       ['LULESH.cc.pre.transformed.cpp'], ['lulesh'], False)
+COMD = FrontendTest('CoMD',
+                    ['CoMD/src-mpi/CoMD.c', 'CoMD/src-mpi/decomposition.c',
+                     'CoMD/src-mpi/haloExchange.c', 'CoMD/src-mpi/linkCells.c',
+                     'CoMD/src-mpi/mycommand.c',
+                     'CoMD/src-mpi/performanceTimers.c',
+                     'CoMD/src-mpi/timestep.c', 'CoMD/src-mpi/cmdLineParser.c',
+                     'CoMD/src-mpi/eam.c', 'CoMD/src-mpi/initAtoms.c',
+                     'CoMD/src-mpi/ljForce.c', 'CoMD/src-mpi/parallel.c',
+                     'CoMD/src-mpi/random.c', 'CoMD/src-mpi/yamlOutput.c'],
+                    ['CoMD.c.pre.transformed.cpp',
+                     'decomposition.c.pre.transformed.cpp',
+                     'haloExchange.c.pre.transformed.cpp',
+                     'linkCells.c.pre.transformed.cpp',
+                     'mycommand.c.pre.transformed.cpp',
+                     'performanceTimers.c.pre.transformed.cpp',
+                     'timestep.c.pre.transformed.cpp',
+                     'cmdLineParser.c.pre.transformed.cpp',
+                     'eam.c.pre.transformed.cpp',
+                     'initAtoms.c.pre.transformed.cpp',
+                     'ljForce.c.pre.transformed.cpp',
+                     'parallel.c.pre.transformed.cpp',
+                     'random.c.pre.transformed.cpp',
+                     'yamlOutput.c.pre.transformed.cpp'],
+                    ['CoMD', 'decomposition', 'haloExchange', 'linkCells',
+                     'mycommand', 'performanceTimers', 'timestep',
+                     'cmdLineParser', 'eam', 'initAtoms', 'ljForce', 'parallel',
+                     'random', 'yamlOutput'], False)
+
 
 TESTS = [PASS_BY_REF]
 for simple in SIMPLE_TESTS:
@@ -67,6 +97,7 @@ TESTS.append(ISO2D)
 TESTS.append(ISO3D)
 TESTS.append(SMITH_WATERMAN)
 TESTS.append(LULESH)
+TESTS.append(COMD)
 
 
 if __name__ == '__main__':

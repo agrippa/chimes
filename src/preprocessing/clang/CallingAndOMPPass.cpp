@@ -110,7 +110,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         int lbl = call.get_lbl();
         ss << "case(" << lbl << "): { goto call_lbl_" << lbl << "; } ";
     }
-    ss << "default: { exit(42); } } ";
+    ss << "default: { chimes_error(); } } ";
     std::string transition_str = ss.str();
 
     /*
@@ -267,22 +267,32 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                 ee = calls.end(); ii != ee; ii++) {
             CallLocation loc = *ii;
 
-            ompTree->add_function_call(loc.get_call(), loc.get_label());
+            if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
+                ompTree->add_function_call(loc.get_call(), loc.get_label());
 
-            AliasesPassedToCallSite callsite =
-                insertions->findFirstMatchingCallsite(i->first,
-                        loc.get_call()->getDirectCallee()->getNameAsString());
+                AliasesPassedToCallSite callsite =
+                    insertions->findFirstMatchingCallsite(i->first,
+                        loc.get_funcname());
 
-            std::stringstream ss;
-            ss << " call_lbl_" << loc.get_label() << ": calling(" <<
-                loc.get_label() << ", " << callsite.get_return_alias() <<
-                "UL, " << callsite.nparams();
-            for (unsigned a = 0; a < callsite.nparams(); a++) {
-                ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
+                std::string func_symbol;
+                if (loc.get_funcname() == "anon") {
+                    func_symbol = stmtToString(loc.get_call()->getCallee());
+                } else {
+                    func_symbol = "&" + loc.get_funcname();
+                }
+
+                std::stringstream ss;
+                ss << " call_lbl_" << loc.get_label() << ": calling((void*)" <<
+                    func_symbol << ", " <<
+                    loc.get_label() << ", " << callsite.get_return_alias() <<
+                    "UL, " << callsite.nparams();
+                for (unsigned a = 0; a < callsite.nparams(); a++) {
+                    ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
+                }
+                ss << "); ";
+
+                InsertAtFront(loc.get_call(), ss.str());
             }
-            ss << "); ";
-
-            InsertAtFront(loc.get_call(), ss.str());
         }
     }
 
@@ -307,6 +317,16 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
+
+    if (insertions->findMatchingFunctionNullReturn(curr_func) == NULL) {
+        /*
+         * LLVM determines some functions are uncallable (e.g. static and not
+         * called in the same compilation unit) and doesn't bother passing them
+         * to our analysis pass. We don't need to insert any callbacks for these
+         * functions, as they are not used.
+         */
+        return;
+    }
 
     if (start.isValid() && end.isValid() && SM->isInMainFile(end)) {
         clang::PresumedLoc presumed_start = SM->getPresumedLoc(start);
@@ -353,17 +373,18 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
         if (const clang::CallExpr *call =
                 clang::dyn_cast<const clang::CallExpr>(s)) {
 
-            const clang::FunctionDecl *decl = call->getDirectCallee();
-            std::string callee_name = decl->getNameAsString();
+            std::string callee_name;
+            if (call->getDirectCallee() == NULL) {
+                callee_name = "anon";
+            } else {
+                callee_name = call->getDirectCallee()->getNameAsString();
+            }
 
             /*
-             * Not necessary, but helps to limit code clutter and reduce
-             * overhead.
-             *
-             * This means we can't support checkpoints from inside constructors
+             * This means we can't support checkpoints from inside
+             * constructors.
              */
-            if (ignorable->find(callee_name) == ignorable->end() &&
-                    !clang::isa<const clang::CXXConstructExpr>(call)) {
+            if (!clang::isa<const clang::CXXConstructExpr>(call)) {
 
                 clang::PresumedLoc presumed = SM->getPresumedLoc(start);
                 int line_no = presumed.getLine();
@@ -374,7 +395,7 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                 }
                 int lbl = getNextFunctionLabel();
                 calls_found[line_no].push_back(CallLocation(
-                            presumed.getColumn(), lbl, call));
+                            callee_name, presumed.getColumn(), lbl, call));
             }
 
             if (callee_name == "new_stack") {

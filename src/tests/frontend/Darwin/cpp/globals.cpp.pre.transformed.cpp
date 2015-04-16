@@ -42,9 +42,11 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
+        unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -57,6 +59,8 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -64,14 +68,16 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+
+extern void chimes_error();
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
 extern int ____chimes_replaying;
 # 3 "<command line>" 2
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 4 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -513,11 +519,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 5 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
-
+# 2 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
 # 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
 
 
@@ -1735,7 +1737,7 @@ int b = 3;
 const char *hello_world = "hello world";
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(19UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(9397157703034130362UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  a = 4;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
@@ -1743,7 +1745,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  printf("auto global\n");
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
- alias_group_changed(4, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL), (size_t)(23UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+ alias_group_changed(4, (size_t)(9397157703034130344UL), (size_t)(9397157703034130345UL), (size_t)(9397157703034130346UL), (size_t)(9397157703034130366UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  rm_stack(false, 0UL); return b + a;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
@@ -1751,7 +1753,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (
 
 
 static int module_init() {
-    init_module(9397157703034130343UL, 2, 0, 3UL, 19UL, 26UL, 10UL);
+    init_module(9397157703034130343UL, 2, 0, 9397157703034130343UL + 3UL, 9397157703034130343UL + 19UL, 9397157703034130343UL + 26UL, 9397157703034130343UL + 10UL);
     register_global_var("global|a", "i32*", (void *)(&a), 8, 1, 0, 0);
     register_global_var("global|b", "i32*", (void *)(&b), 8, 1, 0, 0);
     register_global_var("global|hello_world", "i8**", (void *)(&hello_world), 8, 1, 0, 0);

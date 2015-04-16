@@ -65,6 +65,8 @@ protected:
             std::string new_str);
     void ReplaceText(clang::SourceRange range, std::string s);
 
+    std::string stmtToString(const clang::Stmt* s);
+
     int getNextRegisterLabel();
     int getNextFunctionLabel();
 

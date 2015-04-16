@@ -42,9 +42,11 @@ typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
+        unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
         ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
@@ -57,6 +59,8 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
@@ -64,16 +68,19 @@ extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
         unsigned parent, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+
+extern void chimes_error();
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
 extern int ____chimes_replaying;
 # 3 "<command line>" 2
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 4 "<command line>" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp" 2
+# 33 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
+# 1 "/usr/include/sys/time.h" 1 3 4
+# 67 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -81,15 +88,7 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
+# 68 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types.h" 1 3 4
 # 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
@@ -257,16 +256,367 @@ typedef struct _opaque_pthread_rwlock_t __darwin_pthread_rwlock_t;
 typedef struct _opaque_pthread_rwlockattr_t __darwin_pthread_rwlockattr_t;
 typedef struct _opaque_pthread_t *__darwin_pthread_t;
 # 81 "/usr/include/sys/_types.h" 2 3 4
-# 28 "/usr/include/_types.h" 2 3 4
+# 69 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 151 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 152 "/usr/include/Availability.h" 2 3 4
+# 70 "/usr/include/sys/time.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
+# 45 "/usr/include/sys/_types/_fd_def.h" 3 4
+extern "C" {
+typedef struct fd_set {
+ __int32_t fds_bits[((((1024) % ((sizeof(__int32_t) * 8))) == 0) ? ((1024) / ((sizeof(__int32_t) * 8))) : (((1024) / ((sizeof(__int32_t) * 8))) + 1))];
+} fd_set;
+}
+
+
+static inline int
+__darwin_fd_isset(int _n, const struct fd_set *_p)
+{
+ return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
+}
+# 76 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
+# 30 "/usr/include/sys/_types/_timespec.h" 3 4
+struct timespec
+{
+ __darwin_time_t tv_sec;
+ long tv_nsec;
+};
+# 77 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_timeval.h" 1 3 4
+# 30 "/usr/include/sys/_types/_timeval.h" 3 4
+struct timeval
+{
+ __darwin_time_t tv_sec;
+ __darwin_suseconds_t tv_usec;
+};
+# 78 "/usr/include/sys/time.h" 2 3 4
+
+# 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_time_t.h" 3 4
+typedef __darwin_time_t time_t;
+# 80 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
+typedef __darwin_suseconds_t suseconds_t;
+# 81 "/usr/include/sys/time.h" 2 3 4
+
+
+
+
+
+struct itimerval {
+ struct timeval it_interval;
+ struct timeval it_value;
+};
+# 105 "/usr/include/sys/time.h" 3 4
+# 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
+# 106 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
+# 107 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
+# 108 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
+# 109 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
+# 110 "/usr/include/sys/time.h" 2 3 4
+
+
+
+# 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
+# 114 "/usr/include/sys/time.h" 2 3 4
+# 124 "/usr/include/sys/time.h" 3 4
+struct timezone {
+ int tz_minuteswest;
+ int tz_dsttime;
+};
+# 167 "/usr/include/sys/time.h" 3 4
+struct clockinfo {
+ int hz;
+ int tick;
+ int tickadj;
+ int stathz;
+ int profhz;
+};
+
+
+
+
+
+
+# 1 "/usr/include/time.h" 1 3 4
+# 66 "/usr/include/time.h" 3 4
+# 1 "/usr/include/_types.h" 1 3 4
 # 39 "/usr/include/_types.h" 3 4
 typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 67 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_clock_t.h" 3 4
+typedef __darwin_clock_t clock_t;
+# 68 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 69 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 70 "/usr/include/time.h" 2 3 4
 
 
 
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long tm_gmtoff;
+ char *tm_zone;
+};
+# 96 "/usr/include/time.h" 3 4
+extern char *tzname[];
+
+
+extern int getdate_err;
+
+extern long timezone __asm("_" "timezone") ;
+
+extern int daylight;
+
+extern "C" {
+char *asctime(const struct tm *);
+clock_t clock(void) __asm("_" "clock") ;
+char *ctime(const time_t *);
+double difftime(time_t, time_t);
+struct tm *getdate(const char *);
+struct tm *gmtime(const time_t *);
+struct tm *localtime(const time_t *);
+time_t mktime(struct tm *) __asm("_" "mktime") ;
+size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime") ;
+char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime") ;
+time_t time(time_t *);
+
+
+void tzset(void);
+
+
+
+char *asctime_r(const struct tm * , char * );
+char *ctime_r(const time_t *, char *);
+struct tm *gmtime_r(const time_t * , struct tm * );
+struct tm *localtime_r(const time_t * , struct tm * );
+
+
+time_t posix2time(time_t);
+
+
+
+void tzsetwall(void);
+time_t time2posix(time_t);
+time_t timelocal(struct tm * const);
+time_t timegm(struct tm * const);
+
+
+
+int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep") ;
+
+}
+# 179 "/usr/include/sys/time.h" 2 3 4
+
+
+extern "C" {
+
+
+int adjtime(const struct timeval *, struct timeval *);
+int futimes(int, const struct timeval *);
+int lutimes(const char *, const struct timeval *) __attribute__((availability(macosx,introduced=10.5)));
+int settimeofday(const struct timeval *, const struct timezone *);
+
+
+int getitimer(int, struct itimerval *);
+int gettimeofday(struct timeval * , void * );
+
+
+
+# 1 "/usr/include/sys/_select.h" 1 3 4
+# 39 "/usr/include/sys/_select.h" 3 4
+int select(int, fd_set * , fd_set * ,
+  fd_set * , struct timeval * )
+
+
+
+
+  __asm("_" "select" "$1050")
+
+
+
+
+  ;
+# 194 "/usr/include/sys/time.h" 2 3 4
+
+int setitimer(int, const struct itimerval * ,
+  struct itimerval * );
+int utimes(const char *, const struct timeval *);
+
+}
+# 34 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 1
+# 26 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h"
+# 1 "/usr/include/string.h" 1 3 4
+# 64 "/usr/include/string.h" 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 65 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 66 "/usr/include/string.h" 2 3 4
+
+
+
+extern "C" {
+void *memchr(const void *, int, size_t);
+int memcmp(const void *, const void *, size_t);
+void *memcpy(void *, const void *, size_t);
+void *memmove(void *, const void *, size_t);
+void *memset(void *, int, size_t);
+char *strcat(char *, const char *);
+char *strchr(const char *, int);
+int strcmp(const char *, const char *);
+int strcoll(const char *, const char *);
+char *strcpy(char *, const char *);
+size_t strcspn(const char *, const char *);
+char *strerror(int) __asm("_" "strerror") ;
+size_t strlen(const char *);
+char *strncat(char *, const char *, size_t);
+int strncmp(const char *, const char *, size_t);
+char *strncpy(char *, const char *, size_t);
+char *strpbrk(const char *, const char *);
+char *strrchr(const char *, int);
+size_t strspn(const char *, const char *);
+char *strstr(const char *, const char *);
+char *strtok(char *, const char *);
+size_t strxfrm(char *, const char *, size_t);
+}
+# 103 "/usr/include/string.h" 3 4
+extern "C" {
+char *strtok_r(char *, const char *, char **);
+}
+# 115 "/usr/include/string.h" 3 4
+extern "C" {
+int strerror_r(int, char *, size_t);
+char *strdup(const char *);
+void *memccpy(void *, const void *, int, size_t);
+}
+# 129 "/usr/include/string.h" 3 4
+extern "C" {
+char *stpcpy(char *, const char *);
+char *stpncpy(char *, const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+char *strndup(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+size_t strnlen(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+char *strsignal(int sig);
+}
+
+
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 142 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 143 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(macosx,introduced=10.9)));
+}
+
+
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 153 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern8(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern16(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
+
+char *strcasestr(const char *, const char *);
+char *strnstr(const char *, const char *, size_t);
+size_t strlcat(char *, const char *, size_t);
+size_t strlcpy(char *, const char *, size_t);
+void strmode(int, char *);
+char *strsep(char **, const char *);
+
+
+void swab(const void * , void * , ssize_t);
+}
+
+
+
+
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 65 "/usr/include/strings.h" 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 66 "/usr/include/strings.h" 2 3 4
+
+extern "C" {
+
+
+int bcmp(const void *, const void *, size_t) ;
+void bcopy(const void *, void *, size_t) ;
+void bzero(void *, size_t) ;
+char *index(const char *, int) ;
+char *rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+}
+
+
+
+extern "C" {
+int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+int fls(int) __attribute__((availability(macosx,introduced=10.5)));
+int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+}
+
+
+
+# 1 "/usr/include/string.h" 1 3 4
+# 93 "/usr/include/strings.h" 2 3 4
+# 177 "/usr/include/string.h" 2 3 4
+# 27 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
 # 31 "/usr/include/sys/_types/_va_list.h" 3 4
 typedef __darwin_va_list va_list;
@@ -470,12 +820,7 @@ int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)))
 int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
 }
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
+# 438 "/usr/include/stdio.h" 3 4
 extern "C" {
 int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
 int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
@@ -513,349 +858,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 5 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp" 2
-# 33 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-# 1 "/usr/include/sys/time.h" 1 3 4
-# 75 "/usr/include/sys/time.h" 3 4
-# 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
-# 45 "/usr/include/sys/_types/_fd_def.h" 3 4
-extern "C" {
-typedef struct fd_set {
- __int32_t fds_bits[((((1024) % ((sizeof(__int32_t) * 8))) == 0) ? ((1024) / ((sizeof(__int32_t) * 8))) : (((1024) / ((sizeof(__int32_t) * 8))) + 1))];
-} fd_set;
-}
-
-
-static inline int
-__darwin_fd_isset(int _n, const struct fd_set *_p)
-{
- return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
-}
-# 76 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
-# 30 "/usr/include/sys/_types/_timespec.h" 3 4
-struct timespec
-{
- __darwin_time_t tv_sec;
- long tv_nsec;
-};
-# 77 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_timeval.h" 1 3 4
-# 30 "/usr/include/sys/_types/_timeval.h" 3 4
-struct timeval
-{
- __darwin_time_t tv_sec;
- __darwin_suseconds_t tv_usec;
-};
-# 78 "/usr/include/sys/time.h" 2 3 4
-
-# 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_time_t.h" 3 4
-typedef __darwin_time_t time_t;
-# 80 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
-typedef __darwin_suseconds_t suseconds_t;
-# 81 "/usr/include/sys/time.h" 2 3 4
-
-
-
-
-
-struct itimerval {
- struct timeval it_interval;
- struct timeval it_value;
-};
-# 105 "/usr/include/sys/time.h" 3 4
-# 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
-# 106 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
-# 107 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
-# 108 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
-# 109 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
-# 110 "/usr/include/sys/time.h" 2 3 4
-
-
-
-# 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
-# 114 "/usr/include/sys/time.h" 2 3 4
-# 124 "/usr/include/sys/time.h" 3 4
-struct timezone {
- int tz_minuteswest;
- int tz_dsttime;
-};
-# 167 "/usr/include/sys/time.h" 3 4
-struct clockinfo {
- int hz;
- int tick;
- int tickadj;
- int stathz;
- int profhz;
-};
-
-
-
-
-
-
-# 1 "/usr/include/time.h" 1 3 4
-# 67 "/usr/include/time.h" 3 4
-# 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_clock_t.h" 3 4
-typedef __darwin_clock_t clock_t;
-# 68 "/usr/include/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 69 "/usr/include/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 70 "/usr/include/time.h" 2 3 4
-
-
-
-struct tm {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
- long tm_gmtoff;
- char *tm_zone;
-};
-# 96 "/usr/include/time.h" 3 4
-extern char *tzname[];
-
-
-extern int getdate_err;
-
-extern long timezone __asm("_" "timezone") ;
-
-extern int daylight;
-
-extern "C" {
-char *asctime(const struct tm *);
-clock_t clock(void) __asm("_" "clock") ;
-char *ctime(const time_t *);
-double difftime(time_t, time_t);
-struct tm *getdate(const char *);
-struct tm *gmtime(const time_t *);
-struct tm *localtime(const time_t *);
-time_t mktime(struct tm *) __asm("_" "mktime") ;
-size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime") ;
-char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime") ;
-time_t time(time_t *);
-
-
-void tzset(void);
-
-
-
-char *asctime_r(const struct tm * , char * );
-char *ctime_r(const time_t *, char *);
-struct tm *gmtime_r(const time_t * , struct tm * );
-struct tm *localtime_r(const time_t * , struct tm * );
-
-
-time_t posix2time(time_t);
-
-
-
-void tzsetwall(void);
-time_t time2posix(time_t);
-time_t timelocal(struct tm * const);
-time_t timegm(struct tm * const);
-
-
-
-int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep") ;
-
-}
-# 179 "/usr/include/sys/time.h" 2 3 4
-
-
-extern "C" {
-
-
-int adjtime(const struct timeval *, struct timeval *);
-int futimes(int, const struct timeval *);
-int lutimes(const char *, const struct timeval *) __attribute__((availability(macosx,introduced=10.5)));
-int settimeofday(const struct timeval *, const struct timezone *);
-
-
-int getitimer(int, struct itimerval *);
-int gettimeofday(struct timeval * , void * );
-
-
-
-# 1 "/usr/include/sys/_select.h" 1 3 4
-# 39 "/usr/include/sys/_select.h" 3 4
-int select(int, fd_set * , fd_set * ,
-  fd_set * , struct timeval * )
-
-
-
-
-  __asm("_" "select" "$1050")
-
-
-
-
-  ;
-# 194 "/usr/include/sys/time.h" 2 3 4
-
-int setitimer(int, const struct itimerval * ,
-  struct itimerval * );
-int utimes(const char *, const struct timeval *);
-
-}
-# 34 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 1
-# 26 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h"
-# 1 "/usr/include/string.h" 1 3 4
-# 64 "/usr/include/string.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 65 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 66 "/usr/include/string.h" 2 3 4
-
-
-
-extern "C" {
-void *memchr(const void *, int, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memcpy(void *, const void *, size_t);
-void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
-char *strcat(char *, const char *);
-char *strchr(const char *, int);
-int strcmp(const char *, const char *);
-int strcoll(const char *, const char *);
-char *strcpy(char *, const char *);
-size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror") ;
-size_t strlen(const char *);
-char *strncat(char *, const char *, size_t);
-int strncmp(const char *, const char *, size_t);
-char *strncpy(char *, const char *, size_t);
-char *strpbrk(const char *, const char *);
-char *strrchr(const char *, int);
-size_t strspn(const char *, const char *);
-char *strstr(const char *, const char *);
-char *strtok(char *, const char *);
-size_t strxfrm(char *, const char *, size_t);
-}
-# 103 "/usr/include/string.h" 3 4
-extern "C" {
-char *strtok_r(char *, const char *, char **);
-}
-# 115 "/usr/include/string.h" 3 4
-extern "C" {
-int strerror_r(int, char *, size_t);
-char *strdup(const char *);
-void *memccpy(void *, const void *, int, size_t);
-}
-# 129 "/usr/include/string.h" 3 4
-extern "C" {
-char *stpcpy(char *, const char *);
-char *stpncpy(char *, const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strndup(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-size_t strnlen(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strsignal(int sig);
-}
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 142 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 143 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-
-
-
-
-extern "C" {
-void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern8(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern16(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-
-char *strcasestr(const char *, const char *);
-char *strnstr(const char *, const char *, size_t);
-size_t strlcat(char *, const char *, size_t);
-size_t strlcpy(char *, const char *, size_t);
-void strmode(int, char *);
-char *strsep(char **, const char *);
-
-
-void swab(const void * , void * , ssize_t);
-}
-
-
-
-
-
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 65 "/usr/include/strings.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 66 "/usr/include/strings.h" 2 3 4
-
-extern "C" {
-
-
-int bcmp(const void *, const void *, size_t) ;
-void bcopy(const void *, void *, size_t) ;
-void bzero(void *, size_t) ;
-char *index(const char *, int) ;
-char *rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-}
-
-
-
-extern "C" {
-int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-int fls(int) __attribute__((availability(macosx,introduced=10.5)));
-int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-# 1 "/usr/include/string.h" 1 3 4
-# 93 "/usr/include/strings.h" 2 3 4
-# 177 "/usr/include/string.h" 2 3 4
-# 27 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 2
-
+# 28 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2500,44 +2503,44 @@ static int progress_num_ticks = -1;
 static int progress_disabled = 0;
 # 43 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 44 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-double seconds() {new_stack(0, 0); if (____chimes_replaying) { goto lbl_0; }
+double seconds() {new_stack((void *)(&seconds), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_1; }
+ lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 46 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_1: struct timezone tzp; register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), (size_t)8, 0, 1, 0); if (____chimes_replaying) { goto lbl_2; }
+ lbl_1: struct timezone tzp; register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), (size_t)8, 0, 1, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_2: int i; register_stack_var("seconds|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } call_lbl_0: calling(0, 0UL, 2, (size_t)(1UL), (size_t)(2UL)); i = (gettimeofday(&tp, &tzp));
+ lbl_2: int i; register_stack_var("seconds|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } call_lbl_1: calling((void*)&gettimeofday, 1, 0UL, 2, (size_t)(10806494385137637574UL), (size_t)(10806494385137637575UL)); i = (gettimeofday(&tp, &tzp)) ;
 # 48 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(1, (size_t)(3UL)); rm_stack(false, 0UL); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
+ alias_group_changed(1, (size_t)(10806494385137637576UL)); rm_stack(false, 0UL); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 }
 # 50 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-void ricker_wavelet(float *source, int nsteps, float dt, float freq) {new_stack(4, 4, (size_t)(92UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "ricker_wavelet|source|0", "float*", (void *)(&source), (size_t)8, 1, 0, 0, "ricker_wavelet|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0, "ricker_wavelet|dt|0", "float", (void *)(&dt), (size_t)4, 0, 0, 0, "ricker_wavelet|freq|0", "float", (void *)(&freq), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void ricker_wavelet(float *source, int nsteps, float dt, float freq) {new_stack((void *)(&ricker_wavelet), 4, 4, (size_t)(10806494385137637665UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "ricker_wavelet|source|0", "float*", (void *)(&source), (size_t)8, 1, 0, 0, "ricker_wavelet|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0, "ricker_wavelet|dt|0", "float", (void *)(&dt), (size_t)4, 0, 0, 0, "ricker_wavelet|freq|0", "float", (void *)(&freq), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 52 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_0: float shift; register_stack_var("ricker_wavelet|shift|0", "float", (void *)(&shift), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } shift = (-1.55939996F / freq);
+ lbl_0: float shift; register_stack_var("ricker_wavelet|shift|0", "float", (void *)(&shift), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } shift = (-1.55939996F / freq) ;
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- { lbl_1: int i; register_stack_var("ricker_wavelet|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( i = (0); i < nsteps; i++) {
+ { lbl_1: int i; register_stack_var("ricker_wavelet|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( i = (0) ; i < nsteps; i++) {
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_2: float time; register_stack_var("ricker_wavelet|time|0", "float", (void *)(&time), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } time = (i * dt + shift);
+ lbl_2: float time; register_stack_var("ricker_wavelet|time|0", "float", (void *)(&time), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } time = (i * dt + shift) ;
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_3: float pi_freq_t; register_stack_var("ricker_wavelet|pi_freq_t|0", "float", (void *)(&pi_freq_t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } pi_freq_t = (3.14151692F * freq * time);
+ lbl_3: float pi_freq_t; register_stack_var("ricker_wavelet|pi_freq_t|0", "float", (void *)(&pi_freq_t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } pi_freq_t = (3.14151692F * freq * time) ;
 # 57 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_4: float sqr_pi_freq_t; register_stack_var("ricker_wavelet|sqr_pi_freq_t|0", "float", (void *)(&sqr_pi_freq_t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } sqr_pi_freq_t = (pi_freq_t * pi_freq_t);
+ lbl_4: float sqr_pi_freq_t; register_stack_var("ricker_wavelet|sqr_pi_freq_t|0", "float", (void *)(&sqr_pi_freq_t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
 # 58 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(23UL), (size_t)(24UL), (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(29UL), (size_t)(30UL), (size_t)(31UL), (size_t)(92UL)); source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
+ alias_group_changed(10, (size_t)(10806494385137637596UL), (size_t)(10806494385137637597UL), (size_t)(10806494385137637598UL), (size_t)(10806494385137637599UL), (size_t)(10806494385137637600UL), (size_t)(10806494385137637601UL), (size_t)(10806494385137637602UL), (size_t)(10806494385137637603UL), (size_t)(10806494385137637604UL), (size_t)(10806494385137637665UL)); source[i] = 1e5f * (1.f - 2 * sqr_pi_freq_t) * exp(-sqr_pi_freq_t);
 # 59 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  } }
 # 60 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-alias_group_changed(7, (size_t)(23UL), (size_t)(24UL), (size_t)(25UL), (size_t)(26UL), (size_t)(27UL), (size_t)(28UL), (size_t)(92UL)); rm_stack(false, 0UL); }
+alias_group_changed(7, (size_t)(10806494385137637596UL), (size_t)(10806494385137637597UL), (size_t)(10806494385137637598UL), (size_t)(10806494385137637599UL), (size_t)(10806494385137637600UL), (size_t)(10806494385137637601UL), (size_t)(10806494385137637665UL)); rm_stack(false, 0UL); }
 # 61 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 62 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-void parse_source(char *optarg, source *out) {new_stack(2, 2, (size_t)(186UL), (size_t)(187UL), "parse_source|optarg|0", "i8*", (void *)(&optarg), (size_t)8, 1, 0, 0, "parse_source|out|0", "%struct._source*", (void *)(&out), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source), 2, 2, (size_t)(10806494385137637759UL), (size_t)(10806494385137637760UL), "parse_source|optarg|0", "i8*", (void *)(&optarg), (size_t)8, 1, 0, 0, "parse_source|out|0", "%struct._source*", (void *)(&out), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 63 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", "i8*", (void *)(&x_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } x_str = (optarg);
+ lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", "i8*", (void *)(&x_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } x_str = (optarg) ;
 # 64 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(97UL), (size_t)(98UL), (size_t)(99UL)); lbl_1: char *first_comma; register_stack_var("parse_source|first_comma|0", "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } first_comma = (strchr(x_str, ','));
+ alias_group_changed(3, (size_t)(10806494385137637670UL), (size_t)(10806494385137637671UL), (size_t)(10806494385137637672UL)); lbl_1: char *first_comma; register_stack_var("parse_source|first_comma|0", "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } first_comma = (strchr(x_str, ',')) ;
 # 65 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (first_comma == __null) {
 # 66 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2545,13 +2548,13 @@ void parse_source(char *optarg, source *out) {new_stack(2, 2, (size_t)(186UL), (
 # 67 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  "be x,y,f,t\n");
 # 68 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(2, (size_t)(100UL), (size_t)(101UL)); exit(1);
+ alias_group_changed(2, (size_t)(10806494385137637673UL), (size_t)(10806494385137637674UL)); exit(1);
 # 69 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 70 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_2: char *y_str; register_stack_var("parse_source|y_str|0", "i8*", (void *)(&y_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } y_str = (first_comma + 1);
+ lbl_2: char *y_str; register_stack_var("parse_source|y_str|0", "i8*", (void *)(&y_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } y_str = (first_comma + 1) ;
 # 71 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(2, (size_t)(100UL), (size_t)(101UL)); lbl_3: char *second_comma; register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } second_comma = (strchr(y_str, ','));
+ alias_group_changed(2, (size_t)(10806494385137637673UL), (size_t)(10806494385137637674UL)); lbl_3: char *second_comma; register_stack_var("parse_source|second_comma|0", "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } second_comma = (strchr(y_str, ',')) ;
 # 72 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (second_comma == __null) {
 # 73 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2559,13 +2562,13 @@ void parse_source(char *optarg, source *out) {new_stack(2, 2, (size_t)(186UL), (
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  "be x,y,f,t\n");
 # 75 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(2, (size_t)(102UL), (size_t)(103UL)); exit(1);
+ alias_group_changed(2, (size_t)(10806494385137637675UL), (size_t)(10806494385137637676UL)); exit(1);
 # 76 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 77 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_4: char *freq_str; register_stack_var("parse_source|freq_str|0", "i8*", (void *)(&freq_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } freq_str = (second_comma + 1);
+ lbl_4: char *freq_str; register_stack_var("parse_source|freq_str|0", "i8*", (void *)(&freq_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } freq_str = (second_comma + 1) ;
 # 78 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(2, (size_t)(102UL), (size_t)(103UL)); lbl_5: char *third_comma; register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } third_comma = (strchr(freq_str, ','));
+ alias_group_changed(2, (size_t)(10806494385137637675UL), (size_t)(10806494385137637676UL)); lbl_5: char *third_comma; register_stack_var("parse_source|third_comma|0", "i8*", (void *)(&third_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } third_comma = (strchr(freq_str, ',')) ;
 # 79 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (third_comma == __null) {
 # 80 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2573,11 +2576,11 @@ void parse_source(char *optarg, source *out) {new_stack(2, 2, (size_t)(186UL), (
 # 81 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  "be x,y,f,t\n");
 # 82 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(104UL), (size_t)(105UL), (size_t)(115UL), (size_t)(155UL), (size_t)(174UL)); exit(1);
+ alias_group_changed(5, (size_t)(10806494385137637677UL), (size_t)(10806494385137637678UL), (size_t)(10806494385137637688UL), (size_t)(10806494385137637728UL), (size_t)(10806494385137637747UL)); exit(1);
 # 83 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 84 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_6: char *time_str; register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } time_str = (third_comma + 1);
+ lbl_6: char *time_str; register_stack_var("parse_source|time_str|0", "i8*", (void *)(&time_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } time_str = (third_comma + 1) ;
 # 85 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  *first_comma = '\0';
 # 86 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2586,28 +2589,28 @@ void parse_source(char *optarg, source *out) {new_stack(2, 2, (size_t)(186UL), (
  *third_comma = '\0';
 # 88 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 89 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(104UL), (size_t)(105UL), (size_t)(115UL), (size_t)(155UL), (size_t)(174UL)); out->x = atoi(x_str);
+ alias_group_changed(5, (size_t)(10806494385137637677UL), (size_t)(10806494385137637678UL), (size_t)(10806494385137637688UL), (size_t)(10806494385137637728UL), (size_t)(10806494385137637747UL)); out->x = atoi(x_str);
 # 90 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(1, (size_t)(187UL)); out->y = atoi(y_str);
+ alias_group_changed(1, (size_t)(10806494385137637760UL)); out->y = atoi(y_str);
 # 91 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(1, (size_t)(187UL)); out->freq = atof(freq_str);
+ alias_group_changed(1, (size_t)(10806494385137637760UL)); out->freq = atof(freq_str);
 # 92 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(1, (size_t)(187UL)); out->t = atoi(time_str);
+ alias_group_changed(1, (size_t)(10806494385137637760UL)); out->t = atoi(time_str);
 # 93 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-alias_group_changed(1, (size_t)(187UL)); rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(10806494385137637760UL)); rm_stack(false, 0UL); }
 # 94 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 95 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack(5, 5, (size_t)(317UL), (size_t)(318UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "config_sources|srcs|0", "%struct._source**", (void *)(&srcs), (size_t)8, 1, 0, 0, "config_sources|nsrcs|0", "i32*", (void *)(&nsrcs), (size_t)8, 1, 0, 0, "config_sources|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "config_sources|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "config_sources|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack((void *)(&config_sources), 5, 5, (size_t)(10806494385137637890UL), (size_t)(10806494385137637891UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "config_sources|srcs|0", "%struct._source**", (void *)(&srcs), (size_t)8, 1, 0, 0, "config_sources|nsrcs|0", "i32*", (void *)(&nsrcs), (size_t)8, 1, 0, 0, "config_sources|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "config_sources|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "config_sources|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 96 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (*nsrcs == 0) {
 # 97 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- *srcs = (source *)malloc_wrapper(sizeof(source), 261UL, 0, 1, (int)sizeof(struct _source), 0);
+ *srcs = (source *)malloc_wrapper(sizeof(source), 10806494385137637834UL, 0, 1, (int)sizeof(struct _source), 0);
 # 98 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (*srcs == __null) {
 # 99 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Allocation failed\n");
 # 100 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); exit(1);
+ alias_group_changed(10, (size_t)(10806494385137637768UL), (size_t)(10806494385137637769UL), (size_t)(10806494385137637770UL), (size_t)(10806494385137637771UL), (size_t)(10806494385137637772UL), (size_t)(10806494385137637773UL), (size_t)(10806494385137637774UL), (size_t)(10806494385137637834UL), (size_t)(10806494385137637890UL), (size_t)(10806494385137637891UL)); exit(1);
 # 101 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 102 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2625,15 +2628,15 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 108 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 109 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 110 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- { lbl_0: int i; register_stack_var("config_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( i = (0); i < *nsrcs; i++) {
+ { lbl_0: int i; register_stack_var("config_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( i = (0) ; i < *nsrcs; i++) {
 # 111 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_1: source *curr; register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } curr = ((*srcs) + i);
+ lbl_1: source *curr; register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } curr = ((*srcs) + i) ;
 # 112 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (curr->x < 0 || curr->x >= nx) {
 # 113 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid x value for source\n");
 # 114 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); exit(1);
+ alias_group_changed(10, (size_t)(10806494385137637768UL), (size_t)(10806494385137637769UL), (size_t)(10806494385137637770UL), (size_t)(10806494385137637771UL), (size_t)(10806494385137637772UL), (size_t)(10806494385137637773UL), (size_t)(10806494385137637774UL), (size_t)(10806494385137637834UL), (size_t)(10806494385137637890UL), (size_t)(10806494385137637891UL)); exit(1);
 # 115 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 116 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2641,7 +2644,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 117 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid y value for source\n");
 # 118 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); exit(1);
+ alias_group_changed(10, (size_t)(10806494385137637768UL), (size_t)(10806494385137637769UL), (size_t)(10806494385137637770UL), (size_t)(10806494385137637771UL), (size_t)(10806494385137637772UL), (size_t)(10806494385137637773UL), (size_t)(10806494385137637774UL), (size_t)(10806494385137637834UL), (size_t)(10806494385137637890UL), (size_t)(10806494385137637891UL)); exit(1);
 # 119 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 120 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2649,58 +2652,58 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 121 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid t value for source\n");
 # 122 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); exit(1);
+ alias_group_changed(10, (size_t)(10806494385137637768UL), (size_t)(10806494385137637769UL), (size_t)(10806494385137637770UL), (size_t)(10806494385137637771UL), (size_t)(10806494385137637772UL), (size_t)(10806494385137637773UL), (size_t)(10806494385137637774UL), (size_t)(10806494385137637834UL), (size_t)(10806494385137637890UL), (size_t)(10806494385137637891UL)); exit(1);
 # 123 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 124 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  } }
 # 125 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-alias_group_changed(10, (size_t)(195UL), (size_t)(196UL), (size_t)(197UL), (size_t)(198UL), (size_t)(199UL), (size_t)(200UL), (size_t)(201UL), (size_t)(261UL), (size_t)(317UL), (size_t)(318UL)); rm_stack(false, 0UL); }
+alias_group_changed(10, (size_t)(10806494385137637768UL), (size_t)(10806494385137637769UL), (size_t)(10806494385137637770UL), (size_t)(10806494385137637771UL), (size_t)(10806494385137637772UL), (size_t)(10806494385137637773UL), (size_t)(10806494385137637774UL), (size_t)(10806494385137637834UL), (size_t)(10806494385137637890UL), (size_t)(10806494385137637891UL)); rm_stack(false, 0UL); }
 # 126 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 127 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack(4, 4, (size_t)(400UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), (size_t)8, 1, 0, 0, "sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), (size_t)4, 0, 0, 0, "sample_sources|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0, "sample_sources|dt|0", "float", (void *)(&dt), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack((void *)(&sample_sources), 4, 4, (size_t)(10806494385137637973UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "sample_sources|srcs|0", "%struct._source*", (void *)(&srcs), (size_t)8, 1, 0, 0, "sample_sources|nsrcs|0", "i32", (void *)(&nsrcs), (size_t)4, 0, 0, 0, "sample_sources|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0, "sample_sources|dt|0", "float", (void *)(&dt), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 128 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 341UL, 1, 0));
+ lbl_0: float **src_samples; register_stack_var("sample_sources|src_samples|0", "float**", (void *)(&src_samples), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 10806494385137637914UL, 1, 0)) ;
 # 129 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (src_samples == __null) {
 # 130 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Allocation failed\n");
 # 131 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(7, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL), (size_t)(341UL)); exit(1);
+ alias_group_changed(7, (size_t)(10806494385137637896UL), (size_t)(10806494385137637897UL), (size_t)(10806494385137637898UL), (size_t)(10806494385137637899UL), (size_t)(10806494385137637900UL), (size_t)(10806494385137637901UL), (size_t)(10806494385137637914UL)); exit(1);
 # 132 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 133 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 134 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } for ( i = (0); i < nsrcs; i++) {
+ { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } default: { chimes_error(); } } } for ( i = (0) ; i < nsrcs; i++) {
 # 135 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 361UL, 0, 0);
+ src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 10806494385137637934UL, 0, 0);
 # 136 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (src_samples[i] == __null) {
 # 137 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Allocation failed\n");
 # 138 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(7, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL), (size_t)(341UL)); exit(1);
+ alias_group_changed(7, (size_t)(10806494385137637896UL), (size_t)(10806494385137637897UL), (size_t)(10806494385137637898UL), (size_t)(10806494385137637899UL), (size_t)(10806494385137637900UL), (size_t)(10806494385137637901UL), (size_t)(10806494385137637914UL)); exit(1);
 # 139 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 140 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(7, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL), (size_t)(341UL)); call_lbl_0: calling(0, 0UL, 4, (size_t)(361UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ricker_wavelet(src_samples[i], nsteps, dt, srcs[i].freq);
+ alias_group_changed(7, (size_t)(10806494385137637896UL), (size_t)(10806494385137637897UL), (size_t)(10806494385137637898UL), (size_t)(10806494385137637899UL), (size_t)(10806494385137637900UL), (size_t)(10806494385137637901UL), (size_t)(10806494385137637914UL)); call_lbl_10: calling((void*)&ricker_wavelet, 10, 0UL, 4, (size_t)(10806494385137637934UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ricker_wavelet(src_samples[i], nsteps, dt, srcs[i].freq);
 # 141 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  } }
 # 142 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(6, (size_t)(323UL), (size_t)(324UL), (size_t)(325UL), (size_t)(326UL), (size_t)(327UL), (size_t)(328UL)); rm_stack(true, 341UL); return src_samples;
+ alias_group_changed(6, (size_t)(10806494385137637896UL), (size_t)(10806494385137637897UL), (size_t)(10806494385137637898UL), (size_t)(10806494385137637899UL), (size_t)(10806494385137637900UL), (size_t)(10806494385137637901UL)); rm_stack(true, 10806494385137637914UL); return src_samples;
 # 143 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 }
 # 144 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 145 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-void init_progress(int length, int goal, int disabled) {new_stack(3, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "init_progress|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0, "init_progress|goal|0", "i32", (void *)(&goal), (size_t)4, 0, 0, 0, "init_progress|disabled|0", "i32", (void *)(&disabled), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init_progress), 3, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "init_progress|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0, "init_progress|goal|0", "i32", (void *)(&goal), (size_t)4, 0, 0, 0, "init_progress|disabled|0", "i32", (void *)(&disabled), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 146 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+ lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 147 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (progress_buffer != __null) {
 # 148 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Progress initialized multiple times\n");
 # 149 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); exit(1);
+ alias_group_changed(5, (size_t)(10806494385137637977UL), (size_t)(10806494385137637978UL), (size_t)(10806494385137637979UL), (size_t)(10806494385137638185UL), (size_t)(10806494385137638188UL)); exit(1);
 # 150 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 151 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2709,7 +2712,7 @@ void init_progress(int length, int goal, int disabled) {new_stack(3, 3, (size_t)
 # 153 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid progress length, must be <= 100\n");
 # 154 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); exit(1);
+ alias_group_changed(5, (size_t)(10806494385137637977UL), (size_t)(10806494385137637978UL), (size_t)(10806494385137637979UL), (size_t)(10806494385137638185UL), (size_t)(10806494385137638188UL)); exit(1);
 # 155 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 156 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2717,12 +2720,12 @@ void init_progress(int length, int goal, int disabled) {new_stack(3, 3, (size_t)
  progress_disabled = disabled;
 # 158 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 159 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- if (disabled) {alias_group_changed(7, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(457UL), (size_t)(612UL), (size_t)(615UL)); rm_stack(false, 0UL); return;; };
+ if (disabled) {alias_group_changed(7, (size_t)(10806494385137637977UL), (size_t)(10806494385137637978UL), (size_t)(10806494385137637979UL), (size_t)(10806494385137637980UL), (size_t)(10806494385137638030UL), (size_t)(10806494385137638185UL), (size_t)(10806494385137638188UL)); rm_stack(false, 0UL); return;; };
 # 160 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 161 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 457UL, 0, 0);
+ progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 10806494385137638030UL, 0, 0);
 # 162 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(612UL), (size_t)(615UL)); call_lbl_0: calling(0, 0UL, 4, (size_t)(616UL), (size_t)(617UL), (size_t)(0UL), (size_t)(618UL)); (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
+ alias_group_changed(5, (size_t)(10806494385137637977UL), (size_t)(10806494385137637978UL), (size_t)(10806494385137637979UL), (size_t)(10806494385137638185UL), (size_t)(10806494385137638188UL)); (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
 # 163 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  progress_length = length;
 # 164 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2747,17 +2750,17 @@ void init_progress(int length, int goal, int disabled) {new_stack(3, 3, (size_t)
 # 175 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "%s", progress_buffer);
 # 176 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-alias_group_changed(7, (size_t)(404UL), (size_t)(405UL), (size_t)(406UL), (size_t)(407UL), (size_t)(457UL), (size_t)(612UL), (size_t)(615UL)); rm_stack(false, 0UL); }
+alias_group_changed(7, (size_t)(10806494385137637977UL), (size_t)(10806494385137637978UL), (size_t)(10806494385137637979UL), (size_t)(10806494385137637980UL), (size_t)(10806494385137638030UL), (size_t)(10806494385137638185UL), (size_t)(10806494385137638188UL)); rm_stack(false, 0UL); }
 # 177 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 178 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-void update_progress(int progress) {new_stack(1, 1, (size_t)(0UL), "update_progress|progress|0", "i32", (void *)(&progress), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void update_progress(int progress) {new_stack((void *)(&update_progress), 1, 1, (size_t)(0UL), "update_progress|progress|0", "i32", (void *)(&progress), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 179 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_0: int i; register_stack_var("update_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; }
+ lbl_0: int i; register_stack_var("update_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 180 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 181 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (progress_disabled) {
 # 182 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(6, (size_t)(457UL), (size_t)(502UL), (size_t)(503UL), (size_t)(504UL), (size_t)(505UL), (size_t)(615UL)); rm_stack(false, 0UL); return;
+ alias_group_changed(6, (size_t)(10806494385137638030UL), (size_t)(10806494385137638075UL), (size_t)(10806494385137638076UL), (size_t)(10806494385137638077UL), (size_t)(10806494385137638078UL), (size_t)(10806494385137638188UL)); rm_stack(false, 0UL); return;
 # 183 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 184 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2768,14 +2771,14 @@ void update_progress(int progress) {new_stack(1, 1, (size_t)(0UL), "update_progr
 # 187 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  "init_progress\n");
 # 188 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(502UL), (size_t)(504UL), (size_t)(505UL)); exit(1);
+ alias_group_changed(3, (size_t)(10806494385137638075UL), (size_t)(10806494385137638077UL), (size_t)(10806494385137638078UL)); exit(1);
 # 189 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 190 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 191 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_1: double perc_progress; register_stack_var("update_progress|perc_progress|0", "double", (void *)(&perc_progress), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } perc_progress = ((double)progress / (double)progress_goal);
+ lbl_1: double perc_progress; register_stack_var("update_progress|perc_progress|0", "double", (void *)(&perc_progress), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } perc_progress = ((double)progress / (double)progress_goal) ;
 # 192 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- lbl_2: int ticks; register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { exit(42); } } } ticks = ((int)(perc_progress * progress_length));
+ lbl_2: int ticks; register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ticks = ((int)(perc_progress * progress_length)) ;
 # 193 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (ticks > progress_length) {
 # 194 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2788,7 +2791,7 @@ void update_progress(int progress) {new_stack(1, 1, (size_t)(0UL), "update_progr
 # 198 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "Ticks went backwards?\n");
 # 199 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(502UL), (size_t)(504UL), (size_t)(505UL)); exit(1);
+ alias_group_changed(3, (size_t)(10806494385137638075UL), (size_t)(10806494385137638077UL), (size_t)(10806494385137638078UL)); exit(1);
 # 200 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  }
 # 201 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2816,10 +2819,10 @@ void update_progress(int progress) {new_stack(1, 1, (size_t)(0UL), "update_progr
 # 214 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  progress_num_ticks = ticks;
 # 215 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-alias_group_changed(6, (size_t)(457UL), (size_t)(502UL), (size_t)(503UL), (size_t)(504UL), (size_t)(505UL), (size_t)(615UL)); rm_stack(false, 0UL); }
+alias_group_changed(6, (size_t)(10806494385137638030UL), (size_t)(10806494385137638075UL), (size_t)(10806494385137638076UL), (size_t)(10806494385137638077UL), (size_t)(10806494385137638078UL), (size_t)(10806494385137638188UL)); rm_stack(false, 0UL); }
 # 216 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 217 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
-void finish_progress() {new_stack(0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } }
+void finish_progress() {new_stack((void *)(&finish_progress), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 218 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  if (progress_disabled) {
 # 219 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
@@ -2828,18 +2831,18 @@ void finish_progress() {new_stack(0, 0); if (____chimes_replaying) { switch(get_
  }
 # 221 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 222 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- call_lbl_0: calling(0, 0UL, 1, (size_t)(0UL)); update_progress(progress_goal);
+ call_lbl_2: calling((void*)&update_progress, 2, 0UL, 1, (size_t)(0UL)); update_progress(progress_goal);
 # 223 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
  fprintf(__stderrp, "\n");
 # 224 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 # 225 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
- free_wrapper(progress_buffer, 457UL);
+ free_wrapper(progress_buffer, 10806494385137638030UL);
 # 226 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp"
 rm_stack(false, 0UL); }
 
 
 static int module_init() {
-    init_module(10806494385137637573UL, 19, 3, 201UL, 261UL, 323UL, 400UL, 606UL, 120UL, 612UL, 457UL, 23UL, 92UL, 195UL, 317UL, 196UL, 318UL, 317UL, 261UL, 99UL, 186UL, 98UL, 187UL, 327UL, 341UL, 104UL, 155UL, 102UL, 174UL, 103UL, 174UL, 100UL, 115UL, 101UL, 115UL, 341UL, 361UL, 97UL, 186UL, 105UL, 155UL, "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t), "timeval", 2, (int)__builtin_offsetof(struct timeval, tv_sec), (int)__builtin_offsetof(struct timeval, tv_usec), "timezone", 2, (int)__builtin_offsetof(struct timezone, tz_minuteswest), (int)__builtin_offsetof(struct timezone, tz_dsttime));
+    init_module(10806494385137637573UL, 19, 3, 10806494385137637573UL + 201UL, 10806494385137637573UL + 261UL, 10806494385137637573UL + 323UL, 10806494385137637573UL + 400UL, 10806494385137637573UL + 606UL, 10806494385137637573UL + 120UL, 10806494385137637573UL + 612UL, 10806494385137637573UL + 457UL, 10806494385137637573UL + 23UL, 10806494385137637573UL + 92UL, 10806494385137637573UL + 195UL, 10806494385137637573UL + 317UL, 10806494385137637573UL + 196UL, 10806494385137637573UL + 318UL, 10806494385137637573UL + 317UL, 10806494385137637573UL + 261UL, 10806494385137637573UL + 99UL, 10806494385137637573UL + 186UL, 10806494385137637573UL + 98UL, 10806494385137637573UL + 187UL, 10806494385137637573UL + 327UL, 10806494385137637573UL + 341UL, 10806494385137637573UL + 104UL, 10806494385137637573UL + 155UL, 10806494385137637573UL + 102UL, 10806494385137637573UL + 174UL, 10806494385137637573UL + 103UL, 10806494385137637573UL + 174UL, 10806494385137637573UL + 100UL, 10806494385137637573UL + 115UL, 10806494385137637573UL + 101UL, 10806494385137637573UL + 115UL, 10806494385137637573UL + 341UL, 10806494385137637573UL + 361UL, 10806494385137637573UL + 97UL, 10806494385137637573UL + 186UL, 10806494385137637573UL + 105UL, 10806494385137637573UL + 155UL, "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t), "timeval", 2, (int)__builtin_offsetof(struct timeval, tv_sec), (int)__builtin_offsetof(struct timeval, tv_usec), "timezone", 2, (int)__builtin_offsetof(struct timezone, tz_minuteswest), (int)__builtin_offsetof(struct timezone, tz_dsttime));
     register_global_var("global|progress_buffer", "i8**", (void *)(&progress_buffer), 8, 1, 0, 0);
     register_global_var("global|progress_disabled", "i32*", (void *)(&progress_disabled), 8, 1, 0, 0);
     register_global_var("global|progress_length", "i32*", (void *)(&progress_length), 8, 1, 0, 0);

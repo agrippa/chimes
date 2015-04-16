@@ -1,0 +1,5 @@
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c parseCommandLine|argc|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c parseCommandLine|argv|0 " i8** " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c parseCommandLine|help|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c printCmdYaml|file|0 " %struct.__sFILE* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c printCmdYaml|cmd|0 " %struct.CommandSt* " 64 1 0 

@@ -1,0 +1,9 @@
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|msg|0 " i8* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|t|0 " i64 " 64 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c timestampBarrier|timeString|0 " i8* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c sendReceiveParallel|sendBuf|0 " i8* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c sendReceiveParallel|sendLen|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c sendReceiveParallel|dest|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c sendReceiveParallel|recvBuf|0 " i8* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c sendReceiveParallel|recvLen|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c sendReceiveParallel|source|0 " i32 " 32 0 0 

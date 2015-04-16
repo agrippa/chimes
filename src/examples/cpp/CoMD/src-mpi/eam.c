@@ -169,7 +169,7 @@ static void typeNotSupported(const char* callSite, const char* type);
 /// \param [in] type  The file format of the potential file (setfl or funcfl).
 BasePotential* initEamPot(const char* dir, const char* file, const char* type)
 {
-   EamPotential* pot = malloc(sizeof(EamPotential));
+   EamPotential* pot = (EamPotential*)malloc(sizeof(EamPotential));
    assert(pot);
    pot->force = eamForce;
    pot->print = eamPrint;
@@ -220,10 +220,10 @@ int eamForce(SimFlat* s)
    if (pot->forceExchange == NULL)
    {
       int maxTotalAtoms = MAXATOMS*s->boxes->nTotalBoxes;
-      pot->dfEmbed = malloc(maxTotalAtoms*sizeof(real_t));
-      pot->rhobar  = malloc(maxTotalAtoms*sizeof(real_t));
+      pot->dfEmbed = (real_t*)malloc(maxTotalAtoms*sizeof(real_t));
+      pot->rhobar  = (real_t*)malloc(maxTotalAtoms*sizeof(real_t));
       pot->forceExchange = initForceHaloExchange(s->domain, s->boxes);
-      pot->forceExchangeData = malloc(sizeof(ForceExchangeData));
+      pot->forceExchangeData = (ForceExchangeData*)malloc(sizeof(ForceExchangeData));
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
       pot->forceExchangeData->boxes = s->boxes;
    }
@@ -400,20 +400,21 @@ void eamDestroy(BasePotential** pPot)
    return;
 }
 
+typedef struct _buf_t {
+      real_t cutoff, mass, lat;
+      char latticeType[8];
+      char name[3];
+      int atomicNo;
+} buf_t;
+
 /// Broadcasts an EamPotential from rank 0 to all other ranks.
 /// If the table coefficients are read from a file only rank 0 does the
 /// read.  Hence we need to broadcast the potential to all other ranks.
 void eamBcastPotential(EamPotential* pot)
 {
    assert(pot);
-   
-   struct 
-   {
-      real_t cutoff, mass, lat;
-      char latticeType[8];
-      char name[3];
-      int atomicNo;
-   } buf;
+   buf_t buf;
+
    if (getMyRank() == 0)
    {
       buf.cutoff   = pot->cutoff;
@@ -532,6 +533,11 @@ void interpolate(InterpolationObject* table, real_t r, real_t* f, real_t* df)
    *df = 0.5*(g1 + r*(g2-g1))*table->invDx;
 }
 
+typedef struct _buf_2_t {
+      int n;
+      real_t x0, invDx;
+} buf_2_t;
+
 /// Broadcasts an InterpolationObject from rank 0 to all other ranks.
 ///
 /// It is commonly the case that the data needed to create the
@@ -542,11 +548,7 @@ void interpolate(InterpolationObject* table, real_t r, real_t* f, real_t* df)
 /// \see eamBcastPotential
 void bcastInterpolationObject(InterpolationObject** table)
 {
-   struct
-   {
-      int n;
-      real_t x0, invDx;
-   } buf;
+  buf_2_t buf;
 
    if (getMyRank() == 0)
    {
@@ -559,11 +561,11 @@ void bcastInterpolationObject(InterpolationObject** table)
    if (getMyRank() != 0)
    {
       assert(*table == NULL);
-      *table = malloc(sizeof(InterpolationObject));
+      *table = (InterpolationObject*)malloc(sizeof(InterpolationObject));
       (*table)->n      = buf.n;
       (*table)->x0     = buf.x0;
       (*table)->invDx  = buf.invDx;
-      (*table)->values = malloc(sizeof(real_t) * (buf.n+3) );
+      (*table)->values = (real_t*)malloc(sizeof(real_t) * (buf.n+3) );
       (*table)->values++;
    }
    
@@ -673,7 +675,7 @@ void eamReadSetfl(EamPotential* pot, const char* dir, const char* potName)
    
    // allocate read buffer
    int bufSize = MAX(nRho, nR);
-   real_t* buf = malloc(bufSize * sizeof(real_t));
+   real_t* buf = (real_t*)malloc(bufSize * sizeof(real_t));
    real_t x0 = 0.0;
 
    // Read embedding energy F(rhobar)
@@ -784,7 +786,7 @@ void eamReadFuncfl(EamPotential* pot, const char* dir, const char* potName)
 
    // allocate read buffer
    int bufSize = MAX(nRho, nR);
-   real_t* buf = malloc(bufSize * sizeof(real_t));
+   real_t* buf = (real_t*)malloc(bufSize * sizeof(real_t));
 
    // read embedding energy
    for (int ii=0; ii<nRho; ++ii)

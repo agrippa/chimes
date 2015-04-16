@@ -26496,40 +26496,44 @@ return (err == (cudaSuccess)) ? cudaBindSurfaceToArray(surf, array, desc) : err;
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_chimes();
 # 7 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void calling(int lbl, size_t set_return_alias, unsigned naliases, ...);
-# 8 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int get_next_call();
+extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned naliases, ...);
 # 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void new_stack(unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern int get_next_call();
 # 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
+extern void new_stack(void * func_ptr, unsigned n_local_arg_aliases, unsigned nargs, ...);
 # 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...);
+# 14 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-# 13 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 15 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 18 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 19 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int alias_group_changed(int ngroups, ...);
-# 20 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
 # 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
-# 23 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void free_wrapper(void * ptr, size_t group);
-# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
+# 24 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
 # 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
+# 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void free_wrapper(void * ptr, size_t group);
+# 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+# 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
-# 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void leaving_omp_parallel();
 # 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
+extern void leaving_omp_parallel();
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void chimes_error();
+# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
+# 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
@@ -26785,11 +26789,11 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-int main(int argc, char **argv) {init_chimes(); new_stack(2, 2, (size_t)(0UL), (size_t)(15UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(3859550638466940446UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
- lbl_0: dim3 blocks; register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } } } blocks = dim3(4, 256);
+ lbl_0: dim3 blocks; register_stack_var("main|blocks|0", "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-alias_group_changed(3, (size_t)(1UL), (size_t)(2UL), (size_t)(3UL)); call_lbl_0: calling(0, 0UL, 0); checkpoint();
+alias_group_changed(3, (size_t)(3859550638466940432UL), (size_t)(3859550638466940433UL), (size_t)(3859550638466940434UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 rm_stack(false, 0UL); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
@@ -27584,7 +27588,7 @@ static void __sti____cudaRegisterAll_12_dim3_cpp1_ii_main(void){__cudaFatCubinHa
 
 
 static int module_init() {
-    init_module(3859550638466940431UL, 8, 2, 109UL, 72UL, 18UL, 36UL, 51UL, 72UL, 40UL, 117UL, 3UL, 15UL, 74UL, 72UL, 65UL, 72UL, 81UL, 104UL, "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
+    init_module(3859550638466940431UL, 8, 2, 3859550638466940431UL + 109UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 18UL, 3859550638466940431UL + 36UL, 3859550638466940431UL + 51UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 40UL, 3859550638466940431UL + 117UL, 3859550638466940431UL + 3UL, 3859550638466940431UL + 15UL, 3859550638466940431UL + 74UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 65UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 81UL, 3859550638466940431UL + 104UL, "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
     return 0;
 }
 

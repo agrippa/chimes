@@ -10,6 +10,22 @@
 
 extern DesiredInsertions *insertions;
 
+static std::string join_strings(std::vector<std::string> &l,
+        std::string joiner, std::string ender) {
+    std::stringstream stream;
+
+    bool first = true;
+    for (std::vector<std::string>::iterator i = l.begin(), e = l.end(); i != e;
+            i++) {
+        if (!first) stream << " " << joiner;
+        stream << *i;
+        first = false;
+    }
+    stream << ender;
+
+    return (stream.str());
+}
+
 void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
@@ -29,7 +45,7 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
         if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {
             const clang::DeclStmt *d = clang::dyn_cast<clang::DeclStmt>(s);
             std::stringstream acc_decl;
-            std::stringstream acc_init;
+            std::vector<std::string> acc_init;
 
             // Iterate over declarations in this declaration statement
             for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
@@ -51,6 +67,12 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                         init->printPretty(init_stream, NULL, Context->getPrintingPolicy());
                         init_stream.flush();
 
+                        /*
+                         * TODO it seems that anonymous struct declarations in
+                         * C++ appear as a variable declaration with a
+                         * CXXConstructExpr as its init method. For now, we just
+                         * don't support anonymous structs.
+                         */
                         v->setInit(NULL);
                         std::string decl_str;
                         llvm::raw_string_ostream decl_stream(decl_str);
@@ -67,12 +89,16 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                                 int i = 0;
                                 while (decl_str[i] != ' ') i++;
 
-                                acc_init << " " << v->getName().str() << " = " <<
-                                    decl_str.substr(0, i) << "(" << init_str << "); ";
+                                std::stringstream this_init;
+                                this_init << " " << v->getName().str() << " = " <<
+                                    decl_str.substr(0, i) << "(" << init_str << ") ";
+                                acc_init.push_back(this_init.str());
                             }
                         } else {
-                            acc_init << " " << v->getName().str() << " = (" <<
-                                init_str << "); ";
+                            std::stringstream this_init;
+                            this_init << " " << v->getName().str() << " = (" <<
+                                init_str << ") ";
+                            acc_init.push_back(this_init.str());
                         }
                     } else {
                         /*
@@ -105,13 +131,14 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                         full_decl << "{ " << acc_decl.str();
                         InsertAtFront(f, full_decl.str());
                         InsertTextAfterToken(f->getLocEnd(), " }");
-                        ReplaceText(rng, acc_init.str());
+                        ReplaceText(rng, join_strings(acc_init, ",", ";"));
                         insertions->add_line_collapse(
                                 startingLine(f->getInit()),
                                 endingLine(f->getInit()));
                     } else {
                         std::stringstream complete;
-                        complete << acc_decl.str() << acc_init.str();
+                        complete << acc_decl.str() << join_strings(acc_init,
+                                ";", ";");
                         ReplaceText(rng, complete.str());
                         insertions->add_line_collapse(startingLine(s),
                                 endingLine(s));
@@ -120,7 +147,8 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                 }
                 default: {
                     std::stringstream complete;
-                    complete << acc_decl.str() << acc_init.str();
+                    complete << acc_decl.str() << join_strings(acc_init, ";",
+                            ";");
                     ReplaceText(rng, complete.str());
                     insertions->add_line_collapse(startingLine(s),
                             endingLine(s));

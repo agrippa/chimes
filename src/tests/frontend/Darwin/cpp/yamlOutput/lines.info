@@ -1,0 +1,4 @@
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 56 4 : { 3 } direct:call:sprintf
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 9 : { 55 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 32 4 : { 122 } direct:call:time
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 35 4 : { 124 } direct:call:sprintf

@@ -16,6 +16,27 @@ static int find_group_end(std::string *s) {
     return -1;
 }
 
+size_t DesiredInsertions::get_module_id() {
+    return module_id;
+}
+
+size_t DesiredInsertions::hash(const char *s, size_t seed) {
+    size_t hash = seed;
+    while (*s) {
+        hash = hash * 101 + *s++;
+    }
+    return hash;
+}
+
+/*
+ * Increment all aliases by module_id to ensure uniqueness even in applications
+ * compiled from multiple modules (i.e. files).
+ */
+size_t DesiredInsertions::unique_alias(size_t alias) {
+    if (alias == 0) return alias;
+    else return module_id + alias;
+}
+
 std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
     std::vector<OpenMPPragma> *pragmas = new std::vector<OpenMPPragma>();
 
@@ -159,23 +180,25 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
 
         if (end == std::string::npos) {
             // No terminating aliases
-            size_t return_alias = strtoul(line.c_str(), NULL, 10);
+            size_t return_alias = unique_alias(strtoul(line.c_str(), NULL, 10));
             FunctionExit *info = new FunctionExit(return_alias);
             (*result)[funcname] = info;
         } else {
             // At least one terminating alias
-            size_t return_alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
+            size_t return_alias = unique_alias(
+                    strtoul(line.substr(0, end).c_str(), NULL, 10));
             line = line.substr(end + 1);
             FunctionExit *info = new FunctionExit(return_alias);
 
             end = line.find(' ');
             while (end != std::string::npos) {
-                size_t alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
+                size_t alias = unique_alias(strtoul(line.substr(0, end).c_str(),
+                            NULL, 10));
                 info->add_changed_group_at_term(alias);
                 line = line.substr(end + 1);
                 end = line.find(' ');
             }
-            size_t alias = strtoul(line.c_str(), NULL, 10);
+            size_t alias = unique_alias(strtoul(line.c_str(), NULL, 10));
             info->add_changed_group_at_term(alias);
 
             (*result)[funcname] = info;
@@ -206,13 +229,14 @@ std::vector<FunctionArgumentAliasGroups> *DesiredInsertions::parseFunctions() {
 
             end = line.find(' ');
             while (end != std::string::npos) {
-                size_t alias_no = strtoul(line.substr(0, end).c_str(), NULL,
-                        10);
+                size_t alias_no = unique_alias(
+                        strtoul(line.substr(0, end).c_str(), NULL, 10));
                 func.add_alias_no(alias_no);
                 line = line.substr(end + 1);
                 end = line.find(' ');
             }
-            size_t last_alias_no = strtoul(line.c_str(), NULL, 10);
+            size_t last_alias_no = unique_alias(
+                    strtoul(line.c_str(), NULL, 10));
             func.add_alias_no(last_alias_no);
 
             functions->push_back(func);
@@ -246,12 +270,13 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
         AliasesPassedToCallSite *callsite;
         end = line.find(' ');
         if (end == std::string::npos) {
-            size_t alias = strtoul(line.c_str(), NULL, 10);
+            size_t alias = unique_alias(strtoul(line.c_str(), NULL, 10));
 
             callsite = new AliasesPassedToCallSite(funcname, line_no,
                     col, alias);
         } else {
-            size_t alias = strtoul(line.substr(0, end).c_str(), NULL, 10);
+            size_t alias = unique_alias(
+                    strtoul(line.substr(0, end).c_str(), NULL, 10));
             line = line.substr(end + 1);
 
             callsite = new AliasesPassedToCallSite(funcname, line_no,
@@ -259,12 +284,14 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
 
             end = line.find(' ');
             while (end != std::string::npos) {
-                size_t alias_no = strtoul(line.substr(0, end).c_str(), NULL, 10);
+                size_t alias_no = unique_alias(
+                        strtoul(line.substr(0, end).c_str(), NULL, 10));
                 callsite->add_alias_no(alias_no);
                 line = line.substr(end + 1);
                 end = line.find(' ');
             }
-            size_t last_alias_no = strtoul(line.c_str(), NULL, 10);
+            size_t last_alias_no = unique_alias(
+                    strtoul(line.c_str(), NULL, 10));
             callsite->add_alias_no(last_alias_no);
         }
 
@@ -298,7 +325,7 @@ std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *DesiredInserti
 
         size_t group_end = line.find(' ');
         std::string group_str = line.substr(0, group_end);
-        size_t group = strtoul(group_str.c_str(), NULL, 10);
+        size_t group = unique_alias(strtoul(group_str.c_str(), NULL, 10));
         line = line.substr(group_end + 1);
 
         std::string fname;
@@ -533,7 +560,7 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         while (1) {
             int group_end = find_group_end(&line);
             std::string group_str = line.substr(0, group_end);
-            size_t group = strtoul(group_str.c_str(), NULL, 10);
+            size_t group = unique_alias(strtoul(group_str.c_str(), NULL, 10));
             groups->push_back(group);
 
             if (line[group_end + 1] == '}') break;
@@ -675,8 +702,8 @@ AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
     }
 
     if (i == e) {
-        llvm::errs() << "Unable to find match for " << callee_name <<
-            " on line " << line << "\n";
+        llvm::errs() << "Unable to find match for call site on line " << line <<
+            "\n";
         assert(false);
     }
 
@@ -685,18 +712,18 @@ AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
     return result;
 }
 
-FunctionArgumentAliasGroups DesiredInsertions::findMatchingFunction(
+FunctionArgumentAliasGroups* DesiredInsertions::findMatchingFunctionNullReturn(
         std::string func) {
     for (std::vector<FunctionArgumentAliasGroups>::iterator i =
             functions->begin(), e = functions->end(); i != e; i++) {
-        FunctionArgumentAliasGroups curr = *i;
-        if (curr.get_funcname() == func) {
+        FunctionArgumentAliasGroups *curr = &*i;
+        if (curr->get_funcname() == func) {
             return curr;
         }
 
-        size_t template_index = curr.get_funcname().find('<');
+        size_t template_index = curr->get_funcname().find('<');
         if (template_index != std::string::npos) {
-            std::string without_template = curr.get_funcname().substr(0,
+            std::string without_template = curr->get_funcname().substr(0,
                     template_index);
             if (without_template == func) {
                 return curr;
@@ -704,8 +731,18 @@ FunctionArgumentAliasGroups DesiredInsertions::findMatchingFunction(
         }
     }
 
-    llvm::errs() << func << "\n";
-    assert(false);
+    return (NULL);
+}
+
+FunctionArgumentAliasGroups DesiredInsertions::findMatchingFunction(
+        std::string func) {
+    FunctionArgumentAliasGroups *result = findMatchingFunctionNullReturn(func);
+
+    if (result == NULL) {
+        llvm::errs() << func << "\n";
+        assert(false);
+    }
+    return *result;
 }
 
 FunctionExit *DesiredInsertions::getFunctionExitInfo(std::string funcname) {

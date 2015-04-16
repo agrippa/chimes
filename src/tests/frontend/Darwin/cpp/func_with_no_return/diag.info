@@ -1,8 +1,8 @@
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 32 new_stack(0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 alias_group_changed(1, (size_t)(17UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 alias_group_changed(3, (size_t)(3UL), (size_t)(4UL), (size_t)(5UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 new_stack(2, 0, (size_t)(0UL), (size_t)(14UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 32 new_stack((void *)(&haha_this_sux_part_canc), 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 alias_group_changed(1, (size_t)(1556987170722293722UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 alias_group_changed(3, (size_t)(1556987170722293708UL), (size_t)(1556987170722293709UL), (size_t)(1556987170722293710UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 init_chimes(); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 48  if (____chimes_replaying) {  switch(get_next_call()) { default: { exit(42); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5  call_lbl_0: calling(0, 0UL, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 95  if (____chimes_replaying) {  switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { exit(42); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 84  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5  call_lbl_2: calling((void*)&haha_this_sux_part_canc, 2, 0UL, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 129  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 

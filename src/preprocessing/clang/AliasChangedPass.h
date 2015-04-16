@@ -36,9 +36,6 @@ public:
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
     bool createsOMPTree() override { return false; }
-
-private:
-    std::string to_string(const clang::Stmt *stmt);
 };
 
 #endif

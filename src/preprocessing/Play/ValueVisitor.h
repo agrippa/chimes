@@ -158,6 +158,7 @@ class ValueVisitor {
         size_t visitPhi(PHINode *phi, Value *prev);
         size_t visitExtractValue(ExtractValueInst *ex, Value *prev);
         size_t visitLandingPad(LandingPadInst *land, Value *prev);
+        size_t visitSelect(SelectInst *slct, Value *prev);
 
         void storesReferencesToGroup(size_t container, size_t child);
         size_t searchForValueInKnownAliases(Value *val);

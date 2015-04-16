@@ -16,48 +16,65 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
     if (func != NULL && func->isThisDeclarationADefinition()) {
         clang::SourceLocation declEnd = func->getBody()->getLocStart();
 
-        FunctionArgumentAliasGroups funcAliases =
-            insertions->findMatchingFunction(curr_func);
-
-        std::stringstream ss;
-        ss << "new_stack(" << funcAliases.nargs() << ", " <<
-            (insert_at_front == NULL ? 0 : insert_at_front->size());
-        for (unsigned i = 0; i < funcAliases.nargs(); i++) {
-            ss << ", (size_t)(" << funcAliases.alias_no_for(i) << "UL)";
-        }
+        FunctionArgumentAliasGroups *funcAliases =
+            insertions->findMatchingFunctionNullReturn(curr_func);
 
         /*
-         * Insert stack registrations for parameters to functions.
+         * There may be no function info for a given function if it is a static
+         * function that is never called in its compilation unit (i.e. a
+         * function that LLVM can determine is never called). In that case, it
+         * won't even bother presenting that function declaration to us as part
+         * of the initial analysis pass. Then, we won't have any function input
+         * or exit metadata.
          */
-        if (insert_at_front != NULL) {
-            for (std::vector<StackAlloc *>::iterator i =
-                    insert_at_front->begin(), e = insert_at_front->end();
-                    i != e; i++) {
-                StackAlloc *alloc = *i;
-
-                std::string args = constructRegisterStackVarArgs(alloc);
-                ss << ", " << args;
+        if (funcAliases != NULL) {
+            std::stringstream ss;
+            ss << "new_stack((void *)(&" << curr_func << "), " << funcAliases->nargs() <<
+                ", " << (insert_at_front == NULL ? 0 : insert_at_front->size());
+            for (unsigned i = 0; i < funcAliases->nargs(); i++) {
+                ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
             }
-            insert_at_front = NULL;
-        }
 
-        ss << "); ";
+            /*
+             * Insert stack registrations for parameters to functions.
+             */
+            if (insert_at_front != NULL) {
+                for (std::vector<StackAlloc *>::iterator i =
+                        insert_at_front->begin(), e = insert_at_front->end();
+                        i != e; i++) {
+                    StackAlloc *alloc = *i;
 
-        InsertTextAfterToken(declEnd, ss.str());
+                    std::string args = constructRegisterStackVarArgs(alloc);
+                    ss << ", " << args;
+                }
+                insert_at_front = NULL;
+            }
 
-        // Insert rm_stack at end of function's body if this is a void
-        const clang::Stmt *body = func->getBody();
-        assert(clang::isa<clang::CompoundStmt>(body));
-        const clang::CompoundStmt *cmpd =
-            clang::dyn_cast<const clang::CompoundStmt>(body);
-        const clang::Stmt *last = cmpd->body_back();
-        if (!clang::isa<clang::ReturnStmt>(last)) {
-            // implicit return at end of void funct
-            clang::SourceLocation loc = cmpd->getLocStart();
-            clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
-            if (insertions->isMainFile(locloc.getFilename())) {
-                InsertText(cmpd->getLocEnd(), constructFunctionEndingStmts(),
-                        true, true);
+            ss << "); ";
+
+            // Insert rm_stack at end of function's body if this is a void
+            const clang::Stmt *body = func->getBody();
+            assert(clang::isa<clang::CompoundStmt>(body));
+            const clang::CompoundStmt *cmpd =
+                clang::dyn_cast<const clang::CompoundStmt>(body);
+
+            /*
+             * If a function is empty, its body will have no instructions and
+             * there's no need to add instrumentation
+             */
+            if (cmpd->size() > 0) {
+                InsertTextAfterToken(declEnd, ss.str());
+
+                const clang::Stmt *last = cmpd->body_back();
+                if (!clang::isa<clang::ReturnStmt>(last)) {
+                    // implicit return at end of void funct
+                    clang::SourceLocation loc = cmpd->getLocStart();
+                    clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
+                    if (insertions->isMainFile(locloc.getFilename())) {
+                        InsertText(cmpd->getLocEnd(),
+                                constructFunctionEndingStmts(), true, true);
+                    }
+                }
             }
         }
     }
@@ -97,7 +114,10 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
          * Insert rm_stack callbacks.
          */
         if (clang::isa<clang::ReturnStmt>(s)) {
-            InsertText(start, constructFunctionEndingStmts(), true, true);
+            // See note above in VisitTopLevel on missing function info.
+            if (insertions->findMatchingFunctionNullReturn(curr_func) != NULL) {
+                InsertText(start, constructFunctionEndingStmts(), true, true);
+            }
         }
     }
 
