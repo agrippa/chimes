@@ -24,6 +24,6 @@ releaseNodes 1098
 cb_init
 cbarrier_wait
 cbarrier_cancel
-parTreeSearch 1322
+parTreeSearch 1323
 showStats 0
-main 0 1780
+main 0 1781

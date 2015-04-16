@@ -18,6 +18,7 @@
 #include <math.h>
 
 #include "uts.h"
+#include "checkpoint.h"
 
 /***********************************************************
  *                                                         *
@@ -118,37 +119,6 @@ LOCK_T * shmem_global_lock_alloc() {
 			shmem_int_put((int *)&a,(int *)&b,1,_node); \
 		}								\
 	} while(0)
-
-
-/**** Pthreads Definitions ****/
-#elif defined(__PTHREADS__)
-#include <pthread.h>
-#define PARALLEL         1
-#define COMPILER_TYPE    4
-#define SHARED
-#define SHARED_INDEF
-#define VOLATILE         volatile
-#define MAX_THREADS       128
-#define LOCK_T           pthread_mutex_t
-#define GET_NUM_THREADS  pthread_num_threads
-#define GET_THREAD_NUM   *(int*)pthread_getspecific(pthread_thread_num)
-#define SET_LOCK(zlk)    pthread_mutex_lock(zlk)
-#define UNSET_LOCK(zlk)  pthread_mutex_unlock(zlk)
-#define INIT_LOCK(zlk)   zlk = pthread_global_lock_alloc()
-#define INIT_SINGLE_LOCK(zlk)  zlk = pthread_global_lock_alloc()
-#define SMEMCPY          memcpy
-#define ALLOC            malloc
-#define BARRIER           
-
-int pthread_num_threads = 1;              // Command line parameter - default to 1
-pthread_key_t pthread_thread_num;         // Key to store each thread's ID
-
-/* helper function to match UPC lock allocation semantics */
-LOCK_T * pthread_global_lock_alloc() {    
-    LOCK_T *lock = (LOCK_T *) malloc(sizeof(LOCK_T));
-    pthread_mutex_init(lock, NULL);
-    return lock;
-}
 
 
 /**** Default Sequential Definitions ****/
@@ -361,15 +331,6 @@ int impl_parseParam(char *param, char *value) {
     case 'I':
       pollint = atoi(value); break;
 #endif
-#ifdef __PTHREADS__
-    case 'T':
-      pthread_num_threads = atoi(value);
-      if (pthread_num_threads > MAX_THREADS) {
-        printf("Warning: Requested threads > MAX_THREADS.  Truncated to %d threads\n", MAX_THREADS);
-        pthread_num_threads = MAX_THREADS;
-      }
-      break;
-#endif
 #else /* !PARALLEL */
 #ifdef UTS_STAT
     case 'u':
@@ -400,9 +361,6 @@ void impl_helpMessage() {
     printf("   -i  int   set cancellable barrier polling interval\n");
 #ifdef __BERKELEY_UPC__
     printf("   -I  int   set working bupc_poll() interval\n");
-#endif
-#ifdef __PTHREADS__
-    printf("   -T  int   set number of threads\n");
 #endif
   } else {
 #ifdef UTS_STAT
@@ -1200,6 +1158,8 @@ void parTreeSearch(StealStack *ss) {
       releaseNodes(ss);
       localDepth = ss_localDepth(ss);
     }
+
+    checkpoint();
 		
     /* local work exhausted on this stack - resume tree search if able
      * to re-acquire work from shared portion of this thread's stack
@@ -1236,23 +1196,6 @@ void parTreeSearch(StealStack *ss) {
   
   /* tree search complete ! */
 }
-
-#ifdef __PTHREADS__
-/* Pthreads ParTreeSearch Arguments */
-struct pthread_args {
-	StealStack *ss;
-	int         id;
-};
-
-/* Pthreads ParTreeSearch Wrapper */
-void * pthread_spawn_search(void *arg)
-{
-	pthread_setspecific(pthread_thread_num, &((struct pthread_args*)arg)->id);
-	parTreeSearch(((struct pthread_args*)arg)->ss);
-	return NULL;
-}
-#endif /* __PTHREADS__ */
-
 
 #ifdef TRACE
 // print session records for each thread (used when trace is enabled)
@@ -1403,67 +1346,6 @@ void showStats(double elapsedSecs) {
 #endif
 }
 
-
-/* PThreads main() function:
- *   Pthreads is quite a bit different because of how global data has to be stored
- *   using setspecific() and getspecific().  So, many functions are not safe to call
- *   in the single-threaded context.
- */
-#ifdef __PTHREADS__
-int pthread_main(int argc, char *argv[]) {
-  Node   root;
-  double t1, t2;
-  int    i, err;
-  void  *rval;
-  struct pthread_args *args;
-  pthread_t *thread_ids;
-
-  uts_parseParams(argc, argv);
-  uts_printParams();
-  cb_init();
-
-  /* allocate stealstacks */
-  for (i = 0; i < GET_NUM_THREADS; i++) {
-    stealStack[i] = ALLOC (sizeof(StealStack));
-    ss_init(stealStack[i], MAXSTACKDEPTH);
-  }
-
-  /* initialize root node and push on thread 0 stack */
-  uts_initRoot(&root, type);
-  ss_push(stealStack[0], &root);
-
-  thread_ids = malloc(sizeof(pthread_t)*GET_NUM_THREADS);
-  args = malloc(sizeof(struct pthread_args)*GET_NUM_THREADS);
-  pthread_key_create(&pthread_thread_num, NULL);
-
-  /* start timing */
-  t1 = uts_wctime();
-
-  for (i = 0; i < GET_NUM_THREADS; i++) {
-    ss_initState(stealStack[i]);
-    args[i].ss = stealStack[i];
-    args[i].id = i;
-
-    err = pthread_create(&thread_ids[i], NULL, pthread_spawn_search, (void*)&args[i]);
-    if (err != 0) {
-      printf("FATAL: Error spawning thread %d\n", err);
-      impl_abort(1);
-    }
-  }
-  for (i = 0; i < GET_NUM_THREADS; i++) {
-    pthread_join(thread_ids[i], &rval);
-  }
-
-  /* stop timing */
-  t2 = uts_wctime();
-
-  showStats(t2-t1);
-
-  return 0;
-}
-#endif /* __PTHREADS__ */
-
-
 /*  Main() function for: Sequential, OpenMP, UPC, and Shmem
  *
  *  Notes on execution model:
@@ -1474,10 +1356,6 @@ int pthread_main(int argc, char *argv[]) {
  */
 int main(int argc, char *argv[]) {
   Node root;
-
-#ifdef __PTHREADS__
-  return pthread_main(argc, argv);
-#endif
 
 #ifdef _SHMEM 
   start_pes(0);
