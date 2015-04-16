@@ -93,7 +93,8 @@ std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
     "entering_omp_parallel", "leaving_omp_parallel",
     "register_thread_local_stack_vars", "omp_get_thread_num",
     "__builtin_expect", "operator=", "sqrtf", "sqrtl", "cbrtf", "cbrtl",
-    "fabsf", "fabs", "fabsl", "calloc_wrapper", "__assert_rtn"};
+    "fabsf", "fabs", "fabsl", "calloc_wrapper", "__assert_rtn", "pow",
+    "sprintf"};
 std::set<std::string> *ignorable = NULL;
 
 class Pass {

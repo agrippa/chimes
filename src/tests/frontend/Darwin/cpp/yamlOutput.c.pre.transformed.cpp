@@ -1915,14 +1915,14 @@ static void getTimeString(char* timestring)
 # 30 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  lbl_0: time_t rawtime; register_stack_var("getTimeString|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_1: struct tm *timeinfo; register_stack_var("getTimeString|timeinfo|0", "%struct.tm*", (void *)(&timeinfo), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+ lbl_1: struct tm *timeinfo; register_stack_var("getTimeString|timeinfo|0", "%struct.tm*", (void *)(&timeinfo), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  alias_group_changed(1, (size_t)(12737042733622956009UL)); call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(12737042733622956010UL)); time(&rawtime);
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  call_lbl_3: calling((void*)&localtime, 3, 12737042733622956017UL, 1, (size_t)(12737042733622956010UL)); timeinfo = localtime(&rawtime);
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- alias_group_changed(1, (size_t)(12737042733622956011UL)); call_lbl_5: calling((void*)&sprintf, 5, 0UL, 8, (size_t)(12737042733622956042UL), (size_t)(12737042733622956054UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); sprintf(timestring,
+ alias_group_changed(1, (size_t)(12737042733622956011UL)); sprintf(timestring,
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  "%4d-%02i-%02d, %02d:%02d:%02d",
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -1956,16 +1956,16 @@ void yamlBegin(void)
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  lbl_2: struct tm *ptm; register_stack_var("yamlBegin|ptm|0", "%struct.tm*", (void *)(&ptm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } call_lbl_5: calling((void*)&localtime, 5, 12737042733622955900UL, 1, (size_t)(12737042733622955889UL)); ptm = (localtime(&rawtime)) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_3: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } ;
+ lbl_3: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- alias_group_changed(1, (size_t)(12737042733622955890UL)); call_lbl_7: calling((void*)&sprintf, 7, 0UL, 8, (size_t)(12737042733622955891UL), (size_t)(12737042733622956054UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
+ alias_group_changed(1, (size_t)(12737042733622955890UL)); sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  ptm->tm_year + 1900, ptm->tm_mon+1,
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  ptm->tm_mday, ptm->tm_hour, ptm->tm_min,ptm->tm_sec);
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- call_lbl_8: calling((void*)&sprintf, 8, 0UL, 4, (size_t)(12737042733622955888UL), (size_t)(12737042733622956055UL), (size_t)(12737042733622955953UL), (size_t)(12737042733622955891UL)); sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
+ sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  yamlFile = fopen(filename, "w");
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"

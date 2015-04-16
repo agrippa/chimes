@@ -1,13 +1,13 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 12 9 alias_group_changed(8, (size_t)(8205091200931170117UL), (size_t)(8205091200931170118UL), (size_t)(8205091200931170119UL), (size_t)(8205091200931170120UL), (size_t)(8205091200931170121UL), (size_t)(8205091200931170122UL), (size_t)(8205091200931170123UL), (size_t)(8205091200931170124UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 52 5 alias_group_changed(1, (size_t)(8205091200931170351UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 5 alias_group_changed(6, (size_t)(8205091200931170401UL), (size_t)(8205091200931170402UL), (size_t)(8205091200931170403UL), (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL), (size_t)(8205091200931170539UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 79 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 82 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 85 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 80 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 83 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 86 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 100 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 103 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 106 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 101 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 104 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 107 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 13 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 9 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 95 40 len=7 realloc_wrapper

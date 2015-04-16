@@ -2026,10 +2026,10 @@ size_t clear_whitespaces_do_mapping ( signed char* buffer, long size ) {new_stac
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  switch ( curr_char ) {
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- call_lbl_1: calling((void*)&char_mapping, 1, 0UL, 1, (size_t)(0UL)); case 'A': case 'C': case 'G': case 'T':
+ case 'A': case 'C': case 'G': case 'T':
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- buffer[non_ws_index++] = char_mapping(curr_char);
+ call_lbl_1: calling((void*)&char_mapping, 1, 0UL, 1, (size_t)(0UL)); buffer[non_ws_index++] = char_mapping(curr_char);
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  break;
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"

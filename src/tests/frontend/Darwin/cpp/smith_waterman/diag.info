@@ -128,7 +128,7 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_wate
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 17  register_stack_var("print_matrix|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 46 17  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 45 388  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 71 13  call_lbl_1: calling((void*)&char_mapping, 1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 73 17  call_lbl_1: calling((void*)&char_mapping, 1, 0UL, 1, (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 65 177  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 82 95  call_lbl_2: calling((void*)&fseek, 2, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 23  call_lbl_3: calling((void*)&ftell, 3, 0UL, 1, (size_t)(2568646267985526162UL)); 

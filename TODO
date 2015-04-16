@@ -8,7 +8,8 @@
    simplest way to fix this is probably by inserting temporary variables before
    the function call. Replacing their use in the AST? this would require an
    extension to the current line number modification framework to allow the
-   extension of single line statements to multi-line statements.
+   extension of single line statements to multi-line statements. This also seems
+   to apply to function calls made within for loops, while loops, etc.
 4. We currently get the function pointer of the current function as a way of
    verifying that the callee is using alias data intended for it (and that it
    isn't passing through some arbitrary 3rd party library first). However, this

@@ -1172,9 +1172,10 @@ void parTreeSearch(StealStack *ss) {
 
   /* tree search */
   while (done == 0) {
-    
+   
+    int localDepth = ss_localDepth(ss);
     /* local work */
-    while (ss_localDepth(ss) > 0) {		
+    while (localDepth > 0) {
 
       ss_setState(ss, SS_WORK);
 
@@ -1197,6 +1198,7 @@ void parTreeSearch(StealStack *ss) {
       // release some nodes for stealing, if enough are available
       // and wake up quiescent threads
       releaseNodes(ss);
+      localDepth = ss_localDepth(ss);
     }
 		
     /* local work exhausted on this stack - resume tree search if able
