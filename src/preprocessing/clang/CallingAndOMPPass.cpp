@@ -9,6 +9,9 @@
 #include <clang/AST/Decl.h>
 #include <llvm/Support/raw_ostream.h>
 
+using namespace std;
+using namespace clang;
+
 /**
  * This pass is responsible for setting up the intra-function jumps for both OMP
  * regions and for regular function calls.
@@ -20,6 +23,12 @@ extern clang::FunctionDecl *curr_func_decl;
 extern std::set<std::string> *ignorable;
 
 extern std::string constructMangledName(std::string varname);
+
+CallingAndOMPPass::CallingAndOMPPass() {
+    supported_omp_clauses.insert("private");
+    supported_omp_clauses.insert("firstprivate");
+    supported_omp_clauses.insert("for");
+}
 
 std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations(
         const clang::DeclStmt *d) {
@@ -208,6 +217,17 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         clang::SourceLocation inner_loc = post->getLocStart();
 
         std::set<std::string> private_vars;
+
+        for(map<string, vector<string> >::iterator clause_i = clauses.begin(),
+                clause_e = clauses.end(); clause_i != clause_e; clause_i++) {
+            if (supported_omp_clauses.find(clause_i->first) ==
+                    supported_omp_clauses.end()) {
+                llvm::errs() << "Unsupported OMP clause " << clause_i->first <<
+                    "\n";
+                assert(false);
+            }
+        }
+
         if (clauses.find("private") != clauses.end()) {
             std::vector<std::string> args = clauses["private"];
             for (std::vector<std::string>::iterator argi = args.begin(),

@@ -47,7 +47,7 @@ class CallLocation {
 
 class CallingAndOMPPass : public ParentTransform {
 public:
-    CallingAndOMPPass() { }
+    CallingAndOMPPass();
 
     void VisitStmt(const clang::Stmt *s) override;
     void VisitTopLevel(clang::Decl *toplevel) override;
@@ -78,6 +78,8 @@ private:
             std::map<clang::VarDecl *, StackAlloc *> allocs,
             std::string *force);
     void VisitRegion(OMPRegion *region);
+
+    std::set<std::string> supported_omp_clauses;
 };
 
 #endif
