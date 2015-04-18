@@ -37,6 +37,55 @@
 
 using namespace std;
 
+/*
+ * A note on OMP nested parallelism and how that maps to pthreads.
+ *
+ * In OMP, you can created nested parallel regions like so:
+ *
+ *     #pragma omp parallel
+ *     {
+ *       int outer = omp_get_thread_num();
+ *       #pragma omp parallel
+ *       {
+ *         int inner = omp_get_thread_num();
+ *       }
+ *     }
+ *
+ * OMP nested parallelism is enabled by either setting the environment variable
+ * OMP_NESTED to TRUE or by calling omp_set_nested(1). If an OMP program
+ * encounters nested parallel regions but nested parallelism is not enabled, the
+ * inner region will be executed by each thread from the outer region but with a
+ * team size of 1 corresponding to each individual thread. That is, if we took
+ * the code above and executed it without nested parallelism then the outer
+ * variable would store 0->N-1 for N threads, but the inner variable would store
+ * 0 for each thread (and omp_get_num_threads from inside the inner region would
+ * return 1).
+ *
+ * However, if nested parallelism is enabled then the outer behavior will be the
+ * same but we will see inner also take the values of 0->N-1 for each of the N
+ * outer threads. Therefore, there will be N threads in the outer region and N*N
+ * threads in the inner region.
+ *
+ * We can verify this with a simple test like the one below, which displays the
+ * inner and outer values for each thread, as well as the actual pthread_t it is
+ * executed on. Running code like this shows that each of the N*N OMP threads in
+ * the inner region map to a different pthread_t and that for inner==0 re-uses
+ * the pthread from the outer region.
+ *
+ *     #pragma omp parallel
+ *     {
+ *       int outer = omp_get_thread_num();
+ *       pthread_t outer_me = pthread_self();
+ *       #pragma omp parallel
+ *       {
+ *         int inner = omp_get_thread_num();
+ *         pthread_t inner_me = pthread_self();
+ *         printf("%d %d %p %p\n", outer, inner, outer_me, inner_me);
+ *       }
+ *     }
+ *
+ */
+
 // functions defined in this file
 void new_stack(void *func_ptr, unsigned n_local_arg_aliases, unsigned n_args,
         ...);
