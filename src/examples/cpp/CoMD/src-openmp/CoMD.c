@@ -54,13 +54,16 @@
 #include "eam.h"
 #include "ljForce.h"
 #include "initAtoms.h"
-#include "memUtils.h"
 #include "yamlOutput.h"
 #include "parallel.h"
 #include "performanceTimers.h"
 #include "mycommand.h"
 #include "timestep.h"
 #include "constants.h"
+
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
 
 #define REDIRECT_OUTPUT 0
 #define   MIN(A,B) ((A) < (B) ? (A) : (B))
@@ -108,8 +111,8 @@ int main(int argc, char** argv)
    timestampBarrier("Starting simulation\n");
 
    // This is the CoMD main loop
-   const int nSteps = sim->nSteps;
-   const int printRate = sim->printRate;
+   int nSteps = sim->nSteps;
+   int printRate = sim->printRate;
    int iStep = 0;
    profileStart(loopTimer);
    for (; iStep<nSteps;)
@@ -125,6 +128,10 @@ int main(int argc, char** argv)
       stopTimer(timestepTimer);
 
       iStep += printRate;
+
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
    }
    profileStop(loopTimer);
 
@@ -140,7 +147,7 @@ int main(int argc, char** argv)
    printPerformanceResultsYaml(yamlFile);
 
    destroySimulation(&sim);
-   comdFree(validate);
+   free(validate);
    finalizeSubsystems();
 
    timestampBarrier("CoMD Ending\n");
@@ -162,7 +169,7 @@ int main(int argc, char** argv)
 /// must be initialized before the atoms.
 SimFlat* initSimulation(Command cmd)
 {
-   SimFlat* sim = comdMalloc(sizeof(SimFlat));
+   SimFlat* sim = (SimFlat*)malloc(sizeof(SimFlat));
    sim->nSteps = cmd.nSteps;
    sim->printRate = cmd.printRate;
    sim->dt = cmd.dt;
@@ -228,9 +235,9 @@ void destroySimulation(SimFlat** ps)
    destroyLinkCells(&(s->boxes));
    destroyAtoms(s->atoms);
    destroyHaloExchange(&(s->atomExchange));
-   comdFree(s->species);
-   comdFree(s->domain);
-   comdFree(s);
+   free(s->species);
+   free(s->domain);
+   free(s);
    *ps = NULL;
 
    return;
@@ -269,7 +276,7 @@ BasePotential* initPotential(
 
 SpeciesData* initSpecies(BasePotential* pot)
 {
-   SpeciesData* species = comdMalloc(sizeof(SpeciesData));
+   SpeciesData* species = (SpeciesData*)malloc(sizeof(SpeciesData));
 
    strcpy(species->name, pot->name);
    species->atomicNo = pot->atomicNo;
@@ -281,7 +288,7 @@ SpeciesData* initSpecies(BasePotential* pot)
 Validate* initValidate(SimFlat* sim)
 {
    sumAtoms(sim);
-   Validate* val = comdMalloc(sizeof(Validate));
+   Validate* val = (Validate*)malloc(sizeof(Validate));
    val->eTot0 = (sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal;
    val->nAtoms0 = sim->atoms->nGlobal;
 

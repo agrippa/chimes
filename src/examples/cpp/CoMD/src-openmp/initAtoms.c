@@ -12,7 +12,6 @@
 #include "random.h"
 #include "linkCells.h"
 #include "timestep.h"
-#include "memUtils.h"
 #include "performanceTimers.h"
 
 static void computeVcm(SimFlat* s, real_t vcm[3]);
@@ -22,16 +21,16 @@ static void computeVcm(SimFlat* s, real_t vcm[3]);
 /// initial atom positions and momenta.
 Atoms* initAtoms(LinkCell* boxes)
 {
-   Atoms* atoms = comdMalloc(sizeof(Atoms));
+   Atoms* atoms = (Atoms*)malloc(sizeof(Atoms));
 
    int maxTotalAtoms = MAXATOMS*boxes->nTotalBoxes;
 
-   atoms->gid =      (int*)   comdMalloc(maxTotalAtoms*sizeof(int));
-   atoms->iSpecies = (int*)   comdMalloc(maxTotalAtoms*sizeof(int));
-   atoms->r =        (real3*) comdMalloc(maxTotalAtoms*sizeof(real3));
-   atoms->p =        (real3*) comdMalloc(maxTotalAtoms*sizeof(real3));
-   atoms->f =        (real3*) comdMalloc(maxTotalAtoms*sizeof(real3));
-   atoms->U =        (real_t*)comdMalloc(maxTotalAtoms*sizeof(real_t));
+   atoms->gid =      (int*)   malloc(maxTotalAtoms*sizeof(int));
+   atoms->iSpecies = (int*)   malloc(maxTotalAtoms*sizeof(int));
+   atoms->r =        (real3*) malloc(maxTotalAtoms*sizeof(real3));
+   atoms->p =        (real3*) malloc(maxTotalAtoms*sizeof(real3));
+   atoms->f =        (real3*) malloc(maxTotalAtoms*sizeof(real3));
+   atoms->U =        (real_t*)malloc(maxTotalAtoms*sizeof(real_t));
 
    atoms->nLocal = 0;
    atoms->nGlobal = 0;
@@ -51,13 +50,25 @@ Atoms* initAtoms(LinkCell* boxes)
 
 void destroyAtoms(Atoms *atoms)
 {
-   freeMe(atoms,gid);
-   freeMe(atoms,iSpecies);
-   freeMe(atoms,r);
-   freeMe(atoms,p);
-   freeMe(atoms,f);
-   freeMe(atoms,U);
-   comdFree(atoms);
+   if (atoms->gid) free(atoms->gid);
+   atoms->gid = NULL;
+
+   if (atoms->iSpecies) free(atoms->iSpecies);
+   atoms->iSpecies = NULL;
+
+   if (atoms->r) free(atoms->r);
+   atoms->r = NULL;
+
+   if (atoms->p) free(atoms->p);
+   atoms->p = NULL;
+
+   if (atoms->f) free(atoms->f);
+   atoms->f = NULL;
+
+   if (atoms->U) free(atoms->U);
+   atoms->U = NULL;
+
+   free(atoms);
 }
 
 /// Creates atom positions on a face centered cubic (FCC) lattice with

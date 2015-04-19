@@ -94,7 +94,6 @@
 #include <omp.h>
 
 #include "constants.h"
-#include "memUtils.h"
 #include "parallel.h"
 #include "linkCells.h"
 #include "CoMDTypes.h"
@@ -171,7 +170,7 @@ static void typeNotSupported(const char* callSite, const char* type);
 /// \param [in] type  The file format of the potential file (setfl or funcfl).
 BasePotential* initEamPot(const char* dir, const char* file, const char* type)
 {
-   EamPotential* pot = comdMalloc(sizeof(EamPotential));
+   EamPotential* pot = (EamPotential*)malloc(sizeof(EamPotential));
    assert(pot);
    pot->force = eamForce;
    pot->print = eamPrint;
@@ -222,10 +221,10 @@ int eamForce(SimFlat* s)
    if (pot->forceExchange == NULL)
    {
       int maxTotalAtoms = MAXATOMS*s->boxes->nTotalBoxes;
-      pot->dfEmbed = comdMalloc(maxTotalAtoms*sizeof(real_t));
-      pot->rhobar  = comdMalloc(maxTotalAtoms*sizeof(real_t));
+      pot->dfEmbed = (real_t*)malloc(maxTotalAtoms*sizeof(real_t));
+      pot->rhobar  = (real_t*)malloc(maxTotalAtoms*sizeof(real_t));
       pot->forceExchange = initForceHaloExchange(s->domain, s->boxes);
-      pot->forceExchangeData = comdMalloc(sizeof(ForceExchangeData));
+      pot->forceExchangeData = (ForceExchangeData*)malloc(sizeof(ForceExchangeData));
       pot->forceExchangeData->dfEmbed = pot->dfEmbed;
       pot->forceExchangeData->boxes = s->boxes;
    }
@@ -395,11 +394,18 @@ void eamDestroy(BasePotential** pPot)
    destroyInterpolationObject(&(pot->rho));
    destroyInterpolationObject(&(pot->f));
    destroyHaloExchange(&(pot->forceExchange));
-   comdFree(pot);
+   free(pot);
    *pPot = NULL;
 
    return;
 }
+
+typedef struct _buf_t {
+      real_t cutoff, mass, lat;
+      char latticeType[8];
+      char name[3];
+      int atomicNo;
+} buf_t;
 
 /// Broadcasts an EamPotential from rank 0 to all other ranks.
 /// If the table coefficients are read from a file only rank 0 does the
@@ -407,14 +413,8 @@ void eamDestroy(BasePotential** pPot)
 void eamBcastPotential(EamPotential* pot)
 {
    assert(pot);
-   
-   struct 
-   {
-      real_t cutoff, mass, lat;
-      char latticeType[8];
-      char name[3];
-      int atomicNo;
-   } buf;
+   buf_t buf;
+
    if (getMyRank() == 0)
    {
       buf.cutoff   = pot->cutoff;
@@ -453,10 +453,10 @@ InterpolationObject* initInterpolationObject(
    int n, real_t x0, real_t dx, real_t* data)
 {
    InterpolationObject* table =
-      (InterpolationObject *)comdMalloc(sizeof(InterpolationObject)) ;
+      (InterpolationObject *)malloc(sizeof(InterpolationObject)) ;
    assert(table);
 
-   table->values = (real_t*)comdCalloc(1, (n+3)*sizeof(real_t));
+   table->values = (real_t*)calloc(1, (n+3)*sizeof(real_t));
    assert(table->values);
 
    table->values++; 
@@ -480,9 +480,9 @@ void destroyInterpolationObject(InterpolationObject** a)
    if ( (*a)->values)
    {
       (*a)->values--;
-      comdFree((*a)->values);
+      free((*a)->values);
    }
-   comdFree(*a);
+   free(*a);
    *a = NULL;
 
    return;
@@ -533,6 +533,11 @@ void interpolate(InterpolationObject* table, real_t r, real_t* f, real_t* df)
    *df = 0.5*(g1 + r*(g2-g1))*table->invDx;
 }
 
+typedef struct _buf_2_t {
+      int n;
+      real_t x0, invDx;
+} buf_2_t;
+
 /// Broadcasts an InterpolationObject from rank 0 to all other ranks.
 ///
 /// It is commonly the case that the data needed to create the
@@ -543,11 +548,7 @@ void interpolate(InterpolationObject* table, real_t r, real_t* f, real_t* df)
 /// \see eamBcastPotential
 void bcastInterpolationObject(InterpolationObject** table)
 {
-   struct
-   {
-      int n;
-      real_t x0, invDx;
-   } buf;
+  buf_2_t buf;
 
    if (getMyRank() == 0)
    {
@@ -560,11 +561,11 @@ void bcastInterpolationObject(InterpolationObject** table)
    if (getMyRank() != 0)
    {
       assert(*table == NULL);
-      *table = comdMalloc(sizeof(InterpolationObject));
+      *table = (InterpolationObject*)malloc(sizeof(InterpolationObject));
       (*table)->n      = buf.n;
       (*table)->x0     = buf.x0;
       (*table)->invDx  = buf.invDx;
-      (*table)->values = comdMalloc(sizeof(real_t) * (buf.n+3) );
+      (*table)->values = (real_t*)malloc(sizeof(real_t) * (buf.n+3) );
       (*table)->values++;
    }
    
@@ -674,7 +675,7 @@ void eamReadSetfl(EamPotential* pot, const char* dir, const char* potName)
    
    // allocate read buffer
    int bufSize = MAX(nRho, nR);
-   real_t* buf = comdMalloc(bufSize * sizeof(real_t));
+   real_t* buf = (real_t*)malloc(bufSize * sizeof(real_t));
    real_t x0 = 0.0;
 
    // Read embedding energy F(rhobar)
@@ -698,7 +699,7 @@ void eamReadSetfl(EamPotential* pot, const char* dir, const char* potName)
    buf[0] = buf[1] + (buf[1] - buf[2]); // Linear interpolation to get phi[0].
    pot->phi = initInterpolationObject(nR, x0, dR, buf);
 
-   comdFree(buf);
+   free(buf);
 
    // write to text file for comparison, currently commented out
 /*    printPot(pot->f, "SetflDataF.txt"); */
@@ -785,7 +786,7 @@ void eamReadFuncfl(EamPotential* pot, const char* dir, const char* potName)
 
    // allocate read buffer
    int bufSize = MAX(nRho, nR);
-   real_t* buf = comdMalloc(bufSize * sizeof(real_t));
+   real_t* buf = (real_t*)malloc(bufSize * sizeof(real_t));
 
    // read embedding energy
    for (int ii=0; ii<nRho; ++ii)
@@ -809,7 +810,7 @@ void eamReadFuncfl(EamPotential* pot, const char* dir, const char* potName)
       fscanf(potFile, FMT1, buf+ii);
    pot->rho = initInterpolationObject(nR, x0, dR, buf);
 
-   comdFree(buf);
+   free(buf);
    
 /*    printPot(pot->f,   "funcflDataF.txt"); */
 /*    printPot(pot->rho, "funcflDataRho.txt"); */

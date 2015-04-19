@@ -1357,6 +1357,8 @@ void checkpoint() {
     } else if (last_thread && !checkpoint_thread_running) {
         assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
+        assert(!get_my_context()->get_is_inside_parallel_for());
+
         if (checkpoint_thread_running) {
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
         } else {
@@ -1754,7 +1756,7 @@ static stack_var *find_var(void *addr,
 }
 
 void register_thread_local_stack_vars(unsigned relation, unsigned parent,
-        unsigned nlocals, ...) {
+        bool is_parallel_for, unsigned nlocals, ...) {
     unsigned global_tid;
     pthread_t self = pthread_self();
 
@@ -1834,6 +1836,9 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     thread_ctx *parent_ctx = get_context_for(parent);
     vector<stack_frame *> *parent_stack = parent_ctx->get_stack();
     assert(parent_ctx->parent_vars_size() == nlocals);
+    if (is_parallel_for || parent_ctx->get_is_inside_parallel_for()) {
+        ctx->set_is_inside_parallel_for(true);
+    }
 
     va_list vl;
     va_start(vl, nlocals);

@@ -68,8 +68,6 @@ class RuntimeTest(object):
     """
     def __init__(self, name, input_files, expected_code,
                  expected_num_checkpoints, includes=None, dependencies=None, cli_args=None):
-        assert expected_num_checkpoints > 0, name
-
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
@@ -630,7 +628,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
-    if not os.path.isfile('chimes.0.ckpt'):
+    if test.expected_num_checkpoints > 0 and not os.path.isfile('chimes.0.ckpt'):
         sys.stderr.write('Test ' + test.name + ' failed to produce a ' +
                          'checkpoint file\n')
         sys.stderr.write('Folder ' + work_folder + '\n')

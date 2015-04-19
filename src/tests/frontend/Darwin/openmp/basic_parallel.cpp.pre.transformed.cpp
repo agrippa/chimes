@@ -48,7 +48,7 @@ extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned nlocals, ...);
+        unsigned parent, bool is_parallel_for, unsigned nlocals, ...);
 extern void leaving_omp_parallel();
 
 extern void chimes_error();
@@ -1792,7 +1792,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2,
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_3; }
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, false, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_3; }
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
           lbl_3: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } inside = (6) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"

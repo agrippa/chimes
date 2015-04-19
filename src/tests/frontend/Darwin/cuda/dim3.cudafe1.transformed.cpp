@@ -26522,7 +26522,7 @@ extern void free_wrapper(void * ptr, size_t group);
 # 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
 # 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, bool is_parallel_for, unsigned nlocals, ...);
 # 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel();
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
