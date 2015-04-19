@@ -1,0 +1,8 @@
+profileStart 0 755
+getTime 0 15
+profileStop 0 31 755
+getElapsedTime 0 68 69 755
+getTick 0 90
+printPerformanceResults 0 102 765
+timerStats 0 324 755
+printPerformanceResultsYaml 0 537 538 539

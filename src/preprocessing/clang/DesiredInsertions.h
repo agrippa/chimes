@@ -24,8 +24,15 @@ class OpenMPPragma {
 
         void add_clause(std::string clause_name,
                 std::vector<std::string> clause_arguments) {
-            assert(clauses.find(clause_name) == clauses.end());
-            clauses[clause_name] = clause_arguments;
+            if (clauses.find(clause_name) == clauses.end()) {
+                clauses[clause_name] = clause_arguments;
+            } else {
+                for (std::vector<std::string>::iterator i =
+                        clause_arguments.begin(), e = clause_arguments.end();
+                        i != e; i++) {
+                    clauses[clause_name].push_back(*i);
+                }
+            }
         }
 
         int get_line() { return line; }

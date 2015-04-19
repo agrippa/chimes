@@ -108,7 +108,7 @@ LinkCell* initLinkCells(const Domain* domain, real_t cutoff)
    assert ( (ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2) );
 
    // Added creating neighbors once
-   ll->nbrBoxes = comdMalloc(ll->nTotalBoxes*sizeof(int*));
+   ll->nbrBoxes = (int**)malloc(ll->nTotalBoxes*sizeof(int*));
    for (int iBox=0; iBox<ll->nTotalBoxes; ++iBox)
    {
       ll->nbrBoxes[iBox] = (int*)malloc(27*sizeof(int));

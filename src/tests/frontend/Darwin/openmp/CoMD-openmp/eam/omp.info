@@ -1,0 +1,4 @@
+237 #pragma omp parallel for
+248 #pragma omp parallel for reduction(+:etot)
+303 #pragma omp parallel for reduction(+:etot)
+326 #pragma omp parallel for

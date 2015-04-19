@@ -1,0 +1,32 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 92 4 : { 1, 2, 3 } direct:call:_Z12initParallelPiPPPc
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 105 4 : { 5 } direct:call:_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 109 4 : { 7 } direct:call:_Z16timestampBarrierPKc
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 117 4 : { 8, 9, 10 } direct:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 7 : { 10 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 183 15 : { 145, 318 } direct:call:_ZL13initPotentialiPKcS0_S0_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 189 4 : { 146, 318 } prop:call:_ZL12sanityChecks9CommandStddPc
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 198 18 : { 148, 318 } direct:call:_Z17initDecompositioniiiPd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 201 17 : { 318 } direct:call:_Z13initLinkCellsPK8DomainStd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 202 17 : { 318 } direct:call:_Z9initAtomsP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 205 4 : { 318 } direct:call:_Z16createFccLatticeiiidP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 212 9 : { 318 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 391 17 : { 341, 342 } direct:call:_Z12maxOccupancyP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 394 9 : { 343 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 290 4 : { 552 } direct:call:_ZL8sumAtomsP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 295 8 : { 553, 559 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 344 9 : { 608, 609, 654 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 362 9 : { 667, 668, 669, 670, 1246 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 371 7 : { 1246 } direct:call:fflush
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 308 8 : { 800, 801 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 234 14 : { 885, 886, 887 } prop:call:NULL
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 235 4 : { 885, 886, 887 } prop:call:_Z16destroyLinkCellsPP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 269 22 : { 958, 959, 960, 961, 962 } prop:call:_Z10initEamPotPKcS0_S0_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 269 75 : { 958, 959, 960, 961, 962 } prop:call:_Z9initLjPotv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 35 : { 962 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 433 18 : { 1002, 1003, 1004, 1005, 1006 } direct:call:_Z9getNRanksv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 436 11 : { 1005 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 452 11 : { 1005, 1007, 1008, 1009, 1010, 1011, 1012 } prop:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 460 8 : { 1005, 1007, 1008, 1009, 1010, 1011, 1012 } prop:call:strcasecmp
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 463 11 : { 1005 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 469 4 : { 1013 } direct:call:_Z13bcastParallelPvii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 281 4 : { 1160, 1161 } direct:call:strcpy

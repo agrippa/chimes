@@ -64,7 +64,7 @@ void yamlBegin(void)
 void yamlAppInfo(FILE* file)
 {
 
-   int numThreads = omp_get_max_threads();
+   // int numThreads = omp_get_max_threads();
 
    if (! printRank())
       return;
@@ -82,7 +82,7 @@ void yamlAppInfo(FILE* file)
    fprintf(file,"  CFLAGS: %s\n",           CoMD_CFLAGS);
    fprintf(file,"  LDFLAGS: %s\n",          CoMD_LDFLAGS);
    fprintf(file,"  using MPI: %s\n",        builtWithMpi() ? "true":"false");
-   fprintf(file,"  Threading: OpenMP (%d threads) \n", numThreads);
+   // fprintf(file,"  Threading: OpenMP (%d threads) \n", numThreads);
    fprintf(file,"  Double Precision: %s\n", (sizeof(real_t)==sizeof(double)?"true":"false"));
    char timestring[32];
    getTimeString(timestring);

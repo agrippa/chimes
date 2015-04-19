@@ -10,12 +10,12 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 8
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 8 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 11 9  int inside;  inside = (6) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 11 23 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 8 20 ; call_lbl_7: unsigned ____chimes_parent_thread = entering_omp_parallel(7, 3, &a, &b, &c)
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 10 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, false, 3, &a, &b, &c); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 17 5  leaving_omp_parallel(); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 11 34 ; call_lbl_8: unsigned ____chimes_parent_thread = entering_omp_parallel(8, 1, &inside)
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 13 9  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread, false, 1, &inside); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 16 9  leaving_omp_parallel(); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 8 20 ;  { call_lbl_7: unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, 3, &a, &b, &c); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 10 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, false, 3, &a, &b, &c); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 17 5  leaving_omp_parallel(); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 11 34 ;  { call_lbl_8: unsigned ____chimes_parent_thread1 = entering_omp_parallel(8, 1, &inside); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 13 9  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, false, 1, &inside); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 16 9  leaving_omp_parallel(); } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 15 13  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 6 6  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 6 11  register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); 

@@ -1,0 +1,5 @@
+ljDestroy 25
+initLjPot
+ljForce 265
+ljPrint 527 528
+zeroReal3 544
