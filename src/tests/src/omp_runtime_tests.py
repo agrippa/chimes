@@ -11,7 +11,11 @@ OMP_H = find_file('omp.h', '/usr/')
 
 BASIC_PARALLEL = RuntimeTest('BasicParallel', ['basic_parallel.cpp'], 0, 1,
                              includes=[os.path.dirname(OMP_H)])
-TESTS = [BASIC_PARALLEL]
+# Assertion should fail
+FAIL_CHECKPOINT_IN_FOR = RuntimeTest('FailCheckpointInFor',
+                                     ['fail_checkpoint_in_for.cpp'], -6, 0,
+                                     includes=[os.path.dirname(OMP_H)])
+TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'

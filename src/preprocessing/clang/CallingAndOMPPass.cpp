@@ -27,6 +27,11 @@ extern std::string constructMangledName(std::string varname);
 CallingAndOMPPass::CallingAndOMPPass() {
     supported_omp_clauses.insert("private");
     supported_omp_clauses.insert("firstprivate");
+    supported_omp_clauses.insert("reduction"); // no explicit support required
+    /*
+     * We don't actually support checkpointing inside parallel for loops, but we
+     * allow them to exist as long as checkpoint() isn't called inside.
+     */
     supported_omp_clauses.insert("for");
 }
 
@@ -242,6 +247,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                 private_vars.insert(*argi);
             }
         }
+        bool is_parallel_for = (clauses.find("for") != clauses.end());
 
         int lbl = getNextFunctionLabel();
 
@@ -267,7 +273,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         std::stringstream register_ss;
         register_ss << " " <<
             "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-            "____chimes_parent_thread, " << private_vars.size();
+            "____chimes_parent_thread, " <<
+            (is_parallel_for ? "true" : "false") << ", " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             register_ss << ", &" << *varsi;

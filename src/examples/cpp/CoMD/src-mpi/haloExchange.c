@@ -49,7 +49,7 @@
 #define HALO_Z_PLUS  5
 
 /// Don't change the order of the faces in this enum.
-// enum HaloFaceOrder {HALO_X_MINUS = 0, HALO_X_PLUS,
+// enum HaloFaceOrder {HALO_X_MINUS, HALO_X_PLUS,
 //                     HALO_Y_MINUS, HALO_Y_PLUS,
 //                     HALO_Z_MINUS, HALO_Z_PLUS};
 
