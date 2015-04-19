@@ -13,7 +13,7 @@ class thread_ctx {
     public:
         thread_ctx(pthread_t set_pthread) : pthread(set_pthread),
                 stack_nesting(0), calling_label(-1), func_ptr(NULL),
-                is_inside_parallel_for(false) {}
+                first_parallel_for_nesting(0) {}
 
         std::vector<stack_frame *> *get_stack() { return &program_stack; }
         void push_parent(unsigned parent, unsigned relation) {
@@ -32,8 +32,12 @@ class thread_ctx {
             return parents.size() > 0;
         }
 
-        bool get_is_inside_parallel_for() { return is_inside_parallel_for; }
-        void set_is_inside_parallel_for(bool s) { is_inside_parallel_for = s; }
+        int get_first_parallel_for_nesting() {
+            return first_parallel_for_nesting;
+        }
+        void set_first_parallel_for_nesting(int s) {
+            first_parallel_for_nesting = s;
+        }
 
         void increment_stack_nesting() { stack_nesting++; }
         void decrement_stack_nesting() { stack_nesting--; }
@@ -78,7 +82,7 @@ class thread_ctx {
         set<size_t> changed_groups;
         int calling_label;
         void *func_ptr;
-        bool is_inside_parallel_for;
+        int first_parallel_for_nesting;
 
         /*
          * During normal execution, has every function call and parallel region

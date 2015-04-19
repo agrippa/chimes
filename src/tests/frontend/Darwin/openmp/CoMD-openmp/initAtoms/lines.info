@@ -1,0 +1,18 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 93 19 : { 241, 242, 243, 244, 245, 246, 247, 248, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:floor
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 0 : { 241, 242, 243, 244, 245, 246, 247, 248, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 115 9 : { 241, 242, 243, 244, 245, 246, 247, 248, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 94 17 : { 250 } direct:call:ceil
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 4 : { 570, 571 } direct:call:_ZL10computeVcmP9SimFlatStPd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 248 9 : { 727, 728, 729, 731, 732, 733, 734, 735, 736, 737, 738 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 25 : { 911, 912, 913, 914, 915, 916, 917, 967 } prop:call:sqrt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 4 : { 911, 912, 913, 914, 915, 916, 917, 967 } prop:call:_Z6setVcmP9SimFlatStPd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 26 : { 918 } direct:call:_Z6mkSeedjj
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 48 : { 919 } direct:call:_Z6gasdevPy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 48 : { 967 } direct:call:_Z6gasdevPy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 48 : { 967 } direct:call:_Z6gasdevPy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 25 : { 921 } direct:call:sqrt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 195 4 : { 922, 923, 924, 925, 967 } prop:call:_Z13kineticEnergyP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 210 26 : { 1201, 1202, 1203, 1204, 1205, 1248 } prop:call:_Z6mkSeedjj
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 39 : { 1206 } direct:call:_Z5lcg61Py
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 39 : { 1248 } direct:call:_Z5lcg61Py
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 39 : { 1248 } direct:call:_Z5lcg61Py

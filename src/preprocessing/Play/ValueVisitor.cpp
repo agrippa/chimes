@@ -189,12 +189,23 @@ size_t ValueVisitor::visitStore(StoreInst *store, Value *prev) {
     if (storing->getType()->isPointerTy()) {
         size_t storing_hash = visit(storing, store);
 
+        llvm::errs() << *storing << "\n";
+        llvm::errs() << storing_hash << " " << (contains.find(dst_hash) != contains.end()) << "\n";
+
         if (contains.find(dst_hash) != contains.end()) {
-            mergeAliasGroups(storing_hash, contains[dst_hash]);
-            storing_hash = contains[dst_hash];
+            llvm::errs() << "  " << dst_hash << " " << contains[dst_hash] << "\n";
+            size_t dst_hash_contains = contains[dst_hash];
+            mergeAliasGroups(storing_hash, dst_hash_contains);
+
+            if (storing_hash == dst_hash) {
+                storing_hash = dst_hash_contains;
+            } else {
+                storing_hash = contains[dst_hash];
+            }
+            llvm::errs() << "  " << storing_hash << "\n";
         }
-        storesReferencesToGroup(dst_hash, storing_hash);
         assert(storing_hash > 0);
+        storesReferencesToGroup(dst_hash, storing_hash);
     }
 
     return 0;

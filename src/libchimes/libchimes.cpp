@@ -1357,7 +1357,7 @@ void checkpoint() {
     } else if (last_thread && !checkpoint_thread_running) {
         assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
-        assert(!get_my_context()->get_is_inside_parallel_for());
+        assert(get_my_context()->get_first_parallel_for_nesting() == 0);
 
         if (checkpoint_thread_running) {
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
@@ -1836,8 +1836,8 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     thread_ctx *parent_ctx = get_context_for(parent);
     vector<stack_frame *> *parent_stack = parent_ctx->get_stack();
     assert(parent_ctx->parent_vars_size() == nlocals);
-    if (is_parallel_for || parent_ctx->get_is_inside_parallel_for()) {
-        ctx->set_is_inside_parallel_for(true);
+    if (is_parallel_for && ctx->get_first_parallel_for_nesting() == 0) {
+        ctx->set_first_parallel_for_nesting(stack->size());
     }
 
     va_list vl;
@@ -1886,6 +1886,11 @@ void leaving_omp_parallel() {
                 pthread_to_id.erase(found);
 
                 to_erase.push_back(i);
+            } else {
+                if (program_stack->size() <
+                        ctx->get_first_parallel_for_nesting()) {
+                    ctx->set_first_parallel_for_nesting(0);
+                }
             }
         }
     }

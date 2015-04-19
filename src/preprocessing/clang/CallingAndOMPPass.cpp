@@ -24,7 +24,7 @@ extern std::set<std::string> *ignorable;
 
 extern std::string constructMangledName(std::string varname);
 
-CallingAndOMPPass::CallingAndOMPPass() {
+CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0) {
     supported_omp_clauses.insert("private");
     supported_omp_clauses.insert("firstprivate");
     supported_omp_clauses.insert("reduction"); // no explicit support required
@@ -33,6 +33,14 @@ CallingAndOMPPass::CallingAndOMPPass() {
      * allow them to exist as long as checkpoint() isn't called inside.
      */
     supported_omp_clauses.insert("for");
+}
+
+
+std::string CallingAndOMPPass::get_chimes_parent_thread_varname() {
+    std::stringstream ss;
+    ss << "____chimes_parent_thread" << chimes_parent_thread_counter;
+    chimes_parent_thread_counter++;
+    return ss.str();
 }
 
 std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations(
@@ -257,23 +265,24 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         ompTree->add_region(region);
 
         //TODO kinda hacky....
+        std::string parent_thread_varname = get_chimes_parent_thread_varname();
         std::stringstream entering_ss;
         entering_ss << "; " <<
-            "call_lbl_" << lbl << ": " <<
-            "unsigned ____chimes_parent_thread = entering_omp_parallel(" <<
+            " { call_lbl_" << lbl << ": " <<
+            "unsigned " << parent_thread_varname << " = entering_omp_parallel(" <<
             lbl << ", " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             entering_ss << ", &" << *varsi;
         }
-        entering_ss << ")";
+        entering_ss << "); ";
 
         InsertTextAfterToken(pre_loc, entering_ss.str());
 
         std::stringstream register_ss;
         register_ss << " " <<
             "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-            "____chimes_parent_thread, " <<
+            parent_thread_varname << ", " <<
             (is_parallel_for ? "true" : "false") << ", " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
@@ -282,7 +291,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         register_ss << "); ";
         InsertTextAfterToken(inner_loc, register_ss.str());
 
-        InsertTextAfterToken(post_loc, " leaving_omp_parallel(); ");
+        InsertTextAfterToken(post_loc, " leaving_omp_parallel(); } ");
     }
 
     for (std::map<int, std::vector<CallLocation>>::iterator i =

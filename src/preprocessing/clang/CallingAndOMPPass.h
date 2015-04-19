@@ -65,6 +65,7 @@ private:
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
+    std::string get_chimes_parent_thread_varname();
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is
@@ -80,6 +81,7 @@ private:
     void VisitRegion(OMPRegion *region);
 
     std::set<std::string> supported_omp_clauses;
+    int chimes_parent_thread_counter;
 };
 
 #endif
