@@ -64,13 +64,22 @@ std::string ParentTransform::stmtToString(const clang::Stmt* s) {
     return s_str;
 }
 
-const clang::Stmt *ParentTransform::getParent(const clang::Stmt *s) {
+const clang::Stmt *ParentTransform::getParentMayBeNull(const clang::Stmt *s) {
     if (parentMap.find(s) == parentMap.end()) {
+        return NULL;
+    } else {
+        return parentMap[s];
+    }
+}
+
+const clang::Stmt *ParentTransform::getParent(const clang::Stmt *s) {
+    const clang::Stmt *parent = getParentMayBeNull(s);
+    if (parent == NULL) {
         llvm::errs() << "No parent found for \"" << stmtToString(s) << "\"\n";
         assert(false);
+    } else {
+        return parent;
     }
-
-    return parentMap[s];
 }
 
 void ParentTransform::setParent(const clang::Stmt *child,
@@ -250,6 +259,27 @@ int ParentTransform::startingLine(const clang::Stmt *stmt) {
 
 int ParentTransform::endingLine(const clang::Stmt *stmt) {
     return SM->getPresumedLoc(stmt->getLocEnd()).getLine();
+}
+
+bool ParentTransform::is_omp_for_iter_declaration(const Stmt *s) {
+    const DeclStmt *d = dyn_cast<DeclStmt>(s);
+    const Stmt *parent = getParentMayBeNull(s);
+    int line =
+        SM->getPresumedLoc(s->getLocStart()).getLine();
+
+    if (d && d->isSingleDecl() && parent && isa<ForStmt>(parent)) {
+        const ForStmt *parent_for = dyn_cast<ForStmt>(parent);
+        assert(parent_for);
+        if (parent_for->getInit() == s) {
+            if (const VarDecl *var = dyn_cast<VarDecl>(d->getSingleDecl())) {
+                if (var->hasInit() &&
+                        insertions->get_omp_pragma_for(line - 1)) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
 
 

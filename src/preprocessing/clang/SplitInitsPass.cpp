@@ -8,6 +8,8 @@
 #include <clang/AST/Stmt.h>
 #include <llvm/Support/raw_ostream.h>
 
+using namespace clang;
+
 extern DesiredInsertions *insertions;
 
 static std::string join_strings(std::vector<std::string> &l,
@@ -42,7 +44,8 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
          *   4. int x = 3, y = 4;
          *
          */
-        if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {
+        if (s->getStmtClass() == clang::Stmt::DeclStmtClass &&
+                !is_omp_for_iter_declaration(s)) {
             const clang::DeclStmt *d = clang::dyn_cast<clang::DeclStmt>(s);
             std::stringstream acc_decl;
             std::vector<std::string> acc_init;

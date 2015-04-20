@@ -66,6 +66,7 @@ private:
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
     std::string get_chimes_parent_thread_varname();
+    bool is_inside_if_cond(const clang::Stmt *stmt);
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is

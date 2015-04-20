@@ -1860,36 +1860,39 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     va_end(vl);
 }
 
-void leaving_omp_parallel() {
+void leaving_omp_parallel(bool was_parallel_for) {
     unsigned parent = get_my_tid();
+    get_my_context()->get_stack_tracker().pop();
 
     vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
     assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
 
-    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
-            e = thread_ctxs.end(); i != e; i++) {
-        thread_ctx *ctx = i->second;
+    if (!was_parallel_for) {
+        for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+                e = thread_ctxs.end(); i != e; i++) {
+            thread_ctx *ctx = i->second;
 
-        if (ctx->get_parent() == parent) {
-            ctx->pop_parent();
-            vector<stack_frame *> *program_stack = ctx->get_stack();
-            stack_frame *curr = program_stack->back();
-            program_stack->pop_back();
-            delete curr;
+            if (ctx->has_parent() && ctx->get_parent() == parent) {
+                ctx->pop_parent();
+                vector<stack_frame *> *program_stack = ctx->get_stack();
+                stack_frame *curr = program_stack->back();
+                program_stack->pop_back();
+                delete curr;
 
-            if (program_stack->size() == 0) {
-                // Erase this thread
-                map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
-                        ctx->get_pthread());
-                assert(found != pthread_to_id.end());
-                pthread_to_id.erase(found);
+                if (program_stack->size() == 0) {
+                    // Erase this thread
+                    map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
+                            ctx->get_pthread());
+                    assert(found != pthread_to_id.end());
+                    pthread_to_id.erase(found);
 
-                to_erase.push_back(i);
-            } else {
-                if (program_stack->size() <
-                        ctx->get_first_parallel_for_nesting()) {
-                    ctx->set_first_parallel_for_nesting(0);
+                    to_erase.push_back(i);
+                } else {
+                    if (program_stack->size() <
+                            ctx->get_first_parallel_for_nesting()) {
+                        ctx->set_first_parallel_for_nesting(0);
+                    }
                 }
             }
         }

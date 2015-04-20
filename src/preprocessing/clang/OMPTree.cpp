@@ -56,6 +56,7 @@ void OMPTree::add_region(OMPRegion *region) {
         while (found != leaves.end()) {
             OMPRegion *curr = *found;
             if (curr == parent) break;
+            found++;
         }
 
         if (found != leaves.end()) leaves.erase(found);

@@ -14,7 +14,7 @@ OMP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
                get_platform_directory() + '/openmp'
 OMP_H = find_file('omp.h', '/usr/')
 
-SIMPLE_TESTS = ['basic_parallel.cpp', 'nested_parallel.cpp']
+SIMPLE_TESTS = ['basic_parallel.cpp', 'nested_parallel.cpp', 'for_parallel.cpp']
 COMD_OMP = FrontendTest('CoMD-OMP',
                     ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
                      'CoMD/src-openmp/haloExchange.c', 'CoMD/src-openmp/linkCells.c',

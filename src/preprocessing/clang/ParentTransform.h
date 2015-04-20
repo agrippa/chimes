@@ -10,6 +10,8 @@
 #include "DesiredInsertions.h"
 #include "OMPTree.h"
 
+using namespace clang;
+
 class ParentTransform : public clang::ConstStmtVisitor<ParentTransform> {
 public:
     ParentTransform() { }
@@ -50,6 +52,7 @@ protected:
     std::string constructRegisterStackVarArgs(StackAlloc *alloc);
     std::string constructRegisterStackVar(StackAlloc *alloc);
     void visitChildren(const clang::Stmt *s);
+    const clang::Stmt *getParentMayBeNull(const clang::Stmt *s);
     const clang::Stmt *getParent(const clang::Stmt *s);
     void setParent(const clang::Stmt *child, const clang::Stmt *parent);
 
@@ -66,6 +69,8 @@ protected:
     void ReplaceText(clang::SourceRange range, std::string s);
 
     std::string stmtToString(const clang::Stmt* s);
+
+    bool is_omp_for_iter_declaration(const Stmt *s);
 
     int getNextRegisterLabel();
     int getNextFunctionLabel();

@@ -52,14 +52,8 @@ extern void register_thread_local_stack_vars(unsigned thread,
 extern void leaving_omp_parallel();
 
 extern void chimes_error();
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-
-
-
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
 extern int ____chimes_replaying;

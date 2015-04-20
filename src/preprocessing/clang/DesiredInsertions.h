@@ -301,6 +301,7 @@ public:
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
     std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
             clang::SourceManager &SM);
+    OpenMPPragma *get_omp_pragma_for(int line_no);
 
     size_t hash(const char *s, size_t seed = 0);
     size_t unique_alias(size_t alias);
