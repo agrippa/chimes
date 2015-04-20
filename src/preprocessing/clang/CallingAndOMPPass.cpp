@@ -33,6 +33,8 @@ CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0) {
      * allow them to exist as long as checkpoint() isn't called inside.
      */
     supported_omp_clauses.insert("for");
+    // doesn't seem like anything special needs to be done to support this
+    supported_omp_clauses.insert("shared");
 }
 
 
@@ -67,6 +69,8 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
         std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force) {
     clang::SourceLocation start = d->getLocStart();
     clang::SourceLocation end = d->getLocEnd();
+
+    if (is_omp_for_iter_declaration(d)) return "";
 
     std::stringstream acc;
 
@@ -145,12 +149,23 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     if (region == NULL) {
         assert(new_stack_calls.find(curr_func_decl) != new_stack_calls.end());
         const clang::CallExpr *new_stack_call = new_stack_calls[curr_func_decl];
-        toInsertAt = new_stack_call->getLocEnd();
+        toInsertAt = new_stack_call->getLocEnd().getLocWithOffset(1);
     } else {
-        toInsertAt = region->get_start();
+        if (region->is_parallel_for()) {
+            const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(
+                    region->get_body());
+            assert(for_stmt);
+            toInsertAt = for_stmt->getBody()->getLocStart();
+        } else {
+            toInsertAt = region->get_start().getLocWithOffset(1);
+        }
     }
 
-    if (vars_in_regions.find(region) != vars_in_regions.end()) {
+    if (region != NULL && region->is_parallel_for()) {
+        std::stringstream entry_ss;
+        entry_ss << " if (____chimes_replaying) { chimes_error(); } ";
+        InsertTextAfterToken(toInsertAt, entry_ss.str());
+    } else if (vars_in_regions.find(region) != vars_in_regions.end()) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
         std::string first_label;
         for (unsigned i = 0; i < vars->size(); i++) {
@@ -171,7 +186,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { goto " << first_label <<
             "; } ";
-        InsertTextAfterToken(toInsertAt.getLocWithOffset(1), entry_ss.str());
+        InsertTextAfterToken(toInsertAt, entry_ss.str());
     } else {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { " << transition_str <<
@@ -180,13 +195,29 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
          * Increment past the semicolon at the end of the function call. This is
          * fragile.
          */
-        InsertTextAfterToken(toInsertAt.getLocWithOffset(1), entry_ss.str());
+        InsertTextAfterToken(toInsertAt, entry_ss.str());
     }
 
     for (std::vector<OMPRegion *>::iterator i = children.begin(),
             e = children.end(); i != e; i++) {
         OMPRegion *child = *i;
         VisitRegion(child);
+    }
+}
+
+bool CallingAndOMPPass::is_inside_if_cond(const clang::Stmt *stmt) {
+    const clang::Stmt *child = stmt;
+    const clang::Stmt *parent = getParentMayBeNull(stmt);
+    while (parent != NULL && !clang::isa<clang::IfStmt>(parent)) {
+        child = parent;
+        parent = getParentMayBeNull(parent);
+    }
+
+    if (parent != NULL && clang::isa<clang::IfStmt>(parent)) {
+        const clang::IfStmt *if_stmt = clang::dyn_cast<clang::IfStmt>(parent);
+        return (if_stmt->getCond() == child);
+    } else {
+        return (false);
     }
 }
 
@@ -223,7 +254,18 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         assert(successors.find(pragma.get_line()) != successors.end());
 
         const clang::Stmt *pre = predecessors[pragma.get_line()];
-        clang::SourceLocation pre_loc = pre->getLocEnd();
+        clang::SourceLocation pre_loc;
+        if (is_inside_if_cond(pre)) {
+            const clang::Stmt *parent = getParent(pre);
+            while (!clang::isa<clang::IfStmt>(parent)) {
+                parent = getParent(parent);
+            }
+            const clang::IfStmt *if_stmt = clang::dyn_cast<clang::IfStmt>(parent);
+            assert(if_stmt);
+            pre_loc = if_stmt->getThen()->getLocStart();
+        } else {
+            pre_loc = pre->getLocEnd();
+        }
 
         const clang::Stmt *post = successors[pragma.get_line()];
         clang::SourceLocation post_loc = post->getLocEnd();
@@ -261,7 +303,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         OMPRegion *region = new OMPRegion(pragma.get_line(),
                 post->getLocStart(), post->getLocEnd(), pragma_name, clauses,
-                lbl);
+                lbl, is_parallel_for, post);
         ompTree->add_region(region);
 
         //TODO kinda hacky....
@@ -279,19 +321,24 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         InsertTextAfterToken(pre_loc, entering_ss.str());
 
-        std::stringstream register_ss;
-        register_ss << " " <<
-            "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-            parent_thread_varname << ", " <<
-            (is_parallel_for ? "true" : "false") << ", " << private_vars.size();
-        for (std::set<std::string>::iterator varsi = private_vars.begin(),
-                varse = private_vars.end(); varsi != varse; varsi++) {
-            register_ss << ", &" << *varsi;
+        if (!is_parallel_for) {
+            std::stringstream register_ss;
+            register_ss << " " <<
+                "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
+                parent_thread_varname << ", " <<
+                (is_parallel_for ? "true" : "false") << ", " << private_vars.size();
+            for (std::set<std::string>::iterator varsi = private_vars.begin(),
+                    varse = private_vars.end(); varsi != varse; varsi++) {
+                register_ss << ", &" << *varsi;
+            }
+            register_ss << "); ";
+            InsertTextAfterToken(inner_loc, register_ss.str());
         }
-        register_ss << "); ";
-        InsertTextAfterToken(inner_loc, register_ss.str());
 
-        InsertTextAfterToken(post_loc, " leaving_omp_parallel(); } ");
+        std::stringstream leaving_stream;
+        leaving_stream << " leaving_omp_parallel(" << is_parallel_for <<
+            "); } ";
+        InsertTextAfterToken(post_loc, leaving_stream.str());
     }
 
     for (std::map<int, std::vector<CallLocation>>::iterator i =

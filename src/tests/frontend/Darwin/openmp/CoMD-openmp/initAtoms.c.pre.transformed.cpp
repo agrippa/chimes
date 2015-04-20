@@ -52,14 +52,8 @@ extern void register_thread_local_stack_vars(unsigned thread,
 extern void leaving_omp_parallel();
 
 extern void chimes_error();
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-
-
-
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
 extern int ____chimes_replaying;
@@ -2641,23 +2635,19 @@ void setVcm(SimFlat* s, real_t newVcm[3])
    vShift[2] = (newVcm[2] - oldVcm[2]); { call_lbl_5: unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, 0); ;
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: int iBox; register_stack_var("setVcm|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   {
+   { if (____chimes_replaying) { chimes_error(); }
 # 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      { lbl_3: int iOff; register_stack_var("setVcm|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int ii; register_stack_var("setVcm|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-           lbl_5: int iSpecies; register_stack_var("setVcm|iSpecies|0", "i32", (void *)(&iSpecies), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } iSpecies = (s->atoms->iSpecies[iOff]) ;
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-           lbl_6: real_t mass; register_stack_var("setVcm|mass|0", "double", (void *)(&mass), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } mass = (s->species[iSpecies].mass) ;
+          real_t mass; mass = (s->species[iSpecies].mass) ;
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          s->atoms->p[iOff][0] += mass * vShift[0];
@@ -2668,7 +2658,7 @@ void setVcm(SimFlat* s, real_t newVcm[3])
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   } } leaving_omp_parallel(); }
+   } leaving_omp_parallel(); }
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 alias_group_changed(7, (size_t)(13706408354153104861UL), (size_t)(13706408354153104862UL), (size_t)(13706408354153104863UL), (size_t)(13706408354153104864UL), (size_t)(13706408354153104865UL), (size_t)(13706408354153104866UL), (size_t)(13706408354153104937UL)); rm_stack(false, 0UL); }
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2678,27 +2668,23 @@ void setTemperature(SimFlat* s, real_t temperature)
 {new_stack((void *)(&setTemperature), 2, 2, (size_t)(13706408354153105477UL), (size_t)(0UL), "setTemperature|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", "double", (void *)(&temperature), (size_t)8, 0, 0, 0); { call_lbl_22: unsigned ____chimes_parent_thread1 = entering_omp_parallel(22, 0); ; if (____chimes_replaying) { goto lbl_0; }
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, true, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int iBox; register_stack_var("setTemperature|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   {
+   { if (____chimes_replaying) { chimes_error(); }
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      { lbl_4: int iOff; register_stack_var("setTemperature|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: int ii; register_stack_var("setTemperature|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-           lbl_6: int iType; register_stack_var("setTemperature|iType|0", "i32", (void *)(&iType), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } iType = (s->atoms->iSpecies[iOff]) ;
+          int iType; iType = (s->atoms->iSpecies[iOff]) ;
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-           lbl_7: real_t mass; register_stack_var("setTemperature|mass|0", "double", (void *)(&mass), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } mass = (s->species[iType].mass) ;
+          real_t mass; mass = (s->species[iType].mass) ;
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(8, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105255UL)); lbl_8: real_t sigma; register_stack_var("setTemperature|sigma|0", "double", (void *)(&sigma), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } call_lbl_2: calling((void*)&sqrt, 2, 0UL, 1, (size_t)(0UL)); sigma = (sqrt(kB_eV * temperature / mass)) ;
+         alias_group_changed(8, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105255UL)); real_t sigma; call_lbl_2: calling((void*)&sqrt, 2, 0UL, 1, (size_t)(0UL)); sigma = (sqrt(kB_eV * temperature / mass)) ;
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105206UL)); lbl_9: uint64_t seed; register_stack_var("setTemperature|seed|0", "i64", (void *)(&seed), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } call_lbl_4: calling((void*)&mkSeed, 4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
+         alias_group_changed(1, (size_t)(13706408354153105206UL)); uint64_t seed; call_lbl_4: calling((void*)&mkSeed, 4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          alias_group_changed(1, (size_t)(13706408354153105207UL)); call_lbl_6: calling((void*)&gasdev, 6, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
 # 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2708,7 +2694,7 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   } } leaving_omp_parallel(); }
+   } leaving_omp_parallel(); }
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2725,17 +2711,13 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    alias_group_changed(1, (size_t)(13706408354153105209UL)); lbl_2: real_t scaleFactor; register_stack_var("setTemperature|scaleFactor|0", "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } call_lbl_17: calling((void*)&sqrt, 17, 0UL, 1, (size_t)(0UL)); scaleFactor = (sqrt(temperature / temp)); { call_lbl_23: unsigned ____chimes_parent_thread2 = entering_omp_parallel(23, 0); ;
 # 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, true, 0); if (____chimes_replaying) { goto lbl_10; } lbl_10: int iBox; register_stack_var("setTemperature|iBox|1", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   {
+   { if (____chimes_replaying) { chimes_error(); }
 # 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      { lbl_11: int iOff; register_stack_var("setTemperature|iOff|1", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } lbl_12: int ii; register_stack_var("setTemperature|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2747,7 +2729,7 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   } } leaving_omp_parallel(); }
+   } leaving_omp_parallel(); }
 # 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    alias_group_changed(5, (size_t)(13706408354153105210UL), (size_t)(13706408354153105211UL), (size_t)(13706408354153105212UL), (size_t)(13706408354153105213UL), (size_t)(13706408354153105255UL)); call_lbl_19: calling((void*)&kineticEnergy, 19, 0UL, 1, (size_t)(13706408354153105477UL)); kineticEnergy(s);
 # 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2764,21 +2746,17 @@ void randomDisplacements(SimFlat* s, real_t delta)
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {new_stack((void *)(&randomDisplacements), 2, 2, (size_t)(13706408354153105606UL), (size_t)(0UL), "randomDisplacements|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", "double", (void *)(&delta), (size_t)8, 0, 0, 0); { call_lbl_11: unsigned ____chimes_parent_thread3 = entering_omp_parallel(11, 0); ; if (____chimes_replaying) { switch(get_next_call()) { case(11): { goto call_lbl_11; } default: { chimes_error(); } } }
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, true, 0); if (____chimes_replaying) { goto lbl_0; } lbl_0: int iBox; register_stack_var("randomDisplacements|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   {
+   { if (____chimes_replaying) { chimes_error(); }
 # 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      { lbl_1: int iOff; register_stack_var("randomDisplacements|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: int ii; register_stack_var("randomDisplacements|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); lbl_3: uint64_t seed; register_stack_var("randomDisplacements|seed|0", "i64", (void *)(&seed), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
+         alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); uint64_t seed; call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          alias_group_changed(1, (size_t)(13706408354153105494UL)); call_lbl_4: calling((void*)&lcg61, 4, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][0] += (2.0*lcg61(&seed)-1.0) * delta;
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2788,7 +2766,7 @@ void randomDisplacements(SimFlat* s, real_t delta)
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   } } leaving_omp_parallel(); }
+   } leaving_omp_parallel(); }
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); rm_stack(false, 0UL); }
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2812,17 +2790,13 @@ void computeVcm(SimFlat* s, real_t vcm[3])
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 #pragma omp parallel for reduction(+:v0) reduction(+:v1) reduction(+:v2) reduction(+:v3)
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, true, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: int iBox; register_stack_var("computeVcm|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   {
+   { if (____chimes_replaying) { chimes_error(); }
 # 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-      { lbl_8: int iOff; register_stack_var("computeVcm|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } lbl_9: int ii; register_stack_var("computeVcm|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2833,13 +2807,13 @@ void computeVcm(SimFlat* s, real_t vcm[3])
          v2 += s->atoms->p[iOff][2];
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-           lbl_10: int iSpecies; register_stack_var("computeVcm|iSpecies|0", "i32", (void *)(&iSpecies), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } iSpecies = (s->atoms->iSpecies[iOff]) ;
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
          v3 += s->species[iSpecies].mass;
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   } } leaving_omp_parallel(); }
+   } leaving_omp_parallel(); }
 # 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
   vcmLocal[0] = v0;

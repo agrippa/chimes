@@ -56,6 +56,9 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
 
         // Only support the parallel pragma at the moment
         line = line.substr(line.find(' ') + 1);
+        if (line.find("for") == 0) {
+            line = ("parallel " + line);
+        }
         assert(line.find("parallel") == 0);
 
         end = line.find(' ');
@@ -678,6 +681,15 @@ std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
     }
 
     return result;
+}
+
+OpenMPPragma *DesiredInsertions::get_omp_pragma_for(int line_no) {
+    for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
+            e = omp_pragmas->end(); i != e; i++) {
+        OpenMPPragma *curr = &*i;
+        if (curr->get_line() == line_no) return curr;
+    }
+    return NULL;
 }
 
 AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,

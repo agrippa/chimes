@@ -451,7 +451,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
                   ' ' + test.extra_cli_args
 
     for flag in config.custom_compiler_flags:
-        compile_cmd += ' -x ' + flag
+        compile_cmd += ' -y ' + flag
 
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(examples_dir_path, input_file)

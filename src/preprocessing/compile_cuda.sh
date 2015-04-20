@@ -18,9 +18,10 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
+GXX_FLAGS="-g -O0 ${INCLUDES}"
 DEFINES=
 
-while getopts ":kci:I:L:l:o:w:vps" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -54,6 +55,9 @@ while getopts ":kci:I:L:l:o:w:vps" opt; do
             ;;
         x)
             LINKER_FLAGS="${LINKER_FLAGS} ${OPTARG}"
+            ;;
+        y)
+            GXX_FLAGS="${GXX_FLAGS} ${OPTARG}"
             ;;
         s)
             ENABLE_OMP=0
@@ -122,7 +126,6 @@ INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log
@@ -132,7 +135,7 @@ POST_CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log.post
 CPP_FILE=${COMPILE_HELPER_WORK_DIR}/log.cpp
 CPP_COMPILER_FILE=${COMPILE_HELPER_WORK_DIR}/compiler
 ENV_POST_FILE=${COMPILE_HELPER_WORK_DIR}/log.env.post
-CPP_COMPILER=
+GXX=
 
 mkdir -p ${COMPILE_HELPER_WORK_DIR}
 mkdir -p ${NVCC_WORK_DIR}
@@ -150,7 +153,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     python ${CHIMES_HOME}/src/preprocessing/compile_helper.py \
               ${CMD_FILE} ${ENV_FILE} ${PRE_CMD_FILE} ${POST_CMD_FILE} \
               ${CPP_FILE} ${CPP_COMPILER_FILE}
-    CPP_COMPILER=$(cat ${CPP_COMPILER_FILE})
+    GXX=$(cat ${CPP_COMPILER_FILE})
 
     INFO_FILE_PREFIX=${NVCC_WORK_DIR}/$(basename ${INPUT})
     INTERMEDIATE_FILE=${NVCC_WORK_DIR}/$(cat ${CPP_FILE})
@@ -208,7 +211,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
             ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
     TRANSFORMED_FILE=$(basename ${INTERMEDIATE_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -222,7 +225,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
     echo Postprocessing ${FINAL_FILE}
-    cd ${NVCC_WORK_DIR} && ${CPP_COMPILER} -E -I${CUDA_HOME}/include -include stddef.h \
+    cd ${NVCC_WORK_DIR} && ${GXX} -E -I${CUDA_HOME}/include -include stddef.h \
         ${CHIMES_DEF} ${DEFINES} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
         ${FINAL_FILE}.post ${FINAL_FILE}
 
@@ -256,7 +259,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${CPP_COMPILER} -lpthread -I${CHIMES_HOME}/src/libchimes \
+    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
             -L${CHIMES_HOME}/src/libchimes -L${CUDA_LIB_PATH} -lchimes \
             -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${LIB_PATHS} \
             ${LIBS} ${LINKER_FLAGS}

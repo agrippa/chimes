@@ -18,9 +18,10 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
+GXX_FLAGS="-g -O0 ${INCLUDES}"
 DEFINES=
 
-while getopts ":kci:I:L:l:o:w:vpx:sD:" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -54,6 +55,9 @@ while getopts ":kci:I:L:l:o:w:vpx:sD:" opt; do
             ;;
         x)
             LINKER_FLAGS="${LINKER_FLAGS} ${OPTARG}"
+            ;;
+        y)
+            GXX_FLAGS="${GXX_FLAGS} ${OPTARG}"
             ;;
         s)
             ENABLE_OMP=0
@@ -117,7 +121,6 @@ INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-GXX_FLAGS="-g -O0 ${INCLUDES}"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
