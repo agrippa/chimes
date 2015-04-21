@@ -196,10 +196,13 @@ static unsigned threads_in_checkpoint = 0;
 static pthread_mutex_t threads_in_checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t threads_in_checkpoint_cond = PTHREAD_COND_INITIALIZER;
 
-#define PARENT_ALIASES_INIT_SIZE    1024
-static size_t *parent_aliases = NULL;
-static size_t parent_aliases_capacity = 0;
-static size_t parent_aliases_length = 0;
+/*
+ * Counter for the number of parallel regions entered. Incremented every time we
+ * enter a new parallel region to provide a unique ID for that instance of
+ * parallelism.
+ */
+static size_t regions_executed = 0;
+static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 #ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
@@ -265,10 +268,6 @@ void init_chimes() {
     assert(pthread_to_id.size() == 0);
     pthread_to_id[self] = 0;
     thread_ctxs[0] = new thread_ctx(self);
-
-    parent_aliases = (size_t *)malloc(sizeof(size_t) *
-            PARENT_ALIASES_INIT_SIZE);
-    parent_aliases_capacity = PARENT_ALIASES_INIT_SIZE;
 
     char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
@@ -744,10 +743,10 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
     va_start(vl, nargs);
 
     if (program_stack->size() != 1 &&
-            n_local_arg_aliases != parent_aliases_length) {
+            n_local_arg_aliases != ctx->get_n_parent_aliases()) {
         fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
-                "expected aliases (%u), ignoring\n", parent_aliases_length,
-                n_local_arg_aliases);
+                "expected aliases (%u), ignoring\n",
+                ctx->get_n_parent_aliases(), n_local_arg_aliases);
 
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
             va_arg(vl, size_t);
@@ -761,12 +760,12 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
 
         if (program_stack->size() > 1) {
             for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-                if (valid_group(new_aliases[i]) && valid_group(parent_aliases[i])) {
+                if (valid_group(new_aliases[i]) && valid_group(ctx->get_parent_alias(i))) {
                     assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
-                    merge_alias_groups(new_aliases[i], parent_aliases[i]);
+                    merge_alias_groups(new_aliases[i], ctx->get_parent_alias(i));
                     assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
-                    assert(aliased(new_aliases[i], parent_aliases[i], true));
+                    assert(aliased(new_aliases[i], ctx->get_parent_alias(i), true));
                 }
             }
         }
@@ -803,19 +802,15 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned naliases
     ctx->set_calling_label(lbl);
     ctx->set_return_alias(set_return_alias);
 
-    if (parent_aliases_capacity < naliases) {
-        parent_aliases_capacity *= 2;
-        parent_aliases = (size_t *)realloc(parent_aliases, sizeof(size_t) *
-                parent_aliases_capacity);
-    }
+    ctx->ensure_parent_alias_capacity(naliases);
+    ctx->clear_parent_aliases();
 
     va_list vl;
     va_start(vl, naliases);
     for (unsigned i = 0; i < naliases; i++) {
-        parent_aliases[i] = va_arg(vl, size_t);
+        ctx->add_parent_alias(va_arg(vl, size_t));
     }
     va_end(vl);
-    parent_aliases_length = naliases;
 
 #ifdef __CHIMES_PROFILE
     pp.stop_timer(CALLING);
@@ -1719,25 +1714,6 @@ void *checkpoint_func(void *data) {
     return NULL;
 }
 
-unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...) {
-    thread_ctx *ctx = get_my_context();
-    ctx->clear_parent_vars();
-
-    ctx->get_stack_tracker().push(lbl);
-
-    va_list vl;
-    va_start(vl, nlocals);
-
-    for (unsigned i = 0; i < nlocals; i++) {
-        void *addr = va_arg(vl, void *);
-        ctx->add_parent_var(addr);
-    }
-
-    va_end(vl);
-
-    return get_my_tid();
-}
-
 static stack_var *find_var(void *addr,
         vector<stack_frame *> *parent_stack) {
     for (vector<stack_frame *>::reverse_iterator i = parent_stack->rbegin(),
@@ -1755,8 +1731,47 @@ static stack_var *find_var(void *addr,
     return NULL;
 }
 
+unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
+        unsigned nlocals, ...) {
+    thread_ctx *ctx = get_my_context();
+
+    ctx->get_stack_tracker().push(lbl);
+    ctx->create_new_parent_vars_context();
+
+    va_list vl;
+    va_start(vl, nlocals);
+
+    for (unsigned i = 0; i < nlocals; i++) {
+        void *addr = va_arg(vl, void *);
+        stack_var *var = find_var(addr, ctx->get_stack());
+        /*
+         * var may be null here if the analysis stage determined that this
+         * function could not possibly create a checkpoint (or be part of a
+         * stack trace with a checkpoint). In that case, it optimizes out the
+         * analysis of stack variables and register_stack_var calls will be
+         * missing.
+         *
+         * To address that, we accept var as potentially NULL here and must
+         * handle that as we generate the child context in
+         * register_thread_local_stack_vars. If the parent entry for a variable
+         * is NULL, we can safely assume that we will never query for metadata
+         * on the child either.
+         */
+        ctx->add_parent_var(var);
+    }
+
+    va_end(vl);
+
+    assert(pthread_mutex_lock(&regions_executed_mutex) == 0);
+    *unique_region_id = regions_executed++;
+    assert(pthread_mutex_unlock(&regions_executed_mutex) == 0);
+
+    return get_my_tid();
+}
+
 void register_thread_local_stack_vars(unsigned relation, unsigned parent,
-        bool is_parallel_for, unsigned nlocals, ...) {
+        bool is_parallel_for, unsigned parent_stack_depth, size_t region_id,
+        unsigned nlocals, ...) {
     unsigned global_tid;
     pthread_t self = pthread_self();
 
@@ -1828,71 +1843,108 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     }
 
     thread_ctx *ctx = get_my_context();
-    ctx->push_parent(parent, relation);
+    ctx->push_parent(parent, relation, region_id);
     std::vector<stack_frame *> *stack = ctx->get_stack();
     stack->push_back(new stack_frame());
     ctx->increment_stack_nesting();
 
     thread_ctx *parent_ctx = get_context_for(parent);
-    vector<stack_frame *> *parent_stack = parent_ctx->get_stack();
-    assert(parent_ctx->parent_vars_size() == nlocals);
     if (is_parallel_for && ctx->get_first_parallel_for_nesting() == 0) {
         ctx->set_first_parallel_for_nesting(stack->size());
     }
+
+    vector<stack_var *>& parent_vars = parent_ctx->get_parent_vars_at_depth(
+            parent_stack_depth);
+    assert(parent_vars.size() == nlocals);
 
     va_list vl;
     va_start(vl, nlocals);
     for (unsigned l = 0; l < nlocals; l++) {
         void *child_addr = va_arg(vl, void *);
-        void *parent_addr = parent_ctx->get_parent_var(l);
-        stack_var *parent_var = find_var(parent_addr, parent_stack);
-        assert(parent_var);
+        stack_var *parent_var = parent_vars[l];
 
-        stack_var *child_var = new stack_var(parent_var->get_name().c_str(),
-                parent_var->get_type().c_str(), child_addr,
-                parent_var->get_size(), parent_var->check_is_ptr());
-        for (vector<int>::iterator i = parent_var->get_ptr_offsets()->begin(),
-                e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
-            child_var->add_pointer_offset(*i);
+        /*
+         * See the comment above in entering_omp_parallel on why parent_var
+         * might be NULL.
+         */
+        if (parent_var != NULL) {
+            stack_var *child_var = new stack_var(parent_var->get_name().c_str(),
+                    parent_var->get_type().c_str(), child_addr,
+                    parent_var->get_size(), parent_var->check_is_ptr());
+            for (vector<int>::iterator i =
+                    parent_var->get_ptr_offsets()->begin(),
+                    e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
+                child_var->add_pointer_offset(*i);
+            }
+            stack->back()->add_stack_var(child_var);
         }
-        stack->back()->add_stack_var(child_var);
     }
     va_end(vl);
 }
 
-void leaving_omp_parallel(bool was_parallel_for) {
+unsigned get_parent_vars_stack_depth() {
+    return get_my_context()->parent_vars_depth();
+}
+
+unsigned get_thread_stack_depth() {
+    return get_my_context()->get_stack()->size();
+}
+
+void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id) {
     unsigned parent = get_my_tid();
-    get_my_context()->get_stack_tracker().pop();
+    thread_ctx *my_ctx = get_my_context();
+    /*
+     * If this thread participated in the preceding parallel region, it should have the same stack depth it had before the parallel region, plus one.
+     *
+     * A parent thread may not participate in a parallel region if the parent
+     * thread is a thread created in an omp parallel region which contains an
+     * omp for region. If the omp for region has fewer iterations than the total
+     * number of threads, some threads from the outer omp parallel region will
+     * not receive work.
+     */
+    if (my_ctx->get_parent_region() == region_id) {
+        assert(my_ctx->get_stack()->size() ==
+                (expected_parent_stack_depth + 1));
+    } else {
+        assert(my_ctx->get_stack()->size() ==
+                (expected_parent_stack_depth));
+    }
+
+    my_ctx->get_stack_tracker().pop();
+    my_ctx->pop_parent_vars_entry();
 
     vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
     assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
 
-    if (!was_parallel_for) {
-        for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
-                e = thread_ctxs.end(); i != e; i++) {
-            thread_ctx *ctx = i->second;
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+            e = thread_ctxs.end(); i != e; i++) {
+        thread_ctx *ctx = i->second;
 
-            if (ctx->has_parent() && ctx->get_parent() == parent) {
-                ctx->pop_parent();
-                vector<stack_frame *> *program_stack = ctx->get_stack();
-                stack_frame *curr = program_stack->back();
-                program_stack->pop_back();
-                delete curr;
+        if (ctx->has_parent() && ctx->get_parent() == parent &&
+                ctx->get_parent_region() == region_id) {
+            ctx->pop_parent();
+            vector<stack_frame *> *program_stack = ctx->get_stack();
+            stack_frame *curr = program_stack->back();
+            program_stack->pop_back();
+            delete curr;
 
-                if (program_stack->size() == 0) {
-                    // Erase this thread
-                    map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
-                            ctx->get_pthread());
-                    assert(found != pthread_to_id.end());
-                    pthread_to_id.erase(found);
+            if (ctx != my_ctx) {
+                assert(program_stack->size() == 0);
+            }
 
-                    to_erase.push_back(i);
-                } else {
-                    if (program_stack->size() <
-                            ctx->get_first_parallel_for_nesting()) {
-                        ctx->set_first_parallel_for_nesting(0);
-                    }
+            if (program_stack->size() == 0) {
+                // Erase this thread
+                map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
+                        ctx->get_pthread());
+                assert(found != pthread_to_id.end());
+                pthread_to_id.erase(found);
+
+                to_erase.push_back(i);
+            } else {
+                if (program_stack->size() <
+                        ctx->get_first_parallel_for_nesting()) {
+                    ctx->set_first_parallel_for_nesting(0);
                 }
             }
         }

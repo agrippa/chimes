@@ -1,0 +1,244 @@
+malloc 375 24 9 0
+malloc 376 24 9 0
+malloc 377 24 9 0
+malloc 379 25 9 0
+malloc 380 25 9 0
+malloc 381 25 9 0
+memset 382 5 0 9 0 0
+memset 383 5 0 9 0 0
+memset 384 5 0 9 0 0
+malloc 386 26 9 0
+malloc 387 26 9 0
+malloc 388 26 9 0
+memset 389 5 0 9 0 0
+memset 390 5 0 9 0 0
+memset 391 5 0 9 0 0
+malloc 393 25 9 0
+malloc 394 25 9 0
+malloc 395 25 9 0
+malloc 397 32 9 0
+memset 398 5 0 9 0 0
+malloc 403 35 167 0
+malloc 404 32 167 0
+malloc 406 28 167 0
+malloc 407 28 167 0
+malloc 408 29 167 0
+malloc 409 29 167 0
+malloc 410 30 167 0
+malloc 411 30 167 0
+malloc 413 28 167 0
+malloc 415 24 167 0
+memset 416 5 0 167 0 0
+malloc 418 24 167 0
+memset 419 5 0 167 0 0
+malloc 420 24 167 0
+malloc 421 25 167 0
+malloc 422 25 167 0
+malloc 424 24 167 0
+malloc 426 27 167 0
+malloc 427 27 167 0
+malloc 428 27 167 0
+malloc 430 29 167 0
+malloc 432 25 167 0
+malloc 434 31 167 0
+malloc 441 26 357 0
+malloc 442 26 357 0
+malloc 443 26 357 0
+malloc 445 30 357 0
+malloc 446 31 357 0
+malloc 447 32 357 0
+malloc 449 30 357 0
+malloc 450 31 357 0
+malloc 451 32 357 0
+malloc 453 27 357 0
+malloc 458 29 436 0
+malloc 459 29 436 0
+malloc 460 29 436 0
+malloc 470 37 541 0
+malloc 483 37 541 0
+malloc 493 42 541 0
+fprintf 515 13 0 768 14644
+exit 517 13 0 0
+atoi 2974 23 0 844
+_Z22AllocateElemPersistentP6Domainm 3002 2 0 14642 0
+_Z21AllocateElemTemporaryP6Domainm 3003 2 0 14642 0
+_Z23AllocateNodalPersistentP6Domainm 3005 2 0 14642 0
+_Z16AllocateNodesetsP6Domainm 3006 2 0 14642 0
+_Z23AllocateNodeElemIndexesP6Domain 3056 2 0 14642
+_ZL14CalcElemVolumePKdS0_S0_ 3114 19 0 802 803 804
+gettimeofday 3188 2 0 825 14654
+_ZL13TimeIncrementv 3193 3 0
+_ZL16LagrangeLeapFrogv 3194 3 0
+_Z10checkpointv 3202 9 0
+gettimeofday 3207 2 0 826 14654
+printf 3211 2 0 14645 0
+printf 3214 2 0 14646
+printf 3215 2 0 14647 0
+printf 3216 2 0 14647 0
+printf 3217 2 0 14649 0
+_Z4FABSd 3225 21 0 0
+printf 3236 2 0 14650
+printf 3237 2 0 14647 0
+printf 3238 2 0 14647 0
+printf 3239 2 0 14653 0
+_ZL20CalcElemVolumeScalardddddddddddddddddddddddd 1791 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+_ZL13LagrangeNodalv 2961 2 0
+_ZL16LagrangeElementsv 2965 2 0
+_ZL27CalcTimeConstraintsForElemsv 2967 2 0
+fabs 106 39 0 0
+_ZL17CalcForceForNodesv 1690 2 0
+_ZL24CalcAccelerationForNodesv 1692 2 0
+_ZL43ApplyAccelerationBoundaryConditionsForNodesv 1694 2 0
+_ZL20CalcVelocityForNodesdd 1696 2 0 0 0
+_ZL20CalcPositionForNodesd 1698 2 0 0
+_ZL20CalcLagrangeElementsd 2801 2 0 0
+_ZL13CalcQForElemsv 2804 2 0
+_ZL31ApplyMaterialPropertiesForElemsv 2806 2 0
+_ZL21UpdateVolumesForElemsv 2808 2 0
+_ZL29CalcCourantConstraintForElemsv 2950 2 0
+_ZL27CalcHydroConstraintForElemsv 2953 2 0
+omp_get_num_threads 2821 27 0
+_Z4SQRTd 2848 9 0 0
+omp_get_thread_num 2855 26 0
+omp_get_num_threads 2896 20 0
+_Z4FABSd 2915 52 0 0
+omp_get_thread_num 2917 46 0
+sqrt 102 39 0 0
+_ZL22CalcKinematicsForElemsid 2005 3 0 0 0
+exit 2025 5 0 0
+_ZL31CalcMonotonicQGradientsForElemsv 2359 2 0
+_ZL22CalcMonotonicQForElemsv 2363 2 0
+exit 2376 4 0 0
+malloc 2720 28 2560 0
+exit 2763 6 0 0
+_ZL15EvalEOSForElemsPdi 2768 3 0 2560 0
+free 2770 3 0 2560
+_Z4FABSd 2787 8 0 0
+malloc 2574 27 2819 0
+malloc 2575 27 2826 0
+malloc 2576 27 2833 0
+malloc 2577 27 2840 0
+malloc 2578 33 2847 0
+malloc 2579 34 2854 0
+malloc 2580 24 2861 0
+malloc 2581 24 2868 0
+malloc 2582 26 2875 0
+malloc 2583 27 2882 0
+malloc 2584 27 2889 0
+malloc 2585 27 2896 0
+malloc 2586 25 2903 0
+malloc 2587 26 2910 0
+_ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi 2661 2 0 2882 2889 2896 2903 2910 2833 2819 2840 2847 2854 3357 2875 2826 0 0 0 0 0 2861 2868 0 0 0
+_ZL22CalcSoundSpeedForElemsPddS_S_S_S_di 2692 2 0 3357 0 2889 2882 2910 2903 0 0
+free 2695 2 0 2910
+free 2696 2 0 2903
+free 2697 2 0 2896
+free 2698 2 0 2889
+free 2699 2 0 2882
+free 2700 2 0 2875
+free 2701 2 0 2868
+free 2702 2 0 2861
+free 2703 2 0 2854
+free 2704 2 0 2847
+free 2705 2 0 2840
+free 2706 2 0 2833
+free 2707 2 0 2826
+free 2708 2 0 2819
+malloc 2424 31 3445 0
+_ZL20CalcPressureForElemsPdS_S_S_S_S_dddi 2436 2 0 3445 4012 4013 4010 4018 4019 0 0 0 0
+_Z4SQRTd 2453 11 0 0
+_Z4FABSd 2469 7 0 0
+_ZL20CalcPressureForElemsPdS_S_S_S_S_dddi 2477 2 0 4009 4012 4013 4010 4017 4019 0 0 0 0
+_Z4SQRTd 2495 11 0 0
+_Z4FABSd 2505 7 0 0
+_ZL20CalcPressureForElemsPdS_S_S_S_S_dddi 2513 2 0 4009 4012 4013 4010 4017 4019 0 0 0 0
+_Z4SQRTd 2526 11 0 0
+_Z4FABSd 2531 8 0 0
+free 2535 2 0 3445
+_Z4SQRTd 2554 12 0 0
+_Z4FABSd 2401 7 0 0
+_Z4SQRTd 2128 31 0 0
+_Z4SQRTd 2146 29 0 0
+_Z4SQRTd 2164 30 0 0
+_ZL28CalcMonotonicQRegionForElemsdddddi 2336 3 0 0 0 0 0 0 0
+_ZL14CalcElemVolumePKdS0_S0_ 1955 12 0 5900 5901 5902
+_ZL28CalcElemCharacteristicLengthPKdS0_S0_d 1961 22 0 5900 5901 5902 0
+_ZL32CalcElemShapeFunctionDerivativesPKdS0_S0_PA8_dPd 1983 3 0 5900 5901 5902 5898 5906
+_ZL25CalcElemVelocityGrandientPKdS0_S0_PA8_S_dPd 1988 3 0 5903 5904 5905 5898 0 5899
+_ZL8AreaFacedddddddddddd 1826 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax 1829 15 0 0 0
+_ZL8AreaFacedddddddddddd 1831 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax 1834 15 0 0 0
+_ZL8AreaFacedddddddddddd 1836 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax 1839 15 0 0 0
+_ZL8AreaFacedddddddddddd 1841 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax 1844 15 0 0 0
+_ZL8AreaFacedddddddddddd 1846 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax 1849 15 0 0 0
+_ZL8AreaFacedddddddddddd 1851 6 0 0 0 0 0 0 0 0 0 0 0 0 0
+fmax 1854 15 0 0 0
+_Z4SQRTd 1856 38 0 0
+_ZL23CalcVolumeForceForElemsv 1600 2 0
+_Z4FABSd 1655 7 0 0
+_Z4FABSd 1659 7 0 0
+_Z4FABSd 1663 7 0 0
+malloc 1560 28 8255 0
+malloc 1561 28 8252 0
+malloc 1562 28 8249 0
+malloc 1563 29 8231 0
+_ZL23InitStressTermsForElemsiPdS_S_ 1566 3 0 0 8255 8252 8249
+_ZL23IntegrateStressForElemsiPdS_S_S_ 1570 3 0 0 8255 8252 8249 8231
+exit 1576 5 0 0
+_ZL28CalcHourglassControlForElemsPdd 1580 3 0 8231 0
+free 1582 3 0 8231
+free 1583 3 0 8249
+free 1584 3 0 8252
+free 1585 3 0 8255
+malloc 853 29 8361 0
+malloc 854 29 8368 0
+malloc 855 29 8375 0
+_ZL32CalcElemShapeFunctionDerivativesPKdS0_S0_PA8_dPd 878 3 0 8328 8329 8330 8327 8609
+_ZL19CalcElemNodeNormalsPdS_S_PKdS1_S1_ 881 3 0 8327 8327 8327 8328 8329 8330
+_ZL27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_ 884 3 0 8327 0 0 0 8361 8368 8375
+free 922 2 0 8375
+free 923 2 0 8368
+free 924 2 0 8361
+malloc 1502 26 8645 0
+malloc 1503 26 8652 0
+malloc 1504 26 8659 0
+malloc 1505 25 8666 0
+malloc 1506 25 8673 0
+malloc 1507 25 8680 0
+_ZL29CollectDomainNodesToElemNodesPKiPdS1_S1_ 1516 3 0 2488 8621 8622 8623
+_ZL24CalcElemVolumeDerivativePdS_S_PKdS1_S1_ 1518 3 0 8624 8625 8626 8621 8622 8623
+exit 1536 4 0 0
+_ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d 1541 3 0 8848 8666 8673 8680 8645 8652 8659 0
+free 1544 2 0 8680
+free 1545 2 0 8673
+free 1546 2 0 8666
+free 1547 2 0 8659
+free 1548 2 0 8652
+free 1549 2 0 8645
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1010 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1014 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1018 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1022 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1026 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1030 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1034 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+_ZL7VoluDerddddddddddddddddddPdS_S_ 1038 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9614 9615 9616
+malloc 1242 29 9707 0
+malloc 1243 29 9714 0
+malloc 1244 29 9721 0
+_Z4CBRTd 1359 12 0 0
+_ZL24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_ 1399 3 0 9650 9651 9652 9642 9643 9644 9645 9646 9647 9648 9649 0 9638 9639 9640
+free 1492 2 0 9721
+free 1493 2 0 9714
+free 1494 2 0 9707
+cbrt 104 39 0 0
+_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd 752 2 0 13584 13585 13586 13584 13585 13586 13584 13585 13586 13584 13585 13586 0 0 0 0 0 0 0 0 0 0 0 0
+_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd 759 2 0 13584 13585 13586 13584 13585 13586 13584 13585 13586 13584 13585 13586 0 0 0 0 0 0 0 0 0 0 0 0
+_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd 766 2 0 13584 13585 13586 13584 13585 13586 13584 13585 13586 13584 13585 13586 0 0 0 0 0 0 0 0 0 0 0 0
+_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd 773 2 0 13584 13585 13586 13584 13585 13586 13584 13585 13586 13584 13585 13586 0 0 0 0 0 0 0 0 0 0 0 0
+_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd 780 2 0 13584 13585 13586 13584 13585 13586 13584 13585 13586 13584 13585 13586 0 0 0 0 0 0 0 0 0 0 0 0
+_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd 787 2 0 13584 13585 13586 13584 13585 13586 13584 13585 13586 13584 13585 13586 0 0 0 0 0 0 0 0 0 0 0 0

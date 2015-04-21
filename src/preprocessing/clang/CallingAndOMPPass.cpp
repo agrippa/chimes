@@ -24,7 +24,9 @@ extern std::set<std::string> *ignorable;
 
 extern std::string constructMangledName(std::string varname);
 
-CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0) {
+CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0),
+        blocker_varname_counter(0), parent_stack_depth_varname_counter(0),
+        call_stack_depth_varname_counter(0), region_varname_counter(0) {
     supported_omp_clauses.insert("private");
     supported_omp_clauses.insert("firstprivate");
     supported_omp_clauses.insert("reduction"); // no explicit support required
@@ -37,11 +39,38 @@ CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0) {
     supported_omp_clauses.insert("shared");
 }
 
+std::string CallingAndOMPPass::get_unique_parent_stack_depth_varname() {
+    std::stringstream ss;
+    ss << "____chimes_parent_stack_depth" << parent_stack_depth_varname_counter;
+    parent_stack_depth_varname_counter++;
+    return ss.str();
+}
+
+std::string CallingAndOMPPass::get_unique_call_stack_depth_varname() {
+    std::stringstream ss;
+    ss << "____chimes_call_stack_depth" << call_stack_depth_varname_counter;
+    call_stack_depth_varname_counter++;
+    return ss.str();
+}
+
+std::string CallingAndOMPPass::get_unique_blocker_varname() {
+    std::stringstream ss;
+    ss << "____chimes_first_iter" << blocker_varname_counter;
+    blocker_varname_counter++;
+    return ss.str();
+}
 
 std::string CallingAndOMPPass::get_chimes_parent_thread_varname() {
     std::stringstream ss;
     ss << "____chimes_parent_thread" << chimes_parent_thread_counter;
     chimes_parent_thread_counter++;
+    return ss.str();
+}
+
+std::string CallingAndOMPPass::get_unique_region_varname() {
+    std::stringstream ss;
+    ss << "____chimes_region_id" << region_varname_counter;
+    region_varname_counter++;
     return ss.str();
 }
 
@@ -248,6 +277,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         std::string pragma_name = pragma.get_pragma_name();
         std::map<std::string, std::vector<std::string> > clauses =
             pragma.get_clauses();
+        bool is_parallel_for = (clauses.find("for") != clauses.end());
         assert(pragma_name == "parallel");
 
         assert(predecessors.find(pragma.get_line()) != predecessors.end());
@@ -270,6 +300,12 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         const clang::Stmt *post = successors[pragma.get_line()];
         clang::SourceLocation post_loc = post->getLocEnd();
         clang::SourceLocation inner_loc = post->getLocStart();
+        if (is_parallel_for) {
+            const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(
+                    post);
+            assert(for_stmt);
+            inner_loc = for_stmt->getBody()->getLocStart();
+        }
 
         std::set<std::string> private_vars;
 
@@ -297,7 +333,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                 private_vars.insert(*argi);
             }
         }
-        bool is_parallel_for = (clauses.find("for") != clauses.end());
 
         int lbl = getNextFunctionLabel();
 
@@ -308,36 +343,57 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         //TODO kinda hacky....
         std::string parent_thread_varname = get_chimes_parent_thread_varname();
+        std::string stack_depth_varname = get_unique_parent_stack_depth_varname();
+        std::string call_depth_varname = get_unique_call_stack_depth_varname();
+        std::string region_id_varname = get_unique_region_varname();
+
         std::stringstream entering_ss;
-        entering_ss << "; " <<
-            " { call_lbl_" << lbl << ": " <<
-            "unsigned " << parent_thread_varname << " = entering_omp_parallel(" <<
-            lbl << ", " << private_vars.size();
+        entering_ss << "; " << " { call_lbl_" << lbl << ": unsigned " <<
+            stack_depth_varname << " = get_parent_vars_stack_depth(); " <<
+            "unsigned " << call_depth_varname << " = get_thread_stack_depth(); " <<
+            "size_t " << region_id_varname << "; " << 
+            "unsigned " << parent_thread_varname <<
+            " = entering_omp_parallel(" << lbl << ", &" << region_id_varname <<
+            ", " << private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),
                 varse = private_vars.end(); varsi != varse; varsi++) {
             entering_ss << ", &" << *varsi;
         }
         entering_ss << "); ";
+        std::string blocker_varname;
+        if (is_parallel_for) {
+            blocker_varname = get_unique_blocker_varname();
+            entering_ss << "int " << blocker_varname << " = 1; ";
+
+            insertions->AppendFirstPrivate(pragma.get_line(),
+                    pragma.get_last_line(), blocker_varname);
+        }
 
         InsertTextAfterToken(pre_loc, entering_ss.str());
 
-        if (!is_parallel_for) {
-            std::stringstream register_ss;
-            register_ss << " " <<
-                "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-                parent_thread_varname << ", " <<
-                (is_parallel_for ? "true" : "false") << ", " << private_vars.size();
-            for (std::set<std::string>::iterator varsi = private_vars.begin(),
-                    varse = private_vars.end(); varsi != varse; varsi++) {
-                register_ss << ", &" << *varsi;
-            }
-            register_ss << "); ";
-            InsertTextAfterToken(inner_loc, register_ss.str());
+        std::stringstream register_ss;
+        if (is_parallel_for) {
+            register_ss << "if (" << blocker_varname << ") {";
         }
+        register_ss << " " <<
+            "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
+            parent_thread_varname << ", " <<
+            (is_parallel_for ? "true" : "false") << ", " <<
+            stack_depth_varname << ", " << region_id_varname << ", " <<
+            private_vars.size();
+        for (std::set<std::string>::iterator varsi = private_vars.begin(),
+                varse = private_vars.end(); varsi != varse; varsi++) {
+            register_ss << ", &" << *varsi;
+        }
+        register_ss << "); ";
+        if (is_parallel_for) {
+            register_ss << blocker_varname << " = 0; }";
+        }
+        InsertTextAfterToken(inner_loc, register_ss.str());
 
         std::stringstream leaving_stream;
-        leaving_stream << " leaving_omp_parallel(" << is_parallel_for <<
-            "); } ";
+        leaving_stream << " leaving_omp_parallel(" << call_depth_varname <<
+            ", " << region_id_varname << "); } ";
         InsertTextAfterToken(post_loc, leaving_stream.str());
     }
 

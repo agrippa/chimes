@@ -1,4 +1,4 @@
-71 #pragma omp parallel for
-85 #pragma omp parallel for
-107 #pragma omp parallel for reduction(+:kenergy)
-152 #pragma omp parallel for
+71 71 #pragma omp parallel for
+85 85 #pragma omp parallel for
+107 107 #pragma omp parallel for reduction(+:kenergy)
+152 152 #pragma omp parallel for

@@ -18,7 +18,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O0 ${INCLUDES}"
+GXX_FLAGS="-g -O0"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
@@ -123,6 +123,7 @@ TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
+FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
@@ -145,7 +146,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     printf 'Compiling with nvcc...'
     cd ${NVCC_WORK_DIR} && nvcc -arch=sm_20 \
               --pre-include ${CHIMES_HOME}/src/libchimes/libchimes.h \
-              -I${CHIMES_HOME}/src/libchimes ${GXX_FLAGS} \
+              -I${CHIMES_HOME}/src/libchimes ${GXX_FLAGS} ${INCLUDES} \
               -L${CHIMES_HOME}/src/libchimes -lchimes --verbose --keep \
               --compile ${CHIMES_DEF} ${DEFINES} ${INPUT} -o ${OBJ_FILE} &> ${CMD_FILE} || { \
                   printf 'FAILED\n'; cat ${CMD_FILE}; exit 1; }
@@ -210,6 +211,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${NVCC_WORK_DIR} \
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
+            -v ${INFO_FILE_PREFIX}.firstprivate.info \
             ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -223,6 +225,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} ${TRANSFORMED_FILE} ${FINAL_FILE} \
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
+
+    echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
+    cd ${NVCC_WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \
+        ${INFO_FILE_PREFIX}.firstprivate.info > ${FINAL_FILE}.tmp && \
+        mv ${FINAL_FILE}.tmp ${FINAL_FILE}
 
     echo Postprocessing ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && ${GXX} -E -I${CUDA_HOME}/include -include stddef.h \
@@ -261,8 +268,8 @@ else
 
     ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
             -L${CHIMES_HOME}/src/libchimes -L${CUDA_LIB_PATH} -lchimes \
-            -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${LIB_PATHS} \
-            ${LIBS} ${LINKER_FLAGS}
+            -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${INCLUDES} \
+            ${LIB_PATHS} ${LIBS} ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

@@ -68,6 +68,9 @@ static llvm::cl::opt<std::string> module_id_file("o",
 static llvm::cl::opt<std::string> omp_file("t",
         llvm::cl::desc("OpenMP file"),
         llvm::cl::value_desc("omp_info"));
+static llvm::cl::opt<std::string> firstprivate_file("v",
+        llvm::cl::desc("firstprivate file"),
+        llvm::cl::value_desc("firstprivate_info"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -296,6 +299,7 @@ int main(int argc, const char **argv) {
   check_opt(reachable_file, "Reachable file");
   check_opt(module_id_file, "Module ID file");
   check_opt(omp_file, "OpenMP file");
+  check_opt(firstprivate_file, "Firstprivate file");
 
   ignorable = new std::set<std::string>(ignorable_arr,
           ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
@@ -315,7 +319,8 @@ int main(int argc, const char **argv) {
               stack_allocs_file.c_str(), heap_file.c_str(),
               original_file.c_str(), diag_file.c_str(),
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
-              exit_file.c_str(), reachable_file.c_str(), omp_file.c_str());
+              exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
+              firstprivate_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;

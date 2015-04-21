@@ -49,6 +49,10 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
         unsigned line_no = atoi(line.substr(0, end).c_str());
         line = line.substr(end + 1);
 
+        end = line.find(' ');
+        unsigned last_line = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
         std::string pragma = line;
 
         line = line.substr(line.find(' ') + 1);
@@ -63,9 +67,10 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
 
         end = line.find(' ');
         if (end == std::string::npos) {
-            pragmas->push_back(OpenMPPragma(line_no, line, "parallel"));
+            pragmas->push_back(OpenMPPragma(line_no, last_line, line,
+                        "parallel"));
         } else {
-            OpenMPPragma pragma(line_no, line, "parallel");
+            OpenMPPragma pragma(line_no, last_line, line, "parallel");
             std::string clauses = line.substr(end + 1);
 
             std::vector<std::string> split_clauses;
@@ -640,6 +645,12 @@ bool DesiredInsertions::findNextMatchingMemoryAllocation(int line,
     *ret = *front;
     for_func->erase(front);
     return true;
+}
+
+void DesiredInsertions::AppendFirstPrivate(int starting_line, int ending_line,
+        std::string varname) {
+    firstprivate << starting_line << " " << ending_line << " " << varname <<
+        "\n";
 }
 
 void DesiredInsertions::AppendToDiagnostics(std::string action,

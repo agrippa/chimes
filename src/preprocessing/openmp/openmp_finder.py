@@ -2,6 +2,12 @@
 import os
 import sys
 
+#
+# This script searches a C file for all OMP pragmas and outputs their starting
+# line number, ending line number, and the inlined OMP pragma (removing
+# backslashes if it is across multiple lines).
+#
+
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('usage: python openmp_finder.py input')
@@ -24,12 +30,11 @@ if __name__ == '__main__':
                 acc = line
                 starting_line_no = line_no
                 while line[len(line) - 1] == '\\':
-                    line = input_fp.readline()
+                    line = input_fp.readline().strip()
                     line_no += 1
-                    line = line.strip()
                     acc = acc[:len(acc) - 1].strip() # trim the last \
                     acc += ' ' + line
-                sys.stdout.write(str(starting_line_no) + ' ' + acc + '\n')
+                sys.stdout.write(str(starting_line_no) + ' ' + str(line_no) + ' ' + acc + '\n')
 
         line = input_fp.readline()
         line_no += 1

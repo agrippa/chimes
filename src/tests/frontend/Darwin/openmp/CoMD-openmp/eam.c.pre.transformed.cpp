@@ -46,13 +46,18 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
 extern void free_wrapper(void *ptr, size_t group);
 
-extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, bool is_parallel_for, unsigned nlocals, ...);
-extern void leaving_omp_parallel();
+        unsigned parent, bool is_parallel_for, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(int expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -2852,13 +2857,13 @@ int eamForce(SimFlat* s)
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-     lbl_4: int fsize; register_stack_var("eamForce|fsize|0", "i32", (void *)(&fsize), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_27: unsigned ____chimes_parent_thread0 = entering_omp_parallel(27, 0); ;
+     lbl_4: int fsize; register_stack_var("eamForce|fsize|0", "i32", (void *)(&fsize), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_27: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(27, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-#pragma omp parallel for
+#pragma omp parallel for firstprivate(____chimes_first_iter0)
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=0; ii<fsize; ii++)
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { if (____chimes_replaying) { chimes_error(); }
+   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        call_lbl_9: calling((void*)&zeroReal3, 9, 0UL, 1, (size_t)(18420029360357227392UL)); zeroReal3(s->atoms->f[ii]);
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2868,17 +2873,17 @@ int eamForce(SimFlat* s)
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->rhobar[ii] = 0.;
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(); }
+   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-     lbl_5: int nNbrBoxes; register_stack_var("eamForce|nNbrBoxes|0", "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(7): { goto call_lbl_7; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } nNbrBoxes = (27); { call_lbl_28: unsigned ____chimes_parent_thread1 = entering_omp_parallel(28, 0); ;
+     lbl_5: int nNbrBoxes; register_stack_var("eamForce|nNbrBoxes|0", "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(7): { goto call_lbl_7; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } nNbrBoxes = (27); { call_lbl_28: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(28, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; ;
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-#pragma omp parallel for reduction(+:etot)
+#pragma omp parallel for reduction(+:etot) firstprivate(____chimes_first_iter1)
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { if (____chimes_replaying) { chimes_error(); }
+   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, true, ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2961,16 +2966,16 @@ int eamForce(SimFlat* s)
 # 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(); } ; { call_lbl_29: unsigned ____chimes_parent_thread2 = entering_omp_parallel(29, 0);
+   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); } ; { call_lbl_29: unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(29, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1;
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-#pragma omp parallel for reduction(+:etot)
+#pragma omp parallel for reduction(+:etot) firstprivate(____chimes_first_iter2)
 # 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { if (____chimes_replaying) { chimes_error(); }
+   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, true, ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); ____chimes_first_iter2 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2992,7 +2997,7 @@ int eamForce(SimFlat* s)
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(); }
+   } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); }
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3000,16 +3005,16 @@ int eamForce(SimFlat* s)
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_19: calling((void*)&haloExchange, 19, 0UL, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); haloExchange(pot->forceExchange, pot->forceExchangeData);
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_20: calling((void*)&profileStop, 20, 0UL, 1, (size_t)(0UL)); profileStop(eamHaloTimer); } while(0); { call_lbl_30: unsigned ____chimes_parent_thread3 = entering_omp_parallel(30, 0); ;
+   do { call_lbl_20: calling((void*)&profileStop, 20, 0UL, 1, (size_t)(0UL)); profileStop(eamHaloTimer); } while(0); { call_lbl_30: unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(30, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ;
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 325 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 326 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-#pragma omp parallel for
+#pragma omp parallel for firstprivate(____chimes_first_iter3)
 # 327 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 328 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { if (____chimes_replaying) { chimes_error(); }
+   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, true, ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 329 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3080,7 +3085,7 @@ int eamForce(SimFlat* s)
 # 368 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 369 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(); }
+   } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); }
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    s->ePotential = (real_t) etot;
