@@ -15,7 +15,11 @@ BASIC_PARALLEL = RuntimeTest('BasicParallel', ['basic_parallel.cpp'], 0, 1,
 FAIL_CHECKPOINT_IN_FOR = RuntimeTest('FailCheckpointInFor',
                                      ['fail_checkpoint_in_for.cpp'], -6, 0,
                                      includes=[os.path.dirname(OMP_H)])
-TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR]
+PARALLEL_FOR_PIPELINE = RuntimeTest('ParallelForPipeline',
+                                     ['parallel_for_pipeline.cpp'], 0, 1,
+                                     includes=[os.path.dirname(OMP_H)])
+
+TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR, PARALLEL_FOR_PIPELINE]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'

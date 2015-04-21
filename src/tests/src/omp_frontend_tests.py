@@ -44,6 +44,8 @@ COMD_OMP = FrontendTest('CoMD-OMP',
                      'CoMD-openmp/cmdLineParser', 'CoMD-openmp/eam', 'CoMD-openmp/initAtoms',
                      'CoMD-openmp/ljForce', 'CoMD-openmp/parallel', 'CoMD-openmp/random',
                      'CoMD-openmp/yamlOutput'], False, includes=[os.path.dirname(OMP_H)])
+LULESH_OMP = FrontendTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'],
+                      ['LULESH_OMP.cc.pre.transformed.cpp'], ['lulesh'], False)
 
 
 TESTS = []
@@ -53,6 +55,7 @@ for simple in SIMPLE_TESTS:
     test.includes.append(os.path.dirname(OMP_H))
     TESTS.append(test)
 TESTS.append(COMD_OMP)
+TESTS.append(LULESH_OMP)
 
 
 if __name__ == '__main__':

@@ -26520,20 +26520,24 @@ extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group);
 # 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void free_wrapper(void * ptr, size_t group);
 # 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned entering_omp_parallel(unsigned lbl, unsigned nlocals, ...);
-# 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, bool is_parallel_for, unsigned nlocals, ...);
-# 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void leaving_omp_parallel();
+extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
+# 31 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, bool is_parallel_for, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id);
+# 36 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned get_parent_vars_stack_depth();
+# 37 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned get_thread_stack_depth();
+# 39 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void chimes_error();
-# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 43 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 45 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 58 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;

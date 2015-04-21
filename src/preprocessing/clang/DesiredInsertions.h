@@ -17,9 +17,9 @@ extern std::string curr_func;
 
 class OpenMPPragma {
     public:
-        OpenMPPragma(int set_line,
+        OpenMPPragma(int set_line, int set_last_line,
                 std::string set_pragma, std::string set_pragma_name) :
-                line(set_line), pragma(set_pragma),
+                line(set_line), last_line(set_last_line), pragma(set_pragma),
                 pragma_name(set_pragma_name) { }
 
         void add_clause(std::string clause_name,
@@ -36,6 +36,7 @@ class OpenMPPragma {
         }
 
         int get_line() { return line; }
+        int get_last_line() { return last_line; }
         void update_line(int set_line) { line = set_line; }
         std::string get_pragma() { return pragma; }
 
@@ -46,6 +47,7 @@ class OpenMPPragma {
 
     private:
         int line;
+        int last_line;
         std::string pragma;
 
         std::string pragma_name;
@@ -269,7 +271,7 @@ public:
             const char *diagnostic_filename, const char *working_dirname,
             const char *func_filename, const char *call_filename,
             const char *exit_filename, const char *reachable_filename,
-            const char *omp_filename) :
+            const char *omp_filename, const char *firstprivate_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -277,7 +279,7 @@ public:
             diagnostic_file(diagnostic_filename), working_dir(working_dirname),
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
-            omp_file(omp_filename) {
+            omp_file(omp_filename), firstprivate_file(firstprivate_filename) {
         module_id = hash(module_name);
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
@@ -288,11 +290,14 @@ public:
         func_exits = parseFunctionExits();
         reachable = parseReachable();
         omp_pragmas = parseOMPPragmas();
+
         diagnostics.open(diagnostic_file);
+        firstprivate.open(firstprivate_file);
     }
 
     ~DesiredInsertions() {
         diagnostics.close();
+        firstprivate.close();
     }
 
     bool contains(int line, int col, const char *filename);
@@ -326,6 +331,8 @@ public:
 
     void AppendToDiagnostics(std::string action, clang::SourceLocation loc,
             std::string val, clang::SourceManager &SM);
+    void AppendFirstPrivate(int starting_line, int ending_line,
+            std::string varname);
 
     FunctionExit *getFunctionExitInfo(std::string funcname);
     AliasesPassedToCallSite findFirstMatchingCallsite(int line,
@@ -343,8 +350,9 @@ private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
-            omp_file;
+            omp_file, firstprivate_file;
         std::ofstream diagnostics;
+        std::ofstream firstprivate;
 
         std::vector<CollapsedLines> transforms;
 

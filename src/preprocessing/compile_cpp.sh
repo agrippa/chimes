@@ -18,7 +18,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O0 ${INCLUDES}"
+GXX_FLAGS="-g -O0"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
@@ -118,6 +118,7 @@ BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
+FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
@@ -199,6 +200,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -w ${WORK_DIR} \
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
+            -v ${INFO_FILE_PREFIX}.firstprivate.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -213,6 +215,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info
 
+    echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
+    cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \
+        ${INFO_FILE_PREFIX}.firstprivate.info > ${FINAL_FILE}.tmp &&
+        mv ${FINAL_FILE}.tmp ${FINAL_FILE}
+
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \
         -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
@@ -224,7 +231,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     ${GXX} --compile -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${GXX_FLAGS} ${CHIMES_DEF} ${DEFINES}
+        -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
         echo "Missing object file $OBJ_FILE for input $INPUT"
@@ -248,7 +255,8 @@ else
 
     ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
             -L${CHIMES_HOME}/src/libchimes -lchimes ${OBJ_FILE_STR} \
-            -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${LINKER_FLAGS}
+            -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
+            ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

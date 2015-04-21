@@ -9,24 +9,72 @@
 #include "heap_allocation.h"
 #include "chimes_stack.h"
 
+#define PARENT_ALIASES_INIT_SIZE    1024
+
+class thread_relation {
+    public:
+        thread_relation(unsigned set_parent, unsigned set_relation,
+                size_t set_region_id) : parent(set_parent),
+                relation(set_relation), region_id(set_region_id) { }
+
+        unsigned get_parent() { return parent; }
+        unsigned get_relation() { return relation; }
+        size_t get_region_id() { return region_id; }
+
+    private:
+        unsigned parent;
+        unsigned relation;
+        size_t region_id;
+};
+
 class thread_ctx {
     public:
         thread_ctx(pthread_t set_pthread) : pthread(set_pthread),
                 stack_nesting(0), calling_label(-1), func_ptr(NULL),
-                first_parallel_for_nesting(0) {}
+                first_parallel_for_nesting(0),
+                parent_aliases_capacity(PARENT_ALIASES_INIT_SIZE),
+                parent_aliases_length(0) {
+            parent_aliases = (size_t*)malloc(sizeof(size_t) *
+                    PARENT_ALIASES_INIT_SIZE);
+            assert(parent_aliases);
+        }
+        ~thread_ctx() {
+            free(parent_aliases);
+        }
+
+        size_t get_n_parent_aliases() { return parent_aliases_length; }
+        size_t get_parent_alias(int i) {
+            assert(i < parent_aliases_length);
+            return parent_aliases[i];
+        }
+        void clear_parent_aliases() { parent_aliases_length = 0; }
+        void add_parent_alias(size_t alias) {
+            parent_aliases[parent_aliases_length++] = alias;
+        }
+        void ensure_parent_alias_capacity(int size) {
+            if (size > parent_aliases_capacity) {
+                parent_aliases_capacity *= 2;
+                parent_aliases = (size_t *)realloc(parent_aliases,
+                        sizeof(size_t) * parent_aliases_capacity);
+                assert(parent_aliases);
+            }
+        }
 
         std::vector<stack_frame *> *get_stack() { return &program_stack; }
-        void push_parent(unsigned parent, unsigned relation) {
-            parents.push_back(pair<unsigned, unsigned>(parent, relation));
+        void push_parent(unsigned parent, unsigned relation, size_t region_id) {
+            parents.push_back(thread_relation(parent, relation, region_id));
         }
         void pop_parent() {
             parents.pop_back();
         }
         unsigned get_parent() {
-            return parents[parents.size() - 1].first;
+            return parents[parents.size() - 1].get_parent();
         }
         unsigned get_relation_to_parent() {
-            return parents[parents.size() - 1].second;
+            return parents[parents.size() - 1].get_relation();
+        }
+        size_t get_parent_region() {
+            return parents[parents.size() - 1].get_region_id();
         }
         bool has_parent() {
             return parents.size() > 0;
@@ -46,10 +94,20 @@ class thread_ctx {
 
         pthread_t get_pthread() { return pthread; }
 
-        void clear_parent_vars() { parent_vars.clear(); }
-        unsigned parent_vars_size() { return parent_vars.size(); }
-        void add_parent_var(void *addr) { parent_vars.push_back(addr); }
-        void *get_parent_var(int index) { return parent_vars[index]; }
+        unsigned parent_vars_depth() { return parent_vars.size(); }
+        void add_parent_var(stack_var *var) {
+            parent_vars.back().push_back(var);
+        }
+        vector<stack_var *> &get_parent_vars_at_depth(int depth) {
+            return parent_vars[depth];
+        }
+        void pop_parent_vars_entry() {
+            assert(parent_vars.size() > 0);
+            parent_vars.pop_back();
+        }
+        void create_new_parent_vars_context() {
+            parent_vars.push_back(vector<stack_var *>());
+        }
 
         void clear_changed_groups() { changed_groups.clear(); }
         set<size_t> *get_changed_groups() { return &changed_groups; }
@@ -75,14 +133,18 @@ class thread_ctx {
 
     private:
         pthread_t pthread;
-        vector<void *> parent_vars;
+        vector< vector<stack_var *> > parent_vars;
         vector<stack_frame *> program_stack;
-        vector<pair<unsigned, unsigned> > parents;
+        vector<thread_relation> parents;
         int stack_nesting;
         set<size_t> changed_groups;
         int calling_label;
         void *func_ptr;
         int first_parallel_for_nesting;
+
+        size_t *parent_aliases;
+        size_t parent_aliases_capacity;
+        size_t parent_aliases_length;
 
         /*
          * During normal execution, has every function call and parallel region
