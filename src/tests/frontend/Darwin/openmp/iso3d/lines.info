@@ -1,0 +1,7 @@
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 91 5 : { 1, 2, 3 } direct:call:_Z12setup_configP7_configiPPc
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 118 5 : { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 } prop:call:_Z14config_sourcesPP7_sourcePiiii
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 121 5 : { 15 } direct:call:_Z9init_dataPfS_S_S_iiiff
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 140 9 : { 12, 13, 16, 17, 18, 19, 20, 244 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 145 24 : { 12, 13, 16, 17, 18, 19, 20, 244 } prop:call:_Z7secondsv
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 147 5 : { 21 } direct:call:_Z15finish_progressv
+/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 154 9 : { 22 } prop:call:_Z15save_layer_textPfiiiiiPKci
