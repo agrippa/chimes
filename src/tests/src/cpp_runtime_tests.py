@@ -16,6 +16,8 @@ NESTED_STACK_SCALAR = RuntimeTest('NestedStackScalar',
                                   ['nested_stack_scalar.cpp'], 5, 1)
 NESTED_STACK_STRUCT = RuntimeTest('NestedStackStruct',
                                   ['nested_stack_struct.cpp'], 0, 1)
+NESTED_MALLOCS = RuntimeTest('NestedMallocs',
+                             ['nested_mallocs.cpp'], 0, 1)
 FUNC_PTR = RuntimeTest('FuncPtr', ['func_ptr.cpp'], 11, 1)
 COMD_FREE = RuntimeTest('ComdFree', ['comd_free.cpp'], 0, 1)
 COMD_FREE_COMPLEX = RuntimeTest('ComdFreeComplex', ['comd_free_complex.cpp'], 30,
@@ -44,10 +46,19 @@ ISO3D = RuntimeTest('Iso3D',
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
                     cli_args='-i 1')
+SMITH_WATERMAN_ARGS=CHIMES_HOME + \
+                    '/src/tests/runtime/cpp/smithWaterman/string1.txt ' + \
+                    CHIMES_HOME + \
+                    '/src/tests/runtime/cpp/smithWaterman/string2.txt ' + \
+                    '1 1'
+SMITH_WATERMAN = RuntimeTest('SmithWaterman',
+                             ['smithWaterman/smith_waterman.cpp'], 0, -1,
+                             cli_args=SMITH_WATERMAN_ARGS)
+
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
-         NESTED_STACK_STRUCT, COMD_FREE, COMD_FREE_COMPLEX,
+         NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
          COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, HEAP_POINTERS, HEAP_INDIRECTION,
-         FREE, REALLOC, CALLOC, GLOBALS, MULTI_CHECKPOINT, ISO2D, ISO3D]
+         FREE, REALLOC, CALLOC, GLOBALS, MULTI_CHECKPOINT, ISO2D, ISO3D, SMITH_WATERMAN]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
