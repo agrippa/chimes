@@ -1,5 +1,5 @@
-__sFILE _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
-__sFILEX 
-__sbuf _base _size 
-_config nx ny nz nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
-_source x y freq t 
+__sFILE 0 _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
+__sFILEX 0 
+__sbuf 0 _base _size 
+_config 0 nx ny nz nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
+_source 0 x y freq t 

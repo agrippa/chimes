@@ -1,4 +1,4 @@
-AtomsSt nLocal nGlobal gid iSpecies r p f U 
-DomainSt procGrid procCoord globalMin globalMax globalExtent localMin localMax localExtent 
-LinkCellSt gridSize nLocalBoxes nHaloBoxes nTotalBoxes localMin localMax boxSize invBoxSize nAtoms 
-TimerHandle 
+AtomsSt 0 nLocal nGlobal gid iSpecies r p f U 
+DomainSt 0 procGrid procCoord globalMin globalMax globalExtent localMin localMax localExtent 
+LinkCellSt 0 gridSize nLocalBoxes nHaloBoxes nTotalBoxes localMin localMax boxSize invBoxSize nAtoms 
+TimerHandle 0 

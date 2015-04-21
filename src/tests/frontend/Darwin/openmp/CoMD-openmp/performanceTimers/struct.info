@@ -1,8 +1,8 @@
-RankReduceDataSt val rank 
-TimerGlobalSt atomRate atomAllRate atomsPerUSec 
-TimerHandle 
-TimersSt start total count elapsed minRank maxRank minValue maxValue average stdev 
-__sFILE _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
-__sFILEX 
-__sbuf _base _size 
-timeval tv_sec tv_usec 
+RankReduceDataSt 0 val rank 
+TimerGlobalSt 0 atomRate atomAllRate atomsPerUSec 
+TimerHandle 0 
+TimersSt 0 start total count elapsed minRank maxRank minValue maxValue average stdev 
+__sFILE 0 _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
+__sFILEX 0 
+__sbuf 0 _base _size 
+timeval 0 tv_sec tv_usec 

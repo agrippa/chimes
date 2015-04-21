@@ -1,0 +1,3 @@
+1381 1381 #pragma omp parallel
+1423 1423 #pragma omp barrier
+1438 1438 #pragma omp barrier

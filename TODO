@@ -20,3 +20,5 @@
 
    To fix this, we can do a renaming of the local variable during the code
    generation phase.
+5. We currently require that there be some kind of statement before an OMP
+   pragma for us to find and insert after.

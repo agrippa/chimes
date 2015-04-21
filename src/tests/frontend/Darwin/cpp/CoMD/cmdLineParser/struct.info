@@ -1,2 +1,2 @@
-MyOptionSt help longArg shortArg argFlag type sz ptr next 
-option name has_arg flag val 
+MyOptionSt 0 help longArg shortArg argFlag type sz ptr next 
+option 0 name has_arg flag val 

@@ -25,10 +25,11 @@ class OMPRegion {
                 clang::SourceLocation set_end, std::string set_pragma_name,
                 std::map<std::string, std::vector<std::string> > set_clauses,
                 int set_lbl, bool set_parallel_for,
-                const clang::Stmt *set_body) : parent(NULL),
+                const clang::Stmt *set_body, bool set_is_critical) :
+                parent(NULL),
                 line(set_line), start(set_start), end(set_end),
                 pragma_name(set_pragma_name), clauses(set_clauses),
-                lbl(set_lbl), parallel_for(set_parallel_for), body(set_body) {}
+                lbl(set_lbl), parallel_for(set_parallel_for), body(set_body), is_critical(set_is_critical) {}
 
         void add_child(OMPRegion *child) { children.push_back(child); }
         void set_parent(OMPRegion *set_parent) { parent = set_parent; }
@@ -38,6 +39,7 @@ class OMPRegion {
         std::vector<OMPRegion *> get_children() { return children; }
         int get_lbl() { return lbl; }
         bool is_parallel_for() { return parallel_for; }
+        bool get_is_critical() { return is_critical; }
         const clang::Stmt *get_body() { return body; }
 
     private:
@@ -50,6 +52,7 @@ class OMPRegion {
         int lbl;
         bool parallel_for;
         const clang::Stmt *body;
+        bool is_critical;
 };
 
 class OMPTree {

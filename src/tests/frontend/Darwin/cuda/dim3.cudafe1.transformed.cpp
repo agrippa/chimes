@@ -26522,7 +26522,7 @@ extern void free_wrapper(void * ptr, size_t group);
 # 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
 # 31 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, bool is_parallel_for, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, bool is_parallel_for, bool is_critical, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id);
 # 36 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
@@ -27592,7 +27592,7 @@ static void __sti____cudaRegisterAll_12_dim3_cpp1_ii_main(void){__cudaFatCubinHa
 
 
 static int module_init() {
-    init_module(3859550638466940431UL, 8, 2, 3859550638466940431UL + 109UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 18UL, 3859550638466940431UL + 36UL, 3859550638466940431UL + 51UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 40UL, 3859550638466940431UL + 117UL, 3859550638466940431UL + 3UL, 3859550638466940431UL + 15UL, 3859550638466940431UL + 74UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 65UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 81UL, 3859550638466940431UL + 104UL, "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
+    init_module(3859550638466940431UL, 8, 6, 3859550638466940431UL + 109UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 18UL, 3859550638466940431UL + 36UL, 3859550638466940431UL + 51UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 40UL, 3859550638466940431UL + 117UL, 3859550638466940431UL + 3UL, 3859550638466940431UL + 15UL, 3859550638466940431UL + 74UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 65UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 81UL, 3859550638466940431UL + 104UL, "__fatBinC_Wrapper_t", 4, (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), (int)__builtin_offsetof(__fatBinC_Wrapper_t, filename_or_fatbins), "dim3", 3, (int)__builtin_offsetof(struct dim3, x), (int)__builtin_offsetof(struct dim3, y), (int)__builtin_offsetof(struct dim3, z), "div_t", 2, (int)__builtin_offsetof(div_t, quot), (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, (int)__builtin_offsetof(ldiv_t, quot), (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, (int)__builtin_offsetof(lldiv_t, quot), (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, (int)__builtin_offsetof(struct uint3, x), (int)__builtin_offsetof(struct uint3, y), (int)__builtin_offsetof(struct uint3, z));
     return 0;
 }
 

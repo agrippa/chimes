@@ -1,0 +1,167 @@
+malloc 57 37 3 0
+omp_init_lock 58 3 0 3
+memset 293 3 0 14 0 0
+sprintf 300 10 0 102 2001
+omp_get_num_threads 301 84 0
+sprintf 301 24 0 102 2002 0
+sprintf 301 142 0 102 2003 0
+sprintf 301 252 0 102 2004 0
+sprintf 301 0 0 102 2004 0
+sprintf 301 0 0 102 2006
+atoi 324 19 0 145
+atoi 326 17 0 145
+atoi 331 15 0 145
+printf 361 5 0 2007
+printf 362 5 0 2008
+printf 363 5 0 2009
+exit 380 3 0 0
+omp_set_lock 422 3 0 166
+omp_unset_lock 427 3 0 166
+omp_get_thread_num 432 33 0
+printf 432 3 0 2010 0 197
+exit 433 3 0 0
+omp_get_thread_num 440 86 0
+printf 440 19 0 2012 0 297 0
+malloc 446 26 221 0
+omp_get_thread_num 455 20 0
+printf 454 5 0 2003 0 0
+_Z8ss_errorPc 456 5 0 2014
+_Z21omp_global_lock_allocv 458 16 221
+omp_get_thread_num 459 59 0
+printf 459 19 0 2015 0 221
+_Z10ss_mkEmptyP12stealStack_t 473 3 0 297
+_Z8ss_errorPc 479 32 0 2016
+omp_get_thread_num 481 73 0
+rng_showstate 481 103 327 378 1989
+printf 481 19 0 2017 0 0 327 0
+memcpy 484 3 0 339 378 0
+_Z8ss_errorPc 494 28 0 2018
+omp_get_thread_num 497 84 0
+rng_showstate 497 118 443 427 1989
+printf 497 19 0 2019 0 0 443 0 0
+_Z8ss_errorPc 507 28 0 2018
+omp_get_thread_num 511 84 0
+rng_showstate 511 114 496 481 1989
+printf 511 19 0 2019 0 0 496 0 0
+_Z8ss_errorPc 520 28 0 2022
+omp_set_lock 532 3 0 546
+_Z8ss_errorPc 533 107 0 2017
+omp_unset_lock 540 3 0 546
+omp_set_lock 548 3 0 595
+omp_unset_lock 555 3 0 595
+_Z8ss_errorPc 567 34 0 2009
+_Z8ss_errorPc 570 36 0 2025
+omp_get_thread_num 574 57 0
+printf 574 20 0 2018 0 0
+omp_set_lock 577 3 0 856
+omp_get_thread_num 584 57 0
+printf 584 20 0 2018 0 0
+_Z8ss_errorPc 591 55 0 2028
+omp_unset_lock 608 3 0 856
+omp_get_thread_num 610 57 0
+printf 610 20 0 2018 0 0
+memcpy 621 5 0 832 856 0
+omp_get_thread_num 630 16 0
+rng_showstate 631 16 848 832 1989
+printf 629 9 0 2030 0 0 0 848 0 0 0 856
+omp_get_thread_num 647 7 0
+printf 646 7 0 2031 0 0 0 0 0 0
+omp_get_num_threads 656 19 0
+omp_get_thread_num 657 10 0
+omp_get_num_threads 657 38 0
+_Z10uts_wctimev 674 17 0
+omp_get_thread_num 680 65 0
+printf 680 19 0 2032 0 0 0
+_Z8ss_errorPc 687 33 0 2033
+_Z10uts_wctimev 691 10 0
+omp_get_thread_num 715 71 0
+printf 715 19 0 2034 0 0 0 0
+_Z12uts_initRootP6node_ti 912 3 0 1084 0
+_Z15uts_numChildrenP6node_t 959 17 0 1194
+_Z13uts_childTypeP6node_t 960 15 0 1194
+omp_get_thread_num 966 12 0
+_Z10ss_topPosnP12stealStack_t 966 34 0 1196
+rng_showstate 967 12 1130 1194 1989
+printf 965 5 0 2035 0 0 1130 0 0
+rng_spawn 986 9 0 1194 1195 0
+_Z7ss_pushP12stealStack_tP6node_t 988 7 0 1196 1195
+_Z12releaseNodesP12stealStack_t 989 7 0 1196
+_Z13ss_localDepthP12stealStack_t 1098 9 0 1235
+_Z11ss_setStateP12stealStack_ti 1100 7 0 1235 0
+_Z10ss_releaseP12stealStack_ti 1101 7 0 1235 0
+_Z11ss_setStateP12stealStack_ti 1104 9 0 1235 0
+_Z15cbarrier_cancelv 1105 9 0
+_Z11ss_setStateP12stealStack_ti 1114 7 0 1235 0
+_Z21omp_global_lock_allocv 1007 11 1265
+omp_get_thread_num 1008 56 0
+printf 1008 19 0 2018 0 1265
+omp_set_lock 1012 3 0 1265
+omp_unset_lock 1016 3 0 1265
+omp_get_thread_num 1023 12 0
+omp_set_lock 1025 3 0 1265
+omp_get_num_threads 1030 19 0
+omp_get_thread_num 1041 14 0
+omp_unset_lock 1042 3 0 1265
+omp_get_thread_num 1044 81 0
+printf 1044 20 0 2038 0 0 0
+omp_get_thread_num 1059 94 0
+printf 1059 20 0 2039 0 0 0 0
+omp_set_lock 1064 3 0 1265
+omp_get_thread_num 1072 16 0
+omp_unset_lock 1073 3 0 1265
+omp_get_thread_num 1075 81 0
+printf 1075 20 0 2038 0 0 0
+_Z8initNodeP6node_t 1131 3 0 1389
+_Z13ss_localDepthP12stealStack_t 1136 22 0 1487
+_Z11ss_setStateP12stealStack_ti 1140 7 0 1487 0
+_Z6ss_topP12stealStack_t 1143 16 1422 1487
+_Z11genChildrenP6node_tS0_P12stealStack_t 1146 2 0 1422 1389 1487
+_Z6ss_popP12stealStack_t 1155 9 0 1487
+_Z12releaseNodesP12stealStack_t 1160 7 0 1487
+_Z13ss_localDepthP12stealStack_t 1161 20 0 1487
+_Z10ss_acquireP12stealStack_ti 1167 9 0 1487 0
+_Z11ss_setStateP12stealStack_ti 1176 7 0 1487 0
+_Z8findworki 1177 18 0 0
+_Z8ss_stealP12stealStack_tii 1180 14 0 1487 0 0
+_Z8findworki 1181 30 0 0
+_Z11ss_setStateP12stealStack_ti 1193 5 0 1487 0
+_Z13cbarrier_waitv 1194 12 0
+_Z10checkpointv 1198 5 0
+omp_get_num_threads 1235 18 0
+printf 1270 5 0 2041
+_Z13uts_showStatsiidiii 1273 3 0 0 0 0 0 0 0
+printf 1277 7 0 2043 0 0 0
+printf 1279 7 0 2044 0
+printf 1282 5 0 2018 0
+printf 1283 5 0 2046 0 0 0
+printf 1285 5 0 2003 0 0
+printf 1292 7 0 2048 0
+printf 1293 7 0 2049 0
+printf 1294 7 0 2049 0
+printf 1295 7 0 2049 0
+printf 1296 7 0 2049 0
+printf 1297 7 0 2049 0
+printf 1298 7 0 2049 0
+printf 1299 7 0 2014 0 0
+printf 1301 7 0 2014 0 0
+printf 1303 7 0 2014 0 0
+printf 1305 7 0 2014 0 0
+printf 1307 7 0 2012 0 0 0
+printf 1310 7 0 2060
+_Z15uts_parseParamsiPPc 1370 3 0 0 1980
+_Z7cb_initv 1378 3 0
+omp_get_thread_num 1387 9 0
+_Z15uts_printParamsv 1388 7 0
+malloc 1411 56 1283 0
+omp_get_thread_num 1411 16 0
+omp_get_thread_num 1412 36 0
+_Z7ss_initP12stealStack_ti 1413 5 0 1283 0
+omp_get_thread_num 1417 9 0
+_Z12initRootNodeP6node_ti 1418 7 0 1915 0
+_Z7ss_pushP12stealStack_tP6node_t 1419 7 0 1283 1915
+_Z12ss_initStateP12stealStack_t 1427 5 0 1283
+_Z10uts_wctimev 1428 10 0
+_Z13parTreeSearchP12stealStack_t 1429 5 0 1283
+_Z10uts_wctimev 1430 10 0
+omp_get_thread_num 1442 9 0
+_Z9showStatsd 1443 7 0 0

@@ -58,19 +58,21 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
         line = line.substr(line.find(' ') + 1);
         assert(line.find("omp") == 0);
 
-        // Only support the parallel pragma at the moment
         line = line.substr(line.find(' ') + 1);
-        if (line.find("for") == 0) {
-            line = ("parallel " + line);
-        }
-        assert(line.find("parallel") == 0);
 
+        // Look for a command like parallel, for, etc.
         end = line.find(' ');
+
         if (end == std::string::npos) {
+            // No clauses, just pragma name
+            std::string pragma_name = line;
+
             pragmas->push_back(OpenMPPragma(line_no, last_line, line,
-                        "parallel"));
+                        pragma_name));
         } else {
-            OpenMPPragma pragma(line_no, last_line, line, "parallel");
+            std::string pragma_name = line.substr(0, end);
+
+            OpenMPPragma pragma(line_no, last_line, line, pragma_name);
             std::string clauses = line.substr(end + 1);
 
             std::vector<std::string> split_clauses;
@@ -516,6 +518,16 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     return allocs;
 }
 
+StructFields *DesiredInsertions::get_struct_fields_for(std::string name) {
+    for (std::vector<StructFields *>::iterator i = struct_fields->begin(),
+            e = struct_fields->end(); i != e; i++) {
+        StructFields *curr = *i;
+        llvm::errs() << "comparing \"" << curr->get_name() << "\" \"" << name << "\"\n";
+        if (curr->get_name() == name) return curr;
+    }
+    return NULL;
+}
+
 std::vector<StructFields *> *DesiredInsertions::parseStructs() {
     std::ifstream fp;
     fp.open(struct_info_file, std::ios::in);
@@ -523,19 +535,33 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
 
     std::string line;
     while (getline(fp, line)) {
-        int name_end = line.find(' ');
-        std::string name = line.substr(0, name_end);
-        StructFields *fields = new StructFields(name);
+        size_t end = line.find(' ');
+        std::string name = line.substr(0, end);
+        line = line.substr(end + 1);
 
-        line = line.substr(name_end + 1);
-        while (line.find(' ') != std::string::npos) {
-            int end = line.find(' ');
+        end = line.find(' ');
+        std::string unnamed_str = line.substr(0, end);
+        bool unnamed = false;
+        if (unnamed_str == "1") {
+            unnamed = true;
+        } else {
+            assert(unnamed_str == "0");
+        }
+        line = line.substr(end + 1);
+
+        StructFields *curr = new StructFields(name, unnamed);
+
+        end = line.find(' ');
+        while (end != std::string::npos) {
             std::string field = line.substr(0, end);
-            fields->add_field(field);
+            curr->add_field(field);
 
             line = line.substr(end + 1);
+            end = line.find(' ');
         }
-        fields->add_field(line);
+        // final field at end of line
+        curr->add_field(line);
+        fields->push_back(curr);
     }
     return fields;
 }
