@@ -37,6 +37,11 @@ CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0),
     supported_omp_clauses.insert("for");
     // doesn't seem like anything special needs to be done to support this
     supported_omp_clauses.insert("shared");
+
+    supported_omp_pragmas.insert("parallel");
+    supported_omp_pragmas.insert("for");
+    supported_omp_pragmas.insert("critical");
+    supported_omp_pragmas.insert("barrier");
 }
 
 std::string CallingAndOMPPass::get_unique_parent_stack_depth_varname() {
@@ -190,7 +195,8 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         }
     }
 
-    if (region != NULL && region->is_parallel_for()) {
+    if (region != NULL && (region->is_parallel_for() ||
+                region->get_is_critical())) {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { chimes_error(); } ";
         InsertTextAfterToken(toInsertAt, entry_ss.str());
@@ -250,6 +256,22 @@ bool CallingAndOMPPass::is_inside_if_cond(const clang::Stmt *stmt) {
     }
 }
 
+bool CallingAndOMPPass::is_inside_while_cond(const clang::Stmt *stmt) {
+    const clang::Stmt *child = stmt;
+    const clang::Stmt *parent = getParentMayBeNull(stmt);
+    while (parent != NULL && !clang::isa<clang::WhileStmt>(parent)) {
+        child = parent;
+        parent = getParentMayBeNull(parent);
+    }
+
+    if (parent != NULL && clang::isa<clang::WhileStmt>(parent)) {
+        const clang::WhileStmt *while_stmt = clang::dyn_cast<clang::WhileStmt>(parent);
+        return (while_stmt->getCond() == child);
+    } else {
+        return (false);
+    }
+}
+
 void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
@@ -277,14 +299,23 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         std::string pragma_name = pragma.get_pragma_name();
         std::map<std::string, std::vector<std::string> > clauses =
             pragma.get_clauses();
-        bool is_parallel_for = (clauses.find("for") != clauses.end());
-        assert(pragma_name == "parallel");
+        bool is_parallel_for = (clauses.find("for") != clauses.end() ||
+                pragma_name == "for");
+        bool is_critical = (pragma_name == "critical");
+        bool is_barrier = (pragma_name == "barrier");
+        if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
+            llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
+            assert(false);
+        }
+
+        if (is_barrier) continue;
 
         assert(predecessors.find(pragma.get_line()) != predecessors.end());
         assert(successors.find(pragma.get_line()) != successors.end());
 
         const clang::Stmt *pre = predecessors[pragma.get_line()];
         clang::SourceLocation pre_loc;
+        // TODO remove this, see point #5 in the TODO file
         if (is_inside_if_cond(pre)) {
             const clang::Stmt *parent = getParent(pre);
             while (!clang::isa<clang::IfStmt>(parent)) {
@@ -293,6 +324,15 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             const clang::IfStmt *if_stmt = clang::dyn_cast<clang::IfStmt>(parent);
             assert(if_stmt);
             pre_loc = if_stmt->getThen()->getLocStart();
+        } else if (is_inside_while_cond(pre)) {
+            const clang::Stmt *parent = getParent(pre);
+            while (!clang::isa<clang::WhileStmt>(parent)) {
+                parent = getParent(parent);
+            }
+            const clang::WhileStmt *while_stmt =
+                clang::dyn_cast<clang::WhileStmt>(parent);
+            assert(while_stmt);
+            pre_loc = while_stmt->getBody()->getLocStart();
         } else {
             pre_loc = pre->getLocEnd();
         }
@@ -338,7 +378,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         OMPRegion *region = new OMPRegion(pragma.get_line(),
                 post->getLocStart(), post->getLocEnd(), pragma_name, clauses,
-                lbl, is_parallel_for, post);
+                lbl, is_parallel_for, post, is_critical);
         ompTree->add_region(region);
 
         //TODO kinda hacky....
@@ -379,6 +419,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
             parent_thread_varname << ", " <<
             (is_parallel_for ? "true" : "false") << ", " <<
+            (is_critical ? "true" : "false") << ", " <<
             stack_depth_varname << ", " << region_id_varname << ", " <<
             private_vars.size();
         for (std::set<std::string>::iterator varsi = private_vars.begin(),

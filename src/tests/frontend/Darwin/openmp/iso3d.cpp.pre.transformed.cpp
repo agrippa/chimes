@@ -49,16 +49,22 @@ extern void free_wrapper(void *ptr, size_t group);
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, bool is_parallel_for, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
+        unsigned parent, bool is_parallel_for, bool is_critical,
+        unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(int expected_parent_stack_depth,
         size_t region_id);
 extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+
+
+
 
 
 extern int ____chimes_replaying;
@@ -2848,9 +2854,13 @@ static void fwd(float *next, float *curr, float *vsq,
      size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_3: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
+# 58 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
+# 58 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 #pragma omp parallel for firstprivate(____chimes_first_iter0)
+# 58 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
+# 58 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
+    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
          int z; z = ((total_iters / (ny * nx))) ;
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"

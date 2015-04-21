@@ -69,6 +69,19 @@ namespace {
         std::vector<CallInfo *> *passed;
     } FunctionInfo;
 
+    class StructInfo {
+        public:
+            StructInfo(std::vector<std::string> set_fields,
+                    bool set_is_unnamed) : fields(set_fields),
+                    is_unnamed(set_is_unnamed) { }
+
+            std::vector<std::string> *get_fields() { return &fields; }
+            bool get_is_unnamed() { return is_unnamed; }
+        private:
+            std::vector<std::string> fields;
+            bool is_unnamed;
+    };
+
     class ReachableInfo {
         public:
             ReachableInfo(std::map<size_t, size_t> set_contains,
@@ -140,10 +153,10 @@ namespace {
                 const char *struct_info_filename);
         void findHeapAllocations(Module &M, const char *output_file,
                 std::map<Value *, size_t> value_to_alias_group);
-        std::map<std::string, std::vector<std::string>> *getStructFieldNames(
+        std::map<std::string, StructInfo> *getStructFieldNames(
                 Module &M);
-        void dumpStructInfoToFile(const char *filename, std::map<std::string,
-                std::vector<std::string>> *struct_fields);
+        void dumpStructInfoToFile(const char *filename,
+                std::map<std::string, StructInfo> *struct_fields);
         bool isCheckpoint(Function *callee);
         CALLS_CHECKPOINT mayCreateCheckpoint(Function *F);
         CALLS_CHECKPOINT mayCreateCheckpointHelper(Function *F,
@@ -155,12 +168,12 @@ namespace {
         void dumpReachable(ReachableInfo &R, const char *filename);
         void handleHostAllocation(CallInst *callInst, Function *callee,
                 FILE *fp, std::set<int> &found_mallocs,
-                std::map<std::string, std::vector<std::string>> *structFields,
+                std::map<std::string, StructInfo> *structFields,
                 std::string fname,
                 std::map<Value *, size_t> value_to_alias_group);
         void handleDeviceAllocation(CallInst *callInst, Function *callee,
                 FILE *fp, std::set<int> &found_mallocs,
-                std::map<std::string, std::vector<std::string>> *structFields);
+                std::map<std::string, StructInfo> *structFields);
         void dumpCallSiteAliases(Module &M, const char *filename,
                 std::map<Value *, size_t> value_to_alias_group);
         ReachableInfo propagateAliases(Module &M, Hasher *H);
@@ -397,7 +410,7 @@ void Play::findGlobals(Module &M, const char *filename) {
 
     std::map<std::string, std::string> *global_names =
         mapGlobalsToOriginalName(M);
-    std::map<std::string, std::vector<std::string>> *structFields =
+    std::map<std::string, StructInfo> *structFields =
         getStructFieldNames(M);
 
     FILE *fp = fopen(filename, "w");
@@ -448,8 +461,8 @@ void Play::findGlobals(Module &M, const char *filename) {
                             i < structTy->getStructNumElements(); i++) {
                         Type *field_type = structTy->getStructElementType(i);
                         if (field_type->isPointerTy()) {
-                            std::vector<std::string> fields = (*structFields)[struct_name];
-                            struct_ptr_field_names.push_back(fields[i]);
+                            std::vector<std::string> *fields = structFields->at(struct_name).get_fields();
+                            struct_ptr_field_names.push_back((*fields)[i]);
                         }
                     }
                 }
@@ -532,12 +545,10 @@ static std::string removeTemplatedMangling(std::string fname) {
     }
 
     std::string without_return_type = fname.substr(space_index + 1);
-    llvm::errs() << "  " << without_return_type << "\n";
 
     size_t template_index = without_return_type.find('<');
     assert(template_index != std::string::npos);
     std::string without_template = without_return_type.substr(0, template_index);
-    llvm::errs() << "  " << without_template << "\n";
 
     return without_template;
 }
@@ -1116,53 +1127,76 @@ std::map<std::string, std::string> *Play::mapGlobalsToOriginalName(Module &M) {
     return global_mapping;
 }
 
-std::map<std::string, std::vector<std::string>> *Play::getStructFieldNames(
+/*
+ * Assumes mangled name has format _ZTS*struct_name_t where * is some decimal
+ * number.
+ */
+static std::string demangleStructName(std::string mangled) {
+    assert(mangled.find("_ZTS") == 0);
+    std::string removed_prefix = mangled.substr(4);
+    while (removed_prefix[0] >= '0' && removed_prefix[0] <= '9') {
+        removed_prefix = removed_prefix.substr(1);
+    }
+    return removed_prefix;
+}
+
+std::map<std::string, StructInfo> *Play::getStructFieldNames(
         Module &M) {
-    std::map<std::string, std::vector<std::string>> *struct_fields =
-        new std::map<std::string, std::vector<std::string>>();
+    std::map<std::string, StructInfo> *struct_fields =
+        new std::map<std::string, StructInfo>();
 
     DICompileUnit module = getCompileUnitFor(M);
     DIArray structs = module.getRetainedTypes();
 
+    DITypeIdentifierMap EmptyMap;
     for (unsigned int s = 0; s < structs.getNumElements(); s++) {
         DIType di_struct(structs.getElement(s));
 
         // If this isn't a struct, skip it
-        if (!di_struct.isCompositeType()) continue;
+        if (di_struct.isCompositeType()) {
+            DICompositeType composite(di_struct);
+            DIArray fields_defs = composite.getTypeArray();
 
-        std::string struct_name = di_struct.getName().str();
-        if (struct_name.empty()) {
-            // If unnamed, assume it isn't used
-            continue;
-        }
-        std::vector<std::string> fields;
+            std::string struct_name = demangleStructName(
+                    composite.getIdentifier()->getString().str());
+            bool unnamed_struct = di_struct.getName().str().empty();
 
-        DICompositeType composite(di_struct);
-        DIArray fields_defs = composite.getTypeArray();
-        for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
-            if (fields_defs.getElement(f).getTag() == dwarf::DW_TAG_member) {
-                DIType di_field(fields_defs.getElement(f));
-                std::string fieldname = di_field.getName().str();
-                fields.push_back(fieldname);
+            if (struct_name.empty()) {
+                /*
+                 * If unnamed, assume it isn't used or that the typedef block
+                 * below will handle it.
+                 */
+                continue;
             }
-        }
+            std::vector<std::string> fields;
 
-        (*struct_fields)[struct_name] = fields;
+            for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
+                if (fields_defs.getElement(f).getTag() == dwarf::DW_TAG_member) {
+                    DIType di_field(fields_defs.getElement(f));
+                    std::string fieldname = di_field.getName().str();
+                    fields.push_back(fieldname);
+                }
+            }
+
+            struct_fields->insert(std::pair<std::string, StructInfo>(
+                        struct_name, StructInfo(fields, unnamed_struct)));
+        }
     }
     return struct_fields;
 }
 
-void Play::dumpStructInfoToFile(const char *filename, std::map<std::string,
-        std::vector<std::string>> *struct_fields) {
+void Play::dumpStructInfoToFile(const char *filename,
+        std::map<std::string, StructInfo> *struct_fields) {
     FILE *fp = fopen(filename, "w");
-    for (std::map<std::string, std::vector<std::string>>::iterator struct_iter =
+    for (std::map<std::string, StructInfo>::iterator struct_iter =
             struct_fields->begin(), struct_end = struct_fields->end();
             struct_iter != struct_end; struct_iter++) {
-        std::vector<std::string> fields = struct_iter->second;
+        std::vector<std::string>* fields = struct_iter->second.get_fields();
+        bool is_unnamed = struct_iter->second.get_is_unnamed();
 
-        fprintf(fp, "%s ", struct_iter->first.c_str());
-        for (std::vector<std::string>::iterator field_iter = fields.begin(),
-                field_end = fields.end(); field_iter != field_end;
+        fprintf(fp, "%s %d ", struct_iter->first.c_str(), (is_unnamed ? 1 : 0));
+        for (std::vector<std::string>::iterator field_iter = fields->begin(),
+                field_end = fields->end(); field_iter != field_end;
                 field_iter++) {
             fprintf(fp, "%s ", field_iter->c_str());
         }
@@ -1264,7 +1298,7 @@ void Play::findStackAllocations(Module &M, const char *output_file,
 
     std::vector<StackAllocInfo *> alloc_infos;
 
-    std::map<std::string, std::vector<std::string>> *structFields =
+    std::map<std::string, StructInfo> *structFields =
         getStructFieldNames(M);
     dumpStructInfoToFile(struct_info_filename, structFields);
 
@@ -1387,8 +1421,8 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                                     i++) {
                                 Type *field_type = structTy->getStructElementType(i);
                                 if (field_type->isPointerTy()) {
-                                    std::vector<std::string> fields = (*structFields)[struct_name];
-                                    std::string fieldname = fields[i];
+                                    std::vector<std::string>* fields = structFields->at(struct_name).get_fields();
+                                    std::string fieldname = (*fields)[i];
                                     info->struct_ptr_field_names->push_back(fieldname);
                                 }
                             }
@@ -1482,7 +1516,7 @@ static Type *inferHostAllocationType(CallInst *callInst) {
 }
 
 static void printStructInfo(FILE *fp, Type *base_type,
-        std::map<std::string, std::vector<std::string>> *structFields) {
+        std::map<std::string, StructInfo> *structFields) {
     StructType *structTy = dyn_cast<StructType>(base_type);
     assert(structTy != NULL);
 
@@ -1493,11 +1527,11 @@ static void printStructInfo(FILE *fp, Type *base_type,
         std::string struct_name = structTy->getStructName().str().substr(7);
         fprintf(fp, " %s", struct_name.c_str());
         assert(structFields->find(struct_name) != structFields->end());
-        std::vector<std::string> fields = (*structFields)[struct_name];
+        std::vector<std::string>* fields = structFields->at(struct_name).get_fields();
         for (unsigned int i = 0; i < structTy->getStructNumElements(); i++) {
             Type *field_type = structTy->getStructElementType(i);
             if (field_type->isPointerTy()) {
-                std::string fieldname = fields[i];
+                std::string fieldname = (*fields)[i];
                 fprintf(fp, " %s", fieldname.c_str());
             }
         }
@@ -1509,7 +1543,7 @@ static void printStructInfo(FILE *fp, Type *base_type,
 
 void Play::handleHostAllocation(CallInst *callInst, Function *callee,
         FILE *fp, std::set<int> &found_mallocs,
-        std::map<std::string, std::vector<std::string>> *structFields,
+        std::map<std::string, StructInfo> *structFields,
         std::string fname, std::map<Value *, size_t> value_to_alias_group) {
     int line_no = callInst->getDebugLoc().getLine();
     int col = callInst->getDebugLoc().getCol();
@@ -1598,7 +1632,7 @@ static Type *inferDeviceAllocationType(CallInst *callInst) {
 
 void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
         FILE *fp, std::set<int> &found_mallocs,
-        std::map<std::string, std::vector<std::string>> *structFields) {
+        std::map<std::string, StructInfo> *structFields) {
     int line_no = callInst->getDebugLoc().getLine();
     int col = callInst->getDebugLoc().getCol();
     assert(line_no != 0);
@@ -1628,7 +1662,7 @@ void Play::findHeapAllocations(Module &M, const char *output_file,
     FILE *fp = fopen(output_file, "w");
     std::set<int> found_mallocs;
 
-    std::map<std::string, std::vector<std::string>> *structFields =
+    std::map<std::string, StructInfo> *structFields =
         getStructFieldNames(M);
 
     errs() << "Heap allocation(s), reallocation(s), free(s):\n";

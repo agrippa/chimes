@@ -67,8 +67,8 @@ extern void free_wrapper(void *ptr, size_t group);
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, bool is_parallel_for, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
+        unsigned parent, bool is_parallel_for, bool is_critical,
+        unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(int expected_parent_stack_depth,
         size_t region_id);
 extern unsigned get_parent_vars_stack_depth();

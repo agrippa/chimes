@@ -1,2 +1,2 @@
-_config nx ny nz nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
-_source x y freq t 
+_config 0 nx ny nz nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
+_source 0 x y freq t 

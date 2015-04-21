@@ -31,7 +31,7 @@ class thread_ctx {
     public:
         thread_ctx(pthread_t set_pthread) : pthread(set_pthread),
                 stack_nesting(0), calling_label(-1), func_ptr(NULL),
-                first_parallel_for_nesting(0),
+                first_parallel_for_nesting(0), first_critical_nesting(0),
                 parent_aliases_capacity(PARENT_ALIASES_INIT_SIZE),
                 parent_aliases_length(0) {
             parent_aliases = (size_t*)malloc(sizeof(size_t) *
@@ -85,6 +85,13 @@ class thread_ctx {
         }
         void set_first_parallel_for_nesting(int s) {
             first_parallel_for_nesting = s;
+        }
+
+        int get_first_critical_nesting() {
+            return first_critical_nesting;
+        }
+        void set_first_critical_nesting(int s) {
+            first_critical_nesting = s;
         }
 
         void increment_stack_nesting() { stack_nesting++; }
@@ -141,6 +148,7 @@ class thread_ctx {
         int calling_label;
         void *func_ptr;
         int first_parallel_for_nesting;
+        int first_critical_nesting;
 
         size_t *parent_aliases;
         size_t parent_aliases_capacity;

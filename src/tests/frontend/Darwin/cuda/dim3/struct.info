@@ -1,2 +1,6 @@
-dim3 x y z 
-uint3 x y z 
+__fatBinC_Wrapper_t 1 magic version data filename_or_fatbins 
+dim3 0 x y z 
+div_t 1 quot rem 
+ldiv_t 1 quot rem 
+lldiv_t 1 quot rem 
+uint3 0 x y z 

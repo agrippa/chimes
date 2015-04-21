@@ -68,11 +68,21 @@ void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
                     } else if (alloc.get_is_elem_struct()) {
                         // elements in allocation are structs, not pointers
                         ss2 << ", 0, 1";
+                        StructFields *struct_info =
+                            insertions->get_struct_fields_for(
+                                    alloc.get_struct_type_name());
+                        llvm::errs() << "for " << alloc.get_struct_type_name() << " got " << struct_info << "\n";
+                        assert(struct_info);
 
                         // Element size for each struct
-                        ss2 << ", (int)sizeof(struct " <<
-                            alloc.get_struct_type_name() << "), " <<
-                            alloc.get_num_field_ptrs();
+                        if (struct_info->get_is_unnamed()) {
+                            ss2 << ", (int)sizeof(" <<
+                                alloc.get_struct_type_name() << "), ";
+                        } else {
+                            ss2 << ", (int)sizeof(struct " <<
+                                alloc.get_struct_type_name() << "), ";
+                        }
+                        ss2 << alloc.get_num_field_ptrs();
 
                         // Offests in struct of all pointer fields
                         std::vector<std::string> *struct_field_ptrs =

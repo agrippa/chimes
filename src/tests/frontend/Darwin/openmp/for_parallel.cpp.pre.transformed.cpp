@@ -49,16 +49,22 @@ extern void free_wrapper(void *ptr, size_t group);
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, bool is_parallel_for, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
+        unsigned parent, bool is_parallel_for, bool is_critical,
+        unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(int expected_parent_stack_depth,
         size_t region_id);
 extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+
+
+
 
 
 extern int ____chimes_replaying;
@@ -1778,9 +1784,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2,
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
       lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } c = (5); { call_lbl_8: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(8, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 #pragma omp parallel for firstprivate(a) private(b, c) firstprivate(____chimes_first_iter0)
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-    for (int i = 0; i < 10; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
+    for (int i = 0; i < 10; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
          int inside; inside = (6) ;
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"

@@ -223,16 +223,19 @@ private:
 
 class StructFields {
 public:
-    StructFields(std::string set_name) : name(set_name) {}
+    StructFields(std::string set_name, bool set_is_unnamed) : name(set_name),
+        is_unnamed(set_is_unnamed) {}
     void add_field(std::string &field) { fields.push_back(field); }
 
     std::string get_name() { return name; }
+    bool get_is_unnamed() { return is_unnamed; }
     int num_fields() { return fields.size(); }
     std::vector<std::string>::iterator begin() { return fields.begin(); }
     std::vector<std::string>::iterator end() { return fields.end(); }
 
 private:
     std::string name;
+    bool is_unnamed;
     std::vector<std::string> fields;
 };
 
@@ -303,6 +306,7 @@ public:
     bool contains(int line, int col, const char *filename);
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
+    StructFields *get_struct_fields_for(std::string name);
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
     std::vector<OpenMPPragma> *get_omp_pragmas_for(clang::FunctionDecl *decl,
             clang::SourceManager &SM);

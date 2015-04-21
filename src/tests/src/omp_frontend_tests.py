@@ -58,7 +58,16 @@ ISO3D = FrontendTest('Iso3D-OMP',
                      includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                      dependencies=[os.path.join(OMP_EXAMPLES_DIR, 'lib',
                                                 'libcommon2d.so')])
-
+SMITH_WATERMAN_OMP = FrontendTest('SmithWaterman-OMP',
+                                  ['smithWaterman/smith_waterman_omp.cpp'],
+                                  ['smith_waterman_omp.cpp.pre.transformed.cpp'],
+                                  ['smith_waterman'],
+                                  False)
+UTS_OMP = FrontendTest('UTS-OMP', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
+                   ['brg_sha1.c.pre.transformed.cpp',
+                    'uts.c.pre.transformed.cpp',
+                    'uts_shm.c.pre.transformed.cpp'],
+                   ['brg_sha1', 'uts', 'uts_shm'], False, extra_cli_args='-D BRG_RNG')
 
 
 TESTS = []
@@ -70,6 +79,8 @@ for simple in SIMPLE_TESTS:
 TESTS.append(COMD_OMP)
 TESTS.append(LULESH_OMP)
 TESTS.append(ISO3D)
+TESTS.append(SMITH_WATERMAN_OMP)
+TESTS.append(UTS_OMP)
 
 
 if __name__ == '__main__':

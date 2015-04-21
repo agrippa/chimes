@@ -1,0 +1,4 @@
+node_t 0 type height numChildren state 
+omp_lock_t 1 _x 
+state_t 0 state 
+stealStack_t 0 stackSize workAvail sharedStart local top maxStackDepth nNodes maxTreeDepth nLeaves nAcquire nRelease nSteal nFail wakeups falseWakeups nNodes_last time timeLast entries curState stackLock stack stack_g 

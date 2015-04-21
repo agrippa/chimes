@@ -23,8 +23,9 @@ class GlobalVar(object):
 
 
 class StructFields(object):
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, name, unnamed):
+        self.name = name # string
+        self.unnamed = unnamed # boolean
         self.fields = []
 
     def add_ptr_field(self, field):
@@ -111,9 +112,10 @@ def get_structs(structs_filename):
     for line in fp:
         tokens = line.split()
 
-        s = StructFields(tokens[0])
+        assert tokens[1] == '1' or tokens[1] == '0'
+        s = StructFields(tokens[0], tokens[1] == '1')
 
-        for field in tokens[1:]:
+        for field in tokens[2:]:
             s.add_ptr_field(field)
         structs.append(s)
 
@@ -153,7 +155,10 @@ if __name__ == '__main__':
     for s in structs:
         output_file.write(', "' + s.name + '", ' + str(len(s.fields)))
         for field in s.fields:
-            output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field + ')')
+            if s.unnamed:
+                output_file.write(', (int)offsetof(' + s.name + ', ' + field + ')')
+            else:
+                output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field + ')')
     output_file.write(');\n')
 
     for g in glbls:

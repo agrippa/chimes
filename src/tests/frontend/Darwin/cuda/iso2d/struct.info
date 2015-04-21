@@ -1,6 +1,10 @@
-_config nx ny nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
-_source x y freq t 
-cudaError 
-cudaMemcpyKind 
-dim3 x y z 
-uint3 x y z 
+__fatBinC_Wrapper_t 1 magic version data filename_or_fatbins 
+_config 0 nx ny nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
+_source 0 x y freq t 
+cudaError 0 
+cudaMemcpyKind 0 
+dim3 0 x y z 
+div_t 1 quot rem 
+ldiv_t 1 quot rem 
+lldiv_t 1 quot rem 
+uint3 0 x y z 

@@ -192,7 +192,8 @@ static pthread_mutex_t count_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
  * Count threads that have hit the checkpoint so that we know when all are
  * inside.
  */
-static unsigned threads_in_checkpoint = 0;
+static volatile unsigned threads_in_checkpoint = 0;
+static volatile bool checkpoint_in_progress = false;
 static pthread_mutex_t threads_in_checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t threads_in_checkpoint_cond = PTHREAD_COND_INITIALIZER;
 
@@ -1240,12 +1241,18 @@ void checkpoint() {
 
     assert(pthread_mutex_lock(&threads_in_checkpoint_mutex) == 0);
     unsigned thread_count = ++threads_in_checkpoint;
-    while (threads_in_checkpoint < pthread_to_id.size()) {
-        assert(pthread_cond_wait(&threads_in_checkpoint_cond,
-                    &threads_in_checkpoint_mutex) == 0);
+    if (thread_count == 1) {
+        checkpoint_in_progress = true;
     }
     bool last_thread = (thread_count == pthread_to_id.size());
-    if (last_thread) threads_in_checkpoint = 0;
+    if (!last_thread) {
+        while (checkpoint_in_progress) {
+            assert(pthread_cond_wait(&threads_in_checkpoint_cond,
+                        &threads_in_checkpoint_mutex) == 0);
+        }
+    } else {
+        threads_in_checkpoint = 0;
+    }
 
     /*
      * On replay, the last thread to hit the checkpoint will skip the wait loop
@@ -1353,6 +1360,7 @@ void checkpoint() {
         assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
         assert(get_my_context()->get_first_parallel_for_nesting() == 0);
+        assert(get_my_context()->get_first_critical_nesting() == 0);
 
         if (checkpoint_thread_running) {
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
@@ -1447,6 +1455,7 @@ void checkpoint() {
     }
 
     if (last_thread) {
+        checkpoint_in_progress = false;
         assert(pthread_cond_broadcast(&threads_in_checkpoint_cond) == 0);
     }
     assert(pthread_mutex_unlock(&threads_in_checkpoint_mutex) == 0);
@@ -1770,8 +1779,8 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
 }
 
 void register_thread_local_stack_vars(unsigned relation, unsigned parent,
-        bool is_parallel_for, unsigned parent_stack_depth, size_t region_id,
-        unsigned nlocals, ...) {
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...) {
     unsigned global_tid;
     pthread_t self = pthread_self();
 
@@ -1851,6 +1860,9 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     thread_ctx *parent_ctx = get_context_for(parent);
     if (is_parallel_for && ctx->get_first_parallel_for_nesting() == 0) {
         ctx->set_first_parallel_for_nesting(stack->size());
+    }
+    if (is_critical && ctx->get_first_critical_nesting() == 0) {
+        ctx->set_first_critical_nesting(stack->size());
     }
 
     vector<stack_var *>& parent_vars = parent_ctx->get_parent_vars_at_depth(
@@ -1945,6 +1957,10 @@ void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id) {
                 if (program_stack->size() <
                         ctx->get_first_parallel_for_nesting()) {
                     ctx->set_first_parallel_for_nesting(0);
+                }
+                if (program_stack->size() <
+                        ctx->get_first_critical_nesting()) {
+                    ctx->set_first_critical_nesting(0);
                 }
             }
         }

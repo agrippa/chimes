@@ -146,7 +146,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
-           -o ${PREPROCESS_FILE} -g ${LINKER_FLAGS} \
+           -o ${PREPROCESS_FILE} -g ${GXX_FLAGS} \
            -include${CHIMES_HOME}/src/libchimes/libchimes.h \
            ${CHIMES_DEF} ${DEFINES}
 

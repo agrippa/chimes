@@ -1,0 +1,36 @@
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 233 64 : { 95, 96, 97, 98 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 242 41 : { 168, 169 } direct:call:_Z3PUTii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 243 41 : { 182, 183 } direct:call:_Z3PUTii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 244 41 : { 195, 196 } direct:call:_Z3PUTii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 297 5 : { 330, 331 } direct:call:fseek
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 299 5 : { 332 } direct:call:fseek
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 303 31 : { 333 } direct:call:fread
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 312 56 : { 381, 382, 383 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 319 47 : { 440 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 332 17 : { 489, 490, 491 } direct:call:omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 373 31 : { 141, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 509, 552, 743 } prop:call:_Z8PUT_DIAGii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 382 31 : { 141, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 509, 552, 743 } prop:call:_Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 391 31 : { 141, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 509, 552, 743 } prop:call:_Z8PUT_BROWii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 377 21 : { 506, 507, 508 } prop:call:_Z15add_tile_to_runiiP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 386 21 : { 509, 510, 511 } prop:call:_Z15add_tile_to_runiiP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 395 21 : { 512, 513, 514 } prop:call:_Z15add_tile_to_runiiP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 412 14 : { 920, 921, 922 } direct:call:omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 417 9 : { 926, 927, 1659 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 425 24 : { 926, 927, 1659 } prop:call:atoi
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 426 25 : { 1659 } direct:call:atoi
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 431 16 : { 928, 929, 1659 } prop:call:_Z9read_fileP7__sFILEPm
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 429 80 : { 928, 929, 1659 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 437 16 : { 930, 931, 1657 } prop:call:_Z9read_fileP7__sFILEPm
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 435 80 : { 930, 931, 1657 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 443 115 : { 141, 923, 932, 933, 1657, 1659, 1667 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 444 117 : { 141, 923, 932, 933, 1657, 1659, 1667 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 470 2 : { 141, 923, 932, 933, 1657, 1659, 1667 } prop:call:_Z8PUT_DIAGii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 474 3 : { 141, 529, 550, 552, 741, 923, 924, 934, 935, 1659, 1665, 1667, 1669, 1677 } prop:call:_Z8PUT_DIAGii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 478 3 : { 141, 529, 550, 552, 741, 923, 924, 934, 935, 1659, 1665, 1667, 1669, 1677 } prop:call:_Z8PUT_DIAGii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 487 3 : { 141, 529, 550, 552, 741, 923, 924, 934, 935, 1659, 1665, 1667, 1669, 1677 } prop:call:_Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 496 3 : { 141, 529, 550, 552, 741, 923, 924, 934, 935, 1659, 1665, 1667, 1669, 1677 } prop:call:_Z8PUT_BROWii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 550 5 : { 141, 529, 550, 552, 741, 923, 924, 934, 935, 1659, 1665, 1667, 1669, 1677 } prop:call:gettimeofday
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 575 28 : { 936, 937, 938, 939, 940, 1400, 1409 } prop:call:_Z13pop_next_tileP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 594 9 : { 936, 937, 938, 939, 940, 1400, 1409 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 598 5 : { 936, 937, 938, 939, 940, 1400, 1409 } prop:call:gettimeofday
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 580 21 : { 938, 939 } prop:call:_Z9task_funciiP13_tiles_to_run

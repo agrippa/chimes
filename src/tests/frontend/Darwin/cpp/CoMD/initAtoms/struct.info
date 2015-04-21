@@ -1,11 +1,11 @@
-AtomsSt nLocal nGlobal gid iSpecies r p f U 
-BasePotentialSt cutoff mass lat latticeType name atomicNo force print destroy 
-DomainSt procGrid procCoord globalMin globalMax globalExtent localMin localMax localExtent 
-HaloExchangeSt nbrRank bufCapacity loadBuffer unloadBuffer destroy parms 
-LinkCellSt gridSize nLocalBoxes nHaloBoxes nTotalBoxes localMin localMax boxSize invBoxSize nAtoms 
-SimFlatSt nSteps printRate dt domain boxes atoms species ePotential eKinetic pot atomExchange 
-SpeciesDataSt name atomicNo mass 
-TimerHandle 
-__sFILE _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
-__sFILEX 
-__sbuf _base _size 
+AtomsSt 0 nLocal nGlobal gid iSpecies r p f U 
+BasePotentialSt 0 cutoff mass lat latticeType name atomicNo force print destroy 
+DomainSt 0 procGrid procCoord globalMin globalMax globalExtent localMin localMax localExtent 
+HaloExchangeSt 0 nbrRank bufCapacity loadBuffer unloadBuffer destroy parms 
+LinkCellSt 0 gridSize nLocalBoxes nHaloBoxes nTotalBoxes localMin localMax boxSize invBoxSize nAtoms 
+SimFlatSt 0 nSteps printRate dt domain boxes atoms species ePotential eKinetic pot atomExchange 
+SpeciesDataSt 0 name atomicNo mass 
+TimerHandle 0 
+__sFILE 0 _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
+__sFILEX 0 
+__sbuf 0 _base _size 

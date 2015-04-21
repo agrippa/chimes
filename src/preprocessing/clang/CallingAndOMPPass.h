@@ -67,6 +67,7 @@ private:
     std::vector<DeclarationInfo> vars_to_classify;
     std::string get_chimes_parent_thread_varname();
     bool is_inside_if_cond(const clang::Stmt *stmt);
+    bool is_inside_while_cond(const clang::Stmt *stmt);
     std::string get_unique_blocker_varname();
     std::string get_unique_parent_stack_depth_varname();
     std::string get_unique_call_stack_depth_varname();
@@ -86,6 +87,7 @@ private:
     void VisitRegion(OMPRegion *region);
 
     std::set<std::string> supported_omp_clauses;
+    std::set<std::string> supported_omp_pragmas;
     int chimes_parent_thread_counter;
     int blocker_varname_counter;
     int parent_stack_depth_varname_counter;
