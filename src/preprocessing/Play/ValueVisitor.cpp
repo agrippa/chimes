@@ -189,18 +189,21 @@ size_t ValueVisitor::visitStore(StoreInst *store, Value *prev) {
     if (storing->getType()->isPointerTy()) {
         size_t storing_hash = visit(storing, store);
 
+        llvm::errs() << "For dst_hash=" << dst_hash << " and storing_hash=" << storing_hash << ", contains(dst_hash)=" << (contains.find(dst_hash) != contains.end()) << "\n";
+
         if (contains.find(dst_hash) != contains.end()) {
             size_t dst_hash_contains = contains[dst_hash];
             mergeAliasGroups(storing_hash, dst_hash_contains);
 
-            if (storing_hash == dst_hash) {
+            // if (storing_hash == dst_hash) {
                 storing_hash = dst_hash_contains;
-            } else {
-                storing_hash = contains[dst_hash];
-            }
+            // } else {
+            //     storing_hash = contains[dst_hash];
+            // }
+        } else {
+            assert(storing_hash > 0);
+            storesReferencesToGroup(dst_hash, storing_hash);
         }
-        assert(storing_hash > 0);
-        storesReferencesToGroup(dst_hash, storing_hash);
     }
 
     return 0;
@@ -291,6 +294,18 @@ bool ValueVisitor::setAlias(Value *val, Value *setter, size_t alias) {
     }
 }
 
+#ifdef VERBOSE
+static std::string map_to_string(std::map<size_t, size_t> m) {
+    std::stringstream stream;
+    stream << "{  \n";
+    for (std::map<size_t, size_t>::iterator i = m.begin(),
+            e = m.end(); i != e; i++) {
+        stream << "  " << i->first << " -> " << i->second << "\n";
+    }
+    return stream.str();
+}
+#endif
+
 static std::map<size_t, size_t> translate(
         std::map<size_t, size_t> m, size_t from, size_t to) {
     std::map<size_t, size_t> new_m;
@@ -305,9 +320,9 @@ static std::map<size_t, size_t> translate(
         }
 
         if (i->second == from) {
-            new_m[curr] = to;
+            new_m.insert(std::pair<size_t, size_t>(curr, to));
         } else {
-            new_m[curr] = i->second;
+            new_m.insert(std::pair<size_t, size_t>(curr, i->second));
         }
     }
     return new_m;
@@ -325,7 +340,15 @@ void ValueVisitor::mergeAliasGroups(size_t from, size_t to) {
         }
     }
 
+#ifdef VERBOSE
+    errs() << "Original contains=\n" << map_to_string(contains) << "\n";
+#endif
+
     contains = translate(contains, from, to);
+
+#ifdef VERBOSE
+    errs() << "New contains=\n" << map_to_string(contains) << "\n";
+#endif
 }
 
 void ValueVisitor::storesReferencesToGroup(size_t container, size_t child) {
@@ -334,7 +357,7 @@ void ValueVisitor::storesReferencesToGroup(size_t container, size_t child) {
 
 static void addMapping(size_t from, size_t to,
         std::map<size_t, size_t> &m) {
-    assert(m.find(from) == m.end() || m[from] == to);
-    m[from] = to;
+    assert(m.find(from) == m.end() || m.at(from) == to);
+    m.insert(std::pair<size_t, size_t>(from, to));
 }
 

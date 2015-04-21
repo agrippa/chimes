@@ -625,10 +625,11 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.stderr.write('Test ' + test.name + ' expected exit code ' +
                          str(test.expected_code) + ' but got ' + str(code) +
                          '\n')
+        sys.stderr.write('Command = ' + exec_cmd + '\n')
         sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
-    if test.expected_num_checkpoints > 0 and not os.path.isfile('chimes.0.ckpt'):
+    if test.expected_num_checkpoints != 0 and not os.path.isfile('chimes.0.ckpt'):
         sys.stderr.write('Test ' + test.name + ' failed to produce a ' +
                          'checkpoint file\n')
         sys.stderr.write('Folder ' + work_folder + '\n')
