@@ -8,6 +8,8 @@ from common import run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, find_file, \
                    get_platform_directory, FrontendTest
 
+CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
+OMP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/openmp'
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/openmp'
 OMP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
@@ -46,6 +48,17 @@ COMD_OMP = FrontendTest('CoMD-OMP',
                      'CoMD-openmp/yamlOutput'], False, includes=[os.path.dirname(OMP_H)])
 LULESH_OMP = FrontendTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'],
                       ['LULESH_OMP.cc.pre.transformed.cpp'], ['lulesh'], False)
+ISO3D = FrontendTest('Iso3D-OMP',
+                     ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'],
+                     ['iso3d.cpp.pre.transformed.cpp',
+                      'common.cpp.pre.transformed.cpp',
+                      'common3d.cpp.pre.transformed.cpp'],
+                     ['iso3d', 'common', 'common3d'],
+                     False,
+                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
+                     dependencies=[os.path.join(OMP_EXAMPLES_DIR, 'lib',
+                                                'libcommon2d.so')])
+
 
 
 TESTS = []
@@ -56,6 +69,7 @@ for simple in SIMPLE_TESTS:
     TESTS.append(test)
 TESTS.append(COMD_OMP)
 TESTS.append(LULESH_OMP)
+TESTS.append(ISO3D)
 
 
 if __name__ == '__main__':
