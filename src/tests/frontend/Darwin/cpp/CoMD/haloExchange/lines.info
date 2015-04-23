@@ -1,32 +1,31 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 152 23 : { 1, 2 } direct:call:_ZL16initHaloExchangeP8DomainSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 174 58 : { 3, 4, 5, 6, 7, 8, 9, 88, 2565 } prop:call:_ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 265 21 : { 347, 348 } direct:call:_Z12processorNumP8DomainStiii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 174 58 : { 3, 4, 5, 6, 7, 8, 9, 88, 2556 } prop:call:_ZL14mkAtomCellListP10LinkCellStii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 264 21 : { 347, 348 } direct:call:_Z12processorNumP8DomainStiii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 265 21 : { 352 } direct:call:_Z12processorNumP8DomainStiii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 266 21 : { 352 } direct:call:_Z12processorNumP8DomainStiii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 267 21 : { 352 } direct:call:_Z12processorNumP8DomainStiii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 268 21 : { 352 } direct:call:_Z12processorNumP8DomainStiii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 269 21 : { 352 } direct:call:_Z12processorNumP8DomainStiii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 270 21 : { 352 } direct:call:_Z12processorNumP8DomainStiii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 421 62 : { 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 433 7 : { 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706 } prop:call:_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 355 29 : { 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 1045 } prop:call:_Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 359 47 : { 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 1045 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 420 62 : { 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 432 7 : { 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706 } prop:call:_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 354 29 : { 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 1045 } prop:call:_Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 358 47 : { 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 1045 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 213 23 : { 1050, 1051 } direct:call:_ZL16initHaloExchangeP8DomainSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 237 30 : { 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1138, 2568 } prop:call:_ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 30 : { 2568 } direct:call:_ZL19mkForceRecvCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 591 63 : { 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1498 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 606 65 : { 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1498 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 484 39 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 491 29 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:_Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 496 47 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 536 39 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 543 29 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:_Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 548 47 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 247 4 : { 1967 } direct:call:NULL
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 45 : { 1993, 1994, 1995 } prop:call:_ZL12exchangeDataP14HaloExchangeStPvi
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 294 17 : { 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 } direct:call:NULL
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 295 17 : { 2027 } direct:call:NULL
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 302 9 : { 2028, 2029, 2030 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 13 : { 2032 } direct:call:_Z19sendReceiveParallelPviiS_ii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 9 : { 2031 } prop:call:_Z11profileStop11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 647 4 : { 2177, 2178, 2179, 2180, 2181, 2182, 2183, 2184, 2185, 2207 } prop:call:qsort
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 671 42 : { 2473, 2474, 2475, 2476 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 237 30 : { 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1138, 2559 } prop:call:_ZL19mkForceSendCellListP10LinkCellStii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 30 : { 2559 } direct:call:_ZL19mkForceRecvCellListP10LinkCellStii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 590 63 : { 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1498 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 605 65 : { 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1498 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 483 39 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 490 29 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:_Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 495 47 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 535 39 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 542 29 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:_Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 547 47 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 254 45 : { 1984, 1985, 1986 } prop:call:_ZL12exchangeDataP14HaloExchangeStPvi
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 293 17 : { 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 } direct:call:NULL
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 294 17 : { 2018 } direct:call:NULL
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 301 9 : { 2019, 2020, 2021 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 303 13 : { 2023 } direct:call:_Z19sendReceiveParallelPviiS_ii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 9 : { 2022 } prop:call:_Z11profileStop11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 646 4 : { 2168, 2169, 2170, 2171, 2172, 2173, 2174, 2175, 2176, 2198 } prop:call:qsort
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 670 42 : { 2464, 2465, 2466, 2467 } prop:call:__assert_rtn

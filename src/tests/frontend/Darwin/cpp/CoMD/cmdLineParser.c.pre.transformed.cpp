@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -103,9 +105,9 @@ void freeArgs(void);
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 62 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -2759,8 +2761,8 @@ void processArgs(int argc, char** argv)
 
 static int module_init() {
     init_module(8793756385240104228UL, 35, 2, 8793756385240104228UL + 591UL, 8793756385240104228UL + 611UL, 8793756385240104228UL + 319UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 318UL, 8793756385240104228UL + 539UL, 8793756385240104228UL + 625UL, 8793756385240104228UL + 478UL, 8793756385240104228UL + 196UL, 8793756385240104228UL + 196UL, 8793756385240104228UL + 550UL, 8793756385240104228UL + 583UL, 8793756385240104228UL + 592UL, 8793756385240104228UL + 604UL, 8793756385240104228UL + 69UL, 8793756385240104228UL + 152UL, 8793756385240104228UL + 253UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 250UL, 8793756385240104228UL + 219UL, 8793756385240104228UL + 251UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 48UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 322UL, 8793756385240104228UL + 381UL, 8793756385240104228UL + 323UL, 8793756385240104228UL + 411UL, 8793756385240104228UL + 2UL, 8793756385240104228UL + 60UL, 8793756385240104228UL + 326UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 6UL, 8793756385240104228UL + 64UL, 8793756385240104228UL + 9UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 8UL, 8793756385240104228UL + 66UL, 8793756385240104228UL + 549UL, 8793756385240104228UL + 583UL, 8793756385240104228UL + 583UL, 8793756385240104228UL + 583UL, 8793756385240104228UL + 207UL, 8793756385240104228UL + 250UL, 8793756385240104228UL + 206UL, 8793756385240104228UL + 219UL, 8793756385240104228UL + 208UL, 8793756385240104228UL + 219UL, 8793756385240104228UL + 616UL, 8793756385240104228UL + 455UL, 8793756385240104228UL + 615UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 76UL, 8793756385240104228UL + 92UL, 8793756385240104228UL + 75UL, 8793756385240104228UL + 167UL, 8793756385240104228UL + 168UL, 8793756385240104228UL + 196UL, 8793756385240104228UL + 169UL, 8793756385240104228UL + 196UL, 8793756385240104228UL + 92UL, 8793756385240104228UL + 96UL, 8793756385240104228UL + 10UL, 8793756385240104228UL + 48UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 381UL, 8793756385240104228UL + 620UL, 8793756385240104228UL + 73UL, 8793756385240104228UL + 96UL, "MyOptionSt", 8, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, shortArg), (int)__builtin_offsetof(struct MyOptionSt, argFlag), (int)__builtin_offsetof(struct MyOptionSt, type), (int)__builtin_offsetof(struct MyOptionSt, sz), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next), "option", 4, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, has_arg), (int)__builtin_offsetof(struct option, flag), (int)__builtin_offsetof(struct option, val));
-    register_global_var("global|myargs", "%struct.MyOptionSt**", (void *)(&myargs), 8, 1, 0, 0);
-    register_global_var("global|longest", "i32*", (void *)(&longest), 8, 1, 0, 0);
+    register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8, 1, 0, 0);
+    register_global_var("global|longest", "i32", (void *)(&longest), 4, 0, 0, 0);
     return 0;
 }
 

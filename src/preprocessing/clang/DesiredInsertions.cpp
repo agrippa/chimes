@@ -522,7 +522,6 @@ StructFields *DesiredInsertions::get_struct_fields_for(std::string name) {
     for (std::vector<StructFields *>::iterator i = struct_fields->begin(),
             e = struct_fields->end(); i != e; i++) {
         StructFields *curr = *i;
-        llvm::errs() << "comparing \"" << curr->get_name() << "\" \"" << name << "\"\n";
         if (curr->get_name() == name) return curr;
     }
     return NULL;

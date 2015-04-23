@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -102,9 +104,9 @@ extern int ____chimes_replaying;
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
 # 65 "/usr/include/stdio.h" 2 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 66 "/usr/include/stdio.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -2052,9 +2054,11 @@ alias_group_changed(1, (size_t)(12737042733622956000UL)); rm_stack(false, 0UL); 
 
 static int module_init() {
     init_module(12737042733622955887UL, 7, 4, 12737042733622955887UL + 55UL, 12737042733622955887UL + 112UL, 12737042733622955887UL + 122UL, 12737042733622955887UL + 155UL, 12737042733622955887UL + 3UL, 12737042733622955887UL + 13UL, 12737042733622955887UL + 124UL, 12737042733622955887UL + 130UL, 12737042733622955887UL + 169UL, 12737042733622955887UL + 66UL, 12737042733622955887UL + 113UL, 12737042733622955887UL + 119UL, 12737042733622955887UL + 166UL, 12737042733622955887UL + 161UL, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "tm", 11, (int)__builtin_offsetof(struct tm, tm_sec), (int)__builtin_offsetof(struct tm, tm_min), (int)__builtin_offsetof(struct tm, tm_hour), (int)__builtin_offsetof(struct tm, tm_mday), (int)__builtin_offsetof(struct tm, tm_mon), (int)__builtin_offsetof(struct tm, tm_year), (int)__builtin_offsetof(struct tm, tm_wday), (int)__builtin_offsetof(struct tm, tm_yday), (int)__builtin_offsetof(struct tm, tm_isdst), (int)__builtin_offsetof(struct tm, tm_gmtoff), (int)__builtin_offsetof(struct tm, tm_zone));
-    register_global_var("global|yamlFile", "%struct.__sFILE**", (void *)(&yamlFile), 8, 1, 0, 0);
-    register_global_var("global|CoMDVariant", "i8**", (void *)(&CoMDVariant), 8, 1, 0, 0);
-    register_global_var("global|CoMDVersion", "i8**", (void *)(&CoMDVersion), 8, 1, 0, 0);
+    register_global_var("global|yamlFile", "%struct.__sFILE*", (void *)(&yamlFile), 8, 1, 0, 0);
+    register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8, 1, 0, 0);
+    register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8, 1, 0, 0);
+    register_constant(12737042733622955887UL + 0UL, (void *)CoMDVersion, 4);
+    register_constant(12737042733622955887UL + 1UL, (void *)CoMDVariant, 12);
     return 0;
 }
 

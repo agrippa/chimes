@@ -17,9 +17,16 @@ class GlobalVar(object):
         assert self.is_struct > 0
         self.struct_type_name = struct_type_name
 
-    def add_struct_ptr_field(self, offset):
+    def add_struct_ptr_field(self, field_name):
         assert self.is_struct > 0
-        self.struct_ptr_fields.append(offset)
+        self.struct_ptr_fields.append(field_name)
+
+
+class Constant(object):
+    def __init__(self, constant_id, constant_size, reference):
+        self.constant_id = constant_id
+        self.constant_size = constant_size
+        self.reference = reference
 
 
 class StructFields(object):
@@ -96,13 +103,33 @@ def get_globals(globals_filename):
             curr.set_struct_type_name(tokens[index + 4])
 
             for t in tokens[index + 5:]:
-                curr.add_struct_ptr_field(int(t))
+                curr.add_struct_ptr_field(t)
 
         glbls.append(curr)
 
     fp.close()
 
     return glbls
+
+
+def get_constants(constants_filename):
+    constants = []
+    fp = open(constants_filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        constant_id = tokens[0]
+        constant_size = tokens[len(tokens) - 1]
+
+        reference = ''.join(tokens[1:len(tokens) - 1])
+
+        assert reference[0] == '"'
+        assert reference[len(reference) - 1] == '"'
+
+        constants.append(Constant(constant_id, constant_size, reference[1:len(reference) - 1]))
+
+    fp.close()
+
+    return constants
 
 
 def get_structs(structs_filename):
@@ -124,10 +151,29 @@ def get_structs(structs_filename):
     return structs
 
 
+def write_global(g, func_name, var_label):
+    output_file.write('    ' + func_name + '("' + var_label + '|' + g.name + '", "' +
+                      g.full_type + '", (void *)(&' + g.name + '), ' +
+                      str(g.type_size_in_bits / 8) + ', ' + str(g.is_ptr) +
+                      ', ' + str(g.is_struct) + ', ' +
+                      str(len(g.struct_ptr_fields)))
+    for field_name in g.struct_ptr_fields:
+        output_file.write(', (int)offsetof(struct ' + g.struct_type_name + \
+                          ', ' + field_name + ')')
+    output_file.write(');\n')
+
+
+def write_constant(c, module_id_str):
+    output_file.write('    register_constant(' + module_id_str + 'UL + ' +
+                      c.constant_id + 'UL, (void *)' + c.reference + ', ' +
+                      c.constant_size + ');\n')
+
+
 if __name__ == '__main__':
-    if len(sys.argv) != 7:
+    if len(sys.argv) != 8:
         print('usage: python module_init.py input-file output-file ' +
-              'module-id-file reachable-file globals-file structs-file')
+              'module-id-file reachable-file globals-file structs-file ' +
+              'constants-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
@@ -136,10 +182,12 @@ if __name__ == '__main__':
     reachable_filename = sys.argv[4]
     globals_filename = sys.argv[5]
     structs_filename = sys.argv[6]
+    constants_filename = sys.argv[7]
 
     module_id_str = get_module_id_str(module_id_filename)
     reachable = get_reachable_mappings(reachable_filename)
     glbls = get_globals(globals_filename)
+    constants = get_constants(constants_filename)
     structs = get_structs(structs_filename)
 
     input_file = open(input_filename, 'r')
@@ -162,14 +210,11 @@ if __name__ == '__main__':
     output_file.write(');\n')
 
     for g in glbls:
-        output_file.write('    register_global_var("global|' + g.name + '", "' +
-                          g.full_type + '", (void *)(&' + g.name + '), ' +
-                          str(g.type_size_in_bits / 8) + ', ' + str(g.is_ptr) +
-                          ', ' + str(g.is_struct) + ', ' +
-                          str(len(g.struct_ptr_fields)))
-        for offset in g.struct_ptr_fields:
-            output_file.write(', ' + str(offset))
-        output_file.write(');\n')
+        write_global(g, 'register_global_var', 'global')
+
+    for c in constants:
+        write_constant(c, module_id_str)
+
     output_file.write('    return 0;\n')
     output_file.write('}\n\n')
     output_file.write('static int __libchimes_module_init = module_init();\n\n')

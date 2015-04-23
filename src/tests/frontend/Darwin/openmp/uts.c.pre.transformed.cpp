@@ -38,6 +38,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -57,7 +59,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 51 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
@@ -74,9 +76,9 @@ extern int ____chimes_replaying;
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 62 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -3287,19 +3289,26 @@ alias_group_changed(6, (size_t)(11896266734391819934UL), (size_t)(11896266734391
 
 static int module_init() {
     init_module(11896266734391819126UL, 11, 5, 11896266734391819126UL + 308UL, 11896266734391819126UL + 336UL, 11896266734391819126UL + 888UL, 11896266734391819126UL + 363UL, 11896266734391819126UL + 47UL, 11896266734391819126UL + 78UL, 11896266734391819126UL + 337UL, 11896266734391819126UL + 484UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 760UL, 11896266734391819126UL + 893UL, 11896266734391819126UL + 401UL, 11896266734391819126UL + 1UL, 11896266734391819126UL + 8UL, 11896266734391819126UL + 109UL, 11896266734391819126UL + 214UL, 11896266734391819126UL + 82UL, 11896266734391819126UL + 107UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 220UL, 11896266734391819126UL + 305UL, "node_t", 4, (int)__builtin_offsetof (struct node_t, type), (int)__builtin_offsetof (struct node_t, height), (int)__builtin_offsetof (struct node_t, numChildren), (int)__builtin_offsetof (struct node_t, state), "state_t", 1, (int)__builtin_offsetof (struct state_t, state), "timeval", 2, (int)__builtin_offsetof (struct timeval, tv_sec), (int)__builtin_offsetof (struct timeval, tv_usec), "uts_geoshape_e", 0, "uts_trees_e", 0);
-    register_global_var("global|uts_trees_str", "[3 x i8*]*", (void *)(&uts_trees_str), 8, 1, 0, 0);
-    register_global_var("global|uts_geoshapes_str", "[4 x i8*]*", (void *)(&uts_geoshapes_str), 8, 1, 0, 0);
-    register_global_var("global|type", "i32*", (void *)(&type), 8, 1, 0, 0);
-    register_global_var("global|b_0", "double*", (void *)(&b_0), 8, 1, 0, 0);
-    register_global_var("global|rootId", "i32*", (void *)(&rootId), 8, 1, 0, 0);
-    register_global_var("global|nonLeafBF", "i32*", (void *)(&nonLeafBF), 8, 1, 0, 0);
-    register_global_var("global|nonLeafProb", "double*", (void *)(&nonLeafProb), 8, 1, 0, 0);
-    register_global_var("global|gen_mx", "i32*", (void *)(&gen_mx), 8, 1, 0, 0);
-    register_global_var("global|shape_fn", "i32*", (void *)(&shape_fn), 8, 1, 0, 0);
-    register_global_var("global|shiftDepth", "double*", (void *)(&shiftDepth), 8, 1, 0, 0);
-    register_global_var("global|computeGranularity", "i32*", (void *)(&computeGranularity), 8, 1, 0, 0);
-    register_global_var("global|debug", "i32*", (void *)(&debug), 8, 1, 0, 0);
-    register_global_var("global|verbose", "i32*", (void *)(&verbose), 8, 1, 0, 0);
+    register_global_var("global|uts_trees_str", "[3 x i8*]", (void *)(&uts_trees_str), 24, 0, 0, 0);
+    register_global_var("global|uts_geoshapes_str", "[4 x i8*]", (void *)(&uts_geoshapes_str), 32, 0, 0, 0);
+    register_global_var("global|type", "i32", (void *)(&type), 4, 0, 0, 0);
+    register_global_var("global|b_0", "double", (void *)(&b_0), 8, 0, 0, 0);
+    register_global_var("global|rootId", "i32", (void *)(&rootId), 4, 0, 0, 0);
+    register_global_var("global|nonLeafBF", "i32", (void *)(&nonLeafBF), 4, 0, 0, 0);
+    register_global_var("global|nonLeafProb", "double", (void *)(&nonLeafProb), 8, 0, 0, 0);
+    register_global_var("global|gen_mx", "i32", (void *)(&gen_mx), 4, 0, 0, 0);
+    register_global_var("global|shape_fn", "i32", (void *)(&shape_fn), 4, 0, 0, 0);
+    register_global_var("global|shiftDepth", "double", (void *)(&shiftDepth), 8, 0, 0, 0);
+    register_global_var("global|computeGranularity", "i32", (void *)(&computeGranularity), 4, 0, 0, 0);
+    register_global_var("global|debug", "i32", (void *)(&debug), 4, 0, 0, 0);
+    register_global_var("global|verbose", "i32", (void *)(&verbose), 4, 0, 0, 0);
+    register_constant(11896266734391819126UL + 0UL, (void *)((uts_trees_str)[0]), 9);
+    register_constant(11896266734391819126UL + 1UL, (void *)((uts_trees_str)[1]), 10);
+    register_constant(11896266734391819126UL + 2UL, (void *)((uts_trees_str)[2]), 7);
+    register_constant(11896266734391819126UL + 3UL, (void *)((uts_geoshapes_str)[0]), 16);
+    register_constant(11896266734391819126UL + 4UL, (void *)((uts_geoshapes_str)[1]), 21);
+    register_constant(11896266734391819126UL + 5UL, (void *)((uts_geoshapes_str)[2]), 7);
+    register_constant(11896266734391819126UL + 6UL, (void *)((uts_geoshapes_str)[3]), 23);
     return 0;
 }
 
