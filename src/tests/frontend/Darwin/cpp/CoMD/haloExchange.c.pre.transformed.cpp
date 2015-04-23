@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -163,9 +165,9 @@ void sortAtomsInCell(struct AtomsSt* atoms, struct LinkCellSt* boxes, int iBox);
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 62 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -2214,7 +2216,7 @@ HaloExchange* initAtomHaloExchange(Domain* domain, LinkCell* boxes)
  hh->destroy = destroyAtomsExchange;
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- lbl_5: AtomExchangeParms *parms; register_stack_var("initAtomHaloExchange|parms|0", "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } parms = ((AtomExchangeParms *)malloc_wrapper(sizeof(AtomExchangeParms), 9446392186784961655UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0)) ;
+ lbl_5: AtomExchangeParms *parms; register_stack_var("initAtomHaloExchange|parms|0", "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } parms = ((AtomExchangeParms *)malloc_wrapper(sizeof(AtomExchangeParms), 9446392186784961646UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0)) ;
 # 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  parms->nCells[0] = 2*(boxes->gridSize[1]+2)*(boxes->gridSize[2]+2);
@@ -2230,7 +2232,7 @@ HaloExchange* initAtomHaloExchange(Domain* domain, LinkCell* boxes)
  parms->nCells[5] = parms->nCells[4];
 # 173 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 174 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- { lbl_6: int ii; register_stack_var("initAtomHaloExchange|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ;ii < 6; ++ii) { alias_group_changed(9, (size_t)(9446392186784959093UL), (size_t)(9446392186784959094UL), (size_t)(9446392186784959095UL), (size_t)(9446392186784959096UL), (size_t)(9446392186784959097UL), (size_t)(9446392186784959098UL), (size_t)(9446392186784959099UL), (size_t)(9446392186784959178UL), (size_t)(9446392186784961655UL)); call_lbl_5: calling((void*)&mkAtomCellList, 5, 9446392186784959280UL, 3, (size_t)(9446392186784959194UL), (size_t)(0UL), (size_t)(0UL)); parms->cellList[ii] = mkAtomCellList(boxes, ii, parms->nCells[ii]); } };
+ { lbl_6: int ii; register_stack_var("initAtomHaloExchange|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ;ii < 6; ++ii) { alias_group_changed(9, (size_t)(9446392186784959093UL), (size_t)(9446392186784959094UL), (size_t)(9446392186784959095UL), (size_t)(9446392186784959096UL), (size_t)(9446392186784959097UL), (size_t)(9446392186784959098UL), (size_t)(9446392186784959099UL), (size_t)(9446392186784959178UL), (size_t)(9446392186784961646UL)); call_lbl_5: calling((void*)&mkAtomCellList, 5, 9446392186784959280UL, 3, (size_t)(9446392186784959194UL), (size_t)(0UL), (size_t)(0UL)); parms->cellList[ii] = mkAtomCellList(boxes, ii, parms->nCells[ii]); } };
 # 176 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 177 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_7: int ii; register_stack_var("initAtomHaloExchange|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( ii = (0) ; ii<6; ++ii)
@@ -2262,7 +2264,7 @@ HaloExchange* initAtomHaloExchange(Domain* domain, LinkCell* boxes)
 # 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  hh->parms = parms;
 # 193 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(14, (size_t)(9446392186784959093UL), (size_t)(9446392186784959094UL), (size_t)(9446392186784959095UL), (size_t)(9446392186784959096UL), (size_t)(9446392186784959097UL), (size_t)(9446392186784959098UL), (size_t)(9446392186784959099UL), (size_t)(9446392186784959100UL), (size_t)(9446392186784959101UL), (size_t)(9446392186784959102UL), (size_t)(9446392186784959103UL), (size_t)(9446392186784959178UL), (size_t)(9446392186784959280UL), (size_t)(9446392186784961655UL)); rm_stack(true, 9446392186784959178UL); return hh;
+ alias_group_changed(14, (size_t)(9446392186784959093UL), (size_t)(9446392186784959094UL), (size_t)(9446392186784959095UL), (size_t)(9446392186784959096UL), (size_t)(9446392186784959097UL), (size_t)(9446392186784959098UL), (size_t)(9446392186784959099UL), (size_t)(9446392186784959100UL), (size_t)(9446392186784959101UL), (size_t)(9446392186784959102UL), (size_t)(9446392186784959103UL), (size_t)(9446392186784959178UL), (size_t)(9446392186784959280UL), (size_t)(9446392186784961646UL)); rm_stack(true, 9446392186784959178UL); return hh;
 # 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
 # 211 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -2294,7 +2296,7 @@ HaloExchange* initForceHaloExchange(Domain* domain, LinkCell* boxes)
  hh->bufCapacity = (maxSize)*64*sizeof(ForceMsg);
 # 225 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- lbl_5: ForceExchangeParms *parms; register_stack_var("initForceHaloExchange|parms|0", "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } parms = ((ForceExchangeParms *)malloc_wrapper(sizeof(ForceExchangeParms), 9446392186784961658UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0)) ;
+ lbl_5: ForceExchangeParms *parms; register_stack_var("initForceHaloExchange|parms|0", "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } parms = ((ForceExchangeParms *)malloc_wrapper(sizeof(ForceExchangeParms), 9446392186784961649UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0)) ;
 # 227 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 228 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  parms->nCells[0] = (boxes->gridSize[1] )*(boxes->gridSize[2] );
@@ -2314,482 +2316,481 @@ HaloExchange* initForceHaloExchange(Domain* domain, LinkCell* boxes)
 # 236 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
 # 237 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(9, (size_t)(9446392186784960142UL), (size_t)(9446392186784960143UL), (size_t)(9446392186784960144UL), (size_t)(9446392186784960145UL), (size_t)(9446392186784960146UL), (size_t)(9446392186784960147UL), (size_t)(9446392186784960148UL), (size_t)(9446392186784960228UL), (size_t)(9446392186784961658UL)); call_lbl_5: calling((void*)&mkForceSendCellList, 5, 9446392186784960315UL, 3, (size_t)(9446392186784960235UL), (size_t)(0UL), (size_t)(0UL)); parms->sendCells[ii] = mkForceSendCellList(boxes, ii, parms->nCells[ii]);
+ alias_group_changed(9, (size_t)(9446392186784960142UL), (size_t)(9446392186784960143UL), (size_t)(9446392186784960144UL), (size_t)(9446392186784960145UL), (size_t)(9446392186784960146UL), (size_t)(9446392186784960147UL), (size_t)(9446392186784960148UL), (size_t)(9446392186784960228UL), (size_t)(9446392186784961649UL)); call_lbl_5: calling((void*)&mkForceSendCellList, 5, 9446392186784960315UL, 3, (size_t)(9446392186784960235UL), (size_t)(0UL), (size_t)(0UL)); parms->sendCells[ii] = mkForceSendCellList(boxes, ii, parms->nCells[ii]);
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(1, (size_t)(9446392186784961658UL)); call_lbl_7: calling((void*)&mkForceRecvCellList, 7, 9446392186784960315UL, 3, (size_t)(9446392186784960235UL), (size_t)(0UL), (size_t)(0UL)); parms->recvCells[ii] = mkForceRecvCellList(boxes, ii, parms->nCells[ii]);
+ alias_group_changed(1, (size_t)(9446392186784961649UL)); call_lbl_7: calling((void*)&mkForceRecvCellList, 7, 9446392186784960315UL, 3, (size_t)(9446392186784960235UL), (size_t)(0UL), (size_t)(0UL)); parms->recvCells[ii] = mkForceRecvCellList(boxes, ii, parms->nCells[ii]);
 # 239 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 240 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 241 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  hh->parms = parms;
 # 242 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(9, (size_t)(9446392186784960142UL), (size_t)(9446392186784960143UL), (size_t)(9446392186784960144UL), (size_t)(9446392186784960145UL), (size_t)(9446392186784960146UL), (size_t)(9446392186784960147UL), (size_t)(9446392186784960148UL), (size_t)(9446392186784960228UL), (size_t)(9446392186784961658UL)); rm_stack(true, 9446392186784960228UL); return hh;
+ alias_group_changed(9, (size_t)(9446392186784960142UL), (size_t)(9446392186784960143UL), (size_t)(9446392186784960144UL), (size_t)(9446392186784960145UL), (size_t)(9446392186784960146UL), (size_t)(9446392186784960147UL), (size_t)(9446392186784960148UL), (size_t)(9446392186784960228UL), (size_t)(9446392186784961649UL)); rm_stack(true, 9446392186784960228UL); return hh;
 # 243 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
 # 244 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 245 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void destroyHaloExchange(HaloExchange** haloExchange)
 # 246 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{new_stack((void *)(&destroyHaloExchange), 1, 1, (size_t)(9446392186784961081UL), "destroyHaloExchange|haloExchange|0", "%struct.HaloExchangeSt**", (void *)(&haloExchange), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+{new_stack((void *)(&destroyHaloExchange), 1, 1, (size_t)(9446392186784961072UL), "destroyHaloExchange|haloExchange|0", "%struct.HaloExchangeSt**", (void *)(&haloExchange), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 247 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(1, (size_t)(9446392186784961057UL)); call_lbl_2: calling((void*)(*haloExchange)->destroy, 2, 0UL, 1, (size_t)(9446392186784961063UL)); (*haloExchange)->destroy((*haloExchange)->parms);
-# 248 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  free_wrapper((*haloExchange)->parms, 9446392186784961063UL);
-# 249 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 248 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  free_wrapper(*haloExchange, 9446392186784961061UL);
-# 250 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 249 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  *haloExchange = __null;
+# 250 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+alias_group_changed(2, (size_t)(9446392186784961057UL), (size_t)(9446392186784961072UL)); rm_stack(false, 0UL); }
 # 251 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-alias_group_changed(1, (size_t)(9446392186784961081UL)); rm_stack(false, 0UL); }
 # 252 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 253 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void haloExchange(HaloExchange* haloExchangeData, void* data)
+# 253 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+{new_stack((void *)(&haloExchange), 2, 2, (size_t)(9446392186784961097UL), (size_t)(9446392186784961098UL), "haloExchange|haloExchangeData|0", "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 254 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{new_stack((void *)(&haloExchange), 2, 2, (size_t)(9446392186784961106UL), (size_t)(9446392186784961107UL), "haloExchange|haloExchangeData|0", "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 255 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- { lbl_0: int iAxis; register_stack_var("haloExchange|iAxis|0", "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( iAxis = (0) ;iAxis < 3; ++iAxis) { alias_group_changed(3, (size_t)(9446392186784961083UL), (size_t)(9446392186784961084UL), (size_t)(9446392186784961085UL)); call_lbl_2: calling((void*)&exchangeData, 2, 0UL, 3, (size_t)(9446392186784961106UL), (size_t)(9446392186784961107UL), (size_t)(0UL)); exchangeData(haloExchangeData, data, iAxis); } };
+ { lbl_0: int iAxis; register_stack_var("haloExchange|iAxis|0", "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( iAxis = (0) ;iAxis < 3; ++iAxis) { alias_group_changed(3, (size_t)(9446392186784961074UL), (size_t)(9446392186784961075UL), (size_t)(9446392186784961076UL)); call_lbl_2: calling((void*)&exchangeData, 2, 0UL, 3, (size_t)(9446392186784961097UL), (size_t)(9446392186784961098UL), (size_t)(0UL)); exchangeData(haloExchangeData, data, iAxis); } };
+# 256 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+alias_group_changed(3, (size_t)(9446392186784961074UL), (size_t)(9446392186784961075UL), (size_t)(9446392186784961076UL)); rm_stack(false, 0UL); }
 # 257 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-alias_group_changed(3, (size_t)(9446392186784961083UL), (size_t)(9446392186784961084UL), (size_t)(9446392186784961085UL)); rm_stack(false, 0UL); }
 # 258 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 259 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 260 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 HaloExchange* initHaloExchange(Domain* domain)
-# 261 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 260 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&initHaloExchange), 1, 1, (size_t)(9446392186784959486UL), "initHaloExchange|domain|0", "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 262 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 261 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: HaloExchange *hh; register_stack_var("initHaloExchange|hh|0", "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } hh = ((HaloExchange *)malloc_wrapper(sizeof(HaloExchange), 9446392186784959442UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms))) ;
+# 262 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 263 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 264 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 265 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(2, (size_t)(9446392186784959437UL), (size_t)(9446392186784959438UL)); call_lbl_3: calling((void*)&processorNum, 3, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); hh->nbrRank[0] = processorNum(domain, -1, 0, 0);
-# 266 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 265 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(1, (size_t)(9446392186784959442UL)); call_lbl_5: calling((void*)&processorNum, 5, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); hh->nbrRank[1] = processorNum(domain, +1, 0, 0);
-# 267 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 266 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(1, (size_t)(9446392186784959442UL)); call_lbl_7: calling((void*)&processorNum, 7, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); hh->nbrRank[2] = processorNum(domain, 0, -1, 0);
-# 268 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 267 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(1, (size_t)(9446392186784959442UL)); call_lbl_9: calling((void*)&processorNum, 9, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); hh->nbrRank[3] = processorNum(domain, 0, +1, 0);
-# 269 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 268 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(1, (size_t)(9446392186784959442UL)); call_lbl_11: calling((void*)&processorNum, 11, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); hh->nbrRank[4] = processorNum(domain, 0, 0, -1);
-# 270 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 269 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(1, (size_t)(9446392186784959442UL)); call_lbl_13: calling((void*)&processorNum, 13, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); hh->nbrRank[5] = processorNum(domain, 0, 0, +1);
-# 271 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 270 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  hh->bufCapacity = 0;
+# 271 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 272 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 273 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(1, (size_t)(9446392186784959442UL)); rm_stack(true, 9446392186784959442UL); return hh;
-# 274 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 273 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
-# 284 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 284 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 283 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 283 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void exchangeData(HaloExchange* haloExchange, void* data, int iAxis)
+# 284 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+{new_stack((void *)(&exchangeData), 3, 3, (size_t)(9446392186784961205UL), (size_t)(9446392186784961230UL), (size_t)(0UL), "exchangeData|haloExchange|0", "%struct.HaloExchangeSt*", (void *)(&haloExchange), (size_t)8, 1, 0, 0, "exchangeData|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "exchangeData|iAxis|0", "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 285 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{new_stack((void *)(&exchangeData), 3, 3, (size_t)(9446392186784961214UL), (size_t)(9446392186784961239UL), (size_t)(0UL), "exchangeData|haloExchange|0", "%struct.HaloExchangeSt*", (void *)(&haloExchange), (size_t)8, 1, 0, 0, "exchangeData|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "exchangeData|iAxis|0", "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: int faceM; register_stack_var("exchangeData|faceM|0", "i32", (void *)(&faceM), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } faceM = (2 * iAxis) ;
-# 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: int faceP; register_stack_var("exchangeData|faceP|0", "i32", (void *)(&faceP), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } faceP = (faceM + 1) ;
+# 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 288 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ lbl_2: char *sendBufM; register_stack_var("exchangeData|sendBufM|0", "i8*", (void *)(&sendBufM), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } sendBufM = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961201UL, 0, 0)) ;
 # 289 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- lbl_2: char *sendBufM; register_stack_var("exchangeData|sendBufM|0", "i8*", (void *)(&sendBufM), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } sendBufM = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961210UL, 0, 0)) ;
+ lbl_3: char *sendBufP; register_stack_var("exchangeData|sendBufP|0", "i8*", (void *)(&sendBufP), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } sendBufP = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961211UL, 0, 0)) ;
 # 290 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- lbl_3: char *sendBufP; register_stack_var("exchangeData|sendBufP|0", "i8*", (void *)(&sendBufP), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } sendBufP = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961220UL, 0, 0)) ;
+ lbl_4: char *recvBufM; register_stack_var("exchangeData|recvBufM|0", "i8*", (void *)(&recvBufM), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } recvBufM = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961214UL, 0, 0)) ;
 # 291 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- lbl_4: char *recvBufM; register_stack_var("exchangeData|recvBufM|0", "i8*", (void *)(&recvBufM), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } recvBufM = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961223UL, 0, 0)) ;
+ lbl_5: char *recvBufP; register_stack_var("exchangeData|recvBufP|0", "i8*", (void *)(&recvBufP), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } recvBufP = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961204UL, 0, 0)) ;
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- lbl_5: char *recvBufP; register_stack_var("exchangeData|recvBufP|0", "i8*", (void *)(&recvBufP), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } recvBufP = ((char *)malloc_wrapper(haloExchange->bufCapacity, 9446392186784961213UL, 0, 0)) ;
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(9, (size_t)(9446392186784961099UL), (size_t)(9446392186784961100UL), (size_t)(9446392186784961101UL), (size_t)(9446392186784961102UL), (size_t)(9446392186784961103UL), (size_t)(9446392186784961104UL), (size_t)(9446392186784961105UL), (size_t)(9446392186784961106UL), (size_t)(9446392186784961107UL)); lbl_6: int nSendM; register_stack_var("exchangeData|nSendM|0", "i32", (void *)(&nSendM), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } call_lbl_6: calling((void*)haloExchange->loadBuffer, 6, 0UL, 4, (size_t)(9446392186784961226UL), (size_t)(9446392186784961230UL), (size_t)(0UL), (size_t)(9446392186784961201UL)); nSendM = (haloExchange->loadBuffer(haloExchange->parms, data, faceM, sendBufM)) ;
 # 294 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(9, (size_t)(9446392186784961108UL), (size_t)(9446392186784961109UL), (size_t)(9446392186784961110UL), (size_t)(9446392186784961111UL), (size_t)(9446392186784961112UL), (size_t)(9446392186784961113UL), (size_t)(9446392186784961114UL), (size_t)(9446392186784961115UL), (size_t)(9446392186784961116UL)); lbl_6: int nSendM; register_stack_var("exchangeData|nSendM|0", "i32", (void *)(&nSendM), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } call_lbl_6: calling((void*)haloExchange->loadBuffer, 6, 0UL, 4, (size_t)(9446392186784961235UL), (size_t)(9446392186784961239UL), (size_t)(0UL), (size_t)(9446392186784961210UL)); nSendM = (haloExchange->loadBuffer(haloExchange->parms, data, faceM, sendBufM)) ;
+ alias_group_changed(1, (size_t)(9446392186784961108UL)); lbl_7: int nSendP; register_stack_var("exchangeData|nSendP|0", "i32", (void *)(&nSendP), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } call_lbl_8: calling((void*)haloExchange->loadBuffer, 8, 0UL, 4, (size_t)(9446392186784961226UL), (size_t)(9446392186784961230UL), (size_t)(0UL), (size_t)(9446392186784961211UL)); nSendP = (haloExchange->loadBuffer(haloExchange->parms, data, faceP, sendBufP)) ;
 # 295 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(1, (size_t)(9446392186784961117UL)); lbl_7: int nSendP; register_stack_var("exchangeData|nSendP|0", "i32", (void *)(&nSendP), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } call_lbl_8: calling((void*)haloExchange->loadBuffer, 8, 0UL, 4, (size_t)(9446392186784961235UL), (size_t)(9446392186784961239UL), (size_t)(0UL), (size_t)(9446392186784961220UL)); nSendP = (haloExchange->loadBuffer(haloExchange->parms, data, faceP, sendBufP)) ;
 # 296 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 297 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_8: int nbrRankM; register_stack_var("exchangeData|nbrRankM|0", "i32", (void *)(&nbrRankM), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } nbrRankM = (haloExchange->nbrRank[faceM]) ;
-# 298 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 297 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_9: int nbrRankP; register_stack_var("exchangeData|nbrRankP|0", "i32", (void *)(&nbrRankP), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } nbrRankP = (haloExchange->nbrRank[faceP]) ;
+# 298 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 299 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 300 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_10: int nRecvM; register_stack_var("exchangeData|nRecvM|0", "i32", (void *)(&nRecvM), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } lbl_11: int nRecvP; register_stack_var("exchangeData|nRecvP|0", "i32", (void *)(&nRecvP), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } ;
+# 300 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 301 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ do { alias_group_changed(3, (size_t)(9446392186784961109UL), (size_t)(9446392186784961110UL), (size_t)(9446392186784961111UL)); call_lbl_10: calling((void*)&profileStart, 10, 0UL, 1, (size_t)(0UL)); profileStart(commHaloTimer); } while(0);
 # 302 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- do { alias_group_changed(3, (size_t)(9446392186784961118UL), (size_t)(9446392186784961119UL), (size_t)(9446392186784961120UL)); call_lbl_10: calling((void*)&profileStart, 10, 0UL, 1, (size_t)(0UL)); profileStart(commHaloTimer); } while(0);
+ call_lbl_11: calling((void*)&sendReceiveParallel, 11, 0UL, 6, (size_t)(9446392186784961201UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961204UL), (size_t)(0UL), (size_t)(0UL)); nRecvP = sendReceiveParallel(sendBufM, nSendM, nbrRankM, recvBufP, haloExchange->bufCapacity, nbrRankP);
 # 303 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- call_lbl_11: calling((void*)&sendReceiveParallel, 11, 0UL, 6, (size_t)(9446392186784961210UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961213UL), (size_t)(0UL), (size_t)(0UL)); nRecvP = sendReceiveParallel(sendBufM, nSendM, nbrRankM, recvBufP, haloExchange->bufCapacity, nbrRankP);
+ alias_group_changed(1, (size_t)(9446392186784961113UL)); call_lbl_13: calling((void*)&sendReceiveParallel, 13, 0UL, 6, (size_t)(9446392186784961211UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961214UL), (size_t)(0UL), (size_t)(0UL)); nRecvM = sendReceiveParallel(sendBufP, nSendP, nbrRankP, recvBufM, haloExchange->bufCapacity, nbrRankM);
 # 304 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(1, (size_t)(9446392186784961122UL)); call_lbl_13: calling((void*)&sendReceiveParallel, 13, 0UL, 6, (size_t)(9446392186784961220UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961223UL), (size_t)(0UL), (size_t)(0UL)); nRecvM = sendReceiveParallel(sendBufP, nSendP, nbrRankP, recvBufM, haloExchange->bufCapacity, nbrRankM);
+ do { alias_group_changed(1, (size_t)(9446392186784961112UL)); call_lbl_15: calling((void*)&profileStop, 15, 0UL, 1, (size_t)(0UL)); profileStop(commHaloTimer); } while(0);
 # 305 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- do { alias_group_changed(1, (size_t)(9446392186784961121UL)); call_lbl_15: calling((void*)&profileStop, 15, 0UL, 1, (size_t)(0UL)); profileStop(commHaloTimer); } while(0);
 # 306 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ call_lbl_16: calling((void*)haloExchange->unloadBuffer, 16, 0UL, 5, (size_t)(9446392186784961226UL), (size_t)(9446392186784961230UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961214UL)); haloExchange->unloadBuffer(haloExchange->parms, data, faceM, nRecvM, recvBufM);
 # 307 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- call_lbl_16: calling((void*)haloExchange->unloadBuffer, 16, 0UL, 5, (size_t)(9446392186784961235UL), (size_t)(9446392186784961239UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961223UL)); haloExchange->unloadBuffer(haloExchange->parms, data, faceM, nRecvM, recvBufM);
+ call_lbl_17: calling((void*)haloExchange->unloadBuffer, 17, 0UL, 5, (size_t)(9446392186784961226UL), (size_t)(9446392186784961230UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961204UL)); haloExchange->unloadBuffer(haloExchange->parms, data, faceP, nRecvP, recvBufP);
 # 308 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- call_lbl_17: calling((void*)haloExchange->unloadBuffer, 17, 0UL, 5, (size_t)(9446392186784961235UL), (size_t)(9446392186784961239UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961213UL)); haloExchange->unloadBuffer(haloExchange->parms, data, faceP, nRecvP, recvBufP);
+ free_wrapper(recvBufP, 9446392186784961204UL);
 # 309 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- free_wrapper(recvBufP, 9446392186784961213UL);
+ free_wrapper(recvBufM, 9446392186784961214UL);
 # 310 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- free_wrapper(recvBufM, 9446392186784961223UL);
+ free_wrapper(sendBufP, 9446392186784961211UL);
 # 311 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- free_wrapper(sendBufP, 9446392186784961220UL);
+ free_wrapper(sendBufM, 9446392186784961201UL);
 # 312 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- free_wrapper(sendBufM, 9446392186784961210UL);
-# 313 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 rm_stack(false, 0UL); }
-# 334 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 334 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 333 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 333 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int* mkAtomCellList(LinkCell* boxes, int iFace, const int nCells)
-# 335 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 334 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&mkAtomCellList), 3, 3, (size_t)(9446392186784960137UL), (size_t)(0UL), (size_t)(0UL), "mkAtomCellList|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkAtomCellList|iFace|0", "i32", (void *)(&iFace), (size_t)4, 0, 0, 0, "mkAtomCellList|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 336 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 335 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: int *list; register_stack_var("mkAtomCellList|list|0", "i32*", (void *)(&list), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } list = ((int *)malloc_wrapper(nCells * sizeof(int), 9446392186784960135UL, 0, 0)) ;
-# 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 336 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: int xBegin; register_stack_var("mkAtomCellList|xBegin|0", "i32", (void *)(&xBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } xBegin = (-1) ;
-# 338 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_2: int xEnd; register_stack_var("mkAtomCellList|xEnd|0", "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } xEnd = (boxes->gridSize[0] + 1) ;
-# 339 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 338 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_3: int yBegin; register_stack_var("mkAtomCellList|yBegin|0", "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } yBegin = (-1) ;
-# 340 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 339 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_4: int yEnd; register_stack_var("mkAtomCellList|yEnd|0", "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } yEnd = (boxes->gridSize[1] + 1) ;
-# 341 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 340 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_5: int zBegin; register_stack_var("mkAtomCellList|zBegin|0", "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } zBegin = (-1) ;
-# 342 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 341 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_6: int zEnd; register_stack_var("mkAtomCellList|zEnd|0", "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } zEnd = (boxes->gridSize[2] + 1) ;
+# 342 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 343 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 344 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (iFace == 0) {xEnd = xBegin + 2; };
-# 345 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 344 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (iFace == 1) {xBegin = xEnd - 2; };
-# 346 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 345 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (iFace == 2) {yEnd = yBegin + 2; };
-# 347 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 346 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (iFace == 3) {yBegin = yEnd - 2; };
-# 348 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 347 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (iFace == 4) {zEnd = zBegin + 2; };
-# 349 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 348 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  if (iFace == 5) {zBegin = zEnd - 2; };
+# 349 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 350 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 351 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_7: int count; register_stack_var("mkAtomCellList|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } count = (0) ;
-# 352 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 351 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_8: int ix; register_stack_var("mkAtomCellList|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } for ( ix = (xBegin) ; ix<xEnd; ++ix) {
-# 353 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 352 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_9: int iy; register_stack_var("mkAtomCellList|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } for ( iy = (yBegin) ; iy<yEnd; ++iy) {
-# 354 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 353 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_10: int iz; register_stack_var("mkAtomCellList|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } for ( iz = (zBegin) ; iz<zEnd; ++iz) {
-# 355 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 354 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(15, (size_t)(9446392186784959974UL), (size_t)(9446392186784959975UL), (size_t)(9446392186784959976UL), (size_t)(9446392186784959977UL), (size_t)(9446392186784959978UL), (size_t)(9446392186784959979UL), (size_t)(9446392186784959980UL), (size_t)(9446392186784959981UL), (size_t)(9446392186784959982UL), (size_t)(9446392186784959983UL), (size_t)(9446392186784959984UL), (size_t)(9446392186784959985UL), (size_t)(9446392186784959986UL), (size_t)(9446392186784959987UL), (size_t)(9446392186784960135UL)); call_lbl_3: calling((void*)&getBoxFromTuple, 3, 0UL, 4, (size_t)(9446392186784960137UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); list[count++] = getBoxFromTuple(boxes, ix, iy, iz);
+# 355 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 356 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 357 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 358 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
+ alias_group_changed(15, (size_t)(9446392186784959974UL), (size_t)(9446392186784959975UL), (size_t)(9446392186784959976UL), (size_t)(9446392186784959977UL), (size_t)(9446392186784959978UL), (size_t)(9446392186784959979UL), (size_t)(9446392186784959980UL), (size_t)(9446392186784959981UL), (size_t)(9446392186784959982UL), (size_t)(9446392186784959983UL), (size_t)(9446392186784959984UL), (size_t)(9446392186784959985UL), (size_t)(9446392186784959986UL), (size_t)(9446392186784959987UL), (size_t)(9446392186784960135UL)); (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 358, "count == nCells") : (void)0);
 # 359 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(15, (size_t)(9446392186784959974UL), (size_t)(9446392186784959975UL), (size_t)(9446392186784959976UL), (size_t)(9446392186784959977UL), (size_t)(9446392186784959978UL), (size_t)(9446392186784959979UL), (size_t)(9446392186784959980UL), (size_t)(9446392186784959981UL), (size_t)(9446392186784959982UL), (size_t)(9446392186784959983UL), (size_t)(9446392186784959984UL), (size_t)(9446392186784959985UL), (size_t)(9446392186784959986UL), (size_t)(9446392186784959987UL), (size_t)(9446392186784960135UL)); (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 359, "count == nCells") : (void)0);
-# 360 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(15, (size_t)(9446392186784959974UL), (size_t)(9446392186784959975UL), (size_t)(9446392186784959976UL), (size_t)(9446392186784959977UL), (size_t)(9446392186784959978UL), (size_t)(9446392186784959979UL), (size_t)(9446392186784959980UL), (size_t)(9446392186784959981UL), (size_t)(9446392186784959982UL), (size_t)(9446392186784959983UL), (size_t)(9446392186784959984UL), (size_t)(9446392186784959985UL), (size_t)(9446392186784959986UL), (size_t)(9446392186784959987UL), (size_t)(9446392186784960135UL)); rm_stack(true, 9446392186784960135UL); return list;
-# 361 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 360 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
-# 370 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 370 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 369 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 369 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf)
-# 371 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 370 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&loadAtomsBuffer), 4, 0, (size_t)(9446392186784959775UL), (size_t)(9446392186784959776UL), (size_t)(0UL), (size_t)(9446392186784959778UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
-# 372 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 371 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  AtomExchangeParms *parms; parms = ((AtomExchangeParms *)vparms) ;
-# 373 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 372 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  SimFlat *s; s = ((SimFlat *)data) ;
-# 374 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 373 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  AtomMsg *buf; buf = ((AtomMsg *)charBuf) ;
+# 374 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 375 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 376 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  real_t *pbcFactor; pbcFactor = (parms->pbcFactor[face]) ;
-# 377 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 376 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  real3 shift; ;
-# 378 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 377 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  shift[0] = pbcFactor[0] * s->domain->globalExtent[0];
-# 379 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 378 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  shift[1] = pbcFactor[1] * s->domain->globalExtent[1];
-# 380 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 379 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  shift[2] = pbcFactor[2] * s->domain->globalExtent[2];
+# 380 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 381 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 382 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int nCells; nCells = (parms->nCells[face]) ;
-# 383 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 382 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int *cellList; cellList = (parms->cellList[face]) ;
-# 384 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 383 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int nBuf; nBuf = (0) ;
-# 385 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 384 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { int iCell; for ( iCell = (0) ; iCell<nCells; ++iCell)
+# 385 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 386 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 387 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int iBox; iBox = (cellList[iCell]) ;
-# 388 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 387 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int iOff; iOff = (iBox * 64) ;
-# 389 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 388 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { int ii; for ( ii = (iOff) ; ii<iOff+s->boxes->nAtoms[iBox]; ++ii)
-# 390 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 389 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
-# 391 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 390 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].gid = s->atoms->gid[ii];
-# 392 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 391 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].type = s->atoms->iSpecies[ii];
-# 393 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 392 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].rx = s->atoms->r[ii][0] + shift[0];
-# 394 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 393 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].ry = s->atoms->r[ii][1] + shift[1];
-# 395 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 394 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].rz = s->atoms->r[ii][2] + shift[2];
-# 396 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 395 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].px = s->atoms->p[ii][0];
-# 397 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 396 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].py = s->atoms->p[ii][1];
-# 398 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 397 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].pz = s->atoms->p[ii][2];
-# 399 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 398 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  ++nBuf;
+# 399 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 400 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 401 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
-# 402 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(17, (size_t)(9446392186784959487UL), (size_t)(9446392186784959488UL), (size_t)(9446392186784959489UL), (size_t)(9446392186784959490UL), (size_t)(9446392186784959491UL), (size_t)(9446392186784959492UL), (size_t)(9446392186784959493UL), (size_t)(9446392186784959494UL), (size_t)(9446392186784959495UL), (size_t)(9446392186784959496UL), (size_t)(9446392186784959497UL), (size_t)(9446392186784959498UL), (size_t)(9446392186784959499UL), (size_t)(9446392186784959500UL), (size_t)(9446392186784959501UL), (size_t)(9446392186784959502UL), (size_t)(9446392186784959778UL)); rm_stack(false, 0UL); return nBuf*sizeof(AtomMsg);
-# 403 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 402 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
-# 415 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 415 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 414 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 414 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf)
-# 416 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 415 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&unloadAtomsBuffer), 5, 5, (size_t)(9446392186784959930UL), (size_t)(9446392186784959931UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784959934UL), "unloadAtomsBuffer|vparms|0", "i8*", (void *)(&vparms), (size_t)8, 1, 0, 0, "unloadAtomsBuffer|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "unloadAtomsBuffer|face|0", "i32", (void *)(&face), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|bufSize|0", "i32", (void *)(&bufSize), (size_t)4, 0, 0, 0, "unloadAtomsBuffer|charBuf|0", "i8*", (void *)(&charBuf), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 417 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 416 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: AtomExchangeParms *parms; register_stack_var("unloadAtomsBuffer|parms|0", "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } parms = ((AtomExchangeParms *)vparms) ;
-# 418 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 417 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: SimFlat *s; register_stack_var("unloadAtomsBuffer|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } s = ((SimFlat *)data) ;
-# 419 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 418 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_2: AtomMsg *buf; register_stack_var("unloadAtomsBuffer|buf|0", "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } buf = ((AtomMsg *)charBuf) ;
-# 420 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 419 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_3: int nBuf; register_stack_var("unloadAtomsBuffer|nBuf|0", "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } nBuf = (bufSize / sizeof(AtomMsg)) ;
+# 420 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(18, (size_t)(9446392186784959779UL), (size_t)(9446392186784959780UL), (size_t)(9446392186784959781UL), (size_t)(9446392186784959782UL), (size_t)(9446392186784959783UL), (size_t)(9446392186784959784UL), (size_t)(9446392186784959785UL), (size_t)(9446392186784959786UL), (size_t)(9446392186784959787UL), (size_t)(9446392186784959788UL), (size_t)(9446392186784959789UL), (size_t)(9446392186784959790UL), (size_t)(9446392186784959791UL), (size_t)(9446392186784959792UL), (size_t)(9446392186784959793UL), (size_t)(9446392186784959794UL), (size_t)(9446392186784959795UL), (size_t)(9446392186784959796UL)); (__builtin_expect(!(bufSize % sizeof(AtomMsg) == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 420, "bufSize % sizeof(AtomMsg) == 0") : (void)0);
 # 421 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(18, (size_t)(9446392186784959779UL), (size_t)(9446392186784959780UL), (size_t)(9446392186784959781UL), (size_t)(9446392186784959782UL), (size_t)(9446392186784959783UL), (size_t)(9446392186784959784UL), (size_t)(9446392186784959785UL), (size_t)(9446392186784959786UL), (size_t)(9446392186784959787UL), (size_t)(9446392186784959788UL), (size_t)(9446392186784959789UL), (size_t)(9446392186784959790UL), (size_t)(9446392186784959791UL), (size_t)(9446392186784959792UL), (size_t)(9446392186784959793UL), (size_t)(9446392186784959794UL), (size_t)(9446392186784959795UL), (size_t)(9446392186784959796UL)); (__builtin_expect(!(bufSize % sizeof(AtomMsg) == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 421, "bufSize % sizeof(AtomMsg) == 0") : (void)0);
 # 422 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 423 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_4: int ii; register_stack_var("unloadAtomsBuffer|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( ii = (0) ; ii<nBuf; ++ii)
+# 423 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 424 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 425 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_5: int gid; register_stack_var("unloadAtomsBuffer|gid|0", "i32", (void *)(&gid), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } gid = (buf[ii].gid) ;
-# 426 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 425 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_6: int type; register_stack_var("unloadAtomsBuffer|type|0", "i32", (void *)(&type), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } type = (buf[ii].type) ;
-# 427 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 426 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_7: real_t rx; register_stack_var("unloadAtomsBuffer|rx|0", "double", (void *)(&rx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } rx = (buf[ii].rx) ;
-# 428 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 427 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_8: real_t ry; register_stack_var("unloadAtomsBuffer|ry|0", "double", (void *)(&ry), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ry = (buf[ii].ry) ;
-# 429 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 428 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_9: real_t rz; register_stack_var("unloadAtomsBuffer|rz|0", "double", (void *)(&rz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } rz = (buf[ii].rz) ;
-# 430 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 429 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_10: real_t px; register_stack_var("unloadAtomsBuffer|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } px = (buf[ii].px) ;
-# 431 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 430 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_11: real_t py; register_stack_var("unloadAtomsBuffer|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } py = (buf[ii].py) ;
-# 432 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 431 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_12: real_t pz; register_stack_var("unloadAtomsBuffer|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } pz = (buf[ii].pz) ;
-# 433 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 432 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784959779UL), (size_t)(9446392186784959780UL), (size_t)(9446392186784959781UL), (size_t)(9446392186784959782UL), (size_t)(9446392186784959783UL), (size_t)(9446392186784959784UL), (size_t)(9446392186784959785UL), (size_t)(9446392186784959786UL), (size_t)(9446392186784959787UL), (size_t)(9446392186784959788UL), (size_t)(9446392186784959789UL), (size_t)(9446392186784959790UL), (size_t)(9446392186784959791UL), (size_t)(9446392186784959792UL), (size_t)(9446392186784959793UL), (size_t)(9446392186784959794UL), (size_t)(9446392186784959795UL), (size_t)(9446392186784959796UL)); call_lbl_5: calling((void*)&putAtomInBox, 5, 0UL, 10, (size_t)(9446392186784959911UL), (size_t)(9446392186784959911UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); putAtomInBox(s->boxes, s->atoms, gid, type, rx, ry, rz, px, py, pz);
+# 433 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 434 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
-# 435 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 alias_group_changed(10, (size_t)(9446392186784959779UL), (size_t)(9446392186784959780UL), (size_t)(9446392186784959781UL), (size_t)(9446392186784959782UL), (size_t)(9446392186784959783UL), (size_t)(9446392186784959784UL), (size_t)(9446392186784959785UL), (size_t)(9446392186784959786UL), (size_t)(9446392186784959787UL), (size_t)(9446392186784959788UL)); rm_stack(false, 0UL); }
+# 435 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 436 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 437 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void destroyAtomsExchange(void* vparms)
-# 438 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 437 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&destroyAtomsExchange), 1, 1, (size_t)(9446392186784959972UL), "destroyAtomsExchange|vparms|0", "i8*", (void *)(&vparms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 439 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 438 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: AtomExchangeParms *parms; register_stack_var("destroyAtomsExchange|parms|0", "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } parms = ((AtomExchangeParms *)vparms) ;
+# 439 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 440 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 441 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_1: int ii; register_stack_var("destroyAtomsExchange|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } for ( ii = (0) ; ii<6; ++ii)
+# 441 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 442 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 443 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  free_wrapper(parms->pbcFactor[ii], 9446392186784959955UL);
-# 444 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 443 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  free_wrapper(parms->cellList[ii], 9446392186784959955UL);
-# 445 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 444 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
-# 446 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 445 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 alias_group_changed(3, (size_t)(9446392186784959935UL), (size_t)(9446392186784959936UL), (size_t)(9446392186784959937UL)); rm_stack(false, 0UL); }
-# 455 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 455 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 454 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 454 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int* mkForceSendCellList(LinkCell* boxes, int face, int nCells)
-# 456 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 455 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&mkForceSendCellList), 3, 3, (size_t)(9446392186784960857UL), (size_t)(0UL), (size_t)(0UL), "mkForceSendCellList|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceSendCellList|face|0", "i32", (void *)(&face), (size_t)4, 0, 0, 0, "mkForceSendCellList|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 457 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 456 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: int *list; register_stack_var("mkForceSendCellList|list|0", "i32*", (void *)(&list), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } list = ((int *)malloc_wrapper(nCells * sizeof(int), 9446392186784960855UL, 0, 0)) ;
-# 458 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 457 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: int xBegin; register_stack_var("mkForceSendCellList|xBegin|0", "i32", (void *)(&xBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: int xEnd; register_stack_var("mkForceSendCellList|xEnd|0", "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int yBegin; register_stack_var("mkForceSendCellList|yBegin|0", "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int yEnd; register_stack_var("mkForceSendCellList|yEnd|0", "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: int zBegin; register_stack_var("mkForceSendCellList|zBegin|0", "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int zEnd; register_stack_var("mkForceSendCellList|zEnd|0", "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
+# 458 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 459 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 460 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_7: int nx; register_stack_var("mkForceSendCellList|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } nx = (boxes->gridSize[0]) ;
-# 461 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 460 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_8: int ny; register_stack_var("mkForceSendCellList|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ny = (boxes->gridSize[1]) ;
-# 462 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 461 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_9: int nz; register_stack_var("mkForceSendCellList|nz|0", "i32", (void *)(&nz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } nz = (boxes->gridSize[2]) ;
-# 463 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 462 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  switch(face)
-# 464 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 463 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
-# 465 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 464 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 0:
-# 466 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 465 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=0; xEnd=1; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 466 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 467 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 468 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 1:
-# 469 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 468 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=nx-1; xEnd=nx; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 469 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 470 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 471 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 2:
-# 472 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 471 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=0; yEnd=1; zBegin=0; zEnd=nz;
+# 472 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 473 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 474 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 3:
-# 475 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 474 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=ny-1; yEnd=ny; zBegin=0; zEnd=nz;
+# 475 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 476 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 477 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 4:
-# 478 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 477 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=0; zEnd=1;
+# 478 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 479 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 480 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 5:
-# 481 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 480 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=nz-1; zEnd=nz;
-# 482 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 481 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  break;
-# 483 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 482 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784960663UL), (size_t)(9446392186784960664UL), (size_t)(9446392186784960665UL), (size_t)(9446392186784960666UL), (size_t)(9446392186784960667UL), (size_t)(9446392186784960668UL), (size_t)(9446392186784960669UL), (size_t)(9446392186784960670UL), (size_t)(9446392186784960671UL), (size_t)(9446392186784960672UL), (size_t)(9446392186784960673UL), (size_t)(9446392186784960674UL), (size_t)(9446392186784960675UL), (size_t)(9446392186784960676UL), (size_t)(9446392186784960677UL), (size_t)(9446392186784960678UL), (size_t)(9446392186784960679UL), (size_t)(9446392186784960855UL)); default:
+# 483 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ (__builtin_expect(!(1==0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 483, "1==0") : (void)0);
 # 484 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- (__builtin_expect(!(1==0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 484, "1==0") : (void)0);
-# 485 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  }
+# 485 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 486 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 487 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_10: int count; register_stack_var("mkForceSendCellList|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } count = (0) ;
-# 488 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 487 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_11: int ix; register_stack_var("mkForceSendCellList|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } for ( ix = (xBegin) ; ix<xEnd; ++ix) {
-# 489 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 488 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_12: int iy; register_stack_var("mkForceSendCellList|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for ( iy = (yBegin) ; iy<yEnd; ++iy) {
-# 490 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 489 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_13: int iz; register_stack_var("mkForceSendCellList|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } for ( iz = (zBegin) ; iz<zEnd; ++iz) {
-# 491 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 490 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784960663UL), (size_t)(9446392186784960664UL), (size_t)(9446392186784960665UL), (size_t)(9446392186784960666UL), (size_t)(9446392186784960667UL), (size_t)(9446392186784960668UL), (size_t)(9446392186784960669UL), (size_t)(9446392186784960670UL), (size_t)(9446392186784960671UL), (size_t)(9446392186784960672UL), (size_t)(9446392186784960673UL), (size_t)(9446392186784960674UL), (size_t)(9446392186784960675UL), (size_t)(9446392186784960676UL), (size_t)(9446392186784960677UL), (size_t)(9446392186784960678UL), (size_t)(9446392186784960679UL), (size_t)(9446392186784960855UL)); call_lbl_6: calling((void*)&getBoxFromTuple, 6, 0UL, 4, (size_t)(9446392186784960857UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); list[count++] = getBoxFromTuple(boxes, ix, iy, iz);
+# 491 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 492 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 493 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 494 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
 # 495 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(18, (size_t)(9446392186784960663UL), (size_t)(9446392186784960664UL), (size_t)(9446392186784960665UL), (size_t)(9446392186784960666UL), (size_t)(9446392186784960667UL), (size_t)(9446392186784960668UL), (size_t)(9446392186784960669UL), (size_t)(9446392186784960670UL), (size_t)(9446392186784960671UL), (size_t)(9446392186784960672UL), (size_t)(9446392186784960673UL), (size_t)(9446392186784960674UL), (size_t)(9446392186784960675UL), (size_t)(9446392186784960676UL), (size_t)(9446392186784960677UL), (size_t)(9446392186784960678UL), (size_t)(9446392186784960679UL), (size_t)(9446392186784960855UL)); (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 495, "count == nCells") : (void)0);
 # 496 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(18, (size_t)(9446392186784960663UL), (size_t)(9446392186784960664UL), (size_t)(9446392186784960665UL), (size_t)(9446392186784960666UL), (size_t)(9446392186784960667UL), (size_t)(9446392186784960668UL), (size_t)(9446392186784960669UL), (size_t)(9446392186784960670UL), (size_t)(9446392186784960671UL), (size_t)(9446392186784960672UL), (size_t)(9446392186784960673UL), (size_t)(9446392186784960674UL), (size_t)(9446392186784960675UL), (size_t)(9446392186784960676UL), (size_t)(9446392186784960677UL), (size_t)(9446392186784960678UL), (size_t)(9446392186784960679UL), (size_t)(9446392186784960855UL)); (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 496, "count == nCells") : (void)0);
-# 497 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784960663UL), (size_t)(9446392186784960664UL), (size_t)(9446392186784960665UL), (size_t)(9446392186784960666UL), (size_t)(9446392186784960667UL), (size_t)(9446392186784960668UL), (size_t)(9446392186784960669UL), (size_t)(9446392186784960670UL), (size_t)(9446392186784960671UL), (size_t)(9446392186784960672UL), (size_t)(9446392186784960673UL), (size_t)(9446392186784960674UL), (size_t)(9446392186784960675UL), (size_t)(9446392186784960676UL), (size_t)(9446392186784960677UL), (size_t)(9446392186784960678UL), (size_t)(9446392186784960679UL), (size_t)(9446392186784960855UL)); rm_stack(true, 9446392186784960855UL); return list;
-# 498 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 497 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
-# 507 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 507 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 506 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 506 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int* mkForceRecvCellList(LinkCell* boxes, int face, int nCells)
-# 508 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 507 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&mkForceRecvCellList), 3, 3, (size_t)(9446392186784961054UL), (size_t)(0UL), (size_t)(0UL), "mkForceRecvCellList|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceRecvCellList|face|0", "i32", (void *)(&face), (size_t)4, 0, 0, 0, "mkForceRecvCellList|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 509 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 508 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: int *list; register_stack_var("mkForceRecvCellList|list|0", "i32*", (void *)(&list), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } list = ((int *)malloc_wrapper(nCells * sizeof(int), 9446392186784961052UL, 0, 0)) ;
-# 510 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 509 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: int xBegin; register_stack_var("mkForceRecvCellList|xBegin|0", "i32", (void *)(&xBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: int xEnd; register_stack_var("mkForceRecvCellList|xEnd|0", "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int yBegin; register_stack_var("mkForceRecvCellList|yBegin|0", "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int yEnd; register_stack_var("mkForceRecvCellList|yEnd|0", "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: int zBegin; register_stack_var("mkForceRecvCellList|zBegin|0", "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int zEnd; register_stack_var("mkForceRecvCellList|zEnd|0", "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
+# 510 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 511 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 512 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_7: int nx; register_stack_var("mkForceRecvCellList|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } nx = (boxes->gridSize[0]) ;
-# 513 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 512 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_8: int ny; register_stack_var("mkForceRecvCellList|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ny = (boxes->gridSize[1]) ;
-# 514 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 513 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_9: int nz; register_stack_var("mkForceRecvCellList|nz|0", "i32", (void *)(&nz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } nz = (boxes->gridSize[2]) ;
-# 515 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 514 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  switch(face)
-# 516 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 515 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
-# 517 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 516 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 0:
-# 518 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 517 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=0; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 518 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 519 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 520 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 1:
-# 521 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 520 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=nx; xEnd=nx+1; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 521 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 522 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 523 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 2:
-# 524 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 523 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=0; zBegin=0; zEnd=nz;
+# 524 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 525 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 526 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 3:
-# 527 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 526 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=ny; yEnd=ny+1; zBegin=0; zEnd=nz;
+# 527 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 528 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 529 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 4:
-# 530 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 529 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=-1; zEnd=0;
+# 530 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ break;
 # 531 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- break;
-# 532 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  case 5:
-# 533 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 532 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=nz; zEnd=nz+1;
-# 534 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 533 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  break;
-# 535 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 534 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784960860UL), (size_t)(9446392186784960861UL), (size_t)(9446392186784960862UL), (size_t)(9446392186784960863UL), (size_t)(9446392186784960864UL), (size_t)(9446392186784960865UL), (size_t)(9446392186784960866UL), (size_t)(9446392186784960867UL), (size_t)(9446392186784960868UL), (size_t)(9446392186784960869UL), (size_t)(9446392186784960870UL), (size_t)(9446392186784960871UL), (size_t)(9446392186784960872UL), (size_t)(9446392186784960873UL), (size_t)(9446392186784960874UL), (size_t)(9446392186784960875UL), (size_t)(9446392186784960876UL), (size_t)(9446392186784961052UL)); default:
+# 535 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ (__builtin_expect(!(1==0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 535, "1==0") : (void)0);
 # 536 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- (__builtin_expect(!(1==0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 536, "1==0") : (void)0);
-# 537 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  }
+# 537 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 538 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 539 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_10: int count; register_stack_var("mkForceRecvCellList|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } count = (0) ;
-# 540 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 539 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_11: int ix; register_stack_var("mkForceRecvCellList|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } for ( ix = (xBegin) ; ix<xEnd; ++ix) {
-# 541 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 540 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_12: int iy; register_stack_var("mkForceRecvCellList|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for ( iy = (yBegin) ; iy<yEnd; ++iy) {
-# 542 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 541 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_13: int iz; register_stack_var("mkForceRecvCellList|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } for ( iz = (zBegin) ; iz<zEnd; ++iz) {
-# 543 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 542 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784960860UL), (size_t)(9446392186784960861UL), (size_t)(9446392186784960862UL), (size_t)(9446392186784960863UL), (size_t)(9446392186784960864UL), (size_t)(9446392186784960865UL), (size_t)(9446392186784960866UL), (size_t)(9446392186784960867UL), (size_t)(9446392186784960868UL), (size_t)(9446392186784960869UL), (size_t)(9446392186784960870UL), (size_t)(9446392186784960871UL), (size_t)(9446392186784960872UL), (size_t)(9446392186784960873UL), (size_t)(9446392186784960874UL), (size_t)(9446392186784960875UL), (size_t)(9446392186784960876UL), (size_t)(9446392186784961052UL)); call_lbl_6: calling((void*)&getBoxFromTuple, 6, 0UL, 4, (size_t)(9446392186784961054UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); list[count++] = getBoxFromTuple(boxes, ix, iy, iz);
+# 543 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 544 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 545 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 546 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
 # 547 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(18, (size_t)(9446392186784960860UL), (size_t)(9446392186784960861UL), (size_t)(9446392186784960862UL), (size_t)(9446392186784960863UL), (size_t)(9446392186784960864UL), (size_t)(9446392186784960865UL), (size_t)(9446392186784960866UL), (size_t)(9446392186784960867UL), (size_t)(9446392186784960868UL), (size_t)(9446392186784960869UL), (size_t)(9446392186784960870UL), (size_t)(9446392186784960871UL), (size_t)(9446392186784960872UL), (size_t)(9446392186784960873UL), (size_t)(9446392186784960874UL), (size_t)(9446392186784960875UL), (size_t)(9446392186784960876UL), (size_t)(9446392186784961052UL)); (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 547, "count == nCells") : (void)0);
 # 548 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(18, (size_t)(9446392186784960860UL), (size_t)(9446392186784960861UL), (size_t)(9446392186784960862UL), (size_t)(9446392186784960863UL), (size_t)(9446392186784960864UL), (size_t)(9446392186784960865UL), (size_t)(9446392186784960866UL), (size_t)(9446392186784960867UL), (size_t)(9446392186784960868UL), (size_t)(9446392186784960869UL), (size_t)(9446392186784960870UL), (size_t)(9446392186784960871UL), (size_t)(9446392186784960872UL), (size_t)(9446392186784960873UL), (size_t)(9446392186784960874UL), (size_t)(9446392186784960875UL), (size_t)(9446392186784960876UL), (size_t)(9446392186784961052UL)); (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 548, "count == nCells") : (void)0);
-# 549 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(18, (size_t)(9446392186784960860UL), (size_t)(9446392186784960861UL), (size_t)(9446392186784960862UL), (size_t)(9446392186784960863UL), (size_t)(9446392186784960864UL), (size_t)(9446392186784960865UL), (size_t)(9446392186784960866UL), (size_t)(9446392186784960867UL), (size_t)(9446392186784960868UL), (size_t)(9446392186784960869UL), (size_t)(9446392186784960870UL), (size_t)(9446392186784960871UL), (size_t)(9446392186784960872UL), (size_t)(9446392186784960873UL), (size_t)(9446392186784960874UL), (size_t)(9446392186784960875UL), (size_t)(9446392186784960876UL), (size_t)(9446392186784961052UL)); rm_stack(true, 9446392186784961052UL); return list;
-# 550 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 549 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
+# 550 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 551 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 552 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 553 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -2797,47 +2798,47 @@ int* mkForceRecvCellList(LinkCell* boxes, int face, int nCells)
 # 555 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 556 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 557 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 558 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int loadForceBuffer(void* vparms, void* vdata, int face, char* charBuf)
-# 559 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 558 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&loadForceBuffer), 4, 0, (size_t)(9446392186784960470UL), (size_t)(9446392186784960471UL), (size_t)(0UL), (size_t)(9446392186784960473UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
-# 560 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 559 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  ForceExchangeParms *parms; parms = ((ForceExchangeParms *)vparms) ;
-# 561 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 560 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  ForceExchangeData *data; data = ((ForceExchangeData *)vdata) ;
-# 562 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 561 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  ForceMsg *buf; buf = ((ForceMsg *)charBuf) ;
+# 562 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 563 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 564 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int nCells; nCells = (parms->nCells[face]) ;
-# 565 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 564 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int *cellList; cellList = (parms->sendCells[face]) ;
-# 566 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 565 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int nBuf; nBuf = (0) ;
-# 567 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 566 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { int iCell; for ( iCell = (0) ; iCell<nCells; ++iCell)
+# 567 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 568 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 569 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int iBox; iBox = (cellList[iCell]) ;
-# 570 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 569 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  int iOff; iOff = (iBox * 64) ;
-# 571 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 570 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { int ii; for ( ii = (iOff) ; ii<iOff+data->boxes->nAtoms[iBox]; ++ii)
-# 572 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 571 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
-# 573 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 572 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  buf[nBuf].dfEmbed = data->dfEmbed[ii];
-# 574 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 573 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  ++nBuf;
+# 574 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 575 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 576 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
-# 577 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  alias_group_changed(15, (size_t)(9446392186784960351UL), (size_t)(9446392186784960352UL), (size_t)(9446392186784960353UL), (size_t)(9446392186784960354UL), (size_t)(9446392186784960355UL), (size_t)(9446392186784960356UL), (size_t)(9446392186784960357UL), (size_t)(9446392186784960358UL), (size_t)(9446392186784960359UL), (size_t)(9446392186784960360UL), (size_t)(9446392186784960361UL), (size_t)(9446392186784960362UL), (size_t)(9446392186784960363UL), (size_t)(9446392186784960364UL), (size_t)(9446392186784960473UL)); rm_stack(false, 0UL); return nBuf*sizeof(ForceMsg);
-# 578 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 577 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
+# 578 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 579 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 580 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 581 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -2845,160 +2846,159 @@ int loadForceBuffer(void* vparms, void* vdata, int face, char* charBuf)
 # 583 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 584 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 585 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 586 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void unloadForceBuffer(void* vparms, void* vdata, int face, int bufSize, char* charBuf)
-# 587 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 586 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&unloadForceBuffer), 5, 5, (size_t)(9446392186784960527UL), (size_t)(9446392186784960621UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784960624UL), "unloadForceBuffer|vparms|0", "i8*", (void *)(&vparms), (size_t)8, 1, 0, 0, "unloadForceBuffer|vdata|0", "i8*", (void *)(&vdata), (size_t)8, 1, 0, 0, "unloadForceBuffer|face|0", "i32", (void *)(&face), (size_t)4, 0, 0, 0, "unloadForceBuffer|bufSize|0", "i32", (void *)(&bufSize), (size_t)4, 0, 0, 0, "unloadForceBuffer|charBuf|0", "i8*", (void *)(&charBuf), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 588 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 587 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: ForceExchangeParms *parms; register_stack_var("unloadForceBuffer|parms|0", "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } parms = ((ForceExchangeParms *)vparms) ;
-# 589 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 588 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: ForceExchangeData *data; register_stack_var("unloadForceBuffer|data|0", "%struct.ForceExchangeDataSt*", (void *)(&data), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } data = ((ForceExchangeData *)vdata) ;
-# 590 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 589 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_2: ForceMsg *buf; register_stack_var("unloadForceBuffer|buf|0", "%struct.ForceMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } buf = ((ForceMsg *)charBuf) ;
+# 590 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(16, (size_t)(9446392186784960474UL), (size_t)(9446392186784960475UL), (size_t)(9446392186784960476UL), (size_t)(9446392186784960477UL), (size_t)(9446392186784960478UL), (size_t)(9446392186784960479UL), (size_t)(9446392186784960480UL), (size_t)(9446392186784960481UL), (size_t)(9446392186784960482UL), (size_t)(9446392186784960483UL), (size_t)(9446392186784960484UL), (size_t)(9446392186784960485UL), (size_t)(9446392186784960486UL), (size_t)(9446392186784960487UL), (size_t)(9446392186784960488UL), (size_t)(9446392186784960588UL)); (__builtin_expect(!(bufSize % sizeof(ForceMsg) == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 590, "bufSize % sizeof(ForceMsg) == 0") : (void)0);
 # 591 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(16, (size_t)(9446392186784960474UL), (size_t)(9446392186784960475UL), (size_t)(9446392186784960476UL), (size_t)(9446392186784960477UL), (size_t)(9446392186784960478UL), (size_t)(9446392186784960479UL), (size_t)(9446392186784960480UL), (size_t)(9446392186784960481UL), (size_t)(9446392186784960482UL), (size_t)(9446392186784960483UL), (size_t)(9446392186784960484UL), (size_t)(9446392186784960485UL), (size_t)(9446392186784960486UL), (size_t)(9446392186784960487UL), (size_t)(9446392186784960488UL), (size_t)(9446392186784960588UL)); (__builtin_expect(!(bufSize % sizeof(ForceMsg) == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 591, "bufSize % sizeof(ForceMsg) == 0") : (void)0);
 # 592 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 593 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_3: int nCells; register_stack_var("unloadForceBuffer|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } nCells = (parms->nCells[face]) ;
-# 594 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 593 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_4: int *cellList; register_stack_var("unloadForceBuffer|cellList|0", "i32*", (void *)(&cellList), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } cellList = (parms->recvCells[face]) ;
-# 595 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 594 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_5: int iBuf; register_stack_var("unloadForceBuffer|iBuf|0", "i32", (void *)(&iBuf), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } iBuf = (0) ;
-# 596 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 595 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_6: int iCell; register_stack_var("unloadForceBuffer|iCell|0", "i32", (void *)(&iCell), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( iCell = (0) ; iCell<nCells; ++iCell)
+# 596 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 597 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 598 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_7: int iBox; register_stack_var("unloadForceBuffer|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } iBox = (cellList[iCell]) ;
-# 599 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 598 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_8: int iOff; register_stack_var("unloadForceBuffer|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } iOff = (iBox * 64) ;
-# 600 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 599 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_9: int ii; register_stack_var("unloadForceBuffer|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } for ( ii = (iOff) ; ii<iOff+data->boxes->nAtoms[iBox]; ++ii)
-# 601 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 600 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
-# 602 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 601 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  data->dfEmbed[ii] = buf[iBuf].dfEmbed;
-# 603 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 602 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  ++iBuf;
+# 603 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 604 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
 # 605 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
+ alias_group_changed(16, (size_t)(9446392186784960474UL), (size_t)(9446392186784960475UL), (size_t)(9446392186784960476UL), (size_t)(9446392186784960477UL), (size_t)(9446392186784960478UL), (size_t)(9446392186784960479UL), (size_t)(9446392186784960480UL), (size_t)(9446392186784960481UL), (size_t)(9446392186784960482UL), (size_t)(9446392186784960483UL), (size_t)(9446392186784960484UL), (size_t)(9446392186784960485UL), (size_t)(9446392186784960486UL), (size_t)(9446392186784960487UL), (size_t)(9446392186784960488UL), (size_t)(9446392186784960588UL)); (__builtin_expect(!(iBuf == bufSize/ sizeof(ForceMsg)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 605, "iBuf == bufSize/ sizeof(ForceMsg)") : (void)0);
 # 606 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(16, (size_t)(9446392186784960474UL), (size_t)(9446392186784960475UL), (size_t)(9446392186784960476UL), (size_t)(9446392186784960477UL), (size_t)(9446392186784960478UL), (size_t)(9446392186784960479UL), (size_t)(9446392186784960480UL), (size_t)(9446392186784960481UL), (size_t)(9446392186784960482UL), (size_t)(9446392186784960483UL), (size_t)(9446392186784960484UL), (size_t)(9446392186784960485UL), (size_t)(9446392186784960486UL), (size_t)(9446392186784960487UL), (size_t)(9446392186784960488UL), (size_t)(9446392186784960588UL)); (__builtin_expect(!(iBuf == bufSize/ sizeof(ForceMsg)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 606, "iBuf == bufSize/ sizeof(ForceMsg)") : (void)0);
-# 607 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 alias_group_changed(16, (size_t)(9446392186784960474UL), (size_t)(9446392186784960475UL), (size_t)(9446392186784960476UL), (size_t)(9446392186784960477UL), (size_t)(9446392186784960478UL), (size_t)(9446392186784960479UL), (size_t)(9446392186784960480UL), (size_t)(9446392186784960481UL), (size_t)(9446392186784960482UL), (size_t)(9446392186784960483UL), (size_t)(9446392186784960484UL), (size_t)(9446392186784960485UL), (size_t)(9446392186784960486UL), (size_t)(9446392186784960487UL), (size_t)(9446392186784960488UL), (size_t)(9446392186784960588UL)); rm_stack(false, 0UL); }
+# 607 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 608 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 609 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void destroyForceExchange(void* vparms)
-# 610 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 609 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 {new_stack((void *)(&destroyForceExchange), 1, 1, (size_t)(9446392186784960662UL), "destroyForceExchange|vparms|0", "i8*", (void *)(&vparms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 611 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 610 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: ForceExchangeParms *parms; register_stack_var("destroyForceExchange|parms|0", "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } parms = ((ForceExchangeParms *)vparms) ;
+# 611 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 612 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 613 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_1: int ii; register_stack_var("destroyForceExchange|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } for ( ii = (0) ; ii<6; ++ii)
+# 613 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 614 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 615 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  free_wrapper(parms->sendCells[ii], 9446392186784960645UL);
-# 616 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 615 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  free_wrapper(parms->recvCells[ii], 9446392186784960645UL);
+# 616 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 617 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
-# 618 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 alias_group_changed(3, (size_t)(9446392186784960625UL), (size_t)(9446392186784960626UL), (size_t)(9446392186784960627UL)); rm_stack(false, 0UL); }
-# 628 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 628 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 627 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 627 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 void sortAtomsInCell(Atoms* atoms, LinkCell* boxes, int iBox)
+# 628 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+{new_stack((void *)(&sortAtomsInCell), 3, 3, (size_t)(9446392186784961546UL), (size_t)(9446392186784961547UL), (size_t)(0UL), "sortAtomsInCell|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0, "sortAtomsInCell|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "sortAtomsInCell|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 629 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{new_stack((void *)(&sortAtomsInCell), 3, 3, (size_t)(9446392186784961555UL), (size_t)(9446392186784961556UL), (size_t)(0UL), "sortAtomsInCell|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0, "sortAtomsInCell|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "sortAtomsInCell|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 630 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: int nAtoms; register_stack_var("sortAtomsInCell|nAtoms|0", "i32", (void *)(&nAtoms), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } nAtoms = (boxes->nAtoms[iBox]) ;
+# 630 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 631 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 632 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: AtomMsg tmp[nAtoms]; register_stack_var("sortAtomsInCell|tmp|0", "%struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }", (void *)(&tmp), (size_t)56, 0, 1, 0); if (____chimes_replaying) { goto lbl_2; } ;
+# 632 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 633 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 634 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_2: int begin; register_stack_var("sortAtomsInCell|begin|0", "i32", (void *)(&begin), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } begin = (iBox * 64) ;
-# 635 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 634 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_3: int end; register_stack_var("sortAtomsInCell|end|0", "i32", (void *)(&end), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } end = (begin + nAtoms) ;
-# 636 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 635 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_4: int ii; register_stack_var("sortAtomsInCell|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: int iTmp; register_stack_var("sortAtomsInCell|iTmp|0", "i32", (void *)(&iTmp), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } for ( ii = (begin) , iTmp = (0) ; ii<end; ++ii, ++iTmp)
+# 636 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ {
 # 637 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- {
-# 638 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].gid = atoms->gid[ii];
-# 639 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 638 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].type = atoms->iSpecies[ii];
-# 640 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 639 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].rx = atoms->r[ii][0];
-# 641 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 640 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].ry = atoms->r[ii][1];
-# 642 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 641 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].rz = atoms->r[ii][2];
-# 643 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 642 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].px = atoms->p[ii][0];
-# 644 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 643 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].py = atoms->p[ii][1];
-# 645 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 644 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  tmp[iTmp].pz = atoms->p[ii][2];
+# 645 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ } }
 # 646 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- } }
+ alias_group_changed(10, (size_t)(9446392186784961258UL), (size_t)(9446392186784961259UL), (size_t)(9446392186784961260UL), (size_t)(9446392186784961261UL), (size_t)(9446392186784961262UL), (size_t)(9446392186784961263UL), (size_t)(9446392186784961264UL), (size_t)(9446392186784961265UL), (size_t)(9446392186784961266UL), (size_t)(9446392186784961288UL)); call_lbl_2: calling((void*)&qsort, 2, 0UL, 4, (size_t)(9446392186784961288UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961644UL)); qsort(&tmp, nAtoms, sizeof(AtomMsg), sortAtomsById);
 # 647 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(10, (size_t)(9446392186784961267UL), (size_t)(9446392186784961268UL), (size_t)(9446392186784961269UL), (size_t)(9446392186784961270UL), (size_t)(9446392186784961271UL), (size_t)(9446392186784961272UL), (size_t)(9446392186784961273UL), (size_t)(9446392186784961274UL), (size_t)(9446392186784961275UL), (size_t)(9446392186784961297UL)); call_lbl_2: calling((void*)&qsort, 2, 0UL, 4, (size_t)(9446392186784961297UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961653UL)); qsort(&tmp, nAtoms, sizeof(AtomMsg), sortAtomsById);
-# 648 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  { lbl_6: int ii; register_stack_var("sortAtomsInCell|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: int iTmp; register_stack_var("sortAtomsInCell|iTmp|1", "i32", (void *)(&iTmp), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( ii = (begin) , iTmp = (0) ; ii<end; ++ii, ++iTmp)
-# 649 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 648 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  {
-# 650 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 649 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->gid[ii] = tmp[iTmp].gid;
-# 651 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 650 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->iSpecies[ii] = tmp[iTmp].type;
-# 652 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 651 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->r[ii][0] = tmp[iTmp].rx;
-# 653 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 652 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->r[ii][1] = tmp[iTmp].ry;
-# 654 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 653 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->r[ii][2] = tmp[iTmp].rz;
-# 655 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 654 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->p[ii][0] = tmp[iTmp].px;
-# 656 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 655 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->p[ii][1] = tmp[iTmp].py;
-# 657 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 656 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  atoms->p[ii][2] = tmp[iTmp].pz;
-# 658 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 657 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  } }
+# 658 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 659 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+alias_group_changed(3, (size_t)(9446392186784961267UL), (size_t)(9446392186784961268UL), (size_t)(9446392186784961313UL)); rm_stack(false, 0UL); }
 # 660 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-alias_group_changed(3, (size_t)(9446392186784961276UL), (size_t)(9446392186784961277UL), (size_t)(9446392186784961322UL)); rm_stack(false, 0UL); }
 # 661 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 662 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 663 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 664 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 665 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 666 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 667 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 int sortAtomsById(const void* a, const void* b)
+# 667 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+{new_stack((void *)(&sortAtomsById), 2, 2, (size_t)(9446392186784961596UL), (size_t)(9446392186784961597UL), "sortAtomsById|a|0", "i8*", (void *)(&a), (size_t)8, 1, 0, 0, "sortAtomsById|b|0", "i8*", (void *)(&b), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 668 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{new_stack((void *)(&sortAtomsById), 2, 2, (size_t)(9446392186784961605UL), (size_t)(9446392186784961606UL), "sortAtomsById|a|0", "i8*", (void *)(&a), (size_t)8, 1, 0, 0, "sortAtomsById|b|0", "i8*", (void *)(&b), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
-# 669 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_0: int aId; register_stack_var("sortAtomsById|aId|0", "i32", (void *)(&aId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } aId = (((AtomMsg *)a)->gid) ;
-# 670 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+# 669 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
  lbl_1: int bId; register_stack_var("sortAtomsById|bId|0", "i32", (void *)(&bId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } bId = (((AtomMsg *)b)->gid) ;
+# 670 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(4, (size_t)(9446392186784961554UL), (size_t)(9446392186784961555UL), (size_t)(9446392186784961556UL), (size_t)(9446392186784961557UL)); (__builtin_expect(!(aId != bId), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 670, "aId != bId") : (void)0);
 # 671 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(4, (size_t)(9446392186784961563UL), (size_t)(9446392186784961564UL), (size_t)(9446392186784961565UL), (size_t)(9446392186784961566UL)); (__builtin_expect(!(aId != bId), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c", 671, "aId != bId") : (void)0);
 # 672 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-# 673 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- if (aId < bId) {alias_group_changed(5, (size_t)(9446392186784961562UL), (size_t)(9446392186784961563UL), (size_t)(9446392186784961564UL), (size_t)(9446392186784961565UL), (size_t)(9446392186784961566UL)); rm_stack(false, 0UL); return -1;; };
+ if (aId < bId) {alias_group_changed(5, (size_t)(9446392186784961553UL), (size_t)(9446392186784961554UL), (size_t)(9446392186784961555UL), (size_t)(9446392186784961556UL), (size_t)(9446392186784961557UL)); rm_stack(false, 0UL); return -1;; };
+# 674 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
+ alias_group_changed(5, (size_t)(9446392186784961553UL), (size_t)(9446392186784961554UL), (size_t)(9446392186784961555UL), (size_t)(9446392186784961556UL), (size_t)(9446392186784961557UL)); rm_stack(false, 0UL); return 1;
 # 675 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
- alias_group_changed(5, (size_t)(9446392186784961562UL), (size_t)(9446392186784961563UL), (size_t)(9446392186784961564UL), (size_t)(9446392186784961565UL), (size_t)(9446392186784961566UL)); rm_stack(false, 0UL); return 1;
-# 676 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 }
 
 
 static int module_init() {
-    init_module(9446392186784959090UL, 85, 17, 9446392186784959090UL + 882UL, 9446392186784959090UL + 865UL, 9446392186784959090UL + 1269UL, 9446392186784959090UL + 1309UL, 9446392186784959090UL + 2474UL, 9446392186784959090UL + 2516UL, 9446392186784959090UL + 887UL, 9446392186784959090UL + 1045UL, 9446392186784959090UL + 2465UL, 9446392186784959090UL + 2232UL, 9446392186784959090UL + 884UL, 9446392186784959090UL + 1047UL, 9446392186784959090UL + 2018UL, 9446392186784959090UL + 2124UL, 9446392186784959090UL + 1262UL, 9446392186784959090UL + 1381UL, 9446392186784959090UL + 1261UL, 9446392186784959090UL + 1380UL, 9446392186784959090UL + 1536UL, 9446392186784959090UL + 1572UL, 9446392186784959090UL + 1267UL, 9446392186784959090UL + 1383UL, 9446392186784959090UL + 1266UL, 9446392186784959090UL + 1381UL, 9446392186784959090UL + 1265UL, 9446392186784959090UL + 1380UL, 9446392186784959090UL + 1052UL, 9446392186784959090UL + 1138UL, 9446392186784959090UL + 404UL, 9446392186784959090UL + 439UL, 9446392186784959090UL + 88UL, 9446392186784959090UL + 2565UL, 9446392186784959090UL + 397UL, 9446392186784959090UL + 685UL, 9446392186784959090UL + 2124UL, 9446392186784959090UL + 2145UL, 9446392186784959090UL + 2473UL, 9446392186784959090UL + 2515UL, 9446392186784959090UL + 398UL, 9446392186784959090UL + 686UL, 9446392186784959090UL + 2025UL, 9446392186784959090UL + 2133UL, 9446392186784959090UL + 1050UL, 9446392186784959090UL + 1259UL, 9446392186784959090UL + 1UL, 9446392186784959090UL + 343UL, 9446392186784959090UL + 690UL, 9446392186784959090UL + 841UL, 9446392186784959090UL + 696UL, 9446392186784959090UL + 844UL, 9446392186784959090UL + 1573UL, 9446392186784959090UL + 1767UL, 9446392186784959090UL + 694UL, 9446392186784959090UL + 840UL, 9446392186784959090UL + 695UL, 9446392186784959090UL + 841UL, 9446392186784959090UL + 1967UL, 9446392186784959090UL + 1991UL, 9446392186784959090UL + 2565UL, 9446392186784959090UL + 190UL, 9446392186784959090UL + 2026UL, 9446392186784959090UL + 2123UL, 9446392186784959090UL + 2568UL, 9446392186784959090UL + 1225UL, 9446392186784959090UL + 407UL, 9446392186784959090UL + 439UL, 9446392186784959090UL + 2177UL, 9446392186784959090UL + 2465UL, 9446392186784959090UL + 3UL, 9446392186784959090UL + 88UL, 9446392186784959090UL + 347UL, 9446392186784959090UL + 396UL, 9446392186784959090UL + 403UL, 9446392186784959090UL + 688UL, 9446392186784959090UL + 402UL, 9446392186784959090UL + 686UL, 9446392186784959090UL + 401UL, 9446392186784959090UL + 685UL, 9446392186784959090UL + 400UL, 9446392186784959090UL + 688UL, 9446392186784959090UL + 8UL, 9446392186784959090UL + 2565UL, 9446392186784959090UL + 2178UL, 9446392186784959090UL + 2466UL, 9446392186784959090UL + 1437UL, 9446392186784959090UL + 1448UL, 9446392186784959090UL + 348UL, 9446392186784959090UL + 352UL, 9446392186784959090UL + 1391UL, 9446392186784959090UL + 1534UL, 9446392186784959090UL + 1390UL, 9446392186784959090UL + 1531UL, 9446392186784959090UL + 1388UL, 9446392186784959090UL + 1534UL, 9446392186784959090UL + 2466UL, 9446392186784959090UL + 2199UL, 9446392186784959090UL + 1138UL, 9446392186784959090UL + 2568UL, 9446392186784959090UL + 2019UL, 9446392186784959090UL + 2149UL, 9446392186784959090UL + 693UL, 9446392186784959090UL + 844UL, 9446392186784959090UL + 1353UL, 9446392186784959090UL + 1343UL, 9446392186784959090UL + 1993UL, 9446392186784959090UL + 2016UL, 9446392186784959090UL + 447UL, 9446392186784959090UL + 538UL, 9446392186784959090UL + 845UL, 9446392186784959090UL + 882UL, 9446392186784959090UL + 1384UL, 9446392186784959090UL + 1437UL, 9446392186784959090UL + 2181UL, 9446392186784959090UL + 2205UL, 9446392186784959090UL + 1572UL, 9446392186784959090UL + 1555UL, 9446392186784959090UL + 1498UL, 9446392186784959090UL + 1482UL, 9446392186784959090UL + 2UL, 9446392186784959090UL + 104UL, 9446392186784959090UL + 1264UL, 9446392186784959090UL + 1383UL, 9446392186784959090UL + 1770UL, 9446392186784959090UL + 1964UL, 9446392186784959090UL + 1991UL, 9446392186784959090UL + 1971UL, 9446392186784959090UL + 846UL, 9446392186784959090UL + 882UL, 9446392186784959090UL + 13UL, 9446392186784959090UL + 343UL, 9446392186784959090UL + 12UL, 9446392186784959090UL + 343UL, 9446392186784959090UL + 1773UL, 9446392186784959090UL + 1962UL, 9446392186784959090UL + 841UL, 9446392186784959090UL + 821UL, 9446392186784959090UL + 1994UL, 9446392186784959090UL + 2017UL, 9446392186784959090UL + 1393UL, 9446392186784959090UL + 1448UL, 9446392186784959090UL + 1057UL, 9446392186784959090UL + 2568UL, 9446392186784959090UL + 1971UL, 9446392186784959090UL + 1973UL, 9446392186784959090UL + 1576UL, 9446392186784959090UL + 1765UL, 9446392186784959090UL + 2024UL, 9446392186784959090UL + 2130UL, 9446392186784959090UL + 1051UL, 9446392186784959090UL + 1145UL, 9446392186784959090UL + 1535UL, 9446392186784959090UL + 1572UL, 9446392186784959090UL + 689UL, 9446392186784959090UL + 840UL, 9446392186784959090UL + 1389UL, 9446392186784959090UL + 1437UL, 9446392186784959090UL + 1531UL, 9446392186784959090UL + 1498UL, 9446392186784959090UL + 2023UL, 9446392186784959090UL + 2120UL, 9446392186784959090UL + 685UL, 9446392186784959090UL + 439UL, 9446392186784959090UL + 1385UL, 9446392186784959090UL + 1531UL, 9446392186784959090UL + 686UL, 9446392186784959090UL + 447UL, 9446392186784959090UL + 1380UL, 9446392186784959090UL + 1309UL, 9446392186784959090UL + 1381UL, 9446392186784959090UL + 1353UL, "AtomExchangeParmsSt", 3, (int)__builtin_offsetof(struct AtomExchangeParmsSt, nCells), (int)__builtin_offsetof(struct AtomExchangeParmsSt, cellList), (int)__builtin_offsetof(struct AtomExchangeParmsSt, pbcFactor), "AtomMsgSt", 8, (int)__builtin_offsetof(struct AtomMsgSt, gid), (int)__builtin_offsetof(struct AtomMsgSt, type), (int)__builtin_offsetof(struct AtomMsgSt, rx), (int)__builtin_offsetof(struct AtomMsgSt, ry), (int)__builtin_offsetof(struct AtomMsgSt, rz), (int)__builtin_offsetof(struct AtomMsgSt, px), (int)__builtin_offsetof(struct AtomMsgSt, py), (int)__builtin_offsetof(struct AtomMsgSt, pz), "AtomsSt", 8, (int)__builtin_offsetof(struct AtomsSt, nLocal), (int)__builtin_offsetof(struct AtomsSt, nGlobal), (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, (int)__builtin_offsetof(struct BasePotentialSt, cutoff), (int)__builtin_offsetof(struct BasePotentialSt, mass), (int)__builtin_offsetof(struct BasePotentialSt, lat), (int)__builtin_offsetof(struct BasePotentialSt, latticeType), (int)__builtin_offsetof(struct BasePotentialSt, name), (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), (int)__builtin_offsetof(struct BasePotentialSt, force), (int)__builtin_offsetof(struct BasePotentialSt, print), (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, (int)__builtin_offsetof(struct DomainSt, procGrid), (int)__builtin_offsetof(struct DomainSt, procCoord), (int)__builtin_offsetof(struct DomainSt, globalMin), (int)__builtin_offsetof(struct DomainSt, globalMax), (int)__builtin_offsetof(struct DomainSt, globalExtent), (int)__builtin_offsetof(struct DomainSt, localMin), (int)__builtin_offsetof(struct DomainSt, localMax), (int)__builtin_offsetof(struct DomainSt, localExtent), "ForceExchangeDataSt", 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes), "ForceExchangeParmsSt", 3, (int)__builtin_offsetof(struct ForceExchangeParmsSt, nCells), (int)__builtin_offsetof(struct ForceExchangeParmsSt, sendCells), (int)__builtin_offsetof(struct ForceExchangeParmsSt, recvCells), "ForceMsgSt", 1, (int)__builtin_offsetof(struct ForceMsgSt, dfEmbed), "HaloAxisOrder", 0, "HaloExchangeSt", 6, (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, (int)__builtin_offsetof(struct LinkCellSt, gridSize), (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), (int)__builtin_offsetof(struct LinkCellSt, localMin), (int)__builtin_offsetof(struct LinkCellSt, localMax), (int)__builtin_offsetof(struct LinkCellSt, boxSize), (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "SimFlatSt", 11, (int)__builtin_offsetof(struct SimFlatSt, nSteps), (int)__builtin_offsetof(struct SimFlatSt, printRate), (int)__builtin_offsetof(struct SimFlatSt, dt), (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, ePotential), (int)__builtin_offsetof(struct SimFlatSt, eKinetic), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, (int)__builtin_offsetof(struct SpeciesDataSt, name), (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), (int)__builtin_offsetof(struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size));
+    init_module(9446392186784959090UL, 85, 17, 9446392186784959090UL + 882UL, 9446392186784959090UL + 865UL, 9446392186784959090UL + 1269UL, 9446392186784959090UL + 1309UL, 9446392186784959090UL + 887UL, 9446392186784959090UL + 1045UL, 9446392186784959090UL + 2014UL, 9446392186784959090UL + 2111UL, 9446392186784959090UL + 2465UL, 9446392186784959090UL + 2507UL, 9446392186784959090UL + 884UL, 9446392186784959090UL + 1047UL, 9446392186784959090UL + 1262UL, 9446392186784959090UL + 1381UL, 9446392186784959090UL + 1261UL, 9446392186784959090UL + 1380UL, 9446392186784959090UL + 1536UL, 9446392186784959090UL + 1572UL, 9446392186784959090UL + 1267UL, 9446392186784959090UL + 1383UL, 9446392186784959090UL + 1266UL, 9446392186784959090UL + 1381UL, 9446392186784959090UL + 1265UL, 9446392186784959090UL + 1380UL, 9446392186784959090UL + 1052UL, 9446392186784959090UL + 1138UL, 9446392186784959090UL + 404UL, 9446392186784959090UL + 439UL, 9446392186784959090UL + 88UL, 9446392186784959090UL + 2556UL, 9446392186784959090UL + 397UL, 9446392186784959090UL + 685UL, 9446392186784959090UL + 398UL, 9446392186784959090UL + 686UL, 9446392186784959090UL + 2169UL, 9446392186784959090UL + 2457UL, 9446392186784959090UL + 1984UL, 9446392186784959090UL + 2007UL, 9446392186784959090UL + 1050UL, 9446392186784959090UL + 1259UL, 9446392186784959090UL + 1UL, 9446392186784959090UL + 343UL, 9446392186784959090UL + 690UL, 9446392186784959090UL + 841UL, 9446392186784959090UL + 1985UL, 9446392186784959090UL + 2008UL, 9446392186784959090UL + 696UL, 9446392186784959090UL + 844UL, 9446392186784959090UL + 1573UL, 9446392186784959090UL + 1767UL, 9446392186784959090UL + 694UL, 9446392186784959090UL + 840UL, 9446392186784959090UL + 695UL, 9446392186784959090UL + 841UL, 9446392186784959090UL + 1967UL, 9446392186784959090UL + 1982UL, 9446392186784959090UL + 2168UL, 9446392186784959090UL + 2456UL, 9446392186784959090UL + 2009UL, 9446392186784959090UL + 2115UL, 9446392186784959090UL + 407UL, 9446392186784959090UL + 439UL, 9446392186784959090UL + 3UL, 9446392186784959090UL + 88UL, 9446392186784959090UL + 347UL, 9446392186784959090UL + 396UL, 9446392186784959090UL + 403UL, 9446392186784959090UL + 688UL, 9446392186784959090UL + 402UL, 9446392186784959090UL + 686UL, 9446392186784959090UL + 401UL, 9446392186784959090UL + 685UL, 9446392186784959090UL + 400UL, 9446392186784959090UL + 688UL, 9446392186784959090UL + 2015UL, 9446392186784959090UL + 2121UL, 9446392186784959090UL + 8UL, 9446392186784959090UL + 2556UL, 9446392186784959090UL + 2017UL, 9446392186784959090UL + 2114UL, 9446392186784959090UL + 1437UL, 9446392186784959090UL + 1448UL, 9446392186784959090UL + 348UL, 9446392186784959090UL + 352UL, 9446392186784959090UL + 2010UL, 9446392186784959090UL + 2140UL, 9446392186784959090UL + 1391UL, 9446392186784959090UL + 1534UL, 9446392186784959090UL + 1390UL, 9446392186784959090UL + 1531UL, 9446392186784959090UL + 2464UL, 9446392186784959090UL + 2506UL, 9446392186784959090UL + 1388UL, 9446392186784959090UL + 1534UL, 9446392186784959090UL + 1138UL, 9446392186784959090UL + 2559UL, 9446392186784959090UL + 2115UL, 9446392186784959090UL + 2136UL, 9446392186784959090UL + 693UL, 9446392186784959090UL + 844UL, 9446392186784959090UL + 1353UL, 9446392186784959090UL + 1343UL, 9446392186784959090UL + 2172UL, 9446392186784959090UL + 2196UL, 9446392186784959090UL + 1982UL, 9446392186784959090UL + 1971UL, 9446392186784959090UL + 447UL, 9446392186784959090UL + 538UL, 9446392186784959090UL + 845UL, 9446392186784959090UL + 882UL, 9446392186784959090UL + 1384UL, 9446392186784959090UL + 1437UL, 9446392186784959090UL + 1572UL, 9446392186784959090UL + 1555UL, 9446392186784959090UL + 1498UL, 9446392186784959090UL + 1482UL, 9446392186784959090UL + 2UL, 9446392186784959090UL + 104UL, 9446392186784959090UL + 1264UL, 9446392186784959090UL + 1383UL, 9446392186784959090UL + 1770UL, 9446392186784959090UL + 1964UL, 9446392186784959090UL + 846UL, 9446392186784959090UL + 882UL, 9446392186784959090UL + 13UL, 9446392186784959090UL + 343UL, 9446392186784959090UL + 12UL, 9446392186784959090UL + 343UL, 9446392186784959090UL + 1773UL, 9446392186784959090UL + 1962UL, 9446392186784959090UL + 841UL, 9446392186784959090UL + 821UL, 9446392186784959090UL + 2016UL, 9446392186784959090UL + 2124UL, 9446392186784959090UL + 2456UL, 9446392186784959090UL + 2223UL, 9446392186784959090UL + 1393UL, 9446392186784959090UL + 1448UL, 9446392186784959090UL + 1057UL, 9446392186784959090UL + 2559UL, 9446392186784959090UL + 2556UL, 9446392186784959090UL + 190UL, 9446392186784959090UL + 1971UL, 9446392186784959090UL + 1973UL, 9446392186784959090UL + 1576UL, 9446392186784959090UL + 1765UL, 9446392186784959090UL + 1051UL, 9446392186784959090UL + 1145UL, 9446392186784959090UL + 1535UL, 9446392186784959090UL + 1572UL, 9446392186784959090UL + 2457UL, 9446392186784959090UL + 2190UL, 9446392186784959090UL + 689UL, 9446392186784959090UL + 840UL, 9446392186784959090UL + 1389UL, 9446392186784959090UL + 1437UL, 9446392186784959090UL + 1531UL, 9446392186784959090UL + 1498UL, 9446392186784959090UL + 2559UL, 9446392186784959090UL + 1225UL, 9446392186784959090UL + 685UL, 9446392186784959090UL + 439UL, 9446392186784959090UL + 1385UL, 9446392186784959090UL + 1531UL, 9446392186784959090UL + 686UL, 9446392186784959090UL + 447UL, 9446392186784959090UL + 1380UL, 9446392186784959090UL + 1309UL, 9446392186784959090UL + 1381UL, 9446392186784959090UL + 1353UL, "AtomExchangeParmsSt", 3, (int)__builtin_offsetof(struct AtomExchangeParmsSt, nCells), (int)__builtin_offsetof(struct AtomExchangeParmsSt, cellList), (int)__builtin_offsetof(struct AtomExchangeParmsSt, pbcFactor), "AtomMsgSt", 8, (int)__builtin_offsetof(struct AtomMsgSt, gid), (int)__builtin_offsetof(struct AtomMsgSt, type), (int)__builtin_offsetof(struct AtomMsgSt, rx), (int)__builtin_offsetof(struct AtomMsgSt, ry), (int)__builtin_offsetof(struct AtomMsgSt, rz), (int)__builtin_offsetof(struct AtomMsgSt, px), (int)__builtin_offsetof(struct AtomMsgSt, py), (int)__builtin_offsetof(struct AtomMsgSt, pz), "AtomsSt", 8, (int)__builtin_offsetof(struct AtomsSt, nLocal), (int)__builtin_offsetof(struct AtomsSt, nGlobal), (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, (int)__builtin_offsetof(struct BasePotentialSt, cutoff), (int)__builtin_offsetof(struct BasePotentialSt, mass), (int)__builtin_offsetof(struct BasePotentialSt, lat), (int)__builtin_offsetof(struct BasePotentialSt, latticeType), (int)__builtin_offsetof(struct BasePotentialSt, name), (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), (int)__builtin_offsetof(struct BasePotentialSt, force), (int)__builtin_offsetof(struct BasePotentialSt, print), (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, (int)__builtin_offsetof(struct DomainSt, procGrid), (int)__builtin_offsetof(struct DomainSt, procCoord), (int)__builtin_offsetof(struct DomainSt, globalMin), (int)__builtin_offsetof(struct DomainSt, globalMax), (int)__builtin_offsetof(struct DomainSt, globalExtent), (int)__builtin_offsetof(struct DomainSt, localMin), (int)__builtin_offsetof(struct DomainSt, localMax), (int)__builtin_offsetof(struct DomainSt, localExtent), "ForceExchangeDataSt", 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes), "ForceExchangeParmsSt", 3, (int)__builtin_offsetof(struct ForceExchangeParmsSt, nCells), (int)__builtin_offsetof(struct ForceExchangeParmsSt, sendCells), (int)__builtin_offsetof(struct ForceExchangeParmsSt, recvCells), "ForceMsgSt", 1, (int)__builtin_offsetof(struct ForceMsgSt, dfEmbed), "HaloAxisOrder", 0, "HaloExchangeSt", 6, (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, (int)__builtin_offsetof(struct LinkCellSt, gridSize), (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), (int)__builtin_offsetof(struct LinkCellSt, localMin), (int)__builtin_offsetof(struct LinkCellSt, localMax), (int)__builtin_offsetof(struct LinkCellSt, boxSize), (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "SimFlatSt", 11, (int)__builtin_offsetof(struct SimFlatSt, nSteps), (int)__builtin_offsetof(struct SimFlatSt, printRate), (int)__builtin_offsetof(struct SimFlatSt, dt), (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, ePotential), (int)__builtin_offsetof(struct SimFlatSt, eKinetic), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, (int)__builtin_offsetof(struct SpeciesDataSt, name), (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), (int)__builtin_offsetof(struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size));
     return 0;
 }
 

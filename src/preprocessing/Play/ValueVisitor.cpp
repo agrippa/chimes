@@ -189,8 +189,6 @@ size_t ValueVisitor::visitStore(StoreInst *store, Value *prev) {
     if (storing->getType()->isPointerTy()) {
         size_t storing_hash = visit(storing, store);
 
-        llvm::errs() << "For dst_hash=" << dst_hash << " and storing_hash=" << storing_hash << ", contains(dst_hash)=" << (contains.find(dst_hash) != contains.end()) << "\n";
-
         if (contains.find(dst_hash) != contains.end()) {
             size_t dst_hash_contains = contains[dst_hash];
             mergeAliasGroups(storing_hash, dst_hash_contains);

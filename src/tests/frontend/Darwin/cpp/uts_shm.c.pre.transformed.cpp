@@ -58,6 +58,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -77,7 +79,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -89,9 +91,9 @@ extern int ____chimes_replaying;
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 62 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -3877,19 +3879,19 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 2
 
 static int module_init() {
     init_module(5273863086679872945UL, 41, 3, 5273863086679872945UL + 1224UL, 5273863086679872945UL + 1258UL, 5273863086679872945UL + 1222UL, 5273863086679872945UL + 1323UL, 5273863086679872945UL + 312UL, 5273863086679872945UL + 333UL, 5273863086679872945UL + 311UL, 5273863086679872945UL + 359UL, 5273863086679872945UL + 761UL, 5273863086679872945UL + 703UL, 5273863086679872945UL + 112UL, 5273863086679872945UL + 203UL, 5273863086679872945UL + 278UL, 5273863086679872945UL + 245UL, 5273863086679872945UL + 86UL, 5273863086679872945UL + 102UL, 5273863086679872945UL + 1738UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 26UL, 5273863086679872945UL + 50UL, 5273863086679872945UL + 851UL, 5273863086679872945UL + 922UL, 5273863086679872945UL + 953UL, 5273863086679872945UL + 1058UL, 5273863086679872945UL + 952UL, 5273863086679872945UL + 1057UL, 5273863086679872945UL + 954UL, 5273863086679872945UL + 1059UL, 5273863086679872945UL + 1UL, 5273863086679872945UL + 1797UL, 5273863086679872945UL + 526UL, 5273863086679872945UL + 761UL, 5273863086679872945UL + 938UL, 5273863086679872945UL + 948UL, 5273863086679872945UL + 359UL, 5273863086679872945UL + 333UL, 5273863086679872945UL + 360UL, 5273863086679872945UL + 410UL, 5273863086679872945UL + 361UL, 5273863086679872945UL + 386UL, 5273863086679872945UL + 203UL, 5273863086679872945UL + 134UL, 5273863086679872945UL + 207UL, 5273863086679872945UL + 284UL, 5273863086679872945UL + 206UL, 5273863086679872945UL + 278UL, 5273863086679872945UL + 442UL, 5273863086679872945UL + 479UL, 5273863086679872945UL + 1791UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 1795UL, 5273863086679872945UL + 1103UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 533UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 103UL, 5273863086679872945UL + 111UL, 5273863086679872945UL + 481UL, 5273863086679872945UL + 524UL, 5273863086679872945UL + 55UL, 5273863086679872945UL + 73UL, 5273863086679872945UL + 54UL, 5273863086679872945UL + 72UL, 5273863086679872945UL + 1065UL, 5273863086679872945UL + 1098UL, 5273863086679872945UL + 536UL, 5273863086679872945UL + 703UL, 5273863086679872945UL + 534UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 410UL, 5273863086679872945UL + 386UL, 5273863086679872945UL + 411UL, 5273863086679872945UL + 429UL, 5273863086679872945UL + 803UL, 5273863086679872945UL + 850UL, 5273863086679872945UL + 924UL, 5273863086679872945UL + 937UL, 5273863086679872945UL + 1733UL, 5273863086679872945UL + 1781UL, 5273863086679872945UL + 430UL, 5273863086679872945UL + 441UL, "node_t", 4, (int)__builtin_offsetof(struct node_t, type), (int)__builtin_offsetof(struct node_t, height), (int)__builtin_offsetof(struct node_t, numChildren), (int)__builtin_offsetof(struct node_t, state), "state_t", 1, (int)__builtin_offsetof(struct state_t, state), "stealStack_t", 23, (int)__builtin_offsetof(struct stealStack_t, stackSize), (int)__builtin_offsetof(struct stealStack_t, workAvail), (int)__builtin_offsetof(struct stealStack_t, sharedStart), (int)__builtin_offsetof(struct stealStack_t, local), (int)__builtin_offsetof(struct stealStack_t, top), (int)__builtin_offsetof(struct stealStack_t, maxStackDepth), (int)__builtin_offsetof(struct stealStack_t, nNodes), (int)__builtin_offsetof(struct stealStack_t, maxTreeDepth), (int)__builtin_offsetof(struct stealStack_t, nLeaves), (int)__builtin_offsetof(struct stealStack_t, nAcquire), (int)__builtin_offsetof(struct stealStack_t, nRelease), (int)__builtin_offsetof(struct stealStack_t, nSteal), (int)__builtin_offsetof(struct stealStack_t, nFail), (int)__builtin_offsetof(struct stealStack_t, wakeups), (int)__builtin_offsetof(struct stealStack_t, falseWakeups), (int)__builtin_offsetof(struct stealStack_t, nNodes_last), (int)__builtin_offsetof(struct stealStack_t, time), (int)__builtin_offsetof(struct stealStack_t, timeLast), (int)__builtin_offsetof(struct stealStack_t, entries), (int)__builtin_offsetof(struct stealStack_t, curState), (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g));
-    register_global_var("global|doSteal", "i32*", (void *)(&doSteal), 8, 1, 0, 0);
-    register_global_var("global|chunkSize", "i32*", (void *)(&chunkSize), 8, 1, 0, 0);
-    register_global_var("global|cbint", "i32*", (void *)(&cbint), 8, 1, 0, 0);
-    register_global_var("global|pollint", "i32*", (void *)(&pollint), 8, 1, 0, 0);
-    register_global_var("global|stats", "i32*", (void *)(&stats), 8, 1, 0, 0);
-    register_global_var("global|unbType", "i32*", (void *)(&unbType), 8, 1, 0, 0);
-    register_global_var("global|debug_str", "[1000 x i8]*", (void *)(&debug_str), 8, 1, 0, 0);
-    register_global_var("global|stealStack", "[1 x %struct.stealStack_t*]*", (void *)(&stealStack), 8, 1, 0, 0);
-    register_global_var("global|cb_cancel", "i32*", (void *)(&cb_cancel), 8, 1, 0, 0);
-    register_global_var("global|cb_count", "i32*", (void *)(&cb_count), 8, 1, 0, 0);
-    register_global_var("global|cb_done", "i32*", (void *)(&cb_done), 8, 1, 0, 0);
-    register_global_var("global|cb_lock", "i8**", (void *)(&cb_lock), 8, 1, 0, 0);
-    register_global_var("global|startTime", "[1 x double]*", (void *)(&startTime), 8, 1, 0, 0);
+    register_global_var("global|doSteal", "i32", (void *)(&doSteal), 4, 0, 0, 0);
+    register_global_var("global|chunkSize", "i32", (void *)(&chunkSize), 4, 0, 0, 0);
+    register_global_var("global|cbint", "i32", (void *)(&cbint), 4, 0, 0, 0);
+    register_global_var("global|pollint", "i32", (void *)(&pollint), 4, 0, 0, 0);
+    register_global_var("global|stats", "i32", (void *)(&stats), 4, 0, 0, 0);
+    register_global_var("global|unbType", "i32", (void *)(&unbType), 4, 0, 0, 0);
+    register_global_var("global|debug_str", "[1000 x i8]", (void *)(&debug_str), 1000, 0, 0, 0);
+    register_global_var("global|stealStack", "[1 x %struct.stealStack_t*]", (void *)(&stealStack), 8, 0, 0, 0);
+    register_global_var("global|cb_cancel", "i32", (void *)(&cb_cancel), 4, 0, 0, 0);
+    register_global_var("global|cb_count", "i32", (void *)(&cb_count), 4, 0, 0, 0);
+    register_global_var("global|cb_done", "i32", (void *)(&cb_done), 4, 0, 0, 0);
+    register_global_var("global|cb_lock", "i8*", (void *)(&cb_lock), 8, 1, 0, 0);
+    register_global_var("global|startTime", "[1 x double]", (void *)(&startTime), 8, 0, 0, 0);
     return 0;
 }
 

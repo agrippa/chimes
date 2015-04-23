@@ -14,6 +14,7 @@
 #include "ValueVisitor.h"
 #include "Hasher.h"
 
+#include <set>
 #include <stdio.h>
 #include <utility>
 #include <set>
@@ -182,13 +183,21 @@ namespace {
         void findFunctionExits(Module &M, const char *output_file,
                 std::map<Value *, size_t> value_to_alias_group,
                 std::map<Function *, std::set<size_t> *> *func_to_groups_changed);
-        void findGlobals(Module &M, const char *filename);
+        void dumpGlobal(GlobalVariable *var, std::string varname,
+                FILE *globals_fp, DataLayout *layout,
+                std::map<std::string, StructInfo> *structFields);
+        bool dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
+                DataLayout *layout);
+        void findGlobalsAndConstants(Module &M, const char *globals_filename,
+                const char *constants_filename);
         std::map<std::string, std::string> *mapGlobalsToOriginalName(Module &M);
         void propagateGroupsDown(BasicBlock *curr, std::string filename,
                 std::set<size_t> *groups, std::set<BasicBlock *> *visited,
                 std::set<size_t> *changed_at_termination);
         std::string *getFunctionDisplayName(Function *F, Module &M);
         Hasher *calculate_hashes(Module &M);
+        std::string traverseAllUses(const Value *user, int nesting);
+        std::string findReachableUse(const User *user, const Value *parent, int nesting);
     };
 }
 
@@ -401,7 +410,177 @@ std::map<Value *, size_t> *Play::collectInitialAliasMappings(Module &M,
     return mappings;
 }
 
-void Play::findGlobals(Module &M, const char *filename) {
+std::string Play::traverseAllUses(const Value *parent, int nesting) {
+    for (Value::const_use_iterator i = parent->use_begin(),
+            e = parent->use_end(); i != e; i++) {
+        const Use *use = &*i;
+        User *user = use->getUser();
+        std::string result = findReachableUse(user, parent, nesting + 1);
+        if (result.size() > 0) return result;
+    }
+    return "";
+}
+
+static std::string demangleVarName(std::string varname) {
+    if (varname.find("_ZL") == 0) {
+        std::string removed_prefix = varname.substr(3);
+        while (removed_prefix[0] >= '0' && removed_prefix[0] <= '9') {
+            removed_prefix = removed_prefix.substr(1);
+        }
+        return removed_prefix;
+    } else {
+        return varname;
+    }
+}
+
+std::string Play::findReachableUse(const User *user, const Value *parent, int nesting) {
+    std::string prefix;
+    if (isa<GEPOperator>(user)) {
+        const GEPOperator *op = dyn_cast<GEPOperator>(user);
+        assert(op->getPointerOperandType()->isPointerTy());
+
+        if (op->getPointerOperand() == parent) {
+            assert(op->hasAllZeroIndices());
+            const User *op_user = dyn_cast<User>(op);
+            assert(op_user);
+            if (isa<Value>(op_user)) {
+                return traverseAllUses(dyn_cast<Value>(op_user), nesting);
+            }
+        }
+    } else if (isa<ConstantArray>(user)) {
+        const ConstantArray *arr = dyn_cast<ConstantArray>(user);
+        assert(arr);
+        int index = -1;
+        for (unsigned i = 0; i < arr->getNumOperands(); i++) {
+            if (arr->getOperand(i) == parent) {
+                index = i;
+                break;
+            }
+        }
+        assert(index >= 0);
+
+        if (isa<Value>(arr)) {
+            std::string result = traverseAllUses(dyn_cast<Value>(arr), nesting);
+            if (result.size() > 0) {
+                std::stringstream stream;
+                stream << "((" << result << ")[" << index << "])";
+                return stream.str();
+            }
+        }
+    } else if (isa<GlobalVariable>(user)) {
+        const GlobalVariable *glob = dyn_cast<GlobalVariable>(user);
+        assert(glob);
+        assert(glob->hasInitializer());
+        assert(glob->getInitializer() == parent);
+
+        return demangleVarName(glob->getName().str());
+    }
+
+    return "";
+}
+
+bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
+        DataLayout *layout) {
+    if (var->hasUnnamedAddr()) {
+        if (var->hasInitializer()) {
+            std::string accessable = "";
+            for (Value::const_use_iterator i = var->use_begin(),
+                    e = var->use_end(); i != e; i++) {
+                const Use *use = &*i;
+                User *user = use->getUser();
+                accessable = findReachableUse(user, var, 1);
+                if (accessable.size() > 0) break;
+            }
+
+            if (accessable.size() > 0) {
+                Constant *init = var->getInitializer();
+
+                uint64_t size_in_bits =
+                    layout->getTypeSizeInBits(init->getType());
+                assert((size_in_bits % 8) == 0);
+                uint64_t size_in_bytes = size_in_bits / 8;
+
+                fprintf(fp, "%d \"%s\" %llu\n", constant_index,
+                        accessable.c_str(), size_in_bytes);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        /*
+         * TODO named global constants should be simpler to handle, but until I
+         * have an example of them to verify that on I'll hold off on adding
+         * support
+         */
+        llvm::errs() << *var << "\n";
+        assert(false);
+    }
+}
+
+void Play::dumpGlobal(GlobalVariable *var, std::string varname,
+        FILE *globals_fp, DataLayout *layout,
+        std::map<std::string, StructInfo> *structFields) {
+    /*
+     * All globals look like pointers to clang, but need to be
+     * converted to their base value
+     */
+    assert(var->getType()->isPointerTy());
+    Type *type = var->getType()->getPointerElementType();
+    std::string backing_string;
+    raw_string_ostream stream(backing_string);
+    type->print(stream);
+    stream.flush();
+
+    size_t type_size = layout->getTypeSizeInBits(type);
+    int is_ptr = 0;
+    int is_struct = 0;
+    std::string struct_name;
+    std::vector<std::string> struct_ptr_field_names;
+
+    if (type->isPointerTy()) {
+        is_ptr = 1;
+    } else if (type->isStructTy()) {
+        is_struct = 1;
+
+        StructType *structTy = dyn_cast<StructType>(type);
+        assert(structTy != NULL);
+
+        if (!structTy->isLiteral()) {
+            assert(structTy->getStructName().str().find("struct.") ==
+                    0);
+            struct_name = structTy->getStructName().str().substr(7);
+
+            for (unsigned int i = 0;
+                    i < structTy->getStructNumElements(); i++) {
+                Type *field_type = structTy->getStructElementType(i);
+                if (field_type->isPointerTy()) {
+                    std::vector<std::string> *fields =
+                        structFields->at(struct_name).get_fields();
+                    struct_ptr_field_names.push_back((*fields)[i]);
+                }
+            }
+        }
+    }
+    // Variable name, Full type, type size in bits, is ptr?, is struct?
+    fprintf(globals_fp, "%s \" %s \" %lu %d %d ", varname.c_str(),
+            backing_string.c_str(), type_size, is_ptr, is_struct);
+    if (is_struct) {
+        fprintf(globals_fp, "%s ", struct_name.c_str());
+        for (std::vector<std::string>::iterator field_iter =
+                struct_ptr_field_names.begin(), field_end =
+                struct_ptr_field_names.end(); field_iter != field_end;
+                field_iter++) {
+            fprintf(globals_fp, "%s ", field_iter->c_str());
+        }
+    }
+    fprintf(globals_fp, "\n");
+}
+
+void Play::findGlobalsAndConstants(Module &M, const char *globals_filename,
+        const char *constants_filename) {
     DataLayout *layout = new DataLayout(&M);
 
     std::set<std::string> excluded_globals;
@@ -413,77 +592,48 @@ void Play::findGlobals(Module &M, const char *filename) {
     std::map<std::string, StructInfo> *structFields =
         getStructFieldNames(M);
 
-    FILE *fp = fopen(filename, "w");
-    assert(fp);
+    FILE *globals_fp = fopen(globals_filename, "w");
+    assert(globals_fp);
+    FILE *constants_fp = fopen(constants_filename, "w");
+    assert(constants_fp);
+
+    int constant_index = 0;
+
+    std::set<std::string> unsupported_sections;
+    unsupported_sections.insert("__NV_CUDA,__fatbin");
+    unsupported_sections.insert("__NV_CUDA,__nv_fatbin");
 
     for (Module::global_iterator i = M.global_begin(), e = M.global_end();
             i != e; i++) {
         GlobalValue *G = &*i;
         if (GlobalVariable *var = dyn_cast<GlobalVariable>(G)) {
 
-            if (var->isConstant() || global_names->find(var->getName().str()) ==
-                    global_names->end()) continue;
-
-            assert(global_names->find(var->getName().str()) !=
-                    global_names->end());
-            std::string varname = (*global_names)[var->getName().str()];
-
-            if (excluded_globals.find(varname) != excluded_globals.end()) {
-                continue;
-            }
-
-            Type *type = var->getType();
-            std::string backing_string;
-            raw_string_ostream stream(backing_string);
-            type->print(stream);
-            stream.flush();
-
-            size_t type_size = layout->getTypeSizeInBits(var->getType());
-            int is_ptr = 0;
-            int is_struct = 0;
-            std::string struct_name;
-            std::vector<std::string> struct_ptr_field_names;
-
-            if (type->isPointerTy()) {
-                is_ptr = 1;
-            } else if (type->isStructTy()) {
-                is_struct = 1;
-
-                StructType *structTy = dyn_cast<StructType>(type);
-                assert(structTy != NULL);
-
-                if (!structTy->isLiteral()) {
-                    assert(structTy->getStructName().str().find("struct.") ==
-                            0);
-                    struct_name = structTy->getStructName().str().substr(7);
-
-                    for (unsigned int i = 0;
-                            i < structTy->getStructNumElements(); i++) {
-                        Type *field_type = structTy->getStructElementType(i);
-                        if (field_type->isPointerTy()) {
-                            std::vector<std::string> *fields = structFields->at(struct_name).get_fields();
-                            struct_ptr_field_names.push_back((*fields)[i]);
-                        }
+            if (var->isConstant()) {
+                if (unsupported_sections.find(std::string(var->getSection())) ==
+                        unsupported_sections.end()) {
+                    if (dumpConstant(var, constants_fp, constant_index, layout)) {
+                        constant_index++;
                     }
                 }
-            }
-            // Variable name, Full type, type size in bits, is ptr?, is struct?
-            fprintf(fp, "%s \" %s \" %lu %d %d ", varname.c_str(),
-                    backing_string.c_str(), type_size, is_ptr, is_struct);
-            if (is_struct) {
-                fprintf(fp, "%s ", struct_name.c_str());
-                for (std::vector<std::string>::iterator field_iter =
-                        struct_ptr_field_names.begin(), field_end =
-                        struct_ptr_field_names.end(); field_iter != field_end;
-                        field_iter++) {
-                    fprintf(fp, "%s ", field_iter->c_str());
+            } else {
+                if (global_names->find(var->getName().str()) ==
+                        global_names->end()) {
+                    continue;
                 }
+
+                std::string varname = (*global_names)[var->getName().str()];
+
+                if (excluded_globals.find(varname) != excluded_globals.end()) {
+                    continue;
+                }
+
+                dumpGlobal(var, varname, globals_fp, layout, structFields);
             }
-            fprintf(fp, "\n");
         }
     }
 
-    fclose(fp);
+    fclose(globals_fp);
+    fclose(constants_fp);
 }
 
 ReachableInfo Play::propagateAliases(Module &M, Hasher *H) {
@@ -1810,7 +1960,7 @@ bool Play::runOnModule(Module &M) {
      * well as the alias sets that should be marked by those calls.
      */
 
-    findGlobals(M, "globals.info");
+    findGlobalsAndConstants(M, "globals.info", "constants.info");
 
     ReachableInfo reachable = propagateAliases(M, hashes);
 

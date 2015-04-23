@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -86,9 +88,9 @@ extern int ____chimes_replaying;
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 62 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -1497,7 +1499,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 static int module_init() {
     init_module(1556987170722293705UL, 1, 0, 1556987170722293705UL + 5UL, 1556987170722293705UL + 14UL);
-    register_global_var("global|a", "i32*", (void *)(&a), 8, 1, 0, 0);
+    register_global_var("global|a", "i32", (void *)(&a), 4, 0, 0, 0);
     return 0;
 }
 

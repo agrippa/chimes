@@ -22,12 +22,14 @@
 #endif
 
 #include "chimes_common.h"
+#include "constant_var.h"
 #include "stack_var.h"
 #include "stack_frame.h"
 #include "heap_allocation.h"
 #include "stack_serialization.h"
 #include "thread_serialization.h"
 #include "global_serialization.h"
+#include "constant_serialization.h"
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
 #include "chimes_stack.h"
@@ -153,6 +155,13 @@ static map<std::string, stack_var *> global_vars;
 static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
+ * A list of pointers and lengths of constant values identified as reachable by
+ * the analysis pass. These are only constants which have a pointer type.
+ */
+static map<size_t, constant_var *> constants;
+static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
+
+/*
  * A mapping from alias groups to the alias group that they may contain (in the
  * case of indirect references with nested pointers or structs with contain
  * pointers.
@@ -208,17 +217,19 @@ static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 #ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     INIT_MODULE, REGISTER_GLOBAL_VAR, ALIAS_GROUP_CHANGED, MALLOC_WRAPPER,
-    REALLOC_WRAPPER, FREE_WRAPPER, CALLOC_WRAPPER, N_LABELS };
+    REALLOC_WRAPPER, FREE_WRAPPER, CALLOC_WRAPPER, REGISTER_CONSTANT,
+    N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
     "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
-    "free_wrapper", "calloc_wrapper" };
+    "free_wrapper", "calloc_wrapper", "register_constant" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
 
 static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
 static map<std::string, stack_var *> *unpacked_global_vars;
+static map<size_t, constant_var*> *unpacked_constants;
 static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
 /*
  * A list of objects specifying what memory locations were updated with
@@ -322,6 +333,18 @@ void init_chimes() {
         unpacked_global_vars = deserialize_globals(globals_serialized,
                 globals_serialized_len);
 
+        // read in constants state
+        uint64_t constants_serialized_len;
+        safe_read(fd, &constants_serialized_len,
+                sizeof(constants_serialized_len),
+                "constants_serialized_len", checkpoint_file);
+        unsigned char *constants_serialized = (unsigned char *)malloc(
+                constants_serialized_len);
+        safe_read(fd, constants_serialized, constants_serialized_len,
+                "constants_serialized", checkpoint_file);
+        unpacked_constants = deserialize_constants(constants_serialized,
+                constants_serialized_len);
+
         // read in thread state
         uint64_t thread_hierarchy_serialized_len;
         safe_read(fd, &thread_hierarchy_serialized_len,
@@ -410,6 +433,22 @@ void init_chimes() {
 
             assert(old_to_new->find(old_address) == old_to_new->end());
             (*old_to_new)[old_address] = new ptr_and_size(new_address, size);
+        }
+
+        for (map<size_t, constant_var*>::iterator i = constants.begin(),
+                e = constants.end(); i != e; i++) {
+            size_t id = i->first;
+            constant_var *live = i->second;
+
+            assert(unpacked_constants->find(id) != unpacked_constants->end());
+            constant_var *dead = unpacked_constants->at(id);
+
+            assert(dead->get_length() == live->get_length());
+
+            assert(old_to_new->find(dead->get_address()) == old_to_new->end());
+            old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
+                        new ptr_and_size(live->get_address(),
+                            live->get_length())));
         }
 
         /*
@@ -865,6 +904,49 @@ int get_next_call() {
     return ele;
 }
 
+static bool is_pointer_type(string type) {
+    return (type[type.length() - 1] == '*');
+}
+
+static bool is_array_type(string type) {
+    return (type[0] == '[' && type[type.length() - 1] == ']');
+}
+
+static string get_nested_array_type(string array_type) {
+    assert(is_array_type(array_type));
+    string remove_braces = array_type.substr(1, array_type.length() - 2);
+    // Increment past array length
+    int index = 0;
+    while (remove_braces[index] >= '0' && remove_braces[index] <= '9') {
+        index++;
+    }
+    assert(remove_braces[index++] == ' ');
+    assert(remove_braces[index++] == 'x');
+    assert(remove_braces[index++] == ' ');
+    return remove_braces.substr(index);
+}
+
+#if 0
+
+
+
+static int get_array_length(string array_type) {
+    assert(is_array_type(array_type));
+    string remove_braces = array_type.substr(1, array_type.length() - 2);
+    // Increment past array length
+    int index = 0;
+    while (remove_braces[index] >= '0' && remove_braces[index] <= '9') {
+        index++;
+    }
+    return atoi(remove_braces.substr(0, index).c_str());
+}
+#endif
+
+static bool is_struct_type(string type) {
+    size_t index = type.find("%struct.");
+    return (index != string::npos && index == 0);
+}
+
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl) {
@@ -937,6 +1019,24 @@ void register_global_var(const char *mangled_name, const char *full_type,
 
 #ifdef __CHIMES_PROFILE
     pp.stop_timer(REGISTER_GLOBAL_VAR);
+#endif
+}
+
+//TODO does not support nested pointer types
+void register_constant(size_t const_id, void *address, size_t length) {
+#ifdef __CHIMES_PROFILE
+    pp.start_timer(REGISTER_CONSTANT);
+#endif
+
+    constant_var *var = new constant_var(const_id, address, length);
+
+    assert(pthread_rwlock_wrlock(&constants_lock) == 0);
+    assert(constants.find(const_id) == constants.end());
+    constants[const_id] = var;
+    assert(pthread_rwlock_unlock(&constants_lock) == 0);
+
+#ifdef __CHIMES_PROFILE
+    pp.stop_timer(REGISTER_CONSTANT);
 #endif
 }
 
@@ -1153,9 +1253,11 @@ void free_wrapper(void *ptr, size_t group) {
 typedef struct _checkpoint_thread_ctx {
     unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
+    unsigned char *constants_serialized;
     unsigned char *thread_hierarchy_serialized;
     uint64_t stacks_serialized_len;
     uint64_t globals_serialized_len;
+    uint64_t constants_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
 
     vector<heap_allocation *> *heap_to_checkpoint;
@@ -1263,15 +1365,6 @@ void checkpoint() {
      * other threads will be prevented from entering there.
      */
     if (____chimes_replaying) {
-#ifdef VERBOSE
-        fprintf(stderr, "Got to the desired checkpoint with a stack size of "
-                "%lu ( ", program_stack.size());
-        for (std::vector<stack_frame *>::iterator i = program_stack.begin(),
-                e = program_stack.end(); i != e; i++) {
-            fprintf(stderr, "%d ", (*i)->size());
-        }
-        fprintf(stderr, ")\n");
-#endif
        
         // Assert same number of threads
         assert(unpacked_program_stacks->size() == thread_ctxs.size());
@@ -1347,6 +1440,19 @@ void checkpoint() {
                 globals_iter != globals_end; globals_iter++) {
             stack_var *var = globals_iter->second;
             fix_stack_or_global_pointer(var->get_address(), var->get_type());
+
+            if (is_array_type(var->get_type())) {
+                string nested_type =get_nested_array_type(var->get_type()); 
+                if (is_pointer_type(nested_type)) {
+                    size_t size = var->get_size();
+                    assert(size % sizeof(void*) == 0);
+                    size_t npointers = size / sizeof(void*);
+                    void **container = (void **)var->get_address();
+                    for (int i = 0; i < npointers; i++) {
+                        fix_stack_or_global_pointer(container + i, nested_type);
+                    }
+                }
+            }
         }
 
         ____chimes_replaying = 0;
@@ -1426,6 +1532,8 @@ void checkpoint() {
                     &checkpoint_ctx->stacks_serialized_len);
             checkpoint_ctx->globals_serialized = serialize_globals(&global_vars,
                     &checkpoint_ctx->globals_serialized_len);
+            checkpoint_ctx->constants_serialized = serialize_constants(&constants,
+                    &checkpoint_ctx->constants_serialized_len);
             checkpoint_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
                     &thread_ctxs,
                     &checkpoint_ctx->thread_hierarchy_serialized_len);
@@ -1461,15 +1569,6 @@ void checkpoint() {
     assert(pthread_mutex_unlock(&threads_in_checkpoint_mutex) == 0);
 
     rm_stack(false, 0);
-}
-
-static bool is_pointer_type(string type) {
-    return type[type.length() - 1] == '*';
-}
-
-static bool is_struct_type(string type) {
-    size_t index = type.find("%struct.");
-    return index != string::npos && index == 0;
 }
 
 static void fix_stack_or_global_pointer(void *container, string type) {
@@ -1550,6 +1649,8 @@ void *checkpoint_func(void *data) {
     uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
     unsigned char *globals_serialized = ctx->globals_serialized;
     uint64_t globals_serialized_len = ctx->globals_serialized_len;
+    unsigned char *constants_serialized = ctx->constants_serialized;
+    uint64_t constants_serialized_len = ctx->constants_serialized_len;
     unsigned char *thread_hierarchy_serialized =
         ctx->thread_hierarchy_serialized;
     uint64_t thread_hierarchy_serialized_len =
@@ -1606,6 +1707,12 @@ void *checkpoint_func(void *data) {
             "globals_serialized_len", dump_filename);
     safe_write(fd, globals_serialized, globals_serialized_len,
             "globals_serialized", dump_filename);
+
+    // Write the constants out
+    safe_write(fd, &constants_serialized_len, sizeof(constants_serialized_len),
+            "constants_serialized_len", dump_filename);
+    safe_write(fd, constants_serialized, constants_serialized_len,
+            "constants_serialized", dump_filename);
 
     // Write out the thread hierarchy
     safe_write(fd, &thread_hierarchy_serialized_len,
@@ -1706,6 +1813,7 @@ void *checkpoint_func(void *data) {
     close(fd);
     free(stacks_serialized);
     free(globals_serialized);
+    free(constants_serialized);
     free(thread_hierarchy_serialized);
     for (vector<heap_allocation *>::iterator heap_iter =
             heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();

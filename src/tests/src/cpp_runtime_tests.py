@@ -32,6 +32,7 @@ FREE = RuntimeTest('Free', ['free.cpp'], 42, 1)
 REALLOC = RuntimeTest('Realloc', ['realloc.cpp'], 42, 1)
 CALLOC = RuntimeTest('Calloc', ['calloc.cpp'], 42, 1)
 GLOBALS = RuntimeTest('Globals', ['globals.cpp'], 7, 1)
+CONSTANTS = RuntimeTest('Constants', ['constants.cpp'], 1, 1)
 MULTI_CHECKPOINT = RuntimeTest('MultiCheckpoint', ['multi_checkpoint.cpp'], 100,
                                100)
 ISO2D = RuntimeTest('Iso2D',
@@ -54,11 +55,24 @@ SMITH_WATERMAN_ARGS=CHIMES_HOME + \
 SMITH_WATERMAN = RuntimeTest('SmithWaterman',
                              ['smithWaterman/smith_waterman.cpp'], 0, -1,
                              cli_args=SMITH_WATERMAN_ARGS)
+LULESH = RuntimeTest('Lulesh', ['lulesh/LULESH.cc'], 0, -1, cli_args='1')
+COMD = RuntimeTest('CoMD',
+                   ['CoMD/src-mpi/CoMD.c', 'CoMD/src-mpi/decomposition.c',
+                    'CoMD/src-mpi/haloExchange.c', 'CoMD/src-mpi/linkCells.c',
+                    'CoMD/src-mpi/mycommand.c',
+                    'CoMD/src-mpi/performanceTimers.c',
+                    'CoMD/src-mpi/timestep.c', 'CoMD/src-mpi/cmdLineParser.c',
+                    'CoMD/src-mpi/eam.c', 'CoMD/src-mpi/initAtoms.c',
+                    'CoMD/src-mpi/ljForce.c', 'CoMD/src-mpi/parallel.c',
+                    'CoMD/src-mpi/random.c', 'CoMD/src-mpi/yamlOutput.c'], 0,
+                   -1, cli_args='-N 1 -x 12 -y 12 -z 12')
+
 
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
          NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
          COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, HEAP_POINTERS, HEAP_INDIRECTION,
-         FREE, REALLOC, CALLOC, GLOBALS, MULTI_CHECKPOINT, ISO2D, ISO3D, SMITH_WATERMAN]
+         FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS, MULTI_CHECKPOINT, ISO2D,
+         ISO3D, SMITH_WATERMAN, LULESH, COMD]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

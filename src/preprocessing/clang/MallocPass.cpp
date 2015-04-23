@@ -71,7 +71,6 @@ void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
                         StructFields *struct_info =
                             insertions->get_struct_fields_for(
                                     alloc.get_struct_type_name());
-                        llvm::errs() << "for " << alloc.get_struct_type_name() << " got " << struct_info << "\n";
                         assert(struct_info);
 
                         // Element size for each struct

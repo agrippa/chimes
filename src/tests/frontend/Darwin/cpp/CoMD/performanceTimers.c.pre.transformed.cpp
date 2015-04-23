@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -101,9 +103,9 @@ extern int ____chimes_replaying;
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
 # 65 "/usr/include/stdio.h" 2 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 66 "/usr/include/stdio.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -1981,9 +1983,20 @@ alias_group_changed(2, (size_t)(17287627617634549853UL), (size_t)(17287627617634
 
 static int module_init() {
     init_module(17287627617634549529UL, 3, 8, 17287627617634549529UL + 534UL, 17287627617634549529UL + 730UL, 17287627617634549529UL + 756UL, 17287627617634549529UL + 181UL, 17287627617634549529UL + 754UL, 17287627617634549529UL + 155UL, "RankReduceDataSt", 2, (int)__builtin_offsetof(struct RankReduceDataSt, val), (int)__builtin_offsetof(struct RankReduceDataSt, rank), "TimerGlobalSt", 3, (int)__builtin_offsetof(struct TimerGlobalSt, atomRate), (int)__builtin_offsetof(struct TimerGlobalSt, atomAllRate), (int)__builtin_offsetof(struct TimerGlobalSt, atomsPerUSec), "TimerHandle", 0, "TimersSt", 10, (int)__builtin_offsetof(struct TimersSt, start), (int)__builtin_offsetof(struct TimersSt, total), (int)__builtin_offsetof(struct TimersSt, count), (int)__builtin_offsetof(struct TimersSt, elapsed), (int)__builtin_offsetof(struct TimersSt, minRank), (int)__builtin_offsetof(struct TimersSt, maxRank), (int)__builtin_offsetof(struct TimersSt, minValue), (int)__builtin_offsetof(struct TimersSt, maxValue), (int)__builtin_offsetof(struct TimersSt, average), (int)__builtin_offsetof(struct TimersSt, stdev), "__sFILE", 20, (int)__builtin_offsetof(struct __sFILE, _p), (int)__builtin_offsetof(struct __sFILE, _r), (int)__builtin_offsetof(struct __sFILE, _w), (int)__builtin_offsetof(struct __sFILE, _flags), (int)__builtin_offsetof(struct __sFILE, _file), (int)__builtin_offsetof(struct __sFILE, _bf), (int)__builtin_offsetof(struct __sFILE, _lbfsize), (int)__builtin_offsetof(struct __sFILE, _cookie), (int)__builtin_offsetof(struct __sFILE, _close), (int)__builtin_offsetof(struct __sFILE, _read), (int)__builtin_offsetof(struct __sFILE, _seek), (int)__builtin_offsetof(struct __sFILE, _write), (int)__builtin_offsetof(struct __sFILE, _ub), (int)__builtin_offsetof(struct __sFILE, _extra), (int)__builtin_offsetof(struct __sFILE, _ur), (int)__builtin_offsetof(struct __sFILE, _ubuf), (int)__builtin_offsetof(struct __sFILE, _nbuf), (int)__builtin_offsetof(struct __sFILE, _lb), (int)__builtin_offsetof(struct __sFILE, _blksize), (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof(struct __sbuf, _base), (int)__builtin_offsetof(struct __sbuf, _size), "timeval", 2, (int)__builtin_offsetof(struct timeval, tv_sec), (int)__builtin_offsetof(struct timeval, tv_usec));
-    register_global_var("global|timerName", "[11 x i8*]*", (void *)(&timerName), 8, 1, 0, 0);
-    register_global_var("global|perfTimer", "[11 x %struct.TimersSt]*", (void *)(&perfTimer), 8, 1, 0, 0);
-    register_global_var("global|perfGlobal", "%struct.TimerGlobalSt*", (void *)(&perfGlobal), 8, 1, 0, 0);
+    register_global_var("global|timerName", "[11 x i8*]", (void *)(&timerName), 88, 0, 0, 0);
+    register_global_var("global|perfTimer", "[11 x %struct.TimersSt]", (void *)(&perfTimer), 792, 0, 0, 0);
+    register_global_var("global|perfGlobal", "%struct.TimerGlobalSt = type { double, double, double }", (void *)(&perfGlobal), 24, 0, 1, 0);
+    register_constant(17287627617634549529UL + 0UL, (void *)((timerName)[0]), 6);
+    register_constant(17287627617634549529UL + 1UL, (void *)((timerName)[1]), 5);
+    register_constant(17287627617634549529UL + 2UL, (void *)((timerName)[2]), 9);
+    register_constant(17287627617634549529UL + 3UL, (void *)((timerName)[3]), 11);
+    register_constant(17287627617634549529UL + 4UL, (void *)((timerName)[4]), 11);
+    register_constant(17287627617634549529UL + 5UL, (void *)((timerName)[5]), 15);
+    register_constant(17287627617634549529UL + 6UL, (void *)((timerName)[6]), 13);
+    register_constant(17287627617634549529UL + 7UL, (void *)((timerName)[7]), 8);
+    register_constant(17287627617634549529UL + 8UL, (void *)((timerName)[8]), 12);
+    register_constant(17287627617634549529UL + 9UL, (void *)((timerName)[9]), 9);
+    register_constant(17287627617634549529UL + 10UL, (void *)((timerName)[10]), 11);
     return 0;
 }
 

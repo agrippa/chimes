@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -263,9 +265,9 @@ typedef struct _opaque_pthread_t *__darwin_pthread_t;
 # 81 "/usr/include/sys/_types.h" 2 3 4
 # 69 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 70 "/usr/include/sys/time.h" 2 3 4
 
 
@@ -2848,11 +2850,11 @@ rm_stack(false, 0UL); }
 
 static int module_init() {
     init_module(10806494385137637573UL, 19, 3, 10806494385137637573UL + 201UL, 10806494385137637573UL + 261UL, 10806494385137637573UL + 323UL, 10806494385137637573UL + 400UL, 10806494385137637573UL + 606UL, 10806494385137637573UL + 120UL, 10806494385137637573UL + 612UL, 10806494385137637573UL + 457UL, 10806494385137637573UL + 23UL, 10806494385137637573UL + 92UL, 10806494385137637573UL + 195UL, 10806494385137637573UL + 317UL, 10806494385137637573UL + 196UL, 10806494385137637573UL + 318UL, 10806494385137637573UL + 317UL, 10806494385137637573UL + 261UL, 10806494385137637573UL + 99UL, 10806494385137637573UL + 186UL, 10806494385137637573UL + 98UL, 10806494385137637573UL + 187UL, 10806494385137637573UL + 327UL, 10806494385137637573UL + 341UL, 10806494385137637573UL + 104UL, 10806494385137637573UL + 155UL, 10806494385137637573UL + 102UL, 10806494385137637573UL + 174UL, 10806494385137637573UL + 103UL, 10806494385137637573UL + 174UL, 10806494385137637573UL + 100UL, 10806494385137637573UL + 115UL, 10806494385137637573UL + 101UL, 10806494385137637573UL + 115UL, 10806494385137637573UL + 341UL, 10806494385137637573UL + 361UL, 10806494385137637573UL + 97UL, 10806494385137637573UL + 186UL, 10806494385137637573UL + 105UL, 10806494385137637573UL + 155UL, "_source", 4, (int)__builtin_offsetof(struct _source, x), (int)__builtin_offsetof(struct _source, y), (int)__builtin_offsetof(struct _source, freq), (int)__builtin_offsetof(struct _source, t), "timeval", 2, (int)__builtin_offsetof(struct timeval, tv_sec), (int)__builtin_offsetof(struct timeval, tv_usec), "timezone", 2, (int)__builtin_offsetof(struct timezone, tz_minuteswest), (int)__builtin_offsetof(struct timezone, tz_dsttime));
-    register_global_var("global|progress_buffer", "i8**", (void *)(&progress_buffer), 8, 1, 0, 0);
-    register_global_var("global|progress_disabled", "i32*", (void *)(&progress_disabled), 8, 1, 0, 0);
-    register_global_var("global|progress_length", "i32*", (void *)(&progress_length), 8, 1, 0, 0);
-    register_global_var("global|progress_goal", "i32*", (void *)(&progress_goal), 8, 1, 0, 0);
-    register_global_var("global|progress_num_ticks", "i32*", (void *)(&progress_num_ticks), 8, 1, 0, 0);
+    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8, 1, 0, 0);
+    register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4, 0, 0, 0);
+    register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4, 0, 0, 0);
+    register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4, 0, 0, 0);
+    register_global_var("global|progress_num_ticks", "i32", (void *)(&progress_num_ticks), 4, 0, 0, 0);
     return 0;
 }
 

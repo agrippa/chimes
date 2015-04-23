@@ -38,6 +38,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -57,7 +59,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 51 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
@@ -81,9 +83,9 @@ extern int ____chimes_replaying;
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
 # 65 "/usr/include/stdio.h" 2 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 66 "/usr/include/stdio.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -2728,28 +2730,28 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 
 static int module_init() {
     init_module(469315932764639672UL, 36, 8, 469315932764639672UL + 741UL, 469315932764639672UL + 743UL, 469315932764639672UL + 331UL, 469315932764639672UL + 371UL, 469315932764639672UL + 550UL, 469315932764639672UL + 552UL, 469315932764639672UL + 333UL, 469315932764639672UL + 351UL, 469315932764639672UL + 457UL, 469315932764639672UL + 1496UL, 469315932764639672UL + 498UL, 469315932764639672UL + 552UL, 469315932764639672UL + 499UL, 469315932764639672UL + 552UL, 469315932764639672UL + 495UL, 469315932764639672UL + 741UL, 469315932764639672UL + 497UL, 469315932764639672UL + 141UL, 469315932764639672UL + 230UL, 469315932764639672UL + 281UL, 469315932764639672UL + 491UL, 469315932764639672UL + 919UL, 469315932764639672UL + 1681UL, 469315932764639672UL + 255UL, 469315932764639672UL + 407UL, 469315932764639672UL + 413UL, 469315932764639672UL + 938UL, 469315932764639672UL + 1496UL, 469315932764639672UL + 281UL, 469315932764639672UL + 262UL, 469315932764639672UL + 930UL, 469315932764639672UL + 1008UL, 469315932764639672UL + 937UL, 469315932764639672UL + 1400UL, 469315932764639672UL + 529UL, 469315932764639672UL + 741UL, 469315932764639672UL + 286UL, 469315932764639672UL + 328UL, 469315932764639672UL + 441UL, 469315932764639672UL + 1496UL, 469315932764639672UL + 440UL, 469315932764639672UL + 457UL, 469315932764639672UL + 330UL, 469315932764639672UL + 370UL, 469315932764639672UL + 383UL, 469315932764639672UL + 407UL, 469315932764639672UL + 1665UL, 469315932764639672UL + 550UL, 469315932764639672UL + 1400UL, 469315932764639672UL + 1409UL, 469315932764639672UL + 1649UL, 469315932764639672UL + 968UL, 469315932764639672UL + 940UL, 469315932764639672UL + 1400UL, 469315932764639672UL + 936UL, 469315932764639672UL + 1400UL, 469315932764639672UL + 928UL, 469315932764639672UL + 987UL, 469315932764639672UL + 1669UL, 469315932764639672UL + 529UL, 469315932764639672UL + 439UL, 469315932764639672UL + 1496UL, 469315932764639672UL + 1667UL, 469315932764639672UL + 141UL, 469315932764639672UL + 922UL, 469315932764639672UL + 1649UL, 469315932764639672UL + 1657UL, 469315932764639672UL + 641UL, 469315932764639672UL + 926UL, 469315932764639672UL + 968UL, 469315932764639672UL + 927UL, 469315932764639672UL + 968UL, "Nucleotide", 0, "TILE_DEPS", 0, "__sFILE", 20, (int)__builtin_offsetof (struct __sFILE, _p), (int)__builtin_offsetof (struct __sFILE, _r), (int)__builtin_offsetof (struct __sFILE, _w), (int)__builtin_offsetof (struct __sFILE, _flags), (int)__builtin_offsetof (struct __sFILE, _file), (int)__builtin_offsetof (struct __sFILE, _bf), (int)__builtin_offsetof (struct __sFILE, _lbfsize), (int)__builtin_offsetof (struct __sFILE, _cookie), (int)__builtin_offsetof (struct __sFILE, _close), (int)__builtin_offsetof (struct __sFILE, _read), (int)__builtin_offsetof (struct __sFILE, _seek), (int)__builtin_offsetof (struct __sFILE, _write), (int)__builtin_offsetof (struct __sFILE, _ub), (int)__builtin_offsetof (struct __sFILE, _extra), (int)__builtin_offsetof (struct __sFILE, _ur), (int)__builtin_offsetof (struct __sFILE, _ubuf), (int)__builtin_offsetof (struct __sFILE, _nbuf), (int)__builtin_offsetof (struct __sFILE, _lb), (int)__builtin_offsetof (struct __sFILE, _blksize), (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, (int)__builtin_offsetof (struct __sbuf, _base), (int)__builtin_offsetof (struct __sbuf, _size), "_tile", 2, (int)__builtin_offsetof (struct _tile, row), (int)__builtin_offsetof (struct _tile, col), "_tiles_to_run", 4, (int)__builtin_offsetof (struct _tiles_to_run, q), (int)__builtin_offsetof (struct _tiles_to_run, base), (int)__builtin_offsetof (struct _tiles_to_run, capacity), (int)__builtin_offsetof (struct _tiles_to_run, length), "timeval", 2, (int)__builtin_offsetof (struct timeval, tv_sec), (int)__builtin_offsetof (struct timeval, tv_usec));
-    register_global_var("global|string_1", "i8**", (void *)(&string_1), 8, 1, 0, 0);
-    register_global_var("global|string_2", "i8**", (void *)(&string_2), 8, 1, 0, 0);
-    register_global_var("global|strlen_1", "i32*", (void *)(&strlen_1), 8, 1, 0, 0);
-    register_global_var("global|strlen_2", "i32*", (void *)(&strlen_2), 8, 1, 0, 0);
-    register_global_var("global|tile_width", "i32*", (void *)(&tile_width), 8, 1, 0, 0);
-    register_global_var("global|tile_height", "i32*", (void *)(&tile_height), 8, 1, 0, 0);
-    register_global_var("global|n_tiles_x", "i32*", (void *)(&n_tiles_x), 8, 1, 0, 0);
-    register_global_var("global|n_tiles_y", "i32*", (void *)(&n_tiles_y), 8, 1, 0, 0);
-    register_global_var("global|tile_edges_x", "i32***", (void *)(&tile_edges_x), 8, 1, 0, 0);
-    register_global_var("global|tile_edges_y", "i32***", (void *)(&tile_edges_y), 8, 1, 0, 0);
-    register_global_var("global|tile_diag", "i32**", (void *)(&tile_diag), 8, 1, 0, 0);
-    register_global_var("global|put_counts", "i32**", (void *)(&put_counts), 8, 1, 0, 0);
-    register_global_var("global|worker_tiles", "i32****", (void *)(&worker_tiles), 8, 1, 0, 0);
-    register_global_var("global|max_buffer", "i32**", (void *)(&max_buffer), 8, 1, 0, 0);
-    register_global_var("global|temp_buffer", "i32**", (void *)(&temp_buffer), 8, 1, 0, 0);
-    register_global_var("global|max_size", "i32*", (void *)(&max_size), 8, 1, 0, 0);
-    register_global_var("global|done", "i32*", (void *)(&done), 8, 1, 0, 0);
-    register_global_var("global|nthreads", "i32*", (void *)(&nthreads), 8, 1, 0, 0);
-    register_global_var("global|begin", "%struct.timeval*", (void *)(&begin), 8, 1, 0, 0);
-    register_global_var("global|end", "%struct.timeval*", (void *)(&end), 8, 1, 0, 0);
-    register_global_var("global|dsizes", "[3 x i32]*", (void *)(&dsizes), 8, 1, 0, 0);
-    register_global_var("global|alignment_score_matrix", "[5 x [5 x i8]]*", (void *)(&alignment_score_matrix), 8, 1, 0, 0);
+    register_global_var("global|string_1", "i8*", (void *)(&string_1), 8, 1, 0, 0);
+    register_global_var("global|string_2", "i8*", (void *)(&string_2), 8, 1, 0, 0);
+    register_global_var("global|strlen_1", "i32", (void *)(&strlen_1), 4, 0, 0, 0);
+    register_global_var("global|strlen_2", "i32", (void *)(&strlen_2), 4, 0, 0, 0);
+    register_global_var("global|tile_width", "i32", (void *)(&tile_width), 4, 0, 0, 0);
+    register_global_var("global|tile_height", "i32", (void *)(&tile_height), 4, 0, 0, 0);
+    register_global_var("global|n_tiles_x", "i32", (void *)(&n_tiles_x), 4, 0, 0, 0);
+    register_global_var("global|n_tiles_y", "i32", (void *)(&n_tiles_y), 4, 0, 0, 0);
+    register_global_var("global|tile_edges_x", "i32**", (void *)(&tile_edges_x), 8, 1, 0, 0);
+    register_global_var("global|tile_edges_y", "i32**", (void *)(&tile_edges_y), 8, 1, 0, 0);
+    register_global_var("global|tile_diag", "i32*", (void *)(&tile_diag), 8, 1, 0, 0);
+    register_global_var("global|put_counts", "i32*", (void *)(&put_counts), 8, 1, 0, 0);
+    register_global_var("global|worker_tiles", "i32***", (void *)(&worker_tiles), 8, 1, 0, 0);
+    register_global_var("global|max_buffer", "i32*", (void *)(&max_buffer), 8, 1, 0, 0);
+    register_global_var("global|temp_buffer", "i32*", (void *)(&temp_buffer), 8, 1, 0, 0);
+    register_global_var("global|max_size", "i32", (void *)(&max_size), 4, 0, 0, 0);
+    register_global_var("global|done", "i32", (void *)(&done), 4, 0, 0, 0);
+    register_global_var("global|nthreads", "i32", (void *)(&nthreads), 4, 0, 0, 0);
+    register_global_var("global|begin", "%struct.timeval = type { i64, i32 }", (void *)(&begin), 16, 0, 1, 0);
+    register_global_var("global|end", "%struct.timeval = type { i64, i32 }", (void *)(&end), 16, 0, 1, 0);
+    register_global_var("global|dsizes", "[3 x i32]", (void *)(&dsizes), 12, 0, 0, 0);
+    register_global_var("global|alignment_score_matrix", "[5 x [5 x i8]]", (void *)(&alignment_score_matrix), 25, 0, 0, 0);
     return 0;
 }
 

@@ -1,12 +1,12 @@
-string_1 " i8** " 64 1 0 
-string_2 " i8** " 64 1 0 
-tile_width " i32* " 64 1 0 
-tile_height " i32* " 64 1 0 
-n_tiles_x " i32* " 64 1 0 
-n_tiles_y " i32* " 64 1 0 
-tile_edges_x " i32*** " 64 1 0 
-tile_edges_y " i32*** " 64 1 0 
-tile_diag " i32** " 64 1 0 
-nthreads " i32* " 64 1 0 
-worker_tiles " i32**** " 64 1 0 
-alignment_score_matrix " [5 x [5 x i8]]* " 64 1 0 
+string_1 " i8* " 64 1 0 
+string_2 " i8* " 64 1 0 
+tile_width " i32 " 32 0 0 
+tile_height " i32 " 32 0 0 
+n_tiles_x " i32 " 32 0 0 
+n_tiles_y " i32 " 32 0 0 
+tile_edges_x " i32** " 64 1 0 
+tile_edges_y " i32** " 64 1 0 
+tile_diag " i32* " 64 1 0 
+nthreads " i32 " 32 0 0 
+worker_tiles " i32*** " 64 1 0 
+alignment_score_matrix " [5 x [5 x i8]] " 200 0 0 

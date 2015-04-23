@@ -38,6 +38,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -57,7 +59,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 51 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
@@ -74,9 +76,9 @@ extern int ____chimes_replaying;
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 61 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 62 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -3969,19 +3971,19 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 2
 
 static int module_init() {
     init_module(5826008423592869089UL, 45, 4, 5826008423592869089UL + 198UL, 5826008423592869089UL + 297UL, 5826008423592869089UL + 1914UL, 5826008423592869089UL + 1980UL, 5826008423592869089UL + 454UL, 5826008423592869089UL + 427UL, 5826008423592869089UL + 455UL, 5826008423592869089UL + 506UL, 5826008423592869089UL + 456UL, 5826008423592869089UL + 481UL, 5826008423592869089UL + 1088UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1074UL, 5826008423592869089UL + 1084UL, 5826008423592869089UL + 405UL, 5826008423592869089UL + 454UL, 5826008423592869089UL + 161UL, 5826008423592869089UL + 185UL, 5826008423592869089UL + 1UL, 5826008423592869089UL + 3UL, 5826008423592869089UL + 406UL, 5826008423592869089UL + 427UL, 5826008423592869089UL + 526UL, 5826008423592869089UL + 537UL, 5826008423592869089UL + 185UL, 5826008423592869089UL + 166UL, 5826008423592869089UL + 506UL, 5826008423592869089UL + 481UL, 5826008423592869089UL + 507UL, 5826008423592869089UL + 525UL, 5826008423592869089UL + 188UL, 5826008423592869089UL + 197UL, 5826008423592869089UL + 937UL, 5826008423592869089UL + 985UL, 5826008423592869089UL + 1388UL, 5826008423592869089UL + 1422UL, 5826008423592869089UL + 892UL, 5826008423592869089UL + 832UL, 5826008423592869089UL + 585UL, 5826008423592869089UL + 636UL, 5826008423592869089UL + 1090UL, 5826008423592869089UL + 1196UL, 5826008423592869089UL + 583UL, 5826008423592869089UL + 546UL, 5826008423592869089UL + 636UL, 5826008423592869089UL + 595UL, 5826008423592869089UL + 300UL, 5826008423592869089UL + 378UL, 5826008423592869089UL + 986UL, 5826008423592869089UL + 1058UL, 5826008423592869089UL + 646UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 1919UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 1089UL, 5826008423592869089UL + 1195UL, 5826008423592869089UL + 648UL, 5826008423592869089UL + 832UL, 5826008423592869089UL + 1202UL, 5826008423592869089UL + 1235UL, 5826008423592869089UL + 106UL, 5826008423592869089UL + 144UL, 5826008423592869089UL + 107UL, 5826008423592869089UL + 145UL, 5826008423592869089UL + 1994UL, 5826008423592869089UL + 1265UL, 5826008423592869089UL + 638UL, 5826008423592869089UL + 892UL, 5826008423592869089UL + 1990UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 14UL, 5826008423592869089UL + 1996UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 1060UL, 5826008423592869089UL + 1073UL, 5826008423592869089UL + 37UL, 5826008423592869089UL + 102UL, 5826008423592869089UL + 645UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 299UL, 5826008423592869089UL + 372UL, 5826008423592869089UL + 297UL, 5826008423592869089UL + 221UL, 5826008423592869089UL + 1386UL, 5826008423592869089UL + 1487UL, 5826008423592869089UL + 372UL, 5826008423592869089UL + 339UL, 5826008423592869089UL + 538UL, 5826008423592869089UL + 583UL, "node_t", 4, (int)__builtin_offsetof (struct node_t, type), (int)__builtin_offsetof (struct node_t, height), (int)__builtin_offsetof (struct node_t, numChildren), (int)__builtin_offsetof (struct node_t, state), "omp_lock_t", 1, (int)__builtin_offsetof (omp_lock_t, _x), "state_t", 1, (int)__builtin_offsetof (struct state_t, state), "stealStack_t", 23, (int)__builtin_offsetof (struct stealStack_t, stackSize), (int)__builtin_offsetof (struct stealStack_t, workAvail), (int)__builtin_offsetof (struct stealStack_t, sharedStart), (int)__builtin_offsetof (struct stealStack_t, local), (int)__builtin_offsetof (struct stealStack_t, top), (int)__builtin_offsetof (struct stealStack_t, maxStackDepth), (int)__builtin_offsetof (struct stealStack_t, nNodes), (int)__builtin_offsetof (struct stealStack_t, maxTreeDepth), (int)__builtin_offsetof (struct stealStack_t, nLeaves), (int)__builtin_offsetof (struct stealStack_t, nAcquire), (int)__builtin_offsetof (struct stealStack_t, nRelease), (int)__builtin_offsetof (struct stealStack_t, nSteal), (int)__builtin_offsetof (struct stealStack_t, nFail), (int)__builtin_offsetof (struct stealStack_t, wakeups), (int)__builtin_offsetof (struct stealStack_t, falseWakeups), (int)__builtin_offsetof (struct stealStack_t, nNodes_last), (int)__builtin_offsetof (struct stealStack_t, time), (int)__builtin_offsetof (struct stealStack_t, timeLast), (int)__builtin_offsetof (struct stealStack_t, entries), (int)__builtin_offsetof (struct stealStack_t, curState), (int)__builtin_offsetof (struct stealStack_t, stackLock), (int)__builtin_offsetof (struct stealStack_t, stack), (int)__builtin_offsetof (struct stealStack_t, stack_g));
-    register_global_var("global|doSteal", "i32*", (void *)(&doSteal), 8, 1, 0, 0);
-    register_global_var("global|chunkSize", "i32*", (void *)(&chunkSize), 8, 1, 0, 0);
-    register_global_var("global|cbint", "i32*", (void *)(&cbint), 8, 1, 0, 0);
-    register_global_var("global|pollint", "i32*", (void *)(&pollint), 8, 1, 0, 0);
-    register_global_var("global|stats", "i32*", (void *)(&stats), 8, 1, 0, 0);
-    register_global_var("global|unbType", "i32*", (void *)(&unbType), 8, 1, 0, 0);
-    register_global_var("global|debug_str", "[1000 x i8]*", (void *)(&debug_str), 8, 1, 0, 0);
-    register_global_var("global|stealStack", "[32 x %struct.stealStack_t*]*", (void *)(&stealStack), 8, 1, 0, 0);
-    register_global_var("global|cb_cancel", "i32*", (void *)(&cb_cancel), 8, 1, 0, 0);
-    register_global_var("global|cb_count", "i32*", (void *)(&cb_count), 8, 1, 0, 0);
-    register_global_var("global|cb_done", "i32*", (void *)(&cb_done), 8, 1, 0, 0);
-    register_global_var("global|cb_lock", "%struct.omp_lock_t**", (void *)(&cb_lock), 8, 1, 0, 0);
-    register_global_var("global|startTime", "[32 x double]*", (void *)(&startTime), 8, 1, 0, 0);
+    register_global_var("global|doSteal", "i32", (void *)(&doSteal), 4, 0, 0, 0);
+    register_global_var("global|chunkSize", "i32", (void *)(&chunkSize), 4, 0, 0, 0);
+    register_global_var("global|cbint", "i32", (void *)(&cbint), 4, 0, 0, 0);
+    register_global_var("global|pollint", "i32", (void *)(&pollint), 4, 0, 0, 0);
+    register_global_var("global|stats", "i32", (void *)(&stats), 4, 0, 0, 0);
+    register_global_var("global|unbType", "i32", (void *)(&unbType), 4, 0, 0, 0);
+    register_global_var("global|debug_str", "[1000 x i8]", (void *)(&debug_str), 1000, 0, 0, 0);
+    register_global_var("global|stealStack", "[32 x %struct.stealStack_t*]", (void *)(&stealStack), 256, 0, 0, 0);
+    register_global_var("global|cb_cancel", "i32", (void *)(&cb_cancel), 4, 0, 0, 0);
+    register_global_var("global|cb_count", "i32", (void *)(&cb_count), 4, 0, 0, 0);
+    register_global_var("global|cb_done", "i32", (void *)(&cb_done), 4, 0, 0, 0);
+    register_global_var("global|cb_lock", "%struct.omp_lock_t*", (void *)(&cb_lock), 8, 1, 0, 0);
+    register_global_var("global|startTime", "[32 x double]", (void *)(&startTime), 256, 0, 0, 0);
     return 0;
 }
 

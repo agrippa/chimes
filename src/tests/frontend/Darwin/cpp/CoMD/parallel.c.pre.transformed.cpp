@@ -56,6 +56,8 @@ extern void register_stack_var(const char *mangled_name,
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
 extern int alias_group_changed(int ngroups, ...);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -75,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -188,9 +190,9 @@ int builtWithMpi(void);
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
 # 65 "/usr/include/stdio.h" 2 3 4
 # 1 "/usr/include/Availability.h" 1 3 4
-# 151 "/usr/include/Availability.h" 3 4
+# 153 "/usr/include/Availability.h" 3 4
 # 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 152 "/usr/include/Availability.h" 2 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
 # 66 "/usr/include/stdio.h" 2 3 4
 
 # 1 "/usr/include/_types.h" 1 3 4
@@ -2277,8 +2279,8 @@ int builtWithMpi(void)
 
 static int module_init() {
     init_module(3632450578146407556UL, 20, 1, 3632450578146407556UL + 151UL, 3632450578146407556UL + 184UL, 3632450578146407556UL + 309UL, 3632450578146407556UL + 356UL, 3632450578146407556UL + 152UL, 3632450578146407556UL + 185UL, 3632450578146407556UL + 15UL, 3632450578146407556UL + 42UL, 3632450578146407556UL + 17UL, 3632450578146407556UL + 29UL, 3632450578146407556UL + 259UL, 3632450578146407556UL + 306UL, 3632450578146407556UL + 375UL, 3632450578146407556UL + 34UL, 3632450578146407556UL + 310UL, 3632450578146407556UL + 357UL, 3632450578146407556UL + 51UL, 3632450578146407556UL + 58UL, 3632450578146407556UL + 52UL, 3632450578146407556UL + 59UL, 3632450578146407556UL + 115UL, 3632450578146407556UL + 148UL, 3632450578146407556UL + 61UL, 3632450578146407556UL + 92UL, 3632450578146407556UL + 260UL, 3632450578146407556UL + 307UL, 3632450578146407556UL + 116UL, 3632450578146407556UL + 149UL, 3632450578146407556UL + 64UL, 3632450578146407556UL + 91UL, 3632450578146407556UL + 187UL, 3632450578146407556UL + 220UL, 3632450578146407556UL + 188UL, 3632450578146407556UL + 221UL, 3632450578146407556UL + 224UL, 3632450578146407556UL + 257UL, 3632450578146407556UL + 223UL, 3632450578146407556UL + 256UL, 3632450578146407556UL + 359UL, 3632450578146407556UL + 369UL, "RankReduceDataSt", 2, (int)__builtin_offsetof(struct RankReduceDataSt, val), (int)__builtin_offsetof(struct RankReduceDataSt, rank));
-    register_global_var("global|nRanks", "i32*", (void *)(&nRanks), 8, 1, 0, 0);
-    register_global_var("global|myRank", "i32*", (void *)(&myRank), 8, 1, 0, 0);
+    register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4, 0, 0, 0);
+    register_global_var("global|myRank", "i32", (void *)(&myRank), 4, 0, 0, 0);
     return 0;
 }
 

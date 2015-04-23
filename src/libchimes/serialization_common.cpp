@@ -89,6 +89,49 @@ void new_var(unsigned char **stream, uint64_t *stream_capacity,
     *stream_len += var_record_size;
 }
 
+void new_constant(unsigned char **stream, uint64_t *stream_capacity,
+        uint64_t *stream_len, size_t const_id, void *address, size_t length) {
+    int constant_record_size = 1 + sizeof(const_id) + sizeof(address) +
+        sizeof(length);
+    ensure_capacity(stream, stream_capacity,
+            *stream_len + constant_record_size);
+
+    unsigned char *base = (*stream) + *stream_len;
+    *base = NEW_CONSTANT;
+    base++;
+
+    memcpy(base, &const_id, sizeof(const_id));
+    base += sizeof(const_id);
+
+    memcpy(base, &address, sizeof(address));
+    base += sizeof(address);
+
+    memcpy(base, &length, sizeof(length));
+    base += sizeof(length);
+
+    *stream_len += constant_record_size;
+}
+
+constant_var *deserialize_constant(unsigned char **ptr_to_iter) {
+    unsigned char *iter = *ptr_to_iter;
+
+    size_t id;
+    unsigned char *id_ptr = (unsigned char *)iter;
+    memcpy(&id, id_ptr, sizeof(id));
+
+    void *address;
+    unsigned char *address_ptr = id_ptr + sizeof(id);
+    memcpy(&address, address_ptr, sizeof(address));
+
+    size_t size;
+    unsigned char *size_ptr = address_ptr + sizeof(address);
+    memcpy(&size, size_ptr, sizeof(size));
+
+    *ptr_to_iter = size_ptr + sizeof(size);
+
+    return new constant_var(id, address, size);
+}
+
 stack_var *deserialize_var(unsigned char **ptr_to_iter) {
     unsigned char *iter = *ptr_to_iter;
 
