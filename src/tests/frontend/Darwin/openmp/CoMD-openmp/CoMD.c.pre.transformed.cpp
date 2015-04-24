@@ -2704,7 +2704,7 @@ int main(int argc, char** argv)
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_5: calling((void*)&initSubsystems, 5, 0UL, 0); initSubsystems();
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_6: calling((void*)&timestampBarrier, 6, 0UL, 1, (size_t)(15748557669205417575UL)); timestampBarrier("Starting Initialization\n");
+    call_lbl_6: calling((void*)&timestampBarrier, 6, 0UL, 1, (size_t)(15748557669205417574UL)); timestampBarrier("Starting Initialization\n");
 # 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_7: calling((void*)&yamlAppInfo, 7, 0UL, 1, (size_t)(15748557669205417124UL)); yamlAppInfo(yamlFile);
@@ -2728,10 +2728,10 @@ int main(int argc, char** argv)
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_2: Validate *validate; register_stack_var("main|validate|0", "%struct.ValidateSt*", (void *)(&validate), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } call_lbl_17: calling((void*)&initValidate, 17, 15748557669205416393UL, 1, (size_t)(15748557669205416418UL)); validate = (initValidate(sim)) ;
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205416354UL)); call_lbl_19: calling((void*)&timestampBarrier, 19, 0UL, 1, (size_t)(15748557669205417575UL)); timestampBarrier("Initialization Finished\n");
+   alias_group_changed(1, (size_t)(15748557669205416354UL)); call_lbl_19: calling((void*)&timestampBarrier, 19, 0UL, 1, (size_t)(15748557669205417574UL)); timestampBarrier("Initialization Finished\n");
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_20: calling((void*)&timestampBarrier, 20, 0UL, 1, (size_t)(15748557669205417579UL)); timestampBarrier("Starting simulation\n");
+    call_lbl_20: calling((void*)&timestampBarrier, 20, 0UL, 1, (size_t)(15748557669205417578UL)); timestampBarrier("Starting simulation\n");
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2780,7 +2780,7 @@ int main(int argc, char** argv)
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_35: calling((void*)&printThings, 35, 0UL, 3, (size_t)(15748557669205416418UL), (size_t)(0UL), (size_t)(0UL)); call_lbl_36: calling((void*)&getElapsedTime, 36, 0UL, 1, (size_t)(0UL)); printThings(sim, iStep, getElapsedTime(timestepTimer));
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_37: calling((void*)&timestampBarrier, 37, 0UL, 1, (size_t)(15748557669205417580UL)); timestampBarrier("Ending simulation\n");
+    call_lbl_37: calling((void*)&timestampBarrier, 37, 0UL, 1, (size_t)(15748557669205417579UL)); timestampBarrier("Ending simulation\n");
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2801,7 +2801,7 @@ int main(int argc, char** argv)
     call_lbl_44: calling((void*)&finalizeSubsystems, 44, 0UL, 0); finalizeSubsystems();
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_45: calling((void*)&timestampBarrier, 45, 0UL, 1, (size_t)(15748557669205417581UL)); timestampBarrier("CoMD Ending\n");
+    call_lbl_45: calling((void*)&timestampBarrier, 45, 0UL, 1, (size_t)(15748557669205417580UL)); timestampBarrier("CoMD Ending\n");
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     call_lbl_46: calling((void*)&destroyParallel, 46, 0UL, 0); destroyParallel();
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2836,7 +2836,7 @@ SimFlat* initSimulation(Command cmd)
    sim->atomExchange = __null;
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(2, (size_t)(15748557669205416492UL), (size_t)(15748557669205416665UL)); call_lbl_3: calling((void*)&initPotential, 3, 15748557669205417616UL, 4, (size_t)(0UL), (size_t)(15748557669205416682UL), (size_t)(15748557669205416682UL), (size_t)(15748557669205416682UL)); sim->pot = initPotential(cmd.doeam, cmd.potDir, cmd.potName, cmd.potType);
+   alias_group_changed(2, (size_t)(15748557669205416492UL), (size_t)(15748557669205416665UL)); call_lbl_3: calling((void*)&initPotential, 3, 15748557669205417615UL, 4, (size_t)(0UL), (size_t)(15748557669205416682UL), (size_t)(15748557669205416682UL), (size_t)(15748557669205416682UL)); sim->pot = initPotential(cmd.doeam, cmd.potDir, cmd.potName, cmd.potType);
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_1: real_t latticeConstant; register_stack_var("initSimulation|latticeConstant|0", "double", (void *)(&latticeConstant), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } latticeConstant = (cmd.lat) ;
 # 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2844,10 +2844,10 @@ SimFlat* initSimulation(Command cmd)
 # 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(2, (size_t)(15748557669205416493UL), (size_t)(15748557669205416665UL)); call_lbl_5: calling((void*)&sanityChecks, 5, 0UL, 4, (size_t)(15748557669205416494UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205417616UL)); sanityChecks(cmd, sim->pot->cutoff, latticeConstant, sim->pot->latticeType);
+   alias_group_changed(2, (size_t)(15748557669205416493UL), (size_t)(15748557669205416665UL)); call_lbl_5: calling((void*)&sanityChecks, 5, 0UL, 4, (size_t)(15748557669205416494UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205417615UL)); sanityChecks(cmd, sim->pot->cutoff, latticeConstant, sim->pot->latticeType);
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_6: calling((void*)&initSpecies, 6, 15748557669205417616UL, 1, (size_t)(15748557669205417616UL)); sim->species = initSpecies(sim->pot);
+    call_lbl_6: calling((void*)&initSpecies, 6, 15748557669205417615UL, 1, (size_t)(15748557669205417615UL)); sim->species = initSpecies(sim->pot);
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     lbl_2: real3 globalExtent; register_stack_var("initSimulation|globalExtent|0", "[3 x double]", (void *)(globalExtent), (size_t)24, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } default: { chimes_error(); } } } ;
@@ -2859,14 +2859,14 @@ SimFlat* initSimulation(Command cmd)
    globalExtent[2] = cmd.nz * latticeConstant;
 # 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(2, (size_t)(15748557669205416495UL), (size_t)(15748557669205416665UL)); call_lbl_8: calling((void*)&initDecomposition, 8, 15748557669205417616UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205416495UL)); sim->domain = initDecomposition(
+   alias_group_changed(2, (size_t)(15748557669205416495UL), (size_t)(15748557669205416665UL)); call_lbl_8: calling((void*)&initDecomposition, 8, 15748557669205417615UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205416495UL)); sim->domain = initDecomposition(
 # 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       cmd.xproc, cmd.yproc, cmd.zproc, globalExtent);
 # 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205416665UL)); call_lbl_10: calling((void*)&initLinkCells, 10, 15748557669205417616UL, 2, (size_t)(15748557669205417616UL), (size_t)(0UL)); sim->boxes = initLinkCells(sim->domain, sim->pot->cutoff);
+   alias_group_changed(1, (size_t)(15748557669205416665UL)); call_lbl_10: calling((void*)&initLinkCells, 10, 15748557669205417615UL, 2, (size_t)(15748557669205417615UL), (size_t)(0UL)); sim->boxes = initLinkCells(sim->domain, sim->pot->cutoff);
 # 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205416665UL)); call_lbl_12: calling((void*)&initAtoms, 12, 15748557669205417616UL, 1, (size_t)(15748557669205417616UL)); sim->atoms = initAtoms(sim->boxes);
+   alias_group_changed(1, (size_t)(15748557669205416665UL)); call_lbl_12: calling((void*)&initAtoms, 12, 15748557669205417615UL, 1, (size_t)(15748557669205417615UL)); sim->atoms = initAtoms(sim->boxes);
 # 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2877,7 +2877,7 @@ SimFlat* initSimulation(Command cmd)
     call_lbl_16: calling((void*)&randomDisplacements, 16, 0UL, 2, (size_t)(15748557669205416665UL), (size_t)(0UL)); randomDisplacements(sim, cmd.initialDelta);
 # 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_17: calling((void*)&initAtomHaloExchange, 17, 15748557669205417616UL, 2, (size_t)(15748557669205417616UL), (size_t)(15748557669205417616UL)); sim->atomExchange = initAtomHaloExchange(sim->domain, sim->boxes);
+    call_lbl_17: calling((void*)&initAtomHaloExchange, 17, 15748557669205417615UL, 2, (size_t)(15748557669205417615UL), (size_t)(15748557669205417615UL)); sim->atomExchange = initAtomHaloExchange(sim->domain, sim->boxes);
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2906,25 +2906,25 @@ SimFlat* initSimulation(Command cmd)
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 void destroySimulation(SimFlat** ps)
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-{new_stack((void *)(&destroySimulation), 1, 1, (size_t)(15748557669205417289UL), "destroySimulation|ps|0", "%struct.SimFlatSt**", (void *)(&ps), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&destroySimulation), 1, 1, (size_t)(15748557669205417288UL), "destroySimulation|ps|0", "%struct.SimFlatSt**", (void *)(&ps), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (!ps) {alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417289UL)); rm_stack(false, 0UL); return;; };
+   if (!ps) {alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417288UL)); rm_stack(false, 0UL); return;; };
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_0: SimFlat *s; register_stack_var("destroySimulation|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } s = (*ps) ;
 # 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (!s) {alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417289UL)); rm_stack(false, 0UL); return;; };
+   if (!s) {alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417288UL)); rm_stack(false, 0UL); return;; };
 # 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-     lbl_1: BasePotential *pot; register_stack_var("destroySimulation|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } pot = (s->pot) ;
+     lbl_1: BasePotential *pot; register_stack_var("destroySimulation|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } pot = (s->pot) ;
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (pot) {alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417234UL)); call_lbl_6: calling((void*)pot->destroy, 6, 0UL, 1, (size_t)(15748557669205417234UL)); pot->destroy(&pot); };
+   if (pot) {free_wrapper(pot, 15748557669205417252UL); };
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417234UL)); call_lbl_8: calling((void*)&destroyLinkCells, 8, 0UL, 1, (size_t)(15748557669205417243UL)); destroyLinkCells(&(s->boxes));
+   alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417234UL)); call_lbl_7: calling((void*)&destroyLinkCells, 7, 0UL, 1, (size_t)(15748557669205417243UL)); destroyLinkCells(&(s->boxes));
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_9: calling((void*)&destroyAtoms, 9, 0UL, 1, (size_t)(15748557669205417252UL)); destroyAtoms(s->atoms);
+    call_lbl_8: calling((void*)&destroyAtoms, 8, 0UL, 1, (size_t)(15748557669205417252UL)); destroyAtoms(s->atoms);
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_10: calling((void*)&destroyHaloExchange, 10, 0UL, 1, (size_t)(15748557669205417243UL)); destroyHaloExchange(&(s->atomExchange));
+    call_lbl_9: calling((void*)&destroyHaloExchange, 9, 0UL, 1, (size_t)(15748557669205417243UL)); destroyHaloExchange(&(s->atomExchange));
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    free_wrapper(s->species, 15748557669205417252UL);
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2935,7 +2935,7 @@ void destroySimulation(SimFlat** ps)
    *ps = __null;
 # 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417289UL)); rm_stack(false, 0UL); return;
+   alias_group_changed(3, (size_t)(15748557669205417232UL), (size_t)(15748557669205417233UL), (size_t)(15748557669205417288UL)); rm_stack(false, 0UL); return;
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2970,35 +2970,35 @@ BasePotential* initPotential(
 # 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    int doeam, const char* potDir, const char* potName, const char* potType)
 # 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-{new_stack((void *)(&initPotential), 4, 4, (size_t)(0UL), (size_t)(15748557669205417346UL), (size_t)(15748557669205417347UL), (size_t)(15748557669205417348UL), "initPotential|doeam|0", "i32", (void *)(&doeam), (size_t)4, 0, 0, 0, "initPotential|potDir|0", "i8*", (void *)(&potDir), (size_t)8, 1, 0, 0, "initPotential|potName|0", "i8*", (void *)(&potName), (size_t)8, 1, 0, 0, "initPotential|potType|0", "i8*", (void *)(&potType), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&initPotential), 4, 4, (size_t)(0UL), (size_t)(15748557669205417345UL), (size_t)(15748557669205417346UL), (size_t)(15748557669205417347UL), "initPotential|doeam|0", "i32", (void *)(&doeam), (size_t)4, 0, 0, 0, "initPotential|potDir|0", "i8*", (void *)(&potDir), (size_t)8, 1, 0, 0, "initPotential|potName|0", "i8*", (void *)(&potName), (size_t)8, 1, 0, 0, "initPotential|potType|0", "i8*", (void *)(&potType), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_0: BasePotential *pot; register_stack_var("initPotential|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } pot = (__null) ;
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (doeam) {alias_group_changed(5, (size_t)(15748557669205417305UL), (size_t)(15748557669205417306UL), (size_t)(15748557669205417307UL), (size_t)(15748557669205417308UL), (size_t)(15748557669205417309UL)); call_lbl_2: calling((void*)&initEamPot, 2, 15748557669205417343UL, 3, (size_t)(15748557669205417346UL), (size_t)(15748557669205417347UL), (size_t)(15748557669205417348UL)); pot = initEamPot(potDir, potName, potType); } else {alias_group_changed(5, (size_t)(15748557669205417305UL), (size_t)(15748557669205417306UL), (size_t)(15748557669205417307UL), (size_t)(15748557669205417308UL), (size_t)(15748557669205417309UL)); call_lbl_4: calling((void*)&initLjPot, 4, 15748557669205417343UL, 0); pot = initLjPot(); } ;
+   if (doeam) {alias_group_changed(5, (size_t)(15748557669205417304UL), (size_t)(15748557669205417305UL), (size_t)(15748557669205417306UL), (size_t)(15748557669205417307UL), (size_t)(15748557669205417308UL)); call_lbl_2: calling((void*)&initEamPot, 2, 15748557669205417342UL, 3, (size_t)(15748557669205417345UL), (size_t)(15748557669205417346UL), (size_t)(15748557669205417347UL)); pot = initEamPot(potDir, potName, potType); } else {alias_group_changed(5, (size_t)(15748557669205417304UL), (size_t)(15748557669205417305UL), (size_t)(15748557669205417306UL), (size_t)(15748557669205417307UL), (size_t)(15748557669205417308UL)); call_lbl_4: calling((void*)&initLjPot, 4, 15748557669205417342UL, 0); pot = initLjPot(); } ;
 # 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205417309UL)); (__builtin_expect(!(pot), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c", 273, "pot") : (void)0);
+   alias_group_changed(1, (size_t)(15748557669205417308UL)); (__builtin_expect(!(pot), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c", 273, "pot") : (void)0);
 # 274 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205417309UL)); rm_stack(true, 15748557669205417343UL); return pot;
+   alias_group_changed(1, (size_t)(15748557669205417308UL)); rm_stack(true, 15748557669205417342UL); return pot;
 # 275 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 }
 # 276 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 277 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 SpeciesData* initSpecies(BasePotential* pot)
 # 278 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-{new_stack((void *)(&initSpecies), 1, 1, (size_t)(15748557669205417536UL), "initSpecies|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&initSpecies), 1, 1, (size_t)(15748557669205417535UL), "initSpecies|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-     lbl_0: SpeciesData *species; register_stack_var("initSpecies|species|0", "%struct.SpeciesDataSt*", (void *)(&species), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } species = ((SpeciesData *)malloc_wrapper(sizeof(SpeciesData), 15748557669205417512UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0)) ;
+     lbl_0: SpeciesData *species; register_stack_var("initSpecies|species|0", "%struct.SpeciesDataSt*", (void *)(&species), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } species = ((SpeciesData *)malloc_wrapper(sizeof(SpeciesData), 15748557669205417511UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0)) ;
 # 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(2, (size_t)(15748557669205417507UL), (size_t)(15748557669205417508UL)); call_lbl_3: calling((void*)&strcpy, 3, 15748557669205417521UL, 2, (size_t)(15748557669205417512UL), (size_t)(15748557669205417536UL)); strcpy(species->name, pot->name);
+   alias_group_changed(2, (size_t)(15748557669205417506UL), (size_t)(15748557669205417507UL)); call_lbl_3: calling((void*)&strcpy, 3, 15748557669205417520UL, 2, (size_t)(15748557669205417511UL), (size_t)(15748557669205417535UL)); strcpy(species->name, pot->name);
 # 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    species->atomicNo = pot->atomicNo;
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    species->mass = pot->mass;
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205417512UL)); rm_stack(true, 15748557669205417512UL); return species;
+   alias_group_changed(1, (size_t)(15748557669205417511UL)); rm_stack(true, 15748557669205417511UL); return species;
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 }
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3135,7 +3135,7 @@ void printThings(SimFlat* s, int iStep, double elapsedTime)
    iStepPrev = iStep;
 # 361 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 362 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(5, (size_t)(15748557669205417014UL), (size_t)(15748557669205417015UL), (size_t)(15748557669205417016UL), (size_t)(15748557669205417017UL), (size_t)(15748557669205417593UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(6, (size_t)(15748557669205417018UL), (size_t)(15748557669205417019UL), (size_t)(15748557669205417020UL), (size_t)(15748557669205417021UL), (size_t)(15748557669205417022UL), (size_t)(15748557669205417023UL)); rm_stack(false, 0UL); return;; };
+   alias_group_changed(5, (size_t)(15748557669205417014UL), (size_t)(15748557669205417015UL), (size_t)(15748557669205417016UL), (size_t)(15748557669205417017UL), (size_t)(15748557669205417592UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(6, (size_t)(15748557669205417018UL), (size_t)(15748557669205417019UL), (size_t)(15748557669205417020UL), (size_t)(15748557669205417021UL), (size_t)(15748557669205417022UL), (size_t)(15748557669205417023UL)); rm_stack(false, 0UL); return;; };
 # 364 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 365 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    if (firstCall)
@@ -3150,7 +3150,7 @@ void printThings(SimFlat* s, int iStep, double elapsedTime)
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
        "#  Loop   Time(fs)       Total Energy   Potential Energy     Kinetic Energy  Temperature   (us/atom)     # Atoms\n");
 # 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      alias_group_changed(1, (size_t)(15748557669205417593UL)); call_lbl_7: calling((void*)&fflush, 7, 0UL, 1, (size_t)(15748557669205417124UL)); fflush(__stdoutp);
+      alias_group_changed(1, (size_t)(15748557669205417592UL)); call_lbl_7: calling((void*)&fflush, 7, 0UL, 1, (size_t)(15748557669205417124UL)); fflush(__stdoutp);
 # 372 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 373 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3249,7 +3249,7 @@ rm_stack(false, 0UL); }
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeType[8])
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-{new_stack((void *)(&sanityChecks), 4, 3, (size_t)(15748557669205417503UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205417506UL), "sanityChecks|cutoff|0", "double", (void *)(&cutoff), (size_t)8, 0, 0, 0, "sanityChecks|latticeConst|0", "double", (void *)(&latticeConst), (size_t)8, 0, 0, 0, "sanityChecks|latticeType|0", "i8*", (void *)(&latticeType), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&sanityChecks), 4, 3, (size_t)(15748557669205417502UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205417505UL), "sanityChecks|cutoff|0", "double", (void *)(&cutoff), (size_t)8, 0, 0, 0, "sanityChecks|latticeConst|0", "double", (void *)(&latticeConst), (size_t)8, 0, 0, 0, "sanityChecks|latticeType|0", "i8*", (void *)(&latticeType), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_0: int failCode; register_stack_var("sanityChecks|failCode|0", "i32", (void *)(&failCode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } failCode = (0) ;
 # 430 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3257,13 +3257,13 @@ void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeT
 # 432 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_1: int nProcs; register_stack_var("sanityChecks|nProcs|0", "i32", (void *)(&nProcs), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } nProcs = (cmd.xproc * cmd.yproc * cmd.zproc) ;
 # 433 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(5, (size_t)(15748557669205417349UL), (size_t)(15748557669205417350UL), (size_t)(15748557669205417351UL), (size_t)(15748557669205417352UL), (size_t)(15748557669205417353UL)); call_lbl_2: calling((void*)&getNRanks, 2, 0UL, 0); if (nProcs != getNRanks())
+   alias_group_changed(5, (size_t)(15748557669205417348UL), (size_t)(15748557669205417349UL), (size_t)(15748557669205417350UL), (size_t)(15748557669205417351UL), (size_t)(15748557669205417352UL)); call_lbl_2: calling((void*)&getNRanks, 2, 0UL, 0); if (nProcs != getNRanks())
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       failCode |= 1;
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       call_lbl_4: calling((void*)&printRank, 4, 0UL, 0); if (alias_group_changed(1, (size_t)(15748557669205417352UL)) || printRank()) {fprintf(__stdoutp, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
+       call_lbl_4: calling((void*)&printRank, 4, 0UL, 0); if (alias_group_changed(1, (size_t)(15748557669205417351UL)) || printRank()) {fprintf(__stdoutp, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
 # 439 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 440 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3288,25 +3288,25 @@ void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeT
 # 451 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       failCode |= 2;
 # 452 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       call_lbl_7: calling((void*)&printRank, 7, 0UL, 0); if (alias_group_changed(7, (size_t)(15748557669205417352UL), (size_t)(15748557669205417354UL), (size_t)(15748557669205417355UL), (size_t)(15748557669205417356UL), (size_t)(15748557669205417357UL), (size_t)(15748557669205417358UL), (size_t)(15748557669205417359UL)) || printRank()) {fprintf(__stdoutp, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
+       call_lbl_7: calling((void*)&printRank, 7, 0UL, 0); if (alias_group_changed(7, (size_t)(15748557669205417351UL), (size_t)(15748557669205417353UL), (size_t)(15748557669205417354UL), (size_t)(15748557669205417355UL), (size_t)(15748557669205417356UL), (size_t)(15748557669205417357UL), (size_t)(15748557669205417358UL)) || printRank()) {fprintf(__stdoutp, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
 # 457 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 458 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 459 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 460 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    call_lbl_10: calling((void*)&strcasecmp, 10, 0UL, 2, (size_t)(15748557669205417506UL), (size_t)(15748557669205417608UL)); if (alias_group_changed(7, (size_t)(15748557669205417352UL), (size_t)(15748557669205417354UL), (size_t)(15748557669205417355UL), (size_t)(15748557669205417356UL), (size_t)(15748557669205417357UL), (size_t)(15748557669205417358UL), (size_t)(15748557669205417359UL)) || strcasecmp(latticeType, "FCC") != 0)
+    call_lbl_10: calling((void*)&strcasecmp, 10, 0UL, 2, (size_t)(15748557669205417505UL), (size_t)(15748557669205417607UL)); if (alias_group_changed(7, (size_t)(15748557669205417351UL), (size_t)(15748557669205417353UL), (size_t)(15748557669205417354UL), (size_t)(15748557669205417355UL), (size_t)(15748557669205417356UL), (size_t)(15748557669205417357UL), (size_t)(15748557669205417358UL)) || strcasecmp(latticeType, "FCC") != 0)
 # 461 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 462 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       failCode |= 4;
 # 463 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       call_lbl_12: calling((void*)&printRank, 12, 0UL, 0); if (alias_group_changed(1, (size_t)(15748557669205417352UL)) || printRank()) {fprintf(__stdoutp, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
+       call_lbl_12: calling((void*)&printRank, 12, 0UL, 0); if (alias_group_changed(1, (size_t)(15748557669205417351UL)) || printRank()) {fprintf(__stdoutp, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
 # 467 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 468 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
      lbl_8: int checkCode; register_stack_var("sanityChecks|checkCode|0", "i32", (void *)(&checkCode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } checkCode = (failCode) ;
 # 469 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(1, (size_t)(15748557669205417360UL)); call_lbl_15: calling((void*)&bcastParallel, 15, 0UL, 3, (size_t)(15748557669205417360UL), (size_t)(0UL), (size_t)(0UL)); bcastParallel(&checkCode, sizeof(int), 0);
+   alias_group_changed(1, (size_t)(15748557669205417359UL)); call_lbl_15: calling((void*)&bcastParallel, 15, 0UL, 3, (size_t)(15748557669205417359UL), (size_t)(0UL), (size_t)(0UL)); bcastParallel(&checkCode, sizeof(int), 0);
 # 470 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 471 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 472 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3319,7 +3319,7 @@ rm_stack(false, 0UL); }
 
 
 static int module_init() {
-    init_module(15748557669205416347UL, 35, 13, 15748557669205416347UL + 607UL, 15748557669205416347UL + 571UL, 15748557669205416347UL + 318UL, 15748557669205416347UL + 1269UL, 15748557669205416347UL + 887UL, 15748557669205416347UL + 905UL, 15748557669205416347UL + 886UL, 15748557669205416347UL + 896UL, 15748557669205416347UL + 885UL, 15748557669205416347UL + 942UL, 15748557669205416347UL + 667UL, 15748557669205416347UL + 793UL, 15748557669205416347UL + 551UL, 15748557669205416347UL + 351UL, 15748557669205416347UL + 608UL, 15748557669205416347UL + 652UL, 15748557669205416347UL + 553UL, 15748557669205416347UL + 559UL, 15748557669205416347UL + 552UL, 15748557669205416347UL + 607UL, 15748557669205416347UL + 1160UL, 15748557669205416347UL + 1189UL, 15748557669205416347UL + 1161UL, 15748557669205416347UL + 1165UL, 15748557669205416347UL + 959UL, 15748557669205416347UL + 999UL, 15748557669205416347UL + 793UL, 15748557669205416347UL + 721UL, 15748557669205416347UL + 3UL, 15748557669205416347UL + 130UL, 15748557669205416347UL + 654UL, 15748557669205416347UL + 634UL, 15748557669205416347UL + 5UL, 15748557669205416347UL + 71UL, 15748557669205416347UL + 341UL, 15748557669205416347UL + 550UL, 15748557669205416347UL + 7UL, 15748557669205416347UL + 46UL, 15748557669205416347UL + 652UL, 15748557669205416347UL + 654UL, 15748557669205416347UL + 145UL, 15748557669205416347UL + 318UL, 15748557669205416347UL + 342UL, 15748557669205416347UL + 551UL, 15748557669205416347UL + 896UL, 15748557669205416347UL + 905UL, 15748557669205416347UL + 1229UL, 15748557669205416347UL + 777UL, 15748557669205416347UL + 71UL, 15748557669205416347UL + 112UL, 15748557669205416347UL + 881UL, 15748557669205416347UL + 821UL, 15748557669205416347UL + 1004UL, 15748557669205416347UL + 1159UL, 15748557669205416347UL + 960UL, 15748557669205416347UL + 1000UL, 15748557669205416347UL + 961UL, 15748557669205416347UL + 1001UL, 15748557669205416347UL + 962UL, 15748557669205416347UL + 996UL, 15748557669205416347UL + 905UL, 15748557669205416347UL + 912UL, 15748557669205416347UL + 942UL, 15748557669205416347UL + 896UL, 15748557669205416347UL + 351UL, 15748557669205416347UL + 540UL, 15748557669205416347UL + 801UL, 15748557669205416347UL + 881UL, 15748557669205416347UL + 800UL, 15748557669205416347UL + 880UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 5, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "ValidateSt", 2, "double", (int)__builtin_offsetof (struct ValidateSt, eTot0), "int", (int)__builtin_offsetof (struct ValidateSt, nAtoms0), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size));
+    init_module(15748557669205416347UL, 34, 13, 15748557669205416347UL + 607UL, 15748557669205416347UL + 571UL, 15748557669205416347UL + 318UL, 15748557669205416347UL + 1268UL, 15748557669205416347UL + 887UL, 15748557669205416347UL + 905UL, 15748557669205416347UL + 886UL, 15748557669205416347UL + 896UL, 15748557669205416347UL + 885UL, 15748557669205416347UL + 941UL, 15748557669205416347UL + 667UL, 15748557669205416347UL + 793UL, 15748557669205416347UL + 551UL, 15748557669205416347UL + 351UL, 15748557669205416347UL + 608UL, 15748557669205416347UL + 652UL, 15748557669205416347UL + 553UL, 15748557669205416347UL + 559UL, 15748557669205416347UL + 552UL, 15748557669205416347UL + 607UL, 15748557669205416347UL + 1160UL, 15748557669205416347UL + 1164UL, 15748557669205416347UL + 959UL, 15748557669205416347UL + 999UL, 15748557669205416347UL + 958UL, 15748557669205416347UL + 998UL, 15748557669205416347UL + 793UL, 15748557669205416347UL + 721UL, 15748557669205416347UL + 3UL, 15748557669205416347UL + 130UL, 15748557669205416347UL + 654UL, 15748557669205416347UL + 634UL, 15748557669205416347UL + 5UL, 15748557669205416347UL + 71UL, 15748557669205416347UL + 341UL, 15748557669205416347UL + 550UL, 15748557669205416347UL + 7UL, 15748557669205416347UL + 46UL, 15748557669205416347UL + 652UL, 15748557669205416347UL + 654UL, 15748557669205416347UL + 145UL, 15748557669205416347UL + 318UL, 15748557669205416347UL + 1159UL, 15748557669205416347UL + 1188UL, 15748557669205416347UL + 342UL, 15748557669205416347UL + 551UL, 15748557669205416347UL + 896UL, 15748557669205416347UL + 905UL, 15748557669205416347UL + 71UL, 15748557669205416347UL + 112UL, 15748557669205416347UL + 1228UL, 15748557669205416347UL + 777UL, 15748557669205416347UL + 881UL, 15748557669205416347UL + 821UL, 15748557669205416347UL + 960UL, 15748557669205416347UL + 1000UL, 15748557669205416347UL + 961UL, 15748557669205416347UL + 995UL, 15748557669205416347UL + 941UL, 15748557669205416347UL + 896UL, 15748557669205416347UL + 351UL, 15748557669205416347UL + 540UL, 15748557669205416347UL + 801UL, 15748557669205416347UL + 881UL, 15748557669205416347UL + 800UL, 15748557669205416347UL + 880UL, 15748557669205416347UL + 1003UL, 15748557669205416347UL + 1158UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 5, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "ValidateSt", 2, "double", (int)__builtin_offsetof (struct ValidateSt, eTot0), "int", (int)__builtin_offsetof (struct ValidateSt, nAtoms0), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size));
     return 0;
 }
 

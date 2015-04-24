@@ -3,13 +3,18 @@ Common functionality for functional tests.
 """
 import os
 import sys
+import time
 import shutil
+import random
 import tempfile
 import platform
 from subprocess import Popen, PIPE
 
 CHIMES_HOME = os.environ['CHIMES_HOME']
 CHIMES_REPLAY_EXIT_CODE = 55
+# limit the number of checkpoints tested so individual tests don't take more
+# than 1 minute.
+MAX_TEST_TIME = 60
 
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(CHIMES_HOME, 'src', 'libchimes')
@@ -663,7 +668,13 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
-    for checkpoint in chimes_files:
+   
+    start_time = time.time()
+    total_checkpoints = len(chimes_files)
+    completed_checkpoints = 0
+    while len(chimes_files) > 0 and (time.time() - start_time) < MAX_TEST_TIME:
+        checkpoint = random.choice(chimes_files)
+        chimes_files.remove(checkpoint)
         env['CHIMES_CHECKPOINT_FILE'] = checkpoint
         stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
         if code != CHIMES_REPLAY_EXIT_CODE:
@@ -673,11 +684,17 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
                              str(code) + '\n')
             sys.stderr.write('Folder ' + work_folder + '\n')
             print_and_abort(stdout, stderr)
+        completed_checkpoints += 1
 
     for checkpoint in list_checkpoint_files_in_pwd():
         os.remove(checkpoint)
     os.remove('a.out')
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
-    print(test.name + ' PASSED (' + str(len(chimes_files)) +
-          ' checkpoint(s))')
+
+    if completed_checkpoints == total_checkpoints:
+        info_str = str(total_checkpoints)
+    else:
+        info_str = str(completed_checkpoints) + '/' + str(total_checkpoints)
+
+    print(test.name + ' PASSED (' + info_str + ' checkpoint(s))')

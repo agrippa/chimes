@@ -8,6 +8,7 @@ from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files, find_file
 
 OMP_H = find_file('omp.h', '/usr/')
+CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
 BASIC_PARALLEL = RuntimeTest('BasicParallel', ['basic_parallel.cpp'], 0, 1,
                              includes=[os.path.dirname(OMP_H)])
@@ -18,8 +19,35 @@ FAIL_CHECKPOINT_IN_FOR = RuntimeTest('FailCheckpointInFor',
 PARALLEL_FOR_PIPELINE = RuntimeTest('ParallelForPipeline',
                                      ['parallel_for_pipeline.cpp'], 0, 1,
                                      includes=[os.path.dirname(OMP_H)])
+ISO3D_OMP = RuntimeTest('Iso3D-OMP',
+                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, 1,
+                    includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
+                    dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
+                                               'libcommon2d.so')],
+                    cli_args='-i 1')
+SMITH_WATERMAN_ARGS=CHIMES_HOME + \
+                    '/src/examples/cpp/smithWaterman/string1.txt ' + \
+                    CHIMES_HOME + \
+                    '/src/examples/cpp/smithWaterman/string2.txt ' + \
+                    '1 1'
+SMITH_WATERMAN_OMP = RuntimeTest('SmithWaterman-OMP',
+                             ['smithWaterman/smith_waterman_omp.cpp'], 0, -1,
+                             cli_args=SMITH_WATERMAN_ARGS)
+LULESH_OMP = RuntimeTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'], 0, -1, cli_args='1')
+COMD_OMP = RuntimeTest('CoMD-OMP', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
+                     'CoMD/src-openmp/haloExchange.c', 'CoMD/src-openmp/linkCells.c',
+                     'CoMD/src-openmp/mycommand.c',
+                     'CoMD/src-openmp/performanceTimers.c',
+                     'CoMD/src-openmp/timestep.c', 'CoMD/src-openmp/cmdLineParser.c',
+                     'CoMD/src-openmp/eam.c', 'CoMD/src-openmp/initAtoms.c',
+                     'CoMD/src-openmp/ljForce.c', 'CoMD/src-openmp/parallel.c',
+                     'CoMD/src-openmp/random.c', 'CoMD/src-openmp/yamlOutput.c'],
+                     0, -1, cli_args='-N 1 -x 12 -y 12 -z 12')
+UTS_OMP = RuntimeTest('UTS-OMP', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
+                  0, -1, cli_args='-t 2 -d 5', defines=['BRG_RNG'])
 
-TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR, PARALLEL_FOR_PIPELINE]
+TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR, PARALLEL_FOR_PIPELINE,
+         LULESH_OMP, COMD_OMP, SMITH_WATERMAN_OMP, ISO3D_OMP, UTS_OMP]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
