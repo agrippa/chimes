@@ -94,7 +94,7 @@ if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
-GXX_FLAGS="${INCLUDES} -g -O0"
+GXX_FLAGS="${INCLUDES} -g -O2"
 [[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 for INPUT in ${ABS_INPUTS[@]}; do

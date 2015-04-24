@@ -33,13 +33,27 @@ class thread_ctx {
                 stack_nesting(0), calling_label(-1), func_ptr(NULL),
                 first_parallel_for_nesting(0), first_critical_nesting(0),
                 parent_aliases_capacity(PARENT_ALIASES_INIT_SIZE),
-                parent_aliases_length(0) {
+                parent_aliases_length(0), printed_func_ptr_mismatch(false),
+                printed_func_args_mismatch(false) {
             parent_aliases = (size_t*)malloc(sizeof(size_t) *
                     PARENT_ALIASES_INIT_SIZE);
             assert(parent_aliases);
         }
         ~thread_ctx() {
             free(parent_aliases);
+        }
+
+        bool get_printed_func_ptr_mismatch() {
+            return printed_func_ptr_mismatch;
+        }
+        bool get_printed_func_args_mismatch() {
+            return printed_func_args_mismatch;
+        }
+        void set_printed_func_ptr_mismatch(bool s) {
+            printed_func_ptr_mismatch = s;
+        }
+        void set_printed_func_args_mismatch(bool s) {
+            printed_func_args_mismatch = s;
         }
 
         size_t get_n_parent_aliases() { return parent_aliases_length; }
@@ -153,6 +167,9 @@ class thread_ctx {
         size_t *parent_aliases;
         size_t parent_aliases_capacity;
         size_t parent_aliases_length;
+
+        bool printed_func_ptr_mismatch;
+        bool printed_func_args_mismatch;
 
         /*
          * During normal execution, has every function call and parallel region
