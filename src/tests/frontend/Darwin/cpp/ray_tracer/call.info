@@ -1,0 +1,67 @@
+__assert_rtn 35 34 0 1395 1396 0 1397
+sqrt 53 12 0 0
+cos 69 27 0 0
+sin 69 51 0 0
+sin 70 27 0 0
+cos 70 51 0 0
+cos 76 25 0 0
+sin 76 49 0 0
+sin 77 25 0 0
+cos 77 49 0 0
+sqrt 94 25 0 0
+sqrt 95 25 0 0
+_Z4modvddd 103 16 0 0 0 0
+_Z4modvddd 104 16 0 0 0 0
+fprintf 109 5 0 898 1399 543
+exit 111 5 0 0
+strchr 115 25 582 601 0
+__assert_rtn 116 44 0 1400 1396 0 1401
+strchr 117 26 584 582 0
+__assert_rtn 118 45 0 1400 1396 0 1402
+atof 123 10 0 601
+atof 124 10 0 582
+atof 125 10 0 584
+_getopt 144 17 0 0 909 1404
+atoi 147 28 0 871
+atoi 150 28 0 871
+atoi 153 28 0 871
+_Z19parse_three_doublesPcPdS0_S0_ 156 17 0 871 848 848 848
+_Z19parse_three_doublesPcPdS0_S0_ 159 17 0 871 848 848 848
+_Z19parse_three_doublesPcPdS0_S0_ 162 17 0 871 848 848 848
+_Z19parse_three_doublesPcPdS0_S0_ 165 17 0 871 848 848 848
+strchr 170 37 757 871 0
+__assert_rtn 171 56 0 1402 1396 0 1401
+strchr 172 38 759 757 0
+__assert_rtn 173 57 0 1402 1396 0 1402
+strchr 174 37 775 759 0
+__assert_rtn 175 56 0 1402 1396 0 1401
+strchr 176 38 791 775 0
+__assert_rtn 177 57 0 1402 1396 0 1402
+strchr 178 37 807 791 0
+__assert_rtn 179 56 0 1402 1396 0 1401
+strchr 180 37 823 807 0
+__assert_rtn 181 56 0 1402 1396 0 1401
+realloc 190 43 1202 1202 0
+atof 192 54 0 871
+atof 193 21 0 757
+atof 193 44 0 759
+atof 194 21 0 775
+atof 194 44 0 791
+atof 195 21 0 807
+atof 195 44 0 823
+_Z4initP7_sphereddddddd 192 17 0 1202 0 0 0 0 0 0 0
+fprintf 201 13 0 898 1411 0
+_Z5usagePPc 204 13 0 909
+_Z12parse_configiPPcP7_config 211 5 0 0 1391 920
+malloc 212 26 966 0
+_Z9get_coordddddd 220 20 0 0 0 0 0 0
+_Z9get_coordddddd 221 20 0 0 0 0 0 0
+_Z4modvddd 227 24 0 0 0 0
+_Z19get_sphere_intersecdddddddddd 236 25 0 0 0 0 0 0 0 0 0 0 0
+_Z19get_sphere_intersecdddddddddd 251 27 0 0 0 0 0 0 0 0 0 0 0
+_Z19get_sphere_intersecdddddddddd 258 31 0 0 0 0 0 0 0 0 0 0 0
+_Z18get_cos_angle_v1v2dddddd 268 25 0 0 0 0 0 0 0
+_Z4moveP7_sphereddd 285 11 0 1202 0 0 0
+_Z10checkpointv 289 9 0
+printf 292 7 0 1413 0 0
+free 295 5 0 966

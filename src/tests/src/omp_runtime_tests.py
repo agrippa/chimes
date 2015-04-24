@@ -45,9 +45,14 @@ COMD_OMP = RuntimeTest('CoMD-OMP', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/d
                      0, -1, cli_args='-N 1 -x 12 -y 12 -z 12')
 UTS_OMP = RuntimeTest('UTS-OMP', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
                   0, -1, cli_args='-t 2 -d 5', defines=['BRG_RNG'])
+RAY_TRACER_ARGS='-x 128 -y 128 -s 512,512,100,100,0.5,0.5,0.5 ' + \
+                '-s 0,0,100,100,0.5,0.5,0.5 -t 10'
+RAY_TRACER_OMP = RuntimeTest('RayTracer-OMP', ['ray_tracer.c'], 0, 10,
+                             cli_args=RAY_TRACER_ARGS)
 
 TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR, PARALLEL_FOR_PIPELINE,
-         LULESH_OMP, COMD_OMP, SMITH_WATERMAN_OMP, ISO3D_OMP, UTS_OMP]
+         LULESH_OMP, COMD_OMP, SMITH_WATERMAN_OMP, ISO3D_OMP, UTS_OMP,
+         RAY_TRACER_OMP]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'

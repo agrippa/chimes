@@ -1,0 +1,1 @@
+../../../examples/openmp/ray_tracer.c

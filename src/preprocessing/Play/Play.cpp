@@ -1845,7 +1845,8 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
      * help with replay.
      */
     if (callee->getName().str() == "malloc" ||
-            callee->getName().str() == "calloc") {
+            callee->getName().str() == "calloc" ||
+            callee->getName().str() == "realloc") {
         if (callInst->getNumUses() == 1) {
             Type *base_type = inferHostAllocationType(callInst);
 

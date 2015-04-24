@@ -68,12 +68,16 @@ COMD = RuntimeTest('CoMD',
                    -1, cli_args='-N 1 -x 12 -y 12 -z 12')
 UTS = RuntimeTest('UTS', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
                   0, -1, cli_args='-t 2 -d 5', defines=['BRG_RNG'])
+RAY_TRACER_ARGS='-x 128 -y 128 -s 512,512,100,100,0.5,0.5,0.5 ' + \
+                '-s 0,0,100,100,0.5,0.5,0.5 -t 10'
+RAY_TRACER = RuntimeTest('RayTracer', ['ray_tracer.c'], 0, 10,
+                         cli_args=RAY_TRACER_ARGS)
 
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
          NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
          COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, HEAP_POINTERS, HEAP_INDIRECTION,
          FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS, MULTI_CHECKPOINT, ISO2D,
-         ISO3D, SMITH_WATERMAN, LULESH, COMD, UTS]
+         ISO3D, SMITH_WATERMAN, LULESH, COMD, UTS, RAY_TRACER]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

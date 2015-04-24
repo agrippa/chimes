@@ -54,6 +54,7 @@ void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
 
                 if (alloc.get_fname() == "malloc" ||
                         alloc.get_fname() == "calloc" ||
+                        alloc.get_fname() == "realloc" ||
                         alloc.get_fname() == "cudaMalloc") {
                     /*
                      * This is already asserted while generating heap.info from

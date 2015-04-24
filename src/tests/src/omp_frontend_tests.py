@@ -68,7 +68,9 @@ UTS_OMP = FrontendTest('UTS-OMP', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_s
                     'uts.c.pre.transformed.cpp',
                     'uts_shm.c.pre.transformed.cpp'],
                    ['brg_sha1', 'uts', 'uts_shm'], False, extra_cli_args='-D BRG_RNG')
-
+RAY_TRACER_OMP = FrontendTest('RayTracer-OMP', ['ray_tracer.c'],
+                              ['ray_tracer.c.pre.transformed.cpp'],
+                              ['ray_tracer'], False)
 
 TESTS = []
 for simple in SIMPLE_TESTS:
@@ -81,6 +83,7 @@ TESTS.append(LULESH_OMP)
 TESTS.append(ISO3D)
 TESTS.append(SMITH_WATERMAN_OMP)
 TESTS.append(UTS_OMP)
+TESTS.append(RAY_TRACER_OMP)
 
 
 if __name__ == '__main__':
