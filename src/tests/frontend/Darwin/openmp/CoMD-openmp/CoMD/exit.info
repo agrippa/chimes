@@ -6,8 +6,8 @@ initValidate 559
 sumAtoms 0
 printThings 0 671 672 673 674 675 676
 validateResult 0 802 803
-destroySimulation 0 885 886 942
+destroySimulation 0 885 886 941
 finalizeSubsystems 0
-initPotential 996 962
+initPotential 995 961
 sanityChecks 0
-initSpecies 1165 1165
+initSpecies 1164 1164

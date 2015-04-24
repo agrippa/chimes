@@ -1422,6 +1422,10 @@ int main(int argc, char *argv[]) {
     // line up for the start
 #pragma omp barrier    
     BARRIER
+
+#ifdef __CHIMES_SUPPORT
+    checkpoint();
+#endif
     
     /* time parallel search */
     ss_initState(ss);
@@ -1437,6 +1441,10 @@ int main(int argc, char *argv[]) {
 
 #pragma omp barrier
     BARRIER
+
+#ifdef __CHIMES_SUPPORT
+    checkpoint();
+#endif
 
     /* display results */
     if (GET_THREAD_NUM == 0) {

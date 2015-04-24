@@ -2064,6 +2064,7 @@ void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id) {
                 ctx->get_parent_region() == region_id) {
             ctx->pop_parent();
             vector<stack_frame *> *program_stack = ctx->get_stack();
+            ctx->decrement_stack_nesting();
             stack_frame *curr = program_stack->back();
             program_stack->pop_back();
             delete curr;

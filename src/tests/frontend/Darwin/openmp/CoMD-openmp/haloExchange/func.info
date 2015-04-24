@@ -10,8 +10,8 @@ unloadForceBuffer 1437 1531 0 0 1534
 destroyForceExchange 1572
 mkForceSendCellList 1767 0 0
 mkForceRecvCellList 1964 0 0
-destroyHaloExchange 1991
-haloExchange 2016 2017
-exchangeData 2124 2149 0
-sortAtomsInCell 2465 2466 0
-sortAtomsById 2515 2516
+destroyHaloExchange 1982
+haloExchange 2007 2008
+exchangeData 2115 2140 0
+sortAtomsInCell 2456 2457 0
+sortAtomsById 2506 2507

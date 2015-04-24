@@ -231,7 +231,7 @@ void destroySimulation(SimFlat** ps)
    if ( ! s ) return;
 
    BasePotential* pot = s->pot;
-   if ( pot) pot->destroy(&pot);
+   if ( pot) free(pot);
    destroyLinkCells(&(s->boxes));
    destroyAtoms(s->atoms);
    destroyHaloExchange(&(s->atomExchange));

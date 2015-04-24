@@ -244,7 +244,6 @@ HaloExchange* initForceHaloExchange(Domain* domain, LinkCell* boxes)
 
 void destroyHaloExchange(HaloExchange** haloExchange)
 {
-   (*haloExchange)->destroy((*haloExchange)->parms);
    free((*haloExchange)->parms);
    free(*haloExchange);
    *haloExchange = NULL;
