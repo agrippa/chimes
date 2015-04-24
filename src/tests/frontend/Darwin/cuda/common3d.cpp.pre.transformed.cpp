@@ -63,7 +63,8 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
@@ -77,7 +78,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 58 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -2556,7 +2557,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 100 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
 # 101 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- (conf->nsrcs + 1), 17753382427056418791UL);
+ (conf->nsrcs + 1), 17753382427056418791UL, 0, 1, (int)sizeof(struct _source), 0);
 # 102 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  alias_group_changed(2, (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL)); call_lbl_16: calling((void*)&parse_source, 16, 0UL, 2, (size_t)(17753382427056418755UL), (size_t)(17753382427056418791UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 103 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"

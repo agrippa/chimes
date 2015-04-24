@@ -25,7 +25,8 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,

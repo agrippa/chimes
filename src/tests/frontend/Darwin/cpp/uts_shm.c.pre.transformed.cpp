@@ -65,7 +65,8 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 58 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 

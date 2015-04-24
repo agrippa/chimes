@@ -101,7 +101,8 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...);
 void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 void free_wrapper(void *ptr, size_t group);
 
 void onexit();
@@ -1086,7 +1087,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
 
     assert(pthread_rwlock_wrlock(&heap_lock) == 0);
     assert(heap.find(new_ptr) == heap.end());
-    heap[new_ptr] = alloc;
+    heap.insert(pair<void *, heap_allocation *>(new_ptr, alloc));
     if (alias_to_heap.find(group) == alias_to_heap.end()) {
         alias_to_heap[group] = new vector<heap_allocation *>();
     }
@@ -1164,7 +1165,8 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 
 }
 
-void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
+void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
     pp.start_timer(REALLOC_WRAPPER);
 #endif
@@ -1172,24 +1174,38 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
 
     void *new_ptr = realloc(ptr, nbytes);
 
-    if (ptr != NULL) {
+    if (ptr != NULL && new_ptr == ptr) {
+        /*
+         * The location in memory of a previous allocation did not change, only
+         * the size was extended.
+         */
         map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap(ptr);
 
         heap_allocation *alloc = alloc_ptr->second;
         assert(alloc->get_alias_group() == group);
+        alloc->update_size(nbytes);
+    } else {
+        /*
+         * An initial allocation, or a movement of an old allocation. In either
+         * case, we have to insert a new heap entry.
+         */
 
-        if (new_ptr == ptr) {
-            // The location in memory did not change, only the size was extended
-            alloc->update_size(nbytes);
-        } else {
-            // The memory allocation was moved to satisfy this realloc
-            int is_ptr = 0; int is_struct = 0; int n_struct_ptr_fields = 0;
-            int elem_size = 0;
-            int *ptr_field_offsets = NULL;
-            if (alloc->check_elem_is_ptr()) {
-                is_ptr = 1;
-            } else if (alloc->check_elem_is_struct()) {
-                is_struct = 1;
+        int n_struct_ptr_fields = 0;
+        int elem_size = 0;
+        int *ptr_field_offsets = NULL;
+
+        if (ptr != NULL) {
+            /*
+             * An actual realloc, because the original pointer is non-NULL.
+             * Remove the existing entry in the heap but re-use the information
+             * in it to avoid the overhead of re-parsing the allocation type.
+             */
+            map<void *, heap_allocation *>::iterator alloc_ptr =
+                find_in_heap(ptr);
+            heap_allocation *alloc = alloc_ptr->second;
+            assert(alloc->get_alias_group() == group);
+
+            if (alloc->check_elem_is_struct()) {
                 elem_size = alloc->get_elem_size();
                 n_struct_ptr_fields = alloc->get_ptr_field_offsets()->size();
                 ptr_field_offsets = (int *)malloc(sizeof(int) *
@@ -1198,14 +1214,23 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group) {
                     ptr_field_offsets[i] = (*alloc->get_ptr_field_offsets())[i];
                 }
             }
-
-            map<void *, heap_allocation *>::iterator in_heap =
-                find_in_heap(ptr);
-            assert(in_heap->second->get_alias_group() == group);
             free_helper(ptr);
-            malloc_helper(new_ptr, nbytes, group, 0, is_ptr, is_struct,
-                    elem_size, ptr_field_offsets, n_struct_ptr_fields);
+        } else {
+            chimes_type_info info; memset(&info, 0x00, sizeof(info));
+
+            if (is_struct) {
+                va_list vl;
+                va_start(vl, is_struct);
+                parse_type_info(vl, &info);
+                va_end(vl);
+            }
+            elem_size = info.elem_size;
+            ptr_field_offsets = info.ptr_field_offsets;
+            n_struct_ptr_fields = info.n_ptr_fields;
         }
+
+        malloc_helper(new_ptr, nbytes, group, 0, is_ptr, is_struct,
+                elem_size, ptr_field_offsets, n_struct_ptr_fields);
     }
 
 #ifdef __CHIMES_PROFILE

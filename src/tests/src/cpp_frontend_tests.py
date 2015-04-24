@@ -94,7 +94,9 @@ UTS = FrontendTest('UTS', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
                     'uts.c.pre.transformed.cpp',
                     'uts_shm.c.pre.transformed.cpp'],
                    ['brg_sha1', 'uts', 'uts_shm'], False, extra_cli_args='-s -D BRG_RNG')
-
+RAY_TRACER = FrontendTest('RayTracer', ['ray_tracer.c'],
+                          ['ray_tracer.c.pre.transformed.cpp'], ['ray_tracer'],
+                          False, extra_cli_args='-s')
 
 TESTS = [PASS_BY_REF]
 for simple in SIMPLE_TESTS:
@@ -105,6 +107,7 @@ TESTS.append(SMITH_WATERMAN)
 TESTS.append(LULESH)
 TESTS.append(COMD)
 TESTS.append(UTS)
+TESTS.append(RAY_TRACER)
 
 
 if __name__ == '__main__':

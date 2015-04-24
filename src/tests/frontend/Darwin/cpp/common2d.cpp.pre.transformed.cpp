@@ -63,7 +63,8 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
@@ -77,7 +78,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 58 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 
 
@@ -2545,7 +2546,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- (conf->nsrcs + 1), 8205091200931170452UL);
+ (conf->nsrcs + 1), 8205091200931170452UL, 0, 1, (int)sizeof(struct _source), 0);
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); call_lbl_12: calling((void*)&parse_source, 12, 0UL, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"

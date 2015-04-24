@@ -45,7 +45,8 @@ extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
@@ -59,7 +60,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 51 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 52 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 }
@@ -2467,7 +2468,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
                 conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-                        (conf->nsrcs + 1), 4957368879419144504UL);
+                        (conf->nsrcs + 1), 4957368879419144504UL, 0, 1, (int)sizeof(struct _source), 0);
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
                 alias_group_changed(2, (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL)); call_lbl_16: calling((void*)&parse_source, 16, 0UL, 2, (size_t)(4957368879419144468UL), (size_t)(4957368879419144504UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
