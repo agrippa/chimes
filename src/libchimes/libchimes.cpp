@@ -216,6 +216,9 @@ static pthread_cond_t threads_in_checkpoint_cond = PTHREAD_COND_INITIALIZER;
 static size_t regions_executed = 0;
 static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 
+#define MAX_CHECKPOINT_FILENAME_LEN 256
+static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] = { '\0' };
+
 #ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     INIT_MODULE, REGISTER_GLOBAL_VAR, ALIAS_GROUP_CHANGED, MALLOC_WRAPPER,
@@ -291,6 +294,13 @@ void init_chimes() {
         ____chimes_replaying = 1;
         int fd = open(checkpoint_file, O_RDONLY);
         assert(fd >= 0);
+
+        size_t filename_length;
+        char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
+        safe_read(fd, &filename_length, sizeof(filename_length),
+                "filename_length", checkpoint_file);
+        safe_read(fd, previous_checkpoint_file, filename_length,
+                "previous_checkpoint_file", checkpoint_file);
 
         int nthreads;
         safe_read(fd, &nthreads, sizeof(nthreads), "nthreads",
@@ -764,10 +774,12 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
-    if (program_stack->size() > 0 && func_ptr != ctx->get_func_ptr()) {
+    if (!ctx->get_printed_func_ptr_mismatch() && program_stack->size() > 0 &&
+            func_ptr != ctx->get_func_ptr()) {
         fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
                 "function that we entered (%p). Possibly passed through a "
                 "third-party library.\n", ctx->get_func_ptr(), func_ptr);
+        ctx->set_printed_func_ptr_mismatch(true);
     }
 
     int calling_label = ctx->get_calling_label();
@@ -791,9 +803,12 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
 
     if (program_stack->size() != 1 &&
             n_local_arg_aliases != ctx->get_n_parent_aliases()) {
-        fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
-                "expected aliases (%u), ignoring\n",
-                ctx->get_n_parent_aliases(), n_local_arg_aliases);
+        if (!ctx->get_printed_func_args_mismatch()) {
+            fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
+                    "expected aliases (%u), ignoring\n",
+                    ctx->get_n_parent_aliases(), n_local_arg_aliases);
+            ctx->set_printed_func_args_mismatch(true);
+        }
 
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
             va_arg(vl, size_t);
@@ -1709,7 +1724,7 @@ void *checkpoint_func(void *data) {
 
     // Find a unique file for this checkpoint
     int count = 0;
-    char dump_filename[256];
+    char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
     sprintf(dump_filename, "chimes.%d.ckpt", count);
     int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     while (fd < 0) {
@@ -1717,6 +1732,13 @@ void *checkpoint_func(void *data) {
         sprintf(dump_filename, "chimes.%d.ckpt", count);
         fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     }
+
+    // Write the name of the preceding checkpoint file out
+    size_t filename_length = strlen(previous_checkpoint_filename) + 1;
+    safe_write(fd, &filename_length, sizeof(filename_length), "filename_length",
+            dump_filename);
+    safe_write(fd, previous_checkpoint_filename,
+            filename_length, "previous_checkpoint_filename", dump_filename);
 
     // Write the trace of function calls out
     int nthreads = ctx->stack_trackers->size();
@@ -1869,6 +1891,8 @@ void *checkpoint_func(void *data) {
     delete ctx->stack_trackers;
     delete contains;
     free(ctx);
+
+    strcpy(previous_checkpoint_filename, dump_filename);
 
     checkpoint_thread_running = 0;
 
