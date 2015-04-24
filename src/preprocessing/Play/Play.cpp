@@ -70,16 +70,30 @@ namespace {
         std::vector<CallInfo *> *passed;
     } FunctionInfo;
 
+    class StructFieldInfo {
+        public:
+            StructFieldInfo(std::string set_name, std::string set_type) :
+                name(set_name), type(set_type) { }
+
+            std::string get_name() { return name; }
+            std::string get_type() { return type; }
+
+        private:
+            std::string name;
+            std::string type;
+    };
+
     class StructInfo {
         public:
-            StructInfo(std::vector<std::string> set_fields,
+            StructInfo(std::vector<StructFieldInfo> set_fields,
                     bool set_is_unnamed) : fields(set_fields),
                     is_unnamed(set_is_unnamed) { }
 
-            std::vector<std::string> *get_fields() { return &fields; }
+            std::vector<StructFieldInfo> *get_fields() { return &fields; }
             bool get_is_unnamed() { return is_unnamed; }
+
         private:
-            std::vector<std::string> fields;
+            std::vector<StructFieldInfo> fields;
             bool is_unnamed;
     };
 
@@ -557,9 +571,9 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
                     i < structTy->getStructNumElements(); i++) {
                 Type *field_type = structTy->getStructElementType(i);
                 if (field_type->isPointerTy()) {
-                    std::vector<std::string> *fields =
+                    std::vector<StructFieldInfo> *fields =
                         structFields->at(struct_name).get_fields();
-                    struct_ptr_field_names.push_back((*fields)[i]);
+                    struct_ptr_field_names.push_back((*fields)[i].get_name());
                 }
             }
         }
@@ -1290,6 +1304,76 @@ static std::string demangleStructName(std::string mangled) {
     return removed_prefix;
 }
 
+static std::string DType_to_string(DIType curr, int nesting, DITypeIdentifierMap &TypeIdentifierMap) {
+    assert(curr.isType());
+
+    if (curr.isBasicType()) {
+        return curr.getName().str();
+    } else if (curr.isCompositeType()) {
+        DICompositeType composite(curr);
+        DIArray fields_defs = composite.getTypeArray();
+
+        switch (composite.getTag()) {
+            case (dwarf::DW_TAG_array_type): {
+                assert(fields_defs.getNumElements() == 1);
+
+                assert(fields_defs.getElement(0).isSubrange());
+                DISubrange range(fields_defs.getElement(0));
+                assert(range.getLo() == 0);
+                assert(range.getCount() > 0);
+
+                DIType from = composite.getTypeDerivedFrom().resolve(TypeIdentifierMap);
+                if (from.isType()) {
+                    std::string basetype = DType_to_string(from, nesting + 1,
+                            TypeIdentifierMap);
+                    if (basetype.length() > 0) {
+                        std::stringstream acc;
+                        acc << "[ " << range.getCount() << " x " << basetype << " ]";
+                        return acc.str();
+                    }
+                }
+                return "";
+            }
+            case (dwarf::DW_TAG_structure_type): {
+                return "%struct." + composite.getName().str();
+            }
+            case (dwarf::DW_TAG_union_type): {
+                assert(false);
+            }
+            case (dwarf::DW_TAG_enumeration_type): {
+                assert(false);
+            }
+            case (dwarf::DW_TAG_subroutine_type): {
+                return "";
+            }
+            case (dwarf::DW_TAG_class_type): {
+                return "";
+            }
+            default: {
+                assert(false);
+            }
+        }
+        return "";
+    } else if (curr.isDerivedType()) {
+        DIDerivedType derived(curr);
+        DIType from = derived.getTypeDerivedFrom().resolve(TypeIdentifierMap);
+        if (from.isType()) {
+            std::string child = DType_to_string(from, nesting + 1,
+                    TypeIdentifierMap);
+            if (curr.getTag() == dwarf::DW_TAG_pointer_type) {
+                return (child + "*");
+            } else {
+                return (child);
+            }
+        } else {
+            return "";
+        }
+    } else {
+        llvm::errs() << curr.getName().str() << "\n";
+        assert(false);
+    }
+}
+
 std::map<std::string, StructInfo> *Play::getStructFieldNames(
         Module &M) {
     std::map<std::string, StructInfo> *struct_fields =
@@ -1298,7 +1382,11 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
     DICompileUnit module = getCompileUnitFor(M);
     DIArray structs = module.getRetainedTypes();
 
-    DITypeIdentifierMap EmptyMap;
+    NamedMDNode *CU_Nodes = M.getNamedMetadata("llvm.dbg.cu");
+    assert(CU_Nodes);
+    DITypeIdentifierMap TypeIdentifierMap = llvm::generateDITypeIdentifierMap(
+            CU_Nodes);
+
     for (unsigned int s = 0; s < structs.getNumElements(); s++) {
         DIType di_struct(structs.getElement(s));
 
@@ -1313,18 +1401,32 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
 
             if (struct_name.empty()) {
                 /*
-                 * If unnamed, assume it isn't used or that the typedef block
-                 * below will handle it.
+                 * If unnamed, assume it isn't used.
                  */
                 continue;
             }
-            std::vector<std::string> fields;
+            std::vector<StructFieldInfo> fields;
 
             for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
-                if (fields_defs.getElement(f).getTag() == dwarf::DW_TAG_member) {
-                    DIType di_field(fields_defs.getElement(f));
+                DIDescriptor field = fields_defs.getElement(f);
+                if (field.getTag() == dwarf::DW_TAG_member) {
+                    assert(field.isType());
+                    DIType di_field(field);
                     std::string fieldname = di_field.getName().str();
-                    fields.push_back(fieldname);
+
+                    if (di_field.isBasicType()) {
+                        DIBasicType basic(di_field);
+                        llvm::errs() << "BasicType field=" << fieldname <<
+                            " " << struct_name << "\n";
+                        assert(false); // i dont think a field can be a basic
+                    } else {
+                        assert(di_field.isDerivedType());
+                        DIDerivedType derived(di_field);
+
+                        DIType from = derived.getTypeDerivedFrom().resolve(TypeIdentifierMap);
+                        std::string type = DType_to_string(from, 1, TypeIdentifierMap);
+                        fields.push_back(StructFieldInfo(fieldname, type));
+                    }
                 }
             }
 
@@ -1341,14 +1443,17 @@ void Play::dumpStructInfoToFile(const char *filename,
     for (std::map<std::string, StructInfo>::iterator struct_iter =
             struct_fields->begin(), struct_end = struct_fields->end();
             struct_iter != struct_end; struct_iter++) {
-        std::vector<std::string>* fields = struct_iter->second.get_fields();
+        std::vector<StructFieldInfo>* fields = struct_iter->second.get_fields();
         bool is_unnamed = struct_iter->second.get_is_unnamed();
 
-        fprintf(fp, "%s %d ", struct_iter->first.c_str(), (is_unnamed ? 1 : 0));
-        for (std::vector<std::string>::iterator field_iter = fields->begin(),
+        fprintf(fp, "%s %d", struct_iter->first.c_str(), (is_unnamed ? 1 : 0));
+        for (std::vector<StructFieldInfo>::iterator field_iter = fields->begin(),
                 field_end = fields->end(); field_iter != field_end;
                 field_iter++) {
-            fprintf(fp, "%s ", field_iter->c_str());
+            if (field_iter->get_type().length() > 0) {
+                fprintf(fp, " %s \"%s\"", field_iter->get_name().c_str(),
+                        field_iter->get_type().c_str());
+            }
         }
         fprintf(fp, "\n");
     }
@@ -1571,8 +1676,8 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                                     i++) {
                                 Type *field_type = structTy->getStructElementType(i);
                                 if (field_type->isPointerTy()) {
-                                    std::vector<std::string>* fields = structFields->at(struct_name).get_fields();
-                                    std::string fieldname = (*fields)[i];
+                                    std::vector<StructFieldInfo>* fields = structFields->at(struct_name).get_fields();
+                                    std::string fieldname = fields->at(i).get_name();
                                     info->struct_ptr_field_names->push_back(fieldname);
                                 }
                             }
@@ -1677,11 +1782,11 @@ static void printStructInfo(FILE *fp, Type *base_type,
         std::string struct_name = structTy->getStructName().str().substr(7);
         fprintf(fp, " %s", struct_name.c_str());
         assert(structFields->find(struct_name) != structFields->end());
-        std::vector<std::string>* fields = structFields->at(struct_name).get_fields();
+        std::vector<StructFieldInfo>* fields = structFields->at(struct_name).get_fields();
         for (unsigned int i = 0; i < structTy->getStructNumElements(); i++) {
             Type *field_type = structTy->getStructElementType(i);
             if (field_type->isPointerTy()) {
-                std::string fieldname = (*fields)[i];
+                std::string fieldname = fields->at(i).get_name();
                 fprintf(fp, " %s", fieldname.c_str());
             }
         }

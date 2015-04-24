@@ -1157,9 +1157,10 @@ void parTreeSearch(StealStack *ss) {
       // and wake up quiescent threads
       releaseNodes(ss);
       localDepth = ss_localDepth(ss);
+
+      checkpoint();
     }
 
-    checkpoint();
 		
     /* local work exhausted on this stack - resume tree search if able
      * to re-acquire work from shared portion of this thread's stack
@@ -1440,5 +1441,6 @@ int main(int argc, char *argv[]) {
   }
 /********** End Parallel Region **********/
 
+  printf("Ending tree exploration\n");
   return 0;
 }

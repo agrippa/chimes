@@ -28,6 +28,11 @@ class Constant(object):
         self.constant_size = constant_size
         self.reference = reference
 
+class StructField(object):
+    def __init__(self, name, ty):
+        self.name = name
+        self.ty = ty
+
 
 class StructFields(object):
     def __init__(self, name, unnamed):
@@ -35,8 +40,8 @@ class StructFields(object):
         self.unnamed = unnamed # boolean
         self.fields = []
 
-    def add_ptr_field(self, field):
-        self.fields.append(field)
+    def add_field(self, field_name, field_type):
+        self.fields.append(StructField(field_name, field_type))
 
 
 def transfer(input_file, output_file):
@@ -142,8 +147,16 @@ def get_structs(structs_filename):
         assert tokens[1] == '1' or tokens[1] == '0'
         s = StructFields(tokens[0], tokens[1] == '1')
 
-        for field in tokens[2:]:
-            s.add_ptr_field(field)
+        field_info_str = ' '.join(tokens[2:])
+        tokens = field_info_str.split('"')
+        remove_empties = [i for i in tokens if len(i) > 0]
+        assert len(remove_empties) % 2 == 0
+
+        index = 0
+        while index < len(remove_empties):
+            s.add_field(remove_empties[index].strip(), remove_empties[index + 1].strip())
+            index += 2
+
         structs.append(s)
 
     fp.close()
@@ -203,10 +216,11 @@ if __name__ == '__main__':
     for s in structs:
         output_file.write(', "' + s.name + '", ' + str(len(s.fields)))
         for field in s.fields:
+            output_file.write(', "' + field.ty + '"')
             if s.unnamed:
-                output_file.write(', (int)offsetof(' + s.name + ', ' + field + ')')
+                output_file.write(', (int)offsetof(' + s.name + ', ' + field.name + ')')
             else:
-                output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field + ')')
+                output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field.name + ')')
     output_file.write(');\n')
 
     for g in glbls:
