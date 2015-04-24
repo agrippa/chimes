@@ -221,22 +221,34 @@ private:
     std::vector<std::string> ptr_fields;
 };
 
+class StructField {
+    public:
+        StructField(std::string set_name, std::string set_type) :
+            name(set_name), type(set_type) { }
+
+        std::string get_name() { return name; }
+        std::string get_type() { return type; }
+    private:
+        std::string name;
+        std::string type;
+};
+
 class StructFields {
 public:
     StructFields(std::string set_name, bool set_is_unnamed) : name(set_name),
         is_unnamed(set_is_unnamed) {}
-    void add_field(std::string &field) { fields.push_back(field); }
+    void add_field(StructField field) { fields.push_back(field); }
 
     std::string get_name() { return name; }
     bool get_is_unnamed() { return is_unnamed; }
     int num_fields() { return fields.size(); }
-    std::vector<std::string>::iterator begin() { return fields.begin(); }
-    std::vector<std::string>::iterator end() { return fields.end(); }
+    std::vector<StructField>::iterator begin() { return fields.begin(); }
+    std::vector<StructField>::iterator end() { return fields.end(); }
 
 private:
     std::string name;
     bool is_unnamed;
-    std::vector<std::string> fields;
+    std::vector<StructField> fields;
 };
 
 /*

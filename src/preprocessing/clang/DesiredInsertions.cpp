@@ -493,7 +493,7 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
         if (is_struct) {
             line = line.substr(is_struct_end + 1);
 
-            int struct_type_name_end = line.find(' ');
+            size_t struct_type_name_end = line.find(' ');
             std::string struct_type_name = line.substr(0, struct_type_name_end);
             alloc->set_struct_type_name(struct_type_name);
 
@@ -501,12 +501,13 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
                 line = line.substr(struct_type_name_end + 1);
 
                 while(1) {
-                    int end = line.find(' ');
+                    size_t end = line.find(' ');
                     std::string fieldname = line.substr(0, end);
 
                     alloc->add_ptr_field(fieldname);
 
                     if (end == line.length() - 1) break;
+                    line = line.substr(end + 1);
                 }
             }
         }
@@ -546,20 +547,36 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
         } else {
             assert(unnamed_str == "0");
         }
-        line = line.substr(end + 1);
 
         StructFields *curr = new StructFields(name, unnamed);
 
-        end = line.find(' ');
-        while (end != std::string::npos) {
-            std::string field = line.substr(0, end);
-            curr->add_field(field);
-
+        if (end != std::string::npos) {
             line = line.substr(end + 1);
-            end = line.find(' ');
+
+            int index = 0;
+            while (index < line.length()) {
+                int field_name_start = index;
+                while (index < line.length() && line[index] != ' ') {
+                    index++;
+                }
+                int field_name_end = index;
+
+                index++;
+                assert(index < line.length() && line[index] == '"');
+                index++;
+                int field_type_start = index;
+                while (index < line.length() && line[index] != '"') {
+                    index++;
+                }
+                int field_type_end = index;
+
+                curr->add_field(StructField(line.substr(field_name_start,
+                                field_name_end - field_name_start),
+                            line.substr(field_type_start,
+                                field_type_end - field_type_start)));
+                index += 2;
+            }
         }
-        // final field at end of line
-        curr->add_field(line);
         fields->push_back(curr);
     }
     return fields;

@@ -1,11 +1,11 @@
-__fatBinC_Wrapper_t 1 magic version data filename_or_fatbins 
-__sFILE 0 _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
-__sFILEX 0 
-__sbuf 0 _base _size 
-cudaError 0 
-cudaMemcpyKind 0 
-dim3 0 x y z 
-div_t 1 quot rem 
-ldiv_t 1 quot rem 
-lldiv_t 1 quot rem 
-uint3 0 x y z 
+__fatBinC_Wrapper_t 1 magic "int" version "int" data "long long unsigned int*"
+__sFILE 0 _p "unsigned char*" _r "int" _w "int" _flags "short" _file "short" _bf "%struct.__sbuf" _lbfsize "int" _close "*" _read "*" _seek "*" _write "*" _ub "%struct.__sbuf" _extra "%struct.__sFILEX*" _ur "int" _ubuf "[ 3 x unsigned char ]" _nbuf "[ 1 x unsigned char ]" _lb "%struct.__sbuf" _blksize "int" _offset "long long int"
+__sFILEX 0
+__sbuf 0 _base "unsigned char*" _size "int"
+cudaError 0
+cudaMemcpyKind 0
+dim3 0 x "unsigned int" y "unsigned int" z "unsigned int"
+div_t 1 quot "int" rem "int"
+ldiv_t 1 quot "long int" rem "long int"
+lldiv_t 1 quot "long long int" rem "long long int"
+uint3 0 x "unsigned int" y "unsigned int" z "unsigned int"

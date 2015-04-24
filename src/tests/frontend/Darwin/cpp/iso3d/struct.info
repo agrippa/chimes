@@ -1,2 +1,2 @@
-_config 0 nx ny nz nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
-_source 0 x y freq t 
+_config 0 nx "int" ny "int" nz "int" nsteps "int" save_text "int" verbose "int" radius "int" ngpus "int" srcs "%struct._source*" nsrcs "int" progress_width "int" progress_disabled "int"
+_source 0 x "int" y "int" freq "float" t "int"

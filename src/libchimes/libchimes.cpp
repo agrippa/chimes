@@ -22,6 +22,7 @@
 #endif
 
 #include "chimes_common.h"
+#include "struct_field.h"
 #include "constant_var.h"
 #include "stack_var.h"
 #include "stack_frame.h"
@@ -238,7 +239,7 @@ static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
 static vector<already_updated_ptrs *> already_updated;
 static std::map<void *, ptr_and_size *> *old_to_new;
 
-static std::map<std::string, std::vector<int> *> structs;
+static std::map<std::string, std::vector<struct_field> *> structs;
 
 static pthread_t checkpoint_thread;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -719,7 +720,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
         bool insert_new = false;
         if (structs.find(struct_name_str) == structs.end()) {
             insert_new = true;
-            structs[struct_name_str] = new std::vector<int>();
+            structs[struct_name_str] = new std::vector<struct_field>();
         }
 
 #ifdef VERBOSE
@@ -727,12 +728,17 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #endif
 
         for (int j = 0; j < nfields; j++) {
+            char *ty = va_arg(vl, char *);
             int offset = va_arg(vl, int);
+            std::string ty_str(ty);
+
             assert(offset >= 0);
             if (insert_new) {
-                structs[struct_name_str]->push_back(offset);
+                structs[struct_name_str]->push_back(struct_field(offset,
+                            ty_str));
             } else {
-                assert(structs[struct_name_str]->at(j) == offset);
+                assert(structs[struct_name_str]->at(j).get_offset() == offset);
+                assert(structs[struct_name_str]->at(j).get_ty() == ty_str);
             }
 #ifdef VERBOSE
             fprintf(stderr, " %d", offset);
@@ -889,6 +895,8 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 #ifdef VERBOSE
         fprintf(stderr, "Exiting replay...\n");
 #endif
+        // TODO is this necessary still?
+        fprintf(stderr, "CHIMES exiting, higher stack nesting than checkpoint was taken at...\n");
         exit(55);
     }
 #ifdef __CHIMES_PROFILE
@@ -1580,50 +1588,61 @@ static void fix_stack_or_global_pointer(void *container, string type) {
             *nested_container = new_ptr;
         }
     } else if (is_struct_type(type)) {
-        size_t open_brace_index = type.find("{");
-        assert(open_brace_index != string::npos);
-        open_brace_index += 2;
-        size_t close_brace_index = type.find("}");
-        assert(close_brace_index != string::npos);
-        close_brace_index -= 1;
+        // size_t open_brace_index = type.find("{");
+        // assert(open_brace_index != string::npos);
+        // open_brace_index += 2;
+        // size_t close_brace_index = type.find("}");
+        // assert(close_brace_index != string::npos);
+        // close_brace_index -= 1;
 
         string struct_name = type.substr(8);
-        struct_name = struct_name.substr(0, struct_name.find("=") - 1);
+        if (struct_name.find("=") != std::string::npos) {
+            struct_name = struct_name.substr(0, struct_name.find("=") - 1);
+        }
 
-        std::vector<int> *fields = structs[struct_name];
-        string nested_types = type.substr(open_brace_index, close_brace_index -
-                open_brace_index);
+        assert(structs.find(struct_name) != structs.end());
+        std::vector<struct_field> *fields = structs.at(struct_name);
+        // string nested_types = type.substr(open_brace_index, close_brace_index -
+        //         open_brace_index);
 
-        int field_index = 0;
-        unsigned int index = 0;
-        unsigned int start = 0;
-        while (index < nested_types.length()) {
-            while (index < nested_types.length() && nested_types[index] != ',') {
-                index++;
-            }
+        // int field_index = 0;
+        // unsigned int index = 0;
+        // unsigned int start = 0;
 
-            /*
-             * This requires the offset of every field in every declared struct
-             * to be passed into init_chimes. This is bad because that assumes
-             * that struct definitions are all defined in the same scope as
-             * main. This is okay for the moment, but should be addressed as a
-             * future TODO. Recently, the practice of passing module-specific
-             * information through new_stack was introduced, that would be a
-             * good place to add module-specific struct declarations.
-             */
-            string curr = nested_types.substr(start, index - start);
+        for (int field_index = 0; field_index < fields->size(); field_index++) {
+            string curr = fields->at(field_index).get_ty();
             unsigned char *field_ptr = ((unsigned char *)container) +
-                (*fields)[field_index];
+                (*fields)[field_index].get_offset();
             fix_stack_or_global_pointer((void *)field_ptr, curr);
 
-            start = index + 1;
-            while (start < nested_types.length() && nested_types[start] == ' ') {
-                start++;
-            }
-            index = start;
-            
-            field_index++;
         }
+        // while (index < nested_types.length()) {
+        //     while (index < nested_types.length() && nested_types[index] != ',') {
+        //         index++;
+        //     }
+
+        //     /*
+        //      * This requires the offset of every field in every declared struct
+        //      * to be passed into init_chimes. This is bad because that assumes
+        //      * that struct definitions are all defined in the same scope as
+        //      * main. This is okay for the moment, but should be addressed as a
+        //      * future TODO. Recently, the practice of passing module-specific
+        //      * information through new_stack was introduced, that would be a
+        //      * good place to add module-specific struct declarations.
+        //      */
+        //     string curr = nested_types.substr(start, index - start);
+        //     unsigned char *field_ptr = ((unsigned char *)container) +
+        //         (*fields)[field_index].get_offset();
+        //     fix_stack_or_global_pointer((void *)field_ptr, curr);
+
+        //     start = index + 1;
+        //     while (start < nested_types.length() && nested_types[start] == ' ') {
+        //         start++;
+        //     }
+        //     index = start;
+        //     
+        //     field_index++;
+        // }
     }
 }
 

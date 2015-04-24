@@ -1,17 +1,17 @@
-AtomExchangeParmsSt 0 nCells cellList pbcFactor 
-AtomMsgSt 0 gid type rx ry rz px py pz 
-AtomsSt 0 nLocal nGlobal gid iSpecies r p f U 
-BasePotentialSt 0 cutoff mass lat latticeType name atomicNo force print destroy 
-DomainSt 0 procGrid procCoord globalMin globalMax globalExtent localMin localMax localExtent 
-ForceExchangeDataSt 0 dfEmbed boxes 
-ForceExchangeParmsSt 0 nCells sendCells recvCells 
-ForceMsgSt 0 dfEmbed 
-HaloAxisOrder 0 
-HaloExchangeSt 0 nbrRank bufCapacity loadBuffer unloadBuffer destroy parms 
-LinkCellSt 0 gridSize nLocalBoxes nHaloBoxes nTotalBoxes localMin localMax boxSize invBoxSize nAtoms nbrBoxes 
-SimFlatSt 0 nSteps printRate dt domain boxes atoms species ePotential eKinetic pot atomExchange 
-SpeciesDataSt 0 name atomicNo mass 
-TimerHandle 0 
-__sFILE 0 _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
-__sFILEX 0 
-__sbuf 0 _base _size 
+AtomExchangeParmsSt 0 nCells "[ 6 x int ]" cellList "[ 6 x int* ]" pbcFactor "[ 6 x double* ]"
+AtomMsgSt 0 gid "int" type "int" rx "double" ry "double" rz "double" px "double" py "double" pz "double"
+AtomsSt 0 nLocal "int" nGlobal "int" gid "int*" iSpecies "int*" r "[ 3 x double ]*" p "[ 3 x double ]*" f "[ 3 x double ]*" U "double*"
+BasePotentialSt 0 cutoff "double" mass "double" lat "double" latticeType "[ 8 x char ]" name "[ 3 x char ]" atomicNo "int" force "*" print "*" destroy "*"
+DomainSt 0 procGrid "[ 3 x int ]" procCoord "[ 3 x int ]" globalMin "[ 3 x double ]" globalMax "[ 3 x double ]" globalExtent "[ 3 x double ]" localMin "[ 3 x double ]" localMax "[ 3 x double ]" localExtent "[ 3 x double ]"
+ForceExchangeDataSt 0 dfEmbed "double*" boxes "%struct.LinkCellSt*"
+ForceExchangeParmsSt 0 nCells "[ 6 x int ]" sendCells "[ 6 x int* ]" recvCells "[ 6 x int* ]"
+ForceMsgSt 0 dfEmbed "double"
+HaloAxisOrder 0
+HaloExchangeSt 0 nbrRank "[ 6 x int ]" bufCapacity "int" loadBuffer "*" unloadBuffer "*" destroy "*"
+LinkCellSt 0 gridSize "[ 3 x int ]" nLocalBoxes "int" nHaloBoxes "int" nTotalBoxes "int" localMin "[ 3 x double ]" localMax "[ 3 x double ]" boxSize "[ 3 x double ]" invBoxSize "[ 3 x double ]" nAtoms "int*" nbrBoxes "int**"
+SimFlatSt 0 nSteps "int" printRate "int" dt "double" domain "%struct.DomainSt*" boxes "%struct.LinkCellSt*" atoms "%struct.AtomsSt*" species "%struct.SpeciesDataSt*" ePotential "double" eKinetic "double" pot "%struct.BasePotentialSt*" atomExchange "%struct.HaloExchangeSt*"
+SpeciesDataSt 0 name "[ 3 x char ]" atomicNo "int" mass "double"
+TimerHandle 0
+__sFILE 0 _p "unsigned char*" _r "int" _w "int" _flags "short" _file "short" _bf "%struct.__sbuf" _lbfsize "int" _close "*" _read "*" _seek "*" _write "*" _ub "%struct.__sbuf" _extra "%struct.__sFILEX*" _ur "int" _ubuf "[ 3 x unsigned char ]" _nbuf "[ 1 x unsigned char ]" _lb "%struct.__sbuf" _blksize "int" _offset "long long int"
+__sFILEX 0
+__sbuf 0 _base "unsigned char*" _size "int"

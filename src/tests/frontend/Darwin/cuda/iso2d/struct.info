@@ -1,10 +1,10 @@
-__fatBinC_Wrapper_t 1 magic version data filename_or_fatbins 
-_config 0 nx ny nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
-_source 0 x y freq t 
-cudaError 0 
-cudaMemcpyKind 0 
-dim3 0 x y z 
-div_t 1 quot rem 
-ldiv_t 1 quot rem 
-lldiv_t 1 quot rem 
-uint3 0 x y z 
+__fatBinC_Wrapper_t 1 magic "int" version "int" data "long long unsigned int*"
+_config 0 nx "int" ny "int" nsteps "int" save_text "int" verbose "int" radius "int" ngpus "int" srcs "%struct._source*" nsrcs "int" progress_width "int" progress_disabled "int"
+_source 0 x "int" y "int" freq "float" t "int"
+cudaError 0
+cudaMemcpyKind 0
+dim3 0 x "unsigned int" y "unsigned int" z "unsigned int"
+div_t 1 quot "int" rem "int"
+ldiv_t 1 quot "long int" rem "long int"
+lldiv_t 1 quot "long long int" rem "long long int"
+uint3 0 x "unsigned int" y "unsigned int" z "unsigned int"

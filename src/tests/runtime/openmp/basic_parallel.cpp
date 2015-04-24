@@ -14,8 +14,6 @@ int main(int argc, char **argv) {
         checkpoint();
 
         assert(a == 3);
-        assert(b == 4);
-        assert(c == 5);
         assert(inside == 6);
     }
 

@@ -1,5 +1,5 @@
-__sFILE 0 _p _r _w _flags _file _bf _lbfsize _cookie _close _read _seek _write _ub _extra _ur _ubuf _nbuf _lb _blksize _offset 
-__sFILEX 0 
-__sbuf 0 _base _size 
-_config 0 nx ny nsteps save_text verbose radius ngpus srcs nsrcs progress_width progress_disabled 
-_source 0 x y freq t 
+__sFILE 0 _p "unsigned char*" _r "int" _w "int" _flags "short" _file "short" _bf "%struct.__sbuf" _lbfsize "int" _close "*" _read "*" _seek "*" _write "*" _ub "%struct.__sbuf" _extra "%struct.__sFILEX*" _ur "int" _ubuf "[ 3 x unsigned char ]" _nbuf "[ 1 x unsigned char ]" _lb "%struct.__sbuf" _blksize "int" _offset "long long int"
+__sFILEX 0
+__sbuf 0 _base "unsigned char*" _size "int"
+_config 0 nx "int" ny "int" nsteps "int" save_text "int" verbose "int" radius "int" ngpus "int" srcs "%struct._source*" nsrcs "int" progress_width "int" progress_disabled "int"
+_source 0 x "int" y "int" freq "float" t "int"

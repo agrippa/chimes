@@ -22,7 +22,8 @@ FRONTEND_WORKING_DIR = '/tmp/chimes-frontend'
 INFO_FILES = {'call.info': -1, 'diag.info': -1, 'exit.info': -1,
               'func.info': -1, 'globals.info': -1, 'heap.info': -1,
               'lines.info': 0, 'module.info': -1, 'reachable.info': -1,
-              'stack.info': 0, 'struct.info': -1, 'omp.info': -1}
+              'stack.info': 0, 'struct.info': -1, 'omp.info': -1,
+              'constants.info': -1}
 
 class TestConfig(object):
     """
@@ -67,7 +68,8 @@ class RuntimeTest(object):
     asserts which verify correct behavior.
     """
     def __init__(self, name, input_files, expected_code,
-                 expected_num_checkpoints, includes=None, dependencies=None, cli_args=None):
+                 expected_num_checkpoints, includes=None, dependencies=None,
+                 cli_args=None, defines=None):
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
@@ -81,6 +83,7 @@ class RuntimeTest(object):
         else:
             self.dependencies = dependencies
         self.cli_args = cli_args
+        self.defines = [] if defines is None else defines
 
 
 class FrontendTest(object):
@@ -416,6 +419,22 @@ def get_files_from_compiler_stdout(compile_stdout, n_expected_files):
         root_folder = root_folder[0:root_folder.rfind('/')]
     return (transformed, work_folder, root_folder)
 
+def query_user(msg):
+    valid_input = False
+    do_update = False
+
+    while not valid_input:
+        selection = raw_input(msg + ' [y/n]: ')
+
+        if selection == 'y':
+            do_update = True
+            valid_input = True
+        elif selection == 'n':
+            do_update = False
+            valid_input = True
+
+    return do_update
+
 
 def run_frontend_test(test, compile_script_path, examples_dir_path,
                       test_dir_path, config):
@@ -506,13 +525,16 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
             correct = comparison[0]
             generated = comparison[1]
 
-            if not os.path.isfile(correct):
-                sys.stderr.write('FATAL: Missing file ' + correct + '\n')
-                sys.exit(1)
-
             if not os.path.isfile(generated):
                 sys.stderr.write('FATAL: Missing file ' + generated + '\n')
                 sys.exit(1)
+
+            if not os.path.isfile(correct):
+                sys.stderr.write('FATAL: Missing file ' + correct + '\n')
+                if config.update_tests and query_user('Copy file from test output?'):
+                    shutil.copyfile(generated, correct)
+                else:
+                    sys.exit(1)
 
             diff_cmd = 'diff ' + correct + ' ' + generated
             stdout, _, _ = run_cmd(diff_cmd, True)
@@ -532,17 +554,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
             if config.update_tests:
                 run_cmd('view +1 ' + diff_file, False, interactive=True)
 
-                do_update = False
-                valid_input = False
-                while not valid_input:
-                    selection = raw_input('Update test? [y/n]: ')
-
-                    if selection == 'y':
-                        do_update = True
-                        valid_input = True
-                    elif selection == 'n':
-                        do_update = False
-                        valid_input = True
+                do_update = query_user('Update test?')
 
                 if do_update:
                     for comparison in files_to_compare:
@@ -594,7 +606,10 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     compile_cmd = compile_script_path + ' -k'
 
     for flag in config.custom_compiler_flags:
-        compile_cmd += ' -x ' + flag
+        compile_cmd += ' -y ' + flag
+
+    for d in test.defines:
+        compile_cmd += ' -D ' + d
 
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)

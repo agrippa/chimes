@@ -1,1 +1,1 @@
-DomainSt 0 procGrid procCoord globalMin globalMax globalExtent localMin localMax localExtent 
+DomainSt 0 procGrid "[ 3 x int ]" procCoord "[ 3 x int ]" globalMin "[ 3 x double ]" globalMax "[ 3 x double ]" globalExtent "[ 3 x double ]" localMin "[ 3 x double ]" localMax "[ 3 x double ]" localExtent "[ 3 x double ]"

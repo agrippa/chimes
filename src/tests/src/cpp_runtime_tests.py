@@ -66,13 +66,14 @@ COMD = RuntimeTest('CoMD',
                     'CoMD/src-mpi/ljForce.c', 'CoMD/src-mpi/parallel.c',
                     'CoMD/src-mpi/random.c', 'CoMD/src-mpi/yamlOutput.c'], 0,
                    -1, cli_args='-N 1 -x 12 -y 12 -z 12')
-
+UTS = RuntimeTest('UTS', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
+                  0, -1, cli_args='-t 2 -d 5', defines=['BRG_RNG'])
 
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
          NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
          COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, HEAP_POINTERS, HEAP_INDIRECTION,
          FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS, MULTI_CHECKPOINT, ISO2D,
-         ISO3D, SMITH_WATERMAN, LULESH, COMD]
+         ISO3D, SMITH_WATERMAN, LULESH, COMD, UTS]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

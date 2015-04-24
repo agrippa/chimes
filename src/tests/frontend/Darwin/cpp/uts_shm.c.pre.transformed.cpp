@@ -2780,7 +2780,7 @@ char * impl_getName() {new_stack((void *)(&impl_getName), 0, 0); if (____chimes_
 # 291 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  char *name[] = { "Sequential C", "C/OpenMP", "UPC", "SHMEM", "PThreads" }; ;
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(1, (size_t)(5273863086679872946UL)); rm_stack(true, 5273863086679874742UL); return name[0];
+ alias_group_changed(1, (size_t)(5273863086679872946UL)); rm_stack(true, 5273863086679874743UL); return name[0];
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 }
 # 294 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -2916,7 +2916,7 @@ void ss_init(StealStack *s, int nelts) {new_stack((void *)(&ss_init), 2, 2, (siz
 # 453 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  nbytes, 0);
 # 454 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(4, (size_t)(5273863086679873057UL), (size_t)(5273863086679873058UL), (size_t)(5273863086679873059UL), (size_t)(5273863086679873148UL)); call_lbl_5: calling((void*)&ss_error, 5, 0UL, 1, (size_t)(5273863086679874754UL)); ss_error("ss_init: unable to allocate space for stealstack");
+ alias_group_changed(4, (size_t)(5273863086679873057UL), (size_t)(5273863086679873058UL), (size_t)(5273863086679873059UL), (size_t)(5273863086679873148UL)); call_lbl_5: calling((void*)&ss_error, 5, 0UL, 1, (size_t)(5273863086679874755UL)); ss_error("ss_init: unable to allocate space for stealstack");
 # 455 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
 # 456 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -2957,9 +2957,9 @@ alias_group_changed(4, (size_t)(5273863086679873057UL), (size_t)(527386308667987
 # 476 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 void ss_push(StealStack *s, Node *c) {new_stack((void *)(&ss_push), 2, 2, (size_t)(5273863086679873223UL), (size_t)(5273863086679873229UL), "ss_push|s|0", "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 477 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top >= s->stackSize) {alias_group_changed(2, (size_t)(5273863086679873151UL), (size_t)(5273863086679873152UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874756UL)); ss_error("ss_push: overflow"); };
+ if (s->top >= s->stackSize) {alias_group_changed(2, (size_t)(5273863086679873151UL), (size_t)(5273863086679873152UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874757UL)); ss_error("ss_push: overflow"); };
 # 479 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (debug & 1) {alias_group_changed(2, (size_t)(5273863086679873151UL), (size_t)(5273863086679873152UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5273863086679873178UL, 2, (size_t)(5273863086679873229UL), (size_t)(5273863086679874735UL)); printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, rng_showstate(c->state.state, debug_str), c->height); };
+ if (debug & 1) {alias_group_changed(2, (size_t)(5273863086679873151UL), (size_t)(5273863086679873152UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5273863086679873178UL, 2, (size_t)(5273863086679873229UL), (size_t)(5273863086679874736UL)); printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, rng_showstate(c->state.state, debug_str), c->height); };
 # 482 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  call_lbl_6: calling((void*)&memcpy, 6, 0UL, 3, (size_t)(5273863086679873190UL), (size_t)(5273863086679873229UL), (size_t)(0UL)); memcpy(&(s->stack[s->top]), c, sizeof(Node));
 # 483 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -2979,11 +2979,11 @@ Node * ss_top(StealStack *s) {new_stack((void *)(&ss_top), 1, 1, (size_t)(527386
 # 491 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  lbl_0: Node *r; register_stack_var("ss_top|r|0", "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
 # 492 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top <= s->local) {alias_group_changed(2, (size_t)(5273863086679873256UL), (size_t)(5273863086679873257UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874758UL)); ss_error("ss_top: empty local stack"); };
+ if (s->top <= s->local) {alias_group_changed(2, (size_t)(5273863086679873256UL), (size_t)(5273863086679873257UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874759UL)); ss_error("ss_top: empty local stack"); };
 # 494 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  r = &(s->stack[(s->top) - 1]);
 # 495 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (debug & 1) {alias_group_changed(2, (size_t)(5273863086679873256UL), (size_t)(5273863086679873257UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5273863086679873293UL, 2, (size_t)(5273863086679873278UL), (size_t)(5273863086679874735UL)); printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top - 1, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
+ if (debug & 1) {alias_group_changed(2, (size_t)(5273863086679873256UL), (size_t)(5273863086679873257UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5273863086679873293UL, 2, (size_t)(5273863086679873278UL), (size_t)(5273863086679874736UL)); printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top - 1, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
 # 499 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  alias_group_changed(2, (size_t)(5273863086679873256UL), (size_t)(5273863086679873257UL)); rm_stack(true, 5273863086679873278UL); return r;
 # 500 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -2995,13 +2995,13 @@ void ss_pop(StealStack *s) {new_stack((void *)(&ss_pop), 1, 1, (size_t)(52738630
 # 504 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  lbl_0: Node *r; register_stack_var("ss_pop|r|0", "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
 # 505 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top <= s->local) {alias_group_changed(3, (size_t)(5273863086679873305UL), (size_t)(5273863086679873306UL), (size_t)(5273863086679873355UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874758UL)); ss_error("ss_pop: empty local stack"); };
+ if (s->top <= s->local) {alias_group_changed(3, (size_t)(5273863086679873305UL), (size_t)(5273863086679873306UL), (size_t)(5273863086679873355UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874759UL)); ss_error("ss_pop: empty local stack"); };
 # 507 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  s->top--;
 # 508 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  r = &(s->stack[s->top]);
 # 509 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (debug & 1) {alias_group_changed(3, (size_t)(5273863086679873305UL), (size_t)(5273863086679873306UL), (size_t)(5273863086679873355UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5273863086679873345UL, 2, (size_t)(5273863086679873331UL), (size_t)(5273863086679874735UL)); printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
+ if (debug & 1) {alias_group_changed(3, (size_t)(5273863086679873305UL), (size_t)(5273863086679873306UL), (size_t)(5273863086679873355UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5273863086679873345UL, 2, (size_t)(5273863086679873331UL), (size_t)(5273863086679874736UL)); printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
 # 513 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 alias_group_changed(3, (size_t)(5273863086679873305UL), (size_t)(5273863086679873306UL), (size_t)(5273863086679873355UL)); rm_stack(false, 0UL); }
 # 514 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3011,7 +3011,7 @@ int ss_topPosn(StealStack *s)
 # 517 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 {new_stack((void *)(&ss_topPosn), 1, 1, (size_t)(5273863086679873374UL), "ss_topPosn|s|0", "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 518 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top <= s->local) {alias_group_changed(1, (size_t)(5273863086679873356UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874762UL)); ss_error("ss_topPosn: empty local stack"); };
+ if (s->top <= s->local) {alias_group_changed(1, (size_t)(5273863086679873356UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874763UL)); ss_error("ss_topPosn: empty local stack"); };
 # 520 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  alias_group_changed(1, (size_t)(5273863086679873356UL)); rm_stack(false, 0UL); return s->top - 1;
 # 521 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3031,7 +3031,7 @@ void ss_release(StealStack *s, int k) {new_stack((void *)(&ss_release), 2, 2, (s
 # 530 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 531 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top - s->local >= k) {{ s->local += k; s->workAvail += k; s->nRelease++; }; } else {alias_group_changed(2, (size_t)(5273863086679873387UL), (size_t)(5273863086679873388UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874757UL)); ss_error("ss_release:  do not have k vals to release"); } ;
+ if (s->top - s->local >= k) {{ s->local += k; s->workAvail += k; s->nRelease++; }; } else {alias_group_changed(2, (size_t)(5273863086679873387UL), (size_t)(5273863086679873388UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874758UL)); ss_error("ss_release:  do not have k vals to release"); } ;
 # 538 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 539 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3077,10 +3077,10 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), 3
  lbl_3: int ok; register_stack_var("ss_steal|ok|0", "i32", (void *)(&ok), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
 # 564 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 565 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->sharedStart != s->top) {alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874764UL)); ss_error("ss_steal: thief attempts to steal onto non-empty stack"); };
+ if (s->sharedStart != s->top) {alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874765UL)); ss_error("ss_steal: thief attempts to steal onto non-empty stack"); };
 # 567 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 568 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top + k >= s->stackSize) {alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_4: calling((void*)&ss_error, 4, 0UL, 1, (size_t)(5273863086679874765UL)); ss_error("ss_steal: steal will overflow thief's stack"); };
+ if (s->top + k >= s->stackSize) {alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_4: calling((void*)&ss_error, 4, 0UL, 1, (size_t)(5273863086679874766UL)); ss_error("ss_steal: steal will overflow thief's stack"); };
 # 570 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 571 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 572 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3105,7 +3105,7 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), 3
  victimWorkAvail = stealStack[victim]->workAvail;
 # 588 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 589 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (victimLocal - victimShared != victimWorkAvail) {alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_8: calling((void*)&ss_error, 8, 0UL, 1, (size_t)(5273863086679874768UL)); ss_error("ss_steal: stealStack invariant violated"); };
+ if (victimLocal - victimShared != victimWorkAvail) {alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_8: calling((void*)&ss_error, 8, 0UL, 1, (size_t)(5273863086679874769UL)); ss_error("ss_steal: stealStack invariant violated"); };
 # 591 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 592 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ok = victimWorkAvail >= k;
@@ -3151,7 +3151,7 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), 3
 # 626 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  lbl_7: Node *r; register_stack_var("ss_steal|r|0", "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } r = (&(s->stack[s->top + i])) ;
 # 627 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_13: calling((void*)&rng_showstate, 13, 5273863086679873663UL, 2, (size_t)(5273863086679873648UL), (size_t)(5273863086679874735UL)); printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
+ alias_group_changed(13, (size_t)(5273863086679873471UL), (size_t)(5273863086679873472UL), (size_t)(5273863086679873473UL), (size_t)(5273863086679873474UL), (size_t)(5273863086679873475UL), (size_t)(5273863086679873476UL), (size_t)(5273863086679873477UL), (size_t)(5273863086679873478UL), (size_t)(5273863086679873479UL), (size_t)(5273863086679873480UL), (size_t)(5273863086679873481UL), (size_t)(5273863086679873706UL), (size_t)(5273863086679874079UL)); call_lbl_13: calling((void*)&rng_showstate, 13, 5273863086679873663UL, 2, (size_t)(5273863086679873648UL), (size_t)(5273863086679874736UL)); printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
 # 628 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  0, s->top + i, s->nSteal,
 # 629 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3244,7 +3244,7 @@ void ss_setState(StealStack *s, int state){new_stack((void *)(&ss_setState), 2, 
 # 684 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  lbl_0: double time; register_stack_var("ss_setState|time|0", "double", (void *)(&time), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ;
 # 685 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (state < 0 || state >= 5) {alias_group_changed(2, (size_t)(5273863086679873796UL), (size_t)(5273863086679873797UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874773UL)); ss_error("ss_setState: thread state out of range"); };
+ if (state < 0 || state >= 5) {alias_group_changed(2, (size_t)(5273863086679873796UL), (size_t)(5273863086679873797UL)); call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5273863086679874774UL)); ss_error("ss_setState: thread state out of range"); };
 # 687 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  if (state == s->curState) {alias_group_changed(4, (size_t)(5273863086679873796UL), (size_t)(5273863086679873797UL), (size_t)(5273863086679873798UL), (size_t)(5273863086679873867UL)); rm_stack(false, 0UL); return;; };
 # 689 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3318,7 +3318,7 @@ void genChildren(Node * parent, Node * child, StealStack * ss) {new_stack((void 
 # 962 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  if (debug & 2) {
 # 963 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(5, (size_t)(5273863086679873902UL), (size_t)(5273863086679873903UL), (size_t)(5273863086679873904UL), (size_t)(5273863086679874002UL), (size_t)(5273863086679874003UL)); call_lbl_7: calling((void*)&ss_topPosn, 7, 0UL, 1, (size_t)(5273863086679874004UL)); call_lbl_8: calling((void*)&rng_showstate, 8, 5273863086679873938UL, 2, (size_t)(5273863086679874002UL), (size_t)(5273863086679874735UL)); printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
+ alias_group_changed(5, (size_t)(5273863086679873902UL), (size_t)(5273863086679873903UL), (size_t)(5273863086679873904UL), (size_t)(5273863086679874002UL), (size_t)(5273863086679874003UL)); call_lbl_7: calling((void*)&ss_topPosn, 7, 0UL, 1, (size_t)(5273863086679874004UL)); call_lbl_8: calling((void*)&rng_showstate, 8, 5273863086679873938UL, 2, (size_t)(5273863086679874002UL), (size_t)(5273863086679874736UL)); printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
 # 964 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  0, ss_topPosn(ss),
 # 965 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3387,7 +3387,7 @@ void cb_init(){new_stack((void *)(&cb_init), 0, 0); if (____chimes_replaying) { 
 # 1014 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 1015 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5273863086679874729UL)); rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(5273863086679874730UL)); rm_stack(false, 0UL); }
 # 1016 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1017 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1018 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3475,7 +3475,7 @@ int cbarrier_wait() {new_stack((void *)(&cbarrier_wait), 0, 0); if (____chimes_r
  if (debug & 16) {printf("Thread %d exit idle state, count = %d, done = %d\n", 0, l_count, cb_done); };
 # 1076 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1077 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(6, (size_t)(5273863086679874055UL), (size_t)(5273863086679874056UL), (size_t)(5273863086679874057UL), (size_t)(5273863086679874058UL), (size_t)(5273863086679874079UL), (size_t)(5273863086679874729UL)); rm_stack(false, 0UL); return cb_done;
+ alias_group_changed(6, (size_t)(5273863086679874055UL), (size_t)(5273863086679874056UL), (size_t)(5273863086679874057UL), (size_t)(5273863086679874058UL), (size_t)(5273863086679874079UL), (size_t)(5273863086679874730UL)); rm_stack(false, 0UL); return cb_done;
 # 1078 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 }
 # 1079 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3494,7 +3494,7 @@ void cbarrier_cancel() {new_stack((void *)(&cbarrier_cancel), 0, 0); if (____chi
  cb_cancel = 1;
 # 1091 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1092 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5273863086679874729UL)); rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(5273863086679874730UL)); rm_stack(false, 0UL); }
 # 1093 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1094 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 void releaseNodes(StealStack *ss){new_stack((void *)(&releaseNodes), 1, 1, (size_t)(5273863086679874043UL), "releaseNodes|ss|0", "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
@@ -3594,201 +3594,201 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), 1, 1, (s
 # 1159 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  call_lbl_11: calling((void*)&ss_localDepth, 11, 0UL, 1, (size_t)(5273863086679874268UL)); localDepth = ss_localDepth(ss);
 # 1160 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
 # 1161 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ alias_group_changed(1, (size_t)(5273863086679874171UL)); call_lbl_13: calling((void*)&checkpoint, 13, 0UL, 0); checkpoint();
 # 1162 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(5, (size_t)(5273863086679874167UL), (size_t)(5273863086679874168UL), (size_t)(5273863086679874171UL), (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); call_lbl_13: calling((void*)&checkpoint, 13, 0UL, 0); checkpoint();
+ }
 # 1163 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1164 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1165 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1166 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1167 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+# 1168 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  call_lbl_14: calling((void*)&ss_acquire, 14, 0UL, 2, (size_t)(5273863086679874268UL), (size_t)(0UL)); if (ss_acquire(ss, chunkSize)) {continue;; };
-# 1169 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1170 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1171 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1172 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (doSteal) {
 # 1173 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_4: int goodSteal; register_stack_var("parTreeSearch|goodSteal|0", "i32", (void *)(&goodSteal), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } goodSteal = (0) ;
+ if (doSteal) {
 # 1174 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_5: int victimId; register_stack_var("parTreeSearch|victimId|0", "i32", (void *)(&victimId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } default: { chimes_error(); } } } ;
+ lbl_4: int goodSteal; register_stack_var("parTreeSearch|goodSteal|0", "i32", (void *)(&goodSteal), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } goodSteal = (0) ;
 # 1175 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ lbl_5: int victimId; register_stack_var("parTreeSearch|victimId|0", "i32", (void *)(&victimId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } default: { chimes_error(); } } } ;
 # 1176 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(1, (size_t)(5273863086679874172UL)); call_lbl_16: calling((void*)&ss_setState, 16, 0UL, 2, (size_t)(5273863086679874268UL), (size_t)(0UL)); ss_setState(ss, 1);
 # 1177 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_17: calling((void*)&findwork, 17, 0UL, 1, (size_t)(0UL)); victimId = findwork(chunkSize);
+ alias_group_changed(5, (size_t)(5273863086679874167UL), (size_t)(5273863086679874168UL), (size_t)(5273863086679874171UL), (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); call_lbl_16: calling((void*)&ss_setState, 16, 0UL, 2, (size_t)(5273863086679874268UL), (size_t)(0UL)); ss_setState(ss, 1);
 # 1178 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- while (victimId != -1 && !goodSteal) {
+ call_lbl_17: calling((void*)&findwork, 17, 0UL, 1, (size_t)(0UL)); victimId = findwork(chunkSize);
 # 1179 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ while (victimId != -1 && !goodSteal) {
 # 1180 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(2, (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); call_lbl_19: calling((void*)&ss_steal, 19, 0UL, 3, (size_t)(5273863086679874268UL), (size_t)(0UL), (size_t)(0UL)); goodSteal = ss_steal(ss, victimId, chunkSize);
 # 1181 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ alias_group_changed(2, (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); call_lbl_19: calling((void*)&ss_steal, 19, 0UL, 3, (size_t)(5273863086679874268UL), (size_t)(0UL), (size_t)(0UL)); goodSteal = ss_steal(ss, victimId, chunkSize);
+# 1182 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  if (!goodSteal) { call_lbl_20: calling((void*)&findwork, 20, 0UL, 1, (size_t)(0UL)); victimId = findwork(chunkSize); };
-# 1183 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
 # 1184 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (goodSteal) {continue;; };
-# 1186 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
+# 1185 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ if (goodSteal) {continue;; };
 # 1187 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
 # 1188 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1189 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1190 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1191 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1192 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1193 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(2, (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); call_lbl_22: calling((void*)&ss_setState, 22, 0UL, 2, (size_t)(5273863086679874268UL), (size_t)(0UL)); ss_setState(ss, 2);
 # 1194 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_23: calling((void*)&cbarrier_wait, 23, 0UL, 0); done = cbarrier_wait();
+ alias_group_changed(5, (size_t)(5273863086679874167UL), (size_t)(5273863086679874168UL), (size_t)(5273863086679874171UL), (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); call_lbl_22: calling((void*)&ss_setState, 22, 0UL, 2, (size_t)(5273863086679874268UL), (size_t)(0UL)); ss_setState(ss, 2);
 # 1195 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ call_lbl_23: calling((void*)&cbarrier_wait, 23, 0UL, 0); done = cbarrier_wait();
 # 1196 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
 # 1197 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1198 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-alias_group_changed(4, (size_t)(5273863086679874167UL), (size_t)(5273863086679874168UL), (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); rm_stack(false, 0UL); }
-# 1226 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-# 1226 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-void showStats(double elapsedSecs) {new_stack((void *)(&showStats), 1, 1, (size_t)(0UL), "showStats|elapsedSecs|0", "double", (void *)(&elapsedSecs), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+# 1199 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+alias_group_changed(5, (size_t)(5273863086679874167UL), (size_t)(5273863086679874168UL), (size_t)(5273863086679874171UL), (size_t)(5273863086679874172UL), (size_t)(5273863086679874173UL)); rm_stack(false, 0UL); }
 # 1227 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_0: int i; register_stack_var("showStats|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+# 1227 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+void showStats(double elapsedSecs) {new_stack((void *)(&showStats), 1, 1, (size_t)(0UL), "showStats|elapsedSecs|0", "double", (void *)(&elapsedSecs), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1228 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_1: int tnodes; register_stack_var("showStats|tnodes|0", "i32", (void *)(&tnodes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: int tleaves; register_stack_var("showStats|tleaves|0", "i32", (void *)(&tleaves), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int trel; register_stack_var("showStats|trel|0", "i32", (void *)(&trel), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int tacq; register_stack_var("showStats|tacq|0", "i32", (void *)(&tacq), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: int tsteal; register_stack_var("showStats|tsteal|0", "i32", (void *)(&tsteal), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int tfail; register_stack_var("showStats|tfail|0", "i32", (void *)(&tfail), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } tnodes = (0) ; tleaves = (0) ; trel = (0) ; tacq = (0) ; tsteal = (0) ; tfail = (0) ;
+ lbl_0: int i; register_stack_var("showStats|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 1229 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_7: int mdepth; register_stack_var("showStats|mdepth|0", "i32", (void *)(&mdepth), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } lbl_8: int mheight; register_stack_var("showStats|mheight|0", "i32", (void *)(&mheight), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } mdepth = (0) ; mheight = (0) ;
+ lbl_1: int tnodes; register_stack_var("showStats|tnodes|0", "i32", (void *)(&tnodes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: int tleaves; register_stack_var("showStats|tleaves|0", "i32", (void *)(&tleaves), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int trel; register_stack_var("showStats|trel|0", "i32", (void *)(&trel), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int tacq; register_stack_var("showStats|tacq|0", "i32", (void *)(&tacq), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: int tsteal; register_stack_var("showStats|tsteal|0", "i32", (void *)(&tsteal), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int tfail; register_stack_var("showStats|tfail|0", "i32", (void *)(&tfail), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } tnodes = (0) ; tleaves = (0) ; trel = (0) ; tacq = (0) ; tsteal = (0) ; tfail = (0) ;
 # 1230 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ lbl_7: int mdepth; register_stack_var("showStats|mdepth|0", "i32", (void *)(&mdepth), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } lbl_8: int mheight; register_stack_var("showStats|mheight|0", "i32", (void *)(&mheight), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } mdepth = (0) ; mheight = (0) ;
+# 1231 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  lbl_9: double twork; register_stack_var("showStats|twork|0", "double", (void *)(&twork), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } lbl_10: double tsearch; register_stack_var("showStats|tsearch|0", "double", (void *)(&tsearch), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } lbl_11: double tidle; register_stack_var("showStats|tidle|0", "double", (void *)(&tidle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } lbl_12: double tovh; register_stack_var("showStats|tovh|0", "double", (void *)(&tovh), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } lbl_13: double tcbovh; register_stack_var("showStats|tcbovh|0", "double", (void *)(&tcbovh), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } twork = (0.) ; tsearch = (0.) ; tidle = (0.) ; tovh = (0.) ; tcbovh = (0.) ;
-# 1249 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-# 1249 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- for (i = 0; i < 1; i++) {
 # 1250 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tnodes += stealStack[i]->nNodes;
+# 1250 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ for (i = 0; i < 1; i++) {
 # 1251 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tleaves += stealStack[i]->nLeaves;
+ tnodes += stealStack[i]->nNodes;
 # 1252 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- trel += stealStack[i]->nRelease;
+ tleaves += stealStack[i]->nLeaves;
 # 1253 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tacq += stealStack[i]->nAcquire;
+ trel += stealStack[i]->nRelease;
 # 1254 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tsteal += stealStack[i]->nSteal;
+ tacq += stealStack[i]->nAcquire;
 # 1255 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tfail += stealStack[i]->nFail;
+ tsteal += stealStack[i]->nSteal;
 # 1256 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- twork += stealStack[i]->time[0];
+ tfail += stealStack[i]->nFail;
 # 1257 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tsearch += stealStack[i]->time[1];
+ twork += stealStack[i]->time[0];
 # 1258 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tidle += stealStack[i]->time[2];
+ tsearch += stealStack[i]->time[1];
 # 1259 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tovh += stealStack[i]->time[3];
+ tidle += stealStack[i]->time[2];
 # 1260 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- tcbovh += stealStack[i]->time[4];
+ tovh += stealStack[i]->time[3];
 # 1261 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- mdepth = (((mdepth) > (stealStack[i]->maxStackDepth)) ? (mdepth) : (stealStack[i]->maxStackDepth));
+ tcbovh += stealStack[i]->time[4];
 # 1262 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- mheight = (((mheight) > (stealStack[i]->maxTreeDepth)) ? (mheight) : (stealStack[i]->maxTreeDepth));
+ mdepth = (((mdepth) > (stealStack[i]->maxStackDepth)) ? (mdepth) : (stealStack[i]->maxStackDepth));
 # 1263 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ mheight = (((mheight) > (stealStack[i]->maxTreeDepth)) ? (mheight) : (stealStack[i]->maxTreeDepth));
 # 1264 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (trel != tacq + tsteal) {
+ }
 # 1265 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("*** error! total released != total acquired + total stolen\n");
+ if (trel != tacq + tsteal) {
 # 1266 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ printf("*** error! total released != total acquired + total stolen\n");
 # 1267 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
 # 1268 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(15, (size_t)(5273863086679874269UL), (size_t)(5273863086679874270UL), (size_t)(5273863086679874271UL), (size_t)(5273863086679874272UL), (size_t)(5273863086679874273UL), (size_t)(5273863086679874274UL), (size_t)(5273863086679874275UL), (size_t)(5273863086679874276UL), (size_t)(5273863086679874277UL), (size_t)(5273863086679874278UL), (size_t)(5273863086679874279UL), (size_t)(5273863086679874280UL), (size_t)(5273863086679874281UL), (size_t)(5273863086679874282UL), (size_t)(5273863086679874283UL)); call_lbl_3: calling((void*)&uts_showStats, 3, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); uts_showStats(1, chunkSize, elapsedSecs, tnodes, tleaves, mheight);
 # 1269 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ alias_group_changed(15, (size_t)(5273863086679874269UL), (size_t)(5273863086679874270UL), (size_t)(5273863086679874271UL), (size_t)(5273863086679874272UL), (size_t)(5273863086679874273UL), (size_t)(5273863086679874274UL), (size_t)(5273863086679874275UL), (size_t)(5273863086679874276UL), (size_t)(5273863086679874277UL), (size_t)(5273863086679874278UL), (size_t)(5273863086679874279UL), (size_t)(5273863086679874280UL), (size_t)(5273863086679874281UL), (size_t)(5273863086679874282UL), (size_t)(5273863086679874283UL)); call_lbl_3: calling((void*)&uts_showStats, 3, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); uts_showStats(1, chunkSize, elapsedSecs, tnodes, tleaves, mheight);
 # 1270 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (verbose > 1) {
 # 1271 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (doSteal) {
+ if (verbose > 1) {
 # 1272 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("Total chunks released = %d, of which %d reacquired and %d stolen\n",
+ if (doSteal) {
 # 1273 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- trel, tacq, tsteal);
+ printf("Total chunks released = %d, of which %d reacquired and %d stolen\n",
 # 1274 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("Failed steal operations = %d, ", tfail);
+ trel, tacq, tsteal);
 # 1275 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ printf("Failed steal operations = %d, ", tfail);
 # 1276 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-# 1277 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("Max stealStack size = %d\n", mdepth);
-# 1278 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("Avg time per thread: Work = %.6f, Search = %.6f, Idle = %.6f\n", (twork / 1),
-# 1279 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- (tsearch / 1), (tidle / 1));
-# 1280 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("                     Overhead = %6f, CB_Overhead = %6f\n\n", (tovh / 1),
-# 1281 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- (tcbovh/1));
-# 1282 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
+# 1277 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+# 1278 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ printf("Max stealStack size = %d\n", mdepth);
+# 1279 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ printf("Avg time per thread: Work = %.6f, Search = %.6f, Idle = %.6f\n", (twork / 1),
+# 1280 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ (tsearch / 1), (tidle / 1));
+# 1281 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ printf("                     Overhead = %6f, CB_Overhead = %6f\n\n", (tovh / 1),
+# 1282 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ (tcbovh/1));
 # 1283 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
 # 1284 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1285 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (verbose > 2) {
 # 1286 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- for (i = 0; i < 1; i++) {
+ if (verbose > 2) {
 # 1287 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("** Thread %d\n", i);
+ for (i = 0; i < 1; i++) {
 # 1288 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  # nodes explored    = %d\n", stealStack[i]->nNodes);
+ printf("** Thread %d\n", i);
 # 1289 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  # chunks released   = %d\n", stealStack[i]->nRelease);
+ printf("  # nodes explored    = %d\n", stealStack[i]->nNodes);
 # 1290 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  # chunks reacquired = %d\n", stealStack[i]->nAcquire);
+ printf("  # chunks released   = %d\n", stealStack[i]->nRelease);
 # 1291 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  # chunks stolen     = %d\n", stealStack[i]->nSteal);
+ printf("  # chunks reacquired = %d\n", stealStack[i]->nAcquire);
 # 1292 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  # failed steals     = %d\n", stealStack[i]->nFail);
+ printf("  # chunks stolen     = %d\n", stealStack[i]->nSteal);
 # 1293 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  maximum stack depth = %d\n", stealStack[i]->maxStackDepth);
+ printf("  # failed steals     = %d\n", stealStack[i]->nFail);
 # 1294 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  work time           = %.6f secs (%d sessions)\n",
+ printf("  maximum stack depth = %d\n", stealStack[i]->maxStackDepth);
 # 1295 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- stealStack[i]->time[0], stealStack[i]->entries[0]);
+ printf("  work time           = %.6f secs (%d sessions)\n",
 # 1296 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  overhead time       = %.6f secs (%d sessions)\n",
+ stealStack[i]->time[0], stealStack[i]->entries[0]);
 # 1297 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- stealStack[i]->time[3], stealStack[i]->entries[3]);
+ printf("  overhead time       = %.6f secs (%d sessions)\n",
 # 1298 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  search time         = %.6f secs (%d sessions)\n",
+ stealStack[i]->time[3], stealStack[i]->entries[3]);
 # 1299 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- stealStack[i]->time[1], stealStack[i]->entries[1]);
+ printf("  search time         = %.6f secs (%d sessions)\n",
 # 1300 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  idle time           = %.6f secs (%d sessions)\n",
+ stealStack[i]->time[1], stealStack[i]->entries[1]);
 # 1301 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- stealStack[i]->time[2], stealStack[i]->entries[2]);
+ printf("  idle time           = %.6f secs (%d sessions)\n",
 # 1302 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("  wakeups             = %d, false wakeups = %d (%.2f%%)",
+ stealStack[i]->time[2], stealStack[i]->entries[2]);
 # 1303 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- stealStack[i]->wakeups, stealStack[i]->falseWakeups,
+ printf("  wakeups             = %d, false wakeups = %d (%.2f%%)",
 # 1304 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- (stealStack[i]->wakeups == 0) ? 0.00 : ((((double)stealStack[i]->falseWakeups)/stealStack[i]->wakeups)*100.0));
+ stealStack[i]->wakeups, stealStack[i]->falseWakeups,
 # 1305 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- printf("\n");
+ (stealStack[i]->wakeups == 0) ? 0.00 : ((((double)stealStack[i]->falseWakeups)/stealStack[i]->wakeups)*100.0));
 # 1306 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ printf("\n");
 # 1307 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
-# 1347 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-# 1347 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+# 1308 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
+# 1348 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+# 1348 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 alias_group_changed(1, (size_t)(5273863086679874270UL)); rm_stack(false, 0UL); }
-# 1357 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-# 1357 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(5273863086679874726UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1358 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_0: Node root; register_stack_var("main|root|0", "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); if (____chimes_replaying) { goto lbl_1; } ;
+# 1358 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(5273863086679874727UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1359 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ lbl_0: Node root; register_stack_var("main|root|0", "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 1360 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1361 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1362 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1363 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1364 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1365 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(3, (size_t)(5273863086679874676UL), (size_t)(5273863086679874677UL), (size_t)(5273863086679874678UL)); call_lbl_3: calling((void*)&uts_parseParams, 3, 0UL, 2, (size_t)(0UL), (size_t)(5273863086679874726UL)); uts_parseParams(argc, argv);
 # 1366 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ alias_group_changed(3, (size_t)(5273863086679874676UL), (size_t)(5273863086679874677UL), (size_t)(5273863086679874678UL)); call_lbl_3: calling((void*)&uts_parseParams, 3, 0UL, 2, (size_t)(0UL), (size_t)(5273863086679874727UL)); uts_parseParams(argc, argv);
 # 1367 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1368 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1369 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3796,89 +3796,92 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 2
 # 1371 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1372 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1373 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_4: calling((void*)&cb_init, 4, 0UL, 0); cb_init();
 # 1374 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ call_lbl_4: calling((void*)&cb_init, 4, 0UL, 0); cb_init();
 # 1375 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1376 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-#pragma omp parallel
 # 1377 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- {
+#pragma omp parallel
 # 1378 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_1: double t1; register_stack_var("main|t1|0", "double", (void *)(&t1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: double t2; register_stack_var("main|t2|0", "double", (void *)(&t2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: double et; register_stack_var("main|et|0", "double", (void *)(&et), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
+ {
 # 1379 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- lbl_4: StealStack *ss; register_stack_var("main|ss|0", "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } ;
+ lbl_1: double t1; register_stack_var("main|t1|0", "double", (void *)(&t1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: double t2; register_stack_var("main|t2|0", "double", (void *)(&t2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: double et; register_stack_var("main|et|0", "double", (void *)(&et), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
 # 1380 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ lbl_4: StealStack *ss; register_stack_var("main|ss|0", "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } ;
 # 1381 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1382 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (0 == 0) {
 # 1383 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_5: calling((void*)&uts_printParams, 5, 0UL, 0); uts_printParams();
+ if (0 == 0) {
 # 1384 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ call_lbl_5: calling((void*)&uts_printParams, 5, 0UL, 0); uts_printParams();
+# 1385 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
-# 1406 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-# 1406 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- stealStack[0] = ( StealStack *) malloc_wrapper (sizeof(StealStack), 5273863086679874079UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g));
 # 1407 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- ss = (StealStack *) stealStack[0];
+# 1407 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ stealStack[0] = ( StealStack *) malloc_wrapper (sizeof(StealStack), 5273863086679874079UL, 0, 1, (int)sizeof(struct stealStack_t), 3, (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g));
 # 1408 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(2, (size_t)(5273863086679874683UL), (size_t)(5273863086679874736UL)); call_lbl_8: calling((void*)&ss_init, 8, 0UL, 2, (size_t)(5273863086679874079UL), (size_t)(0UL)); ss_init(ss, 500000);
+ ss = (StealStack *) stealStack[0];
 # 1409 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ alias_group_changed(2, (size_t)(5273863086679874683UL), (size_t)(5273863086679874737UL)); call_lbl_8: calling((void*)&ss_init, 8, 0UL, 2, (size_t)(5273863086679874079UL), (size_t)(0UL)); ss_init(ss, 500000);
 # 1410 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1411 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1412 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (0 == 0) {
 # 1413 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_9: calling((void*)&initRootNode, 9, 0UL, 2, (size_t)(5273863086679874679UL), (size_t)(0UL)); initRootNode(&root, type);
+ if (0 == 0) {
 # 1414 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_10: calling((void*)&ss_push, 10, 0UL, 2, (size_t)(5273863086679874079UL), (size_t)(5273863086679874679UL)); ss_push(ss, &root);
+ call_lbl_9: calling((void*)&initRootNode, 9, 0UL, 2, (size_t)(5273863086679874679UL), (size_t)(0UL)); initRootNode(&root, type);
 # 1415 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ call_lbl_10: calling((void*)&ss_push, 10, 0UL, 2, (size_t)(5273863086679874079UL), (size_t)(5273863086679874679UL)); ss_push(ss, &root);
 # 1416 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
 # 1417 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1418 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-#pragma omp barrier
 # 1419 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+#pragma omp barrier
 # 1420 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1421 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1422 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_11: calling((void*)&ss_initState, 11, 0UL, 1, (size_t)(5273863086679874079UL)); ss_initState(ss);
 # 1423 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_12: calling((void*)&uts_wctime, 12, 0UL, 0); t1 = uts_wctime();
+ call_lbl_11: calling((void*)&ss_initState, 11, 0UL, 1, (size_t)(5273863086679874079UL)); ss_initState(ss);
 # 1424 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(1, (size_t)(5273863086679874680UL)); call_lbl_14: calling((void*)&parTreeSearch, 14, 0UL, 1, (size_t)(5273863086679874079UL)); parTreeSearch(ss);
+ call_lbl_12: calling((void*)&uts_wctime, 12, 0UL, 0); t1 = uts_wctime();
 # 1425 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- call_lbl_15: calling((void*)&uts_wctime, 15, 0UL, 0); t2 = uts_wctime();
+ alias_group_changed(1, (size_t)(5273863086679874680UL)); call_lbl_14: calling((void*)&parTreeSearch, 14, 0UL, 1, (size_t)(5273863086679874079UL)); parTreeSearch(ss);
 # 1426 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- et = t2 - t1;
+ call_lbl_15: calling((void*)&uts_wctime, 15, 0UL, 0); t2 = uts_wctime();
 # 1427 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ et = t2 - t1;
 # 1428 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1429 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1430 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1431 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1432 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1433 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-#pragma omp barrier
 # 1434 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+#pragma omp barrier
 # 1435 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1436 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1437 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (0 == 0) {
 # 1438 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(2, (size_t)(5273863086679874681UL), (size_t)(5273863086679874682UL)); call_lbl_17: calling((void*)&showStats, 17, 0UL, 1, (size_t)(0UL)); showStats(et);
+ if (0 == 0) {
 # 1439 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- }
+ alias_group_changed(2, (size_t)(5273863086679874681UL), (size_t)(5273863086679874682UL)); call_lbl_17: calling((void*)&showStats, 17, 0UL, 1, (size_t)(0UL)); showStats(et);
 # 1440 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
 # 1441 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ }
 # 1442 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1443 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- rm_stack(false, 0UL); return 0;
 # 1444 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ printf("Ending tree exploration\n");
+# 1445 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
+ rm_stack(false, 0UL); return 0;
+# 1446 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 }
 
 
 static int module_init() {
-    init_module(5273863086679872945UL, 41, 3, 5273863086679872945UL + 1224UL, 5273863086679872945UL + 1258UL, 5273863086679872945UL + 1222UL, 5273863086679872945UL + 1323UL, 5273863086679872945UL + 312UL, 5273863086679872945UL + 333UL, 5273863086679872945UL + 311UL, 5273863086679872945UL + 359UL, 5273863086679872945UL + 761UL, 5273863086679872945UL + 703UL, 5273863086679872945UL + 112UL, 5273863086679872945UL + 203UL, 5273863086679872945UL + 278UL, 5273863086679872945UL + 245UL, 5273863086679872945UL + 86UL, 5273863086679872945UL + 102UL, 5273863086679872945UL + 1738UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 26UL, 5273863086679872945UL + 50UL, 5273863086679872945UL + 851UL, 5273863086679872945UL + 922UL, 5273863086679872945UL + 953UL, 5273863086679872945UL + 1058UL, 5273863086679872945UL + 952UL, 5273863086679872945UL + 1057UL, 5273863086679872945UL + 954UL, 5273863086679872945UL + 1059UL, 5273863086679872945UL + 1UL, 5273863086679872945UL + 1797UL, 5273863086679872945UL + 526UL, 5273863086679872945UL + 761UL, 5273863086679872945UL + 938UL, 5273863086679872945UL + 948UL, 5273863086679872945UL + 359UL, 5273863086679872945UL + 333UL, 5273863086679872945UL + 360UL, 5273863086679872945UL + 410UL, 5273863086679872945UL + 361UL, 5273863086679872945UL + 386UL, 5273863086679872945UL + 203UL, 5273863086679872945UL + 134UL, 5273863086679872945UL + 207UL, 5273863086679872945UL + 284UL, 5273863086679872945UL + 206UL, 5273863086679872945UL + 278UL, 5273863086679872945UL + 442UL, 5273863086679872945UL + 479UL, 5273863086679872945UL + 1791UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 1795UL, 5273863086679872945UL + 1103UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 533UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 103UL, 5273863086679872945UL + 111UL, 5273863086679872945UL + 481UL, 5273863086679872945UL + 524UL, 5273863086679872945UL + 55UL, 5273863086679872945UL + 73UL, 5273863086679872945UL + 54UL, 5273863086679872945UL + 72UL, 5273863086679872945UL + 1065UL, 5273863086679872945UL + 1098UL, 5273863086679872945UL + 536UL, 5273863086679872945UL + 703UL, 5273863086679872945UL + 534UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 410UL, 5273863086679872945UL + 386UL, 5273863086679872945UL + 411UL, 5273863086679872945UL + 429UL, 5273863086679872945UL + 803UL, 5273863086679872945UL + 850UL, 5273863086679872945UL + 924UL, 5273863086679872945UL + 937UL, 5273863086679872945UL + 1733UL, 5273863086679872945UL + 1781UL, 5273863086679872945UL + 430UL, 5273863086679872945UL + 441UL, "node_t", 4, (int)__builtin_offsetof(struct node_t, type), (int)__builtin_offsetof(struct node_t, height), (int)__builtin_offsetof(struct node_t, numChildren), (int)__builtin_offsetof(struct node_t, state), "state_t", 1, (int)__builtin_offsetof(struct state_t, state), "stealStack_t", 23, (int)__builtin_offsetof(struct stealStack_t, stackSize), (int)__builtin_offsetof(struct stealStack_t, workAvail), (int)__builtin_offsetof(struct stealStack_t, sharedStart), (int)__builtin_offsetof(struct stealStack_t, local), (int)__builtin_offsetof(struct stealStack_t, top), (int)__builtin_offsetof(struct stealStack_t, maxStackDepth), (int)__builtin_offsetof(struct stealStack_t, nNodes), (int)__builtin_offsetof(struct stealStack_t, maxTreeDepth), (int)__builtin_offsetof(struct stealStack_t, nLeaves), (int)__builtin_offsetof(struct stealStack_t, nAcquire), (int)__builtin_offsetof(struct stealStack_t, nRelease), (int)__builtin_offsetof(struct stealStack_t, nSteal), (int)__builtin_offsetof(struct stealStack_t, nFail), (int)__builtin_offsetof(struct stealStack_t, wakeups), (int)__builtin_offsetof(struct stealStack_t, falseWakeups), (int)__builtin_offsetof(struct stealStack_t, nNodes_last), (int)__builtin_offsetof(struct stealStack_t, time), (int)__builtin_offsetof(struct stealStack_t, timeLast), (int)__builtin_offsetof(struct stealStack_t, entries), (int)__builtin_offsetof(struct stealStack_t, curState), (int)__builtin_offsetof(struct stealStack_t, stackLock), (int)__builtin_offsetof(struct stealStack_t, stack), (int)__builtin_offsetof(struct stealStack_t, stack_g));
+    init_module(5273863086679872945UL, 41, 3, 5273863086679872945UL + 1224UL, 5273863086679872945UL + 1258UL, 5273863086679872945UL + 1222UL, 5273863086679872945UL + 1323UL, 5273863086679872945UL + 312UL, 5273863086679872945UL + 333UL, 5273863086679872945UL + 311UL, 5273863086679872945UL + 359UL, 5273863086679872945UL + 761UL, 5273863086679872945UL + 703UL, 5273863086679872945UL + 112UL, 5273863086679872945UL + 203UL, 5273863086679872945UL + 278UL, 5273863086679872945UL + 245UL, 5273863086679872945UL + 86UL, 5273863086679872945UL + 102UL, 5273863086679872945UL + 1738UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 26UL, 5273863086679872945UL + 50UL, 5273863086679872945UL + 851UL, 5273863086679872945UL + 922UL, 5273863086679872945UL + 953UL, 5273863086679872945UL + 1058UL, 5273863086679872945UL + 952UL, 5273863086679872945UL + 1057UL, 5273863086679872945UL + 954UL, 5273863086679872945UL + 1059UL, 5273863086679872945UL + 1UL, 5273863086679872945UL + 1798UL, 5273863086679872945UL + 526UL, 5273863086679872945UL + 761UL, 5273863086679872945UL + 938UL, 5273863086679872945UL + 948UL, 5273863086679872945UL + 1792UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 359UL, 5273863086679872945UL + 333UL, 5273863086679872945UL + 360UL, 5273863086679872945UL + 410UL, 5273863086679872945UL + 361UL, 5273863086679872945UL + 386UL, 5273863086679872945UL + 203UL, 5273863086679872945UL + 134UL, 5273863086679872945UL + 207UL, 5273863086679872945UL + 284UL, 5273863086679872945UL + 206UL, 5273863086679872945UL + 278UL, 5273863086679872945UL + 442UL, 5273863086679872945UL + 479UL, 5273863086679872945UL + 1796UL, 5273863086679872945UL + 1103UL, 5273863086679872945UL + 1134UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 533UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 103UL, 5273863086679872945UL + 111UL, 5273863086679872945UL + 481UL, 5273863086679872945UL + 524UL, 5273863086679872945UL + 55UL, 5273863086679872945UL + 73UL, 5273863086679872945UL + 54UL, 5273863086679872945UL + 72UL, 5273863086679872945UL + 1065UL, 5273863086679872945UL + 1098UL, 5273863086679872945UL + 536UL, 5273863086679872945UL + 703UL, 5273863086679872945UL + 534UL, 5273863086679872945UL + 726UL, 5273863086679872945UL + 410UL, 5273863086679872945UL + 386UL, 5273863086679872945UL + 411UL, 5273863086679872945UL + 429UL, 5273863086679872945UL + 803UL, 5273863086679872945UL + 850UL, 5273863086679872945UL + 924UL, 5273863086679872945UL + 937UL, 5273863086679872945UL + 1733UL, 5273863086679872945UL + 1782UL, 5273863086679872945UL + 430UL, 5273863086679872945UL + 441UL, "node_t", 4, "int", (int)__builtin_offsetof(struct node_t, type), "int", (int)__builtin_offsetof(struct node_t, height), "int", (int)__builtin_offsetof(struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof(struct node_t, state), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof(struct state_t, state), "stealStack_t", 22, "int", (int)__builtin_offsetof(struct stealStack_t, stackSize), "int", (int)__builtin_offsetof(struct stealStack_t, workAvail), "int", (int)__builtin_offsetof(struct stealStack_t, sharedStart), "int", (int)__builtin_offsetof(struct stealStack_t, local), "int", (int)__builtin_offsetof(struct stealStack_t, top), "int", (int)__builtin_offsetof(struct stealStack_t, maxStackDepth), "int", (int)__builtin_offsetof(struct stealStack_t, nNodes), "int", (int)__builtin_offsetof(struct stealStack_t, maxTreeDepth), "int", (int)__builtin_offsetof(struct stealStack_t, nLeaves), "int", (int)__builtin_offsetof(struct stealStack_t, nAcquire), "int", (int)__builtin_offsetof(struct stealStack_t, nRelease), "int", (int)__builtin_offsetof(struct stealStack_t, nSteal), "int", (int)__builtin_offsetof(struct stealStack_t, nFail), "int", (int)__builtin_offsetof(struct stealStack_t, wakeups), "int", (int)__builtin_offsetof(struct stealStack_t, falseWakeups), "int", (int)__builtin_offsetof(struct stealStack_t, nNodes_last), "[ 5 x double ]", (int)__builtin_offsetof(struct stealStack_t, time), "double", (int)__builtin_offsetof(struct stealStack_t, timeLast), "[ 5 x int ]", (int)__builtin_offsetof(struct stealStack_t, entries), "int", (int)__builtin_offsetof(struct stealStack_t, curState), "%struct.node_t*", (int)__builtin_offsetof(struct stealStack_t, stack), "%struct.node_t*", (int)__builtin_offsetof(struct stealStack_t, stack_g));
     register_global_var("global|doSteal", "i32", (void *)(&doSteal), 4, 0, 0, 0);
     register_global_var("global|chunkSize", "i32", (void *)(&chunkSize), 4, 0, 0, 0);
     register_global_var("global|cbint", "i32", (void *)(&cbint), 4, 0, 0, 0);

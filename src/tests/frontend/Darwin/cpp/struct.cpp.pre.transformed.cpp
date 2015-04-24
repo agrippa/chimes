@@ -1735,32 +1735,36 @@ typedef struct _foo {
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
  int *b;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-} foo;
+ int **c;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+} foo;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1432567827179872269UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- lbl_0: foo test; register_stack_var("main|test|0", "%struct._foo = type { i32, i32* }", (void *)(&test), (size_t)16, 0, 1, 1, (int)__builtin_offsetof(struct _foo, b)); if (____chimes_replaying) { goto lbl_1; } ;
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1432567827179872271UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test.a = 3;
+ lbl_0: foo test; register_stack_var("main|test|0", "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { goto lbl_1; } ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test.b = __null;
+ test.a = 3;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- lbl_1: foo *test2; register_stack_var("main|test2|0", "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 1432567827179872257UL, 0, 1, (int)sizeof(struct _foo), 1, (int)__builtin_offsetof(struct _foo, b))) ;
+ test.b = __null;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test2[0].a = 3;
+ test.c = __null;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- fprintf(__stderrp, "Hello before checkpointing\n");
+ lbl_1: foo *test2; register_stack_var("main|test2|0", "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 1432567827179872259UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- alias_group_changed(6, (size_t)(1432567827179872241UL), (size_t)(1432567827179872242UL), (size_t)(1432567827179872243UL), (size_t)(1432567827179872244UL), (size_t)(1432567827179872245UL), (size_t)(1432567827179872257UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+ test2[0].a = 3;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- rm_stack(false, 0UL); return 0;
+ fprintf(__stderrp, "Hello before checkpointing\n");
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ alias_group_changed(6, (size_t)(1432567827179872241UL), (size_t)(1432567827179872242UL), (size_t)(1432567827179872243UL), (size_t)(1432567827179872244UL), (size_t)(1432567827179872245UL), (size_t)(1432567827179872259UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ rm_stack(false, 0UL); return 0;
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 }
 
 
 static int module_init() {
-    init_module(1432567827179872240UL, 4, 1, 1432567827179872240UL + 3UL, 1432567827179872240UL + 29UL, 1432567827179872240UL + 5UL, 1432567827179872240UL + 17UL, 1432567827179872240UL + 4UL, 1432567827179872240UL + 37UL, 1432567827179872240UL + 35UL, 1432567827179872240UL + 24UL, "_foo", 2, (int)__builtin_offsetof(struct _foo, a), (int)__builtin_offsetof(struct _foo, b));
+    init_module(1432567827179872240UL, 4, 1, 1432567827179872240UL + 37UL, 1432567827179872240UL + 26UL, 1432567827179872240UL + 3UL, 1432567827179872240UL + 31UL, 1432567827179872240UL + 5UL, 1432567827179872240UL + 19UL, 1432567827179872240UL + 4UL, 1432567827179872240UL + 39UL, "_foo", 3, "int", (int)__builtin_offsetof(struct _foo, a), "int*", (int)__builtin_offsetof(struct _foo, b), "int**", (int)__builtin_offsetof(struct _foo, c));
     return 0;
 }
 
