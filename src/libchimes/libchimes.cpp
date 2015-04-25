@@ -222,6 +222,7 @@ static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 #define MAX_CHECKPOINT_FILENAME_LEN 256
 static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
         { '\0' };
+static char checkpoint_directory[MAX_CHECKPOINT_FILENAME_LEN];
 
 #ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
@@ -402,6 +403,14 @@ void init_chimes() {
     pthread_to_id[self] = 0;
     thread_ctxs[0] = new thread_ctx(self);
 
+    char *checkpoint_dir = getenv("CHIMES_CHECKPOINT_DIR");
+    if (checkpoint_dir == NULL) {
+        fprintf(stderr, "A directory for storing checkpoint files must be "
+                "specified by the CHIMES_CHECKPOINT_DIR environment variable\n");
+        exit(1);
+    }
+    memcpy(checkpoint_directory, checkpoint_dir, strlen(checkpoint_dir) + 1);
+
     char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
 #ifdef VERBOSE
@@ -409,7 +418,11 @@ void init_chimes() {
 #endif
         ____chimes_replaying = 1;
         int fd = open(checkpoint_file, O_RDONLY);
-        assert(fd >= 0);
+        if (fd < 0) {
+            fprintf(stderr, "Error opening checkpoint file %s\n",
+                    checkpoint_file);
+            exit(1);
+        }
 
         size_t filename_length;
         char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
@@ -1780,11 +1793,11 @@ void *checkpoint_func(void *data) {
     // Find a unique file for this checkpoint
     int count = 0;
     char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
-    sprintf(dump_filename, "chimes.%d.ckpt", count);
+    sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
     int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     while (fd < 0) {
         count++;
-        sprintf(dump_filename, "chimes.%d.ckpt", count);
+        sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
         fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     }
 

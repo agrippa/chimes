@@ -11,6 +11,7 @@ import platform
 from subprocess import Popen, PIPE
 
 CHIMES_HOME = os.environ['CHIMES_HOME']
+CHECKPOINT_DIR_ENV_VAR = 'CHIMES_CHECKPOINT_DIR'
 CHIMES_REPLAY_EXIT_CODE = 55
 # limit the number of checkpoints tested so individual tests don't take more
 # than 1 minute.
@@ -376,15 +377,17 @@ def run_cmd(cmd, expect_err, env=None, interactive=False):
     return result
 
 
-def list_checkpoint_files_in_pwd():
+def list_checkpoint_files():
     """
     Returns a list of all checkpoint files in the current directory
 
     :returns: List of checkpoint filenames
     :rtype: `list` of `str`
     """
-    return [f for f in os.listdir('.') if os.path.isfile(f) and
-            f.startswith('chimes')]
+    ckpt_dir = os.environ[CHECKPOINT_DIR_ENV_VAR]
+    return [os.path.join(ckpt_dir, f) for f in os.listdir(ckpt_dir)
+            if os.path.isfile(os.path.join(ckpt_dir, f)) and
+               f.startswith('chimes.') and f.endswith('.ckpt')]
 
 
 def cleanup_runtime_files():
@@ -393,7 +396,7 @@ def cleanup_runtime_files():
     new tests.
     """
     # Clean up any leftover checkpoints from previously failed tests
-    chimes_files = list_checkpoint_files_in_pwd()
+    chimes_files = list_checkpoint_files()
     for existing in chimes_files:
         os.remove(existing)
     if os.path.isfile('a.out'):
@@ -599,6 +602,12 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     :param config: Configuration information for tests
     :type config: `class` TestConfig
     """
+    if CHECKPOINT_DIR_ENV_VAR not in os.environ:
+        print('Tests can only be run if a checkpoint directory is specified ' +
+              'with the ' + CHECKPOINT_DIR_ENV_VAR + ' environment variable')
+        sys.exit(1)
+    checkpoint_directory = os.environ[CHECKPOINT_DIR_ENV_VAR]
+
     if len(config.targets) > 0 and test.name not in config.targets:
         print(test.name + ' SKIPPING')
         return
@@ -649,7 +658,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
-    if test.expected_num_checkpoints != 0 and not os.path.isfile('chimes.0.ckpt'):
+    if test.expected_num_checkpoints != 0 and not os.path.isfile(os.path.join(
+            os.environ[CHECKPOINT_DIR_ENV_VAR], 'chimes.0.ckpt')):
         sys.stderr.write('Test ' + test.name + ' failed to produce a ' +
                          'checkpoint file\n')
         sys.stderr.write('Folder ' + work_folder + '\n')
@@ -659,7 +669,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         print_and_abort(stdout, stderr, abort=False)
 
     # Run all generated checkpoints
-    chimes_files = list_checkpoint_files_in_pwd()
+    chimes_files = list_checkpoint_files()
     if test.expected_num_checkpoints != -1 and len(chimes_files) != \
                                         test.expected_num_checkpoints:
         sys.stderr.write('Test ' + test.name + ' expected ' +
@@ -686,7 +696,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
             print_and_abort(stdout, stderr)
         completed_checkpoints += 1
 
-    for checkpoint in list_checkpoint_files_in_pwd():
+    for checkpoint in list_checkpoint_files():
         os.remove(checkpoint)
     os.remove('a.out')
     if not config.keep:
