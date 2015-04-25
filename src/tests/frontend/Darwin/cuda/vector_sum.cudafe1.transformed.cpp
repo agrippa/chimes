@@ -1,19 +1,13 @@
 # 1 "vector_sum.cudafe1.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
@@ -23,9 +17,9 @@ typedef long unsigned int size_t;
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 61 "/Developer/NVIDIA/CUDA-6.5/bin/../include/device_types.h"
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3
 typedef long ptrdiff_t;
-# 42 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3
 typedef unsigned long size_t;
 
 # 1 "/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h" 1 3
@@ -1582,8 +1576,8 @@ typedef struct dim3 dim3;
 # 70 "/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h" 2 3
 # 1 "/Developer/NVIDIA/CUDA-6.5/include/crt/storage_class.h" 1 3
 # 71 "/Developer/NVIDIA/CUDA-6.5/include/crt/host_runtime.h" 2 3
-# 44 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 2 3
-# 53 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3
+# 60 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 2 3
+# 72 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3
 typedef unsigned long rsize_t;
 # 128 "/Developer/NVIDIA/CUDA-6.5/bin/../include/driver_types.h"
 # 718 "/Developer/NVIDIA/CUDA-6.5/bin/../include/driver_types.h"

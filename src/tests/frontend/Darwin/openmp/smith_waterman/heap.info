@@ -13,7 +13,7 @@
 552 41 1400 malloc 0 1 _tiles_to_run q base
 553 26 1409 malloc 0 1 _tile
 560 41 1400 malloc 0 1 _tiles_to_run q base
-561 26 1451 malloc 0 1 _tile
+561 26 1409 malloc 0 1 _tile
 604 43 743 free
 606 3 741 free
 608 2 529 free

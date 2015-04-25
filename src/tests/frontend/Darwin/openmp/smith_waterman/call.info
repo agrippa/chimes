@@ -29,13 +29,13 @@ fprintf 420 5 0 255 1692 0
 atoi 425 24 0 968
 atoi 426 25 0 968
 _fopen 428 20 987 968 1683
-fprintf 429 20 0 255 1686 968
-exit 429 80 0 0
+fprintf 429 20 0 255 1694 968
+exit 429 84 0 0
 _Z9read_fileP7__sFILEPm 431 16 641 987 929
 fprintf 432 5 0 255 1695 0
 _fopen 434 20 1008 968 1683
-fprintf 435 20 0 255 1686 968
-exit 435 80 0 0
+fprintf 435 20 0 255 1694 968
+exit 435 84 0 0
 _Z9read_fileP7__sFILEPm 437 16 641 1008 931
 fprintf 438 5 0 255 1695 0
 fprintf 440 5 0 255 1685 0
@@ -65,7 +65,7 @@ gettimeofday 550 5 0 1675 1705
 malloc 552 41 1400 0
 malloc 553 26 1409 0
 malloc 560 41 1400 0
-malloc 561 26 1451 0
+malloc 561 26 1409 0
 _Z13pop_next_tileP13_tiles_to_run 575 28 1496 1400
 _Z9task_funciiP13_tiles_to_run 580 21 0 0 0 1400
 _Z10checkpointv 594 9 0

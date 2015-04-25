@@ -1,19 +1,13 @@
 # 1 "smith_waterman.cpp.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
@@ -21,23 +15,17 @@ typedef long unsigned int size_t;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
 # 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
@@ -360,19 +348,19 @@ char *fgets(char * , int, FILE *);
 
 
 
-FILE *fopen(const char * , const char * ) __asm("_" "fopen");
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
 
 int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
 int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs") ;
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
 size_t fread(void * , size_t, size_t, FILE * );
 FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen") ;
+                 FILE * ) __asm("_" "freopen" );
 int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
 int fseek(FILE *, long, int);
 int fsetpos(FILE *, const fpos_t *);
 long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite") ;
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
 int getc(FILE *);
 int getchar(void);
 char *gets(char *);
@@ -411,7 +399,7 @@ char *ctermid(char *);
 
 
 
-FILE *fdopen(int, const char *) __asm("_" "fdopen");
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
 
 int fileno(FILE *);
 }
@@ -421,7 +409,7 @@ int pclose(FILE *);
 
 
 
-FILE *popen(const char *, const char *) __asm("_" "popen");
+FILE *popen(const char *, const char *) __asm("_" "popen" );
 
 }
 # 336 "/usr/include/stdio.h" 3 4
@@ -462,7 +450,7 @@ int putw(int, FILE *);
 
 __attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
 
-char *tempnam(const char *, const char *) __asm("_" "tempnam") ;
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
 }
 # 411 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
@@ -1078,8 +1066,8 @@ void (*signal(int, void (*)(int)))(int);
 # 110 "/usr/include/sys/wait.h" 2 3 4
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 72 "/usr/include/sys/resource.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 1 3 4
-# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 1 3 4
+# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
 # 18 "/usr/include/stdint.h" 3 4
 # 1 "/usr/include/sys/_types/_int8_t.h" 1 3 4
@@ -1162,7 +1150,7 @@ typedef long int intmax_t;
 # 32 "/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
 # 60 "/usr/include/stdint.h" 2 3 4
-# 65 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 2 3 4
+# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 2 3 4
 # 73 "/usr/include/sys/resource.h" 2 3 4
 
 
@@ -1318,13 +1306,13 @@ int getpriority(int, id_t);
 
 int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
 
-int getrlimit(int, struct rlimit *) __asm("_" "getrlimit") ;
+int getrlimit(int, struct rlimit *) __asm("_" "getrlimit" );
 int getrusage(int, struct rusage *);
 int setpriority(int, id_t, int);
 
 int setiopolicy_np(int, int, int) __attribute__((availability(macosx,introduced=10.5)));
 
-int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit") ;
+int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 }
 # 111 "/usr/include/sys/wait.h" 2 3 4
 # 186 "/usr/include/sys/wait.h" 3 4
@@ -1421,10 +1409,10 @@ union wait {
 };
 # 247 "/usr/include/sys/wait.h" 3 4
 extern "C" {
-pid_t wait(int *) __asm("_" "wait") ;
-pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid") ;
+pid_t wait(int *) __asm("_" "wait" );
+pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid" );
 
-int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid") ;
+int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid" );
 
 
 pid_t wait3(int *, int, struct rusage *);
@@ -1523,8 +1511,8 @@ void qsort(void *, size_t, size_t,
 int rand(void);
 void *realloc(void *, size_t);
 void srand(unsigned);
-double strtod(const char *, char **) __asm("_" "strtod") ;
-float strtof(const char *, char **) __asm("_" "strtof") ;
+double strtod(const char *, char **) __asm("_" "strtod" );
+float strtof(const char *, char **) __asm("_" "strtof" );
 long strtol(const char *, char **, int);
 long double
   strtold(const char *, char **);
@@ -1538,7 +1526,7 @@ unsigned long
 unsigned long long
   strtoull(const char *, char **, int);
 
-int system(const char *) __asm("_" "system") __attribute__((availability(macosx,introduced=10.0)));
+int system(const char *) __asm("_" "system" ) __attribute__((availability(macosx,introduced=10.0)));
 size_t wcstombs(char * , const wchar_t * , size_t);
 int wctomb(char *, wchar_t);
 
@@ -1567,7 +1555,7 @@ long mrand48(void);
 long nrand48(unsigned short[3]);
 int posix_openpt(int);
 char *ptsname(int);
-int putenv(char *) __asm("_" "putenv") ;
+int putenv(char *) __asm("_" "putenv" );
 long random(void);
 int rand_r(unsigned *);
 
@@ -1577,9 +1565,9 @@ char *realpath(const char * , char * ) __asm("_" "realpath" "$DARWIN_EXTSN");
 
 unsigned short
  *seed48(unsigned short[3]);
-int setenv(const char *, const char *, int) __asm("_" "setenv") ;
+int setenv(const char *, const char *, int) __asm("_" "setenv" );
 
-void setkey(const char *) __asm("_" "setkey") ;
+void setkey(const char *) __asm("_" "setkey" );
 
 
 
@@ -1592,7 +1580,7 @@ void srandom(unsigned);
 
 int unlockpt(int);
 
-int unsetenv(const char *) __asm("_" "unsetenv") ;
+int unsetenv(const char *) __asm("_" "unsetenv" );
 
 
 
@@ -1833,21 +1821,21 @@ extern char *tzname[];
 
 extern int getdate_err;
 
-extern long timezone __asm("_" "timezone") ;
+extern long timezone __asm("_" "timezone" );
 
 extern int daylight;
 
 extern "C" {
 char *asctime(const struct tm *);
-clock_t clock(void) __asm("_" "clock") ;
+clock_t clock(void) __asm("_" "clock" );
 char *ctime(const time_t *);
 double difftime(time_t, time_t);
 struct tm *getdate(const char *);
 struct tm *gmtime(const time_t *);
 struct tm *localtime(const time_t *);
-time_t mktime(struct tm *) __asm("_" "mktime") ;
-size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime") ;
-char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime") ;
+time_t mktime(struct tm *) __asm("_" "mktime" );
+size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime" );
+char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime" );
 time_t time(time_t *);
 
 
@@ -1872,7 +1860,7 @@ time_t timegm(struct tm * const);
 
 
 
-int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep") ;
+int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep" );
 
 }
 # 179 "/usr/include/sys/time.h" 2 3 4
@@ -2188,7 +2176,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 # 160 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  worker_tiles[i] = (int**)malloc_wrapper(sizeof(int*)*(tile_height+1), 2568646267985526752UL, 1, 0);
 # 161 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 2568646267985526505UL, 0, 0); };
+ for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 2568646267985526754UL, 0, 0); };
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  }
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2267,14 +2255,14 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 # 211 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 212 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 213 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(19, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526505UL), (size_t)(2568646267985526754UL)); call_lbl_45: calling((void*)&checkpoint, 45, 0UL, 0); checkpoint();
+ alias_group_changed(18, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526754UL)); call_lbl_45: calling((void*)&checkpoint, 45, 0UL, 0); checkpoint();
 # 214 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 215 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  }
 # 216 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 217 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 218 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(19, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526505UL), (size_t)(2568646267985526754UL)); call_lbl_47: calling((void*)&gettimeofday, 47, 0UL, 2, (size_t)(2568646267985526201UL), (size_t)(2568646267985527005UL)); gettimeofday(&end,0);
+ alias_group_changed(18, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526754UL)); call_lbl_47: calling((void*)&gettimeofday, 47, 0UL, 2, (size_t)(2568646267985526201UL), (size_t)(2568646267985527005UL)); gettimeofday(&end,0);
 # 219 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
 # 220 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2301,7 +2289,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 # 235 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  for (i = 0; i < nthreads; i++) {
 # 236 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- for (j = 0; j < tile_height + 1; j++) { free_wrapper(worker_tiles[i][j], 2568646267985526505UL); };
+ for (j = 0; j < tile_height + 1; j++) { free_wrapper(worker_tiles[i][j], 2568646267985526754UL); };
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  free_wrapper(worker_tiles[i], 2568646267985526752UL);
 # 239 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2316,7 +2304,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 
 
 static int module_init() {
-    init_module(2568646267985525997UL, 23, 5, 2568646267985525997UL + 988UL, 2568646267985525997UL + 403UL, 2568646267985525997UL + 199UL, 2568646267985525997UL + 261UL, 2568646267985525997UL + 198UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 210UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 197UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 986UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 193UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 81UL, 2568646267985525997UL + 123UL, 2568646267985525997UL + 25UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 980UL, 2568646267985525997UL + 656UL, 2568646267985525997UL + 201UL, 2568646267985525997UL + 282UL, 2568646267985525997UL + 991UL, 2568646267985525997UL + 50UL, 2568646267985525997UL + 990UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 508UL, 2568646267985525997UL + 209UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 208UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 57UL, 2568646267985525997UL + 125UL, 2568646267985525997UL + 165UL, 2568646267985525997UL + 126UL, 2568646267985525997UL + 166UL, 2568646267985525997UL + 128UL, 2568646267985525997UL + 146UL, "Nucleotide", 0, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "timeval", 2, "long int", (int)__builtin_offsetof(struct timeval, tv_sec), "int", (int)__builtin_offsetof(struct timeval, tv_usec));
+    init_module(2568646267985525997UL, 23, 5, 2568646267985525997UL + 988UL, 2568646267985525997UL + 403UL, 2568646267985525997UL + 199UL, 2568646267985525997UL + 261UL, 2568646267985525997UL + 198UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 210UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 197UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 986UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 193UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 81UL, 2568646267985525997UL + 123UL, 2568646267985525997UL + 25UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 980UL, 2568646267985525997UL + 656UL, 2568646267985525997UL + 201UL, 2568646267985525997UL + 282UL, 2568646267985525997UL + 991UL, 2568646267985525997UL + 50UL, 2568646267985525997UL + 990UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 757UL, 2568646267985525997UL + 209UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 208UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 57UL, 2568646267985525997UL + 125UL, 2568646267985525997UL + 165UL, 2568646267985525997UL + 126UL, 2568646267985525997UL + 166UL, 2568646267985525997UL + 128UL, 2568646267985525997UL + 146UL, "Nucleotide", 0, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "timeval", 2, "long int", (int)__builtin_offsetof(struct timeval, tv_sec), "int", (int)__builtin_offsetof(struct timeval, tv_usec));
     register_global_var("global|string_1", "i8*", (void *)(&string_1), 8, 1, 0, 0);
     register_global_var("global|string_2", "i8*", (void *)(&string_2), 8, 1, 0, 0);
     register_global_var("global|tile_width", "i32", (void *)(&tile_width), 4, 0, 0, 0);

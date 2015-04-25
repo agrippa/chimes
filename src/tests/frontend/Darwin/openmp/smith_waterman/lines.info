@@ -19,9 +19,9 @@
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 425 24 : { 926, 927, 1659 } prop:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 426 25 : { 1659 } direct:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 431 16 : { 928, 929, 1659 } prop:call:_Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 429 80 : { 928, 929, 1659 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 429 84 : { 928, 929, 1659 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 437 16 : { 930, 931, 1657 } prop:call:_Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 435 80 : { 930, 931, 1657 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 435 84 : { 930, 931, 1657 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 443 115 : { 141, 923, 932, 933, 1657, 1659, 1667 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 444 117 : { 141, 923, 932, 933, 1657, 1659, 1667 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 470 2 : { 141, 923, 932, 933, 1657, 1659, 1667 } prop:call:_Z8PUT_DIAGii

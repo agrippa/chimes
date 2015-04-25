@@ -426,13 +426,13 @@ int main ( int argc, char* argv[] ) {
     tile_height = (int) atoi (argv[4]);
 
     FILE* file_1 = fopen(file_name_1, "r");
-    if (!file_1) { fprintf(stderr, "could not open file %s\n",file_name_1); exit(1); }
+    if (!file_1) { fprintf(stderr, "could not open file \"%s\"\n",file_name_1); exit(1); }
     size_t n_char_in_file_1 = 0;
     string_1 = read_file(file_1, &n_char_in_file_1);
     fprintf(stdout, "Size of input string 1 is %u\n", (unsigned)n_char_in_file_1 );
 
     FILE* file_2 = fopen(file_name_2, "r");
-    if (!file_2) { fprintf(stderr, "could not open file %s\n",file_name_2); exit(1); }
+    if (!file_2) { fprintf(stderr, "could not open file \"%s\"\n",file_name_2); exit(1); }
     size_t n_char_in_file_2 = 0;
     string_2 = read_file(file_2, &n_char_in_file_2);
     fprintf(stdout, "Size of input string 2 is %u\n", (unsigned)n_char_in_file_2 );
