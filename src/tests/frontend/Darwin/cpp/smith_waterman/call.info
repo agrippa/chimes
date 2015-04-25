@@ -37,7 +37,7 @@ malloc 152 27 363 0
 _Z9find_diagii 155 13 0 0 0
 malloc 158 25 494 0
 malloc 160 28 755 0
-malloc 161 71 508 0
+malloc 161 71 757 0
 gettimeofday 166 5 0 203 1008
 _Z9find_diagii 178 23 0 0 0
 _Z10checkpointv 213 8 0
@@ -50,6 +50,6 @@ free 227 2 0 367
 free 229 36 0 363
 free 231 2 0 367
 free 233 2 0 403
-free 236 43 0 508
+free 236 43 0 757
 free 238 3 0 755
 free 240 2 0 494

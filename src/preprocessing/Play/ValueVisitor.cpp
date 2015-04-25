@@ -189,6 +189,11 @@ size_t ValueVisitor::visitStore(StoreInst *store, Value *prev) {
     if (storing->getType()->isPointerTy()) {
         size_t storing_hash = visit(storing, store);
 
+#ifdef VERBOSE
+        errs() << "Storing " << storing_hash << " in " << dst_hash << " for " <<
+            *store << "\n";
+#endif
+
         if (contains.find(dst_hash) != contains.end()) {
             size_t dst_hash_contains = contains[dst_hash];
             mergeAliasGroups(storing_hash, dst_hash_contains);
@@ -310,17 +315,31 @@ static std::map<size_t, size_t> translate(
 
     for (std::map<size_t, size_t>::iterator i = m.begin(),
             e = m.end(); i != e; i++) {
-        size_t curr;
+        size_t key, val;
         if (i->first == from) {
-            curr = to;
+#ifdef VERBOSE
+            errs() << "Replacing parent " << from << " (child " << i->second <<
+                ") with " << to << "\n";
+#endif
+            key = to;
         } else {
-            curr = i->first;
+            key = i->first;
         }
 
         if (i->second == from) {
-            new_m.insert(std::pair<size_t, size_t>(curr, to));
+#ifdef VERBOSE
+            errs() << "Replacing child " << from << " (parent " << i->first <<
+                ") with " << to << "\n";
+#endif
+            val = to;
         } else {
-            new_m.insert(std::pair<size_t, size_t>(curr, i->second));
+            val = i->second;
+        }
+
+        if (new_m.find(key) != new_m.end()) {
+            assert(new_m[key] == val);
+        } else {
+            new_m[key] = val;
         }
     }
     return new_m;
@@ -341,6 +360,18 @@ void ValueVisitor::mergeAliasGroups(size_t from, size_t to) {
 #ifdef VERBOSE
     errs() << "Original contains=\n" << map_to_string(contains) << "\n";
 #endif
+
+    /*
+     * If there are already items in the map keyed on both from and to then
+     * doing the translation below would cause a key clash that would lead to
+     * one of the values being essentially erased. Therefore, if the values are
+     * different we have to first merge them together, then do the update.
+     */
+    if (contains.find(to) != contains.end() &&
+            contains.find(from) != contains.end() &&
+            contains[from] != contains[to]) {
+        mergeAliasGroups(contains[from], contains[to]);
+    }
 
     contains = translate(contains, from, to);
 

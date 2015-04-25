@@ -18,9 +18,9 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterma
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 417 9 alias_group_changed(3, (size_t)(469315932764640598UL), (size_t)(469315932764640599UL), (size_t)(469315932764641331UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 425 5 alias_group_changed(3, (size_t)(469315932764640598UL), (size_t)(469315932764640599UL), (size_t)(469315932764641331UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 426 5 alias_group_changed(1, (size_t)(469315932764641331UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 429 80 alias_group_changed(3, (size_t)(469315932764640600UL), (size_t)(469315932764640601UL), (size_t)(469315932764641331UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 429 84 alias_group_changed(3, (size_t)(469315932764640600UL), (size_t)(469315932764640601UL), (size_t)(469315932764641331UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 431 5 alias_group_changed(3, (size_t)(469315932764640600UL), (size_t)(469315932764640601UL), (size_t)(469315932764641331UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 435 80 alias_group_changed(3, (size_t)(469315932764640602UL), (size_t)(469315932764640603UL), (size_t)(469315932764641329UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 435 84 alias_group_changed(3, (size_t)(469315932764640602UL), (size_t)(469315932764640603UL), (size_t)(469315932764641329UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 437 5 alias_group_changed(3, (size_t)(469315932764640602UL), (size_t)(469315932764640603UL), (size_t)(469315932764641329UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 443 115 alias_group_changed(7, (size_t)(469315932764639813UL), (size_t)(469315932764640595UL), (size_t)(469315932764640604UL), (size_t)(469315932764640605UL), (size_t)(469315932764641329UL), (size_t)(469315932764641331UL), (size_t)(469315932764641339UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 444 117 alias_group_changed(7, (size_t)(469315932764639813UL), (size_t)(469315932764640595UL), (size_t)(469315932764640604UL), (size_t)(469315932764640605UL), (size_t)(469315932764641329UL), (size_t)(469315932764641331UL), (size_t)(469315932764641339UL)); 
@@ -65,7 +65,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smi
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 560 41 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 560 67 , 469315932764641072UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base)
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 561 26 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 561 60 , 469315932764641123UL, 0, 1, (int)sizeof(struct _tile), 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 561 60 , 469315932764641081UL, 0, 1, (int)sizeof(struct _tile), 0
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 604 43 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 604 65 , 469315932764640415UL
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 606 3 len=4 free_wrapper

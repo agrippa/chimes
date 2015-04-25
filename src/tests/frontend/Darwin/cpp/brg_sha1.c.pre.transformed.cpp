@@ -1,20 +1,14 @@
 # 1 "brg_sha1.c.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 4 "<command line>" 2
 # 1 "<built-in>" 2
@@ -22,7 +16,7 @@ typedef long unsigned int size_t;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
 
@@ -30,16 +24,10 @@ typedef long unsigned int size_t;
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
@@ -300,7 +288,7 @@ int strcmp(const char *, const char *);
 int strcoll(const char *, const char *);
 char *strcpy(char *, const char *);
 size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror") ;
+char *strerror(int) __asm("_" "strerror" );
 size_t strlen(const char *);
 char *strncat(char *, const char *, size_t);
 int strncmp(const char *, const char *, size_t);
@@ -502,19 +490,19 @@ char *fgets(char * , int, FILE *);
 
 
 
-FILE *fopen(const char * , const char * ) __asm("_" "fopen");
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
 
 int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
 int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs") ;
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
 size_t fread(void * , size_t, size_t, FILE * );
 FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen") ;
+                 FILE * ) __asm("_" "freopen" );
 int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
 int fseek(FILE *, long, int);
 int fsetpos(FILE *, const fpos_t *);
 long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite") ;
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
 int getc(FILE *);
 int getchar(void);
 char *gets(char *);
@@ -553,7 +541,7 @@ char *ctermid(char *);
 
 
 
-FILE *fdopen(int, const char *) __asm("_" "fdopen");
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
 
 int fileno(FILE *);
 }
@@ -563,7 +551,7 @@ int pclose(FILE *);
 
 
 
-FILE *popen(const char *, const char *) __asm("_" "popen");
+FILE *popen(const char *, const char *) __asm("_" "popen" );
 
 }
 # 336 "/usr/include/stdio.h" 3 4
@@ -604,7 +592,7 @@ int putw(int, FILE *);
 
 __attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
 
-char *tempnam(const char *, const char *) __asm("_" "tempnam") ;
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
 }
 # 411 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
@@ -1219,8 +1207,8 @@ void (*signal(int, void (*)(int)))(int);
 # 110 "/usr/include/sys/wait.h" 2 3 4
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 72 "/usr/include/sys/resource.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 1 3 4
-# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 1 3 4
+# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
 # 18 "/usr/include/stdint.h" 3 4
 # 1 "/usr/include/sys/_types/_int8_t.h" 1 3 4
@@ -1303,7 +1291,7 @@ typedef long int intmax_t;
 # 32 "/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
 # 60 "/usr/include/stdint.h" 2 3 4
-# 65 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 2 3 4
+# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 2 3 4
 # 73 "/usr/include/sys/resource.h" 2 3 4
 
 
@@ -1459,13 +1447,13 @@ int getpriority(int, id_t);
 
 int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
 
-int getrlimit(int, struct rlimit *) __asm("_" "getrlimit") ;
+int getrlimit(int, struct rlimit *) __asm("_" "getrlimit" );
 int getrusage(int, struct rusage *);
 int setpriority(int, id_t, int);
 
 int setiopolicy_np(int, int, int) __attribute__((availability(macosx,introduced=10.5)));
 
-int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit") ;
+int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 }
 # 111 "/usr/include/sys/wait.h" 2 3 4
 # 186 "/usr/include/sys/wait.h" 3 4
@@ -1562,10 +1550,10 @@ union wait {
 };
 # 247 "/usr/include/sys/wait.h" 3 4
 extern "C" {
-pid_t wait(int *) __asm("_" "wait") ;
-pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid") ;
+pid_t wait(int *) __asm("_" "wait" );
+pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid" );
 
-int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid") ;
+int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid" );
 
 
 pid_t wait3(int *, int, struct rusage *);
@@ -1664,8 +1652,8 @@ void qsort(void *, size_t, size_t,
 int rand(void);
 void *realloc(void *, size_t);
 void srand(unsigned);
-double strtod(const char *, char **) __asm("_" "strtod") ;
-float strtof(const char *, char **) __asm("_" "strtof") ;
+double strtod(const char *, char **) __asm("_" "strtod" );
+float strtof(const char *, char **) __asm("_" "strtof" );
 long strtol(const char *, char **, int);
 long double
   strtold(const char *, char **);
@@ -1679,7 +1667,7 @@ unsigned long
 unsigned long long
   strtoull(const char *, char **, int);
 
-int system(const char *) __asm("_" "system") __attribute__((availability(macosx,introduced=10.0)));
+int system(const char *) __asm("_" "system" ) __attribute__((availability(macosx,introduced=10.0)));
 size_t wcstombs(char * , const wchar_t * , size_t);
 int wctomb(char *, wchar_t);
 
@@ -1708,7 +1696,7 @@ long mrand48(void);
 long nrand48(unsigned short[3]);
 int posix_openpt(int);
 char *ptsname(int);
-int putenv(char *) __asm("_" "putenv") ;
+int putenv(char *) __asm("_" "putenv" );
 long random(void);
 int rand_r(unsigned *);
 
@@ -1718,9 +1706,9 @@ char *realpath(const char * , char * ) __asm("_" "realpath" "$DARWIN_EXTSN");
 
 unsigned short
  *seed48(unsigned short[3]);
-int setenv(const char *, const char *, int) __asm("_" "setenv") ;
+int setenv(const char *, const char *, int) __asm("_" "setenv" );
 
-void setkey(const char *) __asm("_" "setkey") ;
+void setkey(const char *) __asm("_" "setkey" );
 
 
 
@@ -1733,7 +1721,7 @@ void srandom(unsigned);
 
 int unlockpt(int);
 
-int unsetenv(const char *) __asm("_" "unsetenv") ;
+int unsetenv(const char *) __asm("_" "unsetenv" );
 
 
 
@@ -2070,8 +2058,8 @@ extern "C" {
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/limits.h" 1 3 4
-# 38 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/limits.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h" 1 3 4
+# 37 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h" 3 4
 # 1 "/usr/include/limits.h" 1 3 4
 # 64 "/usr/include/limits.h" 3 4
 # 1 "/usr/include/machine/limits.h" 1 3 4
@@ -2088,7 +2076,7 @@ extern "C" {
 # 65 "/usr/include/limits.h" 2 3 4
 # 1 "/usr/include/sys/syslimits.h" 1 3 4
 # 66 "/usr/include/limits.h" 2 3 4
-# 39 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/limits.h" 2 3 4
+# 38 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h" 2 3 4
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h" 2
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h"
  typedef unsigned char uint_8t;

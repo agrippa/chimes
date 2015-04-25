@@ -1,19 +1,13 @@
 # 1 "common3d.cpp.pre.transformed.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
@@ -21,23 +15,17 @@ typedef long unsigned int size_t;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 175 "<built-in>" 3
+# 326 "<built-in>" 3
 # 1 "<command line>" 1
 
 # 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-
-
-
-
-
-
-
+# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
@@ -364,19 +352,19 @@ char *fgets(char * , int, FILE *);
 
 
 
-FILE *fopen(const char * , const char * ) __asm("_" "fopen");
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
 
 int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
 int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs") ;
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
 size_t fread(void * , size_t, size_t, FILE * );
 FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen") ;
+                 FILE * ) __asm("_" "freopen" );
 int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
 int fseek(FILE *, long, int);
 int fsetpos(FILE *, const fpos_t *);
 long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite") ;
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
 int getc(FILE *);
 int getchar(void);
 char *gets(char *);
@@ -415,7 +403,7 @@ char *ctermid(char *);
 
 
 
-FILE *fdopen(int, const char *) __asm("_" "fdopen");
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
 
 int fileno(FILE *);
 }
@@ -425,7 +413,7 @@ int pclose(FILE *);
 
 
 
-FILE *popen(const char *, const char *) __asm("_" "popen");
+FILE *popen(const char *, const char *) __asm("_" "popen" );
 
 }
 # 336 "/usr/include/stdio.h" 3 4
@@ -466,7 +454,7 @@ int putw(int, FILE *);
 
 __attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
 
-char *tempnam(const char *, const char *) __asm("_" "tempnam") ;
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
 }
 # 411 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
@@ -1082,8 +1070,8 @@ void (*signal(int, void (*)(int)))(int);
 # 110 "/usr/include/sys/wait.h" 2 3 4
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 72 "/usr/include/sys/resource.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 1 3 4
-# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 3 4
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 1 3 4
+# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
 # 18 "/usr/include/stdint.h" 3 4
 # 1 "/usr/include/sys/_types/_int8_t.h" 1 3 4
@@ -1166,7 +1154,7 @@ typedef long int intmax_t;
 # 32 "/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
 # 60 "/usr/include/stdint.h" 2 3 4
-# 65 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h" 2 3 4
+# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 2 3 4
 # 73 "/usr/include/sys/resource.h" 2 3 4
 
 
@@ -1322,13 +1310,13 @@ int getpriority(int, id_t);
 
 int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
 
-int getrlimit(int, struct rlimit *) __asm("_" "getrlimit") ;
+int getrlimit(int, struct rlimit *) __asm("_" "getrlimit" );
 int getrusage(int, struct rusage *);
 int setpriority(int, id_t, int);
 
 int setiopolicy_np(int, int, int) __attribute__((availability(macosx,introduced=10.5)));
 
-int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit") ;
+int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 }
 # 111 "/usr/include/sys/wait.h" 2 3 4
 # 186 "/usr/include/sys/wait.h" 3 4
@@ -1425,10 +1413,10 @@ union wait {
 };
 # 247 "/usr/include/sys/wait.h" 3 4
 extern "C" {
-pid_t wait(int *) __asm("_" "wait") ;
-pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid") ;
+pid_t wait(int *) __asm("_" "wait" );
+pid_t waitpid(pid_t, int *, int) __asm("_" "waitpid" );
 
-int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid") ;
+int waitid(idtype_t, id_t, siginfo_t *, int) __asm("_" "waitid" );
 
 
 pid_t wait3(int *, int, struct rusage *);
@@ -1527,8 +1515,8 @@ void qsort(void *, size_t, size_t,
 int rand(void);
 void *realloc(void *, size_t);
 void srand(unsigned);
-double strtod(const char *, char **) __asm("_" "strtod") ;
-float strtof(const char *, char **) __asm("_" "strtof") ;
+double strtod(const char *, char **) __asm("_" "strtod" );
+float strtof(const char *, char **) __asm("_" "strtof" );
 long strtol(const char *, char **, int);
 long double
   strtold(const char *, char **);
@@ -1542,7 +1530,7 @@ unsigned long
 unsigned long long
   strtoull(const char *, char **, int);
 
-int system(const char *) __asm("_" "system") __attribute__((availability(macosx,introduced=10.0)));
+int system(const char *) __asm("_" "system" ) __attribute__((availability(macosx,introduced=10.0)));
 size_t wcstombs(char * , const wchar_t * , size_t);
 int wctomb(char *, wchar_t);
 
@@ -1571,7 +1559,7 @@ long mrand48(void);
 long nrand48(unsigned short[3]);
 int posix_openpt(int);
 char *ptsname(int);
-int putenv(char *) __asm("_" "putenv") ;
+int putenv(char *) __asm("_" "putenv" );
 long random(void);
 int rand_r(unsigned *);
 
@@ -1581,9 +1569,9 @@ char *realpath(const char * , char * ) __asm("_" "realpath" "$DARWIN_EXTSN");
 
 unsigned short
  *seed48(unsigned short[3]);
-int setenv(const char *, const char *, int) __asm("_" "setenv") ;
+int setenv(const char *, const char *, int) __asm("_" "setenv" );
 
-void setkey(const char *) __asm("_" "setkey") ;
+void setkey(const char *) __asm("_" "setkey" );
 
 
 
@@ -1596,7 +1584,7 @@ void srandom(unsigned);
 
 int unlockpt(int);
 
-int unsetenv(const char *) __asm("_" "unsetenv") ;
+int unsetenv(const char *) __asm("_" "unsetenv" );
 
 
 
@@ -1747,7 +1735,7 @@ int strcmp(const char *, const char *);
 int strcoll(const char *, const char *);
 char *strcpy(char *, const char *);
 size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror") ;
+char *strerror(int) __asm("_" "strerror" );
 size_t strlen(const char *);
 char *strncat(char *, const char *, size_t);
 int strncmp(const char *, const char *, size_t);
@@ -1946,7 +1934,7 @@ unsigned int
 int chdir(const char *);
 int chown(const char *, uid_t, gid_t);
 
-int close(int) __asm("_" "close") ;
+int close(int) __asm("_" "close" );
 
 int dup(int);
 int dup2(int, int);
@@ -1977,11 +1965,11 @@ int link(const char *, const char *);
 off_t lseek(int, off_t, int);
 long pathconf(const char *, int);
 
-int pause(void) __asm("_" "pause") ;
+int pause(void) __asm("_" "pause" );
 
 int pipe(int [2]);
 
-ssize_t read(int, void *, size_t) __asm("_" "read") ;
+ssize_t read(int, void *, size_t) __asm("_" "read" );
 
 int rmdir(const char *);
 int setgid(gid_t);
@@ -1990,7 +1978,7 @@ pid_t setsid(void);
 int setuid(uid_t);
 
 unsigned int
-  sleep(unsigned int) __asm("_" "sleep") ;
+  sleep(unsigned int) __asm("_" "sleep" );
 
 long sysconf(int);
 pid_t tcgetpgrp(int);
@@ -1998,20 +1986,20 @@ int tcsetpgrp(int, pid_t);
 char *ttyname(int);
 
 
-int ttyname_r(int, char *, size_t) __asm("_" "ttyname_r") ;
+int ttyname_r(int, char *, size_t) __asm("_" "ttyname_r" );
 
 
 
 
 int unlink(const char *);
 
-ssize_t write(int, const void *, size_t) __asm("_" "write") ;
+ssize_t write(int, const void *, size_t) __asm("_" "write" );
 }
 # 500 "/usr/include/unistd.h" 3 4
 extern "C" {
-size_t confstr(int, char *, size_t) __asm("_" "confstr") ;
+size_t confstr(int, char *, size_t) __asm("_" "confstr" );
 
-int getopt(int, char * const [], const char *) __asm("_" "getopt") ;
+int getopt(int, char * const [], const char *) __asm("_" "getopt" );
 
 extern char *optarg;
 extern int optind, opterr, optopt;
@@ -2036,7 +2024,7 @@ char *crypt(const char *, const char *);
 
 
 
-void encrypt(char *, int) __asm("_" "encrypt") ;
+void encrypt(char *, int) __asm("_" "encrypt" );
 
 
 
@@ -2057,15 +2045,15 @@ char *getpass(const char *) ;
 char *getwd(char *) ;
 
 
-int lchown(const char *, uid_t, gid_t) __asm("_" "lchown") ;
+int lchown(const char *, uid_t, gid_t) __asm("_" "lchown" );
 
-int lockf(int, int, off_t) __asm("_" "lockf") ;
+int lockf(int, int, off_t) __asm("_" "lockf" );
 
-int nice(int) __asm("_" "nice") ;
+int nice(int) __asm("_" "nice" );
 
-ssize_t pread(int, void *, size_t, off_t) __asm("_" "pread") ;
+ssize_t pread(int, void *, size_t, off_t) __asm("_" "pread" );
 
-ssize_t pwrite(int, const void *, size_t, off_t) __asm("_" "pwrite") ;
+ssize_t pwrite(int, const void *, size_t, off_t) __asm("_" "pwrite" );
 
 
 
@@ -2078,24 +2066,24 @@ void *sbrk(int);
 
 
 
-pid_t setpgrp(void) __asm("_" "setpgrp") ;
+pid_t setpgrp(void) __asm("_" "setpgrp" );
 
 
 
 
-int setregid(gid_t, gid_t) __asm("_" "setregid") ;
+int setregid(gid_t, gid_t) __asm("_" "setregid" );
 
-int setreuid(uid_t, uid_t) __asm("_" "setreuid") ;
+int setreuid(uid_t, uid_t) __asm("_" "setreuid" );
 
 void swab(const void * , void * , ssize_t);
 void sync(void);
 int truncate(const char *, off_t);
 useconds_t ualarm(useconds_t, useconds_t);
-int usleep(useconds_t) __asm("_" "usleep") ;
+int usleep(useconds_t) __asm("_" "usleep" );
 pid_t vfork(void);
 
 
-int fsync(int) __asm("_" "fsync") ;
+int fsync(int) __asm("_" "fsync" );
 
 int ftruncate(int, off_t);
 int getlogin_r(char *, size_t);
@@ -2270,12 +2258,12 @@ int setgroups(int, const gid_t *);
 void sethostid(long);
 int sethostname(const char *, int);
 
-void setkey(const char *) __asm("_" "setkey") ;
+void setkey(const char *) __asm("_" "setkey" );
 
 
 
 int setlogin(const char *);
-void *setmode(const char *) __asm("_" "setmode");
+void *setmode(const char *) __asm("_" "setmode" );
 int setrgid(gid_t);
 int setruid(uid_t);
 int setsgroups_np(int, const uuid_t);
@@ -2296,8 +2284,8 @@ int getsubopt(char **, char * const *, char **);
 
 int fgetattrlist(int,void*,void*,size_t,unsigned int) __attribute__((availability(macosx,introduced=10.6)));
 int fsetattrlist(int,void*,void*,size_t,unsigned int) __attribute__((availability(macosx,introduced=10.6)));
-int getattrlist(const char*,void*,void*,size_t,unsigned int) __asm("_" "getattrlist") ;
-int setattrlist(const char*,void*,void*,size_t,unsigned int) __asm("_" "setattrlist") ;
+int getattrlist(const char*,void*,void*,size_t,unsigned int) __asm("_" "getattrlist" );
+int setattrlist(const char*,void*,void*,size_t,unsigned int) __asm("_" "setattrlist" );
 int exchangedata(const char*,const char*,unsigned int);
 int getdirentriesattr(int,void*,void*,size_t,unsigned int*,unsigned int*,unsigned int*,unsigned int);
 # 731 "/usr/include/unistd.h" 3 4

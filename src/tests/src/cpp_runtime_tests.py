@@ -33,6 +33,9 @@ REALLOC = RuntimeTest('Realloc', ['realloc.cpp'], 42, 1)
 CALLOC = RuntimeTest('Calloc', ['calloc.cpp'], 42, 1)
 GLOBALS = RuntimeTest('Globals', ['globals.cpp'], 7, 1)
 CONSTANTS = RuntimeTest('Constants', ['constants.cpp'], 1, 1)
+PARTIAL_CHECKPOINT = RuntimeTest('PartialCheckpoint', ['partial_checkpoint.cpp'], 0, 2)
+SWAPPED_PTRS = RuntimeTest('SwappedPointers', ['swapped_ptrs.cpp'], 0, 2)
+SWAPPED_NESTED_PTRS = RuntimeTest('SwappedNestedPointers', ['swapped_nested_ptrs.cpp'], 0, 2)
 MULTI_CHECKPOINT = RuntimeTest('MultiCheckpoint', ['multi_checkpoint.cpp'], 100,
                                100)
 ISO2D = RuntimeTest('Iso2D',
@@ -76,8 +79,9 @@ RAY_TRACER = RuntimeTest('RayTracer', ['ray_tracer.c'], 0, 10,
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
          NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
          COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, HEAP_POINTERS, HEAP_INDIRECTION,
-         FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS, MULTI_CHECKPOINT, ISO2D,
-         ISO3D, SMITH_WATERMAN, LULESH, COMD, UTS, RAY_TRACER]
+         FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS, PARTIAL_CHECKPOINT,
+         SWAPPED_PTRS, SWAPPED_NESTED_PTRS, MULTI_CHECKPOINT, ISO2D, ISO3D,
+         SMITH_WATERMAN, LULESH, COMD, UTS, RAY_TRACER]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

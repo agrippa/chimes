@@ -111,6 +111,9 @@ static void safe_write(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
 static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
+static void skip(int fd, ssize_t size, const char *msg, const char *filename);
+static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
+        const char *filename);
 static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new);
 static void fix_stack_or_global_pointer(void *container, string type);
@@ -217,7 +220,8 @@ static size_t regions_executed = 0;
 static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 #define MAX_CHECKPOINT_FILENAME_LEN 256
-static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] = { '\0' };
+static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
+        { '\0' };
 
 #ifdef __CHIMES_PROFILE
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
@@ -278,6 +282,118 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
     return result;
 }
 
+static void read_heap_from_file(int fd, char *checkpoint_file,
+        std::map<void *, ptr_and_size *> *old_to_new,
+        std::vector<heap_allocation *> *new_heap) {
+    uint64_t n_heap_allocs;
+    safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
+            checkpoint_file);
+    for (unsigned int i = 0; i < n_heap_allocs; i++) {
+        void *old_address;
+        size_t size;
+        size_t group;
+        int is_cuda_alloc, elem_is_ptr, elem_is_struct;
+
+        safe_read(fd, &old_address, sizeof(old_address), "old_address",
+                checkpoint_file);
+        safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
+        safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
+        safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
+                "is_cuda_alloc", checkpoint_file);
+        safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
+                checkpoint_file);
+        safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
+                checkpoint_file);
+
+        void *new_address;
+        if (is_cuda_alloc) {
+            void *host_tmp = malloc(size);
+            assert(host_tmp != NULL);
+            safe_read(fd, host_tmp, size, "heap contents", checkpoint_file);
+
+            CHECK(cudaMalloc((void **)&new_address, size));
+            CHECK(cudaMemcpy(new_address, host_tmp, size,
+                        cudaMemcpyHostToDevice));
+            free(host_tmp);
+        } else {
+            new_address = malloc(size);
+            assert(new_address != NULL);
+            safe_read(fd, new_address, size, "heap contents",
+                    checkpoint_file);
+        }
+
+        heap_allocation *alloc = new heap_allocation(new_address, size,
+                group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
+
+        if (elem_is_struct) {
+            size_t elem_size;
+
+            safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
+                    checkpoint_file);
+            alloc->add_struct_elem_size(elem_size);
+
+            int elem_ptr_offsets_len;
+            safe_read(fd, &elem_ptr_offsets_len,
+                    sizeof(elem_ptr_offsets_len),
+                    "elem_ptr_offsets_len", checkpoint_file);
+            for (int j = 0; j < elem_ptr_offsets_len; j++) {
+                int offset;
+                safe_read(fd, &offset, sizeof(offset), "offset",
+                        checkpoint_file);
+                alloc->add_pointer_offset(offset);
+            }
+        }
+
+        if (old_to_new->find(old_address) == old_to_new->end()) {
+            new_heap->push_back(alloc);
+
+            assert(heap.find(alloc->get_address()) == heap.end());
+            heap[alloc->get_address()] = alloc;
+
+            if (alias_to_heap.find(group) == alias_to_heap.end()) {
+                alias_to_heap[group] = new vector<heap_allocation *>();
+            }
+            alias_to_heap[group]->push_back(alloc);
+
+            assert(old_to_new->find(old_address) == old_to_new->end());
+            old_to_new->insert(pair<void *, ptr_and_size *>(old_address,
+                        new ptr_and_size(new_address, size)));
+        }
+    }
+}
+
+static void read_heap_from_previous_checkpoint(
+        char checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN],
+        std::map<void *, ptr_and_size *> *old_to_new,
+        std::vector<heap_allocation *> *new_heap) {
+    int fd = open(checkpoint_file, O_RDONLY);
+    assert(fd >= 0);
+
+    size_t filename_length;
+    char previous_checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN];
+    safe_read(fd, &filename_length, sizeof(filename_length),
+            "filename_length", checkpoint_file);
+
+    safe_read(fd, previous_checkpoint_file, filename_length,
+            "previous_checkpoint_file", checkpoint_file);
+
+    size_t heap_offset;
+    safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
+            checkpoint_file);
+
+    safe_seek(fd, 0, SEEK_SET, "seek_to_start", checkpoint_file);
+    skip(fd, heap_offset, "skip", checkpoint_file);
+
+    read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap);
+
+    close(fd);
+
+    if (filename_length > 1) {
+        read_heap_from_previous_checkpoint(previous_checkpoint_file, old_to_new,
+                new_heap);
+    }
+}
+
 void init_chimes() {
     atexit(onexit);
 
@@ -301,6 +417,10 @@ void init_chimes() {
                 "filename_length", checkpoint_file);
         safe_read(fd, previous_checkpoint_file, filename_length,
                 "previous_checkpoint_file", checkpoint_file);
+
+        size_t heap_offset;
+        safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
+                checkpoint_file);
 
         int nthreads;
         safe_read(fd, &nthreads, sizeof(nthreads), "nthreads",
@@ -371,80 +491,14 @@ void init_chimes() {
                 thread_hierarchy_serialized, thread_hierarchy_serialized_len);
 
         // read in heap serialization
-        uint64_t n_heap_allocs;
-        safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
-                checkpoint_file);
         old_to_new = new std::map<void *, ptr_and_size *>();
         std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
-        for (unsigned int i = 0; i < n_heap_allocs; i++) {
-            void *old_address;
-            size_t size;
-            size_t group;
-            int is_cuda_alloc, elem_is_ptr, elem_is_struct;
+        read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap);
 
-            safe_read(fd, &old_address, sizeof(old_address), "old_address",
-                    checkpoint_file);
-            safe_read(fd, &size, sizeof(size), "size", checkpoint_file);
-            safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
-            safe_read(fd, &is_cuda_alloc, sizeof(is_cuda_alloc),
-                    "is_cuda_alloc", checkpoint_file);
-            safe_read(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
-                    checkpoint_file);
-            safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
-                    checkpoint_file);
-
-            void *new_address;
-            if (is_cuda_alloc) {
-                void *host_tmp = malloc(size);
-                assert(host_tmp != NULL);
-                safe_read(fd, host_tmp, size, "heap contents", checkpoint_file);
-
-                CHECK(cudaMalloc((void **)&new_address, size));
-                CHECK(cudaMemcpy(new_address, host_tmp, size,
-                            cudaMemcpyHostToDevice));
-                free(host_tmp);
-            } else {
-                new_address = malloc(size);
-                assert(new_address != NULL);
-                safe_read(fd, new_address, size, "heap contents",
-                        checkpoint_file);
-            }
-
-            heap_allocation *alloc = new heap_allocation(new_address, size,
-                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
-
-            if (elem_is_struct) {
-                size_t elem_size;
-
-                safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
-                        checkpoint_file);
-                alloc->add_struct_elem_size(elem_size);
-
-                int elem_ptr_offsets_len;
-                safe_read(fd, &elem_ptr_offsets_len,
-                        sizeof(elem_ptr_offsets_len),
-                        "elem_ptr_offsets_len", checkpoint_file);
-                for (int j = 0; j < elem_ptr_offsets_len; j++) {
-                    int offset;
-                    safe_read(fd, &offset, sizeof(offset), "offset",
-                            checkpoint_file);
-                    alloc->add_pointer_offset(offset);
-                }
-            }
-
-            new_heap->push_back(alloc);
-
-            assert(heap.find(alloc->get_address()) == heap.end());
-            heap[alloc->get_address()] = alloc;
-
-            if (alias_to_heap.find(group) == alias_to_heap.end()) {
-                alias_to_heap[group] = new vector<heap_allocation *>();
-            }
-            alias_to_heap[group]->push_back(alloc);
-
-            assert(old_to_new->find(old_address) == old_to_new->end());
-            (*old_to_new)[old_address] = new ptr_and_size(new_address, size);
+        if (filename_length > 1) {
+            read_heap_from_previous_checkpoint(previous_checkpoint_file,
+                    old_to_new, new_heap);
         }
 
         for (map<size_t, constant_var*>::iterator i = constants.begin(),
@@ -911,9 +965,25 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 #ifdef VERBOSE
         fprintf(stderr, "Exiting replay...\n");
 #endif
-        // TODO is this necessary still?
-        fprintf(stderr, "CHIMES exiting, higher stack nesting than checkpoint was taken at...\n");
-        exit(55);
+        /*
+         * TODO is exiting when we go higher up in the stack then the checkpoint
+         * still necessary? What was the original reasoning?
+         *
+         * We reuse the logic for checkpoint synchronization here.
+         */
+        assert(pthread_mutex_lock(&threads_in_checkpoint_mutex) == 0);
+        unsigned thread_count = ++threads_in_checkpoint;
+        bool last_thread = (thread_count == pthread_to_id.size());
+        if (!last_thread) {
+            while (true) {
+                assert(pthread_cond_wait(&threads_in_checkpoint_cond,
+                            &threads_in_checkpoint_mutex) == 0);
+            }
+        } else {
+            fprintf(stderr, "CHIMES exiting, higher stack nesting than "
+                    "checkpoint was taken at...\n");
+            exit(55);
+        }
     }
 #ifdef __CHIMES_PROFILE
     pp.stop_timer(RM_STACK);
@@ -1092,6 +1162,8 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
             is_cuda_alloc, is_ptr, is_struct);
 
+    alias_group_changed(1, group);
+
     if (is_struct) {
         alloc->add_struct_elem_size(elem_size);
         for (int i = 0; i < n_ptr_field_offsets; i++) {
@@ -1199,6 +1271,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         heap_allocation *alloc = alloc_ptr->second;
         assert(alloc->get_alias_group() == group);
         alloc->update_size(nbytes);
+        alias_group_changed(1, group);
     } else {
         /*
          * An initial allocation, or a movement of an old allocation. In either
@@ -1417,12 +1490,12 @@ void checkpoint() {
         // Assert same number of threads
         assert(unpacked_program_stacks->size() == thread_ctxs.size());
         assert(unpacked_global_vars->size() == global_vars.size());
+
         /*
          * restore non-pointers in the stack to have the correct values by
          * transferring from the deserialized objects into the newly registered
          * addresses
          */
-
         for (map<unsigned, vector<stack_frame *> *>::iterator stacks_iter =
                 unpacked_program_stacks->begin(), stacks_end =
                 unpacked_program_stacks->end(); stacks_iter != stacks_end;
@@ -1527,26 +1600,7 @@ void checkpoint() {
              * remain valid for checkpointing as long as we're still here.
              * Therefore, we must checkpoint stack variables from here before
              * returning.
-             *
-             * However, because we control heap allocations through the
-             * malloc/realloc/free wrappers, we can ensure they are only freed
-             * once they have been fully checkpointed. We can return from this
-             * function and allow the host application to mess with the heap
-             * however much it likes. We just need to be sure we know exactly
-             * which heap state we need to checkpoint, and which we don't. That
-             * information is maintained by the heap sequence groups.
              */
-
-            vector<heap_allocation *> *heap_to_checkpoint =
-                new vector<heap_allocation *>();
-            for (map<void *, heap_allocation *>::iterator heap_iter =
-                    heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
-                    heap_iter++) {
-                heap_allocation *curr = heap_iter->second;
-                heap_allocation *copy = new heap_allocation();
-                curr->copy(copy);
-                heap_to_checkpoint->push_back(copy);
-            }
 
             //TODO use change aliases to reduce checkpoint size
             set<size_t> *all_changed = new set<size_t>();
@@ -1572,6 +1626,28 @@ void checkpoint() {
                 }
                 ctx->clear_changed_groups();
             }
+
+            vector<heap_allocation *> *heap_to_checkpoint =
+                new vector<heap_allocation *>();
+            for (map<void *, heap_allocation *>::iterator heap_iter =
+                    heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
+                    heap_iter++) {
+                heap_allocation *curr = heap_iter->second;
+                /*
+                 * At the moment, we don't calculate alias groups for CUDA
+                 * allocations because they are never dereferenced from the
+                 * host. In future TODO work, we could track which allocations
+                 * are passed to kernels and use that as a way to reduce the
+                 * number of CUDA allocations that need to be checkpointed.
+                 */
+                if (all_changed->find(curr->get_alias_group()) !=
+                        all_changed->end() || curr->get_is_cuda_alloc()) {
+                    heap_allocation *copy = new heap_allocation();
+                    curr->copy(copy);
+                    heap_to_checkpoint->push_back(copy);
+                }
+            }
+
             delete all_changed;
 
             checkpoint_thread_ctx *checkpoint_ctx = (checkpoint_thread_ctx *)malloc(
@@ -1606,7 +1682,8 @@ void checkpoint() {
 
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
-            pthread_create(&checkpoint_thread, NULL, checkpoint_func, checkpoint_ctx);
+            pthread_create(&checkpoint_thread, NULL, checkpoint_func,
+                    checkpoint_ctx);
         }
     }
 
@@ -1628,12 +1705,6 @@ static void fix_stack_or_global_pointer(void *container, string type) {
             *nested_container = new_ptr;
         }
     } else if (is_struct_type(type)) {
-        // size_t open_brace_index = type.find("{");
-        // assert(open_brace_index != string::npos);
-        // open_brace_index += 2;
-        // size_t close_brace_index = type.find("}");
-        // assert(close_brace_index != string::npos);
-        // close_brace_index -= 1;
 
         string struct_name = type.substr(8);
         if (struct_name.find("=") != std::string::npos) {
@@ -1642,12 +1713,6 @@ static void fix_stack_or_global_pointer(void *container, string type) {
 
         assert(structs.find(struct_name) != structs.end());
         std::vector<struct_field> *fields = structs.at(struct_name);
-        // string nested_types = type.substr(open_brace_index, close_brace_index -
-        //         open_brace_index);
-
-        // int field_index = 0;
-        // unsigned int index = 0;
-        // unsigned int start = 0;
 
         for (int field_index = 0; field_index < fields->size(); field_index++) {
             string curr = fields->at(field_index).get_ty();
@@ -1656,33 +1721,6 @@ static void fix_stack_or_global_pointer(void *container, string type) {
             fix_stack_or_global_pointer((void *)field_ptr, curr);
 
         }
-        // while (index < nested_types.length()) {
-        //     while (index < nested_types.length() && nested_types[index] != ',') {
-        //         index++;
-        //     }
-
-        //     /*
-        //      * This requires the offset of every field in every declared struct
-        //      * to be passed into init_chimes. This is bad because that assumes
-        //      * that struct definitions are all defined in the same scope as
-        //      * main. This is okay for the moment, but should be addressed as a
-        //      * future TODO. Recently, the practice of passing module-specific
-        //      * information through new_stack was introduced, that would be a
-        //      * good place to add module-specific struct declarations.
-        //      */
-        //     string curr = nested_types.substr(start, index - start);
-        //     unsigned char *field_ptr = ((unsigned char *)container) +
-        //         (*fields)[field_index].get_offset();
-        //     fix_stack_or_global_pointer((void *)field_ptr, curr);
-
-        //     start = index + 1;
-        //     while (start < nested_types.length() && nested_types[start] == ' ') {
-        //         start++;
-        //     }
-        //     index = start;
-        //     
-        //     field_index++;
-        // }
     }
 }
 
@@ -1700,6 +1738,23 @@ static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
         exit(1);
     }
+}
+
+static void skip(int fd, ssize_t size, const char *msg, const char *filename) {
+    if (lseek(fd, size, SEEK_CUR) == (off_t)-1) {
+        fprintf(stderr, "Error skipping in %s: %s\n", filename, msg);
+        exit(1);
+    }
+}
+
+static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
+        const char *filename) {
+    off_t result = lseek(fd, offset, whence);
+    if (result == (off_t)-1) {
+        fprintf(stderr, "Error seeking in %s: %s\n", filename, msg);
+        exit(1);
+    }
+    return (result);
 }
 
 void *checkpoint_func(void *data) {
@@ -1739,6 +1794,12 @@ void *checkpoint_func(void *data) {
             dump_filename);
     safe_write(fd, previous_checkpoint_filename,
             filename_length, "previous_checkpoint_filename", dump_filename);
+
+    size_t heap_offset = -1; // placeholder until we figure out the actual value
+    off_t heap_offset_offset = safe_seek(fd, 0, SEEK_CUR, "heap_offset_offset",
+            dump_filename);
+    safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_preliminary",
+            dump_filename);
 
     // Write the trace of function calls out
     int nthreads = ctx->stack_trackers->size();
@@ -1787,11 +1848,19 @@ void *checkpoint_func(void *data) {
     safe_write(fd, thread_hierarchy_serialized, thread_hierarchy_serialized_len,
             "thread_hierarchy_serialized", dump_filename);
 
-    // Write the heap allocations out (all of them, for now)
+    // Write the heap allocations out
     uint64_t n_heap_allocs = heap_to_checkpoint->size();
+
+    heap_offset = safe_seek(fd, 0, SEEK_CUR, "heap_offset",
+            dump_filename);
+    assert(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
+            dump_filename) == heap_offset_offset);
+    safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
+            dump_filename);
+    assert(safe_seek(fd, heap_offset, SEEK_SET, "heap_offset", dump_filename));
+
     safe_write(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
             dump_filename);
-
     for (vector<heap_allocation *>::iterator heap_iter =
             heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
             heap_iter != heap_end; heap_iter++) {
@@ -2124,10 +2193,12 @@ void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id) {
 
             if (program_stack->size() == 0) {
                 // Erase this thread
+                assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
                 map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
                         ctx->get_pthread());
                 assert(found != pthread_to_id.end());
                 pthread_to_id.erase(found);
+                assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
 
                 to_erase.push_back(i);
             } else {
