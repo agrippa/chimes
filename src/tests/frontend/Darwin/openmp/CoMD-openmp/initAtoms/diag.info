@@ -1,322 +1,322 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 93 7 alias_group_changed(21, (size_t)(13706408354153104529UL), (size_t)(13706408354153104530UL), (size_t)(13706408354153104531UL), (size_t)(13706408354153104532UL), (size_t)(13706408354153104533UL), (size_t)(13706408354153104534UL), (size_t)(13706408354153104535UL), (size_t)(13706408354153104536UL), (size_t)(13706408354153104539UL), (size_t)(13706408354153104540UL), (size_t)(13706408354153104541UL), (size_t)(13706408354153104542UL), (size_t)(13706408354153104543UL), (size_t)(13706408354153104544UL), (size_t)(13706408354153104545UL), (size_t)(13706408354153104546UL), (size_t)(13706408354153104547UL), (size_t)(13706408354153104548UL), (size_t)(13706408354153104549UL), (size_t)(13706408354153104550UL), (size_t)(13706408354153104551UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 94 7 alias_group_changed(1, (size_t)(13706408354153104538UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 115 9 alias_group_changed(21, (size_t)(13706408354153104529UL), (size_t)(13706408354153104530UL), (size_t)(13706408354153104531UL), (size_t)(13706408354153104532UL), (size_t)(13706408354153104533UL), (size_t)(13706408354153104534UL), (size_t)(13706408354153104535UL), (size_t)(13706408354153104536UL), (size_t)(13706408354153104539UL), (size_t)(13706408354153104540UL), (size_t)(13706408354153104541UL), (size_t)(13706408354153104542UL), (size_t)(13706408354153104543UL), (size_t)(13706408354153104544UL), (size_t)(13706408354153104545UL), (size_t)(13706408354153104546UL), (size_t)(13706408354153104547UL), (size_t)(13706408354153104548UL), (size_t)(13706408354153104549UL), (size_t)(13706408354153104550UL), (size_t)(13706408354153104551UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 4 alias_group_changed(2, (size_t)(13706408354153104858UL), (size_t)(13706408354153104859UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 10 alias_group_changed(8, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105255UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 10 alias_group_changed(1, (size_t)(13706408354153105206UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 10 alias_group_changed(1, (size_t)(13706408354153105207UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 10 alias_group_changed(1, (size_t)(13706408354153105255UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 94 7 alias_group_changed(21, (size_t)(13706408354153104529UL), (size_t)(13706408354153104530UL), (size_t)(13706408354153104531UL), (size_t)(13706408354153104532UL), (size_t)(13706408354153104533UL), (size_t)(13706408354153104534UL), (size_t)(13706408354153104535UL), (size_t)(13706408354153104536UL), (size_t)(13706408354153104539UL), (size_t)(13706408354153104540UL), (size_t)(13706408354153104541UL), (size_t)(13706408354153104542UL), (size_t)(13706408354153104543UL), (size_t)(13706408354153104544UL), (size_t)(13706408354153104545UL), (size_t)(13706408354153104546UL), (size_t)(13706408354153104547UL), (size_t)(13706408354153104548UL), (size_t)(13706408354153104549UL), (size_t)(13706408354153104550UL), (size_t)(13706408354153104551UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 95 7 alias_group_changed(1, (size_t)(13706408354153104538UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 9 alias_group_changed(21, (size_t)(13706408354153104529UL), (size_t)(13706408354153104530UL), (size_t)(13706408354153104531UL), (size_t)(13706408354153104532UL), (size_t)(13706408354153104533UL), (size_t)(13706408354153104534UL), (size_t)(13706408354153104535UL), (size_t)(13706408354153104536UL), (size_t)(13706408354153104539UL), (size_t)(13706408354153104540UL), (size_t)(13706408354153104541UL), (size_t)(13706408354153104542UL), (size_t)(13706408354153104543UL), (size_t)(13706408354153104544UL), (size_t)(13706408354153104545UL), (size_t)(13706408354153104546UL), (size_t)(13706408354153104547UL), (size_t)(13706408354153104548UL), (size_t)(13706408354153104549UL), (size_t)(13706408354153104550UL), (size_t)(13706408354153104551UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 4 alias_group_changed(2, (size_t)(13706408354153104858UL), (size_t)(13706408354153104859UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 10 alias_group_changed(8, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105255UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 10 alias_group_changed(1, (size_t)(13706408354153105206UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 10 alias_group_changed(1, (size_t)(13706408354153105207UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 10 alias_group_changed(1, (size_t)(13706408354153105255UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 4 alias_group_changed(8, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105255UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 4 alias_group_changed(1, (size_t)(13706408354153105209UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 195 4 alias_group_changed(5, (size_t)(13706408354153105210UL), (size_t)(13706408354153105211UL), (size_t)(13706408354153105212UL), (size_t)(13706408354153105213UL), (size_t)(13706408354153105255UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 210 10 alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 10 alias_group_changed(1, (size_t)(13706408354153105494UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 10 alias_group_changed(1, (size_t)(13706408354153105536UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 10 alias_group_changed(1, (size_t)(13706408354153105255UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 4 alias_group_changed(8, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105255UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 4 alias_group_changed(1, (size_t)(13706408354153105209UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 196 4 alias_group_changed(5, (size_t)(13706408354153105210UL), (size_t)(13706408354153105211UL), (size_t)(13706408354153105212UL), (size_t)(13706408354153105213UL), (size_t)(13706408354153105255UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 10 alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 10 alias_group_changed(1, (size_t)(13706408354153105494UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 10 alias_group_changed(1, (size_t)(13706408354153105536UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 248 9 alias_group_changed(11, (size_t)(13706408354153105015UL), (size_t)(13706408354153105016UL), (size_t)(13706408354153105017UL), (size_t)(13706408354153105019UL), (size_t)(13706408354153105020UL), (size_t)(13706408354153105021UL), (size_t)(13706408354153105022UL), (size_t)(13706408354153105023UL), (size_t)(13706408354153105024UL), (size_t)(13706408354153105025UL), (size_t)(13706408354153105026UL)); 
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 27 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 46 , 13706408354153104296UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 28 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 28 55 , 13706408354153104308UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 29 29 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 29 60 , 13706408354153104308UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 30 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 30 57 , 13706408354153104308UL, 0, 0
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 10 alias_group_changed(1, (size_t)(13706408354153105536UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 9 alias_group_changed(11, (size_t)(13706408354153105015UL), (size_t)(13706408354153105016UL), (size_t)(13706408354153105017UL), (size_t)(13706408354153105019UL), (size_t)(13706408354153105020UL), (size_t)(13706408354153105021UL), (size_t)(13706408354153105022UL), (size_t)(13706408354153105023UL), (size_t)(13706408354153105024UL), (size_t)(13706408354153105025UL), (size_t)(13706408354153105026UL)); 
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 27 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 46 , 13706408354153104296UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U)
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 29 24 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 29 55 , 13706408354153104308UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 30 29 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 30 60 , 13706408354153104308UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 31 24 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 31 57 , 13706408354153104308UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 32 24 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 32 57 , 13706408354153104308UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 33 24 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 33 58 , 13706408354153104308UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 53 21 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 53 33 , 13706408354153104441UL
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 56 26 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 56 38 , 13706408354153104441UL
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 59 19 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 59 31 , 13706408354153104441UL
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 62 19 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 62 31 , 13706408354153104441UL
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 65 19 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 65 31 , 13706408354153104441UL
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 68 19 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 68 31 , 13706408354153104441UL
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 71 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 71 9 , 13706408354153104527UL
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 48 4 alias_group_changed(6, (size_t)(13706408354153104289UL), (size_t)(13706408354153104290UL), (size_t)(13706408354153104291UL), (size_t)(13706408354153104292UL), (size_t)(13706408354153104296UL), (size_t)(13706408354153104308UL)); rm_stack(true, 13706408354153104296UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 23 1 new_stack((void *)(&initAtoms), 1, 1, (size_t)(13706408354153104418UL), "initAtoms|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 52 1 new_stack((void *)(&destroyAtoms), 1, 1, (size_t)(13706408354153104527UL), "destroyAtoms|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 1 alias_group_changed(2, (size_t)(13706408354153104436UL), (size_t)(13706408354153104527UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 78 1 new_stack((void *)(&createFccLattice), 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13706408354153104790UL), "createFccLattice|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 120 1 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 125 1 new_stack((void *)(&setVcm), 2, 2, (size_t)(13706408354153105013UL), (size_t)(13706408354153105014UL), "setVcm|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setVcm|newVcm|0", "double*", (void *)(&newVcm), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 147 1 alias_group_changed(7, (size_t)(13706408354153104861UL), (size_t)(13706408354153104862UL), (size_t)(13706408354153104863UL), (size_t)(13706408354153104864UL), (size_t)(13706408354153104865UL), (size_t)(13706408354153104866UL), (size_t)(13706408354153104937UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 178 28 alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105209UL), (size_t)(13706408354153105255UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 160 1 new_stack((void *)(&setTemperature), 2, 2, (size_t)(13706408354153105477UL), (size_t)(0UL), "setTemperature|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", "double", (void *)(&temperature), (size_t)8, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 197 1 alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105209UL), (size_t)(13706408354153105255UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 204 1 new_stack((void *)(&randomDisplacements), 2, 2, (size_t)(13706408354153105606UL), (size_t)(0UL), "randomDisplacements|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", "double", (void *)(&delta), (size_t)8, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 216 1 alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 220 1 new_stack((void *)(&computeVcm), 2, 2, (size_t)(13706408354153105197UL), (size_t)(13706408354153105179UL), "computeVcm|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "computeVcm|vcm|0", "double*", (void *)(&vcm), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 256 1 alias_group_changed(2, (size_t)(13706408354153105027UL), (size_t)(13706408354153105179UL)); rm_stack(false, 0UL); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 4  Atoms *atoms;  atoms = ((Atoms *)malloc_wrapper(sizeof(Atoms), 13706408354153104296UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U))) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 391 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 26 4  int maxTotalAtoms;  maxTotalAtoms = (64 * boxes->nTotalBoxes) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 26 45 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 38 4 {  int iOff; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 46 4  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 38 9  iOff = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 38 21 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 4  const real_t *localMin;  localMin = (s->domain->localMin) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 4  const real_t *localMax;  localMax = (s->domain->localMax) ;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 33 57 , 13706408354153104308UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 34 24 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 34 58 , 13706408354153104308UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 21 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 54 33 , 13706408354153104441UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 26 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 57 38 , 13706408354153104441UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 19 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 60 31 , 13706408354153104441UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 19 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 63 31 , 13706408354153104441UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 19 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 66 31 , 13706408354153104441UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 19 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 69 31 , 13706408354153104441UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 72 9 , 13706408354153104527UL
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 49 4 alias_group_changed(6, (size_t)(13706408354153104289UL), (size_t)(13706408354153104290UL), (size_t)(13706408354153104291UL), (size_t)(13706408354153104292UL), (size_t)(13706408354153104296UL), (size_t)(13706408354153104308UL)); rm_stack(true, 13706408354153104296UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 1 new_stack((void *)(&initAtoms), 1, 1, (size_t)(13706408354153104418UL), "initAtoms|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 53 1 new_stack((void *)(&destroyAtoms), 1, 1, (size_t)(13706408354153104527UL), "destroyAtoms|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 73 1 alias_group_changed(2, (size_t)(13706408354153104436UL), (size_t)(13706408354153104527UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 1 new_stack((void *)(&createFccLattice), 5, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13706408354153104790UL), "createFccLattice|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "createFccLattice|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "createFccLattice|nz|0", "i32", (void *)(&nz), (size_t)4, 0, 0, 0, "createFccLattice|lat|0", "double", (void *)(&lat), (size_t)8, 0, 0, 0, "createFccLattice|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 121 1 rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 1 new_stack((void *)(&setVcm), 2, 2, (size_t)(13706408354153105013UL), (size_t)(13706408354153105014UL), "setVcm|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setVcm|newVcm|0", "double*", (void *)(&newVcm), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 148 1 alias_group_changed(7, (size_t)(13706408354153104861UL), (size_t)(13706408354153104862UL), (size_t)(13706408354153104863UL), (size_t)(13706408354153104864UL), (size_t)(13706408354153104865UL), (size_t)(13706408354153104866UL), (size_t)(13706408354153104937UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 179 28 alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105209UL), (size_t)(13706408354153105255UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 161 1 new_stack((void *)(&setTemperature), 2, 2, (size_t)(13706408354153105477UL), (size_t)(0UL), "setTemperature|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", "double", (void *)(&temperature), (size_t)8, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 198 1 alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105209UL), (size_t)(13706408354153105255UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 205 1 new_stack((void *)(&randomDisplacements), 2, 2, (size_t)(13706408354153105606UL), (size_t)(0UL), "randomDisplacements|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", "double", (void *)(&delta), (size_t)8, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 217 1 alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 1 new_stack((void *)(&computeVcm), 2, 2, (size_t)(13706408354153105197UL), (size_t)(13706408354153105179UL), "computeVcm|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "computeVcm|vcm|0", "double*", (void *)(&vcm), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 257 1 alias_group_changed(2, (size_t)(13706408354153105027UL), (size_t)(13706408354153105179UL)); rm_stack(false, 0UL); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 4  Atoms *atoms;  atoms = ((Atoms *)malloc_wrapper(sizeof(Atoms), 13706408354153104296UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U))) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 391 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 27 4  int maxTotalAtoms;  maxTotalAtoms = (64 * boxes->nTotalBoxes) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 27 45 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 39 4 {  int iOff; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 47 4  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 39 9  iOff = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 39 21 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 4  const real_t *localMin;  localMin = (s->domain->localMin) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 82 4  int nb;  nb = (4) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 82 14 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 4 real3 basis[4] = { { 0.25, 0.25, 0.25 }, { 0.25, 0.75, 0.75 }, { 0.75, 0.25, 0.75 }, { 0.75, 0.75, 0.25 } }; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 86 27 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 89 4 int begin[3]; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 89 16 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 4 int end[3]; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 14 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 4 {  int ii; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 95 4  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 9  ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 17 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 4 real_t px; real_t py; real_t pz; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 19 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 4 {  int ix; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 727  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 9  ix = (begin[0]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 26 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 48 {  int iy; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 724  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 53  iy = (begin[1]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 70 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 48 {  int iz; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 724  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 101  iz = (begin[2]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 118 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 48 {  int ib; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 724  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 153  ib = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 163 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 194  real_t rx;  rx = ((ix + basis[ib][0]) * lat) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 231 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 245  real_t ry;  ry = ((iy + basis[ib][1]) * lat) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 282 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 296  real_t rz;  rz = ((iz + basis[ib][2]) * lat) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 333 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 590  int id;  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 637 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 4 real_t oldVcm[3]; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 20 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 129 4 real_t vShift[3]; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 129 20 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 137 7 {  int iOff;  int ii; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 145 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 137 12  iOff = (64 * iBox)  , ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 137 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 139 10  int iSpecies;  iSpecies = (s->atoms->iSpecies[iOff]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 139 49 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 140 10  real_t mass;  mass = (s->species[iSpecies].mass) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 81 4  const real_t *localMax;  localMax = (s->domain->localMax) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 81 48 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 4  int nb;  nb = (4) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 14 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 84 4 real3 basis[4] = { { 0.25, 0.25, 0.25 }, { 0.25, 0.75, 0.75 }, { 0.75, 0.25, 0.75 }, { 0.75, 0.75, 0.25 } }; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 87 27 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 4 int begin[3]; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 16 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 4 int end[3]; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 14 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 92 4 {  int ii; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 96 4  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 92 9  ii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 92 17 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 4 real_t px; real_t py; real_t pz; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 19 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 4 {  int ix; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 727  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 9  ix = (begin[0]) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 26 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 48 {  int iy; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 724  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 53  iy = (begin[1]) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 70 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 48 {  int iz; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 724  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 101  iz = (begin[2]) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 118 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 48 {  int ib; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 724  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 153  ib = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 163 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 194  real_t rx;  rx = ((ix + basis[ib][0]) * lat) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 231 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 245  real_t ry;  ry = ((iy + basis[ib][1]) * lat) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 282 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 296  real_t rz;  rz = ((iz + basis[ib][2]) * lat) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 333 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 590  int id;  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 637 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 4 real_t oldVcm[3]; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 20 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 130 4 real_t vShift[3]; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 130 20 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 138 7 {  int iOff;  int ii; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 146 7  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 138 12  iOff = (64 * iBox)  , ii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 138 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 140 10  int iSpecies;  iSpecies = (s->atoms->iSpecies[iOff]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 140 49 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 165 7 {  int iOff;  int ii; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 165 12  iOff = (64 * iBox)  , ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 165 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 167 10  int iType;  iType = (s->atoms->iSpecies[iOff]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 167 46 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 168 10  real_t mass;  mass = (s->species[iType].mass) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 141 10  real_t mass;  mass = (s->species[iSpecies].mass) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 141 49 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 166 7 {  int iOff;  int ii; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 175 7  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 166 12  iOff = (64 * iBox)  , ii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 166 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 168 10  int iType;  iType = (s->atoms->iSpecies[iOff]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 168 46 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 306  real_t sigma;  sigma = (sqrt(kB_eV * temperature / mass)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 351 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 68  uint64_t seed;  seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 116 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 179 4 real_t vZero[3] = { 0., 0., 0. }; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 179 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 4  real_t temp;  temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 59 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 62  real_t scaleFactor;  scaleFactor = (sqrt(temperature / temp)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 105 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 188 7 {  int iOff;  int ii; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 193 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 188 12  iOff = (64 * iBox)  , ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 188 34 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 208 7 {  int iOff;  int ii; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 208 12  iOff = (64 * iBox)  , ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 208 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 210 238  uint64_t seed;  seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 210 286 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 4 real_t vcmLocal[4] = { 0., 0., 0., 0. }; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 41 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 4 real_t vcmSum[4] = { 0., 0., 0., 0. }; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 39 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 4  real_t v0;  v0 = (0.) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 4  real_t v1;  v1 = (0.) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 10  real_t mass;  mass = (s->species[iType].mass) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 46 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 306  real_t sigma;  sigma = (sqrt(kB_eV * temperature / mass)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 351 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 68  uint64_t seed;  seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 116 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 4 real_t vZero[3] = { 0., 0., 0. }; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 183 4  real_t temp;  temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 183 59 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 62  real_t scaleFactor;  scaleFactor = (sqrt(temperature / temp)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 105 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 189 7 {  int iOff;  int ii; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 194 7  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 189 12  iOff = (64 * iBox)  , ii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 189 34 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 209 7 {  int iOff;  int ii; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 215 7  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 209 12  iOff = (64 * iBox)  , ii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 209 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 238  uint64_t seed;  seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 286 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 4 real_t vcmLocal[4] = { 0., 0., 0., 0. }; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 41 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 4 real_t vcmSum[4] = { 0., 0., 0., 0. }; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 39 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 4  real_t v0;  v0 = (0.) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 4  real_t v2;  v2 = (0.) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 4  real_t v1;  v1 = (0.) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 4  real_t v3;  v3 = (0.) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 4  real_t v2;  v2 = (0.) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 19 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 232 7 {  int iOff;  int ii; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 240 7  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 232 12  iOff = (64 * iBox)  , ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 232 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 238 10  int iSpecies;  iSpecies = (s->atoms->iSpecies[iOff]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 238 49 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 252 4  real_t totalMass;  totalMass = (vcmSum[3]) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 252 32 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 42 7  call_lbl_8: calling((void*)&zeroReal3, 8, 0UL, 1, (size_t)(13706408354153104308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 43 7  call_lbl_9: calling((void*)&zeroReal3, 9, 0UL, 1, (size_t)(13706408354153104308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 44 7  call_lbl_10: calling((void*)&zeroReal3, 10, 0UL, 1, (size_t)(13706408354153104308UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 17  register_stack_var("initAtoms|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 17  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 26 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 26 22  register_stack_var("initAtoms|maxTotalAtoms|0", "i32", (void *)(&maxTotalAtoms), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 26 22  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 38 7  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 38 15  register_stack_var("initAtoms|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 38 15  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 23 155  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 52 158  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 93 746  call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 94 65  call_lbl_4: calling((void*)&ceil, 4, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 731  call_lbl_5: calling((void*)&putAtomInBox, 5, 0UL, 10, (size_t)(13706408354153104792UL), (size_t)(13706408354153104792UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 115 748  call_lbl_7: calling((void*)&profileStart, 7, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 4  call_lbl_8: calling((void*)&addIntParallel, 8, 0UL, 3, (size_t)(13706408354153104792UL), (size_t)(13706408354153104792UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 117 9  call_lbl_9: calling((void*)&profileStop, 9, 0UL, 1, (size_t)(0UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 27  register_stack_var("createFccLattice|localMin|0", "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 27  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 27  register_stack_var("createFccLattice|localMax|0", "double*", (void *)(&localMax), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 27  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 82 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 82 11  register_stack_var("createFccLattice|nb|0", "i32", (void *)(&nb), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 82 11  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 4  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 111  register_stack_var("createFccLattice|basis|0", "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 111  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 89 4  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 89 16  register_stack_var("createFccLattice|begin|0", "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 89 16  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 4  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 14  register_stack_var("createFccLattice|end|0", "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 14  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 13  register_stack_var("createFccLattice|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 13  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 4  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 13  register_stack_var("createFccLattice|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 13  if (____chimes_replaying) { goto lbl_8; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 15  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 24  register_stack_var("createFccLattice|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 24  if (____chimes_replaying) { goto lbl_9; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 26  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 35  register_stack_var("createFccLattice|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 97 35  if (____chimes_replaying) { goto lbl_10; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 7  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 13  register_stack_var("createFccLattice|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 13  if (____chimes_replaying) { goto lbl_11; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 62  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 68  register_stack_var("createFccLattice|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 68  if (____chimes_replaying) { goto lbl_12; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 73  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 79  register_stack_var("createFccLattice|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 79  if (____chimes_replaying) { goto lbl_13; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 84  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 90  register_stack_var("createFccLattice|ib|0", "i32", (void *)(&ib), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 90  if (____chimes_replaying) { goto lbl_14; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 239  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 248  register_stack_var("createFccLattice|rx|0", "double", (void *)(&rx), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 248  if (____chimes_replaying) { goto lbl_15; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 299  lbl_15: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 308  register_stack_var("createFccLattice|ry|0", "double", (void *)(&ry), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 308  if (____chimes_replaying) { goto lbl_16; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 359  lbl_16: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 368  register_stack_var("createFccLattice|rz|0", "double", (void *)(&rz), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 368  if (____chimes_replaying) { goto lbl_17; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 662  lbl_17: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 668  register_stack_var("createFccLattice|id|0", "i32", (void *)(&id), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 99 668  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 78 493  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 132 38 ;  { call_lbl_5: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 136 4 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 146 4  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 96  call_lbl_2: calling((void*)&computeVcm, 2, 0UL, 2, (size_t)(13706408354153105013UL), (size_t)(13706408354153104860UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 20  register_stack_var("setVcm|oldVcm|0", "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 20  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 129 4  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 129 20  register_stack_var("setVcm|vShift|0", "[3 x double]", (void *)(vShift), (size_t)24, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 129 20  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 125 243  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 136 4  if (____chimes_replaying) { chimes_error(); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 160 256 ;  { call_lbl_22: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(22, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 164 4 if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, true, false, ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; }
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 175 4  leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 123 ;  { call_lbl_23: unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(23, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 187 4 if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, true, false, ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); ____chimes_first_iter2 = 0; }
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 194 4  leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 169 322  call_lbl_2: calling((void*)&sqrt, 2, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 85  call_lbl_4: calling((void*)&mkSeed, 4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 68  call_lbl_6: calling((void*)&gasdev, 6, 0UL, 1, (size_t)(13706408354153105207UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 68  call_lbl_8: calling((void*)&gasdev, 8, 0UL, 1, (size_t)(13706408354153105207UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 68  call_lbl_10: calling((void*)&gasdev, 10, 0UL, 1, (size_t)(13706408354153105207UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 300  call_lbl_14: calling((void*)&setVcm, 14, 0UL, 2, (size_t)(13706408354153105477UL), (size_t)(13706408354153105208UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 4  call_lbl_15: calling((void*)&kineticEnergy, 15, 0UL, 1, (size_t)(13706408354153105477UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 84  call_lbl_17: calling((void*)&sqrt, 17, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 195 198  call_lbl_19: calling((void*)&kineticEnergy, 19, 0UL, 1, (size_t)(13706408354153105477UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 179 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 179 36  register_stack_var("setTemperature|vZero|0", "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 179 36  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 16  register_stack_var("setTemperature|temp|0", "double", (void *)(&temp), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 16  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 63  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 81  register_stack_var("setTemperature|scaleFactor|0", "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 184 81  if (____chimes_replaying) {  switch(get_next_call()) { case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 160 257  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 164 4  if (____chimes_replaying) { chimes_error(); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 187 4  if (____chimes_replaying) { chimes_error(); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 204 259 ;  { call_lbl_11: unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(11, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 207 4 if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, true, false, ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; }
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 215 4  leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 210 255  call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 68  call_lbl_4: calling((void*)&lcg61, 4, 0UL, 1, (size_t)(13706408354153105494UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 68  call_lbl_6: calling((void*)&lcg61, 6, 0UL, 1, (size_t)(13706408354153105494UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 68  call_lbl_8: calling((void*)&lcg61, 8, 0UL, 1, (size_t)(13706408354153105494UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 204 260  if (____chimes_replaying) {  switch(get_next_call()) { case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 207 4  if (____chimes_replaying) { chimes_error(); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 25 ;  { call_lbl_7: unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(7, &____chimes_region_id4, 0); int ____chimes_first_iter4 = 1; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 231 4 if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, true, false, ____chimes_parent_stack_depth4, ____chimes_region_id4, 0); ____chimes_first_iter4 = 0; }
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 241 4  leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4); } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 248 408  call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 4  call_lbl_3: calling((void*)&addRealParallel, 3, 0UL, 3, (size_t)(13706408354153105017UL), (size_t)(13706408354153105018UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 250 9  call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 43  register_stack_var("computeVcm|vcmLocal|0", "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 43  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 4  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 41  register_stack_var("computeVcm|vcmSum|0", "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 41  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 14  register_stack_var("computeVcm|v0|0", "double", (void *)(&v0), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 14  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 14  register_stack_var("computeVcm|v1|0", "double", (void *)(&v1), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 14  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 14  register_stack_var("computeVcm|v2|0", "double", (void *)(&v2), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 14  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 14  register_stack_var("computeVcm|v3|0", "double", (void *)(&v3), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 14  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 252 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 252 21  register_stack_var("computeVcm|totalMass|0", "double", (void *)(&totalMass), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 252 21  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 220 249  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 231 4  if (____chimes_replaying) { chimes_error(); } 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 227 4  real_t v3;  v3 = (0.) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 227 19 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 233 7 {  int iOff;  int ii; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 241 7  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 233 12  iOff = (64 * iBox)  , ii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 233 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 239 10  int iSpecies;  iSpecies = (s->atoms->iSpecies[iOff]) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 239 49 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 253 4  real_t totalMass;  totalMass = (vcmSum[3]) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 253 32 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 43 7  call_lbl_8: calling((void*)&zeroReal3, 8, 0UL, 1, (size_t)(13706408354153104308UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 44 7  call_lbl_9: calling((void*)&zeroReal3, 9, 0UL, 1, (size_t)(13706408354153104308UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 45 7  call_lbl_10: calling((void*)&zeroReal3, 10, 0UL, 1, (size_t)(13706408354153104308UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 5  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 17  register_stack_var("initAtoms|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 25 17  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 27 5  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 27 22  register_stack_var("initAtoms|maxTotalAtoms|0", "i32", (void *)(&maxTotalAtoms), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 27 22  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 39 7  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 39 15  register_stack_var("initAtoms|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 39 15  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 24 155  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 53 158  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 94 746  call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 95 65  call_lbl_4: calling((void*)&ceil, 4, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 731  call_lbl_5: calling((void*)&putAtomInBox, 5, 0UL, 10, (size_t)(13706408354153104792UL), (size_t)(13706408354153104792UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 748  call_lbl_7: calling((void*)&profileStart, 7, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 117 4  call_lbl_8: calling((void*)&addIntParallel, 8, 0UL, 3, (size_t)(13706408354153104792UL), (size_t)(13706408354153104792UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 118 9  call_lbl_9: calling((void*)&profileStop, 9, 0UL, 1, (size_t)(0UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 5  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 27  register_stack_var("createFccLattice|localMin|0", "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 80 27  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 81 5  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 81 27  register_stack_var("createFccLattice|localMax|0", "double*", (void *)(&localMax), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 81 27  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 5  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 11  register_stack_var("createFccLattice|nb|0", "i32", (void *)(&nb), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 83 11  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 84 4  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 84 111  register_stack_var("createFccLattice|basis|0", "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 84 111  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 4  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 16  register_stack_var("createFccLattice|begin|0", "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 90 16  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 4  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 14  register_stack_var("createFccLattice|end|0", "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 91 14  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 92 7  lbl_6: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 92 13  register_stack_var("createFccLattice|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 92 13  if (____chimes_replaying) { goto lbl_7; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 4  lbl_7: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 13  register_stack_var("createFccLattice|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 13  if (____chimes_replaying) { goto lbl_8; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 15  lbl_8: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 24  register_stack_var("createFccLattice|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 24  if (____chimes_replaying) { goto lbl_9; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 26  lbl_9: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 35  register_stack_var("createFccLattice|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 98 35  if (____chimes_replaying) { goto lbl_10; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 7  lbl_10: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 13  register_stack_var("createFccLattice|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 13  if (____chimes_replaying) { goto lbl_11; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 62  lbl_11: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 68  register_stack_var("createFccLattice|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 68  if (____chimes_replaying) { goto lbl_12; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 73  lbl_12: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 79  register_stack_var("createFccLattice|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 79  if (____chimes_replaying) { goto lbl_13; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 84  lbl_13: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 90  register_stack_var("createFccLattice|ib|0", "i32", (void *)(&ib), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 90  if (____chimes_replaying) { goto lbl_14; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 239  lbl_14: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 248  register_stack_var("createFccLattice|rx|0", "double", (void *)(&rx), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 248  if (____chimes_replaying) { goto lbl_15; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 299  lbl_15: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 308  register_stack_var("createFccLattice|ry|0", "double", (void *)(&ry), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 308  if (____chimes_replaying) { goto lbl_16; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 359  lbl_16: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 368  register_stack_var("createFccLattice|rz|0", "double", (void *)(&rz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 368  if (____chimes_replaying) { goto lbl_17; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 662  lbl_17: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 668  register_stack_var("createFccLattice|id|0", "i32", (void *)(&id), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 668  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 79 493  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 133 38 ;  { call_lbl_5: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 137 4 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 147 4  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 96  call_lbl_2: calling((void*)&computeVcm, 2, 0UL, 2, (size_t)(13706408354153105013UL), (size_t)(13706408354153104860UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 4  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 20  register_stack_var("setVcm|oldVcm|0", "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 127 20  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 130 4  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 130 20  register_stack_var("setVcm|vShift|0", "[3 x double]", (void *)(vShift), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 130 20  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 126 243  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 137 4  if (____chimes_replaying) { chimes_error(); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 161 256 ;  { call_lbl_22: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(22, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 165 4 if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 176 4  leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 123 ;  { call_lbl_23: unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(23, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 188 4 if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); ____chimes_first_iter2 = 0; }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 195 4  leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 170 322  call_lbl_2: calling((void*)&sqrt, 2, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 85  call_lbl_4: calling((void*)&mkSeed, 4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 68  call_lbl_6: calling((void*)&gasdev, 6, 0UL, 1, (size_t)(13706408354153105207UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 68  call_lbl_8: calling((void*)&gasdev, 8, 0UL, 1, (size_t)(13706408354153105207UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 68  call_lbl_10: calling((void*)&gasdev, 10, 0UL, 1, (size_t)(13706408354153105207UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 300  call_lbl_14: calling((void*)&setVcm, 14, 0UL, 2, (size_t)(13706408354153105477UL), (size_t)(13706408354153105208UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 182 4  call_lbl_15: calling((void*)&kineticEnergy, 15, 0UL, 1, (size_t)(13706408354153105477UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 84  call_lbl_17: calling((void*)&sqrt, 17, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 196 198  call_lbl_19: calling((void*)&kineticEnergy, 19, 0UL, 1, (size_t)(13706408354153105477UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 4  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 36  register_stack_var("setTemperature|vZero|0", "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 180 36  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 183 5  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 183 16  register_stack_var("setTemperature|temp|0", "double", (void *)(&temp), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 183 16  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 63  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 81  register_stack_var("setTemperature|scaleFactor|0", "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 185 81  if (____chimes_replaying) {  switch(get_next_call()) { case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 161 257  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 165 4  if (____chimes_replaying) { chimes_error(); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 188 4  if (____chimes_replaying) { chimes_error(); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 205 259 ;  { call_lbl_11: unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(11, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 208 4 if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 216 4  leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 255  call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 68  call_lbl_4: calling((void*)&lcg61, 4, 0UL, 1, (size_t)(13706408354153105494UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 68  call_lbl_6: calling((void*)&lcg61, 6, 0UL, 1, (size_t)(13706408354153105494UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 68  call_lbl_8: calling((void*)&lcg61, 8, 0UL, 1, (size_t)(13706408354153105494UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 205 260  if (____chimes_replaying) {  switch(get_next_call()) { case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 208 4  if (____chimes_replaying) { chimes_error(); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 227 25 ;  { call_lbl_7: unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(7, &____chimes_region_id4, 0); int ____chimes_first_iter4 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 232 4 if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth4, ____chimes_region_id4, 0); ____chimes_first_iter4 = 0; }
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 242 4  leaving_omp_parallel(____chimes_call_stack_depth4, ____chimes_region_id4); } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 408  call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 250 4  call_lbl_3: calling((void*)&addRealParallel, 3, 0UL, 3, (size_t)(13706408354153105017UL), (size_t)(13706408354153105018UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 251 9  call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 4  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 43  register_stack_var("computeVcm|vcmLocal|0", "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 222 43  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 4  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 41  register_stack_var("computeVcm|vcmSum|0", "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 223 41  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 5  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 14  register_stack_var("computeVcm|v0|0", "double", (void *)(&v0), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 224 14  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 5  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 14  register_stack_var("computeVcm|v1|0", "double", (void *)(&v1), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 225 14  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 5  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 14  register_stack_var("computeVcm|v2|0", "double", (void *)(&v2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 226 14  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 227 5  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 227 14  register_stack_var("computeVcm|v3|0", "double", (void *)(&v3), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 227 14  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 253 5  lbl_6: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 253 21  register_stack_var("computeVcm|totalMass|0", "double", (void *)(&totalMass), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 253 21  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 221 249  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 232 4  if (____chimes_replaying) { chimes_error(); } 

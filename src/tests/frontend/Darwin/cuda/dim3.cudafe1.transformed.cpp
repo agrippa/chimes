@@ -26518,22 +26518,24 @@ extern void free_wrapper(void * ptr, size_t group);
 # 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, bool is_parallel_for, bool is_critical, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
-# 37 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id);
-# 39 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned get_parent_vars_stack_depth();
+extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned threads_in_region, bool spawns_threads, bool is_parallel_for, bool is_critical, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
+# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth, size_t region_id);
 # 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned get_parent_vars_stack_depth();
+# 41 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned get_thread_stack_depth();
-# 42 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 43 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void chimes_error();
-# 46 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 48 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 58 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 # 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+# 64 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;

@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -128,6 +129,7 @@ static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
 static thread_ctx *get_my_context();
 static thread_ctx *get_context_for(unsigned tid);
+static bool wait_for_all_threads(clock_t *entry_time);
 
 // global data structures that must persist across library calls
 
@@ -204,12 +206,23 @@ static pthread_mutex_t count_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*
  * Count threads that have hit the checkpoint so that we know when all are
- * inside.
+ * inside. These shared variables are protected by thread_count_mutex and
+ * thread_count_cond below.
  */
 static volatile unsigned threads_in_checkpoint = 0;
 static volatile bool checkpoint_in_progress = false;
-static pthread_mutex_t threads_in_checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
-static pthread_cond_t threads_in_checkpoint_cond = PTHREAD_COND_INITIALIZER;
+
+/*
+ * Count the number of total threads to ensure that checkpoints are created by
+ * all threads at once.
+ */
+static unsigned thread_count = 1; // start with one thread
+static unsigned regions_initializing = 0;
+static std::map<size_t, unsigned> regions_counted;
+static pthread_mutex_t thread_count_mutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t thread_count_cond = PTHREAD_COND_INITIALIZER;
+static std::vector<std::pair<unsigned, clock_t> > checkpoint_entry_times;
+static clock_t checkpoint_exit_time = 0;
 
 /*
  * Counter for the number of parallel regions entered. Incremented every time we
@@ -241,6 +254,7 @@ static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
 static map<std::string, stack_var *> *unpacked_global_vars;
 static map<size_t, constant_var*> *unpacked_constants;
 static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
+static map<unsigned, clock_t> *checkpoint_entry_deltas;
 /*
  * A list of objects specifying what memory locations were updated with
  * corrected pointers during the sweep over heap allocations.
@@ -435,6 +449,23 @@ void init_chimes() {
         safe_read(fd, &heap_offset, sizeof(heap_offset), "heap_offset",
                 checkpoint_file);
 
+        // Read heap entry times from checkpoint
+        checkpoint_entry_deltas =
+            new std::map<unsigned, clock_t>();
+        int n_checkpoint_times;
+        safe_read(fd, &n_checkpoint_times, sizeof(n_checkpoint_times),
+                "n_checkpoint_times", checkpoint_file);
+        for (int i = 0; i < n_checkpoint_times; i++) {
+            unsigned tid;
+            clock_t delta;
+
+            safe_read(fd, &tid, sizeof(tid), "tid", checkpoint_file);
+            safe_read(fd, &delta, sizeof(delta), "delta", checkpoint_file);
+            checkpoint_entry_deltas->insert(std::pair<unsigned, clock_t>(tid,
+                        delta));
+        }
+
+        // Read traces from checkpoint
         int nthreads;
         safe_read(fd, &nthreads, sizeof(nthreads), "nthreads",
                 checkpoint_file);
@@ -994,15 +1025,8 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
          *
          * We reuse the logic for checkpoint synchronization here.
          */
-        assert(pthread_mutex_lock(&threads_in_checkpoint_mutex) == 0);
-        unsigned thread_count = ++threads_in_checkpoint;
-        bool last_thread = (thread_count == pthread_to_id.size());
-        if (!last_thread) {
-            while (true) {
-                assert(pthread_cond_wait(&threads_in_checkpoint_cond,
-                            &threads_in_checkpoint_mutex) == 0);
-            }
-        } else {
+        bool final_thread = wait_for_all_threads(NULL);
+        if (final_thread) {
             fprintf(stderr, "CHIMES exiting, higher stack nesting than "
                     "checkpoint was taken at...\n");
             exit(55);
@@ -1014,7 +1038,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 }
 
 int get_next_call() {
-    int tid = get_my_tid();
+    unsigned tid = get_my_tid();
     assert(trace_indices[tid] < traces[tid].size());
     int ele = traces[tid][trace_indices[tid]];
     trace_indices[tid] = trace_indices[tid] + 1;
@@ -1404,6 +1428,8 @@ typedef struct _checkpoint_thread_ctx {
     uint64_t constants_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
 
+    std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
+
     vector<heap_allocation *> *heap_to_checkpoint;
     map<size_t, size_t> *contains;
 
@@ -1482,23 +1508,50 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
             live_stack_iter == live_stack_end);
 }
 
-void checkpoint() {
-    new_stack((void *)checkpoint, 0, 0);
+static bool wait_for_all_threads(clock_t *entry_ptr) {
 
-    assert(pthread_mutex_lock(&threads_in_checkpoint_mutex) == 0);
-    unsigned thread_count = ++threads_in_checkpoint;
-    if (thread_count == 1) {
+    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    unsigned checkpoint_thread_count = ++threads_in_checkpoint;
+
+    if (entry_ptr) {
+        unsigned tid = get_my_tid();
+        checkpoint_entry_times.push_back(std::pair<unsigned, clock_t>(tid,
+                    *entry_ptr));
+    }
+
+    if (checkpoint_thread_count == 1) {
         checkpoint_in_progress = true;
     }
-    bool last_thread = (thread_count == pthread_to_id.size());
-    if (!last_thread) {
-        while (checkpoint_in_progress) {
-            assert(pthread_cond_wait(&threads_in_checkpoint_cond,
-                        &threads_in_checkpoint_mutex) == 0);
+    bool checkpointing_thread = false;
+    if (checkpoint_thread_count != thread_count || regions_initializing) {
+        while (checkpoint_in_progress &&
+                (threads_in_checkpoint != thread_count || regions_initializing)) {
+            assert(pthread_cond_wait(&thread_count_cond, &thread_count_mutex) == 0);
+        }
+        if (threads_in_checkpoint == thread_count) {
+            checkpointing_thread = true;
         }
     } else {
+        checkpointing_thread = true;
+    }
+    if (checkpointing_thread) {
         threads_in_checkpoint = 0;
     }
+
+    return (checkpointing_thread);
+}
+
+static bool compare_entry_times(std::pair<unsigned, clock_t> i,
+        std::pair<unsigned, clock_t> j) {
+    return (i.second < j.second);
+}
+
+void checkpoint() {
+    clock_t enter_time = clock();
+    new_stack((void *)checkpoint, 0, 0);
+    const bool was_a_replay = ____chimes_replaying;
+
+    bool checkpointing_thread = wait_for_all_threads(&enter_time);
 
     /*
      * On replay, the last thread to hit the checkpoint will skip the wait loop
@@ -1606,7 +1659,7 @@ void checkpoint() {
             thread_ctx *ctx = i->second;
             ctx->set_stack_nesting(1);
         }
-    } else if (last_thread && !checkpoint_thread_running) {
+    } else if (checkpointing_thread && !checkpoint_thread_running) {
         assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
         assert(get_my_context()->get_first_parallel_for_nesting() == 0);
@@ -1686,6 +1739,14 @@ void checkpoint() {
                     &checkpoint_ctx->thread_hierarchy_serialized_len);
             checkpoint_ctx->heap_to_checkpoint = heap_to_checkpoint;
 
+            checkpoint_ctx->checkpoint_entry_times =
+                new std::vector<std::pair<unsigned, clock_t> >(
+                        checkpoint_entry_times);
+            std::sort(checkpoint_ctx->checkpoint_entry_times->begin(),
+                    checkpoint_ctx->checkpoint_entry_times->end(),
+                    compare_entry_times);
+            checkpoint_entry_times.clear();
+
             checkpoint_ctx->stack_trackers = new map<unsigned, vector<int> *>();
             for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
                     te = thread_ctxs.end(); ti != te; ti++) {
@@ -1710,11 +1771,20 @@ void checkpoint() {
         }
     }
 
-    if (last_thread) {
+    if (checkpointing_thread) {
         checkpoint_in_progress = false;
-        assert(pthread_cond_broadcast(&threads_in_checkpoint_cond) == 0);
+        if (was_a_replay) {
+            checkpoint_exit_time = clock();
+        }
+        assert(pthread_cond_broadcast(&thread_count_cond) == 0);
     }
-    assert(pthread_mutex_unlock(&threads_in_checkpoint_mutex) == 0);
+    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
+
+    if (was_a_replay) {
+        assert(checkpoint_exit_time);
+        clock_t my_delta = checkpoint_entry_deltas->at(get_my_tid());
+        while (clock() - checkpoint_exit_time < my_delta) ;
+    }
 
     rm_stack(false, 0);
 }
@@ -1824,6 +1894,26 @@ void *checkpoint_func(void *data) {
             dump_filename);
     safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_preliminary",
             dump_filename);
+
+    // Write the heap entry times to the dump file, sorted by entry order
+    int n_checkpoint_times = ctx->checkpoint_entry_times->size();
+    safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times),
+            "n_checkpoint_times", dump_filename);
+    bool first = true;
+    clock_t baseline;
+    for (vector<pair<unsigned, clock_t> >::iterator i =
+            ctx->checkpoint_entry_times->begin(),
+            e = ctx->checkpoint_entry_times->end(); i != e; i++) {
+        unsigned tid = i->first;
+        clock_t t = i->second;
+        if (first) {
+            baseline = t;
+        }
+        clock_t delta = t - baseline;
+        safe_write(fd, &tid, sizeof(tid), "tid", dump_filename);
+        safe_write(fd, &delta, sizeof(delta), "delta", dump_filename);
+        first = false;
+    }
 
     // Write the trace of function calls out
     int nthreads = ctx->stack_trackers->size();
@@ -1982,6 +2072,7 @@ void *checkpoint_func(void *data) {
     }
     delete heap_to_checkpoint;
     delete ctx->stack_trackers;
+    delete ctx->checkpoint_entry_times;
     delete contains;
     free(ctx);
 
@@ -2041,17 +2132,46 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     va_end(vl);
 
     assert(pthread_mutex_lock(&regions_executed_mutex) == 0);
-    *unique_region_id = regions_executed++;
+    *unique_region_id = (regions_executed++);
     assert(pthread_mutex_unlock(&regions_executed_mutex) == 0);
+
+    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    regions_initializing++;
+    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     return get_my_tid();
 }
 
 void register_thread_local_stack_vars(unsigned relation, unsigned parent,
+        unsigned threads_in_region, bool spawns_threads,
         bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
     unsigned global_tid;
     pthread_t self = pthread_self();
+
+    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    if (regions_counted.find(region_id) == regions_counted.end()) {
+        if (!spawns_threads || is_parallel_for) {
+            threads_in_region = 1;
+        }
+        assert(regions_counted.insert(std::pair<size_t, unsigned>(region_id,
+                        threads_in_region - 1)).second);
+        /*
+         * Parallel fors make counting threads difficult. Depending on the loop
+         * predicate, the number of actively executing threads may not equal the
+         * number of threads in the team, so just relying on omp_get_num_threads
+         * can be innaccurate. However, for the moment we don't support
+         * checkpointing inside a parallel for, so we don't need an accurate
+         * thread count within it.
+         */
+        if (spawns_threads && !is_parallel_for) {
+            thread_count += (threads_in_region - 1);
+        }
+        regions_initializing--;
+
+        assert(pthread_cond_broadcast(&thread_count_cond) == 0);
+    }
+    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     if (____chimes_replaying) {
         /*
@@ -2176,7 +2296,8 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
     /*
-     * If this thread participated in the preceding parallel region, it should have the same stack depth it had before the parallel region, plus one.
+     * If this thread participated in the preceding parallel region, it should
+     * have the same stack depth it had before the parallel region, plus one.
      *
      * A parent thread may not participate in a parallel region if the parent
      * thread is a thread created in an omp parallel region which contains an
@@ -2198,6 +2319,8 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
     assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+
+    int nthreads_joined = 0;
 
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
@@ -2226,6 +2349,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
                 assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
 
                 to_erase.push_back(i);
+                nthreads_joined++;
             } else {
                 if (program_stack->size() <
                         ctx->get_first_parallel_for_nesting()) {
@@ -2244,6 +2368,29 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         map<unsigned, thread_ctx *>::iterator curr = *i;
         thread_ctxs.erase(curr);
     }
+
+    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    
+    /*
+     * It is possible for a parallel region to be created by a thread which is
+     * never entered, e.g. a parallel for which has insufficient iterations for
+     * all worker threads to enter. In that case, the region will never have
+     * been inserted in regions_counted and thread_count will not have changed
+     * but regions_initializing will have still been incremented. This doesn't
+     * break anything at the moment as we don't allow checkpointing inside
+     * parallel for regions, so the fact that regions_initializing will be
+     * positive for the entirety of this parallel for region is not a problem
+     * (i.e. cannot cause deadlock).
+     */
+    if (regions_counted.find(region_id) != regions_counted.end()) {
+        thread_count -= regions_counted.at(region_id);
+        assert(regions_counted.erase(region_id) == 1);
+    } else {
+        regions_initializing--;
+    }
+
+    assert(pthread_cond_broadcast(&thread_count_cond) == 0);
+    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 }

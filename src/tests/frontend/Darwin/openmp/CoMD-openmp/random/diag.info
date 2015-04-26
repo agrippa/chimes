@@ -9,10 +9,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/rando
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 23 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 43 4  static double convertToDouble;  convertToDouble = (1. / (2305843009213693951ULL)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 43 64 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 67 4  uint32_t s1;  s1 = (id * (2654435761U)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 67 36 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 68 4  uint32_t s2;  s2 = ((id + callSite) * (2654435761U)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 68 47 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 67 4  uint32_t s1;  s1 = (id * (2654435761UL)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 67 37 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 68 4  uint32_t s2;  s2 = ((id + callSite) * (2654435761UL)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 68 48 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 4  uint64_t iSeed;  iSeed = (((4294967296ULL) * s1) + s2) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 49 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 4 {  unsigned int jj; 
