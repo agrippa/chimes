@@ -20,7 +20,7 @@
 #include "mytype.h"
 #include "parallel.h"
 
-FILE* yamlFile = NULL;
+// FILE* yamlFile = NULL;
 
 static const char* CoMDVersion = "1.1";
 static const char* CoMDVariant = CoMD_VARIANT;
@@ -57,7 +57,7 @@ void yamlBegin(void)
             ptm->tm_year + 1900, ptm->tm_mon+1,
             ptm->tm_mday, ptm->tm_hour, ptm->tm_min,ptm->tm_sec);
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
-   yamlFile = fopen(filename, "w");
+   // yamlFile = fopen(filename, "w");
 }
 
 void yamlAppInfo(FILE* file)
@@ -92,7 +92,7 @@ void yamlEnd(void)
    if (! printRank())
       return;
 
-   fclose(yamlFile);
+   // fclose(yamlFile);
 }
 
 void printSeparator(FILE* file)
