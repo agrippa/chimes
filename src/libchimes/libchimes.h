@@ -32,8 +32,9 @@ extern void free_wrapper(void *ptr, size_t group);
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, bool is_parallel_for, bool is_critical,
-        unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
 extern unsigned get_parent_vars_stack_depth();
@@ -51,11 +52,13 @@ cudaError_t cudaFree_wrapper(void *ptr, size_t group);
 #ifdef _OPENMP
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
 }
 inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-#define LIBCHIMES_THREAD_NUM  omp_get_thread_num()
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 #else
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 #endif
 
 extern int ____chimes_replaying;

@@ -52,19 +52,22 @@ extern void free_wrapper(void *ptr, size_t group);
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, bool is_parallel_for, bool is_critical,
-        unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(int expected_parent_stack_depth,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
 extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 52 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
 }
 inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 
 
@@ -3113,7 +3116,7 @@ void InitStressTermsForElems(Index_t numElem,
 # 607 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 607 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 608 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < numElem ; ++i){if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &numElem); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < numElem ; ++i){if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &numElem); ____chimes_first_iter0 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 609 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   sigxx[i] = sigyy[i] = sigzz[i] = - domain.p[i] - domain.q[i];
 # 610 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -3581,7 +3584,7 @@ void IntegrateStressForElems( Index_t numElem,
 # 859 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  for( Index_t k=0 ; k<numElem ; ++k )
 # 860 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, true, false, ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &numElem); ____chimes_first_iter1 = 0; } if (____chimes_replaying) { chimes_error(); }
+ {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &numElem); ____chimes_first_iter1 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 861 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t B[3][8]; ;
 # 862 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -3643,7 +3646,7 @@ void IntegrateStressForElems( Index_t numElem,
 # 903 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   for( Index_t gnode=0 ; gnode<numNode ; ++gnode )
 # 904 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, true, false, ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &numNode); ____chimes_first_iter2 = 0; } if (____chimes_replaying) { chimes_error(); }
+  {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &numNode); ____chimes_first_iter2 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 905 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t count; count = (domain.nodeElemCount[gnode]) ;
 # 906 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4313,7 +4316,7 @@ void CalcFBHourglassForceForElems(Real_t *determ,
 # 1285 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1285 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1286 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for(Index_t i2=0; i2<numElem; ++i2){if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, true, false, ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &hourg, &numElem); ____chimes_first_iter3 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for(Index_t i2=0; i2<numElem; ++i2){if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &hourg, &numElem); ____chimes_first_iter3 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1287 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t *fx_local; Real_t *fy_local; Real_t *fz_local; ;
 # 1288 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4572,7 +4575,7 @@ void CalcFBHourglassForceForElems(Real_t *determ,
 # 1473 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   for( Index_t gnode=0 ; gnode<numNode ; ++gnode )
 # 1474 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  {if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, true, false, ____chimes_parent_stack_depth4, ____chimes_region_id4, 1, &numNode); ____chimes_first_iter4 = 0; } if (____chimes_replaying) { chimes_error(); }
+  {if (____chimes_first_iter4) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread4, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth4, ____chimes_region_id4, 1, &numNode); ____chimes_first_iter4 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1475 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t count; count = (domain.nodeElemCount[gnode]) ;
 # 1476 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4646,7 +4649,7 @@ void CalcHourglassControlForElems(Real_t determ[], Real_t hgcoef)
 # 1510 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1510 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1511 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i=0 ; i<numElem ; ++i){if (____chimes_first_iter5) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread5, true, false, ____chimes_parent_stack_depth5, ____chimes_region_id5, 1, &numElem); ____chimes_first_iter5 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i=0 ; i<numElem ; ++i){if (____chimes_first_iter5) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread5, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth5, ____chimes_region_id5, 1, &numElem); ____chimes_first_iter5 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1512 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t x1[8]; Real_t y1[8]; Real_t z1[8]; ;
 # 1513 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4757,7 +4760,7 @@ void CalcVolumeForceForElems()
 # 1573 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1573 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1574 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for ( Index_t k=0 ; k<numElem ; ++k ) {if (____chimes_first_iter6) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread6, true, false, ____chimes_parent_stack_depth6, ____chimes_region_id6, 1, &numElem); ____chimes_first_iter6 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for ( Index_t k=0 ; k<numElem ; ++k ) {if (____chimes_first_iter6) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread6, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth6, ____chimes_region_id6, 1, &numElem); ____chimes_first_iter6 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1575 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    if (determ[k] <= Real_t(0.0)) {
 # 1576 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4796,7 +4799,7 @@ static inline void CalcForceForNodes()
 # 1592 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1592 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1593 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i=0; i<numNode; ++i) {if (____chimes_first_iter7) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread7, true, false, ____chimes_parent_stack_depth7, ____chimes_region_id7, 1, &numNode); ____chimes_first_iter7 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i=0; i<numNode; ++i) {if (____chimes_first_iter7) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread7, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth7, ____chimes_region_id7, 1, &numNode); ____chimes_first_iter7 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1594 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.fx[i] = Real_t(0.0) ;
 # 1595 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4831,7 +4834,7 @@ void CalcAccelerationForNodes()
 # 1611 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1611 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1612 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0; i < numNode; ++i) {if (____chimes_first_iter8) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread8, true, false, ____chimes_parent_stack_depth8, ____chimes_region_id8, 1, &numNode); ____chimes_first_iter8 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0; i < numNode; ++i) {if (____chimes_first_iter8) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread8, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth8, ____chimes_region_id8, 1, &numNode); ____chimes_first_iter8 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1613 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.xdd[i] = domain.fx[i] / domain.nodalMass[i];
 # 1614 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4860,7 +4863,7 @@ void ApplyAccelerationBoundaryConditionsForNodes()
 # 1625 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1625 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1626 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread9, false, false, ____chimes_parent_stack_depth9, ____chimes_region_id9, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread9, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth9, ____chimes_region_id9, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 1627 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
         Index_t i; ;; { call_lbl_4: unsigned ____chimes_parent_stack_depth10 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth10 = get_thread_stack_depth(); size_t ____chimes_region_id10; unsigned ____chimes_parent_thread10 = entering_omp_parallel(4, &____chimes_region_id10, 1, &numNodeBC); int ____chimes_first_iter9 = 1;
 # 1628 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4870,7 +4873,7 @@ void ApplyAccelerationBoundaryConditionsForNodes()
 # 1628 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1628 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1629 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (i = 0; i < numNodeBC; ++i) {if (____chimes_first_iter9) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread10, true, false, ____chimes_parent_stack_depth10, ____chimes_region_id10, 1, &numNodeBC); ____chimes_first_iter9 = 0; } if (____chimes_replaying) { chimes_error(); } domain.xdd[domain.symmX[i]] = Real_t(0.); } leaving_omp_parallel(____chimes_call_stack_depth10, ____chimes_region_id10); } ;
+        for (i = 0; i < numNodeBC; ++i) {if (____chimes_first_iter9) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread10, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth10, ____chimes_region_id10, 1, &numNodeBC); ____chimes_first_iter9 = 0; } if (____chimes_replaying) { chimes_error(); } domain.xdd[domain.symmX[i]] = Real_t(0.); } leaving_omp_parallel(____chimes_call_stack_depth10, ____chimes_region_id10); } ;
 # 1631 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1632 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
         Index_t j; ;; { call_lbl_5: unsigned ____chimes_parent_stack_depth11 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth11 = get_thread_stack_depth(); size_t ____chimes_region_id11; unsigned ____chimes_parent_thread11 = entering_omp_parallel(5, &____chimes_region_id11, 1, &numNodeBC); int ____chimes_first_iter10 = 1;
@@ -4881,7 +4884,7 @@ void ApplyAccelerationBoundaryConditionsForNodes()
 # 1633 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1633 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1634 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (j = 0; j < numNodeBC; ++j) {if (____chimes_first_iter10) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread11, true, false, ____chimes_parent_stack_depth11, ____chimes_region_id11, 1, &numNodeBC); ____chimes_first_iter10 = 0; } if (____chimes_replaying) { chimes_error(); } domain.ydd[domain.symmY[j]] = Real_t(0.); } leaving_omp_parallel(____chimes_call_stack_depth11, ____chimes_region_id11); } ;
+        for (j = 0; j < numNodeBC; ++j) {if (____chimes_first_iter10) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread11, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth11, ____chimes_region_id11, 1, &numNodeBC); ____chimes_first_iter10 = 0; } if (____chimes_replaying) { chimes_error(); } domain.ydd[domain.symmY[j]] = Real_t(0.); } leaving_omp_parallel(____chimes_call_stack_depth11, ____chimes_region_id11); } ;
 # 1636 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1637 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
         Index_t k; ;; { call_lbl_6: unsigned ____chimes_parent_stack_depth12 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth12 = get_thread_stack_depth(); size_t ____chimes_region_id12; unsigned ____chimes_parent_thread12 = entering_omp_parallel(6, &____chimes_region_id12, 1, &numNodeBC); int ____chimes_first_iter11 = 1;
@@ -4892,7 +4895,7 @@ void ApplyAccelerationBoundaryConditionsForNodes()
 # 1638 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1638 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1639 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (k = 0; k < numNodeBC; ++k) {if (____chimes_first_iter11) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread12, true, false, ____chimes_parent_stack_depth12, ____chimes_region_id12, 1, &numNodeBC); ____chimes_first_iter11 = 0; } if (____chimes_replaying) { chimes_error(); } domain.zdd[domain.symmZ[k]] = Real_t(0.); } leaving_omp_parallel(____chimes_call_stack_depth12, ____chimes_region_id12); } ;
+        for (k = 0; k < numNodeBC; ++k) {if (____chimes_first_iter11) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread12, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth12, ____chimes_region_id12, 1, &numNodeBC); ____chimes_first_iter11 = 0; } if (____chimes_replaying) { chimes_error(); } domain.zdd[domain.symmZ[k]] = Real_t(0.); } leaving_omp_parallel(____chimes_call_stack_depth12, ____chimes_region_id12); } ;
 # 1641 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9); }
 # 1642 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4916,7 +4919,7 @@ void CalcVelocityForNodes(const Real_t dt, const Real_t u_cut)
 # 1650 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  for ( Index_t i = 0 ; i < numNode ; ++i )
 # 1651 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- {if (____chimes_first_iter12) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread13, true, false, ____chimes_parent_stack_depth13, ____chimes_region_id13, 1, &numNode); ____chimes_first_iter12 = 0; } if (____chimes_replaying) { chimes_error(); }
+ {if (____chimes_first_iter12) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread13, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth13, ____chimes_region_id13, 1, &numNode); ____chimes_first_iter12 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1652 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t xdtmp; Real_t ydtmp; Real_t zdtmp; ;
 # 1653 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4963,7 +4966,7 @@ void CalcPositionForNodes(const Real_t dt)
 # 1674 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  for ( Index_t i = 0 ; i < numNode ; ++i )
 # 1675 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- {if (____chimes_first_iter13) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread14, true, false, ____chimes_parent_stack_depth14, ____chimes_region_id14, 1, &numNode); ____chimes_first_iter13 = 0; } if (____chimes_replaying) { chimes_error(); }
+ {if (____chimes_first_iter13) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread14, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth14, ____chimes_region_id14, 1, &numNode); ____chimes_first_iter13 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1676 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.x[i] += domain.xd[i] * dt ;
 # 1677 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5398,7 +5401,7 @@ void CalcKinematicsForElems( Index_t numElem, Real_t dt )
 # 1929 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  for( Index_t k=0 ; k<numElem ; ++k )
 # 1930 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- {if (____chimes_first_iter14) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread15, true, false, ____chimes_parent_stack_depth15, ____chimes_region_id15, 2, &dt, &numElem); ____chimes_first_iter14 = 0; } if (____chimes_replaying) { chimes_error(); }
+ {if (____chimes_first_iter14) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread15, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth15, ____chimes_region_id15, 2, &dt, &numElem); ____chimes_first_iter14 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 1931 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t B[3][8]; ;
 # 1932 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5546,7 +5549,7 @@ void CalcLagrangeElements(Real_t deltatime)
 # 2010 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   for ( Index_t k=0 ; k<numElem ; ++k )
 # 2011 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  {if (____chimes_first_iter15) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread16, true, false, ____chimes_parent_stack_depth16, ____chimes_region_id16, 1, &numElem); ____chimes_first_iter15 = 0; } if (____chimes_replaying) { chimes_error(); }
+  {if (____chimes_first_iter15) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread16, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth16, ____chimes_region_id16, 1, &numElem); ____chimes_first_iter15 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2012 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2013 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Real_t vdov; vdov = (domain.dxx[k] + domain.dyy[k] + domain.dzz[k]) ;
@@ -5596,7 +5599,7 @@ void CalcMonotonicQGradientsForElems()
 # 2037 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2037 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2038 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < numElem ; ++i ) {if (____chimes_first_iter16) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread17, true, false, ____chimes_parent_stack_depth17, ____chimes_region_id17, 1, &numElem); ____chimes_first_iter16 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < numElem ; ++i ) {if (____chimes_first_iter16) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread17, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth17, ____chimes_region_id17, 1, &numElem); ____chimes_first_iter16 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2039 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t ptiny; ptiny = (9.9999999999999994E-37) ;
 # 2040 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5870,7 +5873,7 @@ void CalcMonotonicQRegionForElems(
 # 2190 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2190 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2191 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for ( Index_t ielem = 0 ; ielem < elength; ++ielem ) {if (____chimes_first_iter17) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread18, true, false, ____chimes_parent_stack_depth18, ____chimes_region_id18, 6, &elength, &monoq_limiter_mult, &monoq_max_slope, &ptiny, &qlc_monoq, &qqc_monoq); ____chimes_first_iter17 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for ( Index_t ielem = 0 ; ielem < elength; ++ielem ) {if (____chimes_first_iter17) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread18, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth18, ____chimes_region_id18, 6, &elength, &monoq_limiter_mult, &monoq_max_slope, &ptiny, &qlc_monoq, &qqc_monoq); ____chimes_first_iter17 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2192 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t qlin; Real_t qquad; ;
 # 2193 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6219,7 +6222,7 @@ void CalcPressureForElems(Real_t* p_new, Real_t* bvc,
 # 2390 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2390 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2391 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0; i < length ; ++i) {if (____chimes_first_iter18) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread19, true, false, ____chimes_parent_stack_depth19, ____chimes_region_id19, 1, &length); ____chimes_first_iter18 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0; i < length ; ++i) {if (____chimes_first_iter18) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread19, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth19, ____chimes_region_id19, 1, &length); ____chimes_first_iter18 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2392 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t c1s; c1s = (Real_t(2.) / Real_t(3.)) ;
 # 2393 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6236,7 +6239,7 @@ void CalcPressureForElems(Real_t* p_new, Real_t* bvc,
 # 2397 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2397 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2398 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i){if (____chimes_first_iter19) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread20, true, false, ____chimes_parent_stack_depth20, ____chimes_region_id20, 4, &eosvmax, &length, &p_cut, &pmin); ____chimes_first_iter19 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i){if (____chimes_first_iter19) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread20, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth20, ____chimes_region_id20, 4, &eosvmax, &length, &p_cut, &pmin); ____chimes_first_iter19 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2399 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   p_new[i] = bvc[i] * e_old[i] ;
 # 2400 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6287,7 +6290,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2426 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2426 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2427 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter20) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread21, true, false, ____chimes_parent_stack_depth21, ____chimes_region_id21, 2, &emin, &length); ____chimes_first_iter20 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter20) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread21, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth21, ____chimes_region_id21, 2, &emin, &length); ____chimes_first_iter20 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2428 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   e_new[i] = e_old[i] - Real_t(0.5) * delvc[i] * (p_old[i] + q_old[i])
 # 2429 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6314,7 +6317,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2439 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2439 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2440 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter21) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread22, true, false, ____chimes_parent_stack_depth22, ____chimes_region_id22, 2, &length, &rho0); ____chimes_first_iter21 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter21) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread22, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth22, ____chimes_region_id22, 2, &length, &rho0); ____chimes_first_iter21 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2441 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t vhalf; vhalf = (Real_t(1.) / (Real_t(1.) + compHalfStep[i])) ;
 # 2442 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6361,7 +6364,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2464 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2464 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2465 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter22) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread23, true, false, ____chimes_parent_stack_depth23, ____chimes_region_id23, 3, &e_cut, &emin, &length); ____chimes_first_iter22 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter22) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread23, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth23, ____chimes_region_id23, 3, &e_cut, &emin, &length); ____chimes_first_iter22 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2466 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2467 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   e_new[i] += Real_t(0.5) * work[i];
@@ -6393,7 +6396,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2480 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2480 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2481 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i){if (____chimes_first_iter23) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread24, true, false, ____chimes_parent_stack_depth24, ____chimes_region_id24, 4, &e_cut, &emin, &length, &rho0); ____chimes_first_iter23 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i){if (____chimes_first_iter23) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread24, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth24, ____chimes_region_id24, 4, &e_cut, &emin, &length, &rho0); ____chimes_first_iter23 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2482 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t sixth; sixth = (Real_t(1.) / Real_t(6.)) ;
 # 2483 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6460,7 +6463,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2517 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i){if (____chimes_first_iter24) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread25, true, false, ____chimes_parent_stack_depth25, ____chimes_region_id25, 3, &length, &q_cut, &rho0); ____chimes_first_iter24 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i){if (____chimes_first_iter24) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread25, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth25, ____chimes_region_id25, 3, &length, &q_cut, &rho0); ____chimes_first_iter24 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2518 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2519 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   if ( delvc[i] <= Real_t(0.) ) {
@@ -6513,7 +6516,7 @@ void CalcSoundSpeedForElems(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2545 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2545 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2546 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0; i < nz ; ++i) {if (____chimes_first_iter25) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread26, true, false, ____chimes_parent_stack_depth26, ____chimes_region_id26, 3, &nz, &rho0, &ss4o3); ____chimes_first_iter25 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0; i < nz ; ++i) {if (____chimes_first_iter25) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread26, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth26, ____chimes_region_id26, 3, &nz, &rho0, &ss4o3); ____chimes_first_iter25 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2547 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Index_t iz; iz = (domain.matElemlist[i]) ;
 # 2548 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6600,7 +6603,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2590 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2590 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2591 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread27, false, false, ____chimes_parent_stack_depth27, ____chimes_region_id27, 0); if (____chimes_replaying) { goto lbl_23; }
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread27, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth27, ____chimes_region_id27, 0); if (____chimes_replaying) { goto lbl_23; }
 # 2592 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
          lbl_23: Index_t i; register_stack_var("EvalEOSForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } ;; { call_lbl_35: unsigned ____chimes_parent_stack_depth28 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth28 = get_thread_stack_depth(); size_t ____chimes_region_id28; unsigned ____chimes_parent_thread28 = entering_omp_parallel(35, &____chimes_region_id28, 1, &length); int ____chimes_first_iter26 = 1;
 # 2593 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6610,7 +6613,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2593 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2593 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2594 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (i=0; i<length; ++i) {if (____chimes_first_iter26) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread28, true, false, ____chimes_parent_stack_depth28, ____chimes_region_id28, 1, &length); ____chimes_first_iter26 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (i=0; i<length; ++i) {if (____chimes_first_iter26) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread28, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth28, ____chimes_region_id28, 1, &length); ____chimes_first_iter26 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2595 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[i]) ;
 # 2596 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6627,7 +6630,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2600 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2600 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2601 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (j=0; j<length; ++j) {if (____chimes_first_iter27) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread29, true, false, ____chimes_parent_stack_depth29, ____chimes_region_id29, 1, &length); ____chimes_first_iter27 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (j=0; j<length; ++j) {if (____chimes_first_iter27) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread29, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth29, ____chimes_region_id29, 1, &length); ____chimes_first_iter27 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2602 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[j]) ;
 # 2603 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6644,7 +6647,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2607 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2607 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2608 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (k=0; k<length; ++k) {if (____chimes_first_iter28) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread30, true, false, ____chimes_parent_stack_depth30, ____chimes_region_id30, 1, &length); ____chimes_first_iter28 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (k=0; k<length; ++k) {if (____chimes_first_iter28) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread30, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth30, ____chimes_region_id30, 1, &length); ____chimes_first_iter28 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2609 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[k]) ;
 # 2610 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6661,7 +6664,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2614 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2614 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2615 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (l=0; l<length; ++l) {if (____chimes_first_iter29) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread31, true, false, ____chimes_parent_stack_depth31, ____chimes_region_id31, 1, &length); ____chimes_first_iter29 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (l=0; l<length; ++l) {if (____chimes_first_iter29) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread31, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth31, ____chimes_region_id31, 1, &length); ____chimes_first_iter29 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2616 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[l]) ;
 # 2617 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6678,7 +6681,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2621 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2621 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2622 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (m = 0; m < length ; ++m) {if (____chimes_first_iter30) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread32, true, false, ____chimes_parent_stack_depth32, ____chimes_region_id32, 1, &length); ____chimes_first_iter30 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (m = 0; m < length ; ++m) {if (____chimes_first_iter30) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread32, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth32, ____chimes_region_id32, 1, &length); ____chimes_first_iter30 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2623 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t vchalf; ;
 # 2624 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6702,7 +6705,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2632 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2632 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2633 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   for(n=0 ; n<length ; ++n) {if (____chimes_first_iter31) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread33, true, false, ____chimes_parent_stack_depth33, ____chimes_region_id33, 2, &eosvmin, &length); ____chimes_first_iter31 = 0; } if (____chimes_replaying) { chimes_error(); }
+   for(n=0 ; n<length ; ++n) {if (____chimes_first_iter31) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread33, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth33, ____chimes_region_id33, 2, &eosvmin, &length); ____chimes_first_iter31 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2634 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     if (vnewc[n] <= eosvmin) {
 # 2635 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6724,7 +6727,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2641 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2641 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2642 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   for(p=0 ; p<length ; ++p) {if (____chimes_first_iter32) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread34, true, false, ____chimes_parent_stack_depth34, ____chimes_region_id34, 2, &eosvmax, &length); ____chimes_first_iter32 = 0; } if (____chimes_replaying) { chimes_error(); }
+   for(p=0 ; p<length ; ++p) {if (____chimes_first_iter32) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread34, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth34, ____chimes_region_id34, 2, &eosvmax, &length); ____chimes_first_iter32 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2643 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     if (vnewc[p] >= eosvmax) {
 # 2644 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6749,7 +6752,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2652 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2652 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2653 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (q = 0 ; q < length ; ++q) {if (____chimes_first_iter33) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread35, true, false, ____chimes_parent_stack_depth35, ____chimes_region_id35, 1, &length); ____chimes_first_iter33 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (q = 0 ; q < length ; ++q) {if (____chimes_first_iter33) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread35, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth35, ____chimes_region_id35, 1, &length); ____chimes_first_iter33 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2654 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[q]) ;
 # 2655 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6782,7 +6785,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2668 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2668 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2669 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread36, false, false, ____chimes_parent_stack_depth36, ____chimes_region_id36, 0); if (____chimes_replaying) { goto lbl_31; }
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread36, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth36, ____chimes_region_id36, 0); if (____chimes_replaying) { goto lbl_31; }
 # 2670 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
          lbl_31: Index_t i; register_stack_var("EvalEOSForElems|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_32; } ;; { call_lbl_44: unsigned ____chimes_parent_stack_depth37 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth37 = get_thread_stack_depth(); size_t ____chimes_region_id37; unsigned ____chimes_parent_thread37 = entering_omp_parallel(44, &____chimes_region_id37, 1, &length); int ____chimes_first_iter34 = 1;
 # 2671 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6792,7 +6795,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2671 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2671 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2672 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (i=0; i<length; ++i) {if (____chimes_first_iter34) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread37, true, false, ____chimes_parent_stack_depth37, ____chimes_region_id37, 1, &length); ____chimes_first_iter34 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (i=0; i<length; ++i) {if (____chimes_first_iter34) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread37, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth37, ____chimes_region_id37, 1, &length); ____chimes_first_iter34 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2673 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[i]) ;
 # 2674 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6809,7 +6812,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2678 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2678 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2679 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (j=0; j<length; ++j) {if (____chimes_first_iter35) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread38, true, false, ____chimes_parent_stack_depth38, ____chimes_region_id38, 1, &length); ____chimes_first_iter35 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (j=0; j<length; ++j) {if (____chimes_first_iter35) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread38, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth38, ____chimes_region_id38, 1, &length); ____chimes_first_iter35 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2680 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[j]) ;
 # 2681 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6826,7 +6829,7 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2685 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2685 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2686 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for (k=0; k<length; ++k) {if (____chimes_first_iter36) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread39, true, false, ____chimes_parent_stack_depth39, ____chimes_region_id39, 1, &length); ____chimes_first_iter36 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for (k=0; k<length; ++k) {if (____chimes_first_iter36) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread39, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth39, ____chimes_region_id39, 1, &length); ____chimes_first_iter36 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2687 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     Index_t zidx; zidx = (domain.matElemlist[k]) ;
 # 2688 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6898,7 +6901,7 @@ void ApplyMaterialPropertiesForElems()
 # 2722 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2722 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2723 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread40, false, false, ____chimes_parent_stack_depth40, ____chimes_region_id40, 0); if (____chimes_replaying) { goto lbl_4; }
+  { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread40, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth40, ____chimes_region_id40, 0); if (____chimes_replaying) { goto lbl_4; }
 # 2724 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
              lbl_4: Index_t i; register_stack_var("ApplyMaterialPropertiesForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;; { call_lbl_10: unsigned ____chimes_parent_stack_depth41 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth41 = get_thread_stack_depth(); size_t ____chimes_region_id41; unsigned ____chimes_parent_thread41 = entering_omp_parallel(10, &____chimes_region_id41, 1, &length); int ____chimes_first_iter37 = 1;
 # 2725 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6908,7 +6911,7 @@ void ApplyMaterialPropertiesForElems()
 # 2725 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2725 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2726 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   for (i=0 ; i<length ; ++i) {if (____chimes_first_iter37) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread41, true, false, ____chimes_parent_stack_depth41, ____chimes_region_id41, 1, &length); ____chimes_first_iter37 = 0; } if (____chimes_replaying) { chimes_error(); }
+   for (i=0 ; i<length ; ++i) {if (____chimes_first_iter37) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread41, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth41, ____chimes_region_id41, 1, &length); ____chimes_first_iter37 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2727 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      Index_t zn; zn = (domain.matElemlist[i]) ;
 # 2728 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6927,7 +6930,7 @@ void ApplyMaterialPropertiesForElems()
 # 2733 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2733 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2734 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    for(j=0 ; j<length ; ++j) {if (____chimes_first_iter38) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread42, true, false, ____chimes_parent_stack_depth42, ____chimes_region_id42, 2, &eosvmin, &length); ____chimes_first_iter38 = 0; } if (____chimes_replaying) { chimes_error(); }
+    for(j=0 ; j<length ; ++j) {if (____chimes_first_iter38) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread42, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth42, ____chimes_region_id42, 2, &eosvmin, &length); ____chimes_first_iter38 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2735 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      if (vnewc[j] < eosvmin) {vnewc[j] = eosvmin; } ;
 # 2737 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6946,7 +6949,7 @@ void ApplyMaterialPropertiesForElems()
 # 2742 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2742 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2743 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    for(k=0 ; k<length ; ++k) {if (____chimes_first_iter39) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread43, true, false, ____chimes_parent_stack_depth43, ____chimes_region_id43, 2, &eosvmax, &length); ____chimes_first_iter39 = 0; } if (____chimes_replaying) { chimes_error(); }
+    for(k=0 ; k<length ; ++k) {if (____chimes_first_iter39) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread43, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth43, ____chimes_region_id43, 2, &eosvmax, &length); ____chimes_first_iter39 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2744 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      if (vnewc[k] > eosvmax) {vnewc[k] = eosvmax; } ;
 # 2746 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6963,7 +6966,7 @@ void ApplyMaterialPropertiesForElems()
 # 2750 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2750 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2751 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   for (l=0; l<length; ++l) {if (____chimes_first_iter40) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread44, true, false, ____chimes_parent_stack_depth44, ____chimes_region_id44, 3, &eosvmax, &eosvmin, &length); ____chimes_first_iter40 = 0; } if (____chimes_replaying) { chimes_error(); }
+   for (l=0; l<length; ++l) {if (____chimes_first_iter40) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread44, LIBCHIMES_NUM_THREADS(), false, true, false, ____chimes_parent_stack_depth44, ____chimes_region_id44, 3, &eosvmax, &eosvmin, &length); ____chimes_first_iter40 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2752 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      Index_t zn; zn = (domain.matElemlist[l]) ;
 # 2753 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7022,7 +7025,7 @@ void UpdateVolumesForElems()
 # 2782 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2782 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2783 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  for(Index_t i=0 ; i<numElem ; ++i) {if (____chimes_first_iter41) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread45, true, false, ____chimes_parent_stack_depth45, ____chimes_region_id45, 2, &numElem, &v_cut); ____chimes_first_iter41 = 0; } if (____chimes_replaying) { chimes_error(); }
+  for(Index_t i=0 ; i<numElem ; ++i) {if (____chimes_first_iter41) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread45, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth45, ____chimes_region_id45, 2, &numElem, &v_cut); ____chimes_first_iter41 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2784 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t tmpV; ;
 # 2785 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7112,7 +7115,7 @@ void CalcCourantConstraintForElems()
 # 2835 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2835 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2836 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter42) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread46, true, false, ____chimes_parent_stack_depth46, ____chimes_region_id46, 2, &length, &qqc2); ____chimes_first_iter42 = 0; } if (____chimes_replaying) { chimes_error(); }
+ for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter42) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread46, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth46, ____chimes_region_id46, 2, &length, &qqc2); ____chimes_first_iter42 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2837 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2838 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7239,7 +7242,7 @@ void CalcHydroConstraintForElems()
 # 2910 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2910 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2911 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter43) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread47, true, false, ____chimes_parent_stack_depth47, ____chimes_region_id47, 1, &length); ____chimes_first_iter43 = 0; } if (____chimes_replaying) { chimes_error(); }
+        for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter43) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread47, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth47, ____chimes_region_id47, 1, &length); ____chimes_first_iter43 = 0; } if (____chimes_replaying) { chimes_error(); }
 # 2912 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
                  Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2913 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"

@@ -303,6 +303,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                 pragma_name == "for");
         bool is_critical = (pragma_name == "critical");
         bool is_barrier = (pragma_name == "barrier");
+        bool spawns_threads = (pragma_name == "parallel");
         if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
             llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
             assert(false);
@@ -417,7 +418,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         }
         register_ss << " " <<
             "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-            parent_thread_varname << ", " <<
+            parent_thread_varname << ", " << "LIBCHIMES_NUM_THREADS(), " <<
+            (spawns_threads ? "true" : "false") << ", " <<
             (is_parallel_for ? "true" : "false") << ", " <<
             (is_critical ? "true" : "false") << ", " <<
             stack_depth_varname << ", " << region_id_varname << ", " <<
