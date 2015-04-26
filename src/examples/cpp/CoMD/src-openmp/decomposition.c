@@ -4,6 +4,7 @@
 /// divided into equal size bricks by a grid that is xproc by yproc by
 /// zproc in size.
 
+#include <stdlib.h>
 #include "decomposition.h"
 
 #include <assert.h>

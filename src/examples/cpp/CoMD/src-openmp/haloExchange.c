@@ -28,6 +28,7 @@
 /// network links would likely benefit from alternate halo exchange
 /// strategies that send independent messages to each neighbor task.
 
+#include <stdlib.h>
 #include "haloExchange.h"
 
 #include <assert.h>
