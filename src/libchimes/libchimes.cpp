@@ -90,6 +90,59 @@ using namespace std;
  *
  */
 
+class checkpoint_ctx {
+    public:
+        checkpoint_ctx(size_t set_id, unsigned set_thread_count) : id(set_id),
+            threads_in_checkpoint(0), thread_count(set_thread_count),
+            checkpoint_in_progress(true) { }
+
+        size_t get_id() {
+            return id;
+        }
+        unsigned incr_threads_in_checkpoint() {
+            return (++threads_in_checkpoint);
+        }
+        unsigned decr_threads_in_checkpoint() {
+            return (--threads_in_checkpoint);
+        }
+        void clear_threads_in_checkpoint() {
+            threads_in_checkpoint = 0;
+        }
+        unsigned get_threads_in_checkpoint() {
+            return (threads_in_checkpoint);
+        }
+        void add_entry_time(unsigned tid, clock_t entry) {
+            checkpoint_entry_times.push_back(std::pair<unsigned, clock_t>(tid,
+                        entry));
+        }
+        unsigned get_thread_count() {
+            return (thread_count);
+        }
+        bool is_checkpoint_in_progress() {
+            return (checkpoint_in_progress);
+        }
+        void set_checkpoint_in_progress(bool s) {
+            checkpoint_in_progress = s;
+        }
+        void set_exit_time() {
+            checkpoint_exit_time = clock();
+        }
+        clock_t get_exit_time() {
+            return checkpoint_exit_time;
+        }
+        std::vector<std::pair<unsigned, clock_t> > get_checkpoint_entry_times() {
+            return (checkpoint_entry_times);
+        }
+
+    private:
+        size_t id;
+        unsigned threads_in_checkpoint;
+        unsigned thread_count;
+        bool checkpoint_in_progress;
+        std::vector<std::pair<unsigned, clock_t> > checkpoint_entry_times;
+        clock_t checkpoint_exit_time;
+};
+
 // functions defined in this file
 void new_stack(void *func_ptr, unsigned n_local_arg_aliases, unsigned n_args,
         ...);
@@ -129,7 +182,7 @@ static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
 static thread_ctx *get_my_context();
 static thread_ctx *get_context_for(unsigned tid);
-static bool wait_for_all_threads(clock_t *entry_time);
+static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out);
 
 // global data structures that must persist across library calls
 
@@ -218,11 +271,13 @@ static volatile bool checkpoint_in_progress = false;
  */
 static unsigned thread_count = 1; // start with one thread
 static unsigned regions_initializing = 0;
+static size_t checkpoint_initializing = 0;
 static std::map<size_t, unsigned> regions_counted;
 static pthread_mutex_t thread_count_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t thread_count_cond = PTHREAD_COND_INITIALIZER;
-static std::vector<std::pair<unsigned, clock_t> > checkpoint_entry_times;
-static clock_t checkpoint_exit_time = 0;
+
+static size_t sync_id_counter = 1;
+static std::map<size_t, checkpoint_ctx*> checkpoint_info;
 
 /*
  * Counter for the number of parallel regions entered. Incremented every time we
@@ -1025,7 +1080,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
          *
          * We reuse the logic for checkpoint synchronization here.
          */
-        bool final_thread = wait_for_all_threads(NULL);
+        bool final_thread = wait_for_all_threads(NULL, NULL);
         if (final_thread) {
             fprintf(stderr, "CHIMES exiting, higher stack nesting than "
                     "checkpoint was taken at...\n");
@@ -1068,9 +1123,6 @@ static string get_nested_array_type(string array_type) {
 }
 
 #if 0
-
-
-
 static int get_array_length(string array_type) {
     assert(is_array_type(array_type));
     string remove_braces = array_type.substr(1, array_type.length() - 2);
@@ -1508,36 +1560,51 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
             live_stack_iter == live_stack_end);
 }
 
-static bool wait_for_all_threads(clock_t *entry_ptr) {
+static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 
     assert(pthread_mutex_lock(&thread_count_mutex) == 0);
-    unsigned checkpoint_thread_count = ++threads_in_checkpoint;
+
+    if (checkpoint_initializing == 0) {
+        // first thread in the checkpoint
+        size_t checkpoint_id = sync_id_counter++;
+        checkpoint_initializing = checkpoint_id;
+
+        assert(checkpoint_info.find(checkpoint_id) == checkpoint_info.end());
+        checkpoint_info.insert(std::pair<size_t, checkpoint_ctx*>(checkpoint_id,
+                    new checkpoint_ctx(checkpoint_id, thread_count)));
+    }
+    checkpoint_ctx *curr_ckpt = checkpoint_info.at(checkpoint_initializing);
+
+    unsigned checkpoint_thread_count = curr_ckpt->incr_threads_in_checkpoint();
 
     if (entry_ptr) {
         unsigned tid = get_my_tid();
-        checkpoint_entry_times.push_back(std::pair<unsigned, clock_t>(tid,
-                    *entry_ptr));
+        curr_ckpt->add_entry_time(tid, *entry_ptr);
     }
 
-    if (checkpoint_thread_count == 1) {
-        checkpoint_in_progress = true;
-    }
     bool checkpointing_thread = false;
     if (checkpoint_thread_count != thread_count || regions_initializing) {
-        while (checkpoint_in_progress &&
-                (threads_in_checkpoint != thread_count || regions_initializing)) {
+        while (curr_ckpt->is_checkpoint_in_progress() &&
+                (curr_ckpt->get_threads_in_checkpoint() !=
+                    curr_ckpt->get_thread_count() ||
+                 regions_initializing)) {
             assert(pthread_cond_wait(&thread_count_cond, &thread_count_mutex) == 0);
         }
-        if (threads_in_checkpoint == thread_count) {
+        if (curr_ckpt->is_checkpoint_in_progress() &&
+                curr_ckpt->get_threads_in_checkpoint() ==
+                curr_ckpt->get_thread_count()) {
             checkpointing_thread = true;
         }
     } else {
         checkpointing_thread = true;
     }
     if (checkpointing_thread) {
-        threads_in_checkpoint = 0;
+        checkpoint_initializing = 0;
     }
 
+    if (out) {
+        *out = curr_ckpt;
+    }
     return (checkpointing_thread);
 }
 
@@ -1550,8 +1617,9 @@ void checkpoint() {
     clock_t enter_time = clock();
     new_stack((void *)checkpoint, 0, 0);
     const bool was_a_replay = ____chimes_replaying;
+    checkpoint_ctx *curr_ckpt;
 
-    bool checkpointing_thread = wait_for_all_threads(&enter_time);
+    bool checkpointing_thread = wait_for_all_threads(&enter_time, &curr_ckpt);
 
     /*
      * On replay, the last thread to hit the checkpoint will skip the wait loop
@@ -1678,7 +1746,6 @@ void checkpoint() {
              * returning.
              */
 
-            //TODO use change aliases to reduce checkpoint size
             set<size_t> *all_changed = new set<size_t>();
             for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
                     e = thread_ctxs.end(); i != e; i++) {
@@ -1741,11 +1808,10 @@ void checkpoint() {
 
             checkpoint_ctx->checkpoint_entry_times =
                 new std::vector<std::pair<unsigned, clock_t> >(
-                        checkpoint_entry_times);
+                        curr_ckpt->get_checkpoint_entry_times());
             std::sort(checkpoint_ctx->checkpoint_entry_times->begin(),
                     checkpoint_ctx->checkpoint_entry_times->end(),
                     compare_entry_times);
-            checkpoint_entry_times.clear();
 
             checkpoint_ctx->stack_trackers = new map<unsigned, vector<int> *>();
             for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
@@ -1772,18 +1838,28 @@ void checkpoint() {
     }
 
     if (checkpointing_thread) {
-        checkpoint_in_progress = false;
+        curr_ckpt->set_checkpoint_in_progress(false);
         if (was_a_replay) {
-            checkpoint_exit_time = clock();
+            curr_ckpt->set_exit_time();
         }
         assert(pthread_cond_broadcast(&thread_count_cond) == 0);
     }
+    clock_t exit_time;
+    if (was_a_replay) {
+        exit_time = curr_ckpt->get_exit_time();
+        unsigned nthreads_left = curr_ckpt->decr_threads_in_checkpoint();
+        if (nthreads_left == 0) {
+            // Free checkpoint metadata and remove from checkpoint_info
+            assert(checkpoint_info.erase(curr_ckpt->get_id()) == 1);
+            delete curr_ckpt;
+        }
+    }
+
     assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     if (was_a_replay) {
-        assert(checkpoint_exit_time);
         clock_t my_delta = checkpoint_entry_deltas->at(get_my_tid());
-        while (clock() - checkpoint_exit_time < my_delta) ;
+        while (clock() - exit_time < my_delta) ;
     }
 
     rm_stack(false, 0);
