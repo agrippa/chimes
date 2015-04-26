@@ -1,80 +1,80 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 90 4 alias_group_changed(3, (size_t)(13807915916850227991UL), (size_t)(13807915916850227992UL), (size_t)(13807915916850227993UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 103 4 alias_group_changed(1, (size_t)(13807915916850227995UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 104 4 alias_group_changed(1, (size_t)(13807915916850227995UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 107 4 alias_group_changed(1, (size_t)(13807915916850227997UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 115 4 alias_group_changed(3, (size_t)(13807915916850227998UL), (size_t)(13807915916850227999UL), (size_t)(13807915916850228000UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 7 alias_group_changed(1, (size_t)(13807915916850228000UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 alias_group_changed(2, (size_t)(13807915916850228135UL), (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 187 4 alias_group_changed(2, (size_t)(13807915916850228136UL), (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 196 4 alias_group_changed(2, (size_t)(13807915916850228138UL), (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 4 alias_group_changed(1, (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 200 4 alias_group_changed(1, (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 203 4 alias_group_changed(1, (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 210 9 alias_group_changed(1, (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 233 4 alias_group_changed(3, (size_t)(13807915916850229003UL), (size_t)(13807915916850229004UL), (size_t)(13807915916850229005UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 16 alias_group_changed(5, (size_t)(13807915916850229075UL), (size_t)(13807915916850229076UL), (size_t)(13807915916850229077UL), (size_t)(13807915916850229078UL), (size_t)(13807915916850229079UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 69 alias_group_changed(5, (size_t)(13807915916850229075UL), (size_t)(13807915916850229076UL), (size_t)(13807915916850229077UL), (size_t)(13807915916850229078UL), (size_t)(13807915916850229079UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 271 4 alias_group_changed(1, (size_t)(13807915916850229079UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 279 4 alias_group_changed(2, (size_t)(13807915916850229277UL), (size_t)(13807915916850229278UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 288 4 alias_group_changed(1, (size_t)(13807915916850228670UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 293 8 alias_group_changed(2, (size_t)(13807915916850228671UL), (size_t)(13807915916850228677UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 306 8 alias_group_changed(2, (size_t)(13807915916850228918UL), (size_t)(13807915916850228919UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 342 9 alias_group_changed(3, (size_t)(13807915916850228726UL), (size_t)(13807915916850228727UL), (size_t)(13807915916850228772UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 4 alias_group_changed(5, (size_t)(13807915916850228785UL), (size_t)(13807915916850228786UL), (size_t)(13807915916850228787UL), (size_t)(13807915916850228788UL), (size_t)(13807915916850229368UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 369 7 alias_group_changed(1, (size_t)(13807915916850229368UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 4 alias_group_changed(2, (size_t)(13807915916850228331UL), (size_t)(13807915916850228332UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 392 4 alias_group_changed(1, (size_t)(13807915916850228333UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 432 4 alias_group_changed(8, (size_t)(13807915916850228334UL), (size_t)(13807915916850228335UL), (size_t)(13807915916850228336UL), (size_t)(13807915916850228337UL), (size_t)(13807915916850228338UL), (size_t)(13807915916850228339UL), (size_t)(13807915916850228340UL), (size_t)(13807915916850228341UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 449 4 alias_group_changed(5, (size_t)(13807915916850229119UL), (size_t)(13807915916850229120UL), (size_t)(13807915916850229121UL), (size_t)(13807915916850229122UL), (size_t)(13807915916850229123UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 452 11 alias_group_changed(1, (size_t)(13807915916850229122UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 11 alias_group_changed(7, (size_t)(13807915916850229122UL), (size_t)(13807915916850229124UL), (size_t)(13807915916850229125UL), (size_t)(13807915916850229126UL), (size_t)(13807915916850229127UL), (size_t)(13807915916850229128UL), (size_t)(13807915916850229129UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 476 8 alias_group_changed(7, (size_t)(13807915916850229122UL), (size_t)(13807915916850229124UL), (size_t)(13807915916850229125UL), (size_t)(13807915916850229126UL), (size_t)(13807915916850229127UL), (size_t)(13807915916850229128UL), (size_t)(13807915916850229129UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 479 11 alias_group_changed(1, (size_t)(13807915916850229122UL)) || 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 485 4 alias_group_changed(1, (size_t)(13807915916850229130UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 alias_group_changed(2, (size_t)(13807915916850228126UL), (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 187 4 alias_group_changed(2, (size_t)(13807915916850228127UL), (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 196 4 alias_group_changed(2, (size_t)(13807915916850228129UL), (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 4 alias_group_changed(1, (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 200 4 alias_group_changed(1, (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 203 4 alias_group_changed(1, (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 210 9 alias_group_changed(1, (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 233 4 alias_group_changed(3, (size_t)(13807915916850228993UL), (size_t)(13807915916850228994UL), (size_t)(13807915916850228995UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 16 alias_group_changed(5, (size_t)(13807915916850229065UL), (size_t)(13807915916850229066UL), (size_t)(13807915916850229067UL), (size_t)(13807915916850229068UL), (size_t)(13807915916850229069UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 69 alias_group_changed(5, (size_t)(13807915916850229065UL), (size_t)(13807915916850229066UL), (size_t)(13807915916850229067UL), (size_t)(13807915916850229068UL), (size_t)(13807915916850229069UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 271 4 alias_group_changed(1, (size_t)(13807915916850229069UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 279 4 alias_group_changed(2, (size_t)(13807915916850229267UL), (size_t)(13807915916850229268UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 288 4 alias_group_changed(1, (size_t)(13807915916850228661UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 293 8 alias_group_changed(2, (size_t)(13807915916850228662UL), (size_t)(13807915916850228668UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 306 8 alias_group_changed(2, (size_t)(13807915916850228909UL), (size_t)(13807915916850228910UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 342 9 alias_group_changed(3, (size_t)(13807915916850228717UL), (size_t)(13807915916850228718UL), (size_t)(13807915916850228763UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 4 alias_group_changed(5, (size_t)(13807915916850228776UL), (size_t)(13807915916850228777UL), (size_t)(13807915916850228778UL), (size_t)(13807915916850228779UL), (size_t)(13807915916850229357UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 369 7 alias_group_changed(1, (size_t)(13807915916850229357UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 4 alias_group_changed(2, (size_t)(13807915916850228322UL), (size_t)(13807915916850228323UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 392 4 alias_group_changed(1, (size_t)(13807915916850228324UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 432 4 alias_group_changed(8, (size_t)(13807915916850228325UL), (size_t)(13807915916850228326UL), (size_t)(13807915916850228327UL), (size_t)(13807915916850228328UL), (size_t)(13807915916850228329UL), (size_t)(13807915916850228330UL), (size_t)(13807915916850228331UL), (size_t)(13807915916850228332UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 449 4 alias_group_changed(5, (size_t)(13807915916850229109UL), (size_t)(13807915916850229110UL), (size_t)(13807915916850229111UL), (size_t)(13807915916850229112UL), (size_t)(13807915916850229113UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 452 11 alias_group_changed(1, (size_t)(13807915916850229112UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 11 alias_group_changed(7, (size_t)(13807915916850229112UL), (size_t)(13807915916850229114UL), (size_t)(13807915916850229115UL), (size_t)(13807915916850229116UL), (size_t)(13807915916850229117UL), (size_t)(13807915916850229118UL), (size_t)(13807915916850229119UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 476 8 alias_group_changed(7, (size_t)(13807915916850229112UL), (size_t)(13807915916850229114UL), (size_t)(13807915916850229115UL), (size_t)(13807915916850229116UL), (size_t)(13807915916850229117UL), (size_t)(13807915916850229118UL), (size_t)(13807915916850229119UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 479 11 alias_group_changed(1, (size_t)(13807915916850229112UL)) || 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 485 4 alias_group_changed(1, (size_t)(13807915916850229120UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 148 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 148 9 , 13807915916850228036UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 148 9 , 13807915916850228029UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 29 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 50 , 13807915916850228308UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 50 , 13807915916850228299UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 232 14 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 232 19 , 13807915916850229023UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 232 19 , 13807915916850229013UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 236 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 236 12 , 13807915916850229023UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 236 12 , 13807915916850229013UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 237 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 237 12 , 13807915916850229023UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 237 12 , 13807915916850229013UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 238 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 238 9 , 13807915916850229014UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 238 9 , 13807915916850229004UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 41 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 66 , 13807915916850229282UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 66 , 13807915916850229272UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 31 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 53 , 13807915916850228677UL, 0, 1, (int)sizeof(struct ValidateSt), 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 53 , 13807915916850228668UL, 0, 1, (int)sizeof(struct ValidateSt), 0
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 154 4 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 1 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(13807915916850228120UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 220 4 rm_stack(true, 13807915916850228308UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 169 1 new_stack((void *)(&initSimulation), 1, 0, (size_t)(13807915916850228325UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 226 14 alias_group_changed(3, (size_t)(13807915916850229003UL), (size_t)(13807915916850229004UL), (size_t)(13807915916850229059UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 13 alias_group_changed(3, (size_t)(13807915916850229003UL), (size_t)(13807915916850229004UL), (size_t)(13807915916850229059UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 241 4 alias_group_changed(3, (size_t)(13807915916850229003UL), (size_t)(13807915916850229004UL), (size_t)(13807915916850229059UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 225 1 new_stack((void *)(&destroySimulation), 1, 1, (size_t)(13807915916850229059UL), "destroySimulation|ps|0", "%struct.SimFlatSt**", (void *)(&ps), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 1 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(13807915916850228111UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 220 4 rm_stack(true, 13807915916850228299UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 169 1 new_stack((void *)(&initSimulation), 1, 0, (size_t)(13807915916850228316UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 226 14 alias_group_changed(3, (size_t)(13807915916850228993UL), (size_t)(13807915916850228994UL), (size_t)(13807915916850229049UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 13 alias_group_changed(3, (size_t)(13807915916850228993UL), (size_t)(13807915916850228994UL), (size_t)(13807915916850229049UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 241 4 alias_group_changed(3, (size_t)(13807915916850228993UL), (size_t)(13807915916850228994UL), (size_t)(13807915916850229049UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 225 1 new_stack((void *)(&destroySimulation), 1, 1, (size_t)(13807915916850229049UL), "destroySimulation|ps|0", "%struct.SimFlatSt**", (void *)(&ps), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 245 1 new_stack((void *)(&initSubsystems), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 251 1 rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 254 1 new_stack((void *)(&finalizeSubsystems), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 259 1 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 272 4 alias_group_changed(1, (size_t)(13807915916850229079UL)); rm_stack(true, 13807915916850229113UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 264 1 new_stack((void *)(&initPotential), 4, 4, (size_t)(0UL), (size_t)(13807915916850229116UL), (size_t)(13807915916850229117UL), (size_t)(13807915916850229118UL), "initPotential|doeam|0", "i32", (void *)(&doeam), (size_t)4, 0, 0, 0, "initPotential|potDir|0", "i8*", (void *)(&potDir), (size_t)8, 1, 0, 0, "initPotential|potName|0", "i8*", (void *)(&potName), (size_t)8, 1, 0, 0, "initPotential|potType|0", "i8*", (void *)(&potType), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 283 4 alias_group_changed(1, (size_t)(13807915916850229282UL)); rm_stack(true, 13807915916850229282UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 276 1 new_stack((void *)(&initSpecies), 1, 1, (size_t)(13807915916850229306UL), "initSpecies|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 301 4 rm_stack(true, 13807915916850228677UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 1 new_stack((void *)(&initValidate), 1, 1, (size_t)(13807915916850228725UL), "initValidate|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 305 1 new_stack((void *)(&validateResult), 2, 2, (size_t)(13807915916850228998UL), (size_t)(13807915916850228999UL), "validateResult|val|0", "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0, "validateResult|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 331 1 alias_group_changed(2, (size_t)(13807915916850228920UL), (size_t)(13807915916850228921UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 334 1 new_stack((void *)(&sumAtoms), 1, 1, (size_t)(13807915916850228770UL), "sumAtoms|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 272 4 alias_group_changed(1, (size_t)(13807915916850229069UL)); rm_stack(true, 13807915916850229103UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 264 1 new_stack((void *)(&initPotential), 4, 4, (size_t)(0UL), (size_t)(13807915916850229106UL), (size_t)(13807915916850229107UL), (size_t)(13807915916850229108UL), "initPotential|doeam|0", "i32", (void *)(&doeam), (size_t)4, 0, 0, 0, "initPotential|potDir|0", "i8*", (void *)(&potDir), (size_t)8, 1, 0, 0, "initPotential|potName|0", "i8*", (void *)(&potName), (size_t)8, 1, 0, 0, "initPotential|potType|0", "i8*", (void *)(&potType), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 283 4 alias_group_changed(1, (size_t)(13807915916850229272UL)); rm_stack(true, 13807915916850229272UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 276 1 new_stack((void *)(&initSpecies), 1, 1, (size_t)(13807915916850229296UL), "initSpecies|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 301 4 rm_stack(true, 13807915916850228668UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 1 new_stack((void *)(&initValidate), 1, 1, (size_t)(13807915916850228716UL), "initValidate|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 305 1 new_stack((void *)(&validateResult), 2, 2, (size_t)(13807915916850228989UL), (size_t)(13807915916850228990UL), "validateResult|val|0", "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0, "validateResult|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 331 1 alias_group_changed(2, (size_t)(13807915916850228911UL), (size_t)(13807915916850228912UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 334 1 new_stack((void *)(&sumAtoms), 1, 1, (size_t)(13807915916850228761UL), "sumAtoms|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 345 1 rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 217 alias_group_changed(6, (size_t)(13807915916850228789UL), (size_t)(13807915916850228790UL), (size_t)(13807915916850228791UL), (size_t)(13807915916850228792UL), (size_t)(13807915916850228793UL), (size_t)(13807915916850228794UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 1 new_stack((void *)(&printThings), 3, 3, (size_t)(13807915916850228911UL), (size_t)(0UL), (size_t)(0UL), "printThings|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "printThings|iStep|0", "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "printThings|elapsedTime|0", "double", (void *)(&elapsedTime), (size_t)8, 0, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 382 1 alias_group_changed(6, (size_t)(13807915916850228789UL), (size_t)(13807915916850228790UL), (size_t)(13807915916850228791UL), (size_t)(13807915916850228792UL), (size_t)(13807915916850228793UL), (size_t)(13807915916850228794UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 217 alias_group_changed(6, (size_t)(13807915916850228780UL), (size_t)(13807915916850228781UL), (size_t)(13807915916850228782UL), (size_t)(13807915916850228783UL), (size_t)(13807915916850228784UL), (size_t)(13807915916850228785UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 1 new_stack((void *)(&printThings), 3, 3, (size_t)(13807915916850228902UL), (size_t)(0UL), (size_t)(0UL), "printThings|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "printThings|iStep|0", "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "printThings|elapsedTime|0", "double", (void *)(&elapsedTime), (size_t)8, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 382 1 alias_group_changed(6, (size_t)(13807915916850228780UL), (size_t)(13807915916850228781UL), (size_t)(13807915916850228782UL), (size_t)(13807915916850228783UL), (size_t)(13807915916850228784UL), (size_t)(13807915916850228785UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 392 81 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 387 1 new_stack((void *)(&printSimulationDataYaml), 2, 2, (size_t)(13807915916850228668UL), (size_t)(13807915916850228669UL), "printSimulationDataYaml|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printSimulationDataYaml|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 387 1 new_stack((void *)(&printSimulationDataYaml), 2, 2, (size_t)(13807915916850228659UL), (size_t)(13807915916850228660UL), "printSimulationDataYaml|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printSimulationDataYaml|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 440 1 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 1 new_stack((void *)(&sanityChecks), 4, 3, (size_t)(13807915916850229273UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229276UL), "sanityChecks|cutoff|0", "double", (void *)(&cutoff), (size_t)8, 0, 0, 0, "sanityChecks|latticeConst|0", "double", (void *)(&latticeConst), (size_t)8, 0, 0, 0, "sanityChecks|latticeType|0", "i8*", (void *)(&latticeType), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 1 new_stack((void *)(&sanityChecks), 4, 3, (size_t)(13807915916850229263UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229266UL), "sanityChecks|cutoff|0", "double", (void *)(&cutoff), (size_t)8, 0, 0, 0, "sanityChecks|latticeConst|0", "double", (void *)(&latticeConst), (size_t)8, 0, 0, 0, "sanityChecks|latticeType|0", "i8*", (void *)(&latticeType), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 492 1 rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 1 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 4  Command cmd;  cmd = Command(parseCommandLine(argc, argv)) ;
@@ -89,7 +89,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 34 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 114 4  int iStep;  iStep = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 114 17 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 4  SimFlat *sim;  sim = ((SimFlat *)malloc_wrapper(sizeof(SimFlat), 13807915916850228308UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange))) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 4  SimFlat *sim;  sim = ((SimFlat *)malloc_wrapper(sizeof(SimFlat), 13807915916850228299UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 432 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 182 4  real_t latticeConstant;  latticeConstant = (cmd.lat) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 182 36 
@@ -101,9 +101,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 231 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 231 31 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 265 4  BasePotential *pot;  pot = (__null) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 265 31 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 4  SpeciesData *species;  species = ((SpeciesData *)malloc_wrapper(sizeof(SpeciesData), 13807915916850229282UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0)) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 4  SpeciesData *species;  species = ((SpeciesData *)malloc_wrapper(sizeof(SpeciesData), 13807915916850229272UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 144 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 4  Validate *val;  val = ((Validate *)malloc_wrapper(sizeof(Validate), 13807915916850228677UL, 0, 1, (int)sizeof(struct ValidateSt), 0)) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 4  Validate *val;  val = ((Validate *)malloc_wrapper(sizeof(Validate), 13807915916850228668UL, 0, 1, (int)sizeof(struct ValidateSt), 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 128 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 308 7  real_t eFinal;  eFinal = ((sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 308 78 
@@ -170,41 +170,37 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 484 28
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 90 130  call_lbl_3: calling((void*)&initParallel, 3, 0UL, 2, (size_t)(13807915916850227992UL), (size_t)(13807915916850227993UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 91 4  call_lbl_4: calling((void*)&profileStart, 4, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 92 4  call_lbl_5: calling((void*)&initSubsystems, 5, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 93 4  call_lbl_6: calling((void*)&timestampBarrier, 6, 0UL, 1, (size_t)(13807915916850229345UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 95 4  call_lbl_7: calling((void*)&yamlAppInfo, 7, 0UL, 1, (size_t)(13807915916850228895UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 96 4  call_lbl_8: calling((void*)&yamlAppInfo, 8, 0UL, 1, (size_t)(13807915916850228895UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 19  call_lbl_10: calling((void*)&parseCommandLine, 10, 0UL, 3, (size_t)(13807915916850227994UL), (size_t)(0UL), (size_t)(13807915916850228120UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 99 4  call_lbl_11: calling((void*)&printCmdYaml, 11, 0UL, 2, (size_t)(13807915916850228895UL), (size_t)(13807915916850227994UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 100 4  call_lbl_12: calling((void*)&printCmdYaml, 12, 0UL, 2, (size_t)(13807915916850228895UL), (size_t)(13807915916850227994UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 20  call_lbl_13: calling((void*)&initSimulation, 13, 13807915916850228061UL, 1, (size_t)(13807915916850227996UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 103 62  call_lbl_15: calling((void*)&printSimulationDataYaml, 15, 0UL, 2, (size_t)(13807915916850228895UL), (size_t)(13807915916850228061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 104 4  call_lbl_16: calling((void*)&printSimulationDataYaml, 16, 0UL, 2, (size_t)(13807915916850228895UL), (size_t)(13807915916850228061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 106 26  call_lbl_17: calling((void*)&initValidate, 17, 13807915916850228036UL, 1, (size_t)(13807915916850228061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 107 62  call_lbl_19: calling((void*)&timestampBarrier, 19, 0UL, 1, (size_t)(13807915916850229345UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 109 4  call_lbl_20: calling((void*)&timestampBarrier, 20, 0UL, 1, (size_t)(13807915916850229349UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 115 130  call_lbl_22: calling((void*)&profileStart, 22, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 118 12  call_lbl_23: calling((void*)&profileStart, 23, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 119 7  call_lbl_24: calling((void*)&sumAtoms, 24, 0UL, 1, (size_t)(13807915916850228061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 12  call_lbl_25: calling((void*)&profileStop, 25, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 7  call_lbl_26: calling((void*)&printThings, 26, 0UL, 3, (size_t)(13807915916850228061UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 7  call_lbl_27: calling((void*)&getElapsedTime, 27, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 124 12  call_lbl_28: calling((void*)&profileStart, 28, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 125 7  call_lbl_29: calling((void*)&timestep, 29, 0UL, 3, (size_t)(13807915916850228061UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 126 12  call_lbl_30: calling((void*)&profileStop, 30, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 65  call_lbl_32: calling((void*)&checkpoint, 32, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 134 4  call_lbl_33: calling((void*)&profileStop, 33, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 136 4  call_lbl_34: calling((void*)&sumAtoms, 34, 0UL, 1, (size_t)(13807915916850228061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 137 4  call_lbl_35: calling((void*)&printThings, 35, 0UL, 3, (size_t)(13807915916850228061UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 137 4  call_lbl_36: calling((void*)&getElapsedTime, 36, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 138 4  call_lbl_37: calling((void*)&timestampBarrier, 37, 0UL, 1, (size_t)(13807915916850229350UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 141 4  call_lbl_38: calling((void*)&validateResult, 38, 0UL, 2, (size_t)(13807915916850228036UL), (size_t)(13807915916850228061UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 142 4  call_lbl_39: calling((void*)&profileStop, 39, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 144 4  call_lbl_40: calling((void*)&printPerformanceResults, 40, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 145 4  call_lbl_41: calling((void*)&printPerformanceResultsYaml, 41, 0UL, 1, (size_t)(13807915916850228895UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 147 4  call_lbl_42: calling((void*)&destroySimulation, 42, 0UL, 1, (size_t)(13807915916850227995UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 149 4  call_lbl_44: calling((void*)&finalizeSubsystems, 44, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 151 4  call_lbl_45: calling((void*)&timestampBarrier, 45, 0UL, 1, (size_t)(13807915916850229351UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 152 4  call_lbl_46: calling((void*)&destroyParallel, 46, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 93 4  call_lbl_6: calling((void*)&timestampBarrier, 6, 0UL, 1, (size_t)(13807915916850229335UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 96 4  call_lbl_7: calling((void*)&yamlAppInfo, 7, 0UL, 1, (size_t)(13807915916850228886UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 19  call_lbl_9: calling((void*)&parseCommandLine, 9, 0UL, 3, (size_t)(13807915916850227994UL), (size_t)(0UL), (size_t)(13807915916850228111UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 100 4  call_lbl_10: calling((void*)&printCmdYaml, 10, 0UL, 2, (size_t)(13807915916850228886UL), (size_t)(13807915916850227994UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 20  call_lbl_11: calling((void*)&initSimulation, 11, 13807915916850228054UL, 1, (size_t)(13807915916850227996UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 104 62  call_lbl_13: calling((void*)&printSimulationDataYaml, 13, 0UL, 2, (size_t)(13807915916850228886UL), (size_t)(13807915916850228054UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 106 26  call_lbl_14: calling((void*)&initValidate, 14, 13807915916850228029UL, 1, (size_t)(13807915916850228054UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 107 62  call_lbl_16: calling((void*)&timestampBarrier, 16, 0UL, 1, (size_t)(13807915916850229335UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 109 4  call_lbl_17: calling((void*)&timestampBarrier, 17, 0UL, 1, (size_t)(13807915916850229338UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 115 130  call_lbl_19: calling((void*)&profileStart, 19, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 118 12  call_lbl_20: calling((void*)&profileStart, 20, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 119 7  call_lbl_21: calling((void*)&sumAtoms, 21, 0UL, 1, (size_t)(13807915916850228054UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 12  call_lbl_22: calling((void*)&profileStop, 22, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 7  call_lbl_23: calling((void*)&printThings, 23, 0UL, 3, (size_t)(13807915916850228054UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 7  call_lbl_24: calling((void*)&getElapsedTime, 24, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 124 12  call_lbl_25: calling((void*)&profileStart, 25, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 125 7  call_lbl_26: calling((void*)&timestep, 26, 0UL, 3, (size_t)(13807915916850228054UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 126 12  call_lbl_27: calling((void*)&profileStop, 27, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 65  call_lbl_29: calling((void*)&checkpoint, 29, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 134 4  call_lbl_30: calling((void*)&profileStop, 30, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 136 4  call_lbl_31: calling((void*)&sumAtoms, 31, 0UL, 1, (size_t)(13807915916850228054UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 137 4  call_lbl_32: calling((void*)&printThings, 32, 0UL, 3, (size_t)(13807915916850228054UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 137 4  call_lbl_33: calling((void*)&getElapsedTime, 33, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 138 4  call_lbl_34: calling((void*)&timestampBarrier, 34, 0UL, 1, (size_t)(13807915916850229339UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 141 4  call_lbl_35: calling((void*)&validateResult, 35, 0UL, 2, (size_t)(13807915916850228029UL), (size_t)(13807915916850228054UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 142 4  call_lbl_36: calling((void*)&profileStop, 36, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 144 4  call_lbl_37: calling((void*)&printPerformanceResults, 37, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 147 4  call_lbl_38: calling((void*)&destroySimulation, 38, 0UL, 1, (size_t)(13807915916850227995UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 149 4  call_lbl_40: calling((void*)&finalizeSubsystems, 40, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 151 4  call_lbl_41: calling((void*)&timestampBarrier, 41, 0UL, 1, (size_t)(13807915916850229340UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 152 4  call_lbl_42: calling((void*)&destroyParallel, 42, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 16  register_stack_var("main|cmd|0", "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 16  if (____chimes_replaying) { goto lbl_1; } 
@@ -222,25 +218,25 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 18  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 114 5  lbl_5: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 114 14  register_stack_var("main|iStep|0", "i32", (void *)(&iStep), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 114 14  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } case(39): { goto call_lbl_39; } case(40): { goto call_lbl_40; } case(41): { goto call_lbl_41; } case(42): { goto call_lbl_42; } case(44): { goto call_lbl_44; } case(45): { goto call_lbl_45; } case(46): { goto call_lbl_46; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 114 14  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } case(40): { goto call_lbl_40; } case(41): { goto call_lbl_41; } case(42): { goto call_lbl_42; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 217  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 96  call_lbl_3: calling((void*)&initPotential, 3, 13807915916850229391UL, 4, (size_t)(0UL), (size_t)(13807915916850228325UL), (size_t)(13807915916850228325UL), (size_t)(13807915916850228325UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 187 96  call_lbl_5: calling((void*)&sanityChecks, 5, 0UL, 4, (size_t)(13807915916850228137UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229391UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 189 4  call_lbl_6: calling((void*)&initSpecies, 6, 13807915916850229391UL, 1, (size_t)(13807915916850229391UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 196 96  call_lbl_8: calling((void*)&initDecomposition, 8, 13807915916850229391UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228138UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 62  call_lbl_10: calling((void*)&initLinkCells, 10, 13807915916850229391UL, 2, (size_t)(13807915916850229391UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 200 62  call_lbl_12: calling((void*)&initAtoms, 12, 13807915916850229391UL, 1, (size_t)(13807915916850229391UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 203 62  call_lbl_14: calling((void*)&createFccLattice, 14, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228308UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 4  call_lbl_15: calling((void*)&setTemperature, 15, 0UL, 2, (size_t)(13807915916850228308UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 205 4  call_lbl_16: calling((void*)&randomDisplacements, 16, 0UL, 2, (size_t)(13807915916850228308UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 207 4  call_lbl_17: calling((void*)&initAtomHaloExchange, 17, 13807915916850229391UL, 2, (size_t)(13807915916850229391UL), (size_t)(13807915916850229391UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 96  call_lbl_3: calling((void*)&initPotential, 3, 13807915916850229380UL, 4, (size_t)(0UL), (size_t)(13807915916850228316UL), (size_t)(13807915916850228316UL), (size_t)(13807915916850228316UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 187 96  call_lbl_5: calling((void*)&sanityChecks, 5, 0UL, 4, (size_t)(13807915916850228128UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229380UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 189 4  call_lbl_6: calling((void*)&initSpecies, 6, 13807915916850229380UL, 1, (size_t)(13807915916850229380UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 196 96  call_lbl_8: calling((void*)&initDecomposition, 8, 13807915916850229380UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228129UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 62  call_lbl_10: calling((void*)&initLinkCells, 10, 13807915916850229380UL, 2, (size_t)(13807915916850229380UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 200 62  call_lbl_12: calling((void*)&initAtoms, 12, 13807915916850229380UL, 1, (size_t)(13807915916850229380UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 203 62  call_lbl_14: calling((void*)&createFccLattice, 14, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228299UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 4  call_lbl_15: calling((void*)&setTemperature, 15, 0UL, 2, (size_t)(13807915916850228299UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 205 4  call_lbl_16: calling((void*)&randomDisplacements, 16, 0UL, 2, (size_t)(13807915916850228299UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 207 4  call_lbl_17: calling((void*)&initAtomHaloExchange, 17, 13807915916850229380UL, 2, (size_t)(13807915916850229380UL), (size_t)(13807915916850229380UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 210 67  call_lbl_19: calling((void*)&profileStart, 19, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 211 4  call_lbl_20: calling((void*)&redistributeAtoms, 20, 0UL, 1, (size_t)(13807915916850228308UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 211 4  call_lbl_20: calling((void*)&redistributeAtoms, 20, 0UL, 1, (size_t)(13807915916850228299UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 212 9  call_lbl_21: calling((void*)&profileStop, 21, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 214 9  call_lbl_22: calling((void*)&profileStart, 22, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 215 4  call_lbl_23: calling((void*)&computeForce, 23, 0UL, 1, (size_t)(13807915916850228308UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 215 4  call_lbl_23: calling((void*)&computeForce, 23, 0UL, 1, (size_t)(13807915916850228299UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 216 9  call_lbl_24: calling((void*)&profileStop, 24, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 218 4  call_lbl_25: calling((void*)&kineticEnergy, 25, 0UL, 1, (size_t)(13807915916850228308UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 218 4  call_lbl_25: calling((void*)&kineticEnergy, 25, 0UL, 1, (size_t)(13807915916850228299UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 17  register_stack_var("initSimulation|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 170 17  if (____chimes_replaying) { goto lbl_1; } 
@@ -251,9 +247,9 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 191 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 191 22  register_stack_var("initSimulation|globalExtent|0", "[3 x double]", (void *)(globalExtent), (size_t)24, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 191 22  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 169 78  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 233 130  call_lbl_7: calling((void*)&destroyLinkCells, 7, 0UL, 1, (size_t)(13807915916850229014UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 234 4  call_lbl_8: calling((void*)&destroyAtoms, 8, 0UL, 1, (size_t)(13807915916850229023UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 235 4  call_lbl_9: calling((void*)&destroyHaloExchange, 9, 0UL, 1, (size_t)(13807915916850229014UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 233 130  call_lbl_7: calling((void*)&destroyLinkCells, 7, 0UL, 1, (size_t)(13807915916850229004UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 234 4  call_lbl_8: calling((void*)&destroyAtoms, 8, 0UL, 1, (size_t)(13807915916850229013UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 235 4  call_lbl_9: calling((void*)&destroyHaloExchange, 9, 0UL, 1, (size_t)(13807915916850229004UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 15  register_stack_var("destroySimulation|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 15  if (____chimes_replaying) { goto lbl_1; } 
@@ -265,20 +261,20 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 250 4  cal
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 245 44  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 258 4  call_lbl_1: calling((void*)&yamlEnd, 1, 0UL, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 254 48  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 210  call_lbl_2: calling((void*)&initEamPot, 2, 13807915916850229113UL, 3, (size_t)(13807915916850229116UL), (size_t)(13807915916850229117UL), (size_t)(13807915916850229118UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 457  call_lbl_4: calling((void*)&initLjPot, 4, 13807915916850229113UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 210  call_lbl_2: calling((void*)&initEamPot, 2, 13807915916850229103UL, 3, (size_t)(13807915916850229106UL), (size_t)(13807915916850229107UL), (size_t)(13807915916850229108UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 457  call_lbl_4: calling((void*)&initLjPot, 4, 13807915916850229103UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 265 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 265 23  register_stack_var("initPotential|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 265 23  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 264 450  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 279 96  call_lbl_3: calling((void*)&strcpy, 3, 13807915916850229291UL, 2, (size_t)(13807915916850229282UL), (size_t)(13807915916850229306UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 279 96  call_lbl_3: calling((void*)&strcpy, 3, 13807915916850229281UL, 2, (size_t)(13807915916850229272UL), (size_t)(13807915916850229296UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 25  register_stack_var("initSpecies|species|0", "%struct.SpeciesDataSt*", (void *)(&species), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 277 25  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 276 160  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 288 62  call_lbl_2: calling((void*)&sumAtoms, 2, 0UL, 1, (size_t)(13807915916850228725UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 288 62  call_lbl_2: calling((void*)&sumAtoms, 2, 0UL, 1, (size_t)(13807915916850228716UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 293 4  call_lbl_5: calling((void*)&printRank, 5, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 296 7  call_lbl_7: calling((void*)&printSeparator, 7, 0UL, 1, (size_t)(13807915916850228895UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 296 7  call_lbl_7: calling((void*)&printSeparator, 7, 0UL, 1, (size_t)(13807915916850228886UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 18  register_stack_var("initValidate|val|0", "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 289 18  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
@@ -292,14 +288,14 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 310 23  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 305 277  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 342 135  call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 343 4  call_lbl_3: calling((void*)&addIntParallel, 3, 0UL, 3, (size_t)(13807915916850228772UL), (size_t)(13807915916850228772UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 343 4  call_lbl_3: calling((void*)&addIntParallel, 3, 0UL, 3, (size_t)(13807915916850228763UL), (size_t)(13807915916850228763UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 344 9  call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 7  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 12  register_stack_var("sumAtoms|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 12  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 334 144  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 198  call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 369 65  call_lbl_7: calling((void*)&fflush, 7, 0UL, 1, (size_t)(13807915916850228895UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 369 65  call_lbl_7: calling((void*)&fflush, 7, 0UL, 1, (size_t)(13807915916850228886UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 357 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 357 14  register_stack_var("printThings|nEval|0", "i32", (void *)(&nEval), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 357 14  if (____chimes_replaying) { goto lbl_1; } 
@@ -322,13 +318,13 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 23  register_stack_var("printThings|timePerAtom|0", "double", (void *)(&timePerAtom), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 23  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 331  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 110  call_lbl_2: calling((void*)&maxOccupancy, 2, 0UL, 1, (size_t)(13807915916850228349UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 110  call_lbl_2: calling((void*)&maxOccupancy, 2, 0UL, 1, (size_t)(13807915916850228340UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 392 62  call_lbl_4: calling((void*)&printRank, 4, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 402 4  call_lbl_10: calling((void*)&printSeparator, 10, 0UL, 1, (size_t)(13807915916850228668UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 417 4  call_lbl_17: calling((void*)&printSeparator, 17, 0UL, 1, (size_t)(13807915916850228668UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 419 4  call_lbl_19: calling((void*)s->pot->print, 19, 0UL, 2, (size_t)(13807915916850228668UL), (size_t)(13807915916850228349UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 432 300  call_lbl_21: calling((void*)&printSeparator, 21, 0UL, 1, (size_t)(13807915916850228668UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 439 4  call_lbl_27: calling((void*)&fflush, 27, 0UL, 1, (size_t)(13807915916850228668UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 402 4  call_lbl_10: calling((void*)&printSeparator, 10, 0UL, 1, (size_t)(13807915916850228659UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 417 4  call_lbl_17: calling((void*)&printSeparator, 17, 0UL, 1, (size_t)(13807915916850228659UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 419 4  call_lbl_19: calling((void*)s->pot->print, 19, 0UL, 2, (size_t)(13807915916850228659UL), (size_t)(13807915916850228340UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 432 300  call_lbl_21: calling((void*)&printSeparator, 21, 0UL, 1, (size_t)(13807915916850228659UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 439 4  call_lbl_27: calling((void*)&fflush, 27, 0UL, 1, (size_t)(13807915916850228659UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 97  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 107  register_stack_var("printSimulationDataYaml|maxOcc|0", "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 107  if (____chimes_replaying) { goto lbl_1; } 
@@ -360,9 +356,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 449 198  call_lbl_2: calling((void*)&getNRanks, 2, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 452 7  call_lbl_4: calling((void*)&printRank, 4, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 7  call_lbl_7: calling((void*)&printRank, 7, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 476 4  call_lbl_10: calling((void*)&strcasecmp, 10, 0UL, 2, (size_t)(13807915916850229276UL), (size_t)(13807915916850229383UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 476 4  call_lbl_10: calling((void*)&strcasecmp, 10, 0UL, 2, (size_t)(13807915916850229266UL), (size_t)(13807915916850229372UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 479 7  call_lbl_12: calling((void*)&printRank, 12, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 485 62  call_lbl_15: calling((void*)&bcastParallel, 15, 0UL, 3, (size_t)(13807915916850229130UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 485 62  call_lbl_15: calling((void*)&bcastParallel, 15, 0UL, 3, (size_t)(13807915916850229120UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 445 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 445 17  register_stack_var("sanityChecks|failCode|0", "i32", (void *)(&failCode), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 445 17  if (____chimes_replaying) { goto lbl_1; } 

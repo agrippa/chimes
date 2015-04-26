@@ -523,7 +523,7 @@ FILE *funopen(const void *,
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h" 2
 
 
-extern FILE* yamlFile;
+
 
 void yamlBegin(void);
 void yamlEnd(void);
@@ -1955,7 +1955,6 @@ int builtWithMpi(void);
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c" 2
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-FILE* yamlFile = __null;
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 static const char* CoMDVersion = "1.1";
@@ -1965,18 +1964,18 @@ static const char* CoMDVariant = "CoMD-openmp";
 # 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 static void getTimeString(char* timestring)
 # 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{new_stack((void *)(&getTimeString), 1, 1, (size_t)(5761392777509905397UL), "getTimeString|timestring|0", "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&getTimeString), 1, 1, (size_t)(5761392777509905392UL), "getTimeString|timestring|0", "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_0: time_t rawtime; register_stack_var("getTimeString|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_1: struct tm *timeinfo; register_stack_var("getTimeString|timeinfo|0", "%struct.tm*", (void *)(&timeinfo), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   alias_group_changed(1, (size_t)(5761392777509905364UL)); call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(5761392777509905365UL)); time(&rawtime);
+   alias_group_changed(1, (size_t)(5761392777509905359UL)); call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(5761392777509905360UL)); time(&rawtime);
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_3: calling((void*)&localtime, 3, 5761392777509905372UL, 1, (size_t)(5761392777509905365UL)); timeinfo = localtime(&rawtime);
+    call_lbl_3: calling((void*)&localtime, 3, 5761392777509905367UL, 1, (size_t)(5761392777509905360UL)); timeinfo = localtime(&rawtime);
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   alias_group_changed(1, (size_t)(5761392777509905366UL)); sprintf(timestring,
+   alias_group_changed(1, (size_t)(5761392777509905361UL)); sprintf(timestring,
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
            "%4d-%02i-%02d, %02d:%02d:%02d",
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -1999,18 +1998,18 @@ void yamlBegin(void)
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 {new_stack((void *)(&yamlBegin), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {alias_group_changed(1, (size_t)(5761392777509905408UL)); rm_stack(false, 0UL); return;; };
+    call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_0: char filename[64]; register_stack_var("yamlBegin|filename|0", "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_1: time_t rawtime; register_stack_var("yamlBegin|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_4: calling((void*)&time, 4, 0UL, 1, (size_t)(5761392777509905246UL)); time (&rawtime);
+    call_lbl_3: calling((void*)&time, 3, 0UL, 1, (size_t)(5761392777509905246UL)); time (&rawtime);
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-     lbl_2: struct tm *ptm; register_stack_var("yamlBegin|ptm|0", "%struct.tm*", (void *)(&ptm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } call_lbl_5: calling((void*)&localtime, 5, 5761392777509905257UL, 1, (size_t)(5761392777509905246UL)); ptm = (localtime(&rawtime)) ;
+     lbl_2: struct tm *ptm; register_stack_var("yamlBegin|ptm|0", "%struct.tm*", (void *)(&ptm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } call_lbl_4: calling((void*)&localtime, 4, 5761392777509905257UL, 1, (size_t)(5761392777509905246UL)); ptm = (localtime(&rawtime)) ;
 # 55 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    lbl_3: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+    lbl_3: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    alias_group_changed(1, (size_t)(5761392777509905247UL)); sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
@@ -2021,21 +2020,20 @@ void yamlBegin(void)
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   yamlFile = fopen(filename, "w");
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-alias_group_changed(1, (size_t)(5761392777509905408UL)); rm_stack(false, 0UL); }
+rm_stack(false, 0UL); }
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void yamlAppInfo(FILE* file)
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{new_stack((void *)(&yamlAppInfo), 1, 1, (size_t)(5761392777509905354UL), "yamlAppInfo|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&yamlAppInfo), 1, 1, (size_t)(5761392777509905349UL), "yamlAppInfo|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   alias_group_changed(1, (size_t)(5761392777509905299UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
+   alias_group_changed(1, (size_t)(5761392777509905294UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_4: calling((void*)&printSeparator, 4, 0UL, 1, (size_t)(5761392777509905354UL)); printSeparator(file);
+    call_lbl_4: calling((void*)&printSeparator, 4, 0UL, 1, (size_t)(5761392777509905349UL)); printSeparator(file);
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Mini-Application Name    : %s\n", CoMDVariant);
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2068,42 +2066,40 @@ void yamlAppInfo(FILE* file)
 # 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_0: char timestring[32]; register_stack_var("yamlAppInfo|timestring|0", "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(23): { goto call_lbl_23; } default: { chimes_error(); } } } ;
 # 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_20: calling((void*)&getTimeString, 20, 0UL, 1, (size_t)(5761392777509905300UL)); getTimeString(timestring);
+    call_lbl_20: calling((void*)&getTimeString, 20, 0UL, 1, (size_t)(5761392777509905295UL)); getTimeString(timestring);
 # 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Run Date/Time: %s\n", timestring);
 # 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file, "\n");
 # 91 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_23: calling((void*)&fflush, 23, 0UL, 1, (size_t)(5761392777509905354UL)); fflush(file);
+    call_lbl_23: calling((void*)&fflush, 23, 0UL, 1, (size_t)(5761392777509905349UL)); fflush(file);
 # 92 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 rm_stack(false, 0UL); }
 # 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void yamlEnd(void)
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{new_stack((void *)(&yamlEnd), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
+{new_stack((void *)(&yamlEnd), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
 # 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_3: calling((void*)&fclose, 3, 0UL, 1, (size_t)(5761392777509905403UL)); fclose(yamlFile);
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 rm_stack(false, 0UL); }
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void printSeparator(FILE* file)
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{new_stack((void *)(&printSeparator), 1, 1, (size_t)(5761392777509905361UL), "printSeparator|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&printSeparator), 1, 1, (size_t)(5761392777509905356UL), "printSeparator|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
       fprintf(file,"\n");
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-alias_group_changed(1, (size_t)(5761392777509905355UL)); rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(5761392777509905350UL)); rm_stack(false, 0UL); }
 
 
 static int module_init() {
-    init_module(5761392777509905244UL, 7, 4, 5761392777509905244UL + 55UL, 5761392777509905244UL + 110UL, 5761392777509905244UL + 122UL, 5761392777509905244UL + 128UL, 5761392777509905244UL + 120UL, 5761392777509905244UL + 153UL, 5761392777509905244UL + 3UL, 5761392777509905244UL + 13UL, 5761392777509905244UL + 111UL, 5761392777509905244UL + 117UL, 5761392777509905244UL + 164UL, 5761392777509905244UL + 159UL, 5761392777509905244UL + 167UL, 5761392777509905244UL + 66UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "tm", 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone));
-    register_global_var("global|yamlFile", "%struct.__sFILE*", (void *)(&yamlFile), 8, 1, 0, 0);
+    init_module(5761392777509905244UL, 6, 4, 5761392777509905244UL + 157UL, 5761392777509905244UL + 61UL, 5761392777509905244UL + 50UL, 5761392777509905244UL + 105UL, 5761392777509905244UL + 115UL, 5761392777509905244UL + 148UL, 5761392777509905244UL + 3UL, 5761392777509905244UL + 13UL, 5761392777509905244UL + 117UL, 5761392777509905244UL + 123UL, 5761392777509905244UL + 106UL, 5761392777509905244UL + 112UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "tm", 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone));
     register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8, 1, 0, 0);
     register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8, 1, 0, 0);
     register_constant(5761392777509905244UL + 0UL, (void *)CoMDVersion, 4);

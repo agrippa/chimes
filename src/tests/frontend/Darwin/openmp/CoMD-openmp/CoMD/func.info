@@ -1,13 +1,13 @@
-main 0 130
+main 0 121
 initSubsystems
-initSimulation 335
-printSimulationDataYaml 550 551
-initValidate 607
-sumAtoms 652
-printThings 793 0 0
-validateResult 880 881
-destroySimulation 941
+initSimulation 326
+printSimulationDataYaml 541 542
+initValidate 598
+sumAtoms 643
+printThings 784 0 0
+validateResult 871 872
+destroySimulation 931
 finalizeSubsystems
-initPotential 0 998 999 1000
-sanityChecks 1155 0 0 1158
-initSpecies 1188
+initPotential 0 988 989 990
+sanityChecks 1145 0 0 1148
+initSpecies 1178
