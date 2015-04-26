@@ -1701,7 +1701,7 @@ void printPerformanceResults(int nGlobalAtoms, int printRate)
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  lbl_3: double totalTime; register_stack_var("printPerformanceResults|totalTime|0", "double", (void *)(&totalTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } totalTime = (perfTimer[ii].total * tick) ;
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%12llu     %8.4f      %8.4f    %8.2f\n", timerName[ii], perfTimer[ii].count, totalTime / (double)perfTimer[ii].count, totalTime, totalTime / loopTime * 100.); };
+ if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%lu     %8.4f      %8.4f    %8.2f\n", timerName[ii], perfTimer[ii].count, totalTime / (double)perfTimer[ii].count, totalTime, totalTime / loopTime * 100.); };
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  } }
 # 146 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1789,7 +1789,7 @@ void printPerformanceResultsYaml(FILE* file)
 # 197 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(file, "  Timer: %s\n", timerName[ii]);
 # 198 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- fprintf(file, "    CallCount:  %""ll" "u""\n", perfTimer[ii].count);
+ fprintf(file, "    CallCount:  %lu\n", perfTimer[ii].count);
 # 199 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(file, "    AvgPerCall: %8.4f\n", totalTime/(double)perfTimer[ii].count);
 # 200 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
