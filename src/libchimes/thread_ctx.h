@@ -57,7 +57,7 @@ class thread_ctx {
         }
 
         size_t get_n_parent_aliases() { return parent_aliases_length; }
-        size_t get_parent_alias(int i) {
+        size_t get_parent_alias(unsigned i) {
             assert(i < parent_aliases_length);
             return parent_aliases[i];
         }
@@ -65,7 +65,7 @@ class thread_ctx {
         void add_parent_alias(size_t alias) {
             parent_aliases[parent_aliases_length++] = alias;
         }
-        void ensure_parent_alias_capacity(int size) {
+        void ensure_parent_alias_capacity(unsigned size) {
             if (size > parent_aliases_capacity) {
                 parent_aliases_capacity *= 2;
                 parent_aliases = (size_t *)realloc(parent_aliases,
@@ -94,17 +94,17 @@ class thread_ctx {
             return parents.size() > 0;
         }
 
-        int get_first_parallel_for_nesting() {
+        unsigned get_first_parallel_for_nesting() {
             return first_parallel_for_nesting;
         }
-        void set_first_parallel_for_nesting(int s) {
+        void set_first_parallel_for_nesting(unsigned s) {
             first_parallel_for_nesting = s;
         }
 
-        int get_first_critical_nesting() {
+        unsigned get_first_critical_nesting() {
             return first_critical_nesting;
         }
-        void set_first_critical_nesting(int s) {
+        void set_first_critical_nesting(unsigned s) {
             first_critical_nesting = s;
         }
 
@@ -161,8 +161,8 @@ class thread_ctx {
         set<size_t> changed_groups;
         int calling_label;
         void *func_ptr;
-        int first_parallel_for_nesting;
-        int first_critical_nesting;
+        unsigned first_parallel_for_nesting;
+        unsigned first_critical_nesting;
 
         size_t *parent_aliases;
         size_t parent_aliases_capacity;

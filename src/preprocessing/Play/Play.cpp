@@ -514,7 +514,7 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
                 assert((size_in_bits % 8) == 0);
                 uint64_t size_in_bytes = size_in_bits / 8;
 
-                fprintf(fp, "%d \"%s\" %llu\n", constant_index,
+                fprintf(fp, "%d \"%s\" %lu\n", constant_index,
                         accessable.c_str(), size_in_bytes);
                 return true;
             } else {
