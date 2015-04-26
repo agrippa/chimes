@@ -1502,9 +1502,7 @@ void bcastParallel(void* buf, int len, int root);
 int builtWithMpi(void);
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c" 2
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h" 1
-# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h"
-extern FILE* yamlFile;
-
+# 12 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.h"
 void yamlBegin(void);
 void yamlEnd(void);
 

@@ -94,15 +94,15 @@ int main(int argc, char** argv)
    initSubsystems();
    timestampBarrier("Starting Initialization\n");
 
-   yamlAppInfo(yamlFile);
+   // yamlAppInfo(yamlFile);
    yamlAppInfo(screenOut);
 
    Command cmd = parseCommandLine(argc, argv);
-   printCmdYaml(yamlFile, &cmd);
+   // printCmdYaml(yamlFile, &cmd);
    printCmdYaml(screenOut, &cmd);
 
    SimFlat* sim = initSimulation(cmd);
-   printSimulationDataYaml(yamlFile, sim);
+   // printSimulationDataYaml(yamlFile, sim);
    printSimulationDataYaml(screenOut, sim);
 
    Validate* validate = initValidate(sim); // atom counts, energy
@@ -144,7 +144,7 @@ int main(int argc, char** argv)
    profileStop(totalTimer);
 
    printPerformanceResults(sim->atoms->nGlobal, sim->printRate);
-   printPerformanceResultsYaml(yamlFile);
+   // printPerformanceResultsYaml(yamlFile);
 
    destroySimulation(&sim);
    free(validate);
