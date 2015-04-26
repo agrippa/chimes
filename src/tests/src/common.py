@@ -42,6 +42,10 @@ class TestConfig(object):
         self.custom_compiler = None
         self.custom_compiler_flags = []
         self.update_tests = update_tests
+        self.force_sequential = False
+
+    def set_force_sequential(self):
+        self.force_sequential = True
 
     def add_custom_compiler_flag(self, flag):
         """
@@ -477,6 +481,9 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     compile_cmd = compile_script_path + ' -k -w ' + FRONTEND_WORKING_DIR + \
                   ' ' + test.extra_cli_args
 
+    if config.force_sequential:
+        compile_cmd += ' -s '
+
     for flag in config.custom_compiler_flags:
         compile_cmd += ' -y ' + flag
 
@@ -618,6 +625,9 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         env['GXX'] = config.custom_compiler
 
     compile_cmd = compile_script_path + ' -k'
+
+    if config.force_sequential:
+        compile_cmd += ' -s '
 
     for flag in config.custom_compiler_flags:
         compile_cmd += ' -y ' + flag

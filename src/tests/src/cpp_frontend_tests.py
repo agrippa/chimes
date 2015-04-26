@@ -112,6 +112,7 @@ TESTS.append(RAY_TRACER)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
+    CONFIG.set_force_sequential()
 
     for t in TESTS:
         run_frontend_test(t, COMPILE_SCRIPT, CPP_EXAMPLES_DIR, CPP_TEST_DIR,

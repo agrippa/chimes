@@ -88,6 +88,7 @@ CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
+    CONFIG.set_force_sequential()
     cleanup_runtime_files()
 
     for t in TESTS:
