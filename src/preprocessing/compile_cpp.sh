@@ -110,6 +110,8 @@ if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
+echo WORK_DIR = $WORK_DIR
+
 OPT=$(find_opt)
 GXX=${GXX:-/usr/bin/g++}
 CLANG=$(find_clang)
@@ -126,8 +128,6 @@ LLVM_LIB=$(get_llvm_lib)
 
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
             "stddef.h" 2>/dev/null | head -n 1))
-
-echo WORK_DIR = $WORK_DIR
 
 for INPUT in ${ABS_INPUTS[@]}; do
     INFO_FILE_PREFIX=${WORK_DIR}/$(basename ${INPUT})

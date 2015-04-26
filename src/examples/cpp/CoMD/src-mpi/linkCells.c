@@ -59,6 +59,7 @@
 ///
 /// \param [in] cutoff The cutoff distance of the potential.
 
+#include <stdlib.h>
 #include "linkCells.h"
 
 #include <stdio.h>

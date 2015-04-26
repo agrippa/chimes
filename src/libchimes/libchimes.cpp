@@ -1582,7 +1582,7 @@ void checkpoint() {
                     assert(size % sizeof(void*) == 0);
                     size_t npointers = size / sizeof(void*);
                     void **container = (void **)var->get_address();
-                    for (int i = 0; i < npointers; i++) {
+                    for (unsigned i = 0; i < npointers; i++) {
                         fix_stack_or_global_pointer(container + i, nested_type);
                     }
                 }
@@ -1727,7 +1727,8 @@ static void fix_stack_or_global_pointer(void *container, string type) {
         assert(structs.find(struct_name) != structs.end());
         std::vector<struct_field> *fields = structs.at(struct_name);
 
-        for (int field_index = 0; field_index < fields->size(); field_index++) {
+        for (unsigned field_index = 0; field_index < fields->size();
+                field_index++) {
             string curr = fields->at(field_index).get_ty();
             unsigned char *field_ptr = ((unsigned char *)container) +
                 (*fields)[field_index].get_offset();
@@ -2160,7 +2161,8 @@ unsigned get_thread_stack_depth() {
     return get_my_context()->get_stack()->size();
 }
 
-void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id) {
+void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id) {
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
     /*
@@ -2174,7 +2176,7 @@ void leaving_omp_parallel(int expected_parent_stack_depth, size_t region_id) {
      */
     if (my_ctx->get_parent_region() == region_id) {
         assert(my_ctx->get_stack()->size() ==
-                (expected_parent_stack_depth + 1));
+                (expected_parent_stack_depth + 1U));
     } else {
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth));
