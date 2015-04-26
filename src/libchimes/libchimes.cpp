@@ -789,6 +789,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
         char *struct_name = va_arg(vl, char *);
         int nfields = va_arg(vl, int);
         string struct_name_str(struct_name);
+
+        if (nfields == 0) continue;
+
         /*
          * We may receive struct information from multiple modules, resulting in
          * repeated inserts of the same struct definition. We use the first
@@ -802,8 +805,12 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
         }
 
 #ifdef VERBOSE
-        fprintf(stderr, "struct %s offsets:", struct_name_str.c_str());
+        fprintf(stderr, "struct %s nfields=%d insert_new=%d offsets:",
+                struct_name_str.c_str(), nfields, insert_new);
 #endif
+        if (!insert_new) {
+            assert((unsigned)nfields == structs[struct_name_str]->size());
+        }
 
         for (int j = 0; j < nfields; j++) {
             char *ty = va_arg(vl, char *);
@@ -822,6 +829,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
             fprintf(stderr, " %d", offset);
 #endif
         }
+#ifdef VERBOSE
+        fprintf(stderr, "\n");
+#endif
     }
 
     va_end(vl);

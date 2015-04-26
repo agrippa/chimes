@@ -1,6 +1,7 @@
 /// \file
 /// Initialize the atom configuration.
 
+#include <stdlib.h>
 #include "initAtoms.h"
 
 #include <math.h>
