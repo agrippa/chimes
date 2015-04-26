@@ -18,7 +18,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O0"
+GXX_FLAGS="-g -O2"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
@@ -124,7 +124,7 @@ FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appen
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-[[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
+[[ $PROFILE == 0 ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
             "stddef.h" 2>/dev/null | head -n 1))
