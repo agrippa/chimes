@@ -36,8 +36,11 @@
 #include "already_updated_ptrs.h"
 #include "chimes_stack.h"
 #include "heap_allocation.h"
+#include "checkpointable_heap_allocation.h"
 #include "type_info.h"
 #include "thread_ctx.h"
+
+#include "xxhash/xxhash.h"
 
 using namespace std;
 
@@ -161,7 +164,7 @@ void free_wrapper(void *ptr, size_t group);
 
 void onexit();
 
-static void safe_write(int fd, void *ptr, ssize_t size, const char *msg,
+static void safe_write(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
 static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
         const char *filename);
@@ -258,14 +261,6 @@ static unsigned count_threads = 1;
 static pthread_mutex_t count_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*
- * Count threads that have hit the checkpoint so that we know when all are
- * inside. These shared variables are protected by thread_count_mutex and
- * thread_count_cond below.
- */
-static volatile unsigned threads_in_checkpoint = 0;
-static volatile bool checkpoint_in_progress = false;
-
-/*
  * Count the number of total threads to ensure that checkpoints are created by
  * all threads at once.
  */
@@ -286,6 +281,23 @@ static std::map<size_t, checkpoint_ctx*> checkpoint_info;
  */
 static size_t regions_executed = 0;
 static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
+
+/*
+ * Variables related to the hashing of large arrays. Hashing is done in CHIMES
+ * to prevent redundant checkpointing of in-memory state that hasn't changed
+ * since the last checkpoint. Currently, we use a high-throughput hashing
+ * function on heap allocations that meet certain criteria to reduce their size
+ * in the checkpoint. This reduces the checkpoint size on-disk, the amount of
+ * disk bandwidth required, and the amount of duplicated heap state necessary
+ * in-memory.
+ */
+static unsigned long long total_allocations = 0;
+static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
+        16 * 1024UL * 1024UL);
+// Just dump things smaller than this, don't waste time hashing.
+static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
+// The target size of a checkpoint, as a percentage of total heap bytes.
+static const double target_checkpoint_size_perc = 0.1;
 
 #define MAX_CHECKPOINT_FILENAME_LEN 256
 static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
@@ -363,6 +375,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
         size_t size;
         size_t group;
         int is_cuda_alloc, elem_is_ptr, elem_is_struct;
+        size_t buffer_offset, buffer_length;
 
         safe_read(fd, &old_address, sizeof(old_address), "old_address",
                 checkpoint_file);
@@ -374,6 +387,12 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                 checkpoint_file);
         safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
                 checkpoint_file);
+        safe_read(fd, &buffer_offset, sizeof(buffer_offset), "buffer_offset",
+                checkpoint_file);
+        assert(buffer_offset == 0);
+        safe_read(fd, &buffer_length, sizeof(buffer_length), "buffer_length",
+                checkpoint_file);
+        assert(buffer_length == size);
 
         void *new_address;
         if (is_cuda_alloc) {
@@ -393,7 +412,8 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
         }
 
         heap_allocation *alloc = new heap_allocation(new_address, size,
-                group, is_cuda_alloc, elem_is_ptr, elem_is_struct);
+                group, is_cuda_alloc, elem_is_ptr, elem_is_struct,
+                *hash_chunker);
 
         if (elem_is_struct) {
             size_t elem_size;
@@ -1259,7 +1279,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     assert(valid_group(group) || is_cuda_alloc);
 
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
-            is_cuda_alloc, is_ptr, is_struct);
+            is_cuda_alloc, is_ptr, is_struct, *hash_chunker);
 
     alias_group_changed(1, group);
 
@@ -1306,6 +1326,8 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
     if (ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
 
+        __sync_fetch_and_add(&total_allocations, nbytes);
+
         if (is_struct) {
             va_list vl;
             va_start(vl, is_struct);
@@ -1334,6 +1356,8 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
     if (ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
 
+        __sync_fetch_and_add(&total_allocations, num * size);
+
         if (is_struct) {
             va_list vl;
             va_start(vl, is_struct);
@@ -1359,6 +1383,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
     assert(valid_group(group));
 
     void *new_ptr = realloc(ptr, nbytes);
+    unsigned long long old_size = 0;
 
     if (ptr != NULL && new_ptr == ptr) {
         /*
@@ -1368,6 +1393,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         map<void *, heap_allocation *>::iterator alloc_ptr = find_in_heap(ptr);
 
         heap_allocation *alloc = alloc_ptr->second;
+        old_size = alloc->get_size();
         assert(alloc->get_alias_group() == group);
         alloc->update_size(nbytes);
         alias_group_changed(1, group);
@@ -1391,6 +1417,7 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
                 find_in_heap(ptr);
             heap_allocation *alloc = alloc_ptr->second;
             assert(alloc->get_alias_group() == group);
+            old_size = alloc->get_size();
 
             if (alloc->check_elem_is_struct()) {
                 elem_size = alloc->get_elem_size();
@@ -1403,6 +1430,9 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
             }
             free_helper(ptr);
         } else {
+            /*
+             * A realloc of a NULL pointer, equivalent to a fresh malloc.
+             */
             chimes_type_info info; memset(&info, 0x00, sizeof(info));
 
             if (is_struct) {
@@ -1418,6 +1448,12 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
 
         malloc_helper(new_ptr, nbytes, group, 0, is_ptr, is_struct,
                 elem_size, ptr_field_offsets, n_struct_ptr_fields);
+    }
+
+    if (old_size < nbytes) {
+        __sync_fetch_and_add(&total_allocations, nbytes - old_size);
+    } else if (nbytes < old_size) {
+        __sync_fetch_and_sub(&total_allocations, old_size - nbytes);
     }
 
 #ifdef __CHIMES_PROFILE
@@ -1463,6 +1499,8 @@ void free_wrapper(void *ptr, size_t group) {
     size_t original_group = in_heap->second->get_alias_group();
     assert(aliased(original_group, group, true));
 
+    __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
+
     free_helper(ptr);
     free(ptr);
 #ifdef __CHIMES_PROFILE
@@ -1482,7 +1520,7 @@ typedef struct _checkpoint_thread_ctx {
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
 
-    vector<heap_allocation *> *heap_to_checkpoint;
+    vector<checkpointable_heap_allocation> *heap_to_checkpoint;
     map<size_t, size_t> *contains;
 
     map<unsigned, vector<int> *> *stack_trackers;
@@ -1611,6 +1649,26 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 static bool compare_entry_times(std::pair<unsigned, clock_t> i,
         std::pair<unsigned, clock_t> j) {
     return (i.second < j.second);
+}
+
+static bool compare_heap_allocations(pair<size_t, heap_allocation *> i,
+        pair<size_t, heap_allocation *> j) {
+    return (i.first < j.first);
+}
+
+static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
+        size_t copied_so_far) {
+    return false;
+
+    // if (alloc_len < DONT_HASH_SIZE) {
+    //     return false;
+    // }
+    // if (copied_so_far >= desired_checkpoint_size) {
+    //     return true;
+    // }
+
+    // size_t remaining = desired_checkpoint_size - copied_so_far;
+    // return (alloc_len > (remaining / 2));
 }
 
 void checkpoint() {
@@ -1770,8 +1828,12 @@ void checkpoint() {
                 ctx->clear_changed_groups();
             }
 
-            vector<heap_allocation *> *heap_to_checkpoint =
-                new vector<heap_allocation *>();
+            const size_t desired_checkpoint_size =
+                (size_t)(target_checkpoint_size_perc *
+                        (double)total_allocations);
+            size_t copied_so_far = 0;
+            vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
+            heap_to_checkpoint_sorted.reserve(heap.size());
             for (map<void *, heap_allocation *>::iterator heap_iter =
                     heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
                     heap_iter++) {
@@ -1785,9 +1847,29 @@ void checkpoint() {
                  */
                 if (all_changed->find(curr->get_alias_group()) !=
                         all_changed->end() || curr->get_is_cuda_alloc()) {
-                    heap_allocation *copy = new heap_allocation();
-                    curr->copy(copy);
-                    heap_to_checkpoint->push_back(copy);
+                    heap_to_checkpoint_sorted.push_back(
+                            pair<size_t, heap_allocation *>(curr->get_size(),
+                                curr));
+                }
+            }
+
+            std::sort(heap_to_checkpoint_sorted.begin(),
+                    heap_to_checkpoint_sorted.end(), compare_heap_allocations);
+            vector<checkpointable_heap_allocation> *to_checkpoint =
+                new vector<checkpointable_heap_allocation>();
+
+            for (vector<pair<size_t, heap_allocation *> >::iterator i =
+                    heap_to_checkpoint_sorted.begin(),
+                    e = heap_to_checkpoint_sorted.end(); i != e; i++) {
+                heap_allocation *curr = i->second;
+                if (!should_hash(curr->get_size(), desired_checkpoint_size,
+                            copied_so_far)) {
+                    to_checkpoint->push_back(checkpointable_heap_allocation(
+                                curr));
+                    curr->invalidate_hashes();
+                } else {
+                    // TODO
+                    assert(false);
                 }
             }
 
@@ -1804,7 +1886,7 @@ void checkpoint() {
             checkpoint_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
                     &thread_ctxs,
                     &checkpoint_ctx->thread_hierarchy_serialized_len);
-            checkpoint_ctx->heap_to_checkpoint = heap_to_checkpoint;
+            checkpoint_ctx->heap_to_checkpoint = to_checkpoint;
 
             checkpoint_ctx->checkpoint_entry_times =
                 new std::vector<std::pair<unsigned, clock_t> >(
@@ -1894,12 +1976,27 @@ static void fix_stack_or_global_pointer(void *container, string type) {
     }
 }
 
-static void safe_write(int fd, void *ptr, ssize_t size, const char *msg,
+static void safe_write(int fd, void *ptr, size_t size, const char *msg,
         const char *filename) {
-    if (write(fd, ptr, size) != size) {
-        fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
-        exit(1);
-    }
+    size_t sofar = 0;
+    const size_t chunk = 1024UL * 1024UL * 1024UL;
+    do {
+        size_t towrite = chunk;
+        if (sofar + towrite > size) {
+            towrite = size - sofar;
+        }
+        ssize_t written = write(fd, (unsigned char *)ptr + sofar, towrite);
+        if (written == -1) {
+            fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
+            fprintf(stderr, "  writing %ld bytes from %p to fd=%d\n", size, ptr,
+                    fd);
+            fprintf(stderr, "  sofar=%ld\n", sofar);
+            perror(NULL);
+            exit(1);
+
+        }
+        sofar += written;
+    } while (sofar < size);
 }
 
 static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
@@ -1939,7 +2036,8 @@ void *checkpoint_func(void *data) {
         ctx->thread_hierarchy_serialized;
     uint64_t thread_hierarchy_serialized_len =
         ctx->thread_hierarchy_serialized_len;
-    vector<heap_allocation *> *heap_to_checkpoint = ctx->heap_to_checkpoint;
+    vector<checkpointable_heap_allocation> *to_checkpoint =
+        ctx->heap_to_checkpoint;
     map<size_t, size_t> *contains = ctx->contains;
 
     /*
@@ -2011,6 +2109,7 @@ void *checkpoint_func(void *data) {
             safe_write(fd, &trace, sizeof(trace), "trace element",
                     dump_filename);
         }
+        delete trace;
     }
 
     // Write the serialized stack out
@@ -2039,7 +2138,7 @@ void *checkpoint_func(void *data) {
             "thread_hierarchy_serialized", dump_filename);
 
     // Write the heap allocations out
-    uint64_t n_heap_allocs = heap_to_checkpoint->size();
+    uint64_t n_heap_allocs = to_checkpoint->size();
 
     heap_offset = safe_seek(fd, 0, SEEK_CUR, "heap_offset",
             dump_filename);
@@ -2051,17 +2150,20 @@ void *checkpoint_func(void *data) {
 
     safe_write(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
             dump_filename);
-    for (vector<heap_allocation *>::iterator heap_iter =
-            heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
+    for (vector<checkpointable_heap_allocation>::iterator heap_iter =
+            to_checkpoint->begin(), heap_end = to_checkpoint->end();
             heap_iter != heap_end; heap_iter++) {
-        heap_allocation *alloc = *heap_iter;
-        assert(alloc->get_tmp_buffer() != NULL);
-        void *address = alloc->get_address();
-        size_t size = alloc->get_size();
-        size_t group = alloc->get_alias_group();
-        int is_cuda_alloc = alloc->get_is_cuda_alloc();
-        int elem_is_ptr = alloc->check_elem_is_ptr();
-        int elem_is_struct = alloc->check_elem_is_struct();
+        checkpointable_heap_allocation alloc = *heap_iter;
+
+        assert(alloc.get_buffer() != NULL);
+        void *address = alloc.get_address();
+        size_t size = alloc.get_size();
+        size_t group = alloc.get_alias_group();
+        int is_cuda_alloc = alloc.get_is_cuda_alloc();
+        int elem_is_ptr = alloc.check_elem_is_ptr();
+        int elem_is_struct = alloc.check_elem_is_struct();
+        size_t buffer_offset = alloc.get_buffer_offset();
+        size_t buffer_length = alloc.get_buffer_length();
 
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
@@ -2072,29 +2174,33 @@ void *checkpoint_func(void *data) {
                 dump_filename);
         safe_write(fd, &elem_is_struct, sizeof(elem_is_struct),
                 "elem_is_struct", dump_filename);
-        safe_write(fd, alloc->get_tmp_buffer(), size, "heap contents",
+        safe_write(fd, &buffer_offset, sizeof(buffer_offset), "buffer_offset",
+                dump_filename);
+        safe_write(fd, &buffer_length, sizeof(buffer_length), "buffer_length",
+                dump_filename);
+        safe_write(fd, alloc.get_buffer(), buffer_length, "heap contents",
                 dump_filename);
 
         if (elem_is_struct) {
-            size_t elem_size = alloc->get_elem_size();
+            size_t elem_size = alloc.get_elem_size();
 
             safe_write(fd, &elem_size, sizeof(elem_size), "elem_size",
                     dump_filename);
             int elem_ptr_offsets_len =
-                alloc->get_ptr_field_offsets()->size();
+                alloc.get_ptr_field_offsets()->size();
             safe_write(fd, &elem_ptr_offsets_len,
                     sizeof(elem_ptr_offsets_len), "elem_ptr_offsets_len",
                     dump_filename);
-            for (unsigned int i = 0; i < alloc->get_ptr_field_offsets()->size();
+            for (unsigned int i = 0; i < alloc.get_ptr_field_offsets()->size();
                     i++) {
-                int offset = (*alloc->get_ptr_field_offsets())[i];
+                int offset = (*alloc.get_ptr_field_offsets())[i];
                 safe_write(fd, &offset, sizeof(offset), "offset",
                         dump_filename);
             }
         }
 
         // Release any deffered frees
-        free(alloc->get_tmp_buffer());
+        free(alloc.get_buffer());
     }
 
     unsigned n_contains_mappings = contains->size();
@@ -2140,13 +2246,7 @@ void *checkpoint_func(void *data) {
     free(globals_serialized);
     free(constants_serialized);
     free(thread_hierarchy_serialized);
-    for (vector<heap_allocation *>::iterator heap_iter =
-            heap_to_checkpoint->begin(), heap_end = heap_to_checkpoint->end();
-            heap_iter != heap_end; heap_iter++) {
-        heap_allocation *curr = *heap_iter;
-        delete curr;
-    }
-    delete heap_to_checkpoint;
+    delete to_checkpoint;
     delete ctx->stack_trackers;
     delete ctx->checkpoint_entry_times;
     delete contains;
