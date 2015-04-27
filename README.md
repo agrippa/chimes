@@ -9,6 +9,7 @@ Prerequisites:
 2. LLVM_HOME set to the llvm-src directory created below
 3. CHIMES_HOME set to the root directory this repo is cloned to
 4. CUDA_HOME set to the root of your CUDA installation
+5. LD_LIBRARY_PATH/DYLD_LIBRARY_PATH has ${CHIMES_HOME}/src/libchimes and ${CHIMES_HOME}/src/libchimes/xxhash
 
 Installation Steps:
 1. Download LLVM 3.5.1 from http://llvm.org/releases/3.5.1/llvm-3.5.1.src.tar.xz and extract to llvm-src
