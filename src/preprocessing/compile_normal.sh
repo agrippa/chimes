@@ -95,7 +95,7 @@ if [[ -z ${WORK_DIR} ]]; then
 fi
 
 GXX_FLAGS="${INCLUDES} -g -O2"
-[[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
+[[ $PROFILE == 0 ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 for INPUT in ${ABS_INPUTS[@]}; do
     BASENAME=$(basename ${INPUT})
