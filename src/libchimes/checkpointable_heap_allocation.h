@@ -17,12 +17,11 @@ class checkpointable_heap_allocation {
         size_t elem_size;
         std::vector<int> elem_ptr_offsets;
 
-        size_t buffer_offset;
-        size_t buffer_length;
+        // (start_offset, end_offset)
+        std::vector<std::pair<size_t, size_t> > ranges;
         void *buffer;
 
-    public:
-        checkpointable_heap_allocation(heap_allocation *other) {
+        void init(heap_allocation *other) {
             address = other->get_address();
             size = other->get_size();
             group = other->get_alias_group();
@@ -37,9 +36,13 @@ class checkpointable_heap_allocation {
                     elem_ptr_offsets.push_back(*i);
                 }
             }
+        }
 
-            buffer_offset = 0;
-            buffer_length = size;
+    public:
+        checkpointable_heap_allocation(heap_allocation *other) {
+            init(other);
+
+            ranges.push_back(std::pair<size_t, size_t>(0, size));
             buffer = malloc(size);
             assert(buffer);
 
@@ -48,6 +51,16 @@ class checkpointable_heap_allocation {
                             cudaMemcpyDeviceToHost));
             } else {
                 memcpy(buffer, other->get_address(), size);
+            }
+        }
+
+        checkpointable_heap_allocation(heap_allocation *other, void *set_buffer,
+                vector<pair<size_t, size_t> > *set_ranges) {
+            init(other);
+            buffer = set_buffer;
+            for (vector<pair<size_t, size_t> >::iterator i =
+                    set_ranges->begin(), e = set_ranges->end(); i != e; i++) {
+                ranges.push_back(*i);
             }
         }
 
@@ -60,8 +73,9 @@ class checkpointable_heap_allocation {
         size_t get_elem_size() { return elem_size; }
         std::vector<int> *get_ptr_field_offsets() { return &elem_ptr_offsets; }
 
-        size_t get_buffer_offset() { return buffer_offset; }
-        size_t get_buffer_length() { return buffer_length; }
+        std::vector<std::pair<size_t, size_t> > *get_buffer_ranges() {
+            return &ranges;
+        }
         void *get_buffer() { return buffer; }
 };
 

@@ -20,11 +20,11 @@ PARALLEL_FOR_PIPELINE = RuntimeTest('ParallelForPipeline',
                                      ['parallel_for_pipeline.cpp'], 0, 1,
                                      includes=[os.path.dirname(OMP_H)])
 ISO3D_OMP = RuntimeTest('Iso3D-OMP',
-                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, 1,
+                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, -1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
-                    cli_args='-i 1')
+                    cli_args='-i 3')
 SMITH_WATERMAN_ARGS=CHIMES_HOME + \
                     '/src/examples/cpp/smithWaterman/string1.txt ' + \
                     CHIMES_HOME + \

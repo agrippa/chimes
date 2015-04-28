@@ -166,7 +166,7 @@ void onexit();
 
 static void safe_write(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
-static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
+static void safe_read(int fd, void *ptr, size_t size, const char *msg,
         const char *filename);
 static void skip(int fd, ssize_t size, const char *msg, const char *filename);
 static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
@@ -366,7 +366,9 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
 
 static void read_heap_from_file(int fd, char *checkpoint_file,
         std::map<void *, ptr_and_size *> *old_to_new,
-        std::vector<heap_allocation *> *new_heap) {
+        std::vector<heap_allocation *> *new_heap,
+        std::map<void *, memory_filled *> *filled,
+        std::map<void *, heap_allocation *> *old_to_alloc) {
     uint64_t n_heap_allocs;
     safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
             checkpoint_file);
@@ -375,7 +377,6 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
         size_t size;
         size_t group;
         int is_cuda_alloc, elem_is_ptr, elem_is_struct;
-        size_t buffer_offset, buffer_length;
 
         safe_read(fd, &old_address, sizeof(old_address), "old_address",
                 checkpoint_file);
@@ -387,40 +388,12 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                 checkpoint_file);
         safe_read(fd, &elem_is_struct, sizeof(elem_is_struct), "elem_is_struct",
                 checkpoint_file);
-        safe_read(fd, &buffer_offset, sizeof(buffer_offset), "buffer_offset",
-                checkpoint_file);
-        assert(buffer_offset == 0);
-        safe_read(fd, &buffer_length, sizeof(buffer_length), "buffer_length",
-                checkpoint_file);
-        assert(buffer_length == size);
 
-        void *new_address;
-        if (is_cuda_alloc) {
-            void *host_tmp = malloc(size);
-            assert(host_tmp != NULL);
-            safe_read(fd, host_tmp, size, "heap contents", checkpoint_file);
-
-            CHECK(cudaMalloc((void **)&new_address, size));
-            CHECK(cudaMemcpy(new_address, host_tmp, size,
-                        cudaMemcpyHostToDevice));
-            free(host_tmp);
-        } else {
-            new_address = malloc(size);
-            assert(new_address != NULL);
-            safe_read(fd, new_address, size, "heap contents",
-                    checkpoint_file);
-        }
-
-        heap_allocation *alloc = new heap_allocation(new_address, size,
-                group, is_cuda_alloc, elem_is_ptr, elem_is_struct,
-                *hash_chunker);
-
+        size_t elem_size = 0;
+        vector<int> elem_ptr_offsets;
         if (elem_is_struct) {
-            size_t elem_size;
-
             safe_read(fd, &elem_size, sizeof(elem_size), "elem_size",
                     checkpoint_file);
-            alloc->add_struct_elem_size(elem_size);
 
             int elem_ptr_offsets_len;
             safe_read(fd, &elem_ptr_offsets_len,
@@ -430,11 +403,55 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                 int offset;
                 safe_read(fd, &offset, sizeof(offset), "offset",
                         checkpoint_file);
-                alloc->add_pointer_offset(offset);
+                elem_ptr_offsets.push_back(offset);
             }
         }
 
+        int n_ranges;
+        size_t buffer_length = 0;
+        safe_read(fd, &n_ranges, sizeof(n_ranges), "n_ranges", checkpoint_file);
+        vector<pair<size_t, size_t> > ranges;
+        for (int j = 0; j < n_ranges; j++) {
+            size_t range_start, range_end;
+            safe_read(fd, &range_start, sizeof(range_start), "range_start",
+                    checkpoint_file);
+            safe_read(fd, &range_end, sizeof(range_end), "range_end",
+                    checkpoint_file);
+            ranges.push_back(pair<size_t, size_t>(range_start, range_end));
+            buffer_length += (range_end - range_start);
+        }
+        void *buffer = malloc(buffer_length);
+        safe_read(fd, buffer, buffer_length, "buffer", checkpoint_file);
+
+        heap_allocation *alloc = NULL;
+        memory_filled *already_filled = NULL;
+        /*
+         * This block should simply initialize a new heap_allocation object (if
+         * necessary). Later we actually populate the data from buffer, based on
+         * ranges.
+         */
         if (old_to_new->find(old_address) == old_to_new->end()) {
+            assert(filled->find(old_address) == filled->end());
+            assert(old_to_alloc->find(old_address) == old_to_alloc->end());
+
+            void *new_address;
+            if (is_cuda_alloc) {
+                CHECK(cudaMalloc((void **)&new_address, size));
+            } else {
+                new_address = malloc(size);
+                assert(new_address != NULL);
+            }
+
+            alloc = new heap_allocation(new_address, size,
+                    group, is_cuda_alloc, elem_is_ptr, elem_is_struct,
+                    *hash_chunker);
+            if (elem_is_struct) {
+                alloc->add_struct_elem_size(elem_size);
+                alloc->set_pointer_offsets(&elem_ptr_offsets);
+            }
+
+            already_filled = new memory_filled(size);
+
             new_heap->push_back(alloc);
 
             assert(heap.find(alloc->get_address()) == heap.end());
@@ -448,14 +465,65 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             assert(old_to_new->find(old_address) == old_to_new->end());
             old_to_new->insert(pair<void *, ptr_and_size *>(old_address,
                         new ptr_and_size(new_address, size)));
+            filled->insert(pair<void *, memory_filled *>(old_address,
+                        already_filled));
+            old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
+                        alloc));
+        } else {
+            assert(filled->find(old_address) != filled->end());
+            assert(old_to_alloc->find(old_address) != old_to_alloc->end());
+
+            alloc = old_to_alloc->at(old_address);
+            already_filled = filled->at(old_address);
         }
+
+        /*
+         * Populate the live buffer in alloc based on the already filled ranges
+         * in already_filled and the available ranges in ranges.
+         */
+        size_t sofar = 0;
+        unsigned char *c_new_address = (unsigned char *)alloc->get_address();
+        for (vector<pair<size_t, size_t> >::iterator range_iter =
+                ranges.begin(), range_e = ranges.end();
+                range_iter != range_e; range_iter++) {
+            size_t range_start = range_iter->first;
+            size_t range_end = range_iter->second;
+            unsigned char *in_buffer = ((unsigned char *)buffer) + sofar;
+
+            vector<pair<size_t, size_t> > *needed = already_filled->offer(
+                    range_start, range_end);
+            for (vector<pair<size_t, size_t> >::iterator needed_iter =
+                    needed->begin(), needed_end = needed->end(); needed_iter !=
+                    needed_end; needed_iter++) {
+                assert(needed_iter->first >= range_start);
+                size_t in_buf_offset = needed_iter->first - range_start;
+                assert(needed_iter->second <= range_end);
+                size_t in_buf_length = needed_iter->second - needed_iter->first;
+
+                if (alloc->get_is_cuda_alloc()) {
+                    CHECK(cudaMemcpy(c_new_address + needed_iter->first,
+                                in_buffer + in_buf_offset, in_buf_length,
+                                cudaMemcpyHostToDevice));
+                } else {
+                    memcpy(c_new_address + needed_iter->first,
+                            in_buffer + in_buf_offset, in_buf_length);
+                }
+            }
+            delete needed;
+
+            sofar += (range_end - range_start);
+        }
+
+        free(buffer);
     }
 }
 
 static void read_heap_from_previous_checkpoint(
         char checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN],
         std::map<void *, ptr_and_size *> *old_to_new,
-        std::vector<heap_allocation *> *new_heap) {
+        std::vector<heap_allocation *> *new_heap,
+        std::map<void *, memory_filled *> *filled,
+        std::map<void *, heap_allocation *> *old_to_alloc) {
     int fd = open(checkpoint_file, O_RDONLY);
     assert(fd >= 0);
 
@@ -474,13 +542,14 @@ static void read_heap_from_previous_checkpoint(
     safe_seek(fd, 0, SEEK_SET, "seek_to_start", checkpoint_file);
     skip(fd, heap_offset, "skip", checkpoint_file);
 
-    read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap);
+    read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap, filled,
+            old_to_alloc);
 
     close(fd);
 
     if (filename_length > 1) {
         read_heap_from_previous_checkpoint(previous_checkpoint_file, old_to_new,
-                new_heap);
+                new_heap, filled, old_to_alloc);
     }
 }
 
@@ -613,12 +682,31 @@ void init_chimes() {
         old_to_new = new std::map<void *, ptr_and_size *>();
         std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
-        read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap);
+        std::map<void *, memory_filled *> *filled = new std::map<void *,
+            memory_filled *>();
+        std::map<void *, heap_allocation *> *old_to_alloc = new std::map<void *,
+            heap_allocation *>();
+        read_heap_from_file(fd, checkpoint_file, old_to_new, new_heap, filled,
+                old_to_alloc);
 
         if (filename_length > 1) {
             read_heap_from_previous_checkpoint(previous_checkpoint_file,
-                    old_to_new, new_heap);
+                    old_to_new, new_heap, filled, old_to_alloc);
         }
+
+        assert(filled->size() == new_heap->size());
+        assert(old_to_new->size() == filled->size());
+        assert(old_to_alloc->size() == filled->size());
+
+        for (std::map<void *, memory_filled *>::iterator filled_i =
+                filled->begin(), filled_e = filled->end(); filled_i != filled_e;
+                filled_i++) {
+            memory_filled *curr = filled_i->second;
+            assert(curr->empty());
+        }
+
+        delete filled;
+        delete old_to_alloc;
 
         for (map<size_t, constant_var*>::iterator i = constants.begin(),
                 e = constants.end(); i != e; i++) {
@@ -723,6 +811,8 @@ void init_chimes() {
                 }
             }
         }
+
+        delete new_heap;
 
         unsigned n_contains_mappings;
         safe_read(fd, &n_contains_mappings, sizeof(n_contains_mappings),
@@ -1658,17 +1748,15 @@ static bool compare_heap_allocations(pair<size_t, heap_allocation *> i,
 
 static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
         size_t copied_so_far) {
-    return false;
+    if (alloc_len < DONT_HASH_SIZE) {
+        return false;
+    }
+    if (copied_so_far >= desired_checkpoint_size) {
+        return true;
+    }
 
-    // if (alloc_len < DONT_HASH_SIZE) {
-    //     return false;
-    // }
-    // if (copied_so_far >= desired_checkpoint_size) {
-    //     return true;
-    // }
-
-    // size_t remaining = desired_checkpoint_size - copied_so_far;
-    // return (alloc_len > (remaining / 2));
+    size_t remaining = desired_checkpoint_size - copied_so_far;
+    return (alloc_len > (remaining / 2));
 }
 
 void checkpoint() {
@@ -1828,10 +1916,6 @@ void checkpoint() {
                 ctx->clear_changed_groups();
             }
 
-            const size_t desired_checkpoint_size =
-                (size_t)(target_checkpoint_size_perc *
-                        (double)total_allocations);
-            size_t copied_so_far = 0;
             vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
             heap_to_checkpoint_sorted.reserve(heap.size());
             for (map<void *, heap_allocation *>::iterator heap_iter =
@@ -1858,6 +1942,10 @@ void checkpoint() {
             vector<checkpointable_heap_allocation> *to_checkpoint =
                 new vector<checkpointable_heap_allocation>();
 
+            const size_t desired_checkpoint_size =
+                (size_t)(target_checkpoint_size_perc *
+                        (double)total_allocations);
+            size_t copied_so_far = 0;
             for (vector<pair<size_t, heap_allocation *> >::iterator i =
                     heap_to_checkpoint_sorted.begin(),
                     e = heap_to_checkpoint_sorted.end(); i != e; i++) {
@@ -1867,9 +1955,64 @@ void checkpoint() {
                     to_checkpoint->push_back(checkpointable_heap_allocation(
                                 curr));
                     curr->invalidate_hashes();
+                    copied_so_far += curr->get_size();
                 } else {
-                    // TODO
-                    assert(false);
+                    if (curr->hashes_invalid()) {
+                        curr->update_hashes();
+                        to_checkpoint->push_back(checkpointable_heap_allocation(
+                                    curr));
+                        curr->mark_hashes_valid();
+                        copied_so_far += curr->get_size();
+                    } else {
+                        size_t n_bytes_changed = 0;
+                        vector<pair<size_t, size_t> > ranges;
+                        for (unsigned chunk = 0; chunk < curr->get_n_hash_chunks(); chunk++) {
+                            unsigned long long curr_hash = curr->get_hash(chunk);
+                            unsigned long long new_hash =
+                                curr->calculate_hash(chunk);
+                            if (curr_hash != new_hash) {
+                                const size_t chunk_start =
+                                    curr->get_hash_chunk_start(chunk);
+                                const size_t chunk_end =
+                                    curr->get_hash_chunk_end(chunk);
+                                const size_t chunk_size =
+                                    chunk_end - chunk_start;
+                                if (ranges.size() == 0) {
+                                    ranges.push_back(pair<size_t, size_t>(
+                                                chunk_start, chunk_end));
+                                } else {
+                                    if (ranges.back().second == chunk_start) {
+                                        ranges.back().second = chunk_end;
+                                    } else {
+                                        ranges.push_back(pair<size_t, size_t>(
+                                                    chunk_start, chunk_end));
+                                    }
+                                }
+                                n_bytes_changed += chunk_size;
+                                curr->update_hash(chunk, new_hash);
+                            }
+                        }
+                        size_t packed_so_far = 0;
+                        unsigned char *source = (unsigned char *)curr->get_address();
+                        unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
+                        for (vector<pair<size_t, size_t> >::iterator i =
+                                ranges.begin(), e = ranges.end(); i != e; i++) {
+                            if (curr->get_is_cuda_alloc()) {
+                                CHECK(cudaMemcpy(buffer + packed_so_far,
+                                            source + i->first,
+                                            i->second - i->first,
+                                            cudaMemcpyDeviceToHost));
+                            } else {
+                                memcpy(buffer + packed_so_far,
+                                        source + i->first,
+                                        i->second - i->first); 
+                            }
+                        }
+                        to_checkpoint->push_back(checkpointable_heap_allocation(
+                                    curr, buffer, &ranges));
+                        curr->mark_hashes_valid();
+                        copied_so_far += n_bytes_changed;
+                    }
                 }
             }
 
@@ -1999,12 +2142,24 @@ static void safe_write(int fd, void *ptr, size_t size, const char *msg,
     } while (sofar < size);
 }
 
-static void safe_read(int fd, void *ptr, ssize_t size, const char *msg,
+static void safe_read(int fd, void *ptr, size_t size, const char *msg,
         const char *filename) {
-    if (read(fd, ptr, size) != size) {
-        fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
-        exit(1);
-    }
+    unsigned char *c_ptr = (unsigned char *)ptr;
+    const size_t chunk = 1024UL * 1024UL * 1024UL;
+    size_t sofar = 0;
+
+    do {
+        size_t toread = chunk;
+        if (sofar + toread > size) {
+            toread = size - sofar;
+        }
+        ssize_t r = read(fd, c_ptr + sofar, toread);
+        if (r == -1) {
+            fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
+            exit(1);
+        }
+        sofar += r;
+    } while (sofar < size);
 }
 
 static void skip(int fd, ssize_t size, const char *msg, const char *filename) {
@@ -2162,8 +2317,6 @@ void *checkpoint_func(void *data) {
         int is_cuda_alloc = alloc.get_is_cuda_alloc();
         int elem_is_ptr = alloc.check_elem_is_ptr();
         int elem_is_struct = alloc.check_elem_is_struct();
-        size_t buffer_offset = alloc.get_buffer_offset();
-        size_t buffer_length = alloc.get_buffer_length();
 
         safe_write(fd, &address, sizeof(address), "address", dump_filename);
         safe_write(fd, &size, sizeof(size), "size", dump_filename);
@@ -2174,12 +2327,6 @@ void *checkpoint_func(void *data) {
                 dump_filename);
         safe_write(fd, &elem_is_struct, sizeof(elem_is_struct),
                 "elem_is_struct", dump_filename);
-        safe_write(fd, &buffer_offset, sizeof(buffer_offset), "buffer_offset",
-                dump_filename);
-        safe_write(fd, &buffer_length, sizeof(buffer_length), "buffer_length",
-                dump_filename);
-        safe_write(fd, alloc.get_buffer(), buffer_length, "heap contents",
-                dump_filename);
 
         if (elem_is_struct) {
             size_t elem_size = alloc.get_elem_size();
@@ -2198,6 +2345,25 @@ void *checkpoint_func(void *data) {
                         dump_filename);
             }
         }
+
+        int n_ranges = alloc.get_buffer_ranges()->size();
+        safe_write(fd, &n_ranges, sizeof(n_ranges), "n_ranges", dump_filename);
+        size_t buffer_length = 0;
+        for (vector<pair<size_t, size_t> >::iterator range_iter =
+                alloc.get_buffer_ranges()->begin(), range_e =
+                alloc.get_buffer_ranges()->end(); range_iter != range_e;
+                range_iter++) {
+            size_t range_start = range_iter->first;
+            size_t range_end = range_iter->second;
+            safe_write(fd, &range_start, sizeof(range_start), "range_start",
+                    dump_filename);
+            safe_write(fd, &range_end, sizeof(range_end), "range_end",
+                    dump_filename);
+            buffer_length += (range_end - range_start);
+        }
+
+        safe_write(fd, alloc.get_buffer(), buffer_length, "heap contents",
+                dump_filename);
 
         // Release any deffered frees
         free(alloc.get_buffer());
