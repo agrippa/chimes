@@ -59,8 +59,14 @@ OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
-    # CONFIG.set_custom_compiler('/opt/apps/gcc/4.8.2/bin/g++')
-    CONFIG.set_custom_compiler('/usr/local/bin/g++')
+    if os.path.isfile('/opt/apps/gcc/4.8.2/bin/g++'):
+        CONFIG.set_custom_compiler('/opt/apps/gcc/4.8.2/bin/g++')
+    elif os.path.isfile('/usr/local/bin/g++'):
+        CONFIG.set_custom_compiler('/usr/local/bin/g++')
+    else:
+        print('Could not detect compatible compiler')
+        sys.exit(1)
+
     CONFIG.add_custom_compiler_flag('-fopenmp')
     cleanup_runtime_files()
 
