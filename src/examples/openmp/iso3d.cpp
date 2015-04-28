@@ -57,9 +57,9 @@ static void fwd(TYPE *next, TYPE *curr, TYPE *vsq,
 
 #pragma omp parallel for
     for (size_t i = 0; i < total_iters; i++) {
-        int z = (total_iters / (ny * nx));
-        int y = (total_iters / nx) % ny;
-        int x = (total_iters % nx);
+        int z = (i / (ny * nx));
+        int y = (i / nx) % ny;
+        int x = (i % nx);
 
         int this_offset = POINT_OFFSET(x, y, z, dimy, dimx, radius);
         TYPE temp = 2.0f * curr[this_offset] - next[this_offset];
