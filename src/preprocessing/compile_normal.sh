@@ -133,7 +133,7 @@ else
     done
 
     g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
-        ${GXX_FLAGS} -L${CUDA_HOME}/lib -lcudart
+        ${GXX_FLAGS} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
