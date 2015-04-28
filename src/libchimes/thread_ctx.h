@@ -5,6 +5,7 @@
 #include <vector>
 #include <set>
 
+#include "perf_profile.h"
 #include "stack_frame.h"
 #include "heap_allocation.h"
 #include "chimes_stack.h"
@@ -38,9 +39,14 @@ class thread_ctx {
             parent_aliases = (size_t*)malloc(sizeof(size_t) *
                     PARENT_ALIASES_INIT_SIZE);
             assert(parent_aliases);
+            thread_start_time = perf_profile::current_time_ns();
         }
         ~thread_ctx() {
             free(parent_aliases);
+        }
+
+        unsigned long long elapsed_time() {
+            return (perf_profile::current_time_ns() - thread_start_time);
         }
 
         bool get_printed_func_ptr_mismatch() {
@@ -170,6 +176,8 @@ class thread_ctx {
 
         bool printed_func_ptr_mismatch;
         bool printed_func_args_mismatch;
+
+        unsigned long long thread_start_time;
 
         /*
          * During normal execution, has every function call and parallel region

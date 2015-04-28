@@ -4,20 +4,22 @@
 #include <vector>
 #include <map>
 #include <stdint.h>
+#include <string>
 
 class perf_profile {
     public:
         perf_profile(const char *set_valid_labels[], int N);
+        ~perf_profile();
 
-        void start_timer(int label_id);
-        void stop_timer(int label_id);
         std::string tostr();
 
+        void add_time(int label_id, unsigned long long start_time);
+        static unsigned long long current_time_ns();
+
     private:
-        std::map<int, uint64_t> elapsed;
-        std::map<int, uint64_t> count;
-        std::map<int, uint64_t> start_times;
-        std::map<int, unsigned> depth;
+        unsigned long long *elapsed;
+        unsigned long long *count;
+        int nlabels;
 
         std::vector<std::string> valid_labels;
 };
