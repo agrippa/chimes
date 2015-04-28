@@ -16,8 +16,9 @@ LIBS=
 OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
+GXX_FLAGS="-g -O2"
 
-while getopts ":kci:I:L:l:o:w:vp" opt; do
+while getopts ":kci:I:L:l:o:w:vpy:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -48,6 +49,9 @@ while getopts ":kci:I:L:l:o:w:vp" opt; do
             ;;
         p)
             PROFILE=1
+            ;;
+        y)
+            GXX_FLAGS="${GXX_FLAGS} ${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -94,7 +98,6 @@ if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
 
-GXX_FLAGS="${INCLUDES} -g -O2"
 [[ $PROFILE == 0 ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
 
 for INPUT in ${ABS_INPUTS[@]}; do
@@ -107,9 +110,10 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     if [[ ${EXT} == "cpp" || ${EXT} == "cc" ]]; then
-        g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS}
+        g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
     elif [[ ${EXT} == "cu" ]]; then
-        nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE}
+        nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
+                   ${INCLUDES}
     fi
 
     if [[ ! -f ${OBJ_FILE} ]]; then
@@ -133,7 +137,8 @@ else
     done
 
     g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
-        ${GXX_FLAGS} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart
+        ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
+        -lcudart
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

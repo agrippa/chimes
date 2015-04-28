@@ -18,9 +18,7 @@
 #include "libchimes_cuda.h"
 #endif
 
-#ifdef __CHIMES_PROFILE
 #include "perf_profile.h"
-#endif
 
 #include "chimes_common.h"
 #include "struct_field.h"
@@ -43,6 +41,8 @@
 #include "xxhash/xxhash.h"
 
 using namespace std;
+
+// #define HASHING_DIAGNOSTICS
 
 /*
  * A note on OMP nested parallelism and how that maps to pthreads.
@@ -250,7 +250,7 @@ static pthread_rwlock_t thread_ctxs_lock = PTHREAD_RWLOCK_INITIALIZER;
  * internal representation, an unsigned integer.
  */
 static std::map<pthread_t, unsigned> pthread_to_id;
-static pthread_mutex_t pthread_to_id_mutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_rwlock_t pthread_to_id_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
  * count_threads is used to assign every pthread created a unique ID that we use
@@ -258,7 +258,6 @@ static pthread_mutex_t pthread_to_id_mutex = PTHREAD_MUTEX_INITIALIZER;
  * first OMP region, so we start from 1.
  */
 static unsigned count_threads = 1;
-static pthread_mutex_t count_threads_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*
  * Count the number of total threads to ensure that checkpoints are created by
@@ -297,7 +296,15 @@ static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
 // Just dump things smaller than this, don't waste time hashing.
 static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
 // The target size of a checkpoint, as a percentage of total heap bytes.
-static const double target_checkpoint_size_perc = 0.1;
+static double target_checkpoint_size_perc = 0.1;
+
+// The target amount of overhead to add to the host program.
+static double target_time_overhead = 0.1;
+static unsigned long long chimes_overhead = 0;
+static unsigned long long dead_thread_time = 0;
+
+#define ADD_TO_OVERHEAD __sync_fetch_and_add(&chimes_overhead, \
+        perf_profile::current_time_ns() - __chimes_overhead_start_time);
 
 #define MAX_CHECKPOINT_FILENAME_LEN 256
 static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
@@ -308,11 +315,16 @@ static char checkpoint_directory[MAX_CHECKPOINT_FILENAME_LEN];
 enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     INIT_MODULE, REGISTER_GLOBAL_VAR, ALIAS_GROUP_CHANGED, MALLOC_WRAPPER,
     REALLOC_WRAPPER, FREE_WRAPPER, CALLOC_WRAPPER, REGISTER_CONSTANT,
-    N_LABELS };
+    LEAVING_OMP_PARALLEL, REGISTER_THREAD_LOCAL_STACK_VARS,
+    ENTERING_OMP_PARALLEL, CHECKPOINT_THREAD, CHECKPOINT, INIT_CHIMES,
+    WAIT_FOR_ALL_THREADS, HASHING, N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
     "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
-    "free_wrapper", "calloc_wrapper", "register_constant" };
+    "free_wrapper", "calloc_wrapper", "register_constant",
+    "leaving_omp_parallel", "register_thread_local_stack_vars",
+    "entering_omp_parallel", "checkpoint_thread", "checkpoint", "init_chimes",
+    "wait_for_all_threads", "hashing" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
@@ -554,12 +566,23 @@ static void read_heap_from_previous_checkpoint(
 }
 
 void init_chimes() {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     atexit(onexit);
 
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
     pthread_to_id[self] = 0;
     thread_ctxs[0] = new thread_ctx(self);
+
+    char *chunk_size = getenv("CHIMES_CHUNK_SIZE_MB");
+    if (chunk_size != NULL) {
+        hash_chunker = new fixed_chunk_size_chunker(
+                atoi(chunk_size) * 1024UL * 1024UL);
+    }
 
     char *checkpoint_dir = getenv("CHIMES_CHECKPOINT_DIR");
     if (checkpoint_dir == NULL) {
@@ -847,6 +870,10 @@ void init_chimes() {
 
         close(fd);
     }
+#ifdef __CHIMES_PROFILE
+    pp.add_time(INIT_CHIMES, __start_time);
+#endif
+    ADD_TO_OVERHEAD
 }
 
 static void *translate_old_ptr(void *ptr,
@@ -956,7 +983,7 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 
 void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(INIT_MODULE);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     assert(pthread_mutex_lock(&module_mutex) == 0);
 
@@ -1035,14 +1062,16 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
     assert(pthread_mutex_unlock(&module_mutex) == 0);
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(INIT_MODULE);
+    pp.add_time(INIT_MODULE, __start_time);
 #endif
 }
 
 void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
         unsigned int nargs, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(NEW_STACK);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
@@ -1124,13 +1153,17 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
     va_end(vl);
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(NEW_STACK);
+    pp.add_time(NEW_STACK, __start_time);
 #endif
+    ADD_TO_OVERHEAD
 }
 
-void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned naliases, ...) {
+void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(CALLING);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     thread_ctx *ctx = get_my_context();
     ctx->set_func_ptr(func_ptr);
@@ -1148,13 +1181,16 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned naliases
     va_end(vl);
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(CALLING);
+    pp.add_time(CALLING, __start_time);
 #endif
+    ADD_TO_OVERHEAD
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(RM_STACK);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
@@ -1198,8 +1234,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
         }
     }
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(RM_STACK);
+    pp.add_time(RM_STACK, __start_time);
 #endif
+    ADD_TO_OVERHEAD
 }
 
 int get_next_call() {
@@ -1280,8 +1317,10 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(REGISTER_STACK_VAR);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     // Skip the expensive stack var creation if we can
     std::vector<stack_frame *> *program_stack = get_my_stack();
@@ -1297,15 +1336,16 @@ void register_stack_var(const char *mangled_name,
         program_stack->back()->add_stack_var(new_var);
     }
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(REGISTER_STACK_VAR);
+    pp.add_time(REGISTER_STACK_VAR, __start_time);
 #endif
+    ADD_TO_OVERHEAD
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(REGISTER_GLOBAL_VAR);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     va_list vl;
     va_start(vl, n_ptr_fields);
@@ -1321,14 +1361,14 @@ void register_global_var(const char *mangled_name, const char *full_type,
     assert(pthread_rwlock_unlock(&globals_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(REGISTER_GLOBAL_VAR);
+    pp.add_time(REGISTER_GLOBAL_VAR, __start_time);
 #endif
 }
 
 //TODO does not support nested pointer types
 void register_constant(size_t const_id, void *address, size_t length) {
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(REGISTER_CONSTANT);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
 
     constant_var *var = new constant_var(const_id, address, length);
@@ -1339,13 +1379,15 @@ void register_constant(size_t const_id, void *address, size_t length) {
     assert(pthread_rwlock_unlock(&constants_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(REGISTER_CONSTANT);
+    pp.add_time(REGISTER_CONSTANT, __start_time);
 #endif
 }
 
 int alias_group_changed(int ngroups, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(ALIAS_GROUP_CHANGED);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     va_list vl;
     va_start(vl, ngroups);
@@ -1358,8 +1400,10 @@ int alias_group_changed(int ngroups, ...) {
     }
     va_end(vl);
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(ALIAS_GROUP_CHANGED);
+    pp.add_time(ALIAS_GROUP_CHANGED, __start_time);
 #endif
+    ADD_TO_OVERHEAD
+
     return 0;
 }
 
@@ -1406,8 +1450,10 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  */
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(MALLOC_WRAPPER);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     assert(valid_group(group));
 
@@ -1429,15 +1475,19 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
     }
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(MALLOC_WRAPPER);
+    pp.add_time(MALLOC_WRAPPER, __start_time);
 #endif
+    ADD_TO_OVERHEAD
+
     return ptr;
 }
 
 void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(CALLOC_WRAPPER);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     assert(valid_group(group));
 
@@ -1459,16 +1509,20 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
     }
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(CALLOC_WRAPPER);
+    pp.add_time(CALLOC_WRAPPER, __start_time);
 #endif
+    ADD_TO_OVERHEAD
+
     return ptr;
 
 }
 
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(REALLOC_WRAPPER);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     assert(valid_group(group));
 
@@ -1547,8 +1601,10 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
     }
 
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(REALLOC_WRAPPER);
+    pp.add_time(REALLOC_WRAPPER, __start_time);
 #endif
+    ADD_TO_OVERHEAD
+
     return new_ptr;
 }
 
@@ -1582,8 +1638,10 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 }
 
 void free_wrapper(void *ptr, size_t group) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    pp.start_timer(FREE_WRAPPER);
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     size_t original_group = in_heap->second->get_alias_group();
@@ -1594,8 +1652,9 @@ void free_wrapper(void *ptr, size_t group) {
     free_helper(ptr);
     free(ptr);
 #ifdef __CHIMES_PROFILE
-    pp.stop_timer(FREE_WRAPPER);
+    pp.add_time(FREE_WRAPPER, __start_time);
 #endif
+    ADD_TO_OVERHEAD
 }
 
 typedef struct _checkpoint_thread_ctx {
@@ -1689,6 +1748,9 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
 }
 
 static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
 
     assert(pthread_mutex_lock(&thread_count_mutex) == 0);
 
@@ -1733,6 +1795,9 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
     if (out) {
         *out = curr_ckpt;
     }
+#ifdef __CHIMES_PROFILE
+    pp.add_time(WAIT_FOR_ALL_THREADS, __start_time);
+#endif
     return (checkpointing_thread);
 }
 
@@ -1759,7 +1824,24 @@ static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
     return (alloc_len > (remaining / 2));
 }
 
+bool within_overhead_bounds() {
+    unsigned long long running_time = dead_thread_time;
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+            e = thread_ctxs.end(); i != e; i++) {
+        running_time += i->second->elapsed_time();
+    }
+    double curr_percent_overhead = (double)chimes_overhead /
+        (double)running_time;
+    return (curr_percent_overhead < target_time_overhead);
+}
+
 void checkpoint() {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
+
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     clock_t enter_time = clock();
     new_stack((void *)checkpoint, 0, 0);
     const bool was_a_replay = ____chimes_replaying;
@@ -1873,7 +1955,8 @@ void checkpoint() {
             thread_ctx *ctx = i->second;
             ctx->set_stack_nesting(1);
         }
-    } else if (checkpointing_thread && !checkpoint_thread_running) {
+    } else if (checkpointing_thread && !checkpoint_thread_running &&
+            within_overhead_bounds()) {
         assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
         assert(get_my_context()->get_first_parallel_for_nesting() == 0);
@@ -1942,22 +2025,40 @@ void checkpoint() {
             vector<checkpointable_heap_allocation> *to_checkpoint =
                 new vector<checkpointable_heap_allocation>();
 
+#ifdef __CHIMES_PROFILE
+            const unsigned long long __hashing_start = perf_profile::current_time_ns();
+#endif
             const size_t desired_checkpoint_size =
                 (size_t)(target_checkpoint_size_perc *
                         (double)total_allocations);
             size_t copied_so_far = 0;
+#ifdef HASHING_DIAGNOSTICS
+            fprintf(stderr, "Hashing diagnostics for checkpoint:\n");
+#endif
             for (vector<pair<size_t, heap_allocation *> >::iterator i =
                     heap_to_checkpoint_sorted.begin(),
                     e = heap_to_checkpoint_sorted.end(); i != e; i++) {
                 heap_allocation *curr = i->second;
                 if (!should_hash(curr->get_size(), desired_checkpoint_size,
                             copied_so_far)) {
+#ifdef HASHING_DIAGNOSTICS
+                    fprintf(stderr, "  not hashing allocation, size=%lu "
+                            "invalid hashes=%d copied_so_far=%lu desired=%lu\n",
+                            curr->get_size(), curr->hashes_invalid(),
+                            copied_so_far, desired_checkpoint_size);
+#endif
                     to_checkpoint->push_back(checkpointable_heap_allocation(
                                 curr));
                     curr->invalidate_hashes();
                     copied_so_far += curr->get_size();
                 } else {
                     if (curr->hashes_invalid()) {
+#ifdef HASHING_DIAGNOSTICS
+                    fprintf(stderr, "  not hashing allocation due to invalid hashes, size=%lu "
+                            "copied_so_far=%lu desired=%lu\n", curr->get_size(),
+                            copied_so_far, desired_checkpoint_size);
+#endif
+
                         curr->update_hashes();
                         to_checkpoint->push_back(checkpointable_heap_allocation(
                                     curr));
@@ -1992,6 +2093,13 @@ void checkpoint() {
                                 curr->update_hash(chunk, new_hash);
                             }
                         }
+#ifdef HASHING_DIAGNOSTICS
+                        fprintf(stderr, "  hashing reduced allocation size "
+                                "from %lu to %lu, copied_so_far=%lu "
+                                "desired=%lu\n", curr->get_size(),
+                                n_bytes_changed, copied_so_far,
+                                desired_checkpoint_size);
+#endif
                         size_t packed_so_far = 0;
                         unsigned char *source = (unsigned char *)curr->get_address();
                         unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
@@ -2015,6 +2123,13 @@ void checkpoint() {
                     }
                 }
             }
+#ifdef HASHING_DIAGNOSTICS
+            fprintf(stderr, "    Hashed checkpoint size = %lu\n", copied_so_far);
+#endif
+
+#ifdef __CHIMES_PROFILE
+    pp.add_time(HASHING, __hashing_start);
+#endif
 
             delete all_changed;
 
@@ -2088,6 +2203,10 @@ void checkpoint() {
     }
 
     rm_stack(false, 0);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(CHECKPOINT, __start_time);
+#endif
+    ADD_TO_OVERHEAD
 }
 
 static void fix_stack_or_global_pointer(void *container, string type) {
@@ -2180,6 +2299,9 @@ static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
 }
 
 void *checkpoint_func(void *data) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
     unsigned char *stacks_serialized = ctx->stacks_serialized;
     uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
@@ -2422,6 +2544,10 @@ void *checkpoint_func(void *data) {
 
     checkpoint_thread_running = 0;
 
+#ifdef __CHIMES_PROFILE
+    pp.add_time(CHECKPOINT_THREAD, __start_time);
+#endif
+
     return NULL;
 }
 
@@ -2444,6 +2570,11 @@ static stack_var *find_var(void *addr,
 
 unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
         unsigned nlocals, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     thread_ctx *ctx = get_my_context();
 
     ctx->get_stack_tracker().push(lbl);
@@ -2481,13 +2612,24 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     regions_initializing++;
     assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
-    return get_my_tid();
+    int my_tid = get_my_tid();
+#ifdef __CHIMES_PROFILE
+    pp.add_time(ENTERING_OMP_PARALLEL, __start_time);
+#endif
+    ADD_TO_OVERHEAD
+
+    return my_tid;
 }
 
 void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         unsigned threads_in_region, bool spawns_threads,
         bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     unsigned global_tid;
     pthread_t self = pthread_self();
 
@@ -2541,13 +2683,13 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
          * Update count_threads so that on replay we don't have any thread ID
          * collisions.
          */
-        assert(pthread_mutex_lock(&count_threads_mutex) == 0);
-        if (global_tid + 1 > count_threads) {
-            count_threads = global_tid + 1;
+        unsigned old = count_threads;
+        while (global_tid + 1 > old) {
+            old = __sync_val_compare_and_swap(&count_threads, old,
+                    global_tid + 1);
         }
-        assert(pthread_mutex_unlock(&count_threads_mutex) == 0);
 
-        assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+        assert(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
             assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
             thread_ctxs[global_tid] = new thread_ctx(self);
@@ -2557,29 +2699,28 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         } else {
             assert(global_tid == pthread_to_id[self]);
         }
-        assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+        assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
     } else {
-        assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+        assert(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
             /*
              * If this thread is being launched for the first time here, first
              * get a globally unique ID for it.
              */
-            assert(pthread_mutex_lock(&count_threads_mutex) == 0);
-            global_tid = count_threads++;
-            assert(pthread_mutex_unlock(&count_threads_mutex) == 0);
+            global_tid = __sync_fetch_and_add(&count_threads, 1);
 
             // Then create a thread ctx for it
             assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-            thread_ctxs[global_tid] = new thread_ctx(self);
+            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid,
+                        new thread_ctx(self)));
             assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
             // Store the mapping from pthread_t to self
-            pthread_to_id[self] = global_tid;
+            pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
         } else {
-            global_tid = pthread_to_id[self];
+            global_tid = pthread_to_id.at(self);
         }
-        assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+        assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
     }
 
     thread_ctx *ctx = get_my_context();
@@ -2623,6 +2764,10 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         }
     }
     va_end(vl);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(REGISTER_THREAD_LOCAL_STACK_VARS, __start_time);
+#endif
+    ADD_TO_OVERHEAD
 }
 
 unsigned get_parent_vars_stack_depth() {
@@ -2635,6 +2780,11 @@ unsigned get_thread_stack_depth() {
 
 void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
     /*
@@ -2683,12 +2833,14 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
 
             if (program_stack->size() == 0) {
                 // Erase this thread
-                assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+                assert(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
                 map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
                         ctx->get_pthread());
                 assert(found != pthread_to_id.end());
                 pthread_to_id.erase(found);
-                assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+                assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+
+                __sync_fetch_and_add(&dead_thread_time, ctx->elapsed_time());
 
                 to_erase.push_back(i);
                 nthreads_joined++;
@@ -2735,6 +2887,10 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(LEAVING_OMP_PARALLEL, __start_time);
+#endif
+    ADD_TO_OVERHEAD
 }
 
 void chimes_error() {
@@ -2744,20 +2900,19 @@ void chimes_error() {
 static unsigned get_my_tid() {
     pthread_t self = pthread_self();
 
-    assert(pthread_mutex_lock(&pthread_to_id_mutex) == 0);
+    assert(pthread_rwlock_rdlock(&pthread_to_id_lock) == 0);
     assert(pthread_to_id.find(self) != pthread_to_id.end());
     unsigned self_id = pthread_to_id[self];
-    assert(pthread_mutex_unlock(&pthread_to_id_mutex) == 0);
+    assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
 
     return self_id;
 }
 
 static thread_ctx *get_context_for(unsigned tid) {
     assert(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
-    assert(thread_ctxs.find(tid) != thread_ctxs.end());
-
-    thread_ctx *result = thread_ctxs[tid];
+    thread_ctx *result = thread_ctxs.at(tid);
     assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+
     return result;
 }
 

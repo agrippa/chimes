@@ -1,63 +1,77 @@
 #include <sstream>
 #include <ctime>
+#include <stdlib.h>
+#include <string.h>
 #include "perf_profile.h"
 #include <assert.h>
+#include <algorithm>
 
-static double current_time_ns() {
-    clock_t t = clock();
-    return (t * 1000000.0) / CLOCKS_PER_SEC;
+unsigned long long perf_profile::current_time_ns() {
+    struct timespec t ={0,0};
+    clock_gettime(CLOCK_MONOTONIC, &t);
+    unsigned long long s = 1000000000ULL * (unsigned long long)t.tv_sec;
+    return (unsigned long long)t.tv_nsec + s;
 }
 
 perf_profile::perf_profile(const char *set_valid_labels[], int N) {
+    nlabels = N;
+    elapsed = (unsigned long long *)malloc(N * sizeof(unsigned long long));
+    count = (unsigned long long *)malloc(N * sizeof(unsigned long long));
+
+    memset(elapsed, 0x00, N * sizeof(unsigned long long));
+    memset(count, 0x00, N * sizeof(unsigned long long));
+
     for (int i = 0; i < N; i++) {
         valid_labels.push_back(std::string(set_valid_labels[i]));
-        elapsed[i] = 0;
-        depth[i] = 0;
     }
 }
 
-void perf_profile::start_timer(int label_id) {
-    double t = current_time_ns();
-
-    int curr_depth = depth[label_id];
-    if (curr_depth == 0) {
-        assert(start_times.find(label_id) == start_times.end());
-        start_times[label_id] = t;
-    }
-    depth[label_id] = curr_depth + 1;
+perf_profile::~perf_profile() {
+    free(elapsed);
+    free(count);
 }
 
-void perf_profile::stop_timer(int label_id) {
-    double t = current_time_ns();
+void perf_profile::add_time(int label_id, const unsigned long long start_time) {
+    const unsigned long long end_time = current_time_ns();
+    __sync_fetch_and_add(elapsed + label_id, end_time - start_time);
+    __sync_fetch_and_add(count + label_id, 1);
+}
 
-    assert(start_times.find(label_id) != start_times.end());
+class label_info {
+    public:
+        label_info(std::string set_label, unsigned long long set_count,
+                unsigned long long set_elapsed) : label(set_label),
+                count(set_count), elapsed(set_elapsed) { }
 
-    int curr_depth = depth[label_id];
-    if (curr_depth == 1) {
-        elapsed[label_id] = elapsed[label_id] + (t - start_times[label_id]);
-        start_times.erase(label_id);
-        count[label_id] += 1;
-    }
-    depth[label_id] = curr_depth - 1;
+        std::string get_label() { return label; }
+        unsigned long long get_count() { return count; }
+        unsigned long long get_elapsed() { return elapsed; }
+    private:
+        std::string label;
+        unsigned long long count;
+        unsigned long long elapsed;
+};
+
+static bool compare_label_info(label_info i, label_info j) {
+    return (i.get_elapsed() > j.get_elapsed());
 }
 
 std::string perf_profile::tostr() {
     std::stringstream ss;
 
-    for (std::map<int, unsigned>::iterator i = depth.begin(),
-            e = depth.end(); i != e; i++) {
-        assert(i->second == 0);
+    std::vector<label_info> profiling_data;
+
+    for (int i = 0; i < nlabels; i++) {
+        profiling_data.push_back(label_info(valid_labels[i], count[i],
+                    elapsed[i]));
     }
 
-    for (std::map<int, uint64_t>::iterator i = start_times.begin(),
-            e = start_times.end(); i != e; i++) {
-        assert(i->second == 0);
-    }
+    std::sort(profiling_data.begin(), profiling_data.end(), compare_label_info);
 
-    for (std::map<int, uint64_t>::iterator i = elapsed.begin(),
-            e = elapsed.end(); i != e; i++) {
-        ss << valid_labels[i->first] << "(" << count[i->first] << ") : " <<
-            i->second << "\n";
+    for (std::vector<label_info>::iterator i = profiling_data.begin(),
+            e = profiling_data.end(); i != e; i++) {
+        ss << i->get_label() << "(" << i->get_count() << ") : " <<
+            i->get_elapsed() << "\n";
     }
     return ss.str();
 }
