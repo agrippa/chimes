@@ -7,6 +7,90 @@
 #include <vector>
 
 #include "hash_chunker.h"
+#include "xxhash/xxhash.h"
+
+using namespace std;
+
+class memory_filled {
+    public:
+        memory_filled(size_t set_length) : length(set_length) {
+            not_filled = new vector<pair<size_t, size_t> >();
+            not_filled->push_back(pair<size_t, size_t>(0, set_length));
+        }
+
+        pair<size_t, size_t> overlap(size_t start1, size_t end1, size_t start2,
+                size_t end2) {
+            if (start1 < start2) {
+                if (end1 > start2) {
+                    return pair<size_t, size_t>(start2, min(end1, end2));
+                }
+            } else if (start1 > start2) {
+                if (start1 < end2) {
+                    return pair<size_t, size_t>(start1, min(end1, end2));
+                }
+            } else { // start1 == start2
+                return pair<size_t, size_t>(start1, min(end1, end2));
+            }
+            return pair<size_t, size_t>(0, 0);
+        }
+
+        bool is_valid(size_t start, size_t end) {
+            return !(start == 0 && end == 0);
+        }
+
+        vector<pair<size_t, size_t> > *offer(size_t start_offset,
+                size_t end_offset) {
+            vector<pair<size_t, size_t> > *useful =
+                new vector<pair<size_t, size_t> >();
+            vector<pair<size_t, size_t> > *new_not_filled =
+                new vector<pair<size_t, size_t> >();
+            for (vector<pair<size_t, size_t> >::iterator i =
+                    not_filled->begin(), e = not_filled->end(); i != e; i++) {
+                size_t hole_start = i->first;
+                size_t hole_end = i->second;
+
+                pair<size_t, size_t> shaded = overlap(start_offset, end_offset,
+                        hole_start, hole_end);
+                if (is_valid(shaded.first, shaded.second)) {
+                    useful->push_back(shaded);
+
+                    if (shaded.first == hole_start && shaded.second == hole_end) {
+                        /*
+                         * do nothing, by inaction removing this entry from the
+                         * new list of holes.
+                         */
+                    } else if (shaded.first == hole_start) {
+                        new_not_filled->push_back(pair<size_t, size_t>(
+                                    shaded.second, hole_end));
+                    } else if (shaded.second == hole_end) {
+                        new_not_filled->push_back(pair<size_t, size_t>(
+                                    hole_start, shaded.first));
+                    } else {
+                        new_not_filled->push_back(pair<size_t, size_t>(
+                                    hole_start, shaded.first));
+                        new_not_filled->push_back(pair<size_t, size_t>(
+                                    shaded.second, hole_end));
+                    }
+                } else {
+                    new_not_filled->push_back(pair<size_t, size_t>(hole_start,
+                                hole_end));
+                }
+            }
+
+            delete not_filled;
+            not_filled = new_not_filled;
+
+            return useful;
+        }
+
+        bool empty() {
+            return (not_filled->size() == 0);
+        }
+
+    private:
+        vector<pair<size_t, size_t> > *not_filled;
+        size_t length;
+};
 
 class heap_allocation {
     private:
@@ -30,10 +114,6 @@ class heap_allocation {
         size_t *hash_chunk_end;
 
     public:
-        // heap_allocation() : address(NULL), size(0), alias_group(0),
-        //         elem_is_ptr(0), elem_is_struct(0), elem_size(0),
-        //         tmp_buffer(NULL), is_cuda_alloc(0), must_hash(true) { }
-
         heap_allocation(void *set_address, size_t set_size,
                 size_t set_alias_group, int set_is_cuda_alloc,
                 int set_elem_is_ptr, int set_elem_is_struct,
@@ -64,8 +144,46 @@ class heap_allocation {
                         size);
             }
         }
+        void update_hashes() {
+            for (unsigned i = 0; i < n_hash_chunks; i++) {
+                update_hash(i, calculate_hash(i));
+            }
+        }
+        size_t get_hash_chunk_start(unsigned index) {
+            assert(index < n_hash_chunks);
+            return hash_chunk_start[index];
+        }
+        size_t get_hash_chunk_end(unsigned index) {
+            assert(index < n_hash_chunks);
+            return hash_chunk_end[index];
+        }
+        unsigned long long get_hash(unsigned index) {
+            assert(index < n_hash_chunks);
+            return hashes[index];
+        }
+        void update_hash(unsigned index, unsigned long long hash) {
+            assert(index < n_hash_chunks);
+            hashes[index] = hash;
+        }
+        unsigned long long calculate_hash(unsigned index) {
+            assert(index < n_hash_chunks);
+
+            const void *chunk_start = ((unsigned char *)address) +
+                hash_chunk_start[index];
+            size_t chunk_len = hash_chunk_end[index] - hash_chunk_start[index];
+            return XXH64(chunk_start, chunk_len, 1);
+        }
         void invalidate_hashes() {
             invalid_hashes = true;
+        }
+        void mark_hashes_valid() {
+            invalid_hashes = false;
+        }
+        bool hashes_invalid() {
+            return invalid_hashes;
+        }
+        unsigned get_n_hash_chunks() {
+            return n_hash_chunks;
         }
 
         // Getters
@@ -94,6 +212,12 @@ class heap_allocation {
             elem_size = set_elem_size;
         }
         void add_pointer_offset(int offset);
+        void set_pointer_offsets(std::vector<int> *s) {
+            assert(elem_ptr_offsets.size() == 0);
+            for (std::vector<int>::iterator i = s->begin(), e = s->end(); i != e; i++) {
+                elem_ptr_offsets.push_back(*i);
+            }
+        }
 
         void copy(heap_allocation *dst);
 };

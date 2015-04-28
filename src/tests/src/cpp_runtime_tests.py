@@ -26,6 +26,7 @@ COMD_FREE_MULTI_FILE = RuntimeTest('ComdFreeMultiFile',
                                    ['comd_free_multi_file_1.cpp',
                                     'comd_free_multi_file_2.cpp'], 30, 1)
 HEAP = RuntimeTest('Heap', ['heap.cpp'], 42, 1)
+STRESS_HASHING = RuntimeTest('StressHashing', ['stress_hashing.cpp'], 0, 3)
 HEAP_POINTERS = RuntimeTest('HeapPointers', ['heap_pointers.cpp'], 0, 1)
 HEAP_INDIRECTION = RuntimeTest('HeapIndirection', ['heap_indirection.cpp'], 0, 1)
 FREE = RuntimeTest('Free', ['free.cpp'], 42, 1)
@@ -45,11 +46,11 @@ ISO2D = RuntimeTest('Iso2D',
                                                'libcommon2d.so')],
                     cli_args='-i 1')
 ISO3D = RuntimeTest('Iso3D',
-                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, 1,
+                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, -1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
-                    cli_args='-i 1')
+                    cli_args='-i 3')
 SMITH_WATERMAN_ARGS=CHIMES_HOME + \
                     '/src/tests/runtime/cpp/smithWaterman/string1.txt ' + \
                     CHIMES_HOME + \
@@ -78,10 +79,11 @@ RAY_TRACER = RuntimeTest('RayTracer', ['ray_tracer.c'], 0, 10,
 
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
          NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
-         COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, HEAP_POINTERS, HEAP_INDIRECTION,
-         FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS, PARTIAL_CHECKPOINT,
-         SWAPPED_PTRS, SWAPPED_NESTED_PTRS, MULTI_CHECKPOINT, ISO2D, ISO3D,
-         SMITH_WATERMAN, LULESH, COMD, UTS, RAY_TRACER]
+         COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, STRESS_HASHING, HEAP_POINTERS,
+         HEAP_INDIRECTION, FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS,
+         PARTIAL_CHECKPOINT, SWAPPED_PTRS, SWAPPED_NESTED_PTRS,
+         MULTI_CHECKPOINT, ISO2D, ISO3D, SMITH_WATERMAN, LULESH, COMD, UTS,
+         RAY_TRACER]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
