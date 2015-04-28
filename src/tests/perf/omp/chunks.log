@@ -1,0 +1,356 @@
+Testing CHUNK_SIZE=1
+iso_r4_2x:   118.8039798737 s total, 11.8803979874 s/step,     0.13 Mcells/s/step
+37G	/scratch/jmg3/checkpoints//
+37G	total
+
+total 38763200
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 11:50 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 11:51 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    33557715 Apr 28 11:52 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3    24120403 Apr 28 11:52 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3    29363347 Apr 28 11:52 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3    35654867 Apr 28 11:52 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3    39849235 Apr 28 11:52 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3    46140755 Apr 28 11:53 chimes.7.ckpt
+-rw-r--r-- 1 jmg3 vs3    53480851 Apr 28 11:53 chimes.8.ckpt
+
+iso_r4_2x:   114.7541379929 s total, 11.4754137993 s/step,     0.14 Mcells/s/step
+19G	/scratch/jmg3/checkpoints//
+19G	total
+
+total 19490816
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 11:54 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3    33557715 Apr 28 11:54 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    24120403 Apr 28 11:54 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3    29363347 Apr 28 11:54 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3    35654867 Apr 28 11:54 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3    39849235 Apr 28 11:54 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3    46140755 Apr 28 11:55 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3    53480851 Apr 28 11:55 chimes.7.ckpt
+
+iso_r4_2x:   109.4642848969 s total, 10.9464284897 s/step,     0.14 Mcells/s/step
+19G	/scratch/jmg3/checkpoints//
+19G	total
+
+total 19486720
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 11:56 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3    33557715 Apr 28 11:56 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    24120403 Apr 28 11:56 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3    29363347 Apr 28 11:56 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3    35654867 Apr 28 11:56 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3    39849235 Apr 28 11:56 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3    46140755 Apr 28 11:57 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3    53480851 Apr 28 11:57 chimes.7.ckpt
+
+iso_r4_2x:   111.5767548084 s total, 11.1576754808 s/step,     0.14 Mcells/s/step
+19G	/scratch/jmg3/checkpoints//
+19G	total
+
+total 19486720
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 11:58 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3    33557715 Apr 28 11:58 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    24120403 Apr 28 11:58 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3    29363347 Apr 28 11:58 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3    35654867 Apr 28 11:58 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3    39849235 Apr 28 11:58 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3    46140755 Apr 28 11:58 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3    53480851 Apr 28 11:59 chimes.7.ckpt
+
+iso_r4_2x:   114.7781031132 s total, 11.4778103113 s/step,     0.14 Mcells/s/step
+19G	/scratch/jmg3/checkpoints//
+19G	total
+
+total 19492864
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 11:59 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3    33557715 Apr 28 12:00 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    24120403 Apr 28 12:00 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3    29363347 Apr 28 12:00 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3    35654867 Apr 28 12:00 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3    39849235 Apr 28 12:00 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3    46140755 Apr 28 12:00 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3    53480851 Apr 28 12:01 chimes.7.ckpt
+
+Testing CHUNK_SIZE=4
+iso_r4_2x:   111.0165288448 s total, 11.1016528845 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20171776
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:01 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   134220787 Apr 28 12:02 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    96471987 Apr 28 12:02 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   113249235 Apr 28 12:02 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   130026483 Apr 28 12:02 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   146803731 Apr 28 12:02 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   167775267 Apr 28 12:02 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   188746803 Apr 28 12:03 chimes.7.ckpt
+
+iso_r4_2x:   111.4533720016 s total, 11.1453372002 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20163584
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:03 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   134220787 Apr 28 12:04 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    96471987 Apr 28 12:04 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   113249235 Apr 28 12:04 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   130026483 Apr 28 12:04 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   146803731 Apr 28 12:04 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   167775267 Apr 28 12:04 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   188746803 Apr 28 12:05 chimes.7.ckpt
+
+iso_r4_2x:   115.6429479122 s total, 11.5642947912 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20222976
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:05 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   134220787 Apr 28 12:06 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    96471987 Apr 28 12:06 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   113249235 Apr 28 12:06 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   130026483 Apr 28 12:06 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   146803731 Apr 28 12:06 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   167775267 Apr 28 12:06 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   188746803 Apr 28 12:07 chimes.7.ckpt
+
+iso_r4_2x:   114.5269958973 s total, 11.4526995897 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20220928
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:07 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   134220787 Apr 28 12:08 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    96471987 Apr 28 12:08 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   113249235 Apr 28 12:08 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   130026483 Apr 28 12:08 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   146803731 Apr 28 12:08 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   167775267 Apr 28 12:08 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   188746803 Apr 28 12:09 chimes.7.ckpt
+
+iso_r4_2x:   116.5673258305 s total, 11.6567325830 s/step,     0.13 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20220928
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:10 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   134220787 Apr 28 12:10 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3    96471987 Apr 28 12:10 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   113249235 Apr 28 12:10 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   130026483 Apr 28 12:10 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   146803731 Apr 28 12:10 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   167775267 Apr 28 12:11 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   188746803 Apr 28 12:11 chimes.7.ckpt
+
+Testing CHUNK_SIZE=16
+iso_r4_2x:   111.1480891705 s total, 11.1148089170 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20753408
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:12 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:12 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   167774995 Apr 28 12:12 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   184552211 Apr 28 12:12 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:12 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   234883859 Apr 28 12:12 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:13 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   285215507 Apr 28 12:13 chimes.7.ckpt
+
+iso_r4_2x:   114.3981449604 s total, 11.4398144960 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20753408
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:14 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:14 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   167774995 Apr 28 12:14 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   184552211 Apr 28 12:14 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:14 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   234883859 Apr 28 12:14 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:15 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   285215507 Apr 28 12:15 chimes.7.ckpt
+
+iso_r4_2x:   112.1335010529 s total, 11.2133501053 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20751360
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:16 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:16 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   167774995 Apr 28 12:16 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   184552211 Apr 28 12:16 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:16 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   234883859 Apr 28 12:16 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:17 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   285215507 Apr 28 12:17 chimes.7.ckpt
+
+iso_r4_2x:   112.0658829212 s total, 11.2065882921 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20755456
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:18 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:18 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   167774995 Apr 28 12:18 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   184552211 Apr 28 12:18 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:18 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   234883859 Apr 28 12:18 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:19 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   285215507 Apr 28 12:19 chimes.7.ckpt
+
+iso_r4_2x:   111.5585138798 s total, 11.1558513880 s/step,     0.14 Mcells/s/step
+20G	/scratch/jmg3/checkpoints//
+20G	total
+
+total 20751360
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:20 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:20 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   167774995 Apr 28 12:20 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   184552211 Apr 28 12:20 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   218106643 Apr 28 12:20 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   234883859 Apr 28 12:20 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:21 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   285215507 Apr 28 12:21 chimes.7.ckpt
+
+Testing CHUNK_SIZE=64
+iso_r4_2x:   113.9302420616 s total, 11.3930242062 s/step,     0.14 Mcells/s/step
+21G	/scratch/jmg3/checkpoints//
+21G	total
+
+total 21386240
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:22 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:22 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:22 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:22 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:22 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:22 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:23 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   402656019 Apr 28 12:23 chimes.7.ckpt
+
+iso_r4_2x:   112.7259271145 s total, 11.2725927114 s/step,     0.14 Mcells/s/step
+21G	/scratch/jmg3/checkpoints//
+21G	total
+
+total 21382144
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:24 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:24 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:24 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:24 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:24 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:24 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:25 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   402656019 Apr 28 12:25 chimes.7.ckpt
+
+iso_r4_2x:   114.1737139225 s total, 11.4173713923 s/step,     0.14 Mcells/s/step
+21G	/scratch/jmg3/checkpoints//
+21G	total
+
+total 21380096
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:26 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:26 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:26 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:26 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:26 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:26 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:27 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   402656019 Apr 28 12:27 chimes.7.ckpt
+
+iso_r4_2x:   116.2429490089 s total, 11.6242949009 s/step,     0.14 Mcells/s/step
+21G	/scratch/jmg3/checkpoints//
+21G	total
+
+total 21382144
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:28 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:28 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:28 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:28 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:28 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:28 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:29 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   402656019 Apr 28 12:29 chimes.7.ckpt
+
+iso_r4_2x:   112.8631651402 s total, 11.2863165140 s/step,     0.14 Mcells/s/step
+21G	/scratch/jmg3/checkpoints//
+21G	total
+
+total 21380096
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:30 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:30 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:30 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   268438291 Apr 28 12:30 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:30 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:30 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   335547155 Apr 28 12:31 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   402656019 Apr 28 12:31 chimes.7.ckpt
+
+Testing CHUNK_SIZE=256
+iso_r4_2x:   113.6138749123 s total, 11.3613874912 s/step,     0.14 Mcells/s/step
+23G	/scratch/jmg3/checkpoints//
+23G	total
+
+total 23151616
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:32 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:32 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:32 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:32 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:32 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:32 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:33 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   805309203 Apr 28 12:33 chimes.7.ckpt
+
+iso_r4_2x:   116.5518770218 s total, 11.6551877022 s/step,     0.13 Mcells/s/step
+23G	/scratch/jmg3/checkpoints//
+23G	total
+
+total 23151616
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:34 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:34 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:34 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:34 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:34 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:35 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:35 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   805309203 Apr 28 12:35 chimes.7.ckpt
+
+iso_r4_2x:   115.8664150238 s total, 11.5866415024 s/step,     0.14 Mcells/s/step
+23G	/scratch/jmg3/checkpoints//
+23G	total
+
+total 23153664
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:36 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:36 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:36 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:36 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:36 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:37 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:37 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   805309203 Apr 28 12:37 chimes.7.ckpt
+
+iso_r4_2x:   113.9713959694 s total, 11.3971395969 s/step,     0.14 Mcells/s/step
+23G	/scratch/jmg3/checkpoints//
+23G	total
+
+total 23155712
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:38 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:38 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:38 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:38 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:38 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:39 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:39 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   805309203 Apr 28 12:39 chimes.7.ckpt
+
+iso_r4_2x:   112.7106981277 s total, 11.2710698128 s/step,     0.14 Mcells/s/step
+23G	/scratch/jmg3/checkpoints//
+23G	total
+
+total 23147520
+-rw-r--r-- 1 jmg3 vs3 19732767903 Apr 28 12:40 chimes.0.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:40 chimes.1.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:40 chimes.2.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:40 chimes.3.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:40 chimes.4.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:41 chimes.5.ckpt
+-rw-r--r-- 1 jmg3 vs3   536873747 Apr 28 12:41 chimes.6.ckpt
+-rw-r--r-- 1 jmg3 vs3   805309203 Apr 28 12:41 chimes.7.ckpt
+
