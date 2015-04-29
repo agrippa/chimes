@@ -1,7 +1,13 @@
 #ifndef CHECKPOINTABLE_HEAP_ALLOCATION_H
 #define CHECKPOINTABLE_HEAP_ALLOCATION_H
 
+#ifdef CUDA_SUPPORT
+#include <cuda_runtime.h>
+#endif
+
+#include "chimes_common.h"
 #include <stdlib.h>
+#include <string.h>
 #include <vector>
 #include "heap_allocation.h"
 
@@ -47,8 +53,12 @@ class checkpointable_heap_allocation {
             assert(buffer);
 
             if (is_cuda_alloc) {
+#ifdef CUDA_SUPPORT
                 CHECK(cudaMemcpy(buffer, other->get_address(), size,
                             cudaMemcpyDeviceToHost));
+#else
+                assert(false);
+#endif
             } else {
                 memcpy(buffer, other->get_address(), size);
             }

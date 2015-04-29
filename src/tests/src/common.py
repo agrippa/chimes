@@ -659,6 +659,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     # Test the command without a checkpoint, verify it produces the expected
     # error code and one checkpoint file.
     assert 'CHIMES_CHECKPOINT_FILE' not in env
+    env['CHIMES_DISABLE_THROTTLING'] = 'TRUE'
     stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
     if code != test.expected_code:
         sys.stderr.write('Test ' + test.name + ' expected exit code ' +
@@ -696,6 +697,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         checkpoint = random.choice(chimes_files)
         chimes_files.remove(checkpoint)
         env['CHIMES_CHECKPOINT_FILE'] = checkpoint
+        env['CHIMES_DISABLE_THROTTLING'] = 'TRUE'
         stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
         if code != CHIMES_REPLAY_EXIT_CODE:
             sys.stderr.write('Rerun of test ' + test.name + ' on checkpoint ' +

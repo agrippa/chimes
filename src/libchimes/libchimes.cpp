@@ -12,6 +12,9 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <string.h>
+#include <sys/types.h>
+#include <aio.h>
+#include <errno.h>
 
 #ifdef CUDA_SUPPORT
 #include <cuda_runtime.h>
@@ -30,6 +33,10 @@
 #include "thread_serialization.h"
 #include "global_serialization.h"
 #include "constant_serialization.h"
+#include "trace_serialization.h"
+#include "container_serialization.h"
+#include "alias_groups_serialization.h"
+#include "checkpointable_heap_serialization.h"
 #include "ptr_and_size.h"
 #include "already_updated_ptrs.h"
 #include "chimes_stack.h"
@@ -92,6 +99,11 @@ using namespace std;
  *     }
  *
  */
+
+typedef struct _serialized_checkpoint_time {
+    unsigned tid;
+    clock_t delta;
+} serialized_checkpoint_time;
 
 class checkpoint_ctx {
     public:
@@ -194,7 +206,7 @@ static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out);
  * from the previous execution, and is then used to replay that trace. This
  * basically stores the old contents of stack_tracker.
  */
-static map<unsigned, vector<int> > traces;
+static map<unsigned, vector<int> > *traces;
 static map<unsigned, unsigned> trace_indices;
 
 /*
@@ -299,6 +311,7 @@ static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
 static double target_checkpoint_size_perc = 0.1;
 
 // The target amount of overhead to add to the host program.
+static bool disable_throttling = false;
 static double target_time_overhead = 0.1;
 static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
@@ -433,6 +446,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             buffer_length += (range_end - range_start);
         }
         void *buffer = malloc(buffer_length);
+        fprintf(stderr, "buffer_length=%lu\n", buffer_length);
         safe_read(fd, buffer, buffer_length, "buffer", checkpoint_file);
 
         heap_allocation *alloc = NULL;
@@ -578,6 +592,11 @@ void init_chimes() {
     pthread_to_id[self] = 0;
     thread_ctxs[0] = new thread_ctx(self);
 
+    char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
+    if (chimes_disable_throttling && strlen(chimes_disable_throttling) > 0) {
+        disable_throttling = true;
+    }
+
     char *chunk_size = getenv("CHIMES_CHUNK_SIZE_MB");
     if (chunk_size != NULL) {
         hash_chunker = new fixed_chunk_size_chunker(
@@ -622,37 +641,30 @@ void init_chimes() {
         int n_checkpoint_times;
         safe_read(fd, &n_checkpoint_times, sizeof(n_checkpoint_times),
                 "n_checkpoint_times", checkpoint_file);
+        serialized_checkpoint_time *serialized_times =
+            (serialized_checkpoint_time *)malloc(n_checkpoint_times *
+                    sizeof(serialized_checkpoint_time));
+        safe_read(fd, serialized_times, n_checkpoint_times *
+                sizeof(serialized_checkpoint_time), "serialized_times",
+                checkpoint_file);
         for (int i = 0; i < n_checkpoint_times; i++) {
-            unsigned tid;
-            clock_t delta;
+            unsigned tid = serialized_times[i].tid;
+            clock_t delta = serialized_times[i].delta;
 
-            safe_read(fd, &tid, sizeof(tid), "tid", checkpoint_file);
-            safe_read(fd, &delta, sizeof(delta), "delta", checkpoint_file);
             checkpoint_entry_deltas->insert(std::pair<unsigned, clock_t>(tid,
                         delta));
         }
 
         // Read traces from checkpoint
-        int nthreads;
-        safe_read(fd, &nthreads, sizeof(nthreads), "nthreads",
+        size_t serialized_traces_len;
+        safe_read(fd, &serialized_traces_len, sizeof(serialized_traces_len),
+                "serialized_traces_len", checkpoint_file);
+        void *serialized_traces = malloc(serialized_traces_len);
+        safe_read(fd, serialized_traces, serialized_traces_len, "serialized_traces",
                 checkpoint_file);
-        for (int i = 0; i < nthreads; i++) {
-            unsigned thread;
-            safe_read(fd, &thread, sizeof(thread), "thread", checkpoint_file);
-
-            traces[thread] = vector<int>();
-            trace_indices[thread] = 0;
-
-            int trace_len;
-            safe_read(fd, &trace_len, sizeof(trace_len), "trace_len",
-                    checkpoint_file);
-            for (int j = 0; j < trace_len; j++) {
-                int trace_ele;
-                safe_read(fd, &trace_ele, sizeof(trace_ele), "trace_ele",
-                        checkpoint_file);
-                traces[thread].push_back(trace_ele);
-            }
-        }
+        traces = deserialize_traces(serialized_traces, serialized_traces_len,
+                &trace_indices);
+        free(serialized_traces);
 
         // read in stack state
         uint64_t stack_serialized_len;
@@ -837,36 +849,26 @@ void init_chimes() {
 
         delete new_heap;
 
-        unsigned n_contains_mappings;
-        safe_read(fd, &n_contains_mappings, sizeof(n_contains_mappings),
-                "n_contains_mappings", checkpoint_file);
-        for (unsigned i = 0; i < n_contains_mappings; i++) {
-            size_t container, child;
-            safe_read(fd, &container, sizeof(container), "container",
-                    checkpoint_file);
-            safe_read(fd, &child, sizeof(child), "child", checkpoint_file);
+        size_t serialized_contains_len;
+        safe_read(fd, &serialized_contains_len, sizeof(serialized_contains_len),
+                "serialized_contains_len", checkpoint_file);
+        void *serialized_contains = malloc(serialized_contains_len);
+        safe_read(fd, serialized_contains, serialized_contains_len,
+                "serialized_contains", checkpoint_file);
+        deserialize_containers(serialized_contains, serialized_contains_len,
+                &contains);
+        free(serialized_contains);
 
-            assert(contains.find(container) == contains.end());
-            contains[container] = child;
-        }
-
-        unsigned n_aliased_groups;
-        safe_read(fd, &n_aliased_groups, sizeof(n_aliased_groups),
-                "n_aliased_groups", checkpoint_file);
-        for (unsigned i = 0; i < n_aliased_groups; i++) {
-            std::vector<size_t> *groups = new std::vector<size_t>();
-            unsigned size;
-            safe_read(fd, &size, sizeof(size), "aliased_groups_size",
-                    checkpoint_file);
-            for (unsigned ii = 0; ii < size; ii++) {
-                size_t group;
-                safe_read(fd, &group, sizeof(group), "group", checkpoint_file);
-                groups->push_back(group);
-
-                assert(aliased_groups.find(group) == aliased_groups.end());
-                aliased_groups[group] = groups;
-            }
-        }
+        size_t serialized_alias_groups_len;
+        safe_read(fd, &serialized_alias_groups_len,
+                sizeof(serialized_alias_groups_len),
+                "serialized_alias_groups_len", checkpoint_file);
+        void *serialized_alias_groups = malloc(serialized_alias_groups_len);
+        safe_read(fd, serialized_alias_groups, serialized_alias_groups_len,
+                "serialized_alias_groups", checkpoint_file);
+        deserialize_alias_groups(serialized_alias_groups,
+                serialized_alias_groups_len, &aliased_groups);
+        free(serialized_alias_groups);
 
         close(fd);
     }
@@ -1241,8 +1243,8 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
 
 int get_next_call() {
     unsigned tid = get_my_tid();
-    assert(trace_indices[tid] < traces[tid].size());
-    int ele = traces[tid][trace_indices[tid]];
+    assert(trace_indices[tid] < traces->at(tid).size());
+    int ele = traces->at(tid)[trace_indices[tid]];
     trace_indices[tid] = trace_indices[tid] + 1;
     return ele;
 }
@@ -1825,6 +1827,10 @@ static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
 }
 
 bool within_overhead_bounds() {
+    if (disable_throttling) {
+        return true;
+    }
+
     unsigned long long running_time = dead_thread_time;
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
@@ -2238,6 +2244,27 @@ static void fix_stack_or_global_pointer(void *container, string type) {
     }
 }
 
+static aiocb *async_safe_write(int fd, void *ptr, size_t size,
+        off_t file_offset, const char *msg, const char *filename,
+        off_t *count_bytes) {
+    aiocb *cb = (aiocb*)malloc(sizeof(aiocb));
+    memset(cb, 0x00, sizeof(aiocb));
+    cb->aio_nbytes = size;
+    cb->aio_offset = file_offset;
+    cb->aio_fildes = fd;
+    cb->aio_buf = ptr;
+
+    *count_bytes += size;
+
+    if (aio_write(cb) == -1) {
+        fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
+        perror(NULL);
+        exit(1);
+    }
+
+    return cb;
+}
+
 static void safe_write(int fd, void *ptr, size_t size, const char *msg,
         const char *filename) {
     size_t sofar = 0;
@@ -2272,7 +2299,9 @@ static void safe_read(int fd, void *ptr, size_t size, const char *msg,
         if (sofar + toread > size) {
             toread = size - sofar;
         }
+        fprintf(stderr, "sofar=%lu toread=%lu\n", sofar, toread);
         ssize_t r = read(fd, c_ptr + sofar, toread);
+        fprintf(stderr, "r=%lu\n", r);
         if (r == -1) {
             fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
             exit(1);
@@ -2317,6 +2346,9 @@ void *checkpoint_func(void *data) {
         ctx->heap_to_checkpoint;
     map<size_t, size_t> *contains = ctx->contains;
 
+    vector<aiocb *> async_tokens;
+    off_t count_bytes = 0;
+
     /*
      * Until we implement the planned client-server architecture, just dump
      * checkpoints to a file locally. Right now, we naively dump everything.
@@ -2335,174 +2367,117 @@ void *checkpoint_func(void *data) {
 
     // Write the name of the preceding checkpoint file out
     size_t filename_length = strlen(previous_checkpoint_filename) + 1;
-    safe_write(fd, &filename_length, sizeof(filename_length), "filename_length",
-            dump_filename);
-    safe_write(fd, previous_checkpoint_filename,
-            filename_length, "previous_checkpoint_filename", dump_filename);
+    async_tokens.push_back(async_safe_write(fd, &filename_length,
+                sizeof(filename_length), count_bytes, "filename_length", dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, previous_checkpoint_filename,
+                filename_length, count_bytes, "previous_checkpoint_filename", dump_filename, &count_bytes));
 
     size_t heap_offset = -1; // placeholder until we figure out the actual value
-    off_t heap_offset_offset = safe_seek(fd, 0, SEEK_CUR, "heap_offset_offset",
-            dump_filename);
-    safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_preliminary",
-            dump_filename);
+    off_t heap_offset_offset = sizeof(filename_length) + filename_length;
+    async_tokens.push_back(async_safe_write(fd, &heap_offset,
+                sizeof(heap_offset), count_bytes, "heap_offset_preliminary", dump_filename,
+                &count_bytes));
 
     // Write the heap entry times to the dump file, sorted by entry order
     int n_checkpoint_times = ctx->checkpoint_entry_times->size();
-    safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times),
-            "n_checkpoint_times", dump_filename);
-    bool first = true;
+    async_tokens.push_back(async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
+                "n_checkpoint_times", dump_filename, &count_bytes));
+    serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
+            n_checkpoint_times * sizeof(serialized_checkpoint_time));
+    int index = 0;
     clock_t baseline;
     for (vector<pair<unsigned, clock_t> >::iterator i =
             ctx->checkpoint_entry_times->begin(),
             e = ctx->checkpoint_entry_times->end(); i != e; i++) {
         unsigned tid = i->first;
         clock_t t = i->second;
-        if (first) {
+        if (index == 0) {
             baseline = t;
         }
         clock_t delta = t - baseline;
-        safe_write(fd, &tid, sizeof(tid), "tid", dump_filename);
-        safe_write(fd, &delta, sizeof(delta), "delta", dump_filename);
-        first = false;
+        serialized_times[index].tid = tid;
+        serialized_times[index].delta = delta;
+        index++;
     }
+    async_tokens.push_back(async_safe_write(fd, serialized_times,
+                n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
+                "serialized_times", dump_filename, &count_bytes));
 
     // Write the trace of function calls out
-    int nthreads = ctx->stack_trackers->size();
-    safe_write(fd, &nthreads, sizeof(nthreads), "nthreads", dump_filename);
-    for (map<unsigned, vector<int> *>::iterator i =
-            ctx->stack_trackers->begin(), e = ctx->stack_trackers->end();
-            i != e; i++) {
-        unsigned thread = i->first;
-        vector<int> *trace = i->second;
-
-        safe_write(fd, &thread, sizeof(thread), "thread", dump_filename);
-        int trace_len = trace->size();
-        safe_write(fd, &trace_len, sizeof(trace_len), "trace length",
-                dump_filename);
-        for (std::vector<int>::iterator trace_iter = trace->begin(),
-                trace_end = trace->end(); trace_iter != trace_end;
-                trace_iter++) {
-            int trace = *trace_iter;
-            safe_write(fd, &trace, sizeof(trace), "trace element",
-                    dump_filename);
-        }
-        delete trace;
-    }
+    size_t serialized_traces_len;
+    void *serialized_traces = serialize_traces(ctx->stack_trackers,
+            &serialized_traces_len);
+    async_tokens.push_back(async_safe_write(fd, &serialized_traces_len,
+                sizeof(serialized_traces_len), count_bytes, "serialized_traces_len",
+                dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, serialized_traces,
+                serialized_traces_len, count_bytes, "serialized_traces", dump_filename, &count_bytes));
 
     // Write the serialized stack out
-    safe_write(fd, &stacks_serialized_len, sizeof(stacks_serialized_len),
-            "stacks_serialized_len", dump_filename);
-    safe_write(fd, stacks_serialized, ctx->stacks_serialized_len,
-            "stacks_serialized", dump_filename);
+    async_tokens.push_back(async_safe_write(fd, &stacks_serialized_len,
+                sizeof(stacks_serialized_len), count_bytes, "stacks_serialized_len",
+                dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, stacks_serialized,
+                ctx->stacks_serialized_len, count_bytes, "stacks_serialized", dump_filename, &count_bytes));
 
     // Write the serialized globals out
-    safe_write(fd, &globals_serialized_len, sizeof(globals_serialized_len),
-            "globals_serialized_len", dump_filename);
-    safe_write(fd, globals_serialized, globals_serialized_len,
-            "globals_serialized", dump_filename);
+    async_tokens.push_back(async_safe_write(fd, &globals_serialized_len,
+                sizeof(globals_serialized_len), count_bytes, "globals_serialized_len",
+                dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, globals_serialized,
+            globals_serialized_len, count_bytes, "globals_serialized", dump_filename, &count_bytes));
 
     // Write the constants out
-    safe_write(fd, &constants_serialized_len, sizeof(constants_serialized_len),
-            "constants_serialized_len", dump_filename);
-    safe_write(fd, constants_serialized, constants_serialized_len,
-            "constants_serialized", dump_filename);
+    async_tokens.push_back(async_safe_write(fd, &constants_serialized_len,
+            sizeof(constants_serialized_len), count_bytes, "constants_serialized_len",
+            dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, constants_serialized,
+            constants_serialized_len, count_bytes, "constants_serialized", dump_filename, &count_bytes));
 
     // Write out the thread hierarchy
-    safe_write(fd, &thread_hierarchy_serialized_len,
-            sizeof(thread_hierarchy_serialized_len),
-            "thread_hierarchy_serialized_len", dump_filename);
-    safe_write(fd, thread_hierarchy_serialized, thread_hierarchy_serialized_len,
-            "thread_hierarchy_serialized", dump_filename);
+    async_tokens.push_back(async_safe_write(fd, &thread_hierarchy_serialized_len,
+            sizeof(thread_hierarchy_serialized_len), count_bytes,
+            "thread_hierarchy_serialized_len", dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, thread_hierarchy_serialized,
+            thread_hierarchy_serialized_len, count_bytes, "thread_hierarchy_serialized",
+            dump_filename, &count_bytes));
+
+    /*
+     * At the end (after all asynchronous I/Os have completed) we write a
+     * pointer to the heap offset into the file near the front.
+     *
+     * TODO
+     */
+    heap_offset = count_bytes;
 
     // Write the heap allocations out
     uint64_t n_heap_allocs = to_checkpoint->size();
+    async_tokens.push_back(async_safe_write(fd, &n_heap_allocs,
+                sizeof(n_heap_allocs), count_bytes, "n_heap_allocs", dump_filename, &count_bytes));
+    vector<serialized_heap_var> *serialized_heap_vars =
+        serialize_checkpointable_heap(to_checkpoint);
+    assert(serialized_heap_vars->size() == to_checkpoint->size());
 
-    heap_offset = safe_seek(fd, 0, SEEK_CUR, "heap_offset",
-            dump_filename);
-    assert(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
-            dump_filename) == heap_offset_offset);
-    safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
-            dump_filename);
-    assert(safe_seek(fd, heap_offset, SEEK_SET, "heap_offset", dump_filename));
-
-    safe_write(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
-            dump_filename);
-    for (vector<checkpointable_heap_allocation>::iterator heap_iter =
-            to_checkpoint->begin(), heap_end = to_checkpoint->end();
-            heap_iter != heap_end; heap_iter++) {
-        checkpointable_heap_allocation alloc = *heap_iter;
-
-        assert(alloc.get_buffer() != NULL);
-        void *address = alloc.get_address();
-        size_t size = alloc.get_size();
-        size_t group = alloc.get_alias_group();
-        int is_cuda_alloc = alloc.get_is_cuda_alloc();
-        int elem_is_ptr = alloc.check_elem_is_ptr();
-        int elem_is_struct = alloc.check_elem_is_struct();
-
-        safe_write(fd, &address, sizeof(address), "address", dump_filename);
-        safe_write(fd, &size, sizeof(size), "size", dump_filename);
-        safe_write(fd, &group, sizeof(group), "group", dump_filename);
-        safe_write(fd, &is_cuda_alloc, sizeof(is_cuda_alloc), "is_cuda_alloc",
-                dump_filename);
-        safe_write(fd, &elem_is_ptr, sizeof(elem_is_ptr), "elem_is_ptr",
-                dump_filename);
-        safe_write(fd, &elem_is_struct, sizeof(elem_is_struct),
-                "elem_is_struct", dump_filename);
-
-        if (elem_is_struct) {
-            size_t elem_size = alloc.get_elem_size();
-
-            safe_write(fd, &elem_size, sizeof(elem_size), "elem_size",
-                    dump_filename);
-            int elem_ptr_offsets_len =
-                alloc.get_ptr_field_offsets()->size();
-            safe_write(fd, &elem_ptr_offsets_len,
-                    sizeof(elem_ptr_offsets_len), "elem_ptr_offsets_len",
-                    dump_filename);
-            for (unsigned int i = 0; i < alloc.get_ptr_field_offsets()->size();
-                    i++) {
-                int offset = (*alloc.get_ptr_field_offsets())[i];
-                safe_write(fd, &offset, sizeof(offset), "offset",
-                        dump_filename);
-            }
-        }
-
-        int n_ranges = alloc.get_buffer_ranges()->size();
-        safe_write(fd, &n_ranges, sizeof(n_ranges), "n_ranges", dump_filename);
-        size_t buffer_length = 0;
-        for (vector<pair<size_t, size_t> >::iterator range_iter =
-                alloc.get_buffer_ranges()->begin(), range_e =
-                alloc.get_buffer_ranges()->end(); range_iter != range_e;
-                range_iter++) {
-            size_t range_start = range_iter->first;
-            size_t range_end = range_iter->second;
-            safe_write(fd, &range_start, sizeof(range_start), "range_start",
-                    dump_filename);
-            safe_write(fd, &range_end, sizeof(range_end), "range_end",
-                    dump_filename);
-            buffer_length += (range_end - range_start);
-        }
-
-        safe_write(fd, alloc.get_buffer(), buffer_length, "heap contents",
-                dump_filename);
-
-        // Release any deffered frees
-        free(alloc.get_buffer());
+    for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+        fprintf(stderr, "writing buffer of size %lu\n", serialized_heap_vars->at(i).get_buffer_len());
+        async_tokens.push_back(async_safe_write(fd,
+                    serialized_heap_vars->at(i).get_serialized(),
+                    serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
+                    "serialized_heap_var", dump_filename, &count_bytes));
+        async_tokens.push_back(async_safe_write(fd,
+                    to_checkpoint->at(i).get_buffer(),
+                    serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
+                    "to_checkpoint_buffer", dump_filename, &count_bytes));
     }
 
-    unsigned n_contains_mappings = contains->size();
-    safe_write(fd, &n_contains_mappings, sizeof(n_contains_mappings),
-            "n_contains_mappings", dump_filename);
-    // Dump container information to be loaded with the checkpoint
-    for (map<size_t, size_t>::iterator i = contains->begin(), e = contains->end();
-            i != e; i++) {
-        size_t container = i->first;
-        size_t child = i->second;
-        safe_write(fd, &container, sizeof(container), "container",
-                dump_filename);
-        safe_write(fd, &child, sizeof(child), "child", dump_filename);
-    }
+    size_t serialized_contains_len;
+    void *serialized_contains = serialize_containers(contains,
+            &serialized_contains_len);
+    async_tokens.push_back(async_safe_write(fd, &serialized_contains_len,
+                sizeof(serialized_contains_len), count_bytes, "serialized_contains_len",
+                dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, serialized_contains,
+                serialized_contains_len, count_bytes, "serialized_contains", dump_filename, &count_bytes));
 
     assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
     set<vector<size_t> *> aliased_groups_ptr;
@@ -2511,33 +2486,86 @@ void *checkpoint_func(void *data) {
         aliased_groups_ptr.insert(i->second);
     }
 
-    unsigned n_aliased_groups = aliased_groups_ptr.size();
-    safe_write(fd, &n_aliased_groups, sizeof(n_aliased_groups),
-            "n_aliased_groups", dump_filename);
-    for (set<vector<size_t> *>::iterator i = aliased_groups_ptr.begin(),
-            e = aliased_groups_ptr.end(); i != e; i++) {
-        vector<size_t> *curr = *i;
-        unsigned curr_size = curr->size();
-        safe_write(fd, &curr_size, sizeof(curr_size), "curr_size",
-                dump_filename);
-
-        for (vector<size_t>::iterator ii = curr->begin(), ee = curr->end();
-                ii != ee; ii++) {
-            size_t group = *ii;
-            safe_write(fd, &group, sizeof(group), "group", dump_filename);
-        }
-    }
+    size_t serialized_alias_groups_len;
+    void *serialized_alias_groups = serialize_alias_groups(&aliased_groups_ptr,
+            &serialized_alias_groups_len);
     assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
+    async_tokens.push_back(async_safe_write(fd, &serialized_alias_groups_len,
+                sizeof(serialized_alias_groups_len), count_bytes,
+                "serialized_alias_groups_len", dump_filename, &count_bytes));
+    async_tokens.push_back(async_safe_write(fd, serialized_alias_groups,
+                serialized_alias_groups_len, count_bytes, "serialized_alias_groups",
+                dump_filename, &count_bytes));
+
+    /*
+     * Done! Wait for async I/Os and finally write the heap offset info in the
+     * header of the checkpoint file.
+     *
+     * Iterate in reverse so we wait for the last ones first.
+     */
+
+    while (!async_tokens.empty()) {
+        aiocb *curr = async_tokens.front();
+        async_tokens.erase(async_tokens.begin());
+
+        // Wait to finish and ensure it succeeded
+        aiocb *last_arr[1] = { curr };
+        assert(aio_suspend(last_arr, 1, NULL) == 0);
+        assert(aio_error(curr) == 0);
+
+        // Check that it was a complete write
+        ssize_t written = aio_return(curr);
+
+        assert(written >= 0);
+        if ((size_t)written < curr->aio_nbytes) {
+            // Need to redo partial write
+            size_t left = curr->aio_nbytes - (size_t)written;
+            aiocb *cb = async_safe_write(curr->aio_fildes,
+                    ((unsigned char *)curr->aio_buf) + written, left,
+                    curr->aio_offset + written, "retry", dump_filename,
+                    &count_bytes);
+            async_tokens.push_back(cb);
+        }
+        free(curr);
+    }
+
+    for (vector<aiocb *>::reverse_iterator i = async_tokens.rbegin(),
+            e = async_tokens.rend(); i != e; i++) {
+        aiocb *curr = *i;
+        aiocb *last_arr[1] = { curr };
+        assert(aio_suspend(last_arr, 1, NULL) == 0);
+        assert(aio_error(curr) == 0);
+        ssize_t ret = aio_return(curr);
+        assert(ret > 0);
+        assert((size_t)ret == curr->aio_nbytes);
+        free(curr);
+    }
+
+    assert(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
+            dump_filename) == heap_offset_offset);
+    safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
+            dump_filename);
     close(fd);
+
+    for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+        free(to_checkpoint->at(i).get_buffer());
+        free(serialized_heap_vars->at(i).get_serialized());
+    }
+
     free(stacks_serialized);
     free(globals_serialized);
     free(constants_serialized);
     free(thread_hierarchy_serialized);
+    free(serialized_times);
+    free(serialized_traces);
+    free(serialized_contains);
+    free(serialized_alias_groups);
     delete to_checkpoint;
     delete ctx->stack_trackers;
     delete ctx->checkpoint_entry_times;
     delete contains;
+    delete serialized_heap_vars;
     free(ctx);
 
     strcpy(previous_checkpoint_filename, dump_filename);

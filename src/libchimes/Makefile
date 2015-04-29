@@ -5,7 +5,9 @@ NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
     global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \
     type_info.cpp serialization_common.cpp perf_profile.cpp \
-    thread_serialization.cpp constant_serialization.cpp hash_chunker.cpp
+    thread_serialization.cpp constant_serialization.cpp hash_chunker.cpp \
+	trace_serialization.cpp alias_groups_serialization.cpp \
+	checkpointable_heap_serialization.cpp container_serialization.cpp
 
 IS_CLANG := $(shell ${GXX} --version 2>&1 | grep clang | wc -l | bc)
 ifeq ($(IS_CLANG),1)
