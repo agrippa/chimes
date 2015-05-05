@@ -109,11 +109,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
     LAST_FILES+=($INPUT)
     OBJ_FILES+=($OBJ_FILE)
 
-    if [[ ${EXT} == "cpp" || ${EXT} == "cc" ]]; then
+    if [[ ${EXT} == "cpp" || ${EXT} == "cc" || ${EXT} == "c" ]]; then
         g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
     elif [[ ${EXT} == "cu" ]]; then
         nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
                    ${INCLUDES}
+    else
+        echo Unsupported file format: ${EXT}
+        exit 1
     fi
 
     if [[ ! -f ${OBJ_FILE} ]]; then
