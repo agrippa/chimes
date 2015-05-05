@@ -6,19 +6,13 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 9 9 alias_
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 12 5 alias_group_changed(3, (size_t)(8715185705475396312UL), (size_t)(8715185705475396313UL), (size_t)(8715185705475396353UL)); rm_stack(true, 8715185705475396353UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 13 new_stack((void *)(&foo), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 18 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(8715185705475396352UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(8715185705475396352UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 8715185705475396353UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 82 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 128  void *tmp;  tmp = (foo()) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 145 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 12  register_stack_var("foo|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 5 12  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 45  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 45  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 141  call_lbl_3: calling((void*)&foo, 3, 8715185705475396347UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 62  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 129  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 138  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 138  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 248  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 129  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 

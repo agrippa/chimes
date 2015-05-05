@@ -3,8 +3,8 @@ uts_wctime 0
 rng_toProb 0 27
 uts_initRoot 0
 uts_numChildren_bin 0 84
-uts_numChildren_geo 0 112
-uts_numChildren 0 221 222
+uts_numChildren_geo 0 112 115
+uts_numChildren 0 220 221 222
 uts_childType 0 307 308
 uts_paramsToStr 0 338
 uts_printParams 0 490 491

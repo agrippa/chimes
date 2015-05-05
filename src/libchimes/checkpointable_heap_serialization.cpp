@@ -11,8 +11,8 @@ vector<serialized_heap_var> *serialize_checkpointable_heap(
     int elem_is_ptr;
     int elem_is_struct;
 
-    size_t elem_size;
-    int elem_ptr_offsets_len;
+    size_t elem_size = 0;
+    int elem_ptr_offsets_len = 0;
 
     int n_ranges;
 

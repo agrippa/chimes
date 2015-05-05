@@ -1725,7 +1725,7 @@ extern void wait_for_checkpoint();
 extern void foo(int *A);
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(12387876047547725272UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)); if (____chimes_replaying) { goto lbl_0; }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  lbl_0: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"

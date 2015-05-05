@@ -1475,27 +1475,40 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+# 1 "/usr/include/assert.h" 1 3 4
+# 75 "/usr/include/assert.h" 3 4
+extern "C" {
+void __assert_rtn(const char *, const char *, int, const char *) __attribute__((noreturn));
+
+
+
+}
+# 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(7772930474166261566UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (0) ;
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- { lbl_1: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } for ( i = (0) ; i < 10; i++) {
+ lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } a = (0) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- a += i;
+ { int i; for ( i = (0) ; i < 10; i++) {
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- } }
+ a += i;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- alias_group_changed(5, (size_t)(7772930474166261536UL), (size_t)(7772930474166261537UL), (size_t)(7772930474166261538UL), (size_t)(7772930474166261539UL), (size_t)(7772930474166261540UL)); call_lbl_3: calling((void*)&checkpoint, 3, 0UL, 0); checkpoint();
+ } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- rm_stack(false, 0UL); return 0;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ alias_group_changed(5, (size_t)(7772930474166261536UL), (size_t)(7772930474166261537UL), (size_t)(7772930474166261538UL), (size_t)(7772930474166261539UL), (size_t)(7772930474166261540UL)); call_lbl_3: calling((void*)&checkpoint, 3, 0UL, 0); checkpoint();
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ rm_stack(false, 0UL); return 0;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 }
 
 
 static int module_init() {
-    init_module(7772930474166261535UL, 1, 0, 7772930474166261535UL + 3UL, 7772930474166261535UL + 31UL);
+    init_module(7772930474166261535UL, 1, 0, 7772930474166261535UL + 3UL, 7772930474166261535UL + 42UL);
     return 0;
 }
 

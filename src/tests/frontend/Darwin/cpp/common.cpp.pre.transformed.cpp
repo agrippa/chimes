@@ -2503,11 +2503,11 @@ static int progress_disabled = 0;
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 double seconds() {new_stack((void *)(&seconds), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: struct timeval tp; register_stack_var("seconds|tp|0", "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_1: struct timezone tzp; register_stack_var("seconds|tzp|0", "%struct.timezone = type { i32, i32 }", (void *)(&tzp), (size_t)8, 0, 1, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ struct timezone tzp; ;
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_2: int i; register_stack_var("seconds|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } call_lbl_1: calling((void*)&gettimeofday, 1, 0UL, 2, (size_t)(7724169104006700303UL), (size_t)(7724169104006700304UL)); i = (gettimeofday(&tp, &tzp)) ;
+ int i; call_lbl_1: calling((void*)&gettimeofday, 1, 0UL, 2, (size_t)(7724169104006700303UL), (size_t)(7724169104006700304UL)); i = (gettimeofday(&tp, &tzp)) ;
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  alias_group_changed(1, (size_t)(7724169104006700305UL)); rm_stack(false, 0UL); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2534,7 +2534,7 @@ void ricker_wavelet(float *source, int nsteps, float dt, float freq) {new_stack(
 alias_group_changed(7, (size_t)(7724169104006700325UL), (size_t)(7724169104006700326UL), (size_t)(7724169104006700327UL), (size_t)(7724169104006700328UL), (size_t)(7724169104006700329UL), (size_t)(7724169104006700330UL), (size_t)(7724169104006700394UL)); rm_stack(false, 0UL); }
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source), 2, 2, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL), "parse_source|optarg|0", "i8*", (void *)(&optarg), (size_t)8, 1, 0, 0, "parse_source|out|0", "%struct._source*", (void *)(&out), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source), 2, 1, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL), "parse_source|out|0", "%struct._source*", (void *)(&out), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  lbl_0: char *x_str; register_stack_var("parse_source|x_str|0", "i8*", (void *)(&x_str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } x_str = (optarg) ;
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2598,7 +2598,7 @@ void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source),
 alias_group_changed(1, (size_t)(7724169104006700489UL)); rm_stack(false, 0UL); }
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack((void *)(&config_sources), 5, 5, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "config_sources|srcs|0", "%struct._source**", (void *)(&srcs), (size_t)8, 1, 0, 0, "config_sources|nsrcs|0", "i32*", (void *)(&nsrcs), (size_t)8, 1, 0, 0, "config_sources|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "config_sources|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "config_sources|nsteps|0", "i32", (void *)(&nsteps), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack((void *)(&config_sources), 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (*nsrcs == 0) {
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2626,9 +2626,9 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- { lbl_0: int i; register_stack_var("config_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( i = (0) ; i < *nsrcs; i++) {
+ { int i; for ( i = (0) ; i < *nsrcs; i++) {
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_1: source *curr; register_stack_var("config_sources|curr|0", "%struct._source*", (void *)(&curr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } curr = ((*srcs) + i) ;
+ source *curr; curr = ((*srcs) + i) ;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (curr->x < 0 || curr->x >= nx) {
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2693,15 +2693,15 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack
 }
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init_progress), 3, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "init_progress|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0, "init_progress|goal|0", "i32", (void *)(&goal), (size_t)4, 0, 0, 0, "init_progress|disabled|0", "i32", (void *)(&disabled), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init_progress), 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 146 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_0: int i; register_stack_var("init_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
+ int i; ;
 # 147 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (progress_buffer != __null) {
 # 148 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Progress initialized multiple times\n");
 # 149 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL), (size_t)(7724169104006700914UL), (size_t)(7724169104006700917UL)); exit(1);
+ alias_group_changed(3, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL)); exit(1);
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2710,7 +2710,7 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
 # 153 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid progress length, must be <= 100\n");
 # 154 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL), (size_t)(7724169104006700914UL), (size_t)(7724169104006700917UL)); exit(1);
+ alias_group_changed(3, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL)); exit(1);
 # 155 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 156 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2723,7 +2723,7 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
 # 161 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 7724169104006700759UL, 0, 0);
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL), (size_t)(7724169104006700914UL), (size_t)(7724169104006700917UL)); (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
+ (__builtin_expect(!(progress_buffer != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp", 162, "progress_buffer != NULL") : (void)0);
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  progress_length = length;
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2751,9 +2751,9 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
 alias_group_changed(7, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL), (size_t)(7724169104006700709UL), (size_t)(7724169104006700759UL), (size_t)(7724169104006700914UL), (size_t)(7724169104006700917UL)); rm_stack(false, 0UL); }
 # 177 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 178 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void update_progress(int progress) {new_stack((void *)(&update_progress), 1, 1, (size_t)(0UL), "update_progress|progress|0", "i32", (void *)(&progress), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void update_progress(int progress) {new_stack((void *)(&update_progress), 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 179 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_0: int i; register_stack_var("update_progress|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ int i; ;
 # 180 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 181 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (progress_disabled) {
@@ -2774,9 +2774,9 @@ void update_progress(int progress) {new_stack((void *)(&update_progress), 1, 1, 
  }
 # 190 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 191 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_1: double perc_progress; register_stack_var("update_progress|perc_progress|0", "double", (void *)(&perc_progress), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } perc_progress = ((double)progress / (double)progress_goal) ;
+ double perc_progress; perc_progress = ((double)progress / (double)progress_goal) ;
 # 192 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_2: int ticks; register_stack_var("update_progress|ticks|0", "i32", (void *)(&ticks), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ticks = ((int)(perc_progress * progress_length)) ;
+ int ticks; ticks = ((int)(perc_progress * progress_length)) ;
 # 193 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (ticks > progress_length) {
 # 194 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"

@@ -16,16 +16,13 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 295 8 : { 544, 550 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 344 9 : { 599, 600, 645 } prop:call:_Z12profileStart11TimerHandle
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 362 9 : { 658, 659, 660, 661, 1234 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 371 7 : { 1234 } direct:call:fflush
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 308 8 : { 791, 792 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 235 4 : { 875, 876, 877 } prop:call:_Z16destroyLinkCellsPP10LinkCellSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 269 22 : { 947, 948, 949, 950, 951 } prop:call:_Z10initEamPotPKcS0_S0_
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 269 75 : { 947, 948, 949, 950, 951 } prop:call:_Z9initLjPotv
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 273 35 : { 951 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 433 18 : { 991, 992, 993, 994, 995 } direct:call:_Z9getNRanksv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 436 11 : { 994 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 452 11 : { 994, 996, 997, 998, 999, 1000, 1001 } prop:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 460 8 : { 994, 996, 997, 998, 999, 1000, 1001 } prop:call:strcasecmp
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 463 11 : { 994 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 469 4 : { 1002 } direct:call:_Z13bcastParallelPvii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 281 4 : { 1149, 1150 } direct:call:strcpy

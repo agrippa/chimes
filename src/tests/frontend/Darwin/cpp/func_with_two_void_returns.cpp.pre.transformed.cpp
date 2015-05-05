@@ -1495,7 +1495,7 @@ void haha_this_sux2() {new_stack((void *)(&haha_this_sux2), 0, 0); if (____chime
 rm_stack(false, 0UL); }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(14214025774788400685UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(14214025774788400685UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
  call_lbl_2: calling((void*)&haha_this_sux2, 2, 0UL, 0); haha_this_sux2();
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"

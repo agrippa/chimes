@@ -1969,16 +1969,16 @@ static void getTimeString(char* timestring)
 # 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 {new_stack((void *)(&getTimeString), 1, 1, (size_t)(5761392777509905392UL), "getTimeString|timestring|0", "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    lbl_0: time_t rawtime; register_stack_var("getTimeString|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+    lbl_0: time_t rawtime; register_stack_var("getTimeString|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    lbl_1: struct tm *timeinfo; register_stack_var("getTimeString|timeinfo|0", "%struct.tm*", (void *)(&timeinfo), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
+   struct tm *timeinfo; ;
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    alias_group_changed(1, (size_t)(5761392777509905359UL)); call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(5761392777509905360UL)); time(&rawtime);
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     call_lbl_3: calling((void*)&localtime, 3, 5761392777509905367UL, 1, (size_t)(5761392777509905360UL)); timeinfo = localtime(&rawtime);
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   alias_group_changed(1, (size_t)(5761392777509905361UL)); sprintf(timestring,
+   sprintf(timestring,
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
            "%4d-%02i-%02d, %02d:%02d:%02d",
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -1994,28 +1994,28 @@ static void getTimeString(char* timestring)
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
            timeinfo->tm_sec);
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(5761392777509905361UL)); rm_stack(false, 0UL); }
 # 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void yamlBegin(void)
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 {new_stack((void *)(&yamlBegin), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
+    call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {alias_group_changed(1, (size_t)(5761392777509905247UL)); rm_stack(false, 0UL); return;; };
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_0: char filename[64]; register_stack_var("yamlBegin|filename|0", "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     lbl_1: time_t rawtime; register_stack_var("yamlBegin|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_3: calling((void*)&time, 3, 0UL, 1, (size_t)(5761392777509905246UL)); time (&rawtime);
+    call_lbl_4: calling((void*)&time, 4, 0UL, 1, (size_t)(5761392777509905246UL)); time (&rawtime);
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-     lbl_2: struct tm *ptm; register_stack_var("yamlBegin|ptm|0", "%struct.tm*", (void *)(&ptm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } call_lbl_4: calling((void*)&localtime, 4, 5761392777509905257UL, 1, (size_t)(5761392777509905246UL)); ptm = (localtime(&rawtime)) ;
+    struct tm *ptm; call_lbl_5: calling((void*)&localtime, 5, 5761392777509905257UL, 1, (size_t)(5761392777509905246UL)); ptm = (localtime(&rawtime)) ;
 # 55 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    lbl_3: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+    lbl_2: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   alias_group_changed(1, (size_t)(5761392777509905247UL)); sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
+   sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
             ptm->tm_year + 1900, ptm->tm_mon+1,
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2024,7 +2024,7 @@ void yamlBegin(void)
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(5761392777509905247UL)); rm_stack(false, 0UL); }
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void yamlAppInfo(FILE* file)
@@ -2093,7 +2093,7 @@ rm_stack(false, 0UL); }
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void printSeparator(FILE* file)
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{new_stack((void *)(&printSeparator), 1, 1, (size_t)(5761392777509905356UL), "printSeparator|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&printSeparator), 1, 0, (size_t)(5761392777509905356UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
       fprintf(file,"\n");

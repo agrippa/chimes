@@ -1718,44 +1718,64 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp" 2
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+# 1 "/usr/include/assert.h" 1 3 4
+# 75 "/usr/include/assert.h" 3 4
+extern "C" {
+void __assert_rtn(const char *, const char *, int, const char *) __attribute__((noreturn));
+
+
+
+}
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp" 2
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-typedef struct _foo {
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- int a;
+typedef struct _foo {
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- int *b;
+ int a;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- int **c;
+ int *b;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-} foo;
+ int **c;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+} foo;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1432567827179872271UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- lbl_0: foo test; register_stack_var("main|test|0", "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { goto lbl_1; } ;
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)); if (____chimes_replaying) { goto lbl_0; }
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test.a = 3;
+ lbl_0: foo test; register_stack_var("main|test|0", "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { goto lbl_1; } ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test.b = __null;
+ test.a = 3;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test.c = __null;
+ test.b = __null;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- lbl_1: foo *test2; register_stack_var("main|test2|0", "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 1432567827179872259UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
+ test.c = __null;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- test2[0].a = 3;
+ lbl_1: foo *test2; register_stack_var("main|test2|0", "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 1432567827179872305UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- fprintf(__stderrp, "Hello before checkpointing\n");
+ test2[0].a = 3;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- alias_group_changed(6, (size_t)(1432567827179872241UL), (size_t)(1432567827179872242UL), (size_t)(1432567827179872243UL), (size_t)(1432567827179872244UL), (size_t)(1432567827179872245UL), (size_t)(1432567827179872259UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+ fprintf(__stderrp, "Hello before checkpointing\n");
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- rm_stack(false, 0UL); return 0;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ alias_group_changed(6, (size_t)(1432567827179872241UL), (size_t)(1432567827179872242UL), (size_t)(1432567827179872243UL), (size_t)(1432567827179872244UL), (size_t)(1432567827179872245UL), (size_t)(1432567827179872305UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ (__builtin_expect(!(test.a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 23, "test.a == 3") : (void)0);
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ (__builtin_expect(!(test.b == __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 24, "test.b == NULL") : (void)0);
+# 25 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ (__builtin_expect(!(test.c == __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 25, "test.c == NULL") : (void)0);
+# 26 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ (__builtin_expect(!(test2[0].a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 26, "test2[0].a == 3") : (void)0);
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
+ rm_stack(false, 0UL); return 0;
+# 29 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 }
 
 
 static int module_init() {
-    init_module(1432567827179872240UL, 4, 1, 1432567827179872240UL + 37UL, 1432567827179872240UL + 26UL, 1432567827179872240UL + 3UL, 1432567827179872240UL + 31UL, 1432567827179872240UL + 5UL, 1432567827179872240UL + 19UL, 1432567827179872240UL + 4UL, 1432567827179872240UL + 39UL, "_foo", 3, "int", (int)__builtin_offsetof(struct _foo, a), "int*", (int)__builtin_offsetof(struct _foo, b), "int**", (int)__builtin_offsetof(struct _foo, c));
+    init_module(1432567827179872240UL, 4, 1, 1432567827179872240UL + 93UL, 1432567827179872240UL + 26UL, 1432567827179872240UL + 3UL, 1432567827179872240UL + 81UL, 1432567827179872240UL + 5UL, 1432567827179872240UL + 65UL, 1432567827179872240UL + 4UL, 1432567827179872240UL + 42UL, "_foo", 3, "int", (int)__builtin_offsetof(struct _foo, a), "int*", (int)__builtin_offsetof(struct _foo, b), "int**", (int)__builtin_offsetof(struct _foo, c));
     return 0;
 }
 

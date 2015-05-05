@@ -805,9 +805,9 @@ extern double significand(double) __attribute__((deprecated));
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 real_t gasdev(uint64_t* seed)
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-{new_stack((void *)(&gasdev), 1, 1, (size_t)(16794414226779803848UL), "gasdev|seed|0", "i64*", (void *)(&seed), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&gasdev), 1, 0, (size_t)(16794414226779803848UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-    lbl_0: real_t rsq; register_stack_var("gasdev|rsq|0", "double", (void *)(&rsq), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: real_t v1; register_stack_var("gasdev|v1|0", "double", (void *)(&v1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } lbl_2: real_t v2; register_stack_var("gasdev|v2|0", "double", (void *)(&v2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ;
+   real_t rsq; real_t v1; real_t v2; ;
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    do
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"

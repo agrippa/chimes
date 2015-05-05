@@ -2262,11 +2262,11 @@ static void ljPrint(FILE* file, BasePotential* pot);
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 void ljDestroy(BasePotential** inppot)
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{new_stack((void *)(&ljDestroy), 1, 1, (size_t)(17518077371777717474UL), "ljDestroy|inppot|0", "%struct.BasePotentialSt**", (void *)(&inppot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&ljDestroy), 1, 0, (size_t)(17518077371777717474UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (!inppot) {alias_group_changed(3, (size_t)(17518077371777717450UL), (size_t)(17518077371777717451UL), (size_t)(17518077371777717474UL)); rm_stack(false, 0UL); return;; };
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_0: LjPotential *pot; register_stack_var("ljDestroy|pot|0", "%struct.LjPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } pot = ((LjPotential *)(*inppot)) ;
+    LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    if (!pot) {alias_group_changed(3, (size_t)(17518077371777717450UL), (size_t)(17518077371777717451UL), (size_t)(17518077371777717474UL)); rm_stack(false, 0UL); return;; };
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2283,9 +2283,9 @@ void ljDestroy(BasePotential** inppot)
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 BasePotential* initLjPot(void)
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{new_stack((void *)(&initLjPot), 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&initLjPot), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_0: LjPotential *pot; register_stack_var("initLjPot|pot|0", "%struct.LjPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 17518077371777717480UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
+    LjPotential *pot; pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 17518077371777717480UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->force = ljForce;
 # 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2302,26 +2302,26 @@ BasePotential* initLjPot(void)
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->lat = 3.615;
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   alias_group_changed(2, (size_t)(17518077371777717478UL), (size_t)(17518077371777717480UL)); call_lbl_3: calling((void*)&strcpy, 3, 17518077371777717507UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718002UL)); strcpy(pot->latticeType, "FCC");
+    call_lbl_2: calling((void*)&strcpy, 2, 17518077371777717507UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718002UL)); strcpy(pot->latticeType, "FCC");
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->cutoff = 2.5*pot->sigma;
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   alias_group_changed(1, (size_t)(17518077371777717480UL)); call_lbl_5: calling((void*)&strcpy, 5, 17518077371777717518UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718003UL)); strcpy(pot->name, "Cu");
+    call_lbl_3: calling((void*)&strcpy, 3, 17518077371777717518UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718003UL)); strcpy(pot->name, "Cu");
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    pot->atomicNo = 29;
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   alias_group_changed(1, (size_t)(17518077371777717480UL)); rm_stack(true, 17518077371777717480UL); return (BasePotential*) pot;
+   alias_group_changed(2, (size_t)(17518077371777717478UL), (size_t)(17518077371777717480UL)); rm_stack(true, 17518077371777717480UL); return (BasePotential*) pot;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 }
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 void ljPrint(FILE* file, BasePotential* pot)
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{new_stack((void *)(&ljPrint), 2, 2, (size_t)(17518077371777717976UL), (size_t)(17518077371777717977UL), "ljPrint|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "ljPrint|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&ljPrint), 2, 0, (size_t)(17518077371777717976UL), (size_t)(17518077371777717977UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_0: LjPotential *ljPot; register_stack_var("ljPrint|ljPot|0", "%struct.LjPotentialSt*", (void *)(&ljPot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ljPot = ((LjPotential *)pot) ;
+    LjPotential *ljPot; ljPot = ((LjPotential *)pot) ;
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    fprintf(file, "  Potential type   : Lennard-Jones\n");
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2346,25 +2346,25 @@ alias_group_changed(3, (size_t)(17518077371777717921UL), (size_t)(17518077371777
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 int ljForce(SimFlat* s)
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{new_stack((void *)(&ljForce), 1, 1, (size_t)(17518077371777717714UL), "ljForce|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&ljForce), 1, 0, (size_t)(17518077371777717714UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_0: LjPotential *pot; register_stack_var("ljForce|pot|0", "%struct.LjPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } pot = ((LjPotential *)s->pot) ;
+    LjPotential *pot; pot = ((LjPotential *)s->pot) ;
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_1: real_t sigma; register_stack_var("ljForce|sigma|0", "double", (void *)(&sigma), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } sigma = (pot->sigma) ;
+    real_t sigma; sigma = (pot->sigma) ;
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_2: real_t epsilon; register_stack_var("ljForce|epsilon|0", "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } epsilon = (pot->epsilon) ;
+    real_t epsilon; epsilon = (pot->epsilon) ;
 # 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_3: real_t rCut; register_stack_var("ljForce|rCut|0", "double", (void *)(&rCut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } rCut = (pot->cutoff) ;
+    real_t rCut; rCut = (pot->cutoff) ;
 # 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_4: real_t rCut2; register_stack_var("ljForce|rCut2|0", "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } rCut2 = (rCut * rCut) ;
+    real_t rCut2; rCut2 = (rCut * rCut) ;
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_5: real_t ePot; register_stack_var("ljForce|ePot|0", "double", (void *)(&ePot), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ePot = (0.) ;
+    real_t ePot; ePot = (0.) ;
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    s->ePotential = 0.0;
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_6: int fSize; register_stack_var("ljForce|fSize|0", "i32", (void *)(&fSize), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } fSize = (s->boxes->nTotalBoxes * 64); { call_lbl_7: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
+    int fSize; fSize = (s->boxes->nTotalBoxes * 64); { call_lbl_6: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2383,15 +2383,15 @@ int ljForce(SimFlat* s)
    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_7: real_t s6; register_stack_var("ljForce|s6|0", "double", (void *)(&s6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
+    real_t s6; s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_8: real_t rCut6; register_stack_var("ljForce|rCut6|0", "double", (void *)(&rCut6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } rCut6 = (s6 / (rCut2 * rCut2 * rCut2)) ;
+    real_t rCut6; rCut6 = (s6 / (rCut2 * rCut2 * rCut2)) ;
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_9: real_t eShift; register_stack_var("ljForce|eShift|0", "double", (void *)(&eShift), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } eShift = (1. * rCut6 * (rCut6 - 1.)) ;
+    real_t eShift; eShift = (1. * rCut6 * (rCut6 - 1.)) ;
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-     lbl_10: int nNbrBoxes; register_stack_var("ljForce|nNbrBoxes|0", "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } nNbrBoxes = (27); { call_lbl_8: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(8, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; ;
+    int nNbrBoxes; nNbrBoxes = (27); { call_lbl_7: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(7, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; ;
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2416,7 +2416,7 @@ int ljForce(SimFlat* s)
           int jBox; jBox = (s->boxes->nbrBoxes[iBox][jTmp]) ;
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-         alias_group_changed(29, (size_t)(17518077371777717526UL), (size_t)(17518077371777717527UL), (size_t)(17518077371777717528UL), (size_t)(17518077371777717529UL), (size_t)(17518077371777717530UL), (size_t)(17518077371777717531UL), (size_t)(17518077371777717532UL), (size_t)(17518077371777717533UL), (size_t)(17518077371777717534UL), (size_t)(17518077371777717535UL), (size_t)(17518077371777717536UL), (size_t)(17518077371777717537UL), (size_t)(17518077371777717538UL), (size_t)(17518077371777717539UL), (size_t)(17518077371777717540UL), (size_t)(17518077371777717541UL), (size_t)(17518077371777717542UL), (size_t)(17518077371777717543UL), (size_t)(17518077371777717544UL), (size_t)(17518077371777717545UL), (size_t)(17518077371777717546UL), (size_t)(17518077371777717547UL), (size_t)(17518077371777717548UL), (size_t)(17518077371777717549UL), (size_t)(17518077371777717550UL), (size_t)(17518077371777717551UL), (size_t)(17518077371777717552UL), (size_t)(17518077371777717714UL), (size_t)(17518077371777717718UL)); (__builtin_expect(!(jBox>=0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c", 181, "jBox>=0") : (void)0);
+         (__builtin_expect(!(jBox>=0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c", 181, "jBox>=0") : (void)0);
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
           int nJBox; nJBox = (s->boxes->nAtoms[jBox]) ;

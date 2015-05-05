@@ -1484,9 +1484,9 @@ void *haha_this_sux() {new_stack((void *)(&haha_this_sux), 0, 0); if (____chimes
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2786831167442144615UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&haha_this_sux, 2, 2786831167442144610UL, 0); tmp = (haha_this_sux()) ;
+ void *tmp; call_lbl_2: calling((void*)&haha_this_sux, 2, 2786831167442144610UL, 0); tmp = (haha_this_sux()) ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
  alias_group_changed(4, (size_t)(2786831167442144600UL), (size_t)(2786831167442144601UL), (size_t)(2786831167442144602UL), (size_t)(2786831167442144603UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"

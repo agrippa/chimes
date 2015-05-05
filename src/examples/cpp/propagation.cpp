@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
 
     if (A[0] == 2) {
         checkpoint();
-        return 2;
+        return A[0];
     }
 
     return 3;

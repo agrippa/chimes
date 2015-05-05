@@ -2525,12 +2525,12 @@ static void computeVcm(SimFlat* s, real_t vcm[3]);
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 Atoms* initAtoms(LinkCell* boxes)
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{new_stack((void *)(&initAtoms), 1, 1, (size_t)(13592833164869970745UL), "initAtoms|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&initAtoms), 1, 0, (size_t)(13592833164869970745UL)); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } }
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_0: Atoms *atoms; register_stack_var("initAtoms|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } atoms = ((Atoms *)malloc_wrapper(sizeof(Atoms), 13592833164869970623UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U))) ;
+ Atoms *atoms; atoms = ((Atoms *)malloc_wrapper(sizeof(Atoms), 13592833164869970623UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U))) ;
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_1: int maxTotalAtoms; register_stack_var("initAtoms|maxTotalAtoms|0", "i32", (void *)(&maxTotalAtoms), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } maxTotalAtoms = (64 * boxes->nTotalBoxes) ;
+ int maxTotalAtoms; maxTotalAtoms = (64 * boxes->nTotalBoxes) ;
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  atoms->gid = (int*) malloc_wrapper(maxTotalAtoms*sizeof(int), 13592833164869970635UL, 0, 0);
@@ -2551,7 +2551,7 @@ Atoms* initAtoms(LinkCell* boxes)
  atoms->nGlobal = 0;
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 39 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_2: int iOff; register_stack_var("initAtoms|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } for ( iOff = (0) ; iOff < maxTotalAtoms; iOff++)
+ { int iOff; for ( iOff = (0) ; iOff < maxTotalAtoms; iOff++)
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2577,7 +2577,7 @@ Atoms* initAtoms(LinkCell* boxes)
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 void destroyAtoms(Atoms *atoms)
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{new_stack((void *)(&destroyAtoms), 1, 1, (size_t)(13592833164869970854UL), "destroyAtoms|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&destroyAtoms), 1, 0, (size_t)(13592833164869970854UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  if (atoms->gid) {free_wrapper(atoms->gid, 13592833164869970768UL); };
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2636,30 +2636,30 @@ void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 91 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  lbl_5: int end[3]; register_stack_var("createFccLattice|end|0", "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_6: int ii; register_stack_var("createFccLattice|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ; ii<3; ++ii)
+ { int ii; for ( ii = (0) ; ii<3; ++ii)
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(21, (size_t)(13592833164869970856UL), (size_t)(13592833164869970857UL), (size_t)(13592833164869970858UL), (size_t)(13592833164869970859UL), (size_t)(13592833164869970860UL), (size_t)(13592833164869970861UL), (size_t)(13592833164869970862UL), (size_t)(13592833164869970863UL), (size_t)(13592833164869970866UL), (size_t)(13592833164869970867UL), (size_t)(13592833164869970868UL), (size_t)(13592833164869970869UL), (size_t)(13592833164869970870UL), (size_t)(13592833164869970871UL), (size_t)(13592833164869970872UL), (size_t)(13592833164869970873UL), (size_t)(13592833164869970874UL), (size_t)(13592833164869970875UL), (size_t)(13592833164869970876UL), (size_t)(13592833164869970877UL), (size_t)(13592833164869970878UL)); call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); begin[ii] = floor(localMin[ii]/lat);
+ call_lbl_1: calling((void*)&floor, 1, 0UL, 1, (size_t)(0UL)); begin[ii] = floor(localMin[ii]/lat);
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(1, (size_t)(13592833164869970865UL)); call_lbl_4: calling((void*)&ceil, 4, 0UL, 1, (size_t)(0UL)); end[ii] = ceil (localMax[ii]/lat);
+ call_lbl_2: calling((void*)&ceil, 2, 0UL, 1, (size_t)(0UL)); end[ii] = ceil (localMax[ii]/lat);
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  } }
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_7: real_t px; register_stack_var("createFccLattice|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } lbl_8: real_t py; register_stack_var("createFccLattice|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } lbl_9: real_t pz; register_stack_var("createFccLattice|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } ;
+ lbl_6: real_t px; register_stack_var("createFccLattice|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: real_t py; register_stack_var("createFccLattice|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } lbl_8: real_t pz; register_stack_var("createFccLattice|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  px=py=pz=0.0;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_10: int ix; register_stack_var("createFccLattice|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { lbl_11: int iy; register_stack_var("createFccLattice|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } { lbl_12: int iz; register_stack_var("createFccLattice|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } { lbl_13: int ib; register_stack_var("createFccLattice|ib|0", "i32", (void *)(&ib), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { lbl_14: real_t rx; register_stack_var("createFccLattice|rx|0", "double", (void *)(&rx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } rx = ((ix + basis[ib][0]) * lat) ; lbl_15: real_t ry; register_stack_var("createFccLattice|ry|0", "double", (void *)(&ry), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } ry = ((iy + basis[ib][1]) * lat) ; lbl_16: real_t rz; register_stack_var("createFccLattice|rz|0", "double", (void *)(&rz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; lbl_17: int id; register_stack_var("createFccLattice|id|0", "i32", (void *)(&id), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_5: calling((void*)&putAtomInBox, 5, 0UL, 10, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); putAtomInBox(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); } } } }; } }
+ { lbl_9: int ix; register_stack_var("createFccLattice|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { lbl_10: int iy; register_stack_var("createFccLattice|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } { lbl_11: int iz; register_stack_var("createFccLattice|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } { lbl_12: int ib; register_stack_var("createFccLattice|ib|0", "i32", (void *)(&ib), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { lbl_13: real_t rx; register_stack_var("createFccLattice|rx|0", "double", (void *)(&rx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } rx = ((ix + basis[ib][0]) * lat) ; lbl_14: real_t ry; register_stack_var("createFccLattice|ry|0", "double", (void *)(&ry), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } ry = ((iy + basis[ib][1]) * lat) ; lbl_15: real_t rz; register_stack_var("createFccLattice|rz|0", "double", (void *)(&rz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; lbl_16: int id; register_stack_var("createFccLattice|id|0", "i32", (void *)(&id), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: calling((void*)&putAtomInBox, 3, 0UL, 10, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); putAtomInBox(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); } } } }; } }
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- do { alias_group_changed(21, (size_t)(13592833164869970856UL), (size_t)(13592833164869970857UL), (size_t)(13592833164869970858UL), (size_t)(13592833164869970859UL), (size_t)(13592833164869970860UL), (size_t)(13592833164869970861UL), (size_t)(13592833164869970862UL), (size_t)(13592833164869970863UL), (size_t)(13592833164869970866UL), (size_t)(13592833164869970867UL), (size_t)(13592833164869970868UL), (size_t)(13592833164869970869UL), (size_t)(13592833164869970870UL), (size_t)(13592833164869970871UL), (size_t)(13592833164869970872UL), (size_t)(13592833164869970873UL), (size_t)(13592833164869970874UL), (size_t)(13592833164869970875UL), (size_t)(13592833164869970876UL), (size_t)(13592833164869970877UL), (size_t)(13592833164869970878UL)); call_lbl_7: calling((void*)&profileStart, 7, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
+ do { alias_group_changed(22, (size_t)(13592833164869970856UL), (size_t)(13592833164869970857UL), (size_t)(13592833164869970858UL), (size_t)(13592833164869970859UL), (size_t)(13592833164869970860UL), (size_t)(13592833164869970861UL), (size_t)(13592833164869970862UL), (size_t)(13592833164869970863UL), (size_t)(13592833164869970865UL), (size_t)(13592833164869970866UL), (size_t)(13592833164869970867UL), (size_t)(13592833164869970868UL), (size_t)(13592833164869970869UL), (size_t)(13592833164869970870UL), (size_t)(13592833164869970871UL), (size_t)(13592833164869970872UL), (size_t)(13592833164869970873UL), (size_t)(13592833164869970874UL), (size_t)(13592833164869970875UL), (size_t)(13592833164869970876UL), (size_t)(13592833164869970877UL), (size_t)(13592833164869970878UL)); call_lbl_5: calling((void*)&profileStart, 5, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- call_lbl_8: calling((void*)&addIntParallel, 8, 0UL, 3, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL)); addIntParallel(&s->atoms->nLocal, &s->atoms->nGlobal, 1);
+ call_lbl_6: calling((void*)&addIntParallel, 6, 0UL, 3, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL)); addIntParallel(&s->atoms->nLocal, &s->atoms->nGlobal, 1);
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- do { call_lbl_9: calling((void*)&profileStop, 9, 0UL, 1, (size_t)(0UL)); profileStop(commReduceTimer); } while(0);
+ do { call_lbl_7: calling((void*)&profileStop, 7, 0UL, 1, (size_t)(0UL)); profileStop(commReduceTimer); } while(0);
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  (__builtin_expect(!(s->atoms->nGlobal == nb*nx*ny*nz), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c", 120, "s->atoms->nGlobal == nb*nx*ny*nz") : (void)0);
@@ -2673,12 +2673,12 @@ void setVcm(SimFlat* s, real_t newVcm[3])
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 {new_stack((void *)(&setVcm), 2, 2, (size_t)(13592833164869971340UL), (size_t)(13592833164869971341UL), "setVcm|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setVcm|newVcm|0", "double*", (void *)(&newVcm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_0: real_t oldVcm[3]; register_stack_var("setVcm|oldVcm|0", "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: real_t oldVcm[3]; register_stack_var("setVcm|oldVcm|0", "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  alias_group_changed(2, (size_t)(13592833164869971185UL), (size_t)(13592833164869971186UL)); call_lbl_2: calling((void*)&computeVcm, 2, 0UL, 2, (size_t)(13592833164869971340UL), (size_t)(13592833164869971187UL)); computeVcm(s, oldVcm);
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_1: real_t vShift[3]; register_stack_var("setVcm|vShift|0", "[3 x double]", (void *)(vShift), (size_t)24, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ real_t vShift[3]; ;
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  vShift[0] = (newVcm[0] - oldVcm[0]);
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2687,17 +2687,17 @@ void setVcm(SimFlat* s, real_t newVcm[3])
  vShift[2] = (newVcm[2] - oldVcm[2]);
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_2: int iBox; register_stack_var("setVcm|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+ { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_3: int iOff; register_stack_var("setVcm|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int ii; register_stack_var("setVcm|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+ { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_5: int iSpecies; register_stack_var("setVcm|iSpecies|0", "i32", (void *)(&iSpecies), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } iSpecies = (s->atoms->iSpecies[iOff]) ;
+ int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_6: real_t mass; register_stack_var("setVcm|mass|0", "double", (void *)(&mass), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } mass = (s->species[iSpecies].mass) ;
+ real_t mass; mass = (s->species[iSpecies].mass) ;
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  s->atoms->p[iOff][0] += mass * vShift[0];
@@ -2730,15 +2730,15 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  lbl_4: real_t mass; register_stack_var("setTemperature|mass|0", "double", (void *)(&mass), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } mass = (s->species[iType].mass) ;
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(8, (size_t)(13592833164869971506UL), (size_t)(13592833164869971507UL), (size_t)(13592833164869971508UL), (size_t)(13592833164869971509UL), (size_t)(13592833164869971510UL), (size_t)(13592833164869971511UL), (size_t)(13592833164869971512UL), (size_t)(13592833164869971562UL)); lbl_5: real_t sigma; register_stack_var("setTemperature|sigma|0", "double", (void *)(&sigma), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } call_lbl_2: calling((void*)&sqrt, 2, 0UL, 1, (size_t)(0UL)); sigma = (sqrt(kB_eV * temperature / mass)) ;
+ lbl_5: real_t sigma; register_stack_var("setTemperature|sigma|0", "double", (void *)(&sigma), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } call_lbl_1: calling((void*)&sqrt, 1, 0UL, 1, (size_t)(0UL)); sigma = (sqrt(kB_eV * temperature / mass)) ;
 # 169 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(1, (size_t)(13592833164869971513UL)); lbl_6: uint64_t seed; register_stack_var("setTemperature|seed|0", "i64", (void *)(&seed), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } call_lbl_4: calling((void*)&mkSeed, 4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
+ alias_group_changed(9, (size_t)(13592833164869971506UL), (size_t)(13592833164869971507UL), (size_t)(13592833164869971508UL), (size_t)(13592833164869971509UL), (size_t)(13592833164869971510UL), (size_t)(13592833164869971511UL), (size_t)(13592833164869971512UL), (size_t)(13592833164869971513UL), (size_t)(13592833164869971562UL)); lbl_6: uint64_t seed; register_stack_var("setTemperature|seed|0", "i64", (void *)(&seed), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } call_lbl_3: calling((void*)&mkSeed, 3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
 # 170 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(1, (size_t)(13592833164869971514UL)); call_lbl_6: calling((void*)&gasdev, 6, 0UL, 1, (size_t)(13592833164869971514UL)); s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
+ alias_group_changed(1, (size_t)(13592833164869971514UL)); call_lbl_5: calling((void*)&gasdev, 5, 0UL, 1, (size_t)(13592833164869971514UL)); s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
 # 171 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(1, (size_t)(13592833164869971562UL)); call_lbl_8: calling((void*)&gasdev, 8, 0UL, 1, (size_t)(13592833164869971514UL)); s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
+ alias_group_changed(1, (size_t)(13592833164869971562UL)); call_lbl_7: calling((void*)&gasdev, 7, 0UL, 1, (size_t)(13592833164869971514UL)); s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
 # 172 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(1, (size_t)(13592833164869971562UL)); call_lbl_10: calling((void*)&gasdev, 10, 0UL, 1, (size_t)(13592833164869971514UL)); s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
+ alias_group_changed(1, (size_t)(13592833164869971562UL)); call_lbl_9: calling((void*)&gasdev, 9, 0UL, 1, (size_t)(13592833164869971514UL)); s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
 # 173 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  } }
 # 174 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2750,20 +2750,20 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 178 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  lbl_7: real_t vZero[3] = { 0., 0., 0. }; register_stack_var("setTemperature|vZero|0", "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } ;
 # 179 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(8, (size_t)(13592833164869971506UL), (size_t)(13592833164869971507UL), (size_t)(13592833164869971508UL), (size_t)(13592833164869971509UL), (size_t)(13592833164869971510UL), (size_t)(13592833164869971511UL), (size_t)(13592833164869971512UL), (size_t)(13592833164869971562UL)); call_lbl_14: calling((void*)&setVcm, 14, 0UL, 2, (size_t)(13592833164869971784UL), (size_t)(13592833164869971515UL)); setVcm(s, vZero);
+ alias_group_changed(9, (size_t)(13592833164869971506UL), (size_t)(13592833164869971507UL), (size_t)(13592833164869971508UL), (size_t)(13592833164869971509UL), (size_t)(13592833164869971510UL), (size_t)(13592833164869971511UL), (size_t)(13592833164869971512UL), (size_t)(13592833164869971513UL), (size_t)(13592833164869971562UL)); call_lbl_13: calling((void*)&setVcm, 13, 0UL, 2, (size_t)(13592833164869971784UL), (size_t)(13592833164869971515UL)); setVcm(s, vZero);
 # 180 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- call_lbl_15: calling((void*)&kineticEnergy, 15, 0UL, 1, (size_t)(13592833164869971784UL)); kineticEnergy(s);
+ call_lbl_14: calling((void*)&kineticEnergy, 14, 0UL, 1, (size_t)(13592833164869971784UL)); kineticEnergy(s);
 # 181 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  lbl_8: real_t temp; register_stack_var("setTemperature|temp|0", "double", (void *)(&temp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 183 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(1, (size_t)(13592833164869971516UL)); lbl_9: real_t scaleFactor; register_stack_var("setTemperature|scaleFactor|0", "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } call_lbl_17: calling((void*)&sqrt, 17, 0UL, 1, (size_t)(0UL)); scaleFactor = (sqrt(temperature / temp)) ;
+ lbl_9: real_t scaleFactor; register_stack_var("setTemperature|scaleFactor|0", "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } call_lbl_15: calling((void*)&sqrt, 15, 0UL, 1, (size_t)(0UL)); scaleFactor = (sqrt(temperature / temp)) ;
 # 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  { lbl_10: int iBox; register_stack_var("setTemperature|iBox|1", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 186 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_11: int iOff; register_stack_var("setTemperature|iOff|1", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } lbl_12: int ii; register_stack_var("setTemperature|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+ { lbl_11: int iOff; register_stack_var("setTemperature|iOff|1", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } lbl_12: int ii; register_stack_var("setTemperature|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 187 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 188 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2777,7 +2777,7 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  } }
 # 193 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(5, (size_t)(13592833164869971517UL), (size_t)(13592833164869971518UL), (size_t)(13592833164869971519UL), (size_t)(13592833164869971520UL), (size_t)(13592833164869971562UL)); call_lbl_19: calling((void*)&kineticEnergy, 19, 0UL, 1, (size_t)(13592833164869971784UL)); kineticEnergy(s);
+ alias_group_changed(6, (size_t)(13592833164869971516UL), (size_t)(13592833164869971517UL), (size_t)(13592833164869971518UL), (size_t)(13592833164869971519UL), (size_t)(13592833164869971520UL), (size_t)(13592833164869971562UL)); call_lbl_17: calling((void*)&kineticEnergy, 17, 0UL, 1, (size_t)(13592833164869971784UL)); kineticEnergy(s);
 # 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
 # 195 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2818,19 +2818,19 @@ alias_group_changed(6, (size_t)(13592833164869971796UL), (size_t)(13592833164869
 # 216 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 void computeVcm(SimFlat* s, real_t vcm[3])
 # 217 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-{new_stack((void *)(&computeVcm), 2, 2, (size_t)(13592833164869971504UL), (size_t)(13592833164869971486UL), "computeVcm|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "computeVcm|vcm|0", "double*", (void *)(&vcm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&computeVcm), 2, 1, (size_t)(13592833164869971504UL), (size_t)(13592833164869971486UL), "computeVcm|vcm|0", "double*", (void *)(&vcm), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 218 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  lbl_0: real_t vcmLocal[4] = { 0., 0., 0., 0. }; register_stack_var("computeVcm|vcmLocal|0", "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 219 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_1: real_t vcmSum[4] = { 0., 0., 0., 0. }; register_stack_var("computeVcm|vcmSum|0", "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ lbl_1: real_t vcmSum[4] = { 0., 0., 0., 0. }; register_stack_var("computeVcm|vcmSum|0", "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 220 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 221 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 222 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_2: int iBox; register_stack_var("computeVcm|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
+ { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; ++iBox)
 # 223 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 224 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { lbl_3: int iOff; register_stack_var("computeVcm|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int ii; register_stack_var("computeVcm|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+ { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
 # 225 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  {
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2841,7 +2841,7 @@ void computeVcm(SimFlat* s, real_t vcm[3])
  vcmLocal[2] += s->atoms->p[iOff][2];
 # 229 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 230 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_5: int iSpecies; register_stack_var("computeVcm|iSpecies|0", "i32", (void *)(&iSpecies), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } iSpecies = (s->atoms->iSpecies[iOff]) ;
+ int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 231 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  vcmLocal[3] += s->species[iSpecies].mass;
 # 232 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2857,7 +2857,7 @@ void computeVcm(SimFlat* s, real_t vcm[3])
  do { call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); profileStop(commReduceTimer); } while(0);
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 239 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- lbl_6: real_t totalMass; register_stack_var("computeVcm|totalMass|0", "double", (void *)(&totalMass), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } totalMass = (vcmSum[3]) ;
+ real_t totalMass; totalMass = (vcmSum[3]) ;
 # 240 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  vcm[0] = vcmSum[0]/totalMass;
 # 241 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"

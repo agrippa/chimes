@@ -4,7 +4,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 4 5 alias_group_changed(2, (size_t)(1300474033434903673UL), (size_t)(1300474033434903674UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 23 new_stack((void *)(&foo), 2, 0, (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1300474033434903714UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 5  int a;  a = (3 + 4 + 5 + 6) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 10 10 
@@ -19,4 +19,4 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 14  register_stack_var("main|ptr|0", "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 14  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 248  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 129  if (____chimes_replaying) { goto lbl_0; } 

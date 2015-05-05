@@ -1,9 +1,13 @@
 #include "checkpoint.h"
+#include <assert.h>
 
 int foo(int a) {
     int b = a;
     int c = a + b;
     checkpoint();
+    assert(a == 3);
+    assert(b == a);
+    assert(c == a + b);
     return c;
 }
 

@@ -1486,7 +1486,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(7686840342758601679UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7686840342758601679UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
  lbl_0: int a[] = { 1, 2, 3, 4, 5 }; register_stack_var("main|a|0", "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"

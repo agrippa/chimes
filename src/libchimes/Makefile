@@ -23,7 +23,10 @@ endif
 CHIMES_LIB=libchimes.so
 CHIMES_CPP_LIB=libchimes_cpp.so
 
-all: ${CHIMES_CPP_LIB} ${CHIMES_LIB}
+all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} benchmark_timers
+
+benchmark_timers: benchmark_timers.cpp
+	${GXX} ${GXX_FLAGS} -o benchmark_timers benchmark_timers.cpp
 
 ${CHIMES_CPP_LIB}: ${SRC} build-xxhash
 	${GXX} ${GXX_FLAGS} -shared ${SRC} -o ${CHIMES_CPP_LIB} -Lxxhash/ -lxxhash

@@ -17,16 +17,13 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 293 8 : { 672, 678 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 342 9 : { 727, 728, 773 } prop:call:_Z12profileStart11TimerHandle
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 9 : { 786, 787, 788, 789, 1367 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 369 7 : { 1367 } direct:call:fflush
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 306 8 : { 919, 920 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 233 4 : { 1003, 1004, 1005 } prop:call:_Z16destroyLinkCellsPP10LinkCellSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 22 : { 1075, 1076, 1077, 1078, 1079 } prop:call:_Z10initEamPotPKcS0_S0_
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 75 : { 1075, 1076, 1077, 1078, 1079 } prop:call:_Z9initLjPotv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 271 35 : { 1079 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 449 18 : { 1119, 1120, 1121, 1122, 1123 } direct:call:_Z9getNRanksv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 452 11 : { 1122 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 11 : { 1122, 1124, 1125, 1126, 1127, 1128, 1129 } prop:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 476 8 : { 1122, 1124, 1125, 1126, 1127, 1128, 1129 } prop:call:strcasecmp
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 479 11 : { 1122 } direct:call:_Z9printRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 485 4 : { 1130 } direct:call:_Z13bcastParallelPvii
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 279 4 : { 1277, 1278 } direct:call:strcpy

@@ -1638,11 +1638,11 @@ alias_group_changed(1, (size_t)(17287627617634550284UL)); rm_stack(false, 0UL); 
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStop(const enum TimerHandle handle)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{new_stack((void *)(&profileStop), 1, 1, (size_t)(0UL), "profileStop|handle|0", "i32", (void *)(&handle), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&profileStop), 1, 1, (size_t)(0UL), "profileStop|handle|0", "i32", (void *)(&handle), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfTimer[handle].count += 1;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- alias_group_changed(2, (size_t)(17287627617634549559UL), (size_t)(17287627617634550284UL)); lbl_0: uint64_t delta; register_stack_var("profileStop|delta|0", "i64", (void *)(&delta), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&getTime, 2, 0UL, 0); delta = (getTime() - perfTimer[handle].start) ;
+ alias_group_changed(2, (size_t)(17287627617634549559UL), (size_t)(17287627617634550284UL)); uint64_t delta; call_lbl_2: calling((void*)&getTime, 2, 0UL, 0); delta = (getTime() - perfTimer[handle].start) ;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfTimer[handle].total += delta;
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1713,7 +1713,7 @@ void printPerformanceResults(int nGlobalAtoms, int printRate)
  fprintf(__stdoutp, "_____________________________________________________________________________\n");
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_4: int ii; register_stack_var("printPerformanceResults|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( ii = (0) ; ii < numberOfTimers; ++ii)
+ { lbl_4: int ii; register_stack_var("printPerformanceResults|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ++ii)
 # 152 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 153 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1721,7 +1721,7 @@ void printPerformanceResults(int nGlobalAtoms, int printRate)
 # 159 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  } }
 # 160 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- alias_group_changed(1, (size_t)(17287627617634549630UL)); lbl_5: double atomsPerTask; register_stack_var("printPerformanceResults|atomsPerTask|0", "double", (void *)(&atomsPerTask), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } call_lbl_20: calling((void*)&getNRanks, 20, 0UL, 0); atomsPerTask = (nGlobalAtoms / (real_t)getNRanks()) ;
+ alias_group_changed(1, (size_t)(17287627617634549630UL)); double atomsPerTask; call_lbl_20: calling((void*)&getNRanks, 20, 0UL, 0); atomsPerTask = (nGlobalAtoms / (real_t)getNRanks()) ;
 # 161 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1766,7 +1766,7 @@ void printPerformanceResultsYaml(FILE* file)
 # 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  lbl_0: double tick; register_stack_var("printPerformanceResultsYaml|tick|0", "double", (void *)(&tick), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_5: calling((void*)&getTick, 5, 0UL, 0); tick = (getTick()) ;
 # 186 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- lbl_1: double loopTime; register_stack_var("printPerformanceResultsYaml|loopTime|0", "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } loopTime = (perfTimer[loopTimer].total * tick) ;
+ lbl_1: double loopTime; register_stack_var("printPerformanceResultsYaml|loopTime|0", "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } loopTime = (perfTimer[loopTimer].total * tick) ;
 # 187 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 188 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(file,"\nPerformance Results:\n");
@@ -1777,7 +1777,7 @@ void printPerformanceResultsYaml(FILE* file)
 # 191 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  call_lbl_12: calling((void*)&getMyRank, 12, 0UL, 0); fprintf(file, "Performance Results For Rank %d:\n", getMyRank());
 # 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_2: int ii; register_stack_var("printPerformanceResultsYaml|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 193 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1785,7 +1785,7 @@ void printPerformanceResultsYaml(FILE* file)
 # 195 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 196 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- lbl_3: double totalTime; register_stack_var("printPerformanceResultsYaml|totalTime|0", "double", (void *)(&totalTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } totalTime = (perfTimer[ii].total * tick) ;
+ double totalTime; totalTime = (perfTimer[ii].total * tick) ;
 # 197 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(file, "  Timer: %s\n", timerName[ii]);
 # 198 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1804,7 +1804,7 @@ void printPerformanceResultsYaml(FILE* file)
 # 205 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(file, "Performance Results Across Ranks:\n");
 # 206 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_4: int ii; register_stack_var("printPerformanceResultsYaml|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 207 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 208 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1895,23 +1895,23 @@ void timerStats(void)
 # 265 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 {new_stack((void *)(&timerStats), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 266 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- lbl_0: double sendBuf[11]; register_stack_var("timerStats|sendBuf|0", "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: double recvBuf[11]; register_stack_var("timerStats|recvBuf|0", "[11 x double]", (void *)(recvBuf), (size_t)88, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ lbl_0: double sendBuf[11]; register_stack_var("timerStats|sendBuf|0", "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } double recvBuf[11]; ;
 # 267 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 268 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 269 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_2: int ii; register_stack_var("timerStats|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
+ { lbl_1: int ii; register_stack_var("timerStats|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
 # 271 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  alias_group_changed(2, (size_t)(17287627617634549842UL), (size_t)(17287627617634549844UL)); call_lbl_2: calling((void*)&addDoubleParallel, 2, 0UL, 3, (size_t)(17287627617634549842UL), (size_t)(17287627617634549843UL), (size_t)(0UL)); addDoubleParallel(sendBuf, recvBuf, numberOfTimers);
 # 272 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 273 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_3: int ii; register_stack_var("timerStats|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(4, (size_t)(17287627617634549845UL), (size_t)(17287627617634549846UL), (size_t)(17287627617634549848UL), (size_t)(17287627617634550284UL)); call_lbl_4: calling((void*)&getNRanks, 4, 0UL, 0); perfTimer[ii].average = recvBuf[ii] / (double)getNRanks(); } };
+ { lbl_2: int ii; register_stack_var("timerStats|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(4, (size_t)(17287627617634549845UL), (size_t)(17287627617634549846UL), (size_t)(17287627617634549848UL), (size_t)(17287627617634550284UL)); call_lbl_4: calling((void*)&getNRanks, 4, 0UL, 0); perfTimer[ii].average = recvBuf[ii] / (double)getNRanks(); } };
 # 275 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 276 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 277 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 278 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- lbl_4: RankReduceData reduceSendBuf[11]; register_stack_var("timerStats|reduceSendBuf|0", "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: RankReduceData reduceRecvBuf[11]; register_stack_var("timerStats|reduceRecvBuf|0", "[11 x %struct.RankReduceDataSt]", (void *)(reduceRecvBuf), (size_t)176, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
+ lbl_3: RankReduceData reduceSendBuf[11]; register_stack_var("timerStats|reduceSendBuf|0", "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } RankReduceData reduceRecvBuf[11]; ;
 # 279 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_6: int ii; register_stack_var("timerStats|ii|2", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { lbl_4: int ii; register_stack_var("timerStats|ii|2", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 280 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 281 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1923,7 +1923,7 @@ void timerStats(void)
 # 284 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  alias_group_changed(4, (size_t)(17287627617634549845UL), (size_t)(17287627617634549846UL), (size_t)(17287627617634549848UL), (size_t)(17287627617634550284UL)); call_lbl_8: calling((void*)&minRankDoubleParallel, 8, 0UL, 3, (size_t)(17287627617634549846UL), (size_t)(17287627617634549847UL), (size_t)(0UL)); minRankDoubleParallel(reduceSendBuf, reduceRecvBuf, numberOfTimers);
 # 285 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_7: int ii; register_stack_var("timerStats|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { lbl_5: int ii; register_stack_var("timerStats|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1935,7 +1935,7 @@ void timerStats(void)
 # 290 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  alias_group_changed(2, (size_t)(17287627617634549849UL), (size_t)(17287627617634550284UL)); call_lbl_10: calling((void*)&maxRankDoubleParallel, 10, 0UL, 3, (size_t)(17287627617634549846UL), (size_t)(17287627617634549847UL), (size_t)(0UL)); maxRankDoubleParallel(reduceSendBuf, reduceRecvBuf, numberOfTimers);
 # 291 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_8: int ii; register_stack_var("timerStats|ii|4", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { lbl_6: int ii; register_stack_var("timerStats|ii|4", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1947,11 +1947,11 @@ void timerStats(void)
 # 296 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 297 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 298 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_9: int ii; register_stack_var("timerStats|ii|5", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { lbl_7: int ii; register_stack_var("timerStats|ii|5", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 299 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 300 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- lbl_10: double temp; register_stack_var("timerStats|temp|0", "double", (void *)(&temp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
+ lbl_8: double temp; register_stack_var("timerStats|temp|0", "double", (void *)(&temp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
 # 301 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  sendBuf[ii] = temp * temp;
 # 302 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1959,7 +1959,7 @@ void timerStats(void)
 # 303 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  alias_group_changed(5, (size_t)(17287627617634549842UL), (size_t)(17287627617634549850UL), (size_t)(17287627617634549851UL), (size_t)(17287627617634549852UL), (size_t)(17287627617634550284UL)); call_lbl_12: calling((void*)&addDoubleParallel, 12, 0UL, 3, (size_t)(17287627617634549842UL), (size_t)(17287627617634549843UL), (size_t)(0UL)); addDoubleParallel(sendBuf, recvBuf, numberOfTimers);
 # 304 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- { lbl_11: int ii; register_stack_var("timerStats|ii|6", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ii++)
+ { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 305 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  {
 # 306 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"

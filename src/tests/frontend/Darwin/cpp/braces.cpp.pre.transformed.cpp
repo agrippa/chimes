@@ -1726,7 +1726,7 @@ FILE *funopen(const void *,
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1263163414597574838UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
  if (argc == 0) {printf("hello there\n"); };
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
@@ -1734,7 +1734,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2,
  if (argc > 0) {printf("hello again\n"); };
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
- { lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
+ { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
  alias_group_changed(4, (size_t)(1263163414597574804UL), (size_t)(1263163414597574805UL), (size_t)(1263163414597574806UL), (size_t)(1263163414597574807UL)); rm_stack(false, 0UL); return 0;

@@ -1,9 +1,5 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 3 : { 1 } direct:call:omp_init_lock
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 300 10 : { 37, 38 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 84 : { 38 } direct:call:omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 142 : { 38 } prop:call:sprintf
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 0 : { 38 } prop:call:sprintf
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 252 : { 38 } direct:call:sprintf
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 84 : { 37, 38 } direct:call:omp_get_num_threads
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 324 19 : { 106, 107, 108 } prop:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 326 17 : { 106, 107, 108 } prop:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 331 15 : { 106, 107, 108 } prop:call:atoi

@@ -1010,7 +1010,7 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void computeForce(SimFlat* s)
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-{new_stack((void *)(&computeForce), 1, 1, (size_t)(7181207812802620719UL), "computeForce|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+{new_stack((void *)(&computeForce), 1, 0, (size_t)(7181207812802620719UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    alias_group_changed(1, (size_t)(7181207812802620708UL)); call_lbl_2: calling((void*)s->pot->force, 2, 0UL, 1, (size_t)(7181207812802620719UL)); s->pot->force(s);
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -1090,9 +1090,9 @@ void kineticEnergy(SimFlat* s)
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {new_stack((void *)(&kineticEnergy), 1, 1, (size_t)(7181207812802620891UL), "kineticEnergy|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-    lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+    lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-     lbl_1: real_t kenergy; register_stack_var("kineticEnergy|kenergy|0", "double", (void *)(&kenergy), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } kenergy = (0.) ;
+    real_t kenergy; kenergy = (0.) ;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[0] = s->ePotential;
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -1130,7 +1130,7 @@ void kineticEnergy(SimFlat* s)
    eLocal[1] = kenergy;
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-    lbl_2: real_t eSum[2]; register_stack_var("kineticEnergy|eSum|0", "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+   real_t eSum[2]; ;
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { alias_group_changed(8, (size_t)(7181207812802620720UL), (size_t)(7181207812802620721UL), (size_t)(7181207812802620722UL), (size_t)(7181207812802620723UL), (size_t)(7181207812802620724UL), (size_t)(7181207812802620725UL), (size_t)(7181207812802620726UL), (size_t)(7181207812802620727UL)); call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"

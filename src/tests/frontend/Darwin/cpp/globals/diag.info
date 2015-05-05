@@ -1,6 +1,6 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 12 5 alias_group_changed(4, (size_t)(9397157703034130344UL), (size_t)(9397157703034130345UL), (size_t)(9397157703034130346UL), (size_t)(9397157703034130366UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 13 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(9397157703034130362UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 33 init_chimes(); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 12 161  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 248  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/globals.cpp 8 129  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 

@@ -1484,7 +1484,7 @@ int foo(int a, int b) {new_stack((void *)(&foo), 2, 0, (size_t)(0UL), (size_t)(0
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1300474033434903714UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)); if (____chimes_replaying) { goto lbl_0; }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
  lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3 + 4 + 5 + 6) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"

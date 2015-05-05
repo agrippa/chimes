@@ -26795,7 +26795,7 @@ void kernel(int *A, int *B, int *C, int N) ;
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(10983886093799450970UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); if (____chimes_replaying) { goto lbl_0; }
 # 21 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaError_t error; ;
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

@@ -1782,13 +1782,13 @@ extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(383979529920101897UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-      lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3) ;
+     int a; a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-      lbl_1: int b; register_stack_var("main|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } b = (4) ;
+     int b; b = (4) ;
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-      lbl_2: int c; register_stack_var("main|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } c = (5); { call_lbl_8: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(8, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
+     int c; c = (5); { call_lbl_8: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(8, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"

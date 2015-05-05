@@ -9,5 +9,5 @@ void *haha_this_sux_part_deux() {
 int main(int argc, char **argv) {
     void *tmp = haha_this_sux_part_deux();
     checkpoint();
-    return 0;
+    return ((int *)tmp)[0];
 }

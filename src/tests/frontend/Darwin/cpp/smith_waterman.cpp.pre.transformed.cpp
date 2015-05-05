@@ -1975,9 +1975,9 @@ signed char char_mapping ( char c ) {new_stack((void *)(&char_mapping), 1, 0, (s
 }
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
-void print_matrix ( int** matrix, int n_rows, int n_columns ) {new_stack((void *)(&print_matrix), 3, 3, (size_t)(2568646267985526073UL), (size_t)(0UL), (size_t)(0UL), "print_matrix|matrix|0", "i32**", (void *)(&matrix), (size_t)8, 1, 0, 0, "print_matrix|n_rows|0", "i32", (void *)(&n_rows), (size_t)4, 0, 0, 0, "print_matrix|n_columns|0", "i32", (void *)(&n_columns), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void print_matrix ( int** matrix, int n_rows, int n_columns ) {new_stack((void *)(&print_matrix), 3, 0, (size_t)(2568646267985526073UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_0: int i; register_stack_var("print_matrix|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int j; register_stack_var("print_matrix|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
+ int i; int j; ;
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  for ( i = 0; i < n_rows; ++i ) {
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2051,10 +2051,10 @@ signed char* read_file( FILE* file, size_t* n_chars ) {new_stack((void *)(&read_
  alias_group_changed(1, (size_t)(2568646267985526124UL)); call_lbl_5: calling((void*)&fseek, 5, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 0);
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_1: signed char *file_buffer; register_stack_var("read_file|file_buffer|0", "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2568646267985526143UL, 0, 0)) ;
+ lbl_1: signed char *file_buffer; register_stack_var("read_file|file_buffer|0", "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2568646267985526143UL, 0, 0)) ;
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(1, (size_t)(2568646267985526125UL)); lbl_2: size_t n_read_from_file; register_stack_var("read_file|n_read_from_file|0", "i64", (void *)(&n_read_from_file), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
+ alias_group_changed(1, (size_t)(2568646267985526125UL)); size_t n_read_from_file; call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  file_buffer[file_size] = '\n';
 # 90 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2074,7 +2074,7 @@ int find_diag(int row, int col) {new_stack((void *)(&find_diag), 2, 0, (size_t)(
 }
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
-int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2568646267985526969UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2, 1, (size_t)(0UL), (size_t)(2568646267985526969UL), "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  lbl_0: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } lbl_1: int j; register_stack_var("main|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2234,7 +2234,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
  lbl_22: int top_score; register_stack_var("main|top_score|0", "i32", (void *)(&top_score), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]) ;
 # 196 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 197 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_23: int bigger_of_left_top; register_stack_var("main|bigger_of_left_top|0", "i32", (void *)(&bigger_of_left_top), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
+ lbl_23: int bigger_of_left_top; register_stack_var("main|bigger_of_left_top|0", "i32", (void *)(&bigger_of_left_top), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(14): { goto call_lbl_14; } case(21): { goto call_lbl_21; } case(34): { goto call_lbl_34; } case(37): { goto call_lbl_37; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(45): { goto call_lbl_45; } case(47): { goto call_lbl_47; } case(49): { goto call_lbl_49; } default: { chimes_error(); } } } bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
 # 198 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  local_matrix[ii][jj] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
 # 199 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2269,9 +2269,9 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
  fprintf(__stdoutp, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
 # 220 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 221 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_24: int diag_zero; register_stack_var("main|diag_zero|0", "i32", (void *)(&diag_zero), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } call_lbl_49: calling((void*)&find_diag, 49, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); diag_zero = (find_diag(0, 0)) ;
+ int diag_zero; call_lbl_49: calling((void*)&find_diag, 49, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); diag_zero = (find_diag(0, 0)) ;
 # 222 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_25: int score; register_stack_var("main|score|0", "i32", (void *)(&score), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(14): { goto call_lbl_14; } case(21): { goto call_lbl_21; } case(34): { goto call_lbl_34; } case(37): { goto call_lbl_37; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(45): { goto call_lbl_45; } case(47): { goto call_lbl_47; } case(49): { goto call_lbl_49; } default: { chimes_error(); } } } score = (tile_diag[diag_zero]) ;
+ int score; score = (tile_diag[diag_zero]) ;
 # 223 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp, "score: %d\n", score);
 # 224 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"

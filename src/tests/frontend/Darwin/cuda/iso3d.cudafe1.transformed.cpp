@@ -26908,7 +26908,7 @@ void fwd_kernel(float *next, float *curr, float *vsq, float *c_coeff, int
 nx, int ny, int nz, int dimx, int dimy, int radius) ;
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2433535641213254749UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)); if (____chimes_replaying) { goto lbl_0; }
 # 75 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
  lbl_0: config conf; register_stack_var("main|conf|0", "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
 # 76 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"

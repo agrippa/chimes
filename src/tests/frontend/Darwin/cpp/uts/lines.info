@@ -3,30 +3,18 @@
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 163 11 : { 82 } direct:call:rng_rand
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 164 14 : { 83 } direct:call:_Z10rng_toProbi
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 213 7 : { 109, 110, 111, 114 } prop:call:rng_rand
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 182 40 : { 109, 110, 111, 114 } prop:call:log
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 192 17 : { 109, 110, 111, 114 } prop:call:sin
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 214 7 : { 113 } direct:call:_Z10rng_toProbi
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 218 23 : { 115 } direct:call:log
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 247 7 : { 220, 221 } prop:call:_Z9uts_errorPc
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 52 : { 220, 221 } prop:call:floor
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 230 87 : { 220, 221 } prop:call:_Z19uts_numChildren_binP6node_t
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 237 21 : { 220, 221 } prop:call:_Z19uts_numChildren_geoP6node_t
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 64 : { 220, 221 } prop:call:_Z19uts_numChildren_geoP6node_t
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 241 116 : { 220, 221 } prop:call:_Z19uts_numChildren_binP6node_t
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 253 24 : { 221 } prop:call:ceil
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 284 7 : { 308 } prop:call:_Z9uts_errorPc
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 293 79 : { 337, 338 } direct:call:_Z12impl_getNamev
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 296 10 : { 338 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 299 10 : { 338 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 300 10 : { 338 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 303 12 : { 338, 339, 340, 341 } prop:call:sprintf
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 311 12 : { 338, 339, 340, 341 } prop:call:sprintf
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 317 19 : { 338, 339, 340, 341 } prop:call:ceil
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 321 10 : { 338, 339, 340, 341 } prop:call:sprintf
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 9 : { 338 } direct:call:rng_showtype
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 323 10 : { 338 } direct:call:sprintf
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 322 9 : { 338, 339, 340, 341 } prop:call:rng_showtype
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 335 11 : { 490, 491 } prop:call:_Z15uts_paramsToStrPci
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 336 11 : { 491 } direct:call:_Z16impl_paramsToStrPci
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 345 56 : { 514, 515, 516, 517, 894, 895 } prop:call:_Z15uts_helpMessagev
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 400 5 : { 514, 515, 516, 517, 894, 895 } prop:call:_Z10impl_aborti
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 345 129 : { 514, 515, 516, 517, 894, 895 } prop:call:strlen
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c 355 10 : { 514, 515, 516, 517, 894, 895 } prop:call:_Z15impl_parseParamPcS_

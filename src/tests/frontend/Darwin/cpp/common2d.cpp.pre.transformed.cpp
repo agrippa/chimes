@@ -2374,9 +2374,9 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void save_text(float *field, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_text), 7, 7, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL), "save_text|field|0", "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|dimy|0", "i32", (void *)(&dimy), (size_t)4, 0, 0, 0, "save_text|ny|0", "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+ const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_text), 7, 0, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- lbl_0: FILE *fp; register_stack_var("save_text|fp|0", "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } fp = (fopen(filename, "wb")) ;
+ FILE *fp; fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  if (fp == __null) {
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2387,9 +2387,9 @@ void save_text(float *field, const int dimx, const int dimy,
  }
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- { lbl_1: int y; register_stack_var("save_text|y|0", "i32", (void *)(&y), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( y = (0) ; y < ny; y++) {
+ { int y; for ( y = (0) ; y < ny; y++) {
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- { lbl_2: int x; register_stack_var("save_text|x|0", "i32", (void *)(&x), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } for ( x = (0) ; x < nx; x++) {
+ { int x; for ( x = (0) ; x < nx; x++) {
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  fprintf(fp, "%d %d %.20f\n", y, x,
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2446,7 +2446,7 @@ void init_data(float *curr, float *next, float *vsq,
 alias_group_changed(15, (size_t)(8205091200931170215UL), (size_t)(8205091200931170216UL), (size_t)(8205091200931170217UL), (size_t)(8205091200931170218UL), (size_t)(8205091200931170219UL), (size_t)(8205091200931170220UL), (size_t)(8205091200931170221UL), (size_t)(8205091200931170222UL), (size_t)(8205091200931170223UL), (size_t)(8205091200931170224UL), (size_t)(8205091200931170225UL), (size_t)(8205091200931170338UL), (size_t)(8205091200931170339UL), (size_t)(8205091200931170340UL), (size_t)(8205091200931170341UL)); rm_stack(false, 0UL); }
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-void usage(char **argv) {new_stack((void *)(&usage), 1, 1, (size_t)(8205091200931170362UL), "usage|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void usage(char **argv) {new_stack((void *)(&usage), 1, 0, (size_t)(8205091200931170362UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"

@@ -1,3 +1,0 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 121 4 : { 29, 31 } direct:call:strcpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 124 4 : { 31 } direct:call:strcpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 181 45 : { 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 265, 269 } prop:call:__assert_rtn

@@ -11,6 +11,7 @@
 #include "llvm/IR/IntrinsicInst.h"
 #include "llvm/IR/Operator.h"
 
+#include "AllocaVisitor.h"
 #include "ValueVisitor.h"
 #include "Hasher.h"
 
@@ -173,6 +174,13 @@ namespace {
         void dumpStructInfoToFile(const char *filename,
                 std::map<std::string, StructInfo> *struct_fields);
         bool isCheckpoint(Function *callee);
+        bool isPathFromFuncStartToCheckpointThrough(BasicBlock *bb,
+                std::set<StoreInst *> *stores, bool foundStoreIn,
+                std::vector<std::string> *visited);
+        bool isPathFromCheckpointThroughLoad(BasicBlock *bb,
+                std::set<LoadInst *> *loads, bool foundCheckpointIn,
+                std::vector<std::string> *visited);
+        std::set<AllocaInst *> *findStackAllocationsAliveAtCheckpoint(Function *F);
         CALLS_CHECKPOINT mayCreateCheckpoint(Function *F);
         CALLS_CHECKPOINT mayCreateCheckpointHelper(Function *F,
                 std::set<Instruction *> *visited);
@@ -514,7 +522,7 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
                 assert((size_in_bits % 8) == 0);
                 uint64_t size_in_bytes = size_in_bits / 8;
 
-                fprintf(fp, "%d \"%s\" %lu\n", constant_index,
+                fprintf(fp, "%d \"%s\" %llu\n", constant_index,
                         accessable.c_str(), size_in_bytes);
                 return true;
             } else {
@@ -1159,7 +1167,7 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
 }
 
 bool Play::isCheckpoint(Function *callee) {
-    return callee->getName().str() == "_Z10checkpointv";
+    return (callee != NULL && callee->getName().str() == "_Z10checkpointv");
 }
 
 void Play::initKnownFunctions() {
@@ -1169,11 +1177,25 @@ void Play::initKnownFunctions() {
     doesFunctionCreateCheckpoint["fprintf"] = DOES_NOT;
     doesFunctionCreateCheckpoint["\x01_fopen"] = DOES_NOT;
     doesFunctionCreateCheckpoint["fclose"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["sprintf"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["fflush"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["fscanf"] = DOES_NOT;
 
     doesFunctionCreateCheckpoint["malloc"] = DOES_NOT;
     doesFunctionCreateCheckpoint["free"] = DOES_NOT;
     doesFunctionCreateCheckpoint["realloc"] = DOES_NOT;
     doesFunctionCreateCheckpoint["calloc"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["log"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["floor"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["sqrt"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["ceil"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["__assert_rtn"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["strcpy"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["strcat"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["strlen"] = DOES_NOT;
 }
 
 bool Play::isKnownFunction(Function *F) {
@@ -1541,6 +1563,141 @@ static std::map<Value *, std::string> *mapValueToOriginalVarname(
     return mapping;
 }
 
+bool Play::isPathFromFuncStartToCheckpointThrough(BasicBlock *bb,
+        std::set<StoreInst *> *stores, bool foundStoreIn,
+        std::vector<std::string> *visited) {
+    bool foundStore = foundStoreIn;
+
+    std::vector<std::string> my_visited(*visited);
+
+    if (std::find(my_visited.begin(), my_visited.end(), bb->getName()) != my_visited.end()) {
+        return false;
+    }
+    my_visited.push_back(bb->getName());
+
+
+    for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; i++) {
+        Instruction *curr = &*i;
+
+        if (foundStore) {
+            if (CallInst *call = dyn_cast<CallInst>(curr)) {
+                if (!isa<IntrinsicInst>(call) &&
+                        mayCreateCheckpoint(call->getCalledFunction()) != DOES_NOT) {
+                    fprintf(stderr, "May create checkpoint because of function %s\n", (call->getCalledFunction() == NULL ? "null" : call->getCalledFunction()->getName().str().c_str()));
+                    return (true);
+                }
+            }
+        } else {
+            if (StoreInst *store = dyn_cast<StoreInst>(curr)) {
+                if (stores->find(store) != stores->end()) {
+                    foundStore = true;
+                    my_visited.clear();
+                }
+            }
+        }
+    }
+
+    TerminatorInst *term = bb->getTerminator();
+    for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
+        BasicBlock *child = term->getSuccessor(i);
+        if (isPathFromFuncStartToCheckpointThrough(child, stores,
+                foundStore, &my_visited)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Play::isPathFromCheckpointThroughLoad(BasicBlock *bb,
+        std::set<LoadInst *> *loads, bool foundCheckpointIn,
+        std::vector<std::string> *visited) {
+    bool foundCheckpoint = foundCheckpointIn;
+
+    std::vector<std::string> my_visited(*visited);
+
+    if (std::find(my_visited.begin(), my_visited.end(), bb->getName()) != my_visited.end()) {
+        return false;
+    }
+    my_visited.push_back(bb->getName());
+
+    for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; i++) {
+        Instruction &curr = *i;
+
+        if (foundCheckpoint) {
+            if (isa<LoadInst>(&curr) &&
+                    loads->find(dyn_cast<LoadInst>(&curr)) != loads->end()) {
+                return true;
+            }
+        } else {
+            if (CallInst *call = dyn_cast<CallInst>(&curr)) {
+                if (!isa<IntrinsicInst>(call) &&
+                        mayCreateCheckpoint(call->getCalledFunction()) != DOES_NOT) {
+                    foundCheckpoint = true;
+                    my_visited.clear();
+                }
+            }
+        }
+    }
+
+    TerminatorInst *term = bb->getTerminator();
+    for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
+        BasicBlock *child = term->getSuccessor(i);
+        if (isPathFromCheckpointThroughLoad(child, loads,
+                foundCheckpoint, &my_visited)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+std::set<AllocaInst *> *Play::findStackAllocationsAliveAtCheckpoint(Function *F) {
+    std::vector<AllocaInst *> *initial = new std::vector<AllocaInst *>();
+
+    for (Function::iterator i = F->begin(), e = F->end(); i != e; i++) {
+        BasicBlock *bb = &*i;
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                ++i) {
+            Instruction *inst = &*i;
+            if (isa<AllocaInst>(inst)) {
+                initial->push_back(dyn_cast<AllocaInst>(inst));
+            }
+        }
+    }
+
+    AllocaVisitor visitor(initial);
+    visitor.driver();
+
+    std::vector<std::string> s_visited;
+    std::vector<std::string> l_visited;
+
+    std::set<AllocaInst *> *result = new std::set<AllocaInst *>();
+    for (std::vector<AllocaInst *>::iterator i = initial->begin(),
+            e = initial->end(); i != e; i++) {
+        AllocaInst *curr = *i;
+
+        std::set<StoreInst *> *stores = visitor.get_stores(curr);
+        std::set<LoadInst *> *loads = visitor.get_loads(curr);
+
+        if (visitor.is_unsolvable(curr)) {
+            result->insert(curr);
+        } else {
+            BasicBlock *entry = &F->getEntryBlock();
+            s_visited.clear();
+            l_visited.clear();
+            bool through_store = isPathFromFuncStartToCheckpointThrough(entry,
+                    stores, false, &s_visited);
+            bool through_load = isPathFromCheckpointThroughLoad(entry, loads,
+                    false, &l_visited);
+            bool should_checkpoint = (through_store && through_load);
+            if (should_checkpoint) {
+                result->insert(curr);
+            }
+        }
+    }
+
+    return (result);
+}
+
 /*
  * TODO I don't think this supports stack-allocated arrays yet. Related TODO in
  * libchimes.cpp
@@ -1568,7 +1725,10 @@ void Play::findStackAllocations(Module &M, const char *output_file,
          * variables can be alive when a call to checkpoint() is made, and only
          * checkpointing those. TODO.
          */
-        if (mayCreateCheckpoint(F) == DOES_NOT) continue;
+        if (mayCreateCheckpoint(F) == DOES_NOT || F->empty()) continue;
+
+        std::set<AllocaInst *> *alive =
+            findStackAllocationsAliveAtCheckpoint(F);
 
         std::map<Value *, std::string> *varname_mapping =
             mapValueToOriginalVarname(F);
@@ -1583,124 +1743,128 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                     ++i) {
                 Instruction &inst = *i;
                 if (AllocaInst *alloca = dyn_cast<AllocaInst>(&inst)) {
-                    std::string varname = alloca->getName().str();
-                    uint64_t type_size = layout->getTypeSizeInBits(
-                            alloca->getAllocatedType());
-                    assert(type_size % 8 == 0); // even number of bytes
+                    if (alive->find(alloca) != alive->end() ||
+                            alloca->isArrayAllocation()) {
 
-                    // auto-generated llvm stack allocation for return values
-                    if (strcmp(varname.c_str(), "retval") == 0) {
-                        continue;
-                    }
+                        std::string varname = alloca->getName().str();
+                        uint64_t type_size = layout->getTypeSizeInBits(
+                                alloca->getAllocatedType());
+                        assert(type_size % 8 == 0); // even number of bytes
 
-                    /*
-                     * There may be stack allocations for temporary variables
-                     * that do not exist in the original source. These can be
-                     * safely ignored.
-                     */
-                    if (varname_mapping->find(alloca) == varname_mapping->end()) {
-                        continue;
-                    }
-                    varname = (*varname_mapping)[alloca];
-
-                    int is_argument = 0;
-                    const char *arg_addr_suffix = ".addr";
-                    size_t found = varname.find(arg_addr_suffix);
-                    if (found != std::string::npos && found ==
-                            varname.length() - strlen(arg_addr_suffix)) {
-
-                        varname = varname.substr(0, varname.length() -
-                                strlen(arg_addr_suffix));
+                        // auto-generated llvm stack allocation for return values
+                        if (strcmp(varname.c_str(), "retval") == 0) {
+                            continue;
+                        }
 
                         /*
-                         * double check that we can find a matching argument to
-                         * this function if we think this stack allocation is
-                         * for an argument's address
+                         * There may be stack allocations for temporary variables
+                         * that do not exist in the original source. These can be
+                         * safely ignored.
                          */
-                        for (Function::arg_iterator arg_iter = F->arg_begin(),
-                                arg_end = F->arg_end(); arg_iter != arg_end;
-                                arg_iter++) {
-                            Argument *arg = arg_iter;
-                            if (arg->getName().str() == varname) {
-                                is_argument = 1;
-                                break;
+                        if (varname_mapping->find(alloca) == varname_mapping->end()) {
+                            continue;
+                        }
+                        varname = (*varname_mapping)[alloca];
+
+                        int is_argument = 0;
+                        const char *arg_addr_suffix = ".addr";
+                        size_t found = varname.find(arg_addr_suffix);
+                        if (found != std::string::npos && found ==
+                                varname.length() - strlen(arg_addr_suffix)) {
+
+                            varname = varname.substr(0, varname.length() -
+                                    strlen(arg_addr_suffix));
+
+                            /*
+                             * double check that we can find a matching argument to
+                             * this function if we think this stack allocation is
+                             * for an argument's address
+                             */
+                            for (Function::arg_iterator arg_iter = F->arg_begin(),
+                                    arg_end = F->arg_end(); arg_iter != arg_end;
+                                    arg_iter++) {
+                                Argument *arg = arg_iter;
+                                if (arg->getName().str() == varname) {
+                                    is_argument = 1;
+                                    break;
+                                }
+                            }
+                            assert(is_argument);
+                        }
+
+                        StackAllocInfo *info = new StackAllocInfo();
+                        info->type_size_in_bits = type_size;
+                        info->alloca = alloca;
+                        info->parent = bb;
+                        info->is_ptr = 0;
+                        info->is_struct = 0;
+                        info->struct_ptr_field_names =
+                            new std::vector<std::string>();
+
+                        for (Value::use_iterator use_iter = alloca->use_begin(),
+                                use_end = alloca->use_end(); use_iter != use_end;
+                                use_iter++) {
+                            Use *use = &*use_iter;
+                            if (Instruction *user = dyn_cast<Instruction>(use->getUser())) {
+                                info->users.push_back(user);
+                            } else {
+                                fprintf(stderr, "User is not an instruction?\n");
+                                exit(1);
                             }
                         }
-                        assert(is_argument);
-                    }
 
-                    StackAllocInfo *info = new StackAllocInfo();
-                    info->type_size_in_bits = type_size;
-                    info->alloca = alloca;
-                    info->parent = bb;
-                    info->is_ptr = 0;
-                    info->is_struct = 0;
-                    info->struct_ptr_field_names =
-                        new std::vector<std::string>();
+                        /*
+                         * Construct a unique variable name based on the containing
+                         * function and this local's name.
+                         */
+                        std::string *unique_varname = getUniqueVarname(varname,
+                                F, &found_variables, M);
 
-                    for (Value::use_iterator use_iter = alloca->use_begin(),
-                            use_end = alloca->use_end(); use_iter != use_end;
-                            use_iter++) {
-                        Use *use = &*use_iter;
-                        if (Instruction *user = dyn_cast<Instruction>(use->getUser())) {
-                            info->users.push_back(user);
-                        } else {
-                            fprintf(stderr, "User is not an instruction?\n");
-                            exit(1);
-                        }
-                    }
+                        info->varname = unique_varname;
 
-                    /*
-                     * Construct a unique variable name based on the containing
-                     * function and this local's name.
-                     */
-                    std::string *unique_varname = getUniqueVarname(varname,
-                            F, &found_variables, M);
+                        Type *ty = alloca->getAllocatedType();
+                        if (ty->isPointerTy()) {
+                            info->is_ptr = 1;
+                        } else if (ty->isStructTy()) {
+                            StructType *structTy = dyn_cast<StructType>(ty);
+                            assert(structTy != NULL);
+                            std::string struct_name = structTy->getStructName().str().substr(7);
 
-                    info->varname = unique_varname;
+                            if (structFields->find(struct_name) != structFields->end() && !structTy->isLiteral()) {
+                                assert(structTy->getStructName().str().find("struct.") == 0);
+                                info->is_struct = 1;
+                                info->struct_type_name = struct_name;
 
-                    Type *ty = alloca->getAllocatedType();
-                    if (ty->isPointerTy()) {
-                        info->is_ptr = 1;
-                    } else if (ty->isStructTy()) {
-                        StructType *structTy = dyn_cast<StructType>(ty);
-                        assert(structTy != NULL);
-                        std::string struct_name = structTy->getStructName().str().substr(7);
-
-                        if (structFields->find(struct_name) != structFields->end() && !structTy->isLiteral()) {
-                            assert(structTy->getStructName().str().find("struct.") == 0);
-                            info->is_struct = 1;
-                            info->struct_type_name = struct_name;
-
-                            for (unsigned int i = 0; i < structTy->getStructNumElements();
-                                    i++) {
-                                Type *field_type = structTy->getStructElementType(i);
-                                if (field_type->isPointerTy()) {
-                                    std::vector<StructFieldInfo>* fields = structFields->at(struct_name).get_fields();
-                                    std::string fieldname = fields->at(i).get_name();
-                                    info->struct_ptr_field_names->push_back(fieldname);
+                                for (unsigned int i = 0; i < structTy->getStructNumElements();
+                                        i++) {
+                                    Type *field_type = structTy->getStructElementType(i);
+                                    if (field_type->isPointerTy()) {
+                                        std::vector<StructFieldInfo>* fields = structFields->at(struct_name).get_fields();
+                                        std::string fieldname = fields->at(i).get_name();
+                                        info->struct_ptr_field_names->push_back(fieldname);
+                                    }
                                 }
                             }
                         }
-                    }
 
 
-                    std::string backing_string;
-                    raw_string_ostream stream(backing_string);
-                    ty->print(stream);
-                    stream.flush();
-                    info->full_type_name = stream.str();
+                        std::string backing_string;
+                        raw_string_ostream stream(backing_string);
+                        ty->print(stream);
+                        stream.flush();
+                        info->full_type_name = stream.str();
 
-                    if (info->users.size() > 0) {
-                        info->filename = new std::string(
-                                findFilenameContainingBB(*bb, M));
-                        alloc_infos.push_back(info);
-                    } else {
-                        /*
-                         * Throw away the info we just generated if this is an
-                         * unused stack allocation
-                         */
-                        delete info;
+                        if (info->users.size() > 0) {
+                            info->filename = new std::string(
+                                    findFilenameContainingBB(*bb, M));
+                            alloc_infos.push_back(info);
+                        } else {
+                            /*
+                             * Throw away the info we just generated if this is an
+                             * unused stack allocation
+                             */
+                            delete info;
+                        }
                     }
                 }
             }
