@@ -1,4 +1,6 @@
-malloc 17 21 36 0
-malloc 18 21 40 0
-_Z3barPiS_ 20 5 0 36 40
-_Z10checkpointv 21 5 0
+malloc 18 21 36 0
+malloc 19 21 60 0
+_Z3barPiS_ 21 5 0 36 60
+_Z10checkpointv 22 5 0
+__assert_rtn 24 42 0 81 82 0 83
+__assert_rtn 25 44 0 81 82 0 83

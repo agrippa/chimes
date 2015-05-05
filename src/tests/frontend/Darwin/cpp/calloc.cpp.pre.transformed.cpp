@@ -1477,7 +1477,7 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2173952053329873827UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2173952053329873827UL)); if (____chimes_replaying) { goto lbl_0; }
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
  lbl_0: int *alloc; register_stack_var("main|alloc|0", "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } alloc = ((int *)calloc_wrapper(10, sizeof(int), 2173952053329873812UL, 0, 0)) ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"

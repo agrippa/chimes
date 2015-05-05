@@ -1,2 +1,0 @@
-/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 112 3 : { 567, 568 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 118 10 : { 589, 590 } direct:call:sprintf

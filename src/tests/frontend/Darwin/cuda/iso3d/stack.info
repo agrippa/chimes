@@ -1,5 +1,3 @@
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|argc|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|argv|0 " i8** " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|conf|0 " %struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 } " 448 0 1 _config srcs 
 /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|dx|0 " float " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|dt|0 " float " 32 0 0 
@@ -43,16 +41,6 @@
 /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|error|12 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|error|13 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu main|error|14 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_0|0 " float* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_1|0 " float* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_2|0 " float* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_3|0 " float* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_4|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_5|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_6|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_7|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_8|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu fwd_kernel|__cuda_9|0 " i32 " 32 0 0 
 /tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par0|0 " float* " 64 1 0 
 /tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par1|0 " float* " 64 1 0 
 /tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par2|0 " float* " 64 1 0 
@@ -63,6 +51,4 @@
 /tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par7|0 " i32 " 32 0 0 
 /tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par8|0 " i32 " 32 0 0 
 /tmp/chimes-frontend/nvcc/iso3d.cudafe1.stub.c __device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par9|0 " i32 " 32 0 0 
-/Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h cudaLaunch<char>|func|0 " i8* " 64 1 0 
 iso3d.cudafe1.stub.c __sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf|callback_fp|0 " void (i8**)* " 64 1 0 
-iso3d.cudafe1.stub.c __nv_cudaEntityRegisterCallback|__T23|0 " i8** " 64 1 0 

@@ -4,10 +4,10 @@ initSimulation 309
 printSimulationDataYaml 0
 initValidate 550
 sumAtoms 0
-printThings 0 662 663 664 665 666 667
+printThings 0 662 663 664 665 666 667 1234
 validateResult 0 793 794
 destroySimulation 0 875 876 931
 finalizeSubsystems 0
 initPotential 985 951
 sanityChecks 0
-initSpecies 1154 1154
+initSpecies 1154 1149 1150 1154

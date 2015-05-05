@@ -1,46 +1,28 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 174 35 : { 1, 2, 3, 4, 26 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 190 8 : { 1, 2, 3, 4, 26 } prop:call:_Z9getMyRankv
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 218 35 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 119, 120, 121, 122, 661 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 119, 120, 121, 122, 661 } prop:call:_Z21initForceHaloExchangeP8DomainStP10LinkCellSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 277 30 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 119, 120, 121, 122, 661 } prop:call:sqrt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 312 10 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 119, 120, 121, 122, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 119, 120, 121, 122, 661 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 280 19 : { 114 } direct:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 355 30 : { 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 138, 661 } prop:call:sqrt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 358 19 : { 135 } direct:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_Z21initForceHaloExchangeP8DomainStP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 280 19 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 312 10 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 358 19 : { 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 393 4 : { 896, 897 } prop:call:_ZL26destroyInterpolationObjectPP21InterpolationObjectSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 638 4 : { 935, 936, 937 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 641 28 : { 939 } prop:call:_ZL12fileNotFoundPKcS0_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 645 4 : { 939 } prop:call:fgets
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 641 28 : { 935, 936, 937, 939 } prop:call:_ZL12fileNotFoundPKcS0_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 645 4 : { 935, 936, 937, 939 } prop:call:fgets
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 666 4 : { 1185 } direct:call:fgets
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 674 4 : { 1185 } direct:call:strcpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 682 39 : { 950, 951, 952, 953 } prop:call:fscanf
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 684 13 : { 950, 951, 952, 953 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 687 37 : { 954, 1185 } prop:call:fscanf
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 684 13 : { 950, 951, 952, 953, 1185 } prop:call:_ZL23initInterpolationObjectiddPd
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 689 15 : { 954, 1185 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 692 37 : { 955, 956, 957, 1056, 1185 } prop:call:fscanf
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 700 15 : { 955, 956, 957, 1056, 1185 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 757 4 : { 1188, 1189, 1190 } direct:call:sprintf
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 759 28 : { 1192 } prop:call:_ZL12fileNotFoundPKcS0_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 763 4 : { 1192 } prop:call:fgets
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 777 4 : { 1443 } direct:call:strcpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 792 39 : { 1203, 1204, 1205, 1206, 1443 } prop:call:fscanf
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 759 28 : { 1188, 1189, 1190, 1192 } prop:call:_ZL12fileNotFoundPKcS0_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 763 4 : { 1188, 1189, 1190, 1192 } prop:call:fgets
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 782 4 : { 1443 } direct:call:fgets
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 794 13 : { 1203, 1204, 1205, 1206, 1443 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 797 37 : { 1207, 1208, 1209, 1303, 1443 } prop:call:fscanf
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 806 15 : { 1207, 1208, 1209, 1303, 1443 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 809 37 : { 1210, 1443 } prop:call:fscanf
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 811 15 : { 1210, 1443 } prop:call:_ZL23initInterpolationObjectiddPd
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 839 4 : { 1446, 1447 } direct:call:exit
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 415 35 : { 1461 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 418 8 : { 1461 } prop:call:_Z9getMyRankv
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 424 7 : { 1462 } direct:call:strcpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 432 4 : { 1557 } direct:call:strcpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 427 4 : { 1462 } prop:call:_Z13bcastParallelPvii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 435 4 : { 1557 } direct:call:_ZL24bcastInterpolationObjectPP21InterpolationObjectSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 824 4 : { 1565, 1566 } direct:call:exit
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 457 37 : { 1589, 1590, 1591, 1592, 1593, 1624 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 460 45 : { 1589, 1590, 1591, 1592, 1593, 1624 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 832 4 : { 1724 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 553 8 : { 1737 } direct:call:_Z9getMyRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 559 4 : { 1738 } prop:call:_Z13bcastParallelPvii
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 573 4 : { 1739, 1782, 1784 } prop:call:_Z13bcastParallelPvii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 519 18 : { 1900, 1901, 1902, 1903, 1904 } prop:call:floor
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 526 12 : { 1901, 1905 } prop:call:floor

@@ -2333,17 +2333,17 @@ static MyOption* myargs=__null;
 # 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static char* dupString(const char* s)
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{new_stack((void *)(&dupString), 1, 1, (size_t)(7180137057745129440UL), "dupString|s|0", "i8*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&dupString), 1, 0, (size_t)(7180137057745129440UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_0: char *d; register_stack_var("dupString|d|0", "i8*", (void *)(&d), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+   char *d; ;
 # 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (!s) {s = ""; };
 # 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   alias_group_changed(1, (size_t)(7180137057745129420UL)); call_lbl_3: calling((void*)&strlen, 3, 0UL, 1, (size_t)(7180137057745129440UL)); d = (char*)calloc_wrapper((strlen(s)+1),sizeof(char), 7180137057745129433UL, 0, 0);
+    call_lbl_2: calling((void*)&strlen, 2, 0UL, 1, (size_t)(7180137057745129440UL)); d = (char*)calloc_wrapper((strlen(s)+1),sizeof(char), 7180137057745129433UL, 0, 0);
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   alias_group_changed(1, (size_t)(7180137057745129421UL)); call_lbl_5: calling((void*)&strcpy, 5, 7180137057745129437UL, 2, (size_t)(7180137057745129433UL), (size_t)(7180137057745129440UL)); strcpy(d, s);
+    call_lbl_3: calling((void*)&strcpy, 3, 7180137057745129437UL, 2, (size_t)(7180137057745129433UL), (size_t)(7180137057745129440UL)); strcpy(d, s);
 # 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   rm_stack(true, 7180137057745129433UL); return d;
+   alias_group_changed(2, (size_t)(7180137057745129420UL), (size_t)(7180137057745129421UL)); rm_stack(true, 7180137057745129433UL); return d;
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 }
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2354,11 +2354,11 @@ static MyOption* myOptionAlloc(
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    int has_arg, const char type, void* dataPtr, int dataSize, const char* help)
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{new_stack((void *)(&myOptionAlloc), 7, 7, (size_t)(7180137057745128981UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7180137057745128925UL), (size_t)(0UL), (size_t)(7180137057745128996UL), "myOptionAlloc|longOption|0", "i8*", (void *)(&longOption), (size_t)8, 1, 0, 0, "myOptionAlloc|shortOption|0", "i8", (void *)(&shortOption), (size_t)1, 0, 0, 0, "myOptionAlloc|has_arg|0", "i32", (void *)(&has_arg), (size_t)4, 0, 0, 0, "myOptionAlloc|type|0", "i8", (void *)(&type), (size_t)1, 0, 0, 0, "myOptionAlloc|dataPtr|0", "i8*", (void *)(&dataPtr), (size_t)8, 1, 0, 0, "myOptionAlloc|dataSize|0", "i32", (void *)(&dataSize), (size_t)4, 0, 0, 0, "myOptionAlloc|help|0", "i8*", (void *)(&help), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&myOptionAlloc), 7, 6, (size_t)(7180137057745128981UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7180137057745128925UL), (size_t)(0UL), (size_t)(7180137057745128996UL), "myOptionAlloc|longOption|0", "i8*", (void *)(&longOption), (size_t)8, 1, 0, 0, "myOptionAlloc|shortOption|0", "i8", (void *)(&shortOption), (size_t)1, 0, 0, 0, "myOptionAlloc|has_arg|0", "i32", (void *)(&has_arg), (size_t)4, 0, 0, 0, "myOptionAlloc|type|0", "i8", (void *)(&type), (size_t)1, 0, 0, 0, "myOptionAlloc|dataPtr|0", "i8*", (void *)(&dataPtr), (size_t)8, 1, 0, 0, "myOptionAlloc|dataSize|0", "i32", (void *)(&dataSize), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     static int iBase; iBase = (129) ;
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-     lbl_0: MyOption *o; register_stack_var("myOptionAlloc|o|0", "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 7180137057745128921UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
+     lbl_0: MyOption *o; register_stack_var("myOptionAlloc|o|0", "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 7180137057745128921UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    alias_group_changed(8, (size_t)(7180137057745128898UL), (size_t)(7180137057745128899UL), (size_t)(7180137057745128900UL), (size_t)(7180137057745128901UL), (size_t)(7180137057745128902UL), (size_t)(7180137057745128903UL), (size_t)(7180137057745128904UL), (size_t)(7180137057745128905UL)); call_lbl_3: calling((void*)&dupString, 3, 7180137057745128925UL, 1, (size_t)(7180137057745128996UL)); o->help = dupString(help);
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2374,7 +2374,7 @@ static MyOption* myOptionAlloc(
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    o->sz = dataSize;
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (longOption) {alias_group_changed(2, (size_t)(7180137057745128921UL), (size_t)(7180137057745129448UL)); call_lbl_7: calling((void*)&strlen, 7, 0UL, 1, (size_t)(7180137057745128981UL)); call_lbl_8: calling((void*)&strlen, 8, 0UL, 1, (size_t)(7180137057745128981UL)); longest = (longest > strlen(longOption) ? longest : strlen(longOption)); };
+   if (longOption) { call_lbl_6: calling((void*)&strlen, 6, 0UL, 1, (size_t)(7180137057745128981UL)); call_lbl_7: calling((void*)&strlen, 7, 0UL, 1, (size_t)(7180137057745128981UL)); longest = (longest > strlen(longOption) ? longest : strlen(longOption)); };
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    alias_group_changed(2, (size_t)(7180137057745128921UL), (size_t)(7180137057745129448UL)); rm_stack(true, 7180137057745128921UL); return o;
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2383,9 +2383,9 @@ static MyOption* myOptionAlloc(
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 static MyOption* myOptionFree(MyOption* o)
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{new_stack((void *)(&myOptionFree), 1, 1, (size_t)(7180137057745129079UL), "myOptionFree|o|0", "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&myOptionFree), 1, 0, (size_t)(7180137057745129079UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_0: MyOption *r; register_stack_var("myOptionFree|r|0", "%struct.MyOptionSt*", (void *)(&r), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
+   MyOption *r; ;
 # 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (!o) {alias_group_changed(3, (size_t)(7180137057745129035UL), (size_t)(7180137057745129036UL), (size_t)(7180137057745129037UL)); rm_stack(true, 7180137057745129048UL); return __null;; };
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2441,11 +2441,11 @@ int addArg(const char* longOption, const char shortOption,
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
            const char* help)
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-{new_stack((void *)(&addArg), 7, 7, (size_t)(7180137057745128889UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7180137057745128893UL), (size_t)(0UL), (size_t)(7180137057745128895UL), "addArg|longOption|0", "i8*", (void *)(&longOption), (size_t)8, 1, 0, 0, "addArg|shortOption|0", "i8", (void *)(&shortOption), (size_t)1, 0, 0, 0, "addArg|has_arg|0", "i32", (void *)(&has_arg), (size_t)4, 0, 0, 0, "addArg|type|0", "i8", (void *)(&type), (size_t)1, 0, 0, 0, "addArg|dataPtr|0", "i8*", (void *)(&dataPtr), (size_t)8, 1, 0, 0, "addArg|dataSize|0", "i32", (void *)(&dataSize), (size_t)4, 0, 0, 0, "addArg|help|0", "i8*", (void *)(&help), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&addArg), 7, 0, (size_t)(7180137057745128889UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7180137057745128893UL), (size_t)(0UL), (size_t)(7180137057745128895UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_0: MyOption *o; register_stack_var("addArg|o|0", "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+   MyOption *o; ;
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_1: MyOption *p; register_stack_var("addArg|p|0", "%struct.MyOptionSt*", (void *)(&p), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+   MyOption *p; ;
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    alias_group_changed(7, (size_t)(7180137057745128831UL), (size_t)(7180137057745128832UL), (size_t)(7180137057745128833UL), (size_t)(7180137057745128834UL), (size_t)(7180137057745128835UL), (size_t)(7180137057745128836UL), (size_t)(7180137057745128837UL)); call_lbl_2: calling((void*)&myOptionAlloc, 2, 7180137057745129449UL, 7, (size_t)(7180137057745128889UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7180137057745128893UL), (size_t)(0UL), (size_t)(7180137057745128895UL)); o = myOptionAlloc(longOption,shortOption,has_arg,type,dataPtr,dataSize, help);
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2480,17 +2480,17 @@ void printArgs()
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 {new_stack((void *)(&printArgs), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-     lbl_0: MyOption *o; register_stack_var("printArgs|o|0", "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } o = (myargs) ;
+    MyOption *o; o = (myargs) ;
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_1: char s[4096]; register_stack_var("printArgs|s|0", "[4096 x i8]", (void *)(s), (size_t)4096, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+    lbl_0: char s[4096]; register_stack_var("printArgs|s|0", "[4096 x i8]", (void *)(s), (size_t)4096, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_2: unsigned char *shortArg; register_stack_var("printArgs|shortArg|0", "i8*", (void *)(&shortArg), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
+   unsigned char *shortArg; ;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    fprintf(__stdoutp,"\n"
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       "  Arguments are: \n");
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   alias_group_changed(1, (size_t)(7180137057745129080UL)); sprintf(s,"   --%%-%ds",longest);
+   sprintf(s,"   --%%-%ds",longest);
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    while(o)
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2520,15 +2520,15 @@ void processArgs(int argc, char** argv)
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     lbl_0: MyOption *o; register_stack_var("processArgs|o|0", "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-     lbl_1: int n; register_stack_var("processArgs|n|0", "i32", (void *)(&n), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } n = (0) ;
+    int n; n = (0) ;
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_2: int i; register_stack_var("processArgs|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } ;
+    lbl_1: int i; register_stack_var("processArgs|i|0", "i32*", (void *)(&i), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_3: struct option *opts; register_stack_var("processArgs|opts|0", "%struct.option*", (void *)(&opts), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
+    lbl_2: struct option *opts; register_stack_var("processArgs|opts|0", "%struct.option*", (void *)(&opts), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } ;
 # 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_4: char *sArgs; register_stack_var("processArgs|sArgs|0", "i8*", (void *)(&sArgs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
+    lbl_3: char *sArgs; register_stack_var("processArgs|sArgs|0", "i8*", (void *)(&sArgs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-    lbl_5: int c; register_stack_var("processArgs|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
+    lbl_4: int c; register_stack_var("processArgs|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (!myargs) {alias_group_changed(5, (size_t)(7180137057745129146UL), (size_t)(7180137057745129147UL), (size_t)(7180137057745129148UL), (size_t)(7180137057745129149UL), (size_t)(7180137057745129153UL)); rm_stack(false, 0UL); return;; };
@@ -2559,9 +2559,9 @@ void processArgs(int argc, char** argv)
       opts[i].val = o->shortArg[0];
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      alias_group_changed(12, (size_t)(7180137057745129146UL), (size_t)(7180137057745129147UL), (size_t)(7180137057745129148UL), (size_t)(7180137057745129149UL), (size_t)(7180137057745129150UL), (size_t)(7180137057745129151UL), (size_t)(7180137057745129152UL), (size_t)(7180137057745129153UL), (size_t)(7180137057745129154UL), (size_t)(7180137057745129155UL), (size_t)(7180137057745129210UL), (size_t)(7180137057745129449UL)); call_lbl_6: calling((void*)&strcat, 6, 7180137057745129244UL, 2, (size_t)(7180137057745129240UL), (size_t)(7180137057745129449UL)); strcat(sArgs,(char*) o->shortArg);
+       call_lbl_5: calling((void*)&strcat, 5, 7180137057745129244UL, 2, (size_t)(7180137057745129240UL), (size_t)(7180137057745129449UL)); strcat(sArgs,(char*) o->shortArg);
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      if (o->argFlag) { call_lbl_7: calling((void*)&strcat, 7, 7180137057745129251UL, 2, (size_t)(7180137057745129240UL), (size_t)(7180137057745129452UL)); strcat(sArgs, ":"); };
+      if (o->argFlag) { call_lbl_6: calling((void*)&strcat, 6, 7180137057745129251UL, 2, (size_t)(7180137057745129240UL), (size_t)(7180137057745129452UL)); strcat(sArgs, ":"); };
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       o = ((MyOption*) o->next);
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2573,14 +2573,14 @@ void processArgs(int argc, char** argv)
    {
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-        lbl_6: int option_index; register_stack_var("processArgs|option_index|0", "i32", (void *)(&option_index), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } option_index = (0) ;
+        lbl_5: int option_index; register_stack_var("processArgs|option_index|0", "i32", (void *)(&option_index), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } option_index = (0) ;
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      alias_group_changed(12, (size_t)(7180137057745129146UL), (size_t)(7180137057745129147UL), (size_t)(7180137057745129148UL), (size_t)(7180137057745129149UL), (size_t)(7180137057745129150UL), (size_t)(7180137057745129151UL), (size_t)(7180137057745129152UL), (size_t)(7180137057745129153UL), (size_t)(7180137057745129154UL), (size_t)(7180137057745129155UL), (size_t)(7180137057745129210UL), (size_t)(7180137057745129449UL)); call_lbl_9: calling((void*)&getopt_long, 9, 0UL, 5, (size_t)(0UL), (size_t)(7180137057745129368UL), (size_t)(7180137057745129240UL), (size_t)(7180137057745129210UL), (size_t)(7180137057745129154UL)); c = getopt_long (argc, argv, sArgs, opts, &option_index);
+      alias_group_changed(12, (size_t)(7180137057745129146UL), (size_t)(7180137057745129147UL), (size_t)(7180137057745129148UL), (size_t)(7180137057745129149UL), (size_t)(7180137057745129150UL), (size_t)(7180137057745129151UL), (size_t)(7180137057745129152UL), (size_t)(7180137057745129153UL), (size_t)(7180137057745129154UL), (size_t)(7180137057745129155UL), (size_t)(7180137057745129210UL), (size_t)(7180137057745129449UL)); call_lbl_8: calling((void*)&getopt_long, 8, 0UL, 5, (size_t)(0UL), (size_t)(7180137057745129368UL), (size_t)(7180137057745129240UL), (size_t)(7180137057745129210UL), (size_t)(7180137057745129154UL)); c = getopt_long (argc, argv, sArgs, opts, &option_index);
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break;; };
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-       call_lbl_10: calling((void*)&findOption, 10, 7180137057745129449UL, 2, (size_t)(7180137057745129449UL), (size_t)(0UL)); o = findOption(myargs,c);
+       call_lbl_9: calling((void*)&findOption, 9, 7180137057745129449UL, 2, (size_t)(7180137057745129449UL), (size_t)(0UL)); o = findOption(myargs,c);
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2602,7 +2602,7 @@ void processArgs(int argc, char** argv)
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       {
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-           lbl_7: int *i; register_stack_var("processArgs|i|1", "i32*", (void *)(&i), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } default: { chimes_error(); } } } i = ((int *)o->ptr) ;
+          int *i; i = ((int *)o->ptr) ;
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
          *i = 1;
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2618,25 +2618,25 @@ void processArgs(int argc, char** argv)
 # 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'i':
 # 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_13: calling((void*)&sscanf, 13, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%d",(int*)o->ptr);
+               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_12: calling((void*)&sscanf, 12, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%d",(int*)o->ptr);
 # 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
 # 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'f':
 # 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_15: calling((void*)&sscanf, 15, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%f",(float*)o->ptr);
+               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_14: calling((void*)&sscanf, 14, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%f",(float*)o->ptr);
 # 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'd':
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_17: calling((void*)&sscanf, 17, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129449UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%lf",(double*)o->ptr);
+               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_16: calling((void*)&sscanf, 16, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129449UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%lf",(double*)o->ptr);
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
 # 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 's':
 # 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_19: calling((void*)&strncpy, 19, 7180137057745129336UL, 3, (size_t)(7180137057745129449UL), (size_t)(7180137057745129307UL), (size_t)(0UL)); strncpy((char*)o->ptr,(char*)optarg,o->sz);
+               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_18: calling((void*)&strncpy, 18, 7180137057745129336UL, 3, (size_t)(7180137057745129449UL), (size_t)(7180137057745129307UL), (size_t)(0UL)); strncpy((char*)o->ptr,(char*)optarg,o->sz);
 # 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                ((char*)o->ptr)[o->sz-1] = '\0';
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2644,7 +2644,7 @@ void processArgs(int argc, char** argv)
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 'c':
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_21: calling((void*)&sscanf, 21, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%c",(char*)o->ptr);
+               alias_group_changed(2, (size_t)(7180137057745129148UL), (size_t)(7180137057745129153UL)); call_lbl_20: calling((void*)&sscanf, 20, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); sscanf(optarg,"%c",(char*)o->ptr);
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                break;
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"

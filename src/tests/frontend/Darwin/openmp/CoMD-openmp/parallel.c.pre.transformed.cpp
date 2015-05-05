@@ -2033,19 +2033,19 @@ void timestampBarrier(const char* msg)
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
     call_lbl_1: calling((void*)&barrierParallel, 1, 0UL, 0); barrierParallel();
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-    call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(1, (size_t)(2720369932807153864UL)); rm_stack(false, 0UL); return;; };
+    call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(1, (size_t)(2720369932807153864UL)); lbl_0: time_t t; register_stack_var("timestampBarrier|t|0", "i64", (void *)(&t), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_6: calling((void*)&time, 6, 0UL, 1, (size_t)(2720369932807154229UL)); t = (time(__null)) ;
+   alias_group_changed(1, (size_t)(2720369932807153864UL)); lbl_0: time_t t; register_stack_var("timestampBarrier|t|0", "i64", (void *)(&t), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } call_lbl_6: calling((void*)&time, 6, 0UL, 1, (size_t)(2720369932807154229UL)); t = (time(__null)) ;
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(1, (size_t)(2720369932807153865UL)); lbl_1: char *timeString; register_stack_var("timestampBarrier|timeString|0", "i8*", (void *)(&timeString), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } call_lbl_8: calling((void*)&ctime, 8, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); timeString = (ctime(&t)) ;
+   alias_group_changed(1, (size_t)(2720369932807153865UL)); char *timeString; call_lbl_8: calling((void*)&ctime, 8, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); timeString = (ctime(&t)) ;
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fprintf(__stdoutp, "%s: %s\n", timeString, msg);
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(2, (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); call_lbl_11: calling((void*)&fflush, 11, 0UL, 1, (size_t)(2720369932807153883UL)); fflush(__stdoutp);
+    call_lbl_10: calling((void*)&fflush, 10, 0UL, 1, (size_t)(2720369932807153883UL)); fflush(__stdoutp);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(1, (size_t)(2720369932807153864UL)); rm_stack(false, 0UL); }
+alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL); }
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void initParallel(int* argc, char*** argv)
@@ -2084,12 +2084,12 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
                         void* recvBuf, int recvLen, int source)
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&sendReceiveParallel), 6, 6, (size_t)(2720369932807153941UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2720369932807153940UL), (size_t)(0UL), (size_t)(0UL), "sendReceiveParallel|sendBuf|0", "i8*", (void *)(&sendBuf), (size_t)8, 1, 0, 0, "sendReceiveParallel|sendLen|0", "i32", (void *)(&sendLen), (size_t)4, 0, 0, 0, "sendReceiveParallel|dest|0", "i32", (void *)(&dest), (size_t)4, 0, 0, 0, "sendReceiveParallel|recvBuf|0", "i8*", (void *)(&recvBuf), (size_t)8, 1, 0, 0, "sendReceiveParallel|recvLen|0", "i32", (void *)(&recvLen), (size_t)4, 0, 0, 0, "sendReceiveParallel|source|0", "i32", (void *)(&source), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
+{new_stack((void *)(&sendReceiveParallel), 6, 0, (size_t)(2720369932807153941UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2720369932807153940UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(6, (size_t)(2720369932807153910UL), (size_t)(2720369932807153911UL), (size_t)(2720369932807153912UL), (size_t)(2720369932807153913UL), (size_t)(2720369932807153914UL), (size_t)(2720369932807153915UL)); (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
+   (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-    call_lbl_4: calling((void*)&memcpy, 4, 0UL, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); memcpy(recvBuf, sendBuf, sendLen);
+    call_lbl_3: calling((void*)&memcpy, 3, 0UL, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); memcpy(recvBuf, sendBuf, sendLen);
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    alias_group_changed(6, (size_t)(2720369932807153910UL), (size_t)(2720369932807153911UL), (size_t)(2720369932807153912UL), (size_t)(2720369932807153913UL), (size_t)(2720369932807153914UL), (size_t)(2720369932807153915UL)); rm_stack(false, 0UL); return sendLen;

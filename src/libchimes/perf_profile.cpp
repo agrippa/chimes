@@ -5,12 +5,35 @@
 #include "perf_profile.h"
 #include <assert.h>
 #include <algorithm>
+#include <time.h>
+#include <sys/time.h>
 
-unsigned long long perf_profile::current_time_ns() {
+#ifdef __MACH__
+#include <mach/clock.h>
+#include <mach/mach.h>
+#endif
+
+unsigned long long perf_profile::current_time_ms() {
+#ifdef __MACH__
+    struct timeval t;
+    assert(gettimeofday(&t, NULL) == 0); 
+    unsigned long long s = 1000000ULL * (unsigned long long)t.tv_sec;
+    return (unsigned long long)t.tv_usec + s;
+#if 0
+    clock_serv_t cclock;
+    mach_timespec_t mts;
+    host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock);
+    clock_get_time(cclock, &mts);
+    mach_port_deallocate(mach_task_self(), cclock);
+    unsigned long long s = 1000000000ULL * (unsigned long long)mts.tv_sec;
+    return (unsigned long long)mts.tv_nsec + s;
+#endif
+#else
     struct timespec t ={0,0};
     clock_gettime(CLOCK_MONOTONIC, &t);
-    unsigned long long s = 1000000000ULL * (unsigned long long)t.tv_sec;
-    return (unsigned long long)t.tv_nsec + s;
+    unsigned long long s = 1000000ULL * (unsigned long long)t.tv_sec;
+    return (unsigned long long)t.tv_msec + s;
+#endif
 }
 
 perf_profile::perf_profile(const char *set_valid_labels[], int N) {
@@ -32,7 +55,7 @@ perf_profile::~perf_profile() {
 }
 
 void perf_profile::add_time(int label_id, const unsigned long long start_time) {
-    const unsigned long long end_time = current_time_ns();
+    const unsigned long long end_time = current_time_ms();
     __sync_fetch_and_add(elapsed + label_id, end_time - start_time);
     __sync_fetch_and_add(count + label_id, 1);
 }

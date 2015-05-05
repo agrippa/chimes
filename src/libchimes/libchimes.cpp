@@ -317,7 +317,7 @@ static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
 
 #define ADD_TO_OVERHEAD __sync_fetch_and_add(&chimes_overhead, \
-        perf_profile::current_time_ns() - __chimes_overhead_start_time);
+        perf_profile::current_time_ms() - __chimes_overhead_start_time);
 
 #define MAX_CHECKPOINT_FILENAME_LEN 256
 static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
@@ -446,7 +446,6 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             buffer_length += (range_end - range_start);
         }
         void *buffer = malloc(buffer_length);
-        fprintf(stderr, "buffer_length=%lu\n", buffer_length);
         safe_read(fd, buffer, buffer_length, "buffer", checkpoint_file);
 
         heap_allocation *alloc = NULL;
@@ -580,11 +579,11 @@ static void read_heap_from_previous_checkpoint(
 }
 
 void init_chimes() {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     atexit(onexit);
 
     pthread_t self = pthread_self();
@@ -872,10 +871,10 @@ void init_chimes() {
 
         close(fd);
     }
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_CHIMES, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 static void *translate_old_ptr(void *ptr,
@@ -985,7 +984,7 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 
 void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
     assert(pthread_mutex_lock(&module_mutex) == 0);
 
@@ -1070,11 +1069,11 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 
 void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
         unsigned int nargs, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
@@ -1154,19 +1153,19 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
 
     va_end(vl);
 
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(NEW_STACK, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
     ctx->set_func_ptr(func_ptr);
     ctx->set_calling_label(lbl);
@@ -1182,18 +1181,18 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias,
     }
     va_end(vl);
 
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLING, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
     stack_frame *curr = program_stack->back();
@@ -1235,10 +1234,10 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
             exit(55);
         }
     }
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(RM_STACK, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 int get_next_call() {
@@ -1319,11 +1318,11 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     // Skip the expensive stack var creation if we can
     std::vector<stack_frame *> *program_stack = get_my_stack();
     if (!program_stack->back()->stack_var_exists(std::string(mangled_name),
@@ -1337,17 +1336,17 @@ void register_stack_var(const char *mangled_name,
 
         program_stack->back()->add_stack_var(new_var);
     }
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_STACK_VAR, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
     va_list vl;
     va_start(vl, n_ptr_fields);
@@ -1370,7 +1369,7 @@ void register_global_var(const char *mangled_name, const char *full_type,
 //TODO does not support nested pointer types
 void register_constant(size_t const_id, void *address, size_t length) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
 
     constant_var *var = new constant_var(const_id, address, length);
@@ -1386,11 +1385,11 @@ void register_constant(size_t const_id, void *address, size_t length) {
 }
 
 int alias_group_changed(int ngroups, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     va_list vl;
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
@@ -1401,10 +1400,10 @@ int alias_group_changed(int ngroups, ...) {
         }
     }
     va_end(vl);
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ALIAS_GROUP_CHANGED, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 
     return 0;
 }
@@ -1452,11 +1451,11 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
  */
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     assert(valid_group(group));
 
     void *ptr = malloc(nbytes);
@@ -1476,21 +1475,21 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
                 info.ptr_field_offsets, info.n_ptr_fields);
     }
 
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(MALLOC_WRAPPER, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 
     return ptr;
 }
 
 void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     assert(valid_group(group));
 
     void *ptr = calloc(num, size);
@@ -1510,10 +1509,10 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
                 info.elem_size, info.ptr_field_offsets, info.n_ptr_fields);
     }
 
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLOC_WRAPPER, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 
     return ptr;
 
@@ -1521,11 +1520,11 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     assert(valid_group(group));
 
     void *new_ptr = realloc(ptr, nbytes);
@@ -1602,10 +1601,10 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         __sync_fetch_and_sub(&total_allocations, old_size - nbytes);
     }
 
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REALLOC_WRAPPER, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 
     return new_ptr;
 }
@@ -1640,11 +1639,11 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 }
 
 void free_wrapper(void *ptr, size_t group) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     size_t original_group = in_heap->second->get_alias_group();
     assert(aliased(original_group, group, true));
@@ -1653,10 +1652,10 @@ void free_wrapper(void *ptr, size_t group) {
 
     free_helper(ptr);
     free(ptr);
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(FREE_WRAPPER, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 typedef struct _checkpoint_thread_ctx {
@@ -1751,7 +1750,7 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
 
 static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
 
     assert(pthread_mutex_lock(&thread_count_mutex) == 0);
@@ -1842,12 +1841,12 @@ bool within_overhead_bounds() {
 }
 
 void checkpoint() {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
-
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
+
     clock_t enter_time = clock();
     new_stack((void *)checkpoint, 0, 0);
     const bool was_a_replay = ____chimes_replaying;
@@ -2032,7 +2031,7 @@ void checkpoint() {
                 new vector<checkpointable_heap_allocation>();
 
 #ifdef __CHIMES_PROFILE
-            const unsigned long long __hashing_start = perf_profile::current_time_ns();
+            const unsigned long long __hashing_start = perf_profile::current_time_ms();
 #endif
             const size_t desired_checkpoint_size =
                 (size_t)(target_checkpoint_size_perc *
@@ -2209,10 +2208,10 @@ void checkpoint() {
     }
 
     rm_stack(false, 0);
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CHECKPOINT, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 static void fix_stack_or_global_pointer(void *container, string type) {
@@ -2244,25 +2243,47 @@ static void fix_stack_or_global_pointer(void *container, string type) {
     }
 }
 
-static aiocb *async_safe_write(int fd, void *ptr, size_t size,
-        off_t file_offset, const char *msg, const char *filename,
-        off_t *count_bytes) {
-    aiocb *cb = (aiocb*)malloc(sizeof(aiocb));
-    memset(cb, 0x00, sizeof(aiocb));
-    cb->aio_nbytes = size;
-    cb->aio_offset = file_offset;
-    cb->aio_fildes = fd;
-    cb->aio_buf = ptr;
+static aiocb *prep_async_safe_write(int fd, void *ptr, size_t size,
+        off_t file_offset, off_t *count_bytes, const char *msg,
+        vector<aiocb *> *async_tokens) {
+    const size_t chunk_size = 1024UL * 1024UL * 1024UL;
+    const size_t nchunks = (size + chunk_size - 1) / chunk_size;
+    aiocb *cb = NULL;
+
+    for (size_t i = 0; i < nchunks; i++) {
+        cb = (aiocb*)malloc(sizeof(aiocb));
+        memset(cb, 0x00, sizeof(aiocb));
+
+        size_t base = i * chunk_size;
+        size_t towrite = chunk_size;
+        if (size - base < towrite) {
+            towrite = size - base;
+        }
+
+        cb->aio_nbytes = towrite;
+        cb->aio_offset = file_offset + base;
+        cb->aio_fildes = fd;
+        cb->aio_buf = ((unsigned char *)ptr) + base;
+        cb->aio_sigevent.sigev_notify = SIGEV_NONE;
+
+        if (async_tokens != NULL) {
+            async_tokens->push_back(cb);
+        }
+
+#ifdef VERBOSE
+        fprintf(stderr, "Prepping chunk %lu/%lu for %s: offset=%lld nbytes=%lu\n",
+                i + 1, nchunks, msg, cb->aio_offset, cb->aio_nbytes);
+#endif
+    }
 
     *count_bytes += size;
 
-    if (aio_write(cb) == -1) {
-        fprintf(stderr, "Error writing to %s: %s\n", filename, msg);
-        perror(NULL);
-        exit(1);
+    if (async_tokens == NULL) {
+        assert(nchunks == 1);
+        return (cb);
+    } else {
+        return (NULL);
     }
-
-    return cb;
 }
 
 static void safe_write(int fd, void *ptr, size_t size, const char *msg,
@@ -2299,9 +2320,7 @@ static void safe_read(int fd, void *ptr, size_t size, const char *msg,
         if (sofar + toread > size) {
             toread = size - sofar;
         }
-        fprintf(stderr, "sofar=%lu toread=%lu\n", sofar, toread);
         ssize_t r = read(fd, c_ptr + sofar, toread);
-        fprintf(stderr, "r=%lu\n", r);
         if (r == -1) {
             fprintf(stderr, "Error reading from %s: %s\n", filename, msg);
             exit(1);
@@ -2327,9 +2346,71 @@ static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
     return (result);
 }
 
+static int wait_for_running_writes(struct aiocb * aio_list[],
+        int n_writes_running, off_t *count_bytes, char dump_filename[],
+        vector<aiocb *> *async_tokens) {
+#ifdef VERBOSE
+    fprintf(stderr, "Waiting for %d running writes\n", n_writes_running);
+#endif
+
+    int a = 0;
+    int n_left_running = n_writes_running;
+    if (aio_suspend(aio_list, n_writes_running, NULL) != 0) {
+        fprintf(stderr ,"aio_suspend waiting for %d writes\n",
+                n_writes_running);
+        perror("aio_suspend");
+        exit(1);
+    }
+
+    while (a < n_left_running) {
+        aiocb *curr = aio_list[a];
+        const int ret = aio_error(curr);
+        if (ret == EINPROGRESS) {
+            // Write is still in-progress, so just iterate to the next
+            a++;
+        } else if (ret == 0) {
+            // Write completed, but may not have written all data
+            ssize_t written = aio_return(curr);
+            assert(written >= 0);
+
+            if ((size_t)written < curr->aio_nbytes) {
+                // Write only partially finished
+                size_t left = curr->aio_nbytes - (size_t)written;
+                aio_list[a] = prep_async_safe_write(
+                        curr->aio_fildes,
+                        ((unsigned char *)curr->aio_buf) + written,
+                        left, curr->aio_offset + written, count_bytes, "retry", NULL);
+                assert(aio_write(aio_list[a]) == 0);
+                a++;
+            } else {
+                // Write is finished
+                n_left_running--;
+                if (n_left_running > 0 && a != n_left_running) {
+                    aio_list[a] = aio_list[n_left_running];
+                }
+            }
+            free(curr);
+        } else {
+            fprintf(stderr, "Unexpected error on aio_write to %s\n",
+                    dump_filename);
+            fprintf(stderr, "fildes=%d offset=%lld nbytes=%lu buf=%p a=%d\n",
+                    curr->aio_fildes, curr->aio_offset, curr->aio_nbytes,
+                    curr->aio_buf, a);
+            perror(NULL);
+            exit(1);
+        }
+    }
+
+#ifdef VERBOSE
+    fprintf(stderr, "Done, %d writes remaining\n", n_left_running);
+#endif
+
+    return (n_left_running);
+}
+
 void *checkpoint_func(void *data) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
     unsigned char *stacks_serialized = ctx->stacks_serialized;
@@ -2354,6 +2435,10 @@ void *checkpoint_func(void *data) {
      * checkpoints to a file locally. Right now, we naively dump everything.
      */
 
+    // Total number of async writes issued below
+    struct aiocb * aio_list[(16 + (2 * to_checkpoint->size()) + 4)];
+    int n_writes_running = 0;
+
     // Find a unique file for this checkpoint
     int count = 0;
     char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
@@ -2367,21 +2452,20 @@ void *checkpoint_func(void *data) {
 
     // Write the name of the preceding checkpoint file out
     size_t filename_length = strlen(previous_checkpoint_filename) + 1;
-    async_tokens.push_back(async_safe_write(fd, &filename_length,
-                sizeof(filename_length), count_bytes, "filename_length", dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, previous_checkpoint_filename,
-                filename_length, count_bytes, "previous_checkpoint_filename", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &filename_length,
+            sizeof(filename_length), count_bytes, &count_bytes, "filename_length", &async_tokens);
+    prep_async_safe_write(fd, previous_checkpoint_filename,
+            filename_length, count_bytes, &count_bytes, "previous_checkpoint_filename", &async_tokens);
 
     size_t heap_offset = -1; // placeholder until we figure out the actual value
     off_t heap_offset_offset = sizeof(filename_length) + filename_length;
-    async_tokens.push_back(async_safe_write(fd, &heap_offset,
-                sizeof(heap_offset), count_bytes, "heap_offset_preliminary", dump_filename,
-                &count_bytes));
+    prep_async_safe_write(fd, &heap_offset,
+                sizeof(heap_offset), count_bytes, &count_bytes, "heap_offset", &async_tokens);
 
     // Write the heap entry times to the dump file, sorted by entry order
     int n_checkpoint_times = ctx->checkpoint_entry_times->size();
-    async_tokens.push_back(async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
-                "n_checkpoint_times", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
+                &count_bytes, "n_checkpoint_times", &async_tokens);
     serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
             n_checkpoint_times * sizeof(serialized_checkpoint_time));
     int index = 0;
@@ -2399,48 +2483,42 @@ void *checkpoint_func(void *data) {
         serialized_times[index].delta = delta;
         index++;
     }
-    async_tokens.push_back(async_safe_write(fd, serialized_times,
+    prep_async_safe_write(fd, serialized_times,
                 n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
-                "serialized_times", dump_filename, &count_bytes));
+                &count_bytes, "serialized_times", &async_tokens);
 
     // Write the trace of function calls out
     size_t serialized_traces_len;
     void *serialized_traces = serialize_traces(ctx->stack_trackers,
             &serialized_traces_len);
-    async_tokens.push_back(async_safe_write(fd, &serialized_traces_len,
-                sizeof(serialized_traces_len), count_bytes, "serialized_traces_len",
-                dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, serialized_traces,
-                serialized_traces_len, count_bytes, "serialized_traces", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &serialized_traces_len,
+                sizeof(serialized_traces_len), count_bytes, &count_bytes, "serialized_traces_len", &async_tokens);
+    prep_async_safe_write(fd, serialized_traces,
+                serialized_traces_len, count_bytes, &count_bytes, "serialized_traces", &async_tokens);
 
     // Write the serialized stack out
-    async_tokens.push_back(async_safe_write(fd, &stacks_serialized_len,
-                sizeof(stacks_serialized_len), count_bytes, "stacks_serialized_len",
-                dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, stacks_serialized,
-                ctx->stacks_serialized_len, count_bytes, "stacks_serialized", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &stacks_serialized_len,
+                sizeof(stacks_serialized_len), count_bytes, &count_bytes, "stacks_serialized_len", &async_tokens);
+    prep_async_safe_write(fd, stacks_serialized,
+                ctx->stacks_serialized_len, count_bytes, &count_bytes, "stacks_serialized", &async_tokens);
 
     // Write the serialized globals out
-    async_tokens.push_back(async_safe_write(fd, &globals_serialized_len,
-                sizeof(globals_serialized_len), count_bytes, "globals_serialized_len",
-                dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, globals_serialized,
-            globals_serialized_len, count_bytes, "globals_serialized", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &globals_serialized_len,
+                sizeof(globals_serialized_len), count_bytes, &count_bytes, "globals_serialized_len", &async_tokens);
+    prep_async_safe_write(fd, globals_serialized,
+            globals_serialized_len, count_bytes, &count_bytes, "globals_serialized", &async_tokens);
 
     // Write the constants out
-    async_tokens.push_back(async_safe_write(fd, &constants_serialized_len,
-            sizeof(constants_serialized_len), count_bytes, "constants_serialized_len",
-            dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, constants_serialized,
-            constants_serialized_len, count_bytes, "constants_serialized", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &constants_serialized_len,
+            sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
+    prep_async_safe_write(fd, constants_serialized,
+            constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
 
     // Write out the thread hierarchy
-    async_tokens.push_back(async_safe_write(fd, &thread_hierarchy_serialized_len,
-            sizeof(thread_hierarchy_serialized_len), count_bytes,
-            "thread_hierarchy_serialized_len", dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, thread_hierarchy_serialized,
-            thread_hierarchy_serialized_len, count_bytes, "thread_hierarchy_serialized",
-            dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
+            sizeof(thread_hierarchy_serialized_len), count_bytes, &count_bytes, "thread_hierarchy_serialized_len", &async_tokens);
+    prep_async_safe_write(fd, thread_hierarchy_serialized,
+            thread_hierarchy_serialized_len, count_bytes, &count_bytes, "thread_hierarchy_serialized", &async_tokens);
 
     /*
      * At the end (after all asynchronous I/Os have completed) we write a
@@ -2452,32 +2530,30 @@ void *checkpoint_func(void *data) {
 
     // Write the heap allocations out
     uint64_t n_heap_allocs = to_checkpoint->size();
-    async_tokens.push_back(async_safe_write(fd, &n_heap_allocs,
-                sizeof(n_heap_allocs), count_bytes, "n_heap_allocs", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &n_heap_allocs,
+                sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
     vector<serialized_heap_var> *serialized_heap_vars =
         serialize_checkpointable_heap(to_checkpoint);
     assert(serialized_heap_vars->size() == to_checkpoint->size());
 
     for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-        fprintf(stderr, "writing buffer of size %lu\n", serialized_heap_vars->at(i).get_buffer_len());
-        async_tokens.push_back(async_safe_write(fd,
+        prep_async_safe_write(fd,
                     serialized_heap_vars->at(i).get_serialized(),
                     serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
-                    "serialized_heap_var", dump_filename, &count_bytes));
-        async_tokens.push_back(async_safe_write(fd,
+                    &count_bytes, "serialized_heap_vars", &async_tokens);
+        prep_async_safe_write(fd,
                     to_checkpoint->at(i).get_buffer(),
                     serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
-                    "to_checkpoint_buffer", dump_filename, &count_bytes));
+                    &count_bytes, "to_checkpoint", &async_tokens);
     }
 
     size_t serialized_contains_len;
     void *serialized_contains = serialize_containers(contains,
             &serialized_contains_len);
-    async_tokens.push_back(async_safe_write(fd, &serialized_contains_len,
-                sizeof(serialized_contains_len), count_bytes, "serialized_contains_len",
-                dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, serialized_contains,
-                serialized_contains_len, count_bytes, "serialized_contains", dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &serialized_contains_len,
+                sizeof(serialized_contains_len), count_bytes, &count_bytes, "serialized_contains_len", &async_tokens);
+    prep_async_safe_write(fd, serialized_contains,
+                serialized_contains_len, count_bytes, &count_bytes, "serialized_contains", &async_tokens);
 
     assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
     set<vector<size_t> *> aliased_groups_ptr;
@@ -2491,12 +2567,10 @@ void *checkpoint_func(void *data) {
             &serialized_alias_groups_len);
     assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
-    async_tokens.push_back(async_safe_write(fd, &serialized_alias_groups_len,
-                sizeof(serialized_alias_groups_len), count_bytes,
-                "serialized_alias_groups_len", dump_filename, &count_bytes));
-    async_tokens.push_back(async_safe_write(fd, serialized_alias_groups,
-                serialized_alias_groups_len, count_bytes, "serialized_alias_groups",
-                dump_filename, &count_bytes));
+    prep_async_safe_write(fd, &serialized_alias_groups_len,
+                sizeof(serialized_alias_groups_len), count_bytes, &count_bytes, "serialized_alias_groups_len", &async_tokens);
+    prep_async_safe_write(fd, serialized_alias_groups,
+                serialized_alias_groups_len, count_bytes, &count_bytes, "serialized_alias_groups", &async_tokens);
 
     /*
      * Done! Wait for async I/Os and finally write the heap offset info in the
@@ -2504,42 +2578,42 @@ void *checkpoint_func(void *data) {
      *
      * Iterate in reverse so we wait for the last ones first.
      */
-
     while (!async_tokens.empty()) {
-        aiocb *curr = async_tokens.front();
+        aiocb *torun = async_tokens.front();
         async_tokens.erase(async_tokens.begin());
 
-        // Wait to finish and ensure it succeeded
-        aiocb *last_arr[1] = { curr };
-        assert(aio_suspend(last_arr, 1, NULL) == 0);
-        assert(aio_error(curr) == 0);
-
-        // Check that it was a complete write
-        ssize_t written = aio_return(curr);
-
-        assert(written >= 0);
-        if ((size_t)written < curr->aio_nbytes) {
-            // Need to redo partial write
-            size_t left = curr->aio_nbytes - (size_t)written;
-            aiocb *cb = async_safe_write(curr->aio_fildes,
-                    ((unsigned char *)curr->aio_buf) + written, left,
-                    curr->aio_offset + written, "retry", dump_filename,
-                    &count_bytes);
-            async_tokens.push_back(cb);
+        /*
+         * Some writes may be empty (e.g. if there are no globals then the
+         * serialized globals len will be == 0).
+         */
+        if (torun->aio_nbytes == 0) {
+            free(torun);
+            continue;
         }
-        free(curr);
+
+        int err = aio_write(torun);
+
+        if (err == -1) {
+            async_tokens.push_back(torun);
+            if (errno == EAGAIN) {
+                if (n_writes_running) {
+                    n_writes_running = wait_for_running_writes(aio_list,
+                            n_writes_running, &count_bytes, dump_filename, &async_tokens);
+                }
+            } else {
+                fprintf(stderr, "Unexpected error while writing asynchronously "
+                        "to %s\n", dump_filename);
+                perror(NULL);
+                exit(1);
+            }
+        } else {
+            aio_list[n_writes_running++] = torun;
+        }
     }
 
-    for (vector<aiocb *>::reverse_iterator i = async_tokens.rbegin(),
-            e = async_tokens.rend(); i != e; i++) {
-        aiocb *curr = *i;
-        aiocb *last_arr[1] = { curr };
-        assert(aio_suspend(last_arr, 1, NULL) == 0);
-        assert(aio_error(curr) == 0);
-        ssize_t ret = aio_return(curr);
-        assert(ret > 0);
-        assert((size_t)ret == curr->aio_nbytes);
-        free(curr);
+    while (n_writes_running > 0) {
+        n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
+                &count_bytes, dump_filename, &async_tokens);
     }
 
     assert(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
@@ -2598,11 +2672,11 @@ static stack_var *find_var(void *addr,
 
 unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
         unsigned nlocals, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
 
     ctx->get_stack_tracker().push(lbl);
@@ -2641,10 +2715,10 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     int my_tid = get_my_tid();
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ENTERING_OMP_PARALLEL, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 
     return my_tid;
 }
@@ -2653,11 +2727,11 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         unsigned threads_in_region, bool spawns_threads,
         bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     unsigned global_tid;
     pthread_t self = pthread_self();
 
@@ -2792,10 +2866,10 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         }
     }
     va_end(vl);
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_THREAD_LOCAL_STACK_VARS, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 unsigned get_parent_vars_stack_depth() {
@@ -2808,11 +2882,11 @@ unsigned get_thread_stack_depth() {
 
 void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id) {
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
+    const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
     /*
@@ -2915,10 +2989,10 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(LEAVING_OMP_PARALLEL, __start_time);
 #endif
-    ADD_TO_OVERHEAD
 }
 
 void chimes_error() {

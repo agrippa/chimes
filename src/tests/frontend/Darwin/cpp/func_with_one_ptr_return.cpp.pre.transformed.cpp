@@ -1469,28 +1469,28 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
-void *haha_this_sux_part_deux() {new_stack((void *)(&haha_this_sux_part_deux), 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void *haha_this_sux_part_deux() {new_stack((void *)(&haha_this_sux_part_deux), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- lbl_0: int *A; register_stack_var("haha_this_sux_part_deux|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 651168722096376618UL, 0, 0)) ;
+ int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 651168722096376618UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  alias_group_changed(1, (size_t)(651168722096376616UL)); rm_stack(true, 651168722096376618UL); return A;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(651168722096376642UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(651168722096376646UL)); if (____chimes_replaying) { goto lbl_0; }
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  alias_group_changed(3, (size_t)(651168722096376627UL), (size_t)(651168722096376628UL), (size_t)(651168722096376629UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } call_lbl_3: calling((void*)&haha_this_sux_part_deux, 3, 651168722096376637UL, 0); tmp = (haha_this_sux_part_deux()) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  alias_group_changed(1, (size_t)(651168722096376630UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- rm_stack(false, 0UL); return 0;
+ rm_stack(false, 0UL); return ((int *)tmp)[0];
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 }
 
 
 static int module_init() {
-    init_module(651168722096376615UL, 3, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 27UL);
+    init_module(651168722096376615UL, 3, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL);
     return 0;
 }
 

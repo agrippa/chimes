@@ -929,7 +929,7 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 void computeForce(SimFlat* s)
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-{new_stack((void *)(&computeForce), 1, 1, (size_t)(8093288458141874426UL), "computeForce|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+{new_stack((void *)(&computeForce), 1, 0, (size_t)(8093288458141874426UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  alias_group_changed(1, (size_t)(8093288458141874415UL)); call_lbl_2: calling((void*)s->pot->force, 2, 0UL, 1, (size_t)(8093288458141874426UL)); s->pot->force(s);
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -997,23 +997,23 @@ void kineticEnergy(SimFlat* s)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {new_stack((void *)(&kineticEnergy), 1, 1, (size_t)(8093288458141874593UL), "kineticEnergy|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  eLocal[0] = s->ePotential;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  eLocal[1] = 0;
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { lbl_1: int iBox; register_stack_var("kineticEnergy|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
+ { int iBox; for ( iBox = (0) ; iBox<s->boxes->nLocalBoxes; iBox++)
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  {
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { lbl_2: int iOff; register_stack_var("kineticEnergy|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int ii; register_stack_var("kineticEnergy|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+ { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  {
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- lbl_4: int iSpecies; register_stack_var("kineticEnergy|iSpecies|0", "i32", (void *)(&iSpecies), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } iSpecies = (s->atoms->iSpecies[iOff]) ;
+ int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- lbl_5: real_t invMass; register_stack_var("kineticEnergy|invMass|0", "double", (void *)(&invMass), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } invMass = (0.5 / s->species[iSpecies].mass) ;
+ real_t invMass; invMass = (0.5 / s->species[iSpecies].mass) ;
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  eLocal[1] += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -1026,7 +1026,7 @@ void kineticEnergy(SimFlat* s)
  } }
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- lbl_6: real_t eSum[2]; register_stack_var("kineticEnergy|eSum|0", "[2 x double]", (void *)(eSum), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+ real_t eSum[2]; ;
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  do { alias_group_changed(7, (size_t)(8093288458141874427UL), (size_t)(8093288458141874428UL), (size_t)(8093288458141874429UL), (size_t)(8093288458141874430UL), (size_t)(8093288458141874431UL), (size_t)(8093288458141874432UL), (size_t)(8093288458141874433UL)); call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"

@@ -1469,7 +1469,7 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(16469201489461360458UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(16469201489461360461UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
@@ -1492,7 +1492,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2,
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); call_lbl_6: calling((void*)&checkpoint, 6, 0UL, 0); checkpoint();
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); rm_stack(false, 0UL); return 2;
+ alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); rm_stack(false, 0UL); return A[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  }
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
@@ -1503,7 +1503,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2,
 
 
 static int module_init() {
-    init_module(16469201489461360415UL, 2, 0, 16469201489461360415UL + 3UL, 16469201489461360415UL + 43UL, 16469201489461360415UL + 4UL, 16469201489461360415UL + 11UL);
+    init_module(16469201489461360415UL, 2, 0, 16469201489461360415UL + 3UL, 16469201489461360415UL + 46UL, 16469201489461360415UL + 4UL, 16469201489461360415UL + 11UL);
     return 0;
 }
 

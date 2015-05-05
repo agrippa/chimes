@@ -1,12 +1,9 @@
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 233 64 : { 95, 96, 97, 98 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 242 41 : { 168, 169 } direct:call:_Z3PUTii
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 243 41 : { 182, 183 } direct:call:_Z3PUTii
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 244 41 : { 195, 196 } direct:call:_Z3PUTii
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 297 5 : { 330, 331 } direct:call:fseek
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 299 5 : { 332 } direct:call:fseek
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 303 31 : { 333 } direct:call:fread
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 312 56 : { 381, 382, 383 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 319 47 : { 440 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 332 17 : { 489, 490, 491 } direct:call:omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 373 31 : { 141, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 509, 552, 743 } prop:call:_Z8PUT_DIAGii
 /Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 382 31 : { 141, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 509, 552, 743 } prop:call:_Z8PUT_RCOLii

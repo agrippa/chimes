@@ -1476,47 +1476,62 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-# 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-# 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-void bar(int *A, int *B) {new_stack((void *)(&bar), 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- A[0] = 3;
-# 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-# 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- if (A[0] == 3) {
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL); return;
-# 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- }
-# 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-# 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- B[0] = 3;
-# 12 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL); return;
-# 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+
+# 1 "/usr/include/assert.h" 1 3 4
+# 75 "/usr/include/assert.h" 3 4
+extern "C" {
+void __assert_rtn(const char *, const char *, int, const char *) __attribute__((noreturn));
+
+
+
 }
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+void bar(int *A, int *B) {new_stack((void *)(&bar), 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ A[0] = 3;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ if (A[0] == 3) {
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL); return;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ }
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ B[0] = 3;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL); return;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+}
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(7569268050213511404UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); if (____chimes_replaying) { goto lbl_0; }
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511395UL, 0, 0)) ;
+ lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- call_lbl_4: calling((void*)&bar, 4, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511395UL)); bar(A, B);
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(5, (size_t)(7569268050213511380UL), (size_t)(7569268050213511381UL), (size_t)(7569268050213511382UL), (size_t)(7569268050213511383UL), (size_t)(7569268050213511384UL)); call_lbl_6: calling((void*)&checkpoint, 6, 0UL, 0); checkpoint();
+ call_lbl_4: calling((void*)&bar, 4, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); bar(A, B);
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ alias_group_changed(5, (size_t)(7569268050213511380UL), (size_t)(7569268050213511381UL), (size_t)(7569268050213511382UL), (size_t)(7569268050213511383UL), (size_t)(7569268050213511384UL)); call_lbl_6: calling((void*)&checkpoint, 6, 0UL, 0); checkpoint();
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- rm_stack(false, 0UL); return 0;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ (__builtin_expect(!(A[0] == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 24, "A[0] == 3") : (void)0);
+# 25 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ (__builtin_expect(!(B != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 25, "B != NULL") : (void)0);
+# 26 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ rm_stack(false, 0UL); return 0;
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
 
 
 static int module_init() {
-    init_module(7569268050213511355UL, 5, 0, 7569268050213511355UL + 1UL, 7569268050213511355UL + 21UL, 7569268050213511355UL + 27UL, 7569268050213511355UL + 49UL, 7569268050213511355UL + 2UL, 7569268050213511355UL + 22UL, 7569268050213511355UL + 28UL, 7569268050213511355UL + 36UL, 7569268050213511355UL + 29UL, 7569268050213511355UL + 40UL);
+    init_module(7569268050213511355UL, 5, 0, 7569268050213511355UL + 1UL, 7569268050213511355UL + 21UL, 7569268050213511355UL + 27UL, 7569268050213511355UL + 73UL, 7569268050213511355UL + 2UL, 7569268050213511355UL + 22UL, 7569268050213511355UL + 28UL, 7569268050213511355UL + 36UL, 7569268050213511355UL + 29UL, 7569268050213511355UL + 60UL);
     return 0;
 }
 

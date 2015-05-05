@@ -1469,9 +1469,9 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
-void *foo() {new_stack((void *)(&foo), 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void *foo() {new_stack((void *)(&foo), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
- lbl_0: int *A; register_stack_var("foo|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 8715185705475396353UL, 0, 0)) ;
+ int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 8715185705475396353UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  A[0] = 1;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
@@ -1488,9 +1488,9 @@ void *foo() {new_stack((void *)(&foo), 0, 0); if (____chimes_replaying) { goto l
 }
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(8715185705475396352UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(8715185705475396352UL)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
- alias_group_changed(3, (size_t)(8715185705475396337UL), (size_t)(8715185705475396338UL), (size_t)(8715185705475396339UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } call_lbl_3: calling((void*)&foo, 3, 8715185705475396347UL, 0); tmp = (foo()) ;
+ alias_group_changed(3, (size_t)(8715185705475396337UL), (size_t)(8715185705475396338UL), (size_t)(8715185705475396339UL)); void *tmp; call_lbl_3: calling((void*)&foo, 3, 8715185705475396347UL, 0); tmp = (foo()) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  alias_group_changed(1, (size_t)(8715185705475396340UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"

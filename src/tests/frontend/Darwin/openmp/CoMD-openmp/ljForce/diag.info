@@ -1,6 +1,3 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 121 4 alias_group_changed(2, (size_t)(17518077371777717478UL), (size_t)(17518077371777717480UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 124 4 alias_group_changed(1, (size_t)(17518077371777717480UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 181 10 alias_group_changed(29, (size_t)(17518077371777717526UL), (size_t)(17518077371777717527UL), (size_t)(17518077371777717528UL), (size_t)(17518077371777717529UL), (size_t)(17518077371777717530UL), (size_t)(17518077371777717531UL), (size_t)(17518077371777717532UL), (size_t)(17518077371777717533UL), (size_t)(17518077371777717534UL), (size_t)(17518077371777717535UL), (size_t)(17518077371777717536UL), (size_t)(17518077371777717537UL), (size_t)(17518077371777717538UL), (size_t)(17518077371777717539UL), (size_t)(17518077371777717540UL), (size_t)(17518077371777717541UL), (size_t)(17518077371777717542UL), (size_t)(17518077371777717543UL), (size_t)(17518077371777717544UL), (size_t)(17518077371777717545UL), (size_t)(17518077371777717546UL), (size_t)(17518077371777717547UL), (size_t)(17518077371777717548UL), (size_t)(17518077371777717549UL), (size_t)(17518077371777717550UL), (size_t)(17518077371777717551UL), (size_t)(17518077371777717552UL), (size_t)(17518077371777717714UL), (size_t)(17518077371777717718UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 103 4 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 103 9 , 17518077371777717460UL
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 37 len=6 malloc_wrapper
@@ -8,13 +5,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/l
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 100 18 alias_group_changed(3, (size_t)(17518077371777717450UL), (size_t)(17518077371777717451UL), (size_t)(17518077371777717474UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 102 15 alias_group_changed(3, (size_t)(17518077371777717450UL), (size_t)(17518077371777717451UL), (size_t)(17518077371777717474UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 106 4 alias_group_changed(3, (size_t)(17518077371777717450UL), (size_t)(17518077371777717451UL), (size_t)(17518077371777717474UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 99 1 new_stack((void *)(&ljDestroy), 1, 1, (size_t)(17518077371777717474UL), "ljDestroy|inppot|0", "%struct.BasePotentialSt**", (void *)(&inppot), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 127 4 alias_group_changed(1, (size_t)(17518077371777717480UL)); rm_stack(true, 17518077371777717480UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 99 1 new_stack((void *)(&ljDestroy), 1, 0, (size_t)(17518077371777717474UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 127 4 alias_group_changed(2, (size_t)(17518077371777717478UL), (size_t)(17518077371777717480UL)); rm_stack(true, 17518077371777717480UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 111 1 new_stack((void *)(&initLjPot), 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 131 1 new_stack((void *)(&ljPrint), 2, 2, (size_t)(17518077371777717976UL), (size_t)(17518077371777717977UL), "ljPrint|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "ljPrint|pot|0", "%struct.BasePotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 131 1 new_stack((void *)(&ljPrint), 2, 0, (size_t)(17518077371777717976UL), (size_t)(17518077371777717977UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 142 1 alias_group_changed(3, (size_t)(17518077371777717921UL), (size_t)(17518077371777717922UL), (size_t)(17518077371777717923UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 226 4 alias_group_changed(29, (size_t)(17518077371777717526UL), (size_t)(17518077371777717527UL), (size_t)(17518077371777717528UL), (size_t)(17518077371777717529UL), (size_t)(17518077371777717530UL), (size_t)(17518077371777717531UL), (size_t)(17518077371777717532UL), (size_t)(17518077371777717533UL), (size_t)(17518077371777717534UL), (size_t)(17518077371777717535UL), (size_t)(17518077371777717536UL), (size_t)(17518077371777717537UL), (size_t)(17518077371777717538UL), (size_t)(17518077371777717539UL), (size_t)(17518077371777717540UL), (size_t)(17518077371777717541UL), (size_t)(17518077371777717542UL), (size_t)(17518077371777717543UL), (size_t)(17518077371777717544UL), (size_t)(17518077371777717545UL), (size_t)(17518077371777717546UL), (size_t)(17518077371777717547UL), (size_t)(17518077371777717548UL), (size_t)(17518077371777717549UL), (size_t)(17518077371777717550UL), (size_t)(17518077371777717551UL), (size_t)(17518077371777717552UL), (size_t)(17518077371777717714UL), (size_t)(17518077371777717718UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 145 1 new_stack((void *)(&ljForce), 1, 1, (size_t)(17518077371777717714UL), "ljForce|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 145 1 new_stack((void *)(&ljForce), 1, 0, (size_t)(17518077371777717714UL)); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 101 4  LjPotential *pot;  pot = ((LjPotential *)(*inppot)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 101 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 4  LjPotential *pot;  pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 17518077371777717480UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
@@ -79,60 +76,18 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 2
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 216 19  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 213 24  m = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 213 31 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 101 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 101 21  register_stack_var("ljDestroy|pot|0", "%struct.LjPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 101 21  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 99 163  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 121 96  call_lbl_3: calling((void*)&strcpy, 3, 17518077371777717507UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718002UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 124 62  call_lbl_5: calling((void*)&strcpy, 5, 17518077371777717518UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718003UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 21  register_stack_var("initLjPot|pot|0", "%struct.LjPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 21  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 111 39  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 132 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 132 23  register_stack_var("ljPrint|ljPot|0", "%struct.LjPotentialSt*", (void *)(&ljPot), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 132 23  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 131 261  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 155 52 ;  { call_lbl_7: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 99 73  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 121 4  call_lbl_2: calling((void*)&strcpy, 2, 17518077371777717507UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718002UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 124 4  call_lbl_3: calling((void*)&strcpy, 3, 17518077371777717518UL, 2, (size_t)(17518077371777717480UL), (size_t)(17518077371777718003UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 111 39  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 131 105  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 155 52 ;  { call_lbl_6: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 158 4 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 161 4  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 168 36 ;  { call_lbl_8: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(8, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 168 36 ;  { call_lbl_7: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(7, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 173 4 if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; }
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 221 4  leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 159 7  call_lbl_1: calling((void*)&zeroReal3, 1, 0UL, 1, (size_t)(17518077371777717718UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 146 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 146 21  register_stack_var("ljForce|pot|0", "%struct.LjPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 146 21  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 147 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 147 17  register_stack_var("ljForce|sigma|0", "double", (void *)(&sigma), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 147 17  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 148 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 148 19  register_stack_var("ljForce|epsilon|0", "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 148 19  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 149 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 149 16  register_stack_var("ljForce|rCut|0", "double", (void *)(&rCut), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 149 16  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 150 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 150 17  register_stack_var("ljForce|rCut2|0", "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 150 17  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 153 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 153 16  register_stack_var("ljForce|ePot|0", "double", (void *)(&ePot), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 153 16  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 155 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 155 14  register_stack_var("ljForce|fSize|0", "i32", (void *)(&fSize), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 155 14  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 163 5  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 163 14  register_stack_var("ljForce|s6|0", "double", (void *)(&s6), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 163 14  if (____chimes_replaying) { goto lbl_8; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 165 5  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 165 17  register_stack_var("ljForce|rCut6|0", "double", (void *)(&rCut6), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 165 17  if (____chimes_replaying) { goto lbl_9; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 166 5  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 166 18  register_stack_var("ljForce|eShift|0", "double", (void *)(&eShift), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 166 18  if (____chimes_replaying) { goto lbl_10; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 168 5  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 168 18  register_stack_var("ljForce|nNbrBoxes|0", "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 168 18  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 145 142  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 145 71  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 158 4  if (____chimes_replaying) { chimes_error(); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 173 4  if (____chimes_replaying) { chimes_error(); } 

@@ -1,5 +1,6 @@
 #include <checkpoint.h>
 #include <stdlib.h>
+#include <assert.h>
 
 void bar(int *A, int *B) {
     A[0] = 3;
@@ -19,6 +20,9 @@ int main(int argc, char **argv) {
 
     bar(A, B);
     checkpoint();
+
+    assert(A[0] == 3);
+    assert(B != NULL);
 
     return 0;
 }

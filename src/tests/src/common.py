@@ -35,7 +35,7 @@ class TestConfig(object):
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep, verbose, targets, update_tests):
+    def __init__(self, keep, verbose, targets, update_tests, just_compile):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
@@ -43,6 +43,7 @@ class TestConfig(object):
         self.custom_compiler_flags = []
         self.update_tests = update_tests
         self.force_sequential = False
+        self.just_compile = just_compile
 
     def set_force_sequential(self):
         self.force_sequential = True
@@ -265,6 +266,7 @@ def parse_argv(argv):
     verbose = False
     update_tests = False
     targets = []
+    just_compile = False
 
     i = 1
     while i < len(argv):
@@ -279,6 +281,8 @@ def parse_argv(argv):
             for target in argv[i + 1].split(','):
                 targets.append(target)
             i += 1
+        elif argv[i] == '-c':
+            just_compile = True
         elif argv[i] == '-h':
             usage(argv)
         else:
@@ -286,7 +290,7 @@ def parse_argv(argv):
             usage(argv)
         i += 1
 
-    return TestConfig(keep, verbose, targets, update_tests)
+    return TestConfig(keep, verbose, targets, update_tests, just_compile)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -501,6 +505,9 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
     assert test.expect_err or os.path.isfile('a.out')
 
+    if config.just_compile:
+        return
+
     # Get the final output filename and containing folder
     transformed, work_folder, root_folder = \
             get_files_from_compiler_stdout(stdout, len(test.input_files))
@@ -645,6 +652,9 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     if config.verbose:
         print_and_abort(stdout, stderr, abort=False)
+
+    if config.just_compile:
+        return
 
     _, work_folder, root_folder = get_files_from_compiler_stdout(stdout, len(test.input_files))
 

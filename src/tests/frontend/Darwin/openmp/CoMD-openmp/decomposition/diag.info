@@ -32,15 +32,6 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decompositi
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 110  call_lbl_7: calling((void*)&getMyRank, 7, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15  register_stack_var("initDecomposition|dd|0", "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 97  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 107  register_stack_var("initDecomposition|myRank|0", "i32", (void *)(&myRank), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 107  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 7  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 12  register_stack_var("initDecomposition|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 12  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 7  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 12  register_stack_var("initDecomposition|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 42 12  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 440  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 121  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

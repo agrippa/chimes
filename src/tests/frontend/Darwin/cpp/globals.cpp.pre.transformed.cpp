@@ -1735,7 +1735,7 @@ int b = 3;
 const char *hello_world = "hello world";
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(9397157703034130362UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  a = 4;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"

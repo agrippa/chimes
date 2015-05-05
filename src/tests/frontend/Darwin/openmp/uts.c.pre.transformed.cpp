@@ -2770,7 +2770,7 @@ int debug = 0;
 int verbose = 1;
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-void uts_error(char *str) {new_stack((void *)(&uts_error), 1, 1, (size_t)(11896266734391819134UL), "uts_error|str|0", "i8*", (void *)(&str), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
+void uts_error(char *str) {new_stack((void *)(&uts_error), 1, 0, (size_t)(11896266734391819134UL)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("*** Error: %s\n", str);
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2793,7 +2793,7 @@ double uts_wctime() {new_stack((void *)(&uts_wctime), 0, 0); if (____chimes_repl
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-double rng_toProb(int n) {new_stack((void *)(&rng_toProb), 1, 1, (size_t)(0UL), "rng_toProb|n|0", "i32", (void *)(&n), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+double rng_toProb(int n) {new_stack((void *)(&rng_toProb), 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (n < 0) {
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2824,12 +2824,12 @@ rm_stack(false, 0UL); }
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin), 1, 1, (size_t)(11896266734391819233UL), "uts_numChildren_bin|parent|0", "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin), 1, 0, (size_t)(11896266734391819233UL)); if (____chimes_replaying) { goto lbl_0; }
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819208UL)); lbl_0: int v; register_stack_var("uts_numChildren_bin|v|0", "i32", (void *)(&v), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(parent->state.state)) ;
+  alias_group_changed(1, (size_t)(11896266734391819208UL)); lbl_0: int v; register_stack_var("uts_numChildren_bin|v|0", "i32", (void *)(&v), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(parent->state.state)) ;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819209UL)); lbl_1: double d; register_stack_var("uts_numChildren_bin|d|0", "double", (void *)(&d), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_4: calling((void*)&rng_toProb, 4, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(v)) ;
+  alias_group_changed(1, (size_t)(11896266734391819209UL)); double d; call_lbl_4: calling((void*)&rng_toProb, 4, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(v)) ;
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   alias_group_changed(1, (size_t)(11896266734391819210UL)); rm_stack(false, 0UL); return (d < nonLeafProb) ? nonLeafBF : 0;
@@ -2842,11 +2842,11 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     lbl_0: double b_i; register_stack_var("uts_numChildren_geo|b_i|0", "double", (void *)(&b_i), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b_i = (b_0) ;
 # 172 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_1: int depth; register_stack_var("uts_numChildren_geo|depth|0", "i32", (void *)(&depth), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } depth = (parent->height) ;
+   int depth; depth = (parent->height) ;
 # 173 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   lbl_2: int numChildren; register_stack_var("uts_numChildren_geo|numChildren|0", "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int h; register_stack_var("uts_numChildren_geo|h|0", "i32", (void *)(&h), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
+  int numChildren; lbl_1: int h; register_stack_var("uts_numChildren_geo|h|0", "i32", (void *)(&h), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   lbl_4: double p; register_stack_var("uts_numChildren_geo|p|0", "double", (void *)(&p), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: double u; register_stack_var("uts_numChildren_geo|u|0", "double", (void *)(&u), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } ;
+   lbl_2: double p; register_stack_var("uts_numChildren_geo|p|0", "double", (void *)(&p), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } double u; ;
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2858,7 +2858,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case EXPDEC:
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_3: calling((void*)&log, 3, 0UL, 1, (size_t)(0UL)); call_lbl_4: calling((void*)&log, 4, 0UL, 1, (size_t)(0UL)); b_i = b_0 * pow((double) depth, -log(b_0)/log((double) gen_mx));
+       call_lbl_2: calling((void*)&log, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&log, 3, 0UL, 1, (size_t)(0UL)); b_i = b_0 * pow((double) depth, -log(b_0)/log((double) gen_mx));
 # 183 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2874,7 +2874,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       }
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_7: calling((void*)&sin, 7, 0UL, 1, (size_t)(0UL)); b_i = pow(b_0,
+      alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_6: calling((void*)&sin, 6, 0UL, 1, (size_t)(0UL)); b_i = pow(b_0,
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
                 sin(2.0*3.141592653589793*(double) depth / (double) gen_mx));
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2909,17 +2909,17 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_9: calling((void*)&rng_rand, 9, 0UL, 1, (size_t)(11896266734391819340UL)); h = rng_rand(parent->state.state);
+  alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_8: calling((void*)&rng_rand, 8, 0UL, 1, (size_t)(11896266734391819340UL)); h = rng_rand(parent->state.state);
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819239UL)); call_lbl_11: calling((void*)&rng_toProb, 11, 0UL, 1, (size_t)(0UL)); u = rng_toProb(h);
+  alias_group_changed(1, (size_t)(11896266734391819239UL)); call_lbl_10: calling((void*)&rng_toProb, 10, 0UL, 1, (size_t)(0UL)); u = rng_toProb(h);
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819241UL)); call_lbl_13: calling((void*)&floor, 13, 0UL, 1, (size_t)(0UL)); call_lbl_14: calling((void*)&log, 14, 0UL, 1, (size_t)(0UL)); call_lbl_15: calling((void*)&log, 15, 0UL, 1, (size_t)(0UL)); numChildren = floor(log(1 - u) / log(1 - p));
+   call_lbl_11: calling((void*)&floor, 11, 0UL, 1, (size_t)(0UL)); call_lbl_12: calling((void*)&log, 12, 0UL, 1, (size_t)(0UL)); call_lbl_13: calling((void*)&log, 13, 0UL, 1, (size_t)(0UL)); numChildren = floor(log(1 - u) / log(1 - p));
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819238UL)); rm_stack(false, 0UL); return numChildren;
+  alias_group_changed(2, (size_t)(11896266734391819238UL), (size_t)(11896266734391819241UL)); rm_stack(false, 0UL); return numChildren;
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2927,7 +2927,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 224 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (size_t)(11896266734391819431UL), "uts_numChildren|parent|0", "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_0: int numChildren; register_stack_var("uts_numChildren|numChildren|0", "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numChildren = (0) ;
+    lbl_0: int numChildren; register_stack_var("uts_numChildren|numChildren|0", "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } numChildren = (0) ;
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2935,25 +2935,25 @@ int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case BIN:
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height == 0) {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); numChildren = (int)floor(b_0); } else {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_4: calling((void*)&uts_numChildren_bin, 4, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
+      if (parent->height == 0) { call_lbl_1: calling((void*)&floor, 1, 0UL, 1, (size_t)(0UL)); numChildren = (int)floor(b_0); } else {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_3: calling((void*)&uts_numChildren_bin, 3, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case GEO:
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_6: calling((void*)&uts_numChildren_geo, 6, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent);
+      alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_5: calling((void*)&uts_numChildren_geo, 5, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent);
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case HYBRID:
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_8: calling((void*)&uts_numChildren_geo, 8, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent); } else {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_10: calling((void*)&uts_numChildren_bin, 10, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
+      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_7: calling((void*)&uts_numChildren_geo, 7, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent); } else {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_9: calling((void*)&uts_numChildren_bin, 9, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_12: calling((void*)&uts_error, 12, 0UL, 1, (size_t)(11896266734391820034UL)); default:
+    alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_11: calling((void*)&uts_error, 11, 0UL, 1, (size_t)(11896266734391820034UL)); default:
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       uts_error("parTreeSearch(): Unknown tree type");
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2964,7 +2964,7 @@ int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (parent->height == 0 && parent->type == BIN) {
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(1, (size_t)(11896266734391819347UL)); lbl_1: int rootBF; register_stack_var("uts_numChildren|rootBF|0", "i32", (void *)(&rootBF), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } call_lbl_14: calling((void*)&ceil, 14, 0UL, 1, (size_t)(0UL)); rootBF = ((int)ceil(b_0)) ;
+     int rootBF; call_lbl_12: calling((void*)&ceil, 12, 0UL, 1, (size_t)(0UL)); rootBF = ((int)ceil(b_0)) ;
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     if (numChildren > rootBF) {
 # 255 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2993,13 +2993,13 @@ int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (
   }
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(2, (size_t)(11896266734391819347UL), (size_t)(11896266734391819348UL)); rm_stack(false, 0UL); return numChildren;
+  alias_group_changed(3, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL), (size_t)(11896266734391819348UL)); rm_stack(false, 0UL); return numChildren;
 # 269 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 270 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 272 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int uts_childType(Node *parent) {new_stack((void *)(&uts_childType), 1, 1, (size_t)(11896266734391819462UL), "uts_childType|parent|0", "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } default: { chimes_error(); } } }
+int uts_childType(Node *parent) {new_stack((void *)(&uts_childType), 1, 0, (size_t)(11896266734391819462UL)); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } default: { chimes_error(); } } }
 # 273 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   switch (type) {
 # 274 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3035,18 +3035,18 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 295 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 296 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819464UL)); ind += sprintf(strBuf+ind, "Tree type:  %d (%s)\n", type, uts_trees_str[type]);
+  ind += sprintf(strBuf+ind, "Tree type:  %d (%s)\n", type, uts_trees_str[type]);
 # 297 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 298 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819464UL)); ind += sprintf(strBuf+ind, "Tree shape parameters:\n");
+  ind += sprintf(strBuf+ind, "Tree shape parameters:\n");
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819464UL)); ind += sprintf(strBuf+ind, "  root branching factor b_0 = %.1f, root seed = %d\n", b_0, rootId);
+  ind += sprintf(strBuf+ind, "  root branching factor b_0 = %.1f, root seed = %d\n", b_0, rootId);
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (type == GEO || type == HYBRID) {
 # 303 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(4, (size_t)(11896266734391819464UL), (size_t)(11896266734391819465UL), (size_t)(11896266734391819466UL), (size_t)(11896266734391819467UL)); ind += sprintf(strBuf+ind, "  GEO parameters: gen_mx = %d, shape function = %d (%s)\n",
+    ind += sprintf(strBuf+ind, "  GEO parameters: gen_mx = %d, shape function = %d (%s)\n",
 # 304 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
             gen_mx, shape_fn, uts_geoshapes_str[shape_fn]);
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3059,9 +3059,9 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 309 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       lbl_1: int m; register_stack_var("uts_paramsToStr|m|0", "i32", (void *)(&m), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } m = (nonLeafBF) ;
 # 310 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      lbl_2: double es; register_stack_var("uts_paramsToStr|es|0", "double", (void *)(&es), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } es = ((1. / (1. - q * m))) ;
+      lbl_2: double es; register_stack_var("uts_paramsToStr|es|0", "double", (void *)(&es), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } es = ((1. / (1. - q * m))) ;
 # 311 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(4, (size_t)(11896266734391819464UL), (size_t)(11896266734391819465UL), (size_t)(11896266734391819466UL), (size_t)(11896266734391819467UL)); ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
+    ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
             q, m, q * m, es);
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3070,7 +3070,7 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 315 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (type == HYBRID) {
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(4, (size_t)(11896266734391819464UL), (size_t)(11896266734391819465UL), (size_t)(11896266734391819466UL), (size_t)(11896266734391819467UL)); call_lbl_16: calling((void*)&ceil, 16, 0UL, 1, (size_t)(0UL)); ind += sprintf(strBuf+ind, "  HYBRID:  GEO from root to depth %d, then BIN\n",
+     call_lbl_10: calling((void*)&ceil, 10, 0UL, 1, (size_t)(0UL)); ind += sprintf(strBuf+ind, "  HYBRID:  GEO from root to depth %d, then BIN\n",
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
             (int) ceil(shiftDepth * gen_mx));
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3078,11 +3078,11 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(4, (size_t)(11896266734391819464UL), (size_t)(11896266734391819465UL), (size_t)(11896266734391819466UL), (size_t)(11896266734391819467UL)); ind += sprintf(strBuf+ind, "Random number generator: ");
+  ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819464UL)); call_lbl_20: calling((void*)&rng_showtype, 20, 0UL, 2, (size_t)(11896266734391819610UL), (size_t)(0UL)); ind = rng_showtype(strBuf, ind);
+  alias_group_changed(4, (size_t)(11896266734391819464UL), (size_t)(11896266734391819465UL), (size_t)(11896266734391819466UL), (size_t)(11896266734391819467UL)); call_lbl_13: calling((void*)&rng_showtype, 13, 0UL, 2, (size_t)(11896266734391819610UL), (size_t)(0UL)); ind = rng_showtype(strBuf, ind);
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819464UL)); ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
+  ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 325 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   alias_group_changed(1, (size_t)(11896266734391819464UL)); rm_stack(false, 0UL); return ind;
@@ -3117,16 +3117,16 @@ void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams
 # 342 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     lbl_0: int i; register_stack_var("uts_parseParams|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } i = (1) ;
 # 343 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_1: int err; register_stack_var("uts_parseParams|err|0", "i32", (void *)(&err), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } err = (-1) ;
+    lbl_1: int err; register_stack_var("uts_parseParams|err|0", "i32", (void *)(&err), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } err = (-1) ;
 # 344 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
 # 345 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_5: calling((void*)&strlen, 5, 0UL, 1, (size_t)(11896266734391819886UL)); if (argv[i][0] == '-' && argv[i][1] == 'h') {{ alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_3: calling((void*)&uts_helpMessage, 3, 0UL, 0); uts_helpMessage(); call_lbl_4: calling((void*)&impl_abort, 4, 0UL, 1, (size_t)(0UL)); impl_abort(0); }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i + 1) { err = i; break; }
+     call_lbl_4: calling((void*)&strlen, 4, 0UL, 1, (size_t)(11896266734391819886UL)); if (argv[i][0] == '-' && argv[i][1] == 'h') {{ alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_2: calling((void*)&uts_helpMessage, 2, 0UL, 0); uts_helpMessage(); call_lbl_3: calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(0); }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i + 1) { err = i; break; }
 # 352 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 353 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 354 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 355 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-     call_lbl_6: calling((void*)&impl_parseParam, 6, 0UL, 2, (size_t)(11896266734391819886UL), (size_t)(11896266734391819886UL)); if (!impl_parseParam(argv[i], argv[i+1])) {
+    alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_6: calling((void*)&impl_parseParam, 6, 0UL, 2, (size_t)(11896266734391819886UL), (size_t)(11896266734391819886UL)); if (!impl_parseParam(argv[i], argv[i+1])) {
 # 356 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       i += 2;
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3263,7 +3263,7 @@ rm_stack(false, 0UL); }
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-void uts_showStats(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {new_stack((void *)(&uts_showStats), 6, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "uts_showStats|nPes|0", "i32", (void *)(&nPes), (size_t)4, 0, 0, 0, "uts_showStats|chunkSize|0", "i32", (void *)(&chunkSize), (size_t)4, 0, 0, 0, "uts_showStats|walltime|0", "double", (void *)(&walltime), (size_t)8, 0, 0, 0, "uts_showStats|nNodes|0", "i32", (void *)(&nNodes), (size_t)4, 0, 0, 0, "uts_showStats|nLeaves|0", "i32", (void *)(&nLeaves), (size_t)4, 0, 0, 0, "uts_showStats|maxDepth|0", "i32", (void *)(&maxDepth), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void uts_showStats(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {new_stack((void *)(&uts_showStats), 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 430 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 431 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (verbose == 0) {

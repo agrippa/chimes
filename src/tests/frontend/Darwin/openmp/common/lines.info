@@ -16,8 +16,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 131 9 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 138 13 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 9 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:_Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 149 9 : { 404, 405, 406, 612, 615 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 154 9 : { 404, 405, 406, 612, 615 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 162 58 : { 404, 405, 406, 612, 615 } prop:call:__assert_rtn
+/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 149 9 : { 404, 405, 406 } prop:call:exit
+/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 154 9 : { 404, 405, 406 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 188 9 : { 502, 504, 505 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 199 9 : { 502, 504, 505 } prop:call:exit

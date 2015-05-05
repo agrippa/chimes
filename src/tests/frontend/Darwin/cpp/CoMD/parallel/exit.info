@@ -1,7 +1,7 @@
 getNRanks 0
 getMyRank 0
 printRank 0 5
-timestampBarrier 0 15
+timestampBarrier 0 15 17 29
 barrierParallel 0
 initParallel 0 51 52
 destroyParallel 0

@@ -1,18 +1,12 @@
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 35 34 : { 1, 2, 3, 4, 5, 6, 7, 8 } prop:call:__assert_rtn
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 53 12 : { 115, 116, 117 } direct:call:sqrt
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 69 27 : { 205, 206 } direct:call:cos
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 70 27 : { 207 } direct:call:sin
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 76 25 : { 256, 257 } direct:call:cos
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 77 25 : { 258 } direct:call:sin
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 94 25 : { 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319 } prop:call:sqrt
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 95 25 : { 320 } direct:call:sqrt
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 16 : { 483, 484, 485, 486, 487, 488 } direct:call:_Z4modvddd
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 16 : { 489 } direct:call:_Z4modvddd
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 111 5 : { 537 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 25 : { 552, 553, 554, 555 } direct:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 116 44 : { 556 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 26 : { 556 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 118 45 : { 557, 582, 584 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 123 10 : { 557, 582, 584 } prop:call:atof
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 124 10 : { 603 } direct:call:atof
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 125 10 : { 608 } direct:call:atof
@@ -26,17 +20,11 @@
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17 : { 626, 627 } prop:call:_Z19parse_three_doublesPcPdS0_S0_
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17 : { 626, 627 } prop:call:_Z19parse_three_doublesPcPdS0_S0_
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 37 : { 626, 627 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 171 56 : { 628 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 38 : { 628 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 173 57 : { 629 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 37 : { 629 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 175 56 : { 630 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 38 : { 630 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 177 57 : { 631 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 37 : { 631 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 179 56 : { 632 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 37 : { 632 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 181 56 : { 633, 757, 759, 775, 791, 807, 823, 848 } prop:call:__assert_rtn
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 54 : { 633, 757, 759, 775, 791, 807, 823, 848 } prop:call:atof
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 5 : { 917, 918, 919 } direct:call:_Z12parse_configiPPcP7_config
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 24 : { 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 936, 937, 945, 946, 947, 966 } prop:call:_Z4modvddd

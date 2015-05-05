@@ -1,14 +1,7 @@
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp print_matrix|matrix|0 " i32** " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp print_matrix|n_rows|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp print_matrix|n_columns|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp print_matrix|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp print_matrix|j|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp read_file|file|0 " %struct.__sFILE* " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp read_file|n_chars|0 " i64* " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp read_file|file_size|0 " i64 " 64 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp read_file|file_buffer|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp read_file|n_read_from_file|0 " i64 " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|argc|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|argv|0 " i8** " 64 1 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|i|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|j|0 " i32 " 32 0 0 
@@ -34,5 +27,3 @@
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|left_score|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|top_score|0 " i32 " 32 0 0 
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|bigger_of_left_top|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|diag_zero|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|score|0 " i32 " 32 0 0 

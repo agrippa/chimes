@@ -7,7 +7,6 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 2554 3 : { 1657 } direct:call:_ZL20CalcLagrangeElementsd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 2586 13 : { 1670, 1671, 1672, 1673, 1674, 1675, 1676, 1677 } prop:call:_Z4SQRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 2620 37 : { 1797, 1798, 1799, 1800, 1801, 1802, 1803 } prop:call:_Z4FABSd
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 94 39 : { 1868 } direct:call:sqrt
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1815 7 : { 1876, 1877 } prop:call:_ZL22CalcKinematicsForElemsid
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1833 12 : { 1878, 1879, 1880, 1995 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 2165 4 : { 1969, 1970 } direct:call:_ZL31CalcMonotonicQGradientsForElemsv

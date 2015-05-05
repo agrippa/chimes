@@ -1,17 +1,9 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 85 4 alias_group_changed(7, (size_t)(7522830976577679905UL), (size_t)(7522830976577679906UL), (size_t)(7522830976577679907UL), (size_t)(7522830976577679908UL), (size_t)(7522830976577679909UL), (size_t)(7522830976577679926UL), (size_t)(7522830976577680092UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 109 4 alias_group_changed(7, (size_t)(7522830976577679905UL), (size_t)(7522830976577679906UL), (size_t)(7522830976577679907UL), (size_t)(7522830976577679908UL), (size_t)(7522830976577679909UL), (size_t)(7522830976577679926UL), (size_t)(7522830976577680092UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 13 alias_group_changed(8, (size_t)(7522830976577680169UL), (size_t)(7522830976577680170UL), (size_t)(7522830976577680171UL), (size_t)(7522830976577680175UL), (size_t)(7522830976577680176UL), (size_t)(7522830976577680177UL), (size_t)(7522830976577680178UL), (size_t)(7522830976577680254UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 4 alias_group_changed(11, (size_t)(7522830976577680811UL), (size_t)(7522830976577680812UL), (size_t)(7522830976577680813UL), (size_t)(7522830976577680814UL), (size_t)(7522830976577680815UL), (size_t)(7522830976577680816UL), (size_t)(7522830976577680817UL), (size_t)(7522830976577680818UL), (size_t)(7522830976577680819UL), (size_t)(7522830976577680820UL), (size_t)(7522830976577680821UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 236 4 alias_group_changed(6, (size_t)(7522830976577680537UL), (size_t)(7522830976577680538UL), (size_t)(7522830976577680539UL), (size_t)(7522830976577680540UL), (size_t)(7522830976577680541UL), (size_t)(7522830976577680542UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 237 4 alias_group_changed(6, (size_t)(7522830976577680537UL), (size_t)(7522830976577680538UL), (size_t)(7522830976577680539UL), (size_t)(7522830976577680540UL), (size_t)(7522830976577680541UL), (size_t)(7522830976577680542UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 252 4 alias_group_changed(7, (size_t)(7522830976577681136UL), (size_t)(7522830976577681137UL), (size_t)(7522830976577681138UL), (size_t)(7522830976577681139UL), (size_t)(7522830976577681140UL), (size_t)(7522830976577681141UL), (size_t)(7522830976577681199UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 10 alias_group_changed(6, (size_t)(7522830976577681369UL), (size_t)(7522830976577681370UL), (size_t)(7522830976577681371UL), (size_t)(7522830976577681372UL), (size_t)(7522830976577681373UL), (size_t)(7522830976577681374UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29 alias_group_changed(1, (size_t)(7522830976577681374UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 9 alias_group_changed(3, (size_t)(7522830976577681474UL), (size_t)(7522830976577681475UL), (size_t)(7522830976577681476UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 4 alias_group_changed(5, (size_t)(7522830976577680975UL), (size_t)(7522830976577680976UL), (size_t)(7522830976577680977UL), (size_t)(7522830976577680978UL), (size_t)(7522830976577680979UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 4 alias_group_changed(1, (size_t)(7522830976577680980UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 4 alias_group_changed(1, (size_t)(7522830976577680981UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 4 alias_group_changed(3, (size_t)(7522830976577680980UL), (size_t)(7522830976577680981UL), (size_t)(7522830976577680982UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 4 alias_group_changed(8, (size_t)(7522830976577680975UL), (size_t)(7522830976577680976UL), (size_t)(7522830976577680977UL), (size_t)(7522830976577680978UL), (size_t)(7522830976577680979UL), (size_t)(7522830976577680980UL), (size_t)(7522830976577680981UL), (size_t)(7522830976577680982UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 52 , 7522830976577679926UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23 len=6 malloc_wrapper
@@ -21,27 +13,27 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCel
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 10 , 7522830976577680149UL
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 4 alias_group_changed(7, (size_t)(7522830976577679905UL), (size_t)(7522830976577679906UL), (size_t)(7522830976577679907UL), (size_t)(7522830976577679908UL), (size_t)(7522830976577679909UL), (size_t)(7522830976577679926UL), (size_t)(7522830976577680092UL)); rm_stack(true, 7522830976577679926UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 1 new_stack((void *)(&initLinkCells), 2, 2, (size_t)(7522830976577680130UL), (size_t)(0UL), "initLinkCells|domain|0", "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0, "initLinkCells|cutoff|0", "double", (void *)(&cutoff), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 1 new_stack((void *)(&initLinkCells), 2, 0, (size_t)(7522830976577680130UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 115 17 alias_group_changed(2, (size_t)(7522830976577680141UL), (size_t)(7522830976577680167UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 116 18 alias_group_changed(2, (size_t)(7522830976577680141UL), (size_t)(7522830976577680167UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 122 4 alias_group_changed(2, (size_t)(7522830976577680141UL), (size_t)(7522830976577680167UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 1 new_stack((void *)(&destroyLinkCells), 1, 1, (size_t)(7522830976577680167UL), "destroyLinkCells|boxes|0", "%struct.LinkCellSt**", (void *)(&boxes), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 1 new_stack((void *)(&destroyLinkCells), 1, 0, (size_t)(7522830976577680167UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 4 alias_group_changed(8, (size_t)(7522830976577680169UL), (size_t)(7522830976577680170UL), (size_t)(7522830976577680171UL), (size_t)(7522830976577680175UL), (size_t)(7522830976577680176UL), (size_t)(7522830976577680177UL), (size_t)(7522830976577680178UL), (size_t)(7522830976577680254UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 1 new_stack((void *)(&getNeighborBoxes), 3, 3, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680254UL), "getNeighborBoxes|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "getNeighborBoxes|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "getNeighborBoxes|nbrBoxes|0", "i32*", (void *)(&nbrBoxes), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 1 new_stack((void *)(&getNeighborBoxes), 3, 2, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680254UL), "getNeighborBoxes|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "getNeighborBoxes|nbrBoxes|0", "i32*", (void *)(&nbrBoxes), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 1 new_stack((void *)(&putAtomInBox), 10, 10, (size_t)(7522830976577680965UL), (size_t)(7522830976577680966UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "putAtomInBox|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "putAtomInBox|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0, "putAtomInBox|gid|0", "i32", (void *)(&gid), (size_t)4, 0, 0, 0, "putAtomInBox|iType|0", "i32", (void *)(&iType), (size_t)4, 0, 0, 0, "putAtomInBox|x|0", "double", (void *)(&x), (size_t)8, 0, 0, 0, "putAtomInBox|y|0", "double", (void *)(&y), (size_t)8, 0, 0, 0, "putAtomInBox|z|0", "double", (void *)(&z), (size_t)8, 0, 0, 0, "putAtomInBox|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0, "putAtomInBox|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0, "putAtomInBox|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 185 1 alias_group_changed(5, (size_t)(7522830976577680822UL), (size_t)(7522830976577680823UL), (size_t)(7522830976577680867UL), (size_t)(7522830976577680899UL), (size_t)(7522830976577680966UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 4 alias_group_changed(6, (size_t)(7522830976577680537UL), (size_t)(7522830976577680538UL), (size_t)(7522830976577680539UL), (size_t)(7522830976577680540UL), (size_t)(7522830976577680541UL), (size_t)(7522830976577680542UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 1 new_stack((void *)(&getBoxFromTuple), 4, 4, (size_t)(7522830976577680792UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "getBoxFromTuple|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "getBoxFromTuple|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0, "getBoxFromTuple|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0, "getBoxFromTuple|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 1 new_stack((void *)(&getBoxFromTuple), 4, 0, (size_t)(7522830976577680792UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 261 4 alias_group_changed(9, (size_t)(7522830976577681136UL), (size_t)(7522830976577681137UL), (size_t)(7522830976577681138UL), (size_t)(7522830976577681139UL), (size_t)(7522830976577681140UL), (size_t)(7522830976577681141UL), (size_t)(7522830976577681142UL), (size_t)(7522830976577681199UL), (size_t)(7522830976577681238UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 1 new_stack((void *)(&moveAtom), 5, 5, (size_t)(7522830976577681197UL), (size_t)(7522830976577681238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "moveAtom|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "moveAtom|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0, "moveAtom|iId|0", "i32", (void *)(&iId), (size_t)4, 0, 0, 0, "moveAtom|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "moveAtom|jBox|0", "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 1 new_stack((void *)(&moveAtom), 5, 0, (size_t)(7522830976577681197UL), (size_t)(7522830976577681238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 1 new_stack((void *)(&updateLinkCells), 2, 2, (size_t)(7522830976577681442UL), (size_t)(7522830976577681443UL), "updateLinkCells|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "updateLinkCells|atoms|0", "%struct.AtomsSt*", (void *)(&atoms), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 294 1 alias_group_changed(6, (size_t)(7522830976577681369UL), (size_t)(7522830976577681370UL), (size_t)(7522830976577681371UL), (size_t)(7522830976577681372UL), (size_t)(7522830976577681373UL), (size_t)(7522830976577681374UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 4 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 1 new_stack((void *)(&maxOccupancy), 1, 1, (size_t)(7522830976577681505UL), "maxOccupancy|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 1 new_stack((void *)(&maxOccupancy), 1, 0, (size_t)(7522830976577681505UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 1 new_stack((void *)(&copyAtom), 6, 0, (size_t)(7522830976577681363UL), (size_t)(7522830976577681364UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 325 1 alias_group_changed(9, (size_t)(7522830976577681242UL), (size_t)(7522830976577681243UL), (size_t)(7522830976577681244UL), (size_t)(7522830976577681245UL), (size_t)(7522830976577681246UL), (size_t)(7522830976577681247UL), (size_t)(7522830976577681248UL), (size_t)(7522830976577681249UL), (size_t)(7522830976577681278UL)); rm_stack(false, 0UL); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 127 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 1 new_stack((void *)(&getBoxFromCoord), 2, 2, (size_t)(7522830976577681134UL), (size_t)(7522830976577681135UL), "getBoxFromCoord|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "getBoxFromCoord|rr|0", "double*", (void *)(&rr), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 292 rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 1 new_stack((void *)(&getBoxFromCoord), 2, 0, (size_t)(7522830976577681134UL), (size_t)(7522830976577681135UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 1 new_stack((void *)(&emptyHaloCells), 1, 0, (size_t)(7522830976577681473UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 376 1 alias_group_changed(3, (size_t)(7522830976577681444UL), (size_t)(7522830976577681445UL), (size_t)(7522830976577681464UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 1 new_stack((void *)(&getTuple), 5, 0, (size_t)(7522830976577680532UL), (size_t)(0UL), (size_t)(7522830976577680534UL), (size_t)(7522830976577680535UL), (size_t)(7522830976577680536UL)); 
@@ -114,12 +106,12 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 44 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 4  const int *gridSize;  gridSize = (boxes->gridSize) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 41 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 193  int ix;  ix = ((int)(floor((rr[0] - localMin[0]) * boxes->invBoxSize[0]))) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 258 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 61  int iy;  iy = ((int)(floor((rr[1] - localMin[1]) * boxes->invBoxSize[1]))) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 126 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 61  int iz;  iz = ((int)(floor((rr[2] - localMin[2]) * boxes->invBoxSize[2]))) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 126 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 4  int ix;  ix = ((int)(floor((rr[0] - localMin[0]) * boxes->invBoxSize[0]))) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 69 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 4  int iy;  iy = ((int)(floor((rr[1] - localMin[1]) * boxes->invBoxSize[1]))) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 69 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 4  int iz;  iz = ((int)(floor((rr[2] - localMin[2]) * boxes->invBoxSize[2]))) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 69 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 4 {  int ii; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 93  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 9  ii = (boxes->nLocalBoxes) ;
@@ -130,68 +122,35 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 389 41 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 402 7 int ink; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 402 14 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 17  register_stack_var("initLinkCells|ll|0", "%struct.LinkCellSt*", (void *)(&ll), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 17  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 7  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 12  register_stack_var("initLinkCells|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 88 12  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 7  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 15  register_stack_var("initLinkCells|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 106 15  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 252  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 169  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 91  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 79  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4  call_lbl_1: calling((void*)&getTuple, 1, 0UL, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 301  call_lbl_3: calling((void*)&getBoxFromTuple, 3, 0UL, 4, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10  register_stack_var("getNeighborBoxes|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 12  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 18  register_stack_var("getNeighborBoxes|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 18  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 20  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 26  register_stack_var("getNeighborBoxes|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 26  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 5  lbl_3: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 5  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 14  register_stack_var("getNeighborBoxes|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 14  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 7  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 136 14  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 7  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 12  register_stack_var("getNeighborBoxes|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 12  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 10  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 137 12  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 10  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 15  register_stack_var("getNeighborBoxes|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 15  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 13  lbl_6: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 138 15  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 13  lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 18  register_stack_var("getNeighborBoxes|k|0", "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 139 18  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 367  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 296  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 404  call_lbl_2: calling((void*)&getBoxFromCoord, 2, 0UL, 2, (size_t)(7522830976577680965UL), (size_t)(7522830976577680821UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 31  register_stack_var("putAtomInBox|xyz|0", "[3 x double]", (void *)(xyz), (size_t)24, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 31  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 393  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 401  register_stack_var("putAtomInBox|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 401  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 13  register_stack_var("putAtomInBox|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 168 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 31  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 921  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 13  register_stack_var("getBoxFromTuple|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 195 13  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 24  register_stack_var("getBoxFromTuple|gridSize|0", "i32*", (void *)(&gridSize), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 196 24  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 409  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 123  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4  call_lbl_1: calling((void*)&copyAtom, 1, 0UL, 6, (size_t)(7522830976577681197UL), (size_t)(7522830976577681238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13  call_lbl_5: calling((void*)&copyAtom, 5, 0UL, 6, (size_t)(7522830976577681197UL), (size_t)(7522830976577681238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 11  register_stack_var("moveAtom|nj|0", "i32", (void *)(&nj), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 248 11  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 11  register_stack_var("moveAtom|ni|0", "i32", (void *)(&ni), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 255 11  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 495  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13  call_lbl_4: calling((void*)&copyAtom, 4, 0UL, 6, (size_t)(7522830976577681197UL), (size_t)(7522830976577681238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 149  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4  call_lbl_1: calling((void*)&emptyHaloCells, 1, 0UL, 1, (size_t)(7522830976577681442UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 244  call_lbl_3: calling((void*)&getBoxFromCoord, 3, 0UL, 2, (size_t)(7522830976577681442UL), (size_t)(7522830976577681415UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 86  call_lbl_5: calling((void*)&moveAtom, 5, 0UL, 5, (size_t)(7522830976577681442UL), (size_t)(7522830976577681443UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -213,41 +172,17 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 4
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 9  call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17  register_stack_var("maxOccupancy|localMax|0", "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 7  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 13  register_stack_var("maxOccupancy|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 300 13  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 4  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17  register_stack_var("maxOccupancy|globalMax|0", "i32", (void *)(&globalMax), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 303 17  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 160  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 299 17  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 75  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 321 4  call_lbl_1: calling((void*)&memcpy, 1, 0UL, 3, (size_t)(7522830976577681278UL), (size_t)(7522830976577681278UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 322 4  call_lbl_2: calling((void*)&memcpy, 2, 0UL, 3, (size_t)(7522830976577681278UL), (size_t)(7522830976577681278UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 323 4  call_lbl_3: calling((void*)&memcpy, 3, 0UL, 3, (size_t)(7522830976577681278UL), (size_t)(7522830976577681278UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 324 4  call_lbl_4: calling((void*)&memcpy, 4, 0UL, 3, (size_t)(7522830976577681278UL), (size_t)(7522830976577681278UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 164  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 203  call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 71  call_lbl_4: calling((void*)&floor, 4, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 71  call_lbl_6: calling((void*)&floor, 6, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 149  call_lbl_9: calling((void*)&getBoxFromTuple, 9, 0UL, 4, (size_t)(7522830976577681134UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 27  register_stack_var("getBoxFromCoord|localMin|0", "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 339 27  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 27  register_stack_var("getBoxFromCoord|localMax|0", "double*", (void *)(&localMax), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 340 27  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 24  register_stack_var("getBoxFromCoord|gridSize|0", "i32*", (void *)(&gridSize), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 341 24  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 194  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 200  register_stack_var("getBoxFromCoord|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 200  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 62  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 68  register_stack_var("getBoxFromCoord|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 68  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 62  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 68  register_stack_var("getBoxFromCoord|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 68  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 269  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 342 14  call_lbl_1: calling((void*)&floor, 1, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 343 14  call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 344 14  call_lbl_3: calling((void*)&floor, 3, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 314  call_lbl_6: calling((void*)&getBoxFromTuple, 6, 0UL, 4, (size_t)(7522830976577681134UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 111  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 77  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 185  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

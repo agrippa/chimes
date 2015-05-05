@@ -1599,7 +1599,7 @@ Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent)
  alias_group_changed(4, (size_t)(13672999005525477745UL), (size_t)(13672999005525477746UL), (size_t)(13672999005525477747UL), (size_t)(13672999005525477748UL)); call_lbl_3: calling((void*)&getNRanks, 3, 0UL, 0); (__builtin_expect(!(xproc * yproc * zproc == getNRanks()), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
- lbl_0: Domain *dd; register_stack_var("initDecomposition|dd|0", "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } dd = ((Domain *)malloc_wrapper(sizeof(Domain), 13672999005525477778UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
+ lbl_0: Domain *dd; register_stack_var("initDecomposition|dd|0", "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } dd = ((Domain *)malloc_wrapper(sizeof(Domain), 13672999005525477778UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  dd->procGrid[0] = xproc;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
@@ -1608,7 +1608,7 @@ Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent)
  dd->procGrid[2] = zproc;
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
- alias_group_changed(2, (size_t)(13672999005525477749UL), (size_t)(13672999005525477778UL)); lbl_1: int myRank; register_stack_var("initDecomposition|myRank|0", "i32", (void *)(&myRank), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } call_lbl_7: calling((void*)&getMyRank, 7, 0UL, 0); myRank = (getMyRank()) ;
+ alias_group_changed(2, (size_t)(13672999005525477749UL), (size_t)(13672999005525477778UL)); int myRank; call_lbl_7: calling((void*)&getMyRank, 7, 0UL, 0); myRank = (getMyRank()) ;
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
@@ -1620,7 +1620,7 @@ Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent)
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
- { lbl_2: int i; register_stack_var("initDecomposition|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( i = (0) ; i < 3; i++)
+ { int i; for ( i = (0) ; i < 3; i++)
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  {
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
@@ -1634,7 +1634,7 @@ Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent)
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
- { lbl_3: int i; register_stack_var("initDecomposition|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } for ( i = (0) ; i < 3; i++)
+ { int i; for ( i = (0) ; i < 3; i++)
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  {
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"

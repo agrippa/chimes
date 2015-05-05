@@ -4,7 +4,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 3 16 new_
 InsertText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 8 5 alias_group_changed(1, (size_t)(1464087543762942931UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 7 16 new_stack((void *)(&bar), 1, 0, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 24 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(1464087543762942964UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 5 int d; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10 
@@ -16,4 +16,4 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 161  call_lbl_5:
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10  register_stack_var("main|d|0", "i32", (void *)(&d), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 248  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 129  if (____chimes_replaying) { goto lbl_0; } 

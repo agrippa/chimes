@@ -2,14 +2,11 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 5 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 4 5 rm_stack(true, 2786831167442144618UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 23 new_stack((void *)(&haha_this_sux), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 10 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 new_stack((void *)(&main), 2, 2, (size_t)(0UL), (size_t)(2786831167442144615UL), "main|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5  void *tmp;  tmp = (haha_this_sux()) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 32 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 65  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 18  call_lbl_2: calling((void*)&haha_this_sux, 2, 2786831167442144610UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 161  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 15  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 15  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 248  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 129  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 

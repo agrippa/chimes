@@ -13,7 +13,6 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2896 20 : { 2205, 2206, 2207, 2208 } direct:call:omp_get_num_threads
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2915 52 : { 2209, 2210, 2211, 2212, 2213, 2215, 2235, 2239 } prop:call:_Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2917 46 : { 2214 } direct:call:omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 102 39 : { 2361 } direct:call:sqrt
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2005 3 : { 2369, 2370 } prop:call:_ZL22CalcKinematicsForElemsid
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2025 5 : { 2371, 2372, 2373, 2488 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2359 2 : { 2462, 2463 } direct:call:_ZL31CalcMonotonicQGradientsForElemsv
