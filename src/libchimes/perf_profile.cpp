@@ -32,7 +32,7 @@ unsigned long long perf_profile::current_time_ms() {
     struct timespec t ={0,0};
     clock_gettime(CLOCK_MONOTONIC, &t);
     unsigned long long s = 1000000ULL * (unsigned long long)t.tv_sec;
-    return (unsigned long long)t.tv_msec + s;
+    return (((unsigned long long)t.tv_nsec)/1000ULL) + s;
 #endif
 }
 
