@@ -29,8 +29,8 @@ extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
 extern int get_next_call();
 extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
         unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
-        ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -1820,7 +1820,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(17008665004289634901UL, 1, 0, 17008665004289634901UL + 5UL, 17008665004289634901UL + 29UL);
+    init_module(17008665004289634901UL, 1, 2, 0, 0, 17008665004289634901UL + 5UL, 17008665004289634901UL + 29UL, "_Z3foov", 1, "_Z10checkpointv", "main", 3, "_Z3foov", "omp_get_thread_num", "printf");
     return 0;
 }
 

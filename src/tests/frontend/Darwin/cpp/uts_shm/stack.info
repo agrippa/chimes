@@ -49,7 +49,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tovh|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tcbovh|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|root|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t1|0 " double " 64 0 0  0 _Z10uts_wctimev _Z13parTreeSearchP12stealStack_t _Z9showStatsd
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t1|0 " double " 64 0 0  1
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t2|0 " double " 64 0 0  0 _Z9showStatsd
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|et|0 " double " 64 0 0  0 _Z9showStatsd
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|ss|0 " %struct.stealStack_t* " 64 1 0  0 _Z10uts_wctimev _Z12initRootNodeP6node_ti _Z12ss_initStateP12stealStack_t _Z13parTreeSearchP12stealStack_t _Z7ss_initP12stealStack_ti _Z7ss_pushP12stealStack_tP6node_t _Z9showStatsd
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|ss|0 " %struct.stealStack_t* " 64 1 0  1

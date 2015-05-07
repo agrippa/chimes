@@ -180,7 +180,7 @@ namespace {
         bool isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
                 std::set<StoreInst *> *stores, bool foundStoreIn,
                 std::vector<std::string> *visited,
-                std::set<std::string> *causesCheckpoint);
+                std::set<std::string> *causesCheckpoint, bool *definitelyCheckpoints);
         bool isPathFromCheckpointThroughLoad(BasicBlock *bb,
                 std::set<LoadInst *> *loads, bool foundCheckpointIn,
                 std::vector<std::string> *visited);
@@ -1571,7 +1571,7 @@ static std::map<Value *, std::string> *mapValueToOriginalVarname(
 bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
         std::set<StoreInst *> *stores, bool foundStoreIn,
         std::vector<std::string> *visited,
-        std::set<std::string> *causesCheckpoint) {
+        std::set<std::string> *causesCheckpoint, bool *definitelyCheckpoints) {
     bool foundStore = foundStoreIn;
 
     std::vector<std::string> my_visited(*visited);
@@ -1588,15 +1588,20 @@ bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
 
         if (foundStore) {
             if (CallInst *call = dyn_cast<CallInst>(curr)) {
-                if (!isa<IntrinsicInst>(call) &&
-                        mayCreateCheckpoint(call->getCalledFunction()) != DOES_NOT) {
-                    mayCheckpoint = true;
-                    causesCheckpoint->insert(
-                            call->getCalledFunction() == NULL ? "" :
-                            call->getCalledFunction()->getName().str());
-                    fprintf(stderr, "May create checkpoint because of function %s\n",
-                            (call->getCalledFunction() == NULL ? "null" :
-                             call->getCalledFunction()->getName().str().c_str()));
+                if (!isa<IntrinsicInst>(call)) {
+                    CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(call->getCalledFunction());
+                    if (doesCheckpoint == MAY) {
+                        mayCheckpoint = true;
+                        causesCheckpoint->insert(
+                                call->getCalledFunction() == NULL ? "" :
+                                call->getCalledFunction()->getName().str());
+                        fprintf(stderr, "May create checkpoint because of function %s\n",
+                                (call->getCalledFunction() == NULL ? "null" :
+                                 call->getCalledFunction()->getName().str().c_str()));
+                    } else if (doesCheckpoint == DOES) {
+                        *definitelyCheckpoints = true;
+                        return (true);
+                    }
                 }
             }
         } else {
@@ -1613,10 +1618,17 @@ bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
     for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
         if (isPathFromFuncStartToCheckpointThroughStore(child, stores,
-                foundStore, &my_visited, causesCheckpoint)) {
+                foundStore, &my_visited, causesCheckpoint, definitelyCheckpoints)) {
+            /*
+             * If the child block indicated that there is a function called
+             * which definitely checkpoints, return immediately and always
+             * checkpoint this variable.
+             */
+            if (*definitelyCheckpoints) return (true);
             if (!mayCheckpoint) mayCheckpoint = true;
         }
     }
+
     return (mayCheckpoint);
 }
 
@@ -1711,16 +1723,35 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
             BasicBlock *entry = &F->getEntryBlock();
             s_visited.clear();
             l_visited.clear();
+
+            /*
+             * The analysis below is a little coarse because it simply asks
+             * which functions may create a checkpoint after the variable is
+             * stored into, and then if the variable is ever loaded from after
+             * the earliest of those functions on the CFG. In reality, it would
+             * be possible for a variable to be stored to, a function called
+             * that MAY (but does not actually) create a checkpoint, then the
+             * variable loaded from, and then a checkpoint created (and the
+             * variable never used again). In this scenario, the variable would
+             * never actually have to be persisted but it would be because we
+             * find a checkpoint call after the store, and we find a load after
+             * a function that MAY checkpoint. To be more precise, we'd have to
+             * tell the runtime that it's only necessary to checkpoint this
+             * variable if a few specific functions actually do checkpoint,
+             * rather than just any functions following the store. Just removing
+             * any functions after the last load would be an improvement. TODO.
+             */
             std::set<std::string> causesCheckpoint;
+            bool definitelyCheckpoints = false;
             bool through_store = isPathFromFuncStartToCheckpointThroughStore(
-                    entry, stores, false, &s_visited, &causesCheckpoint);
+                    entry, stores, false, &s_visited, &causesCheckpoint,
+                    &definitelyCheckpoints);
             bool through_load = isPathFromCheckpointThroughLoad(entry, loads,
                     false, &l_visited);
             bool should_checkpoint = (through_store && through_load);
             if (should_checkpoint) {
                 if (causesCheckpoint.find("") != causesCheckpoint.end() ||
-                        causesCheckpoint.find("_Z10checkpointv") !=
-                            causesCheckpoint.end()) {
+                        definitelyCheckpoints) {
                     /*
                      * If we are unable to fetch the function name/info for some
                      * called function then use the same behavior as if it were

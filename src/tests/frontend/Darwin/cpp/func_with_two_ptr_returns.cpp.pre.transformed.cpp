@@ -35,8 +35,8 @@ extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
 extern int get_next_call();
 extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
         unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
-        ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -1507,7 +1507,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(16401429439071256598UL, 4, 0, 16401429439071256598UL + 1UL, 16401429439071256598UL + 43UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 42UL, 16401429439071256598UL + 26UL, 16401429439071256598UL + 33UL, 16401429439071256598UL + 2UL, 16401429439071256598UL + 43UL);
+    init_module(16401429439071256598UL, 4, 2, 0, 0, 16401429439071256598UL + 1UL, 16401429439071256598UL + 43UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 42UL, 16401429439071256598UL + 26UL, 16401429439071256598UL + 33UL, 16401429439071256598UL + 2UL, 16401429439071256598UL + 43UL, "_Z24haha_this_sux_part_troisv", 1, "malloc", "main", 2, "_Z10checkpointv", "_Z24haha_this_sux_part_troisv");
     return 0;
 }
 
