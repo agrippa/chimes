@@ -302,11 +302,30 @@ static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 static map<string, set<string> > call_tree;
 
 /*
+ * A mapping from function name to true/false, whether calling that function may
+ * cause a checkpoint to be created. Functions not present in this map must be
+ * treated as if they mapped to true (i.e. they always create a checkpoint).
+ */
+static map<string, bool> does_checkpoint;
+
+/*
  * A mapping from unique variable names to the functions called which mean they
  * must be checkpointed (i.e. functions which may or may not create a
  * checkpoint, we don't know).
  */
 static map<string, set<string> > var_checkpoint_causes;
+
+/*
+ * A mapping from stack variable name to whether it must be registered for
+ * checkpoints. This is conditioned on whether it may be storing a value that is
+ * later referenced when a checkpoint is created. The values in this map are
+ * generated based on does_checkpoint and var_checkpoint_causes.
+ *
+ * If a variable is registered which is in this map and maps to false, then we
+ * can skip that registration. However, if it is registered and it maps to true
+ * or has no entry in this map, we must register it.
+ */
+static map<string, bool> need_to_checkpoint;
 
 /*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
@@ -624,6 +643,75 @@ void init_chimes() {
         exit(1);
     }
     memcpy(checkpoint_directory, checkpoint_dir, strlen(checkpoint_dir) + 1);
+
+    /*
+     * Figure out all of the functions in this executable that may cause a
+     * checkpoint to be created.
+     */
+    does_checkpoint["_Z10checkpointv"] = true;
+    bool changed;
+    do {
+        changed = false;
+        for (map<string, set<string> >::iterator i = call_tree.begin(),
+                e = call_tree.end(); i != e; i++) {
+            string func = i->first;
+            /*
+             * If we already know this function causes a checkpoint, nothing can
+             * change that so we continue.
+             */
+            if (does_checkpoint.find(func) != does_checkpoint.end() &&
+                    does_checkpoint[func]) {
+                continue;
+            }
+
+            bool causes_checkpoint = false;
+            for (set<string>::iterator callee_iter = i->second.begin(),
+                    callee_end = i->second.end(); callee_iter != callee_end;
+                    callee_iter++) {
+                string callee = *callee_iter;
+                if (does_checkpoint.find(callee) != does_checkpoint.end() &&
+                        does_checkpoint[callee]) {
+                    causes_checkpoint = true;
+                    break;
+                }
+            }
+
+            if (does_checkpoint.find(func) == does_checkpoint.end()) {
+                // No existing knowledge of this function
+                does_checkpoint[func] = causes_checkpoint;
+                changed = true;
+            } else {
+                /*
+                 * Already have a value for this function, only mark changed if
+                 * it actually changes.
+                 */
+                if (causes_checkpoint && !does_checkpoint[func]){ 
+                    does_checkpoint[func] = true;
+                    changed = true;
+                }
+            }
+        }
+    } while (changed);
+
+    for (map<string, set<string> >::iterator i = var_checkpoint_causes.begin(),
+            e = var_checkpoint_causes.end(); i != e; i++) {
+        string varname = i->first;
+        bool must_checkpoint = false;
+
+        for (set<string>::iterator cause_iter = i->second.begin(),
+                cause_end = i->second.end(); cause_iter != cause_end;
+                cause_iter++) {
+            string cause = *cause_iter;
+            if (does_checkpoint.find(cause) == does_checkpoint.end() ||
+                    does_checkpoint[cause]) {
+                must_checkpoint = true;
+                break;
+            }
+        }
+
+        assert(need_to_checkpoint.find(varname) == need_to_checkpoint.end());
+        need_to_checkpoint[varname] = must_checkpoint;
+    }
 
     char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
@@ -1388,9 +1476,19 @@ void register_stack_var(const char *mangled_name,
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
+
+    const string mangled_name_str(mangled_name);
+    const map<string, bool>::iterator must_checkpoint_iter =
+        need_to_checkpoint.find(mangled_name_str);
+    if (must_checkpoint_iter != need_to_checkpoint.end() &&
+            !must_checkpoint_iter->second) {
+        // Can skip stack variable registration!
+        return;
+    }
+
     // Skip the expensive stack var creation if we can
     std::vector<stack_frame *> *program_stack = get_my_stack();
-    if (!program_stack->back()->stack_var_exists(std::string(mangled_name),
+    if (!program_stack->back()->stack_var_exists(mangled_name_str,
                 ptr)) {
 
         va_list vl;
