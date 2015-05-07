@@ -1,0 +1,11 @@
+rng_init sha1_begin sha1_end sha1_hash
+sha1_begin
+sha1_hash sha1_compile
+sha1_end sha1_compile
+rng_spawn sha1_begin sha1_end sha1_hash
+rng_rand
+rng_nextrand sha1_begin sha1_end sha1_hash
+rng_showstate sprintf
+rng_showtype sprintf
+sha1_compile
+sha1 sha1_begin sha1_end sha1_hash

@@ -1,16 +1,16 @@
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|N|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_A|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_B|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_C|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_A|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_B|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_C|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|threads_per_block|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|blocks_per_grid|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|fp|0 " %struct.__sFILE* " 64 1 0 
-/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par0|0 " i32* " 64 1 0 
-/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par1|0 " i32* " 64 1 0 
-/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par2|0 " i32* " 64 1 0 
-/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par3|0 " i32 " 32 0 0 
-vector_sum.cudafe1.stub.c __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0 " void (i8**)* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|i|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|N|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_A|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_B|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_C|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_A|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_B|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_C|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|threads_per_block|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|blocks_per_grid|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|fp|0 " %struct.__sFILE* " 64 1 0  0 cudaFree
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par0|0 " i32* " 64 1 0  1
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par1|0 " i32* " 64 1 0  1
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par2|0 " i32* " 64 1 0  1
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c __device_stub__Z6kernelPiS_S_i|__par3|0 " i32 " 32 0 0  1
+vector_sum.cudafe1.stub.c __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0 " void (i8**)* " 64 1 0  1

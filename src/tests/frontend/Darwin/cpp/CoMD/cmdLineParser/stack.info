@@ -1,16 +1,16 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|longOption|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|shortOption|0 " i8 " 8 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|has_arg|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|type|0 " i8 " 8 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|dataPtr|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|dataSize|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|o|0 " %struct.MyOptionSt* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c printArgs|s|0 " [4096 x i8] " 32768 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|argc|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|argv|0 " i8** " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|o|0 " %struct.MyOptionSt* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|opts|0 " %struct.option* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|sArgs|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|c|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|option_index|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|i|0 " i32* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|longOption|0 " i8* " 64 1 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|shortOption|0 " i8 " 8 0 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|has_arg|0 " i32 " 32 0 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|type|0 " i8 " 8 0 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|dataPtr|0 " i8* " 64 1 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|dataSize|0 " i32 " 32 0 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c myOptionAlloc|o|0 " %struct.MyOptionSt* " 64 1 0  0 _ZL9dupStringPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c printArgs|s|0 " [4096 x i8] " 32768 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|argc|0 " i32 " 32 0 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|argv|0 " i8** " 64 1 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|o|0 " %struct.MyOptionSt* " 64 1 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|opts|0 " %struct.option* " 64 1 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|sArgs|0 " i8* " 64 1 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|c|0 " i32 " 32 0 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|option_index|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c processArgs|i|0 " i32* " 64 1 0  0 getopt_long sscanf strncpy

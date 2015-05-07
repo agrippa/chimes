@@ -1671,10 +1671,13 @@ typedef struct _checkpoint_thread_ctx {
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
 
     vector<checkpointable_heap_allocation> *heap_to_checkpoint;
-    map<size_t, size_t> *contains;
+
+    void *contains_serialized;
+    size_t contains_serialized_len;
 
     map<unsigned, vector<int> *> *stack_trackers;
 } checkpoint_thread_ctx;
+
 static void *checkpoint_func(void *data);
 
 void wait_for_checkpoint() {
@@ -2167,12 +2170,9 @@ void checkpoint() {
                 info->get_stack_tracker().copy(checkpoint_ctx->stack_trackers->at(thread));
             }
 
-            checkpoint_ctx->contains = new map<size_t, size_t>();
             assert(pthread_rwlock_rdlock(&contains_lock) == 0);
-            for (map<size_t, size_t>::iterator i = contains.begin(),
-                    e = contains.end(); i != e; i++) {
-                (*checkpoint_ctx->contains)[i->first] = i->second;
-            }
+            checkpoint_ctx->contains_serialized = serialize_containers(
+                    &contains, &(checkpoint_ctx->contains_serialized_len));
             assert(pthread_rwlock_unlock(&contains_lock) == 0);
 
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
@@ -2425,7 +2425,8 @@ void *checkpoint_func(void *data) {
         ctx->thread_hierarchy_serialized_len;
     vector<checkpointable_heap_allocation> *to_checkpoint =
         ctx->heap_to_checkpoint;
-    map<size_t, size_t> *contains = ctx->contains;
+    void *contains_serialized = ctx->contains_serialized;
+    size_t contains_serialized_len = ctx->contains_serialized_len;
 
     vector<aiocb *> async_tokens;
     off_t count_bytes = 0;
@@ -2547,13 +2548,12 @@ void *checkpoint_func(void *data) {
                     &count_bytes, "to_checkpoint", &async_tokens);
     }
 
-    size_t serialized_contains_len;
-    void *serialized_contains = serialize_containers(contains,
-            &serialized_contains_len);
-    prep_async_safe_write(fd, &serialized_contains_len,
-                sizeof(serialized_contains_len), count_bytes, &count_bytes, "serialized_contains_len", &async_tokens);
-    prep_async_safe_write(fd, serialized_contains,
-                serialized_contains_len, count_bytes, &count_bytes, "serialized_contains", &async_tokens);
+    prep_async_safe_write(fd, &contains_serialized_len,
+            sizeof(contains_serialized_len), count_bytes, &count_bytes,
+            "contains_serialized_len", &async_tokens);
+    prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
+                count_bytes, &count_bytes, "serialized_contains",
+                &async_tokens);
 
     assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
     set<vector<size_t> *> aliased_groups_ptr;
@@ -2568,9 +2568,11 @@ void *checkpoint_func(void *data) {
     assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
     prep_async_safe_write(fd, &serialized_alias_groups_len,
-                sizeof(serialized_alias_groups_len), count_bytes, &count_bytes, "serialized_alias_groups_len", &async_tokens);
+                sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,
+                "serialized_alias_groups_len", &async_tokens);
     prep_async_safe_write(fd, serialized_alias_groups,
-                serialized_alias_groups_len, count_bytes, &count_bytes, "serialized_alias_groups", &async_tokens);
+                serialized_alias_groups_len, count_bytes, &count_bytes,
+                "serialized_alias_groups", &async_tokens);
 
     /*
      * Done! Wait for async I/Os and finally write the heap offset info in the
@@ -2633,12 +2635,11 @@ void *checkpoint_func(void *data) {
     free(thread_hierarchy_serialized);
     free(serialized_times);
     free(serialized_traces);
-    free(serialized_contains);
+    free(contains_serialized);
     free(serialized_alias_groups);
     delete to_checkpoint;
     delete ctx->stack_trackers;
     delete ctx->checkpoint_entry_times;
-    delete contains;
     delete serialized_heap_vars;
     free(ctx);
 

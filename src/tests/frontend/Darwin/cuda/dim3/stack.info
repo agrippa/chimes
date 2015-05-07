@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cuda/dim3.cu main|blocks|0 " %struct.dim3 = type { i32, i32, i32 } " 96 0 1 dim3 
-/tmp/chimes-frontend/nvcc/dim3.cudafe1.stub.c __sti____cudaRegisterAll_12_dim3_cpp1_ii_main|callback_fp|0 " void (i8**)* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cuda/dim3.cu main|blocks|0 " %struct.dim3 = type { i32, i32, i32 } " 96 0 1 dim3 0 1
+/tmp/chimes-frontend/nvcc/dim3.cudafe1.stub.c __sti____cudaRegisterAll_12_dim3_cpp1_ii_main|callback_fp|0 " void (i8**)* " 64 1 0  1

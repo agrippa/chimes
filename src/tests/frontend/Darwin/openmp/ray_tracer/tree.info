@@ -1,0 +1,13 @@
+_Z4initP7_sphereddddddd __assert_rtn
+_Z9get_coordddddd
+_Z4modvddd sqrt
+_Z4moveP7_sphereddd
+_Z7move_toP7_sphereddd
+_Z5rot_xP7_sphered cos sin
+_Z5rot_yP7_sphered cos sin
+_Z19get_sphere_intersecdddddddddd sqrt
+_Z18get_cos_angle_v1v2dddddd _Z4modvddd
+_Z5usagePPc exit fprintf
+_Z19parse_three_doublesPcPdS0_S0_ __assert_rtn atof strchr
+_Z12parse_configiPPcP7_config _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc __assert_rtn atof atoi fprintf realloc strchr
+main _Z10checkpointv _Z12parse_configiPPcP7_config _Z18get_cos_angle_v1v2dddddd _Z19get_sphere_intersecdddddddddd _Z4modvddd _Z4moveP7_sphereddd _Z9get_coordddddd free malloc printf

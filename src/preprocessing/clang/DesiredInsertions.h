@@ -194,6 +194,11 @@ public:
         type_size_in_bits(set_type_size_in_bits), is_ptr(set_is_ptr),
         is_struct(set_is_struct) { }
 
+    void set_always_checkpoint(bool s) { always_checkpoint = s; }
+    void add_checkpoint_cause(std::string funcname) {
+        checkpoint_causes.insert(funcname);
+    }
+
     void set_struct_type_name(std::string s) { struct_type_name = s; }
     std::string get_struct_type_name() { return struct_type_name; }
 
@@ -219,6 +224,8 @@ private:
     bool is_struct;
     std::string struct_type_name;
     std::vector<std::string> ptr_fields;
+    bool always_checkpoint;
+    std::set<std::string> checkpoint_causes;
 };
 
 class StructField {

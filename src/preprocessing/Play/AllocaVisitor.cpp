@@ -4,6 +4,16 @@
 
 using namespace llvm;
 
+/*
+ * The goal of AllocaVisitor is to find all locations where the contents of a
+ * stack variable might be read or written. It collects all store and load
+ * locations for the Alloca instruction associated with a stack variable. If it
+ * finds any situations which suggest that it will not be possible to find all
+ * store/load locations (e.g. the address of a stack variable passed to a
+ * function, storing the address of a stack variable in another variable) then
+ * we mark the current stack variable unsolvable and exit.
+ */
+
 void AllocaVisitor::driver() {
 
     for (std::vector<AllocaInst *>::iterator i = toprocess->begin(),
@@ -121,8 +131,14 @@ bool AllocaVisitor::visitGEP(GEPOperator *getele, Value *prev) {
 
 bool AllocaVisitor::visitStore(StoreInst *store, Value *prev) {
     if (store->getPointerOperand() == prev) {
+        // We are storing a value into this stack variable
         stores[curr].insert(store);
     } else {
+        /*
+         * If we are storing the address of this stack variable into something
+         * else, there is no way to figure out where else it might be modified
+         * so it is unsolvable.
+         */
         assert(store->getValueOperand() == prev);
         unsolvable[curr] = true;
     }
@@ -131,6 +147,7 @@ bool AllocaVisitor::visitStore(StoreInst *store, Value *prev) {
 
 bool AllocaVisitor::visitLoad(LoadInst *load, Value *prev) {
     assert(load->getPointerOperand() == prev);
+    // We are loading the value of a stack variable.
     loads[curr].insert(load);
     return (false);
 }
@@ -141,6 +158,11 @@ bool AllocaVisitor::visitReturn(ReturnInst *ret, Value *prev) {
 
 bool AllocaVisitor::visitCall(CallInst *call, Value *prev) {
 
+    /*
+     * If the address of this stack variable is passed into a function call, we
+     * have no way to figure out if it is loaded, stored, etc so we deem it
+     * unsolvable.
+     */
     for (unsigned i = 0; i < call->getNumArgOperands(); i++) {
         Value *arg = call->getArgOperand(i);
         if (arg == prev) {

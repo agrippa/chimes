@@ -34,6 +34,7 @@ void *serialize_containers(map<size_t, size_t> *contains,
 void deserialize_containers(void *buffer, size_t len,
         map<size_t, size_t> *contains) {
     unsigned char *iter = (unsigned char *)buffer;
+    contains->clear();
 
     unsigned n_contains_mappings;
     memcpy(&n_contains_mappings, iter, sizeof(n_contains_mappings));
