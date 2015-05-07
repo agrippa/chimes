@@ -1,0 +1,16 @@
+_Z9getNRanksv
+_Z9getMyRankv
+_Z9printRankv
+_Z16timestampBarrierPKc _Z15barrierParallelv _Z9printRankv ctime fflush fprintf time
+_Z15barrierParallelv
+_Z12initParallelPiPPPc
+_Z15destroyParallelv
+_Z19sendReceiveParallelPviiS_ii __assert_rtn
+_Z14addIntParallelPiS_i
+_Z15addRealParallelPdS_i
+_Z17addDoubleParallelPdS_i
+_Z14maxIntParallelPiS_i
+_Z21minRankDoubleParallelP16RankReduceDataStS0_i
+_Z21maxRankDoubleParallelP16RankReduceDataStS0_i
+_Z13bcastParallelPvii
+_Z12builtWithMpiv

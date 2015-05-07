@@ -46,6 +46,7 @@ void *serialize_alias_groups(set<vector<size_t> *> *aliased_groups_ptr,
 void deserialize_alias_groups(void *buffer, size_t len,
         map<size_t, vector<size_t> *> *aliased_groups) {
     unsigned char *iter = (unsigned char *)buffer;
+    aliased_groups->clear();
 
     unsigned n_aliased_groups;
     memcpy(&n_aliased_groups, iter, sizeof(n_aliased_groups));

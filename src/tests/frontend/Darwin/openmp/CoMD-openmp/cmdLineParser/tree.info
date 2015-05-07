@@ -1,0 +1,9 @@
+_Z6addArgPKccicPviS0_ _ZL10lastOptionP10MyOptionSt _ZL13myOptionAllocPKccicPviS0_
+_ZL13myOptionAllocPKccicPviS0_ _ZL9dupStringPKc calloc strlen
+_ZL10lastOptionP10MyOptionSt
+_Z8freeArgsv _ZL12myOptionFreeP10MyOptionSt
+_ZL12myOptionFreeP10MyOptionSt free
+_Z9printArgsv fprintf sprintf
+_Z11processArgsiPPc _ZL10findOptionP10MyOptionSth calloc fprintf free getopt_long sscanf strcat strncpy
+_ZL10findOptionP10MyOptionSth
+_ZL9dupStringPKc calloc strcpy strlen

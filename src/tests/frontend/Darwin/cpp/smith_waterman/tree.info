@@ -1,0 +1,6 @@
+_Z12char_mappingc
+_Z12print_matrixPPiii fprintf
+_Z28clear_whitespaces_do_mappingPal _Z12char_mappingc
+_Z9read_fileP7__sFILEPm _Z28clear_whitespaces_do_mappingPal fread fseek ftell malloc
+_Z9find_diagii
+main _fopen _Z10checkpointv _Z9find_diagii _Z9read_fileP7__sFILEPm atoi exit fprintf free gettimeofday malloc

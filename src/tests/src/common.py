@@ -29,7 +29,7 @@ INFO_FILES = {'call.info': -1, 'diag.info': -1, 'exit.info': -1,
               'func.info': -1, 'globals.info': -1, 'heap.info': -1,
               'lines.info': 0, 'module.info': -1, 'reachable.info': -1,
               'stack.info': 0, 'struct.info': -1, 'omp.info': -1,
-              'constants.info': -1}
+              'constants.info': -1, 'tree.info': -1}
 
 class TestConfig(object):
     """

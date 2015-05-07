@@ -496,19 +496,43 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
             size_t struct_type_name_end = line.find(' ');
             std::string struct_type_name = line.substr(0, struct_type_name_end);
             alloc->set_struct_type_name(struct_type_name);
+            line = line.substr(struct_type_name_end + 1);
 
-            if (struct_type_name_end != line.length() - 1) {
-                line = line.substr(struct_type_name_end + 1);
+            size_t nfieldnames_end = line.find(' ');
+            std::string nfieldnames_str = line.substr(0, nfieldnames_end);
+            int nfieldnames = atoi(nfieldnames_str.c_str());
 
-                while(1) {
+            if (nfieldnames_end != std::string::npos) {
+                line = line.substr(nfieldnames_end + 1);
+
+                for (int f = 0; f < nfieldnames; f++) {
                     size_t end = line.find(' ');
                     std::string fieldname = line.substr(0, end);
-
                     alloc->add_ptr_field(fieldname);
-
-                    if (end == line.length() - 1) break;
                     line = line.substr(end + 1);
                 }
+            } else {
+                assert(nfieldnames == 0);
+            }
+
+            size_t always_checkpoint_end = line.find(' ');
+            std::string always_checkpoint_str = line.substr(0, always_checkpoint_end);
+            int always_checkpoint = atoi(always_checkpoint_str.c_str());
+            alloc->set_always_checkpoint(always_checkpoint > 0);
+
+            if (!always_checkpoint) {
+                line = line.substr(always_checkpoint_end + 1);
+
+                while (1) {
+                    size_t end = line.find(' ');
+                    std::string cause = line.substr(0, end);
+                    alloc->add_checkpoint_cause(cause);
+
+                    if (end == std::string::npos) break;
+                    line = line.substr(end + 1);
+                }
+            } else {
+                assert(always_checkpoint_end == std::string::npos);
             }
         }
 

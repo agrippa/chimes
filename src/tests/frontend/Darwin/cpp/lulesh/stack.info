@@ -1,301 +1,301 @@
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|edgeElems|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|edgeNodes|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|tx|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|ty|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|tz|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|nidx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|zidx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|meshElems|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|plane|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|row|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|col|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|plane|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|row|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|col|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|localNode|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|x_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|elemToNode|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|lnode|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|gnode|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|volume|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|idx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|2 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|planeInc|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|rowInc|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|3 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|4 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|5 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|6 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|7 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|8 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|9 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|planeInc|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|rowInc|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|2 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|start|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|end|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|elapsed_time|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|ElemId|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|MaxAbsDiff|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|TotalAbsDiff|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|MaxRelDiff|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|3 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|k|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|AbsDiff|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|RelDiff|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc LagrangeNodal|delt|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc LagrangeNodal|u_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|length|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|qqc2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|indx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|dtf|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dthydro|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|hydro_elem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dvovmax|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|length|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|indx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dtdvov|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|k|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|vdov|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|vdovthird|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|qstop|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|numElem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|idx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc ApplyMaterialPropertiesForElems|vnewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|numElem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|v_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|tmpV|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|vnewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|length|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|ss4o3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|rho0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|e_old|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|delvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|p_old|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|q_old|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|compression|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|compHalfStep|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|qq|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|ql|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|work|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|p_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|e_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|q_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|bvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|pbvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|zidx|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|i|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|zidx|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|i|2 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|zidx|2 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|p_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|e_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|bvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|pbvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|p_old|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_old|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|compression|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|compHalfStep|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|vnewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|work|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|delvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|pmin|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|p_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|e_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|emin|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|qq|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ql|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|rho0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|eosvmax|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|length|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|sixth|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|pHalfStep|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|vhalf|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ssc|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|2 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_tilde|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ssc|1 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|3 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ssc|2 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|vnewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|rho0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|enewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|pnewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|pbvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|bvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|nz|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|iz|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|ssTmp|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|p_new|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|bvc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|e_old|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|vnewc|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|pmin|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|p_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|eosvmax|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|length|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|numElem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|ptiny|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|ax|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|ay|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|az|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxv|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyv|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzv|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|elemToNode|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n0|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n1|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n3|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n4|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n5|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n6|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n7|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x4|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x5|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x6|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x7|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y4|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y5|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y6|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y7|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z4|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z5|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z6|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z7|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv4|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv5|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv6|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv7|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv4|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv5|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv6|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv7|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv0|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv3|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv4|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv5|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv6|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv7|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|vol|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|norm|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxj|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyj|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzj|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxi|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyi|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzi|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxk|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyk|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzk|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|numElem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|dt|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|B|0 " [3 x [8 x double]] " 1536 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|x_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|y_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|z_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|xd_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|yd_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|zd_local|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|detJ|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|k|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|volume|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|relativeVolume|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|elemToNode|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|lnode|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|gnode|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|lnode|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|gnode|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|dt2|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|j|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|dt|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|u_cut|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|numNode|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|xdtmp|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|ydtmp|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|zdtmp|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x1|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x8n|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|y8n|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|z8n|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|determ|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|x8n|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|y8n|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|z8n|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdx|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdy|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdz|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourg|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|numElem|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hgfx|0 " [8 x double] " 512 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|coefficient|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|gamma|0 " [4 x [8 x double]] " 2048 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|elemToNode|0 " i32* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i3|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|volinv|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|ss1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|mass1|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|volume13|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i1|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourmodx|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourmody|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourmodz|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n0si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n1si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n2si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n3si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n4si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n5si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n6si2|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n7si2|0 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|edgeElems|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|edgeNodes|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|tx|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|ty|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|tz|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|nidx|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|zidx|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|meshElems|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|plane|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|row|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|col|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|plane|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|row|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|col|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|localNode|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|x_local|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|elemToNode|0 " i32* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|lnode|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|gnode|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|volume|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|idx|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|2 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|planeInc|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|rowInc|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|3 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|4 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|5 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|6 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|7 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|8 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|9 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|planeInc|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|rowInc|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|2 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|start|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|end|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|elapsed_time|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|ElemId|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|MaxAbsDiff|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|TotalAbsDiff|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|MaxRelDiff|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|3 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|k|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|AbsDiff|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|RelDiff|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc LagrangeNodal|delt|0 " double " 64 0 0  0 _ZL17CalcForceForNodesv _ZL20CalcVelocityForNodesdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc LagrangeNodal|u_cut|0 " double " 64 0 0  0 _ZL17CalcForceForNodesv _ZL20CalcVelocityForNodesdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|length|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|qqc2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|i|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|indx|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcCourantConstraintForElems|dtf|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dthydro|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|hydro_elem|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dvovmax|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|length|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|i|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|indx|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dtdvov|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0  0 _ZL22CalcKinematicsForElemsid exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|k|0 " i32 " 32 0 0  0 exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|vdov|0 " double " 64 0 0  0 exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|vdovthird|0 " double " 64 0 0  0 exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|qstop|0 " double " 64 0 0  0 _ZL31CalcMonotonicQGradientsForElemsv exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|numElem|0 " i32 " 32 0 0  0 _ZL31CalcMonotonicQGradientsForElemsv exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|idx|0 " i32 " 32 0 0  0 exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|i|0 " i32 " 32 0 0  0 exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc ApplyMaterialPropertiesForElems|vnewc|0 " double* " 64 1 0  0 _ZL15EvalEOSForElemsPdi exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|numElem|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|v_cut|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|i|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|tmpV|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|vnewc|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|length|0 " i32 " 32 0 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|ss4o3|0 " double " 64 0 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|rho0|0 " double " 64 0 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|e_old|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|delvc|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|p_old|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|q_old|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|compression|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|compHalfStep|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|qq|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|ql|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|work|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|p_new|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|e_new|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|q_new|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|bvc|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|pbvc|0 " double* " 64 1 0  0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|i|0 " i32 " 32 0 0  0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|zidx|0 " i32 " 32 0 0  0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|i|1 " i32 " 32 0 0  0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|zidx|1 " i32 " 32 0 0  0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|i|2 " i32 " 32 0 0  0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc EvalEOSForElems|zidx|2 " i32 " 32 0 0  0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|p_new|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|e_new|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_new|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|bvc|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|pbvc|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|p_old|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_old|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|compression|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|compHalfStep|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|vnewc|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|work|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|delvc|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|pmin|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|p_cut|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|e_cut|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_cut|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|emin|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|qq|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ql|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|rho0|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|eosvmax|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|length|0 " i32 " 32 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|sixth|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|pHalfStep|0 " double* " 64 1 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|0 " i32 " 32 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|vhalf|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ssc|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|1 " i32 " 32 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|2 " i32 " 32 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|q_tilde|0 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ssc|1 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|i|3 " i32 " 32 0 0  0 _Z4FABSd _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcEnergyForElems|ssc|2 " double " 64 0 0  0 _Z4FABSd _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|vnewc|0 " double* " 64 1 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|rho0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|enewc|0 " double* " 64 1 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|pnewc|0 " double* " 64 1 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|pbvc|0 " double* " 64 1 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|bvc|0 " double* " 64 1 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|nz|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|i|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|iz|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcSoundSpeedForElems|ssTmp|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|p_new|0 " double* " 64 1 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|bvc|0 " double* " 64 1 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|e_old|0 " double* " 64 1 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|vnewc|0 " double* " 64 1 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|pmin|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|p_cut|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|eosvmax|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|length|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcPressureForElems|i|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|numElem|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|ptiny|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|i|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|ax|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|ay|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|az|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxv|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyv|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzv|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|elemToNode|0 " i32* " 64 1 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n0|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n1|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n2|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n3|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n4|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n5|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n6|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|n7|0 " i32 " 32 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x1|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x3|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x4|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x5|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x6|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|x7|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y1|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y3|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y4|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y5|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y6|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|y7|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z1|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z3|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z4|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z5|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z6|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|z7|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv1|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv3|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv4|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv5|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv6|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|xv7|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv1|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv3|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv4|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv5|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv6|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|yv7|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv0|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv1|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv2|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv3|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv4|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv5|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv6|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|zv7|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|vol|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|norm|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxj|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyj|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzj|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxi|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyi|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzi|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dxk|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dyk|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzk|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|numElem|0 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|dt|0 " double " 64 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|B|0 " [3 x [8 x double]] " 1536 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|x_local|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|y_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|z_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|xd_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|yd_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|zd_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|detJ|0 " double " 64 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|k|0 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|volume|0 " double " 64 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|relativeVolume|0 " double " 64 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|elemToNode|0 " i32* " 64 1 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|lnode|0 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|gnode|0 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|lnode|1 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|gnode|1 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|dt2|0 " double " 64 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|j|0 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0  0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|dt|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|u_cut|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|numNode|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|i|0 " i32 " 32 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|xdtmp|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|ydtmp|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|zdtmp|0 " double " 64 0 0  0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x1|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|y8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|z8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|determ|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|x8n|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|y8n|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|z8n|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdx|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdy|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdz|0 " double* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourg|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|numElem|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hgfx|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|coefficient|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|gamma|0 " [4 x [8 x double]] " 2048 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|elemToNode|0 " i32* " 64 1 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i3|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|volinv|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|ss1|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|mass1|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|volume13|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i1|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourmodx|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourmody|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourmodz|0 " double " 64 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n0si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n1si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n2si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n3si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n4si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n5si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n6si2|0 " i32 " 32 0 0  0 _Z4CBRTd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|n7si2|0 " i32 " 32 0 0  0 _Z4CBRTd

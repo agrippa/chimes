@@ -5,7 +5,7 @@ set -e
 script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 
-INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info"
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info"
 ENABLE_OMP=1
 KEEP=0
 PROFILE=0

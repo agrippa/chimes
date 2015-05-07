@@ -1,58 +1,58 @@
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|self|0 " %struct._sphere* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|angle|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|y|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|self|0 " %struct._sphere* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|angle|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|x|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v1x|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v1y|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v1z|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v2x|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v2y|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v2z|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|a|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|def|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|a|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|b|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|c|0 " double* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|first_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|second_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|argc|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|argv|0 " i8** " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|conf|0 " %struct._config* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|c|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|sphere_def|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|first_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|second_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|third_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|fourth_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|fifth_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|sixth_comma|0 " i8* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|conf|0 " %struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 } " 960 0 1 _config spheres 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|screen|0 " %struct._rgb* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|f_max|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|t|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|i|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|x|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|y|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|t|1 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|vx|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|vy|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|vz|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|mod_v|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|bShadow|0 " i8 " 8 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|spherehit|0 " %struct._sphere* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|k|0 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|sphn|0 " %struct._sphere* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|taux|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|color|0 " %struct._rgb = type { double, double, double } " 192 0 1 _rgb 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|itx|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|ity|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|itz|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|tauxla|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|k|1 " i32 " 32 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|sphnb|0 " %struct._sphere* " 64 1 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|tauxlb|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|cost|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|fact|0 " double " 64 0 0 
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|i|1 " i32 " 32 0 0 
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|self|0 " %struct._sphere* " 64 1 0  0 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|angle|0 " double " 64 0 0  0 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|y|0 " double " 64 0 0  0 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|self|0 " %struct._sphere* " 64 1 0  0 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|angle|0 " double " 64 0 0  0 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|x|0 " double " 64 0 0  0 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v1x|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v1y|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v1z|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v2x|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v2y|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|v2z|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_cos_angle_v1v2|a|0 " double " 64 0 0  0 _Z4modvddd
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|def|0 " i8* " 64 1 0  0 atof strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|a|0 " double* " 64 1 0  0 atof strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|b|0 " double* " 64 1 0  0 atof strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|c|0 " double* " 64 1 0  0 atof strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|first_comma|0 " i8* " 64 1 0  0 atof strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_three_doubles|second_comma|0 " i8* " 64 1 0  0 atof
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|argc|0 " i32 " 32 0 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|argv|0 " i8** " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|conf|0 " %struct._config* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|c|0 " i32 " 32 0 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|sphere_def|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|first_comma|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|second_comma|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|third_comma|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|fourth_comma|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|fifth_comma|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c parse_config|sixth_comma|0 " i8* " 64 1 0  0 _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc atof atoi strchr
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|conf|0 " %struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 } " 960 0 1 _config 1 spheres 1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|screen|0 " %struct._rgb* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|f_max|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|t|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|i|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|x|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|y|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|t|1 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|vx|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|vy|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|vz|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|mod_v|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|bShadow|0 " i8 " 8 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|spherehit|0 " %struct._sphere* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|k|0 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|sphn|0 " %struct._sphere* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|taux|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|color|0 " %struct._rgb = type { double, double, double } " 192 0 1 _rgb 0 1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|itx|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|ity|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|itz|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|tauxla|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|k|1 " i32 " 32 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|sphnb|0 " %struct._sphere* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|tauxlb|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|cost|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|fact|0 " double " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c main|i|1 " i32 " 32 0 0  1

@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/struct.cpp main|test|0 " %struct._foo = type { i32, i32*, i32** } " 192 0 1 _foo b c 
-/Users/jmg3/num-debug/src/examples/cpp/struct.cpp main|test2|0 " %struct._foo* " 64 1 0 
+/Users/jmg3/num-debug/src/examples/cpp/struct.cpp main|test|0 " %struct._foo = type { i32, i32*, i32** } " 192 0 1 _foo 2 b c 1
+/Users/jmg3/num-debug/src/examples/cpp/struct.cpp main|test2|0 " %struct._foo* " 64 1 0  1
