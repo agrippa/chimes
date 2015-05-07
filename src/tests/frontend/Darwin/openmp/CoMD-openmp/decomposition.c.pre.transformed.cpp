@@ -29,8 +29,8 @@ extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
 extern int get_next_call();
 extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
         unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
-        ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -1650,7 +1650,7 @@ int processorNum(Domain* domain, int dix, int diy, int diz)
 
 
 static int module_init() {
-    init_module(12059379678030502345UL, 5, 1, 12059379678030502345UL + 245UL, 12059379678030502345UL + 326UL, 12059379678030502345UL + 244UL, 12059379678030502345UL + 326UL, 12059379678030502345UL + 5UL, 12059379678030502345UL + 34UL, 12059379678030502345UL + 4UL, 12059379678030502345UL + 230UL, 12059379678030502345UL + 240UL, 12059379678030502345UL + 326UL, "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent));
+    init_module(12059379678030502345UL, 5, 2, 5, 1, 12059379678030502345UL + 245UL, 12059379678030502345UL + 326UL, 12059379678030502345UL + 244UL, 12059379678030502345UL + 326UL, 12059379678030502345UL + 5UL, 12059379678030502345UL + 34UL, 12059379678030502345UL + 4UL, 12059379678030502345UL + 230UL, 12059379678030502345UL + 240UL, 12059379678030502345UL + 326UL, "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "_Z17initDecompositioniiiPd", 4, "_Z9getMyRankv", "_Z9getNRanksv", "__assert_rtn", "malloc", "_Z12processorNumP8DomainStiii", 0, "initDecomposition|xproc|0", 2, "_Z9getNRanksv", "_Z9getMyRankv", "initDecomposition|yproc|0", 2, "_Z9getNRanksv", "_Z9getMyRankv", "initDecomposition|zproc|0", 2, "_Z9getNRanksv", "_Z9getMyRankv", "initDecomposition|globalExtent|0", 2, "_Z9getNRanksv", "_Z9getMyRankv", "initDecomposition|dd|0", 1, "_Z9getMyRankv");
     return 0;
 }
 

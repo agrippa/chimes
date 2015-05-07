@@ -9,8 +9,8 @@ extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
 extern int get_next_call();
 extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
         unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
-        ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,

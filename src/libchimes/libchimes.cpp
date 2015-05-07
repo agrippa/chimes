@@ -294,6 +294,21 @@ static size_t regions_executed = 0;
 static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*
+ * A mapping from function name to functions called by that function. If a
+ * function calls any functions which are unresolvable at compile-time (e.g.
+ * through a function pointer) it will not be included in this list because the
+ * mapping cannot be made complete.
+ */
+static map<string, set<string> > call_tree;
+
+/*
+ * A mapping from unique variable names to the functions called which mean they
+ * must be checkpointed (i.e. functions which may or may not create a
+ * checkpoint, we don't know).
+ */
+static map<string, set<string> > var_checkpoint_causes;
+
+/*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
  * to prevent redundant checkpointing of in-memory state that hasn't changed
  * since the last checkpoint. Currently, we use a high-throughput hashing
@@ -982,7 +997,8 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     }
 }
 
-void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
+void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1056,6 +1072,55 @@ void init_module(size_t module_id, int n_contains_mappings, int nstructs, ...) {
 #ifdef VERBOSE
         fprintf(stderr, "\n");
 #endif
+    }
+
+    // Parse call tree from arguments.
+    for (int i = 0; i < nfunctions; i++) {
+        char *func_name = va_arg(vl, char *);
+        unsigned n_callees = va_arg(vl, unsigned);
+
+        string func_name_str(func_name);
+
+        if (call_tree.find(func_name_str) != call_tree.end()) {
+            assert(n_callees == call_tree[func_name_str].size());
+
+            for (unsigned c = 0; c < n_callees; c++) {
+                char *callee_name = va_arg(vl, char *);
+                string callee_name_str(callee_name);
+                assert(call_tree[func_name_str].find(callee_name_str) !=
+                        call_tree[func_name_str].end());
+            }
+        } else {
+            call_tree.insert(pair<string, set<string> >(func_name_str,
+                        set<string>()));
+
+            for (unsigned c = 0; c < n_callees; c++) {
+                char *callee_name = va_arg(vl, char *);
+                string callee_name_str(callee_name);
+
+                call_tree[func_name_str].insert(callee_name_str);
+            }
+        }
+    }
+
+    // Parse checkpoint causes from the arguments
+    for (int i = 0; i < nvars; i++) {
+        char *var_name = va_arg(vl, char *);
+        unsigned n_causes = va_arg(vl, unsigned);
+
+        string var_name_str(var_name);
+
+        assert(var_checkpoint_causes.find(var_name_str) ==
+                var_checkpoint_causes.end());
+        var_checkpoint_causes.insert(pair<string, set<string> >(var_name_str,
+                    set<string>()));
+
+        for (unsigned c = 0; c < n_causes; c++) {
+            char *cause = va_arg(vl, char *);
+            string cause_str(cause);
+
+            var_checkpoint_causes[var_name_str].insert(cause_str);
+        }
     }
 
     va_end(vl);

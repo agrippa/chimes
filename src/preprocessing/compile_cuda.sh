@@ -225,7 +225,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} ${TRANSFORMED_FILE} ${FINAL_FILE} \
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
-        ${INFO_FILE_PREFIX}.constants.info
+        ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
+        ${INFO_FILE_PREFIX}.tree.info
 
     echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \

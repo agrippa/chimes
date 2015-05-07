@@ -35,8 +35,8 @@ extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
 extern int get_next_call();
 extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
         unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
-        ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -1531,7 +1531,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(7569268050213511355UL, 5, 0, 7569268050213511355UL + 1UL, 7569268050213511355UL + 21UL, 7569268050213511355UL + 27UL, 7569268050213511355UL + 73UL, 7569268050213511355UL + 2UL, 7569268050213511355UL + 22UL, 7569268050213511355UL + 28UL, 7569268050213511355UL + 36UL, 7569268050213511355UL + 29UL, 7569268050213511355UL + 60UL);
+    init_module(7569268050213511355UL, 5, 2, 0, 0, 7569268050213511355UL + 1UL, 7569268050213511355UL + 21UL, 7569268050213511355UL + 27UL, 7569268050213511355UL + 73UL, 7569268050213511355UL + 2UL, 7569268050213511355UL + 22UL, 7569268050213511355UL + 28UL, 7569268050213511355UL + 36UL, 7569268050213511355UL + 29UL, 7569268050213511355UL + 60UL, "_Z3barPiS_", 0, "main", 4, "_Z10checkpointv", "_Z3barPiS_", "__assert_rtn", "malloc");
     return 0;
 }
 

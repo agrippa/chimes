@@ -44,6 +44,21 @@ class StructFields(object):
         self.fields.append(StructField(field_name, field_type))
 
 
+class StackVar(object):
+    def __init__(self, name):
+        self.name = name
+        self.causes = []
+
+    def add_cause(self, cause):
+        self.causes.append(cause)
+
+
+class Callees(object):
+    def __init__(self, name, callees):
+        self.name = name
+        self.callees = callees
+
+
 def transfer(input_file, output_file):
     output_file.write(input_file.read())
 
@@ -164,6 +179,43 @@ def get_structs(structs_filename):
     return structs
 
 
+def get_stack_vars(stack_var_filename):
+    stack_vars = []
+    fp = open(stack_var_filename, 'r')
+
+    for line in fp:
+        tokens = line.split()
+
+        # If this is a stack var that we don't want to always checkpoint
+        if tokens[len(tokens) - 1] != '1':
+            varname = tokens[1]
+            var = StackVar(varname)
+
+            index = len(tokens) - 1
+            while tokens[index] != '0':
+                var.add_cause(tokens[index])
+                index = index - 1
+
+            stack_vars.append(var)
+
+    fp.close()
+
+    return stack_vars
+
+
+def get_call_tree(call_tree_filename):
+    call_tree = []
+    fp = open(call_tree_filename, 'r')
+
+    for line in fp:
+        tokens = line.split()
+        call_tree.append(Callees(tokens[0], tokens[1:]))
+
+    fp.close()
+
+    return call_tree
+
+
 def write_global(g, func_name, var_label):
     output_file.write('    ' + func_name + '("' + var_label + '|' + g.name + '", "' +
                       g.full_type + '", (void *)(&' + g.name + '), ' +
@@ -183,10 +235,10 @@ def write_constant(c, module_id_str):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 8:
+    if len(sys.argv) != 10:
         print('usage: python module_init.py input-file output-file ' +
               'module-id-file reachable-file globals-file structs-file ' +
-              'constants-file')
+              'constants-file stack-var-file call-tree-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
@@ -196,12 +248,16 @@ if __name__ == '__main__':
     globals_filename = sys.argv[5]
     structs_filename = sys.argv[6]
     constants_filename = sys.argv[7]
+    stack_var_filename = sys.argv[8]
+    call_tree_filename = sys.argv[9]
 
     module_id_str = get_module_id_str(module_id_filename)
     reachable = get_reachable_mappings(reachable_filename)
     glbls = get_globals(globals_filename)
     constants = get_constants(constants_filename)
     structs = get_structs(structs_filename)
+    stack_vars = get_stack_vars(stack_var_filename)
+    call_tree = get_call_tree(call_tree_filename)
 
     input_file = open(input_filename, 'r')
     output_file = open(output_filename, 'w')
@@ -209,10 +265,13 @@ if __name__ == '__main__':
     transfer(input_file, output_file)
     output_file.write('\n\nstatic int module_init() {\n')
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
-                      str(len(reachable)) + ', ' + str(len(structs)))
+                      str(len(reachable)) + ', ' + str(len(call_tree)) + \
+                      ', ' + str(len(stack_vars)) + ', ' + str(len(structs)))
+
     for k in reachable.keys():
         output_file.write(', ' + module_id_str + 'UL + ' + k + 'UL, ' +
                           module_id_str + 'UL + ' + reachable[k] + 'UL')
+
     for s in structs:
         output_file.write(', "' + s.name + '", ' + str(len(s.fields)))
         for field in s.fields:
@@ -221,6 +280,17 @@ if __name__ == '__main__':
                 output_file.write(', (int)offsetof(' + s.name + ', ' + field.name + ')')
             else:
                 output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field.name + ')')
+
+    for c in call_tree:
+        output_file.write(', "' + c.name + '", ' + str(len(c.callees)))
+        for callee in c.callees:
+            output_file.write(', "' + callee + '"')
+
+    for var in stack_vars:
+        output_file.write(', "' + var.name + '", ' + str(len(var.causes)))
+        for cause in var.causes:
+            output_file.write(', "' + cause + '"')
+
     output_file.write(');\n')
 
     for g in glbls:

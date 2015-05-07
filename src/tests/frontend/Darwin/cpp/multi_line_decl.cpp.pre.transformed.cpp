@@ -35,8 +35,8 @@ extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
 extern int get_next_call();
 extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
         unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings, int nstructs,
-        ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
 extern void register_stack_var(const char *mangled_name,
         const char *full_type, void *ptr, size_t size, int is_ptr,
@@ -1502,7 +1502,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(1300474033434903672UL, 2, 0, 1300474033434903672UL + 19UL, 1300474033434903672UL + 28UL, 1300474033434903672UL + 17UL, 1300474033434903672UL + 42UL);
+    init_module(1300474033434903672UL, 2, 2, 0, 0, 1300474033434903672UL + 19UL, 1300474033434903672UL + 28UL, 1300474033434903672UL + 17UL, 1300474033434903672UL + 42UL, "_Z3fooii", 0, "main", 3, "_Z10checkpointv", "_Z3fooii", "malloc");
     return 0;
 }
 
