@@ -1185,6 +1185,9 @@ void Play::initKnownFunctions() {
     doesFunctionCreateCheckpoint["sprintf"] = DOES_NOT;
     doesFunctionCreateCheckpoint["fflush"] = DOES_NOT;
     doesFunctionCreateCheckpoint["fscanf"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["fgets"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["sscanf"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["fopen"] = DOES_NOT;
 
     doesFunctionCreateCheckpoint["malloc"] = DOES_NOT;
     doesFunctionCreateCheckpoint["free"] = DOES_NOT;
@@ -1195,12 +1198,20 @@ void Play::initKnownFunctions() {
     doesFunctionCreateCheckpoint["floor"] = DOES_NOT;
     doesFunctionCreateCheckpoint["sqrt"] = DOES_NOT;
     doesFunctionCreateCheckpoint["ceil"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["qsort"] = DOES_NOT;
 
     doesFunctionCreateCheckpoint["__assert_rtn"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["__assert_fail"] = DOES_NOT;
 
     doesFunctionCreateCheckpoint["strcpy"] = DOES_NOT;
     doesFunctionCreateCheckpoint["strcat"] = DOES_NOT;
     doesFunctionCreateCheckpoint["strlen"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["strcmp"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["exit"] = DOES_NOT;
+
+    doesFunctionCreateCheckpoint["gettimeofday"] = DOES_NOT;
+    doesFunctionCreateCheckpoint["localtime"] = DOES_NOT;
 }
 
 bool Play::isKnownFunction(Function *F) {
@@ -1717,8 +1728,22 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
         assert(result->find(curr) == result->end());
 
         if (visitor.is_unsolvable(curr)) {
+            /*
+             * If the visitor deemed this variable unsolvable, that means that
+             * it is either a pointer-typed stack variable which is passed into
+             * a child function (and so we cannot know how it is stored to or
+             * loaded from) or a pointer-typed variable whose value is stored
+             * into another variable (causing a similar problem).
+             *
+             * While this is true, because it is a variable allocated on the
+             * stack we can assert that if the parent function cannot cause the
+             * creation of a checkpoint, then it is possible to skip registering
+             * this variable.
+             */
+            std::set<std::string> just_parent;
+            just_parent.insert(F->getName().str());
             result->insert(std::pair<AllocaInst *, std::set<std::string> >(curr,
-                        std::set<std::string>()));
+                        just_parent));
         } else {
             BasicBlock *entry = &F->getEntryBlock();
             s_visited.clear();

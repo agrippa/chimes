@@ -124,7 +124,12 @@ FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appen
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-[[ $PROFILE == 0 ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
+if [[ $PROFILE == 0 ]]; then
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
+else
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    GXX_FLAGS="${GXX_FLAGS} -pg"
+fi
 
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
             "stddef.h" 2>/dev/null | head -n 1))
@@ -255,10 +260,9 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
-            -L${CHIMES_HOME}/src/libchimes -lchimes ${OBJ_FILE_STR} \
-            -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
-            ${LINKER_FLAGS}
+    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${OBJ_FILE_STR} \
+        -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
+        ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
