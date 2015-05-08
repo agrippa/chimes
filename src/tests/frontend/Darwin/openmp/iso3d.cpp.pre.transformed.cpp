@@ -8,6 +8,9 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "iso3d.cpp.pre.transformed.cpp"
+static int ____must_checkpoint_main_conf_0 = 2;
+static int ____must_checkpoint_main_elapsed_s_0 = 2;
+static int ____must_checkpoint_main_point_rate_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

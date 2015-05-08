@@ -8,6 +8,38 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "smith_waterman_omp.cpp.pre.transformed.cpp"
+static int ____must_checkpoint_read_file_file_0 = 2;
+static int ____must_checkpoint_read_file_n_chars_0 = 2;
+static int ____must_checkpoint_read_file_file_size_0 = 2;
+static int ____must_checkpoint_read_file_file_buffer_0 = 2;
+static int ____must_checkpoint_task_func_i_0 = 2;
+static int ____must_checkpoint_task_func_j_0 = 2;
+static int ____must_checkpoint_task_func_next_0 = 2;
+static int ____must_checkpoint_task_func_ii_0 = 2;
+static int ____must_checkpoint_task_func_jj_0 = 2;
+static int ____must_checkpoint_task_func_threadId_0 = 2;
+static int ____must_checkpoint_task_func_local_matrix_0 = 2;
+static int ____must_checkpoint_task_func_diag_index_0 = 2;
+static int ____must_checkpoint_task_func_diag_0 = 2;
+static int ____must_checkpoint_task_func_tile_edge_y_0 = 2;
+static int ____must_checkpoint_task_func_tile_edge_x_0 = 2;
+static int ____must_checkpoint_task_func_char_from_1_0 = 2;
+static int ____must_checkpoint_task_func_char_from_2_0 = 2;
+static int ____must_checkpoint_task_func_diag_score_0 = 2;
+static int ____must_checkpoint_task_func_left_score_0 = 2;
+static int ____must_checkpoint_task_func_top_score_0 = 2;
+static int ____must_checkpoint_task_func_bigger_of_left_top_0 = 2;
+static int ____must_checkpoint_task_func_success_0 = 2;
+static int ____must_checkpoint_task_func_row_0 = 2;
+static int ____must_checkpoint_task_func_col_0 = 2;
+static int ____must_checkpoint_task_func_success_1 = 2;
+static int ____must_checkpoint_task_func_row_1 = 2;
+static int ____must_checkpoint_task_func_col_1 = 2;
+static int ____must_checkpoint_task_func_success_2 = 2;
+static int ____must_checkpoint_task_func_row_2 = 2;
+static int ____must_checkpoint_task_func_col_2 = 2;
+static int ____must_checkpoint_main_n_char_in_file_1_0 = 2;
+static int ____must_checkpoint_main_n_char_in_file_2_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

@@ -12,6 +12,31 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "linkCells.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_getNeighborBoxes_boxes_0 = 2;
+static int ____must_checkpoint_getNeighborBoxes_nbrBoxes_0 = 2;
+static int ____must_checkpoint_getNeighborBoxes_ix_0 = 2;
+static int ____must_checkpoint_getNeighborBoxes_count_0 = 2;
+static int ____must_checkpoint_getNeighborBoxes_i_0 = 2;
+static int ____must_checkpoint_getNeighborBoxes_j_0 = 2;
+static int ____must_checkpoint_getNeighborBoxes_k_0 = 2;
+static int ____must_checkpoint_putAtomInBox_boxes_0 = 2;
+static int ____must_checkpoint_putAtomInBox_atoms_0 = 2;
+static int ____must_checkpoint_putAtomInBox_gid_0 = 2;
+static int ____must_checkpoint_putAtomInBox_iType_0 = 2;
+static int ____must_checkpoint_putAtomInBox_x_0 = 2;
+static int ____must_checkpoint_putAtomInBox_y_0 = 2;
+static int ____must_checkpoint_putAtomInBox_z_0 = 2;
+static int ____must_checkpoint_putAtomInBox_px_0 = 2;
+static int ____must_checkpoint_putAtomInBox_py_0 = 2;
+static int ____must_checkpoint_putAtomInBox_pz_0 = 2;
+static int ____must_checkpoint_putAtomInBox_xyz_0 = 2;
+static int ____must_checkpoint_updateLinkCells_boxes_0 = 2;
+static int ____must_checkpoint_updateLinkCells_atoms_0 = 2;
+static int ____must_checkpoint_updateLinkCells_iBox_0 = 2;
+static int ____must_checkpoint_updateLinkCells_iOff_0 = 2;
+static int ____must_checkpoint_updateLinkCells_ii_0 = 2;
+static int ____must_checkpoint_updateLinkCells_jBox_0 = 2;
+static int ____must_checkpoint_maxOccupancy_localMax_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

@@ -8,6 +8,14 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "timestep.c.pre.transformed.cpp"
+static int ____must_checkpoint_timestep_s_0 = 2;
+static int ____must_checkpoint_timestep_nSteps_0 = 2;
+static int ____must_checkpoint_timestep_dt_0 = 2;
+static int ____must_checkpoint_timestep_ii_0 = 2;
+static int ____must_checkpoint_redistributeAtoms_sim_0 = 2;
+static int ____must_checkpoint_redistributeAtoms_ii_0 = 2;
+static int ____must_checkpoint_kineticEnergy_s_0 = 2;
+static int ____must_checkpoint_kineticEnergy_eLocal_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

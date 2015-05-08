@@ -12,6 +12,28 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "performanceTimers.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_profileStart_handle_0 = 2;
+static int ____must_checkpoint_getTime_ptime_0 = 2;
+static int ____must_checkpoint_profileStop_handle_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_nGlobalAtoms_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_printRate_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_tick_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_loopTime_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_ii_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_totalTime_0 = 2;
+static int ____must_checkpoint_printPerformanceResults_ii_1 = 2;
+static int ____must_checkpoint_timerStats_sendBuf_0 = 2;
+static int ____must_checkpoint_timerStats_ii_0 = 2;
+static int ____must_checkpoint_timerStats_reduceSendBuf_0 = 2;
+static int ____must_checkpoint_timerStats_ii_1 = 2;
+static int ____must_checkpoint_timerStats_ii_2 = 2;
+static int ____must_checkpoint_timerStats_ii_3 = 2;
+static int ____must_checkpoint_timerStats_ii_4 = 2;
+static int ____must_checkpoint_timerStats_temp_0 = 2;
+static int ____must_checkpoint_timerStats_ii_5 = 2;
+static int ____must_checkpoint_printPerformanceResultsYaml_file_0 = 2;
+static int ____must_checkpoint_printPerformanceResultsYaml_tick_0 = 2;
+static int ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

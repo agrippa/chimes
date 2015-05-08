@@ -12,6 +12,22 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "cmdLineParser.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_myOptionAlloc_longOption_0 = 2;
+static int ____must_checkpoint_myOptionAlloc_shortOption_0 = 2;
+static int ____must_checkpoint_myOptionAlloc_has_arg_0 = 2;
+static int ____must_checkpoint_myOptionAlloc_type_0 = 2;
+static int ____must_checkpoint_myOptionAlloc_dataPtr_0 = 2;
+static int ____must_checkpoint_myOptionAlloc_dataSize_0 = 2;
+static int ____must_checkpoint_myOptionAlloc_o_0 = 2;
+static int ____must_checkpoint_printArgs_s_0 = 2;
+static int ____must_checkpoint_processArgs_argc_0 = 2;
+static int ____must_checkpoint_processArgs_argv_0 = 2;
+static int ____must_checkpoint_processArgs_o_0 = 2;
+static int ____must_checkpoint_processArgs_opts_0 = 2;
+static int ____must_checkpoint_processArgs_sArgs_0 = 2;
+static int ____must_checkpoint_processArgs_c_0 = 2;
+static int ____must_checkpoint_processArgs_option_index_0 = 2;
+static int ____must_checkpoint_processArgs_i_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

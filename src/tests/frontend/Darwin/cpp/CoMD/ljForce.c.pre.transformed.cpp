@@ -12,6 +12,32 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "ljForce.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_ljForce_s_0 = 2;
+static int ____must_checkpoint_ljForce_epsilon_0 = 2;
+static int ____must_checkpoint_ljForce_rCut2_0 = 2;
+static int ____must_checkpoint_ljForce_ePot_0 = 2;
+static int ____must_checkpoint_ljForce_s6_0 = 2;
+static int ____must_checkpoint_ljForce_eShift_0 = 2;
+static int ____must_checkpoint_ljForce_nbrBoxes_0 = 2;
+static int ____must_checkpoint_ljForce_iBox_0 = 2;
+static int ____must_checkpoint_ljForce_nIBox_0 = 2;
+static int ____must_checkpoint_ljForce_nNbrBoxes_0 = 2;
+static int ____must_checkpoint_ljForce_jTmp_0 = 2;
+static int ____must_checkpoint_ljForce_jBox_0 = 2;
+static int ____must_checkpoint_ljForce_nJBox_0 = 2;
+static int ____must_checkpoint_ljForce_iOff_0 = 2;
+static int ____must_checkpoint_ljForce_ii_0 = 2;
+static int ____must_checkpoint_ljForce_iId_0 = 2;
+static int ____must_checkpoint_ljForce_jOff_0 = 2;
+static int ____must_checkpoint_ljForce_ij_0 = 2;
+static int ____must_checkpoint_ljForce_dr_0 = 2;
+static int ____must_checkpoint_ljForce_jId_0 = 2;
+static int ____must_checkpoint_ljForce_r2_0 = 2;
+static int ____must_checkpoint_ljForce_m_0 = 2;
+static int ____must_checkpoint_ljForce_r6_0 = 2;
+static int ____must_checkpoint_ljForce_eLocal_0 = 2;
+static int ____must_checkpoint_ljForce_fr_0 = 2;
+static int ____must_checkpoint_ljForce_m_1 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

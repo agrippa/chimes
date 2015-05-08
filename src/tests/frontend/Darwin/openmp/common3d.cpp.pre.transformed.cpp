@@ -8,6 +8,10 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "common3d.cpp.pre.transformed.cpp"
+static int ____must_checkpoint_setup_config_conf_0 = 2;
+static int ____must_checkpoint_setup_config_argc_0 = 2;
+static int ____must_checkpoint_setup_config_argv_0 = 2;
+static int ____must_checkpoint_setup_config_c_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

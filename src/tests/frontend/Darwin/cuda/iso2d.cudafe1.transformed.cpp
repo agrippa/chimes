@@ -12,6 +12,31 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "iso2d.cudafe1.transformed.cpp" 2
+static int ____must_checkpoint_main_conf_0 = 2;
+static int ____must_checkpoint_main_d_curr_0 = 2;
+static int ____must_checkpoint_main_d_next_0 = 2;
+static int ____must_checkpoint_main_d_vsq_0 = 2;
+static int ____must_checkpoint_main_d_c_coeff_0 = 2;
+static int ____must_checkpoint_main_block_0 = 2;
+static int ____must_checkpoint_main_grid_0 = 2;
+static int ____must_checkpoint_main_error_9 = 2;
+static int ____must_checkpoint_main_compute_s_0 = 2;
+static int ____must_checkpoint_main_error_10 = 2;
+static int ____must_checkpoint_main_total_s_0 = 2;
+static int ____must_checkpoint_main_point_rate_0 = 2;
+static int ____must_checkpoint_main_i_0 = 2;
+static int ____must_checkpoint_main_error_11 = 2;
+static int ____must_checkpoint_main_error_12 = 2;
+static int ____must_checkpoint_main_error_13 = 2;
+static int ____must_checkpoint_main_error_14 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par0_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par1_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par2_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par3_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par4_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par5_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par6_0 = 2;
+static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par7_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}

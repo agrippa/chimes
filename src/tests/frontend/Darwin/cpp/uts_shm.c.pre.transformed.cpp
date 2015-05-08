@@ -13,6 +13,53 @@ typedef long unsigned int size_t;
 # 4 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "uts_shm.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_ss_init_s_0 = 2;
+static int ____must_checkpoint_ss_init_nelts_0 = 2;
+static int ____must_checkpoint_ss_push_s_0 = 2;
+static int ____must_checkpoint_ss_push_c_0 = 2;
+static int ____must_checkpoint_ss_top_s_0 = 2;
+static int ____must_checkpoint_ss_top_r_0 = 2;
+static int ____must_checkpoint_ss_pop_s_0 = 2;
+static int ____must_checkpoint_ss_pop_r_0 = 2;
+static int ____must_checkpoint_ss_topPosn_s_0 = 2;
+static int ____must_checkpoint_ss_steal_s_0 = 2;
+static int ____must_checkpoint_ss_steal_victim_0 = 2;
+static int ____must_checkpoint_ss_steal_k_0 = 2;
+static int ____must_checkpoint_ss_steal_victimLocal_0 = 2;
+static int ____must_checkpoint_ss_steal_victimShared_0 = 2;
+static int ____must_checkpoint_ss_steal_victimWorkAvail_0 = 2;
+static int ____must_checkpoint_ss_steal_ok_0 = 2;
+static int ____must_checkpoint_ss_steal_victimStackBase_0 = 2;
+static int ____must_checkpoint_ss_steal_victimSharedStart_0 = 2;
+static int ____must_checkpoint_ss_steal_i_0 = 2;
+static int ____must_checkpoint_ss_steal_r_0 = 2;
+static int ____must_checkpoint_ss_initState_s_0 = 2;
+static int ____must_checkpoint_ss_setState_s_0 = 2;
+static int ____must_checkpoint_ss_setState_state_0 = 2;
+static int ____must_checkpoint_genChildren_parent_0 = 2;
+static int ____must_checkpoint_genChildren_child_0 = 2;
+static int ____must_checkpoint_genChildren_ss_0 = 2;
+static int ____must_checkpoint_genChildren_parentHeight_0 = 2;
+static int ____must_checkpoint_genChildren_numChildren_0 = 2;
+static int ____must_checkpoint_genChildren_childType_0 = 2;
+static int ____must_checkpoint_genChildren_i_0 = 2;
+static int ____must_checkpoint_genChildren_j_0 = 2;
+static int ____must_checkpoint_releaseNodes_ss_0 = 2;
+static int ____must_checkpoint_parTreeSearch_child_0 = 2;
+static int ____must_checkpoint_showStats_i_0 = 2;
+static int ____must_checkpoint_showStats_trel_0 = 2;
+static int ____must_checkpoint_showStats_tacq_0 = 2;
+static int ____must_checkpoint_showStats_tsteal_0 = 2;
+static int ____must_checkpoint_showStats_tfail_0 = 2;
+static int ____must_checkpoint_showStats_mdepth_0 = 2;
+static int ____must_checkpoint_showStats_twork_0 = 2;
+static int ____must_checkpoint_showStats_tsearch_0 = 2;
+static int ____must_checkpoint_showStats_tidle_0 = 2;
+static int ____must_checkpoint_showStats_tovh_0 = 2;
+static int ____must_checkpoint_showStats_tcbovh_0 = 2;
+static int ____must_checkpoint_main_root_0 = 2;
+static int ____must_checkpoint_main_t2_0 = 2;
+static int ____must_checkpoint_main_et_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

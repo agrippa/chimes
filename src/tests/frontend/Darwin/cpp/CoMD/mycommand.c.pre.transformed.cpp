@@ -12,6 +12,11 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "mycommand.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_parseCommandLine_argc_0 = 2;
+static int ____must_checkpoint_parseCommandLine_argv_0 = 2;
+static int ____must_checkpoint_parseCommandLine_help_0 = 2;
+static int ____must_checkpoint_printCmdYaml_file_0 = 2;
+static int ____must_checkpoint_printCmdYaml_cmd_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

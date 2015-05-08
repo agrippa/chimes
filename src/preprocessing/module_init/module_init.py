@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import sys
+from common import StackVar, transfer, get_stack_vars
 
 
 class GlobalVar(object):
@@ -44,23 +45,10 @@ class StructFields(object):
         self.fields.append(StructField(field_name, field_type))
 
 
-class StackVar(object):
-    def __init__(self, name):
-        self.name = name
-        self.causes = []
-
-    def add_cause(self, cause):
-        self.causes.append(cause)
-
-
 class Callees(object):
     def __init__(self, name, callees):
         self.name = name
         self.callees = callees
-
-
-def transfer(input_file, output_file):
-    output_file.write(input_file.read())
 
 
 def parse_64bit_int(s):
@@ -179,30 +167,6 @@ def get_structs(structs_filename):
     return structs
 
 
-def get_stack_vars(stack_var_filename):
-    stack_vars = []
-    fp = open(stack_var_filename, 'r')
-
-    for line in fp:
-        tokens = line.split()
-
-        # If this is a stack var that we don't want to always checkpoint
-        if tokens[len(tokens) - 1] != '1':
-            varname = tokens[1]
-            var = StackVar(varname)
-
-            index = len(tokens) - 1
-            while tokens[index] != '0':
-                var.add_cause(tokens[index])
-                index = index - 1
-
-            stack_vars.append(var)
-
-    fp.close()
-
-    return stack_vars
-
-
 def get_call_tree(call_tree_filename):
     call_tree = []
     fp = open(call_tree_filename, 'r')
@@ -263,6 +227,7 @@ if __name__ == '__main__':
     output_file = open(output_filename, 'w')
 
     transfer(input_file, output_file)
+
     output_file.write('\n\nstatic int module_init() {\n')
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
                       str(len(reachable)) + ', ' + str(len(call_tree)) + \

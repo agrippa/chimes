@@ -12,6 +12,14 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "smith_waterman.cpp.pre.transformed.cpp" 2
+static int ____must_checkpoint_read_file_file_0 = 2;
+static int ____must_checkpoint_read_file_n_chars_0 = 2;
+static int ____must_checkpoint_read_file_file_size_0 = 2;
+static int ____must_checkpoint_read_file_file_buffer_0 = 2;
+static int ____must_checkpoint_main_n_char_in_file_1_0 = 2;
+static int ____must_checkpoint_main_n_char_in_file_2_0 = 2;
+static int ____must_checkpoint_main_begin_0 = 2;
+static int ____must_checkpoint_main_end_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
