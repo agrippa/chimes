@@ -29,7 +29,7 @@ using namespace llvm;
 
 namespace {
 
-    enum CALLS_CHECKPOINT { DOES = 0, DOES_NOT = 1, MAY = 2 };
+    enum CALLS_CHECKPOINT { DOES_NOT = 0, MAY = 1, DOES = 2 };
 
     typedef struct _SimpleLoc {
         std::string *filename;
@@ -1260,20 +1260,10 @@ CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
 
                     Function *child = call->getCalledFunction();
 
-                    if (child == NULL) {
-                        result = MAY;
-                    } else if (isCheckpoint(child)) {
-                        result = DOES;
-                    } else if (child->empty()) {
-                        result = MAY;
-                    } else {
-                        CALLS_CHECKPOINT child_result =
-                            mayCreateCheckpointHelper(child, visited);
-                        if (child_result == DOES) {
-                            result = DOES;
-                        } else if (child_result == MAY) {
-                            result = MAY;
-                        }
+                    CALLS_CHECKPOINT child_result =
+                        mayCreateCheckpointHelper(child, visited);
+                    if (child_result > result) {
+                        result = child_result;
                     }
                 }
             }
@@ -1606,9 +1596,6 @@ bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
                         causesCheckpoint->insert(
                                 call->getCalledFunction() == NULL ? "" :
                                 call->getCalledFunction()->getName().str());
-                        fprintf(stderr, "May create checkpoint because of function %s\n",
-                                (call->getCalledFunction() == NULL ? "null" :
-                                 call->getCalledFunction()->getName().str().c_str()));
                     } else if (doesCheckpoint == DOES) {
                         *definitelyCheckpoints = true;
                         return (true);
@@ -2285,6 +2272,16 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
 
         if (!contains_unknown_functions) {
             fprintf(fp, "%s", F->getName().str().c_str());
+
+            CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(F);
+            if (doesCheckpoint == DOES) {
+                fprintf(fp, " DOES");
+            } else if (doesCheckpoint == DOES_NOT) {
+                fprintf(fp, " DOES_NOT");
+            } else {
+                fprintf(fp, " MAY");
+            }
+
             for (std::set<std::string>::iterator i = called.begin(),
                     e = called.end(); i != e; i++) {
                 std::string curr = *i;
