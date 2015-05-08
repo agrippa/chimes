@@ -1,24 +1,24 @@
 /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp seconds|tp|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 0 _Z7secondsv
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|source|0 " float* " 64 1 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|nsteps|0 " i32 " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|dt|0 " float " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|freq|0 " float " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|shift|0 " float " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|i|0 " i32 " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|time|0 " float " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|pi_freq_t|0 " float " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|sqr_pi_freq_t|0 " float " 32 0 0  0 exp
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|out|0 " %struct._source* " 64 1 0  0 atof atoi strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|x_str|0 " i8* " 64 1 0  0 atof atoi strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|first_comma|0 " i8* " 64 1 0  0 atof atoi strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|y_str|0 " i8* " 64 1 0  0 atof atoi strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|second_comma|0 " i8* " 64 1 0  0 atof atoi strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|freq_str|0 " i8* " 64 1 0  0 atof atoi strchr
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|third_comma|0 " i8* " 64 1 0  0 atof atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|time_str|0 " i8* " 64 1 0  0 atof atoi
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|srcs|0 " %struct._source* " 64 1 0  0 _Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|nsrcs|0 " i32 " 32 0 0  0 _Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|nsteps|0 " i32 " 32 0 0  0 _Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|dt|0 " float " 32 0 0  0 _Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|src_samples|0 " float** " 64 1 0  0 _Z14ricker_waveletPfiff
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|i|0 " i32 " 32 0 0  0 _Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|source|0 " float* " 64 1 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|nsteps|0 " i32 " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|dt|0 " float " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|freq|0 " float " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|shift|0 " float " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|i|0 " i32 " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|time|0 " float " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|pi_freq_t|0 " float " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp ricker_wavelet|sqr_pi_freq_t|0 " float " 32 0 0 0 exp
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|out|0 " %struct._source* " 64 1 0 0 atof atoi strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|x_str|0 " i8* " 64 1 0 0 atof atoi strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|first_comma|0 " i8* " 64 1 0 0 atof atoi strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|y_str|0 " i8* " 64 1 0 0 atof atoi strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|second_comma|0 " i8* " 64 1 0 0 atof atoi strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|freq_str|0 " i8* " 64 1 0 0 atof atoi strchr
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|third_comma|0 " i8* " 64 1 0 0 atof atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp parse_source|time_str|0 " i8* " 64 1 0 0 atof atoi
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|srcs|0 " %struct._source* " 64 1 0 0 _Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|nsrcs|0 " i32 " 32 0 0 0 _Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|nsteps|0 " i32 " 32 0 0 0 _Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|dt|0 " float " 32 0 0 0 _Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|src_samples|0 " float** " 64 1 0 0 _Z14ricker_waveletPfiff
+/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common.cpp sample_sources|i|0 " i32 " 32 0 0 0 _Z14ricker_waveletPfiff

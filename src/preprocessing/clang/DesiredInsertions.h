@@ -194,6 +194,7 @@ public:
         type_size_in_bits(set_type_size_in_bits), is_ptr(set_is_ptr),
         is_struct(set_is_struct) { }
 
+    bool get_always_checkpoint() { return always_checkpoint; }
     void set_always_checkpoint(bool s) { always_checkpoint = s; }
     void add_checkpoint_cause(std::string funcname) {
         checkpoint_causes.insert(funcname);

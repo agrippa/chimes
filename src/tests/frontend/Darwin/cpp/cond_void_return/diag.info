@@ -17,9 +17,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5  call_lbl_4: calling((void*)&bar, 4, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 194  call_lbl_6: calling((void*)&checkpoint, 6, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12  register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12  register_stack_var("main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 6  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 12  register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 12  register_stack_var("main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 12  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 129  if (____chimes_replaying) { goto lbl_0; } 

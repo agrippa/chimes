@@ -20,6 +20,6 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cp
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 9  call_lbl_5: calling((void*)&foo, 5, 0UL, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 130  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 10  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 20  register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 20  register_stack_var("main|inside|0", (int *)0x0, "i32", (void *)(&inside), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 20  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 6  if (____chimes_replaying) { goto lbl_0; } 

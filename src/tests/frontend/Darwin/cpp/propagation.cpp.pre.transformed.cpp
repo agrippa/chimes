@@ -38,7 +38,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1471,7 +1471,7 @@ extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(16469201489461360461UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
+ lbl_0: int *A; register_stack_var("main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  A[0] = 3;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"

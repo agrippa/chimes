@@ -38,7 +38,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1510,9 +1510,9 @@ void bar(int *A, int *B) {new_stack((void *)(&bar), 2, 0, (size_t)(7569268050213
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); if (____chimes_replaying) { goto lbl_0; }
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- lbl_0: int *A; register_stack_var("main|A|0", "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
+ lbl_0: int *A; register_stack_var("main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- lbl_1: int *B; register_stack_var("main|B|0", "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
+ lbl_1: int *B; register_stack_var("main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  call_lbl_4: calling((void*)&bar, 4, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); bar(A, B);

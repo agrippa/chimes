@@ -32,7 +32,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1805,7 +1805,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
     { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_0; }
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-          lbl_0: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } inside = (6) ;
+          lbl_0: int inside; register_stack_var("main|inside|0", (int *)0x0, "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } inside = (6) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
         alias_group_changed(7, (size_t)(17008665004289634904UL), (size_t)(17008665004289634905UL), (size_t)(17008665004289634906UL), (size_t)(17008665004289634907UL), (size_t)(17008665004289634908UL), (size_t)(17008665004289634909UL), (size_t)(17008665004289634910UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"

@@ -40,7 +40,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -965,9 +965,9 @@ static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 double timestep(SimFlat* s, int nSteps, real_t dt)
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-{new_stack((void *)(&timestep), 3, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", "double", (void *)(&dt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&timestep), 3, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", &____must_checkpoint_timestep_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", &____must_checkpoint_timestep_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", &____must_checkpoint_timestep_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   { lbl_0: int ii; register_stack_var("timestep|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } for ( ii = (0) ; ii<nSteps; ++ii)
+   { lbl_0: int ii; register_stack_var("timestep|ii|0", &____must_checkpoint_timestep_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } for ( ii = (0) ; ii<nSteps; ++ii)
 # 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    {
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -1096,9 +1096,9 @@ alias_group_changed(9, (size_t)(7181207812802620502UL), (size_t)(718120781280262
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void kineticEnergy(SimFlat* s)
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-{new_stack((void *)(&kineticEnergy), 1, 1, (size_t)(7181207812802620891UL), "kineticEnergy|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&kineticEnergy), 1, 1, (size_t)(7181207812802620891UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-    lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+    lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
     real_t kenergy; kenergy = (0.) ;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -1156,7 +1156,7 @@ alias_group_changed(1, (size_t)(7181207812802620891UL)); rm_stack(false, 0UL); }
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 void redistributeAtoms(SimFlat* sim)
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-{new_stack((void *)(&redistributeAtoms), 1, 1, (size_t)(7181207812802620673UL), "redistributeAtoms|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+{new_stack((void *)(&redistributeAtoms), 1, 1, (size_t)(7181207812802620673UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    alias_group_changed(1, (size_t)(7181207812802620659UL)); call_lbl_2: calling((void*)&updateLinkCells, 2, 0UL, 2, (size_t)(7181207812802620675UL), (size_t)(7181207812802620675UL)); updateLinkCells(sim->boxes, sim->atoms);
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"

@@ -42,7 +42,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -2497,9 +2497,9 @@ void default_config(config *conf) {new_stack((void *)(&default_config), 1, 0, (s
 alias_group_changed(2, (size_t)(17753382427056418691UL), (size_t)(17753382427056418731UL)); rm_stack(false, 0UL); }
 # 72 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 73 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setup_config), 3, 3, (size_t)(17753382427056418861UL), (size_t)(0UL), (size_t)(17753382427056418863UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setup_config), 3, 3, (size_t)(17753382427056418861UL), (size_t)(0UL), (size_t)(17753382427056418863UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- lbl_0: int c; register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } default: { chimes_error(); } } } ;
+ lbl_0: int c; register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } default: { chimes_error(); } } } ;
 # 75 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  opterr = 0;
 # 76 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"

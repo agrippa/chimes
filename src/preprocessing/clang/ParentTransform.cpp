@@ -9,9 +9,16 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     std::string actual_name = alloc->get_mangled_varname().substr(
             first_pipe + 1);;
     actual_name = actual_name.substr(0, actual_name.find('|'));
+    std::string cond_varname(alloc->get_mangled_varname());
+    std::replace(cond_varname.begin(), cond_varname.end(), '|', '_');
 
     std::stringstream ss;
     ss << "\"" << alloc->get_mangled_varname() << "\", ";
+    if (alloc->get_always_checkpoint()) {
+        ss << "(int *)0x0, ";
+    } else {
+        ss << "&____must_checkpoint_" << cond_varname << ", ";
+    }
     ss << "\"" << alloc->get_full_type() << "\", ";
     if ((alloc->get_full_type())[0] == '[') {
         // Stack array

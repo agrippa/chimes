@@ -62,19 +62,19 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/h
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 616 7 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 616 31 , 18379826249005485930UL
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 194 4 alias_group_changed(14, (size_t)(18379826249005484378UL), (size_t)(18379826249005484379UL), (size_t)(18379826249005484380UL), (size_t)(18379826249005484381UL), (size_t)(18379826249005484382UL), (size_t)(18379826249005484383UL), (size_t)(18379826249005484384UL), (size_t)(18379826249005484385UL), (size_t)(18379826249005484386UL), (size_t)(18379826249005484387UL), (size_t)(18379826249005484388UL), (size_t)(18379826249005484463UL), (size_t)(18379826249005484565UL), (size_t)(18379826249005486931UL)); rm_stack(true, 18379826249005484463UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 1 new_stack((void *)(&initAtomHaloExchange), 2, 2, (size_t)(18379826249005484718UL), (size_t)(18379826249005484479UL), "initAtomHaloExchange|domain|0", "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0, "initAtomHaloExchange|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 1 new_stack((void *)(&initAtomHaloExchange), 2, 2, (size_t)(18379826249005484718UL), (size_t)(18379826249005484479UL), "initAtomHaloExchange|domain|0", &____must_checkpoint_initAtomHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0, "initAtomHaloExchange|boxes|0", &____must_checkpoint_initAtomHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 243 4 alias_group_changed(9, (size_t)(18379826249005485427UL), (size_t)(18379826249005485428UL), (size_t)(18379826249005485429UL), (size_t)(18379826249005485430UL), (size_t)(18379826249005485431UL), (size_t)(18379826249005485432UL), (size_t)(18379826249005485433UL), (size_t)(18379826249005485513UL), (size_t)(18379826249005486934UL)); rm_stack(true, 18379826249005485513UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 213 1 new_stack((void *)(&initForceHaloExchange), 2, 1, (size_t)(18379826249005485634UL), (size_t)(18379826249005485520UL), "initForceHaloExchange|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 213 1 new_stack((void *)(&initForceHaloExchange), 2, 1, (size_t)(18379826249005485634UL), (size_t)(18379826249005485520UL), "initForceHaloExchange|boxes|0", &____must_checkpoint_initForceHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 247 1 new_stack((void *)(&destroyHaloExchange), 1, 0, (size_t)(18379826249005486357UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 251 1 alias_group_changed(2, (size_t)(18379826249005486342UL), (size_t)(18379826249005486357UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 254 1 new_stack((void *)(&haloExchange), 2, 2, (size_t)(18379826249005486382UL), (size_t)(18379826249005486383UL), "haloExchange|haloExchangeData|0", "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 254 1 new_stack((void *)(&haloExchange), 2, 2, (size_t)(18379826249005486382UL), (size_t)(18379826249005486383UL), "haloExchange|haloExchangeData|0", &____must_checkpoint_haloExchange_haloExchangeData_0, "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", &____must_checkpoint_haloExchange_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 257 1 alias_group_changed(3, (size_t)(18379826249005486359UL), (size_t)(18379826249005486360UL), (size_t)(18379826249005486361UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 273 4 alias_group_changed(1, (size_t)(18379826249005484727UL)); rm_stack(true, 18379826249005484727UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 261 1 new_stack((void *)(&initHaloExchange), 1, 1, (size_t)(18379826249005484771UL), "initHaloExchange|domain|0", "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 285 1 new_stack((void *)(&exchangeData), 3, 2, (size_t)(18379826249005486490UL), (size_t)(18379826249005486515UL), (size_t)(0UL), "exchangeData|haloExchange|0", "%struct.HaloExchangeSt*", (void *)(&haloExchange), (size_t)8, 1, 0, 0, "exchangeData|data|0", "i8*", (void *)(&data), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 261 1 new_stack((void *)(&initHaloExchange), 1, 1, (size_t)(18379826249005484771UL), "initHaloExchange|domain|0", &____must_checkpoint_initHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 285 1 new_stack((void *)(&exchangeData), 3, 2, (size_t)(18379826249005486490UL), (size_t)(18379826249005486515UL), (size_t)(0UL), "exchangeData|haloExchange|0", (int *)0x0, "%struct.HaloExchangeSt*", (void *)(&haloExchange), (size_t)8, 1, 0, 0, "exchangeData|data|0", (int *)0x0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 313 1 rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 360 4 alias_group_changed(15, (size_t)(18379826249005485259UL), (size_t)(18379826249005485260UL), (size_t)(18379826249005485261UL), (size_t)(18379826249005485262UL), (size_t)(18379826249005485263UL), (size_t)(18379826249005485264UL), (size_t)(18379826249005485265UL), (size_t)(18379826249005485266UL), (size_t)(18379826249005485267UL), (size_t)(18379826249005485268UL), (size_t)(18379826249005485269UL), (size_t)(18379826249005485270UL), (size_t)(18379826249005485271UL), (size_t)(18379826249005485272UL), (size_t)(18379826249005485420UL)); rm_stack(true, 18379826249005485420UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 335 1 new_stack((void *)(&mkAtomCellList), 3, 2, (size_t)(18379826249005485422UL), (size_t)(0UL), (size_t)(0UL), "mkAtomCellList|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkAtomCellList|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 335 1 new_stack((void *)(&mkAtomCellList), 3, 2, (size_t)(18379826249005485422UL), (size_t)(0UL), (size_t)(0UL), "mkAtomCellList|boxes|0", &____must_checkpoint_mkAtomCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkAtomCellList|nCells|0", &____must_checkpoint_mkAtomCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 402 4 alias_group_changed(17, (size_t)(18379826249005484772UL), (size_t)(18379826249005484773UL), (size_t)(18379826249005484774UL), (size_t)(18379826249005484775UL), (size_t)(18379826249005484776UL), (size_t)(18379826249005484777UL), (size_t)(18379826249005484778UL), (size_t)(18379826249005484779UL), (size_t)(18379826249005484780UL), (size_t)(18379826249005484781UL), (size_t)(18379826249005484782UL), (size_t)(18379826249005484783UL), (size_t)(18379826249005484784UL), (size_t)(18379826249005484785UL), (size_t)(18379826249005484786UL), (size_t)(18379826249005484787UL), (size_t)(18379826249005485063UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 371 1 new_stack((void *)(&loadAtomsBuffer), 4, 0, (size_t)(18379826249005485060UL), (size_t)(18379826249005485061UL), (size_t)(0UL), (size_t)(18379826249005485063UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 416 1 new_stack((void *)(&unloadAtomsBuffer), 5, 0, (size_t)(18379826249005485215UL), (size_t)(18379826249005485216UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005485219UL)); 
@@ -82,9 +82,9 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchang
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 438 1 new_stack((void *)(&destroyAtomsExchange), 1, 0, (size_t)(18379826249005485257UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 446 1 alias_group_changed(3, (size_t)(18379826249005485220UL), (size_t)(18379826249005485221UL), (size_t)(18379826249005485222UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 497 4 alias_group_changed(18, (size_t)(18379826249005485948UL), (size_t)(18379826249005485949UL), (size_t)(18379826249005485950UL), (size_t)(18379826249005485951UL), (size_t)(18379826249005485952UL), (size_t)(18379826249005485953UL), (size_t)(18379826249005485954UL), (size_t)(18379826249005485955UL), (size_t)(18379826249005485956UL), (size_t)(18379826249005485957UL), (size_t)(18379826249005485958UL), (size_t)(18379826249005485959UL), (size_t)(18379826249005485960UL), (size_t)(18379826249005485961UL), (size_t)(18379826249005485962UL), (size_t)(18379826249005485963UL), (size_t)(18379826249005485964UL), (size_t)(18379826249005486140UL)); rm_stack(true, 18379826249005486140UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 456 1 new_stack((void *)(&mkForceSendCellList), 3, 2, (size_t)(18379826249005486142UL), (size_t)(0UL), (size_t)(0UL), "mkForceSendCellList|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceSendCellList|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 456 1 new_stack((void *)(&mkForceSendCellList), 3, 2, (size_t)(18379826249005486142UL), (size_t)(0UL), (size_t)(0UL), "mkForceSendCellList|boxes|0", &____must_checkpoint_mkForceSendCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceSendCellList|nCells|0", &____must_checkpoint_mkForceSendCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 549 4 alias_group_changed(18, (size_t)(18379826249005486145UL), (size_t)(18379826249005486146UL), (size_t)(18379826249005486147UL), (size_t)(18379826249005486148UL), (size_t)(18379826249005486149UL), (size_t)(18379826249005486150UL), (size_t)(18379826249005486151UL), (size_t)(18379826249005486152UL), (size_t)(18379826249005486153UL), (size_t)(18379826249005486154UL), (size_t)(18379826249005486155UL), (size_t)(18379826249005486156UL), (size_t)(18379826249005486157UL), (size_t)(18379826249005486158UL), (size_t)(18379826249005486159UL), (size_t)(18379826249005486160UL), (size_t)(18379826249005486161UL), (size_t)(18379826249005486337UL)); rm_stack(true, 18379826249005486337UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 508 1 new_stack((void *)(&mkForceRecvCellList), 3, 2, (size_t)(18379826249005486339UL), (size_t)(0UL), (size_t)(0UL), "mkForceRecvCellList|boxes|0", "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceRecvCellList|nCells|0", "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 508 1 new_stack((void *)(&mkForceRecvCellList), 3, 2, (size_t)(18379826249005486339UL), (size_t)(0UL), (size_t)(0UL), "mkForceRecvCellList|boxes|0", &____must_checkpoint_mkForceRecvCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceRecvCellList|nCells|0", &____must_checkpoint_mkForceRecvCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 577 4 alias_group_changed(15, (size_t)(18379826249005485636UL), (size_t)(18379826249005485637UL), (size_t)(18379826249005485638UL), (size_t)(18379826249005485639UL), (size_t)(18379826249005485640UL), (size_t)(18379826249005485641UL), (size_t)(18379826249005485642UL), (size_t)(18379826249005485643UL), (size_t)(18379826249005485644UL), (size_t)(18379826249005485645UL), (size_t)(18379826249005485646UL), (size_t)(18379826249005485647UL), (size_t)(18379826249005485648UL), (size_t)(18379826249005485649UL), (size_t)(18379826249005485758UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 559 1 new_stack((void *)(&loadForceBuffer), 4, 0, (size_t)(18379826249005485755UL), (size_t)(18379826249005485756UL), (size_t)(0UL), (size_t)(18379826249005485758UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 587 1 new_stack((void *)(&unloadForceBuffer), 5, 0, (size_t)(18379826249005485812UL), (size_t)(18379826249005485906UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005485909UL)); 
@@ -383,58 +383,58 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExc
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 116  call_lbl_2: calling((void*)&initHaloExchange, 2, 18379826249005484463UL, 1, (size_t)(18379826249005484718UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 377  call_lbl_5: calling((void*)&mkAtomCellList, 5, 18379826249005484565UL, 3, (size_t)(18379826249005484479UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 97  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 113  register_stack_var("initAtomHaloExchange|hh|0", "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 113  register_stack_var("initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 113  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 14  register_stack_var("initAtomHaloExchange|size0|0", "i32", (void *)(&size0), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 14  register_stack_var("initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 155 14  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 14  register_stack_var("initAtomHaloExchange|size1|0", "i32", (void *)(&size1), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 14  register_stack_var("initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 156 14  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 14  register_stack_var("initAtomHaloExchange|size2|0", "i32", (void *)(&size2), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 14  register_stack_var("initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 157 14  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 16  register_stack_var("initAtomHaloExchange|maxSize|0", "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 16  register_stack_var("initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 158 16  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 29  register_stack_var("initAtomHaloExchange|parms|0", "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 29  register_stack_var("initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 166 29  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 13  register_stack_var("initAtomHaloExchange|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 13  register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 304  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 407  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 116  call_lbl_2: calling((void*)&initHaloExchange, 2, 18379826249005485513UL, 1, (size_t)(18379826249005485634UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 238 337  call_lbl_5: calling((void*)&mkForceSendCellList, 5, 18379826249005485600UL, 3, (size_t)(18379826249005485520UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 239 65  call_lbl_7: calling((void*)&mkForceRecvCellList, 7, 18379826249005485600UL, 3, (size_t)(18379826249005485520UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 97  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 113  register_stack_var("initForceHaloExchange|hh|0", "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 113  register_stack_var("initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 113  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 14  register_stack_var("initForceHaloExchange|size0|0", "i32", (void *)(&size0), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 14  register_stack_var("initForceHaloExchange|size0|0", &____must_checkpoint_initForceHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 220 14  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 14  register_stack_var("initForceHaloExchange|size1|0", "i32", (void *)(&size1), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 14  register_stack_var("initForceHaloExchange|size1|0", &____must_checkpoint_initForceHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 221 14  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 14  register_stack_var("initForceHaloExchange|size2|0", "i32", (void *)(&size2), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 14  register_stack_var("initForceHaloExchange|size2|0", &____must_checkpoint_initForceHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 222 14  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 16  register_stack_var("initForceHaloExchange|maxSize|0", "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 16  register_stack_var("initForceHaloExchange|maxSize|0", &____must_checkpoint_initForceHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 223 16  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 30  register_stack_var("initForceHaloExchange|parms|0", "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 30  register_stack_var("initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 227 30  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 236 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 236 13  register_stack_var("initForceHaloExchange|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 236 13  register_stack_var("initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 236 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 213 213  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 213 265  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 247 83  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 255 185  call_lbl_2: calling((void*)&exchangeData, 2, 0UL, 3, (size_t)(18379826249005486382UL), (size_t)(18379826249005486383UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 255 7  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 255 16  register_stack_var("haloExchange|iAxis|0", "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 255 16  register_stack_var("haloExchange|iAxis|0", &____must_checkpoint_haloExchange_iAxis_0, "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 255 16  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 254 288  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 254 384  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 265 96  call_lbl_3: calling((void*)&processorNum, 3, 0UL, 4, (size_t)(18379826249005484771UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 266 62  call_lbl_5: calling((void*)&processorNum, 5, 0UL, 4, (size_t)(18379826249005484771UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 267 62  call_lbl_7: calling((void*)&processorNum, 7, 0UL, 4, (size_t)(18379826249005484771UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -442,9 +442,9 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchang
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 269 62  call_lbl_11: calling((void*)&processorNum, 11, 0UL, 4, (size_t)(18379826249005484771UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 270 62  call_lbl_13: calling((void*)&processorNum, 13, 0UL, 4, (size_t)(18379826249005484771UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 262 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 262 21  register_stack_var("initHaloExchange|hh|0", "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 262 21  register_stack_var("initHaloExchange|hh|0", &____must_checkpoint_initHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 262 21  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 261 169  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 261 217  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 294 348  call_lbl_6: calling((void*)haloExchange->loadBuffer, 6, 0UL, 4, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(18379826249005486486UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 295 76  call_lbl_8: calling((void*)haloExchange->loadBuffer, 8, 0UL, 4, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(18379826249005486496UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 302 135  call_lbl_10: calling((void*)&profileStart, 10, 0UL, 1, (size_t)(0UL)); 
@@ -454,184 +454,184 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchang
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 307 4  call_lbl_16: calling((void*)haloExchange->unloadBuffer, 16, 0UL, 5, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486499UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 308 4  call_lbl_17: calling((void*)haloExchange->unloadBuffer, 17, 0UL, 5, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486489UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 286 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 286 14  register_stack_var("exchangeData|faceM|0", "i32", (void *)(&faceM), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 286 14  register_stack_var("exchangeData|faceM|0", (int *)0x0, "i32", (void *)(&faceM), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 286 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 287 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 287 14  register_stack_var("exchangeData|faceP|0", "i32", (void *)(&faceP), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 287 14  register_stack_var("exchangeData|faceP|0", (int *)0x0, "i32", (void *)(&faceP), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 287 14  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 289 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 289 19  register_stack_var("exchangeData|sendBufM|0", "i8*", (void *)(&sendBufM), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 289 19  register_stack_var("exchangeData|sendBufM|0", (int *)0x0, "i8*", (void *)(&sendBufM), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 289 19  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 290 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 290 19  register_stack_var("exchangeData|sendBufP|0", "i8*", (void *)(&sendBufP), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 290 19  register_stack_var("exchangeData|sendBufP|0", (int *)0x0, "i8*", (void *)(&sendBufP), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 290 19  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 291 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 291 19  register_stack_var("exchangeData|recvBufM|0", "i8*", (void *)(&recvBufM), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 291 19  register_stack_var("exchangeData|recvBufM|0", (int *)0x0, "i8*", (void *)(&recvBufM), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 291 19  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 292 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 292 19  register_stack_var("exchangeData|recvBufP|0", "i8*", (void *)(&recvBufP), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 292 19  register_stack_var("exchangeData|recvBufP|0", (int *)0x0, "i8*", (void *)(&recvBufP), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 292 19  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 294 335  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 294 345  register_stack_var("exchangeData|nSendM|0", "i32", (void *)(&nSendM), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 294 345  register_stack_var("exchangeData|nSendM|0", (int *)0x0, "i32", (void *)(&nSendM), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 294 345  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 295 63  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 295 73  register_stack_var("exchangeData|nSendP|0", "i32", (void *)(&nSendP), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 295 73  register_stack_var("exchangeData|nSendP|0", (int *)0x0, "i32", (void *)(&nSendP), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 295 73  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 297 5  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 297 17  register_stack_var("exchangeData|nbrRankM|0", "i32", (void *)(&nbrRankM), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 297 17  register_stack_var("exchangeData|nbrRankM|0", (int *)0x0, "i32", (void *)(&nbrRankM), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 297 17  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 298 5  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 298 17  register_stack_var("exchangeData|nbrRankP|0", "i32", (void *)(&nbrRankP), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 298 17  register_stack_var("exchangeData|nbrRankP|0", (int *)0x0, "i32", (void *)(&nbrRankP), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 298 17  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 4  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 14  register_stack_var("exchangeData|nRecvM|0", "i32", (void *)(&nRecvM), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 14  register_stack_var("exchangeData|nRecvM|0", (int *)0x0, "i32", (void *)(&nRecvM), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 14  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 16  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 26  register_stack_var("exchangeData|nRecvP|0", "i32", (void *)(&nRecvP), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 26  register_stack_var("exchangeData|nRecvP|0", (int *)0x0, "i32", (void *)(&nRecvP), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 300 26  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 285 295  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 285 319  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 355 548  call_lbl_3: calling((void*)&getBoxFromTuple, 3, 0UL, 4, (size_t)(18379826249005485422UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 336 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 336 14  register_stack_var("mkAtomCellList|list|0", "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 336 14  register_stack_var("mkAtomCellList|list|0", &____must_checkpoint_mkAtomCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 336 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 338 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 338 13  register_stack_var("mkAtomCellList|xEnd|0", "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 338 13  register_stack_var("mkAtomCellList|xEnd|0", &____must_checkpoint_mkAtomCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 338 13  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 339 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 339 15  register_stack_var("mkAtomCellList|yBegin|0", "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 339 15  register_stack_var("mkAtomCellList|yBegin|0", &____must_checkpoint_mkAtomCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 339 15  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 340 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 340 13  register_stack_var("mkAtomCellList|yEnd|0", "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 340 13  register_stack_var("mkAtomCellList|yEnd|0", &____must_checkpoint_mkAtomCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 340 13  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 341 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 341 15  register_stack_var("mkAtomCellList|zBegin|0", "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 341 15  register_stack_var("mkAtomCellList|zBegin|0", &____must_checkpoint_mkAtomCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 341 15  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 342 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 342 13  register_stack_var("mkAtomCellList|zEnd|0", "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 342 13  register_stack_var("mkAtomCellList|zEnd|0", &____must_checkpoint_mkAtomCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 342 13  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 351 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 351 14  register_stack_var("mkAtomCellList|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 351 14  register_stack_var("mkAtomCellList|count|0", &____must_checkpoint_mkAtomCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 351 14  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 352 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 352 13  register_stack_var("mkAtomCellList|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 352 13  register_stack_var("mkAtomCellList|ix|0", &____must_checkpoint_mkAtomCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 352 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 353 10  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 353 16  register_stack_var("mkAtomCellList|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 353 16  register_stack_var("mkAtomCellList|iy|0", &____must_checkpoint_mkAtomCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 353 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 354 13  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 354 19  register_stack_var("mkAtomCellList|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 354 19  register_stack_var("mkAtomCellList|iz|0", &____must_checkpoint_mkAtomCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 354 19  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 335 268  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 335 359  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 371 162  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 433 644  call_lbl_4: calling((void*)&putAtomInBox, 4, 0UL, 10, (size_t)(18379826249005485196UL), (size_t)(18379826249005485196UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 418 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 418 15  register_stack_var("unloadAtomsBuffer|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 418 15  register_stack_var("unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 418 15  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 419 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 419 17  register_stack_var("unloadAtomsBuffer|buf|0", "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 419 17  register_stack_var("unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 419 17  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 420 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 420 13  register_stack_var("unloadAtomsBuffer|nBuf|0", "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 420 13  register_stack_var("unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 420 13  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 7  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 13  register_stack_var("unloadAtomsBuffer|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 13  register_stack_var("unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 423 13  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 8  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 15  register_stack_var("unloadAtomsBuffer|gid|0", "i32", (void *)(&gid), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 15  register_stack_var("unloadAtomsBuffer|gid|0", &____must_checkpoint_unloadAtomsBuffer_gid_0, "i32", (void *)(&gid), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 425 15  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 8  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 16  register_stack_var("unloadAtomsBuffer|type|0", "i32", (void *)(&type), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 16  register_stack_var("unloadAtomsBuffer|type|0", &____must_checkpoint_unloadAtomsBuffer_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 426 16  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 8  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 17  register_stack_var("unloadAtomsBuffer|rx|0", "double", (void *)(&rx), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 17  register_stack_var("unloadAtomsBuffer|rx|0", &____must_checkpoint_unloadAtomsBuffer_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 427 17  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 8  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 17  register_stack_var("unloadAtomsBuffer|ry|0", "double", (void *)(&ry), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 17  register_stack_var("unloadAtomsBuffer|ry|0", &____must_checkpoint_unloadAtomsBuffer_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 428 17  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 8  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 17  register_stack_var("unloadAtomsBuffer|rz|0", "double", (void *)(&rz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 17  register_stack_var("unloadAtomsBuffer|rz|0", &____must_checkpoint_unloadAtomsBuffer_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 429 17  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 8  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 17  register_stack_var("unloadAtomsBuffer|px|0", "double", (void *)(&px), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 17  register_stack_var("unloadAtomsBuffer|px|0", &____must_checkpoint_unloadAtomsBuffer_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 430 17  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 8  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 17  register_stack_var("unloadAtomsBuffer|py|0", "double", (void *)(&py), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 17  register_stack_var("unloadAtomsBuffer|py|0", &____must_checkpoint_unloadAtomsBuffer_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 431 17  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 8  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 17  register_stack_var("unloadAtomsBuffer|pz|0", "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 17  register_stack_var("unloadAtomsBuffer|pz|0", &____must_checkpoint_unloadAtomsBuffer_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 432 17  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 416 179  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 438 84  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 491 650  call_lbl_5: calling((void*)&getBoxFromTuple, 5, 0UL, 4, (size_t)(18379826249005486142UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 457 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 457 14  register_stack_var("mkForceSendCellList|list|0", "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 457 14  register_stack_var("mkForceSendCellList|list|0", &____must_checkpoint_mkForceSendCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 457 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 16  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 24  register_stack_var("mkForceSendCellList|xEnd|0", "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 24  register_stack_var("mkForceSendCellList|xEnd|0", &____must_checkpoint_mkForceSendCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 24  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 26  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 36  register_stack_var("mkForceSendCellList|yBegin|0", "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 36  register_stack_var("mkForceSendCellList|yBegin|0", &____must_checkpoint_mkForceSendCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 36  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 38  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 46  register_stack_var("mkForceSendCellList|yEnd|0", "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 46  register_stack_var("mkForceSendCellList|yEnd|0", &____must_checkpoint_mkForceSendCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 46  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 48  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 58  register_stack_var("mkForceSendCellList|zBegin|0", "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 58  register_stack_var("mkForceSendCellList|zBegin|0", &____must_checkpoint_mkForceSendCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 58  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 60  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 68  register_stack_var("mkForceSendCellList|zEnd|0", "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 68  register_stack_var("mkForceSendCellList|zEnd|0", &____must_checkpoint_mkForceSendCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 458 68  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 487 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 487 14  register_stack_var("mkForceSendCellList|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 487 14  register_stack_var("mkForceSendCellList|count|0", &____must_checkpoint_mkForceSendCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 487 14  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 488 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 488 13  register_stack_var("mkForceSendCellList|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 488 13  register_stack_var("mkForceSendCellList|ix|0", &____must_checkpoint_mkForceSendCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 488 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 489 10  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 489 16  register_stack_var("mkForceSendCellList|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 489 16  register_stack_var("mkForceSendCellList|iy|0", &____must_checkpoint_mkForceSendCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 489 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 490 13  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 490 19  register_stack_var("mkForceSendCellList|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 490 19  register_stack_var("mkForceSendCellList|iz|0", &____must_checkpoint_mkForceSendCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 490 19  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 456 283  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 456 384  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 543 650  call_lbl_5: calling((void*)&getBoxFromTuple, 5, 0UL, 4, (size_t)(18379826249005486339UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 509 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 509 14  register_stack_var("mkForceRecvCellList|list|0", "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 509 14  register_stack_var("mkForceRecvCellList|list|0", &____must_checkpoint_mkForceRecvCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 509 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 16  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 24  register_stack_var("mkForceRecvCellList|xEnd|0", "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 24  register_stack_var("mkForceRecvCellList|xEnd|0", &____must_checkpoint_mkForceRecvCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 24  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 26  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 36  register_stack_var("mkForceRecvCellList|yBegin|0", "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 36  register_stack_var("mkForceRecvCellList|yBegin|0", &____must_checkpoint_mkForceRecvCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 36  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 38  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 46  register_stack_var("mkForceRecvCellList|yEnd|0", "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 46  register_stack_var("mkForceRecvCellList|yEnd|0", &____must_checkpoint_mkForceRecvCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 46  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 48  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 58  register_stack_var("mkForceRecvCellList|zBegin|0", "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 58  register_stack_var("mkForceRecvCellList|zBegin|0", &____must_checkpoint_mkForceRecvCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 58  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 60  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 68  register_stack_var("mkForceRecvCellList|zEnd|0", "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 68  register_stack_var("mkForceRecvCellList|zEnd|0", &____must_checkpoint_mkForceRecvCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 510 68  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 539 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 539 14  register_stack_var("mkForceRecvCellList|count|0", "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 539 14  register_stack_var("mkForceRecvCellList|count|0", &____must_checkpoint_mkForceRecvCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 539 14  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 540 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 540 13  register_stack_var("mkForceRecvCellList|ix|0", "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 540 13  register_stack_var("mkForceRecvCellList|ix|0", &____must_checkpoint_mkForceRecvCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 540 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 541 10  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 541 16  register_stack_var("mkForceRecvCellList|iy|0", "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 541 16  register_stack_var("mkForceRecvCellList|iy|0", &____must_checkpoint_mkForceRecvCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 541 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 542 13  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 542 19  register_stack_var("mkForceRecvCellList|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 542 19  register_stack_var("mkForceRecvCellList|iz|0", &____must_checkpoint_mkForceRecvCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 542 19  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 508 283  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 508 384  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 559 162  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 587 179  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 610 84  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 647 4  call_lbl_1: calling((void*)&qsort, 1, 0UL, 4, (size_t)(18379826249005486573UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486929UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 632 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 632 24  register_stack_var("sortAtomsInCell|tmp|0", "%struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }", (void *)(&tmp), (size_t)56, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 632 24  register_stack_var("sortAtomsInCell|tmp|0", &____must_checkpoint_sortAtomsInCell_tmp_0, "%struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }", (void *)(&tmp), (size_t)56, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 632 24  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 629 128  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 668 111  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

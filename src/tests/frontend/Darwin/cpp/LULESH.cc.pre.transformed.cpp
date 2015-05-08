@@ -297,7 +297,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -4266,7 +4266,7 @@ void CalcFBHourglassForceForElems(Real_t *determ,
 # 1121 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t hourg)
 # 1122 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&CalcFBHourglassForceForElems), 8, 8, (size_t)(16832839476487316031UL), (size_t)(16832839476487316032UL), (size_t)(16832839476487316033UL), (size_t)(16832839476487316034UL), (size_t)(16832839476487316035UL), (size_t)(16832839476487316036UL), (size_t)(16832839476487316037UL), (size_t)(0UL), "CalcFBHourglassForceForElems|determ|0", "double*", (void *)(&determ), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|x8n|0", "double*", (void *)(&x8n), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|y8n|0", "double*", (void *)(&y8n), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|z8n|0", "double*", (void *)(&z8n), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|dvdx|0", "double*", (void *)(&dvdx), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|dvdy|0", "double*", (void *)(&dvdy), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|dvdz|0", "double*", (void *)(&dvdz), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|hourg|0", "double", (void *)(&hourg), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&CalcFBHourglassForceForElems), 8, 8, (size_t)(16832839476487316031UL), (size_t)(16832839476487316032UL), (size_t)(16832839476487316033UL), (size_t)(16832839476487316034UL), (size_t)(16832839476487316035UL), (size_t)(16832839476487316036UL), (size_t)(16832839476487316037UL), (size_t)(0UL), "CalcFBHourglassForceForElems|determ|0", &____must_checkpoint_CalcFBHourglassForceForElems_determ_0, "double*", (void *)(&determ), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|x8n|0", &____must_checkpoint_CalcFBHourglassForceForElems_x8n_0, "double*", (void *)(&x8n), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|y8n|0", &____must_checkpoint_CalcFBHourglassForceForElems_y8n_0, "double*", (void *)(&y8n), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|z8n|0", &____must_checkpoint_CalcFBHourglassForceForElems_z8n_0, "double*", (void *)(&z8n), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|dvdx|0", &____must_checkpoint_CalcFBHourglassForceForElems_dvdx_0, "double*", (void *)(&dvdx), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|dvdy|0", &____must_checkpoint_CalcFBHourglassForceForElems_dvdy_0, "double*", (void *)(&dvdy), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|dvdz|0", &____must_checkpoint_CalcFBHourglassForceForElems_dvdz_0, "double*", (void *)(&dvdz), (size_t)8, 1, 0, 0, "CalcFBHourglassForceForElems|hourg|0", &____must_checkpoint_CalcFBHourglassForceForElems_hourg_0, "double", (void *)(&hourg), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1123 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1124 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1125 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4275,16 +4275,16 @@ void CalcFBHourglassForceForElems(Real_t *determ,
 # 1128 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1129 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1130 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Index_t numElem; register_stack_var("CalcFBHourglassForceForElems|numElem|0", "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numElem = (mesh.numElem) ;
+ lbl_0: Index_t numElem; register_stack_var("CalcFBHourglassForceForElems|numElem|0", &____must_checkpoint_CalcFBHourglassForceForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numElem = (mesh.numElem) ;
 # 1131 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1132 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t hgfx[8]; register_stack_var("CalcFBHourglassForceForElems|hgfx|0", "[8 x double]", (void *)(hgfx), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } Real_t hgfy[8]; Real_t hgfz[8]; ;
+ lbl_1: Real_t hgfx[8]; register_stack_var("CalcFBHourglassForceForElems|hgfx|0", &____must_checkpoint_CalcFBHourglassForceForElems_hgfx_0, "[8 x double]", (void *)(hgfx), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } Real_t hgfy[8]; Real_t hgfz[8]; ;
 # 1133 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1134 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t coefficient; register_stack_var("CalcFBHourglassForceForElems|coefficient|0", "double", (void *)(&coefficient), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } ;
+ lbl_2: Real_t coefficient; register_stack_var("CalcFBHourglassForceForElems|coefficient|0", &____must_checkpoint_CalcFBHourglassForceForElems_coefficient_0, "double", (void *)(&coefficient), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } ;
 # 1135 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1136 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t gamma[4][8]; register_stack_var("CalcFBHourglassForceForElems|gamma|0", "[4 x [8 x double]]", (void *)(gamma), (size_t)256, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
+ lbl_3: Real_t gamma[4][8]; register_stack_var("CalcFBHourglassForceForElems|gamma|0", &____must_checkpoint_CalcFBHourglassForceForElems_gamma_0, "[4 x [8 x double]]", (void *)(gamma), (size_t)256, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
 # 1137 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t hourgam0[4]; Real_t hourgam1[4]; Real_t hourgam2[4]; Real_t hourgam3[4]; ;
 # 1138 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4362,26 +4362,26 @@ void CalcFBHourglassForceForElems(Real_t *determ,
 # 1176 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1177 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1178 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_4: Index_t i2; register_stack_var("CalcFBHourglassForceForElems|i2|0", "i32", (void *)(&i2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for( i2 = (0) ;i2<numElem;++i2){
+ { lbl_4: Index_t i2; register_stack_var("CalcFBHourglassForceForElems|i2|0", &____must_checkpoint_CalcFBHourglassForceForElems_i2_0, "i32", (void *)(&i2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for( i2 = (0) ;i2<numElem;++i2){
 # 1179 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Index_t *elemToNode; register_stack_var("CalcFBHourglassForceForElems|elemToNode|0", "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } elemToNode = (&mesh.nodelist[8 * i2]) ;
+ lbl_5: Index_t *elemToNode; register_stack_var("CalcFBHourglassForceForElems|elemToNode|0", &____must_checkpoint_CalcFBHourglassForceForElems_elemToNode_0, "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } elemToNode = (&mesh.nodelist[8 * i2]) ;
 # 1180 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_6: Index_t i3; register_stack_var("CalcFBHourglassForceForElems|i3|0", "i32", (void *)(&i3), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } i3 = (8 * i2) ;
+ lbl_6: Index_t i3; register_stack_var("CalcFBHourglassForceForElems|i3|0", &____must_checkpoint_CalcFBHourglassForceForElems_i3_0, "i32", (void *)(&i3), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } i3 = (8 * i2) ;
 # 1181 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_7: Real_t volinv; register_stack_var("CalcFBHourglassForceForElems|volinv|0", "double", (void *)(&volinv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } volinv = (Real_t(1.) / determ[i2]) ;
+ lbl_7: Real_t volinv; register_stack_var("CalcFBHourglassForceForElems|volinv|0", &____must_checkpoint_CalcFBHourglassForceForElems_volinv_0, "double", (void *)(&volinv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } volinv = (Real_t(1.) / determ[i2]) ;
 # 1182 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_8: Real_t ss1; register_stack_var("CalcFBHourglassForceForElems|ss1|0", "double", (void *)(&ss1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } lbl_9: Real_t mass1; register_stack_var("CalcFBHourglassForceForElems|mass1|0", "double", (void *)(&mass1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } lbl_10: Real_t volume13; register_stack_var("CalcFBHourglassForceForElems|volume13|0", "double", (void *)(&volume13), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } ;
+ lbl_8: Real_t ss1; register_stack_var("CalcFBHourglassForceForElems|ss1|0", &____must_checkpoint_CalcFBHourglassForceForElems_ss1_0, "double", (void *)(&ss1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } lbl_9: Real_t mass1; register_stack_var("CalcFBHourglassForceForElems|mass1|0", &____must_checkpoint_CalcFBHourglassForceForElems_mass1_0, "double", (void *)(&mass1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } lbl_10: Real_t volume13; register_stack_var("CalcFBHourglassForceForElems|volume13|0", &____must_checkpoint_CalcFBHourglassForceForElems_volume13_0, "double", (void *)(&volume13), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } ;
 # 1183 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_11: Index_t i1; register_stack_var("CalcFBHourglassForceForElems|i1|0", "i32", (void *)(&i1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } for( i1 = (0) ;i1<4;++i1){
+ { lbl_11: Index_t i1; register_stack_var("CalcFBHourglassForceForElems|i1|0", &____must_checkpoint_CalcFBHourglassForceForElems_i1_0, "i32", (void *)(&i1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } for( i1 = (0) ;i1<4;++i1){
 # 1184 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1185 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_12: Real_t hourmodx; register_stack_var("CalcFBHourglassForceForElems|hourmodx|0", "double", (void *)(&hourmodx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } hourmodx = (x8n[i3] * gamma[i1][0] + x8n[i3 + 1] * gamma[i1][1] + x8n[i3 + 2] * gamma[i1][2] + x8n[i3 + 3] * gamma[i1][3] + x8n[i3 + 4] * gamma[i1][4] + x8n[i3 + 5] * gamma[i1][5] + x8n[i3 + 6] * gamma[i1][6] + x8n[i3 + 7] * gamma[i1][7]) ;
+ lbl_12: Real_t hourmodx; register_stack_var("CalcFBHourglassForceForElems|hourmodx|0", &____must_checkpoint_CalcFBHourglassForceForElems_hourmodx_0, "double", (void *)(&hourmodx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } hourmodx = (x8n[i3] * gamma[i1][0] + x8n[i3 + 1] * gamma[i1][1] + x8n[i3 + 2] * gamma[i1][2] + x8n[i3 + 3] * gamma[i1][3] + x8n[i3 + 4] * gamma[i1][4] + x8n[i3 + 5] * gamma[i1][5] + x8n[i3 + 6] * gamma[i1][6] + x8n[i3 + 7] * gamma[i1][7]) ;
 # 1190 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1191 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_13: Real_t hourmody; register_stack_var("CalcFBHourglassForceForElems|hourmody|0", "double", (void *)(&hourmody), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } hourmody = (y8n[i3] * gamma[i1][0] + y8n[i3 + 1] * gamma[i1][1] + y8n[i3 + 2] * gamma[i1][2] + y8n[i3 + 3] * gamma[i1][3] + y8n[i3 + 4] * gamma[i1][4] + y8n[i3 + 5] * gamma[i1][5] + y8n[i3 + 6] * gamma[i1][6] + y8n[i3 + 7] * gamma[i1][7]) ;
+ lbl_13: Real_t hourmody; register_stack_var("CalcFBHourglassForceForElems|hourmody|0", &____must_checkpoint_CalcFBHourglassForceForElems_hourmody_0, "double", (void *)(&hourmody), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } hourmody = (y8n[i3] * gamma[i1][0] + y8n[i3 + 1] * gamma[i1][1] + y8n[i3 + 2] * gamma[i1][2] + y8n[i3 + 3] * gamma[i1][3] + y8n[i3 + 4] * gamma[i1][4] + y8n[i3 + 5] * gamma[i1][5] + y8n[i3 + 6] * gamma[i1][6] + y8n[i3 + 7] * gamma[i1][7]) ;
 # 1196 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1197 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_14: Real_t hourmodz; register_stack_var("CalcFBHourglassForceForElems|hourmodz|0", "double", (void *)(&hourmodz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } hourmodz = (z8n[i3] * gamma[i1][0] + z8n[i3 + 1] * gamma[i1][1] + z8n[i3 + 2] * gamma[i1][2] + z8n[i3 + 3] * gamma[i1][3] + z8n[i3 + 4] * gamma[i1][4] + z8n[i3 + 5] * gamma[i1][5] + z8n[i3 + 6] * gamma[i1][6] + z8n[i3 + 7] * gamma[i1][7]) ;
+ lbl_14: Real_t hourmodz; register_stack_var("CalcFBHourglassForceForElems|hourmodz|0", &____must_checkpoint_CalcFBHourglassForceForElems_hourmodz_0, "double", (void *)(&hourmodz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } hourmodz = (z8n[i3] * gamma[i1][0] + z8n[i3 + 1] * gamma[i1][1] + z8n[i3 + 2] * gamma[i1][2] + z8n[i3 + 3] * gamma[i1][3] + z8n[i3 + 4] * gamma[i1][4] + z8n[i3 + 5] * gamma[i1][5] + z8n[i3 + 6] * gamma[i1][6] + z8n[i3 + 7] * gamma[i1][7]) ;
 # 1202 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1203 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  hourgam0[i1] = gamma[i1][0] - volinv*(dvdx[i3 ] * hourmodx +
@@ -4453,21 +4453,21 @@ void CalcFBHourglassForceForElems(Real_t *determ,
  alias_group_changed(42, (size_t)(16832839476487307662UL), (size_t)(16832839476487314728UL), (size_t)(16832839476487314729UL), (size_t)(16832839476487314730UL), (size_t)(16832839476487314731UL), (size_t)(16832839476487314732UL), (size_t)(16832839476487314733UL), (size_t)(16832839476487314734UL), (size_t)(16832839476487314735UL), (size_t)(16832839476487314736UL), (size_t)(16832839476487314740UL), (size_t)(16832839476487314741UL), (size_t)(16832839476487314742UL), (size_t)(16832839476487314743UL), (size_t)(16832839476487314744UL), (size_t)(16832839476487314745UL), (size_t)(16832839476487314746UL), (size_t)(16832839476487314747UL), (size_t)(16832839476487314748UL), (size_t)(16832839476487314749UL), (size_t)(16832839476487314750UL), (size_t)(16832839476487314751UL), (size_t)(16832839476487314752UL), (size_t)(16832839476487314753UL), (size_t)(16832839476487314754UL), (size_t)(16832839476487314755UL), (size_t)(16832839476487314756UL), (size_t)(16832839476487314757UL), (size_t)(16832839476487314758UL), (size_t)(16832839476487314759UL), (size_t)(16832839476487314760UL), (size_t)(16832839476487314761UL), (size_t)(16832839476487314762UL), (size_t)(16832839476487314763UL), (size_t)(16832839476487314764UL), (size_t)(16832839476487314765UL), (size_t)(16832839476487314766UL), (size_t)(16832839476487314767UL), (size_t)(16832839476487314768UL), (size_t)(16832839476487314769UL), (size_t)(16832839476487314770UL), (size_t)(16832839476487314771UL)); call_lbl_2: calling((void*)&CBRT, 2, 0UL, 1, (size_t)(0UL)); volume13=CBRT(determ[i2]);
 # 1243 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1244 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_15: Index_t n0si2; register_stack_var("CalcFBHourglassForceForElems|n0si2|0", "i32", (void *)(&n0si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } n0si2 = (elemToNode[0]) ;
+ lbl_15: Index_t n0si2; register_stack_var("CalcFBHourglassForceForElems|n0si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n0si2_0, "i32", (void *)(&n0si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } n0si2 = (elemToNode[0]) ;
 # 1245 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_16: Index_t n1si2; register_stack_var("CalcFBHourglassForceForElems|n1si2|0", "i32", (void *)(&n1si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } n1si2 = (elemToNode[1]) ;
+ lbl_16: Index_t n1si2; register_stack_var("CalcFBHourglassForceForElems|n1si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n1si2_0, "i32", (void *)(&n1si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } n1si2 = (elemToNode[1]) ;
 # 1246 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_17: Index_t n2si2; register_stack_var("CalcFBHourglassForceForElems|n2si2|0", "i32", (void *)(&n2si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } n2si2 = (elemToNode[2]) ;
+ lbl_17: Index_t n2si2; register_stack_var("CalcFBHourglassForceForElems|n2si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n2si2_0, "i32", (void *)(&n2si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } n2si2 = (elemToNode[2]) ;
 # 1247 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_18: Index_t n3si2; register_stack_var("CalcFBHourglassForceForElems|n3si2|0", "i32", (void *)(&n3si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } n3si2 = (elemToNode[3]) ;
+ lbl_18: Index_t n3si2; register_stack_var("CalcFBHourglassForceForElems|n3si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n3si2_0, "i32", (void *)(&n3si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } n3si2 = (elemToNode[3]) ;
 # 1248 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_19: Index_t n4si2; register_stack_var("CalcFBHourglassForceForElems|n4si2|0", "i32", (void *)(&n4si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } n4si2 = (elemToNode[4]) ;
+ lbl_19: Index_t n4si2; register_stack_var("CalcFBHourglassForceForElems|n4si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n4si2_0, "i32", (void *)(&n4si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } n4si2 = (elemToNode[4]) ;
 # 1249 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_20: Index_t n5si2; register_stack_var("CalcFBHourglassForceForElems|n5si2|0", "i32", (void *)(&n5si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } n5si2 = (elemToNode[5]) ;
+ lbl_20: Index_t n5si2; register_stack_var("CalcFBHourglassForceForElems|n5si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n5si2_0, "i32", (void *)(&n5si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } n5si2 = (elemToNode[5]) ;
 # 1250 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_21: Index_t n6si2; register_stack_var("CalcFBHourglassForceForElems|n6si2|0", "i32", (void *)(&n6si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } n6si2 = (elemToNode[6]) ;
+ lbl_21: Index_t n6si2; register_stack_var("CalcFBHourglassForceForElems|n6si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n6si2_0, "i32", (void *)(&n6si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } n6si2 = (elemToNode[6]) ;
 # 1251 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_22: Index_t n7si2; register_stack_var("CalcFBHourglassForceForElems|n7si2|0", "i32", (void *)(&n7si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } n7si2 = (elemToNode[7]) ;
+ lbl_22: Index_t n7si2; register_stack_var("CalcFBHourglassForceForElems|n7si2|0", &____must_checkpoint_CalcFBHourglassForceForElems_n7si2_0, "i32", (void *)(&n7si2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } n7si2 = (elemToNode[7]) ;
 # 1252 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1253 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  xd1[0] = mesh.xd[n0si2];
@@ -4601,7 +4601,7 @@ void CalcHourglassControlForElems(Real_t determ[], Real_t hgcoef)
 # 1324 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Index_t i; Index_t ii; Index_t jj; ;
 # 1325 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t x1[8]; register_stack_var("CalcHourglassControlForElems|x1|0", "[8 x double]", (void *)(x1), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } Real_t y1[8]; Real_t z1[8]; ;
+ lbl_0: Real_t x1[8]; register_stack_var("CalcHourglassControlForElems|x1|0", &____must_checkpoint_CalcHourglassControlForElems_x1_0, "[8 x double]", (void *)(x1), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } Real_t y1[8]; Real_t z1[8]; ;
 # 1326 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t pfx[8]; Real_t pfy[8]; Real_t pfz[8]; ;
 # 1327 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4609,17 +4609,17 @@ void CalcHourglassControlForElems(Real_t determ[], Real_t hgcoef)
 # 1328 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Index_t numElem8; numElem8 = (numElem * 8) ;
 # 1329 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t *dvdx; register_stack_var("CalcHourglassControlForElems|dvdx|0", "double*", (void *)(&dvdx), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313762UL, 0, 0)) ;
+ lbl_1: Real_t *dvdx; register_stack_var("CalcHourglassControlForElems|dvdx|0", &____must_checkpoint_CalcHourglassControlForElems_dvdx_0, "double*", (void *)(&dvdx), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313762UL, 0, 0)) ;
 # 1330 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t *dvdy; register_stack_var("CalcHourglassControlForElems|dvdy|0", "double*", (void *)(&dvdy), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313769UL, 0, 0)) ;
+ lbl_2: Real_t *dvdy; register_stack_var("CalcHourglassControlForElems|dvdy|0", &____must_checkpoint_CalcHourglassControlForElems_dvdy_0, "double*", (void *)(&dvdy), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313769UL, 0, 0)) ;
 # 1331 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t *dvdz; register_stack_var("CalcHourglassControlForElems|dvdz|0", "double*", (void *)(&dvdz), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313776UL, 0, 0)) ;
+ lbl_3: Real_t *dvdz; register_stack_var("CalcHourglassControlForElems|dvdz|0", &____must_checkpoint_CalcHourglassControlForElems_dvdz_0, "double*", (void *)(&dvdz), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313776UL, 0, 0)) ;
 # 1332 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_4: Real_t *x8n; register_stack_var("CalcHourglassControlForElems|x8n|0", "double*", (void *)(&x8n), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313783UL, 0, 0)) ;
+ lbl_4: Real_t *x8n; register_stack_var("CalcHourglassControlForElems|x8n|0", &____must_checkpoint_CalcHourglassControlForElems_x8n_0, "double*", (void *)(&x8n), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313783UL, 0, 0)) ;
 # 1333 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Real_t *y8n; register_stack_var("CalcHourglassControlForElems|y8n|0", "double*", (void *)(&y8n), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313790UL, 0, 0)) ;
+ lbl_5: Real_t *y8n; register_stack_var("CalcHourglassControlForElems|y8n|0", &____must_checkpoint_CalcHourglassControlForElems_y8n_0, "double*", (void *)(&y8n), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313790UL, 0, 0)) ;
 # 1334 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_6: Real_t *z8n; register_stack_var("CalcHourglassControlForElems|z8n|0", "double*", (void *)(&z8n), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313797UL, 0, 0)) ;
+ lbl_6: Real_t *z8n; register_stack_var("CalcHourglassControlForElems|z8n|0", &____must_checkpoint_CalcHourglassControlForElems_z8n_0, "double*", (void *)(&z8n), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 16832839476487313797UL, 0, 0)) ;
 # 1335 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1336 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1337 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4705,13 +4705,13 @@ void CalcVolumeForceForElems()
 # 1383 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t hgcoef; hgcoef = (mesh.hgcoef) ;
 # 1384 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t *sigxx; register_stack_var("CalcVolumeForceForElems|sigxx|0", "double*", (void *)(&sigxx), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313461UL, 0, 0)) ;
+ lbl_0: Real_t *sigxx; register_stack_var("CalcVolumeForceForElems|sigxx|0", &____must_checkpoint_CalcVolumeForceForElems_sigxx_0, "double*", (void *)(&sigxx), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313461UL, 0, 0)) ;
 # 1385 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t *sigyy; register_stack_var("CalcVolumeForceForElems|sigyy|0", "double*", (void *)(&sigyy), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313458UL, 0, 0)) ;
+ lbl_1: Real_t *sigyy; register_stack_var("CalcVolumeForceForElems|sigyy|0", &____must_checkpoint_CalcVolumeForceForElems_sigyy_0, "double*", (void *)(&sigyy), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313458UL, 0, 0)) ;
 # 1386 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t *sigzz; register_stack_var("CalcVolumeForceForElems|sigzz|0", "double*", (void *)(&sigzz), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313455UL, 0, 0)) ;
+ lbl_2: Real_t *sigzz; register_stack_var("CalcVolumeForceForElems|sigzz|0", &____must_checkpoint_CalcVolumeForceForElems_sigzz_0, "double*", (void *)(&sigzz), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313455UL, 0, 0)) ;
 # 1387 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t *determ; register_stack_var("CalcVolumeForceForElems|determ|0", "double*", (void *)(&determ), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313437UL, 0, 0)) ;
+ lbl_3: Real_t *determ; register_stack_var("CalcVolumeForceForElems|determ|0", &____must_checkpoint_CalcVolumeForceForElems_determ_0, "double*", (void *)(&determ), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 16832839476487313437UL, 0, 0)) ;
 # 1388 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1389 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1390 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4822,16 +4822,16 @@ static inline
 # 1455 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 void CalcVelocityForNodes(const Real_t dt, const Real_t u_cut)
 # 1456 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&CalcVelocityForNodes), 2, 2, (size_t)(0UL), (size_t)(0UL), "CalcVelocityForNodes|dt|0", "double", (void *)(&dt), (size_t)8, 0, 0, 0, "CalcVelocityForNodes|u_cut|0", "double", (void *)(&u_cut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&CalcVelocityForNodes), 2, 2, (size_t)(0UL), (size_t)(0UL), "CalcVelocityForNodes|dt|0", &____must_checkpoint_CalcVelocityForNodes_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "CalcVelocityForNodes|u_cut|0", &____must_checkpoint_CalcVelocityForNodes_u_cut_0, "double", (void *)(&u_cut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1457 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Index_t numNode; register_stack_var("CalcVelocityForNodes|numNode|0", "i32", (void *)(&numNode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numNode = (mesh.numNode) ;
+ lbl_0: Index_t numNode; register_stack_var("CalcVelocityForNodes|numNode|0", &____must_checkpoint_CalcVelocityForNodes_numNode_0, "i32", (void *)(&numNode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numNode = (mesh.numNode) ;
 # 1458 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1459 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_1: Index_t i; register_stack_var("CalcVelocityForNodes|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( i = (0) ; i < numNode ; ++i )
+ { lbl_1: Index_t i; register_stack_var("CalcVelocityForNodes|i|0", &____must_checkpoint_CalcVelocityForNodes_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( i = (0) ; i < numNode ; ++i )
 # 1460 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  {
 # 1461 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t xdtmp; register_stack_var("CalcVelocityForNodes|xdtmp|0", "double", (void *)(&xdtmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: Real_t ydtmp; register_stack_var("CalcVelocityForNodes|ydtmp|0", "double", (void *)(&ydtmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: Real_t zdtmp; register_stack_var("CalcVelocityForNodes|zdtmp|0", "double", (void *)(&zdtmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ;
+ lbl_2: Real_t xdtmp; register_stack_var("CalcVelocityForNodes|xdtmp|0", &____must_checkpoint_CalcVelocityForNodes_xdtmp_0, "double", (void *)(&xdtmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: Real_t ydtmp; register_stack_var("CalcVelocityForNodes|ydtmp|0", &____must_checkpoint_CalcVelocityForNodes_ydtmp_0, "double", (void *)(&ydtmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: Real_t zdtmp; register_stack_var("CalcVelocityForNodes|zdtmp|0", &____must_checkpoint_CalcVelocityForNodes_zdtmp_0, "double", (void *)(&zdtmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ;
 # 1462 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1463 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  xdtmp = mesh.xd[i] + mesh.xdd[i] * dt ;
@@ -4889,9 +4889,9 @@ void LagrangeNodal()
 # 1492 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&LagrangeNodal), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1493 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t delt; register_stack_var("LagrangeNodal|delt|0", "double", (void *)(&delt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } delt = (mesh.deltatime) ;
+ lbl_0: Real_t delt; register_stack_var("LagrangeNodal|delt|0", &____must_checkpoint_LagrangeNodal_delt_0, "double", (void *)(&delt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } delt = (mesh.deltatime) ;
 # 1494 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t u_cut; register_stack_var("LagrangeNodal|u_cut|0", "double", (void *)(&u_cut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } u_cut = (mesh.u_cut) ;
+ lbl_1: Real_t u_cut; register_stack_var("LagrangeNodal|u_cut|0", &____must_checkpoint_LagrangeNodal_u_cut_0, "double", (void *)(&u_cut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } u_cut = (mesh.u_cut) ;
 # 1495 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1496 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1497 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5111,7 +5111,7 @@ Real_t CalcElemCharacteristicLength( const Real_t x[8],
 # 1631 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&CalcElemCharacteristicLength), 4, 0, (size_t)(16832839476487311406UL), (size_t)(16832839476487311418UL), (size_t)(16832839476487311430UL), (size_t)(0UL)); if (____chimes_replaying) { goto lbl_0; }
 # 1632 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- Real_t a; lbl_0: Real_t charLength; register_stack_var("CalcElemCharacteristicLength|charLength|0", "double", (void *)(&charLength), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } charLength = (0.) ;
+ Real_t a; lbl_0: Real_t charLength; register_stack_var("CalcElemCharacteristicLength|charLength|0", &____must_checkpoint_CalcElemCharacteristicLength_charLength_0, "double", (void *)(&charLength), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } charLength = (0.) ;
 # 1633 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1634 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  call_lbl_1: calling((void*)&AreaFace, 1, 0UL, 12, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); a = AreaFace(x[0],x[1],x[2],x[3],
@@ -5296,45 +5296,45 @@ static inline
 # 1733 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 void CalcKinematicsForElems( Index_t numElem, Real_t dt )
 # 1734 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&CalcKinematicsForElems), 2, 2, (size_t)(0UL), (size_t)(0UL), "CalcKinematicsForElems|numElem|0", "i32", (void *)(&numElem), (size_t)4, 0, 0, 0, "CalcKinematicsForElems|dt|0", "double", (void *)(&dt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&CalcKinematicsForElems), 2, 2, (size_t)(0UL), (size_t)(0UL), "CalcKinematicsForElems|numElem|0", &____must_checkpoint_CalcKinematicsForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0, "CalcKinematicsForElems|dt|0", &____must_checkpoint_CalcKinematicsForElems_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1735 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t B[3][8]; register_stack_var("CalcKinematicsForElems|B|0", "[3 x [8 x double]]", (void *)(B), (size_t)192, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: Real_t B[3][8]; register_stack_var("CalcKinematicsForElems|B|0", &____must_checkpoint_CalcKinematicsForElems_B_0, "[3 x [8 x double]]", (void *)(B), (size_t)192, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 1736 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t D[6]; ;
 # 1737 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t x_local[8]; register_stack_var("CalcKinematicsForElems|x_local|0", "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ lbl_1: Real_t x_local[8]; register_stack_var("CalcKinematicsForElems|x_local|0", &____must_checkpoint_CalcKinematicsForElems_x_local_0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 1738 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t y_local[8]; register_stack_var("CalcKinematicsForElems|y_local|0", "[8 x double]", (void *)(y_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } ;
+ lbl_2: Real_t y_local[8]; register_stack_var("CalcKinematicsForElems|y_local|0", &____must_checkpoint_CalcKinematicsForElems_y_local_0, "[8 x double]", (void *)(y_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } ;
 # 1739 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t z_local[8]; register_stack_var("CalcKinematicsForElems|z_local|0", "[8 x double]", (void *)(z_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
+ lbl_3: Real_t z_local[8]; register_stack_var("CalcKinematicsForElems|z_local|0", &____must_checkpoint_CalcKinematicsForElems_z_local_0, "[8 x double]", (void *)(z_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } ;
 # 1740 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_4: Real_t xd_local[8]; register_stack_var("CalcKinematicsForElems|xd_local|0", "[8 x double]", (void *)(xd_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
+ lbl_4: Real_t xd_local[8]; register_stack_var("CalcKinematicsForElems|xd_local|0", &____must_checkpoint_CalcKinematicsForElems_xd_local_0, "[8 x double]", (void *)(xd_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 1741 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Real_t yd_local[8]; register_stack_var("CalcKinematicsForElems|yd_local|0", "[8 x double]", (void *)(yd_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
+ lbl_5: Real_t yd_local[8]; register_stack_var("CalcKinematicsForElems|yd_local|0", &____must_checkpoint_CalcKinematicsForElems_yd_local_0, "[8 x double]", (void *)(yd_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
 # 1742 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_6: Real_t zd_local[8]; register_stack_var("CalcKinematicsForElems|zd_local|0", "[8 x double]", (void *)(zd_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
+ lbl_6: Real_t zd_local[8]; register_stack_var("CalcKinematicsForElems|zd_local|0", &____must_checkpoint_CalcKinematicsForElems_zd_local_0, "[8 x double]", (void *)(zd_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
 # 1743 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_7: Real_t detJ; register_stack_var("CalcKinematicsForElems|detJ|0", "double", (void *)(&detJ), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } detJ = (Real_t(0.)) ;
+ lbl_7: Real_t detJ; register_stack_var("CalcKinematicsForElems|detJ|0", &____must_checkpoint_CalcKinematicsForElems_detJ_0, "double", (void *)(&detJ), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } detJ = (Real_t(0.)) ;
 # 1744 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1745 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1746 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_8: Index_t k; register_stack_var("CalcKinematicsForElems|k|0", "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } for( k = (0) ; k<numElem ; ++k )
+ { lbl_8: Index_t k; register_stack_var("CalcKinematicsForElems|k|0", &____must_checkpoint_CalcKinematicsForElems_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } for( k = (0) ; k<numElem ; ++k )
 # 1747 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  {
 # 1748 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_9: Real_t volume; register_stack_var("CalcKinematicsForElems|volume|0", "double", (void *)(&volume), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } ;
+ lbl_9: Real_t volume; register_stack_var("CalcKinematicsForElems|volume|0", &____must_checkpoint_CalcKinematicsForElems_volume_0, "double", (void *)(&volume), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } ;
 # 1749 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_10: Real_t relativeVolume; register_stack_var("CalcKinematicsForElems|relativeVolume|0", "double", (void *)(&relativeVolume), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } ;
+ lbl_10: Real_t relativeVolume; register_stack_var("CalcKinematicsForElems|relativeVolume|0", &____must_checkpoint_CalcKinematicsForElems_relativeVolume_0, "double", (void *)(&relativeVolume), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } ;
 # 1750 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_11: Index_t *elemToNode; register_stack_var("CalcKinematicsForElems|elemToNode|0", "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } elemToNode = (&mesh.nodelist[8 * k]) ;
+ lbl_11: Index_t *elemToNode; register_stack_var("CalcKinematicsForElems|elemToNode|0", &____must_checkpoint_CalcKinematicsForElems_elemToNode_0, "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } elemToNode = (&mesh.nodelist[8 * k]) ;
 # 1751 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1752 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1753 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_12: Index_t lnode; register_stack_var("CalcKinematicsForElems|lnode|0", "i32", (void *)(&lnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for( lnode = (0) ; lnode<8 ; ++lnode )
+ { lbl_12: Index_t lnode; register_stack_var("CalcKinematicsForElems|lnode|0", &____must_checkpoint_CalcKinematicsForElems_lnode_0, "i32", (void *)(&lnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for( lnode = (0) ; lnode<8 ; ++lnode )
 # 1754 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  {
 # 1755 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_13: Index_t gnode; register_stack_var("CalcKinematicsForElems|gnode|0", "i32", (void *)(&gnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } gnode = (elemToNode[lnode]) ;
+ lbl_13: Index_t gnode; register_stack_var("CalcKinematicsForElems|gnode|0", &____must_checkpoint_CalcKinematicsForElems_gnode_0, "i32", (void *)(&gnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } gnode = (elemToNode[lnode]) ;
 # 1756 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  x_local[lnode] = mesh.x[gnode];
 # 1757 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5366,11 +5366,11 @@ void CalcKinematicsForElems( Index_t numElem, Real_t dt )
 # 1772 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1773 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1774 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_14: Index_t lnode; register_stack_var("CalcKinematicsForElems|lnode|1", "i32", (void *)(&lnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } for( lnode = (0) ; lnode<8 ; ++lnode )
+ { lbl_14: Index_t lnode; register_stack_var("CalcKinematicsForElems|lnode|1", &____must_checkpoint_CalcKinematicsForElems_lnode_1, "i32", (void *)(&lnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } for( lnode = (0) ; lnode<8 ; ++lnode )
 # 1775 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  {
 # 1776 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_15: Index_t gnode; register_stack_var("CalcKinematicsForElems|gnode|1", "i32", (void *)(&gnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } gnode = (elemToNode[lnode]) ;
+ lbl_15: Index_t gnode; register_stack_var("CalcKinematicsForElems|gnode|1", &____must_checkpoint_CalcKinematicsForElems_gnode_1, "i32", (void *)(&gnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } gnode = (elemToNode[lnode]) ;
 # 1777 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  xd_local[lnode] = mesh.xd[gnode];
 # 1778 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5381,9 +5381,9 @@ void CalcKinematicsForElems( Index_t numElem, Real_t dt )
  } }
 # 1781 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1782 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_16: Real_t dt2; register_stack_var("CalcKinematicsForElems|dt2|0", "double", (void *)(&dt2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } dt2 = (Real_t(0.5) * dt) ;
+ lbl_16: Real_t dt2; register_stack_var("CalcKinematicsForElems|dt2|0", &____must_checkpoint_CalcKinematicsForElems_dt2_0, "double", (void *)(&dt2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } dt2 = (Real_t(0.5) * dt) ;
 # 1783 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_17: Index_t j; register_stack_var("CalcKinematicsForElems|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } for ( j = (0) ; j<8 ; ++j )
+ { lbl_17: Index_t j; register_stack_var("CalcKinematicsForElems|j|0", &____must_checkpoint_CalcKinematicsForElems_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } for ( j = (0) ; j<8 ; ++j )
 # 1784 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  {
 # 1785 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5432,7 +5432,7 @@ void CalcLagrangeElements(Real_t deltatime)
 # 1809 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&CalcLagrangeElements), 1, 0, (size_t)(0UL)); if (____chimes_replaying) { goto lbl_0; }
 # 1810 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Index_t numElem; register_stack_var("CalcLagrangeElements|numElem|0", "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } numElem = (mesh.numElem) ;
+ lbl_0: Index_t numElem; register_stack_var("CalcLagrangeElements|numElem|0", &____must_checkpoint_CalcLagrangeElements_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } numElem = (mesh.numElem) ;
 # 1811 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if (numElem > 0) {
 # 1812 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5486,163 +5486,163 @@ void CalcMonotonicQGradientsForElems()
 {new_stack((void *)(&CalcMonotonicQGradientsForElems), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 1842 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1843 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Index_t numElem; register_stack_var("CalcMonotonicQGradientsForElems|numElem|0", "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numElem = (mesh.numElem) ;
+ lbl_0: Index_t numElem; register_stack_var("CalcMonotonicQGradientsForElems|numElem|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numElem = (mesh.numElem) ;
 # 1844 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t ptiny; register_stack_var("CalcMonotonicQGradientsForElems|ptiny|0", "double", (void *)(&ptiny), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ptiny = (Real_t(9.9999999999999994E-37)) ;
+ lbl_1: Real_t ptiny; register_stack_var("CalcMonotonicQGradientsForElems|ptiny|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_ptiny_0, "double", (void *)(&ptiny), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ptiny = (Real_t(9.9999999999999994E-37)) ;
 # 1845 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1846 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_2: Index_t i; register_stack_var("CalcMonotonicQGradientsForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( i = (0) ; i < numElem ; ++i ) {
+ { lbl_2: Index_t i; register_stack_var("CalcMonotonicQGradientsForElems|i|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( i = (0) ; i < numElem ; ++i ) {
 # 1847 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t ax; register_stack_var("CalcMonotonicQGradientsForElems|ax|0", "double", (void *)(&ax), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: Real_t ay; register_stack_var("CalcMonotonicQGradientsForElems|ay|0", "double", (void *)(&ay), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: Real_t az; register_stack_var("CalcMonotonicQGradientsForElems|az|0", "double", (void *)(&az), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
+ lbl_3: Real_t ax; register_stack_var("CalcMonotonicQGradientsForElems|ax|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_ax_0, "double", (void *)(&ax), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: Real_t ay; register_stack_var("CalcMonotonicQGradientsForElems|ay|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_ay_0, "double", (void *)(&ay), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } lbl_5: Real_t az; register_stack_var("CalcMonotonicQGradientsForElems|az|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_az_0, "double", (void *)(&az), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ;
 # 1848 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_6: Real_t dxv; register_stack_var("CalcMonotonicQGradientsForElems|dxv|0", "double", (void *)(&dxv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: Real_t dyv; register_stack_var("CalcMonotonicQGradientsForElems|dyv|0", "double", (void *)(&dyv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } lbl_8: Real_t dzv; register_stack_var("CalcMonotonicQGradientsForElems|dzv|0", "double", (void *)(&dzv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ;
+ lbl_6: Real_t dxv; register_stack_var("CalcMonotonicQGradientsForElems|dxv|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dxv_0, "double", (void *)(&dxv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: Real_t dyv; register_stack_var("CalcMonotonicQGradientsForElems|dyv|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dyv_0, "double", (void *)(&dyv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } lbl_8: Real_t dzv; register_stack_var("CalcMonotonicQGradientsForElems|dzv|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dzv_0, "double", (void *)(&dzv), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ;
 # 1849 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1850 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_9: const Index_t *elemToNode; register_stack_var("CalcMonotonicQGradientsForElems|elemToNode|0", "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } elemToNode = (&mesh.nodelist[8 * i]) ;
+ lbl_9: const Index_t *elemToNode; register_stack_var("CalcMonotonicQGradientsForElems|elemToNode|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_elemToNode_0, "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } elemToNode = (&mesh.nodelist[8 * i]) ;
 # 1851 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_10: Index_t n0; register_stack_var("CalcMonotonicQGradientsForElems|n0|0", "i32", (void *)(&n0), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } n0 = (elemToNode[0]) ;
+ lbl_10: Index_t n0; register_stack_var("CalcMonotonicQGradientsForElems|n0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n0_0, "i32", (void *)(&n0), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } n0 = (elemToNode[0]) ;
 # 1852 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_11: Index_t n1; register_stack_var("CalcMonotonicQGradientsForElems|n1|0", "i32", (void *)(&n1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } n1 = (elemToNode[1]) ;
+ lbl_11: Index_t n1; register_stack_var("CalcMonotonicQGradientsForElems|n1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n1_0, "i32", (void *)(&n1), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } n1 = (elemToNode[1]) ;
 # 1853 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_12: Index_t n2; register_stack_var("CalcMonotonicQGradientsForElems|n2|0", "i32", (void *)(&n2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } n2 = (elemToNode[2]) ;
+ lbl_12: Index_t n2; register_stack_var("CalcMonotonicQGradientsForElems|n2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n2_0, "i32", (void *)(&n2), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } n2 = (elemToNode[2]) ;
 # 1854 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_13: Index_t n3; register_stack_var("CalcMonotonicQGradientsForElems|n3|0", "i32", (void *)(&n3), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } n3 = (elemToNode[3]) ;
+ lbl_13: Index_t n3; register_stack_var("CalcMonotonicQGradientsForElems|n3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n3_0, "i32", (void *)(&n3), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } n3 = (elemToNode[3]) ;
 # 1855 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_14: Index_t n4; register_stack_var("CalcMonotonicQGradientsForElems|n4|0", "i32", (void *)(&n4), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } n4 = (elemToNode[4]) ;
+ lbl_14: Index_t n4; register_stack_var("CalcMonotonicQGradientsForElems|n4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n4_0, "i32", (void *)(&n4), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } n4 = (elemToNode[4]) ;
 # 1856 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_15: Index_t n5; register_stack_var("CalcMonotonicQGradientsForElems|n5|0", "i32", (void *)(&n5), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } n5 = (elemToNode[5]) ;
+ lbl_15: Index_t n5; register_stack_var("CalcMonotonicQGradientsForElems|n5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n5_0, "i32", (void *)(&n5), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } n5 = (elemToNode[5]) ;
 # 1857 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_16: Index_t n6; register_stack_var("CalcMonotonicQGradientsForElems|n6|0", "i32", (void *)(&n6), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } n6 = (elemToNode[6]) ;
+ lbl_16: Index_t n6; register_stack_var("CalcMonotonicQGradientsForElems|n6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n6_0, "i32", (void *)(&n6), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } n6 = (elemToNode[6]) ;
 # 1858 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_17: Index_t n7; register_stack_var("CalcMonotonicQGradientsForElems|n7|0", "i32", (void *)(&n7), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } n7 = (elemToNode[7]) ;
+ lbl_17: Index_t n7; register_stack_var("CalcMonotonicQGradientsForElems|n7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_n7_0, "i32", (void *)(&n7), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } n7 = (elemToNode[7]) ;
 # 1859 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1860 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_18: Real_t x0; register_stack_var("CalcMonotonicQGradientsForElems|x0|0", "double", (void *)(&x0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } x0 = (mesh.x[n0]) ;
+ lbl_18: Real_t x0; register_stack_var("CalcMonotonicQGradientsForElems|x0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x0_0, "double", (void *)(&x0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } x0 = (mesh.x[n0]) ;
 # 1861 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_19: Real_t x1; register_stack_var("CalcMonotonicQGradientsForElems|x1|0", "double", (void *)(&x1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } x1 = (mesh.x[n1]) ;
+ lbl_19: Real_t x1; register_stack_var("CalcMonotonicQGradientsForElems|x1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x1_0, "double", (void *)(&x1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } x1 = (mesh.x[n1]) ;
 # 1862 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_20: Real_t x2; register_stack_var("CalcMonotonicQGradientsForElems|x2|0", "double", (void *)(&x2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } x2 = (mesh.x[n2]) ;
+ lbl_20: Real_t x2; register_stack_var("CalcMonotonicQGradientsForElems|x2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x2_0, "double", (void *)(&x2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } x2 = (mesh.x[n2]) ;
 # 1863 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_21: Real_t x3; register_stack_var("CalcMonotonicQGradientsForElems|x3|0", "double", (void *)(&x3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } x3 = (mesh.x[n3]) ;
+ lbl_21: Real_t x3; register_stack_var("CalcMonotonicQGradientsForElems|x3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x3_0, "double", (void *)(&x3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } x3 = (mesh.x[n3]) ;
 # 1864 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_22: Real_t x4; register_stack_var("CalcMonotonicQGradientsForElems|x4|0", "double", (void *)(&x4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } x4 = (mesh.x[n4]) ;
+ lbl_22: Real_t x4; register_stack_var("CalcMonotonicQGradientsForElems|x4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x4_0, "double", (void *)(&x4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } x4 = (mesh.x[n4]) ;
 # 1865 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_23: Real_t x5; register_stack_var("CalcMonotonicQGradientsForElems|x5|0", "double", (void *)(&x5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } x5 = (mesh.x[n5]) ;
+ lbl_23: Real_t x5; register_stack_var("CalcMonotonicQGradientsForElems|x5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x5_0, "double", (void *)(&x5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } x5 = (mesh.x[n5]) ;
 # 1866 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_24: Real_t x6; register_stack_var("CalcMonotonicQGradientsForElems|x6|0", "double", (void *)(&x6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } x6 = (mesh.x[n6]) ;
+ lbl_24: Real_t x6; register_stack_var("CalcMonotonicQGradientsForElems|x6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x6_0, "double", (void *)(&x6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } x6 = (mesh.x[n6]) ;
 # 1867 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_25: Real_t x7; register_stack_var("CalcMonotonicQGradientsForElems|x7|0", "double", (void *)(&x7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_26; } x7 = (mesh.x[n7]) ;
+ lbl_25: Real_t x7; register_stack_var("CalcMonotonicQGradientsForElems|x7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_x7_0, "double", (void *)(&x7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_26; } x7 = (mesh.x[n7]) ;
 # 1868 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1869 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_26: Real_t y0; register_stack_var("CalcMonotonicQGradientsForElems|y0|0", "double", (void *)(&y0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } y0 = (mesh.y[n0]) ;
+ lbl_26: Real_t y0; register_stack_var("CalcMonotonicQGradientsForElems|y0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y0_0, "double", (void *)(&y0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } y0 = (mesh.y[n0]) ;
 # 1870 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_27: Real_t y1; register_stack_var("CalcMonotonicQGradientsForElems|y1|0", "double", (void *)(&y1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_28; } y1 = (mesh.y[n1]) ;
+ lbl_27: Real_t y1; register_stack_var("CalcMonotonicQGradientsForElems|y1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y1_0, "double", (void *)(&y1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_28; } y1 = (mesh.y[n1]) ;
 # 1871 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_28: Real_t y2; register_stack_var("CalcMonotonicQGradientsForElems|y2|0", "double", (void *)(&y2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_29; } y2 = (mesh.y[n2]) ;
+ lbl_28: Real_t y2; register_stack_var("CalcMonotonicQGradientsForElems|y2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y2_0, "double", (void *)(&y2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_29; } y2 = (mesh.y[n2]) ;
 # 1872 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_29: Real_t y3; register_stack_var("CalcMonotonicQGradientsForElems|y3|0", "double", (void *)(&y3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_30; } y3 = (mesh.y[n3]) ;
+ lbl_29: Real_t y3; register_stack_var("CalcMonotonicQGradientsForElems|y3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y3_0, "double", (void *)(&y3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_30; } y3 = (mesh.y[n3]) ;
 # 1873 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_30: Real_t y4; register_stack_var("CalcMonotonicQGradientsForElems|y4|0", "double", (void *)(&y4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_31; } y4 = (mesh.y[n4]) ;
+ lbl_30: Real_t y4; register_stack_var("CalcMonotonicQGradientsForElems|y4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y4_0, "double", (void *)(&y4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_31; } y4 = (mesh.y[n4]) ;
 # 1874 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_31: Real_t y5; register_stack_var("CalcMonotonicQGradientsForElems|y5|0", "double", (void *)(&y5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_32; } y5 = (mesh.y[n5]) ;
+ lbl_31: Real_t y5; register_stack_var("CalcMonotonicQGradientsForElems|y5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y5_0, "double", (void *)(&y5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_32; } y5 = (mesh.y[n5]) ;
 # 1875 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_32: Real_t y6; register_stack_var("CalcMonotonicQGradientsForElems|y6|0", "double", (void *)(&y6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_33; } y6 = (mesh.y[n6]) ;
+ lbl_32: Real_t y6; register_stack_var("CalcMonotonicQGradientsForElems|y6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y6_0, "double", (void *)(&y6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_33; } y6 = (mesh.y[n6]) ;
 # 1876 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_33: Real_t y7; register_stack_var("CalcMonotonicQGradientsForElems|y7|0", "double", (void *)(&y7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_34; } y7 = (mesh.y[n7]) ;
+ lbl_33: Real_t y7; register_stack_var("CalcMonotonicQGradientsForElems|y7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_y7_0, "double", (void *)(&y7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_34; } y7 = (mesh.y[n7]) ;
 # 1877 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1878 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_34: Real_t z0; register_stack_var("CalcMonotonicQGradientsForElems|z0|0", "double", (void *)(&z0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_35; } z0 = (mesh.z[n0]) ;
+ lbl_34: Real_t z0; register_stack_var("CalcMonotonicQGradientsForElems|z0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z0_0, "double", (void *)(&z0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_35; } z0 = (mesh.z[n0]) ;
 # 1879 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_35: Real_t z1; register_stack_var("CalcMonotonicQGradientsForElems|z1|0", "double", (void *)(&z1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_36; } z1 = (mesh.z[n1]) ;
+ lbl_35: Real_t z1; register_stack_var("CalcMonotonicQGradientsForElems|z1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z1_0, "double", (void *)(&z1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_36; } z1 = (mesh.z[n1]) ;
 # 1880 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_36: Real_t z2; register_stack_var("CalcMonotonicQGradientsForElems|z2|0", "double", (void *)(&z2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_37; } z2 = (mesh.z[n2]) ;
+ lbl_36: Real_t z2; register_stack_var("CalcMonotonicQGradientsForElems|z2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z2_0, "double", (void *)(&z2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_37; } z2 = (mesh.z[n2]) ;
 # 1881 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_37: Real_t z3; register_stack_var("CalcMonotonicQGradientsForElems|z3|0", "double", (void *)(&z3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_38; } z3 = (mesh.z[n3]) ;
+ lbl_37: Real_t z3; register_stack_var("CalcMonotonicQGradientsForElems|z3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z3_0, "double", (void *)(&z3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_38; } z3 = (mesh.z[n3]) ;
 # 1882 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_38: Real_t z4; register_stack_var("CalcMonotonicQGradientsForElems|z4|0", "double", (void *)(&z4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_39; } z4 = (mesh.z[n4]) ;
+ lbl_38: Real_t z4; register_stack_var("CalcMonotonicQGradientsForElems|z4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z4_0, "double", (void *)(&z4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_39; } z4 = (mesh.z[n4]) ;
 # 1883 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_39: Real_t z5; register_stack_var("CalcMonotonicQGradientsForElems|z5|0", "double", (void *)(&z5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_40; } z5 = (mesh.z[n5]) ;
+ lbl_39: Real_t z5; register_stack_var("CalcMonotonicQGradientsForElems|z5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z5_0, "double", (void *)(&z5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_40; } z5 = (mesh.z[n5]) ;
 # 1884 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_40: Real_t z6; register_stack_var("CalcMonotonicQGradientsForElems|z6|0", "double", (void *)(&z6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_41; } z6 = (mesh.z[n6]) ;
+ lbl_40: Real_t z6; register_stack_var("CalcMonotonicQGradientsForElems|z6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z6_0, "double", (void *)(&z6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_41; } z6 = (mesh.z[n6]) ;
 # 1885 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_41: Real_t z7; register_stack_var("CalcMonotonicQGradientsForElems|z7|0", "double", (void *)(&z7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_42; } z7 = (mesh.z[n7]) ;
+ lbl_41: Real_t z7; register_stack_var("CalcMonotonicQGradientsForElems|z7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_z7_0, "double", (void *)(&z7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_42; } z7 = (mesh.z[n7]) ;
 # 1886 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1887 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_42: Real_t xv0; register_stack_var("CalcMonotonicQGradientsForElems|xv0|0", "double", (void *)(&xv0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_43; } xv0 = (mesh.xd[n0]) ;
+ lbl_42: Real_t xv0; register_stack_var("CalcMonotonicQGradientsForElems|xv0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv0_0, "double", (void *)(&xv0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_43; } xv0 = (mesh.xd[n0]) ;
 # 1888 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_43: Real_t xv1; register_stack_var("CalcMonotonicQGradientsForElems|xv1|0", "double", (void *)(&xv1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_44; } xv1 = (mesh.xd[n1]) ;
+ lbl_43: Real_t xv1; register_stack_var("CalcMonotonicQGradientsForElems|xv1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv1_0, "double", (void *)(&xv1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_44; } xv1 = (mesh.xd[n1]) ;
 # 1889 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_44: Real_t xv2; register_stack_var("CalcMonotonicQGradientsForElems|xv2|0", "double", (void *)(&xv2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_45; } xv2 = (mesh.xd[n2]) ;
+ lbl_44: Real_t xv2; register_stack_var("CalcMonotonicQGradientsForElems|xv2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv2_0, "double", (void *)(&xv2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_45; } xv2 = (mesh.xd[n2]) ;
 # 1890 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_45: Real_t xv3; register_stack_var("CalcMonotonicQGradientsForElems|xv3|0", "double", (void *)(&xv3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_46; } xv3 = (mesh.xd[n3]) ;
+ lbl_45: Real_t xv3; register_stack_var("CalcMonotonicQGradientsForElems|xv3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv3_0, "double", (void *)(&xv3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_46; } xv3 = (mesh.xd[n3]) ;
 # 1891 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_46: Real_t xv4; register_stack_var("CalcMonotonicQGradientsForElems|xv4|0", "double", (void *)(&xv4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_47; } xv4 = (mesh.xd[n4]) ;
+ lbl_46: Real_t xv4; register_stack_var("CalcMonotonicQGradientsForElems|xv4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv4_0, "double", (void *)(&xv4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_47; } xv4 = (mesh.xd[n4]) ;
 # 1892 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_47: Real_t xv5; register_stack_var("CalcMonotonicQGradientsForElems|xv5|0", "double", (void *)(&xv5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_48; } xv5 = (mesh.xd[n5]) ;
+ lbl_47: Real_t xv5; register_stack_var("CalcMonotonicQGradientsForElems|xv5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv5_0, "double", (void *)(&xv5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_48; } xv5 = (mesh.xd[n5]) ;
 # 1893 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_48: Real_t xv6; register_stack_var("CalcMonotonicQGradientsForElems|xv6|0", "double", (void *)(&xv6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_49; } xv6 = (mesh.xd[n6]) ;
+ lbl_48: Real_t xv6; register_stack_var("CalcMonotonicQGradientsForElems|xv6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv6_0, "double", (void *)(&xv6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_49; } xv6 = (mesh.xd[n6]) ;
 # 1894 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_49: Real_t xv7; register_stack_var("CalcMonotonicQGradientsForElems|xv7|0", "double", (void *)(&xv7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_50; } xv7 = (mesh.xd[n7]) ;
+ lbl_49: Real_t xv7; register_stack_var("CalcMonotonicQGradientsForElems|xv7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_xv7_0, "double", (void *)(&xv7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_50; } xv7 = (mesh.xd[n7]) ;
 # 1895 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1896 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_50: Real_t yv0; register_stack_var("CalcMonotonicQGradientsForElems|yv0|0", "double", (void *)(&yv0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_51; } yv0 = (mesh.yd[n0]) ;
+ lbl_50: Real_t yv0; register_stack_var("CalcMonotonicQGradientsForElems|yv0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv0_0, "double", (void *)(&yv0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_51; } yv0 = (mesh.yd[n0]) ;
 # 1897 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_51: Real_t yv1; register_stack_var("CalcMonotonicQGradientsForElems|yv1|0", "double", (void *)(&yv1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_52; } yv1 = (mesh.yd[n1]) ;
+ lbl_51: Real_t yv1; register_stack_var("CalcMonotonicQGradientsForElems|yv1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv1_0, "double", (void *)(&yv1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_52; } yv1 = (mesh.yd[n1]) ;
 # 1898 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_52: Real_t yv2; register_stack_var("CalcMonotonicQGradientsForElems|yv2|0", "double", (void *)(&yv2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_53; } yv2 = (mesh.yd[n2]) ;
+ lbl_52: Real_t yv2; register_stack_var("CalcMonotonicQGradientsForElems|yv2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv2_0, "double", (void *)(&yv2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_53; } yv2 = (mesh.yd[n2]) ;
 # 1899 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_53: Real_t yv3; register_stack_var("CalcMonotonicQGradientsForElems|yv3|0", "double", (void *)(&yv3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_54; } yv3 = (mesh.yd[n3]) ;
+ lbl_53: Real_t yv3; register_stack_var("CalcMonotonicQGradientsForElems|yv3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv3_0, "double", (void *)(&yv3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_54; } yv3 = (mesh.yd[n3]) ;
 # 1900 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_54: Real_t yv4; register_stack_var("CalcMonotonicQGradientsForElems|yv4|0", "double", (void *)(&yv4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_55; } yv4 = (mesh.yd[n4]) ;
+ lbl_54: Real_t yv4; register_stack_var("CalcMonotonicQGradientsForElems|yv4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv4_0, "double", (void *)(&yv4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_55; } yv4 = (mesh.yd[n4]) ;
 # 1901 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_55: Real_t yv5; register_stack_var("CalcMonotonicQGradientsForElems|yv5|0", "double", (void *)(&yv5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_56; } yv5 = (mesh.yd[n5]) ;
+ lbl_55: Real_t yv5; register_stack_var("CalcMonotonicQGradientsForElems|yv5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv5_0, "double", (void *)(&yv5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_56; } yv5 = (mesh.yd[n5]) ;
 # 1902 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_56: Real_t yv6; register_stack_var("CalcMonotonicQGradientsForElems|yv6|0", "double", (void *)(&yv6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_57; } yv6 = (mesh.yd[n6]) ;
+ lbl_56: Real_t yv6; register_stack_var("CalcMonotonicQGradientsForElems|yv6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv6_0, "double", (void *)(&yv6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_57; } yv6 = (mesh.yd[n6]) ;
 # 1903 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_57: Real_t yv7; register_stack_var("CalcMonotonicQGradientsForElems|yv7|0", "double", (void *)(&yv7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_58; } yv7 = (mesh.yd[n7]) ;
+ lbl_57: Real_t yv7; register_stack_var("CalcMonotonicQGradientsForElems|yv7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_yv7_0, "double", (void *)(&yv7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_58; } yv7 = (mesh.yd[n7]) ;
 # 1904 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1905 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_58: Real_t zv0; register_stack_var("CalcMonotonicQGradientsForElems|zv0|0", "double", (void *)(&zv0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_59; } zv0 = (mesh.zd[n0]) ;
+ lbl_58: Real_t zv0; register_stack_var("CalcMonotonicQGradientsForElems|zv0|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv0_0, "double", (void *)(&zv0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_59; } zv0 = (mesh.zd[n0]) ;
 # 1906 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_59: Real_t zv1; register_stack_var("CalcMonotonicQGradientsForElems|zv1|0", "double", (void *)(&zv1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_60; } zv1 = (mesh.zd[n1]) ;
+ lbl_59: Real_t zv1; register_stack_var("CalcMonotonicQGradientsForElems|zv1|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv1_0, "double", (void *)(&zv1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_60; } zv1 = (mesh.zd[n1]) ;
 # 1907 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_60: Real_t zv2; register_stack_var("CalcMonotonicQGradientsForElems|zv2|0", "double", (void *)(&zv2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_61; } zv2 = (mesh.zd[n2]) ;
+ lbl_60: Real_t zv2; register_stack_var("CalcMonotonicQGradientsForElems|zv2|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv2_0, "double", (void *)(&zv2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_61; } zv2 = (mesh.zd[n2]) ;
 # 1908 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_61: Real_t zv3; register_stack_var("CalcMonotonicQGradientsForElems|zv3|0", "double", (void *)(&zv3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_62; } zv3 = (mesh.zd[n3]) ;
+ lbl_61: Real_t zv3; register_stack_var("CalcMonotonicQGradientsForElems|zv3|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv3_0, "double", (void *)(&zv3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_62; } zv3 = (mesh.zd[n3]) ;
 # 1909 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_62: Real_t zv4; register_stack_var("CalcMonotonicQGradientsForElems|zv4|0", "double", (void *)(&zv4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_63; } zv4 = (mesh.zd[n4]) ;
+ lbl_62: Real_t zv4; register_stack_var("CalcMonotonicQGradientsForElems|zv4|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv4_0, "double", (void *)(&zv4), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_63; } zv4 = (mesh.zd[n4]) ;
 # 1910 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_63: Real_t zv5; register_stack_var("CalcMonotonicQGradientsForElems|zv5|0", "double", (void *)(&zv5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_64; } zv5 = (mesh.zd[n5]) ;
+ lbl_63: Real_t zv5; register_stack_var("CalcMonotonicQGradientsForElems|zv5|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv5_0, "double", (void *)(&zv5), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_64; } zv5 = (mesh.zd[n5]) ;
 # 1911 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_64: Real_t zv6; register_stack_var("CalcMonotonicQGradientsForElems|zv6|0", "double", (void *)(&zv6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_65; } zv6 = (mesh.zd[n6]) ;
+ lbl_64: Real_t zv6; register_stack_var("CalcMonotonicQGradientsForElems|zv6|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv6_0, "double", (void *)(&zv6), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_65; } zv6 = (mesh.zd[n6]) ;
 # 1912 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_65: Real_t zv7; register_stack_var("CalcMonotonicQGradientsForElems|zv7|0", "double", (void *)(&zv7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_66; } zv7 = (mesh.zd[n7]) ;
+ lbl_65: Real_t zv7; register_stack_var("CalcMonotonicQGradientsForElems|zv7|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_zv7_0, "double", (void *)(&zv7), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_66; } zv7 = (mesh.zd[n7]) ;
 # 1913 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1914 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_66: Real_t vol; register_stack_var("CalcMonotonicQGradientsForElems|vol|0", "double", (void *)(&vol), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_67; } vol = (mesh.volo[i] * mesh.vnew[i]) ;
+ lbl_66: Real_t vol; register_stack_var("CalcMonotonicQGradientsForElems|vol|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_vol_0, "double", (void *)(&vol), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_67; } vol = (mesh.volo[i] * mesh.vnew[i]) ;
 # 1915 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_67: Real_t norm; register_stack_var("CalcMonotonicQGradientsForElems|norm|0", "double", (void *)(&norm), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_68; } norm = (Real_t(1.) / (vol + ptiny)) ;
+ lbl_67: Real_t norm; register_stack_var("CalcMonotonicQGradientsForElems|norm|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_norm_0, "double", (void *)(&norm), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_68; } norm = (Real_t(1.) / (vol + ptiny)) ;
 # 1916 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1917 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_68: Real_t dxj; register_stack_var("CalcMonotonicQGradientsForElems|dxj|0", "double", (void *)(&dxj), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_69; } dxj = (Real_t(-0.25) * ((x0 + x1 + x5 + x4) - (x3 + x2 + x6 + x7))) ;
+ lbl_68: Real_t dxj; register_stack_var("CalcMonotonicQGradientsForElems|dxj|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dxj_0, "double", (void *)(&dxj), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_69; } dxj = (Real_t(-0.25) * ((x0 + x1 + x5 + x4) - (x3 + x2 + x6 + x7))) ;
 # 1918 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_69: Real_t dyj; register_stack_var("CalcMonotonicQGradientsForElems|dyj|0", "double", (void *)(&dyj), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_70; } dyj = (Real_t(-0.25) * ((y0 + y1 + y5 + y4) - (y3 + y2 + y6 + y7))) ;
+ lbl_69: Real_t dyj; register_stack_var("CalcMonotonicQGradientsForElems|dyj|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dyj_0, "double", (void *)(&dyj), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_70; } dyj = (Real_t(-0.25) * ((y0 + y1 + y5 + y4) - (y3 + y2 + y6 + y7))) ;
 # 1919 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_70: Real_t dzj; register_stack_var("CalcMonotonicQGradientsForElems|dzj|0", "double", (void *)(&dzj), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_71; } dzj = (Real_t(-0.25) * ((z0 + z1 + z5 + z4) - (z3 + z2 + z6 + z7))) ;
+ lbl_70: Real_t dzj; register_stack_var("CalcMonotonicQGradientsForElems|dzj|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dzj_0, "double", (void *)(&dzj), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_71; } dzj = (Real_t(-0.25) * ((z0 + z1 + z5 + z4) - (z3 + z2 + z6 + z7))) ;
 # 1920 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1921 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_71: Real_t dxi; register_stack_var("CalcMonotonicQGradientsForElems|dxi|0", "double", (void *)(&dxi), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_72; } dxi = (Real_t(0.25) * ((x1 + x2 + x6 + x5) - (x0 + x3 + x7 + x4))) ;
+ lbl_71: Real_t dxi; register_stack_var("CalcMonotonicQGradientsForElems|dxi|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dxi_0, "double", (void *)(&dxi), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_72; } dxi = (Real_t(0.25) * ((x1 + x2 + x6 + x5) - (x0 + x3 + x7 + x4))) ;
 # 1922 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_72: Real_t dyi; register_stack_var("CalcMonotonicQGradientsForElems|dyi|0", "double", (void *)(&dyi), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_73; } dyi = (Real_t(0.25) * ((y1 + y2 + y6 + y5) - (y0 + y3 + y7 + y4))) ;
+ lbl_72: Real_t dyi; register_stack_var("CalcMonotonicQGradientsForElems|dyi|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dyi_0, "double", (void *)(&dyi), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_73; } dyi = (Real_t(0.25) * ((y1 + y2 + y6 + y5) - (y0 + y3 + y7 + y4))) ;
 # 1923 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_73: Real_t dzi; register_stack_var("CalcMonotonicQGradientsForElems|dzi|0", "double", (void *)(&dzi), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_74; } dzi = (Real_t(0.25) * ((z1 + z2 + z6 + z5) - (z0 + z3 + z7 + z4))) ;
+ lbl_73: Real_t dzi; register_stack_var("CalcMonotonicQGradientsForElems|dzi|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dzi_0, "double", (void *)(&dzi), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_74; } dzi = (Real_t(0.25) * ((z1 + z2 + z6 + z5) - (z0 + z3 + z7 + z4))) ;
 # 1924 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1925 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_74: Real_t dxk; register_stack_var("CalcMonotonicQGradientsForElems|dxk|0", "double", (void *)(&dxk), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_75; } dxk = (Real_t(0.25) * ((x4 + x5 + x6 + x7) - (x0 + x1 + x2 + x3))) ;
+ lbl_74: Real_t dxk; register_stack_var("CalcMonotonicQGradientsForElems|dxk|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dxk_0, "double", (void *)(&dxk), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_75; } dxk = (Real_t(0.25) * ((x4 + x5 + x6 + x7) - (x0 + x1 + x2 + x3))) ;
 # 1926 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_75: Real_t dyk; register_stack_var("CalcMonotonicQGradientsForElems|dyk|0", "double", (void *)(&dyk), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_76; } dyk = (Real_t(0.25) * ((y4 + y5 + y6 + y7) - (y0 + y1 + y2 + y3))) ;
+ lbl_75: Real_t dyk; register_stack_var("CalcMonotonicQGradientsForElems|dyk|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dyk_0, "double", (void *)(&dyk), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_76; } dyk = (Real_t(0.25) * ((y4 + y5 + y6 + y7) - (y0 + y1 + y2 + y3))) ;
 # 1927 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_76: Real_t dzk; register_stack_var("CalcMonotonicQGradientsForElems|dzk|0", "double", (void *)(&dzk), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } dzk = (Real_t(0.25) * ((z4 + z5 + z6 + z7) - (z0 + z1 + z2 + z3))) ;
+ lbl_76: Real_t dzk; register_stack_var("CalcMonotonicQGradientsForElems|dzk|0", &____must_checkpoint_CalcMonotonicQGradientsForElems_dzk_0, "double", (void *)(&dzk), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } dzk = (Real_t(0.25) * ((z4 + z5 + z6 + z7) - (z0 + z1 + z2 + z3))) ;
 # 1928 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1929 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1930 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6036,9 +6036,9 @@ void CalcQForElems()
 # 2156 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&CalcQForElems), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2157 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t qstop; register_stack_var("CalcQForElems|qstop|0", "double", (void *)(&qstop), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } qstop = (mesh.qstop) ;
+ lbl_0: Real_t qstop; register_stack_var("CalcQForElems|qstop|0", &____must_checkpoint_CalcQForElems_qstop_0, "double", (void *)(&qstop), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } qstop = (mesh.qstop) ;
 # 2158 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Index_t numElem; register_stack_var("CalcQForElems|numElem|0", "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } numElem = (mesh.numElem) ;
+ lbl_1: Index_t numElem; register_stack_var("CalcQForElems|numElem|0", &____must_checkpoint_CalcQForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } numElem = (mesh.numElem) ;
 # 2159 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2160 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2161 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6097,11 +6097,11 @@ void CalcPressureForElems(Real_t* p_new, Real_t* bvc,
 # 2193 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Index_t length)
 # 2194 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&CalcPressureForElems), 10, 8, (size_t)(16832839476487309452UL), (size_t)(16832839476487309453UL), (size_t)(16832839476487309454UL), (size_t)(16832839476487309455UL), (size_t)(16832839476487309456UL), (size_t)(16832839476487309457UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "CalcPressureForElems|p_new|0", "double*", (void *)(&p_new), (size_t)8, 1, 0, 0, "CalcPressureForElems|bvc|0", "double*", (void *)(&bvc), (size_t)8, 1, 0, 0, "CalcPressureForElems|e_old|0", "double*", (void *)(&e_old), (size_t)8, 1, 0, 0, "CalcPressureForElems|vnewc|0", "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "CalcPressureForElems|pmin|0", "double", (void *)(&pmin), (size_t)8, 0, 0, 0, "CalcPressureForElems|p_cut|0", "double", (void *)(&p_cut), (size_t)8, 0, 0, 0, "CalcPressureForElems|eosvmax|0", "double", (void *)(&eosvmax), (size_t)8, 0, 0, 0, "CalcPressureForElems|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&CalcPressureForElems), 10, 8, (size_t)(16832839476487309452UL), (size_t)(16832839476487309453UL), (size_t)(16832839476487309454UL), (size_t)(16832839476487309455UL), (size_t)(16832839476487309456UL), (size_t)(16832839476487309457UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "CalcPressureForElems|p_new|0", &____must_checkpoint_CalcPressureForElems_p_new_0, "double*", (void *)(&p_new), (size_t)8, 1, 0, 0, "CalcPressureForElems|bvc|0", &____must_checkpoint_CalcPressureForElems_bvc_0, "double*", (void *)(&bvc), (size_t)8, 1, 0, 0, "CalcPressureForElems|e_old|0", &____must_checkpoint_CalcPressureForElems_e_old_0, "double*", (void *)(&e_old), (size_t)8, 1, 0, 0, "CalcPressureForElems|vnewc|0", &____must_checkpoint_CalcPressureForElems_vnewc_0, "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "CalcPressureForElems|pmin|0", &____must_checkpoint_CalcPressureForElems_pmin_0, "double", (void *)(&pmin), (size_t)8, 0, 0, 0, "CalcPressureForElems|p_cut|0", &____must_checkpoint_CalcPressureForElems_p_cut_0, "double", (void *)(&p_cut), (size_t)8, 0, 0, 0, "CalcPressureForElems|eosvmax|0", &____must_checkpoint_CalcPressureForElems_eosvmax_0, "double", (void *)(&eosvmax), (size_t)8, 0, 0, 0, "CalcPressureForElems|length|0", &____must_checkpoint_CalcPressureForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2195 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t c1s; c1s = (Real_t(2.) / Real_t(3.)) ;
 # 2196 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_0: Index_t i; register_stack_var("CalcPressureForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( i = (0) ; i < length ; ++i) {
+ { lbl_0: Index_t i; register_stack_var("CalcPressureForElems|i|0", &____must_checkpoint_CalcPressureForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( i = (0) ; i < length ; ++i) {
 # 2197 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  bvc[i] = c1s * (compression[i] + Real_t(1.));
 # 2198 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6150,14 +6150,14 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2225 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Index_t length)
 # 2226 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&CalcEnergyForElems), 23, 22, (size_t)(16832839476487309184UL), (size_t)(16832839476487309185UL), (size_t)(16832839476487309186UL), (size_t)(16832839476487309187UL), (size_t)(16832839476487309188UL), (size_t)(16832839476487309189UL), (size_t)(16832839476487309190UL), (size_t)(16832839476487309191UL), (size_t)(16832839476487309192UL), (size_t)(16832839476487309193UL), (size_t)(16832839476487309194UL), (size_t)(16832839476487309195UL), (size_t)(16832839476487309196UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16832839476487309202UL), (size_t)(16832839476487309203UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "CalcEnergyForElems|p_new|0", "double*", (void *)(&p_new), (size_t)8, 1, 0, 0, "CalcEnergyForElems|e_new|0", "double*", (void *)(&e_new), (size_t)8, 1, 0, 0, "CalcEnergyForElems|q_new|0", "double*", (void *)(&q_new), (size_t)8, 1, 0, 0, "CalcEnergyForElems|bvc|0", "double*", (void *)(&bvc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|pbvc|0", "double*", (void *)(&pbvc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|p_old|0", "double*", (void *)(&p_old), (size_t)8, 1, 0, 0, "CalcEnergyForElems|q_old|0", "double*", (void *)(&q_old), (size_t)8, 1, 0, 0, "CalcEnergyForElems|compression|0", "double*", (void *)(&compression), (size_t)8, 1, 0, 0, "CalcEnergyForElems|compHalfStep|0", "double*", (void *)(&compHalfStep), (size_t)8, 1, 0, 0, "CalcEnergyForElems|vnewc|0", "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|work|0", "double*", (void *)(&work), (size_t)8, 1, 0, 0, "CalcEnergyForElems|delvc|0", "double*", (void *)(&delvc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|pmin|0", "double", (void *)(&pmin), (size_t)8, 0, 0, 0, "CalcEnergyForElems|p_cut|0", "double", (void *)(&p_cut), (size_t)8, 0, 0, 0, "CalcEnergyForElems|e_cut|0", "double", (void *)(&e_cut), (size_t)8, 0, 0, 0, "CalcEnergyForElems|q_cut|0", "double", (void *)(&q_cut), (size_t)8, 0, 0, 0, "CalcEnergyForElems|emin|0", "double", (void *)(&emin), (size_t)8, 0, 0, 0, "CalcEnergyForElems|qq|0", "double*", (void *)(&qq), (size_t)8, 1, 0, 0, "CalcEnergyForElems|ql|0", "double*", (void *)(&ql), (size_t)8, 1, 0, 0, "CalcEnergyForElems|rho0|0", "double", (void *)(&rho0), (size_t)8, 0, 0, 0, "CalcEnergyForElems|eosvmax|0", "double", (void *)(&eosvmax), (size_t)8, 0, 0, 0, "CalcEnergyForElems|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&CalcEnergyForElems), 23, 22, (size_t)(16832839476487309184UL), (size_t)(16832839476487309185UL), (size_t)(16832839476487309186UL), (size_t)(16832839476487309187UL), (size_t)(16832839476487309188UL), (size_t)(16832839476487309189UL), (size_t)(16832839476487309190UL), (size_t)(16832839476487309191UL), (size_t)(16832839476487309192UL), (size_t)(16832839476487309193UL), (size_t)(16832839476487309194UL), (size_t)(16832839476487309195UL), (size_t)(16832839476487309196UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16832839476487309202UL), (size_t)(16832839476487309203UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "CalcEnergyForElems|p_new|0", &____must_checkpoint_CalcEnergyForElems_p_new_0, "double*", (void *)(&p_new), (size_t)8, 1, 0, 0, "CalcEnergyForElems|e_new|0", &____must_checkpoint_CalcEnergyForElems_e_new_0, "double*", (void *)(&e_new), (size_t)8, 1, 0, 0, "CalcEnergyForElems|q_new|0", &____must_checkpoint_CalcEnergyForElems_q_new_0, "double*", (void *)(&q_new), (size_t)8, 1, 0, 0, "CalcEnergyForElems|bvc|0", &____must_checkpoint_CalcEnergyForElems_bvc_0, "double*", (void *)(&bvc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|pbvc|0", &____must_checkpoint_CalcEnergyForElems_pbvc_0, "double*", (void *)(&pbvc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|p_old|0", &____must_checkpoint_CalcEnergyForElems_p_old_0, "double*", (void *)(&p_old), (size_t)8, 1, 0, 0, "CalcEnergyForElems|q_old|0", &____must_checkpoint_CalcEnergyForElems_q_old_0, "double*", (void *)(&q_old), (size_t)8, 1, 0, 0, "CalcEnergyForElems|compression|0", &____must_checkpoint_CalcEnergyForElems_compression_0, "double*", (void *)(&compression), (size_t)8, 1, 0, 0, "CalcEnergyForElems|compHalfStep|0", &____must_checkpoint_CalcEnergyForElems_compHalfStep_0, "double*", (void *)(&compHalfStep), (size_t)8, 1, 0, 0, "CalcEnergyForElems|vnewc|0", &____must_checkpoint_CalcEnergyForElems_vnewc_0, "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|work|0", &____must_checkpoint_CalcEnergyForElems_work_0, "double*", (void *)(&work), (size_t)8, 1, 0, 0, "CalcEnergyForElems|delvc|0", &____must_checkpoint_CalcEnergyForElems_delvc_0, "double*", (void *)(&delvc), (size_t)8, 1, 0, 0, "CalcEnergyForElems|pmin|0", &____must_checkpoint_CalcEnergyForElems_pmin_0, "double", (void *)(&pmin), (size_t)8, 0, 0, 0, "CalcEnergyForElems|p_cut|0", &____must_checkpoint_CalcEnergyForElems_p_cut_0, "double", (void *)(&p_cut), (size_t)8, 0, 0, 0, "CalcEnergyForElems|e_cut|0", &____must_checkpoint_CalcEnergyForElems_e_cut_0, "double", (void *)(&e_cut), (size_t)8, 0, 0, 0, "CalcEnergyForElems|q_cut|0", &____must_checkpoint_CalcEnergyForElems_q_cut_0, "double", (void *)(&q_cut), (size_t)8, 0, 0, 0, "CalcEnergyForElems|emin|0", &____must_checkpoint_CalcEnergyForElems_emin_0, "double", (void *)(&emin), (size_t)8, 0, 0, 0, "CalcEnergyForElems|qq|0", &____must_checkpoint_CalcEnergyForElems_qq_0, "double*", (void *)(&qq), (size_t)8, 1, 0, 0, "CalcEnergyForElems|ql|0", &____must_checkpoint_CalcEnergyForElems_ql_0, "double*", (void *)(&ql), (size_t)8, 1, 0, 0, "CalcEnergyForElems|rho0|0", &____must_checkpoint_CalcEnergyForElems_rho0_0, "double", (void *)(&rho0), (size_t)8, 0, 0, 0, "CalcEnergyForElems|eosvmax|0", &____must_checkpoint_CalcEnergyForElems_eosvmax_0, "double", (void *)(&eosvmax), (size_t)8, 0, 0, 0, "CalcEnergyForElems|length|0", &____must_checkpoint_CalcEnergyForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2227 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t sixth; register_stack_var("CalcEnergyForElems|sixth|0", "double", (void *)(&sixth), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } sixth = (Real_t(1.) / Real_t(6.)) ;
+ lbl_0: Real_t sixth; register_stack_var("CalcEnergyForElems|sixth|0", &____must_checkpoint_CalcEnergyForElems_sixth_0, "double", (void *)(&sixth), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } sixth = (Real_t(1.) / Real_t(6.)) ;
 # 2228 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t *pHalfStep; register_stack_var("CalcEnergyForElems|pHalfStep|0", "double*", (void *)(&pHalfStep), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308622UL, 0, 0)) ;
+ lbl_1: Real_t *pHalfStep; register_stack_var("CalcEnergyForElems|pHalfStep|0", &____must_checkpoint_CalcEnergyForElems_pHalfStep_0, "double*", (void *)(&pHalfStep), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308622UL, 0, 0)) ;
 # 2229 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2230 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_2: Index_t i; register_stack_var("CalcEnergyForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( i = (0) ; i < length ; ++i) {
+ { lbl_2: Index_t i; register_stack_var("CalcEnergyForElems|i|0", &____must_checkpoint_CalcEnergyForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( i = (0) ; i < length ; ++i) {
 # 2231 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  e_new[i] = e_old[i] - Real_t(0.5) * delvc[i] * (p_old[i] + q_old[i])
 # 2232 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6178,9 +6178,9 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  pmin, p_cut, eosvmax, length);
 # 2241 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2242 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_3: Index_t i; register_stack_var("CalcEnergyForElems|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( i = (0) ; i < length ; ++i) {
+ { lbl_3: Index_t i; register_stack_var("CalcEnergyForElems|i|1", &____must_checkpoint_CalcEnergyForElems_i_1, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( i = (0) ; i < length ; ++i) {
 # 2243 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_4: Real_t vhalf; register_stack_var("CalcEnergyForElems|vhalf|0", "double", (void *)(&vhalf), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } vhalf = (Real_t(1.) / (Real_t(1.) + compHalfStep[i])) ;
+ lbl_4: Real_t vhalf; register_stack_var("CalcEnergyForElems|vhalf|0", &____must_checkpoint_CalcEnergyForElems_vhalf_0, "double", (void *)(&vhalf), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } vhalf = (Real_t(1.) / (Real_t(1.) + compHalfStep[i])) ;
 # 2244 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2245 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( delvc[i] > Real_t(0.) ) {
@@ -6191,7 +6191,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2248 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  else {
 # 2249 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Real_t ssc; register_stack_var("CalcEnergyForElems|ssc|0", "double", (void *)(&ssc), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ssc = ((pbvc[i] * e_new[i] + vhalf * vhalf * bvc[i] * pHalfStep[i]) / rho0) ;
+ lbl_5: Real_t ssc; register_stack_var("CalcEnergyForElems|ssc|0", &____must_checkpoint_CalcEnergyForElems_ssc_0, "double", (void *)(&ssc), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } ssc = ((pbvc[i] * e_new[i] + vhalf * vhalf * bvc[i] * pHalfStep[i]) / rho0) ;
 # 2251 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2252 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( ssc <= Real_t(.111111e-36) ) {
@@ -6218,7 +6218,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2264 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  } }
 # 2265 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_6: Index_t i; register_stack_var("CalcEnergyForElems|i|2", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( i = (0) ; i < length ; ++i) {
+ { lbl_6: Index_t i; register_stack_var("CalcEnergyForElems|i|2", &____must_checkpoint_CalcEnergyForElems_i_2, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( i = (0) ; i < length ; ++i) {
 # 2266 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2267 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  e_new[i] += Real_t(0.5) * work[i];
@@ -6244,9 +6244,9 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  pmin, p_cut, eosvmax, length);
 # 2279 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2280 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_7: Index_t i; register_stack_var("CalcEnergyForElems|i|3", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( i = (0) ; i < length ; ++i){
+ { lbl_7: Index_t i; register_stack_var("CalcEnergyForElems|i|3", &____must_checkpoint_CalcEnergyForElems_i_3, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( i = (0) ; i < length ; ++i){
 # 2281 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_8: Real_t q_tilde; register_stack_var("CalcEnergyForElems|q_tilde|0", "double", (void *)(&q_tilde), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ;
+ lbl_8: Real_t q_tilde; register_stack_var("CalcEnergyForElems|q_tilde|0", &____must_checkpoint_CalcEnergyForElems_q_tilde_0, "double", (void *)(&q_tilde), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } ;
 # 2282 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2283 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if (delvc[i] > Real_t(0.)) {
@@ -6257,7 +6257,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2286 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  else {
 # 2287 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_9: Real_t ssc; register_stack_var("CalcEnergyForElems|ssc|1", "double", (void *)(&ssc), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } ssc = ((pbvc[i] * e_new[i] + vnewc[i] * vnewc[i] * bvc[i] * p_new[i]) / rho0) ;
+ lbl_9: Real_t ssc; register_stack_var("CalcEnergyForElems|ssc|1", &____must_checkpoint_CalcEnergyForElems_ssc_1, "double", (void *)(&ssc), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } ssc = ((pbvc[i] * e_new[i] + vnewc[i] * vnewc[i] * bvc[i] * p_new[i]) / rho0) ;
 # 2289 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2290 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( ssc <= Real_t(.111111e-36) ) {
@@ -6308,7 +6308,7 @@ void CalcEnergyForElems(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2316 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( delvc[i] <= Real_t(0.) ) {
 # 2317 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_10: Real_t ssc; register_stack_var("CalcEnergyForElems|ssc|2", "double", (void *)(&ssc), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ssc = ((pbvc[i] * e_new[i] + vnewc[i] * vnewc[i] * bvc[i] * p_new[i]) / rho0) ;
+ lbl_10: Real_t ssc; register_stack_var("CalcEnergyForElems|ssc|2", &____must_checkpoint_CalcEnergyForElems_ssc_2, "double", (void *)(&ssc), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ssc = ((pbvc[i] * e_new[i] + vnewc[i] * vnewc[i] * bvc[i] * p_new[i]) / rho0) ;
 # 2319 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2320 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( ssc <= Real_t(.111111e-36) ) {
@@ -6348,13 +6348,13 @@ void CalcSoundSpeedForElems(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2340 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t *bvc, Real_t ss4o3, Index_t nz)
 # 2341 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&CalcSoundSpeedForElems), 8, 7, (size_t)(16832839476487309305UL), (size_t)(0UL), (size_t)(16832839476487309307UL), (size_t)(16832839476487309308UL), (size_t)(16832839476487309309UL), (size_t)(16832839476487309310UL), (size_t)(0UL), (size_t)(0UL), "CalcSoundSpeedForElems|vnewc|0", "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|rho0|0", "double", (void *)(&rho0), (size_t)8, 0, 0, 0, "CalcSoundSpeedForElems|enewc|0", "double*", (void *)(&enewc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|pnewc|0", "double*", (void *)(&pnewc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|pbvc|0", "double*", (void *)(&pbvc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|bvc|0", "double*", (void *)(&bvc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|nz|0", "i32", (void *)(&nz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&CalcSoundSpeedForElems), 8, 7, (size_t)(16832839476487309305UL), (size_t)(0UL), (size_t)(16832839476487309307UL), (size_t)(16832839476487309308UL), (size_t)(16832839476487309309UL), (size_t)(16832839476487309310UL), (size_t)(0UL), (size_t)(0UL), "CalcSoundSpeedForElems|vnewc|0", &____must_checkpoint_CalcSoundSpeedForElems_vnewc_0, "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|rho0|0", &____must_checkpoint_CalcSoundSpeedForElems_rho0_0, "double", (void *)(&rho0), (size_t)8, 0, 0, 0, "CalcSoundSpeedForElems|enewc|0", &____must_checkpoint_CalcSoundSpeedForElems_enewc_0, "double*", (void *)(&enewc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|pnewc|0", &____must_checkpoint_CalcSoundSpeedForElems_pnewc_0, "double*", (void *)(&pnewc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|pbvc|0", &____must_checkpoint_CalcSoundSpeedForElems_pbvc_0, "double*", (void *)(&pbvc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|bvc|0", &____must_checkpoint_CalcSoundSpeedForElems_bvc_0, "double*", (void *)(&bvc), (size_t)8, 1, 0, 0, "CalcSoundSpeedForElems|nz|0", &____must_checkpoint_CalcSoundSpeedForElems_nz_0, "i32", (void *)(&nz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2342 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_0: Index_t i; register_stack_var("CalcSoundSpeedForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( i = (0) ; i < nz ; ++i) {
+ { lbl_0: Index_t i; register_stack_var("CalcSoundSpeedForElems|i|0", &____must_checkpoint_CalcSoundSpeedForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( i = (0) ; i < nz ; ++i) {
 # 2343 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Index_t iz; register_stack_var("CalcSoundSpeedForElems|iz|0", "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } iz = (mesh.matElemlist[i]) ;
+ lbl_1: Index_t iz; register_stack_var("CalcSoundSpeedForElems|iz|0", &____must_checkpoint_CalcSoundSpeedForElems_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } iz = (mesh.matElemlist[i]) ;
 # 2344 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t ssTmp; register_stack_var("CalcSoundSpeedForElems|ssTmp|0", "double", (void *)(&ssTmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ssTmp = ((pbvc[i] * enewc[i] + vnewc[i] * vnewc[i] * bvc[i] * pnewc[i]) / rho0) ;
+ lbl_2: Real_t ssTmp; register_stack_var("CalcSoundSpeedForElems|ssTmp|0", &____must_checkpoint_CalcSoundSpeedForElems_ssTmp_0, "double", (void *)(&ssTmp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ssTmp = ((pbvc[i] * enewc[i] + vnewc[i] * vnewc[i] * bvc[i] * pnewc[i]) / rho0) ;
 # 2346 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if (ssTmp <= Real_t(.111111e-36)) {
 # 2347 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6373,13 +6373,13 @@ static inline
 # 2354 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2355 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-{new_stack((void *)(&EvalEOSForElems), 2, 2, (size_t)(16832839476487308532UL), (size_t)(0UL), "EvalEOSForElems|vnewc|0", "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "EvalEOSForElems|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&EvalEOSForElems), 2, 2, (size_t)(16832839476487308532UL), (size_t)(0UL), "EvalEOSForElems|vnewc|0", &____must_checkpoint_EvalEOSForElems_vnewc_0, "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0, "EvalEOSForElems|length|0", &____must_checkpoint_EvalEOSForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2356 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t e_cut; e_cut = (mesh.e_cut) ;
 # 2357 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t p_cut; p_cut = (mesh.p_cut) ;
 # 2358 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t ss4o3; register_stack_var("EvalEOSForElems|ss4o3|0", "double", (void *)(&ss4o3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ss4o3 = (mesh.ss4o3) ;
+ lbl_0: Real_t ss4o3; register_stack_var("EvalEOSForElems|ss4o3|0", &____must_checkpoint_EvalEOSForElems_ss4o3_0, "double", (void *)(&ss4o3), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ss4o3 = (mesh.ss4o3) ;
 # 2359 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t q_cut; q_cut = (mesh.q_cut) ;
 # 2360 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6392,60 +6392,60 @@ void EvalEOSForElems(Real_t *vnewc, Index_t length)
 # 2364 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t emin; emin = (mesh.emin) ;
 # 2365 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t rho0; register_stack_var("EvalEOSForElems|rho0|0", "double", (void *)(&rho0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } rho0 = (mesh.refdens) ;
+ lbl_1: Real_t rho0; register_stack_var("EvalEOSForElems|rho0|0", &____must_checkpoint_EvalEOSForElems_rho0_0, "double", (void *)(&rho0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } rho0 = (mesh.refdens) ;
 # 2366 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2367 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t *e_old; register_stack_var("EvalEOSForElems|e_old|0", "double*", (void *)(&e_old), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487307994UL, 0, 0)) ;
+ lbl_2: Real_t *e_old; register_stack_var("EvalEOSForElems|e_old|0", &____must_checkpoint_EvalEOSForElems_e_old_0, "double*", (void *)(&e_old), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487307994UL, 0, 0)) ;
 # 2368 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t *delvc; register_stack_var("EvalEOSForElems|delvc|0", "double*", (void *)(&delvc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308001UL, 0, 0)) ;
+ lbl_3: Real_t *delvc; register_stack_var("EvalEOSForElems|delvc|0", &____must_checkpoint_EvalEOSForElems_delvc_0, "double*", (void *)(&delvc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308001UL, 0, 0)) ;
 # 2369 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_4: Real_t *p_old; register_stack_var("EvalEOSForElems|p_old|0", "double*", (void *)(&p_old), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308008UL, 0, 0)) ;
+ lbl_4: Real_t *p_old; register_stack_var("EvalEOSForElems|p_old|0", &____must_checkpoint_EvalEOSForElems_p_old_0, "double*", (void *)(&p_old), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308008UL, 0, 0)) ;
 # 2370 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Real_t *q_old; register_stack_var("EvalEOSForElems|q_old|0", "double*", (void *)(&q_old), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308015UL, 0, 0)) ;
+ lbl_5: Real_t *q_old; register_stack_var("EvalEOSForElems|q_old|0", &____must_checkpoint_EvalEOSForElems_q_old_0, "double*", (void *)(&q_old), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308015UL, 0, 0)) ;
 # 2371 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_6: Real_t *compression; register_stack_var("EvalEOSForElems|compression|0", "double*", (void *)(&compression), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308022UL, 0, 0)) ;
+ lbl_6: Real_t *compression; register_stack_var("EvalEOSForElems|compression|0", &____must_checkpoint_EvalEOSForElems_compression_0, "double*", (void *)(&compression), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308022UL, 0, 0)) ;
 # 2372 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_7: Real_t *compHalfStep; register_stack_var("EvalEOSForElems|compHalfStep|0", "double*", (void *)(&compHalfStep), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308029UL, 0, 0)) ;
+ lbl_7: Real_t *compHalfStep; register_stack_var("EvalEOSForElems|compHalfStep|0", &____must_checkpoint_EvalEOSForElems_compHalfStep_0, "double*", (void *)(&compHalfStep), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308029UL, 0, 0)) ;
 # 2373 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_8: Real_t *qq; register_stack_var("EvalEOSForElems|qq|0", "double*", (void *)(&qq), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_9; } qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308036UL, 0, 0)) ;
+ lbl_8: Real_t *qq; register_stack_var("EvalEOSForElems|qq|0", &____must_checkpoint_EvalEOSForElems_qq_0, "double*", (void *)(&qq), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_9; } qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308036UL, 0, 0)) ;
 # 2374 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_9: Real_t *ql; register_stack_var("EvalEOSForElems|ql|0", "double*", (void *)(&ql), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308043UL, 0, 0)) ;
+ lbl_9: Real_t *ql; register_stack_var("EvalEOSForElems|ql|0", &____must_checkpoint_EvalEOSForElems_ql_0, "double*", (void *)(&ql), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_10; } ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308043UL, 0, 0)) ;
 # 2375 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_10: Real_t *work; register_stack_var("EvalEOSForElems|work|0", "double*", (void *)(&work), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308050UL, 0, 0)) ;
+ lbl_10: Real_t *work; register_stack_var("EvalEOSForElems|work|0", &____must_checkpoint_EvalEOSForElems_work_0, "double*", (void *)(&work), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308050UL, 0, 0)) ;
 # 2376 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_11: Real_t *p_new; register_stack_var("EvalEOSForElems|p_new|0", "double*", (void *)(&p_new), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308057UL, 0, 0)) ;
+ lbl_11: Real_t *p_new; register_stack_var("EvalEOSForElems|p_new|0", &____must_checkpoint_EvalEOSForElems_p_new_0, "double*", (void *)(&p_new), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_12; } p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308057UL, 0, 0)) ;
 # 2377 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_12: Real_t *e_new; register_stack_var("EvalEOSForElems|e_new|0", "double*", (void *)(&e_new), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_13; } e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308064UL, 0, 0)) ;
+ lbl_12: Real_t *e_new; register_stack_var("EvalEOSForElems|e_new|0", &____must_checkpoint_EvalEOSForElems_e_new_0, "double*", (void *)(&e_new), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_13; } e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308064UL, 0, 0)) ;
 # 2378 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_13: Real_t *q_new; register_stack_var("EvalEOSForElems|q_new|0", "double*", (void *)(&q_new), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_14; } q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308071UL, 0, 0)) ;
+ lbl_13: Real_t *q_new; register_stack_var("EvalEOSForElems|q_new|0", &____must_checkpoint_EvalEOSForElems_q_new_0, "double*", (void *)(&q_new), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_14; } q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308071UL, 0, 0)) ;
 # 2379 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_14: Real_t *bvc; register_stack_var("EvalEOSForElems|bvc|0", "double*", (void *)(&bvc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_15; } bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308078UL, 0, 0)) ;
+ lbl_14: Real_t *bvc; register_stack_var("EvalEOSForElems|bvc|0", &____must_checkpoint_EvalEOSForElems_bvc_0, "double*", (void *)(&bvc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_15; } bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308078UL, 0, 0)) ;
 # 2380 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_15: Real_t *pbvc; register_stack_var("EvalEOSForElems|pbvc|0", "double*", (void *)(&pbvc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_16; } pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308085UL, 0, 0)) ;
+ lbl_15: Real_t *pbvc; register_stack_var("EvalEOSForElems|pbvc|0", &____must_checkpoint_EvalEOSForElems_pbvc_0, "double*", (void *)(&pbvc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_16; } pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487308085UL, 0, 0)) ;
 # 2381 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2382 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2383 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_16: Index_t i; register_stack_var("EvalEOSForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } for ( i = (0) ; i<length; ++i) {
+ { lbl_16: Index_t i; register_stack_var("EvalEOSForElems|i|0", &____must_checkpoint_EvalEOSForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } for ( i = (0) ; i<length; ++i) {
 # 2384 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_17: Index_t zidx; register_stack_var("EvalEOSForElems|zidx|0", "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } zidx = (mesh.matElemlist[i]) ;
+ lbl_17: Index_t zidx; register_stack_var("EvalEOSForElems|zidx|0", &____must_checkpoint_EvalEOSForElems_zidx_0, "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } zidx = (mesh.matElemlist[i]) ;
 # 2385 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  e_old[i] = mesh.e[zidx] ;
 # 2386 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  } }
 # 2387 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2388 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_18: Index_t i; register_stack_var("EvalEOSForElems|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } for ( i = (0) ; i<length; ++i) {
+ { lbl_18: Index_t i; register_stack_var("EvalEOSForElems|i|1", &____must_checkpoint_EvalEOSForElems_i_1, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } for ( i = (0) ; i<length; ++i) {
 # 2389 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_19: Index_t zidx; register_stack_var("EvalEOSForElems|zidx|1", "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } zidx = (mesh.matElemlist[i]) ;
+ lbl_19: Index_t zidx; register_stack_var("EvalEOSForElems|zidx|1", &____must_checkpoint_EvalEOSForElems_zidx_1, "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } zidx = (mesh.matElemlist[i]) ;
 # 2390 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  delvc[i] = mesh.delv[zidx] ;
 # 2391 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  } }
 # 2392 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2393 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_20: Index_t i; register_stack_var("EvalEOSForElems|i|2", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } for ( i = (0) ; i<length; ++i) {
+ { lbl_20: Index_t i; register_stack_var("EvalEOSForElems|i|2", &____must_checkpoint_EvalEOSForElems_i_2, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } for ( i = (0) ; i<length; ++i) {
 # 2394 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_21: Index_t zidx; register_stack_var("EvalEOSForElems|zidx|2", "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } zidx = (mesh.matElemlist[i]) ;
+ lbl_21: Index_t zidx; register_stack_var("EvalEOSForElems|zidx|2", &____must_checkpoint_EvalEOSForElems_zidx_2, "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } zidx = (mesh.matElemlist[i]) ;
 # 2395 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  p_old[i] = mesh.p[zidx] ;
 # 2396 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6612,7 +6612,7 @@ void ApplyMaterialPropertiesForElems()
 # 2484 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t eosvmax; eosvmax = (mesh.eosvmax) ;
 # 2485 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t *vnewc; register_stack_var("ApplyMaterialPropertiesForElems|vnewc|0", "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487307734UL, 0, 0)) ;
+ lbl_0: Real_t *vnewc; register_stack_var("ApplyMaterialPropertiesForElems|vnewc|0", &____must_checkpoint_ApplyMaterialPropertiesForElems_vnewc_0, "double*", (void *)(&vnewc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 16832839476487307734UL, 0, 0)) ;
 # 2486 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2487 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  { Index_t i; for ( i = (0) ; i<length ; ++i) {
@@ -6690,16 +6690,16 @@ void UpdateVolumesForElems()
 # 2531 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&UpdateVolumesForElems), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2532 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Index_t numElem; register_stack_var("UpdateVolumesForElems|numElem|0", "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numElem = (mesh.numElem) ;
+ lbl_0: Index_t numElem; register_stack_var("UpdateVolumesForElems|numElem|0", &____must_checkpoint_UpdateVolumesForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } numElem = (mesh.numElem) ;
 # 2533 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if (numElem != 0) {
 # 2534 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Real_t v_cut; register_stack_var("UpdateVolumesForElems|v_cut|0", "double", (void *)(&v_cut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } v_cut = (mesh.v_cut) ;
+ lbl_1: Real_t v_cut; register_stack_var("UpdateVolumesForElems|v_cut|0", &____must_checkpoint_UpdateVolumesForElems_v_cut_0, "double", (void *)(&v_cut), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } v_cut = (mesh.v_cut) ;
 # 2535 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2536 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_2: Index_t i; register_stack_var("UpdateVolumesForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for( i = (0) ; i<numElem ; ++i) {
+ { lbl_2: Index_t i; register_stack_var("UpdateVolumesForElems|i|0", &____must_checkpoint_UpdateVolumesForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for( i = (0) ; i<numElem ; ++i) {
 # 2537 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t tmpV; register_stack_var("UpdateVolumesForElems|tmpV|0", "double", (void *)(&tmpV), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
+ lbl_3: Real_t tmpV; register_stack_var("UpdateVolumesForElems|tmpV|0", &____must_checkpoint_UpdateVolumesForElems_tmpV_0, "double", (void *)(&tmpV), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
 # 2538 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  tmpV = mesh.vnew[i] ;
 # 2539 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6748,24 +6748,24 @@ void CalcCourantConstraintForElems()
 # 2566 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&CalcCourantConstraintForElems), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2567 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t dtcourant; register_stack_var("CalcCourantConstraintForElems|dtcourant|0", "double", (void *)(&dtcourant), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } dtcourant = (Real_t(1.0E+20)) ;
+ lbl_0: Real_t dtcourant; register_stack_var("CalcCourantConstraintForElems|dtcourant|0", &____must_checkpoint_CalcCourantConstraintForElems_dtcourant_0, "double", (void *)(&dtcourant), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } dtcourant = (Real_t(1.0E+20)) ;
 # 2568 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Index_t courant_elem; register_stack_var("CalcCourantConstraintForElems|courant_elem|0", "i32", (void *)(&courant_elem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } courant_elem = (-1) ;
+ lbl_1: Index_t courant_elem; register_stack_var("CalcCourantConstraintForElems|courant_elem|0", &____must_checkpoint_CalcCourantConstraintForElems_courant_elem_0, "i32", (void *)(&courant_elem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } courant_elem = (-1) ;
 # 2569 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  Real_t qqc; qqc = (mesh.qqc) ;
 # 2570 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Index_t length; register_stack_var("CalcCourantConstraintForElems|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } length = (mesh.numElem) ;
+ lbl_2: Index_t length; register_stack_var("CalcCourantConstraintForElems|length|0", &____must_checkpoint_CalcCourantConstraintForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } length = (mesh.numElem) ;
 # 2571 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2572 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Real_t qqc2; register_stack_var("CalcCourantConstraintForElems|qqc2|0", "double", (void *)(&qqc2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } qqc2 = (Real_t(64.) * qqc * qqc) ;
+ lbl_3: Real_t qqc2; register_stack_var("CalcCourantConstraintForElems|qqc2|0", &____must_checkpoint_CalcCourantConstraintForElems_qqc2_0, "double", (void *)(&qqc2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } qqc2 = (Real_t(64.) * qqc * qqc) ;
 # 2573 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2574 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_4: Index_t i; register_stack_var("CalcCourantConstraintForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( i = (0) ; i < length ; ++i) {
+ { lbl_4: Index_t i; register_stack_var("CalcCourantConstraintForElems|i|0", &____must_checkpoint_CalcCourantConstraintForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( i = (0) ; i < length ; ++i) {
 # 2575 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Index_t indx; register_stack_var("CalcCourantConstraintForElems|indx|0", "i32", (void *)(&indx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } indx = (mesh.matElemlist[i]) ;
+ lbl_5: Index_t indx; register_stack_var("CalcCourantConstraintForElems|indx|0", &____must_checkpoint_CalcCourantConstraintForElems_indx_0, "i32", (void *)(&indx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } indx = (mesh.matElemlist[i]) ;
 # 2576 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2577 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_6: Real_t dtf; register_stack_var("CalcCourantConstraintForElems|dtf|0", "double", (void *)(&dtf), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } dtf = (mesh.ss[indx] * mesh.ss[indx]) ;
+ lbl_6: Real_t dtf; register_stack_var("CalcCourantConstraintForElems|dtf|0", &____must_checkpoint_CalcCourantConstraintForElems_dtf_0, "double", (void *)(&dtf), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } dtf = (mesh.ss[indx] * mesh.ss[indx]) ;
 # 2578 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2579 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( mesh.vdov[indx] < Real_t(0.) ) {
@@ -6822,23 +6822,23 @@ void CalcHydroConstraintForElems()
 # 2610 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {new_stack((void *)(&CalcHydroConstraintForElems), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 2611 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_0: Real_t dthydro; register_stack_var("CalcHydroConstraintForElems|dthydro|0", "double", (void *)(&dthydro), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } dthydro = (Real_t(1.0E+20)) ;
+ lbl_0: Real_t dthydro; register_stack_var("CalcHydroConstraintForElems|dthydro|0", &____must_checkpoint_CalcHydroConstraintForElems_dthydro_0, "double", (void *)(&dthydro), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } dthydro = (Real_t(1.0E+20)) ;
 # 2612 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Index_t hydro_elem; register_stack_var("CalcHydroConstraintForElems|hydro_elem|0", "i32", (void *)(&hydro_elem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } hydro_elem = (-1) ;
+ lbl_1: Index_t hydro_elem; register_stack_var("CalcHydroConstraintForElems|hydro_elem|0", &____must_checkpoint_CalcHydroConstraintForElems_hydro_elem_0, "i32", (void *)(&hydro_elem), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } hydro_elem = (-1) ;
 # 2613 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t dvovmax; register_stack_var("CalcHydroConstraintForElems|dvovmax|0", "double", (void *)(&dvovmax), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } dvovmax = (mesh.dvovmax) ;
+ lbl_2: Real_t dvovmax; register_stack_var("CalcHydroConstraintForElems|dvovmax|0", &____must_checkpoint_CalcHydroConstraintForElems_dvovmax_0, "double", (void *)(&dvovmax), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } dvovmax = (mesh.dvovmax) ;
 # 2614 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_3: Index_t length; register_stack_var("CalcHydroConstraintForElems|length|0", "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } length = (mesh.numElem) ;
+ lbl_3: Index_t length; register_stack_var("CalcHydroConstraintForElems|length|0", &____must_checkpoint_CalcHydroConstraintForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } length = (mesh.numElem) ;
 # 2615 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2616 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_4: Index_t i; register_stack_var("CalcHydroConstraintForElems|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( i = (0) ; i < length ; ++i) {
+ { lbl_4: Index_t i; register_stack_var("CalcHydroConstraintForElems|i|0", &____must_checkpoint_CalcHydroConstraintForElems_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( i = (0) ; i < length ; ++i) {
 # 2617 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Index_t indx; register_stack_var("CalcHydroConstraintForElems|indx|0", "i32", (void *)(&indx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } indx = (mesh.matElemlist[i]) ;
+ lbl_5: Index_t indx; register_stack_var("CalcHydroConstraintForElems|indx|0", &____must_checkpoint_CalcHydroConstraintForElems_indx_0, "i32", (void *)(&indx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } indx = (mesh.matElemlist[i]) ;
 # 2618 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2619 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if (mesh.vdov[indx] != Real_t(0.)) {
 # 2620 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- alias_group_changed(7, (size_t)(16832839476487307464UL), (size_t)(16832839476487307465UL), (size_t)(16832839476487307466UL), (size_t)(16832839476487307467UL), (size_t)(16832839476487307468UL), (size_t)(16832839476487307469UL), (size_t)(16832839476487307470UL)); lbl_6: Real_t dtdvov; register_stack_var("CalcHydroConstraintForElems|dtdvov|0", "double", (void *)(&dtdvov), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&FABS, 2, 0UL, 1, (size_t)(0UL)); dtdvov = (dvovmax / (FABS(mesh.vdov[indx]) + Real_t(9.9999999999999995E-21))) ;
+ alias_group_changed(7, (size_t)(16832839476487307464UL), (size_t)(16832839476487307465UL), (size_t)(16832839476487307466UL), (size_t)(16832839476487307467UL), (size_t)(16832839476487307468UL), (size_t)(16832839476487307469UL), (size_t)(16832839476487307470UL)); lbl_6: Real_t dtdvov; register_stack_var("CalcHydroConstraintForElems|dtdvov|0", &____must_checkpoint_CalcHydroConstraintForElems_dtdvov_0, "double", (void *)(&dtdvov), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&FABS, 2, 0UL, 1, (size_t)(0UL)); dtdvov = (dvovmax / (FABS(mesh.vdov[indx]) + Real_t(9.9999999999999995E-21))) ;
 # 2621 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( dthydro > dtdvov ) {
 # 2622 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6906,16 +6906,16 @@ int main(int argc, char *argv[])
 # 2661 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(16832839476487307101UL)); if (____chimes_replaying) { goto lbl_0; }
 # 2662 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- alias_group_changed(3, (size_t)(16832839476487306126UL), (size_t)(16832839476487306127UL), (size_t)(16832839476487306128UL)); lbl_0: Index_t edgeElems; register_stack_var("main|edgeElems|0", "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } edgeElems = (atoi(argv[1])) ;
+ alias_group_changed(3, (size_t)(16832839476487306126UL), (size_t)(16832839476487306127UL), (size_t)(16832839476487306128UL)); lbl_0: Index_t edgeElems; register_stack_var("main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } edgeElems = (atoi(argv[1])) ;
 # 2663 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_1: Index_t edgeNodes; register_stack_var("main|edgeNodes|0", "i32", (void *)(&edgeNodes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } edgeNodes = (edgeElems + 1) ;
+ lbl_1: Index_t edgeNodes; register_stack_var("main|edgeNodes|0", (int *)0x0, "i32", (void *)(&edgeNodes), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } edgeNodes = (edgeElems + 1) ;
 # 2664 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2665 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_2: Real_t tx; register_stack_var("main|tx|0", "double", (void *)(&tx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: Real_t ty; register_stack_var("main|ty|0", "double", (void *)(&ty), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: Real_t tz; register_stack_var("main|tz|0", "double", (void *)(&tz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
+ lbl_2: Real_t tx; register_stack_var("main|tx|0", (int *)0x0, "double", (void *)(&tx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: Real_t ty; register_stack_var("main|ty|0", (int *)0x0, "double", (void *)(&ty), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: Real_t tz; register_stack_var("main|tz|0", (int *)0x0, "double", (void *)(&tz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 2666 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_5: Index_t nidx; register_stack_var("main|nidx|0", "i32", (void *)(&nidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: Index_t zidx; register_stack_var("main|zidx|0", "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
+ lbl_5: Index_t nidx; register_stack_var("main|nidx|0", (int *)0x0, "i32", (void *)(&nidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: Index_t zidx; register_stack_var("main|zidx|0", (int *)0x0, "i32", (void *)(&zidx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } ;
 # 2667 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_7: Index_t meshElems; register_stack_var("main|meshElems|0", "i32", (void *)(&meshElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } ;
+ lbl_7: Index_t meshElems; register_stack_var("main|meshElems|0", (int *)0x0, "i32", (void *)(&meshElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } ;
 # 2679 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2679 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.sizeX = edgeElems ;
@@ -6952,15 +6952,15 @@ int main(int argc, char *argv[])
 # 2700 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  tz = Real_t(0.) ;
 # 2701 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_8: Index_t plane; register_stack_var("main|plane|0", "i32", (void *)(&plane), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } for ( plane = (0) ; plane<edgeNodes; ++plane) {
+ { lbl_8: Index_t plane; register_stack_var("main|plane|0", (int *)0x0, "i32", (void *)(&plane), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } for ( plane = (0) ; plane<edgeNodes; ++plane) {
 # 2702 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  ty = Real_t(0.) ;
 # 2703 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_9: Index_t row; register_stack_var("main|row|0", "i32", (void *)(&row), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } for ( row = (0) ; row<edgeNodes; ++row) {
+ { lbl_9: Index_t row; register_stack_var("main|row|0", (int *)0x0, "i32", (void *)(&row), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } for ( row = (0) ; row<edgeNodes; ++row) {
 # 2704 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  tx = Real_t(0.) ;
 # 2705 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_10: Index_t col; register_stack_var("main|col|0", "i32", (void *)(&col), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } for ( col = (0) ; col<edgeNodes; ++col) {
+ { lbl_10: Index_t col; register_stack_var("main|col|0", (int *)0x0, "i32", (void *)(&col), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } for ( col = (0) ; col<edgeNodes; ++col) {
 # 2706 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.x[nidx] = tx ;
 # 2707 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6993,13 +6993,13 @@ int main(int argc, char *argv[])
 # 2724 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  zidx = 0 ;
 # 2725 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_11: Index_t plane; register_stack_var("main|plane|1", "i32", (void *)(&plane), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } for ( plane = (0) ; plane<edgeElems; ++plane) {
+ { lbl_11: Index_t plane; register_stack_var("main|plane|1", (int *)0x0, "i32", (void *)(&plane), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } for ( plane = (0) ; plane<edgeElems; ++plane) {
 # 2726 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_12: Index_t row; register_stack_var("main|row|1", "i32", (void *)(&row), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for ( row = (0) ; row<edgeElems; ++row) {
+ { lbl_12: Index_t row; register_stack_var("main|row|1", (int *)0x0, "i32", (void *)(&row), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for ( row = (0) ; row<edgeElems; ++row) {
 # 2727 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_13: Index_t col; register_stack_var("main|col|1", "i32", (void *)(&col), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } for ( col = (0) ; col<edgeElems; ++col) {
+ { lbl_13: Index_t col; register_stack_var("main|col|1", (int *)0x0, "i32", (void *)(&col), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_14; } for ( col = (0) ; col<edgeElems; ++col) {
 # 2728 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_14: Index_t *localNode; register_stack_var("main|localNode|0", "i32*", (void *)(&localNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_15; } localNode = (&mesh.nodelist[8 * zidx]) ;
+ lbl_14: Index_t *localNode; register_stack_var("main|localNode|0", (int *)0x0, "i32*", (void *)(&localNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_15; } localNode = (&mesh.nodelist[8 * zidx]) ;
 # 2729 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  localNode[0] = nidx ;
 # 2730 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7033,7 +7033,7 @@ int main(int argc, char *argv[])
 # 2744 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2745 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2746 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_15: Index_t i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } for ( i = (0) ; i<meshElems; ++i) {
+ { lbl_15: Index_t i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_16; } for ( i = (0) ; i<meshElems; ++i) {
 # 2747 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.matElemlist[i] = i ;
 # 2748 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7108,17 +7108,17 @@ int main(int argc, char *argv[])
 # 2787 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2788 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2789 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_16: Index_t i; register_stack_var("main|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } for ( i = (0) ; i<meshElems; ++i) {
+ { lbl_16: Index_t i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } for ( i = (0) ; i<meshElems; ++i) {
 # 2790 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_17: Real_t x_local[8]; register_stack_var("main|x_local|0", "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } Real_t y_local[8]; Real_t z_local[8]; ;
+ lbl_17: Real_t x_local[8]; register_stack_var("main|x_local|0", &____must_checkpoint_main_x_local_0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_18; } Real_t y_local[8]; Real_t z_local[8]; ;
 # 2791 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_18: Index_t *elemToNode; register_stack_var("main|elemToNode|0", "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_19; } elemToNode = (&mesh.nodelist[8 * i]) ;
+ lbl_18: Index_t *elemToNode; register_stack_var("main|elemToNode|0", (int *)0x0, "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_19; } elemToNode = (&mesh.nodelist[8 * i]) ;
 # 2792 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_19: Index_t lnode; register_stack_var("main|lnode|0", "i32", (void *)(&lnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } for( lnode = (0) ; lnode<8 ; ++lnode )
+ { lbl_19: Index_t lnode; register_stack_var("main|lnode|0", (int *)0x0, "i32", (void *)(&lnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } for( lnode = (0) ; lnode<8 ; ++lnode )
 # 2793 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  {
 # 2794 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_20: Index_t gnode; register_stack_var("main|gnode|0", "i32", (void *)(&gnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } gnode = (elemToNode[lnode]) ;
+ lbl_20: Index_t gnode; register_stack_var("main|gnode|0", (int *)0x0, "i32", (void *)(&gnode), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } gnode = (elemToNode[lnode]) ;
 # 2795 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  x_local[lnode] = mesh.x[gnode];
 # 2796 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7130,15 +7130,15 @@ int main(int argc, char *argv[])
 # 2799 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2800 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2801 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_21: Real_t volume; register_stack_var("main|volume|0", "double", (void *)(&volume), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } call_lbl_9: calling((void*)&CalcElemVolumeWrapper, 9, 0UL, 3, (size_t)(16832839476487306146UL), (size_t)(16832839476487306147UL), (size_t)(16832839476487306148UL)); volume = (CalcElemVolumeWrapper(x_local, y_local, z_local)) ;
+ lbl_21: Real_t volume; register_stack_var("main|volume|0", (int *)0x0, "double", (void *)(&volume), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } call_lbl_9: calling((void*)&CalcElemVolumeWrapper, 9, 0UL, 3, (size_t)(16832839476487306146UL), (size_t)(16832839476487306147UL), (size_t)(16832839476487306148UL)); volume = (CalcElemVolumeWrapper(x_local, y_local, z_local)) ;
 # 2802 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.volo[i] = volume ;
 # 2803 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.elemMass[i] = volume ;
 # 2804 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_22: Index_t j; register_stack_var("main|j|0", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } for ( j = (0) ; j<8; ++j) {
+ { lbl_22: Index_t j; register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } for ( j = (0) ; j<8; ++j) {
 # 2805 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_23: Index_t idx; register_stack_var("main|idx|0", "i32", (void *)(&idx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } idx = (elemToNode[j]) ;
+ lbl_23: Index_t idx; register_stack_var("main|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_24; } idx = (elemToNode[j]) ;
 # 2806 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.nodalMass[idx] += volume / Real_t(8.0) ;
 # 2807 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7154,13 +7154,13 @@ int main(int argc, char *argv[])
 # 2814 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  nidx = 0 ;
 # 2815 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_24: Index_t i; register_stack_var("main|i|2", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } for ( i = (0) ; i<edgeNodes; ++i) {
+ { lbl_24: Index_t i; register_stack_var("main|i|2", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } for ( i = (0) ; i<edgeNodes; ++i) {
 # 2816 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_25: Index_t planeInc; register_stack_var("main|planeInc|0", "i32", (void *)(&planeInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_26; } planeInc = (i * edgeNodes * edgeNodes) ;
+ lbl_25: Index_t planeInc; register_stack_var("main|planeInc|0", (int *)0x0, "i32", (void *)(&planeInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_26; } planeInc = (i * edgeNodes * edgeNodes) ;
 # 2817 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_26: Index_t rowInc; register_stack_var("main|rowInc|0", "i32", (void *)(&rowInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } rowInc = (i * edgeNodes) ;
+ lbl_26: Index_t rowInc; register_stack_var("main|rowInc|0", (int *)0x0, "i32", (void *)(&rowInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } rowInc = (i * edgeNodes) ;
 # 2818 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_27: Index_t j; register_stack_var("main|j|1", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_28; } for ( j = (0) ; j<edgeNodes; ++j) {
+ { lbl_27: Index_t j; register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_28; } for ( j = (0) ; j<edgeNodes; ++j) {
 # 2819 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.symmX[nidx] = planeInc + j*edgeNodes ;
 # 2820 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7178,7 +7178,7 @@ int main(int argc, char *argv[])
 # 2827 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.lxim[0] = 0 ;
 # 2828 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_28: Index_t i; register_stack_var("main|i|3", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_29; } for ( i = (1) ; i<meshElems; ++i) {
+ { lbl_28: Index_t i; register_stack_var("main|i|3", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_29; } for ( i = (1) ; i<meshElems; ++i) {
 # 2829 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.lxim[i] = i-1 ;
 # 2830 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7189,7 +7189,7 @@ int main(int argc, char *argv[])
  mesh.lxip[meshElems-1] = meshElems-1 ;
 # 2833 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2834 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_29: Index_t i; register_stack_var("main|i|4", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_30; } for ( i = (0) ; i<edgeElems; ++i) {
+ { lbl_29: Index_t i; register_stack_var("main|i|4", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_30; } for ( i = (0) ; i<edgeElems; ++i) {
 # 2835 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.letam[i] = i ;
 # 2836 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7197,7 +7197,7 @@ int main(int argc, char *argv[])
 # 2837 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  } }
 # 2838 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_30: Index_t i; register_stack_var("main|i|5", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_31; } for ( i = (edgeElems) ; i<meshElems; ++i) {
+ { lbl_30: Index_t i; register_stack_var("main|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_31; } for ( i = (edgeElems) ; i<meshElems; ++i) {
 # 2839 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.letam[i] = i-edgeElems ;
 # 2840 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7206,7 +7206,7 @@ int main(int argc, char *argv[])
  } }
 # 2842 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2843 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_31: Index_t i; register_stack_var("main|i|6", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_32; } for ( i = (0) ; i<edgeElems*edgeElems; ++i) {
+ { lbl_31: Index_t i; register_stack_var("main|i|6", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_32; } for ( i = (0) ; i<edgeElems*edgeElems; ++i) {
 # 2844 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.lzetam[i] = i ;
 # 2845 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7214,7 +7214,7 @@ int main(int argc, char *argv[])
 # 2846 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  } }
 # 2847 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_32: Index_t i; register_stack_var("main|i|7", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_33; } for ( i = (edgeElems * edgeElems) ; i<meshElems; ++i) {
+ { lbl_32: Index_t i; register_stack_var("main|i|7", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_33; } for ( i = (edgeElems * edgeElems) ; i<meshElems; ++i) {
 # 2848 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.lzetam[i] = i - edgeElems*edgeElems ;
 # 2849 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7224,7 +7224,7 @@ int main(int argc, char *argv[])
 # 2851 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2852 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2853 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_33: Index_t i; register_stack_var("main|i|8", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_34; } for ( i = (0) ; i<meshElems; ++i) {
+ { lbl_33: Index_t i; register_stack_var("main|i|8", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_34; } for ( i = (0) ; i<meshElems; ++i) {
 # 2854 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.elemBC[i] = 0 ;
 # 2855 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7233,13 +7233,13 @@ int main(int argc, char *argv[])
 # 2857 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2858 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2859 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_34: Index_t i; register_stack_var("main|i|9", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_35; } for ( i = (0) ; i<edgeElems; ++i) {
+ { lbl_34: Index_t i; register_stack_var("main|i|9", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_35; } for ( i = (0) ; i<edgeElems; ++i) {
 # 2860 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_35: Index_t planeInc; register_stack_var("main|planeInc|1", "i32", (void *)(&planeInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_36; } planeInc = (i * edgeElems * edgeElems) ;
+ lbl_35: Index_t planeInc; register_stack_var("main|planeInc|1", (int *)0x0, "i32", (void *)(&planeInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_36; } planeInc = (i * edgeElems * edgeElems) ;
 # 2861 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_36: Index_t rowInc; register_stack_var("main|rowInc|1", "i32", (void *)(&rowInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_37; } rowInc = (i * edgeElems) ;
+ lbl_36: Index_t rowInc; register_stack_var("main|rowInc|1", (int *)0x0, "i32", (void *)(&rowInc), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_37; } rowInc = (i * edgeElems) ;
 # 2862 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_37: Index_t j; register_stack_var("main|j|2", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_38; } for ( j = (0) ; j<edgeElems; ++j) {
+ { lbl_37: Index_t j; register_stack_var("main|j|2", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_38; } for ( j = (0) ; j<edgeElems; ++j) {
 # 2863 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh.elemBC[planeInc+j*edgeElems] |= 0x001 ;
 # 2864 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7258,7 +7258,7 @@ int main(int argc, char *argv[])
  } }
 # 2871 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2872 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_38: timeval start; register_stack_var("main|start|0", "%struct.timeval = type { i64, i32 }", (void *)(&start), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_39; } lbl_39: timeval end; register_stack_var("main|end|0", "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_40; } ;
+ lbl_38: timeval start; register_stack_var("main|start|0", &____must_checkpoint_main_start_0, "%struct.timeval = type { i64, i32 }", (void *)(&start), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_39; } lbl_39: timeval end; register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_40; } ;
 # 2873 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  call_lbl_10: calling((void*)&gettimeofday, 10, 0UL, 2, (size_t)(16832839476487306169UL), (size_t)(16832839476487319684UL)); gettimeofday(&start, __null);
 # 2874 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7286,14 +7286,14 @@ int main(int argc, char *argv[])
 # 2891 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  call_lbl_15: calling((void*)&gettimeofday, 15, 0UL, 2, (size_t)(16832839476487306170UL), (size_t)(16832839476487319684UL)); gettimeofday(&end, __null);
 # 2892 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_40: double elapsed_time; register_stack_var("main|elapsed_time|0", "double", (void *)(&elapsed_time), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_41; } elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) * 9.9999999999999995E-7) ;
+ lbl_40: double elapsed_time; register_stack_var("main|elapsed_time|0", &____must_checkpoint_main_elapsed_time_0, "double", (void *)(&elapsed_time), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_41; } elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) * 9.9999999999999995E-7) ;
 # 2893 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2894 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2895 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  printf("\n\nElapsed time = %12.6e\n\n", elapsed_time);
 # 2896 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2897 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_41: Index_t ElemId; register_stack_var("main|ElemId|0", "i32", (void *)(&ElemId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_42; } ElemId = (0) ;
+ lbl_41: Index_t ElemId; register_stack_var("main|ElemId|0", &____must_checkpoint_main_ElemId_0, "i32", (void *)(&ElemId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_42; } ElemId = (0) ;
 # 2898 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  printf("Run completed:  \n");
 # 2899 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7304,18 +7304,18 @@ int main(int argc, char *argv[])
  printf("   Final Origin Energy = %12.6e \n", mesh.e[ElemId]);
 # 2902 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2903 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_42: Real_t MaxAbsDiff; register_stack_var("main|MaxAbsDiff|0", "double", (void *)(&MaxAbsDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_43; } MaxAbsDiff = (Real_t(0.)) ;
+ lbl_42: Real_t MaxAbsDiff; register_stack_var("main|MaxAbsDiff|0", &____must_checkpoint_main_MaxAbsDiff_0, "double", (void *)(&MaxAbsDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_43; } MaxAbsDiff = (Real_t(0.)) ;
 # 2904 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_43: Real_t TotalAbsDiff; register_stack_var("main|TotalAbsDiff|0", "double", (void *)(&TotalAbsDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_44; } TotalAbsDiff = (Real_t(0.)) ;
+ lbl_43: Real_t TotalAbsDiff; register_stack_var("main|TotalAbsDiff|0", &____must_checkpoint_main_TotalAbsDiff_0, "double", (void *)(&TotalAbsDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_44; } TotalAbsDiff = (Real_t(0.)) ;
 # 2905 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_44: Real_t MaxRelDiff; register_stack_var("main|MaxRelDiff|0", "double", (void *)(&MaxRelDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_45; } MaxRelDiff = (Real_t(0.)) ;
+ lbl_44: Real_t MaxRelDiff; register_stack_var("main|MaxRelDiff|0", &____must_checkpoint_main_MaxRelDiff_0, "double", (void *)(&MaxRelDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_45; } MaxRelDiff = (Real_t(0.)) ;
 # 2906 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2907 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_45: Index_t j; register_stack_var("main|j|3", "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_46; } for ( j = (0) ; j<edgeElems; ++j) {
+ { lbl_45: Index_t j; register_stack_var("main|j|3", &____must_checkpoint_main_j_3, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_46; } for ( j = (0) ; j<edgeElems; ++j) {
 # 2908 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- { lbl_46: Index_t k; register_stack_var("main|k|0", "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_47; } for ( k = (j + 1) ; k<edgeElems; ++k) {
+ { lbl_46: Index_t k; register_stack_var("main|k|0", &____must_checkpoint_main_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_47; } for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 2909 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- alias_group_changed(48, (size_t)(16832839476487306131UL), (size_t)(16832839476487306132UL), (size_t)(16832839476487306133UL), (size_t)(16832839476487306134UL), (size_t)(16832839476487306135UL), (size_t)(16832839476487306137UL), (size_t)(16832839476487306138UL), (size_t)(16832839476487306139UL), (size_t)(16832839476487306140UL), (size_t)(16832839476487306141UL), (size_t)(16832839476487306142UL), (size_t)(16832839476487306143UL), (size_t)(16832839476487306144UL), (size_t)(16832839476487306145UL), (size_t)(16832839476487306146UL), (size_t)(16832839476487306147UL), (size_t)(16832839476487306148UL), (size_t)(16832839476487306149UL), (size_t)(16832839476487306150UL), (size_t)(16832839476487306151UL), (size_t)(16832839476487306152UL), (size_t)(16832839476487306153UL), (size_t)(16832839476487306154UL), (size_t)(16832839476487306155UL), (size_t)(16832839476487306156UL), (size_t)(16832839476487306157UL), (size_t)(16832839476487306158UL), (size_t)(16832839476487306159UL), (size_t)(16832839476487306160UL), (size_t)(16832839476487306161UL), (size_t)(16832839476487306162UL), (size_t)(16832839476487306163UL), (size_t)(16832839476487306164UL), (size_t)(16832839476487306165UL), (size_t)(16832839476487306166UL), (size_t)(16832839476487306167UL), (size_t)(16832839476487306168UL), (size_t)(16832839476487306171UL), (size_t)(16832839476487306172UL), (size_t)(16832839476487306173UL), (size_t)(16832839476487306174UL), (size_t)(16832839476487306175UL), (size_t)(16832839476487306176UL), (size_t)(16832839476487306177UL), (size_t)(16832839476487306178UL), (size_t)(16832839476487306179UL), (size_t)(16832839476487307662UL), (size_t)(16832839476487319674UL)); lbl_47: Real_t AbsDiff; register_stack_var("main|AbsDiff|0", "double", (void *)(&AbsDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_48; } call_lbl_22: calling((void*)&FABS, 22, 0UL, 1, (size_t)(0UL)); AbsDiff = (FABS(mesh.e[j * edgeElems + k] - mesh.e[k * edgeElems + j])) ;
+ alias_group_changed(48, (size_t)(16832839476487306131UL), (size_t)(16832839476487306132UL), (size_t)(16832839476487306133UL), (size_t)(16832839476487306134UL), (size_t)(16832839476487306135UL), (size_t)(16832839476487306137UL), (size_t)(16832839476487306138UL), (size_t)(16832839476487306139UL), (size_t)(16832839476487306140UL), (size_t)(16832839476487306141UL), (size_t)(16832839476487306142UL), (size_t)(16832839476487306143UL), (size_t)(16832839476487306144UL), (size_t)(16832839476487306145UL), (size_t)(16832839476487306146UL), (size_t)(16832839476487306147UL), (size_t)(16832839476487306148UL), (size_t)(16832839476487306149UL), (size_t)(16832839476487306150UL), (size_t)(16832839476487306151UL), (size_t)(16832839476487306152UL), (size_t)(16832839476487306153UL), (size_t)(16832839476487306154UL), (size_t)(16832839476487306155UL), (size_t)(16832839476487306156UL), (size_t)(16832839476487306157UL), (size_t)(16832839476487306158UL), (size_t)(16832839476487306159UL), (size_t)(16832839476487306160UL), (size_t)(16832839476487306161UL), (size_t)(16832839476487306162UL), (size_t)(16832839476487306163UL), (size_t)(16832839476487306164UL), (size_t)(16832839476487306165UL), (size_t)(16832839476487306166UL), (size_t)(16832839476487306167UL), (size_t)(16832839476487306168UL), (size_t)(16832839476487306171UL), (size_t)(16832839476487306172UL), (size_t)(16832839476487306173UL), (size_t)(16832839476487306174UL), (size_t)(16832839476487306175UL), (size_t)(16832839476487306176UL), (size_t)(16832839476487306177UL), (size_t)(16832839476487306178UL), (size_t)(16832839476487306179UL), (size_t)(16832839476487307662UL), (size_t)(16832839476487319674UL)); lbl_47: Real_t AbsDiff; register_stack_var("main|AbsDiff|0", &____must_checkpoint_main_AbsDiff_0, "double", (void *)(&AbsDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_48; } call_lbl_22: calling((void*)&FABS, 22, 0UL, 1, (size_t)(0UL)); AbsDiff = (FABS(mesh.e[j * edgeElems + k] - mesh.e[k * edgeElems + j])) ;
 # 2910 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  TotalAbsDiff += AbsDiff;
 # 2911 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7323,7 +7323,7 @@ int main(int argc, char *argv[])
  if (MaxAbsDiff < AbsDiff) {MaxAbsDiff = AbsDiff; };
 # 2913 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2914 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- lbl_48: Real_t RelDiff; register_stack_var("main|RelDiff|0", "double", (void *)(&RelDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } RelDiff = (AbsDiff / mesh.e[k * edgeElems + j]) ;
+ lbl_48: Real_t RelDiff; register_stack_var("main|RelDiff|0", &____must_checkpoint_main_RelDiff_0, "double", (void *)(&RelDiff), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } RelDiff = (AbsDiff / mesh.e[k * edgeElems + j]) ;
 # 2915 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2916 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if (MaxRelDiff < RelDiff) {MaxRelDiff = RelDiff; };

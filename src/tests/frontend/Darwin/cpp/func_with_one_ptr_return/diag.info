@@ -15,6 +15,6 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_re
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 138  call_lbl_3: calling((void*)&haha_this_sux_part_deux, 3, 651168722096376637UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 61  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 126  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 135  register_stack_var("main|tmp|0", "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 135  register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 135  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 128  if (____chimes_replaying) { goto lbl_0; } 

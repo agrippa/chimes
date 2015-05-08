@@ -162,9 +162,9 @@ class checkpoint_ctx {
 void new_stack(void *func_ptr, unsigned n_local_arg_aliases, unsigned n_args,
         ...);
 void rm_stack(bool has_return_alias, size_t returned_alias);
-void register_stack_var(const char *mangled_name, unsigned thread,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
+void register_stack_var(const char *mangled_name, int *cond_registration,
+        unsigned thread, const char *full_type, void *ptr, size_t size,
+        int is_ptr, int is_struct, int n_ptr_fields, ...);
 int alias_group_changed(int ngroups, ...);
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...);
@@ -191,6 +191,7 @@ void free_helper(void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl);
+static bool need_to_register(int *cond_registration, string mangled_name);
 
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
@@ -1316,15 +1317,19 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
 
     for (unsigned i = 0; i < nargs; i++) {
         const char *mangled_name = va_arg(vl, const char *);
+        int *cond_registration = va_arg(vl, int *);
         const char *full_type = va_arg(vl, const char *);
         void *ptr = va_arg(vl, void *);
         size_t size = va_arg(vl, size_t);
         int is_ptr = va_arg(vl, int);
         int is_struct = va_arg(vl, int);
         int n_ptr_fields = va_arg(vl, int);
-        stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
-                is_struct, n_ptr_fields, vl);
-        program_stack->back()->add_stack_var(new_var);
+
+        if (need_to_register(cond_registration, std::string(mangled_name))) {
+            stack_var *new_var = get_var(mangled_name, full_type, ptr, size,
+                    is_ptr, is_struct, n_ptr_fields, vl);
+            program_stack->back()->add_stack_var(new_var);
+        }
     }
 
     va_end(vl);
@@ -1483,6 +1488,27 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
     return new_var;
 }
 
+static bool need_to_register(int *cond_registration, string mangled_name) {
+    if (cond_registration) {
+        if (*cond_registration == 2) { // UNKNOWN
+            const map<string, bool>::iterator must_checkpoint_iter =
+                need_to_checkpoint.find(mangled_name);
+            if (must_checkpoint_iter != need_to_checkpoint.end() &&
+                    !must_checkpoint_iter->second) {
+                // Can skip stack variable registration!
+                *cond_registration = 0;
+                return (false);
+            } else {
+                *cond_registration = 1;
+            }
+        } else if (*cond_registration == 0) { // DONT CHECKPOINT
+            return (false);
+        }
+    }
+
+    return (true);
+}
+
 /*
  * TODO support stack arrays:
  *   Today, the registration of a stack array appears as follows:
@@ -1491,7 +1517,7 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
  *   This registration would not allow the full recreation of stack state at
  *   replay.
  */
-void register_stack_var(const char *mangled_name,
+void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...) {
 #ifdef __CHIMES_PROFILE
@@ -1501,11 +1527,11 @@ void register_stack_var(const char *mangled_name,
     //     perf_profile::current_time_ms();
 
     const string mangled_name_str(mangled_name);
-    const map<string, bool>::iterator must_checkpoint_iter =
-        need_to_checkpoint.find(mangled_name_str);
-    if (must_checkpoint_iter != need_to_checkpoint.end() &&
-            !must_checkpoint_iter->second) {
-        // Can skip stack variable registration!
+    /*
+     * If cond_registration is NULL, it means this variable was marked as
+     * something that had to be checkpointed unconditionally.
+     */
+    if (!need_to_register(cond_registration, mangled_name_str)) {
         return;
     }
 
