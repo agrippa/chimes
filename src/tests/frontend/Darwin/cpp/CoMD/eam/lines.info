@@ -7,24 +7,18 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 23 : { 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 144, 166 } prop:call:_Z16getNeighborBoxesP10LinkCellStiPi
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 16 : { 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 144, 166 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 4 : { 1032, 1033 } prop:call:_ZL26destroyInterpolationObjectPP21InterpolationObjectSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 : { 1071, 1072, 1073, 1075 } prop:call:_ZL12fileNotFoundPKcS0_
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 645 4 : { 1071, 1072, 1073, 1075 } prop:call:fgets
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 666 4 : { 1321 } direct:call:fgets
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 13 : { 1086, 1087, 1088, 1089, 1321 } prop:call:_ZL23initInterpolationObjectiddPd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 : { 1071, 1072, 1073, 1075, 1086, 1087, 1088, 1089, 1321 } prop:call:_ZL12fileNotFoundPKcS0_
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22 : { 1071, 1072, 1073, 1075, 1086, 1087, 1088, 1089, 1321 } prop:call:_ZL13notAlloyReadyPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 13 : { 1071, 1072, 1073, 1075, 1086, 1087, 1088, 1089, 1321 } prop:call:_ZL23initInterpolationObjectiddPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 15 : { 1090, 1321 } prop:call:_ZL23initInterpolationObjectiddPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 15 : { 1091, 1092, 1093, 1192, 1321 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28 : { 1324, 1325, 1326, 1328 } prop:call:_ZL12fileNotFoundPKcS0_
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 763 4 : { 1324, 1325, 1326, 1328 } prop:call:fgets
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 782 4 : { 1579 } direct:call:fgets
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 13 : { 1339, 1340, 1341, 1342, 1579 } prop:call:_ZL23initInterpolationObjectiddPd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28 : { 1324, 1325, 1326, 1328, 1339, 1340, 1341, 1342, 1579 } prop:call:_ZL12fileNotFoundPKcS0_
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 13 : { 1324, 1325, 1326, 1328, 1339, 1340, 1341, 1342, 1579 } prop:call:_ZL23initInterpolationObjectiddPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 15 : { 1343, 1344, 1345, 1439, 1579 } prop:call:_ZL23initInterpolationObjectiddPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 15 : { 1346, 1579 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 839 4 : { 1582, 1583 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1597 } prop:call:_Z9getMyRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1598 } prop:call:_Z13bcastParallelPvii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1693 } direct:call:_ZL24bcastInterpolationObjectPP21InterpolationObjectSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 824 4 : { 1701, 1702 } direct:call:exit
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 832 4 : { 1860 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 1873 } direct:call:_Z9getMyRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 1874 } prop:call:_Z13bcastParallelPvii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 1875, 1918, 1920 } prop:call:_Z13bcastParallelPvii

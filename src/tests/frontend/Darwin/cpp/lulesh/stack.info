@@ -15,7 +15,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|localNode|0 " i32* " 64 1 0  1
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|0 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|i|1 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|x_local|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|x_local|0 " [8 x double] " 512 0 0  0 main
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|elemToNode|0 " i32* " 64 1 0  1
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|lnode|0 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|gnode|0 " i32 " 32 0 0  1
@@ -36,8 +36,8 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|planeInc|1 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|rowInc|1 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|j|2 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|start|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|end|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|start|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 0 main
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|end|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 0 main
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|elapsed_time|0 " double " 64 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|ElemId|0 " i32 " 32 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc main|MaxAbsDiff|0 " double " 64 0 0  0 _Z4FABSd
@@ -63,15 +63,10 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|i|0 " i32 " 32 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|indx|0 " i32 " 32 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHydroConstraintForElems|dtdvov|0 " double " 64 0 0  0 _Z4FABSd
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0  0 _ZL22CalcKinematicsForElemsid exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|k|0 " i32 " 32 0 0  0 exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|vdov|0 " double " 64 0 0  0 exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|vdovthird|0 " double " 64 0 0  0 exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|qstop|0 " double " 64 0 0  0 _ZL31CalcMonotonicQGradientsForElemsv exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|numElem|0 " i32 " 32 0 0  0 _ZL31CalcMonotonicQGradientsForElemsv exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|idx|0 " i32 " 32 0 0  0 exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|i|0 " i32 " 32 0 0  0 exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc ApplyMaterialPropertiesForElems|vnewc|0 " double* " 64 1 0  0 _ZL15EvalEOSForElemsPdi exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0  0 _ZL22CalcKinematicsForElemsid
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|qstop|0 " double " 64 0 0  0 _ZL31CalcMonotonicQGradientsForElemsv
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcQForElems|numElem|0 " i32 " 32 0 0  0 _ZL31CalcMonotonicQGradientsForElemsv
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc ApplyMaterialPropertiesForElems|vnewc|0 " double* " 64 1 0  0 _ZL15EvalEOSForElemsPdi
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|numElem|0 " i32 " 32 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|v_cut|0 " double " 64 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc UpdateVolumesForElems|i|0 " i32 " 32 0 0  0 _Z4FABSd
@@ -231,8 +226,8 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcMonotonicQGradientsForElems|dzk|0 " double " 64 0 0  0 _Z4SQRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|numElem|0 " i32 " 32 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|dt|0 " double " 64 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|B|0 " [3 x [8 x double]] " 1536 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|x_local|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|B|0 " [3 x [8 x double]] " 1536 0 0  0 _ZL22CalcKinematicsForElemsid
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|x_local|0 " [8 x double] " 512 0 0  0 _ZL22CalcKinematicsForElemsid
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|y_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|z_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcKinematicsForElems|xd_local|0 " [8 x double] " 512 0 0  0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
@@ -257,17 +252,17 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|xdtmp|0 " double " 64 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|ydtmp|0 " double " 64 0 0  0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVelocityForNodes|zdtmp|0 " double " 64 0 0  0 _Z4FABSd
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x1|0 " [8 x double] " 512 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|y8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|z8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d exit
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0  0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x1|0 " [8 x double] " 512 0 0  0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|x8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|y8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcHourglassControlForElems|z8n|0 " double* " 64 1 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|determ|0 " double* " 64 1 0  0 _Z4CBRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|x8n|0 " double* " 64 1 0  0 _Z4CBRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|y8n|0 " double* " 64 1 0  0 _Z4CBRTd
@@ -277,7 +272,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|dvdz|0 " double* " 64 1 0  0 _Z4CBRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hourg|0 " double " 64 0 0  0 _Z4CBRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|numElem|0 " i32 " 32 0 0  0 _Z4CBRTd
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hgfx|0 " [8 x double] " 512 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|hgfx|0 " [8 x double] " 512 0 0  0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|coefficient|0 " double " 64 0 0  0 _Z4CBRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|gamma|0 " [4 x [8 x double]] " 2048 0 0  0 _Z4CBRTd
 /Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc CalcFBHourglassForceForElems|i2|0 " i32 " 32 0 0  0 _Z4CBRTd

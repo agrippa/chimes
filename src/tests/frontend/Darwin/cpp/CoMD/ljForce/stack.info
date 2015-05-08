@@ -4,7 +4,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|ePot|0 " double " 64 0 0  0 _Z16getNeighborBoxesP10LinkCellStiPi
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|s6|0 " double " 64 0 0  0 _Z16getNeighborBoxesP10LinkCellStiPi
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|eShift|0 " double " 64 0 0  0 _Z16getNeighborBoxesP10LinkCellStiPi
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|nbrBoxes|0 " [27 x i32] " 864 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|nbrBoxes|0 " [27 x i32] " 864 0 0  0 _ZL7ljForceP9SimFlatSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|iBox|0 " i32 " 32 0 0  0 _Z16getNeighborBoxesP10LinkCellStiPi
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|nIBox|0 " i32 " 32 0 0  0 _Z16getNeighborBoxesP10LinkCellStiPi
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c ljForce|nNbrBoxes|0 " i32 " 32 0 0  0 _Z16getNeighborBoxesP10LinkCellStiPi

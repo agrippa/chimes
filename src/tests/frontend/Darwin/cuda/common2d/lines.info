@@ -1,5 +1,3 @@
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 12 9 : { 1, 2, 3, 4, 5, 6, 7, 8 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 52 5 : { 235 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 77 17 : { 285, 286, 287, 288, 406, 423 } prop:call:_getopt
 /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 17 : { 288, 406 } prop:call:_Z5usagePPc
 /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 80 28 : { 288, 406 } prop:call:atoi

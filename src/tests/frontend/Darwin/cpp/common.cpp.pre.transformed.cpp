@@ -2546,7 +2546,7 @@ void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source),
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  "be x,y,f,t\n");
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(2, (size_t)(7724169104006700402UL), (size_t)(7724169104006700403UL)); exit(1);
+ exit(1);
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2560,7 +2560,7 @@ void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source),
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  "be x,y,f,t\n");
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(2, (size_t)(7724169104006700404UL), (size_t)(7724169104006700405UL)); exit(1);
+ exit(1);
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2574,7 +2574,7 @@ void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source),
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  "be x,y,f,t\n");
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(5, (size_t)(7724169104006700406UL), (size_t)(7724169104006700407UL), (size_t)(7724169104006700417UL), (size_t)(7724169104006700457UL), (size_t)(7724169104006700476UL)); exit(1);
+ exit(1);
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2595,7 +2595,7 @@ void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source),
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  alias_group_changed(1, (size_t)(7724169104006700489UL)); out->t = atoi(time_str);
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-alias_group_changed(1, (size_t)(7724169104006700489UL)); rm_stack(false, 0UL); }
+alias_group_changed(4, (size_t)(7724169104006700402UL), (size_t)(7724169104006700404UL), (size_t)(7724169104006700406UL), (size_t)(7724169104006700489UL)); rm_stack(false, 0UL); }
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack((void *)(&config_sources), 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2608,7 +2608,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Allocation failed\n");
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(7724169104006700497UL), (size_t)(7724169104006700498UL), (size_t)(7724169104006700499UL), (size_t)(7724169104006700500UL), (size_t)(7724169104006700501UL), (size_t)(7724169104006700502UL), (size_t)(7724169104006700503UL), (size_t)(7724169104006700563UL), (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL)); exit(1);
+ exit(1);
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2634,7 +2634,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid x value for source\n");
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(7724169104006700497UL), (size_t)(7724169104006700498UL), (size_t)(7724169104006700499UL), (size_t)(7724169104006700500UL), (size_t)(7724169104006700501UL), (size_t)(7724169104006700502UL), (size_t)(7724169104006700503UL), (size_t)(7724169104006700563UL), (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL)); exit(1);
+ exit(1);
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2642,7 +2642,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid y value for source\n");
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(7724169104006700497UL), (size_t)(7724169104006700498UL), (size_t)(7724169104006700499UL), (size_t)(7724169104006700500UL), (size_t)(7724169104006700501UL), (size_t)(7724169104006700502UL), (size_t)(7724169104006700503UL), (size_t)(7724169104006700563UL), (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL)); exit(1);
+ exit(1);
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2650,7 +2650,7 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid t value for source\n");
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(10, (size_t)(7724169104006700497UL), (size_t)(7724169104006700498UL), (size_t)(7724169104006700499UL), (size_t)(7724169104006700500UL), (size_t)(7724169104006700501UL), (size_t)(7724169104006700502UL), (size_t)(7724169104006700503UL), (size_t)(7724169104006700563UL), (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL)); exit(1);
+ exit(1);
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2667,12 +2667,12 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Allocation failed\n");
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(7, (size_t)(7724169104006700625UL), (size_t)(7724169104006700626UL), (size_t)(7724169104006700627UL), (size_t)(7724169104006700628UL), (size_t)(7724169104006700629UL), (size_t)(7724169104006700630UL), (size_t)(7724169104006700643UL)); exit(1);
+ exit(1);
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } default: { chimes_error(); } } } for ( i = (0) ; i < nsrcs; i++) {
+ { lbl_1: int i; register_stack_var("sample_sources|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } default: { chimes_error(); } } } for ( i = (0) ; i < nsrcs; i++) {
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 7724169104006700663UL, 0, 0);
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2680,15 +2680,15 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Allocation failed\n");
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(7, (size_t)(7724169104006700625UL), (size_t)(7724169104006700626UL), (size_t)(7724169104006700627UL), (size_t)(7724169104006700628UL), (size_t)(7724169104006700629UL), (size_t)(7724169104006700630UL), (size_t)(7724169104006700643UL)); exit(1);
+ exit(1);
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(7, (size_t)(7724169104006700625UL), (size_t)(7724169104006700626UL), (size_t)(7724169104006700627UL), (size_t)(7724169104006700628UL), (size_t)(7724169104006700629UL), (size_t)(7724169104006700630UL), (size_t)(7724169104006700643UL)); call_lbl_10: calling((void*)&ricker_wavelet, 10, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ricker_wavelet(src_samples[i], nsteps, dt, srcs[i].freq);
+ alias_group_changed(7, (size_t)(7724169104006700625UL), (size_t)(7724169104006700626UL), (size_t)(7724169104006700627UL), (size_t)(7724169104006700628UL), (size_t)(7724169104006700629UL), (size_t)(7724169104006700630UL), (size_t)(7724169104006700643UL)); call_lbl_8: calling((void*)&ricker_wavelet, 8, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ricker_wavelet(src_samples[i], nsteps, dt, srcs[i].freq);
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  } }
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(6, (size_t)(7724169104006700625UL), (size_t)(7724169104006700626UL), (size_t)(7724169104006700627UL), (size_t)(7724169104006700628UL), (size_t)(7724169104006700629UL), (size_t)(7724169104006700630UL)); rm_stack(true, 7724169104006700643UL); return src_samples;
+ alias_group_changed(7, (size_t)(7724169104006700625UL), (size_t)(7724169104006700626UL), (size_t)(7724169104006700627UL), (size_t)(7724169104006700628UL), (size_t)(7724169104006700629UL), (size_t)(7724169104006700630UL), (size_t)(7724169104006700643UL)); rm_stack(true, 7724169104006700643UL); return src_samples;
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 }
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2701,7 +2701,7 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
 # 148 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Progress initialized multiple times\n");
 # 149 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL)); exit(1);
+ exit(1);
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2710,7 +2710,7 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
 # 153 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Invalid progress length, must be <= 100\n");
 # 154 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(7724169104006700706UL), (size_t)(7724169104006700707UL), (size_t)(7724169104006700708UL)); exit(1);
+ exit(1);
 # 155 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 156 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2769,7 +2769,7 @@ void update_progress(int progress) {new_stack((void *)(&update_progress), 1, 0, 
 # 187 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  "init_progress\n");
 # 188 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(7724169104006700804UL), (size_t)(7724169104006700806UL), (size_t)(7724169104006700807UL)); exit(1);
+ exit(1);
 # 189 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 190 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2789,7 +2789,7 @@ void update_progress(int progress) {new_stack((void *)(&update_progress), 1, 0, 
 # 198 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "Ticks went backwards?\n");
 # 199 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- alias_group_changed(3, (size_t)(7724169104006700804UL), (size_t)(7724169104006700806UL), (size_t)(7724169104006700807UL)); exit(1);
+ exit(1);
 # 200 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 201 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2840,7 +2840,7 @@ rm_stack(false, 0UL); }
 
 
 static int module_init() {
-    init_module(7724169104006700302UL, 19, 8, 23, 3, 7724169104006700302UL + 201UL, 7724169104006700302UL + 261UL, 7724169104006700302UL + 323UL, 7724169104006700302UL + 400UL, 7724169104006700302UL + 606UL, 7724169104006700302UL + 120UL, 7724169104006700302UL + 612UL, 7724169104006700302UL + 457UL, 7724169104006700302UL + 23UL, 7724169104006700302UL + 92UL, 7724169104006700302UL + 195UL, 7724169104006700302UL + 317UL, 7724169104006700302UL + 196UL, 7724169104006700302UL + 318UL, 7724169104006700302UL + 317UL, 7724169104006700302UL + 261UL, 7724169104006700302UL + 99UL, 7724169104006700302UL + 186UL, 7724169104006700302UL + 98UL, 7724169104006700302UL + 187UL, 7724169104006700302UL + 327UL, 7724169104006700302UL + 341UL, 7724169104006700302UL + 104UL, 7724169104006700302UL + 155UL, 7724169104006700302UL + 102UL, 7724169104006700302UL + 174UL, 7724169104006700302UL + 103UL, 7724169104006700302UL + 174UL, 7724169104006700302UL + 100UL, 7724169104006700302UL + 115UL, 7724169104006700302UL + 101UL, 7724169104006700302UL + 115UL, 7724169104006700302UL + 341UL, 7724169104006700302UL + 361UL, 7724169104006700302UL + 97UL, 7724169104006700302UL + 186UL, 7724169104006700302UL + 105UL, 7724169104006700302UL + 155UL, "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "timeval", 2, "long int", (int)__builtin_offsetof(struct timeval, tv_sec), "int", (int)__builtin_offsetof(struct timeval, tv_usec), "timezone", 2, "int", (int)__builtin_offsetof(struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof(struct timezone, tz_dsttime), "_Z7secondsv", 1, "gettimeofday", "_Z14ricker_waveletPfiff", 1, "exp", "_Z12parse_sourcePcP7_source", 5, "atof", "atoi", "exit", "fprintf", "strchr", "_Z14config_sourcesPP7_sourcePiiii", 3, "exit", "fprintf", "malloc", "_Z14sample_sourcesP7_sourceiif", 4, "_Z14ricker_waveletPfiff", "exit", "fprintf", "malloc", "_Z13init_progressiii", 4, "__assert_rtn", "exit", "fprintf", "malloc", "_Z15update_progressi", 2, "exit", "fprintf", "_Z15finish_progressv", 3, "_Z15update_progressi", "fprintf", "free", "ricker_wavelet|source|0", 1, "exp", "ricker_wavelet|nsteps|0", 1, "exp", "ricker_wavelet|dt|0", 1, "exp", "ricker_wavelet|freq|0", 1, "exp", "ricker_wavelet|shift|0", 1, "exp", "ricker_wavelet|i|0", 1, "exp", "ricker_wavelet|time|0", 1, "exp", "ricker_wavelet|pi_freq_t|0", 1, "exp", "ricker_wavelet|sqr_pi_freq_t|0", 1, "exp", "parse_source|out|0", 4, "strchr", "exit", "atoi", "atof", "parse_source|x_str|0", 4, "strchr", "exit", "atoi", "atof", "parse_source|first_comma|0", 4, "strchr", "exit", "atoi", "atof", "parse_source|y_str|0", 4, "strchr", "exit", "atoi", "atof", "parse_source|second_comma|0", 4, "strchr", "exit", "atoi", "atof", "parse_source|freq_str|0", 4, "strchr", "exit", "atoi", "atof", "parse_source|third_comma|0", 3, "exit", "atoi", "atof", "parse_source|time_str|0", 2, "atoi", "atof", "sample_sources|srcs|0", 2, "exit", "_Z14ricker_waveletPfiff", "sample_sources|nsrcs|0", 2, "exit", "_Z14ricker_waveletPfiff", "sample_sources|nsteps|0", 2, "exit", "_Z14ricker_waveletPfiff", "sample_sources|dt|0", 2, "exit", "_Z14ricker_waveletPfiff", "sample_sources|src_samples|0", 2, "exit", "_Z14ricker_waveletPfiff", "sample_sources|i|0", 2, "exit", "_Z14ricker_waveletPfiff");
+    init_module(7724169104006700302UL, 19, 8, 24, 3, 7724169104006700302UL + 201UL, 7724169104006700302UL + 261UL, 7724169104006700302UL + 323UL, 7724169104006700302UL + 400UL, 7724169104006700302UL + 606UL, 7724169104006700302UL + 120UL, 7724169104006700302UL + 612UL, 7724169104006700302UL + 457UL, 7724169104006700302UL + 23UL, 7724169104006700302UL + 92UL, 7724169104006700302UL + 195UL, 7724169104006700302UL + 317UL, 7724169104006700302UL + 196UL, 7724169104006700302UL + 318UL, 7724169104006700302UL + 317UL, 7724169104006700302UL + 261UL, 7724169104006700302UL + 99UL, 7724169104006700302UL + 186UL, 7724169104006700302UL + 98UL, 7724169104006700302UL + 187UL, 7724169104006700302UL + 327UL, 7724169104006700302UL + 341UL, 7724169104006700302UL + 104UL, 7724169104006700302UL + 155UL, 7724169104006700302UL + 102UL, 7724169104006700302UL + 174UL, 7724169104006700302UL + 103UL, 7724169104006700302UL + 174UL, 7724169104006700302UL + 100UL, 7724169104006700302UL + 115UL, 7724169104006700302UL + 101UL, 7724169104006700302UL + 115UL, 7724169104006700302UL + 341UL, 7724169104006700302UL + 361UL, 7724169104006700302UL + 97UL, 7724169104006700302UL + 186UL, 7724169104006700302UL + 105UL, 7724169104006700302UL + 155UL, "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "timeval", 2, "long int", (int)__builtin_offsetof(struct timeval, tv_sec), "int", (int)__builtin_offsetof(struct timeval, tv_usec), "timezone", 2, "int", (int)__builtin_offsetof(struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof(struct timezone, tz_dsttime), "_Z7secondsv", 1, "gettimeofday", "_Z14ricker_waveletPfiff", 1, "exp", "_Z12parse_sourcePcP7_source", 5, "atof", "atoi", "exit", "fprintf", "strchr", "_Z14config_sourcesPP7_sourcePiiii", 3, "exit", "fprintf", "malloc", "_Z14sample_sourcesP7_sourceiif", 4, "_Z14ricker_waveletPfiff", "exit", "fprintf", "malloc", "_Z13init_progressiii", 4, "__assert_rtn", "exit", "fprintf", "malloc", "_Z15update_progressi", 2, "exit", "fprintf", "_Z15finish_progressv", 3, "_Z15update_progressi", "fprintf", "free", "seconds|tp|0", 1, "_Z7secondsv", "ricker_wavelet|source|0", 1, "exp", "ricker_wavelet|nsteps|0", 1, "exp", "ricker_wavelet|dt|0", 1, "exp", "ricker_wavelet|freq|0", 1, "exp", "ricker_wavelet|shift|0", 1, "exp", "ricker_wavelet|i|0", 1, "exp", "ricker_wavelet|time|0", 1, "exp", "ricker_wavelet|pi_freq_t|0", 1, "exp", "ricker_wavelet|sqr_pi_freq_t|0", 1, "exp", "parse_source|out|0", 3, "strchr", "atoi", "atof", "parse_source|x_str|0", 3, "strchr", "atoi", "atof", "parse_source|first_comma|0", 3, "strchr", "atoi", "atof", "parse_source|y_str|0", 3, "strchr", "atoi", "atof", "parse_source|second_comma|0", 3, "strchr", "atoi", "atof", "parse_source|freq_str|0", 3, "strchr", "atoi", "atof", "parse_source|third_comma|0", 2, "atoi", "atof", "parse_source|time_str|0", 2, "atoi", "atof", "sample_sources|srcs|0", 1, "_Z14ricker_waveletPfiff", "sample_sources|nsrcs|0", 1, "_Z14ricker_waveletPfiff", "sample_sources|nsteps|0", 1, "_Z14ricker_waveletPfiff", "sample_sources|dt|0", 1, "_Z14ricker_waveletPfiff", "sample_sources|src_samples|0", 1, "_Z14ricker_waveletPfiff", "sample_sources|i|0", 1, "_Z14ricker_waveletPfiff");
     register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8, 1, 0, 0);
     register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4, 0, 0, 0);
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4, 0, 0, 0);

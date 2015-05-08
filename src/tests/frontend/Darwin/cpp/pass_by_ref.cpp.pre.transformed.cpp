@@ -1739,7 +1739,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(12387876047547725256UL, 1, 1, 0, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "_Z10checkpointv", "_Z3fooPi");
+    init_module(12387876047547725256UL, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "_Z10checkpointv", "_Z3fooPi", "main|b|0", 1, "main");
     return 0;
 }
 

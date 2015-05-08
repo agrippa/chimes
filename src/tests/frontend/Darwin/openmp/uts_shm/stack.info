@@ -3,7 +3,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c impl_paramsToStr|ind|0 " i32 " 32 0 0  0 omp_get_num_threads
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c impl_parseParam|err|0 " i32 " 32 0 0  0 atoi
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c ss_mkEmpty|s|0 " %struct.stealStack_t* " 64 1 0  0 omp_set_lock omp_unset_lock
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c ss_error|str|0 " i8* " 64 1 0  0 exit omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c ss_error|str|0 " i8* " 64 1 0  0 omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c ss_init|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z10ss_mkEmptyP12stealStack_t _Z21omp_global_lock_allocv _Z8ss_errorPc omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c ss_init|nelts|0 " i32 " 32 0 0  0 _Z10ss_mkEmptyP12stealStack_t _Z21omp_global_lock_allocv _Z8ss_errorPc omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c ss_init|nbytes|0 " i32 " 32 0 0  0 _Z10ss_mkEmptyP12stealStack_t _Z21omp_global_lock_allocv _Z8ss_errorPc omp_get_thread_num
@@ -54,7 +54,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|ss|0 " %struct.stealStack_t* " 64 1 0  1
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|done|0 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|parent|0 " %struct.node_t* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|child|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 1
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|child|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 0 _Z13parTreeSearchP12stealStack_t
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|localDepth|0 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|goodSteal|0 " i32 " 32 0 0  1
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c parTreeSearch|victimId|0 " i32 " 32 0 0  1
@@ -74,7 +74,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c showStats|tovh|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii omp_get_num_threads
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c showStats|tcbovh|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii omp_get_num_threads
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c showStats|nthreads|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c main|root|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 1
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c main|root|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 0 main
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c main|t1|0 " double " 64 0 0  1
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c main|t2|0 " double " 64 0 0  1
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c main|et|0 " double " 64 0 0  1

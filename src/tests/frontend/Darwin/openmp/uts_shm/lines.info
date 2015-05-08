@@ -3,7 +3,6 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 324 19 : { 106, 107, 108 } prop:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 326 17 : { 106, 107, 108 } prop:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 331 15 : { 106, 107, 108 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 380 3 : { 152 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 422 3 : { 161 } direct:call:omp_set_lock
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 427 3 : { 185 } direct:call:omp_unset_lock
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 432 33 : { 188 } direct:call:omp_get_thread_num

@@ -6,7 +6,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|localMin|0 " double* " 64 1 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|localMax|0 " double* " 64 1 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|nb|0 " i32 " 32 0 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|basis|0 " [4 x [3 x double]] " 768 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|basis|0 " [4 x [3 x double]] " 768 0 0  0 _Z16createFccLatticeiiidP9SimFlatSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|begin|0 " [3 x i32] " 96 0 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|end|0 " [3 x i32] " 96 0 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|px|0 " double " 64 0 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
@@ -22,10 +22,10 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|id|0 " i32 " 32 0 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd _Z14addIntParallelPiS_i
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setVcm|s|0 " %struct.SimFlatSt* " 64 1 0  0 _ZL10computeVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setVcm|newVcm|0 " double* " 64 1 0  0 _ZL10computeVcmP9SimFlatStPd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setVcm|oldVcm|0 " [3 x double] " 192 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setVcm|oldVcm|0 " [3 x double] " 192 0 0  0 _Z6setVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c computeVcm|vcm|0 " double* " 64 1 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z15addRealParallelPdS_i
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c computeVcm|vcmLocal|0 " [4 x double] " 256 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c computeVcm|vcmSum|0 " [4 x double] " 256 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c computeVcm|vcmLocal|0 " [4 x double] " 256 0 0  0 _ZL10computeVcmP9SimFlatStPd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c computeVcm|vcmSum|0 " [4 x double] " 256 0 0  0 _ZL10computeVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|s|0 " %struct.SimFlatSt* " 64 1 0  0 _Z13kineticEnergyP9SimFlatSt _Z6gasdevPy _Z6mkSeedjj _Z6setVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|temperature|0 " double " 64 0 0  0 _Z13kineticEnergyP9SimFlatSt _Z6gasdevPy _Z6mkSeedjj _Z6setVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|iBox|0 " i32 " 32 0 0  0 _Z13kineticEnergyP9SimFlatSt _Z6gasdevPy _Z6mkSeedjj _Z6setVcmP9SimFlatStPd
@@ -34,8 +34,8 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|iType|0 " i32 " 32 0 0  0 _Z13kineticEnergyP9SimFlatSt _Z6gasdevPy _Z6mkSeedjj _Z6setVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|mass|0 " double " 64 0 0  0 _Z13kineticEnergyP9SimFlatSt _Z6gasdevPy _Z6mkSeedjj _Z6setVcmP9SimFlatStPd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|sigma|0 " double " 64 0 0  0 _Z13kineticEnergyP9SimFlatSt _Z6gasdevPy _Z6mkSeedjj _Z6setVcmP9SimFlatStPd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|seed|0 " i64 " 64 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|vZero|0 " [3 x double] " 192 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|seed|0 " i64 " 64 0 0  0 _Z14setTemperatureP9SimFlatStd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|vZero|0 " [3 x double] " 192 0 0  0 _Z14setTemperatureP9SimFlatStd
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|temp|0 " double " 64 0 0  0 _Z13kineticEnergyP9SimFlatSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|scaleFactor|0 " double " 64 0 0  0 _Z13kineticEnergyP9SimFlatSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c setTemperature|iBox|1 " i32 " 32 0 0  0 _Z13kineticEnergyP9SimFlatSt
@@ -46,4 +46,4 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c randomDisplacements|iBox|0 " i32 " 32 0 0  0 _Z5lcg61Py _Z6mkSeedjj
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c randomDisplacements|iOff|0 " i32 " 32 0 0  0 _Z5lcg61Py _Z6mkSeedjj
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c randomDisplacements|ii|0 " i32 " 32 0 0  0 _Z5lcg61Py _Z6mkSeedjj
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c randomDisplacements|seed|0 " i64 " 64 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c randomDisplacements|seed|0 " i64 " 64 0 0  0 _Z19randomDisplacementsP9SimFlatStd

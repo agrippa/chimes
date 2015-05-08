@@ -2375,7 +2375,7 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_layer_text), 8, 0, (size_t)(17753382427056418519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382427056418525UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
+ const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_layer_text), 8, 0, (size_t)(17753382427056418519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382427056418525UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  FILE *fp; fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2383,7 +2383,7 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 11 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  fprintf(__stderrp, "Failed to open output file %s\n", filename);
 # 12 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(9, (size_t)(17753382427056418425UL), (size_t)(17753382427056418426UL), (size_t)(17753382427056418427UL), (size_t)(17753382427056418428UL), (size_t)(17753382427056418429UL), (size_t)(17753382427056418430UL), (size_t)(17753382427056418431UL), (size_t)(17753382427056418432UL), (size_t)(17753382427056418433UL)); exit(1);
+ exit(1);
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  }
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2403,7 +2403,7 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
  } }
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- call_lbl_7: calling((void*)&fclose, 7, 0UL, 1, (size_t)(17753382427056418454UL)); fclose(fp);
+ call_lbl_6: calling((void*)&fclose, 6, 0UL, 1, (size_t)(17753382427056418454UL)); fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 alias_group_changed(11, (size_t)(17753382427056418425UL), (size_t)(17753382427056418426UL), (size_t)(17753382427056418427UL), (size_t)(17753382427056418428UL), (size_t)(17753382427056418429UL), (size_t)(17753382427056418430UL), (size_t)(17753382427056418431UL), (size_t)(17753382427056418432UL), (size_t)(17753382427056418433UL), (size_t)(17753382427056418434UL), (size_t)(17753382427056418435UL)); rm_stack(false, 0UL); }
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2457,9 +2457,9 @@ void usage(char **argv) {new_stack((void *)(&usage), 1, 0, (size_t)(177533824270
 # 52 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  argv[0]);
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(1, (size_t)(17753382427056418679UL)); exit(1);
+ exit(1);
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(17753382427056418679UL)); rm_stack(false, 0UL); }
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void default_config(config *conf) {new_stack((void *)(&default_config), 1, 0, (size_t)(17753382427056418731UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }

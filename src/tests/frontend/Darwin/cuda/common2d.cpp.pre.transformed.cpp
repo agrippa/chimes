@@ -2374,7 +2374,7 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 void save_text(float *field, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
- const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_text), 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
+ const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_text), 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  FILE *fp; fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
@@ -2382,7 +2382,7 @@ void save_text(float *field, const int dimx, const int dimy,
 # 11 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  fprintf(__stderrp, "Failed to open output file %s\n", filename);
 # 12 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
- alias_group_changed(8, (size_t)(17753382416546317924UL), (size_t)(17753382416546317925UL), (size_t)(17753382416546317926UL), (size_t)(17753382416546317927UL), (size_t)(17753382416546317928UL), (size_t)(17753382416546317929UL), (size_t)(17753382416546317930UL), (size_t)(17753382416546317931UL)); exit(1);
+ exit(1);
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  }
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
@@ -2402,7 +2402,7 @@ void save_text(float *field, const int dimx, const int dimy,
  } }
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
- call_lbl_7: calling((void*)&fclose, 7, 0UL, 1, (size_t)(17753382416546317950UL)); fclose(fp);
+ call_lbl_6: calling((void*)&fclose, 6, 0UL, 1, (size_t)(17753382416546317950UL)); fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 alias_group_changed(10, (size_t)(17753382416546317924UL), (size_t)(17753382416546317925UL), (size_t)(17753382416546317926UL), (size_t)(17753382416546317927UL), (size_t)(17753382416546317928UL), (size_t)(17753382416546317929UL), (size_t)(17753382416546317930UL), (size_t)(17753382416546317931UL), (size_t)(17753382416546317932UL), (size_t)(17753382416546317933UL)); rm_stack(false, 0UL); }
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
@@ -2454,9 +2454,9 @@ void usage(char **argv) {new_stack((void *)(&usage), 1, 0, (size_t)(177533824165
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  argv[0]);
 # 52 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
- alias_group_changed(1, (size_t)(17753382416546318158UL)); exit(1);
+ exit(1);
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(17753382416546318158UL)); rm_stack(false, 0UL); }
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 void default_config(config *conf) {new_stack((void *)(&default_config), 1, 0, (size_t)(17753382416546318207UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }

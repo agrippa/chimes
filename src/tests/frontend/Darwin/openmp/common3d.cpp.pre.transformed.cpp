@@ -2299,7 +2299,7 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-        const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_layer_text), 8, 0, (size_t)(4957368879419144232UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4957368879419144238UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
+        const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_layer_text), 8, 0, (size_t)(4957368879419144232UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4957368879419144238UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
      FILE *fp; fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2307,7 +2307,7 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
         fprintf(__stderrp, "Failed to open output file %s\n", filename);
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-        alias_group_changed(9, (size_t)(4957368879419144138UL), (size_t)(4957368879419144139UL), (size_t)(4957368879419144140UL), (size_t)(4957368879419144141UL), (size_t)(4957368879419144142UL), (size_t)(4957368879419144143UL), (size_t)(4957368879419144144UL), (size_t)(4957368879419144145UL), (size_t)(4957368879419144146UL)); exit(1);
+        exit(1);
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     }
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2327,7 +2327,7 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
     } }
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-     call_lbl_7: calling((void*)&fclose, 7, 0UL, 1, (size_t)(4957368879419144167UL)); fclose(fp);
+     call_lbl_6: calling((void*)&fclose, 6, 0UL, 1, (size_t)(4957368879419144167UL)); fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 alias_group_changed(11, (size_t)(4957368879419144138UL), (size_t)(4957368879419144139UL), (size_t)(4957368879419144140UL), (size_t)(4957368879419144141UL), (size_t)(4957368879419144142UL), (size_t)(4957368879419144143UL), (size_t)(4957368879419144144UL), (size_t)(4957368879419144145UL), (size_t)(4957368879419144146UL), (size_t)(4957368879419144147UL), (size_t)(4957368879419144148UL)); rm_stack(false, 0UL); }
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2381,9 +2381,9 @@ void usage(char **argv) {new_stack((void *)(&usage), 1, 0, (size_t)(495736887941
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
             argv[0]);
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-    alias_group_changed(1, (size_t)(4957368879419144392UL)); exit(1);
+    exit(1);
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-rm_stack(false, 0UL); }
+alias_group_changed(1, (size_t)(4957368879419144392UL)); rm_stack(false, 0UL); }
 # 55 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void default_config(config *conf) {new_stack((void *)(&default_config), 1, 0, (size_t)(4957368879419144444UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }

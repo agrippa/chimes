@@ -1,5 +1,3 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 382 3 alias_group_changed(1, (size_t)(5273863086679873022UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 431 3 alias_group_changed(1, (size_t)(5273863086679873048UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 454 5 alias_group_changed(4, (size_t)(5273863086679873057UL), (size_t)(5273863086679873058UL), (size_t)(5273863086679873059UL), (size_t)(5273863086679873148UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 477 32 alias_group_changed(2, (size_t)(5273863086679873151UL), (size_t)(5273863086679873152UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 479 19 alias_group_changed(2, (size_t)(5273863086679873151UL), (size_t)(5273863086679873152UL)); 
@@ -48,11 +46,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 316 47
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 357 25 new_stack((void *)(&impl_helpMessage), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 372 1 rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 374 26 new_stack((void *)(&impl_abort), 1, 0, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 384 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 384 1 alias_group_changed(1, (size_t)(5273863086679873022UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 419 32 new_stack((void *)(&ss_mkEmpty), 1, 0, (size_t)(5273863086679873047UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 426 1 alias_group_changed(2, (size_t)(5273863086679873031UL), (size_t)(5273863086679873047UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 429 26 new_stack((void *)(&ss_error), 1, 0, (size_t)(5273863086679873056UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 432 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 432 1 alias_group_changed(1, (size_t)(5273863086679873048UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 435 40 new_stack((void *)(&ss_init), 2, 2, (size_t)(5273863086679873148UL), (size_t)(0UL), "ss_init|s|0", "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_init|nelts|0", "i32", (void *)(&nelts), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 472 1 alias_group_changed(4, (size_t)(5273863086679873057UL), (size_t)(5273863086679873058UL), (size_t)(5273863086679873059UL), (size_t)(5273863086679873148UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 476 38 new_stack((void *)(&ss_push), 2, 2, (size_t)(5273863086679873223UL), (size_t)(5273863086679873229UL), "ss_push|s|0", "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0); 

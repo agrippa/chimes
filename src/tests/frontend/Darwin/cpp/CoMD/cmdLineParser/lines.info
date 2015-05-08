@@ -3,8 +3,4 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 52 17 : { 92 } direct:call:_ZL9dupStringPKc
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 118 16 : { 615 } prop:call:_ZL12myOptionFreeP10MyOptionSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 178 11 : { 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 381, 620 } prop:call:getopt_long
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 199 16 : { 319, 324 } prop:call:sscanf
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 202 16 : { 319, 324 } prop:call:sscanf
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 205 16 : { 319, 324 } prop:call:sscanf
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 208 16 : { 319, 324 } prop:call:strncpy
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 212 16 : { 319, 324 } prop:call:sscanf
