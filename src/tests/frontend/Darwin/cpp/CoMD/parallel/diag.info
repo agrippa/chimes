@@ -8,7 +8,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 47 22 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 48 4 alias_group_changed(1, (size_t)(3632450578146407561UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 46 1 new_stack((void *)(&printRank), 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 23 alias_group_changed(3, (size_t)(3632450578146407571UL), (size_t)(3632450578146407573UL), (size_t)(3632450578146407585UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 1 new_stack((void *)(&timestampBarrier), 1, 1, (size_t)(3632450578146407598UL), "timestampBarrier|msg|0", "i8*", (void *)(&msg), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 1 new_stack((void *)(&timestampBarrier), 1, 1, (size_t)(3632450578146407598UL), "timestampBarrier|msg|0", &____must_checkpoint_timestampBarrier_msg_0, "i8*", (void *)(&msg), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 61 1 alias_group_changed(3, (size_t)(3632450578146407571UL), (size_t)(3632450578146407573UL), (size_t)(3632450578146407585UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 109 4 alias_group_changed(6, (size_t)(3632450578146407617UL), (size_t)(3632450578146407618UL), (size_t)(3632450578146407619UL), (size_t)(3632450578146407620UL), (size_t)(3632450578146407621UL), (size_t)(3632450578146407622UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 95 1 new_stack((void *)(&sendReceiveParallel), 6, 0, (size_t)(3632450578146407648UL), (size_t)(0UL), (size_t)(0UL), (size_t)(3632450578146407647UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -63,9 +63,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 73 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 57 81  call_lbl_8: calling((void*)&ctime, 8, 3632450578146407585UL, 1, (size_t)(3632450578146407572UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 60 4  call_lbl_10: calling((void*)&fflush, 10, 0UL, 1, (size_t)(3632450578146407590UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 62  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 70  register_stack_var("timestampBarrier|t|0", "i64", (void *)(&t), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 70  register_stack_var("timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 70  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 148  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 193  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 107 4  call_lbl_3: calling((void*)&memcpy, 3, 0UL, 3, (size_t)(3632450578146407647UL), (size_t)(3632450578146407648UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 95 175  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 114 125  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

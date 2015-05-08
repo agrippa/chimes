@@ -43,7 +43,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1599,12 +1599,12 @@ int builtWithMpi(void);
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent)
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-{new_stack((void *)(&initDecomposition), 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13672999005525477974UL), "initDecomposition|xproc|0", "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&initDecomposition), 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13672999005525477974UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  alias_group_changed(4, (size_t)(13672999005525477745UL), (size_t)(13672999005525477746UL), (size_t)(13672999005525477747UL), (size_t)(13672999005525477748UL)); call_lbl_3: calling((void*)&getNRanks, 3, 0UL, 0); (__builtin_expect(!(xproc * yproc * zproc == getNRanks()), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c", 20, "xproc * yproc * zproc == getNRanks()") : (void)0);
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
- lbl_0: Domain *dd; register_stack_var("initDecomposition|dd|0", "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } dd = ((Domain *)malloc_wrapper(sizeof(Domain), 13672999005525477778UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
+ lbl_0: Domain *dd; register_stack_var("initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } dd = ((Domain *)malloc_wrapper(sizeof(Domain), 13672999005525477778UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
  dd->procGrid[0] = xproc;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"

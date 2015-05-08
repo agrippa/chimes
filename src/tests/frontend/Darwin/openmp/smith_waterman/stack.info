@@ -1,49 +1,49 @@
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|file|0 " %struct.__sFILE* " 64 1 0  0 fread fseek ftell
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|n_chars|0 " i64* " 64 1 0  0 fread fseek ftell
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|file_size|0 " i64 " 64 0 0  0 fread fseek
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|file_buffer|0 " i8* " 64 1 0  0 fread
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|i|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|j|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|next|0 " %struct._tiles_to_run* " 64 1 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|ii|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|jj|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|threadId|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|local_matrix|0 " i32** " 64 1 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|diag_index|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|diag|0 " i32* " 64 1 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|tile_edge_y|0 " i32* " 64 1 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|tile_edge_x|0 " i32* " 64 1 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|char_from_1|0 " i8 " 8 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|char_from_2|0 " i8 " 8 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|diag_score|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|left_score|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|top_score|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|bigger_of_left_top|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|success|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|row|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|col|0 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_RCOLii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|success|1 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|row|1 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|col|1 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|success|2 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|row|2 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|col|2 " i32 " 32 0 0  0 _Z15add_tile_to_runiiP13_tiles_to_run
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|argc|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|argv|0 " i8** " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|i|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|j|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_name_1|0 " i8* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_name_2|0 " i8* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_1|0 " %struct.__sFILE* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|n_char_in_file_1|0 " i64 " 64 0 0  0 main
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_2|0 " %struct.__sFILE* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|n_char_in_file_2|0 " i64 " 64 0 0  0 main
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|num_tiles|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|num_diags|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|result_row|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|result_col|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|curr|0 " %struct._tiles_to_run* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|next|0 " %struct._tiles_to_run* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|mine|0 " %struct._tile* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|done|0 " i8 " 8 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|tmp|0 " %struct._tiles_to_run* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|file|0 " %struct.__sFILE* " 64 1 0 0 fread fseek ftell
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|n_chars|0 " i64* " 64 1 0 0 fread fseek ftell
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|file_size|0 " i64 " 64 0 0 0 fread fseek
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp read_file|file_buffer|0 " i8* " 64 1 0 0 fread
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|i|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|j|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|next|0 " %struct._tiles_to_run* " 64 1 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|ii|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|jj|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|threadId|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|local_matrix|0 " i32** " 64 1 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|diag_index|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|diag|0 " i32* " 64 1 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|tile_edge_y|0 " i32* " 64 1 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|tile_edge_x|0 " i32* " 64 1 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|char_from_1|0 " i8 " 8 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|char_from_2|0 " i8 " 8 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|diag_score|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|left_score|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|top_score|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|bigger_of_left_top|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_DIAGii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|success|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|row|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|col|0 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii _Z8PUT_RCOLii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|success|1 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|row|1 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|col|1 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run _Z8PUT_BROWii
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|success|2 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|row|2 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp task_func|col|2 " i32 " 32 0 0 0 _Z15add_tile_to_runiiP13_tiles_to_run
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|argc|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|argv|0 " i8** " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|i|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|j|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_name_1|0 " i8* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_name_2|0 " i8* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_1|0 " %struct.__sFILE* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|n_char_in_file_1|0 " i64 " 64 0 0 0 main
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|file_2|0 " %struct.__sFILE* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|n_char_in_file_2|0 " i64 " 64 0 0 0 main
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|num_tiles|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|num_diags|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|result_row|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|result_col|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|curr|0 " %struct._tiles_to_run* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|next|0 " %struct._tiles_to_run* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|mine|0 " %struct._tile* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|done|0 " i8 " 8 0 0 1
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp main|tmp|0 " %struct._tiles_to_run* " 64 1 0 1

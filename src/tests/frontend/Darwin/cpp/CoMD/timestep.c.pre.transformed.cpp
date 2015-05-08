@@ -46,7 +46,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -884,9 +884,9 @@ static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 double timestep(SimFlat* s, int nSteps, real_t dt)
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-{new_stack((void *)(&timestep), 3, 3, (size_t)(8093288458141874007UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", "double", (void *)(&dt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&timestep), 3, 3, (size_t)(8093288458141874007UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", &____must_checkpoint_timestep_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", &____must_checkpoint_timestep_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", &____must_checkpoint_timestep_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { lbl_0: int ii; register_stack_var("timestep|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } for ( ii = (0) ; ii<nSteps; ++ii)
+ { lbl_0: int ii; register_stack_var("timestep|ii|0", &____must_checkpoint_timestep_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } for ( ii = (0) ; ii<nSteps; ++ii)
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  {
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -1003,9 +1003,9 @@ alias_group_changed(9, (size_t)(8093288458141874209UL), (size_t)(809328845814187
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 void kineticEnergy(SimFlat* s)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-{new_stack((void *)(&kineticEnergy), 1, 1, (size_t)(8093288458141874593UL), "kineticEnergy|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&kineticEnergy), 1, 1, (size_t)(8093288458141874593UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+ lbl_0: real_t eLocal[2]; register_stack_var("kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  eLocal[0] = s->ePotential;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -1052,7 +1052,7 @@ alias_group_changed(1, (size_t)(8093288458141874593UL)); rm_stack(false, 0UL); }
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 void redistributeAtoms(SimFlat* sim)
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-{new_stack((void *)(&redistributeAtoms), 1, 1, (size_t)(8093288458141874380UL), "redistributeAtoms|sim|0", "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&redistributeAtoms), 1, 1, (size_t)(8093288458141874380UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
  alias_group_changed(1, (size_t)(8093288458141874366UL)); call_lbl_2: calling((void*)&updateLinkCells, 2, 0UL, 2, (size_t)(8093288458141874382UL), (size_t)(8093288458141874382UL)); updateLinkCells(sim->boxes, sim->atoms);
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -1064,7 +1064,7 @@ void redistributeAtoms(SimFlat* sim)
  do { call_lbl_5: calling((void*)&profileStop, 5, 0UL, 1, (size_t)(0UL)); profileStop(atomHaloTimer); } while(0);
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
- { lbl_0: int ii; register_stack_var("redistributeAtoms|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { alias_group_changed(1, (size_t)(8093288458141874367UL)); call_lbl_7: calling((void*)&sortAtomsInCell, 7, 0UL, 3, (size_t)(8093288458141874382UL), (size_t)(8093288458141874382UL), (size_t)(0UL)); sortAtomsInCell(sim->atoms, sim->boxes, ii); } };
+ { lbl_0: int ii; register_stack_var("redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { alias_group_changed(1, (size_t)(8093288458141874367UL)); call_lbl_7: calling((void*)&sortAtomsInCell, 7, 0UL, 3, (size_t)(8093288458141874382UL), (size_t)(8093288458141874382UL), (size_t)(0UL)); sortAtomsInCell(sim->atoms, sim->boxes, ii); } };
 # 146 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 alias_group_changed(1, (size_t)(8093288458141874367UL)); rm_stack(false, 0UL); }
 

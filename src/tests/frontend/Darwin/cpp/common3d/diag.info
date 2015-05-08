@@ -20,7 +20,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 49 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 54 1 alias_group_changed(1, (size_t)(8205091211441270872UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 56 35 new_stack((void *)(&default_config), 1, 0, (size_t)(8205091211441270924UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 71 1 alias_group_changed(2, (size_t)(8205091211441270884UL), (size_t)(8205091211441270924UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 73 56 new_stack((void *)(&setup_config), 3, 3, (size_t)(8205091211441271054UL), (size_t)(0UL), (size_t)(8205091211441271056UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 73 56 new_stack((void *)(&setup_config), 3, 3, (size_t)(8205091211441271054UL), (size_t)(0UL), (size_t)(8205091211441271056UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 127 1 alias_group_changed(2, (size_t)(8205091211441270928UL), (size_t)(8205091211441271054UL)); rm_stack(false, 0UL); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 9 37 
@@ -55,6 +55,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 102 107  call
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 119 103  call_lbl_25: calling((void*)&usage, 25, 0UL, 1, (size_t)(8205091211441271056UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 125 99  call_lbl_27: calling((void*)&getNumCUDADevices, 27, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  register_stack_var("setup_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 73 393  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 73 519  if (____chimes_replaying) { goto lbl_0; } 

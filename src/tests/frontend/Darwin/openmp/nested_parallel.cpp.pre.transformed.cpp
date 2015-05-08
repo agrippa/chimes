@@ -32,7 +32,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1798,7 +1798,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 10 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
     { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_0; }
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-          lbl_0: int inside; register_stack_var("main|inside|0", "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } default: { chimes_error(); } } } inside = (6); { call_lbl_8: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(8, &____chimes_region_id1, 1, &inside); ;
+          lbl_0: int inside; register_stack_var("main|inside|0", (int *)0x0, "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } default: { chimes_error(); } } } inside = (6); { call_lbl_8: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(8, &____chimes_region_id1, 1, &inside); ;
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"

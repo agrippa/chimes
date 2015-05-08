@@ -40,7 +40,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -2082,13 +2082,13 @@ int printRank()
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
 void timestampBarrier(const char* msg)
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
-{new_stack((void *)(&timestampBarrier), 1, 1, (size_t)(3632450578146407598UL), "timestampBarrier|msg|0", "i8*", (void *)(&msg), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&timestampBarrier), 1, 1, (size_t)(3632450578146407598UL), "timestampBarrier|msg|0", &____must_checkpoint_timestampBarrier_msg_0, "i8*", (void *)(&msg), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
  call_lbl_1: calling((void*)&barrierParallel, 1, 0UL, 0); barrierParallel();
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
  call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(3, (size_t)(3632450578146407571UL), (size_t)(3632450578146407573UL), (size_t)(3632450578146407585UL)); rm_stack(false, 0UL); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
- alias_group_changed(1, (size_t)(3632450578146407571UL)); lbl_0: time_t t; register_stack_var("timestampBarrier|t|0", "i64", (void *)(&t), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } call_lbl_6: calling((void*)&time, 6, 0UL, 1, (size_t)(3632450578146407936UL)); t = (time(__null)) ;
+ alias_group_changed(1, (size_t)(3632450578146407571UL)); lbl_0: time_t t; register_stack_var("timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } call_lbl_6: calling((void*)&time, 6, 0UL, 1, (size_t)(3632450578146407936UL)); t = (time(__null)) ;
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
  alias_group_changed(1, (size_t)(3632450578146407572UL)); char *timeString; call_lbl_8: calling((void*)&ctime, 8, 3632450578146407585UL, 1, (size_t)(3632450578146407572UL)); timeString = (ctime(&t)) ;
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"

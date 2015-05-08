@@ -1983,12 +1983,12 @@ void Play::findStackAllocations(Module &M, const char *output_file,
         std::vector<Instruction *> users = info->users;
         std::vector<std::string> *field_names = info->struct_ptr_field_names;
 
-        fprintf(fp, "%s %s \" %s \" %d %d %d ",
+        fprintf(fp, "%s %s \" %s \" %d %d %d",
                 info->filename->c_str(), info->varname->c_str(),
                 info->full_type_name.c_str(), info->type_size_in_bits,
                 info->is_ptr, info->is_struct);
         if (info->is_struct) {
-            fprintf(fp, "%s %d", info->struct_type_name.c_str(), field_names->size());
+            fprintf(fp, " %s %d", info->struct_type_name.c_str(), field_names->size());
             for (std::vector<std::string>::iterator field_iter =
                     field_names->begin(), field_end = field_names->end();
                     field_iter != field_end; field_iter++) {

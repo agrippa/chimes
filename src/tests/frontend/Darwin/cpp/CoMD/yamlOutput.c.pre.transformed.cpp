@@ -45,7 +45,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1915,9 +1915,9 @@ static const char* CoMDVariant = "CoMD-serial";
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 static void getTimeString(char* timestring)
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-{new_stack((void *)(&getTimeString), 1, 1, (size_t)(12737042733622956037UL), "getTimeString|timestring|0", "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&getTimeString), 1, 1, (size_t)(12737042733622956037UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 30 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_0: time_t rawtime; register_stack_var("getTimeString|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
+ lbl_0: time_t rawtime; register_stack_var("getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  struct tm *timeinfo; ;
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -1952,15 +1952,15 @@ void yamlBegin(void)
  call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {alias_group_changed(1, (size_t)(12737042733622955890UL)); rm_stack(false, 0UL); return;; };
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_0: char filename[64]; register_stack_var("yamlBegin|filename|0", "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: char filename[64]; register_stack_var("yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_1: time_t rawtime; register_stack_var("yamlBegin|rawtime|0", "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ lbl_1: time_t rawtime; register_stack_var("yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  call_lbl_4: calling((void*)&time, 4, 0UL, 1, (size_t)(12737042733622955889UL)); time (&rawtime);
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  struct tm *ptm; call_lbl_5: calling((void*)&localtime, 5, 12737042733622955900UL, 1, (size_t)(12737042733622955889UL)); ptm = (localtime(&rawtime)) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_2: char sdate[25]; register_stack_var("yamlBegin|sdate|0", "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+ lbl_2: char sdate[25]; register_stack_var("yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
@@ -1977,7 +1977,7 @@ alias_group_changed(1, (size_t)(12737042733622955890UL)); rm_stack(false, 0UL); 
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlAppInfo(FILE* file)
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-{new_stack((void *)(&yamlAppInfo), 1, 1, (size_t)(12737042733622955994UL), "yamlAppInfo|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&yamlAppInfo), 1, 1, (size_t)(12737042733622955994UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  alias_group_changed(1, (size_t)(12737042733622955937UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -2013,7 +2013,7 @@ void yamlAppInfo(FILE* file)
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  fprintf(file,"  Double Precision: %s\n", (sizeof(real_t)==sizeof(double)?"true":"false"));
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_0: char timestring[32]; register_stack_var("yamlAppInfo|timestring|0", "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(18): { goto call_lbl_18; } case(21): { goto call_lbl_21; } case(24): { goto call_lbl_24; } default: { chimes_error(); } } } ;
+ lbl_0: char timestring[32]; register_stack_var("yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(18): { goto call_lbl_18; } case(21): { goto call_lbl_21; } case(24): { goto call_lbl_24; } default: { chimes_error(); } } } ;
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  call_lbl_21: calling((void*)&getTimeString, 21, 0UL, 1, (size_t)(12737042733622955938UL)); getTimeString(timestring);
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"

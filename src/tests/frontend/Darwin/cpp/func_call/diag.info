@@ -1,7 +1,7 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 5 alias_group_changed(3, (size_t)(11267635574997452871UL), (size_t)(11267635574997452872UL), (size_t)(11267635574997452873UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 5 alias_group_changed(4, (size_t)(11267635574997452933UL), (size_t)(11267635574997452934UL), (size_t)(11267635574997452935UL), (size_t)(11267635574997452936UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 11 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 16 new_stack((void *)(&foo), 1, 1, (size_t)(0UL), "foo|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 16 new_stack((void *)(&foo), 1, 1, (size_t)(0UL), "foo|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 17 5 alias_group_changed(1, (size_t)(11267635574997452937UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 14 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(11267635574997452952UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 14 33 init_chimes(); 
@@ -15,11 +15,11 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 165  in
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 179 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 131  call_lbl_2: calling((void*)&checkpoint, 2, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11  register_stack_var("foo|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11  register_stack_var("foo|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 6  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 11  register_stack_var("foo|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 11  register_stack_var("foo|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 11  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 115  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 127  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 174  call_lbl_3: calling((void*)&foo, 3, 0UL, 1, (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 14 130  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 

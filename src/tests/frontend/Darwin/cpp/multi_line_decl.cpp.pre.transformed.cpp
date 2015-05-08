@@ -38,7 +38,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1486,9 +1486,9 @@ int foo(int a, int b) {new_stack((void *)(&foo), 2, 0, (size_t)(0UL), (size_t)(0
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)); if (____chimes_replaying) { goto lbl_0; }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- lbl_0: int a; register_stack_var("main|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3 + 4 + 5 + 6) ;
+ lbl_0: int a; register_stack_var("main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3 + 4 + 5 + 6) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- lbl_1: int *ptr; register_stack_var("main|ptr|0", "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ptr = ((int *)malloc_wrapper(100, 1300474033434903700UL, 0, 0)) ;
+ lbl_1: int *ptr; register_stack_var("main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ptr = ((int *)malloc_wrapper(100, 1300474033434903700UL, 0, 0)) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
  ptr[0] = 42;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"

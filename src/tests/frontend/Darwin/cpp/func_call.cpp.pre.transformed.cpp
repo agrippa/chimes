@@ -38,7 +38,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1486,11 +1486,11 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
-int foo(int a) {new_stack((void *)(&foo), 1, 1, (size_t)(0UL), "foo|a|0", "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int foo(int a) {new_stack((void *)(&foo), 1, 1, (size_t)(0UL), "foo|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- lbl_0: int b; register_stack_var("foo|b|0", "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b = (a) ;
+ lbl_0: int b; register_stack_var("foo|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b = (a) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- lbl_1: int c; register_stack_var("foo|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } c = (a + b) ;
+ lbl_1: int c; register_stack_var("foo|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } c = (a + b) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  alias_group_changed(3, (size_t)(11267635574997452871UL), (size_t)(11267635574997452872UL), (size_t)(11267635574997452873UL)); call_lbl_2: calling((void*)&checkpoint, 2, 0UL, 0); checkpoint();
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"

@@ -54,7 +54,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1625,7 +1625,7 @@ static TimerGlobal perfGlobal;
 # 92 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void profileStart(const enum TimerHandle handle)
 # 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-{new_stack((void *)(&profileStart), 1, 1, (size_t)(0UL), "profileStart|handle|0", "i32", (void *)(&handle), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+{new_stack((void *)(&profileStart), 1, 1, (size_t)(0UL), "profileStart|handle|0", &____must_checkpoint_profileStart_handle_0, "i32", (void *)(&handle), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(1, (size_t)(10568076854246272995UL)); call_lbl_2: calling((void*)&getTime, 2, 0UL, 0); perfTimer[handle].start = getTime();
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1634,7 +1634,7 @@ alias_group_changed(1, (size_t)(10568076854246273749UL)); rm_stack(false, 0UL); 
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void profileStop(const enum TimerHandle handle)
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-{new_stack((void *)(&profileStop), 1, 1, (size_t)(0UL), "profileStop|handle|0", "i32", (void *)(&handle), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+{new_stack((void *)(&profileStop), 1, 1, (size_t)(0UL), "profileStop|handle|0", &____must_checkpoint_profileStop_handle_0, "i32", (void *)(&handle), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfTimer[handle].count += 1;
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1670,7 +1670,7 @@ double getElapsedTime(const enum TimerHandle handle)
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void printPerformanceResults(int nGlobalAtoms, int printRate)
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-{new_stack((void *)(&printPerformanceResults), 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", "i32", (void *)(&printRate), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&printPerformanceResults), 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(2, (size_t)(10568076854246273089UL), (size_t)(10568076854246273090UL)); call_lbl_2: calling((void*)&timerStats, 2, 0UL, 0); timerStats();
@@ -1680,9 +1680,9 @@ void printPerformanceResults(int nGlobalAtoms, int printRate)
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     lbl_0: double tick; register_stack_var("printPerformanceResults|tick|0", "double", (void *)(&tick), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_6: calling((void*)&getTick, 6, 0UL, 0); tick = (getTick()) ;
+     lbl_0: double tick; register_stack_var("printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_6: calling((void*)&getTick, 6, 0UL, 0); tick = (getTick()) ;
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     lbl_1: double loopTime; register_stack_var("printPerformanceResults|loopTime|0", "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } loopTime = (perfTimer[loopTimer].total * tick) ;
+     lbl_1: double loopTime; register_stack_var("printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } loopTime = (perfTimer[loopTimer].total * tick) ;
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(2, (size_t)(10568076854246273091UL), (size_t)(10568076854246273092UL)); call_lbl_9: calling((void*)&getMyRank, 9, 0UL, 0); fprintf(__stdoutp, "\n\nTimings for Rank %d\n", getMyRank());
@@ -1691,11 +1691,11 @@ void printPerformanceResults(int nGlobalAtoms, int printRate)
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(__stdoutp, "___________________________________________________________________\n");
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_2: int ii; register_stack_var("printPerformanceResults|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ; ii<numberOfTimers; ++ii)
+   { lbl_2: int ii; register_stack_var("printPerformanceResults|ii|0", &____must_checkpoint_printPerformanceResults_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ; ii<numberOfTimers; ++ii)
 # 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-        lbl_3: double totalTime; register_stack_var("printPerformanceResults|totalTime|0", "double", (void *)(&totalTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } totalTime = (perfTimer[ii].total * tick) ;
+        lbl_3: double totalTime; register_stack_var("printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } totalTime = (perfTimer[ii].total * tick) ;
 # 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       if (perfTimer[ii].count > 0) {fprintf(__stdoutp, "%-16s%12%lu     %8.4f      %8.4f    %8.2f\n", timerName[ii], perfTimer[ii].count, totalTime / (double)perfTimer[ii].count, totalTime, totalTime / loopTime * 100.); };
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1709,7 +1709,7 @@ void printPerformanceResults(int nGlobalAtoms, int printRate)
    fprintf(__stdoutp, "_____________________________________________________________________________\n");
 # 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_4: int ii; register_stack_var("printPerformanceResults|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ++ii)
+   { lbl_4: int ii; register_stack_var("printPerformanceResults|ii|1", &____must_checkpoint_printPerformanceResults_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ++ii)
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1755,14 +1755,14 @@ alias_group_changed(2, (size_t)(10568076854246273096UL), (size_t)(10568076854246
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 void printPerformanceResultsYaml(FILE* file)
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-{new_stack((void *)(&printPerformanceResultsYaml), 1, 1, (size_t)(10568076854246273724UL), "printPerformanceResultsYaml|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&printPerformanceResultsYaml), 1, 1, (size_t)(10568076854246273724UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(1, (size_t)(10568076854246273528UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(3, (size_t)(10568076854246273531UL), (size_t)(10568076854246273532UL), (size_t)(10568076854246273533UL)); rm_stack(false, 0UL); return;; };
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     lbl_0: double tick; register_stack_var("printPerformanceResultsYaml|tick|0", "double", (void *)(&tick), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_5: calling((void*)&getTick, 5, 0UL, 0); tick = (getTick()) ;
+     lbl_0: double tick; register_stack_var("printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_5: calling((void*)&getTick, 5, 0UL, 0); tick = (getTick()) ;
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     lbl_1: double loopTime; register_stack_var("printPerformanceResultsYaml|loopTime|0", "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } loopTime = (perfTimer[loopTimer].total * tick) ;
+     lbl_1: double loopTime; register_stack_var("printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } loopTime = (perfTimer[loopTimer].total * tick) ;
 # 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
@@ -1857,7 +1857,7 @@ static uint64_t getTime(void)
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {new_stack((void *)(&getTime), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     lbl_0: struct timeval ptime; register_stack_var("getTime|ptime|0", "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
+     lbl_0: struct timeval ptime; register_stack_var("getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     uint64_t t; t = (0) ;
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1891,23 +1891,23 @@ void timerStats(void)
 # 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 {new_stack((void *)(&timerStats), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    lbl_0: double sendBuf[11]; register_stack_var("timerStats|sendBuf|0", "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } double recvBuf[11]; ;
+    lbl_0: double sendBuf[11]; register_stack_var("timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } double recvBuf[11]; ;
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_1: int ii; register_stack_var("timerStats|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
+   { lbl_1: int ii; register_stack_var("timerStats|ii|0", &____must_checkpoint_timerStats_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(2, (size_t)(10568076854246273307UL), (size_t)(10568076854246273309UL)); call_lbl_2: calling((void*)&addDoubleParallel, 2, 0UL, 3, (size_t)(10568076854246273307UL), (size_t)(10568076854246273308UL), (size_t)(0UL)); addDoubleParallel(sendBuf, recvBuf, numberOfTimers);
 # 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_2: int ii; register_stack_var("timerStats|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(4, (size_t)(10568076854246273310UL), (size_t)(10568076854246273311UL), (size_t)(10568076854246273313UL), (size_t)(10568076854246273749UL)); call_lbl_4: calling((void*)&getNRanks, 4, 0UL, 0); perfTimer[ii].average = recvBuf[ii] / (double)getNRanks(); } };
+   { lbl_2: int ii; register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(4, (size_t)(10568076854246273310UL), (size_t)(10568076854246273311UL), (size_t)(10568076854246273313UL), (size_t)(10568076854246273749UL)); call_lbl_4: calling((void*)&getNRanks, 4, 0UL, 0); perfTimer[ii].average = recvBuf[ii] / (double)getNRanks(); } };
 # 275 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 276 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 277 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 278 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     lbl_3: RankReduceData reduceSendBuf[11]; register_stack_var("timerStats|reduceSendBuf|0", "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } RankReduceData reduceRecvBuf[11]; ;
+     lbl_3: RankReduceData reduceSendBuf[11]; register_stack_var("timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } RankReduceData reduceRecvBuf[11]; ;
 # 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_4: int ii; register_stack_var("timerStats|ii|2", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+   { lbl_4: int ii; register_stack_var("timerStats|ii|2", &____must_checkpoint_timerStats_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1919,7 +1919,7 @@ void timerStats(void)
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(4, (size_t)(10568076854246273310UL), (size_t)(10568076854246273311UL), (size_t)(10568076854246273313UL), (size_t)(10568076854246273749UL)); call_lbl_8: calling((void*)&minRankDoubleParallel, 8, 0UL, 3, (size_t)(10568076854246273311UL), (size_t)(10568076854246273312UL), (size_t)(0UL)); minRankDoubleParallel(reduceSendBuf, reduceRecvBuf, numberOfTimers);
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_5: int ii; register_stack_var("timerStats|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+   { lbl_5: int ii; register_stack_var("timerStats|ii|3", &____must_checkpoint_timerStats_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1931,7 +1931,7 @@ void timerStats(void)
 # 290 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    alias_group_changed(2, (size_t)(10568076854246273314UL), (size_t)(10568076854246273749UL)); call_lbl_10: calling((void*)&maxRankDoubleParallel, 10, 0UL, 3, (size_t)(10568076854246273311UL), (size_t)(10568076854246273312UL), (size_t)(0UL)); maxRankDoubleParallel(reduceSendBuf, reduceRecvBuf, numberOfTimers);
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_6: int ii; register_stack_var("timerStats|ii|4", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+   { lbl_6: int ii; register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -1943,11 +1943,11 @@ void timerStats(void)
 # 296 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 297 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_7: int ii; register_stack_var("timerStats|ii|5", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( ii = (0) ; ii < numberOfTimers; ii++)
+   { lbl_7: int ii; register_stack_var("timerStats|ii|5", &____must_checkpoint_timerStats_ii_5, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-        lbl_8: double temp; register_stack_var("timerStats|temp|0", "double", (void *)(&temp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
+        lbl_8: double temp; register_stack_var("timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } temp = ((double)perfTimer[ii].total - perfTimer[ii].average) ;
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       sendBuf[ii] = temp * temp;
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"

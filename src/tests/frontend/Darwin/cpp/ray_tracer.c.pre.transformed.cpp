@@ -69,7 +69,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -2876,9 +2876,9 @@ void move_to(sphere *self, double vx, double vy, double vz) {new_stack((void *)(
 alias_group_changed(5, (size_t)(519228149530227499UL), (size_t)(519228149530227500UL), (size_t)(519228149530227501UL), (size_t)(519228149530227502UL), (size_t)(519228149530227524UL)); rm_stack(false, 0UL); }
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-void rot_x(sphere *self, double angle) {new_stack((void *)(&rot_x), 2, 2, (size_t)(519228149530227575UL), (size_t)(0UL), "rot_x|self|0", "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_x|angle|0", "double", (void *)(&angle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void rot_x(sphere *self, double angle) {new_stack((void *)(&rot_x), 2, 2, (size_t)(519228149530227575UL), (size_t)(0UL), "rot_x|self|0", &____must_checkpoint_rot_x_self_0, "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_x|angle|0", &____must_checkpoint_rot_x_angle_0, "double", (void *)(&angle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(2, (size_t)(519228149530227528UL), (size_t)(519228149530227529UL)); lbl_0: double y; register_stack_var("rot_x|y|0", "double", (void *)(&y), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
+ alias_group_changed(2, (size_t)(519228149530227528UL), (size_t)(519228149530227529UL)); lbl_0: double y; register_stack_var("rot_x|y|0", &____must_checkpoint_rot_x_y_0, "double", (void *)(&y), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  alias_group_changed(1, (size_t)(519228149530227530UL)); double z; call_lbl_5: calling((void*)&sin, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&cos, 6, 0UL, 1, (size_t)(0UL)); z = (self->cy * sin(angle) + self->cz * cos(angle)) ;
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2889,9 +2889,9 @@ void rot_x(sphere *self, double angle) {new_stack((void *)(&rot_x), 2, 2, (size_
 alias_group_changed(2, (size_t)(519228149530227531UL), (size_t)(519228149530227575UL)); rm_stack(false, 0UL); }
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-void rot_y(sphere *self, double angle) {new_stack((void *)(&rot_y), 2, 2, (size_t)(519228149530227626UL), (size_t)(0UL), "rot_y|self|0", "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_y|angle|0", "double", (void *)(&angle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void rot_y(sphere *self, double angle) {new_stack((void *)(&rot_y), 2, 2, (size_t)(519228149530227626UL), (size_t)(0UL), "rot_y|self|0", &____must_checkpoint_rot_y_self_0, "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_y|angle|0", &____must_checkpoint_rot_y_angle_0, "double", (void *)(&angle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(2, (size_t)(519228149530227579UL), (size_t)(519228149530227580UL)); lbl_0: double x; register_stack_var("rot_y|x|0", "double", (void *)(&x), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
+ alias_group_changed(2, (size_t)(519228149530227579UL), (size_t)(519228149530227580UL)); lbl_0: double x; register_stack_var("rot_y|x|0", &____must_checkpoint_rot_y_x_0, "double", (void *)(&x), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  alias_group_changed(1, (size_t)(519228149530227581UL)); double z; call_lbl_5: calling((void*)&sin, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&cos, 6, 0UL, 1, (size_t)(0UL)); z = (self->cx * sin(angle) + self->cz * cos(angle)) ;
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2935,9 +2935,9 @@ double get_sphere_intersec(double cx, double cy, double cz, double radius,
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 double get_cos_angle_v1v2(double v1x, double v1y, double v1z, double v2x,
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- double v2y, double v2z) {new_stack((void *)(&get_cos_angle_v1v2), 6, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_cos_angle_v1v2|v1x|0", "double", (void *)(&v1x), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v1y|0", "double", (void *)(&v1y), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v1z|0", "double", (void *)(&v1z), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v2x|0", "double", (void *)(&v2x), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v2y|0", "double", (void *)(&v2y), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v2z|0", "double", (void *)(&v2z), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+ double v2y, double v2z) {new_stack((void *)(&get_cos_angle_v1v2), 6, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_cos_angle_v1v2|v1x|0", &____must_checkpoint_get_cos_angle_v1v2_v1x_0, "double", (void *)(&v1x), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v1y|0", &____must_checkpoint_get_cos_angle_v1v2_v1y_0, "double", (void *)(&v1y), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v1z|0", &____must_checkpoint_get_cos_angle_v1v2_v1z_0, "double", (void *)(&v1z), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v2x|0", &____must_checkpoint_get_cos_angle_v1v2_v2x_0, "double", (void *)(&v2x), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v2y|0", &____must_checkpoint_get_cos_angle_v1v2_v2y_0, "double", (void *)(&v2y), (size_t)8, 0, 0, 0, "get_cos_angle_v1v2|v2z|0", &____must_checkpoint_get_cos_angle_v1v2_v2z_0, "double", (void *)(&v2z), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(6, (size_t)(519228149530227806UL), (size_t)(519228149530227807UL), (size_t)(519228149530227808UL), (size_t)(519228149530227809UL), (size_t)(519228149530227810UL), (size_t)(519228149530227811UL)); lbl_0: double a; register_stack_var("get_cos_angle_v1v2|a|0", "double", (void *)(&a), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&modv, 2, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); a = (modv(v1x, v1y, v1z)) ;
+ alias_group_changed(6, (size_t)(519228149530227806UL), (size_t)(519228149530227807UL), (size_t)(519228149530227808UL), (size_t)(519228149530227809UL), (size_t)(519228149530227810UL), (size_t)(519228149530227811UL)); lbl_0: double a; register_stack_var("get_cos_angle_v1v2|a|0", &____must_checkpoint_get_cos_angle_v1v2_a_0, "double", (void *)(&a), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&modv, 2, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); a = (modv(v1x, v1y, v1z)) ;
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  alias_group_changed(1, (size_t)(519228149530227812UL)); double b; call_lbl_4: calling((void*)&modv, 4, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); b = (modv(v2x, v2y, v2z)) ;
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2957,13 +2957,13 @@ void usage(char **argv) {new_stack((void *)(&usage), 1, 0, (size_t)(519228149530
 alias_group_changed(1, (size_t)(519228149530227860UL)); rm_stack(false, 0UL); }
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-void parse_three_doubles(char *def, double *a, double *b, double *c) {new_stack((void *)(&parse_three_doubles), 4, 4, (size_t)(519228149530227924UL), (size_t)(519228149530227926UL), (size_t)(519228149530227931UL), (size_t)(519228149530227936UL), "parse_three_doubles|def|0", "i8*", (void *)(&def), (size_t)8, 1, 0, 0, "parse_three_doubles|a|0", "double*", (void *)(&a), (size_t)8, 1, 0, 0, "parse_three_doubles|b|0", "double*", (void *)(&b), (size_t)8, 1, 0, 0, "parse_three_doubles|c|0", "double*", (void *)(&c), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void parse_three_doubles(char *def, double *a, double *b, double *c) {new_stack((void *)(&parse_three_doubles), 4, 4, (size_t)(519228149530227924UL), (size_t)(519228149530227926UL), (size_t)(519228149530227931UL), (size_t)(519228149530227936UL), "parse_three_doubles|def|0", &____must_checkpoint_parse_three_doubles_def_0, "i8*", (void *)(&def), (size_t)8, 1, 0, 0, "parse_three_doubles|a|0", &____must_checkpoint_parse_three_doubles_a_0, "double*", (void *)(&a), (size_t)8, 1, 0, 0, "parse_three_doubles|b|0", &____must_checkpoint_parse_three_doubles_b_0, "double*", (void *)(&b), (size_t)8, 1, 0, 0, "parse_three_doubles|c|0", &____must_checkpoint_parse_three_doubles_c_0, "double*", (void *)(&c), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(4, (size_t)(519228149530227875UL), (size_t)(519228149530227876UL), (size_t)(519228149530227877UL), (size_t)(519228149530227878UL)); lbl_0: char *first_comma; register_stack_var("parse_three_doubles|first_comma|0", "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } first_comma = (strchr(def, ',')) ;
+ alias_group_changed(4, (size_t)(519228149530227875UL), (size_t)(519228149530227876UL), (size_t)(519228149530227877UL), (size_t)(519228149530227878UL)); lbl_0: char *first_comma; register_stack_var("parse_three_doubles|first_comma|0", &____must_checkpoint_parse_three_doubles_first_comma_0, "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } first_comma = (strchr(def, ',')) ;
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(first_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 116, "first_comma") : (void)0);
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227879UL)); lbl_1: char *second_comma; register_stack_var("parse_three_doubles|second_comma|0", "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } second_comma = (strchr(first_comma + 1, ',')) ;
+ alias_group_changed(1, (size_t)(519228149530227879UL)); lbl_1: char *second_comma; register_stack_var("parse_three_doubles|second_comma|0", &____must_checkpoint_parse_three_doubles_second_comma_0, "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } second_comma = (strchr(first_comma + 1, ',')) ;
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(second_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 118, "second_comma") : (void)0);
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2982,9 +2982,9 @@ void parse_three_doubles(char *def, double *a, double *b, double *c) {new_stack(
 alias_group_changed(3, (size_t)(519228149530227879UL), (size_t)(519228149530227880UL), (size_t)(519228149530227936UL)); rm_stack(false, 0UL); }
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-void parse_config(int argc, char **argv, config *conf) {new_stack((void *)(&parse_config), 3, 3, (size_t)(0UL), (size_t)(519228149530228232UL), (size_t)(519228149530228171UL), "parse_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parse_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0, "parse_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void parse_config(int argc, char **argv, config *conf) {new_stack((void *)(&parse_config), 3, 3, (size_t)(0UL), (size_t)(519228149530228232UL), (size_t)(519228149530228171UL), "parse_config|argc|0", &____must_checkpoint_parse_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parse_config|argv|0", &____must_checkpoint_parse_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0, "parse_config|conf|0", &____must_checkpoint_parse_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_0: int c; register_stack_var("parse_config|c|0", "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: int c; register_stack_var("parse_config|c|0", &____must_checkpoint_parse_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  opterr = 0;
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3060,30 +3060,30 @@ void parse_config(int argc, char **argv, config *conf) {new_stack((void *)(&pars
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  case 's': {
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_1: char *sphere_def; register_stack_var("parse_config|sphere_def|0", "i8*", (void *)(&sphere_def), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } sphere_def = (optarg) ;
+ lbl_1: char *sphere_def; register_stack_var("parse_config|sphere_def|0", &____must_checkpoint_parse_config_sphere_def_0, "i8*", (void *)(&sphere_def), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } sphere_def = (optarg) ;
 # 169 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 170 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(2, (size_t)(519228149530227949UL), (size_t)(519228149530227950UL)); lbl_2: char *first_comma; register_stack_var("parse_config|first_comma|0", "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } first_comma = (strchr(sphere_def, ',')) ;
+ alias_group_changed(2, (size_t)(519228149530227949UL), (size_t)(519228149530227950UL)); lbl_2: char *first_comma; register_stack_var("parse_config|first_comma|0", &____must_checkpoint_parse_config_first_comma_0, "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } first_comma = (strchr(sphere_def, ',')) ;
 # 171 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(first_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 171, "first_comma") : (void)0);
 # 172 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227951UL)); lbl_3: char *second_comma; register_stack_var("parse_config|second_comma|0", "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } second_comma = (strchr(first_comma + 1, ',')) ;
+ alias_group_changed(1, (size_t)(519228149530227951UL)); lbl_3: char *second_comma; register_stack_var("parse_config|second_comma|0", &____must_checkpoint_parse_config_second_comma_0, "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } second_comma = (strchr(first_comma + 1, ',')) ;
 # 173 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(second_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 173, "second_comma") : (void)0);
 # 174 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227952UL)); lbl_4: char *third_comma; register_stack_var("parse_config|third_comma|0", "i8*", (void *)(&third_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } third_comma = (strchr(second_comma + 1, ',')) ;
+ alias_group_changed(1, (size_t)(519228149530227952UL)); lbl_4: char *third_comma; register_stack_var("parse_config|third_comma|0", &____must_checkpoint_parse_config_third_comma_0, "i8*", (void *)(&third_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } third_comma = (strchr(second_comma + 1, ',')) ;
 # 175 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(third_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 175, "third_comma") : (void)0);
 # 176 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227953UL)); lbl_5: char *fourth_comma; register_stack_var("parse_config|fourth_comma|0", "i8*", (void *)(&fourth_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } fourth_comma = (strchr(third_comma + 1, ',')) ;
+ alias_group_changed(1, (size_t)(519228149530227953UL)); lbl_5: char *fourth_comma; register_stack_var("parse_config|fourth_comma|0", &____must_checkpoint_parse_config_fourth_comma_0, "i8*", (void *)(&fourth_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } fourth_comma = (strchr(third_comma + 1, ',')) ;
 # 177 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(fourth_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 177, "fourth_comma") : (void)0);
 # 178 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227954UL)); lbl_6: char *fifth_comma; register_stack_var("parse_config|fifth_comma|0", "i8*", (void *)(&fifth_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } fifth_comma = (strchr(fourth_comma + 1, ',')) ;
+ alias_group_changed(1, (size_t)(519228149530227954UL)); lbl_6: char *fifth_comma; register_stack_var("parse_config|fifth_comma|0", &____must_checkpoint_parse_config_fifth_comma_0, "i8*", (void *)(&fifth_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } fifth_comma = (strchr(fourth_comma + 1, ',')) ;
 # 179 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(fifth_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 179, "fifth_comma") : (void)0);
 # 180 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227955UL)); lbl_7: char *sixth_comma; register_stack_var("parse_config|sixth_comma|0", "i8*", (void *)(&sixth_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(43): { goto call_lbl_43; } case(53): { goto call_lbl_53; } default: { chimes_error(); } } } sixth_comma = (strchr(fifth_comma + 1, ',')) ;
+ alias_group_changed(1, (size_t)(519228149530227955UL)); lbl_7: char *sixth_comma; register_stack_var("parse_config|sixth_comma|0", &____must_checkpoint_parse_config_sixth_comma_0, "i8*", (void *)(&sixth_comma), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(43): { goto call_lbl_43; } case(53): { goto call_lbl_53; } default: { chimes_error(); } } } sixth_comma = (strchr(fifth_comma + 1, ',')) ;
 # 181 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  (__builtin_expect(!(sixth_comma), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c", 181, "sixth_comma") : (void)0);
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3139,38 +3139,38 @@ alias_group_changed(7, (size_t)(519228149530227949UL), (size_t)(5192281495302279
 # 209 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(519228149530228714UL)); if (____chimes_replaying) { goto lbl_0; }
 # 210 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_0: config conf; register_stack_var("main|conf|0", "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: config conf; register_stack_var("main|conf|0", &____must_checkpoint_main_conf_0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); if (____chimes_replaying) { goto lbl_1; } ;
 # 211 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  alias_group_changed(3, (size_t)(519228149530228240UL), (size_t)(519228149530228241UL), (size_t)(519228149530228242UL)); call_lbl_3: calling((void*)&parse_config, 3, 0UL, 3, (size_t)(0UL), (size_t)(519228149530228714UL), (size_t)(519228149530228243UL)); parse_config(argc, argv, &conf);
 # 212 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_1: rgb *screen; register_stack_var("main|screen|0", "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 519228149530228289UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
+ lbl_1: rgb *screen; register_stack_var("main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_2; } screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 519228149530228289UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
 # 213 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 214 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_2: double f_max; register_stack_var("main|f_max|0", "double", (void *)(&f_max), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } f_max = (200.) ;
+ lbl_2: double f_max; register_stack_var("main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_3; } f_max = (200.) ;
 # 215 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- { lbl_3: int t; register_stack_var("main|t|0", "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( t = (0) ; t < conf.nt; t++) {
+ { lbl_3: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_4; } for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_4: int i; register_stack_var("main|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
+ lbl_4: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 217 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 #pragma omp parallel for
 # 219 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  for (i = 0; i < conf.nx * conf.ny; i++) {
 # 220 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_5: double x; register_stack_var("main|x|0", "double", (void *)(&x), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } call_lbl_5: calling((void*)&get_coord, 5, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); x = (get_coord(0., conf.nx, -f_max, f_max, i / conf.ny)) ;
+ lbl_5: double x; register_stack_var("main|x|0", (int *)0x0, "double", (void *)(&x), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_6; } call_lbl_5: calling((void*)&get_coord, 5, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); x = (get_coord(0., conf.nx, -f_max, f_max, i / conf.ny)) ;
 # 221 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_6: double y; register_stack_var("main|y|0", "double", (void *)(&y), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } call_lbl_6: calling((void*)&get_coord, 6, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); y = (get_coord(0., conf.ny, -f_max, f_max, i % conf.ny)) ;
+ lbl_6: double y; register_stack_var("main|y|0", (int *)0x0, "double", (void *)(&y), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } call_lbl_6: calling((void*)&get_coord, 6, 0UL, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); y = (get_coord(0., conf.ny, -f_max, f_max, i % conf.ny)) ;
 # 222 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_7: double t; register_stack_var("main|t|1", "double", (void *)(&t), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } t = (1.0E+10) ;
+ lbl_7: double t; register_stack_var("main|t|1", (int *)0x0, "double", (void *)(&t), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } t = (1.0E+10) ;
 # 223 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_8: double vx; register_stack_var("main|vx|0", "double", (void *)(&vx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } vx = (x - conf.px) ;
+ lbl_8: double vx; register_stack_var("main|vx|0", (int *)0x0, "double", (void *)(&vx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } vx = (x - conf.px) ;
 # 224 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_9: double vy; register_stack_var("main|vy|0", "double", (void *)(&vy), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } vy = (y - conf.py) ;
+ lbl_9: double vy; register_stack_var("main|vy|0", (int *)0x0, "double", (void *)(&vy), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } vy = (y - conf.py) ;
 # 225 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_10: double vz; register_stack_var("main|vz|0", "double", (void *)(&vz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } vz = (-conf.pz) ;
+ lbl_10: double vz; register_stack_var("main|vz|0", (int *)0x0, "double", (void *)(&vz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_11; } vz = (-conf.pz) ;
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 227 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(20, (size_t)(519228149530228244UL), (size_t)(519228149530228245UL), (size_t)(519228149530228246UL), (size_t)(519228149530228247UL), (size_t)(519228149530228248UL), (size_t)(519228149530228249UL), (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228268UL), (size_t)(519228149530228269UL), (size_t)(519228149530228270UL), (size_t)(519228149530228289UL)); lbl_11: double mod_v; register_stack_var("main|mod_v|0", "double", (void *)(&mod_v), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_8: calling((void*)&modv, 8, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); mod_v = (modv(vx, vy, vz)) ;
+ alias_group_changed(20, (size_t)(519228149530228244UL), (size_t)(519228149530228245UL), (size_t)(519228149530228246UL), (size_t)(519228149530228247UL), (size_t)(519228149530228248UL), (size_t)(519228149530228249UL), (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228268UL), (size_t)(519228149530228269UL), (size_t)(519228149530228270UL), (size_t)(519228149530228289UL)); lbl_11: double mod_v; register_stack_var("main|mod_v|0", (int *)0x0, "double", (void *)(&mod_v), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_8: calling((void*)&modv, 8, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); mod_v = (modv(vx, vy, vz)) ;
 # 228 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  vx = vx / mod_v;
 # 229 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3179,15 +3179,15 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  vz = vz / mod_v;
 # 231 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 232 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_12: bool bShadow; register_stack_var("main|bShadow|0", "i8", (void *)(&bShadow), (size_t)1, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } bShadow = (false) ;
+ lbl_12: bool bShadow; register_stack_var("main|bShadow|0", (int *)0x0, "i8", (void *)(&bShadow), (size_t)1, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } bShadow = (false) ;
 # 233 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_13: sphere *spherehit; register_stack_var("main|spherehit|0", "%struct._sphere*", (void *)(&spherehit), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_14; } spherehit = (__null) ;
+ lbl_13: sphere *spherehit; register_stack_var("main|spherehit|0", (int *)0x0, "%struct._sphere*", (void *)(&spherehit), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_14; } spherehit = (__null) ;
 # 234 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- { lbl_14: int k; register_stack_var("main|k|0", "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } for ( k = (0) ; k < conf.nspheres; k++) {
+ { lbl_14: int k; register_stack_var("main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_15; } for ( k = (0) ; k < conf.nspheres; k++) {
 # 235 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_15: sphere *sphn; register_stack_var("main|sphn|0", "%struct._sphere*", (void *)(&sphn), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_16; } sphn = (conf.spheres + k) ;
+ lbl_15: sphere *sphn; register_stack_var("main|sphn|0", (int *)0x0, "%struct._sphere*", (void *)(&sphn), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_16; } sphn = (conf.spheres + k) ;
 # 236 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(14, (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228258UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228261UL), (size_t)(519228149530228262UL), (size_t)(519228149530228263UL)); lbl_16: double taux; register_stack_var("main|taux|0", "double", (void *)(&taux), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } call_lbl_10: calling((void*)&get_sphere_intersec, 10, 0UL, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); taux = (get_sphere_intersec(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz)) ;
+ alias_group_changed(14, (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228258UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228261UL), (size_t)(519228149530228262UL), (size_t)(519228149530228263UL)); lbl_16: double taux; register_stack_var("main|taux|0", (int *)0x0, "double", (void *)(&taux), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } call_lbl_10: calling((void*)&get_sphere_intersec, 10, 0UL, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); taux = (get_sphere_intersec(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz)) ;
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  if (taux < 0) {continue;; };
 # 239 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3202,27 +3202,27 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  } }
 # 244 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 245 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_17: rgb color; register_stack_var("main|color|0", "%struct._rgb = type { double, double, double }", (void *)(&color), (size_t)24, 0, 1, 0); if (____chimes_replaying) { goto lbl_18; } ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
+ lbl_17: rgb color; register_stack_var("main|color|0", (int *)0x0, "%struct._rgb = type { double, double, double }", (void *)(&color), (size_t)24, 0, 1, 0); if (____chimes_replaying) { goto lbl_18; } ; color.r = 0.03; color.g = 0.06; color.b = 0.03;
 # 246 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  if (spherehit != __null) {
 # 247 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_18: double itx; register_stack_var("main|itx|0", "double", (void *)(&itx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } itx = (conf.px + t * vx) ;
+ lbl_18: double itx; register_stack_var("main|itx|0", (int *)0x0, "double", (void *)(&itx), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_19; } itx = (conf.px + t * vx) ;
 # 248 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_19: double ity; register_stack_var("main|ity|0", "double", (void *)(&ity), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } ity = (conf.py + t * vy) ;
+ lbl_19: double ity; register_stack_var("main|ity|0", (int *)0x0, "double", (void *)(&ity), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_20; } ity = (conf.py + t * vy) ;
 # 249 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_20: double itz; register_stack_var("main|itz|0", "double", (void *)(&itz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } itz = (conf.pz + t * vz) ;
+ lbl_20: double itz; register_stack_var("main|itz|0", (int *)0x0, "double", (void *)(&itz), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_21; } itz = (conf.pz + t * vz) ;
 # 250 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 251 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(14, (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228258UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228261UL), (size_t)(519228149530228262UL), (size_t)(519228149530228263UL)); lbl_21: double tauxla; register_stack_var("main|tauxla|0", "double", (void *)(&tauxla), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } call_lbl_12: calling((void*)&get_sphere_intersec, 12, 0UL, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); tauxla = (get_sphere_intersec(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz)) ;
+ alias_group_changed(14, (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228258UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228261UL), (size_t)(519228149530228262UL), (size_t)(519228149530228263UL)); lbl_21: double tauxla; register_stack_var("main|tauxla|0", (int *)0x0, "double", (void *)(&tauxla), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_22; } call_lbl_12: calling((void*)&get_sphere_intersec, 12, 0UL, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); tauxla = (get_sphere_intersec(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz)) ;
 # 254 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 255 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- { lbl_22: int k; register_stack_var("main|k|1", "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } for ( k = (0) ; k < conf.nspheres; k++) {
+ { lbl_22: int k; register_stack_var("main|k|1", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_23; } for ( k = (0) ; k < conf.nspheres; k++) {
 # 256 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_23: sphere *sphnb; register_stack_var("main|sphnb|0", "%struct._sphere*", (void *)(&sphnb), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_24; } sphnb = (conf.spheres + k) ;
+ lbl_23: sphere *sphnb; register_stack_var("main|sphnb|0", (int *)0x0, "%struct._sphere*", (void *)(&sphnb), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_24; } sphnb = (conf.spheres + k) ;
 # 257 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  if (sphnb != spherehit) {
 # 258 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(5, (size_t)(519228149530228255UL), (size_t)(519228149530228264UL), (size_t)(519228149530228265UL), (size_t)(519228149530228266UL), (size_t)(519228149530228267UL)); lbl_24: double tauxlb; register_stack_var("main|tauxlb|0", "double", (void *)(&tauxlb), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } call_lbl_14: calling((void*)&get_sphere_intersec, 14, 0UL, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); tauxlb = (get_sphere_intersec(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz)) ;
+ alias_group_changed(5, (size_t)(519228149530228255UL), (size_t)(519228149530228264UL), (size_t)(519228149530228265UL), (size_t)(519228149530228266UL), (size_t)(519228149530228267UL)); lbl_24: double tauxlb; register_stack_var("main|tauxlb|0", (int *)0x0, "double", (void *)(&tauxlb), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_25; } call_lbl_14: calling((void*)&get_sphere_intersec, 14, 0UL, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); tauxlb = (get_sphere_intersec(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz)) ;
 # 262 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3236,11 +3236,11 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 267 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  } }
 # 268 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(5, (size_t)(519228149530228255UL), (size_t)(519228149530228264UL), (size_t)(519228149530228265UL), (size_t)(519228149530228266UL), (size_t)(519228149530228267UL)); lbl_25: double cost; register_stack_var("main|cost|0", "double", (void *)(&cost), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_26; } call_lbl_16: calling((void*)&get_cos_angle_v1v2, 16, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); cost = (get_cos_angle_v1v2(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz)) ;
+ alias_group_changed(5, (size_t)(519228149530228255UL), (size_t)(519228149530228264UL), (size_t)(519228149530228265UL), (size_t)(519228149530228266UL), (size_t)(519228149530228267UL)); lbl_25: double cost; register_stack_var("main|cost|0", (int *)0x0, "double", (void *)(&cost), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_26; } call_lbl_16: calling((void*)&get_cos_angle_v1v2, 16, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); cost = (get_cos_angle_v1v2(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz)) ;
 # 271 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  if (cost < 0) {cost = 0; };
 # 272 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- lbl_26: double fact; register_stack_var("main|fact|0", "double", (void *)(&fact), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } fact = (1.) ;
+ lbl_26: double fact; register_stack_var("main|fact|0", (int *)0x0, "double", (void *)(&fact), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_27; } fact = (1.) ;
 # 273 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  if (bShadow == true) {fact = 0.5; } else {fact = 1.; } ;
 # 274 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3262,7 +3262,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  }
 # 283 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 284 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- { lbl_27: int i; register_stack_var("main|i|1", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } for ( i = (0) ; i < conf.nspheres; i++) {
+ { lbl_27: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  call_lbl_17: calling((void*)&move, 17, 0UL, 4, (size_t)(519228149530228525UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); move(conf.spheres + i, conf.svx, conf.svy, conf.svz);
 # 286 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"

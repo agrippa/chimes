@@ -61,7 +61,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -2856,7 +2856,7 @@ rm_stack(false, 0UL); }
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double uts_wctime() {new_stack((void *)(&uts_wctime), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_0: struct timeval tv; register_stack_var("uts_wctime|tv|0", "%struct.timeval = type { i64, i32 }", (void *)(&tv), (size_t)16, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
+ lbl_0: struct timeval tv; register_stack_var("uts_wctime|tv|0", &____must_checkpoint_uts_wctime_tv_0, "%struct.timeval = type { i64, i32 }", (void *)(&tv), (size_t)16, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  call_lbl_1: calling((void*)&gettimeofday, 1, 0UL, 2, (size_t)(766405423403602259UL), (size_t)(766405423403603193UL)); gettimeofday(&tv, __null);
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -2882,7 +2882,7 @@ double rng_toProb(int n) {new_stack((void *)(&rng_toProb), 1, 0, (size_t)(0UL));
 # 148 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 149 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-void uts_initRoot(Node * root, int type) {new_stack((void *)(&uts_initRoot), 2, 2, (size_t)(766405423403602324UL), (size_t)(0UL), "uts_initRoot|root|0", "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", "i32", (void *)(&type), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+void uts_initRoot(Node * root, int type) {new_stack((void *)(&uts_initRoot), 2, 2, (size_t)(766405423403602324UL), (size_t)(0UL), "uts_initRoot|root|0", &____must_checkpoint_uts_initRoot_root_0, "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", &____must_checkpoint_uts_initRoot_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  root->type = type;
 # 152 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -2902,7 +2902,7 @@ rm_stack(false, 0UL); }
 int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin), 1, 0, (size_t)(766405423403602353UL)); if (____chimes_replaying) { goto lbl_0; }
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- alias_group_changed(1, (size_t)(766405423403602328UL)); lbl_0: int v; register_stack_var("uts_numChildren_bin|v|0", "i32", (void *)(&v), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(766405423403602353UL)); v = (rng_rand(parent->state.state)) ;
+ alias_group_changed(1, (size_t)(766405423403602328UL)); lbl_0: int v; register_stack_var("uts_numChildren_bin|v|0", &____must_checkpoint_uts_numChildren_bin_v_0, "i32", (void *)(&v), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(766405423403602353UL)); v = (rng_rand(parent->state.state)) ;
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  alias_group_changed(1, (size_t)(766405423403602329UL)); double d; call_lbl_4: calling((void*)&rng_toProb, 4, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(v)) ;
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -2913,15 +2913,15 @@ int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin)
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 169 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 170 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo), 1, 1, (size_t)(766405423403602460UL), "uts_numChildren_geo|parent|0", "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo), 1, 1, (size_t)(766405423403602460UL), "uts_numChildren_geo|parent|0", &____must_checkpoint_uts_numChildren_geo_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 171 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_0: double b_i; register_stack_var("uts_numChildren_geo|b_i|0", "double", (void *)(&b_i), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b_i = (b_0) ;
+ lbl_0: double b_i; register_stack_var("uts_numChildren_geo|b_i|0", &____must_checkpoint_uts_numChildren_geo_b_i_0, "double", (void *)(&b_i), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b_i = (b_0) ;
 # 172 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  int depth; depth = (parent->height) ;
 # 173 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- int numChildren; lbl_1: int h; register_stack_var("uts_numChildren_geo|h|0", "i32", (void *)(&h), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+ int numChildren; lbl_1: int h; register_stack_var("uts_numChildren_geo|h|0", &____must_checkpoint_uts_numChildren_geo_h_0, "i32", (void *)(&h), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
 # 174 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_2: double p; register_stack_var("uts_numChildren_geo|p|0", "double", (void *)(&p), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } double u; ;
+ lbl_2: double p; register_stack_var("uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } double u; ;
 # 175 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 176 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 177 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -3000,9 +3000,9 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 222 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 223 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 224 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (size_t)(766405423403602551UL), "uts_numChildren|parent|0", "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (size_t)(766405423403602551UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 225 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_0: int numChildren; register_stack_var("uts_numChildren|numChildren|0", "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } numChildren = (0) ;
+ lbl_0: int numChildren; register_stack_var("uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } numChildren = (0) ;
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 227 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 228 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -3103,7 +3103,7 @@ alias_group_changed(2, (size_t)(766405423403602553UL), (size_t)(7664054234036025
 # 289 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 290 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 291 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr), 2, 2, (size_t)(766405423403602730UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", "i32", (void *)(&ind), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr), 2, 2, (size_t)(766405423403602730UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  alias_group_changed(2, (size_t)(766405423403602583UL), (size_t)(766405423403602584UL)); call_lbl_3: calling((void*)&impl_getName, 3, 766405423403602596UL, 0); ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", impl_getName());
@@ -3130,11 +3130,11 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 307 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (type == BIN || type == HYBRID) {
 # 308 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_0: double q; register_stack_var("uts_paramsToStr|q|0", "double", (void *)(&q), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } q = (nonLeafProb) ;
+ lbl_0: double q; register_stack_var("uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } q = (nonLeafProb) ;
 # 309 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_1: int m; register_stack_var("uts_paramsToStr|m|0", "i32", (void *)(&m), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } m = (nonLeafBF) ;
+ lbl_1: int m; register_stack_var("uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } m = (nonLeafBF) ;
 # 310 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_2: double es; register_stack_var("uts_paramsToStr|es|0", "double", (void *)(&es), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } es = ((1. / (1. - q * m))) ;
+ lbl_2: double es; register_stack_var("uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } es = ((1. / (1. - q * m))) ;
 # 311 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
 # 312 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -3168,11 +3168,11 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 329 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_printParams() {new_stack((void *)(&uts_printParams), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 330 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_0: char strBuf[5000]; register_stack_var("uts_printParams|strBuf|0", "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: char strBuf[5000]; register_stack_var("uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
 # 331 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  strBuf[0] = '\0';
 # 332 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_1: int ind; register_stack_var("uts_printParams|ind|0", "i32", (void *)(&ind), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ind = (0) ;
+ lbl_1: int ind; register_stack_var("uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ind = (0) ;
 # 333 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 334 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (verbose > 0) {
@@ -3188,11 +3188,11 @@ void uts_printParams() {new_stack((void *)(&uts_printParams), 0, 0); if (____chi
 alias_group_changed(2, (size_t)(766405423403602736UL), (size_t)(766405423403602737UL)); rm_stack(false, 0UL); }
 # 340 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 341 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams), 2, 2, (size_t)(0UL), (size_t)(766405423403603004UL), "uts_parseParams|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams), 2, 2, (size_t)(0UL), (size_t)(766405423403603004UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 342 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_0: int i; register_stack_var("uts_parseParams|i|0", "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } i = (1) ;
+ lbl_0: int i; register_stack_var("uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } i = (1) ;
 # 343 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
- lbl_1: int err; register_stack_var("uts_parseParams|err|0", "i32", (void *)(&err), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } err = (-1) ;
+ lbl_1: int err; register_stack_var("uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } err = (-1) ;
 # 344 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  while (i < argc && err == -1) {
 # 345 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"

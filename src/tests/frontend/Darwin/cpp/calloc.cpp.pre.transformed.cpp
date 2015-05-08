@@ -38,7 +38,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1479,7 +1479,7 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2173952053329873827UL)); if (____chimes_replaying) { goto lbl_0; }
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
- lbl_0: int *alloc; register_stack_var("main|alloc|0", "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } alloc = ((int *)calloc_wrapper(10, sizeof(int), 2173952053329873812UL, 0, 0)) ;
+ lbl_0: int *alloc; register_stack_var("main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } alloc = ((int *)calloc_wrapper(10, sizeof(int), 2173952053329873812UL, 0, 0)) ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
  alias_group_changed(4, (size_t)(2173952053329873802UL), (size_t)(2173952053329873803UL), (size_t)(2173952053329873804UL), (size_t)(2173952053329873805UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();

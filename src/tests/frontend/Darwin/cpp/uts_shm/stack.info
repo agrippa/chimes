@@ -1,55 +1,55 @@
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_init|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z8ss_errorPc
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_init|nelts|0 " i32 " 32 0 0  0 _Z8ss_errorPc
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|c|0 " %struct.node_t* " 64 1 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|r|0 " %struct.node_t* " 64 1 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|r|0 " %struct.node_t* " 64 1 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_topPosn|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z8ss_errorPc
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victim|0 " i32 " 32 0 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|k|0 " i32 " 32 0 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimLocal|0 " i32 " 32 0 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimShared|0 " i32 " 32 0 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimWorkAvail|0 " i32 " 32 0 0  0 _Z8ss_errorPc rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|ok|0 " i32 " 32 0 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimStackBase|0 " %struct.node_t* " 64 1 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimSharedStart|0 " %struct.node_t* " 64 1 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|i|0 " i32 " 32 0 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|r|0 " %struct.node_t* " 64 1 0  0 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_initState|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z10uts_wctimev
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_setState|s|0 " %struct.stealStack_t* " 64 1 0  0 _Z10uts_wctimev _Z8ss_errorPc
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_setState|state|0 " i32 " 32 0 0  0 _Z10uts_wctimev _Z8ss_errorPc
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|parent|0 " %struct.node_t* " 64 1 0  0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|child|0 " %struct.node_t* " 64 1 0  0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|ss|0 " %struct.stealStack_t* " 64 1 0  0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|parentHeight|0 " i32 " 32 0 0  0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|numChildren|0 " i32 " 32 0 0  0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|childType|0 " i32 " 32 0 0  0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|i|0 " i32 " 32 0 0  0 _Z12releaseNodesP12stealStack_t _Z7ss_pushP12stealStack_tP6node_t rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|j|0 " i32 " 32 0 0  0 _Z12releaseNodesP12stealStack_t _Z7ss_pushP12stealStack_tP6node_t rng_spawn
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c releaseNodes|ss|0 " %struct.stealStack_t* " 64 1 0  0 _Z10ss_releaseP12stealStack_ti _Z11ss_setStateP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|ss|0 " %struct.stealStack_t* " 64 1 0  1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|done|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|parent|0 " %struct.node_t* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_init|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_init|nelts|0 " i32 " 32 0 0 0 _Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|c|0 " %struct.node_t* " 64 1 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|r|0 " %struct.node_t* " 64 1 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|r|0 " %struct.node_t* " 64 1 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_topPosn|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victim|0 " i32 " 32 0 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|k|0 " i32 " 32 0 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimLocal|0 " i32 " 32 0 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimShared|0 " i32 " 32 0 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimWorkAvail|0 " i32 " 32 0 0 0 _Z8ss_errorPc rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|ok|0 " i32 " 32 0 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimStackBase|0 " %struct.node_t* " 64 1 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimSharedStart|0 " %struct.node_t* " 64 1 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|i|0 " i32 " 32 0 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|r|0 " %struct.node_t* " 64 1 0 0 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_initState|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z10uts_wctimev
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_setState|s|0 " %struct.stealStack_t* " 64 1 0 0 _Z10uts_wctimev _Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_setState|state|0 " i32 " 32 0 0 0 _Z10uts_wctimev _Z8ss_errorPc
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|parent|0 " %struct.node_t* " 64 1 0 0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|child|0 " %struct.node_t* " 64 1 0 0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|ss|0 " %struct.stealStack_t* " 64 1 0 0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|parentHeight|0 " i32 " 32 0 0 0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z15uts_numChildrenP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|numChildren|0 " i32 " 32 0 0 0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z13uts_childTypeP6node_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|childType|0 " i32 " 32 0 0 0 _Z10ss_topPosnP12stealStack_t _Z12releaseNodesP12stealStack_t _Z7ss_pushP12stealStack_tP6node_t rng_showstate rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|i|0 " i32 " 32 0 0 0 _Z12releaseNodesP12stealStack_t _Z7ss_pushP12stealStack_tP6node_t rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|j|0 " i32 " 32 0 0 0 _Z12releaseNodesP12stealStack_t _Z7ss_pushP12stealStack_tP6node_t rng_spawn
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c releaseNodes|ss|0 " %struct.stealStack_t* " 64 1 0 0 _Z10ss_releaseP12stealStack_ti _Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|ss|0 " %struct.stealStack_t* " 64 1 0 1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|done|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|parent|0 " %struct.node_t* " 64 1 0 1
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|child|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 0 _Z13parTreeSearchP12stealStack_t
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|localDepth|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|goodSteal|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|victimId|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|i|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|trel|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tacq|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tsteal|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tfail|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|mdepth|0 " i32 " 32 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|twork|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tsearch|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tidle|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tovh|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tcbovh|0 " double " 64 0 0  0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|localDepth|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|goodSteal|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c parTreeSearch|victimId|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|i|0 " i32 " 32 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|trel|0 " i32 " 32 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tacq|0 " i32 " 32 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tsteal|0 " i32 " 32 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tfail|0 " i32 " 32 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|mdepth|0 " i32 " 32 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|twork|0 " double " 64 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tsearch|0 " double " 64 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tidle|0 " double " 64 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tovh|0 " double " 64 0 0 0 _Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c showStats|tcbovh|0 " double " 64 0 0 0 _Z13uts_showStatsiidiii
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|root|0 " %struct.node_t = type { i32, i32, i32, %struct.state_t } " 256 0 1 node_t 0 0 main
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t1|0 " double " 64 0 0  1
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t2|0 " double " 64 0 0  0 _Z9showStatsd
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|et|0 " double " 64 0 0  0 _Z9showStatsd
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|ss|0 " %struct.stealStack_t* " 64 1 0  1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t1|0 " double " 64 0 0 1
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|t2|0 " double " 64 0 0 0 _Z9showStatsd
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|et|0 " double " 64 0 0 0 _Z9showStatsd
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c main|ss|0 " %struct.stealStack_t* " 64 1 0 1

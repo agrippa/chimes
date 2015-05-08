@@ -43,7 +43,7 @@ extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias);
-extern void register_stack_var(const char *mangled_name,
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
@@ -1996,7 +1996,7 @@ int builtWithMpi(void);
 # 186 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command parseCommandLine(int argc, char** argv)
 # 187 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-{new_stack((void *)(&parseCommandLine), 3, 2, (size_t)(6238158647987170569UL), (size_t)(0UL), (size_t)(6238158647987170571UL), "parseCommandLine|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&parseCommandLine), 3, 2, (size_t)(6238158647987170569UL), (size_t)(0UL), (size_t)(6238158647987170571UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 188 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  Command cmd; ;
 # 189 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
@@ -2040,7 +2040,7 @@ Command parseCommandLine(int argc, char** argv)
  cmd.initialDelta = 0.0;
 # 209 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 210 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
- lbl_0: int help; register_stack_var("parseCommandLine|help|0", "i32", (void *)(&help), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } default: { chimes_error(); } } } help = (0) ;
+ lbl_0: int help; register_stack_var("parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } default: { chimes_error(); } } } help = (0) ;
 # 211 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 212 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  alias_group_changed(4, (size_t)(6238158647987170429UL), (size_t)(6238158647987170430UL), (size_t)(6238158647987170431UL), (size_t)(6238158647987170569UL)); call_lbl_8: calling((void*)&addArg, 8, 0UL, 7, (size_t)(6238158647987170663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6238158647987170431UL), (size_t)(0UL), (size_t)(6238158647987170667UL)); addArg("help", 'h', 0, 'i', &(help), 0, "print this message");
@@ -2115,7 +2115,7 @@ Command parseCommandLine(int argc, char** argv)
 # 252 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml(FILE* file, Command* cmd)
 # 253 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-{new_stack((void *)(&printCmdYaml), 2, 2, (size_t)(6238158647987170658UL), (size_t)(6238158647987170659UL), "printCmdYaml|file|0", "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+{new_stack((void *)(&printCmdYaml), 2, 2, (size_t)(6238158647987170658UL), (size_t)(6238158647987170659UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 254 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  alias_group_changed(2, (size_t)(6238158647987170594UL), (size_t)(6238158647987170595UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL); return;; };
 # 256 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"

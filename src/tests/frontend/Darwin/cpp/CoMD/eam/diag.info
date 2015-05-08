@@ -53,16 +53,16 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 7
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 813 4 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 813 9 , 684635133602953961UL
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 200 4 alias_group_changed(4, (size_t)(684635133602952523UL), (size_t)(684635133602952524UL), (size_t)(684635133602952525UL), (size_t)(684635133602952526UL)); rm_stack(true, 684635133602952548UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 1 new_stack((void *)(&initEamPot), 3, 3, (size_t)(684635133602952606UL), (size_t)(684635133602952607UL), (size_t)(684635133602952608UL), "initEamPot|dir|0", "i8*", (void *)(&dir), (size_t)8, 1, 0, 0, "initEamPot|file|0", "i8*", (void *)(&file), (size_t)8, 1, 0, 0, "initEamPot|type|0", "i8*", (void *)(&type), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 1 new_stack((void *)(&initEamPot), 3, 3, (size_t)(684635133602952606UL), (size_t)(684635133602952607UL), (size_t)(684635133602952608UL), "initEamPot|dir|0", &____must_checkpoint_initEamPot_dir_0, "i8*", (void *)(&dir), (size_t)8, 1, 0, 0, "initEamPot|file|0", &____must_checkpoint_initEamPot_file_0, "i8*", (void *)(&file), (size_t)8, 1, 0, 0, "initEamPot|type|0", &____must_checkpoint_initEamPot_type_0, "i8*", (void *)(&type), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 373 4 alias_group_changed(17, (size_t)(684635133602952618UL), (size_t)(684635133602952619UL), (size_t)(684635133602952650UL), (size_t)(684635133602952652UL), (size_t)(684635133602952653UL), (size_t)(684635133602952654UL), (size_t)(684635133602952655UL), (size_t)(684635133602952656UL), (size_t)(684635133602952657UL), (size_t)(684635133602952658UL), (size_t)(684635133602952659UL), (size_t)(684635133602952660UL), (size_t)(684635133602952661UL), (size_t)(684635133602952662UL), (size_t)(684635133602952666UL), (size_t)(684635133602952688UL), (size_t)(684635133602953506UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 1 new_stack((void *)(&eamForce), 1, 1, (size_t)(684635133602953506UL), "eamForce|s|0", "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 1 new_stack((void *)(&eamForce), 1, 1, (size_t)(684635133602953506UL), "eamForce|s|0", &____must_checkpoint_eamForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 1 new_stack((void *)(&eamPrint), 2, 0, (size_t)(684635133602953552UL), (size_t)(684635133602953553UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 386 1 alias_group_changed(3, (size_t)(684635133602953507UL), (size_t)(684635133602953508UL), (size_t)(684635133602953509UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 390 16 alias_group_changed(3, (size_t)(684635133602953554UL), (size_t)(684635133602953555UL), (size_t)(684635133602953590UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 392 15 alias_group_changed(3, (size_t)(684635133602953554UL), (size_t)(684635133602953555UL), (size_t)(684635133602953590UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 400 4 alias_group_changed(3, (size_t)(684635133602953554UL), (size_t)(684635133602953555UL), (size_t)(684635133602953590UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 1 new_stack((void *)(&eamDestroy), 1, 1, (size_t)(684635133602953590UL), "eamDestroy|pPot|0", "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 1 new_stack((void *)(&eamBcastPotential), 1, 1, (size_t)(684635133602954215UL), "eamBcastPotential|pot|0", "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 1 new_stack((void *)(&eamDestroy), 1, 1, (size_t)(684635133602953590UL), "eamDestroy|pPot|0", &____must_checkpoint_eamDestroy_pPot_0, "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 1 new_stack((void *)(&eamBcastPotential), 1, 1, (size_t)(684635133602954215UL), "eamBcastPotential|pot|0", &____must_checkpoint_eamBcastPotential_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 438 1 alias_group_changed(1, (size_t)(684635133602954119UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 473 4 alias_group_changed(8, (size_t)(684635133602954247UL), (size_t)(684635133602954248UL), (size_t)(684635133602954249UL), (size_t)(684635133602954250UL), (size_t)(684635133602954251UL), (size_t)(684635133602954252UL), (size_t)(684635133602954280UL), (size_t)(684635133602954282UL)); rm_stack(true, 684635133602954282UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 1 new_stack((void *)(&initInterpolationObject), 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602954378UL)); 
@@ -72,11 +72,11 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 488 4 alias
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 1 new_stack((void *)(&destroyInterpolationObject), 1, 0, (size_t)(684635133602954539UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 1 new_stack((void *)(&interpolate), 4, 0, (size_t)(684635133602954703UL), (size_t)(0UL), (size_t)(684635133602954705UL), (size_t)(684635133602954706UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 alias_group_changed(10, (size_t)(684635133602954552UL), (size_t)(684635133602954553UL), (size_t)(684635133602954554UL), (size_t)(684635133602954555UL), (size_t)(684635133602954556UL), (size_t)(684635133602954557UL), (size_t)(684635133602954558UL), (size_t)(684635133602954559UL), (size_t)(684635133602954705UL), (size_t)(684635133602954706UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 new_stack((void *)(&bcastInterpolationObject), 1, 1, (size_t)(684635133602954442UL), "bcastInterpolationObject|table|0", "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 new_stack((void *)(&bcastInterpolationObject), 1, 1, (size_t)(684635133602954442UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 574 1 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 new_stack((void *)(&eamReadSetfl), 3, 1, (size_t)(684635133602953843UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL), "eamReadSetfl|pot|0", "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 new_stack((void *)(&eamReadSetfl), 3, 1, (size_t)(684635133602953843UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL), "eamReadSetfl|pot|0", &____must_checkpoint_eamReadSetfl_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 708 1 alias_group_changed(1, (size_t)(684635133602953843UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 1 new_stack((void *)(&eamReadFuncfl), 3, 1, (size_t)(684635133602954101UL), (size_t)(684635133602954102UL), (size_t)(684635133602954103UL), "eamReadFuncfl|pot|0", "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 1 new_stack((void *)(&eamReadFuncfl), 3, 1, (size_t)(684635133602954101UL), (size_t)(684635133602954102UL), (size_t)(684635133602954103UL), "eamReadFuncfl|pot|0", &____must_checkpoint_eamReadFuncfl_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 818 1 alias_group_changed(1, (size_t)(684635133602954101UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 1 new_stack((void *)(&fileNotFound), 2, 0, (size_t)(684635133602954236UL), (size_t)(684635133602954237UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 825 1 alias_group_changed(2, (size_t)(684635133602954223UL), (size_t)(684635133602954224UL)); rm_stack(false, 0UL); 
@@ -312,9 +312,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 7  call
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 7  call_lbl_10: calling((void*)&typeNotSupported, 10, 0UL, 2, (size_t)(684635133602954712UL), (size_t)(684635133602952608UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 4  call_lbl_11: calling((void*)&eamBcastPotential, 11, 0UL, 1, (size_t)(684635133602952548UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22  register_stack_var("initEamPot|pot|0", "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22  register_stack_var("initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 329  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 448  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 800  call_lbl_6: calling((void*)&initForceHaloExchange, 6, 684635133602952688UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 4  call_lbl_8: calling((void*)&memset, 8, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 4  call_lbl_9: calling((void*)&memset, 9, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -332,141 +332,141 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 529  ca
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 28  call_lbl_26: calling((void*)&sqrt, 26, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 489  call_lbl_28: calling((void*)&interpolate, 28, 0UL, 4, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952664UL), (size_t)(684635133602952665UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 22  register_stack_var("eamForce|pot|0", "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 22  register_stack_var("eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 22  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 231 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 231 17  register_stack_var("eamForce|rCut2|0", "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 231 17  register_stack_var("eamForce|rCut2|0", &____must_checkpoint_eamForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 231 17  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 234 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 234 16  register_stack_var("eamForce|etot|0", "double", (void *)(&etot), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 234 16  register_stack_var("eamForce|etot|0", &____must_checkpoint_eamForce_etot_0, "double", (void *)(&etot), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 234 16  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 4  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 20  register_stack_var("eamForce|nbrBoxes|0", "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 20  register_stack_var("eamForce|nbrBoxes|0", &____must_checkpoint_eamForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 240 20  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 7  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  register_stack_var("eamForce|iBox|0", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  register_stack_var("eamForce|iBox|0", &____must_checkpoint_eamForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 242 15  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 8  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  register_stack_var("eamForce|nIBox|0", "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 244 17  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 801  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 814  register_stack_var("eamForce|nNbrBoxes|0", "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 814  register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 814  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 10  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18  register_stack_var("eamForce|jTmp|0", "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18  register_stack_var("eamForce|jTmp|0", &____must_checkpoint_eamForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 247 18  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 11  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19  register_stack_var("eamForce|jBox|0", "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19  register_stack_var("eamForce|jBox|0", &____must_checkpoint_eamForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 249 19  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 11  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20  register_stack_var("eamForce|nJBox|0", "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20  register_stack_var("eamForce|nJBox|0", &____must_checkpoint_eamForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 252 20  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 13  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21  register_stack_var("eamForce|iOff|0", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21  register_stack_var("eamForce|iOff|0", &____must_checkpoint_eamForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 21  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 24  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30  register_stack_var("eamForce|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30  register_stack_var("eamForce|ii|0", &____must_checkpoint_eamForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 254 30  if (____chimes_replaying) { goto lbl_12; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 16  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24  register_stack_var("eamForce|jOff|0", "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24  register_stack_var("eamForce|jOff|0", &____must_checkpoint_eamForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 24  if (____chimes_replaying) { goto lbl_13; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 27  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33  register_stack_var("eamForce|ij|0", "i32", (void *)(&ij), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33  register_stack_var("eamForce|ij|0", &____must_checkpoint_eamForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 257 33  if (____chimes_replaying) { goto lbl_14; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 17  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26  register_stack_var("eamForce|r2|0", "double", (void *)(&r2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26  register_stack_var("eamForce|r2|0", &____must_checkpoint_eamForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 261 26  if (____chimes_replaying) { goto lbl_15; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 16  lbl_15: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  register_stack_var("eamForce|dr|0", "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  register_stack_var("eamForce|dr|0", &____must_checkpoint_eamForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 262 24  if (____chimes_replaying) { goto lbl_16; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 19  lbl_16: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24  register_stack_var("eamForce|k|0", "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24  register_stack_var("eamForce|k|0", &____must_checkpoint_eamForce_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 263 24  if (____chimes_replaying) { goto lbl_17; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 17  lbl_17: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25  register_stack_var("eamForce|r|0", "double", (void *)(&r), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25  register_stack_var("eamForce|r|0", &____must_checkpoint_eamForce_r_0, "double", (void *)(&r), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 25  if (____chimes_replaying) { goto lbl_18; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 16  lbl_18: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 29  register_stack_var("eamForce|phiTmp|0", "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 29  register_stack_var("eamForce|phiTmp|0", &____must_checkpoint_eamForce_phiTmp_0, "double", (void *)(&phiTmp), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 29  if (____chimes_replaying) { goto lbl_19; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 44  lbl_19: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  register_stack_var("eamForce|rhoTmp|0", "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  register_stack_var("eamForce|rhoTmp|0", &____must_checkpoint_eamForce_rhoTmp_0, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 272 57  if (____chimes_replaying) { goto lbl_20; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 19  lbl_20: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24  register_stack_var("eamForce|k|1", "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24  register_stack_var("eamForce|k|1", &____must_checkpoint_eamForce_k_1, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 276 24  if (____chimes_replaying) { goto lbl_21; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 7  lbl_21: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  register_stack_var("eamForce|iBox|1", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  register_stack_var("eamForce|iBox|1", &____must_checkpoint_eamForce_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  if (____chimes_replaying) { goto lbl_22; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 7  lbl_22: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 15  register_stack_var("eamForce|iOff|1", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 15  register_stack_var("eamForce|iOff|1", &____must_checkpoint_eamForce_iOff_1, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 15  if (____chimes_replaying) { goto lbl_23; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 8  lbl_23: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  register_stack_var("eamForce|nIBox|1", "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  register_stack_var("eamForce|nIBox|1", &____must_checkpoint_eamForce_nIBox_1, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____chimes_replaying) { goto lbl_24; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 10  lbl_24: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  register_stack_var("eamForce|iOff|2", "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  register_stack_var("eamForce|iOff|2", &____must_checkpoint_eamForce_iOff_2, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____chimes_replaying) { goto lbl_25; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 21  lbl_25: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  register_stack_var("eamForce|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  register_stack_var("eamForce|ii|1", &____must_checkpoint_eamForce_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____chimes_replaying) { goto lbl_26; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 10  lbl_26: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23  register_stack_var("eamForce|fEmbed|0", "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23  register_stack_var("eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23  if (____chimes_replaying) { goto lbl_27; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_27: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  register_stack_var("eamForce|iBox|2", "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  register_stack_var("eamForce|iBox|2", &____must_checkpoint_eamForce_iBox_2, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____chimes_replaying) { goto lbl_28; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_28: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  register_stack_var("eamForce|nIBox|2", "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____chimes_replaying) { goto lbl_29; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 513  lbl_29: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 526  register_stack_var("eamForce|nNbrBoxes|1", "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 526  register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 526  if (____chimes_replaying) { goto lbl_30; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 10  lbl_30: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  register_stack_var("eamForce|jTmp|1", "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  register_stack_var("eamForce|jTmp|1", &____must_checkpoint_eamForce_jTmp_1, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____chimes_replaying) { goto lbl_31; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 11  lbl_31: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  register_stack_var("eamForce|jBox|1", "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  register_stack_var("eamForce|jBox|1", &____must_checkpoint_eamForce_jBox_1, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____chimes_replaying) { goto lbl_32; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 11  lbl_32: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  register_stack_var("eamForce|nJBox|1", "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  register_stack_var("eamForce|nJBox|1", &____must_checkpoint_eamForce_nJBox_1, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____chimes_replaying) { goto lbl_33; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 24  lbl_33: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  register_stack_var("eamForce|ii|2", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  register_stack_var("eamForce|ii|2", &____must_checkpoint_eamForce_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  if (____chimes_replaying) { goto lbl_34; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 16  lbl_34: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24  register_stack_var("eamForce|jOff|1", "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24  register_stack_var("eamForce|jOff|1", &____must_checkpoint_eamForce_jOff_1, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 24  if (____chimes_replaying) { goto lbl_35; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 27  lbl_35: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33  register_stack_var("eamForce|ij|1", "i32", (void *)(&ij), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33  register_stack_var("eamForce|ij|1", &____must_checkpoint_eamForce_ij_1, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 342 33  if (____chimes_replaying) { goto lbl_36; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 17  lbl_36: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26  register_stack_var("eamForce|r2|1", "double", (void *)(&r2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26  register_stack_var("eamForce|r2|1", &____must_checkpoint_eamForce_r2_1, "double", (void *)(&r2), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 346 26  if (____chimes_replaying) { goto lbl_37; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 16  lbl_37: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  register_stack_var("eamForce|dr|1", "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  register_stack_var("eamForce|dr|1", &____must_checkpoint_eamForce_dr_1, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 347 24  if (____chimes_replaying) { goto lbl_38; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 19  lbl_38: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24  register_stack_var("eamForce|k|2", "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24  register_stack_var("eamForce|k|2", &____must_checkpoint_eamForce_k_2, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 348 24  if (____chimes_replaying) { goto lbl_39; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 17  lbl_39: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25  register_stack_var("eamForce|r|1", "double", (void *)(&r), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25  register_stack_var("eamForce|r|1", &____must_checkpoint_eamForce_r_1, "double", (void *)(&r), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 25  if (____chimes_replaying) { goto lbl_40; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 16  lbl_40: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  register_stack_var("eamForce|rhoTmp|1", "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  register_stack_var("eamForce|rhoTmp|1", &____must_checkpoint_eamForce_rhoTmp_1, "double", (void *)(&rhoTmp), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____chimes_replaying) { goto lbl_41; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 19  lbl_41: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  register_stack_var("eamForce|k|3", "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  register_stack_var("eamForce|k|3", &____must_checkpoint_eamForce_k_3, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 142  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 177  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 102  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 92  call_lbl_6: calling((void*)&destroyInterpolationObject, 6, 0UL, 1, (size_t)(684635133602953565UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 4  call_lbl_7: calling((void*)&destroyInterpolationObject, 7, 0UL, 1, (size_t)(684635133602953565UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 4  call_lbl_8: calling((void*)&destroyInterpolationObject, 8, 0UL, 1, (size_t)(684635133602953565UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 4  call_lbl_9: calling((void*)&destroyHaloExchange, 9, 0UL, 1, (size_t)(684635133602953565UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 22  register_stack_var("eamDestroy|pot|0", "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 22  register_stack_var("eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 22  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 159  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 199  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 4  call_lbl_4: calling((void*)&getMyRank, 4, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 424 7  call_lbl_5: calling((void*)&strcpy, 5, 684635133602954163UL, 2, (size_t)(684635133602954120UL), (size_t)(684635133602954215UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 425 7  call_lbl_6: calling((void*)&strcpy, 6, 684635133602954169UL, 2, (size_t)(684635133602954120UL), (size_t)(684635133602954215UL)); 
@@ -477,9 +477,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 60  cal
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 4  call_lbl_13: calling((void*)&bcastInterpolationObject, 13, 0UL, 1, (size_t)(684635133602954215UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 4  call_lbl_14: calling((void*)&bcastInterpolationObject, 14, 0UL, 1, (size_t)(684635133602954215UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14  register_stack_var("eamBcastPotential|buf|0", "%struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 }", (void *)(&buf), (size_t)40, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14  register_stack_var("eamBcastPotential|buf|0", &____must_checkpoint_eamBcastPotential_buf_0, "%struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 }", (void *)(&buf), (size_t)40, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 169  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 215  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 130  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 88  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 519 14  call_lbl_1: calling((void*)&floor, 1, 0UL, 1, (size_t)(0UL)); 
@@ -490,12 +490,12 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 60  cal
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 4  call_lbl_5: calling((void*)&getMyRank, 5, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 124  call_lbl_11: calling((void*)&bcastParallel, 11, 0UL, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15  register_stack_var("bcastInterpolationObject|buf|0", "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15  register_stack_var("bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19  register_stack_var("bcastInterpolationObject|valuesSize|0", "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19  register_stack_var("bcastInterpolationObject|valuesSize|0", &____must_checkpoint_bcastInterpolationObject_valuesSize_0, "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 195  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 250  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 340  call_lbl_4: calling((void*)&fileNotFound, 4, 0UL, 2, (size_t)(684635133602954730UL), (size_t)(684635133602953596UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 645 4  call_lbl_5: calling((void*)&fgets, 5, 684635133602953639UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 646 4  call_lbl_6: calling((void*)&fgets, 6, 684635133602953642UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
@@ -515,39 +515,39 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 92  cal
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 692 48  call_lbl_24: calling((void*)&fscanf, 24, 0UL, 3, (size_t)(684635133602953629UL), (size_t)(684635133602954714UL), (size_t)(684635133602953714UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 188  call_lbl_26: calling((void*)&initInterpolationObject, 26, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18  register_stack_var("eamReadSetfl|tmp|0", "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18  register_stack_var("eamReadSetfl|tmp|0", &____must_checkpoint_eamReadSetfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 18  register_stack_var("eamReadSetfl|potFile|0", "%struct.__sFILE*", (void *)(&potFile), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 18  register_stack_var("eamReadSetfl|potFile|0", &____must_checkpoint_eamReadSetfl_potFile_0, "%struct.__sFILE*", (void *)(&potFile), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 18  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 4  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 23  register_stack_var("eamReadSetfl|latticeType|0", "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 23  register_stack_var("eamReadSetfl|latticeType|0", &____must_checkpoint_eamReadSetfl_latticeType_0, "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 23  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 677 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 677 16  register_stack_var("eamReadSetfl|bufSize|0", "i32", (void *)(&bufSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 677 16  register_stack_var("eamReadSetfl|bufSize|0", &____must_checkpoint_eamReadSetfl_bufSize_0, "i32", (void *)(&bufSize), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 677 16  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 16  register_stack_var("eamReadSetfl|buf|0", "double*", (void *)(&buf), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 16  register_stack_var("eamReadSetfl|buf|0", &____must_checkpoint_eamReadSetfl_buf_0, "double*", (void *)(&buf), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 16  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 679 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 679 14  register_stack_var("eamReadSetfl|x0|0", "double", (void *)(&x0), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 679 14  register_stack_var("eamReadSetfl|x0|0", &____must_checkpoint_eamReadSetfl_x0_0, "double", (void *)(&x0), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 679 14  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 682 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 682 13  register_stack_var("eamReadSetfl|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 682 13  register_stack_var("eamReadSetfl|ii|0", &____must_checkpoint_eamReadSetfl_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 682 13  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 687 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 687 13  register_stack_var("eamReadSetfl|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 687 13  register_stack_var("eamReadSetfl|ii|1", &____must_checkpoint_eamReadSetfl_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 687 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 692 7  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 692 13  register_stack_var("eamReadSetfl|ii|2", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 692 13  register_stack_var("eamReadSetfl|ii|2", &____must_checkpoint_eamReadSetfl_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 692 13  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 694 7  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 694 13  register_stack_var("eamReadSetfl|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 694 13  register_stack_var("eamReadSetfl|ii|3", &____must_checkpoint_eamReadSetfl_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 694 13  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 696 8  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 696 16  register_stack_var("eamReadSetfl|r|0", "double", (void *)(&r), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 696 16  register_stack_var("eamReadSetfl|r|0", &____must_checkpoint_eamReadSetfl_r_0, "double", (void *)(&r), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 696 16  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 223  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 264  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 340  call_lbl_4: calling((void*)&fileNotFound, 4, 0UL, 2, (size_t)(684635133602954721UL), (size_t)(684635133602953849UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 763 4  call_lbl_5: calling((void*)&fgets, 5, 684635133602953892UL, 3, (size_t)(684635133602953849UL), (size_t)(0UL), (size_t)(684635133602953882UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 765 4  call_lbl_6: calling((void*)&sscanf, 6, 0UL, 3, (size_t)(684635133602953849UL), (size_t)(684635133602954722UL), (size_t)(684635133602953851UL)); 
@@ -564,42 +564,42 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 188  ca
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 48  call_lbl_20: calling((void*)&fscanf, 20, 0UL, 3, (size_t)(684635133602953882UL), (size_t)(684635133602954714UL), (size_t)(684635133602953961UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 92  call_lbl_22: calling((void*)&initInterpolationObject, 22, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18  register_stack_var("eamReadFuncfl|tmp|0", "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18  register_stack_var("eamReadFuncfl|tmp|0", &____must_checkpoint_eamReadFuncfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 18  register_stack_var("eamReadFuncfl|potFile|0", "%struct.__sFILE*", (void *)(&potFile), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 18  register_stack_var("eamReadFuncfl|potFile|0", &____must_checkpoint_eamReadFuncfl_potFile_0, "%struct.__sFILE*", (void *)(&potFile), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 18  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 4  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 16  register_stack_var("eamReadFuncfl|name|0", "[3 x i8]", (void *)(name), (size_t)3, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 16  register_stack_var("eamReadFuncfl|name|0", &____must_checkpoint_eamReadFuncfl_name_0, "[3 x i8]", (void *)(name), (size_t)3, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 16  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 4  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 23  register_stack_var("eamReadFuncfl|latticeType|0", "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 23  register_stack_var("eamReadFuncfl|latticeType|0", &____must_checkpoint_eamReadFuncfl_latticeType_0, "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 23  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 785 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 785 14  register_stack_var("eamReadFuncfl|x0|0", "double", (void *)(&x0), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 785 14  register_stack_var("eamReadFuncfl|x0|0", &____must_checkpoint_eamReadFuncfl_x0_0, "double", (void *)(&x0), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 785 14  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 788 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 788 16  register_stack_var("eamReadFuncfl|bufSize|0", "i32", (void *)(&bufSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 788 16  register_stack_var("eamReadFuncfl|bufSize|0", &____must_checkpoint_eamReadFuncfl_bufSize_0, "i32", (void *)(&bufSize), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 788 16  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 789 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 789 16  register_stack_var("eamReadFuncfl|buf|0", "double*", (void *)(&buf), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 789 16  register_stack_var("eamReadFuncfl|buf|0", &____must_checkpoint_eamReadFuncfl_buf_0, "double*", (void *)(&buf), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 789 16  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 792 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 792 13  register_stack_var("eamReadFuncfl|ii|0", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 792 13  register_stack_var("eamReadFuncfl|ii|0", &____must_checkpoint_eamReadFuncfl_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 792 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 797 7  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 797 13  register_stack_var("eamReadFuncfl|ii|1", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 797 13  register_stack_var("eamReadFuncfl|ii|1", &____must_checkpoint_eamReadFuncfl_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 797 13  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 799 7  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 799 13  register_stack_var("eamReadFuncfl|ii|2", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 799 13  register_stack_var("eamReadFuncfl|ii|2", &____must_checkpoint_eamReadFuncfl_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 799 13  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 801 8  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 801 16  register_stack_var("eamReadFuncfl|r|0", "double", (void *)(&r), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 801 16  register_stack_var("eamReadFuncfl|r|0", &____must_checkpoint_eamReadFuncfl_r_0, "double", (void *)(&r), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 801 16  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 7  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 13  register_stack_var("eamReadFuncfl|ii|3", "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 13  register_stack_var("eamReadFuncfl|ii|3", &____must_checkpoint_eamReadFuncfl_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 13  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 225  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 267  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 106  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 75  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 110  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

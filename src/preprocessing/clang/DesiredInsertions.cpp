@@ -487,12 +487,11 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
         } else {
             is_struct = false;
         }
+        line = line.substr(is_struct_end + 1);
 
         StackAlloc *alloc = new StackAlloc(filename, mangled_name, full_type,
                 type_size_in_bits, is_ptr, is_struct);
         if (is_struct) {
-            line = line.substr(is_struct_end + 1);
-
             size_t struct_type_name_end = line.find(' ');
             std::string struct_type_name = line.substr(0, struct_type_name_end);
             alloc->set_struct_type_name(struct_type_name);
@@ -514,26 +513,27 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
             } else {
                 assert(nfieldnames == 0);
             }
+        }
 
-            size_t always_checkpoint_end = line.find(' ');
-            std::string always_checkpoint_str = line.substr(0, always_checkpoint_end);
-            int always_checkpoint = atoi(always_checkpoint_str.c_str());
-            alloc->set_always_checkpoint(always_checkpoint > 0);
+        size_t always_checkpoint_end = line.find(' ');
+        std::string always_checkpoint_str = line.substr(0,
+                always_checkpoint_end);
+        int always_checkpoint = atoi(always_checkpoint_str.c_str());
+        alloc->set_always_checkpoint(always_checkpoint > 0);
 
-            if (!always_checkpoint) {
-                line = line.substr(always_checkpoint_end + 1);
+        if (!always_checkpoint) {
+            line = line.substr(always_checkpoint_end + 1);
 
-                while (1) {
-                    size_t end = line.find(' ');
-                    std::string cause = line.substr(0, end);
-                    alloc->add_checkpoint_cause(cause);
+            while (1) {
+                size_t end = line.find(' ');
+                std::string cause = line.substr(0, end);
+                alloc->add_checkpoint_cause(cause);
 
-                    if (end == std::string::npos) break;
-                    line = line.substr(end + 1);
-                }
-            } else {
-                assert(always_checkpoint_end == std::string::npos);
+                if (end == std::string::npos) break;
+                line = line.substr(end + 1);
             }
+        } else {
+            assert(always_checkpoint_end == std::string::npos);
         }
 
         assert(allocs->find(mangled_name) == allocs->end());
