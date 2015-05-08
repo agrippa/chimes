@@ -173,7 +173,7 @@ def get_call_tree(call_tree_filename):
 
     for line in fp:
         tokens = line.split()
-        call_tree.append(Callees(tokens[0], tokens[1:]))
+        call_tree.append(Callees(tokens[0], tokens[2:]))
 
     fp.close()
 

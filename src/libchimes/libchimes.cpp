@@ -705,7 +705,7 @@ void init_chimes() {
             string cause = *cause_iter;
             if (does_checkpoint.find(cause) == does_checkpoint.end() ||
                     does_checkpoint[cause]) {
-                fprintf(stderr, "Must checkpoint %s becuase of %s\n", varname.c_str(), cause.c_str());
+                // fprintf(stderr, "Must checkpoint %s becuase of %s\n", varname.c_str(), cause.c_str());
                 must_checkpoint = true;
                 break;
             }
@@ -1294,20 +1294,13 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
             va_arg(vl, size_t);
         }
     } else {
-        std::vector<size_t> new_aliases;
         for (unsigned i = 0; i < n_local_arg_aliases; i++) {
             size_t alias = va_arg(vl, size_t);
-            new_aliases.push_back(alias);
-        }
-
-        if (program_stack->size() > 1) {
-            for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-                if (valid_group(new_aliases[i]) && valid_group(ctx->get_parent_alias(i))) {
+            if (program_stack->size() > 1) {
+                if (valid_group(alias) && valid_group(ctx->get_parent_alias(i))) {
                     assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
-                    merge_alias_groups(new_aliases[i], ctx->get_parent_alias(i));
+                    merge_alias_groups(alias, ctx->get_parent_alias(i));
                     assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
-
-                    assert(aliased(new_aliases[i], ctx->get_parent_alias(i), true));
                 }
             }
         }
@@ -1527,6 +1520,7 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
     //     perf_profile::current_time_ms();
 
     const string mangled_name_str(mangled_name);
+    // fprintf(stderr, "Thinking about registering %s\n", mangled_name);
     /*
      * If cond_registration is NULL, it means this variable was marked as
      * something that had to be checkpointed unconditionally.
@@ -1535,7 +1529,7 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
         return;
     }
 
-    fprintf(stderr, "Registering %s\n", mangled_name);
+    // fprintf(stderr, "  Actually Registering %s\n", mangled_name);
 
     // Skip the expensive stack var creation if we can
     std::vector<stack_frame *> *program_stack = get_my_stack();
@@ -1604,13 +1598,14 @@ int alias_group_changed(int ngroups, ...) {
 #endif
     // const unsigned long long __chimes_overhead_start_time =
     //     perf_profile::current_time_ms();
+    thread_ctx *ctx = get_my_context();
     va_list vl;
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
         size_t group = va_arg(vl, size_t);
 
         if (valid_group(group)) {
-            get_my_context()->add_changed_group(group);
+            ctx->add_changed_group(group);
         }
     }
     va_end(vl);
@@ -2204,21 +2199,22 @@ void checkpoint() {
             for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
                     e = thread_ctxs.end(); i != e; i++) {
                 thread_ctx *ctx = i->second;
-                set<size_t> *changed = ctx->get_changed_groups();
+                set_of_aliases *changed = ctx->get_changed_groups();
 
-                for (set<size_t>::iterator ii = changed->begin(),
-                        ee = changed->end(); ii != ee; ii++) {
-                    size_t group = *ii;
+                for (size_t ii = 0; ii < INIT_SET_SIZE; ii++) {
+                    for (size_t iii = 0; iii < (changed->len)[ii]; iii++) {
+                        size_t group = (changed->set)[ii][iii];
 
-                    if (aliased_groups.find(group) != aliased_groups.end()) {
-                        for (vector<size_t>::iterator iter =
-                                aliased_groups[group]->begin(), end =
-                                aliased_groups[group]->end(); iter != end;
-                                iter++) {
-                            all_changed->insert(*iter);
+                        if (aliased_groups.find(group) != aliased_groups.end()) {
+                            for (vector<size_t>::iterator iter =
+                                    aliased_groups[group]->begin(), end =
+                                    aliased_groups[group]->end(); iter != end;
+                                    iter++) {
+                                all_changed->insert(*iter);
+                            }
+                        } else {
+                            all_changed->insert(group);
                         }
-                    } else {
-                        all_changed->insert(group);
                     }
                 }
                 ctx->clear_changed_groups();

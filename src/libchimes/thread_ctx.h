@@ -5,6 +5,7 @@
 #include <vector>
 #include <set>
 
+#include "set_of_aliases.h"
 #include "perf_profile.h"
 #include "stack_frame.h"
 #include "heap_allocation.h"
@@ -137,8 +138,10 @@ class thread_ctx {
         }
 
         void clear_changed_groups() { changed_groups.clear(); }
-        set<size_t> *get_changed_groups() { return &changed_groups; }
-        void add_changed_group(size_t group) { changed_groups.insert(group); }
+        set_of_aliases *get_changed_groups() { return &changed_groups; }
+        void add_changed_group(size_t group) {
+            changed_groups.add(group);
+        }
 
         void set_calling_label(int label) { calling_label = label; }
         int get_calling_label() { return calling_label; }
@@ -164,7 +167,7 @@ class thread_ctx {
         vector<stack_frame *> program_stack;
         vector<thread_relation> parents;
         int stack_nesting;
-        set<size_t> changed_groups;
+        set_of_aliases changed_groups;
         int calling_label;
         void *func_ptr;
         unsigned first_parallel_for_nesting;
