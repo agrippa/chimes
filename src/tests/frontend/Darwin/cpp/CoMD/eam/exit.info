@@ -4,11 +4,11 @@ eamPrint 0 985 986 987
 eamDestroy 0 1032 1033 1068
 eamReadSetfl 0 1321
 eamReadFuncfl 0 1579
-typeNotSupported 0
+typeNotSupported 0 1582 1583
 eamBcastPotential 0 1597
-fileNotFound 0
+fileNotFound 0 1701 1702
 initInterpolationObject 1760 1725 1726 1727 1728 1729 1730 1758 1760
-notAlloyReady 0
+notAlloyReady 0 1860
 bcastInterpolationObject 0
 destroyInterpolationObject 0 1978 1986 2017
 interpolate 0 2030 2031 2032 2033 2034 2035 2036 2037 2183 2184

@@ -6,7 +6,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 4 alias_group_changed(1, (size_t)(17287627617634549630UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 4 alias_group_changed(1, (size_t)(17287627617634550063UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 4 alias_group_changed(2, (size_t)(17287627617634550064UL), (size_t)(17287627617634550065UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 247 4 alias_group_changed(1, (size_t)(17287627617634549544UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 4 alias_group_changed(2, (size_t)(17287627617634549842UL), (size_t)(17287627617634549844UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 49 alias_group_changed(4, (size_t)(17287627617634549845UL), (size_t)(17287627617634549846UL), (size_t)(17287627617634549848UL), (size_t)(17287627617634550284UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 7 alias_group_changed(4, (size_t)(17287627617634549845UL), (size_t)(17287627617634549846UL), (size_t)(17287627617634549848UL), (size_t)(17287627617634550284UL)); 
@@ -145,13 +144,10 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performance
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 186 20  register_stack_var("printPerformanceResultsYaml|loopTime|0", "double", (void *)(&loopTime), (size_t)8, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 186 20  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 181 186  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 247 62  call_lbl_2: calling((void*)&gettimeofday, 2, 0UL, 2, (size_t)(17287627617634549543UL), (size_t)(17287627617634550325UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 247 4  call_lbl_1: calling((void*)&gettimeofday, 1, 0UL, 2, (size_t)(17287627617634549543UL), (size_t)(17287627617634550325UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 25  register_stack_var("getTime|ptime|0", "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 25  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 246 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 246 15  register_stack_var("getTime|t|0", "i64", (void *)(&t), (size_t)8, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 246 15  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 25  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 244 37  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 37  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 96  call_lbl_2: calling((void*)&addDoubleParallel, 2, 0UL, 3, (size_t)(17287627617634549842UL), (size_t)(17287627617634549843UL), (size_t)(0UL)); 

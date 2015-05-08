@@ -1,6 +1,5 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c profileStart|handle|0 " i32 " 32 0 0  0 _ZL7getTimev
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTime|ptime|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTime|t|0 " i64 " 64 0 0  0 gettimeofday
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTime|ptime|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 0 _ZL7getTimev
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c profileStop|handle|0 " i32 " 32 0 0  0 _ZL7getTimev
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|nGlobalAtoms|0 " i32 " 32 0 0  0 _Z9getMyRankv _Z9getNRanksv _Z9printRankv _ZL10timerStatsv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|printRate|0 " i32 " 32 0 0  0 _Z9getMyRankv _Z9getNRanksv _Z9printRankv _ZL10timerStatsv
@@ -9,9 +8,9 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|ii|0 " i32 " 32 0 0  0 _Z9getNRanksv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|totalTime|0 " double " 64 0 0  0 _Z9getNRanksv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|ii|1 " i32 " 32 0 0  0 _Z9getNRanksv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|sendBuf|0 " [11 x double] " 704 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|sendBuf|0 " [11 x double] " 704 0 0  0 _ZL10timerStatsv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|ii|0 " i32 " 32 0 0  0 _Z17addDoubleParallelPdS_i _Z21maxRankDoubleParallelP16RankReduceDataStS0_i _Z21minRankDoubleParallelP16RankReduceDataStS0_i _Z9getMyRankv _Z9getNRanksv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|reduceSendBuf|0 " [11 x %struct.RankReduceDataSt] " 1408 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|reduceSendBuf|0 " [11 x %struct.RankReduceDataSt] " 1408 0 0  0 _ZL10timerStatsv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|ii|1 " i32 " 32 0 0  0 _Z17addDoubleParallelPdS_i _Z21maxRankDoubleParallelP16RankReduceDataStS0_i _Z21minRankDoubleParallelP16RankReduceDataStS0_i _Z9getMyRankv _Z9getNRanksv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|ii|2 " i32 " 32 0 0  0 _Z17addDoubleParallelPdS_i _Z21maxRankDoubleParallelP16RankReduceDataStS0_i _Z9getNRanksv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|ii|3 " i32 " 32 0 0  0 _Z17addDoubleParallelPdS_i _Z9getNRanksv

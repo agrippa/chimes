@@ -1,5 +1,3 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 12 9 alias_group_changed(9, (size_t)(4957368879419144138UL), (size_t)(4957368879419144139UL), (size_t)(4957368879419144140UL), (size_t)(4957368879419144141UL), (size_t)(4957368879419144142UL), (size_t)(4957368879419144143UL), (size_t)(4957368879419144144UL), (size_t)(4957368879419144145UL), (size_t)(4957368879419144146UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 53 5 alias_group_changed(1, (size_t)(4957368879419144392UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 79 5 alias_group_changed(6, (size_t)(4957368879419144445UL), (size_t)(4957368879419144446UL), (size_t)(4957368879419144447UL), (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL), (size_t)(4957368879419144591UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 82 17 alias_group_changed(2, (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 85 17 alias_group_changed(2, (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL)); 
@@ -19,7 +17,7 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 24 1 alias
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 29 49 new_stack((void *)(&init_data), 9, 0, (size_t)(4957368879419144378UL), (size_t)(4957368879419144379UL), (size_t)(4957368879419144380UL), (size_t)(4957368879419144381UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 47 1 alias_group_changed(16, (size_t)(4957368879419144248UL), (size_t)(4957368879419144249UL), (size_t)(4957368879419144250UL), (size_t)(4957368879419144251UL), (size_t)(4957368879419144252UL), (size_t)(4957368879419144253UL), (size_t)(4957368879419144254UL), (size_t)(4957368879419144255UL), (size_t)(4957368879419144256UL), (size_t)(4957368879419144257UL), (size_t)(4957368879419144258UL), (size_t)(4957368879419144259UL), (size_t)(4957368879419144378UL), (size_t)(4957368879419144379UL), (size_t)(4957368879419144380UL), (size_t)(4957368879419144381UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 49 25 new_stack((void *)(&usage), 1, 0, (size_t)(4957368879419144403UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 54 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 54 1 alias_group_changed(1, (size_t)(4957368879419144392UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 56 35 new_stack((void *)(&default_config), 1, 0, (size_t)(4957368879419144444UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 71 1 alias_group_changed(2, (size_t)(4957368879419144404UL), (size_t)(4957368879419144444UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 73 56 new_stack((void *)(&setup_config), 3, 3, (size_t)(4957368879419144574UL), (size_t)(0UL), (size_t)(4957368879419144576UL), "setup_config|conf|0", "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
@@ -46,8 +44,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 41 5
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 41 33 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 74 5 int c; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 74 10 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 23 5  call_lbl_7: calling((void*)&fclose, 7, 0UL, 1, (size_t)(4957368879419144167UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 8 271  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 23 5  call_lbl_6: calling((void*)&fclose, 6, 0UL, 1, (size_t)(4957368879419144167UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 8 271  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 40 5  call_lbl_1: calling((void*)&memset, 1, 0UL, 3, (size_t)(4957368879419144381UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 29 294  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 49 92  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

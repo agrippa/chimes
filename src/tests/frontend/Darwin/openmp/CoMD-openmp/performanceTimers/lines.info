@@ -1,5 +1,4 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30 : { 1 } direct:call:_ZL7getTimev
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 247 4 : { 15 } direct:call:gettimeofday
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 21 : { 30, 755 } direct:call:_ZL7getTimev
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 4 : { 95, 96 } direct:call:_ZL10timerStatsv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 52 : { 97, 98 } direct:call:_Z9getMyRankv

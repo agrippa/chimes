@@ -5,12 +5,12 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|dataPtr|0 " i8* " 64 1 0  0 _ZL9dupStringPKc
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|dataSize|0 " i32 " 32 0 0  0 _ZL9dupStringPKc
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|o|0 " %struct.MyOptionSt* " 64 1 0  0 _ZL9dupStringPKc
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c printArgs|s|0 " [4096 x i8] " 32768 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|argc|0 " i32 " 32 0 0  0 getopt_long sscanf strncpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|argv|0 " i8** " 64 1 0  0 getopt_long sscanf strncpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|o|0 " %struct.MyOptionSt* " 64 1 0  0 getopt_long sscanf strncpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|opts|0 " %struct.option* " 64 1 0  0 getopt_long sscanf strncpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|sArgs|0 " i8* " 64 1 0  0 getopt_long sscanf strncpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|c|0 " i32 " 32 0 0  0 getopt_long sscanf strncpy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|option_index|0 " i32 " 32 0 0  1
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|i|0 " i32* " 64 1 0  0 getopt_long sscanf strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c printArgs|s|0 " [4096 x i8] " 32768 0 0  0 _Z9printArgsv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|argc|0 " i32 " 32 0 0  0 getopt_long strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|argv|0 " i8** " 64 1 0  0 getopt_long strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|o|0 " %struct.MyOptionSt* " 64 1 0  0 getopt_long strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|opts|0 " %struct.option* " 64 1 0  0 getopt_long strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|sArgs|0 " i8* " 64 1 0  0 getopt_long strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|c|0 " i32 " 32 0 0  0 getopt_long strncpy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|option_index|0 " i32 " 32 0 0  0 _Z11processArgsiPPc
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|i|0 " i32* " 64 1 0  0 getopt_long strncpy

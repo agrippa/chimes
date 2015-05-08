@@ -1,15 +1,8 @@
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 82 5 : { 125, 126 } direct:call:fseek
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 84 5 : { 127 } direct:call:fseek
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 31 : { 128 } direct:call:fread
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 106 3 : { 191, 192, 193, 196, 197, 198 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 112 24 : { 191, 192, 193, 196, 197, 198 } prop:call:atoi
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 113 25 : { 982 } direct:call:atoi
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 118 13 : { 199, 200, 982 } prop:call:_Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 116 77 : { 199, 200, 982 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 124 13 : { 201, 202, 980 } prop:call:_Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 122 77 : { 201, 202, 980 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 131 72 : { 194, 195, 363, 367, 403, 494, 755, 980, 982, 986, 988, 990 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 134 73 : { 194, 195, 363, 367, 403, 494, 755, 980, 982, 986, 988, 990 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 166 5 : { 194, 195, 363, 367, 403, 494, 755, 980, 982, 986, 988, 990 } prop:call:gettimeofday
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 8 : { 194, 195, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 363, 403, 757 } prop:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 218 5 : { 194, 195, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 363, 403, 757 } prop:call:gettimeofday
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 213 8 : { 194, 195, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 363, 367, 403, 494, 755, 757, 980, 982, 986, 988, 990 } prop:call:_Z10checkpointv

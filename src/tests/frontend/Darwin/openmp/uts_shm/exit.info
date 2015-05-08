@@ -3,7 +3,7 @@ impl_getName 1998 14
 impl_paramsToStr 0 38
 impl_parseParam 0 106 107 108 1985
 impl_helpMessage 0
-impl_abort 0
+impl_abort 0 152
 ss_mkEmpty 0
 ss_error 0
 ss_init 0

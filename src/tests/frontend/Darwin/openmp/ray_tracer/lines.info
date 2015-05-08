@@ -4,7 +4,6 @@
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 77 25 : { 258 } direct:call:sin
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 16 : { 483, 484, 485, 486, 487, 488 } direct:call:_Z4modvddd
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 16 : { 489 } direct:call:_Z4modvddd
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 111 5 : { 537 } direct:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 25 : { 552, 553, 554, 555 } direct:call:strchr
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 26 : { 556 } prop:call:strchr
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 123 10 : { 557, 582, 584 } prop:call:atof

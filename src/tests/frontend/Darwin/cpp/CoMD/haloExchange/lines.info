@@ -19,4 +19,3 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 302 9 : { 2019, 2020, 2021 } prop:call:_Z12profileStart11TimerHandle
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 13 : { 2023 } direct:call:_Z19sendReceiveParallelPviiS_ii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 9 : { 2022 } prop:call:_Z11profileStop11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 647 4 : { 2168, 2169, 2170, 2171, 2172, 2173, 2174, 2175, 2176, 2198 } prop:call:qsort

@@ -5,4 +5,4 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c redistributeAtoms|sim|0 " %struct.SimFlatSt* " 64 1 0  0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _Z15sortAtomsInCellP7AtomsStP10LinkCellSti _Z15updateLinkCellsP10LinkCellStP7AtomsSt
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c redistributeAtoms|ii|0 " i32 " 32 0 0  0 _Z15sortAtomsInCellP7AtomsStP10LinkCellSti
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|s|0 " %struct.SimFlatSt* " 64 1 0  0 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z15addRealParallelPdS_i
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|eLocal|0 " [2 x double] " 128 0 0  1
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|eLocal|0 " [2 x double] " 128 0 0  0 _Z13kineticEnergyP9SimFlatSt

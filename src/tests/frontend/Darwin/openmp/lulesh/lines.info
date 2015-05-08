@@ -1,9 +1,8 @@
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 517 13 : { 458, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 541, 778 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2974 23 : { 782, 783, 784 } direct:call:atoi
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 3002 2 : { 785, 786, 792, 14642 } direct:call:_Z22AllocateElemPersistentP6Domainm
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 3056 2 : { 787, 788, 789, 790, 791, 793, 794, 795, 796, 797, 798, 799, 2488 } prop:call:_Z23AllocateNodeElemIndexesP6Domain
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 3188 2 : { 790, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 2488, 14642 } prop:call:gettimeofday
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 3225 21 : { 827, 828, 829, 830, 831, 832, 833, 834, 835 } prop:call:_Z4FABSd
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 3194 3 : { 790, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 827, 828, 829, 830, 831, 832, 833, 834, 835, 2488, 14642 } prop:call:_ZL16LagrangeLeapFrogv
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 3225 21 : { 790, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 827, 828, 829, 830, 831, 832, 833, 834, 835, 2488, 14642 } prop:call:_Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 106 39 : { 1956 } direct:call:fabs
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1690 2 : { 1964, 1965 } direct:call:_ZL17CalcForceForNodesv
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2801 2 : { 1981 } direct:call:_ZL20CalcLagrangeElementsd
@@ -14,10 +13,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2915 52 : { 2209, 2210, 2211, 2212, 2213, 2215, 2235, 2239 } prop:call:_Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2917 46 : { 2214 } direct:call:omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2005 3 : { 2369, 2370 } prop:call:_ZL22CalcKinematicsForElemsid
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2025 5 : { 2371, 2372, 2373, 2488 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2359 2 : { 2462, 2463 } direct:call:_ZL31CalcMonotonicQGradientsForElemsv
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2376 4 : { 2464, 2465 } prop:call:exit
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2763 6 : { 2509, 2510, 2511, 2512, 2513, 2514, 2515, 2516, 2517, 2518, 2519, 2560 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2768 3 : { 2509, 2510, 2511, 2512, 2513, 2514, 2515, 2516, 2517, 2518, 2519, 2560 } prop:call:_ZL15EvalEOSForElemsPdi
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2787 8 : { 2488, 2691, 2692, 2693, 2694 } prop:call:_Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 2661 2 : { 2739, 2740, 2741, 2742, 2743, 2744, 2745, 2746, 2747, 2748, 2749, 2750, 2751, 2752, 2753, 2754, 2755, 2756, 2757, 2758, 2759, 2760, 2761, 2762, 2763, 2764, 2765, 2766, 2767, 2768, 2769, 2770, 2771, 2772, 2773, 2774, 2775, 2776, 2777, 2819, 2826, 2833, 2840, 2847, 2854, 2861, 2868, 2875 } prop:call:_ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
@@ -49,9 +45,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1659 7 : { 2488, 7994, 7995 } prop:call:_Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1663 7 : { 2488, 7995, 7996 } prop:call:_Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1570 3 : { 8167, 8168, 8169, 8170, 8171, 8172 } prop:call:_ZL23IntegrateStressForElemsiPdS_S_S_
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1576 5 : { 8173 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1580 3 : { 8173 } prop:call:_ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1536 4 : { 8610, 8611, 8612, 8613, 8614, 8615, 8616, 8617, 8618, 8619, 8620, 8627, 8628, 8629, 8645, 8652, 8659, 8666, 8673, 8680, 8848 } prop:call:exit
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1541 3 : { 8610, 8611, 8612, 8613, 8614, 8615, 8616, 8617, 8618, 8619, 8620, 8627, 8628, 8629, 8645, 8652, 8659, 8666, 8673, 8680, 8848 } prop:call:_ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 1359 12 : { 9620, 9621, 9622, 9623, 9624, 9625, 9626, 9627, 9628, 9629, 9630, 9631, 9632, 9633, 9634, 9635, 9636, 9637, 9641, 9642, 9643, 9644, 9645, 9646, 9647, 9648, 9649, 9650, 9651, 9652, 9653, 9654, 9655, 9656, 9657, 9658, 9659, 9660, 9661, 9662, 9663, 9664, 9665, 9666, 9667, 9668, 9669, 9670, 9707, 9714, 9721 } prop:call:_Z4CBRTd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc 104 39 : { 11007 } direct:call:cbrt

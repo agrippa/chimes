@@ -2,9 +2,9 @@ impl_getName 1798 1
 impl_paramsToStr 0 26 27
 impl_parseParam 0 54 55 56
 impl_helpMessage 0
-impl_abort 0
+impl_abort 0 77
 ss_mkEmpty 0 86 102
-ss_error 0
+ss_error 0 103
 ss_init 0 112 113 114 203
 ss_push 0 206 207 278
 ss_top 333 311 312
