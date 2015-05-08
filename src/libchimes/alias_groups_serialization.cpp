@@ -4,13 +4,20 @@
 
 using namespace std;
 
-void *serialize_alias_groups(set<vector<size_t> *> *aliased_groups_ptr,
+void *serialize_alias_groups(map<size_t, vector<size_t> *> *aliased_groups,
         size_t *out_len) {
-    unsigned n_aliased_groups = aliased_groups_ptr->size();
+
+    set<vector<size_t> *> aliased_groups_ptr;
+    for (map<size_t, vector<size_t> *>::iterator i = aliased_groups->begin(),
+            e = aliased_groups->end(); i != e; i++) {
+        aliased_groups_ptr.insert(i->second);
+    }
+
+    unsigned n_aliased_groups = aliased_groups_ptr.size();
     size_t len = sizeof(n_aliased_groups);
 
-    for (set<vector<size_t> *>::iterator i = aliased_groups_ptr->begin(),
-            e = aliased_groups_ptr->end(); i != e; i++) {
+    for (set<vector<size_t> *>::iterator i = aliased_groups_ptr.begin(),
+            e = aliased_groups_ptr.end(); i != e; i++) {
         vector<size_t> *curr = *i;
         len += sizeof(unsigned); // curr_size
         len += curr->size() * sizeof(size_t);
@@ -22,8 +29,8 @@ void *serialize_alias_groups(set<vector<size_t> *> *aliased_groups_ptr,
     memcpy(iter, &n_aliased_groups, sizeof(n_aliased_groups));
     iter += sizeof(n_aliased_groups);
 
-    for (set<vector<size_t> *>::iterator i = aliased_groups_ptr->begin(),
-            e = aliased_groups_ptr->end(); i != e; i++) {
+    for (set<vector<size_t> *>::iterator i = aliased_groups_ptr.begin(),
+            e = aliased_groups_ptr.end(); i != e; i++) {
         vector<size_t> *curr = *i;
 
         unsigned curr_size = curr->size();

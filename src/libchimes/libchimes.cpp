@@ -704,6 +704,7 @@ void init_chimes() {
             string cause = *cause_iter;
             if (does_checkpoint.find(cause) == does_checkpoint.end() ||
                     does_checkpoint[cause]) {
+                fprintf(stderr, "Must checkpoint %s becuase of %s\n", varname.c_str(), cause.c_str());
                 must_checkpoint = true;
                 break;
             }
@@ -995,6 +996,26 @@ static void *translate_old_ptr(void *ptr,
     return NULL;
 }
 
+static map<size_t, size_t>::iterator find_alias_in_contains(size_t alias,
+        size_t *out_alias) {
+    if (aliased_groups.find(alias) == aliased_groups.end()) {
+        *out_alias = alias;
+        return contains.find(alias);
+    } else {
+        vector<size_t> *aliased = aliased_groups.at(alias);
+        for (vector<size_t>::iterator i = aliased->begin(), e = aliased->end();
+                i != e; i++) {
+            size_t curr = *i;
+            map<size_t, size_t>::iterator found = contains.find(curr);
+            if (found != contains.end()) {
+                *out_alias = curr;
+                return found;
+            }
+        }
+    }
+    return contains.end();
+}
+
 static void merge_alias_groups(size_t alias1, size_t alias2) {
     assert(valid_group(alias1));
     assert(valid_group(alias2));
@@ -1002,15 +1023,17 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     if (aliased(alias1, alias2, false)) return;
 
     assert(pthread_rwlock_rdlock(&contains_lock) == 0);
-    map<size_t, size_t>::iterator child1_iter = contains.find(alias1);
-    map<size_t, size_t>::iterator child2_iter = contains.find(alias2);
+    size_t alias1_alias, alias2_alias;
+    map<size_t, size_t>::iterator child1_iter = find_alias_in_contains(alias1,
+            &alias1_alias);
+    map<size_t, size_t>::iterator child2_iter = find_alias_in_contains(alias2,
+            &alias2_alias);
     map<size_t, size_t>::iterator end = contains.end();
 
-    // TODO Need to update contains anytime you merge alias groups so that 
     if (child1_iter != end && child2_iter == end) {
-        contains[alias2] = contains[alias1];
+        contains[alias2] = contains[alias1_alias];
     } else if (child1_iter == end && child2_iter != end) {
-        contains[alias1] = contains[alias2];
+        contains[alias1] = contains[alias2_alias];
     } else if (child1_iter != end && child2_iter != end) {
         size_t child1 = child1_iter->second;
         size_t child2 = child2_iter->second;
@@ -1474,8 +1497,8 @@ void register_stack_var(const char *mangled_name,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ms();
 
     const string mangled_name_str(mangled_name);
     const map<string, bool>::iterator must_checkpoint_iter =
@@ -1485,6 +1508,8 @@ void register_stack_var(const char *mangled_name,
         // Can skip stack variable registration!
         return;
     }
+
+    fprintf(stderr, "Registering %s\n", mangled_name);
 
     // Skip the expensive stack var creation if we can
     std::vector<stack_frame *> *program_stack = get_my_stack();
@@ -1499,7 +1524,7 @@ void register_stack_var(const char *mangled_name,
 
         program_stack->back()->add_stack_var(new_var);
     }
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_STACK_VAR, __start_time);
 #endif
@@ -1551,8 +1576,8 @@ int alias_group_changed(int ngroups, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+    // const unsigned long long __chimes_overhead_start_time =
+    //     perf_profile::current_time_ms();
     va_list vl;
     va_start(vl, ngroups);
     for (int i = 0; i < ngroups; i++) {
@@ -1563,7 +1588,7 @@ int alias_group_changed(int ngroups, ...) {
         }
     }
     va_end(vl);
-    ADD_TO_OVERHEAD
+    // ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ALIAS_GROUP_CHANGED, __start_time);
 #endif
@@ -1809,6 +1834,7 @@ void free_wrapper(void *ptr, size_t group) {
         perf_profile::current_time_ms();
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     size_t original_group = in_heap->second->get_alias_group();
+
     assert(aliased(original_group, group, true));
 
     __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
@@ -1837,6 +1863,8 @@ typedef struct _checkpoint_thread_ctx {
 
     void *contains_serialized;
     size_t contains_serialized_len;
+    void *serialized_alias_groups;
+    size_t serialized_alias_groups_len;
 
     map<unsigned, vector<int> *> *stack_trackers;
 } checkpoint_thread_ctx;
@@ -2338,6 +2366,12 @@ void checkpoint() {
                     &contains, &(checkpoint_ctx->contains_serialized_len));
             assert(pthread_rwlock_unlock(&contains_lock) == 0);
 
+            assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+            checkpoint_ctx->serialized_alias_groups = serialize_alias_groups(
+                    &aliased_groups,
+                    &(checkpoint_ctx->serialized_alias_groups_len));
+            assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+
             assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
             pthread_create(&checkpoint_thread, NULL, checkpoint_func,
@@ -2590,6 +2624,8 @@ void *checkpoint_func(void *data) {
         ctx->heap_to_checkpoint;
     void *contains_serialized = ctx->contains_serialized;
     size_t contains_serialized_len = ctx->contains_serialized_len;
+    void *serialized_alias_groups = ctx->serialized_alias_groups;
+    size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
 
     vector<aiocb *> async_tokens;
     off_t count_bytes = 0;
@@ -2717,18 +2753,6 @@ void *checkpoint_func(void *data) {
     prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
                 count_bytes, &count_bytes, "serialized_contains",
                 &async_tokens);
-
-    assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
-    set<vector<size_t> *> aliased_groups_ptr;
-    for (map<size_t, vector<size_t> *>::iterator i = aliased_groups.begin(),
-            e = aliased_groups.end(); i != e; i++) {
-        aliased_groups_ptr.insert(i->second);
-    }
-
-    size_t serialized_alias_groups_len;
-    void *serialized_alias_groups = serialize_alias_groups(&aliased_groups_ptr,
-            &serialized_alias_groups_len);
-    assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
     prep_async_safe_write(fd, &serialized_alias_groups_len,
                 sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,

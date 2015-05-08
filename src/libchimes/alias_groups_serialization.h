@@ -7,7 +7,8 @@
 #include <map>
 
 extern void *serialize_alias_groups(
-        std::set<std::vector<size_t> *> *aliased_groups_ptr, size_t *out_len);
+        std::map<size_t, std::vector<size_t> *> *aliased_groups,
+        size_t *out_len);
 extern void deserialize_alias_groups(void *buffer, size_t len,
         std::map<size_t, std::vector<size_t> *> *alias_groups);
 
