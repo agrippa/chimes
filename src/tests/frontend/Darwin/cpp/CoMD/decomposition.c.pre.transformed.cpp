@@ -12,6 +12,11 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "decomposition.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_initDecomposition_xproc_0 = 2;
+static int ____must_checkpoint_initDecomposition_yproc_0 = 2;
+static int ____must_checkpoint_initDecomposition_zproc_0 = 2;
+static int ____must_checkpoint_initDecomposition_globalExtent_0 = 2;
+static int ____must_checkpoint_initDecomposition_dd_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

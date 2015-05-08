@@ -12,6 +12,7 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "dim3.cudafe1.transformed.cpp" 2
+static int ____must_checkpoint_main_blocks_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}

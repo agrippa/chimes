@@ -12,6 +12,13 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "yamlOutput.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_yamlBegin_filename_0 = 2;
+static int ____must_checkpoint_yamlBegin_rawtime_0 = 2;
+static int ____must_checkpoint_yamlBegin_sdate_0 = 2;
+static int ____must_checkpoint_yamlAppInfo_file_0 = 2;
+static int ____must_checkpoint_yamlAppInfo_timestring_0 = 2;
+static int ____must_checkpoint_getTimeString_timestring_0 = 2;
+static int ____must_checkpoint_getTimeString_rawtime_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

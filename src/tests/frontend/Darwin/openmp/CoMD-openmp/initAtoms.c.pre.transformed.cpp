@@ -8,6 +8,55 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "initAtoms.c.pre.transformed.cpp"
+static int ____must_checkpoint_createFccLattice_nx_0 = 2;
+static int ____must_checkpoint_createFccLattice_ny_0 = 2;
+static int ____must_checkpoint_createFccLattice_nz_0 = 2;
+static int ____must_checkpoint_createFccLattice_lat_0 = 2;
+static int ____must_checkpoint_createFccLattice_s_0 = 2;
+static int ____must_checkpoint_createFccLattice_localMin_0 = 2;
+static int ____must_checkpoint_createFccLattice_localMax_0 = 2;
+static int ____must_checkpoint_createFccLattice_nb_0 = 2;
+static int ____must_checkpoint_createFccLattice_basis_0 = 2;
+static int ____must_checkpoint_createFccLattice_begin_0 = 2;
+static int ____must_checkpoint_createFccLattice_end_0 = 2;
+static int ____must_checkpoint_createFccLattice_px_0 = 2;
+static int ____must_checkpoint_createFccLattice_py_0 = 2;
+static int ____must_checkpoint_createFccLattice_pz_0 = 2;
+static int ____must_checkpoint_createFccLattice_ix_0 = 2;
+static int ____must_checkpoint_createFccLattice_iy_0 = 2;
+static int ____must_checkpoint_createFccLattice_iz_0 = 2;
+static int ____must_checkpoint_createFccLattice_ib_0 = 2;
+static int ____must_checkpoint_createFccLattice_rx_0 = 2;
+static int ____must_checkpoint_createFccLattice_ry_0 = 2;
+static int ____must_checkpoint_createFccLattice_rz_0 = 2;
+static int ____must_checkpoint_createFccLattice_id_0 = 2;
+static int ____must_checkpoint_setVcm_s_0 = 2;
+static int ____must_checkpoint_setVcm_newVcm_0 = 2;
+static int ____must_checkpoint_setVcm_oldVcm_0 = 2;
+static int ____must_checkpoint_computeVcm_vcm_0 = 2;
+static int ____must_checkpoint_computeVcm_vcmLocal_0 = 2;
+static int ____must_checkpoint_computeVcm_vcmSum_0 = 2;
+static int ____must_checkpoint_setTemperature_s_0 = 2;
+static int ____must_checkpoint_setTemperature_temperature_0 = 2;
+static int ____must_checkpoint_setTemperature_iBox_0 = 2;
+static int ____must_checkpoint_setTemperature_iOff_0 = 2;
+static int ____must_checkpoint_setTemperature_ii_0 = 2;
+static int ____must_checkpoint_setTemperature_iType_0 = 2;
+static int ____must_checkpoint_setTemperature_mass_0 = 2;
+static int ____must_checkpoint_setTemperature_sigma_0 = 2;
+static int ____must_checkpoint_setTemperature_seed_0 = 2;
+static int ____must_checkpoint_setTemperature_vZero_0 = 2;
+static int ____must_checkpoint_setTemperature_temp_0 = 2;
+static int ____must_checkpoint_setTemperature_scaleFactor_0 = 2;
+static int ____must_checkpoint_setTemperature_iBox_1 = 2;
+static int ____must_checkpoint_setTemperature_iOff_1 = 2;
+static int ____must_checkpoint_setTemperature_ii_1 = 2;
+static int ____must_checkpoint_randomDisplacements_s_0 = 2;
+static int ____must_checkpoint_randomDisplacements_delta_0 = 2;
+static int ____must_checkpoint_randomDisplacements_iBox_0 = 2;
+static int ____must_checkpoint_randomDisplacements_iOff_0 = 2;
+static int ____must_checkpoint_randomDisplacements_ii_0 = 2;
+static int ____must_checkpoint_randomDisplacements_seed_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

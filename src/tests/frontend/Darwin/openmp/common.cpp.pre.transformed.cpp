@@ -8,6 +8,30 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "common.cpp.pre.transformed.cpp"
+static int ____must_checkpoint_seconds_tp_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_source_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_nsteps_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_dt_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_freq_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_shift_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_i_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_time_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_pi_freq_t_0 = 2;
+static int ____must_checkpoint_ricker_wavelet_sqr_pi_freq_t_0 = 2;
+static int ____must_checkpoint_parse_source_out_0 = 2;
+static int ____must_checkpoint_parse_source_x_str_0 = 2;
+static int ____must_checkpoint_parse_source_first_comma_0 = 2;
+static int ____must_checkpoint_parse_source_y_str_0 = 2;
+static int ____must_checkpoint_parse_source_second_comma_0 = 2;
+static int ____must_checkpoint_parse_source_freq_str_0 = 2;
+static int ____must_checkpoint_parse_source_third_comma_0 = 2;
+static int ____must_checkpoint_parse_source_time_str_0 = 2;
+static int ____must_checkpoint_sample_sources_srcs_0 = 2;
+static int ____must_checkpoint_sample_sources_nsrcs_0 = 2;
+static int ____must_checkpoint_sample_sources_nsteps_0 = 2;
+static int ____must_checkpoint_sample_sources_dt_0 = 2;
+static int ____must_checkpoint_sample_sources_src_samples_0 = 2;
+static int ____must_checkpoint_sample_sources_i_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

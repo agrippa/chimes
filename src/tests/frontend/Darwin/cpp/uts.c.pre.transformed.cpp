@@ -13,6 +13,27 @@ typedef long unsigned int size_t;
 # 4 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "uts.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_uts_wctime_tv_0 = 2;
+static int ____must_checkpoint_uts_initRoot_root_0 = 2;
+static int ____must_checkpoint_uts_initRoot_type_0 = 2;
+static int ____must_checkpoint_uts_numChildren_bin_v_0 = 2;
+static int ____must_checkpoint_uts_numChildren_geo_parent_0 = 2;
+static int ____must_checkpoint_uts_numChildren_geo_b_i_0 = 2;
+static int ____must_checkpoint_uts_numChildren_geo_h_0 = 2;
+static int ____must_checkpoint_uts_numChildren_geo_p_0 = 2;
+static int ____must_checkpoint_uts_numChildren_parent_0 = 2;
+static int ____must_checkpoint_uts_numChildren_numChildren_0 = 2;
+static int ____must_checkpoint_uts_paramsToStr_strBuf_0 = 2;
+static int ____must_checkpoint_uts_paramsToStr_ind_0 = 2;
+static int ____must_checkpoint_uts_paramsToStr_q_0 = 2;
+static int ____must_checkpoint_uts_paramsToStr_m_0 = 2;
+static int ____must_checkpoint_uts_paramsToStr_es_0 = 2;
+static int ____must_checkpoint_uts_printParams_strBuf_0 = 2;
+static int ____must_checkpoint_uts_printParams_ind_0 = 2;
+static int ____must_checkpoint_uts_parseParams_argc_0 = 2;
+static int ____must_checkpoint_uts_parseParams_argv_0 = 2;
+static int ____must_checkpoint_uts_parseParams_i_0 = 2;
+static int ____must_checkpoint_uts_parseParams_err_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

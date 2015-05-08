@@ -12,6 +12,9 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "iso2d.cpp.pre.transformed.cpp" 2
+static int ____must_checkpoint_main_conf_0 = 2;
+static int ____must_checkpoint_main_elapsed_s_0 = 2;
+static int ____must_checkpoint_main_point_rate_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

@@ -8,6 +8,11 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "mycommand.c.pre.transformed.cpp"
+static int ____must_checkpoint_parseCommandLine_argc_0 = 2;
+static int ____must_checkpoint_parseCommandLine_argv_0 = 2;
+static int ____must_checkpoint_parseCommandLine_help_0 = 2;
+static int ____must_checkpoint_printCmdYaml_file_0 = 2;
+static int ____must_checkpoint_printCmdYaml_cmd_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

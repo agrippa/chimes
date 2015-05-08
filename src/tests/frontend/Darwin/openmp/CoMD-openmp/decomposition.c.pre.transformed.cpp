@@ -8,6 +8,11 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "decomposition.c.pre.transformed.cpp"
+static int ____must_checkpoint_initDecomposition_xproc_0 = 2;
+static int ____must_checkpoint_initDecomposition_yproc_0 = 2;
+static int ____must_checkpoint_initDecomposition_zproc_0 = 2;
+static int ____must_checkpoint_initDecomposition_globalExtent_0 = 2;
+static int ____must_checkpoint_initDecomposition_dd_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

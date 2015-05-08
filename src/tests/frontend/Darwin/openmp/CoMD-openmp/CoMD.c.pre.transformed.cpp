@@ -8,6 +8,35 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "CoMD.c.pre.transformed.cpp"
+static int ____must_checkpoint_main_argc_0 = 2;
+static int ____must_checkpoint_main_cmd_0 = 2;
+static int ____must_checkpoint_main_sim_0 = 2;
+static int ____must_checkpoint_initSimulation_sim_0 = 2;
+static int ____must_checkpoint_initSimulation_latticeConstant_0 = 2;
+static int ____must_checkpoint_initSimulation_globalExtent_0 = 2;
+static int ____must_checkpoint_initValidate_sim_0 = 2;
+static int ____must_checkpoint_initValidate_val_0 = 2;
+static int ____must_checkpoint_sumAtoms_s_0 = 2;
+static int ____must_checkpoint_printThings_s_0 = 2;
+static int ____must_checkpoint_printThings_iStep_0 = 2;
+static int ____must_checkpoint_printThings_elapsedTime_0 = 2;
+static int ____must_checkpoint_printThings_nEval_0 = 2;
+static int ____must_checkpoint_validateResult_val_0 = 2;
+static int ____must_checkpoint_validateResult_sim_0 = 2;
+static int ____must_checkpoint_destroySimulation_ps_0 = 2;
+static int ____must_checkpoint_destroySimulation_s_0 = 2;
+static int ____must_checkpoint_initPotential_pot_0 = 2;
+static int ____must_checkpoint_sanityChecks_cutoff_0 = 2;
+static int ____must_checkpoint_sanityChecks_latticeConst_0 = 2;
+static int ____must_checkpoint_sanityChecks_latticeType_0 = 2;
+static int ____must_checkpoint_sanityChecks_failCode_0 = 2;
+static int ____must_checkpoint_sanityChecks_minx_0 = 2;
+static int ____must_checkpoint_sanityChecks_miny_0 = 2;
+static int ____must_checkpoint_sanityChecks_minz_0 = 2;
+static int ____must_checkpoint_sanityChecks_sizex_0 = 2;
+static int ____must_checkpoint_sanityChecks_sizey_0 = 2;
+static int ____must_checkpoint_sanityChecks_sizez_0 = 2;
+static int ____must_checkpoint_sanityChecks_checkCode_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

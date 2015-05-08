@@ -12,6 +12,7 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "pass_by_ref.cpp.pre.transformed.cpp" 2
+static int ____must_checkpoint_main_b_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3

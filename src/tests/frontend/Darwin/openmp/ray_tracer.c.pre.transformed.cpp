@@ -8,6 +8,37 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "ray_tracer.c.pre.transformed.cpp"
+static int ____must_checkpoint_rot_x_self_0 = 2;
+static int ____must_checkpoint_rot_x_angle_0 = 2;
+static int ____must_checkpoint_rot_x_y_0 = 2;
+static int ____must_checkpoint_rot_y_self_0 = 2;
+static int ____must_checkpoint_rot_y_angle_0 = 2;
+static int ____must_checkpoint_rot_y_x_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_v1x_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_v1y_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_v1z_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_v2x_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_v2y_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_v2z_0 = 2;
+static int ____must_checkpoint_get_cos_angle_v1v2_a_0 = 2;
+static int ____must_checkpoint_parse_three_doubles_def_0 = 2;
+static int ____must_checkpoint_parse_three_doubles_a_0 = 2;
+static int ____must_checkpoint_parse_three_doubles_b_0 = 2;
+static int ____must_checkpoint_parse_three_doubles_c_0 = 2;
+static int ____must_checkpoint_parse_three_doubles_first_comma_0 = 2;
+static int ____must_checkpoint_parse_three_doubles_second_comma_0 = 2;
+static int ____must_checkpoint_parse_config_argc_0 = 2;
+static int ____must_checkpoint_parse_config_argv_0 = 2;
+static int ____must_checkpoint_parse_config_conf_0 = 2;
+static int ____must_checkpoint_parse_config_c_0 = 2;
+static int ____must_checkpoint_parse_config_sphere_def_0 = 2;
+static int ____must_checkpoint_parse_config_first_comma_0 = 2;
+static int ____must_checkpoint_parse_config_second_comma_0 = 2;
+static int ____must_checkpoint_parse_config_third_comma_0 = 2;
+static int ____must_checkpoint_parse_config_fourth_comma_0 = 2;
+static int ____must_checkpoint_parse_config_fifth_comma_0 = 2;
+static int ____must_checkpoint_parse_config_sixth_comma_0 = 2;
+static int ____must_checkpoint_main_conf_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"

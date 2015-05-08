@@ -118,6 +118,7 @@ CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
@@ -137,6 +138,7 @@ STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
 for INPUT in ${ABS_INPUTS[@]}; do
     INFO_FILE_PREFIX=${WORK_DIR}/$(basename ${INPUT})
     PREPROCESS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.cpp
+    PREPROCESSED_WITH_CONDS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.conds.cpp
     BITCODE_FILE=${WORK_DIR}/$(basename ${INPUT}).bc
     TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
     ANALYSIS_LOG_FILE=${WORK_DIR}/$(basename ${INPUT}).analysis.log
@@ -154,8 +156,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -o ${PREPROCESS_FILE} -g ${GXX_FLAGS} \
            -include${CHIMES_HOME}/src/libchimes/libchimes.h \
            ${CHIMES_DEF} ${DEFINES}
-
-           # -include stddef.h -include stdio.h \
 
     echo Inserting line pragmas in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
@@ -189,6 +189,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
         mv ${WORK_DIR}/${info_file} ${INFO_FILE_PREFIX}.${info_file}
 
     done
+
+    echo Setting up stack variable conditionals for ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${PREPROCESS_FILE} \
+        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info
+    mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
 
     ${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \

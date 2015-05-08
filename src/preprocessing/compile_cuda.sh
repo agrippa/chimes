@@ -18,7 +18,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O0"
+GXX_FLAGS="-g -O2"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
@@ -120,14 +120,22 @@ COMPILE_HELPER_WORK_DIR=${WORK_DIR}/compile_helper
 OPT=$(find_opt)
 CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
+BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-[[ ! $PROFILE ]] || GXX_FLAGS="${GXX_FLAGS} -pg"
+if [[ $PROFILE == 0 ]]; then
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
+else
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    GXX_FLAGS="${GXX_FLAGS} -pg"
+fi
+
 
 CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log
 ENV_FILE=${COMPILE_HELPER_WORK_DIR}/log.env
@@ -176,6 +184,13 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INPUT} > ${INTERMEDIATE_FILE}.lines
     mv ${INTERMEDIATE_FILE}.lines ${INTERMEDIATE_FILE}
 
+    echo Inserting braces in ${INTERMEDIATE_FILE}
+    cd ${NVCC_WORK_DIR} && ${BRACE_INSERT} -o ${INTERMEDIATE_FILE}.braces \
+        ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+        -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
+    cp ${INTERMEDIATE_FILE}.braces ${INTERMEDIATE_FILE}
+
     echo Generating bitcode for ${INTERMEDIATE_FILE} into ${BITCODE_FILE}
     cd ${NVCC_WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
         -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
@@ -186,6 +201,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             ${BITCODE_FILE} > $TMP_OBJ_FILE &> ${ANALYSIS_LOG_FILE}
     rm ${TMP_OBJ_FILE}
 
+    # Save info files off to a unique location
     echo Saving info files
     for info_file in ${INFO_FILES}; do
         if [[ ! -f ${NVCC_WORK_DIR}/${info_file} ]]; then
@@ -195,6 +211,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
         mv ${NVCC_WORK_DIR}/${info_file} ${INFO_FILE_PREFIX}.${info_file}
 
     done
+
+    echo Setting up stack variable conditionals for ${INTERMEDIATE_FILE}
+    cd ${NVCC_WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${INTERMEDIATE_FILE} \
+        ${INTERMEDIATE_FILE}.conds ${INFO_FILE_PREFIX}.stack.info
+    mv ${INTERMEDIATE_FILE}.conds ${INTERMEDIATE_FILE}
 
     ${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \
@@ -269,9 +290,9 @@ else
     done
 
     ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes \
-            -L${CHIMES_HOME}/src/libchimes -L${CUDA_LIB_PATH} -lchimes \
-            -lcudart ${OBJ_FILE_STR} -o ${OUTPUT} ${GXX_FLAGS} ${INCLUDES} \
-            ${LIB_PATHS} ${LIBS} ${LINKER_FLAGS}
+            -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart ${OBJ_FILE_STR} \
+            -o ${OUTPUT} ${GXX_FLAGS} ${INCLUDES} ${LIB_PATHS} ${LIBS} \
+            ${LINKER_FLAGS}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "parallel.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_timestampBarrier_msg_0 = 2;
+static int ____must_checkpoint_timestampBarrier_t_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
