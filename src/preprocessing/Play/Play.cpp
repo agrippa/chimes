@@ -50,7 +50,7 @@ namespace {
         BasicBlock *parent;
         std::vector<Instruction *> users;
 
-        bool alwaysCheckpoint;
+        bool mayCheckpoint;
         std::set<std::string> *causesCheckpoint;
 
         bool is_ptr;
@@ -177,13 +177,24 @@ namespace {
         void dumpStructInfoToFile(const char *filename,
                 std::map<std::string, StructInfo> *struct_fields);
         bool isCheckpoint(Function *callee);
-        bool isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
-                std::set<StoreInst *> *stores, bool foundStoreIn,
-                std::vector<std::string> *visited,
-                std::set<std::string> *causesCheckpoint, bool *definitelyCheckpoints);
+
+        std::string isPossibleCheckpointCall(CallInst *call);
+        std::map<BasicBlock *, std::set<std::string> > *collectPossibleCheckpointsInBBs(Function *F);
+        std::map<BasicBlock *, bool> *containsLoad(Function *F,
+                std::set<LoadInst *> *loads);
+
+        void isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
+                std::set<StoreInst *> *stores, bool foundStore,
+                std::set<BasicBlock *> *pre_visited,
+                std::set<BasicBlock *> *post_visited,
+                std::set<std::string> *causesCheckpoint,
+                std::map<BasicBlock *, std::set<std::string> > *bb_to_checkpoints);
+
         bool isPathFromCheckpointThroughLoad(BasicBlock *bb,
-                std::set<LoadInst *> *loads, bool foundCheckpointIn,
-                std::vector<std::string> *visited);
+                std::set<LoadInst *> *loads, bool foundCheckpoint,
+                std::set<BasicBlock *> *pre_visited,
+                std::set<BasicBlock *> *post_visited,
+                std::map<BasicBlock *, bool> *bb_to_loads);
         std::map<AllocaInst *, std::set<std::string> > *findStackAllocationsAliveAtCheckpoint(Function *F);
         CALLS_CHECKPOINT mayCreateCheckpoint(Function *F);
         CALLS_CHECKPOINT mayCreateCheckpointHelper(Function *F,
@@ -527,7 +538,7 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
                 assert((size_in_bits % 8) == 0);
                 uint64_t size_in_bytes = size_in_bits / 8;
 
-                fprintf(fp, "%d \"%s\" %llu\n", constant_index,
+                fprintf(fp, "%d \"%s\" %lu\n", constant_index,
                         accessable.c_str(), size_in_bytes);
                 return true;
             } else {
@@ -1176,42 +1187,26 @@ bool Play::isCheckpoint(Function *callee) {
 }
 
 void Play::initKnownFunctions() {
-    doesFunctionCreateCheckpoint["rand"] = DOES_NOT;
+    char conf_filename[1024];
+    char *chimes_home = getenv("CHIMES_HOME");
+    assert(chimes_home);
+    sprintf(conf_filename, "%s/src/preprocessing/non_checkpointing.conf",
+            chimes_home);
 
-    doesFunctionCreateCheckpoint["printf"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["fprintf"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["\x01_fopen"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["fclose"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["sprintf"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["fflush"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["fscanf"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["fgets"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["sscanf"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["fopen"] = DOES_NOT;
+    char *line = NULL; size_t line_length = 0;
+    ssize_t nchars;
+    FILE *fp = fopen(conf_filename, "r");
+    while ((nchars = getline(&line, &line_length, fp)) != (ssize_t)-1) {
+        while (nchars > 0 && line[nchars - 1] == '\n') {
+            line[nchars - 1] = '\0';
+            nchars--;
+        }
 
-    doesFunctionCreateCheckpoint["malloc"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["free"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["realloc"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["calloc"] = DOES_NOT;
-
-    doesFunctionCreateCheckpoint["log"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["floor"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["sqrt"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["ceil"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["qsort"] = DOES_NOT;
-
-    doesFunctionCreateCheckpoint["__assert_rtn"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["__assert_fail"] = DOES_NOT;
-
-    doesFunctionCreateCheckpoint["strcpy"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["strcat"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["strlen"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["strcmp"] = DOES_NOT;
-
-    doesFunctionCreateCheckpoint["exit"] = DOES_NOT;
-
-    doesFunctionCreateCheckpoint["gettimeofday"] = DOES_NOT;
-    doesFunctionCreateCheckpoint["localtime"] = DOES_NOT;
+        if (nchars > 0) {
+            doesFunctionCreateCheckpoint[std::string(line)] = DOES_NOT;
+        }
+    }
+    fclose(fp);
 }
 
 bool Play::isKnownFunction(Function *F) {
@@ -1569,44 +1564,123 @@ static std::map<Value *, std::string> *mapValueToOriginalVarname(
     return mapping;
 }
 
-bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
-        std::set<StoreInst *> *stores, bool foundStoreIn,
-        std::vector<std::string> *visited,
-        std::set<std::string> *causesCheckpoint, bool *definitelyCheckpoints) {
-    bool foundStore = foundStoreIn;
-
-    std::vector<std::string> my_visited(*visited);
-
-    if (std::find(my_visited.begin(), my_visited.end(), bb->getName()) != my_visited.end()) {
-        return false;
+std::string Play::isPossibleCheckpointCall(CallInst *call) {
+    if (!isa<IntrinsicInst>(call)) {
+        CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(
+                call->getCalledFunction());
+        if (doesCheckpoint == MAY || doesCheckpoint == DOES) {
+            return (call->getCalledFunction() == NULL ? "---" : 
+                    call->getCalledFunction()->getName().str());
+        }
     }
-    my_visited.push_back(bb->getName());
+    return ("");
+}
 
-    bool mayCheckpoint = false;
+std::map<BasicBlock *, std::set<std::string> > *Play::collectPossibleCheckpointsInBBs(Function *F) {
+    std::map<BasicBlock *, std::set<std::string> > *mapping =
+        new std::map<BasicBlock *, std::set<std::string> >();
 
-    for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; i++) {
-        Instruction *curr = &*i;
+    Function::BasicBlockListType &bblist = F->getBasicBlockList();
+    for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+            bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+        BasicBlock *bb = &*bb_iter;
 
-        if (foundStore) {
+        mapping->insert(std::pair<BasicBlock *, std::set<std::string> >(bb,
+                    std::set<std::string>()));
+
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                ++i) {
+            Instruction *curr = &*i;
+
             if (CallInst *call = dyn_cast<CallInst>(curr)) {
-                if (!isa<IntrinsicInst>(call)) {
-                    CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(call->getCalledFunction());
-                    if (doesCheckpoint == MAY) {
-                        mayCheckpoint = true;
-                        causesCheckpoint->insert(
-                                call->getCalledFunction() == NULL ? "" :
-                                call->getCalledFunction()->getName().str());
-                    } else if (doesCheckpoint == DOES) {
-                        *definitelyCheckpoints = true;
-                        return (true);
-                    }
+                std::string checkpointable_call_name = isPossibleCheckpointCall(call);
+                if (checkpointable_call_name.size() > 0) {
+                    mapping->at(bb).insert(checkpointable_call_name);
                 }
             }
-        } else {
-            if (StoreInst *store = dyn_cast<StoreInst>(curr)) {
-                if (stores->find(store) != stores->end()) {
-                    foundStore = true;
-                    my_visited.clear();
+        }
+    }
+
+    return (mapping);
+}
+
+std::map<BasicBlock *, bool> *Play::containsLoad(Function *F,
+        std::set<LoadInst *> *loads) {
+    std::map<BasicBlock *, bool> *mapping = new std::map<BasicBlock *, bool>();
+
+    Function::BasicBlockListType &bblist = F->getBasicBlockList();
+    for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
+            bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
+        BasicBlock *bb = &*bb_iter;
+
+        mapping->insert(std::pair<BasicBlock *, bool>(bb, false));
+
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
+                ++i) {
+            Instruction *curr = &*i;
+
+            if (isa<LoadInst>(curr) &&
+                    loads->find(dyn_cast<LoadInst>(curr)) != loads->end()) {
+                mapping->find(bb)->second = true;
+                break;
+            }
+        }
+    }
+
+    return (mapping);
+}
+
+void Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
+        std::set<StoreInst *> *stores, bool foundStore,
+        std::set<BasicBlock *> *pre_visited,
+        std::set<BasicBlock *> *post_visited,
+        std::set<std::string> *causesCheckpoint,
+        std::map<BasicBlock *, std::set<std::string> > *bb_to_checkpoints) {
+
+    if (foundStore) {
+        if (post_visited->find(bb) != post_visited->end()) {
+            return;
+        }
+        post_visited->insert(bb);
+
+        assert(bb_to_checkpoints->find(bb) != bb_to_checkpoints->end());
+        std::set<std::string> possible_checkpoints = bb_to_checkpoints->at(bb);
+        for (std::set<std::string>::iterator i = possible_checkpoints.begin(),
+                e = possible_checkpoints.end(); i != e; i++) {
+            causesCheckpoint->insert(*i);
+        }
+    } else {
+        if (pre_visited->find(bb) != pre_visited->end()) {
+            return;
+        }
+        pre_visited->insert(bb);
+
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; i++) {
+            Instruction *curr = &*i;
+
+            /*
+             * This block is here to make our analysis precise for stores that
+             * occur in the middle of a basic block. If we find a store in the
+             * middle of a basic block, we only want to consider the possible
+             * checkpoints that come after that store.
+             */
+            if (!foundStore) {
+                if (StoreInst *store = dyn_cast<StoreInst>(curr)) {
+                    /*
+                     * If this is a store to a stack variable discovered by the
+                     * AllocaVisitor
+                     */
+                    if (stores->find(store) != stores->end()) {
+                        foundStore = true;
+                    }
+                }
+            } else {
+                if (CallInst *call = dyn_cast<CallInst>(curr)) {
+                    std::string checkpointable_call_name =
+                        isPossibleCheckpointCall(call);
+                    if (checkpointable_call_name.size() > 0) {
+                        causesCheckpoint->insert(checkpointable_call_name);
+                    }
                 }
             }
         }
@@ -1615,19 +1689,10 @@ bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
     TerminatorInst *term = bb->getTerminator();
     for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
-        if (isPathFromFuncStartToCheckpointThroughStore(child, stores,
-                foundStore, &my_visited, causesCheckpoint, definitelyCheckpoints)) {
-            /*
-             * If the child block indicated that there is a function called
-             * which definitely checkpoints, return immediately and always
-             * checkpoint this variable.
-             */
-            if (*definitelyCheckpoints) return (true);
-            if (!mayCheckpoint) mayCheckpoint = true;
-        }
+        isPathFromFuncStartToCheckpointThroughStore(child, stores,
+                foundStore, pre_visited, post_visited, causesCheckpoint,
+                bb_to_checkpoints);
     }
-
-    return (mayCheckpoint);
 }
 
 /*
@@ -1635,31 +1700,41 @@ bool Play::isPathFromFuncStartToCheckpointThroughStore(BasicBlock *bb,
  * have been created.
  */
 bool Play::isPathFromCheckpointThroughLoad(BasicBlock *bb,
-        std::set<LoadInst *> *loads, bool foundCheckpointIn,
-        std::vector<std::string> *visited) {
-    bool foundCheckpoint = foundCheckpointIn;
+        std::set<LoadInst *> *loads, bool foundCheckpoint,
+        std::set<BasicBlock *> *pre_visited,
+        std::set<BasicBlock *> *post_visited,
+        std::map<BasicBlock *, bool> *bb_to_loads) {
 
-    std::vector<std::string> my_visited(*visited);
+    if (foundCheckpoint) {
+        if (post_visited->find(bb) != post_visited->end()) {
+            return (false);
+        }
+        post_visited->insert(bb);
 
-    if (std::find(my_visited.begin(), my_visited.end(), bb->getName()) != my_visited.end()) {
-        return false;
-    }
-    my_visited.push_back(bb->getName());
+        assert(bb_to_loads->find(bb) != bb_to_loads->end());
+        if (bb_to_loads->at(bb)) {
+            return (true);
+        }
+    } else {
+        if (pre_visited->find(bb) != pre_visited->end()) {
+            return (false);
+        }
+        pre_visited->insert(bb);
 
-    for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; i++) {
-        Instruction &curr = *i;
+        for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; i++) {
+            Instruction *curr = &*i;
 
-        if (foundCheckpoint) {
-            if (isa<LoadInst>(&curr) &&
-                    loads->find(dyn_cast<LoadInst>(&curr)) != loads->end()) {
-                return true;
-            }
-        } else {
-            if (CallInst *call = dyn_cast<CallInst>(&curr)) {
-                if (!isa<IntrinsicInst>(call) &&
-                        mayCreateCheckpoint(call->getCalledFunction()) != DOES_NOT) {
-                    foundCheckpoint = true;
-                    my_visited.clear();
+            if (!foundCheckpoint) {
+                if (CallInst *call = dyn_cast<CallInst>(curr)) {
+                    std::string possible_checkpoint_funcname = isPossibleCheckpointCall(call);
+                    if (possible_checkpoint_funcname.size() > 0) {
+                        foundCheckpoint = true;
+                    }
+                }
+            } else {
+                if (isa<LoadInst>(curr) &&
+                        loads->find(dyn_cast<LoadInst>(curr)) != loads->end()) {
+                    return (true);
                 }
             }
         }
@@ -1668,12 +1743,13 @@ bool Play::isPathFromCheckpointThroughLoad(BasicBlock *bb,
     TerminatorInst *term = bb->getTerminator();
     for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
-        if (isPathFromCheckpointThroughLoad(child, loads,
-                foundCheckpoint, &my_visited)) {
-            return true;
+        if (isPathFromCheckpointThroughLoad(child, loads, foundCheckpoint,
+                    pre_visited, post_visited, bb_to_loads)) {
+            return (true);
         }
     }
-    return false;
+
+    return (false);
 }
 
 /*
@@ -1699,10 +1775,17 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
 
     AllocaVisitor visitor(initial);
     visitor.driver();
+    llvm::errs() << "finished visitor\n";
 
-    std::vector<std::string> s_visited;
-    std::vector<std::string> l_visited;
+    std::set<BasicBlock *> s_pre_visited;
+    std::set<BasicBlock *> s_post_visited;
+    std::set<BasicBlock *> l_pre_visited;
+    std::set<BasicBlock *> l_post_visited;
 
+    /*
+     * Construct a mapping from stack variable allocation to a list of function
+     * names which may cause it to be checkpointed.
+     */
     std::map<AllocaInst *, std::set<std::string> > *result =
         new std::map<AllocaInst *, std::set<std::string> >();
     for (std::vector<AllocaInst *>::iterator i = initial->begin(),
@@ -1733,8 +1816,10 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
                         just_parent));
         } else {
             BasicBlock *entry = &F->getEntryBlock();
-            s_visited.clear();
-            l_visited.clear();
+            s_pre_visited.clear();
+            s_post_visited.clear();
+            l_pre_visited.clear();
+            l_post_visited.clear();
 
             /*
              * The analysis below is a little coarse because it simply asks
@@ -1754,28 +1839,40 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
              * any functions after the last load would be an improvement. TODO.
              */
             std::set<std::string> causesCheckpoint;
-            bool definitelyCheckpoints = false;
-            bool through_store = isPathFromFuncStartToCheckpointThroughStore(
-                    entry, stores, false, &s_visited, &causesCheckpoint,
-                    &definitelyCheckpoints);
+            std::map<BasicBlock *, std::set<std::string> > *bb_to_checkpoints =
+                collectPossibleCheckpointsInBBs(F);
+            std::map<BasicBlock *, bool> *bb_to_loads = containsLoad(F, loads);
+
+            llvm::errs() << "Started isPathFromFuncStartToCheckpointThroughStore\n";
+            isPathFromFuncStartToCheckpointThroughStore(entry, stores, false,
+                    &s_pre_visited, &s_post_visited, &causesCheckpoint,
+                    bb_to_checkpoints);
+            bool through_store = (causesCheckpoint.size() > 0);
+
+            llvm::errs() << "Started isPathFromCheckpointThroughLoad\n";
             bool through_load = isPathFromCheckpointThroughLoad(entry, loads,
-                    false, &l_visited);
+                    false, &l_pre_visited, &l_post_visited, bb_to_loads);
+            llvm::errs() << "Finished isPathFromCheckpointThroughLoad\n";
             bool should_checkpoint = (through_store && through_load);
             if (should_checkpoint) {
-                if (causesCheckpoint.find("") != causesCheckpoint.end() ||
-                        definitelyCheckpoints) {
+                if (causesCheckpoint.find("---") != causesCheckpoint.end()) {
                     /*
                      * If we are unable to fetch the function name/info for some
                      * called function then use the same behavior as if it were
-                     * unsolvable: always checkpoint this stack variable.
+                     * unsolvable: only checkpoint if the parent function may
+                     * cause a checkpoint.
                      */
+                    std::set<std::string> just_parent;
+                    just_parent.insert(F->getName().str());
                     result->insert(std::pair<AllocaInst *, std::set<std::string> >(curr,
-                                std::set<std::string>()));
+                                just_parent));
                 } else {
                     result->insert(std::pair<AllocaInst *, std::set<std::string> >(
                                 curr, causesCheckpoint));
                 }
             }
+
+            delete bb_to_checkpoints;
         }
     }
 
@@ -1801,18 +1898,16 @@ void Play::findStackAllocations(Module &M, const char *output_file,
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
         Function *F = &*I;
 
-        /*
-         * At the moment, I try to remove unnecessary stack variable
-         * registrations by just skipping any functions which cannot be on the
-         * stack when a checkpoint() call is made. This could be improved using
-         * variable live range analysis to figure out exactly which stack
-         * variables can be alive when a call to checkpoint() is made, and only
-         * checkpointing those. TODO.
-         */
-        if (mayCreateCheckpoint(F) == DOES_NOT || F->empty()) continue;
+        if (F->empty()) continue;
 
+        /*
+         * Find all stack variables that might be alive when a checkpoint is
+         * taken.
+         */
+        llvm::errs() << "Getting alive for function " << F->getName().str() << "\n";
         std::map<AllocaInst *, std::set<std::string> > *alive =
             findStackAllocationsAliveAtCheckpoint(F);
+        llvm::errs() << "Got alive for function " << F->getName().str() << "\n";
 
         std::map<Value *, std::string> *varname_mapping =
             mapValueToOriginalVarname(F);
@@ -1826,136 +1921,154 @@ void Play::findStackAllocations(Module &M, const char *output_file,
             for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e;
                     ++i) {
                 Instruction &inst = *i;
+
+                // If this is a declaration for space on the stack
                 if (AllocaInst *alloca = dyn_cast<AllocaInst>(&inst)) {
-                    if (alive->find(alloca) != alive->end() ||
-                            alloca->isArrayAllocation()) {
 
-                        std::string varname = alloca->getName().str();
-                        uint64_t type_size = layout->getTypeSizeInBits(
-                                alloca->getAllocatedType());
-                        assert(type_size % 8 == 0); // even number of bytes
+                    std::string varname = alloca->getName().str();
+                    uint64_t type_size = layout->getTypeSizeInBits(
+                            alloca->getAllocatedType());
+                    assert(type_size % 8 == 0); // even number of bytes
 
-                        // auto-generated llvm stack allocation for return values
-                        if (strcmp(varname.c_str(), "retval") == 0) {
-                            continue;
-                        }
+                    // auto-generated llvm stack allocation for return values
+                    if (strcmp(varname.c_str(), "retval") == 0) {
+                        continue;
+                    }
 
-                        /*
-                         * There may be stack allocations for temporary variables
-                         * that do not exist in the original source. These can be
-                         * safely ignored.
-                         */
-                        if (varname_mapping->find(alloca) == varname_mapping->end()) {
-                            continue;
-                        }
-                        varname = (*varname_mapping)[alloca];
+                    /*
+                     * There may be stack allocations for temporary variables
+                     * that do not exist in the original source. These can be
+                     * safely ignored.
+                     */
+                    if (varname_mapping->find(alloca) == varname_mapping->end()) {
+                        continue;
+                    }
+                    varname = (*varname_mapping)[alloca];
 
-                        int is_argument = 0;
-                        const char *arg_addr_suffix = ".addr";
-                        size_t found = varname.find(arg_addr_suffix);
-                        if (found != std::string::npos && found ==
-                                varname.length() - strlen(arg_addr_suffix)) {
+                    int is_argument = 0;
+                    const char *arg_addr_suffix = ".addr";
+                    size_t found = varname.find(arg_addr_suffix);
+                    if (found != std::string::npos && found ==
+                            varname.length() - strlen(arg_addr_suffix)) {
 
-                            varname = varname.substr(0, varname.length() -
-                                    strlen(arg_addr_suffix));
-
-                            /*
-                             * double check that we can find a matching argument to
-                             * this function if we think this stack allocation is
-                             * for an argument's address
-                             */
-                            for (Function::arg_iterator arg_iter = F->arg_begin(),
-                                    arg_end = F->arg_end(); arg_iter != arg_end;
-                                    arg_iter++) {
-                                Argument *arg = arg_iter;
-                                if (arg->getName().str() == varname) {
-                                    is_argument = 1;
-                                    break;
-                                }
-                            }
-                            assert(is_argument);
-                        }
-
-                        StackAllocInfo *info = new StackAllocInfo();
-                        info->type_size_in_bits = type_size;
-                        info->alloca = alloca;
-                        info->parent = bb;
-                        info->is_ptr = 0;
-                        info->is_struct = 0;
-                        info->struct_ptr_field_names =
-                            new std::vector<std::string>();
-                        info->alwaysCheckpoint = (alive->at(alloca).size() == 0);
-                        info->causesCheckpoint = new std::set<std::string>(alive->at(alloca));
-
-                        for (Value::use_iterator use_iter = alloca->use_begin(),
-                                use_end = alloca->use_end(); use_iter != use_end;
-                                use_iter++) {
-                            Use *use = &*use_iter;
-                            if (Instruction *user = dyn_cast<Instruction>(use->getUser())) {
-                                info->users.push_back(user);
-                            } else {
-                                fprintf(stderr, "User is not an instruction?\n");
-                                exit(1);
-                            }
-                        }
+                        varname = varname.substr(0, varname.length() -
+                                strlen(arg_addr_suffix));
 
                         /*
-                         * Construct a unique variable name based on the containing
-                         * function and this local's name.
+                         * double check that we can find a matching argument to
+                         * this function if we think this stack allocation is
+                         * for an argument's address
                          */
-                        std::string *unique_varname = getUniqueVarname(varname,
-                                F, &found_variables, M);
-
-                        info->varname = unique_varname;
-
-                        Type *ty = alloca->getAllocatedType();
-                        if (ty->isPointerTy()) {
-                            info->is_ptr = 1;
-                        } else if (ty->isStructTy()) {
-                            StructType *structTy = dyn_cast<StructType>(ty);
-                            assert(structTy != NULL);
-                            std::string struct_name = structTy->getStructName().str().substr(7);
-
-                            if (structFields->find(struct_name) != structFields->end() && !structTy->isLiteral()) {
-                                assert(structTy->getStructName().str().find("struct.") == 0);
-                                info->is_struct = 1;
-                                info->struct_type_name = struct_name;
-
-                                for (unsigned int i = 0; i < structTy->getStructNumElements();
-                                        i++) {
-                                    Type *field_type = structTy->getStructElementType(i);
-                                    if (field_type->isPointerTy()) {
-                                        std::vector<StructFieldInfo>* fields = structFields->at(struct_name).get_fields();
-                                        std::string fieldname = fields->at(i).get_name();
-                                        info->struct_ptr_field_names->push_back(fieldname);
-                                    }
-                                }
+                        for (Function::arg_iterator arg_iter = F->arg_begin(),
+                                arg_end = F->arg_end(); arg_iter != arg_end;
+                                arg_iter++) {
+                            Argument *arg = arg_iter;
+                            if (arg->getName().str() == varname) {
+                                is_argument = 1;
+                                break;
                             }
                         }
+                        assert(is_argument);
+                    }
 
+                    StackAllocInfo *info = new StackAllocInfo();
+                    info->type_size_in_bits = type_size;
+                    info->alloca = alloca;
+                    info->parent = bb;
+                    info->is_ptr = 0;
+                    info->is_struct = 0;
+                    info->struct_ptr_field_names =
+                        new std::vector<std::string>();
+                    if (alive->find(alloca) != alive->end()) {
+                        /*
+                         * There will always be at least one function that this
+                         * variable's registration is conditioned on (its
+                         * enclosing parent).
+                         */
+                        assert(alive->at(alloca).size() > 0);
+                        info->mayCheckpoint = true;
+                        info->causesCheckpoint = new std::set<std::string>(
+                                alive->at(alloca));
+                    } else {
+                        /*
+                         * This stack variable was not identified as being
+                         * possibly alive during a checkpoint, and therefore we
+                         * can avoid inserting a registration call for it.
+                         * However, we still want to split it if there is an
+                         * initializer.
+                         */
+                        info->mayCheckpoint = false;
+                        info->causesCheckpoint = new std::set<std::string>();
+                    }
 
-                        std::string backing_string;
-                        raw_string_ostream stream(backing_string);
-                        ty->print(stream);
-                        stream.flush();
-                        info->full_type_name = stream.str();
-
-                        if (info->users.size() > 0) {
-                            info->filename = new std::string(
-                                    findFilenameContainingBB(*bb, M));
-                            alloc_infos.push_back(info);
+                    for (Value::use_iterator use_iter = alloca->use_begin(),
+                            use_end = alloca->use_end(); use_iter != use_end;
+                            use_iter++) {
+                        Use *use = &*use_iter;
+                        if (Instruction *user = dyn_cast<Instruction>(use->getUser())) {
+                            info->users.push_back(user);
                         } else {
-                            /*
-                             * Throw away the info we just generated if this is an
-                             * unused stack allocation
-                             */
-                            delete info;
+                            fprintf(stderr, "User is not an instruction?\n");
+                            exit(1);
                         }
+                    }
+
+                    /*
+                     * Construct a unique variable name based on the containing
+                     * function and this local's name.
+                     */
+                    std::string *unique_varname = getUniqueVarname(varname,
+                            F, &found_variables, M);
+
+                    info->varname = unique_varname;
+
+                    Type *ty = alloca->getAllocatedType();
+                    if (ty->isPointerTy()) {
+                        info->is_ptr = 1;
+                    } else if (ty->isStructTy()) {
+                        StructType *structTy = dyn_cast<StructType>(ty);
+                        assert(structTy != NULL);
+                        std::string struct_name = structTy->getStructName().str().substr(7);
+
+                        if (structFields->find(struct_name) != structFields->end() && !structTy->isLiteral()) {
+                            assert(structTy->getStructName().str().find("struct.") == 0);
+                            info->is_struct = 1;
+                            info->struct_type_name = struct_name;
+
+                            for (unsigned int i = 0; i < structTy->getStructNumElements();
+                                    i++) {
+                                Type *field_type = structTy->getStructElementType(i);
+                                if (field_type->isPointerTy()) {
+                                    std::vector<StructFieldInfo>* fields = structFields->at(struct_name).get_fields();
+                                    std::string fieldname = fields->at(i).get_name();
+                                    info->struct_ptr_field_names->push_back(fieldname);
+                                }
+                            }
+                        }
+                    }
+
+                    std::string backing_string;
+                    raw_string_ostream stream(backing_string);
+                    ty->print(stream);
+                    stream.flush();
+                    info->full_type_name = stream.str();
+
+                    if (info->users.size() > 0) {
+                        info->filename = new std::string(
+                                findFilenameContainingBB(*bb, M));
+                        alloc_infos.push_back(info);
+                    } else {
+                        /*
+                         * Throw away the info we just generated if this is an
+                         * unused stack allocation
+                         */
+                        delete info;
                     }
                 }
             }
         }
     }
+    llvm::errs() << "Done collecting stack variable info\n";
 
     /*
      * Find which line in the original source to insert a stack variable
@@ -1975,7 +2088,8 @@ void Play::findStackAllocations(Module &M, const char *output_file,
                 info->full_type_name.c_str(), info->type_size_in_bits,
                 info->is_ptr, info->is_struct);
         if (info->is_struct) {
-            fprintf(fp, " %s %d", info->struct_type_name.c_str(), field_names->size());
+            fprintf(fp, " %s %lu", info->struct_type_name.c_str(),
+                    field_names->size());
             for (std::vector<std::string>::iterator field_iter =
                     field_names->begin(), field_end = field_names->end();
                     field_iter != field_end; field_iter++) {
@@ -1983,18 +2097,17 @@ void Play::findStackAllocations(Module &M, const char *output_file,
             }
         }
 
-        if (info->alwaysCheckpoint) {
+        if (info->mayCheckpoint) {
             fprintf(fp, " 1");
-        } else {
-            fprintf(fp, " 0");
             for (std::set<std::string>::iterator i =
                     info->causesCheckpoint->begin(), e =
                     info->causesCheckpoint->end(); i != e; i++) {
                 std::string curr = *i;
                 fprintf(fp, " %s", curr.c_str());
             }
+        } else {
+            fprintf(fp, " 0");
         }
-
         fprintf(fp, "\n");
     }
 
@@ -2235,6 +2348,11 @@ static void printGroupsChanged(FILE *fp, Function *F,
     }
 }
 
+/*
+ * This function dumps a list of the names of the functions called for each
+ * function defined in this module. If a callee name cannot be resolved (e.g. it
+ * is a function pointer) we explicitly indicate this in the dumped output.
+ */
 void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
     FILE *fp = fopen(output_file, "w");
 
@@ -2248,11 +2366,10 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
 
         Function::BasicBlockListType &bblist = F->getBasicBlockList();
         for (Function::BasicBlockListType::iterator bb_iter = bblist.begin(),
-                bb_end = bblist.end();
-                bb_iter != bb_end && !contains_unknown_functions; bb_iter++) {
+                bb_end = bblist.end(); bb_iter != bb_end; bb_iter++) {
             BasicBlock *bb = &*bb_iter;
             for (BasicBlock::iterator i = bb->begin(), e = bb->end();
-                    i != e && !contains_unknown_functions; ++i) {
+                    i != e; ++i) {
                 Instruction &inst = *i;
 
                 if (CallInst *call = dyn_cast<CallInst>(&inst)) {
@@ -2270,25 +2387,24 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
             }
         }
 
-        if (!contains_unknown_functions) {
-            fprintf(fp, "%s", F->getName().str().c_str());
+        fprintf(fp, "%s %d", F->getName().str().c_str(),
+                contains_unknown_functions);
 
-            CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(F);
-            if (doesCheckpoint == DOES) {
-                fprintf(fp, " DOES");
-            } else if (doesCheckpoint == DOES_NOT) {
-                fprintf(fp, " DOES_NOT");
-            } else {
-                fprintf(fp, " MAY");
-            }
-
-            for (std::set<std::string>::iterator i = called.begin(),
-                    e = called.end(); i != e; i++) {
-                std::string curr = *i;
-                fprintf(fp, " %s", curr.c_str());
-            }
-            fprintf(fp, "\n");
+        CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(F);
+        if (doesCheckpoint == DOES) {
+            fprintf(fp, " DOES");
+        } else if (doesCheckpoint == DOES_NOT) {
+            fprintf(fp, " DOES_NOT");
+        } else {
+            fprintf(fp, " MAY");
         }
+
+        for (std::set<std::string>::iterator i = called.begin(),
+                e = called.end(); i != e; i++) {
+            std::string curr = *i;
+            fprintf(fp, " %s", curr.c_str());
+        }
+        fprintf(fp, "\n");
     }
 
     fclose(fp);

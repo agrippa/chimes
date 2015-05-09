@@ -1516,8 +1516,8 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
-    // const unsigned long long __chimes_overhead_start_time =
-    //     perf_profile::current_time_ms();
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
 
     const string mangled_name_str(mangled_name);
     // fprintf(stderr, "Thinking about registering %s\n", mangled_name);
@@ -1544,7 +1544,7 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 
         program_stack->back()->add_stack_var(new_var);
     }
-    // ADD_TO_OVERHEAD
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_STACK_VAR, __start_time);
 #endif

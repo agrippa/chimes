@@ -194,11 +194,12 @@ public:
         type_size_in_bits(set_type_size_in_bits), is_ptr(set_is_ptr),
         is_struct(set_is_struct) { }
 
-    bool get_always_checkpoint() { return always_checkpoint; }
-    void set_always_checkpoint(bool s) { always_checkpoint = s; }
+    bool get_may_checkpoint() { return may_checkpoint; }
+    void set_may_checkpoint(bool s) { may_checkpoint = s; }
     void add_checkpoint_cause(std::string funcname) {
         checkpoint_causes.insert(funcname);
     }
+    std::set<std::string> *get_checkpoint_causes() { return &checkpoint_causes; }
 
     void set_struct_type_name(std::string s) { struct_type_name = s; }
     std::string get_struct_type_name() { return struct_type_name; }
@@ -225,8 +226,27 @@ private:
     bool is_struct;
     std::string struct_type_name;
     std::vector<std::string> ptr_fields;
-    bool always_checkpoint;
+    bool may_checkpoint;
     std::set<std::string> checkpoint_causes;
+};
+
+enum CREATES_CHECKPOINT { DOES_NOT = 0, MAY = 1, DOES = 2 };
+
+class FunctionCallees {
+    public:
+        FunctionCallees(std::string set_name, bool set_calls_unknown_functions,
+                CREATES_CHECKPOINT set_may_checkpoint) : name(set_name),
+                calls_unknown_functions(set_calls_unknown_functions),
+                may_checkpoint(set_may_checkpoint) { }
+        void add_checkpoint_cause(std::string cause) {
+            checkpoint_causes.insert(cause);
+        }
+        CREATES_CHECKPOINT get_may_checkpoint() { return may_checkpoint; }
+    private:
+        std::string name;
+        bool calls_unknown_functions;
+        CREATES_CHECKPOINT may_checkpoint;
+        std::set<std::string> checkpoint_causes;
 };
 
 class StructField {
@@ -294,7 +314,8 @@ public:
             const char *diagnostic_filename, const char *working_dirname,
             const char *func_filename, const char *call_filename,
             const char *exit_filename, const char *reachable_filename,
-            const char *omp_filename, const char *firstprivate_filename) :
+            const char *omp_filename, const char *firstprivate_filename,
+            const char *call_tree_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -302,7 +323,8 @@ public:
             diagnostic_file(diagnostic_filename), working_dir(working_dirname),
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
-            omp_file(omp_filename), firstprivate_file(firstprivate_filename) {
+            omp_file(omp_filename), firstprivate_file(firstprivate_filename),
+            call_tree_file(call_tree_filename) {
         module_id = hash(module_name);
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
@@ -313,6 +335,7 @@ public:
         func_exits = parseFunctionExits();
         reachable = parseReachable();
         omp_pragmas = parseOMPPragmas();
+        call_tree = parseCallTree();
 
         diagnostics.open(diagnostic_file);
         firstprivate.open(firstprivate_file);
@@ -370,11 +393,13 @@ public:
     void update_line_numbers();
     size_t get_module_id();
 
+    bool always_checkpoints(StackAlloc *alloc);
+
 private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
-            omp_file, firstprivate_file;
+            omp_file, firstprivate_file, call_tree_file;
         std::ofstream diagnostics;
         std::ofstream firstprivate;
 
@@ -389,6 +414,7 @@ private:
         std::map<std::string, FunctionExit *> *func_exits;
         std::vector<ReachableInfo> *reachable;
         std::vector<OpenMPPragma> *omp_pragmas;
+        std::map<std::string, FunctionCallees> *call_tree;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
@@ -399,6 +425,7 @@ private:
         std::map<std::string, FunctionExit *> *parseFunctionExits();
         std::vector<ReachableInfo> *parseReachable();
         std::vector<OpenMPPragma> *parseOMPPragmas();
+        std::map<std::string, FunctionCallees> *parseCallTree();
 
         size_t module_id;
 };

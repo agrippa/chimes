@@ -20,12 +20,12 @@ def get_stack_vars(stack_var_filename):
         tokens = line.split()
 
         # If this is a stack var that we don't want to always checkpoint
-        if tokens[len(tokens) - 1] != '1':
+        if tokens[len(tokens) - 1] != '0':
             varname = tokens[1]
             var = StackVar(varname)
 
             index = len(tokens) - 1
-            while tokens[index] != '0':
+            while tokens[index] != '1':
                 var.add_cause(tokens[index])
                 index = index - 1
 

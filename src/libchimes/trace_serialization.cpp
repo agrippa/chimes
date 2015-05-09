@@ -86,7 +86,6 @@ map<unsigned, vector<int> >* deserialize_traces(void *buffer, size_t len,
             result->at(thread).push_back(trace_ele);
         }
     }
-    fprintf(stderr, "%lu %lu\n",(size_t)(iter - (unsigned char *)buffer), len);
     assert((size_t)(iter - (unsigned char *)buffer) == len);
 
     return (result);

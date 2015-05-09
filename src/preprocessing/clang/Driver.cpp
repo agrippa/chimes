@@ -71,34 +71,21 @@ static llvm::cl::opt<std::string> omp_file("t",
 static llvm::cl::opt<std::string> firstprivate_file("v",
         llvm::cl::desc("firstprivate file"),
         llvm::cl::value_desc("firstprivate_info"));
+static llvm::cl::opt<std::string> call_tree_file("b",
+        llvm::cl::desc("call tree file"),
+        llvm::cl::value_desc("call_tree_info"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
 std::string curr_func;
 FunctionDecl *curr_func_decl = NULL;
 std::vector<StackAlloc *> *insert_at_front = NULL;
+std::set<std::string> *ignorable = NULL;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
 static std::map<std::string, int> num_register_labels;
 static std::map<std::string, int> num_call_labels;
-
-/*
- * __builtin_expect and operator= are an abuse of this array's intended purpose
- * as a list of functions which we don't need to worry about modifying their
- * inputs.
- */
-std::string ignorable_arr[] = {"malloc_wrapper", "realloc_wrapper",
-    "free_wrapper", "cudaMalloc_wrapper", "cudaFree_wrapper",
-    "init_chimes", "new_stack", "rm_stack", "register_stack_var",
-    "alias_group_changed", "printf", "fprintf", "exp", "strchr", "exit",
-    "atoi", "atof", "fopen", "getopt", "LIBCHIMES_THREAD_NUM", "LIBCHIMES_NUM_THREADS",
-    "entering_omp_parallel", "leaving_omp_parallel",
-    "register_thread_local_stack_vars", "omp_get_thread_num",
-    "__builtin_expect", "operator=", "sqrtf", "sqrtl", "cbrtf", "cbrtl",
-    "fabsf", "fabs", "fabsl", "calloc_wrapper", "__assert_rtn", "__assert_fail",
-    "pow", "sprintf", "qsort"};
-std::set<std::string> *ignorable = NULL;
 
 class Pass {
 public:
@@ -300,9 +287,22 @@ int main(int argc, const char **argv) {
   check_opt(module_id_file, "Module ID file");
   check_opt(omp_file, "OpenMP file");
   check_opt(firstprivate_file, "Firstprivate file");
+  check_opt(call_tree_file, "Call tree file");
 
-  ignorable = new std::set<std::string>(ignorable_arr,
-          ignorable_arr + sizeof(ignorable_arr) / sizeof(ignorable_arr[0]));
+  ignorable = new std::set<std::string>();
+  char *chimes_home = getenv("CHIMES_HOME");
+  assert(chimes_home);
+  std::stringstream file_ss;
+  file_ss << std::string(chimes_home) <<
+      "/src/preprocessing/non_checkpointing.conf";
+
+  std::ifstream infile(file_ss.str());
+  std::string line;
+  while (std::getline(infile, line)) {
+      if (line.size() > 0) {
+          ignorable->insert(line);
+      }
+  }
 
   bool updateFile = true;
   if (contains_line_markings.compare("true") == 0) {
@@ -320,7 +320,7 @@ int main(int argc, const char **argv) {
               original_file.c_str(), diag_file.c_str(),
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
-              firstprivate_file.c_str());
+              firstprivate_file.c_str(), call_tree_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;

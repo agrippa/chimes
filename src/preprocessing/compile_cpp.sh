@@ -18,7 +18,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O2"
+GXX_FLAGS="-g -O0"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
@@ -211,6 +211,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -c true \
             -t ${INFO_FILE_PREFIX}.omp.info \
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
+            -b ${INFO_FILE_PREFIX}.tree.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
