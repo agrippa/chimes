@@ -20,7 +20,8 @@ if __name__ == '__main__':
     output_file = open(output_filename, 'w')
 
     for var in stack_vars:
-        output_file.write('static int ____must_checkpoint_' + var.name.replace('|', '_') + ' = 2;\n')
+        output_file.write('static int ____must_checkpoint_' +
+                          var.name.replace('|', '_') + ' = 2;\n')
     output_file.write('\n')
 
     transfer(input_file, output_file)

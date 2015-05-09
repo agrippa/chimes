@@ -14,6 +14,8 @@ static std::string get_cond_registration_varname(std::string mangled_varname) {
 }
 
 std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
+    assert(alloc->get_may_checkpoint());
+
     int first_pipe = alloc->get_mangled_varname().find('|');
     std::string actual_name = alloc->get_mangled_varname().substr(
             first_pipe + 1);;
@@ -23,7 +25,7 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
 
     std::stringstream ss;
     ss << "\"" << alloc->get_mangled_varname() << "\", ";
-    if (alloc->get_always_checkpoint()) {
+    if (insertions->always_checkpoints(alloc)) {
         ss << "(int *)0x0, ";
     } else {
         ss << "&" << cond_varname << ", ";
@@ -53,7 +55,7 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
 
 std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
     std::stringstream ss;
-    if (alloc->get_always_checkpoint()) {
+    if (insertions->always_checkpoints(alloc)) {
         ss << " register_stack_var(" << constructRegisterStackVarArgs(alloc) <<
             "); ";
     } else {

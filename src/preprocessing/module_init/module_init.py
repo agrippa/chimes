@@ -46,8 +46,13 @@ class StructFields(object):
 
 
 class Callees(object):
-    def __init__(self, name, callees):
+    def __init__(self, name, calls_unknown, creates_checkpoint, callees):
+        assert calls_unknown == '0' or calls_unknown == '1'
+        assert creates_checkpoint == 'DOES' or \
+               creates_checkpoint == 'DOES_NOT' or creates_checkpoint == 'MAY'
         self.name = name
+        self.calls_unknown = True if calls_unknown == '1' else False
+        self.creates_checkpoint = creates_checkpoint
         self.callees = callees
 
 
@@ -173,7 +178,7 @@ def get_call_tree(call_tree_filename):
 
     for line in fp:
         tokens = line.split()
-        call_tree.append(Callees(tokens[0], tokens[2:]))
+        call_tree.append(Callees(tokens[0], tokens[1], tokens[2], tokens[3:]))
 
     fp.close()
 

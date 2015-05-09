@@ -90,7 +90,8 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
             std::string mangled = constructMangledName(v->getName().str());
             StackAlloc *alloc = insertions->findStackAlloc(mangled);
 
-            if (alloc != NULL) {
+
+            if (alloc != NULL && alloc->get_may_checkpoint()) {
                 assert(allocs.find(v) == allocs.end());
                 allocs[v] = alloc;
             }
@@ -115,7 +116,16 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
         if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
 
             if (allocs.find(v) != allocs.end()) {
-                StackAlloc *alloc = allocs[v];
+                StackAlloc *alloc = allocs.at(v);
+                /*
+                 * If this was identified as a variable which may have a
+                 * STORE->LOAD pair across a function call which MAY/DOES create
+                 * a checkpoint.
+                 *
+                 * alloc->checkpoint_causes only includes functions which
+                 * MAY or DOES create a checkpoint, no DOES_NOT.
+                 */
+                assert(alloc->get_may_checkpoint());
                 acc << constructRegisterStackVar(alloc);
                 if (v->hasInit() && clang::dyn_cast<clang::InitListExpr>(v->getInit())) {
                     anyInitLists = true;

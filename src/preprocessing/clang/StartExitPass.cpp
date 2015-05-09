@@ -28,9 +28,20 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
          * or exit metadata.
          */
         if (funcAliases != NULL) {
+            int nCheckpointedArgs = 0;
+            if (insert_at_front != NULL) {
+                for (std::vector<StackAlloc *>::iterator i =
+                        insert_at_front->begin(), e = insert_at_front->end();
+                        i != e; i++) {
+                    StackAlloc *alloc = *i;
+                    if (alloc->get_may_checkpoint()) {
+                        nCheckpointedArgs++;
+                    }
+                }
+            }
             std::stringstream ss;
             ss << "new_stack((void *)(&" << curr_func << "), " << funcAliases->nargs() <<
-                ", " << (insert_at_front == NULL ? 0 : insert_at_front->size());
+                ", " << nCheckpointedArgs;
             for (unsigned i = 0; i < funcAliases->nargs(); i++) {
                 ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
             }
@@ -44,8 +55,10 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
                         i != e; i++) {
                     StackAlloc *alloc = *i;
 
-                    std::string args = constructRegisterStackVarArgs(alloc);
-                    ss << ", " << args;
+                    if (alloc->get_may_checkpoint()) {
+                        std::string args = constructRegisterStackVarArgs(alloc);
+                        ss << ", " << args;
+                    }
                 }
                 insert_at_front = NULL;
             }

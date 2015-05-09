@@ -515,14 +515,14 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
             }
         }
 
-        size_t always_checkpoint_end = line.find(' ');
-        std::string always_checkpoint_str = line.substr(0,
-                always_checkpoint_end);
-        int always_checkpoint = atoi(always_checkpoint_str.c_str());
-        alloc->set_always_checkpoint(always_checkpoint > 0);
+        size_t may_checkpoint_end = line.find(' ');
+        std::string may_checkpoint_str = line.substr(0,
+                may_checkpoint_end);
+        int may_checkpoint = atoi(may_checkpoint_str.c_str());
+        alloc->set_may_checkpoint(may_checkpoint > 0);
 
-        if (!always_checkpoint) {
-            line = line.substr(always_checkpoint_end + 1);
+        if (may_checkpoint) {
+            line = line.substr(may_checkpoint_end + 1);
 
             while (1) {
                 size_t end = line.find(' ');
@@ -533,7 +533,7 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
                 line = line.substr(end + 1);
             }
         } else {
-            assert(always_checkpoint_end == std::string::npos);
+            assert(may_checkpoint_end == std::string::npos);
         }
 
         assert(allocs->find(mangled_name) == allocs->end());
@@ -541,6 +541,57 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     }
 
     return allocs;
+}
+
+std::map<std::string, FunctionCallees> *DesiredInsertions::parseCallTree() {
+    std::ifstream fp;
+    fp.open(call_tree_file, std::ios::in);
+    std::map<std::string, FunctionCallees> *call_tree =
+        new std::map<std::string, FunctionCallees>();
+
+    std::string line;
+    while (getline(fp, line)) {
+        size_t end = line.find(' ');
+        std::string name = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        std::string s_contains_unknown_functions = line.substr(0, end);
+        assert(s_contains_unknown_functions == "1" ||
+                s_contains_unknown_functions == "0");
+        bool contains_unknown_functions = (s_contains_unknown_functions == "1");
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        std::string may_checkpoint_str = line.substr(0, end);
+        CREATES_CHECKPOINT may_checkpoint;
+        if (may_checkpoint_str == "DOES") {
+            may_checkpoint = DOES;
+        } else if (may_checkpoint_str == "DOES_NOT") {
+            may_checkpoint = DOES_NOT;
+        } else if (may_checkpoint_str == "MAY") {
+            may_checkpoint = MAY;
+        } else {
+            assert(false);
+        }
+        line = line.substr(end + 1);
+
+        FunctionCallees callees(name, contains_unknown_functions,
+                may_checkpoint);
+
+        do {
+            end = line.find(' ');
+            std::string func_name = line.substr(0, end);
+            callees.add_checkpoint_cause(func_name);
+            line = line.substr(end + 1);
+        } while (end != std::string::npos);
+
+        assert(call_tree->find(name) == call_tree->end());
+        call_tree->insert(std::pair<std::string, FunctionCallees>(name,
+                    callees));
+    }
+
+    return (call_tree);
 }
 
 StructFields *DesiredInsertions::get_struct_fields_for(std::string name) {
@@ -987,4 +1038,30 @@ void DesiredInsertions::update_line_numbers() {
     }
 
     transforms.clear();
+}
+
+bool DesiredInsertions::always_checkpoints(StackAlloc *alloc) {
+    std::set<std::string> *checkpoint_causes = alloc->get_checkpoint_causes();
+    for (std::set<std::string>::iterator i = checkpoint_causes->begin(),
+            e = checkpoint_causes->end(); i != e; i++) {
+        std::string cause = *i;
+
+        if (cause == "_Z10checkpointv") return (true);
+
+        if (call_tree->find(cause) == call_tree->end()) {
+            /*
+             * Externally defined functions may not have an entry in the call
+             * tree. For example, given an application compiled from two files
+             * there may be missing nodes in the call tree from file B when
+             * transforming file A. For these functions, we can't assert that
+             * they always checkpoint so we just skip them.
+             */
+            continue;
+        }
+
+        if (call_tree->at(cause).get_may_checkpoint() == DOES) {
+            return (true);
+        }
+    }
+    return (false);
 }
