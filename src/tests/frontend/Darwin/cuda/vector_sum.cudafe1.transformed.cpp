@@ -26813,7 +26813,7 @@ cudaError_t error; ;
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  lbl_2: int *h_A; register_stack_var("main|h_A|0", (int *)0x0, "i32*", (void *)(&h_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int *h_B; register_stack_var("main|h_B|0", (int *)0x0, "i32*", (void *)(&h_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int *h_C; register_stack_var("main|h_C|0", (int *)0x0, "i32*", (void *)(&h_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_5: int *d_A; register_stack_var("main|d_A|0", &____must_checkpoint_main_d_A_0, "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int *d_B; register_stack_var("main|d_B|0", &____must_checkpoint_main_d_B_0, "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: int *d_C; register_stack_var("main|d_C|0", &____must_checkpoint_main_d_C_0, "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } ;
+ lbl_5: int *d_A; if (____must_checkpoint_main_d_A_0 != 0) { register_stack_var("main|d_A|0", &____must_checkpoint_main_d_A_0, "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_6; } lbl_6: int *d_B; if (____must_checkpoint_main_d_B_0 != 0) { register_stack_var("main|d_B|0", &____must_checkpoint_main_d_B_0, "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_7; } lbl_7: int *d_C; if (____must_checkpoint_main_d_C_0 != 0) { register_stack_var("main|d_C|0", &____must_checkpoint_main_d_C_0, "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_8; } ;
 # 28 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 h_A = ((int *)malloc_wrapper(sizeof(int) * N, 10983886093799450819UL, 0, 0));
 # 29 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26849,7 +26849,7 @@ alias_group_changed(2, (size_t)(10983886093799450794UL), (size_t)(10983886093799
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  call_lbl_16: calling((void*)&checkpoint, 16, 0UL, 0); checkpoint();
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_10: FILE *fp; register_stack_var("main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } fp = (fopen("dump.out", "w")) ;
+ lbl_10: FILE *fp; if (____must_checkpoint_main_fp_0 != 0) { register_stack_var("main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } fp = (fopen("dump.out", "w")) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 for (i = 0; i < N; i++) {
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

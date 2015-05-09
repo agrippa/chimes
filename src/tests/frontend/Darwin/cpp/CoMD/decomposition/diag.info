@@ -31,7 +31,7 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 164  call_lbl_3: calling((void*)&getNRanks, 3, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 110  call_lbl_7: calling((void*)&getMyRank, 7, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15  register_stack_var("initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15  if (____must_checkpoint_initDecomposition_dd_0 != 0) { register_stack_var("initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 639  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 58 121  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

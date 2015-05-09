@@ -7,6 +7,6 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 131  call_lbl_3: calling((void*)&foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 11 5  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10  register_stack_var("main|b|0", &____must_checkpoint_main_b_0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10  if (____must_checkpoint_main_b_0 != 0) { register_stack_var("main|b|0", &____must_checkpoint_main_b_0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 8 130  if (____chimes_replaying) { goto lbl_0; } 

@@ -1,1 +1,1 @@
-main _fopen _Z10checkpointv fclose fprintf free malloc printf rand
+main DOES _fopen _Z10checkpointv fclose fprintf free malloc printf rand

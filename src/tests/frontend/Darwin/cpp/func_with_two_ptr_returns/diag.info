@@ -1,5 +1,4 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 5 alias_group_changed(3, (size_t)(16401429439071256621UL), (size_t)(16401429439071256622UL), (size_t)(16401429439071256623UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 5 alias_group_changed(1, (size_t)(16401429439071256624UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 5 alias_group_changed(4, (size_t)(16401429439071256621UL), (size_t)(16401429439071256622UL), (size_t)(16401429439071256623UL), (size_t)(16401429439071256624UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 6 21 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 6 42 , 16401429439071256641UL, 0, 0
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 8 9 alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL); 
@@ -11,12 +10,12 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_re
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 14 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 6 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 16401429439071256641UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 6 83 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 131  void *tmp;  tmp = (haha_this_sux_part_trois()) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 169 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 5  void *tmp;  tmp = (haha_this_sux_part_trois()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 43 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 5 87  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 144  call_lbl_3: calling((void*)&haha_this_sux_part_trois, 3, 16401429439071256631UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 63  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 132  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 141  register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 141  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 18  call_lbl_2: calling((void*)&haha_this_sux_part_trois, 2, 16401429439071256631UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 165  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 6  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 15  register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 15  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 14 130  if (____chimes_replaying) { goto lbl_0; } 

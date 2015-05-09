@@ -1,2 +1,1 @@
-/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 17 : { 23, 24, 25 } direct:call:_Z24haha_this_sux_part_troisv
-/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 5 : { 26 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 5 : { 23, 24, 25, 26 } direct:call:_Z10checkpointv

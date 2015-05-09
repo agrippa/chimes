@@ -1,2 +1,2 @@
-_Z3foov _Z10checkpointv
-main _Z3foov omp_get_thread_num printf
+_Z3foov DOES _Z10checkpointv
+main DOES _Z3foov omp_get_thread_num printf

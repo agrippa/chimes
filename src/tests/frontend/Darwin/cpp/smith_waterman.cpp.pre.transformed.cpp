@@ -2054,12 +2054,12 @@ signed char* read_file( FILE* file, size_t* n_chars ) {new_stack((void *)(&read_
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  alias_group_changed(2, (size_t)(2568646267985526122UL), (size_t)(2568646267985526123UL)); call_lbl_2: calling((void*)&fseek, 2, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 2);
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_0: long file_size; register_stack_var("read_file|file_size|0", &____must_checkpoint_read_file_file_size_0, "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } call_lbl_3: calling((void*)&ftell, 3, 0UL, 1, (size_t)(2568646267985526162UL)); file_size = (ftell(file)) ;
+ lbl_0: long file_size; if (____must_checkpoint_read_file_file_size_0 != 0) { register_stack_var("read_file|file_size|0", &____must_checkpoint_read_file_file_size_0, "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } call_lbl_3: calling((void*)&ftell, 3, 0UL, 1, (size_t)(2568646267985526162UL)); file_size = (ftell(file)) ;
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  alias_group_changed(1, (size_t)(2568646267985526124UL)); call_lbl_5: calling((void*)&fseek, 5, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 0);
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_1: signed char *file_buffer; register_stack_var("read_file|file_buffer|0", &____must_checkpoint_read_file_file_buffer_0, "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2568646267985526143UL, 0, 0)) ;
+ lbl_1: signed char *file_buffer; if (____must_checkpoint_read_file_file_buffer_0 != 0) { register_stack_var("read_file|file_buffer|0", &____must_checkpoint_read_file_file_buffer_0, "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2568646267985526143UL, 0, 0)) ;
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  alias_group_changed(1, (size_t)(2568646267985526125UL)); size_t n_read_from_file; call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
@@ -2112,7 +2112,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  if (!file_1) { fprintf(__stderrp, "could not open file %s\n",file_name_1); exit(1); }
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_6: size_t n_char_in_file_1; register_stack_var("main|n_char_in_file_1|0", &____must_checkpoint_main_n_char_in_file_1_0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } n_char_in_file_1 = (0) ;
+ lbl_6: size_t n_char_in_file_1; if (____must_checkpoint_main_n_char_in_file_1_0 != 0) { register_stack_var("main|n_char_in_file_1|0", &____must_checkpoint_main_n_char_in_file_1_0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_7; } n_char_in_file_1 = (0) ;
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  alias_group_changed(3, (size_t)(2568646267985526196UL), (size_t)(2568646267985526197UL), (size_t)(2568646267985526979UL)); call_lbl_12: calling((void*)&read_file, 12, 2568646267985526653UL, 2, (size_t)(2568646267985526258UL), (size_t)(2568646267985526197UL)); string_1 = read_file(file_1, &n_char_in_file_1);
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2123,7 +2123,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  if (!file_2) { fprintf(__stderrp, "could not open file %s\n",file_name_2); exit(1); }
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_8: size_t n_char_in_file_2; register_stack_var("main|n_char_in_file_2|0", &____must_checkpoint_main_n_char_in_file_2_0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } n_char_in_file_2 = (0) ;
+ lbl_8: size_t n_char_in_file_2; if (____must_checkpoint_main_n_char_in_file_2_0 != 0) { register_stack_var("main|n_char_in_file_2|0", &____must_checkpoint_main_n_char_in_file_2_0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_9; } n_char_in_file_2 = (0) ;
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  alias_group_changed(3, (size_t)(2568646267985526198UL), (size_t)(2568646267985526199UL), (size_t)(2568646267985526977UL)); call_lbl_18: calling((void*)&read_file, 18, 2568646267985526653UL, 2, (size_t)(2568646267985526279UL), (size_t)(2568646267985526199UL)); string_2 = read_file(file_2, &n_char_in_file_2);
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2191,7 +2191,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), 2
  }
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- lbl_9: struct timeval begin; register_stack_var("main|begin|0", &____must_checkpoint_main_begin_0, "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_10; } lbl_10: struct timeval end; register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); if (____chimes_replaying) { goto lbl_11; } ;
+ lbl_9: struct timeval begin; if (____must_checkpoint_main_begin_0 != 0) { register_stack_var("main|begin|0", &____must_checkpoint_main_begin_0, "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { goto lbl_10; } lbl_10: struct timeval end; if (____must_checkpoint_main_end_0 != 0) { register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { goto lbl_11; } ;
 # 166 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  call_lbl_36: calling((void*)&gettimeofday, 36, 0UL, 2, (size_t)(2568646267985526200UL), (size_t)(2568646267985527005UL)); gettimeofday(&begin,0);
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"

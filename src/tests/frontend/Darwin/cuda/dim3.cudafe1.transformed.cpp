@@ -26794,7 +26794,7 @@ extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
- lbl_0: dim3 blocks; register_stack_var("main|blocks|0", &____must_checkpoint_main_blocks_0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } blocks = dim3(4, 256) ;
+ lbl_0: dim3 blocks; if (____must_checkpoint_main_blocks_0 != 0) { register_stack_var("main|blocks|0", &____must_checkpoint_main_blocks_0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 alias_group_changed(3, (size_t)(3859550638466940432UL), (size_t)(3859550638466940433UL), (size_t)(3859550638466940434UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"

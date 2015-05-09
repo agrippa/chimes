@@ -49,18 +49,18 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|RelDiff|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|delt|0 " double " 64 0 0 0 _ZL17CalcForceForNodesv _ZL20CalcVelocityForNodesdd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|u_cut|0 " double " 64 0 0 0 _ZL17CalcForceForNodesv _ZL20CalcVelocityForNodesdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0 0 _Z4SQRTd omp_get_num_threads omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_num_threads omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|length|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_num_threads omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|qqc2|0 " double " 64 0 0 0 _Z4SQRTd omp_get_num_threads omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|threads|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|1 " i32 " 32 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|indx|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtf|0 " double " 64 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|thread_num|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem_per_thread|0 " i32 " 32 0 0 0 _Z4SQRTd omp_get_thread_num
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant_per_thread|0 " double " 64 0 0 0 _Z4SQRTd omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0 0 omp_get_num_threads omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0 0 omp_get_num_threads omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|length|0 " i32 " 32 0 0 0 omp_get_num_threads omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|qqc2|0 " double " 64 0 0 0 omp_get_num_threads omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|threads|0 " i32 " 32 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|0 " i32 " 32 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|1 " i32 " 32 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|indx|0 " i32 " 32 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtf|0 " double " 64 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|thread_num|0 " i32 " 32 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem_per_thread|0 " i32 " 32 0 0 0 omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant_per_thread|0 " double " 64 0 0 0 omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dthydro|0 " double " 64 0 0 0 _Z4FABSd omp_get_num_threads omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem|0 " i32 " 32 0 0 0 _Z4FABSd omp_get_num_threads omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dvovmax|0 " double " 64 0 0 0 _Z4FABSd omp_get_num_threads omp_get_thread_num
@@ -74,80 +74,62 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dthydro_per_thread|0 " double " 64 0 0 0 _Z4FABSd omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem_per_thread|0 " i32 " 32 0 0 0 _Z4FABSd omp_get_thread_num
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0 0 _ZL22CalcKinematicsForElemsid
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcQForElems|qstop|0 " double " 64 0 0 0 _ZL31CalcMonotonicQGradientsForElemsv
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcQForElems|numElem|0 " i32 " 32 0 0 0 _ZL31CalcMonotonicQGradientsForElemsv
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc ApplyMaterialPropertiesForElems|vnewc|0 " double* " 64 1 0 0 _ZL15EvalEOSForElemsPdi
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc UpdateVolumesForElems|numElem|0 " i32 " 32 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc UpdateVolumesForElems|v_cut|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc UpdateVolumesForElems|i|0 " i32 " 32 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc UpdateVolumesForElems|tmpV|0 " double " 64 0 0 0 _Z4FABSd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|vnewc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|length|0 " i32 " 32 0 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|ss4o3|0 " double " 64 0 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|rho0|0 " double " 64 0 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|e_old|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|delvc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|p_old|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|q_old|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|compression|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|compHalfStep|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|qq|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|ql|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|work|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|p_new|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|e_new|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|q_new|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|bvc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|pbvc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|i|0 " i32 " 32 0 0 0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|zidx|0 " i32 " 32 0 0 0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|j|0 " i32 " 32 0 0 0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|zidx|1 " i32 " 32 0 0 0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|k|0 " i32 " 32 0 0 0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|zidx|2 " i32 " 32 0 0 0 _ZL22CalcSoundSpeedForElemsPddS_S_S_S_di
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|p_new|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|e_new|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_new|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|bvc|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|pbvc|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|p_old|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_old|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|compression|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|compHalfStep|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|vnewc|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|work|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|delvc|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|pmin|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|p_cut|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|e_cut|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_cut|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|emin|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|qq|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ql|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|rho0|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|eosvmax|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|length|0 " i32 " 32 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|pHalfStep|0 " double* " 64 1 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|0 " i32 " 32 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|vhalf|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ssc|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|1 " i32 " 32 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|2 " i32 " 32 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|sixth|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_tilde|0 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ssc|1 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|3 " i32 " 32 0 0 0 _Z4FABSd _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ssc|2 " double " 64 0 0 0 _Z4FABSd _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|vnewc|0 " double* " 64 1 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|rho0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|enewc|0 " double* " 64 1 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|pnewc|0 " double* " 64 1 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|pbvc|0 " double* " 64 1 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|bvc|0 " double* " 64 1 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|nz|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|i|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|iz|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcSoundSpeedForElems|ssTmp|0 " double " 64 0 0 0 _Z4SQRTd
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|vnewc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|length|0 " i32 " 32 0 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|ss4o3|0 " double " 64 0 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|rho0|0 " double " 64 0 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|e_old|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|delvc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|p_old|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|q_old|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|compression|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|compHalfStep|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|qq|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|ql|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|work|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|p_new|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|e_new|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|q_new|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|bvc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc EvalEOSForElems|pbvc|0 " double* " 64 1 0 0 _ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|p_new|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|e_new|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_new|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|bvc|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|pbvc|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|p_old|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_old|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|compression|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|compHalfStep|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|vnewc|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|work|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|delvc|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|pmin|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|p_cut|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|e_cut|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_cut|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|emin|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|qq|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ql|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|rho0|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|eosvmax|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|length|0 " i32 " 32 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|pHalfStep|0 " double* " 64 1 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|0 " i32 " 32 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|vhalf|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ssc|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|1 " i32 " 32 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|2 " i32 " 32 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|sixth|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|q_tilde|0 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ssc|1 " double " 64 0 0 0 _Z4FABSd _ZL20CalcPressureForElemsPdS_S_S_S_S_dddi
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|i|3 " i32 " 32 0 0 0 _Z4FABSd
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcEnergyForElems|ssc|2 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPressureForElems|p_new|0 " double* " 64 1 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPressureForElems|bvc|0 " double* " 64 1 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPressureForElems|e_old|0 " double* " 64 1 0 0 _Z4FABSd
@@ -157,83 +139,6 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPressureForElems|eosvmax|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPressureForElems|length|0 " i32 " 32 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPressureForElems|i|0 " i32 " 32 0 0 0 _Z4FABSd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|numElem|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|i|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|ptiny|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|ax|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|ay|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|az|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dxv|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dyv|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dzv|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|elemToNode|0 " i32* " 64 1 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n0|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n1|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n2|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n3|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n4|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n5|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n6|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|n7|0 " i32 " 32 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x1|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x2|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x3|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x4|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x5|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x6|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|x7|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y1|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y2|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y3|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y4|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y5|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y6|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|y7|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z1|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z2|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z3|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z4|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z5|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z6|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|z7|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv1|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv2|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv3|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv4|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv5|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv6|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|xv7|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv1|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv2|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv3|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv4|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv5|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv6|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|yv7|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv0|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv1|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv2|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv3|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv4|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv5|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv6|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|zv7|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|vol|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|norm|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dxj|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dyj|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dzj|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dxi|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dyi|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dzi|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dxk|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dyk|0 " double " 64 0 0 0 _Z4SQRTd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQGradientsForElems|dzk|0 " double " 64 0 0 0 _Z4SQRTd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|numElem|0 " i32 " 32 0 0 0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|dt|0 " double " 64 0 0 0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|k|0 " i32 " 32 0 0 0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
@@ -254,12 +159,12 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|gnode|1 " i32 " 32 0 0 0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|dt2|0 " double " 64 0 0 0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|j|0 " i32 " 32 0 0 0 _ZL28CalcElemCharacteristicLengthPKdS0_S0_d
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|x|0 " double* " 64 1 0 0 _Z4SQRTd fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|y|0 " double* " 64 1 0 0 _Z4SQRTd fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|z|0 " double* " 64 1 0 0 _Z4SQRTd fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|volume|0 " double " 64 0 0 0 _Z4SQRTd fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|a|0 " double " 64 0 0 0 _Z4SQRTd fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 0 _Z4SQRTd fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|x|0 " double* " 64 1 0 0 fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|y|0 " double* " 64 1 0 0 fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|z|0 " double* " 64 1 0 0 fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|volume|0 " double " 64 0 0 0 fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|a|0 " double " 64 0 0 0 fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 0 fmax
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVelocityForNodes|dt|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVelocityForNodes|u_cut|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVelocityForNodes|numNode|0 " i32 " 32 0 0 0 _Z4FABSd
@@ -267,14 +172,10 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVelocityForNodes|xdtmp|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVelocityForNodes|ydtmp|0 " double " 64 0 0 0 _Z4FABSd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVelocityForNodes|zdtmp|0 " double " 64 0 0 0 _Z4FABSd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|numElem|0 " i32 " 32 0 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_ _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|hgcoef|0 " double " 64 0 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_ _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_ _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_ _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_ _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_ _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|k|0 " i32 " 32 0 0 0 _ZL28CalcHourglassControlForElemsPdd
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc IntegrateStressForElems|B|0 " [3 x [8 x double]] " 1536 0 0 0 _ZL23IntegrateStressForElemsiPdS_S_S_
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0 0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0 0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0 0 _ZL28CalcHourglassControlForElemsPdd
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0 0 _ZL28CalcHourglassControlForElemsPdd
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0 0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0 0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0 0 _ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d

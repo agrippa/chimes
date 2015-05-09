@@ -2968,7 +2968,7 @@ alias_group_changed(20, (size_t)(636351188801416980UL), (size_t)(636351188801416
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); if (____chimes_replaying) { goto lbl_0; }
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- lbl_0: config conf; register_stack_var("main|conf|0", &____must_checkpoint_main_conf_0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: config conf; if (____must_checkpoint_main_conf_0 != 0) { register_stack_var("main|conf|0", &____must_checkpoint_main_conf_0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); } if (____chimes_replaying) { goto lbl_1; } ;
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  alias_group_changed(3, (size_t)(636351188801416609UL), (size_t)(636351188801416610UL), (size_t)(636351188801416611UL)); call_lbl_3: calling((void*)&setup_config, 3, 0UL, 3, (size_t)(636351188801416612UL), (size_t)(0UL), (size_t)(636351188801416950UL)); setup_config(&conf, argc, argv);
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3060,13 +3060,13 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2,
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  } }
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(8, (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416623UL), (size_t)(636351188801416624UL), (size_t)(636351188801416625UL), (size_t)(636351188801416626UL), (size_t)(636351188801416627UL), (size_t)(636351188801416828UL)); lbl_16: double elapsed_s; register_stack_var("main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_17; } call_lbl_26: calling((void*)&seconds, 26, 0UL, 0); elapsed_s = (seconds() - start) ;
+ alias_group_changed(8, (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416623UL), (size_t)(636351188801416624UL), (size_t)(636351188801416625UL), (size_t)(636351188801416626UL), (size_t)(636351188801416627UL), (size_t)(636351188801416828UL)); lbl_16: double elapsed_s; if (____must_checkpoint_main_elapsed_s_0 != 0) { register_stack_var("main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_17; } call_lbl_26: calling((void*)&seconds, 26, 0UL, 0); elapsed_s = (seconds() - start) ;
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  alias_group_changed(1, (size_t)(636351188801416628UL)); call_lbl_28: calling((void*)&finish_progress, 28, 0UL, 0); finish_progress();
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- lbl_17: float point_rate; register_stack_var("main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } case(31): { goto call_lbl_31; } default: { chimes_error(); } } } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
+ lbl_17: float point_rate; if (____must_checkpoint_main_point_rate_0 != 0) { register_stack_var("main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } case(31): { goto call_lbl_31; } default: { chimes_error(); } } } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"

@@ -1,72 +1,35 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|dir|0 " i8* " 64 1 0 0 _Z9getMyRankv _ZL12eamReadSetflP14EamPotentialStPKcS2_ _ZL13eamReadFuncflP14EamPotentialStPKcS2_ _ZL16typeNotSupportedPKcS0_ _ZL17eamBcastPotentialP14EamPotentialSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|file|0 " i8* " 64 1 0 0 _Z9getMyRankv _ZL12eamReadSetflP14EamPotentialStPKcS2_ _ZL13eamReadFuncflP14EamPotentialStPKcS2_ _ZL16typeNotSupportedPKcS0_ _ZL17eamBcastPotentialP14EamPotentialSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|type|0 " i8* " 64 1 0 0 _Z9getMyRankv _ZL12eamReadSetflP14EamPotentialStPKcS2_ _ZL13eamReadFuncflP14EamPotentialStPKcS2_ _ZL16typeNotSupportedPKcS0_ _ZL17eamBcastPotentialP14EamPotentialSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z9getMyRankv _ZL12eamReadSetflP14EamPotentialStPKcS2_ _ZL13eamReadFuncflP14EamPotentialStPKcS2_ _ZL16typeNotSupportedPKcS0_ _ZL17eamBcastPotentialP14EamPotentialSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|s|0 " %struct.SimFlatSt* " 64 1 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _Z21initForceHaloExchangeP8DomainStP10LinkCellSt _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _Z21initForceHaloExchangeP8DomainStP10LinkCellSt _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rCut2|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|etot|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|fsize|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|ii|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nNbrBoxes|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jTmp|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nJBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jOff|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dr|0 " [3 x double] " 192 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r2|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|dir|0 " i8* " 64 1 0 0 _Z9getMyRankv _ZL17eamBcastPotentialP14EamPotentialSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|file|0 " i8* " 64 1 0 0 _Z9getMyRankv _ZL17eamBcastPotentialP14EamPotentialSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|type|0 " i8* " 64 1 0 0 _Z9getMyRankv _ZL17eamBcastPotentialP14EamPotentialSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z9getMyRankv _ZL17eamBcastPotentialP14EamPotentialSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|s|0 " %struct.SimFlatSt* " 64 1 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _Z21initForceHaloExchangeP8DomainStP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _Z21initForceHaloExchangeP8DomainStP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rCut2|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|etot|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|fsize|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|ii|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nNbrBoxes|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jTmp|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nJBox|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jOff|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dr|0 " [3 x double] " 192 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r2|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|0 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r|0 " double " 64 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|phiTmp|0 " double " 64 0 0 0 _ZL8eamForceP9SimFlatSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rhoTmp|0 " double " 64 0 0 0 _ZL8eamForceP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _ZL11interpolateP21InterpolationObjectStdPdS1_
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|1 " i32 " 32 0 0 0 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|fEmbed|0 " double " 64 0 0 0 _ZL8eamForceP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|2 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|2 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jTmp|1 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jBox|1 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nJBox|1 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|2 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jOff|1 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r2|1 " double " 64 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dr|1 " [3 x double] " 192 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|2 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r|1 " double " 64 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rhoTmp|1 " double " 64 0 0 0 _ZL8eamForceP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|3 " i32 " 32 0 0 0 _ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamDestroy|pPot|0 " %struct.BasePotentialSt** " 64 1 0 0 _Z19destroyHaloExchangePP14HaloExchangeSt _ZL26destroyInterpolationObjectPP21InterpolationObjectSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamDestroy|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z19destroyHaloExchangePP14HaloExchangeSt _ZL26destroyInterpolationObjectPP21InterpolationObjectSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _ZL12fileNotFoundPKcS0_ _ZL13notAlloyReadyPKc _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|tmp|0 " [4096 x i8] " 32768 0 0 0 _ZL12eamReadSetflP14EamPotentialStPKcS2_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|potFile|0 " %struct.__sFILE* " 64 1 0 0 _ZL12fileNotFoundPKcS0_ _ZL13notAlloyReadyPKc _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|latticeType|0 " [8 x i8] " 64 0 0 0 _ZL12eamReadSetflP14EamPotentialStPKcS2_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|bufSize|0 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|buf|0 " double* " 64 1 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|x0|0 " double " 64 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|0 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|1 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|2 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|3 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|r|0 " double " 64 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _ZL12fileNotFoundPKcS0_ _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|tmp|0 " [4096 x i8] " 32768 0 0 0 _ZL13eamReadFuncflP14EamPotentialStPKcS2_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|potFile|0 " %struct.__sFILE* " 64 1 0 0 _ZL12fileNotFoundPKcS0_ _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|name|0 " [3 x i8] " 24 0 0 0 _ZL13eamReadFuncflP14EamPotentialStPKcS2_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|latticeType|0 " [8 x i8] " 64 0 0 0 _ZL13eamReadFuncflP14EamPotentialStPKcS2_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|x0|0 " double " 64 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|bufSize|0 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|buf|0 " double* " 64 1 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|0 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|1 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|2 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|r|0 " double " 64 0 0 0 _ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|3 " i32 " 32 0 0 0 _ZL23initInterpolationObjectiddPd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamDestroy|pPot|0 " %struct.BasePotentialSt** " 64 1 0 0 _Z19destroyHaloExchangePP14HaloExchangeSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamDestroy|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z19destroyHaloExchangePP14HaloExchangeSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamBcastPotential|pot|0 " %struct.EamPotentialSt* " 64 1 0 0 _Z13bcastParallelPvii _Z9getMyRankv _ZL24bcastInterpolationObjectPP21InterpolationObjectSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamBcastPotential|buf|0 " %struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 } " 320 0 1 _buf_t 0 0 _ZL17eamBcastPotentialP14EamPotentialSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|table|0 " %struct.InterpolationObjectSt** " 64 1 0 0 _Z13bcastParallelPvii _Z9getMyRankv

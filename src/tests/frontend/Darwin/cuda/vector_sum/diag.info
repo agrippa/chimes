@@ -65,13 +65,13 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 21  lb
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 29  register_stack_var("main|h_C|0", (int *)0x0, "i32*", (void *)(&h_C), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 25 29  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 1  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  register_stack_var("main|d_A|0", &____must_checkpoint_main_d_A_0, "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  if (____must_checkpoint_main_d_A_0 != 0) { register_stack_var("main|d_A|0", &____must_checkpoint_main_d_A_0, "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 9  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 11  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  register_stack_var("main|d_B|0", &____must_checkpoint_main_d_B_0, "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  if (____must_checkpoint_main_d_B_0 != 0) { register_stack_var("main|d_B|0", &____must_checkpoint_main_d_B_0, "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 21  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  register_stack_var("main|d_C|0", &____must_checkpoint_main_d_C_0, "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  if (____must_checkpoint_main_d_C_0 != 0) { register_stack_var("main|d_C|0", &____must_checkpoint_main_d_C_0, "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 2  lbl_8: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 44 23  register_stack_var("main|threads_per_block|0", (int *)0x0, "i32", (void *)(&threads_per_block), (size_t)4, 0, 0, 0); 
@@ -80,6 +80,6 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 2  lbl
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21  register_stack_var("main|blocks_per_grid|0", (int *)0x0, "i32", (void *)(&blocks_per_grid), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 2  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  register_stack_var("main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  if (____must_checkpoint_main_fp_0 != 0) { register_stack_var("main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  if (____chimes_replaying) {  switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 130  if (____chimes_replaying) { goto lbl_0; } 

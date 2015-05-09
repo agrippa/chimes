@@ -8,13 +8,10 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "uts.c.pre.transformed.cpp"
-static int ____must_checkpoint_uts_wctime_tv_0 = 2;
 static int ____must_checkpoint_uts_initRoot_root_0 = 2;
 static int ____must_checkpoint_uts_initRoot_type_0 = 2;
-static int ____must_checkpoint_uts_numChildren_bin_v_0 = 2;
 static int ____must_checkpoint_uts_numChildren_geo_parent_0 = 2;
 static int ____must_checkpoint_uts_numChildren_geo_b_i_0 = 2;
-static int ____must_checkpoint_uts_numChildren_geo_h_0 = 2;
 static int ____must_checkpoint_uts_numChildren_geo_p_0 = 2;
 static int ____must_checkpoint_uts_numChildren_parent_0 = 2;
 static int ____must_checkpoint_uts_numChildren_numChildren_0 = 2;
@@ -2800,9 +2797,9 @@ void uts_error(char *str) {new_stack((void *)(&uts_error), 1, 0, (size_t)(118962
 rm_stack(false, 0UL); }
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-double uts_wctime() {new_stack((void *)(&uts_wctime), 0, 0); if (____chimes_replaying) { goto lbl_0; }
+double uts_wctime() {new_stack((void *)(&uts_wctime), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_0: struct timeval tv; register_stack_var("uts_wctime|tv|0", &____must_checkpoint_uts_wctime_tv_0, "%struct.timeval = type { i64, i32 }", (void *)(&tv), (size_t)16, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
+   struct timeval tv; ;
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    call_lbl_1: calling((void*)&gettimeofday, 1, 0UL, 2, (size_t)(11896266734391819139UL), (size_t)(11896266734391820073UL)); gettimeofday(&tv, __null);
 # 136 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2845,15 +2842,15 @@ rm_stack(false, 0UL); }
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin), 1, 0, (size_t)(11896266734391819233UL)); if (____chimes_replaying) { goto lbl_0; }
+int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin), 1, 0, (size_t)(11896266734391819233UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819208UL)); lbl_0: int v; register_stack_var("uts_numChildren_bin|v|0", &____must_checkpoint_uts_numChildren_bin_v_0, "i32", (void *)(&v), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(parent->state.state)) ;
+  alias_group_changed(1, (size_t)(11896266734391819208UL)); int v; call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(parent->state.state)) ;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819209UL)); double d; call_lbl_4: calling((void*)&rng_toProb, 4, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(v)) ;
+   double d; call_lbl_3: calling((void*)&rng_toProb, 3, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(v)) ;
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819210UL)); rm_stack(false, 0UL); return (d < nonLeafProb) ? nonLeafBF : 0;
+  alias_group_changed(2, (size_t)(11896266734391819209UL), (size_t)(11896266734391819210UL)); rm_stack(false, 0UL); return (d < nonLeafProb) ? nonLeafBF : 0;
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2861,13 +2858,13 @@ int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin)
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo), 1, 1, (size_t)(11896266734391819340UL), "uts_numChildren_geo|parent|0", &____must_checkpoint_uts_numChildren_geo_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_0: double b_i; register_stack_var("uts_numChildren_geo|b_i|0", &____must_checkpoint_uts_numChildren_geo_b_i_0, "double", (void *)(&b_i), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } b_i = (b_0) ;
+    lbl_0: double b_i; if (____must_checkpoint_uts_numChildren_geo_b_i_0 != 0) { register_stack_var("uts_numChildren_geo|b_i|0", &____must_checkpoint_uts_numChildren_geo_b_i_0, "double", (void *)(&b_i), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } b_i = (b_0) ;
 # 172 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    int depth; depth = (parent->height) ;
 # 173 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  int numChildren; lbl_1: int h; register_stack_var("uts_numChildren_geo|h|0", &____must_checkpoint_uts_numChildren_geo_h_0, "i32", (void *)(&h), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;
+  int numChildren; int h; ;
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   lbl_2: double p; register_stack_var("uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } double u; ;
+   lbl_1: double p; if (____must_checkpoint_uts_numChildren_geo_p_0 != 0) { register_stack_var("uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } double u; ;
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2932,15 +2929,15 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_8: calling((void*)&rng_rand, 8, 0UL, 1, (size_t)(11896266734391819340UL)); h = rng_rand(parent->state.state);
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819239UL)); call_lbl_10: calling((void*)&rng_toProb, 10, 0UL, 1, (size_t)(0UL)); u = rng_toProb(h);
+   call_lbl_9: calling((void*)&rng_toProb, 9, 0UL, 1, (size_t)(0UL)); u = rng_toProb(h);
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   call_lbl_11: calling((void*)&floor, 11, 0UL, 1, (size_t)(0UL)); call_lbl_12: calling((void*)&log, 12, 0UL, 1, (size_t)(0UL)); call_lbl_13: calling((void*)&log, 13, 0UL, 1, (size_t)(0UL)); numChildren = floor(log(1 - u) / log(1 - p));
+   call_lbl_10: calling((void*)&floor, 10, 0UL, 1, (size_t)(0UL)); call_lbl_11: calling((void*)&log, 11, 0UL, 1, (size_t)(0UL)); call_lbl_12: calling((void*)&log, 12, 0UL, 1, (size_t)(0UL)); numChildren = floor(log(1 - u) / log(1 - p));
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(2, (size_t)(11896266734391819238UL), (size_t)(11896266734391819241UL)); rm_stack(false, 0UL); return numChildren;
+  alias_group_changed(3, (size_t)(11896266734391819238UL), (size_t)(11896266734391819239UL), (size_t)(11896266734391819241UL)); rm_stack(false, 0UL); return numChildren;
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2948,7 +2945,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 224 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), 1, 1, (size_t)(11896266734391819431UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_0: int numChildren; register_stack_var("uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } numChildren = (0) ;
+    lbl_0: int numChildren; if (____must_checkpoint_uts_numChildren_numChildren_0 != 0) { register_stack_var("uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } } } numChildren = (0) ;
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3076,11 +3073,11 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 307 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (type == BIN || type == HYBRID) {
 # 308 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      lbl_0: double q; register_stack_var("uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } q = (nonLeafProb) ;
+      lbl_0: double q; if (____must_checkpoint_uts_paramsToStr_q_0 != 0) { register_stack_var("uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } q = (nonLeafProb) ;
 # 309 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      lbl_1: int m; register_stack_var("uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } m = (nonLeafBF) ;
+      lbl_1: int m; if (____must_checkpoint_uts_paramsToStr_m_0 != 0) { register_stack_var("uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } m = (nonLeafBF) ;
 # 310 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      lbl_2: double es; register_stack_var("uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } es = ((1. / (1. - q * m))) ;
+      lbl_2: double es; if (____must_checkpoint_uts_paramsToStr_es_0 != 0) { register_stack_var("uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } es = ((1. / (1. - q * m))) ;
 # 311 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     ind += sprintf(strBuf+ind, "  BIN parameters:  q = %f, m = %d, E(n) = %f, E(s) = %.2f\n",
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3114,11 +3111,11 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 329 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 void uts_printParams() {new_stack((void *)(&uts_printParams), 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 330 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   lbl_0: char strBuf[5000]; register_stack_var("uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+   lbl_0: char strBuf[5000]; if (____must_checkpoint_uts_printParams_strBuf_0 != 0) { register_stack_var("uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ;
 # 331 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   strBuf[0] = '\0';
 # 332 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_1: int ind; register_stack_var("uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ind = (0) ;
+    lbl_1: int ind; if (____must_checkpoint_uts_printParams_ind_0 != 0) { register_stack_var("uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ind = (0) ;
 # 333 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 334 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
@@ -3136,9 +3133,9 @@ alias_group_changed(2, (size_t)(11896266734391819616UL), (size_t)(11896266734391
 # 341 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams), 2, 2, (size_t)(0UL), (size_t)(11896266734391819884UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 342 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_0: int i; register_stack_var("uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } i = (1) ;
+    lbl_0: int i; if (____must_checkpoint_uts_parseParams_i_0 != 0) { register_stack_var("uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } i = (1) ;
 # 343 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    lbl_1: int err; register_stack_var("uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } err = (-1) ;
+    lbl_1: int err; if (____must_checkpoint_uts_parseParams_err_0 != 0) { register_stack_var("uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } err = (-1) ;
 # 344 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
 # 345 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3313,7 +3310,7 @@ alias_group_changed(6, (size_t)(11896266734391819934UL), (size_t)(11896266734391
 
 
 static int module_init() {
-    init_module(11896266734391819126UL, 11, 13, 21, 5, 11896266734391819126UL + 308UL, 11896266734391819126UL + 336UL, 11896266734391819126UL + 888UL, 11896266734391819126UL + 363UL, 11896266734391819126UL + 47UL, 11896266734391819126UL + 78UL, 11896266734391819126UL + 337UL, 11896266734391819126UL + 484UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 760UL, 11896266734391819126UL + 893UL, 11896266734391819126UL + 401UL, 11896266734391819126UL + 1UL, 11896266734391819126UL + 8UL, 11896266734391819126UL + 109UL, 11896266734391819126UL + 214UL, 11896266734391819126UL + 82UL, 11896266734391819126UL + 107UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 220UL, 11896266734391819126UL + 305UL, "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec), "uts_geoshape_e", 0, "uts_trees_e", 0, "_Z9uts_errorPc", 2, "_Z10impl_aborti", "printf", "_Z10uts_wctimev", 1, "gettimeofday", "_Z10rng_toProbi", 1, "printf", "_Z12uts_initRootP6node_ti", 2, "printf", "rng_init", "_Z19uts_numChildren_binP6node_t", 2, "_Z10rng_toProbi", "rng_rand", "_Z19uts_numChildren_geoP6node_t", 5, "_Z10rng_toProbi", "floor", "log", "rng_rand", "sin", "_Z15uts_numChildrenP6node_t", 6, "_Z19uts_numChildren_binP6node_t", "_Z19uts_numChildren_geoP6node_t", "_Z9uts_errorPc", "ceil", "floor", "printf", "_Z13uts_childTypeP6node_t", 1, "_Z9uts_errorPc", "_Z15uts_paramsToStrPci", 4, "_Z12impl_getNamev", "ceil", "rng_showtype", "sprintf", "_Z15uts_printParamsv", 3, "_Z15uts_paramsToStrPci", "_Z16impl_paramsToStrPci", "printf", "_Z15uts_parseParamsiPPc", 7, "_Z10impl_aborti", "_Z15impl_parseParamPcS_", "_Z15uts_helpMessagev", "atof", "atoi", "printf", "strlen", "_Z15uts_helpMessagev", 3, "_Z12impl_getNamev", "_Z16impl_helpMessagev", "printf", "_Z13uts_showStatsiidiii", 1, "printf", "uts_wctime|tv|0", 1, "_Z10uts_wctimev", "uts_initRoot|root|0", 1, "rng_init", "uts_initRoot|type|0", 1, "rng_init", "uts_numChildren_bin|v|0", 1, "_Z10rng_toProbi", "uts_numChildren_geo|parent|0", 3, "sin", "rng_rand", "_Z10rng_toProbi", "uts_numChildren_geo|b_i|0", 3, "sin", "rng_rand", "_Z10rng_toProbi", "uts_numChildren_geo|h|0", 1, "_Z10rng_toProbi", "uts_numChildren_geo|p|0", 2, "rng_rand", "_Z10rng_toProbi", "uts_numChildren|parent|0", 3, "_Z9uts_errorPc", "_Z19uts_numChildren_geoP6node_t", "_Z19uts_numChildren_binP6node_t", "uts_numChildren|numChildren|0", 3, "_Z9uts_errorPc", "_Z19uts_numChildren_geoP6node_t", "_Z19uts_numChildren_binP6node_t", "uts_paramsToStr|strBuf|0", 2, "rng_showtype", "_Z12impl_getNamev", "uts_paramsToStr|ind|0", 2, "rng_showtype", "_Z12impl_getNamev", "uts_paramsToStr|q|0", 1, "rng_showtype", "uts_paramsToStr|m|0", 1, "rng_showtype", "uts_paramsToStr|es|0", 1, "rng_showtype", "uts_printParams|strBuf|0", 1, "_Z15uts_printParamsv", "uts_printParams|ind|0", 2, "_Z16impl_paramsToStrPci", "_Z15uts_paramsToStrPci", "uts_parseParams|argc|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti", "uts_parseParams|argv|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti", "uts_parseParams|i|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti", "uts_parseParams|err|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti");
+    init_module(11896266734391819126UL, 11, 13, 18, 5, 11896266734391819126UL + 308UL, 11896266734391819126UL + 336UL, 11896266734391819126UL + 888UL, 11896266734391819126UL + 363UL, 11896266734391819126UL + 47UL, 11896266734391819126UL + 78UL, 11896266734391819126UL + 337UL, 11896266734391819126UL + 484UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 760UL, 11896266734391819126UL + 893UL, 11896266734391819126UL + 401UL, 11896266734391819126UL + 1UL, 11896266734391819126UL + 8UL, 11896266734391819126UL + 109UL, 11896266734391819126UL + 214UL, 11896266734391819126UL + 82UL, 11896266734391819126UL + 107UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 220UL, 11896266734391819126UL + 305UL, "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec), "uts_geoshape_e", 0, "uts_trees_e", 0, "_Z9uts_errorPc", 2, "_Z10impl_aborti", "printf", "_Z10uts_wctimev", 1, "gettimeofday", "_Z10rng_toProbi", 1, "printf", "_Z12uts_initRootP6node_ti", 2, "printf", "rng_init", "_Z19uts_numChildren_binP6node_t", 2, "_Z10rng_toProbi", "rng_rand", "_Z19uts_numChildren_geoP6node_t", 5, "_Z10rng_toProbi", "floor", "log", "rng_rand", "sin", "_Z15uts_numChildrenP6node_t", 6, "_Z19uts_numChildren_binP6node_t", "_Z19uts_numChildren_geoP6node_t", "_Z9uts_errorPc", "ceil", "floor", "printf", "_Z13uts_childTypeP6node_t", 1, "_Z9uts_errorPc", "_Z15uts_paramsToStrPci", 4, "_Z12impl_getNamev", "ceil", "rng_showtype", "sprintf", "_Z15uts_printParamsv", 3, "_Z15uts_paramsToStrPci", "_Z16impl_paramsToStrPci", "printf", "_Z15uts_parseParamsiPPc", 7, "_Z10impl_aborti", "_Z15impl_parseParamPcS_", "_Z15uts_helpMessagev", "atof", "atoi", "printf", "strlen", "_Z15uts_helpMessagev", 3, "_Z12impl_getNamev", "_Z16impl_helpMessagev", "printf", "_Z13uts_showStatsiidiii", 1, "printf", "uts_initRoot|root|0", 1, "rng_init", "uts_initRoot|type|0", 1, "rng_init", "uts_numChildren_geo|parent|0", 2, "sin", "rng_rand", "uts_numChildren_geo|b_i|0", 2, "sin", "rng_rand", "uts_numChildren_geo|p|0", 1, "rng_rand", "uts_numChildren|parent|0", 3, "_Z9uts_errorPc", "_Z19uts_numChildren_geoP6node_t", "_Z19uts_numChildren_binP6node_t", "uts_numChildren|numChildren|0", 3, "_Z9uts_errorPc", "_Z19uts_numChildren_geoP6node_t", "_Z19uts_numChildren_binP6node_t", "uts_paramsToStr|strBuf|0", 2, "rng_showtype", "_Z12impl_getNamev", "uts_paramsToStr|ind|0", 2, "rng_showtype", "_Z12impl_getNamev", "uts_paramsToStr|q|0", 1, "rng_showtype", "uts_paramsToStr|m|0", 1, "rng_showtype", "uts_paramsToStr|es|0", 1, "rng_showtype", "uts_printParams|strBuf|0", 1, "_Z15uts_printParamsv", "uts_printParams|ind|0", 2, "_Z16impl_paramsToStrPci", "_Z15uts_paramsToStrPci", "uts_parseParams|argc|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti", "uts_parseParams|argv|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti", "uts_parseParams|i|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti", "uts_parseParams|err|0", 5, "atoi", "atof", "_Z15uts_helpMessagev", "_Z15impl_parseParamPcS_", "_Z10impl_aborti");
     register_global_var("global|uts_trees_str", "[3 x i8*]", (void *)(&uts_trees_str), 24, 0, 0, 0);
     register_global_var("global|uts_geoshapes_str", "[4 x i8*]", (void *)(&uts_geoshapes_str), 32, 0, 0, 0);
     register_global_var("global|type", "i32", (void *)(&type), 4, 0, 0, 0);

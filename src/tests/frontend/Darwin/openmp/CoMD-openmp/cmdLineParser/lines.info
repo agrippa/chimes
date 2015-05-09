@@ -1,6 +1,2 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 102 8 : { 2, 3, 4, 5, 6, 7, 8 } direct:call:_ZL13myOptionAllocPKccicPviS0_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 51 14 : { 69, 70, 71, 72, 73, 74, 75, 76 } direct:call:_ZL9dupStringPKc
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 52 17 : { 92 } direct:call:_ZL9dupStringPKc
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 118 16 : { 615 } prop:call:_ZL12myOptionFreeP10MyOptionSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 178 11 : { 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 381, 620 } prop:call:getopt_long
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 208 16 : { 319, 324 } prop:call:strncpy

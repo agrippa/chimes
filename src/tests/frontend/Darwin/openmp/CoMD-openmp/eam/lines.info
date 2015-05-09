@@ -1,19 +1,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 190 8 : { 1, 2, 3, 4, 26 } prop:call:_Z9getMyRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_Z21initForceHaloExchangeP8DomainStP10LinkCellSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 280 19 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 312 10 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 119, 120, 121, 122, 661 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 358 19 : { 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 661 } prop:call:_ZL11interpolateP21InterpolationObjectStdPdS1_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 393 4 : { 896, 897 } prop:call:_ZL26destroyInterpolationObjectPP21InterpolationObjectSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 641 28 : { 935, 936, 937, 939, 950, 951, 952, 953, 1185 } prop:call:_ZL12fileNotFoundPKcS0_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 653 22 : { 935, 936, 937, 939, 950, 951, 952, 953, 1185 } prop:call:_ZL13notAlloyReadyPKc
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 684 13 : { 935, 936, 937, 939, 950, 951, 952, 953, 1185 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 689 15 : { 954, 1185 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 700 15 : { 955, 956, 957, 1056, 1185 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 759 28 : { 1188, 1189, 1190, 1192, 1203, 1204, 1205, 1206, 1443 } prop:call:_ZL12fileNotFoundPKcS0_
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 794 13 : { 1188, 1189, 1190, 1192, 1203, 1204, 1205, 1206, 1443 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 806 15 : { 1207, 1208, 1209, 1303, 1443 } prop:call:_ZL23initInterpolationObjectiddPd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 811 15 : { 1210, 1443 } prop:call:_ZL23initInterpolationObjectiddPd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 396 4 : { 896, 897 } prop:call:_Z19destroyHaloExchangePP14HaloExchangeSt
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 418 8 : { 1461 } prop:call:_Z9getMyRankv
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 427 4 : { 1462 } prop:call:_Z13bcastParallelPvii
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 435 4 : { 1557 } direct:call:_ZL24bcastInterpolationObjectPP21InterpolationObjectSt

@@ -1489,7 +1489,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7686840342758601679UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
- lbl_0: int a[] = { 1, 2, 3, 4, 5 }; register_stack_var("main|a|0", &____must_checkpoint_main_a_0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
+ lbl_0: int a[] = { 1, 2, 3, 4, 5 }; if (____must_checkpoint_main_a_0 != 0) { register_stack_var("main|a|0", &____must_checkpoint_main_a_0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
  a[4] = a[0];
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
