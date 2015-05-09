@@ -188,60 +188,60 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 116 7
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 117 4  call_lbl_6: calling((void*)&addIntParallel, 6, 0UL, 3, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 118 9  call_lbl_7: calling((void*)&profileStop, 7, 0UL, 1, (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 80 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 80 27  register_stack_var("createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 80 27  if (____must_checkpoint_createFccLattice_localMin_0 != 0) { register_stack_var("createFccLattice|localMin|0", &____must_checkpoint_createFccLattice_localMin_0, "double*", (void *)(&localMin), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 80 27  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 81 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 81 27  register_stack_var("createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 81 27  if (____must_checkpoint_createFccLattice_localMax_0 != 0) { register_stack_var("createFccLattice|localMax|0", &____must_checkpoint_createFccLattice_localMax_0, "double*", (void *)(&localMax), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 81 27  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 83 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 83 11  register_stack_var("createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 83 11  if (____must_checkpoint_createFccLattice_nb_0 != 0) { register_stack_var("createFccLattice|nb|0", &____must_checkpoint_createFccLattice_nb_0, "i32", (void *)(&nb), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 83 11  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 84 4  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 84 111  register_stack_var("createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 84 111  if (____must_checkpoint_createFccLattice_basis_0 != 0) { register_stack_var("createFccLattice|basis|0", &____must_checkpoint_createFccLattice_basis_0, "[4 x [3 x double]]", (void *)(basis), (size_t)96, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 84 111  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 90 4  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 90 16  register_stack_var("createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 90 16  if (____must_checkpoint_createFccLattice_begin_0 != 0) { register_stack_var("createFccLattice|begin|0", &____must_checkpoint_createFccLattice_begin_0, "[3 x i32]", (void *)(begin), (size_t)12, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 90 16  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 91 4  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 91 14  register_stack_var("createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 91 14  if (____must_checkpoint_createFccLattice_end_0 != 0) { register_stack_var("createFccLattice|end|0", &____must_checkpoint_createFccLattice_end_0, "[3 x i32]", (void *)(end), (size_t)12, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 91 14  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 4  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 13  register_stack_var("createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 13  if (____must_checkpoint_createFccLattice_px_0 != 0) { register_stack_var("createFccLattice|px|0", &____must_checkpoint_createFccLattice_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 13  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 15  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 24  register_stack_var("createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 24  if (____must_checkpoint_createFccLattice_py_0 != 0) { register_stack_var("createFccLattice|py|0", &____must_checkpoint_createFccLattice_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 24  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 26  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 35  register_stack_var("createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 35  if (____must_checkpoint_createFccLattice_pz_0 != 0) { register_stack_var("createFccLattice|pz|0", &____must_checkpoint_createFccLattice_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 98 35  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 7  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 13  register_stack_var("createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 13  if (____must_checkpoint_createFccLattice_ix_0 != 0) { register_stack_var("createFccLattice|ix|0", &____must_checkpoint_createFccLattice_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 13  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 62  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 68  register_stack_var("createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 68  if (____must_checkpoint_createFccLattice_iy_0 != 0) { register_stack_var("createFccLattice|iy|0", &____must_checkpoint_createFccLattice_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 68  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 73  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 79  register_stack_var("createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 79  if (____must_checkpoint_createFccLattice_iz_0 != 0) { register_stack_var("createFccLattice|iz|0", &____must_checkpoint_createFccLattice_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 79  if (____chimes_replaying) { goto lbl_12; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 84  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 90  register_stack_var("createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 90  if (____must_checkpoint_createFccLattice_ib_0 != 0) { register_stack_var("createFccLattice|ib|0", &____must_checkpoint_createFccLattice_ib_0, "i32", (void *)(&ib), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 90  if (____chimes_replaying) { goto lbl_13; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 239  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 248  register_stack_var("createFccLattice|rx|0", &____must_checkpoint_createFccLattice_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 248  if (____must_checkpoint_createFccLattice_rx_0 != 0) { register_stack_var("createFccLattice|rx|0", &____must_checkpoint_createFccLattice_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 248  if (____chimes_replaying) { goto lbl_14; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 299  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 308  register_stack_var("createFccLattice|ry|0", &____must_checkpoint_createFccLattice_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 308  if (____must_checkpoint_createFccLattice_ry_0 != 0) { register_stack_var("createFccLattice|ry|0", &____must_checkpoint_createFccLattice_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 308  if (____chimes_replaying) { goto lbl_15; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 359  lbl_15: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 368  register_stack_var("createFccLattice|rz|0", &____must_checkpoint_createFccLattice_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 368  if (____must_checkpoint_createFccLattice_rz_0 != 0) { register_stack_var("createFccLattice|rz|0", &____must_checkpoint_createFccLattice_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 368  if (____chimes_replaying) { goto lbl_16; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 662  lbl_16: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 668  register_stack_var("createFccLattice|id|0", &____must_checkpoint_createFccLattice_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 668  if (____must_checkpoint_createFccLattice_id_0 != 0) { register_stack_var("createFccLattice|id|0", &____must_checkpoint_createFccLattice_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 100 668  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 79 713  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 128 96  call_lbl_2: calling((void*)&computeVcm, 2, 0UL, 2, (size_t)(13592833164869971340UL), (size_t)(13592833164869971187UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 127 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 127 20  register_stack_var("setVcm|oldVcm|0", &____must_checkpoint_setVcm_oldVcm_0, "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 127 20  if (____must_checkpoint_setVcm_oldVcm_0 != 0) { register_stack_var("setVcm|oldVcm|0", &____must_checkpoint_setVcm_oldVcm_0, "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 127 20  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 126 314  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 168 26  call_lbl_1: calling((void*)&sqrt, 1, 0UL, 1, (size_t)(0UL)); 
@@ -254,43 +254,43 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 180 4
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 183 26  call_lbl_15: calling((void*)&sqrt, 15, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 193 232  call_lbl_17: calling((void*)&kineticEnergy, 17, 0UL, 1, (size_t)(13592833164869971784UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 162 7  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 162 15  register_stack_var("setTemperature|iBox|0", &____must_checkpoint_setTemperature_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 162 15  if (____must_checkpoint_setTemperature_iBox_0 != 0) { register_stack_var("setTemperature|iBox|0", &____must_checkpoint_setTemperature_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 162 15  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 10  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 18  register_stack_var("setTemperature|iOff|0", &____must_checkpoint_setTemperature_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 18  if (____must_checkpoint_setTemperature_iOff_0 != 0) { register_stack_var("setTemperature|iOff|0", &____must_checkpoint_setTemperature_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 18  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 21  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 27  register_stack_var("setTemperature|ii|0", &____must_checkpoint_setTemperature_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 27  if (____must_checkpoint_setTemperature_ii_0 != 0) { register_stack_var("setTemperature|ii|0", &____must_checkpoint_setTemperature_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 164 27  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 166 11  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 166 20  register_stack_var("setTemperature|iType|0", &____must_checkpoint_setTemperature_iType_0, "i32", (void *)(&iType), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 166 20  if (____must_checkpoint_setTemperature_iType_0 != 0) { register_stack_var("setTemperature|iType|0", &____must_checkpoint_setTemperature_iType_0, "i32", (void *)(&iType), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 166 20  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 167 11  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 167 22  register_stack_var("setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 167 22  if (____must_checkpoint_setTemperature_mass_0 != 0) { register_stack_var("setTemperature|mass|0", &____must_checkpoint_setTemperature_mass_0, "double", (void *)(&mass), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 167 22  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 168 11  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 168 23  register_stack_var("setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 168 23  if (____must_checkpoint_setTemperature_sigma_0 != 0) { register_stack_var("setTemperature|sigma|0", &____must_checkpoint_setTemperature_sigma_0, "double", (void *)(&sigma), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 168 23  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 169 341  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 169 354  register_stack_var("setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 169 354  if (____must_checkpoint_setTemperature_seed_0 != 0) { register_stack_var("setTemperature|seed|0", &____must_checkpoint_setTemperature_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 169 354  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 178 4  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 178 36  register_stack_var("setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 178 36  if (____must_checkpoint_setTemperature_vZero_0 != 0) { register_stack_var("setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 178 36  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 181 5  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 181 16  register_stack_var("setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 181 16  if (____must_checkpoint_setTemperature_temp_0 != 0) { register_stack_var("setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 181 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 183 5  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 183 23  register_stack_var("setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 183 23  if (____must_checkpoint_setTemperature_scaleFactor_0 != 0) { register_stack_var("setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 183 23  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 184 7  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 184 15  register_stack_var("setTemperature|iBox|1", &____must_checkpoint_setTemperature_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 184 15  if (____must_checkpoint_setTemperature_iBox_1 != 0) { register_stack_var("setTemperature|iBox|1", &____must_checkpoint_setTemperature_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 184 15  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 10  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 18  register_stack_var("setTemperature|iOff|1", &____must_checkpoint_setTemperature_iOff_1, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 18  if (____must_checkpoint_setTemperature_iOff_1 != 0) { register_stack_var("setTemperature|iOff|1", &____must_checkpoint_setTemperature_iOff_1, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 18  if (____chimes_replaying) { goto lbl_12; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 21  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 27  register_stack_var("setTemperature|ii|1", &____must_checkpoint_setTemperature_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 27  if (____must_checkpoint_setTemperature_ii_1 != 0) { register_stack_var("setTemperature|ii|1", &____must_checkpoint_setTemperature_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 186 27  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 160 349  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 255  call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
@@ -298,25 +298,25 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 208 6
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 209 68  call_lbl_6: calling((void*)&lcg61, 6, 0UL, 1, (size_t)(13592833164869971801UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 210 68  call_lbl_8: calling((void*)&lcg61, 8, 0UL, 1, (size_t)(13592833164869971801UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 203 7  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 203 15  register_stack_var("randomDisplacements|iBox|0", &____must_checkpoint_randomDisplacements_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 203 15  if (____must_checkpoint_randomDisplacements_iBox_0 != 0) { register_stack_var("randomDisplacements|iBox|0", &____must_checkpoint_randomDisplacements_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 203 15  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 10  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 18  register_stack_var("randomDisplacements|iOff|0", &____must_checkpoint_randomDisplacements_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 18  if (____must_checkpoint_randomDisplacements_iOff_0 != 0) { register_stack_var("randomDisplacements|iOff|0", &____must_checkpoint_randomDisplacements_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 18  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 21  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 27  register_stack_var("randomDisplacements|ii|0", &____must_checkpoint_randomDisplacements_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 27  if (____must_checkpoint_randomDisplacements_ii_0 != 0) { register_stack_var("randomDisplacements|ii|0", &____must_checkpoint_randomDisplacements_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 205 27  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 239  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 252  register_stack_var("randomDisplacements|seed|0", &____must_checkpoint_randomDisplacements_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 252  if (____must_checkpoint_randomDisplacements_seed_0 != 0) { register_stack_var("randomDisplacements|seed|0", &____must_checkpoint_randomDisplacements_seed_0, "i64", (void *)(&seed), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 252  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 202 356  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 235 271  call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 236 4  call_lbl_3: calling((void*)&addRealParallel, 3, 0UL, 3, (size_t)(13592833164869971344UL), (size_t)(13592833164869971345UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 237 9  call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 218 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 218 43  register_stack_var("computeVcm|vcmLocal|0", &____must_checkpoint_computeVcm_vcmLocal_0, "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 218 43  if (____must_checkpoint_computeVcm_vcmLocal_0 != 0) { register_stack_var("computeVcm|vcmLocal|0", &____must_checkpoint_computeVcm_vcmLocal_0, "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 218 43  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 219 4  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 219 41  register_stack_var("computeVcm|vcmSum|0", &____must_checkpoint_computeVcm_vcmSum_0, "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 219 41  if (____must_checkpoint_computeVcm_vcmSum_0 != 0) { register_stack_var("computeVcm|vcmSum|0", &____must_checkpoint_computeVcm_vcmSum_0, "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 219 41  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 217 214  if (____chimes_replaying) { goto lbl_0; } 

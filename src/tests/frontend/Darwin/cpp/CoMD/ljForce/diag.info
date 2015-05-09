@@ -99,78 +99,78 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  call_lbl_1: calling((void*)&zeroReal3, 1, 0UL, 1, (size_t)(14970133447157970508UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 1171  call_lbl_3: calling((void*)&getNeighborBoxes, 3, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19  register_stack_var("ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19  if (____must_checkpoint_ljForce_epsilon_0 != 0) { register_stack_var("ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 17  register_stack_var("ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 17  if (____must_checkpoint_ljForce_rCut2_0 != 0) { register_stack_var("ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 17  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 16  register_stack_var("ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 16  if (____must_checkpoint_ljForce_ePot_0 != 0) { register_stack_var("ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 16  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 7  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 13  register_stack_var("ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 13  if (____must_checkpoint_ljForce_ii_0 != 0) { register_stack_var("ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 13  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 14  register_stack_var("ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 14  if (____must_checkpoint_ljForce_s6_0 != 0) { register_stack_var("ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 14  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 18  register_stack_var("ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 18  if (____must_checkpoint_ljForce_eShift_0 != 0) { register_stack_var("ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 18  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 4  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 20  register_stack_var("ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 20  if (____must_checkpoint_ljForce_nbrBoxes_0 != 0) { register_stack_var("ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 20  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 15  register_stack_var("ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 15  if (____must_checkpoint_ljForce_iBox_0 != 0) { register_stack_var("ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 15  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 8  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 17  register_stack_var("ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 17  if (____must_checkpoint_ljForce_nIBox_0 != 0) { register_stack_var("ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 17  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 1155  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 1168  register_stack_var("ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 1168  if (____must_checkpoint_ljForce_nNbrBoxes_0 != 0) { register_stack_var("ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 1168  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 10  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 18  register_stack_var("ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 18  if (____must_checkpoint_ljForce_jTmp_0 != 0) { register_stack_var("ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 18  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 11  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 19  register_stack_var("ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 19  if (____must_checkpoint_ljForce_jBox_0 != 0) { register_stack_var("ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 19  if (____chimes_replaying) { goto lbl_12; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 11  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 20  register_stack_var("ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 20  if (____must_checkpoint_ljForce_nJBox_0 != 0) { register_stack_var("ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 20  if (____chimes_replaying) { goto lbl_13; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 13  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 21  register_stack_var("ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 21  if (____must_checkpoint_ljForce_iOff_0 != 0) { register_stack_var("ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 21  if (____chimes_replaying) { goto lbl_14; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 14  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 21  register_stack_var("ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 21  if (____must_checkpoint_ljForce_iId_0 != 0) { register_stack_var("ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 21  if (____chimes_replaying) { goto lbl_15; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 16  lbl_15: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 24  register_stack_var("ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 24  if (____must_checkpoint_ljForce_jOff_0 != 0) { register_stack_var("ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 24  if (____chimes_replaying) { goto lbl_16; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 27  lbl_16: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 33  register_stack_var("ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 33  if (____must_checkpoint_ljForce_ij_0 != 0) { register_stack_var("ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 33  if (____chimes_replaying) { goto lbl_17; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 16  lbl_17: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 28  register_stack_var("ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 28  if (____must_checkpoint_ljForce_dr_0 != 0) { register_stack_var("ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 28  if (____chimes_replaying) { goto lbl_18; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 17  lbl_18: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 24  register_stack_var("ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 24  if (____must_checkpoint_ljForce_jId_0 != 0) { register_stack_var("ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 24  if (____chimes_replaying) { goto lbl_19; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 17  lbl_19: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 26  register_stack_var("ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 26  if (____must_checkpoint_ljForce_r2_0 != 0) { register_stack_var("ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 26  if (____chimes_replaying) { goto lbl_20; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 19  lbl_20: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 24  register_stack_var("ljForce|m|0", &____must_checkpoint_ljForce_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 24  if (____must_checkpoint_ljForce_m_0 != 0) { register_stack_var("ljForce|m|0", &____must_checkpoint_ljForce_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 24  if (____chimes_replaying) { goto lbl_21; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 17  lbl_21: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 26  register_stack_var("ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 26  if (____must_checkpoint_ljForce_r6_0 != 0) { register_stack_var("ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 26  if (____chimes_replaying) { goto lbl_22; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 17  lbl_22: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 30  register_stack_var("ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 30  if (____must_checkpoint_ljForce_eLocal_0 != 0) { register_stack_var("ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 30  if (____chimes_replaying) { goto lbl_23; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 17  lbl_23: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 26  register_stack_var("ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 26  if (____must_checkpoint_ljForce_fr_0 != 0) { register_stack_var("ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 26  if (____chimes_replaying) { goto lbl_24; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 19  lbl_24: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 24  register_stack_var("ljForce|m|1", &____must_checkpoint_ljForce_m_1, "i32", (void *)(&m), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 24  if (____must_checkpoint_ljForce_m_1 != 0) { register_stack_var("ljForce|m|1", &____must_checkpoint_ljForce_m_1, "i32", (void *)(&m), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 24  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 176  if (____chimes_replaying) { goto lbl_0; } 

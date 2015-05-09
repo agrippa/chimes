@@ -1,2 +1,2 @@
-_Z3foov malloc
-main _Z10checkpointv _Z3foov
+_Z3foov DOES_NOT malloc
+main DOES _Z10checkpointv _Z3foov

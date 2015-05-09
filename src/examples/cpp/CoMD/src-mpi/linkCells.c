@@ -161,7 +161,7 @@ void putAtomInBox(LinkCell* boxes, Atoms* atoms,
                   const real_t x,  const real_t y,  const real_t z,
                   const real_t px, const real_t py, const real_t pz)
 {
-   real_t xyz[3] = {x,y,z};
+   real_t xyz[3]; xyz[0] = x; xyz[1] = y; xyz[2] = z;
    
    // Find correct box.
    int iBox = getBoxFromCoord(boxes, xyz);

@@ -383,56 +383,56 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 114  call_lbl_2: calling((void*)&initHaloExchange, 2, 9446392186784959178UL, 1, (size_t)(9446392186784959433UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 368  call_lbl_5: calling((void*)&mkAtomCellList, 5, 9446392186784959280UL, 3, (size_t)(9446392186784959194UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 95  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 111  register_stack_var("initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 111  if (____must_checkpoint_initAtomHaloExchange_hh_0 != 0) { register_stack_var("initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 111  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 155 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 155 14  register_stack_var("initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 155 14  if (____must_checkpoint_initAtomHaloExchange_size0_0 != 0) { register_stack_var("initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 155 14  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 156 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 156 14  register_stack_var("initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 156 14  if (____must_checkpoint_initAtomHaloExchange_size1_0 != 0) { register_stack_var("initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 156 14  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 157 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 157 14  register_stack_var("initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 157 14  if (____must_checkpoint_initAtomHaloExchange_size2_0 != 0) { register_stack_var("initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 157 14  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 158 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 158 16  register_stack_var("initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 158 16  if (____must_checkpoint_initAtomHaloExchange_maxSize_0 != 0) { register_stack_var("initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 158 16  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 29  register_stack_var("initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 29  if (____must_checkpoint_initAtomHaloExchange_parms_0 != 0) { register_stack_var("initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 29  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 13  register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 13  if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 152 405  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 114  call_lbl_2: calling((void*)&initHaloExchange, 2, 9446392186784960228UL, 1, (size_t)(9446392186784960349UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 328  call_lbl_5: calling((void*)&mkForceSendCellList, 5, 9446392186784960315UL, 3, (size_t)(9446392186784960235UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 239 64  call_lbl_7: calling((void*)&mkForceRecvCellList, 7, 9446392186784960315UL, 3, (size_t)(9446392186784960235UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 95  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 111  register_stack_var("initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 111  if (____must_checkpoint_initForceHaloExchange_hh_0 != 0) { register_stack_var("initForceHaloExchange|hh|0", &____must_checkpoint_initForceHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 111  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 220 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 220 14  register_stack_var("initForceHaloExchange|size0|0", &____must_checkpoint_initForceHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 220 14  if (____must_checkpoint_initForceHaloExchange_size0_0 != 0) { register_stack_var("initForceHaloExchange|size0|0", &____must_checkpoint_initForceHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 220 14  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 221 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 221 14  register_stack_var("initForceHaloExchange|size1|0", &____must_checkpoint_initForceHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 221 14  if (____must_checkpoint_initForceHaloExchange_size1_0 != 0) { register_stack_var("initForceHaloExchange|size1|0", &____must_checkpoint_initForceHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 221 14  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 222 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 222 14  register_stack_var("initForceHaloExchange|size2|0", &____must_checkpoint_initForceHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 222 14  if (____must_checkpoint_initForceHaloExchange_size2_0 != 0) { register_stack_var("initForceHaloExchange|size2|0", &____must_checkpoint_initForceHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 222 14  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 223 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 223 16  register_stack_var("initForceHaloExchange|maxSize|0", &____must_checkpoint_initForceHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 223 16  if (____must_checkpoint_initForceHaloExchange_maxSize_0 != 0) { register_stack_var("initForceHaloExchange|maxSize|0", &____must_checkpoint_initForceHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 223 16  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 227 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 227 30  register_stack_var("initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 227 30  if (____must_checkpoint_initForceHaloExchange_parms_0 != 0) { register_stack_var("initForceHaloExchange|parms|0", &____must_checkpoint_initForceHaloExchange_parms_0, "%struct.ForceExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 227 30  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 236 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 236 13  register_stack_var("initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 236 13  if (____must_checkpoint_initForceHaloExchange_ii_0 != 0) { register_stack_var("initForceHaloExchange|ii|0", &____must_checkpoint_initForceHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 236 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 213 263  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 247 82  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 182  call_lbl_2: calling((void*)&exchangeData, 2, 0UL, 3, (size_t)(9446392186784961097UL), (size_t)(9446392186784961098UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 7  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 16  register_stack_var("haloExchange|iAxis|0", &____must_checkpoint_haloExchange_iAxis_0, "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 16  if (____must_checkpoint_haloExchange_iAxis_0 != 0) { register_stack_var("haloExchange|iAxis|0", &____must_checkpoint_haloExchange_iAxis_0, "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 16  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 254 382  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 265 94  call_lbl_3: calling((void*)&processorNum, 3, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -442,7 +442,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 26
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 269 61  call_lbl_11: calling((void*)&processorNum, 11, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 270 61  call_lbl_13: calling((void*)&processorNum, 13, 0UL, 4, (size_t)(9446392186784959486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 21  register_stack_var("initHaloExchange|hh|0", &____must_checkpoint_initHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 21  if (____must_checkpoint_initHaloExchange_hh_0 != 0) { register_stack_var("initHaloExchange|hh|0", &____must_checkpoint_initHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 21  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 261 216  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 294 339  call_lbl_6: calling((void*)haloExchange->loadBuffer, 6, 0UL, 4, (size_t)(9446392186784961226UL), (size_t)(9446392186784961230UL), (size_t)(0UL), (size_t)(9446392186784961201UL)); 
@@ -492,146 +492,143 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExc
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 285 317  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 355 533  call_lbl_3: calling((void*)&getBoxFromTuple, 3, 0UL, 4, (size_t)(9446392186784960137UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 336 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 336 14  register_stack_var("mkAtomCellList|list|0", &____must_checkpoint_mkAtomCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 336 14  if (____must_checkpoint_mkAtomCellList_list_0 != 0) { register_stack_var("mkAtomCellList|list|0", &____must_checkpoint_mkAtomCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 336 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 338 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 338 13  register_stack_var("mkAtomCellList|xEnd|0", &____must_checkpoint_mkAtomCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 338 13  if (____must_checkpoint_mkAtomCellList_xEnd_0 != 0) { register_stack_var("mkAtomCellList|xEnd|0", &____must_checkpoint_mkAtomCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 338 13  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 339 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 339 15  register_stack_var("mkAtomCellList|yBegin|0", &____must_checkpoint_mkAtomCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 339 15  if (____must_checkpoint_mkAtomCellList_yBegin_0 != 0) { register_stack_var("mkAtomCellList|yBegin|0", &____must_checkpoint_mkAtomCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 339 15  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 340 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 340 13  register_stack_var("mkAtomCellList|yEnd|0", &____must_checkpoint_mkAtomCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 340 13  if (____must_checkpoint_mkAtomCellList_yEnd_0 != 0) { register_stack_var("mkAtomCellList|yEnd|0", &____must_checkpoint_mkAtomCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 340 13  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 341 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 341 15  register_stack_var("mkAtomCellList|zBegin|0", &____must_checkpoint_mkAtomCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 341 15  if (____must_checkpoint_mkAtomCellList_zBegin_0 != 0) { register_stack_var("mkAtomCellList|zBegin|0", &____must_checkpoint_mkAtomCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 341 15  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 342 5  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 342 13  register_stack_var("mkAtomCellList|zEnd|0", &____must_checkpoint_mkAtomCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 342 13  if (____must_checkpoint_mkAtomCellList_zEnd_0 != 0) { register_stack_var("mkAtomCellList|zEnd|0", &____must_checkpoint_mkAtomCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 342 13  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 351 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 351 14  register_stack_var("mkAtomCellList|count|0", &____must_checkpoint_mkAtomCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 351 14  if (____must_checkpoint_mkAtomCellList_count_0 != 0) { register_stack_var("mkAtomCellList|count|0", &____must_checkpoint_mkAtomCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 351 14  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 352 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 352 13  register_stack_var("mkAtomCellList|ix|0", &____must_checkpoint_mkAtomCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 352 13  if (____must_checkpoint_mkAtomCellList_ix_0 != 0) { register_stack_var("mkAtomCellList|ix|0", &____must_checkpoint_mkAtomCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 352 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 353 10  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 353 16  register_stack_var("mkAtomCellList|iy|0", &____must_checkpoint_mkAtomCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 353 16  if (____must_checkpoint_mkAtomCellList_iy_0 != 0) { register_stack_var("mkAtomCellList|iy|0", &____must_checkpoint_mkAtomCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 353 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 354 13  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 354 19  register_stack_var("mkAtomCellList|iz|0", &____must_checkpoint_mkAtomCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 354 19  if (____must_checkpoint_mkAtomCellList_iz_0 != 0) { register_stack_var("mkAtomCellList|iz|0", &____must_checkpoint_mkAtomCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 354 19  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 335 358  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 371 159  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 433 626  call_lbl_4: calling((void*)&putAtomInBox, 4, 0UL, 10, (size_t)(9446392186784959911UL), (size_t)(9446392186784959911UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 418 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 418 15  register_stack_var("unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 418 15  if (____must_checkpoint_unloadAtomsBuffer_s_0 != 0) { register_stack_var("unloadAtomsBuffer|s|0", &____must_checkpoint_unloadAtomsBuffer_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 418 15  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 419 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 419 17  register_stack_var("unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 419 17  if (____must_checkpoint_unloadAtomsBuffer_buf_0 != 0) { register_stack_var("unloadAtomsBuffer|buf|0", &____must_checkpoint_unloadAtomsBuffer_buf_0, "%struct.AtomMsgSt*", (void *)(&buf), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 419 17  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 420 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 420 13  register_stack_var("unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 420 13  if (____must_checkpoint_unloadAtomsBuffer_nBuf_0 != 0) { register_stack_var("unloadAtomsBuffer|nBuf|0", &____must_checkpoint_unloadAtomsBuffer_nBuf_0, "i32", (void *)(&nBuf), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 420 13  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 423 7  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 423 13  register_stack_var("unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 423 13  if (____must_checkpoint_unloadAtomsBuffer_ii_0 != 0) { register_stack_var("unloadAtomsBuffer|ii|0", &____must_checkpoint_unloadAtomsBuffer_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 423 13  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 425 8  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 425 15  register_stack_var("unloadAtomsBuffer|gid|0", &____must_checkpoint_unloadAtomsBuffer_gid_0, "i32", (void *)(&gid), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 425 15  if (____must_checkpoint_unloadAtomsBuffer_gid_0 != 0) { register_stack_var("unloadAtomsBuffer|gid|0", &____must_checkpoint_unloadAtomsBuffer_gid_0, "i32", (void *)(&gid), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 425 15  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 426 8  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 426 16  register_stack_var("unloadAtomsBuffer|type|0", &____must_checkpoint_unloadAtomsBuffer_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 426 16  if (____must_checkpoint_unloadAtomsBuffer_type_0 != 0) { register_stack_var("unloadAtomsBuffer|type|0", &____must_checkpoint_unloadAtomsBuffer_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 426 16  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 427 8  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 427 17  register_stack_var("unloadAtomsBuffer|rx|0", &____must_checkpoint_unloadAtomsBuffer_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 427 17  if (____must_checkpoint_unloadAtomsBuffer_rx_0 != 0) { register_stack_var("unloadAtomsBuffer|rx|0", &____must_checkpoint_unloadAtomsBuffer_rx_0, "double", (void *)(&rx), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 427 17  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 428 8  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 428 17  register_stack_var("unloadAtomsBuffer|ry|0", &____must_checkpoint_unloadAtomsBuffer_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 428 17  if (____must_checkpoint_unloadAtomsBuffer_ry_0 != 0) { register_stack_var("unloadAtomsBuffer|ry|0", &____must_checkpoint_unloadAtomsBuffer_ry_0, "double", (void *)(&ry), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 428 17  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 429 8  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 429 17  register_stack_var("unloadAtomsBuffer|rz|0", &____must_checkpoint_unloadAtomsBuffer_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 429 17  if (____must_checkpoint_unloadAtomsBuffer_rz_0 != 0) { register_stack_var("unloadAtomsBuffer|rz|0", &____must_checkpoint_unloadAtomsBuffer_rz_0, "double", (void *)(&rz), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 429 17  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 430 8  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 430 17  register_stack_var("unloadAtomsBuffer|px|0", &____must_checkpoint_unloadAtomsBuffer_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 430 17  if (____must_checkpoint_unloadAtomsBuffer_px_0 != 0) { register_stack_var("unloadAtomsBuffer|px|0", &____must_checkpoint_unloadAtomsBuffer_px_0, "double", (void *)(&px), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 430 17  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 431 8  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 431 17  register_stack_var("unloadAtomsBuffer|py|0", &____must_checkpoint_unloadAtomsBuffer_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 431 17  if (____must_checkpoint_unloadAtomsBuffer_py_0 != 0) { register_stack_var("unloadAtomsBuffer|py|0", &____must_checkpoint_unloadAtomsBuffer_py_0, "double", (void *)(&py), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 431 17  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 432 8  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 432 17  register_stack_var("unloadAtomsBuffer|pz|0", &____must_checkpoint_unloadAtomsBuffer_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 432 17  if (____must_checkpoint_unloadAtomsBuffer_pz_0 != 0) { register_stack_var("unloadAtomsBuffer|pz|0", &____must_checkpoint_unloadAtomsBuffer_pz_0, "double", (void *)(&pz), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 432 17  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 416 176  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 438 83  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 491 632  call_lbl_5: calling((void*)&getBoxFromTuple, 5, 0UL, 4, (size_t)(9446392186784960857UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 457 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 457 14  register_stack_var("mkForceSendCellList|list|0", &____must_checkpoint_mkForceSendCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 457 14  if (____must_checkpoint_mkForceSendCellList_list_0 != 0) { register_stack_var("mkForceSendCellList|list|0", &____must_checkpoint_mkForceSendCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 457 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 16  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 24  register_stack_var("mkForceSendCellList|xEnd|0", &____must_checkpoint_mkForceSendCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 24  if (____must_checkpoint_mkForceSendCellList_xEnd_0 != 0) { register_stack_var("mkForceSendCellList|xEnd|0", &____must_checkpoint_mkForceSendCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 24  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 26  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 36  register_stack_var("mkForceSendCellList|yBegin|0", &____must_checkpoint_mkForceSendCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 36  if (____must_checkpoint_mkForceSendCellList_yBegin_0 != 0) { register_stack_var("mkForceSendCellList|yBegin|0", &____must_checkpoint_mkForceSendCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 36  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 38  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 46  register_stack_var("mkForceSendCellList|yEnd|0", &____must_checkpoint_mkForceSendCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 46  if (____must_checkpoint_mkForceSendCellList_yEnd_0 != 0) { register_stack_var("mkForceSendCellList|yEnd|0", &____must_checkpoint_mkForceSendCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 46  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 48  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 58  register_stack_var("mkForceSendCellList|zBegin|0", &____must_checkpoint_mkForceSendCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 58  if (____must_checkpoint_mkForceSendCellList_zBegin_0 != 0) { register_stack_var("mkForceSendCellList|zBegin|0", &____must_checkpoint_mkForceSendCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 58  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 60  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 68  register_stack_var("mkForceSendCellList|zEnd|0", &____must_checkpoint_mkForceSendCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 68  if (____must_checkpoint_mkForceSendCellList_zEnd_0 != 0) { register_stack_var("mkForceSendCellList|zEnd|0", &____must_checkpoint_mkForceSendCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 458 68  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 487 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 487 14  register_stack_var("mkForceSendCellList|count|0", &____must_checkpoint_mkForceSendCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 487 14  if (____must_checkpoint_mkForceSendCellList_count_0 != 0) { register_stack_var("mkForceSendCellList|count|0", &____must_checkpoint_mkForceSendCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 487 14  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 488 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 488 13  register_stack_var("mkForceSendCellList|ix|0", &____must_checkpoint_mkForceSendCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 488 13  if (____must_checkpoint_mkForceSendCellList_ix_0 != 0) { register_stack_var("mkForceSendCellList|ix|0", &____must_checkpoint_mkForceSendCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 488 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 489 10  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 489 16  register_stack_var("mkForceSendCellList|iy|0", &____must_checkpoint_mkForceSendCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 489 16  if (____must_checkpoint_mkForceSendCellList_iy_0 != 0) { register_stack_var("mkForceSendCellList|iy|0", &____must_checkpoint_mkForceSendCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 489 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 490 13  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 490 19  register_stack_var("mkForceSendCellList|iz|0", &____must_checkpoint_mkForceSendCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 490 19  if (____must_checkpoint_mkForceSendCellList_iz_0 != 0) { register_stack_var("mkForceSendCellList|iz|0", &____must_checkpoint_mkForceSendCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 490 19  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 456 383  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 543 632  call_lbl_5: calling((void*)&getBoxFromTuple, 5, 0UL, 4, (size_t)(9446392186784961054UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 509 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 509 14  register_stack_var("mkForceRecvCellList|list|0", &____must_checkpoint_mkForceRecvCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 509 14  if (____must_checkpoint_mkForceRecvCellList_list_0 != 0) { register_stack_var("mkForceRecvCellList|list|0", &____must_checkpoint_mkForceRecvCellList_list_0, "i32*", (void *)(&list), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 509 14  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 16  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 24  register_stack_var("mkForceRecvCellList|xEnd|0", &____must_checkpoint_mkForceRecvCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 24  if (____must_checkpoint_mkForceRecvCellList_xEnd_0 != 0) { register_stack_var("mkForceRecvCellList|xEnd|0", &____must_checkpoint_mkForceRecvCellList_xEnd_0, "i32", (void *)(&xEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 24  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 26  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 36  register_stack_var("mkForceRecvCellList|yBegin|0", &____must_checkpoint_mkForceRecvCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 36  if (____must_checkpoint_mkForceRecvCellList_yBegin_0 != 0) { register_stack_var("mkForceRecvCellList|yBegin|0", &____must_checkpoint_mkForceRecvCellList_yBegin_0, "i32", (void *)(&yBegin), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 36  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 38  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 46  register_stack_var("mkForceRecvCellList|yEnd|0", &____must_checkpoint_mkForceRecvCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 46  if (____must_checkpoint_mkForceRecvCellList_yEnd_0 != 0) { register_stack_var("mkForceRecvCellList|yEnd|0", &____must_checkpoint_mkForceRecvCellList_yEnd_0, "i32", (void *)(&yEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 46  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 48  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 58  register_stack_var("mkForceRecvCellList|zBegin|0", &____must_checkpoint_mkForceRecvCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 58  if (____must_checkpoint_mkForceRecvCellList_zBegin_0 != 0) { register_stack_var("mkForceRecvCellList|zBegin|0", &____must_checkpoint_mkForceRecvCellList_zBegin_0, "i32", (void *)(&zBegin), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 58  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 60  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 68  register_stack_var("mkForceRecvCellList|zEnd|0", &____must_checkpoint_mkForceRecvCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 68  if (____must_checkpoint_mkForceRecvCellList_zEnd_0 != 0) { register_stack_var("mkForceRecvCellList|zEnd|0", &____must_checkpoint_mkForceRecvCellList_zEnd_0, "i32", (void *)(&zEnd), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 510 68  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 539 5  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 539 14  register_stack_var("mkForceRecvCellList|count|0", &____must_checkpoint_mkForceRecvCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 539 14  if (____must_checkpoint_mkForceRecvCellList_count_0 != 0) { register_stack_var("mkForceRecvCellList|count|0", &____must_checkpoint_mkForceRecvCellList_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 539 14  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 540 7  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 540 13  register_stack_var("mkForceRecvCellList|ix|0", &____must_checkpoint_mkForceRecvCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 540 13  if (____must_checkpoint_mkForceRecvCellList_ix_0 != 0) { register_stack_var("mkForceRecvCellList|ix|0", &____must_checkpoint_mkForceRecvCellList_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 540 13  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 541 10  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 541 16  register_stack_var("mkForceRecvCellList|iy|0", &____must_checkpoint_mkForceRecvCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 541 16  if (____must_checkpoint_mkForceRecvCellList_iy_0 != 0) { register_stack_var("mkForceRecvCellList|iy|0", &____must_checkpoint_mkForceRecvCellList_iy_0, "i32", (void *)(&iy), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 541 16  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 542 13  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 542 19  register_stack_var("mkForceRecvCellList|iz|0", &____must_checkpoint_mkForceRecvCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 542 19  if (____must_checkpoint_mkForceRecvCellList_iz_0 != 0) { register_stack_var("mkForceRecvCellList|iz|0", &____must_checkpoint_mkForceRecvCellList_iz_0, "i32", (void *)(&iz), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 542 19  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 508 383  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 559 159  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 587 176  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 610 83  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 647 4  call_lbl_1: calling((void*)&qsort, 1, 0UL, 4, (size_t)(9446392186784961288UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9446392186784961644UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 632 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 632 24  register_stack_var("sortAtomsInCell|tmp|0", &____must_checkpoint_sortAtomsInCell_tmp_0, "%struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }", (void *)(&tmp), (size_t)56, 0, 1, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 632 24  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 629 126  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 629 126  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 668 109  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

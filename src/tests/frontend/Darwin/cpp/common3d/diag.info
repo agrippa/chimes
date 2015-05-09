@@ -8,7 +8,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 102 17 alias_
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 106 17 alias_group_changed(2, (size_t)(8205091211441270928UL), (size_t)(8205091211441271054UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 109 17 alias_group_changed(2, (size_t)(8205091211441270928UL), (size_t)(8205091211441271054UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 112 17 alias_group_changed(2, (size_t)(8205091211441270928UL), (size_t)(8205091211441271054UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 119 13 alias_group_changed(2, (size_t)(8205091211441270928UL), (size_t)(8205091211441271054UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 125 9 alias_group_changed(2, (size_t)(8205091211441270928UL), (size_t)(8205091211441271054UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 100 40 len=7 realloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 101 41 , 8205091211441270984UL, 0, 1, (int)sizeof(struct _source), 0
@@ -52,9 +51,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 49 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 56 111  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 77 5  call_lbl_1: calling((void*)&default_config, 1, 0UL, 1, (size_t)(8205091211441271054UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 102 107  call_lbl_16: calling((void*)&parse_source, 16, 0UL, 2, (size_t)(8205091211441270948UL), (size_t)(8205091211441270984UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 119 103  call_lbl_25: calling((void*)&usage, 25, 0UL, 1, (size_t)(8205091211441271056UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 125 99  call_lbl_27: calling((void*)&getNumCUDADevices, 27, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 119 13  call_lbl_24: calling((void*)&usage, 24, 0UL, 1, (size_t)(8205091211441271056UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 125 99  call_lbl_26: calling((void*)&getNumCUDADevices, 26, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  if (____must_checkpoint_setup_config_c_0 != 0) { register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(16): { goto call_lbl_16; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 73 519  if (____chimes_replaying) { goto lbl_0; } 

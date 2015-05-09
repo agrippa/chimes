@@ -1,5 +1,5 @@
-_Z9yamlBeginv _Z9printRankv localtime sprintf time
-_Z11yamlAppInfoP7__sFILE _Z12builtWithMpiv _Z14printSeparatorP7__sFILE _Z9printRankv _ZL13getTimeStringPc fflush fprintf
-_Z14printSeparatorP7__sFILE fprintf
-_ZL13getTimeStringPc localtime sprintf time
-_Z7yamlEndv _Z9printRankv
+_Z9yamlBeginv MAY _Z9printRankv localtime sprintf time
+_Z11yamlAppInfoP7__sFILE MAY _Z12builtWithMpiv _Z14printSeparatorP7__sFILE _Z9printRankv _ZL13getTimeStringPc fflush fprintf
+_Z14printSeparatorP7__sFILE DOES_NOT fprintf
+_ZL13getTimeStringPc MAY localtime sprintf time
+_Z7yamlEndv MAY _Z9printRankv

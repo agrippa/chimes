@@ -1,1 +1,1 @@
-main _Z10checkpointv omp_get_thread_num printf
+main DOES _Z10checkpointv omp_get_thread_num printf

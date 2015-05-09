@@ -1,5 +1,5 @@
-_Z15save_layer_textPfiiiiiPKci _fopen exit fclose fprintf
-_Z9init_dataPfS_S_S_iiiff
-_Z5usagePPc exit fprintf
-_Z14default_configP7_config
-_Z12setup_configP7_configiPPc _getopt _Z12parse_sourcePcP7_source _Z14default_configP7_config _Z5usagePPc atoi fprintf getNumCUDADevices realloc
+_Z15save_layer_textPfiiiiiPKci DOES_NOT _fopen exit fclose fprintf
+_Z9init_dataPfS_S_S_iiiff DOES_NOT
+_Z5usagePPc DOES_NOT exit fprintf
+_Z14default_configP7_config DOES_NOT
+_Z12setup_configP7_configiPPc MAY _getopt _Z12parse_sourcePcP7_source _Z14default_configP7_config _Z5usagePPc atoi fprintf getNumCUDADevices realloc

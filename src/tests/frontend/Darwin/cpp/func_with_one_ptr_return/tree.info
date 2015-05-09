@@ -1,2 +1,2 @@
-_Z23haha_this_sux_part_deuxv malloc
-main _Z10checkpointv _Z23haha_this_sux_part_deuxv
+_Z23haha_this_sux_part_deuxv DOES_NOT malloc
+main DOES _Z10checkpointv _Z23haha_this_sux_part_deuxv

@@ -1497,9 +1497,9 @@ alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(16401429439071256640UL)); if (____chimes_replaying) { goto lbl_0; }
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- alias_group_changed(3, (size_t)(16401429439071256621UL), (size_t)(16401429439071256622UL), (size_t)(16401429439071256623UL)); lbl_0: void *tmp; register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } call_lbl_3: calling((void*)&haha_this_sux_part_trois, 3, 16401429439071256631UL, 0); tmp = (haha_this_sux_part_trois()) ;
+ lbl_0: void *tmp; register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&haha_this_sux_part_trois, 2, 16401429439071256631UL, 0); tmp = (haha_this_sux_part_trois()) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- alias_group_changed(1, (size_t)(16401429439071256624UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+ alias_group_changed(4, (size_t)(16401429439071256621UL), (size_t)(16401429439071256622UL), (size_t)(16401429439071256623UL), (size_t)(16401429439071256624UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  rm_stack(false, 0UL); return ((int *)tmp)[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"

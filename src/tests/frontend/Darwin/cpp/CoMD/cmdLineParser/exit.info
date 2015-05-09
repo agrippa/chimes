@@ -1,5 +1,5 @@
-addArg 0 1 9 10 48 615
-myOptionAlloc 92 92 619
+addArg 0 1 2 3 4 5 6 7 8 9 10 48 615
+myOptionAlloc 92 69 70 71 72 73 74 75 76 92 619
 lastOption 196 168 169
 freeArgs 0 615
 myOptionFree 219 206 207 208

@@ -82,4 +82,3 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nbrRankP|0 " i32 " 32 0 0 1
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nRecvM|0 " i32 " 32 0 0 1
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c exchangeData|nRecvP|0 " i32 " 32 0 0 1
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c sortAtomsInCell|tmp|0 " %struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double } " 448 0 1 AtomMsgSt 0 0 _Z15sortAtomsInCellP7AtomsStP10LinkCellSti

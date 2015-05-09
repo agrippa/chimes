@@ -123,10 +123,10 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.c
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 88 89  call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 92 5  call_lbl_9: calling((void*)&clear_whitespaces_do_mapping, 9, 0UL, 2, (size_t)(2568646267985526143UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 20  register_stack_var("read_file|file_size|0", &____must_checkpoint_read_file_file_size_0, "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 20  if (____must_checkpoint_read_file_file_size_0 != 0) { register_stack_var("read_file|file_size|0", &____must_checkpoint_read_file_file_size_0, "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 83 20  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 6  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 30  register_stack_var("read_file|file_buffer|0", &____must_checkpoint_read_file_file_buffer_0, "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 30  if (____must_checkpoint_read_file_file_buffer_0 != 0) { register_stack_var("read_file|file_buffer|0", &____must_checkpoint_read_file_file_buffer_0, "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 86 30  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 81 388  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 96 101  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
@@ -158,19 +158,19 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_wate
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 115 15  register_stack_var("main|file_1|0", (int *)0x0, "%struct.__sFILE*", (void *)(&file_1), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 115 15  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 3  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 26  register_stack_var("main|n_char_in_file_1|0", &____must_checkpoint_main_n_char_in_file_1_0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 26  if (____must_checkpoint_main_n_char_in_file_1_0 != 0) { register_stack_var("main|n_char_in_file_1|0", &____must_checkpoint_main_n_char_in_file_1_0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 117 26  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 121 3  lbl_7: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 121 15  register_stack_var("main|file_2|0", (int *)0x0, "%struct.__sFILE*", (void *)(&file_2), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 121 15  if (____chimes_replaying) { goto lbl_8; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 3  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 26  register_stack_var("main|n_char_in_file_2|0", &____must_checkpoint_main_n_char_in_file_2_0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 26  if (____must_checkpoint_main_n_char_in_file_2_0 != 0) { register_stack_var("main|n_char_in_file_2|0", &____must_checkpoint_main_n_char_in_file_2_0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 123 26  if (____chimes_replaying) { goto lbl_9; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 6  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 26  register_stack_var("main|begin|0", &____must_checkpoint_main_begin_0, "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 26  if (____must_checkpoint_main_begin_0 != 0) { register_stack_var("main|begin|0", &____must_checkpoint_main_begin_0, "%struct.timeval = type { i64, i32 }", (void *)(&begin), (size_t)16, 0, 1, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 26  if (____chimes_replaying) { goto lbl_10; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 29  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 47  register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 47  if (____must_checkpoint_main_end_0 != 0) { register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 165 47  if (____chimes_replaying) { goto lbl_11; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 173 6  lbl_11: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 173 12  register_stack_var("main|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); 
