@@ -16,6 +16,9 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
     if (func != NULL && func->isThisDeclarationADefinition()) {
         clang::SourceLocation declEnd = func->getBody()->getLocStart();
 
+        FunctionCallees *callees = insertions->get_callees(curr_func);
+        if (callees && callees->get_may_checkpoint() == DOES_NOT) return;
+
         FunctionArgumentAliasGroups *funcAliases =
             insertions->findMatchingFunctionNullReturn(curr_func);
 
@@ -120,6 +123,9 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
     clang::SourceLocation end = s->getLocEnd();
     clang::PresumedLoc start_loc = SM->getPresumedLoc(start);
+
+    FunctionCallees *callees = insertions->get_callees(curr_func);
+    if (callees && callees->get_may_checkpoint() == DOES_NOT) return;
 
     if (start.isValid() && end.isValid() &&
             insertions->isMainFile(start_loc.getFilename())) {
