@@ -543,11 +543,11 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     return allocs;
 }
 
-std::map<std::string, FunctionCallees> *DesiredInsertions::parseCallTree() {
+std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
     std::ifstream fp;
     fp.open(call_tree_file, std::ios::in);
-    std::map<std::string, FunctionCallees> *call_tree =
-        new std::map<std::string, FunctionCallees>();
+    std::map<std::string, FunctionCallees *> *call_tree =
+        new std::map<std::string, FunctionCallees *>();
 
     std::string line;
     while (getline(fp, line)) {
@@ -576,18 +576,18 @@ std::map<std::string, FunctionCallees> *DesiredInsertions::parseCallTree() {
         }
         line = line.substr(end + 1);
 
-        FunctionCallees callees(name, contains_unknown_functions,
-                may_checkpoint);
+        FunctionCallees *callees = new FunctionCallees(name,
+                contains_unknown_functions, may_checkpoint);
 
         do {
             end = line.find(' ');
             std::string func_name = line.substr(0, end);
-            callees.add_checkpoint_cause(func_name);
+            callees->add_checkpoint_cause(func_name);
             line = line.substr(end + 1);
         } while (end != std::string::npos);
 
         assert(call_tree->find(name) == call_tree->end());
-        call_tree->insert(std::pair<std::string, FunctionCallees>(name,
+        call_tree->insert(std::pair<std::string, FunctionCallees *>(name,
                     callees));
     }
 
@@ -1059,9 +1059,16 @@ bool DesiredInsertions::always_checkpoints(StackAlloc *alloc) {
             continue;
         }
 
-        if (call_tree->at(cause).get_may_checkpoint() == DOES) {
+        if (call_tree->at(cause)->get_may_checkpoint() == DOES) {
             return (true);
         }
     }
     return (false);
+}
+
+FunctionCallees *DesiredInsertions::get_callees(std::string name) {
+    if (call_tree->find(name) == call_tree->end()) {
+        return NULL;
+    }
+    return (call_tree->at(name));
 }

@@ -395,6 +395,7 @@ public:
     size_t get_module_id();
 
     bool always_checkpoints(StackAlloc *alloc);
+    FunctionCallees *get_callees(std::string name);
 
 private:
         std::string lines_info_file, struct_info_file,
@@ -415,7 +416,7 @@ private:
         std::map<std::string, FunctionExit *> *func_exits;
         std::vector<ReachableInfo> *reachable;
         std::vector<OpenMPPragma> *omp_pragmas;
-        std::map<std::string, FunctionCallees> *call_tree;
+        std::map<std::string, FunctionCallees *> *call_tree;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
@@ -426,7 +427,7 @@ private:
         std::map<std::string, FunctionExit *> *parseFunctionExits();
         std::vector<ReachableInfo> *parseReachable();
         std::vector<OpenMPPragma> *parseOMPPragmas();
-        std::map<std::string, FunctionCallees> *parseCallTree();
+        std::map<std::string, FunctionCallees *> *parseCallTree();
 
         size_t module_id;
 };
