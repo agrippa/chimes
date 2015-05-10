@@ -1523,7 +1523,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(1464087543762942921UL, 1, 3, 0, 0, 1464087543762942921UL + 19UL, 1464087543762942921UL + 43UL, "_Z3fooi", 0, "_Z3bari", 0, "main", 3, "_Z10checkpointv", "_Z3bari", "_Z3fooi");
+    init_module(1464087543762942921UL, 1, 3, 0, 0, 1464087543762942921UL + 19UL, 1464087543762942921UL + 43UL, "main", 3, "_Z10checkpointv", "_Z3bari", "_Z3fooi", "_Z3fooi", 0, "_Z3bari", 0);
     return 0;
 }
 

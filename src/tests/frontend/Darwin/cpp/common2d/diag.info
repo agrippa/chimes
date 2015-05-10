@@ -1,16 +1,11 @@
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 5 alias_group_changed(7, (size_t)(8205091200931170117UL), (size_t)(8205091200931170118UL), (size_t)(8205091200931170119UL), (size_t)(8205091200931170120UL), (size_t)(8205091200931170121UL), (size_t)(8205091200931170122UL), (size_t)(8205091200931170123UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 77 5 alias_group_changed(6, (size_t)(8205091200931170401UL), (size_t)(8205091200931170402UL), (size_t)(8205091200931170403UL), (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL), (size_t)(8205091200931170539UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 80 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 83 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 86 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 101 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 104 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 107 17 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 9 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 95 40 len=7 realloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 96 41 , 8205091200931170452UL, 0, 1, (int)sizeof(struct _source), 0
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 8 71 new_stack((void *)(&save_text), 7, 0, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 24 1 alias_group_changed(10, (size_t)(8205091200931170117UL), (size_t)(8205091200931170118UL), (size_t)(8205091200931170119UL), (size_t)(8205091200931170120UL), (size_t)(8205091200931170121UL), (size_t)(8205091200931170122UL), (size_t)(8205091200931170123UL), (size_t)(8205091200931170124UL), (size_t)(8205091200931170125UL), (size_t)(8205091200931170126UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 8 71 new_stack((void *)(&save_text), 7, 6, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL), "save_text|field|0", &____must_checkpoint_save_text_field_0, "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", &____must_checkpoint_save_text_dimx_0, "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|ny|0", &____must_checkpoint_save_text_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", &____must_checkpoint_save_text_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", &____must_checkpoint_save_text_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", &____must_checkpoint_save_text_radius_0, "i32", (void *)(&radius), (size_t)4, 0, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 24 1 alias_group_changed(3, (size_t)(8205091200931170124UL), (size_t)(8205091200931170125UL), (size_t)(8205091200931170126UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 28 49 new_stack((void *)(&init_data), 8, 0, (size_t)(8205091200931170338UL), (size_t)(8205091200931170339UL), (size_t)(8205091200931170340UL), (size_t)(8205091200931170341UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 46 1 alias_group_changed(15, (size_t)(8205091200931170215UL), (size_t)(8205091200931170216UL), (size_t)(8205091200931170217UL), (size_t)(8205091200931170218UL), (size_t)(8205091200931170219UL), (size_t)(8205091200931170220UL), (size_t)(8205091200931170221UL), (size_t)(8205091200931170222UL), (size_t)(8205091200931170223UL), (size_t)(8205091200931170224UL), (size_t)(8205091200931170225UL), (size_t)(8205091200931170338UL), (size_t)(8205091200931170339UL), (size_t)(8205091200931170340UL), (size_t)(8205091200931170341UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 48 25 new_stack((void *)(&usage), 1, 0, (size_t)(8205091200931170362UL)); 
@@ -19,8 +14,8 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 55 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 69 1 alias_group_changed(2, (size_t)(8205091200931170363UL), (size_t)(8205091200931170400UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 71 56 new_stack((void *)(&setup_config), 3, 3, (size_t)(8205091200931170522UL), (size_t)(0UL), (size_t)(8205091200931170524UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 122 1 alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); rm_stack(false, 0UL); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 37 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 260  FILE *fp;  fp = (fopen(filename, "wb")) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 9 292 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 5 {  int y; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 21 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 15 10  y = (0) ;
@@ -41,17 +36,16 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 5  f
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 40 33 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5 int c; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 10 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 23 5  call_lbl_6: calling((void*)&fclose, 6, 0UL, 1, (size_t)(8205091200931170143UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 8 250  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 8 880  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 39 5  call_lbl_1: calling((void*)&memset, 1, 0UL, 3, (size_t)(8205091200931170341UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 28 279  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 48 92  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 55 111  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 5  call_lbl_1: calling((void*)&default_config, 1, 0UL, 1, (size_t)(8205091200931170522UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 107  call_lbl_12: calling((void*)&parse_source, 12, 0UL, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 13  call_lbl_20: calling((void*)&usage, 20, 0UL, 1, (size_t)(8205091200931170524UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 99  call_lbl_22: calling((void*)&getNumCUDADevices, 22, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 107  call_lbl_9: calling((void*)&parse_source, 9, 0UL, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 114 13  call_lbl_14: calling((void*)&usage, 14, 0UL, 1, (size_t)(8205091200931170524UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 99  call_lbl_16: calling((void*)&getNumCUDADevices, 16, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 10  if (____must_checkpoint_setup_config_c_0 != 0) { register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(12): { goto call_lbl_12; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(9): { goto call_lbl_9; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 71 519  if (____chimes_replaying) { goto lbl_0; } 

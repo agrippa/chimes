@@ -6,6 +6,6 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 int 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 161  call_lbl_3: calling((void*)&checkpoint, 3, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32  if (____must_checkpoint_main_a_0 != 0) { register_stack_var("main|a|0", &____must_checkpoint_main_a_0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32  register_stack_var("main|a|0", (int *)0x0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 129  if (____chimes_replaying) { goto lbl_0; } 

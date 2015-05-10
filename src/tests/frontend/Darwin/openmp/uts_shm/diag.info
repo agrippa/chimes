@@ -1,58 +1,35 @@
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 58 3 alias_group_changed(1, (size_t)(5826008423592869090UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 17 alias_group_changed(2, (size_t)(5826008423592869126UL), (size_t)(5826008423592869127UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 324 7 alias_group_changed(3, (size_t)(5826008423592869195UL), (size_t)(5826008423592869196UL), (size_t)(5826008423592869197UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 326 7 alias_group_changed(3, (size_t)(5826008423592869195UL), (size_t)(5826008423592869196UL), (size_t)(5826008423592869197UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 331 7 alias_group_changed(3, (size_t)(5826008423592869195UL), (size_t)(5826008423592869196UL), (size_t)(5826008423592869197UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 422 3 alias_group_changed(1, (size_t)(5826008423592869250UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 427 3 alias_group_changed(1, (size_t)(5826008423592869274UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 432 3 alias_group_changed(1, (size_t)(5826008423592869277UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 440 19 alias_group_changed(4, (size_t)(5826008423592869287UL), (size_t)(5826008423592869288UL), (size_t)(5826008423592869289UL), (size_t)(5826008423592869386UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 454 5 alias_group_changed(4, (size_t)(5826008423592869287UL), (size_t)(5826008423592869288UL), (size_t)(5826008423592869289UL), (size_t)(5826008423592869386UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 458 3 alias_group_changed(4, (size_t)(5826008423592869287UL), (size_t)(5826008423592869288UL), (size_t)(5826008423592869289UL), (size_t)(5826008423592869386UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 459 19 alias_group_changed(1, (size_t)(5826008423592869386UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 473 3 alias_group_changed(1, (size_t)(5826008423592869386UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 479 32 alias_group_changed(2, (size_t)(5826008423592869388UL), (size_t)(5826008423592869389UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 481 19 alias_group_changed(2, (size_t)(5826008423592869388UL), (size_t)(5826008423592869389UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 494 28 alias_group_changed(2, (size_t)(5826008423592869494UL), (size_t)(5826008423592869495UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 497 19 alias_group_changed(2, (size_t)(5826008423592869494UL), (size_t)(5826008423592869495UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 507 28 alias_group_changed(3, (size_t)(5826008423592869544UL), (size_t)(5826008423592869545UL), (size_t)(5826008423592869595UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 511 19 alias_group_changed(3, (size_t)(5826008423592869544UL), (size_t)(5826008423592869545UL), (size_t)(5826008423592869595UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 520 28 alias_group_changed(1, (size_t)(5826008423592869596UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 532 3 alias_group_changed(2, (size_t)(5826008423592869627UL), (size_t)(5826008423592869628UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 540 3 alias_group_changed(1, (size_t)(5826008423592869672UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 548 3 alias_group_changed(2, (size_t)(5826008423592869674UL), (size_t)(5826008423592869675UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 555 3 alias_group_changed(2, (size_t)(5826008423592869676UL), (size_t)(5826008423592869725UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 567 34 alias_group_changed(3, (size_t)(5826008423592869727UL), (size_t)(5826008423592869728UL), (size_t)(5826008423592869729UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 570 36 alias_group_changed(3, (size_t)(5826008423592869727UL), (size_t)(5826008423592869728UL), (size_t)(5826008423592869729UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 574 20 alias_group_changed(3, (size_t)(5826008423592869727UL), (size_t)(5826008423592869728UL), (size_t)(5826008423592869729UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 577 3 alias_group_changed(3, (size_t)(5826008423592869727UL), (size_t)(5826008423592869728UL), (size_t)(5826008423592869729UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 591 55 alias_group_changed(5, (size_t)(5826008423592869730UL), (size_t)(5826008423592869731UL), (size_t)(5826008423592869732UL), (size_t)(5826008423592869733UL), (size_t)(5826008423592870372UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 608 3 alias_group_changed(5, (size_t)(5826008423592869730UL), (size_t)(5826008423592869731UL), (size_t)(5826008423592869732UL), (size_t)(5826008423592869733UL), (size_t)(5826008423592870372UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 629 9 alias_group_changed(5, (size_t)(5826008423592869734UL), (size_t)(5826008423592869735UL), (size_t)(5826008423592869736UL), (size_t)(5826008423592869737UL), (size_t)(5826008423592869981UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 646 7 alias_group_changed(1, (size_t)(5826008423592869981UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 656 3 alias_group_changed(3, (size_t)(5826008423592869985UL), (size_t)(5826008423592869986UL), (size_t)(5826008423592869987UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 674 3 alias_group_changed(1, (size_t)(5826008423592870026UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 680 19 alias_group_changed(2, (size_t)(5826008423592870027UL), (size_t)(5826008423592870074UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 687 33 alias_group_changed(2, (size_t)(5826008423592870075UL), (size_t)(5826008423592870076UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 691 3 alias_group_changed(2, (size_t)(5826008423592870075UL), (size_t)(5826008423592870076UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 715 19 alias_group_changed(2, (size_t)(5826008423592870077UL), (size_t)(5826008423592870147UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 912 3 alias_group_changed(2, (size_t)(5826008423592870163UL), (size_t)(5826008423592870164UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 959 3 alias_group_changed(4, (size_t)(5826008423592870177UL), (size_t)(5826008423592870178UL), (size_t)(5826008423592870179UL), (size_t)(5826008423592870180UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 960 3 alias_group_changed(1, (size_t)(5826008423592870181UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 965 5 alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870184UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 986 9 alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870184UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 988 7 alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870184UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1008 19 alias_group_changed(1, (size_t)(5826008423592871085UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1012 3 alias_group_changed(1, (size_t)(5826008423592871085UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1016 3 alias_group_changed(1, (size_t)(5826008423592871074UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1025 3 alias_group_changed(1, (size_t)(5826008423592870347UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1030 3 alias_group_changed(1, (size_t)(5826008423592871074UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1041 3 alias_group_changed(4, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870372UL), (size_t)(5826008423592871074UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1042 3 alias_group_changed(1, (size_t)(5826008423592870372UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1059 20 alias_group_changed(3, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870346UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1042 3 alias_group_changed(4, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870372UL), (size_t)(5826008423592871074UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1064 3 alias_group_changed(3, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870346UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1072 3 alias_group_changed(3, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592871074UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1073 3 alias_group_changed(1, (size_t)(5826008423592870372UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1073 3 alias_group_changed(4, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870372UL), (size_t)(5826008423592871074UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1100 7 alias_group_changed(1, (size_t)(5826008423592870291UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1140 7 alias_group_changed(5, (size_t)(5826008423592870475UL), (size_t)(5826008423592870476UL), (size_t)(5826008423592870479UL), (size_t)(5826008423592870480UL), (size_t)(5826008423592870481UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1146 2 alias_group_changed(1, (size_t)(5826008423592870477UL)); 
@@ -66,8 +43,7 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1198 5 alias_
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1235 3 alias_group_changed(14, (size_t)(5826008423592870577UL), (size_t)(5826008423592870579UL), (size_t)(5826008423592870580UL), (size_t)(5826008423592870581UL), (size_t)(5826008423592870582UL), (size_t)(5826008423592870583UL), (size_t)(5826008423592870584UL), (size_t)(5826008423592870585UL), (size_t)(5826008423592870586UL), (size_t)(5826008423592870587UL), (size_t)(5826008423592870588UL), (size_t)(5826008423592870589UL), (size_t)(5826008423592870590UL), (size_t)(5826008423592870591UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1273 3 alias_group_changed(15, (size_t)(5826008423592870578UL), (size_t)(5826008423592870579UL), (size_t)(5826008423592870580UL), (size_t)(5826008423592870581UL), (size_t)(5826008423592870582UL), (size_t)(5826008423592870583UL), (size_t)(5826008423592870584UL), (size_t)(5826008423592870585UL), (size_t)(5826008423592870586UL), (size_t)(5826008423592870587UL), (size_t)(5826008423592870588UL), (size_t)(5826008423592870589UL), (size_t)(5826008423592870590UL), (size_t)(5826008423592870591UL), (size_t)(5826008423592870592UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 3 alias_group_changed(3, (size_t)(5826008423592871001UL), (size_t)(5826008423592871002UL), (size_t)(5826008423592871003UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1412 5 alias_group_changed(1, (size_t)(5826008423592871081UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1413 5 alias_group_changed(1, (size_t)(5826008423592871008UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1413 5 alias_group_changed(2, (size_t)(5826008423592871008UL), (size_t)(5826008423592871081UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1433 5 alias_group_changed(1, (size_t)(5826008423592871005UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1446 5 alias_group_changed(2, (size_t)(5826008423592871006UL), (size_t)(5826008423592871007UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 37 len=6 malloc_wrapper
@@ -90,18 +66,18 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 376
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 386 1 alias_group_changed(1, (size_t)(5826008423592869241UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 421 32 new_stack((void *)(&ss_mkEmpty), 1, 1, (size_t)(5826008423592869274UL), "ss_mkEmpty|s|0", &____must_checkpoint_ss_mkEmpty_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 428 1 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 431 26 new_stack((void *)(&ss_error), 1, 1, (size_t)(5826008423592869286UL), "ss_error|str|0", &____must_checkpoint_ss_error_str_0, "i8*", (void *)(&str), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 434 1 rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 431 26 new_stack((void *)(&ss_error), 1, 0, (size_t)(5826008423592869286UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 434 1 alias_group_changed(1, (size_t)(5826008423592869277UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 437 40 new_stack((void *)(&ss_init), 2, 2, (size_t)(5826008423592869386UL), (size_t)(0UL), "ss_init|s|0", &____must_checkpoint_ss_init_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_init|nelts|0", &____must_checkpoint_ss_init_nelts_0, "i32", (void *)(&nelts), (size_t)4, 0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 474 1 rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 478 38 new_stack((void *)(&ss_push), 2, 2, (size_t)(5826008423592869461UL), (size_t)(5826008423592869467UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 489 1 alias_group_changed(3, (size_t)(5826008423592869388UL), (size_t)(5826008423592869389UL), (size_t)(5826008423592869461UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 501 3 alias_group_changed(2, (size_t)(5826008423592869494UL), (size_t)(5826008423592869495UL)); rm_stack(true, 5826008423592869516UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 492 30 new_stack((void *)(&ss_top), 1, 1, (size_t)(5826008423592869543UL), "ss_top|s|0", &____must_checkpoint_ss_top_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 505 28 new_stack((void *)(&ss_pop), 1, 1, (size_t)(5826008423592869595UL), "ss_pop|s|0", &____must_checkpoint_ss_pop_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 492 30 new_stack((void *)(&ss_top), 1, 0, (size_t)(5826008423592869543UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 505 28 new_stack((void *)(&ss_pop), 1, 0, (size_t)(5826008423592869595UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 515 1 alias_group_changed(3, (size_t)(5826008423592869544UL), (size_t)(5826008423592869545UL), (size_t)(5826008423592869595UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 522 3 alias_group_changed(1, (size_t)(5826008423592869596UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 519 1 new_stack((void *)(&ss_topPosn), 1, 1, (size_t)(5826008423592869614UL), "ss_topPosn|s|0", &____must_checkpoint_ss_topPosn_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 519 1 new_stack((void *)(&ss_topPosn), 1, 0, (size_t)(5826008423592869614UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 527 3 alias_group_changed(1, (size_t)(5826008423592869615UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 526 34 new_stack((void *)(&ss_localDepth), 1, 0, (size_t)(5826008423592869626UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 531 39 new_stack((void *)(&ss_release), 2, 2, (size_t)(5826008423592869672UL), (size_t)(0UL), "ss_release|s|0", &____must_checkpoint_ss_release_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_release|k|0", &____must_checkpoint_ss_release_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
@@ -214,44 +190,41 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 4  l
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 20  if (____must_checkpoint_omp_global_lock_alloc_lock_0 != 0) { register_stack_var("omp_global_lock_alloc|lock|0", &____must_checkpoint_omp_global_lock_alloc_lock_0, "%struct.omp_lock_t*", (void *)(&lock), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 57 20  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 56 88  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 292 64  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 293 3  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 293 76  if (____must_checkpoint_impl_getName_name_0 != 0) { register_stack_var("impl_getName|name|0", &____must_checkpoint_impl_getName_name_0, "[5 x i8*]", (void *)(name), (size_t)40, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 293 76  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 292 64  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 301 107  call_lbl_4: calling((void*)&omp_get_num_threads, 4, 0UL, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 299 375  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 319 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 319 11  if (____must_checkpoint_impl_parseParam_err_0 != 0) { register_stack_var("impl_parseParam|err|0", &____must_checkpoint_impl_parseParam_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 319 11  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 318 157  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 318 157  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 359 70  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 376 80  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 422 60  call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869255UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 427 60  call_lbl_4: calling((void*)&omp_unset_lock, 4, 0UL, 1, (size_t)(5826008423592869255UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 421 218  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 431 194  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 456 5  call_lbl_8: calling((void*)&ss_error, 8, 0UL, 1, (size_t)(5826008423592871105UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 458 159  call_lbl_10: calling((void*)&omp_global_lock_alloc, 10, 5826008423592869310UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 473 60  call_lbl_15: calling((void*)&ss_mkEmpty, 15, 0UL, 1, (size_t)(5826008423592869386UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 438 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 438 14  if (____must_checkpoint_ss_init_nbytes_0 != 0) { register_stack_var("ss_init|nbytes|0", &____must_checkpoint_ss_init_nbytes_0, "i32", (void *)(&nbytes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 438 14  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 437 334  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 479 122  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871107UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 481 109  call_lbl_6: calling((void*)&rng_showstate, 6, 5826008423592869416UL, 2, (size_t)(5826008423592869467UL), (size_t)(5826008423592871080UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 484 3  call_lbl_7: calling((void*)&memcpy, 7, 0UL, 3, (size_t)(5826008423592869428UL), (size_t)(5826008423592869467UL), (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 478 350  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 494 118  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871109UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 497 109  call_lbl_6: calling((void*)&rng_showstate, 6, 5826008423592869532UL, 2, (size_t)(5826008423592869516UL), (size_t)(5826008423592871080UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 431 96  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 456 5  call_lbl_6: calling((void*)&ss_error, 6, 0UL, 1, (size_t)(5826008423592871105UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 458 159  call_lbl_8: calling((void*)&omp_global_lock_alloc, 8, 5826008423592869310UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 473 60  call_lbl_12: calling((void*)&ss_mkEmpty, 12, 0UL, 1, (size_t)(5826008423592869386UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 437 334  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 479 32  call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871107UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 481 109  call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869416UL, 2, (size_t)(5826008423592869467UL), (size_t)(5826008423592871080UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 484 3  call_lbl_6: calling((void*)&memcpy, 6, 0UL, 3, (size_t)(5826008423592869428UL), (size_t)(5826008423592869467UL), (size_t)(0UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 478 350  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 494 28  call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871109UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 497 109  call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869532UL, 2, (size_t)(5826008423592869516UL), (size_t)(5826008423592871080UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 493 3  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 493 10  if (____must_checkpoint_ss_top_r_0 != 0) { register_stack_var("ss_top|r|0", &____must_checkpoint_ss_top_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 493 10  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 492 204  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 507 151  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871109UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 511 142  call_lbl_6: calling((void*)&rng_showstate, 6, 5826008423592869585UL, 2, (size_t)(5826008423592869570UL), (size_t)(5826008423592871080UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 493 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 492 98  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 507 28  call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871109UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 511 142  call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869585UL, 2, (size_t)(5826008423592869570UL), (size_t)(5826008423592871080UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 506 3  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 506 10  if (____must_checkpoint_ss_pop_r_0 != 0) { register_stack_var("ss_pop|r|0", &____must_checkpoint_ss_pop_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 506 10  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 505 202  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 520 85  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871113UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 519 187  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 506 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 505 96  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 520 28  call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871113UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 519 73  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 526 109  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 532 93  call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869635UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 533 107  call_lbl_3: calling((void*)&ss_error, 3, 0UL, 1, (size_t)(5826008423592871108UL)); 
@@ -263,13 +236,13 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 547 3  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 547 12  if (____must_checkpoint_ss_acquire_avail_0 != 0) { register_stack_var("ss_acquire|avail|0", &____must_checkpoint_ss_acquire_avail_0, "i32", (void *)(&avail), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 547 12  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 546 335  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 567 157  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871100UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 570 159  call_lbl_4: calling((void*)&ss_error, 4, 0UL, 1, (size_t)(5826008423592871116UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 577 126  call_lbl_9: calling((void*)&omp_set_lock, 9, 0UL, 1, (size_t)(5826008423592869945UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 591 244  call_lbl_13: calling((void*)&ss_error, 13, 0UL, 1, (size_t)(5826008423592871119UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 608 192  call_lbl_15: calling((void*)&omp_unset_lock, 15, 0UL, 1, (size_t)(5826008423592869945UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 621 5  call_lbl_18: calling((void*)&memcpy, 18, 0UL, 3, (size_t)(5826008423592869921UL), (size_t)(5826008423592869945UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 629 198  call_lbl_22: calling((void*)&rng_showstate, 22, 5826008423592869937UL, 2, (size_t)(5826008423592869921UL), (size_t)(5826008423592871080UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 567 34  call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871100UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 570 36  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871116UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 577 126  call_lbl_6: calling((void*)&omp_set_lock, 6, 0UL, 1, (size_t)(5826008423592869945UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 591 55  call_lbl_9: calling((void*)&ss_error, 9, 0UL, 1, (size_t)(5826008423592871119UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 608 192  call_lbl_11: calling((void*)&omp_unset_lock, 11, 0UL, 1, (size_t)(5826008423592869945UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 621 5  call_lbl_14: calling((void*)&memcpy, 14, 0UL, 3, (size_t)(5826008423592869921UL), (size_t)(5826008423592869945UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 629 198  call_lbl_18: calling((void*)&rng_showstate, 18, 5826008423592869937UL, 2, (size_t)(5826008423592869921UL), (size_t)(5826008423592871080UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 564 3  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 564 18  if (____must_checkpoint_ss_steal_victimLocal_0 != 0) { register_stack_var("ss_steal|victimLocal|0", &____must_checkpoint_ss_steal_victimLocal_0, "i32", (void *)(&victimLocal), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 564 18  if (____chimes_replaying) { goto lbl_1; } 
@@ -293,7 +266,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 626
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 626 12  if (____chimes_replaying) { goto lbl_7; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 628 10  lbl_7: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 628 17  if (____must_checkpoint_ss_steal_r_0 != 0) { register_stack_var("ss_steal|r|0", &____must_checkpoint_ss_steal_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 628 17  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(9): { goto call_lbl_9; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(18): { goto call_lbl_18; } case(22): { goto call_lbl_22; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 628 17  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(14): { goto call_lbl_14; } case(18): { goto call_lbl_18; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 563 457  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 656 126  call_lbl_2: calling((void*)&omp_get_num_threads, 2, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 657 5  call_lbl_4: calling((void*)&omp_get_num_threads, 4, 0UL, 0); 
@@ -305,16 +278,10 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 655
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 655 15  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 654 165  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 674 60  call_lbl_2: calling((void*)&uts_wctime, 2, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 673 3  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 673 8  if (____must_checkpoint_ss_initState_i_0 != 0) { register_stack_var("ss_initState|i|0", &____must_checkpoint_ss_initState_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 673 8  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 672 226  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 687 123  call_lbl_2: calling((void*)&ss_error, 2, 0UL, 1, (size_t)(5826008423592871124UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 691 93  call_lbl_6: calling((void*)&uts_wctime, 6, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 686 3  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 686 14  if (____must_checkpoint_ss_setState_time_0 != 0) { register_stack_var("ss_setState|time|0", &____must_checkpoint_ss_setState_time_0, "double", (void *)(&time), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 686 14  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 685 357  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 672 226  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 687 33  call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871124UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 691 93  call_lbl_5: calling((void*)&uts_wctime, 5, 0UL, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 685 357  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 889 71  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 912 93  call_lbl_2: calling((void*)&uts_initRoot, 2, 0UL, 2, (size_t)(5826008423592870173UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 911 90  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
@@ -342,14 +309,14 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 973
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 973 17  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 955 569  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1007 3  call_lbl_1: calling((void*)&omp_global_lock_alloc, 1, 5826008423592870354UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1012 60  call_lbl_6: calling((void*)&omp_set_lock, 6, 0UL, 1, (size_t)(5826008423592870354UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1016 60  call_lbl_8: calling((void*)&omp_unset_lock, 8, 0UL, 1, (size_t)(5826008423592870354UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1006 51  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1012 60  call_lbl_5: calling((void*)&omp_set_lock, 5, 0UL, 1, (size_t)(5826008423592870354UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1016 60  call_lbl_7: calling((void*)&omp_unset_lock, 7, 0UL, 1, (size_t)(5826008423592870354UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1006 51  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1025 60  call_lbl_3: calling((void*)&omp_set_lock, 3, 0UL, 1, (size_t)(5826008423592870354UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1030 60  call_lbl_5: calling((void*)&omp_get_num_threads, 5, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1042 60  call_lbl_9: calling((void*)&omp_unset_lock, 9, 0UL, 1, (size_t)(5826008423592870354UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1064 126  call_lbl_16: calling((void*)&omp_set_lock, 16, 0UL, 1, (size_t)(5826008423592870354UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1073 60  call_lbl_20: calling((void*)&omp_unset_lock, 20, 0UL, 1, (size_t)(5826008423592870354UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1042 159  call_lbl_8: calling((void*)&omp_unset_lock, 8, 0UL, 1, (size_t)(5826008423592870354UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1064 126  call_lbl_14: calling((void*)&omp_set_lock, 14, 0UL, 1, (size_t)(5826008423592870354UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1073 159  call_lbl_17: calling((void*)&omp_unset_lock, 17, 0UL, 1, (size_t)(5826008423592870354UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1022 3  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1022 14  if (____must_checkpoint_cbarrier_wait_l_count_0 != 0) { register_stack_var("cbarrier_wait|l_count|0", &____must_checkpoint_cbarrier_wait_l_count_0, "i32", (void *)(&l_count), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1022 14  if (____chimes_replaying) { goto lbl_1; } 
@@ -361,7 +328,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 102
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1022 40  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1023 4  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1023 10  if (____must_checkpoint_cbarrier_wait_pe_0 != 0) { register_stack_var("cbarrier_wait|pe|0", &____must_checkpoint_cbarrier_wait_pe_0, "i32", (void *)(&pe), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1023 10  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1023 10  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(14): { goto call_lbl_14; } case(17): { goto call_lbl_17; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1021 63  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1084 68  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1098 5  call_lbl_1: calling((void*)&ss_localDepth, 1, 0UL, 1, (size_t)(5826008423592870324UL)); 
@@ -394,7 +361,7 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1127 3 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1127 15  register_stack_var("parTreeSearch|parent|0", (int *)0x0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1127 15  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1128 4  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1128 14  if (____must_checkpoint_parTreeSearch_child_0 != 0) { register_stack_var("parTreeSearch|child|0", &____must_checkpoint_parTreeSearch_child_0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&child), (size_t)32, 0, 1, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1128 14  register_stack_var("parTreeSearch|child|0", (int *)0x0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&child), (size_t)32, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1128 14  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1136 6  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1136 20  register_stack_var("parTreeSearch|localDepth|0", (int *)0x0, "i32", (void *)(&localDepth), (size_t)4, 0, 0, 0); 
@@ -454,25 +421,25 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1235 49
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1235 503  if (____must_checkpoint_showStats_nthreads_0 != 0) { register_stack_var("showStats|nthreads|0", &____must_checkpoint_showStats_nthreads_0, "i32", (void *)(&nthreads), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1235 503  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1230 216  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 11 ;  { call_lbl_27: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(27, &____chimes_region_id0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 11 ;  { call_lbl_26: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(26, &____chimes_region_id0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1382 3  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1453 3  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 126  call_lbl_3: calling((void*)&uts_parseParams, 3, 0UL, 2, (size_t)(0UL), (size_t)(5826008423592871071UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 3  call_lbl_4: calling((void*)&cb_init, 4, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1388 7  call_lbl_6: calling((void*)&uts_printParams, 6, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1413 62  call_lbl_12: calling((void*)&ss_init, 12, 0UL, 2, (size_t)(5826008423592870372UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1418 7  call_lbl_14: calling((void*)&initRootNode, 14, 0UL, 2, (size_t)(5826008423592871004UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1419 7  call_lbl_15: calling((void*)&ss_push, 15, 0UL, 2, (size_t)(5826008423592870372UL), (size_t)(5826008423592871004UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1427 5  call_lbl_16: calling((void*)&checkpoint, 16, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1431 5  call_lbl_17: calling((void*)&ss_initState, 17, 0UL, 1, (size_t)(5826008423592870372UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1432 5  call_lbl_18: calling((void*)&uts_wctime, 18, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1433 62  call_lbl_20: calling((void*)&parTreeSearch, 20, 0UL, 1, (size_t)(5826008423592870372UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1434 5  call_lbl_21: calling((void*)&uts_wctime, 21, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1446 95  call_lbl_23: calling((void*)&checkpoint, 23, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1451 7  call_lbl_25: calling((void*)&showStats, 25, 0UL, 1, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1413 95  call_lbl_11: calling((void*)&ss_init, 11, 0UL, 2, (size_t)(5826008423592870372UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1418 7  call_lbl_13: calling((void*)&initRootNode, 13, 0UL, 2, (size_t)(5826008423592871004UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1419 7  call_lbl_14: calling((void*)&ss_push, 14, 0UL, 2, (size_t)(5826008423592870372UL), (size_t)(5826008423592871004UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1427 5  call_lbl_15: calling((void*)&checkpoint, 15, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1431 5  call_lbl_16: calling((void*)&ss_initState, 16, 0UL, 1, (size_t)(5826008423592870372UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1432 5  call_lbl_17: calling((void*)&uts_wctime, 17, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1433 62  call_lbl_19: calling((void*)&parTreeSearch, 19, 0UL, 1, (size_t)(5826008423592870372UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1434 5  call_lbl_20: calling((void*)&uts_wctime, 20, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1446 95  call_lbl_22: calling((void*)&checkpoint, 22, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1451 7  call_lbl_24: calling((void*)&showStats, 24, 0UL, 1, (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1363 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1363 13  if (____must_checkpoint_main_root_0 != 0) { register_stack_var("main|root|0", &____must_checkpoint_main_root_0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1363 13  if (____chimes_replaying) {  switch(get_next_call()) { case(27): { goto call_lbl_27; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1363 13  register_stack_var("main|root|0", (int *)0x0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1363 13  if (____chimes_replaying) {  switch(get_next_call()) { case(26): { goto call_lbl_26; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1362 130  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1383 5  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1383 14  register_stack_var("main|t1|0", (int *)0x0, "double", (void *)(&t1), (size_t)8, 0, 0, 0); 
@@ -485,5 +452,5 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 138
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1383 36  if (____chimes_replaying) { goto lbl_4; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1384 5  lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1384 19  register_stack_var("main|ss|0", (int *)0x0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1384 19  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1384 19  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1382 4  if (____chimes_replaying) { goto lbl_1; } 

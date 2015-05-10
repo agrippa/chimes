@@ -1,6 +1,6 @@
-_Z12char_mappingc DOES_NOT
-_Z12print_matrixPPiii DOES_NOT fprintf
-_Z28clear_whitespaces_do_mappingPal DOES_NOT _Z12char_mappingc
-_Z9read_fileP7__sFILEPm MAY _Z28clear_whitespaces_do_mappingPal fread fseek ftell malloc
-_Z9find_diagii DOES_NOT
-main DOES _fopen _Z10checkpointv _Z9find_diagii _Z9read_fileP7__sFILEPm atoi exit fprintf free gettimeofday malloc
+_Z12char_mappingc 0 DOES_NOT
+_Z12print_matrixPPiii 0 DOES_NOT fprintf
+_Z28clear_whitespaces_do_mappingPal 0 DOES_NOT _Z12char_mappingc
+_Z9read_fileP7__sFILEPm 0 MAY _Z28clear_whitespaces_do_mappingPal fread fseek ftell malloc
+_Z9find_diagii 0 DOES_NOT
+main 0 DOES _fopen _Z10checkpointv _Z9find_diagii _Z9read_fileP7__sFILEPm atoi exit fprintf free gettimeofday malloc

@@ -1,1 +1,1 @@
-main DOES _Z10checkpointv malloc
+main 0 DOES _Z10checkpointv malloc

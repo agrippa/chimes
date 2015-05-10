@@ -8,6 +8,7 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "random.c.pre.transformed.cpp"
+static int ____must_checkpoint_mkSeed_iSeed_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -805,7 +806,7 @@ extern double significand(double) __attribute__((deprecated));
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 real_t gasdev(uint64_t* seed)
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-{new_stack((void *)(&gasdev), 1, 0, (size_t)(16794414226779803848UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
+{new_stack((void *)(&gasdev), 1, 0, (size_t)(16794414226779803848UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    real_t rsq; real_t v1; real_t v2; ;
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
@@ -822,7 +823,7 @@ real_t gasdev(uint64_t* seed)
    } while (rsq >= 1.0 || rsq == 0.0);
 # 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   alias_group_changed(4, (size_t)(16794414226779803838UL), (size_t)(16794414226779803839UL), (size_t)(16794414226779803840UL), (size_t)(16794414226779803841UL)); rm_stack(false, 0UL); call_lbl_5: calling((void*)&sqrt, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&log, 6, 0UL, 1, (size_t)(0UL)); return v2 * sqrt(-2.0*log(rsq)/rsq);
+   alias_group_changed(4, (size_t)(16794414226779803838UL), (size_t)(16794414226779803839UL), (size_t)(16794414226779803840UL), (size_t)(16794414226779803841UL)); rm_stack(false, 0UL); return v2 * sqrt(-2.0*log(rsq)/rsq);
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 }
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
@@ -846,14 +847,14 @@ double lcg61(uint64_t* seed)
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 uint64_t mkSeed(uint32_t id, uint32_t callSite)
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-{new_stack((void *)(&mkSeed), 2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
+{new_stack((void *)(&mkSeed), 2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { goto lbl_0; }
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s1; s1 = (id * (2654435761UL)) ;
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s2; s2 = ((id + callSite) * (2654435761UL)) ;
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-    uint64_t iSeed; iSeed = (((4294967296ULL) * s1) + s2) ;
+     lbl_0: uint64_t iSeed; if (____must_checkpoint_mkSeed_iSeed_0 != 0) { register_stack_var("mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } iSeed = (((4294967296ULL) * s1) + s2) ;
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { call_lbl_1: calling((void*)&lcg61, 1, 0UL, 1, (size_t)(16794414226779803911UL)); lcg61(&iSeed); } };
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
@@ -864,7 +865,7 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite)
 
 
 static int module_init() {
-    init_module(16794414226779803837UL, 2, 3, 0, 0, 16794414226779803837UL + 1UL, 16794414226779803837UL + 11UL, 16794414226779803837UL + 50UL, 16794414226779803837UL + 67UL, "_Z6gasdevPy", 3, "_Z5lcg61Py", "log", "sqrt", "_Z5lcg61Py", 0, "_Z6mkSeedjj", 1, "_Z5lcg61Py");
+    init_module(16794414226779803837UL, 2, 3, 1, 0, 16794414226779803837UL + 1UL, 16794414226779803837UL + 11UL, 16794414226779803837UL + 50UL, 16794414226779803837UL + 67UL, "_Z5lcg61Py", 0, "_Z6mkSeedjj", 1, "_Z5lcg61Py", "_Z6gasdevPy", 3, "_Z5lcg61Py", "log", "sqrt", "mkSeed|iSeed|0", 1, "_Z6mkSeedjj");
     return 0;
 }
 

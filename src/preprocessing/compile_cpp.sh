@@ -192,7 +192,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Setting up stack variable conditionals for ${PREPROCESS_FILE}
     cd ${WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${PREPROCESS_FILE} \
-        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info
+        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info ${INFO_FILE_PREFIX}.tree.info
     mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
 
     ${TRANSFORM} \

@@ -1,8 +1,8 @@
-_Z7secondsv DOES_NOT gettimeofday
-_Z14ricker_waveletPfiff MAY exp
-_Z12parse_sourcePcP7_source MAY atof atoi exit fprintf strchr
-_Z14config_sourcesPP7_sourcePiiii DOES_NOT exit fprintf malloc
-_Z14sample_sourcesP7_sourceiif MAY _Z14ricker_waveletPfiff exit fprintf malloc
-_Z13init_progressiii DOES_NOT __assert_rtn exit fprintf malloc
-_Z15update_progressi DOES_NOT exit fprintf
-_Z15finish_progressv DOES_NOT _Z15update_progressi fprintf free
+_Z7secondsv 0 DOES_NOT gettimeofday
+_Z14ricker_waveletPfiff 0 DOES_NOT exp
+_Z12parse_sourcePcP7_source 0 DOES_NOT atof atoi exit fprintf strchr
+_Z14config_sourcesPP7_sourcePiiii 0 DOES_NOT exit fprintf malloc
+_Z14sample_sourcesP7_sourceiif 0 DOES_NOT _Z14ricker_waveletPfiff exit fprintf malloc
+_Z13init_progressiii 0 DOES_NOT __assert_rtn exit fprintf malloc
+_Z15update_progressi 0 DOES_NOT exit fprintf
+_Z15finish_progressv 0 DOES_NOT _Z15update_progressi fprintf free

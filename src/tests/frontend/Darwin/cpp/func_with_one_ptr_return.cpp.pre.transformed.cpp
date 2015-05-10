@@ -1490,7 +1490,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(651168722096376615UL, 3, 2, 0, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL, "_Z23haha_this_sux_part_deuxv", 1, "malloc", "main", 2, "_Z10checkpointv", "_Z23haha_this_sux_part_deuxv");
+    init_module(651168722096376615UL, 3, 2, 0, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL, "main", 2, "_Z10checkpointv", "_Z23haha_this_sux_part_deuxv", "_Z23haha_this_sux_part_deuxv", 1, "malloc");
     return 0;
 }
 

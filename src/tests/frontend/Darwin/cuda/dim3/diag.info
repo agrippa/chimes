@@ -6,6 +6,6 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1  dim3 block
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 20 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 124  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 2  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 13  if (____must_checkpoint_main_blocks_0 != 0) { register_stack_var("main|blocks|0", &____must_checkpoint_main_blocks_0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 13  register_stack_var("main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 13  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 129  if (____chimes_replaying) { goto lbl_0; } 

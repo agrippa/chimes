@@ -1,2 +1,2 @@
-_Z17initDecompositioniiiPd MAY _Z9getMyRankv _Z9getNRanksv __assert_rtn malloc
-_Z12processorNumP8DomainStiii DOES_NOT
+_Z17initDecompositioniiiPd 0 MAY _Z9getMyRankv _Z9getNRanksv __assert_rtn malloc
+_Z12processorNumP8DomainStiii 0 DOES_NOT

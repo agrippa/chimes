@@ -2986,7 +2986,7 @@ alias_group_changed(25, (size_t)(636351199311517512UL), (size_t)(636351199311517
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(636351199311517481UL)); if (____chimes_replaying) { goto lbl_0; }
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- lbl_0: config conf; if (____must_checkpoint_main_conf_0 != 0) { register_stack_var("main|conf|0", &____must_checkpoint_main_conf_0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); } if (____chimes_replaying) { goto lbl_1; } ;
+ lbl_0: config conf; register_stack_var("main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  alias_group_changed(3, (size_t)(636351199311517110UL), (size_t)(636351199311517111UL), (size_t)(636351199311517112UL)); call_lbl_3: calling((void*)&setup_config, 3, 0UL, 3, (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(636351199311517481UL)); setup_config(&conf, argc, argv);
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"

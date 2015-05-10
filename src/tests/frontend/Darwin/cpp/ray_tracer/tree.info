@@ -1,13 +1,13 @@
-_Z4initP7_sphereddddddd DOES_NOT __assert_rtn
-_Z9get_coordddddd DOES_NOT
-_Z4modvddd DOES_NOT sqrt
-_Z4moveP7_sphereddd DOES_NOT
-_Z7move_toP7_sphereddd DOES_NOT
-_Z5rot_xP7_sphered MAY cos sin
-_Z5rot_yP7_sphered MAY cos sin
-_Z19get_sphere_intersecdddddddddd DOES_NOT sqrt
-_Z18get_cos_angle_v1v2dddddd DOES_NOT _Z4modvddd
-_Z5usagePPc DOES_NOT exit fprintf
-_Z19parse_three_doublesPcPdS0_S0_ MAY __assert_rtn atof strchr
-_Z12parse_configiPPcP7_config MAY _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc __assert_rtn atof atoi fprintf realloc strchr
-main DOES _Z10checkpointv _Z12parse_configiPPcP7_config _Z18get_cos_angle_v1v2dddddd _Z19get_sphere_intersecdddddddddd _Z4modvddd _Z4moveP7_sphereddd _Z9get_coordddddd free malloc printf
+_Z4initP7_sphereddddddd 0 DOES_NOT __assert_rtn
+_Z9get_coordddddd 0 DOES_NOT
+_Z4modvddd 0 DOES_NOT sqrt
+_Z4moveP7_sphereddd 0 DOES_NOT
+_Z7move_toP7_sphereddd 0 DOES_NOT
+_Z5rot_xP7_sphered 0 MAY cos sin
+_Z5rot_yP7_sphered 0 MAY cos sin
+_Z19get_sphere_intersecdddddddddd 0 DOES_NOT sqrt
+_Z18get_cos_angle_v1v2dddddd 0 DOES_NOT _Z4modvddd
+_Z5usagePPc 0 DOES_NOT exit fprintf
+_Z19parse_three_doublesPcPdS0_S0_ 0 DOES_NOT __assert_rtn atof strchr
+_Z12parse_configiPPcP7_config 0 MAY _getopt _Z19parse_three_doublesPcPdS0_S0_ _Z4initP7_sphereddddddd _Z5usagePPc __assert_rtn atof atoi fprintf realloc strchr
+main 0 DOES _Z10checkpointv _Z12parse_configiPPcP7_config _Z18get_cos_angle_v1v2dddddd _Z19get_sphere_intersecdddddddddd _Z4modvddd _Z4moveP7_sphereddd _Z9get_coordddddd free malloc printf

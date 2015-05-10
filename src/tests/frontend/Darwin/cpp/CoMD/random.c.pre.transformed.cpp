@@ -12,6 +12,7 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "random.c.pre.transformed.cpp" 2
+static int ____must_checkpoint_mkSeed_iSeed_0 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -810,7 +811,7 @@ extern double significand(double) __attribute__((availability(macosx,introduced=
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 real_t gasdev(uint64_t* seed)
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
-{new_stack((void *)(&gasdev), 1, 0, (size_t)(13664289541852258059UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
+{new_stack((void *)(&gasdev), 1, 0, (size_t)(13664289541852258059UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  real_t rsq; real_t v1; real_t v2; ;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
@@ -827,7 +828,7 @@ real_t gasdev(uint64_t* seed)
  } while (rsq >= 1.0 || rsq == 0.0);
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- alias_group_changed(4, (size_t)(13664289541852258049UL), (size_t)(13664289541852258050UL), (size_t)(13664289541852258051UL), (size_t)(13664289541852258052UL)); rm_stack(false, 0UL); call_lbl_5: calling((void*)&sqrt, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&log, 6, 0UL, 1, (size_t)(0UL)); return v2 * sqrt(-2.0*log(rsq)/rsq);
+ alias_group_changed(4, (size_t)(13664289541852258049UL), (size_t)(13664289541852258050UL), (size_t)(13664289541852258051UL), (size_t)(13664289541852258052UL)); rm_stack(false, 0UL); return v2 * sqrt(-2.0*log(rsq)/rsq);
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 }
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
@@ -851,14 +852,14 @@ double lcg61(uint64_t* seed)
 # 66 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 uint64_t mkSeed(uint32_t id, uint32_t callSite)
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
-{new_stack((void *)(&mkSeed), 2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
+{new_stack((void *)(&mkSeed), 2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { goto lbl_0; }
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  uint32_t s1; s1 = (id * 2654435761UL) ;
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  uint32_t s2; s2 = ((id + callSite) * 2654435761UL) ;
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- uint64_t iSeed; iSeed = ((4294967296ULL * s1) + s2) ;
+ lbl_0: uint64_t iSeed; if (____must_checkpoint_mkSeed_iSeed_0 != 0) { register_stack_var("mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } iSeed = ((4294967296ULL * s1) + s2) ;
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { call_lbl_1: calling((void*)&lcg61, 1, 0UL, 1, (size_t)(13664289541852258122UL)); lcg61(&iSeed); } };
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
@@ -869,7 +870,7 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite)
 
 
 static int module_init() {
-    init_module(13664289541852258048UL, 2, 3, 0, 0, 13664289541852258048UL + 1UL, 13664289541852258048UL + 11UL, 13664289541852258048UL + 50UL, 13664289541852258048UL + 67UL, "_Z6gasdevPy", 3, "_Z5lcg61Py", "log", "sqrt", "_Z5lcg61Py", 0, "_Z6mkSeedjj", 1, "_Z5lcg61Py");
+    init_module(13664289541852258048UL, 2, 3, 1, 0, 13664289541852258048UL + 1UL, 13664289541852258048UL + 11UL, 13664289541852258048UL + 50UL, 13664289541852258048UL + 67UL, "_Z5lcg61Py", 0, "_Z6mkSeedjj", 1, "_Z5lcg61Py", "_Z6gasdevPy", 3, "_Z5lcg61Py", "log", "sqrt", "mkSeed|iSeed|0", 1, "_Z6mkSeedjj");
     return 0;
 }
 

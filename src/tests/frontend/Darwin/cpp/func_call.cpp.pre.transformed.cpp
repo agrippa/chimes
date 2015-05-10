@@ -1517,7 +1517,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(11267635574997452870UL, 1, 2, 0, 0, 11267635574997452870UL + 65UL, 11267635574997452870UL + 82UL, "_Z3fooi", 2, "_Z10checkpointv", "__assert_rtn", "main", 1, "_Z3fooi");
+    init_module(11267635574997452870UL, 1, 2, 0, 0, 11267635574997452870UL + 65UL, 11267635574997452870UL + 82UL, "main", 1, "_Z3fooi", "_Z3fooi", 2, "_Z10checkpointv", "__assert_rtn");
     return 0;
 }
 

@@ -1,1 +1,1 @@
-main DOES _Z10checkpointv printf
+main 0 DOES _Z10checkpointv printf

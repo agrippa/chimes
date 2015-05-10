@@ -1,11 +1,11 @@
-rng_init DOES_NOT sha1_begin sha1_end sha1_hash
-sha1_begin DOES_NOT
-sha1_hash DOES_NOT sha1_compile
-sha1_end DOES_NOT sha1_compile
-rng_spawn DOES_NOT sha1_begin sha1_end sha1_hash
-rng_rand DOES_NOT
-rng_nextrand DOES_NOT sha1_begin sha1_end sha1_hash
-rng_showstate DOES_NOT sprintf
-rng_showtype DOES_NOT sprintf
-sha1_compile DOES_NOT
-sha1 DOES_NOT sha1_begin sha1_end sha1_hash
+rng_init 0 DOES_NOT sha1_begin sha1_end sha1_hash
+sha1_begin 0 DOES_NOT
+sha1_hash 0 DOES_NOT sha1_compile
+sha1_end 0 DOES_NOT sha1_compile
+rng_spawn 0 DOES_NOT sha1_begin sha1_end sha1_hash
+rng_rand 0 DOES_NOT
+rng_nextrand 0 DOES_NOT sha1_begin sha1_end sha1_hash
+rng_showstate 0 DOES_NOT sprintf
+rng_showtype 0 DOES_NOT sprintf
+sha1_compile 0 DOES_NOT
+sha1 0 DOES_NOT sha1_begin sha1_end sha1_hash

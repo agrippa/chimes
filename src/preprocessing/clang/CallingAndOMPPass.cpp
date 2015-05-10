@@ -90,8 +90,8 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
             std::string mangled = constructMangledName(v->getName().str());
             StackAlloc *alloc = insertions->findStackAlloc(mangled);
 
-
-            if (alloc != NULL && alloc->get_may_checkpoint()) {
+            if (alloc != NULL && (alloc->get_may_checkpoint() ||
+                        alloc->is_array_type())) {
                 assert(allocs.find(v) == allocs.end());
                 allocs[v] = alloc;
             }
@@ -110,6 +110,7 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
     std::stringstream acc;
 
     bool anyInitLists = false;
+    bool add_wrapping_lbl = false;
     for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
             e = d->decl_end(); i != e; i++) {
         clang::Decl *dd = *i;
@@ -125,16 +126,32 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
                  * alloc->checkpoint_causes only includes functions which
                  * MAY or DOES create a checkpoint, no DOES_NOT.
                  */
-                assert(alloc->get_may_checkpoint());
-                acc << constructRegisterStackVar(alloc);
-                if (v->hasInit() && clang::dyn_cast<clang::InitListExpr>(v->getInit())) {
+                assert(alloc->get_may_checkpoint() || alloc->is_array_type());
+                if (alloc->get_may_checkpoint()) {
+                    acc << constructRegisterStackVar(alloc);
+                }
+
+                /*
+                 * We add a wrapping label to jump to as part of function resume
+                 * for variables that are either checkpointable (i.e. they may
+                 * be on the stack when a checkpoint is created) or array
+                 * allocations. The reasoning behind checkpointable labels is
+                 * obvious: we need these labels to jump to the associated
+                 * variable registration during resume. We place labels on
+                 * arrays simply because the compiler will complain about jumps
+                 * over variable initialization if we do not jump through those
+                 * initializations.
+                 */
+                add_wrapping_lbl = true;
+                if (v->hasInit() && clang::dyn_cast<clang::InitListExpr>(
+                            v->getInit())) {
                     anyInitLists = true;
                 }
             }
         }
     }
 
-    if (acc.str().length() > 0) {
+    if (add_wrapping_lbl) {
         std::stringstream label_ss;
         int lbl = getNextRegisterLabel();
         label_ss << "lbl_" << lbl;
