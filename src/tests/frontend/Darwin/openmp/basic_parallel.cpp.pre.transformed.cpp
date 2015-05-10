@@ -1803,13 +1803,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); if (____chimes_replaying) { goto lbl_0; }
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, false, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-          lbl_0: int inside; register_stack_var("main|inside|0", (int *)0x0, "i32", (void *)(&inside), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } inside = (6) ;
+         int inside; inside = (6) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-        alias_group_changed(7, (size_t)(17008665004289634904UL), (size_t)(17008665004289634905UL), (size_t)(17008665004289634906UL), (size_t)(17008665004289634907UL), (size_t)(17008665004289634908UL), (size_t)(17008665004289634909UL), (size_t)(17008665004289634910UL)); printf("hello from %d : %d\n", omp_get_thread_num(), inside);
+        printf("hello from %d : %d\n", omp_get_thread_num(), inside);
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-         call_lbl_5: calling((void*)&foo, 5, 0UL, 0); foo();
+        alias_group_changed(7, (size_t)(17008665004289634904UL), (size_t)(17008665004289634905UL), (size_t)(17008665004289634906UL), (size_t)(17008665004289634907UL), (size_t)(17008665004289634908UL), (size_t)(17008665004289634909UL), (size_t)(17008665004289634910UL)); call_lbl_5: calling((void*)&foo, 5, 0UL, 0); foo();
 # 18 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 19 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
@@ -1820,7 +1820,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 
 
 static int module_init() {
-    init_module(17008665004289634901UL, 1, 2, 0, 0, 17008665004289634901UL + 5UL, 17008665004289634901UL + 29UL, "_Z3foov", 1, "_Z10checkpointv", "main", 3, "_Z3foov", "omp_get_thread_num", "printf");
+    init_module(17008665004289634901UL, 1, 2, 0, 0, 17008665004289634901UL + 5UL, 17008665004289634901UL + 29UL, "main", 3, "_Z3foov", "omp_get_thread_num", "printf", "_Z3foov", 1, "_Z10checkpointv");
     return 0;
 }
 

@@ -216,6 +216,7 @@ public:
     int get_type_size_in_bits() { return type_size_in_bits; }
     bool get_is_ptr() { return is_ptr; }
     bool get_is_struct() { return is_struct; }
+    bool is_array_type() { return full_type[0] == '['; }
 
 private:
     std::string enclosing_file;

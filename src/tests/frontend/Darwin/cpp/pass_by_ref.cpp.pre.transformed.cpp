@@ -1728,7 +1728,7 @@ extern void foo(int *A);
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)); if (____chimes_replaying) { goto lbl_0; }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- lbl_0: int b; if (____must_checkpoint_main_b_0 != 0) { register_stack_var("main|b|0", &____must_checkpoint_main_b_0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+ lbl_0: int b; register_stack_var("main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  alias_group_changed(3, (size_t)(12387876047547725257UL), (size_t)(12387876047547725258UL), (size_t)(12387876047547725259UL)); call_lbl_3: calling((void*)&foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); foo(&b);
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"

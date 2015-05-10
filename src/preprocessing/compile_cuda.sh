@@ -214,7 +214,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Setting up stack variable conditionals for ${INTERMEDIATE_FILE}
     cd ${NVCC_WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${INTERMEDIATE_FILE} \
-        ${INTERMEDIATE_FILE}.conds ${INFO_FILE_PREFIX}.stack.info
+        ${INTERMEDIATE_FILE}.conds ${INFO_FILE_PREFIX}.stack.info ${INFO_FILE_PREFIX}.tree.info
     mv ${INTERMEDIATE_FILE}.conds ${INTERMEDIATE_FILE}
 
     ${TRANSFORM} \

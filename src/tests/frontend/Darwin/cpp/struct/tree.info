@@ -1,1 +1,1 @@
-main DOES _Z10checkpointv __assert_rtn fprintf malloc
+main 0 DOES _Z10checkpointv __assert_rtn fprintf malloc

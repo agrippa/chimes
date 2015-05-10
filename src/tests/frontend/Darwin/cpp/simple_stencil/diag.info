@@ -1,4 +1,5 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9 alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983328UL), (size_t)(7654350934130983345UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 5 alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983328UL), (size_t)(7654350934130983345UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 24 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 45 , 7654350934130983345UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 24 len=6 malloc_wrapper
@@ -7,7 +8,7 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 5 len=4
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 10 , 7654350934130983345UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 10 , 7654350934130983345UL
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983329UL), (size_t)(7654350934130983345UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 alias_group_changed(2, (size_t)(7654350934130983322UL), (size_t)(7654350934130983329UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 5 int i; int iter; ;
@@ -22,11 +23,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 5 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 84 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 9  int *tmp;  tmp = (curr) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 5  FILE *fp;  fp = (fopen("dump.out", "w")) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 38 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 14 9  call_lbl_4: calling((void*)&rand, 4, 0UL, 0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 393  FILE *fp;  fp = (fopen("dump.out", "w")) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 426 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 397  call_lbl_7: calling((void*)&checkpoint, 7, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 33 5  call_lbl_10: calling((void*)&fclose, 10, 0UL, 1, (size_t)(7654350934130983447UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 10  register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 10  if (____chimes_replaying) { goto lbl_1; } 
@@ -47,5 +46,5 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 1
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 15  if (____chimes_replaying) { goto lbl_6; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 10  lbl_6: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 18  register_stack_var("main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 18  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(10): { goto call_lbl_10; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 18  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 129  if (____chimes_replaying) { goto lbl_0; } 

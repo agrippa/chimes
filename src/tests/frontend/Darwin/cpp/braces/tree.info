@@ -1,1 +1,1 @@
-main DOES_NOT printf
+main 0 DOES_NOT printf

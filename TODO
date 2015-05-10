@@ -22,3 +22,4 @@
    generation phase.
 5. We currently require that there be some kind of statement before an OMP
    pragma for us to find and insert after.
+6. Add support for dynamically sized stack arrays, eg. int arr[num_threads].

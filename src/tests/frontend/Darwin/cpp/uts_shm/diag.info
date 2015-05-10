@@ -154,7 +154,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1379 5 dou
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1379 22 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1380 5 StealStack *ss; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1380 20 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 290 64  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 291 3  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 291 76  if (____must_checkpoint_impl_getName_name_0 != 0) { register_stack_var("impl_getName|name|0", &____must_checkpoint_impl_getName_name_0, "[5 x i8*]", (void *)(name), (size_t)40, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 291 76  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 290 64  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 297 138  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 316 157  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 357 70  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
@@ -272,7 +275,7 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1125 3  lb
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1125 15  register_stack_var("parTreeSearch|parent|0", (int *)0x0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1125 15  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1126 4  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1126 14  if (____must_checkpoint_parTreeSearch_child_0 != 0) { register_stack_var("parTreeSearch|child|0", &____must_checkpoint_parTreeSearch_child_0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&child), (size_t)32, 0, 1, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1126 14  register_stack_var("parTreeSearch|child|0", (int *)0x0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&child), (size_t)32, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1126 14  if (____chimes_replaying) { goto lbl_3; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1134 6  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1134 20  register_stack_var("parTreeSearch|localDepth|0", (int *)0x0, "i32", (void *)(&localDepth), (size_t)4, 0, 0, 0); 
@@ -331,7 +334,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1425 62  call_lb
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1426 5  call_lbl_15: calling((void*)&uts_wctime, 15, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1439 97  call_lbl_17: calling((void*)&showStats, 17, 0UL, 1, (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1359 4  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1359 13  if (____must_checkpoint_main_root_0 != 0) { register_stack_var("main|root|0", &____must_checkpoint_main_root_0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1359 13  register_stack_var("main|root|0", (int *)0x0, "%struct.node_t = type { i32, i32, i32, %struct.state_t }", (void *)(&root), (size_t)32, 0, 1, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1359 13  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1379 5  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1379 14  register_stack_var("main|t1|0", (int *)0x0, "double", (void *)(&t1), (size_t)8, 0, 0, 0); 

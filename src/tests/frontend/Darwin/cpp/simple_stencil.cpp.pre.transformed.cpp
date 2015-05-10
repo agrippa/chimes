@@ -1737,7 +1737,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  for (i = 0; i < N; i++) {
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- call_lbl_4: calling((void*)&rand, 4, 0UL, 0); curr[i] = next[i] = rand() % 100;
+ curr[i] = next[i] = rand() % 100;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1752,7 +1752,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- lbl_6: int *tmp; register_stack_var("main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } tmp = (curr) ;
+ lbl_6: int *tmp; register_stack_var("main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } tmp = (curr) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  curr = next;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1764,7 +1764,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  }
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- FILE *fp; fp = (fopen("dump.out", "w")) ;
+ alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983328UL), (size_t)(7654350934130983345UL)); FILE *fp; fp = (fopen("dump.out", "w")) ;
 # 30 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  for (i = 0; i < N; i++) {
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1772,14 +1772,14 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- call_lbl_10: calling((void*)&fclose, 10, 0UL, 1, (size_t)(7654350934130983447UL)); fclose(fp);
+ fclose(fp);
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  free_wrapper(curr, 7654350934130983345UL);
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  free_wrapper(next, 7654350934130983345UL);
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983329UL), (size_t)(7654350934130983345UL)); rm_stack(false, 0UL); return 0;
+ alias_group_changed(2, (size_t)(7654350934130983322UL), (size_t)(7654350934130983329UL)); rm_stack(false, 0UL); return 0;
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 }
 

@@ -1,5 +1,5 @@
-_Z9ljDestroyPP15BasePotentialSt DOES_NOT free
-_Z9initLjPotv DOES_NOT malloc strcpy
-_ZL7ljForceP9SimFlatSt DOES_NOT _ZL9zeroReal3Pd __assert_rtn
-_ZL7ljPrintP7__sFILEP15BasePotentialSt DOES_NOT fprintf
-_ZL9zeroReal3Pd DOES_NOT
+_Z9ljDestroyPP15BasePotentialSt 0 DOES_NOT free
+_Z9initLjPotv 0 DOES_NOT malloc strcpy
+_ZL7ljForceP9SimFlatSt 0 DOES_NOT _ZL9zeroReal3Pd __assert_rtn
+_ZL7ljPrintP7__sFILEP15BasePotentialSt 0 DOES_NOT fprintf
+_ZL9zeroReal3Pd 0 DOES_NOT

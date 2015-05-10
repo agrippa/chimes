@@ -1,3 +1,7 @@
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp foo|a|0 " i32 " 32 0 0 1
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp foo|b|0 " i32 " 32 0 0 1
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp foo|c|0 " i32 " 32 0 0 1
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp foo|a|0 " i32 " 32 0 0 1 _Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp foo|b|0 " i32 " 32 0 0 1 _Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp foo|c|0 " i32 " 32 0 0 1 _Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp main|argc|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp main|argv|0 " i8** " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp main|a|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp main|b|0 " i32 " 32 0 0 0

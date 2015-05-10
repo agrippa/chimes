@@ -10,6 +10,8 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 alias
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 alias_group_changed(1, (size_t)(684635133602954395UL)) || 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 alias_group_changed(1, (size_t)(684635133602954396UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 alias_group_changed(3, (size_t)(684635133602954397UL), (size_t)(684635133602954440UL), (size_t)(684635133602954442UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 4 alias_group_changed(3, (size_t)(684635133602953593UL), (size_t)(684635133602953594UL), (size_t)(684635133602953595UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 4 alias_group_changed(3, (size_t)(684635133602953846UL), (size_t)(684635133602953847UL), (size_t)(684635133602953848UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 39 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 65 , 684635133602952548UL, 0, 1, (int)sizeof(struct EamPotentialSt), 10, (int)__builtin_offsetof(struct EamPotentialSt, force), (int)__builtin_offsetof(struct EamPotentialSt, print), (int)__builtin_offsetof(struct EamPotentialSt, destroy), (int)__builtin_offsetof(struct EamPotentialSt, phi), (int)__builtin_offsetof(struct EamPotentialSt, rho), (int)__builtin_offsetof(struct EamPotentialSt, f), (int)__builtin_offsetof(struct EamPotentialSt, rhobar), (int)__builtin_offsetof(struct EamPotentialSt, dfEmbed), (int)__builtin_offsetof(struct EamPotentialSt, forceExchange), (int)__builtin_offsetof(struct EamPotentialSt, forceExchangeData)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 223 31 len=6 malloc_wrapper
@@ -62,10 +64,10 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 5
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 alias_group_changed(10, (size_t)(684635133602954552UL), (size_t)(684635133602954553UL), (size_t)(684635133602954554UL), (size_t)(684635133602954555UL), (size_t)(684635133602954556UL), (size_t)(684635133602954557UL), (size_t)(684635133602954558UL), (size_t)(684635133602954559UL), (size_t)(684635133602954705UL), (size_t)(684635133602954706UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 new_stack((void *)(&bcastInterpolationObject), 1, 1, (size_t)(684635133602954442UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 574 1 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 new_stack((void *)(&eamReadSetfl), 3, 0, (size_t)(684635133602953843UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 708 1 alias_group_changed(14, (size_t)(684635133602953593UL), (size_t)(684635133602953594UL), (size_t)(684635133602953595UL), (size_t)(684635133602953597UL), (size_t)(684635133602953608UL), (size_t)(684635133602953609UL), (size_t)(684635133602953610UL), (size_t)(684635133602953611UL), (size_t)(684635133602953612UL), (size_t)(684635133602953613UL), (size_t)(684635133602953614UL), (size_t)(684635133602953615UL), (size_t)(684635133602953714UL), (size_t)(684635133602953843UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 1 new_stack((void *)(&eamReadFuncfl), 3, 0, (size_t)(684635133602954101UL), (size_t)(684635133602954102UL), (size_t)(684635133602954103UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 818 1 alias_group_changed(14, (size_t)(684635133602953846UL), (size_t)(684635133602953847UL), (size_t)(684635133602953848UL), (size_t)(684635133602953850UL), (size_t)(684635133602953861UL), (size_t)(684635133602953862UL), (size_t)(684635133602953863UL), (size_t)(684635133602953864UL), (size_t)(684635133602953865UL), (size_t)(684635133602953866UL), (size_t)(684635133602953867UL), (size_t)(684635133602953868UL), (size_t)(684635133602953961UL), (size_t)(684635133602954101UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 new_stack((void *)(&eamReadSetfl), 3, 1, (size_t)(684635133602953843UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL), "eamReadSetfl|pot|0", &____must_checkpoint_eamReadSetfl_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 708 1 alias_group_changed(11, (size_t)(684635133602953597UL), (size_t)(684635133602953608UL), (size_t)(684635133602953609UL), (size_t)(684635133602953610UL), (size_t)(684635133602953611UL), (size_t)(684635133602953612UL), (size_t)(684635133602953613UL), (size_t)(684635133602953614UL), (size_t)(684635133602953615UL), (size_t)(684635133602953714UL), (size_t)(684635133602953843UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 1 new_stack((void *)(&eamReadFuncfl), 3, 1, (size_t)(684635133602954101UL), (size_t)(684635133602954102UL), (size_t)(684635133602954103UL), "eamReadFuncfl|pot|0", &____must_checkpoint_eamReadFuncfl_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 818 1 alias_group_changed(11, (size_t)(684635133602953850UL), (size_t)(684635133602953861UL), (size_t)(684635133602953862UL), (size_t)(684635133602953863UL), (size_t)(684635133602953864UL), (size_t)(684635133602953865UL), (size_t)(684635133602953866UL), (size_t)(684635133602953867UL), (size_t)(684635133602953868UL), (size_t)(684635133602953961UL), (size_t)(684635133602954101UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 1 new_stack((void *)(&fileNotFound), 2, 0, (size_t)(684635133602954236UL), (size_t)(684635133602954237UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 825 1 alias_group_changed(2, (size_t)(684635133602954223UL), (size_t)(684635133602954224UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 1 new_stack((void *)(&notAlloyReady), 1, 0, (size_t)(684635133602954391UL)); 
@@ -214,8 +216,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 585 7
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 585 32 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 4 char tmp[4096]; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 4  FILE *potFile;  potFile = (fopen(tmp, "r")) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 35 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 124  FILE *potFile;  potFile = (fopen(tmp, "r")) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 155 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 651 4 int nElems; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 651 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 657 4 int nRho; int nR; ;
@@ -254,8 +256,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 696 7
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 696 28 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 4 char tmp[4096]; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 4  FILE *potFile;  potFile = (fopen(tmp, "r")) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 35 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 124  FILE *potFile;  potFile = (fopen(tmp, "r")) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 155 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 4 char name[3]; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 16 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 769 4 int nAtomic; ;
@@ -293,15 +295,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 8
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 9  ii = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 19 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 4  call_lbl_5: calling((void*)&getMyRank, 5, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 7  call_lbl_6: calling((void*)&strcmp, 6, 0UL, 2, (size_t)(684635133602952608UL), (size_t)(684635133602954715UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 40  call_lbl_7: calling((void*)&eamReadSetfl, 7, 0UL, 3, (size_t)(684635133602952548UL), (size_t)(684635133602952606UL), (size_t)(684635133602952607UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 7  call_lbl_8: calling((void*)&strcmp, 8, 0UL, 2, (size_t)(684635133602952608UL), (size_t)(684635133602954716UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 7  call_lbl_9: calling((void*)&eamReadFuncfl, 9, 0UL, 3, (size_t)(684635133602952548UL), (size_t)(684635133602952606UL), (size_t)(684635133602952607UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 7  call_lbl_10: calling((void*)&typeNotSupported, 10, 0UL, 2, (size_t)(684635133602954712UL), (size_t)(684635133602952608UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 4  call_lbl_11: calling((void*)&eamBcastPotential, 11, 0UL, 1, (size_t)(684635133602952548UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22  if (____must_checkpoint_initEamPot_pot_0 != 0) { register_stack_var("initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 448  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 832  call_lbl_6: calling((void*)&initForceHaloExchange, 6, 684635133602952688UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 4  call_lbl_8: calling((void*)&memset, 8, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); 
@@ -309,7 +309,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 4  call
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 237 4  call_lbl_10: calling((void*)&memset, 10, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 238 4  call_lbl_11: calling((void*)&memset, 11, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 849  call_lbl_13: calling((void*)&getNeighborBoxes, 13, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 270 28  call_lbl_14: calling((void*)&sqrt, 14, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 16  call_lbl_15: calling((void*)&interpolate, 15, 0UL, 4, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952638UL), (size_t)(684635133602952639UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 16  call_lbl_16: calling((void*)&interpolate, 16, 0UL, 4, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952640UL), (size_t)(684635133602952641UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 10  call_lbl_17: calling((void*)&interpolate, 17, 0UL, 4, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952648UL), (size_t)(684635133602952649UL)); 
@@ -317,7 +316,6 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 834  ca
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 4  call_lbl_20: calling((void*)&haloExchange, 20, 0UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 9  call_lbl_21: calling((void*)&profileStop, 21, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 561  call_lbl_23: calling((void*)&getNeighborBoxes, 23, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 355 28  call_lbl_24: calling((void*)&sqrt, 24, 0UL, 1, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 16  call_lbl_25: calling((void*)&interpolate, 25, 0UL, 4, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952664UL), (size_t)(684635133602952665UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 22  if (____must_checkpoint_eamForce_pot_0 != 0) { register_stack_var("eamForce|pot|0", &____must_checkpoint_eamForce_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } 
@@ -385,39 +383,39 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 2
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 7  lbl_21: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  if (____must_checkpoint_eamForce_iBox_1 != 0) { register_stack_var("eamForce|iBox|1", &____must_checkpoint_eamForce_iBox_1, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 304 15  if (____chimes_replaying) { goto lbl_22; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 7  lbl_22: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 15  if (____must_checkpoint_eamForce_iOff_1 != 0) { register_stack_var("eamForce|iOff|1", &____must_checkpoint_eamForce_iOff_1, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 306 15  if (____chimes_replaying) { goto lbl_23; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 8  lbl_23: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 8  lbl_22: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____must_checkpoint_eamForce_nIBox_1 != 0) { register_stack_var("eamForce|nIBox|1", &____must_checkpoint_eamForce_nIBox_1, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____chimes_replaying) { goto lbl_24; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 10  lbl_24: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 307 17  if (____chimes_replaying) { goto lbl_23; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 10  lbl_23: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____must_checkpoint_eamForce_iOff_2 != 0) { register_stack_var("eamForce|iOff|2", &____must_checkpoint_eamForce_iOff_2, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____chimes_replaying) { goto lbl_25; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 21  lbl_25: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 18  if (____chimes_replaying) { goto lbl_24; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 21  lbl_24: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____must_checkpoint_eamForce_ii_1 != 0) { register_stack_var("eamForce|ii|1", &____must_checkpoint_eamForce_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____chimes_replaying) { goto lbl_26; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 10  lbl_26: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 310 27  if (____chimes_replaying) { goto lbl_25; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 10  lbl_25: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23  if (____must_checkpoint_eamForce_fEmbed_0 != 0) { register_stack_var("eamForce|fEmbed|0", &____must_checkpoint_eamForce_fEmbed_0, "double", (void *)(&fEmbed), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23  if (____chimes_replaying) { goto lbl_27; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_27: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 312 23  if (____chimes_replaying) { goto lbl_26; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 7  lbl_26: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____must_checkpoint_eamForce_iBox_2 != 0) { register_stack_var("eamForce|iBox|2", &____must_checkpoint_eamForce_iBox_2, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____chimes_replaying) { goto lbl_28; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_28: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 327 15  if (____chimes_replaying) { goto lbl_27; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 8  lbl_27: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____chimes_replaying) { goto lbl_29; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 545  lbl_29: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 329 17  if (____chimes_replaying) { goto lbl_28; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 545  lbl_28: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 558  if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 558  if (____chimes_replaying) { goto lbl_30; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 10  lbl_30: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 558  if (____chimes_replaying) { goto lbl_29; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 10  lbl_29: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____must_checkpoint_eamForce_jTmp_1 != 0) { register_stack_var("eamForce|jTmp|1", &____must_checkpoint_eamForce_jTmp_1, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____chimes_replaying) { goto lbl_31; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 11  lbl_31: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 332 18  if (____chimes_replaying) { goto lbl_30; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 11  lbl_30: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____must_checkpoint_eamForce_jBox_1 != 0) { register_stack_var("eamForce|jBox|1", &____must_checkpoint_eamForce_jBox_1, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____chimes_replaying) { goto lbl_32; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 11  lbl_32: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 334 19  if (____chimes_replaying) { goto lbl_31; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 11  lbl_31: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____must_checkpoint_eamForce_nJBox_1 != 0) { register_stack_var("eamForce|nJBox|1", &____must_checkpoint_eamForce_nJBox_1, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____chimes_replaying) { goto lbl_33; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 337 20  if (____chimes_replaying) { goto lbl_32; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 13  lbl_32: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 21  if (____must_checkpoint_eamForce_iOff_3 != 0) { register_stack_var("eamForce|iOff|3", &____must_checkpoint_eamForce_iOff_3, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 21  if (____chimes_replaying) { goto lbl_33; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 24  lbl_33: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  if (____must_checkpoint_eamForce_ii_2 != 0) { register_stack_var("eamForce|ii|2", &____must_checkpoint_eamForce_ii_2, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 339 30  if (____chimes_replaying) { goto lbl_34; } 
@@ -444,7 +442,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 3
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____chimes_replaying) { goto lbl_41; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 19  lbl_41: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____must_checkpoint_eamForce_k_3 != 0) { register_stack_var("eamForce|k|3", &____must_checkpoint_eamForce_k_3, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 177  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 102  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 4  call_lbl_5: calling((void*)&destroyInterpolationObject, 5, 0UL, 1, (size_t)(684635133602953565UL)); 
@@ -456,23 +454,17 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 3
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 22  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 199  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 4  call_lbl_4: calling((void*)&getMyRank, 4, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 424 7  call_lbl_5: calling((void*)&strcpy, 5, 684635133602954163UL, 2, (size_t)(684635133602954120UL), (size_t)(684635133602954215UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 425 7  call_lbl_6: calling((void*)&strcpy, 6, 684635133602954169UL, 2, (size_t)(684635133602954120UL), (size_t)(684635133602954215UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 60  call_lbl_8: calling((void*)&bcastParallel, 8, 0UL, 3, (size_t)(684635133602954120UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 432 4  call_lbl_9: calling((void*)&strcpy, 9, 684635133602954198UL, 2, (size_t)(684635133602954215UL), (size_t)(684635133602954120UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 433 4  call_lbl_10: calling((void*)&strcpy, 10, 684635133602954204UL, 2, (size_t)(684635133602954215UL), (size_t)(684635133602954120UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 60  call_lbl_12: calling((void*)&bcastInterpolationObject, 12, 0UL, 1, (size_t)(684635133602954215UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 4  call_lbl_13: calling((void*)&bcastInterpolationObject, 13, 0UL, 1, (size_t)(684635133602954215UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 4  call_lbl_14: calling((void*)&bcastInterpolationObject, 14, 0UL, 1, (size_t)(684635133602954215UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14  if (____must_checkpoint_eamBcastPotential_buf_0 != 0) { register_stack_var("eamBcastPotential|buf|0", &____must_checkpoint_eamBcastPotential_buf_0, "%struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 }", (void *)(&buf), (size_t)40, 0, 1, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 215  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 130  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 88  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 519 14  call_lbl_1: calling((void*)&floor, 1, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 526 4  call_lbl_2: calling((void*)&floor, 2, 0UL, 1, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 152  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 152  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 4  call_lbl_2: calling((void*)&getMyRank, 2, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 60  call_lbl_4: calling((void*)&bcastParallel, 4, 0UL, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 4  call_lbl_5: calling((void*)&getMyRank, 5, 0UL, 0); 
@@ -484,41 +476,32 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 5
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19  if (____must_checkpoint_bcastInterpolationObject_valuesSize_0 != 0) { register_stack_var("bcastInterpolationObject|valuesSize|0", &____must_checkpoint_bcastInterpolationObject_valuesSize_0, "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 572 19  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(11): { goto call_lbl_11; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 250  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28  call_lbl_3: calling((void*)&fileNotFound, 3, 0UL, 2, (size_t)(684635133602954730UL), (size_t)(684635133602953596UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 645 4  call_lbl_4: calling((void*)&fgets, 4, 684635133602953639UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 646 4  call_lbl_5: calling((void*)&fgets, 5, 684635133602953642UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 647 4  call_lbl_6: calling((void*)&fgets, 6, 684635133602953645UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 650 4  call_lbl_7: calling((void*)&fgets, 7, 684635133602953648UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 652 4  call_lbl_8: calling((void*)&sscanf, 8, 0UL, 3, (size_t)(684635133602953596UL), (size_t)(684635133602954722UL), (size_t)(684635133602953598UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22  call_lbl_9: calling((void*)&notAlloyReady, 9, 0UL, 1, (size_t)(684635133602954730UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 660 4  call_lbl_10: calling((void*)&fgets, 10, 684635133602953664UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 661 4  call_lbl_11: calling((void*)&sscanf, 11, 0UL, 7, (size_t)(684635133602953596UL), (size_t)(684635133602954724UL), (size_t)(684635133602953599UL), (size_t)(684635133602953601UL), (size_t)(684635133602953600UL), (size_t)(684635133602953602UL), (size_t)(684635133602953603UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 666 4  call_lbl_12: calling((void*)&fgets, 12, 684635133602953673UL, 3, (size_t)(684635133602953596UL), (size_t)(0UL), (size_t)(684635133602953629UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 670 4  call_lbl_13: calling((void*)&sscanf, 13, 0UL, 6, (size_t)(684635133602953596UL), (size_t)(684635133602954721UL), (size_t)(684635133602953604UL), (size_t)(684635133602953605UL), (size_t)(684635133602953606UL), (size_t)(684635133602953607UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 674 4  call_lbl_14: calling((void*)&strcpy, 14, 684635133602953698UL, 2, (size_t)(684635133602953843UL), (size_t)(684635133602953607UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 682 50  call_lbl_16: calling((void*)&fscanf, 16, 0UL, 3, (size_t)(684635133602953629UL), (size_t)(684635133602954714UL), (size_t)(684635133602953714UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 4  call_lbl_17: calling((void*)&initInterpolationObject, 17, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 687 48  call_lbl_18: calling((void*)&fscanf, 18, 0UL, 3, (size_t)(684635133602953629UL), (size_t)(684635133602954714UL), (size_t)(684635133602953714UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 4  call_lbl_19: calling((void*)&initInterpolationObject, 19, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 692 48  call_lbl_20: calling((void*)&fscanf, 20, 0UL, 3, (size_t)(684635133602953629UL), (size_t)(684635133602954714UL), (size_t)(684635133602953714UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 4  call_lbl_21: calling((void*)&initInterpolationObject, 21, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 138  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28  call_lbl_3: calling((void*)&fileNotFound, 3, 0UL, 2, (size_t)(684635133602954721UL), (size_t)(684635133602953849UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 763 4  call_lbl_4: calling((void*)&fgets, 4, 684635133602953892UL, 3, (size_t)(684635133602953849UL), (size_t)(0UL), (size_t)(684635133602953882UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 765 4  call_lbl_5: calling((void*)&sscanf, 5, 0UL, 3, (size_t)(684635133602953849UL), (size_t)(684635133602954722UL), (size_t)(684635133602953851UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 766 4  call_lbl_6: calling((void*)&strcpy, 6, 684635133602953901UL, 2, (size_t)(684635133602954101UL), (size_t)(684635133602953851UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 772 4  call_lbl_7: calling((void*)&fgets, 7, 684635133602953908UL, 3, (size_t)(684635133602953849UL), (size_t)(0UL), (size_t)(684635133602953882UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 773 4  call_lbl_8: calling((void*)&sscanf, 8, 0UL, 6, (size_t)(684635133602953849UL), (size_t)(684635133602954721UL), (size_t)(684635133602953852UL), (size_t)(684635133602953853UL), (size_t)(684635133602953854UL), (size_t)(684635133602953855UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 777 4  call_lbl_9: calling((void*)&strcpy, 9, 684635133602953929UL, 2, (size_t)(684635133602954101UL), (size_t)(684635133602953855UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 782 4  call_lbl_10: calling((void*)&fgets, 10, 684635133602953937UL, 3, (size_t)(684635133602953849UL), (size_t)(0UL), (size_t)(684635133602953882UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 783 4  call_lbl_11: calling((void*)&sscanf, 11, 0UL, 7, (size_t)(684635133602953849UL), (size_t)(684635133602954724UL), (size_t)(684635133602953856UL), (size_t)(684635133602953858UL), (size_t)(684635133602953857UL), (size_t)(684635133602953859UL), (size_t)(684635133602953860UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 792 50  call_lbl_13: calling((void*)&fscanf, 13, 0UL, 3, (size_t)(684635133602953882UL), (size_t)(684635133602954714UL), (size_t)(684635133602953961UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 4  call_lbl_14: calling((void*)&initInterpolationObject, 14, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 797 48  call_lbl_15: calling((void*)&fscanf, 15, 0UL, 3, (size_t)(684635133602953882UL), (size_t)(684635133602954714UL), (size_t)(684635133602953961UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 4  call_lbl_16: calling((void*)&initInterpolationObject, 16, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 48  call_lbl_17: calling((void*)&fscanf, 17, 0UL, 3, (size_t)(684635133602953882UL), (size_t)(684635133602954714UL), (size_t)(684635133602953961UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 4  call_lbl_18: calling((void*)&initInterpolationObject, 18, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 139  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28  call_lbl_4: calling((void*)&fileNotFound, 4, 0UL, 2, (size_t)(684635133602954730UL), (size_t)(684635133602953596UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22  call_lbl_10: calling((void*)&notAlloyReady, 10, 0UL, 1, (size_t)(684635133602954730UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 4  call_lbl_18: calling((void*)&initInterpolationObject, 18, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 4  call_lbl_20: calling((void*)&initInterpolationObject, 20, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 4  call_lbl_22: calling((void*)&initInterpolationObject, 22, 684635133602953741UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953714UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 4  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18  if (____must_checkpoint_eamReadSetfl_tmp_0 != 0) { register_stack_var("eamReadSetfl|tmp|0", &____must_checkpoint_eamReadSetfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 4  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 23  if (____must_checkpoint_eamReadSetfl_latticeType_0 != 0) { register_stack_var("eamReadSetfl|latticeType|0", &____must_checkpoint_eamReadSetfl_latticeType_0, "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 669 23  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(10): { goto call_lbl_10; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 264  if (____chimes_replaying) { goto lbl_0; } 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28  call_lbl_4: calling((void*)&fileNotFound, 4, 0UL, 2, (size_t)(684635133602954721UL), (size_t)(684635133602953849UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 4  call_lbl_15: calling((void*)&initInterpolationObject, 15, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 4  call_lbl_17: calling((void*)&initInterpolationObject, 17, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 4  call_lbl_19: calling((void*)&initInterpolationObject, 19, 684635133602953986UL, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602953961UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 4  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18  if (____must_checkpoint_eamReadFuncfl_tmp_0 != 0) { register_stack_var("eamReadFuncfl|tmp|0", &____must_checkpoint_eamReadFuncfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 4  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 16  if (____must_checkpoint_eamReadFuncfl_name_0 != 0) { register_stack_var("eamReadFuncfl|name|0", &____must_checkpoint_eamReadFuncfl_name_0, "[3 x i8]", (void *)(name), (size_t)3, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 764 16  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 4  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 23  if (____must_checkpoint_eamReadFuncfl_latticeType_0 != 0) { register_stack_var("eamReadFuncfl|latticeType|0", &____must_checkpoint_eamReadFuncfl_latticeType_0, "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 771 23  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 267  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 106  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 75  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 110  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

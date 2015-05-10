@@ -75,14 +75,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLi
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 27 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 191 10  int *i;  i = ((int *)o->ptr) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 191 31 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 40 4  call_lbl_2: calling((void*)&strlen, 2, 0UL, 1, (size_t)(7180137057745129440UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 41 4  call_lbl_3: calling((void*)&strcpy, 3, 7180137057745129437UL, 2, (size_t)(7180137057745129433UL), (size_t)(7180137057745129440UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 37 72  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 37 72  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 51 4  call_lbl_2: calling((void*)&dupString, 2, 7180137057745128925UL, 1, (size_t)(7180137057745128996UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 52 4  call_lbl_3: calling((void*)&dupString, 3, 7180137057745128925UL, 1, (size_t)(7180137057745128981UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 63 21  call_lbl_4: calling((void*)&strlen, 4, 0UL, 1, (size_t)(7180137057745128981UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 63 21  call_lbl_5: calling((void*)&strlen, 5, 0UL, 1, (size_t)(7180137057745128981UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 48 202  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 48 202  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 68 75  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 79 73  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 86 88  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
@@ -91,32 +87,29 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLinePars
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 99 195  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 118 7  call_lbl_1: calling((void*)&myOptionFree, 1, 7180137057745129449UL, 1, (size_t)(7180137057745129449UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 115 38  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 124 39  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 168 7  call_lbl_5: calling((void*)&strcat, 5, 7180137057745129244UL, 2, (size_t)(7180137057745129240UL), (size_t)(7180137057745129449UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 169 24  call_lbl_6: calling((void*)&strcat, 6, 7180137057745129251UL, 2, (size_t)(7180137057745129240UL), (size_t)(7180137057745129452UL)); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 126 4  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 126 16  if (____must_checkpoint_printArgs_s_0 != 0) { register_stack_var("printArgs|s|0", &____must_checkpoint_printArgs_s_0, "[4096 x i8]", (void *)(s), (size_t)4096, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 126 16  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 124 39  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 178 428  call_lbl_8: calling((void*)&getopt_long, 8, 0UL, 5, (size_t)(0UL), (size_t)(7180137057745129368UL), (size_t)(7180137057745129240UL), (size_t)(7180137057745129210UL), (size_t)(7180137057745129154UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 180 7  call_lbl_9: calling((void*)&findOption, 9, 7180137057745129449UL, 2, (size_t)(7180137057745129449UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 199 16  call_lbl_11: calling((void*)&sscanf, 11, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 202 16  call_lbl_12: calling((void*)&sscanf, 12, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 205 16  call_lbl_13: calling((void*)&sscanf, 13, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129449UL), (size_t)(7180137057745129449UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 208 106  call_lbl_15: calling((void*)&strncpy, 15, 7180137057745129336UL, 3, (size_t)(7180137057745129449UL), (size_t)(7180137057745129307UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 212 16  call_lbl_16: calling((void*)&sscanf, 16, 0UL, 3, (size_t)(7180137057745129307UL), (size_t)(7180137057745129451UL), (size_t)(7180137057745129449UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 146 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 146 15  if (____must_checkpoint_processArgs_o_0 != 0) { register_stack_var("processArgs|o|0", &____must_checkpoint_processArgs_o_0, "%struct.MyOptionSt*", (void *)(&o), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 146 15  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 148 4  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 148 9  if (____must_checkpoint_processArgs_i_0 != 0) { register_stack_var("processArgs|i|0", &____must_checkpoint_processArgs_i_0, "i32*", (void *)(&i), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 148 9  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 149 4  lbl_2: 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 149 4  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 149 23  if (____must_checkpoint_processArgs_opts_0 != 0) { register_stack_var("processArgs|opts|0", &____must_checkpoint_processArgs_opts_0, "%struct.option*", (void *)(&opts), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 149 23  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 150 4  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 149 23  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 150 4  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 150 15  if (____must_checkpoint_processArgs_sArgs_0 != 0) { register_stack_var("processArgs|sArgs|0", &____must_checkpoint_processArgs_sArgs_0, "i8*", (void *)(&sArgs), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 150 15  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 4  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 150 15  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 4  lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 9  if (____must_checkpoint_processArgs_c_0 != 0) { register_stack_var("processArgs|c|0", &____must_checkpoint_processArgs_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 9  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 8  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 151 9  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 8  lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 24  if (____must_checkpoint_processArgs_option_index_0 != 0) { register_stack_var("processArgs|option_index|0", &____must_checkpoint_processArgs_option_index_0, "i32", (void *)(&option_index), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 24  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 176 24  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 191 11  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 191 17  if (____must_checkpoint_processArgs_i_1 != 0) { register_stack_var("processArgs|i|1", &____must_checkpoint_processArgs_i_1, "i32*", (void *)(&i), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 191 17  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 145 304  if (____chimes_replaying) { goto lbl_0; } 

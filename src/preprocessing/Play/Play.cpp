@@ -1775,7 +1775,6 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
 
     AllocaVisitor visitor(initial);
     visitor.driver();
-    llvm::errs() << "finished visitor\n";
 
     std::set<BasicBlock *> s_pre_visited;
     std::set<BasicBlock *> s_post_visited;
@@ -1843,16 +1842,13 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
                 collectPossibleCheckpointsInBBs(F);
             std::map<BasicBlock *, bool> *bb_to_loads = containsLoad(F, loads);
 
-            llvm::errs() << "Started isPathFromFuncStartToCheckpointThroughStore\n";
             isPathFromFuncStartToCheckpointThroughStore(entry, stores, false,
                     &s_pre_visited, &s_post_visited, &causesCheckpoint,
                     bb_to_checkpoints);
             bool through_store = (causesCheckpoint.size() > 0);
 
-            llvm::errs() << "Started isPathFromCheckpointThroughLoad\n";
             bool through_load = isPathFromCheckpointThroughLoad(entry, loads,
                     false, &l_pre_visited, &l_post_visited, bb_to_loads);
-            llvm::errs() << "Finished isPathFromCheckpointThroughLoad\n";
             bool should_checkpoint = (through_store && through_load);
             if (should_checkpoint) {
                 if (causesCheckpoint.find("---") != causesCheckpoint.end()) {
@@ -1904,10 +1900,8 @@ void Play::findStackAllocations(Module &M, const char *output_file,
          * Find all stack variables that might be alive when a checkpoint is
          * taken.
          */
-        llvm::errs() << "Getting alive for function " << F->getName().str() << "\n";
         std::map<AllocaInst *, std::set<std::string> > *alive =
             findStackAllocationsAliveAtCheckpoint(F);
-        llvm::errs() << "Got alive for function " << F->getName().str() << "\n";
 
         std::map<Value *, std::string> *varname_mapping =
             mapValueToOriginalVarname(F);
@@ -2022,11 +2016,11 @@ void Play::findStackAllocations(Module &M, const char *output_file,
 
                     info->varname = unique_varname;
 
-                    Type *ty = alloca->getAllocatedType();
+                    const Type *ty = alloca->getAllocatedType();
                     if (ty->isPointerTy()) {
                         info->is_ptr = 1;
                     } else if (ty->isStructTy()) {
-                        StructType *structTy = dyn_cast<StructType>(ty);
+                        const StructType *structTy = dyn_cast<StructType>(ty);
                         assert(structTy != NULL);
                         std::string struct_name = structTy->getStructName().str().substr(7);
 
@@ -2049,7 +2043,25 @@ void Play::findStackAllocations(Module &M, const char *output_file,
 
                     std::string backing_string;
                     raw_string_ostream stream(backing_string);
+                    if (alloca->isArrayAllocation() &&
+                            !isa<Constant>(alloca->getArraySize())) {
+                        /*
+                         * For god knows what reason LLVM prints a different
+                         * type name for array allocations on the stack if they
+                         * have a non-constant size vs. constant. If they have a
+                         * constant size, they appear as something like
+                         * [8 x double] to indicate an 8-element array of
+                         * doubles. If they are of non-constant size, they
+                         * simply appear as double. This logic adds the
+                         * necessary brackets.
+                         */
+                        stream << "[na x ";
+                    }
                     ty->print(stream);
+                    if (alloca->isArrayAllocation() &&
+                            !isa<Constant>(alloca->getArraySize())) {
+                        stream << "]";
+                    }
                     stream.flush();
                     info->full_type_name = stream.str();
 
@@ -2068,7 +2080,6 @@ void Play::findStackAllocations(Module &M, const char *output_file,
             }
         }
     }
-    llvm::errs() << "Done collecting stack variable info\n";
 
     /*
      * Find which line in the original source to insert a stack variable

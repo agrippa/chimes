@@ -12,6 +12,12 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "common2d.cpp.pre.transformed.cpp" 2
+static int ____must_checkpoint_save_text_field_0 = 2;
+static int ____must_checkpoint_save_text_dimx_0 = 2;
+static int ____must_checkpoint_save_text_ny_0 = 2;
+static int ____must_checkpoint_save_text_nx_0 = 2;
+static int ____must_checkpoint_save_text_filename_0 = 2;
+static int ____must_checkpoint_save_text_radius_0 = 2;
 static int ____must_checkpoint_setup_config_conf_0 = 2;
 static int ____must_checkpoint_setup_config_argc_0 = 2;
 static int ____must_checkpoint_setup_config_argv_0 = 2;
@@ -2378,9 +2384,9 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void save_text(float *field, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_text), 7, 0, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
+ const int ny, const int nx, const char *filename, int radius) {new_stack((void *)(&save_text), 7, 6, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL), "save_text|field|0", &____must_checkpoint_save_text_field_0, "float*", (void *)(&field), (size_t)8, 1, 0, 0, "save_text|dimx|0", &____must_checkpoint_save_text_dimx_0, "i32", (void *)(&dimx), (size_t)4, 0, 0, 0, "save_text|ny|0", &____must_checkpoint_save_text_ny_0, "i32", (void *)(&ny), (size_t)4, 0, 0, 0, "save_text|nx|0", &____must_checkpoint_save_text_nx_0, "i32", (void *)(&nx), (size_t)4, 0, 0, 0, "save_text|filename|0", &____must_checkpoint_save_text_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0, "save_text|radius|0", &____must_checkpoint_save_text_radius_0, "i32", (void *)(&radius), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- FILE *fp; fp = (fopen(filename, "wb")) ;
+ alias_group_changed(7, (size_t)(8205091200931170117UL), (size_t)(8205091200931170118UL), (size_t)(8205091200931170119UL), (size_t)(8205091200931170120UL), (size_t)(8205091200931170121UL), (size_t)(8205091200931170122UL), (size_t)(8205091200931170123UL)); FILE *fp; fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  if (fp == __null) {
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2406,9 +2412,9 @@ void save_text(float *field, const int dimx, const int dimy,
  } }
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- call_lbl_6: calling((void*)&fclose, 6, 0UL, 1, (size_t)(8205091200931170143UL)); fclose(fp);
+ fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-alias_group_changed(10, (size_t)(8205091200931170117UL), (size_t)(8205091200931170118UL), (size_t)(8205091200931170119UL), (size_t)(8205091200931170120UL), (size_t)(8205091200931170121UL), (size_t)(8205091200931170122UL), (size_t)(8205091200931170123UL), (size_t)(8205091200931170124UL), (size_t)(8205091200931170125UL), (size_t)(8205091200931170126UL)); rm_stack(false, 0UL); }
+alias_group_changed(3, (size_t)(8205091200931170124UL), (size_t)(8205091200931170125UL), (size_t)(8205091200931170126UL)); rm_stack(false, 0UL); }
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void init_data(float *curr, float *next, float *vsq,
@@ -2494,7 +2500,7 @@ alias_group_changed(2, (size_t)(8205091200931170363UL), (size_t)(820509120093117
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setup_config), 3, 3, (size_t)(8205091200931170522UL), (size_t)(0UL), (size_t)(8205091200931170524UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- lbl_0: int c; if (____must_checkpoint_setup_config_c_0 != 0) { register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(12): { goto call_lbl_12; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } ;
+ lbl_0: int c; if (____must_checkpoint_setup_config_c_0 != 0) { register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(9): { goto call_lbl_9; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } default: { chimes_error(); } } } ;
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  opterr = 0;
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2508,19 +2514,19 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  case 'x':
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); conf->nx = atoi(optarg);
+ conf->nx = atoi(optarg);
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  break;
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  case 'y':
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); conf->ny = atoi(optarg);
+ conf->ny = atoi(optarg);
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  break;
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  case 'i':
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); conf->nsteps = atoi(optarg);
+ conf->nsteps = atoi(optarg);
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  break;
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2542,7 +2548,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  (conf->nsrcs + 1), 8205091200931170452UL, 0, 1, (int)sizeof(struct _source), 0);
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); call_lbl_12: calling((void*)&parse_source, 12, 0UL, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+ alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); call_lbl_9: calling((void*)&parse_source, 9, 0UL, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  conf->nsrcs++;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2550,19 +2556,19 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  case 'r':
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); conf->radius = atoi(optarg);
+ conf->radius = atoi(optarg);
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  break;
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  case 'g':
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); conf->ngpus = atoi(optarg);
+ conf->ngpus = atoi(optarg);
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  break;
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  case 'w':
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); conf->progress_width = atoi(optarg);
+ conf->progress_width = atoi(optarg);
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  break;
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2576,7 +2582,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  fprintf(__stderrp, "Missing argument to option %c\n", optopt);
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- call_lbl_20: calling((void*)&usage, 20, 0UL, 1, (size_t)(8205091200931170524UL)); default:
+ call_lbl_14: calling((void*)&usage, 14, 0UL, 1, (size_t)(8205091200931170524UL)); default:
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  usage(argv);
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2587,7 +2593,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  if (conf->ngpus == -1) {
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); call_lbl_22: calling((void*)&getNumCUDADevices, 22, 0UL, 0); conf->ngpus = getNumCUDADevices();
+ alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(8205091200931170522UL)); call_lbl_16: calling((void*)&getNumCUDADevices, 16, 0UL, 0); conf->ngpus = getNumCUDADevices();
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  }
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2595,7 +2601,7 @@ alias_group_changed(2, (size_t)(8205091200931170404UL), (size_t)(820509120093117
 
 
 static int module_init() {
-    init_module(8205091200931170116UL, 16, 5, 4, 5, 8205091200931170116UL + 235UL, 8205091200931170116UL + 246UL, 8205091200931170116UL + 99UL, 8205091200931170116UL + 222UL, 8205091200931170116UL + 425UL, 8205091200931170116UL + 308UL, 8205091200931170116UL + 418UL, 8205091200931170116UL + 387UL, 8205091200931170116UL + 1UL, 8205091200931170116UL + 84UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 336UL, 8205091200931170116UL + 247UL, 8205091200931170116UL + 284UL, 8205091200931170116UL + 246UL, 8205091200931170116UL + 241UL, 8205091200931170116UL + 6UL, 8205091200931170116UL + 89UL, 8205091200931170116UL + 102UL, 8205091200931170116UL + 225UL, 8205091200931170116UL + 8UL, 8205091200931170116UL + 27UL, 8205091200931170116UL + 100UL, 8205091200931170116UL + 223UL, 8205091200931170116UL + 101UL, 8205091200931170116UL + 224UL, 8205091200931170116UL + 285UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 284UL, 8205091200931170116UL + 428UL, 8205091200931170116UL + 287UL, 8205091200931170116UL + 408UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "_Z9save_textPfiiiiPKci", 4, "_fopen", "exit", "fclose", "fprintf", "_Z9init_dataPfS_S_S_iiff", 0, "_Z5usagePPc", 2, "exit", "fprintf", "_Z14default_configP7_config", 0, "_Z12setup_configP7_configiPPc", 8, "_getopt", "_Z12parse_sourcePcP7_source", "_Z14default_configP7_config", "_Z5usagePPc", "atoi", "fprintf", "getNumCUDADevices", "realloc", "setup_config|conf|0", 4, "getNumCUDADevices", "atoi", "_Z12parse_sourcePcP7_source", "_getopt", "setup_config|argc|0", 4, "getNumCUDADevices", "atoi", "_Z12parse_sourcePcP7_source", "_getopt", "setup_config|argv|0", 4, "getNumCUDADevices", "atoi", "_Z12parse_sourcePcP7_source", "_getopt", "setup_config|c|0", 4, "getNumCUDADevices", "atoi", "_Z12parse_sourcePcP7_source", "_getopt");
+    init_module(8205091200931170116UL, 16, 5, 10, 5, 8205091200931170116UL + 235UL, 8205091200931170116UL + 246UL, 8205091200931170116UL + 99UL, 8205091200931170116UL + 222UL, 8205091200931170116UL + 425UL, 8205091200931170116UL + 308UL, 8205091200931170116UL + 418UL, 8205091200931170116UL + 387UL, 8205091200931170116UL + 1UL, 8205091200931170116UL + 84UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 336UL, 8205091200931170116UL + 247UL, 8205091200931170116UL + 284UL, 8205091200931170116UL + 246UL, 8205091200931170116UL + 241UL, 8205091200931170116UL + 6UL, 8205091200931170116UL + 89UL, 8205091200931170116UL + 102UL, 8205091200931170116UL + 225UL, 8205091200931170116UL + 8UL, 8205091200931170116UL + 27UL, 8205091200931170116UL + 100UL, 8205091200931170116UL + 223UL, 8205091200931170116UL + 101UL, 8205091200931170116UL + 224UL, 8205091200931170116UL + 285UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 284UL, 8205091200931170116UL + 428UL, 8205091200931170116UL + 287UL, 8205091200931170116UL + 408UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "_Z9save_textPfiiiiPKci", 4, "_fopen", "exit", "fclose", "fprintf", "_Z14default_configP7_config", 0, "_Z5usagePPc", 2, "exit", "fprintf", "_Z12setup_configP7_configiPPc", 8, "_getopt", "_Z12parse_sourcePcP7_source", "_Z14default_configP7_config", "_Z5usagePPc", "atoi", "fprintf", "getNumCUDADevices", "realloc", "_Z9init_dataPfS_S_S_iiff", 0, "save_text|field|0", 1, "_fopen", "save_text|dimx|0", 1, "_fopen", "save_text|ny|0", 1, "_fopen", "save_text|nx|0", 1, "_fopen", "save_text|filename|0", 1, "_fopen", "save_text|radius|0", 1, "_fopen", "setup_config|conf|0", 3, "getNumCUDADevices", "_Z12parse_sourcePcP7_source", "_getopt", "setup_config|argc|0", 3, "getNumCUDADevices", "_Z12parse_sourcePcP7_source", "_getopt", "setup_config|argv|0", 3, "getNumCUDADevices", "_Z12parse_sourcePcP7_source", "_getopt", "setup_config|c|0", 3, "getNumCUDADevices", "_Z12parse_sourcePcP7_source", "_getopt");
     return 0;
 }
 

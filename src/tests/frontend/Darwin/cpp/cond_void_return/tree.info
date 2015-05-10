@@ -1,2 +1,2 @@
-_Z3barPiS_ DOES_NOT
-main DOES _Z10checkpointv _Z3barPiS_ __assert_rtn malloc
+_Z3barPiS_ 0 DOES_NOT
+main 0 DOES _Z10checkpointv _Z3barPiS_ __assert_rtn malloc

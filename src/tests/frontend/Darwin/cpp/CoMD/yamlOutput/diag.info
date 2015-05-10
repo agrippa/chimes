@@ -28,14 +28,12 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 83 4 char timestring[32]; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 83 23 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 32 62  call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(12737042733622956005UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 33 4  call_lbl_3: calling((void*)&localtime, 3, 12737042733622956012UL, 1, (size_t)(12737042733622956005UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 30 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 30 18  if (____must_checkpoint_getTimeString_rawtime_0 != 0) { register_stack_var("getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 30 18  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 30 18  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 29 206  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 47 4  call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 52 4  call_lbl_4: calling((void*)&time, 4, 0UL, 1, (size_t)(12737042733622955889UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 53 22  call_lbl_5: calling((void*)&localtime, 5, 12737042733622955900UL, 1, (size_t)(12737042733622955889UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 50 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 50 21  if (____must_checkpoint_yamlBegin_filename_0 != 0) { register_stack_var("yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 50 21  if (____chimes_replaying) { goto lbl_1; } 
@@ -44,16 +42,15 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOut
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 51 18  if (____chimes_replaying) { goto lbl_2; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 54 4  lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 54 18  if (____must_checkpoint_yamlBegin_sdate_0 != 0) { register_stack_var("yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 54 18  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 54 18  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 46 39  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 62  call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 4  call_lbl_4: calling((void*)&printSeparator, 4, 0UL, 1, (size_t)(12737042733622955994UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 80 4  call_lbl_18: calling((void*)&builtWithMpi, 18, 0UL, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 84 4  call_lbl_21: calling((void*)&getTimeString, 21, 0UL, 1, (size_t)(12737042733622955938UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 87 4  call_lbl_24: calling((void*)&fflush, 24, 0UL, 1, (size_t)(12737042733622955994UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 83 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 83 23  if (____must_checkpoint_yamlAppInfo_timestring_0 != 0) { register_stack_var("yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 83 23  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(18): { goto call_lbl_18; } case(21): { goto call_lbl_21; } case(24): { goto call_lbl_24; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 83 23  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(18): { goto call_lbl_18; } case(21): { goto call_lbl_21; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 64 195  if (____chimes_replaying) { goto lbl_0; } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 92 4  call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 91 37  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 

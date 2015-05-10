@@ -1,7 +1,8 @@
 #!/usr/bin/python
 import os
 import sys
-from common import StackVar, transfer, get_stack_vars
+from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
+                   always_checkpoints
 
 
 class GlobalVar(object):
@@ -43,17 +44,6 @@ class StructFields(object):
 
     def add_field(self, field_name, field_type):
         self.fields.append(StructField(field_name, field_type))
-
-
-class Callees(object):
-    def __init__(self, name, calls_unknown, creates_checkpoint, callees):
-        assert calls_unknown == '0' or calls_unknown == '1'
-        assert creates_checkpoint == 'DOES' or \
-               creates_checkpoint == 'DOES_NOT' or creates_checkpoint == 'MAY'
-        self.name = name
-        self.calls_unknown = True if calls_unknown == '1' else False
-        self.creates_checkpoint = creates_checkpoint
-        self.callees = callees
 
 
 def parse_64bit_int(s):
@@ -172,19 +162,6 @@ def get_structs(structs_filename):
     return structs
 
 
-def get_call_tree(call_tree_filename):
-    call_tree = []
-    fp = open(call_tree_filename, 'r')
-
-    for line in fp:
-        tokens = line.split()
-        call_tree.append(Callees(tokens[0], tokens[1], tokens[2], tokens[3:]))
-
-    fp.close()
-
-    return call_tree
-
-
 def write_global(g, func_name, var_label):
     output_file.write('    ' + func_name + '("' + var_label + '|' + g.name + '", "' +
                       g.full_type + '", (void *)(&' + g.name + '), ' +
@@ -233,10 +210,17 @@ if __name__ == '__main__':
 
     transfer(input_file, output_file)
 
+    count_conditionally_checkpointable_vars= 0
+    for var in stack_vars:
+        if not always_checkpoints(var, call_tree):
+            count_conditionally_checkpointable_vars += 1
+            
+
     output_file.write('\n\nstatic int module_init() {\n')
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
                       str(len(reachable)) + ', ' + str(len(call_tree)) + \
-                      ', ' + str(len(stack_vars)) + ', ' + str(len(structs)))
+                      ', ' + str(count_conditionally_checkpointable_vars) + \
+                      ', ' + str(len(structs)))
 
     for k in reachable.keys():
         output_file.write(', ' + module_id_str + 'UL + ' + k + 'UL, ' +
@@ -251,15 +235,16 @@ if __name__ == '__main__':
             else:
                 output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field.name + ')')
 
-    for c in call_tree:
+    for c in call_tree.values():
         output_file.write(', "' + c.name + '", ' + str(len(c.callees)))
         for callee in c.callees:
             output_file.write(', "' + callee + '"')
 
     for var in stack_vars:
-        output_file.write(', "' + var.name + '", ' + str(len(var.causes)))
-        for cause in var.causes:
-            output_file.write(', "' + cause + '"')
+        if not always_checkpoints(var, call_tree):
+            output_file.write(', "' + var.name + '", ' + str(len(var.causes)))
+            for cause in var.causes:
+                output_file.write(', "' + cause + '"')
 
     output_file.write(');\n')
 

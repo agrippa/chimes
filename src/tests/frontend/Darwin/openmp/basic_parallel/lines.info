@@ -1,1 +1,1 @@
-/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 16 40 : { 3, 4, 5, 6, 7, 8, 9 } direct:call:omp_get_thread_num
+/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 9 : { 3, 4, 5, 6, 7, 8, 9 } direct:call:_Z3foov

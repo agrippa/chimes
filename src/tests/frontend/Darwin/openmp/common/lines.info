@@ -1,9 +1,0 @@
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 58 56 : { 23, 24, 25, 26, 27, 28, 29, 30, 31, 92 } prop:call:exp
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 64 25 : { 97, 98, 99 } direct:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 71 26 : { 100, 101 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 78 25 : { 102, 103 } prop:call:strchr
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 89 14 : { 104, 105, 115, 155, 174 } prop:call:atoi
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 90 14 : { 187 } direct:call:atoi
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 91 17 : { 187 } direct:call:atof
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 92 14 : { 187 } direct:call:atoi
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 9 : { 323, 324, 325, 326, 327, 328, 341 } prop:call:_Z14ricker_waveletPfiff

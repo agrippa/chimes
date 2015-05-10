@@ -1,0 +1,11 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c gasdev|seed|0 " i64* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c gasdev|rsq|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c gasdev|v1|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c gasdev|v2|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c lcg61|seed|0 " i64* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c mkSeed|id|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c mkSeed|callSite|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c mkSeed|s1|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c mkSeed|s2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c mkSeed|iSeed|0 " i64 " 64 0 0 1 _Z6mkSeedjj
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c mkSeed|jj|0 " i32 " 32 0 0 0

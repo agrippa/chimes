@@ -2,26 +2,7 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 69 5 alias_gro
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 70 5 alias_group_changed(1, (size_t)(2899028330670199482UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 76 3 alias_group_changed(2, (size_t)(2899028330670199531UL), (size_t)(2899028330670199532UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 77 3 alias_group_changed(1, (size_t)(2899028330670199533UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 5 alias_group_changed(4, (size_t)(2899028330670199827UL), (size_t)(2899028330670199828UL), (size_t)(2899028330670199829UL), (size_t)(2899028330670199830UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 5 alias_group_changed(1, (size_t)(2899028330670199831UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 123 5 alias_group_changed(3, (size_t)(2899028330670199832UL), (size_t)(2899028330670199857UL), (size_t)(2899028330670199859UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 124 5 alias_group_changed(1, (size_t)(2899028330670199878UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 125 5 alias_group_changed(1, (size_t)(2899028330670199883UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 144 5 alias_group_changed(6, (size_t)(2899028330670199898UL), (size_t)(2899028330670199899UL), (size_t)(2899028330670199900UL), (size_t)(2899028330670199901UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200678UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 147 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 150 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 153 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 17 alias_group_changed(2, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 17 alias_group_changed(1, (size_t)(2899028330670199903UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 17 alias_group_changed(1, (size_t)(2899028330670199904UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 17 alias_group_changed(1, (size_t)(2899028330670199905UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 17 alias_group_changed(1, (size_t)(2899028330670199906UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 17 alias_group_changed(1, (size_t)(2899028330670199907UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 17 alias_group_changed(8, (size_t)(2899028330670199908UL), (size_t)(2899028330670200032UL), (size_t)(2899028330670200034UL), (size_t)(2899028330670200050UL), (size_t)(2899028330670200066UL), (size_t)(2899028330670200082UL), (size_t)(2899028330670200098UL), (size_t)(2899028330670200123UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 144 5 alias_group_changed(19, (size_t)(2899028330670199898UL), (size_t)(2899028330670199899UL), (size_t)(2899028330670199900UL), (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL), (size_t)(2899028330670199903UL), (size_t)(2899028330670199904UL), (size_t)(2899028330670199905UL), (size_t)(2899028330670199906UL), (size_t)(2899028330670199907UL), (size_t)(2899028330670199908UL), (size_t)(2899028330670200032UL), (size_t)(2899028330670200034UL), (size_t)(2899028330670200050UL), (size_t)(2899028330670200066UL), (size_t)(2899028330670200082UL), (size_t)(2899028330670200098UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200678UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 5 alias_group_changed(3, (size_t)(2899028330670200192UL), (size_t)(2899028330670200193UL), (size_t)(2899028330670200194UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 289 9 alias_group_changed(28, (size_t)(2899028330670200196UL), (size_t)(2899028330670200197UL), (size_t)(2899028330670200198UL), (size_t)(2899028330670200199UL), (size_t)(2899028330670200200UL), (size_t)(2899028330670200201UL), (size_t)(2899028330670200202UL), (size_t)(2899028330670200203UL), (size_t)(2899028330670200204UL), (size_t)(2899028330670200205UL), (size_t)(2899028330670200206UL), (size_t)(2899028330670200207UL), (size_t)(2899028330670200208UL), (size_t)(2899028330670200209UL), (size_t)(2899028330670200210UL), (size_t)(2899028330670200211UL), (size_t)(2899028330670200212UL), (size_t)(2899028330670200213UL), (size_t)(2899028330670200214UL), (size_t)(2899028330670200215UL), (size_t)(2899028330670200216UL), (size_t)(2899028330670200217UL), (size_t)(2899028330670200218UL), (size_t)(2899028330670200219UL), (size_t)(2899028330670200220UL), (size_t)(2899028330670200221UL), (size_t)(2899028330670200222UL), (size_t)(2899028330670200241UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 190 43 len=7 realloc_wrapper
@@ -50,10 +31,10 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 105 5 alias_gr
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 102 33 new_stack((void *)(&get_cos_angle_v1v2), 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 108 25 new_stack((void *)(&usage), 1, 0, (size_t)(2899028330670199823UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 112 1 alias_group_changed(1, (size_t)(2899028330670199812UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 70 new_stack((void *)(&parse_three_doubles), 4, 4, (size_t)(2899028330670199876UL), (size_t)(2899028330670199878UL), (size_t)(2899028330670199883UL), (size_t)(2899028330670199888UL), "parse_three_doubles|def|0", &____must_checkpoint_parse_three_doubles_def_0, "i8*", (void *)(&def), (size_t)8, 1, 0, 0, "parse_three_doubles|a|0", &____must_checkpoint_parse_three_doubles_a_0, "double*", (void *)(&a), (size_t)8, 1, 0, 0, "parse_three_doubles|b|0", &____must_checkpoint_parse_three_doubles_b_0, "double*", (void *)(&b), (size_t)8, 1, 0, 0, "parse_three_doubles|c|0", &____must_checkpoint_parse_three_doubles_c_0, "double*", (void *)(&c), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 126 1 alias_group_changed(3, (size_t)(2899028330670199831UL), (size_t)(2899028330670199832UL), (size_t)(2899028330670199888UL)); rm_stack(false, 0UL); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 70 new_stack((void *)(&parse_three_doubles), 4, 0, (size_t)(2899028330670199876UL), (size_t)(2899028330670199878UL), (size_t)(2899028330670199883UL), (size_t)(2899028330670199888UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 126 1 alias_group_changed(11, (size_t)(2899028330670199827UL), (size_t)(2899028330670199828UL), (size_t)(2899028330670199829UL), (size_t)(2899028330670199830UL), (size_t)(2899028330670199831UL), (size_t)(2899028330670199832UL), (size_t)(2899028330670199857UL), (size_t)(2899028330670199859UL), (size_t)(2899028330670199878UL), (size_t)(2899028330670199883UL), (size_t)(2899028330670199888UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 128 56 new_stack((void *)(&parse_config), 3, 3, (size_t)(0UL), (size_t)(2899028330670200184UL), (size_t)(2899028330670200123UL), "parse_config|argc|0", &____must_checkpoint_parse_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parse_config|argv|0", &____must_checkpoint_parse_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0, "parse_config|conf|0", &____must_checkpoint_parse_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 207 1 alias_group_changed(7, (size_t)(2899028330670199901UL), (size_t)(2899028330670199903UL), (size_t)(2899028330670199904UL), (size_t)(2899028330670199905UL), (size_t)(2899028330670199906UL), (size_t)(2899028330670199907UL), (size_t)(2899028330670199908UL)); rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 207 1 alias_group_changed(8, (size_t)(2899028330670199901UL), (size_t)(2899028330670199902UL), (size_t)(2899028330670199903UL), (size_t)(2899028330670199904UL), (size_t)(2899028330670199905UL), (size_t)(2899028330670199906UL), (size_t)(2899028330670199907UL), (size_t)(2899028330670199908UL)); rm_stack(false, 0UL); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 296 5 alias_group_changed(3, (size_t)(2899028330670200196UL), (size_t)(2899028330670200197UL), (size_t)(2899028330670200198UL)); rm_stack(false, 0UL); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 209 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2899028330670200666UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 209 33 init_chimes(); 
@@ -83,26 +64,26 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 5  d
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 5  double b;  b = (modv(v2x, v2y, v2z)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 161  char *first_comma;  first_comma = (strchr(def, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 197 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 62  char *second_comma;  second_comma = (strchr(first_comma + 1, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 111 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 5  char *first_comma;  first_comma = (strchr(def, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 41 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 5  char *second_comma;  second_comma = (strchr(first_comma + 1, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 54 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 129 5 int c; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 129 10 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 168 17  char *sphere_def;  sphere_def = (optarg) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 168 42 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 107  char *first_comma;  first_comma = (strchr(sphere_def, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 150 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 74  char *second_comma;  second_comma = (strchr(first_comma + 1, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 123 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 74  char *third_comma;  third_comma = (strchr(second_comma + 1, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 123 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 74  char *fourth_comma;  fourth_comma = (strchr(third_comma + 1, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 123 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 74  char *fifth_comma;  fifth_comma = (strchr(fourth_comma + 1, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 123 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 74  char *sixth_comma;  sixth_comma = (strchr(fifth_comma + 1, ',')) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 122 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 17  char *first_comma;  first_comma = (strchr(sphere_def, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 60 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 17  char *second_comma;  second_comma = (strchr(first_comma + 1, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 66 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 17  char *third_comma;  third_comma = (strchr(second_comma + 1, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 66 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 17  char *fourth_comma;  fourth_comma = (strchr(third_comma + 1, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 66 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 17  char *fifth_comma;  fifth_comma = (strchr(fourth_comma + 1, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 66 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 17  char *sixth_comma;  sixth_comma = (strchr(fifth_comma + 1, ',')) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 65 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 210 5  config conf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 210 16 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 212 5  rgb *screen;  screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 2899028330670200241UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
@@ -169,8 +150,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 284 12  
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 284 21 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 34 204  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 48 185  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 53 150  call_lbl_3: calling((void*)&sqrt, 3, 0UL, 1, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 52 124  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 52 124  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 56 169  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 62 175  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 69 107  call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); 
@@ -189,50 +169,42 @@ InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 76 94  l
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 76 102  if (____must_checkpoint_rot_y_x_0 != 0) { register_stack_var("rot_y|x|0", &____must_checkpoint_rot_y_x_0, "double", (void *)(&x), (size_t)8, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 76 102  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 75 331  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 94 20  call_lbl_1: calling((void*)&sqrt, 1, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 95 20  call_lbl_2: calling((void*)&sqrt, 2, 0UL, 1, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 83 274  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 83 274  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 17  call_lbl_1: calling((void*)&modv, 1, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 17  call_lbl_2: calling((void*)&modv, 2, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 102 170  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 108 92  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 162  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 179  if (____must_checkpoint_parse_three_doubles_first_comma_0 != 0) { register_stack_var("parse_three_doubles|first_comma|0", &____must_checkpoint_parse_three_doubles_first_comma_0, "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 115 179  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 63  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 81  if (____must_checkpoint_parse_three_doubles_second_comma_0 != 0) { register_stack_var("parse_three_doubles|second_comma|0", &____must_checkpoint_parse_three_doubles_second_comma_0, "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 117 81  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 724  if (____chimes_replaying) { goto lbl_0; } 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 107  call_lbl_10: calling((void*)&parse_three_doubles, 10, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 107  call_lbl_12: calling((void*)&parse_three_doubles, 12, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 107  call_lbl_14: calling((void*)&parse_three_doubles, 14, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 107  call_lbl_16: calling((void*)&parse_three_doubles, 16, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 305  call_lbl_43: calling((void*)&init, 43, 0UL, 8, (size_t)(2899028330670200477UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 203 9  call_lbl_52: calling((void*)&usage, 52, 0UL, 1, (size_t)(2899028330670200184UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 250  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 17  call_lbl_6: calling((void*)&parse_three_doubles, 6, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 17  call_lbl_7: calling((void*)&parse_three_doubles, 7, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17  call_lbl_8: calling((void*)&parse_three_doubles, 8, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17  call_lbl_9: calling((void*)&parse_three_doubles, 9, 0UL, 4, (size_t)(2899028330670200146UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL), (size_t)(2899028330670200123UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 17  call_lbl_29: calling((void*)&init, 29, 0UL, 8, (size_t)(2899028330670200477UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 203 9  call_lbl_38: calling((void*)&usage, 38, 0UL, 1, (size_t)(2899028330670200184UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 129 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 129 10  if (____must_checkpoint_parse_config_c_0 != 0) { register_stack_var("parse_config|c|0", &____must_checkpoint_parse_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 129 10  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 168 18  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 168 34  if (____must_checkpoint_parse_config_sphere_def_0 != 0) { register_stack_var("parse_config|sphere_def|0", &____must_checkpoint_parse_config_sphere_def_0, "i8*", (void *)(&sphere_def), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 168 34  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 108  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 125  if (____must_checkpoint_parse_config_first_comma_0 != 0) { register_stack_var("parse_config|first_comma|0", &____must_checkpoint_parse_config_first_comma_0, "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 125  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 75  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 93  if (____must_checkpoint_parse_config_second_comma_0 != 0) { register_stack_var("parse_config|second_comma|0", &____must_checkpoint_parse_config_second_comma_0, "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 93  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 75  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 92  if (____must_checkpoint_parse_config_third_comma_0 != 0) { register_stack_var("parse_config|third_comma|0", &____must_checkpoint_parse_config_third_comma_0, "i8*", (void *)(&third_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 92  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 75  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 93  if (____must_checkpoint_parse_config_fourth_comma_0 != 0) { register_stack_var("parse_config|fourth_comma|0", &____must_checkpoint_parse_config_fourth_comma_0, "i8*", (void *)(&fourth_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 93  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 75  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 92  if (____must_checkpoint_parse_config_fifth_comma_0 != 0) { register_stack_var("parse_config|fifth_comma|0", &____must_checkpoint_parse_config_fifth_comma_0, "i8*", (void *)(&fifth_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 92  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 75  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 92  if (____must_checkpoint_parse_config_sixth_comma_0 != 0) { register_stack_var("parse_config|sixth_comma|0", &____must_checkpoint_parse_config_sixth_comma_0, "i8*", (void *)(&sixth_comma), (size_t)8, 1, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 92  if (____chimes_replaying) {  switch(get_next_call()) { case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(43): { goto call_lbl_43; } case(52): { goto call_lbl_52; } default: { chimes_error(); } }  } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 18  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 35  if (____must_checkpoint_parse_config_first_comma_0 != 0) { register_stack_var("parse_config|first_comma|0", &____must_checkpoint_parse_config_first_comma_0, "i8*", (void *)(&first_comma), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 170 35  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 18  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 36  if (____must_checkpoint_parse_config_second_comma_0 != 0) { register_stack_var("parse_config|second_comma|0", &____must_checkpoint_parse_config_second_comma_0, "i8*", (void *)(&second_comma), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 172 36  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 18  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 35  if (____must_checkpoint_parse_config_third_comma_0 != 0) { register_stack_var("parse_config|third_comma|0", &____must_checkpoint_parse_config_third_comma_0, "i8*", (void *)(&third_comma), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 174 35  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 18  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 36  if (____must_checkpoint_parse_config_fourth_comma_0 != 0) { register_stack_var("parse_config|fourth_comma|0", &____must_checkpoint_parse_config_fourth_comma_0, "i8*", (void *)(&fourth_comma), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 176 36  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 18  lbl_6: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 35  if (____must_checkpoint_parse_config_fifth_comma_0 != 0) { register_stack_var("parse_config|fifth_comma|0", &____must_checkpoint_parse_config_fifth_comma_0, "i8*", (void *)(&fifth_comma), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 178 35  if (____chimes_replaying) { goto lbl_7; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 18  lbl_7: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 35  if (____must_checkpoint_parse_config_sixth_comma_0 != 0) { register_stack_var("parse_config|sixth_comma|0", &____must_checkpoint_parse_config_sixth_comma_0, "i8*", (void *)(&sixth_comma), (size_t)8, 1, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 180 35  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(29): { goto call_lbl_29; } case(38): { goto call_lbl_38; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 128 519  if (____chimes_replaying) { goto lbl_0; } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 216 14 ;  { call_lbl_19: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(19, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 219 47 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), true, true, false, ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
@@ -248,7 +220,7 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 26  call_l
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 11  call_lbl_12: calling((void*)&move, 12, 0UL, 4, (size_t)(2899028330670200477UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 289 958  call_lbl_14: calling((void*)&checkpoint, 14, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 210 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 210 17  if (____must_checkpoint_main_conf_0 != 0) { register_stack_var("main|conf|0", &____must_checkpoint_main_conf_0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 210 17  register_stack_var("main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 210 17  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 212 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c 212 17  register_stack_var("main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0); 

@@ -20,9 +20,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/rando
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 28 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 7  call_lbl_1: calling((void*)&lcg61, 1, 0UL, 1, (size_t)(16794414226779803848UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 7  call_lbl_2: calling((void*)&lcg61, 2, 0UL, 1, (size_t)(16794414226779803848UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 31 186  call_lbl_5: calling((void*)&sqrt, 5, 0UL, 1, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 31 186  call_lbl_6: calling((void*)&log, 6, 0UL, 1, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 22 70  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 22 70  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 42 69  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57  call_lbl_1: calling((void*)&lcg61, 1, 0UL, 1, (size_t)(16794414226779803911UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 66 66  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 5  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 19  if (____must_checkpoint_mkSeed_iSeed_0 != 0) { register_stack_var("mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 19  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 66 66  if (____chimes_replaying) { goto lbl_0; } 
