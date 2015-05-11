@@ -1,18 +1,18 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 1 _ZL14mkAtomCellListP10LinkCellStii _ZL16initHaloExchangeP8DomainSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 _ZL14mkAtomCellListP10LinkCellStii _ZL16initHaloExchangeP8DomainSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 _ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|size0|0 " i32 " 32 0 0 1 _ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|size1|0 " i32 " 32 0 0 1 _ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|size2|0 " i32 " 32 0 0 1 _ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|maxSize|0 " i32 " 32 0 0 1 _ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|parms|0 " %struct.AtomExchangeParmsSt* " 64 1 0 1 _ZL14mkAtomCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|ii|0 " i32 " 32 0 0 1 _ZL14mkAtomCellListP10LinkCellStii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 1 initHaloExchange mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 initHaloExchange mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|size0|0 " i32 " 32 0 0 1 mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|size1|0 " i32 " 32 0 0 1 mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|size2|0 " i32 " 32 0 0 1 mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|maxSize|0 " i32 " 32 0 0 1 mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|parms|0 " %struct.AtomExchangeParmsSt* " 64 1 0 1 mkAtomCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|ii|0 " i32 " 32 0 0 1 mkAtomCellList
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|ii|1 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|jj|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|procCoord|0 " i32* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initAtomHaloExchange|procGrid|0 " i32* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 1 _Z12processorNumP8DomainStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 _Z12processorNumP8DomainStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 1 processorNum
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 processorNum
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c loadAtomsBuffer|vparms|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c loadAtomsBuffer|data|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c loadAtomsBuffer|face|0 " i32 " 32 0 0 0
@@ -35,44 +35,44 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|bufSize|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|charBuf|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|parms|0 " %struct.AtomExchangeParmsSt* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|s|0 " %struct.SimFlatSt* " 64 1 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|buf|0 " %struct.AtomMsgSt* " 64 1 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|nBuf|0 " i32 " 32 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|ii|0 " i32 " 32 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|gid|0 " i32 " 32 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|type|0 " i32 " 32 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|rx|0 " double " 64 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|ry|0 " double " 64 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|rz|0 " double " 64 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|px|0 " double " 64 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|py|0 " double " 64 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|pz|0 " double " 64 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|s|0 " %struct.SimFlatSt* " 64 1 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|buf|0 " %struct.AtomMsgSt* " 64 1 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|nBuf|0 " i32 " 32 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|ii|0 " i32 " 32 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|gid|0 " i32 " 32 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|type|0 " i32 " 32 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|rx|0 " double " 64 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|ry|0 " double " 64 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|rz|0 " double " 64 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|px|0 " double " 64 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|py|0 " double " 64 0 0 1 putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c unloadAtomsBuffer|pz|0 " double " 64 0 0 1 putAtomInBox
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyAtomsExchange|vparms|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyAtomsExchange|parms|0 " %struct.AtomExchangeParmsSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyAtomsExchange|ii|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|iFace|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|nCells|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|list|0 " i32* " 64 1 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|nCells|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|list|0 " i32* " 64 1 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|xBegin|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|xEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|yBegin|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|yEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|zBegin|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|zEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|count|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|ix|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|iy|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|iz|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|xEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|yBegin|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|yEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|zBegin|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|zEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|count|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|ix|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|iy|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkAtomCellList|iz|0 " i32 " 32 0 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|domain|0 " %struct.DomainSt* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 _ZL16initHaloExchangeP8DomainSt _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|size0|0 " i32 " 32 0 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|size1|0 " i32 " 32 0 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|size2|0 " i32 " 32 0 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|maxSize|0 " i32 " 32 0 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|parms|0 " %struct.ForceExchangeParmsSt* " 64 1 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|ii|0 " i32 " 32 0 0 1 _ZL19mkForceRecvCellListP10LinkCellStii _ZL19mkForceSendCellListP10LinkCellStii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 initHaloExchange mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|hh|0 " %struct.HaloExchangeSt* " 64 1 0 1 mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|size0|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|size1|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|size2|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|maxSize|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|parms|0 " %struct.ForceExchangeParmsSt* " 64 1 0 1 mkForceRecvCellList mkForceSendCellList
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c initForceHaloExchange|ii|0 " i32 " 32 0 0 1 mkForceRecvCellList mkForceSendCellList
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c loadForceBuffer|vparms|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c loadForceBuffer|vdata|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c loadForceBuffer|face|0 " i32 " 32 0 0 0
@@ -105,44 +105,44 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyForceExchange|vparms|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyForceExchange|parms|0 " %struct.ForceExchangeParmsSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyForceExchange|ii|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|face|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|nCells|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|list|0 " i32* " 64 1 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|nCells|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|list|0 " i32* " 64 1 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|xBegin|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|xEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|yBegin|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|yEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|zBegin|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|zEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|xEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|yBegin|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|yEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|zBegin|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|zEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|nx|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|ny|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|nz|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|count|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|ix|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|iy|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|iz|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|count|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|ix|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|iy|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceSendCellList|iz|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|boxes|0 " %struct.LinkCellSt* " 64 1 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|face|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|nCells|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|list|0 " i32* " 64 1 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|nCells|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|list|0 " i32* " 64 1 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|xBegin|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|xEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|yBegin|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|yEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|zBegin|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|zEnd|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|xEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|yBegin|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|yEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|zBegin|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|zEnd|0 " i32 " 32 0 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|nx|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|ny|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|nz|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|count|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|ix|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|iy|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|iz|0 " i32 " 32 0 0 1 _Z15getBoxFromTupleP10LinkCellStiii
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|count|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|ix|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|iy|0 " i32 " 32 0 0 1 getBoxFromTuple
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c mkForceRecvCellList|iz|0 " i32 " 32 0 0 1 getBoxFromTuple
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c destroyHaloExchange|haloExchange|0 " %struct.HaloExchangeSt** " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c haloExchange|haloExchangeData|0 " %struct.HaloExchangeSt* " 64 1 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c haloExchange|data|0 " i8* " 64 1 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c haloExchange|iAxis|0 " i32 " 32 0 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c haloExchange|haloExchangeData|0 " %struct.HaloExchangeSt* " 64 1 0 1 exchangeData
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c haloExchange|data|0 " i8* " 64 1 0 1 exchangeData
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c haloExchange|iAxis|0 " i32 " 32 0 0 1 exchangeData
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c exchangeData|haloExchange|0 " %struct.HaloExchangeSt* " 64 1 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c exchangeData|data|0 " i8* " 64 1 0 1 _ZL12exchangeDataP14HaloExchangeStPvi
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c exchangeData|iAxis|0 " i32 " 32 0 0 0
@@ -168,7 +168,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|iTmp|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|ii|1 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|iTmp|1 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|tmp|0 " [na x %struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }] " 448 0 1 AtomMsgSt 0 1 _Z15sortAtomsInCellP7AtomsStP10LinkCellSti
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsInCell|tmp|0 " [na x %struct.AtomMsgSt = type { i32, i32, double, double, double, double, double, double }] " 448 0 1 AtomMsgSt 0 1 sortAtomsInCell
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsById|a|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsById|b|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c sortAtomsById|aId|0 " i32 " 32 0 0 0

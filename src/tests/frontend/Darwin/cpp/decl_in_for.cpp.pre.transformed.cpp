@@ -33,11 +33,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +68,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1486,7 +1487,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  lbl_0: int a; register_stack_var("main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } a = (0) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
@@ -1502,13 +1503,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- rm_stack(false, 0UL); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 }
 
 
 static int module_init() {
-    init_module(7772930474166261535UL, 1, 1, 0, 0, 7772930474166261535UL + 3UL, 7772930474166261535UL + 42UL, "main", 2, "_Z10checkpointv", "__assert_rtn");
+    init_module(7772930474166261535UL, 1, 1, 0, 0, 7772930474166261535UL + 3UL, 7772930474166261535UL + 42UL, "main", 1, "checkpoint");
     return 0;
 }
 

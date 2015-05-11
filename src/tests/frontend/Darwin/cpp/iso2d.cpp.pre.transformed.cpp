@@ -15,6 +15,8 @@ typedef long unsigned int size_t;
 static int ____must_checkpoint_main_conf_0 = 2;
 static int ____must_checkpoint_main_elapsed_s_0 = 2;
 static int ____must_checkpoint_main_point_rate_0 = 2;
+
+static int ____must_manage_fwd = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -36,11 +38,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -70,7 +73,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2925,7 +2928,7 @@ extern void wait_for_checkpoint();
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 static void fwd(float *next, float *curr, float *vsq,
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {new_stack((void *)(&fwd), 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+ float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  { int y; for ( y = (0) ; y < ny; y++) {
@@ -2963,10 +2966,10 @@ static void fwd(float *next, float *curr, float *vsq,
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  } }
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
-alias_group_changed(20, (size_t)(636351188801416980UL), (size_t)(636351188801416981UL), (size_t)(636351188801416982UL), (size_t)(636351188801416983UL), (size_t)(636351188801416984UL), (size_t)(636351188801416985UL), (size_t)(636351188801416986UL), (size_t)(636351188801416987UL), (size_t)(636351188801416988UL), (size_t)(636351188801416989UL), (size_t)(636351188801416990UL), (size_t)(636351188801416991UL), (size_t)(636351188801416992UL), (size_t)(636351188801416993UL), (size_t)(636351188801416994UL), (size_t)(636351188801416995UL), (size_t)(636351188801416996UL), (size_t)(636351188801416997UL), (size_t)(636351188801416998UL), (size_t)(636351188801417188UL)); rm_stack(false, 0UL); }
+alias_group_changed(20, (size_t)(636351188801416980UL), (size_t)(636351188801416981UL), (size_t)(636351188801416982UL), (size_t)(636351188801416983UL), (size_t)(636351188801416984UL), (size_t)(636351188801416985UL), (size_t)(636351188801416986UL), (size_t)(636351188801416987UL), (size_t)(636351188801416988UL), (size_t)(636351188801416989UL), (size_t)(636351188801416990UL), (size_t)(636351188801416991UL), (size_t)(636351188801416992UL), (size_t)(636351188801416993UL), (size_t)(636351188801416994UL), (size_t)(636351188801416995UL), (size_t)(636351188801416996UL), (size_t)(636351188801416997UL), (size_t)(636351188801416998UL), (size_t)(636351188801417188UL)); rm_stack(false, 0UL, "fwd", &____must_manage_fwd); }
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
-int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); if (____chimes_replaying) { goto lbl_0; }
+int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); if (____chimes_replaying) { goto lbl_0; }
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  lbl_0: config conf; register_stack_var("main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3011,7 +3014,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2,
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  fprintf(__stderrp, "Allocations failed\n");
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(12, (size_t)(636351188801416609UL), (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL), (size_t)(636351188801416629UL), (size_t)(636351188801416630UL)); rm_stack(false, 0UL); return 1;
+ alias_group_changed(12, (size_t)(636351188801416609UL), (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL), (size_t)(636351188801416629UL), (size_t)(636351188801416630UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 1;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3097,13 +3100,13 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2,
  free_wrapper(srcs, 636351188801416932UL);
 # 149 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(12, (size_t)(636351188801416609UL), (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL), (size_t)(636351188801416629UL), (size_t)(636351188801416630UL)); rm_stack(false, 0UL); return 0;
+ alias_group_changed(12, (size_t)(636351188801416609UL), (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL), (size_t)(636351188801416629UL), (size_t)(636351188801416630UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 }
 
 
 static int module_init() {
-    init_module(636351188801416608UL, 14, 2, 3, 2, 636351188801416608UL + 11UL, 636351188801416608UL + 220UL, 636351188801416608UL + 10UL, 636351188801416608UL + 223UL, 636351188801416608UL + 13UL, 636351188801416608UL + 222UL, 636351188801416608UL + 12UL, 636351188801416608UL + 220UL, 636351188801416608UL + 601UL, 636351188801416608UL + 274UL, 636351188801416608UL + 14UL, 636351188801416608UL + 324UL, 636351188801416608UL + 19UL, 636351188801416608UL + 220UL, 636351188801416608UL + 3UL, 636351188801416608UL + 342UL, 636351188801416608UL + 4UL, 636351188801416608UL + 165UL, 636351188801416608UL + 324UL, 636351188801416608UL + 326UL, 636351188801416608UL + 373UL, 636351188801416608UL + 581UL, 636351188801416608UL + 372UL, 636351188801416608UL + 580UL, 636351188801416608UL + 375UL, 636351188801416608UL + 583UL, 636351188801416608UL + 374UL, 636351188801416608UL + 582UL, "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "main", 15, "_Z10checkpointv", "_Z12setup_configP7_configiPPc", "_Z13init_progressiii", "_Z14config_sourcesPP7_sourcePiiii", "_Z14sample_sourcesP7_sourceiif", "_Z15finish_progressv", "_Z15update_progressi", "_Z7secondsv", "_Z9init_dataPfS_S_S_iiff", "_Z9save_textPfiiiiPKci", "_ZL3fwdPfS_S_S_iiiii", "fprintf", "free", "malloc", "printf", "_ZL3fwdPfS_S_S_iiiii", 0, "main|conf|0", 1, "main", "main|elapsed_s|0", 2, "_Z9save_textPfiiiiPKci", "_Z15finish_progressv", "main|point_rate|0", 1, "_Z9save_textPfiiiiPKci");
+    init_module(636351188801416608UL, 14, 2, 3, 2, 636351188801416608UL + 11UL, 636351188801416608UL + 220UL, 636351188801416608UL + 10UL, 636351188801416608UL + 223UL, 636351188801416608UL + 13UL, 636351188801416608UL + 222UL, 636351188801416608UL + 12UL, 636351188801416608UL + 220UL, 636351188801416608UL + 601UL, 636351188801416608UL + 274UL, 636351188801416608UL + 14UL, 636351188801416608UL + 324UL, 636351188801416608UL + 19UL, 636351188801416608UL + 220UL, 636351188801416608UL + 3UL, 636351188801416608UL + 342UL, 636351188801416608UL + 4UL, 636351188801416608UL + 165UL, 636351188801416608UL + 324UL, 636351188801416608UL + 326UL, 636351188801416608UL + 373UL, 636351188801416608UL + 581UL, 636351188801416608UL + 372UL, 636351188801416608UL + 580UL, 636351188801416608UL + 375UL, 636351188801416608UL + 583UL, 636351188801416608UL + 374UL, 636351188801416608UL + 582UL, "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "fwd", 0, "main", 11, "checkpoint", "config_sources", "finish_progress", "fwd", "init_data", "init_progress", "sample_sources", "save_text", "seconds", "setup_config", "update_progress", "main|conf|0", 1, "main", "main|elapsed_s|0", 2, "save_text", "finish_progress", "main|point_rate|0", 1, "save_text");
     return 0;
 }
 

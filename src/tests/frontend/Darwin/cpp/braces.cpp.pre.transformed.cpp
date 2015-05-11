@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "braces.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_main = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +35,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +70,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1726,7 +1729,7 @@ FILE *funopen(const void *,
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
  if (argc == 0) {printf("hello there\n"); };
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
@@ -1737,13 +1740,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
- alias_group_changed(4, (size_t)(1263163414597574804UL), (size_t)(1263163414597574805UL), (size_t)(1263163414597574806UL), (size_t)(1263163414597574807UL)); rm_stack(false, 0UL); return 0;
+ alias_group_changed(4, (size_t)(1263163414597574804UL), (size_t)(1263163414597574805UL), (size_t)(1263163414597574806UL), (size_t)(1263163414597574807UL)); rm_stack(false, 0UL, "main", &____must_manage_main); return 0;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 }
 
 
 static int module_init() {
-    init_module(1263163414597574803UL, 1, 1, 0, 0, 1263163414597574803UL + 3UL, 1263163414597574803UL + 35UL, "main", 1, "printf");
+    init_module(1263163414597574803UL, 1, 1, 0, 0, 1263163414597574803UL + 3UL, 1263163414597574803UL + 35UL, "main", 0);
     return 0;
 }
 

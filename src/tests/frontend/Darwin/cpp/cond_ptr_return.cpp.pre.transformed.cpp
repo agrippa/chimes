@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "cond_ptr_return.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_foo = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +35,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +70,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1469,7 +1472,7 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
-void *foo() {new_stack((void *)(&foo), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void *foo() {new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 8715185705475396353UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
@@ -1478,29 +1481,29 @@ void *foo() {new_stack((void *)(&foo), 0, 0); if (____chimes_replaying) { switch
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  if (A[0] == 3) {
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
- alias_group_changed(3, (size_t)(8715185705475396312UL), (size_t)(8715185705475396313UL), (size_t)(8715185705475396353UL)); rm_stack(true, 8715185705475396353UL); return A;
+ alias_group_changed(3, (size_t)(8715185705475396312UL), (size_t)(8715185705475396313UL), (size_t)(8715185705475396353UL)); rm_stack(true, 8715185705475396353UL, "foo", &____must_manage_foo); return A;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
- alias_group_changed(3, (size_t)(8715185705475396312UL), (size_t)(8715185705475396313UL), (size_t)(8715185705475396353UL)); rm_stack(true, 8715185705475396353UL); return __null;
+ alias_group_changed(3, (size_t)(8715185705475396312UL), (size_t)(8715185705475396313UL), (size_t)(8715185705475396353UL)); rm_stack(true, 8715185705475396353UL, "foo", &____must_manage_foo); return __null;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 }
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(8715185705475396352UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(8715185705475396352UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  void *tmp; call_lbl_2: calling((void*)&foo, 2, 8715185705475396347UL, 0); tmp = (foo()) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  alias_group_changed(4, (size_t)(8715185705475396337UL), (size_t)(8715185705475396338UL), (size_t)(8715185705475396339UL), (size_t)(8715185705475396340UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
- rm_stack(false, 0UL); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
 }
 
 
 static int module_init() {
-    init_module(8715185705475396311UL, 4, 2, 0, 0, 8715185705475396311UL + 1UL, 8715185705475396311UL + 42UL, 8715185705475396311UL + 2UL, 8715185705475396311UL + 42UL, 8715185705475396311UL + 28UL, 8715185705475396311UL + 41UL, 8715185705475396311UL + 29UL, 8715185705475396311UL + 36UL, "main", 2, "_Z10checkpointv", "_Z3foov", "_Z3foov", 1, "malloc");
+    init_module(8715185705475396311UL, 4, 2, 0, 0, 8715185705475396311UL + 1UL, 8715185705475396311UL + 42UL, 8715185705475396311UL + 2UL, 8715185705475396311UL + 42UL, 8715185705475396311UL + 28UL, 8715185705475396311UL + 41UL, 8715185705475396311UL + 29UL, 8715185705475396311UL + 36UL, "main", 2, "checkpoint", "foo", "foo", 0);
     return 0;
 }
 

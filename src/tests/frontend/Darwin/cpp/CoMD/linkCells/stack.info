@@ -7,7 +7,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|iBox|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|nbrBoxes|0 " i32* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|ix|0 " i32 " 32 0 0 1 _Z16getNeighborBoxesP10LinkCellStiPi
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|ix|0 " i32 " 32 0 0 1 getNeighborBoxes
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|iy|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|iz|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getNeighborBoxes|count|0 " i32 " 32 0 0 0
@@ -40,7 +40,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|px|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|py|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|pz|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|xyz|0 " [3 x double] " 192 0 0 1 _Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|xyz|0 " [3 x double] " 192 0 0 1 putAtomInBox
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|iBox|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c putAtomInBox|iOff|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c getBoxFromCoord|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
@@ -75,6 +75,6 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c emptyHaloCells|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c emptyHaloCells|ii|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|localMax|0 " i32 " 32 0 0 1 _Z12maxOccupancyP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|localMax|0 " i32 " 32 0 0 1 maxOccupancy
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|ii|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c maxOccupancy|globalMax|0 " i32 " 32 0 0 0

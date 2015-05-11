@@ -1,22 +1,22 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 5 alias_group_changed(6, (size_t)(1300474033434903687UL), (size_t)(1300474033434903688UL), (size_t)(1300474033434903689UL), (size_t)(1300474033434903690UL), (size_t)(1300474033434903691UL), (size_t)(1300474033434903700UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 23 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 30 , 1300474033434903700UL, 0, 0
-InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 4 5 alias_group_changed(2, (size_t)(1300474033434903673UL), (size_t)(1300474033434903674UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 23 new_stack((void *)(&foo), 2, 0, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 4 5 alias_group_changed(2, (size_t)(1300474033434903673UL), (size_t)(1300474033434903674UL)); rm_stack(false, 0UL, "foo", &____must_manage_foo); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 23 new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 5 rm_stack(false, 0UL, "main", (int *)0x0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 33 new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 5  int a;  a = (3 + 4 + 5 + 6) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 10 10 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 5  int *ptr;  ptr = ((int *)malloc_wrapper(100, 1300474033434903700UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 71 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 85  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 114  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 227  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 27  call_lbl_6: calling((void*)&foo, 6, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 47  call_lbl_6: calling((void*)&foo, 6, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 6  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 11  register_stack_var("main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 11  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 14  register_stack_var("main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 14  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 129  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 149  if (____chimes_replaying) { goto lbl_0; } 

@@ -26,6 +26,16 @@ if __name__ == '__main__':
         if not always_checkpoints(var, call_tree):
             output_file.write('static int ____must_checkpoint_' +
                               var.name.replace('|', '_') + ' = 2;\n')
+
+    output_file.write('\n')
+
+    for node in call_tree.values():
+        if (node.creates_checkpoint == 'MAY' or \
+                node.creates_checkpoint == 'DOES_NOT') and \
+                not node.calls_unknown:
+            output_file.write('static int ____must_manage_' +
+                node.name.replace('.', '_').replace(':', '_') + ' = 2;\n')
+
     output_file.write('\n')
 
     transfer(input_file, output_file)

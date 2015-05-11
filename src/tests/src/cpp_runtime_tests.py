@@ -40,11 +40,11 @@ SWAPPED_NESTED_PTRS = RuntimeTest('SwappedNestedPointers', ['swapped_nested_ptrs
 MULTI_CHECKPOINT = RuntimeTest('MultiCheckpoint', ['multi_checkpoint.cpp'], 100,
                                100)
 ISO2D = RuntimeTest('Iso2D',
-                    ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'], 0, 1,
+                    ['iso2d.cpp', 'lib/common.cpp', 'lib/common2d.cpp'], 0, -1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
-                    cli_args='-i 1')
+                    cli_args='-i 10')
 ISO3D = RuntimeTest('Iso3D',
                     ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, -1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],

@@ -1,7 +1,7 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|s|0 " %struct.SimFlatSt* " 64 1 0 1 _Z11profileStop11TimerHandle _Z12computeForceP9SimFlatSt _Z12profileStart11TimerHandle _Z13kineticEnergyP9SimFlatSt _Z17redistributeAtomsP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|nSteps|0 " i32 " 32 0 0 1 _Z11profileStop11TimerHandle _Z12computeForceP9SimFlatSt _Z12profileStart11TimerHandle _Z13kineticEnergyP9SimFlatSt _Z17redistributeAtomsP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|dt|0 " double " 64 0 0 1 _Z11profileStop11TimerHandle _Z12computeForceP9SimFlatSt _Z12profileStart11TimerHandle _Z13kineticEnergyP9SimFlatSt _Z17redistributeAtomsP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|ii|0 " i32 " 32 0 0 1 _Z11profileStop11TimerHandle _Z12computeForceP9SimFlatSt _Z12profileStart11TimerHandle _Z13kineticEnergyP9SimFlatSt _Z17redistributeAtomsP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|s|0 " %struct.SimFlatSt* " 64 1 0 1 computeForce kineticEnergy profileStart profileStop redistributeAtoms
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|nSteps|0 " i32 " 32 0 0 1 computeForce kineticEnergy profileStart profileStop redistributeAtoms
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|dt|0 " double " 64 0 0 1 computeForce kineticEnergy profileStart profileStop redistributeAtoms
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c timestep|ii|0 " i32 " 32 0 0 1 computeForce kineticEnergy profileStart profileStop redistributeAtoms
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c advanceVelocity|s|0 " %struct.SimFlatSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c advanceVelocity|nBoxes|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c advanceVelocity|dt|0 " double " 64 0 0 0
@@ -16,11 +16,11 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c advancePosition|ii|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c advancePosition|iSpecies|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c advancePosition|invMass|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c redistributeAtoms|sim|0 " %struct.SimFlatSt* " 64 1 0 1 _Z11profileStop11TimerHandle _Z12haloExchangeP14HaloExchangeStPv _Z12profileStart11TimerHandle _Z15sortAtomsInCellP7AtomsStP10LinkCellSti _Z15updateLinkCellsP10LinkCellStP7AtomsSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c redistributeAtoms|ii|0 " i32 " 32 0 0 1 _Z15sortAtomsInCellP7AtomsStP10LinkCellSti
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c redistributeAtoms|sim|0 " %struct.SimFlatSt* " 64 1 0 1 haloExchange profileStart profileStop sortAtomsInCell updateLinkCells
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c redistributeAtoms|ii|0 " i32 " 32 0 0 1 sortAtomsInCell
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c computeForce|s|0 " %struct.SimFlatSt* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|s|0 " %struct.SimFlatSt* " 64 1 0 1 _Z11profileStop11TimerHandle _Z12profileStart11TimerHandle _Z15addRealParallelPdS_i
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|eLocal|0 " [2 x double] " 128 0 0 1 _Z13kineticEnergyP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|s|0 " %struct.SimFlatSt* " 64 1 0 1 addRealParallel profileStart profileStop
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|eLocal|0 " [2 x double] " 128 0 0 1 kineticEnergy
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|iBox|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|iOff|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c kineticEnergy|ii|0 " i32 " 32 0 0 0

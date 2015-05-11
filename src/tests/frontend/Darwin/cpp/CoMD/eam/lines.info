@@ -4,8 +4,6 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 9 : { 96, 97, 98, 99, 100, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 120, 121, 123, 124, 125, 166 } prop:call:_Z12profileStart11TimerHandle
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 23 : { 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 144, 166 } prop:call:_Z16getNeighborBoxesP10LinkCellStiPi
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 4 : { 1032, 1033 } prop:call:_Z19destroyHaloExchangePP14HaloExchangeSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 640 20 : { 1071, 1072, 1073 } direct:call:_fopen
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 758 20 : { 1324, 1325, 1326 } direct:call:_fopen
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1597 } prop:call:_Z9getMyRankv
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1598 } prop:call:_Z13bcastParallelPvii
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1693 } direct:call:_ZL24bcastInterpolationObjectPP21InterpolationObjectSt

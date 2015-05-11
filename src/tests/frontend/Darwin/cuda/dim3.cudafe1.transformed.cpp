@@ -14,6 +14,12 @@ typedef long unsigned int size_t;
 # 1 "dim3.cudafe1.transformed.cpp" 2
 static int ____must_checkpoint_main_blocks_0 = 2;
 static int ____must_checkpoint___sti____cudaRegisterAll_12_dim3_cpp1_ii_main_callback_fp_0 = 2;
+
+static int ____must_manage___nv_cudaEntityRegisterCallback = 2;
+static int ____must_manage_____nv_dummy_param_ref = 2;
+static int ____must_manage___cudaUnregisterBinaryUtil = 2;
+static int ____must_manage___nv_save_fatbinhandle_for_managed_rt = 2;
+static int ____must_manage_dim3__dim3 = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
@@ -26496,48 +26502,48 @@ extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned 
 # 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int get_next_call();
 # 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void new_stack(void * func_ptr, unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void * func_ptr, const char * funcname, int * conditional, unsigned n_local_arg_aliases, unsigned nargs, ...);
 # 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions, int nvars, int nstructs, ...);
 # 14 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
-# 15 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void rm_stack(bool has_return_alias, size_t returned_alias, const char * funcname, int * conditional);
+# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, int * cond_registration, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 18 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 19 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_constant(size_t const_id, void * address, size_t length);
-# 23 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int alias_group_changed(int ngroups, ...);
 # 24 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern int alias_group_changed(int ngroups, ...);
+# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 31 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void free_wrapper(void * ptr, size_t group);
-# 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 33 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
-# 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 35 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned threads_in_region, bool spawns_threads, bool is_parallel_for, bool is_critical, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
-# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 39 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth, size_t region_id);
-# 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned get_parent_vars_stack_depth();
 # 41 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned get_parent_vars_stack_depth();
+# 42 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned get_thread_stack_depth();
-# 43 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void chimes_error();
-# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 48 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 # 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-# 64 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 65 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
@@ -26793,13 +26799,13 @@ extern void checkpoint();
 extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)); if (____chimes_replaying) { goto lbl_0; }
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
  lbl_0: dim3 blocks; register_stack_var("main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 alias_group_changed(3, (size_t)(3859550638466940432UL), (size_t)(3859550638466940433UL), (size_t)(3859550638466940434UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-rm_stack(false, 0UL); return 0;
+rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 }
 # 1 "dim3.cudafe1.stub.c"
@@ -27592,7 +27598,7 @@ static void __sti____cudaRegisterAll_12_dim3_cpp1_ii_main(void){__cudaFatCubinHa
 
 
 static int module_init() {
-    init_module(3859550638466940431UL, 8, 8, 2, 6, 3859550638466940431UL + 109UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 18UL, 3859550638466940431UL + 36UL, 3859550638466940431UL + 51UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 40UL, 3859550638466940431UL + 117UL, 3859550638466940431UL + 3UL, 3859550638466940431UL + 15UL, 3859550638466940431UL + 74UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 65UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 81UL, 3859550638466940431UL + 104UL, "__fatBinC_Wrapper_t", 3, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "_ZL31__nv_cudaEntityRegisterCallbackPPv", 1, "_ZL37__nv_save_fatbinhandle_for_managed_rtPPv", "main", 2, "_Z10checkpointv", "_ZN4dim3C1Ejjj", "_ZN4dim3C2Ejjj", 0, "_ZL37__nv_save_fatbinhandle_for_managed_rtPPv", 0, "_ZL22____nv_dummy_param_refPv", 0, "_ZN4dim3C1Ejjj", 1, "_ZN4dim3C2Ejjj", "_ZL26__cudaUnregisterBinaryUtilv", 2, "_ZL22____nv_dummy_param_refPv", "__cudaUnregisterFatBinary", "_ZL45__sti____cudaRegisterAll_12_dim3_cpp1_ii_mainv", 2, "__cudaRegisterFatBinary", "atexit", "main|blocks|0", 1, "main", "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main|callback_fp|0", 1, "_ZL45__sti____cudaRegisterAll_12_dim3_cpp1_ii_mainv");
+    init_module(3859550638466940431UL, 8, 7, 2, 6, 3859550638466940431UL + 109UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 18UL, 3859550638466940431UL + 36UL, 3859550638466940431UL + 51UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 40UL, 3859550638466940431UL + 117UL, 3859550638466940431UL + 3UL, 3859550638466940431UL + 15UL, 3859550638466940431UL + 74UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 65UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 81UL, 3859550638466940431UL + 104UL, "__fatBinC_Wrapper_t", 3, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "__nv_cudaEntityRegisterCallback", 1, "__nv_save_fatbinhandle_for_managed_rt", "____nv_dummy_param_ref", 0, "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_save_fatbinhandle_for_managed_rt", 0, "dim3::dim3", 0, "main", 1, "checkpoint", "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main", 2, "__cudaRegisterFatBinary", "atexit", "main|blocks|0", 1, "main", "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main|callback_fp|0", 1, "_ZL45__sti____cudaRegisterAll_12_dim3_cpp1_ii_mainv");
     return 0;
 }
 

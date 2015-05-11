@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "func_with_two_ptr_returns.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_haha_this_sux_part_trois = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +35,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +70,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1478,36 +1481,36 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
-void *haha_this_sux_part_trois() {new_stack((void *)(&haha_this_sux_part_trois), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void *haha_this_sux_part_trois() {new_stack((void *)(&haha_this_sux_part_trois), "haha_this_sux_part_trois", &____must_manage_haha_this_sux_part_trois, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 16401429439071256641UL, 0, 0)) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  if (A[0]) {
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL); return A;
+ alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL, "haha_this_sux_part_trois", &____must_manage_haha_this_sux_part_trois); return A;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  } else {
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL); return __null;
+ alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL, "haha_this_sux_part_trois", &____must_manage_haha_this_sux_part_trois); return __null;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
-alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL); }
+alias_group_changed(2, (size_t)(16401429439071256599UL), (size_t)(16401429439071256600UL)); rm_stack(true, 16401429439071256641UL, "haha_this_sux_part_trois", &____must_manage_haha_this_sux_part_trois); }
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(16401429439071256640UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(16401429439071256640UL)); if (____chimes_replaying) { goto lbl_0; }
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  lbl_0: void *tmp; register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&haha_this_sux_part_trois, 2, 16401429439071256631UL, 0); tmp = (haha_this_sux_part_trois()) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  alias_group_changed(4, (size_t)(16401429439071256621UL), (size_t)(16401429439071256622UL), (size_t)(16401429439071256623UL), (size_t)(16401429439071256624UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- rm_stack(false, 0UL); return ((int *)tmp)[0];
+ rm_stack(false, 0UL, "main", (int *)0x0); return ((int *)tmp)[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
 }
 
 
 static int module_init() {
-    init_module(16401429439071256598UL, 4, 2, 0, 0, 16401429439071256598UL + 1UL, 16401429439071256598UL + 43UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 42UL, 16401429439071256598UL + 26UL, 16401429439071256598UL + 33UL, 16401429439071256598UL + 2UL, 16401429439071256598UL + 43UL, "_Z24haha_this_sux_part_troisv", 1, "malloc", "main", 2, "_Z10checkpointv", "_Z24haha_this_sux_part_troisv");
+    init_module(16401429439071256598UL, 4, 2, 0, 0, 16401429439071256598UL + 1UL, 16401429439071256598UL + 43UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 42UL, 16401429439071256598UL + 26UL, 16401429439071256598UL + 33UL, 16401429439071256598UL + 2UL, 16401429439071256598UL + 43UL, "main", 2, "checkpoint", "haha_this_sux_part_trois", "haha_this_sux_part_trois", 0);
     return 0;
 }
 

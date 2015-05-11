@@ -1,6 +1,6 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 10 5 alias_group_changed(3, (size_t)(12387876047547725257UL), (size_t)(12387876047547725258UL), (size_t)(12387876047547725259UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 12 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 8 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 12 5 rm_stack(false, 0UL, "main", (int *)0x0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 8 33 new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 8 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5 int b; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10 
@@ -9,4 +9,4 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 11 5  call_lbl
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 5  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10  register_stack_var("main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 9 10  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 8 130  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp 8 150  if (____chimes_replaying) { goto lbl_0; } 

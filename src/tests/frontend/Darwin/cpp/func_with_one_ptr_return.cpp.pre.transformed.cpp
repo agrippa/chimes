@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "func_with_one_ptr_return.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_haha_this_sux_part_deux = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +35,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +70,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1469,28 +1472,28 @@ extern void wait_for_checkpoint();
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
-void *haha_this_sux_part_deux() {new_stack((void *)(&haha_this_sux_part_deux), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void *haha_this_sux_part_deux() {new_stack((void *)(&haha_this_sux_part_deux), "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  int *A; A = ((int *)malloc_wrapper(sizeof(int) * 10, 651168722096376618UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- alias_group_changed(1, (size_t)(651168722096376616UL)); rm_stack(true, 651168722096376618UL); return A;
+ alias_group_changed(1, (size_t)(651168722096376616UL)); rm_stack(true, 651168722096376618UL, "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux); return A;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(651168722096376646UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(651168722096376646UL)); if (____chimes_replaying) { goto lbl_0; }
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  lbl_0: void *tmp; register_stack_var("main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&haha_this_sux_part_deux, 2, 651168722096376637UL, 0); tmp = (haha_this_sux_part_deux()) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  alias_group_changed(4, (size_t)(651168722096376627UL), (size_t)(651168722096376628UL), (size_t)(651168722096376629UL), (size_t)(651168722096376630UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- rm_stack(false, 0UL); return ((int *)tmp)[0];
+ rm_stack(false, 0UL, "main", (int *)0x0); return ((int *)tmp)[0];
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 }
 
 
 static int module_init() {
-    init_module(651168722096376615UL, 3, 2, 0, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL, "main", 2, "_Z10checkpointv", "_Z23haha_this_sux_part_deuxv", "_Z23haha_this_sux_part_deuxv", 1, "malloc");
+    init_module(651168722096376615UL, 3, 2, 0, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL, "haha_this_sux_part_deux", 0, "main", 2, "checkpoint", "haha_this_sux_part_deux");
     return 0;
 }
 

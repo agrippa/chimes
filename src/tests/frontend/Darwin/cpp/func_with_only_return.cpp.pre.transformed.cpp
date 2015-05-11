@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "func_with_only_return.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_haha_this_sux = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +35,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +70,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1477,26 +1480,26 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
-void *haha_this_sux() {new_stack((void *)(&haha_this_sux), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void *haha_this_sux() {new_stack((void *)(&haha_this_sux), "haha_this_sux", &____must_manage_haha_this_sux, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- rm_stack(true, 2786831167442144618UL); return __null;
+ rm_stack(true, 2786831167442144618UL, "haha_this_sux", &____must_manage_haha_this_sux); return __null;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
  void *tmp; call_lbl_2: calling((void*)&haha_this_sux, 2, 2786831167442144610UL, 0); tmp = (haha_this_sux()) ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
  alias_group_changed(4, (size_t)(2786831167442144600UL), (size_t)(2786831167442144601UL), (size_t)(2786831167442144602UL), (size_t)(2786831167442144603UL)); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- rm_stack(false, 0UL); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 }
 
 
 static int module_init() {
-    init_module(2786831167442144598UL, 2, 2, 0, 0, 2786831167442144598UL + 5UL, 2786831167442144598UL + 12UL, 2786831167442144598UL + 4UL, 2786831167442144598UL + 17UL, "_Z13haha_this_suxv", 0, "main", 2, "_Z10checkpointv", "_Z13haha_this_suxv");
+    init_module(2786831167442144598UL, 2, 2, 0, 0, 2786831167442144598UL + 5UL, 2786831167442144598UL + 12UL, 2786831167442144598UL + 4UL, 2786831167442144598UL + 17UL, "main", 2, "checkpoint", "haha_this_sux", "haha_this_sux", 0);
     return 0;
 }
 

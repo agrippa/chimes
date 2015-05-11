@@ -2,6 +2,4 @@
 /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 70 27 : { 207 } direct:call:sin
 /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 76 25 : { 256, 257 } direct:call:cos
 /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 77 25 : { 258 } direct:call:sin
-/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 144 17 : { 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 757, 759, 775, 791, 807, 823, 848, 1403 } prop:call:_getopt
-/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 211 5 : { 917, 918, 919 } direct:call:_Z12parse_configiPPcP7_config
-/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 9 : { 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 966 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 9 : { 917, 918, 919, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 966 } prop:call:_Z10checkpointv

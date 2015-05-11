@@ -1,8 +1,8 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 14 5 alias_group_changed(4, (size_t)(1263163414597574804UL), (size_t)(1263163414597574805UL), (size_t)(1263163414597574806UL), (size_t)(1263163414597574807UL)); rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 14 5 alias_group_changed(4, (size_t)(1263163414597574804UL), (size_t)(1263163414597574805UL), (size_t)(1263163414597574806UL), (size_t)(1263163414597574807UL)); rm_stack(false, 0UL, "main", &____must_manage_main); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 33 new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 33 init_chimes(); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 53  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 19 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 129  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 160  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

@@ -38,6 +38,15 @@ static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par5_0
 static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par6_0 = 2;
 static int ____must_checkpoint___device_stub__Z10fwd_kernelPfS_S_S_iiii___par7_0 = 2;
 static int ____must_checkpoint___sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad_callback_fp_0 = 2;
+
+static int ____must_manage_cudaError = 2;
+static int ____must_manage___nv_cudaEntityRegisterCallback = 2;
+static int ____must_manage_fwd_kernel = 2;
+static int ____must_manage___cudaUnregisterBinaryUtil = 2;
+static int ____must_manage___nv_save_fatbinhandle_for_managed_rt = 2;
+static int ____must_manage_____nv_dummy_param_ref = 2;
+static int ____must_manage_dim3__dim3 = 2;
+static int ____must_manage___device_stub__Z10fwd_kernelPfS_S_S_iiii = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 static char __nv_inited_managed_rt = 0; static void **__nv_fatbinhandle_for_managed_rt; static void __nv_save_fatbinhandle_for_managed_rt(void **in){__nv_fatbinhandle_for_managed_rt = in;} static char __nv_init_managed_rt_with_module(void **); static inline void __nv_init_managed_rt(void) { __nv_inited_managed_rt = (__nv_inited_managed_rt ? __nv_inited_managed_rt : __nv_init_managed_rt_with_module(__nv_fatbinhandle_for_managed_rt));}
@@ -26520,48 +26529,48 @@ extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned 
 # 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int get_next_call();
 # 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void new_stack(void * func_ptr, unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void new_stack(void * func_ptr, const char * funcname, int * conditional, unsigned n_local_arg_aliases, unsigned nargs, ...);
 # 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions, int nvars, int nstructs, ...);
 # 14 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
-# 15 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void rm_stack(bool has_return_alias, size_t returned_alias, const char * funcname, int * conditional);
+# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, int * cond_registration, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 18 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 19 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_constant(size_t const_id, void * address, size_t length);
-# 23 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int alias_group_changed(int ngroups, ...);
 # 24 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern int alias_group_changed(int ngroups, ...);
+# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 31 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void free_wrapper(void * ptr, size_t group);
-# 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 33 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
-# 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 35 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned threads_in_region, bool spawns_threads, bool is_parallel_for, bool is_critical, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
-# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 39 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth, size_t region_id);
-# 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned get_parent_vars_stack_depth();
 # 41 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned get_parent_vars_stack_depth();
+# 42 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned get_thread_stack_depth();
-# 43 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void chimes_error();
-# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 48 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 # 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-# 64 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 65 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 31 "/usr/include/sys/_types/_va_list.h" 3
 typedef __darwin_va_list va_list;
@@ -26934,7 +26943,7 @@ void fwd_kernel(float *next, float *curr, float *vsq, float *c_coeff, int
 nx, int ny, int dimx, int radius) ;
 # 69 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 # 69 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(2433535641109194314UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2433535641109194314UL)); if (____chimes_replaying) { goto lbl_0; }
 # 70 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
  lbl_0: config conf; register_stack_var("main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
 # 71 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
@@ -26946,7 +26955,7 @@ if (((conf.nx) % 32) != 0) {
 # 75 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 fprintf(__stderrp, "Invalid nx configuration, must be an even multiple of %d\n", 32);
 # 77 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL); return 1;
+alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 1;
 # 78 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 }
 # 79 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
@@ -26954,7 +26963,7 @@ if (((conf.ny) % 16) != 0) {
 # 80 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 fprintf(__stderrp, "Invalid ny configuration, must be an even multiple of %d\n", 16);
 # 82 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL); return 1;
+alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 1;
 # 83 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 }
 # 85 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
@@ -26992,7 +27001,7 @@ if (((curr == (__null)) || (next == (__null))) || (vsq == (__null))) {
 # 105 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 fprintf(__stderrp, "Allocations failed\n");
 # 106 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL); return 1;
+alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 1;
 # 107 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 }
 # 109 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
@@ -27098,7 +27107,7 @@ free_wrapper(srcs, 2433535641109194228UL);
 # 181 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 { alias_group_changed(1, (size_t)(2433535641109193659UL)); lbl_41: cudaError_t error; if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } case(30): { goto call_lbl_30; } case(37): { goto call_lbl_37; } case(44): { goto call_lbl_44; } case(50): { goto call_lbl_50; } case(55): { goto call_lbl_55; } case(57): { goto call_lbl_57; } case(60): { goto call_lbl_60; } case(63): { goto call_lbl_63; } case(66): { goto call_lbl_66; } case(69): { goto call_lbl_69; } case(72): { goto call_lbl_72; } case(75): { goto call_lbl_75; } case(78): { goto call_lbl_78; } case(81): { goto call_lbl_81; } case(83): { goto call_lbl_83; } case(86): { goto call_lbl_86; } case(89): { goto call_lbl_89; } case(90): { goto call_lbl_90; } case(92): { goto call_lbl_92; } case(93): { goto call_lbl_93; } case(95): { goto call_lbl_95; } case(99): { goto call_lbl_99; } case(102): { goto call_lbl_102; } case(104): { goto call_lbl_104; } case(107): { goto call_lbl_107; } case(110): { goto call_lbl_110; } case(112): { goto call_lbl_112; } case(115): { goto call_lbl_115; } case(127): { goto call_lbl_127; } case(134): { goto call_lbl_134; } case(141): { goto call_lbl_141; } case(148): { goto call_lbl_148; } default: { chimes_error(); } } } error = (cudaFree_wrapper(d_c_coeff, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu", 181); alias_group_changed(1, (size_t)(2433535641109193660UL)); call_lbl_148: calling((void*)&cudaGetErrorString, 148, 2433535641109194305UL, 1, (size_t)(0UL)); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 183 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
-alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL); return 0;
+alias_group_changed(11, (size_t)(2433535641109193612UL), (size_t)(2433535641109193616UL), (size_t)(2433535641109193617UL), (size_t)(2433535641109193618UL), (size_t)(2433535641109193619UL), (size_t)(2433535641109193620UL), (size_t)(2433535641109193621UL), (size_t)(2433535641109193622UL), (size_t)(2433535641109193623UL), (size_t)(2433535641109193624UL), (size_t)(2433535641109193660UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 184 "/Users/jmg3/num-debug/src/examples/cuda/iso2d.cu"
 }
 # 1 "iso2d.cudafe1.stub.c"
@@ -27993,7 +28002,7 @@ static void __sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad(void) { __cudaFat
 
 
 static int module_init() {
-    init_module(2433535641109193611UL, 31, 11, 26, 10, 2433535641109193611UL + 949UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 966UL, 2433535641109193611UL + 989UL, 2433535641109193611UL + 3UL, 2433535641109193611UL + 703UL, 2433535641109193611UL + 4UL, 2433535641109193611UL + 380UL, 2433535641109193611UL + 737UL, 2433535641109193611UL + 755UL, 2433535641109193611UL + 912UL, 2433535641109193611UL + 1020UL, 2433535641109193611UL + 775UL, 2433535641109193611UL + 809UL, 2433535641109193611UL + 774UL, 2433535641109193611UL + 808UL, 2433535641109193611UL + 777UL, 2433535641109193611UL + 811UL, 2433535641109193611UL + 776UL, 2433535641109193611UL + 810UL, 2433535641109193611UL + 993UL, 2433535641109193611UL + 567UL, 2433535641109193611UL + 39UL, 2433535641109193611UL + 489UL, 2433535641109193611UL + 617UL, 2433535641109193611UL + 619UL, 2433535641109193611UL + 923UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 1005UL, 2433535641109193611UL + 1014UL, 2433535641109193611UL + 11UL, 2433535641109193611UL + 525UL, 2433535641109193611UL + 10UL, 2433535641109193611UL + 525UL, 2433535641109193611UL + 13UL, 2433535641109193611UL + 342UL, 2433535641109193611UL + 12UL, 2433535641109193611UL + 525UL, 2433535641109193611UL + 15UL, 2433535641109193611UL + 489UL, 2433535641109193611UL + 14UL, 2433535641109193611UL + 617UL, 2433535641109193611UL + 17UL, 2433535641109193611UL + 476UL, 2433535641109193611UL + 16UL, 2433535641109193611UL + 489UL, 2433535641109193611UL + 18UL, 2433535641109193611UL + 477UL, 2433535641109193611UL + 905UL, 2433535641109193611UL + 911UL, 2433535641109193611UL + 940UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 829UL, 2433535641109193611UL + 897UL, 2433535641109193611UL + 828UL, 2433535641109193611UL + 896UL, 2433535641109193611UL + 1007UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 827UL, 2433535641109193611UL + 895UL, 2433535641109193611UL + 826UL, 2433535641109193611UL + 894UL, "__fatBinC_Wrapper_t", 3, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "_ZL31__nv_cudaEntityRegisterCallbackPPv", 2, "_ZL37__nv_save_fatbinhandle_for_managed_rtPPv", "__cudaRegisterFunction", "_ZL26__cudaUnregisterBinaryUtilv", 2, "_ZL22____nv_dummy_param_refPv", "__cudaUnregisterFatBinary", "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", 2, "_ZN37_GLOBAL__N__13_iso2d_cpp1_ii_2fcd0cad10cudaLaunchIcEE9cudaErrorPT_", "cudaSetupArgument", "_ZL37__nv_save_fatbinhandle_for_managed_rtPPv", 0, "_Z10fwd_kernelPfS_S_S_iiii", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "_ZN4dim3C1Ejjj", 1, "_ZN4dim3C2Ejjj", "_ZN4dim3C2Ejjj", 0, "_ZL50__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cadv", 2, "__cudaRegisterFatBinary", "atexit", "main", 23, "_Z10checkpointv", "_Z10fwd_kernelPfS_S_S_iiii", "_Z12setup_configP7_configiPPc", "_Z13init_progressiii", "_Z14config_sourcesPP7_sourcePiiii", "_Z14sample_sourcesP7_sourceiif", "_Z15finish_progressv", "_Z15update_progressi", "_Z7secondsv", "_Z9init_dataPfS_S_S_iiff", "_Z9save_textPfiiiiPKci", "_ZN4dim3C1Ejjj", "cudaConfigureCall", "cudaDeviceSynchronize", "cudaFree", "cudaGetErrorString", "cudaMalloc", "cudaMemcpy", "exit", "fprintf", "free", "malloc", "printf", "_ZN37_GLOBAL__N__13_iso2d_cpp1_ii_2fcd0cad10cudaLaunchIcEE9cudaErrorPT_", 1, "cudaLaunch", "_ZL22____nv_dummy_param_refPv", 0, "main|conf|0", 1, "main", "main|d_curr|0", 1, "main", "main|d_next|0", 1, "main", "main|d_vsq|0", 1, "main", "main|d_c_coeff|0", 1, "main", "main|block|0", 1, "main", "main|grid|0", 1, "main", "main|error|9", 6, "cudaMemcpy", "cudaGetErrorString", "cudaFree", "_Z9save_textPfiiiiPKci", "_Z7secondsv", "_Z15finish_progressv", "main|compute_s|0", 6, "cudaMemcpy", "cudaGetErrorString", "cudaFree", "_Z9save_textPfiiiiPKci", "_Z7secondsv", "_Z15finish_progressv", "main|error|10", 5, "cudaGetErrorString", "cudaFree", "_Z9save_textPfiiiiPKci", "_Z7secondsv", "_Z15finish_progressv", "main|total_s|0", 4, "cudaGetErrorString", "cudaFree", "_Z9save_textPfiiiiPKci", "_Z15finish_progressv", "main|point_rate|0", 3, "cudaGetErrorString", "cudaFree", "_Z9save_textPfiiiiPKci", "main|i|0", 2, "cudaGetErrorString", "cudaFree", "main|error|11", 2, "cudaGetErrorString", "cudaFree", "main|error|12", 2, "cudaGetErrorString", "cudaFree", "main|error|13", 2, "cudaGetErrorString", "cudaFree", "main|error|14", 1, "cudaGetErrorString", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par0|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par1|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par2|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par3|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par4|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par5|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par6|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par7|0", 1, "_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii", "__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad|callback_fp|0", 1, "_ZL50__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cadv");
+    init_module(2433535641109193611UL, 31, 10, 26, 10, 2433535641109193611UL + 949UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 966UL, 2433535641109193611UL + 989UL, 2433535641109193611UL + 3UL, 2433535641109193611UL + 703UL, 2433535641109193611UL + 4UL, 2433535641109193611UL + 380UL, 2433535641109193611UL + 737UL, 2433535641109193611UL + 755UL, 2433535641109193611UL + 912UL, 2433535641109193611UL + 1020UL, 2433535641109193611UL + 775UL, 2433535641109193611UL + 809UL, 2433535641109193611UL + 774UL, 2433535641109193611UL + 808UL, 2433535641109193611UL + 777UL, 2433535641109193611UL + 811UL, 2433535641109193611UL + 776UL, 2433535641109193611UL + 810UL, 2433535641109193611UL + 993UL, 2433535641109193611UL + 567UL, 2433535641109193611UL + 39UL, 2433535641109193611UL + 489UL, 2433535641109193611UL + 617UL, 2433535641109193611UL + 619UL, 2433535641109193611UL + 923UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 1005UL, 2433535641109193611UL + 1014UL, 2433535641109193611UL + 11UL, 2433535641109193611UL + 525UL, 2433535641109193611UL + 10UL, 2433535641109193611UL + 525UL, 2433535641109193611UL + 13UL, 2433535641109193611UL + 342UL, 2433535641109193611UL + 12UL, 2433535641109193611UL + 525UL, 2433535641109193611UL + 15UL, 2433535641109193611UL + 489UL, 2433535641109193611UL + 14UL, 2433535641109193611UL + 617UL, 2433535641109193611UL + 17UL, 2433535641109193611UL + 476UL, 2433535641109193611UL + 16UL, 2433535641109193611UL + 489UL, 2433535641109193611UL + 18UL, 2433535641109193611UL + 477UL, 2433535641109193611UL + 905UL, 2433535641109193611UL + 911UL, 2433535641109193611UL + 940UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 829UL, 2433535641109193611UL + 897UL, 2433535641109193611UL + 828UL, 2433535641109193611UL + 896UL, 2433535641109193611UL + 1007UL, 2433535641109193611UL + 947UL, 2433535641109193611UL + 827UL, 2433535641109193611UL + 895UL, 2433535641109193611UL + 826UL, 2433535641109193611UL + 894UL, "__fatBinC_Wrapper_t", 3, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "cudaError", 1, "cudaLaunch", "__nv_cudaEntityRegisterCallback", 2, "__cudaRegisterFunction", "__nv_save_fatbinhandle_for_managed_rt", "fwd_kernel", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_save_fatbinhandle_for_managed_rt", 0, "__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad", 2, "__cudaRegisterFatBinary", "atexit", "____nv_dummy_param_ref", 0, "dim3::dim3", 0, "main", 17, "checkpoint", "config_sources", "cudaConfigureCall", "cudaDeviceSynchronize", "cudaFree", "cudaGetErrorString", "cudaMalloc", "cudaMemcpy", "finish_progress", "fwd_kernel", "init_data", "init_progress", "sample_sources", "save_text", "seconds", "setup_config", "update_progress", "__device_stub__Z10fwd_kernelPfS_S_S_iiii", 2, "cudaError", "cudaSetupArgument", "main|conf|0", 1, "main", "main|d_curr|0", 1, "main", "main|d_next|0", 1, "main", "main|d_vsq|0", 1, "main", "main|d_c_coeff|0", 1, "main", "main|block|0", 1, "main", "main|grid|0", 1, "main", "main|error|9", 6, "seconds", "save_text", "finish_progress", "cudaMemcpy", "cudaGetErrorString", "cudaFree", "main|compute_s|0", 6, "seconds", "save_text", "finish_progress", "cudaMemcpy", "cudaGetErrorString", "cudaFree", "main|error|10", 5, "seconds", "save_text", "finish_progress", "cudaGetErrorString", "cudaFree", "main|total_s|0", 4, "save_text", "finish_progress", "cudaGetErrorString", "cudaFree", "main|point_rate|0", 3, "save_text", "cudaGetErrorString", "cudaFree", "main|i|0", 2, "cudaGetErrorString", "cudaFree", "main|error|11", 2, "cudaGetErrorString", "cudaFree", "main|error|12", 2, "cudaGetErrorString", "cudaFree", "main|error|13", 2, "cudaGetErrorString", "cudaFree", "main|error|14", 1, "cudaGetErrorString", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par0|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par1|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par2|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par3|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par4|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par5|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par6|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiii|__par7|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiii", "__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad|callback_fp|0", 1, "_ZL50__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cadv");
     return 0;
 }
 

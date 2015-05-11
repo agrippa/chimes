@@ -1,16 +1,16 @@
-_Z9getNRanksv 0 DOES_NOT
-_Z9getMyRankv 0 DOES_NOT
-_Z9printRankv 0 DOES_NOT
-_Z16timestampBarrierPKc 0 MAY _Z15barrierParallelv _Z9printRankv ctime fflush fprintf time
-_Z15barrierParallelv 0 DOES_NOT
-_Z12initParallelPiPPPc 0 DOES_NOT
-_Z15destroyParallelv 0 DOES_NOT
-_Z19sendReceiveParallelPviiS_ii 0 DOES_NOT __assert_rtn
-_Z14addIntParallelPiS_i 0 DOES_NOT
-_Z15addRealParallelPdS_i 0 DOES_NOT
-_Z17addDoubleParallelPdS_i 0 DOES_NOT
-_Z14maxIntParallelPiS_i 0 DOES_NOT
-_Z21minRankDoubleParallelP16RankReduceDataStS0_i 0 DOES_NOT
-_Z21maxRankDoubleParallelP16RankReduceDataStS0_i 0 DOES_NOT
-_Z13bcastParallelPvii 0 DOES_NOT
-_Z12builtWithMpiv 0 DOES_NOT
+getNRanks 0 DOES_NOT
+getMyRank 0 DOES_NOT
+printRank 0 DOES_NOT
+timestampBarrier 0 MAY barrierParallel ctime printRank time
+barrierParallel 0 DOES_NOT
+initParallel 0 DOES_NOT
+destroyParallel 0 DOES_NOT
+sendReceiveParallel 0 DOES_NOT
+addIntParallel 0 DOES_NOT
+addRealParallel 0 DOES_NOT
+addDoubleParallel 0 DOES_NOT
+maxIntParallel 0 DOES_NOT
+minRankDoubleParallel 0 DOES_NOT
+maxRankDoubleParallel 0 DOES_NOT
+bcastParallel 0 DOES_NOT
+builtWithMpi 0 DOES_NOT

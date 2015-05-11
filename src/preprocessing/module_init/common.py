@@ -63,7 +63,7 @@ def get_call_tree(call_tree_filename):
 # This mirrors the logic in DesiredInsertions.always_checkpoints
 def always_checkpoints(alloc, call_tree):
     for cause in alloc.causes:
-        if cause == "_Z10checkpointv":
+        if cause == "checkpoint":
             return True
 
         if cause not in call_tree.keys():
