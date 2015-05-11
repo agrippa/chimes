@@ -59,18 +59,14 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                     start_loc.getFilename());
 
             // Get the list of alias groups changed at this location
-            std::vector<size_t> *groups = insertions->get_groups(
+            unsigned loc_id = insertions->get_loc_id(
                     start_loc.getLine(), start_loc.getColumn(),
                     start_loc.getFilename());
 
             // Generate the alias_group_changed callback
             std::stringstream ss;
-            ss << "alias_group_changed(" << groups->size();
-            for (std::vector<size_t>::iterator i = groups->begin(),
-                    e = groups->end(); i != e; i++) {
-                ss << ", (size_t)(" << *i << "UL)";
-            }
-            ss << ")";
+            ss << "alias_group_changed(" << \
+                insertions->get_alias_loc_var(loc_id) << ")";
 
             unsigned int inserted_line = start_loc.getLine();
             unsigned int inserted_col = start_loc.getColumn();

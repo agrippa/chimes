@@ -2,11 +2,13 @@
 #include <ctime>
 #include <stdlib.h>
 #include <string.h>
-#include "perf_profile.h"
 #include <assert.h>
 #include <algorithm>
 #include <time.h>
 #include <sys/time.h>
+
+#include "libchimes.h"
+#include "perf_profile.h"
 
 #ifdef __MACH__
 #include <mach/clock.h>
@@ -16,7 +18,7 @@
 unsigned long long perf_profile::current_time_ms() {
 #ifdef __MACH__
     struct timeval t;
-    assert(gettimeofday(&t, NULL) == 0); 
+    VERIFY(gettimeofday(&t, NULL) == 0); 
     unsigned long long s = 1000000ULL * (unsigned long long)t.tv_sec;
     return (unsigned long long)t.tv_usec + s;
 #if 0

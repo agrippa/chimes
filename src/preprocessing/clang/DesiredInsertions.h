@@ -68,9 +68,10 @@ class ReachableInfo {
 
 class FunctionExit {
     public:
-        FunctionExit(size_t set_return_alias) :
-            return_alias(set_return_alias) {}
+        FunctionExit(unsigned set_id, size_t set_return_alias) :
+            id(set_id), return_alias(set_return_alias) {}
 
+        unsigned get_id() { return (id); }
         size_t get_return_alias() { return return_alias; }
         std::set<size_t> get_groups_changed_at_termination() {
             return groups_changed_at_termination;
@@ -80,6 +81,7 @@ class FunctionExit {
         }
 
     private:
+        unsigned id;
         size_t return_alias;
         std::set<size_t> groups_changed_at_termination;
 };
@@ -288,11 +290,12 @@ private:
  */
 class StateChangeInsertion {
 public:
-    StateChangeInsertion(std::string set_filename, int set_line_no, int set_col,
-            std::vector<size_t> *set_groups) : filename(set_filename),
-            line_no(set_line_no), col(set_col), groups(set_groups) {
+    StateChangeInsertion(unsigned set_id, std::string set_filename, int set_line_no,
+            int set_col, std::vector<size_t> *set_groups) : id(set_id),
+            filename(set_filename), line_no(set_line_no), col(set_col), groups(set_groups) {
     }
 
+    unsigned get_id() { return (id); }
     int get_line() { return line_no; }
     int get_col() { return col; }
     void update_line(int set_line) { line_no = set_line; }
@@ -300,6 +303,7 @@ public:
     std::vector<size_t> *get_groups() { return groups; }
 
 private:
+    unsigned id;
     std::string filename;
     int line_no;
     int col;
@@ -326,8 +330,10 @@ public:
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
             omp_file(omp_filename), firstprivate_file(firstprivate_filename),
-            call_tree_file(call_tree_filename) {
+            call_tree_file(call_tree_filename), state_change_insertions(NULL),
+            func_exits(NULL) {
         module_id = hash(module_name);
+        // parseStateChangeInsertions must be called before parseFunctionExits
         state_change_insertions = parseStateChangeInsertions();
         struct_fields = parseStructs();
         stack_allocs = parseStackAllocs();
@@ -350,6 +356,8 @@ public:
 
     bool contains(int line, int col, const char *filename);
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
+
+    unsigned get_loc_id(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     StructFields *get_struct_fields_for(std::string name);
     std::vector<ReachableInfo> *get_reachable() { return reachable; }
@@ -399,6 +407,8 @@ public:
     FunctionCallees *get_callees(std::string name);
     bool has_callees(std::string name);
 
+    std::string get_alias_loc_var(unsigned id);
+
 private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
@@ -432,6 +442,8 @@ private:
         std::map<std::string, FunctionCallees *> *parseCallTree();
 
         size_t module_id;
+
+        unsigned count_locs = 0;
 };
 
 #endif

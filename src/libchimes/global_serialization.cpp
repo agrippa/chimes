@@ -3,6 +3,7 @@
 
 #include <assert.h>
 
+#include "chimes_common.h"
 #include "stack_var.h"
 #include "serialization_common.h"
 
@@ -38,7 +39,7 @@ map<string, stack_var *> *deserialize_globals(unsigned char *globals_serialized,
         unsigned char marker = *iter;
         iter++;
 
-        assert(marker == NEW_STACK_VAR);
+        VERIFY(marker == NEW_STACK_VAR);
         stack_var *var = deserialize_var(&iter);
         assert(globals->find(var->get_name()) == globals->end());
         (*globals)[var->get_name()] = var;

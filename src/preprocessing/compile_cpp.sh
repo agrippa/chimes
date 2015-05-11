@@ -192,28 +192,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Setting up stack variable conditionals for ${PREPROCESS_FILE}
     cd ${WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${PREPROCESS_FILE} \
-        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info ${INFO_FILE_PREFIX}.tree.info
+        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info \
+        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
+        ${INFO_FILE_PREFIX}.exit.info
     mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
 
-    echo ${TRANSFORM} \
-            -l ${INFO_FILE_PREFIX}.lines.info \
-            -s ${INFO_FILE_PREFIX}.struct.info \
-            -a ${INFO_FILE_PREFIX}.stack.info \
-            -i ${INPUT} \
-            -m ${INFO_FILE_PREFIX}.heap.info \
-            -d ${INFO_FILE_PREFIX}.diag.info \
-            -f ${INFO_FILE_PREFIX}.func.info \
-            -k ${INFO_FILE_PREFIX}.call.info \
-            -x ${INFO_FILE_PREFIX}.exit.info \
-            -r ${INFO_FILE_PREFIX}.reachable.info \
-            -o ${INFO_FILE_PREFIX}.module.info \
-            -w ${WORK_DIR} \
-            -c true \
-            -t ${INFO_FILE_PREFIX}.omp.info \
-            -v ${INFO_FILE_PREFIX}.firstprivate.info \
-            -b ${INFO_FILE_PREFIX}.tree.info \
-            ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
     ${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \
             -s ${INFO_FILE_PREFIX}.struct.info \
@@ -245,7 +228,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
-        ${INFO_FILE_PREFIX}.tree.info
+        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
+        ${INFO_FILE_PREFIX}.exit.info
 
     echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
     cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \

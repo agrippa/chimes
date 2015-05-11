@@ -150,6 +150,12 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
     FunctionExit *info = insertions->getFunctionExitInfo(curr_func);
     std::set<size_t> groups_changed =
         info->get_groups_changed_at_termination();
+    std::string loc_id;
+    if (groups_changed.size() > 0) {
+        loc_id = insertions->get_alias_loc_var(info->get_id());
+    } else {
+        loc_id = "0";
+    }
     std::stringstream ss;
 
     if (inserting_rm) {
@@ -162,25 +168,16 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
         }
         if (info->get_return_alias() == 0) {
             ss << "rm_stack(false, 0UL, \"" << curr_func << "\", " <<
-                address_of_cond_varname << ", " << groups_changed.size();
+                address_of_cond_varname << ", " << loc_id << "); ";
         } else {
             ss << "rm_stack(true, " << info->get_return_alias() << "UL, \"" <<
                 curr_func << "\", " << address_of_cond_varname << ", " <<
-                groups_changed.size();
+                loc_id << "); ";
         }
-        for (std::set<size_t>::iterator i = groups_changed.begin(),
-                e = groups_changed.end(); i != e; i++) {
-            ss << ", (size_t)(" << *i << "UL)";
-        }
-        ss << "); ";
     } else {
         if (groups_changed.size() > 0) {
-            ss << "alias_group_changed(" << groups_changed.size();
-            for (std::set<size_t>::iterator i = groups_changed.begin(),
-                    e = groups_changed.end(); i != e; i++) {
-                ss << ", (size_t)(" << *i << "UL)";
-            }
-            ss << "); ";
+            ss << "alias_group_changed(" <<
+                insertions->get_alias_loc_var(info->get_id()) << "); ";
         }
     }
     return ss.str();

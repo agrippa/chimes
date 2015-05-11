@@ -2,7 +2,8 @@
 import os
 import sys
 from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
-                   always_checkpoints
+                   always_checkpoints, get_exit_info, get_alias_loc_var, \
+                   get_aliases_changed
 
 
 class GlobalVar(object):
@@ -181,10 +182,11 @@ def write_constant(c, module_id_str):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 10:
+    if len(sys.argv) != 12:
         print('usage: python module_init.py input-file output-file ' +
               'module-id-file reachable-file globals-file structs-file ' +
-              'constants-file stack-var-file call-tree-file')
+              'constants-file stack-var-file call-tree-file lines-file ' +
+              'exits-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
@@ -196,6 +198,8 @@ if __name__ == '__main__':
     constants_filename = sys.argv[7]
     stack_var_filename = sys.argv[8]
     call_tree_filename = sys.argv[9]
+    lines_filename = sys.argv[10]
+    exits_filename = sys.argv[11]
 
     module_id_str = get_module_id_str(module_id_filename)
     reachable = get_reachable_mappings(reachable_filename)
@@ -204,6 +208,8 @@ if __name__ == '__main__':
     structs = get_structs(structs_filename)
     stack_vars = get_stack_vars(stack_var_filename)
     call_tree = get_call_tree(call_tree_filename)
+    changed = get_aliases_changed(lines_filename)
+    exits = get_exit_info(exits_filename)
 
     input_file = open(input_filename, 'r')
     output_file = open(output_filename, 'w')
@@ -220,7 +226,7 @@ if __name__ == '__main__':
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
                       str(len(reachable)) + ', ' + str(len(call_tree)) + \
                       ', ' + str(count_conditionally_checkpointable_vars) + \
-                      ', ' + str(len(structs)))
+                      ', ' + str(len(changed)) + ', ' + str(len(structs)))
 
     for k in reachable.keys():
         output_file.write(', ' + module_id_str + 'UL + ' + k + 'UL, ' +
@@ -245,6 +251,21 @@ if __name__ == '__main__':
             output_file.write(', "' + var.name + '", ' + str(len(var.causes)))
             for cause in var.causes:
                 output_file.write(', "' + cause + '"')
+
+    count = 0
+    for change_set in changed:
+        output_file.write(', &' + get_alias_loc_var(count) +
+                          ', (unsigned)' + str(len(change_set.aliases_changed)))
+        for alias in change_set.aliases_changed:
+            output_file.write(', ' + module_id_str + 'UL + ' + alias + 'UL')
+        count += 1
+
+    for ex in exits:
+        output_file.write(', &' + get_alias_loc_var(count) +
+                          ', (unsigned)' + str(len(ex.groups_changed)))
+        for alias in ex.groups_changed:
+            output_file.write(', ' + module_id_str + 'UL + ' + alias + 'UL')
+        count += 1
 
     output_file.write(');\n')
 

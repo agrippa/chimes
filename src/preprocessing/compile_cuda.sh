@@ -214,7 +214,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Setting up stack variable conditionals for ${INTERMEDIATE_FILE}
     cd ${NVCC_WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${INTERMEDIATE_FILE} \
-        ${INTERMEDIATE_FILE}.conds ${INFO_FILE_PREFIX}.stack.info ${INFO_FILE_PREFIX}.tree.info
+        ${INTERMEDIATE_FILE}.conds ${INFO_FILE_PREFIX}.stack.info \
+        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
+        ${INFO_FILE_PREFIX}.exit.info
     mv ${INTERMEDIATE_FILE}.conds ${INTERMEDIATE_FILE}
 
     ${TRANSFORM} \
@@ -248,7 +250,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
-        ${INFO_FILE_PREFIX}.tree.info
+        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
+        ${INFO_FILE_PREFIX}.exit.info
 
     echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \

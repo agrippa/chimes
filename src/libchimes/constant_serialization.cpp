@@ -3,6 +3,7 @@
 
 #include <assert.h>
 
+#include "chimes_common.h"
 #include "constant_var.h"
 #include "serialization_common.h"
 
@@ -39,7 +40,7 @@ map<size_t, constant_var *> *deserialize_constants(
         unsigned char marker = *iter;
         iter++;
 
-        assert(marker == NEW_CONSTANT);
+        VERIFY(marker == NEW_CONSTANT);
         constant_var *var = deserialize_constant(&iter);
         assert(constants->find(var->get_id()) == constants->end());
         constants->insert(std::pair<size_t, constant_var*>(var->get_id(), var));

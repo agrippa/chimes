@@ -19,6 +19,18 @@ class Callees(object):
         self.callees = callees
 
 
+class AliasesChanged(object):
+    def __init__(self, aliases_changed):
+        self.aliases_changed = aliases_changed
+
+
+class ExitInfo(object):
+    def __init__(self, funcname, return_alias, groups_changed):
+        self.funcname = funcname
+        self.return_alias = return_alias
+        self.groups_changed = groups_changed
+
+
 def transfer(input_file, output_file):
     output_file.write(input_file.read())
 
@@ -73,3 +85,46 @@ def always_checkpoints(alloc, call_tree):
             return True
 
     return False
+
+
+def get_alias_loc_var(id):
+    return ('____alias_loc_id_' + str(id))
+
+
+def count_alias_sets(lines_filename):
+    count = 0
+    fp = open(lines_filename, 'r')
+    for line in fp:
+        count += 1
+    fp.close()
+    return count
+
+
+def get_aliases_changed(lines_filename):
+    changed = []
+    fp = open(lines_filename, 'r')
+
+    for line in fp:
+        tokens = line.split()
+        index = 5
+        end = index
+        while tokens[end] != '}':
+            end += 1
+
+        aliases = tokens[index:end]
+        aliases = [(t[:len(t) - 1] if t[len(t) - 1] == ',' else t) for t in aliases]
+        changed.append(AliasesChanged(aliases))
+
+    fp.close()
+    return changed
+
+
+def get_exit_info(exit_filename):
+    exits = []
+    fp = open(exit_filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        if len(tokens) > 2: # if there are aliases changed here
+            exits.append(ExitInfo(tokens[0], tokens[1], tokens[2:]))
+    fp.close()
+    return exits

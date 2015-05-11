@@ -2,6 +2,7 @@
 #define LIBCHIMES_H
 
 #include <stddef.h>
+#include <stdio.h>
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
@@ -10,9 +11,9 @@ extern int get_next_call();
 extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, int ngroups, ...);
+        const char *funcname, int *conditional, unsigned loc_id);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -21,7 +22,7 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern int alias_group_changed(int ngroups, ...);
+extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
