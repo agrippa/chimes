@@ -39,7 +39,7 @@ extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
+        const char *funcname, int *conditional, int ngroups, ...);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -1735,7 +1735,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0); return b;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0); return b;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 }
 
