@@ -9,6 +9,7 @@ INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit
 ENABLE_OMP=1
 KEEP=0
 PROFILE=0
+DUMMY=0
 COMPILE=0
 INPUTS=()
 INCLUDES=
@@ -23,6 +24,9 @@ DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
     case $opt in 
+        d)
+            DUMMY=1
+            ;;
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
             ;;
@@ -75,6 +79,11 @@ while getopts ":kci:I:L:l:o:w:vpx:y:sD:" opt; do
             ;;
     esac
 done
+
+if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
+    echo "The profile (-p) and dummy (-d) flags are mutually exclusive"
+    exit 1
+fi
 
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
     echo usage: compile_cuda.sh [-c] [-k] [-p] [-v] [-s] [-I include-path] [-l libname] [-L lib-path] -i input.cu
@@ -129,13 +138,14 @@ FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appen
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-if [[ $PROFILE == 0 ]]; then
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
-else
+if [[ $PROFILE == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
     GXX_FLAGS="${GXX_FLAGS} -pg"
+elif [[ $DUMMY == 1 ]]; then
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy"
+else
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
 fi
-
 
 CMD_FILE=${COMPILE_HELPER_WORK_DIR}/log
 ENV_FILE=${COMPILE_HELPER_WORK_DIR}/log.env
