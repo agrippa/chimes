@@ -1699,8 +1699,8 @@ int alias_group_changed(int ngroups, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
-    // const unsigned long long __chimes_overhead_start_time =
-    //     perf_profile::current_time_ms();
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
     va_list vl;
     va_start(vl, ngroups);
@@ -1712,7 +1712,7 @@ int alias_group_changed(int ngroups, ...) {
         }
     }
     va_end(vl);
-    // ADD_TO_OVERHEAD
+    ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ALIAS_GROUP_CHANGED, __start_time);
 #endif
