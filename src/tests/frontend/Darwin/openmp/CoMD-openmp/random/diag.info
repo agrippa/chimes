@@ -1,8 +1,8 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 31 4 alias_group_changed(4, (size_t)(16794414226779803838UL), (size_t)(16794414226779803839UL), (size_t)(16794414226779803840UL), (size_t)(16794414226779803841UL)); rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 31 4 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 22 1 new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(16794414226779803848UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 48 4 alias_group_changed(2, (size_t)(16794414226779803887UL), (size_t)(16794414226779803904UL)); rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 48 4 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 42 1 new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(16794414226779803904UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 74 4 alias_group_changed(6, (size_t)(16794414226779803907UL), (size_t)(16794414226779803908UL), (size_t)(16794414226779803909UL), (size_t)(16794414226779803910UL), (size_t)(16794414226779803911UL), (size_t)(16794414226779803912UL)); rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 74 4 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 66 1 new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 23 4 real_t rsq; real_t v1; real_t v2; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 23 20 

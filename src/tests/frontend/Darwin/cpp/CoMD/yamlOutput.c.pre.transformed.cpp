@@ -25,6 +25,12 @@ static int ____must_manage_yamlBegin = 2;
 static int ____must_manage_yamlEnd = 2;
 static int ____must_manage_yamlAppInfo = 2;
 static int ____must_manage_getTimeString = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -41,63 +47,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c" 2
-# 13 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.h" 1
-
-
-
-
-
-
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -539,11 +488,59 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.h" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
 
-
-
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c" 2
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.h" 1
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.h"
 void yamlBegin(void);
 void yamlEnd(void);
 
@@ -1928,7 +1925,7 @@ static void getTimeString(char* timestring)
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  struct tm *timeinfo; ;
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- alias_group_changed(1, (size_t)(12737042733622956004UL)); call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(12737042733622956005UL)); time(&rawtime);
+ alias_group_changed(____alias_loc_id_1); call_lbl_2: calling((void*)&time, 2, 0UL, 1, (size_t)(12737042733622956005UL)); time(&rawtime);
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  timeinfo = localtime(&rawtime);
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -1949,25 +1946,25 @@ static void getTimeString(char* timestring)
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  timeinfo->tm_sec);
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-alias_group_changed(1, (size_t)(12737042733622956006UL)); rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString); }
+rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4); }
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlBegin(void)
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {new_stack((void *)(&yamlBegin), "yamlBegin", &____must_manage_yamlBegin, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {alias_group_changed(1, (size_t)(12737042733622955890UL)); rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin); return;; };
+ call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2); return;; };
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  lbl_0: char filename[64]; if (____must_checkpoint_yamlBegin_filename_0 != 0) { register_stack_var("yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ;
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  lbl_1: time_t rawtime; if (____must_checkpoint_yamlBegin_rawtime_0 != 0) { register_stack_var("yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } ;
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- call_lbl_4: calling((void*)&time, 4, 0UL, 1, (size_t)(12737042733622955889UL)); time (&rawtime);
+ call_lbl_3: calling((void*)&time, 3, 0UL, 1, (size_t)(12737042733622955889UL)); time (&rawtime);
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  struct tm *ptm; ptm = (localtime(&rawtime)) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- lbl_2: char sdate[25]; if (____must_checkpoint_yamlBegin_sdate_0 != 0) { register_stack_var("yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+ lbl_2: char sdate[25]; if (____must_checkpoint_yamlBegin_sdate_0 != 0) { register_stack_var("yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  sprintf (sdate,"%04d:%02d:%02d-%02d:%02d:%02d",
@@ -1979,14 +1976,14 @@ void yamlBegin(void)
  sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-alias_group_changed(1, (size_t)(12737042733622955890UL)); rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin); }
+rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2); }
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlAppInfo(FILE* file)
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(12737042733622955994UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- alias_group_changed(1, (size_t)(12737042733622955937UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo); return;; };
+ alias_group_changed(____alias_loc_id_0); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0); return;; };
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  call_lbl_4: calling((void*)&printSeparator, 4, 0UL, 1, (size_t)(12737042733622955994UL)); printSeparator(file);
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -2030,18 +2027,18 @@ void yamlAppInfo(FILE* file)
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  fflush(file);
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo); }
+rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0); }
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 90 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlEnd(void)
 # 91 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {new_stack((void *)(&yamlEnd), "yamlEnd", &____must_manage_yamlEnd, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd); return;; };
+ call_lbl_1: calling((void*)&printRank, 1, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0); return;; };
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd); }
+rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0); }
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void printSeparator(FILE* file)
@@ -2051,11 +2048,11 @@ void printSeparator(FILE* file)
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  fprintf(file,"\n");
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-alias_group_changed(1, (size_t)(12737042733622955995UL)); rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator); }
+rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3); }
 
 
 static int module_init() {
-    init_module(12737042733622955887UL, 6, 5, 7, 4, 12737042733622955887UL + 159UL, 12737042733622955887UL + 61UL, 12737042733622955887UL + 3UL, 12737042733622955887UL + 13UL, 12737042733622955887UL + 50UL, 12737042733622955887UL + 107UL, 12737042733622955887UL + 108UL, 12737042733622955887UL + 114UL, 12737042733622955887UL + 117UL, 12737042733622955887UL + 150UL, 12737042733622955887UL + 119UL, 12737042733622955887UL + 125UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "tm", 11, "int", (int)__builtin_offsetof(struct tm, tm_sec), "int", (int)__builtin_offsetof(struct tm, tm_min), "int", (int)__builtin_offsetof(struct tm, tm_hour), "int", (int)__builtin_offsetof(struct tm, tm_mday), "int", (int)__builtin_offsetof(struct tm, tm_mon), "int", (int)__builtin_offsetof(struct tm, tm_year), "int", (int)__builtin_offsetof(struct tm, tm_wday), "int", (int)__builtin_offsetof(struct tm, tm_yday), "int", (int)__builtin_offsetof(struct tm, tm_isdst), "long int", (int)__builtin_offsetof(struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof(struct tm, tm_zone), "printSeparator", 0, "yamlBegin", 2, "printRank", "time", "yamlEnd", 1, "printRank", "yamlAppInfo", 4, "builtWithMpi", "getTimeString", "printRank", "printSeparator", "getTimeString", 1, "time", "yamlBegin|filename|0", 1, "yamlBegin", "yamlBegin|rawtime|0", 1, "yamlBegin", "yamlBegin|sdate|0", 1, "yamlBegin", "yamlAppInfo|file|0", 3, "printRank", "getTimeString", "builtWithMpi", "yamlAppInfo|timestring|0", 1, "yamlAppInfo", "getTimeString|timestring|0", 1, "time", "getTimeString|rawtime|0", 1, "getTimeString");
+    init_module(12737042733622955887UL, 6, 5, 7, 2, 4, 12737042733622955887UL + 159UL, 12737042733622955887UL + 61UL, 12737042733622955887UL + 3UL, 12737042733622955887UL + 13UL, 12737042733622955887UL + 50UL, 12737042733622955887UL + 107UL, 12737042733622955887UL + 108UL, 12737042733622955887UL + 114UL, 12737042733622955887UL + 117UL, 12737042733622955887UL + 150UL, 12737042733622955887UL + 119UL, 12737042733622955887UL + 125UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "tm", 11, "int", (int)__builtin_offsetof(struct tm, tm_sec), "int", (int)__builtin_offsetof(struct tm, tm_min), "int", (int)__builtin_offsetof(struct tm, tm_hour), "int", (int)__builtin_offsetof(struct tm, tm_mday), "int", (int)__builtin_offsetof(struct tm, tm_mon), "int", (int)__builtin_offsetof(struct tm, tm_year), "int", (int)__builtin_offsetof(struct tm, tm_wday), "int", (int)__builtin_offsetof(struct tm, tm_yday), "int", (int)__builtin_offsetof(struct tm, tm_isdst), "long int", (int)__builtin_offsetof(struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof(struct tm, tm_zone), "printSeparator", 0, "yamlBegin", 2, "printRank", "time", "yamlEnd", 1, "printRank", "yamlAppInfo", 4, "builtWithMpi", "getTimeString", "printRank", "printSeparator", "getTimeString", 1, "time", "yamlBegin|filename|0", 1, "yamlBegin", "yamlBegin|rawtime|0", 1, "yamlBegin", "yamlBegin|sdate|0", 1, "yamlBegin", "yamlAppInfo|file|0", 3, "printRank", "getTimeString", "builtWithMpi", "yamlAppInfo|timestring|0", 1, "yamlAppInfo", "getTimeString|timestring|0", 1, "time", "getTimeString|rawtime|0", 1, "getTimeString", &____alias_loc_id_0, (unsigned)1, 12737042733622955887UL + 50UL, &____alias_loc_id_1, (unsigned)1, 12737042733622955887UL + 117UL, &____alias_loc_id_2, (unsigned)1, 12737042733622955887UL + 3UL, &____alias_loc_id_3, (unsigned)1, 12737042733622955887UL + 108UL, &____alias_loc_id_4, (unsigned)1, 12737042733622955887UL + 119UL);
     register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8, 1, 0, 0);
     register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8, 1, 0, 0);
     register_constant(12737042733622955887UL + 0UL, (void *)CoMDVersion, 4);

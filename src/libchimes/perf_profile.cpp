@@ -7,6 +7,7 @@
 #include <time.h>
 #include <sys/time.h>
 
+#include "chimes_common.h"
 #include "libchimes.h"
 #include "perf_profile.h"
 

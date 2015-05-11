@@ -26,6 +26,19 @@ static int ____must_manage_find_diag = 2;
 static int ____must_manage_char_mapping = 2;
 static int ____must_manage_read_file = 2;
 static int ____must_manage_print_matrix = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -42,55 +55,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -532,7 +496,58 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -1985,7 +2000,7 @@ signed char char_mapping ( char c ) {new_stack((void *)(&char_mapping), "char_ma
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  }
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(2, (size_t)(2568646267985525998UL), (size_t)(2568646267985525999UL)); rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping); return to_be_returned;
+ rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_6); return to_be_returned;
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 }
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2008,7 +2023,7 @@ void print_matrix ( int** matrix, int n_rows, int n_columns ) {new_stack((void *
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp,"--------------------------------\n");
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
-alias_group_changed(5, (size_t)(2568646267985526022UL), (size_t)(2568646267985526023UL), (size_t)(2568646267985526024UL), (size_t)(2568646267985526025UL), (size_t)(2568646267985526026UL)); rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix); }
+rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_7); }
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 static char alignment_score_matrix[5][5] =
@@ -2052,24 +2067,24 @@ size_t clear_whitespaces_do_mapping ( signed char* buffer, long size ) {new_stac
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  }
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(6, (size_t)(2568646267985526078UL), (size_t)(2568646267985526079UL), (size_t)(2568646267985526080UL), (size_t)(2568646267985526081UL), (size_t)(2568646267985526082UL), (size_t)(2568646267985526120UL)); rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping); return non_ws_index;
+ rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_8); return non_ws_index;
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 }
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 signed char* read_file( FILE* file, size_t* n_chars ) {new_stack((void *)(&read_file), "read_file", &____must_manage_read_file, 2, 2, (size_t)(2568646267985526162UL), (size_t)(2568646267985526163UL), "read_file|file|0", &____must_checkpoint_read_file_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "read_file|n_chars|0", &____must_checkpoint_read_file_n_chars_0, "i64*", (void *)(&n_chars), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(2, (size_t)(2568646267985526122UL), (size_t)(2568646267985526123UL)); call_lbl_2: calling((void*)&fseek, 2, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 2);
+ alias_group_changed(____alias_loc_id_0); call_lbl_2: calling((void*)&fseek, 2, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 2);
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  lbl_0: long file_size; if (____must_checkpoint_read_file_file_size_0 != 0) { register_stack_var("read_file|file_size|0", &____must_checkpoint_read_file_file_size_0, "i64", (void *)(&file_size), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } call_lbl_3: calling((void*)&ftell, 3, 0UL, 1, (size_t)(2568646267985526162UL)); file_size = (ftell(file)) ;
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(1, (size_t)(2568646267985526124UL)); call_lbl_5: calling((void*)&fseek, 5, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 0);
+ alias_group_changed(____alias_loc_id_1); call_lbl_5: calling((void*)&fseek, 5, 0UL, 3, (size_t)(2568646267985526162UL), (size_t)(0UL), (size_t)(0UL)); fseek (file, 0L, 0);
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  lbl_1: signed char *file_buffer; if (____must_checkpoint_read_file_file_buffer_0 != 0) { register_stack_var("read_file|file_buffer|0", &____must_checkpoint_read_file_file_buffer_0, "i8*", (void *)(&file_buffer), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2568646267985526143UL, 0, 0)) ;
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(1, (size_t)(2568646267985526125UL)); size_t n_read_from_file; call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
+ alias_group_changed(____alias_loc_id_2); size_t n_read_from_file; call_lbl_8: calling((void*)&fread, 8, 0UL, 4, (size_t)(2568646267985526143UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2568646267985526162UL)); n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  file_buffer[file_size] = '\n';
 # 90 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2077,14 +2092,14 @@ signed char* read_file( FILE* file, size_t* n_chars ) {new_stack((void *)(&read_
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  call_lbl_9: calling((void*)&clear_whitespaces_do_mapping, 9, 0UL, 2, (size_t)(2568646267985526143UL), (size_t)(0UL)); *n_chars = clear_whitespaces_do_mapping(file_buffer, file_size);
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(3, (size_t)(2568646267985526126UL), (size_t)(2568646267985526143UL), (size_t)(2568646267985526163UL)); rm_stack(true, 2568646267985526143UL, "read_file", &____must_manage_read_file); return file_buffer;
+ rm_stack(true, 2568646267985526143UL, "read_file", &____must_manage_read_file, ____alias_loc_id_9); return file_buffer;
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 }
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 int find_diag(int row, int col) {new_stack((void *)(&find_diag), "find_diag", &____must_manage_find_diag, 2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(2, (size_t)(2568646267985526173UL), (size_t)(2568646267985526174UL)); rm_stack(false, 0UL, "find_diag", &____must_manage_find_diag); return (n_tiles_y - 1) + (col - row);
+ rm_stack(false, 0UL, "find_diag", &____must_manage_find_diag, ____alias_loc_id_10); return (n_tiles_y - 1) + (col - row);
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 }
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2121,7 +2136,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), "
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  lbl_4: size_t n_char_in_file_1; register_stack_var("main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } n_char_in_file_1 = (0) ;
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(9, (size_t)(2568646267985526188UL), (size_t)(2568646267985526189UL), (size_t)(2568646267985526190UL), (size_t)(2568646267985526193UL), (size_t)(2568646267985526194UL), (size_t)(2568646267985526195UL), (size_t)(2568646267985526196UL), (size_t)(2568646267985526197UL), (size_t)(2568646267985526979UL)); call_lbl_10: calling((void*)&read_file, 10, 2568646267985526653UL, 2, (size_t)(2568646267985526258UL), (size_t)(2568646267985526197UL)); string_1 = read_file(file_1, &n_char_in_file_1);
+ alias_group_changed(____alias_loc_id_3); call_lbl_10: calling((void*)&read_file, 10, 2568646267985526653UL, 2, (size_t)(2568646267985526258UL), (size_t)(2568646267985526197UL)); string_1 = read_file(file_1, &n_char_in_file_1);
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp, "Size of input string 1 is %u\n", (unsigned)n_char_in_file_1 );
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2132,7 +2147,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), "
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  lbl_6: size_t n_char_in_file_2; register_stack_var("main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_7; } n_char_in_file_2 = (0) ;
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(3, (size_t)(2568646267985526198UL), (size_t)(2568646267985526199UL), (size_t)(2568646267985526977UL)); call_lbl_16: calling((void*)&read_file, 16, 2568646267985526653UL, 2, (size_t)(2568646267985526279UL), (size_t)(2568646267985526199UL)); string_2 = read_file(file_2, &n_char_in_file_2);
+ alias_group_changed(____alias_loc_id_4); call_lbl_16: calling((void*)&read_file, 16, 2568646267985526653UL, 2, (size_t)(2568646267985526279UL), (size_t)(2568646267985526199UL)); string_2 = read_file(file_2, &n_char_in_file_2);
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fprintf(__stdoutp, "Size of input string 2 is %u\n", (unsigned)n_char_in_file_2 );
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2272,7 +2287,7 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), "
 # 211 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 212 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 213 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(26, (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526202UL), (size_t)(2568646267985526203UL), (size_t)(2568646267985526204UL), (size_t)(2568646267985526205UL), (size_t)(2568646267985526206UL), (size_t)(2568646267985526207UL), (size_t)(2568646267985526208UL), (size_t)(2568646267985526209UL), (size_t)(2568646267985526210UL), (size_t)(2568646267985526211UL), (size_t)(2568646267985526212UL), (size_t)(2568646267985526213UL), (size_t)(2568646267985526214UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526364UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526491UL), (size_t)(2568646267985526752UL), (size_t)(2568646267985526754UL), (size_t)(2568646267985526977UL), (size_t)(2568646267985526979UL), (size_t)(2568646267985526983UL), (size_t)(2568646267985526985UL), (size_t)(2568646267985526987UL)); call_lbl_37: calling((void*)&checkpoint, 37, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_5); call_lbl_37: calling((void*)&checkpoint, 37, 0UL, 0); checkpoint();
 # 214 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 215 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  }
@@ -2315,13 +2330,13 @@ int main ( int argc, char* argv[] ) {init_chimes(); new_stack((void *)(&main), "
  free_wrapper(worker_tiles, 2568646267985526491UL);
 # 241 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 242 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- alias_group_changed(22, (size_t)(2568646267985526188UL), (size_t)(2568646267985526189UL), (size_t)(2568646267985526190UL), (size_t)(2568646267985526191UL), (size_t)(2568646267985526192UL), (size_t)(2568646267985526193UL), (size_t)(2568646267985526194UL), (size_t)(2568646267985526195UL), (size_t)(2568646267985526196UL), (size_t)(2568646267985526198UL), (size_t)(2568646267985526215UL), (size_t)(2568646267985526216UL), (size_t)(2568646267985526360UL), (size_t)(2568646267985526364UL), (size_t)(2568646267985526400UL), (size_t)(2568646267985526491UL), (size_t)(2568646267985526752UL), (size_t)(2568646267985526977UL), (size_t)(2568646267985526979UL), (size_t)(2568646267985526983UL), (size_t)(2568646267985526985UL), (size_t)(2568646267985526987UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_11); return 0;
 # 243 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 }
 
 
 static int module_init() {
-    init_module(2568646267985525997UL, 23, 6, 8, 5, 2568646267985525997UL + 988UL, 2568646267985525997UL + 403UL, 2568646267985525997UL + 199UL, 2568646267985525997UL + 261UL, 2568646267985525997UL + 198UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 210UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 197UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 986UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 193UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 81UL, 2568646267985525997UL + 123UL, 2568646267985525997UL + 25UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 980UL, 2568646267985525997UL + 656UL, 2568646267985525997UL + 201UL, 2568646267985525997UL + 282UL, 2568646267985525997UL + 991UL, 2568646267985525997UL + 50UL, 2568646267985525997UL + 990UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 757UL, 2568646267985525997UL + 209UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 208UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 57UL, 2568646267985525997UL + 125UL, 2568646267985525997UL + 165UL, 2568646267985525997UL + 126UL, 2568646267985525997UL + 166UL, 2568646267985525997UL + 128UL, 2568646267985525997UL + 146UL, "Nucleotide", 0, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "timeval", 2, "long int", (int)__builtin_offsetof(struct timeval, tv_sec), "int", (int)__builtin_offsetof(struct timeval, tv_usec), "clear_whitespaces_do_mapping", 1, "char_mapping", "find_diag", 0, "char_mapping", 0, "read_file", 4, "clear_whitespaces_do_mapping", "fread", "fseek", "ftell", "print_matrix", 0, "main", 3, "checkpoint", "find_diag", "read_file", "read_file|file|0", 3, "ftell", "fseek", "fread", "read_file|n_chars|0", 3, "ftell", "fseek", "fread", "read_file|file_size|0", 2, "fseek", "fread", "read_file|file_buffer|0", 1, "fread", "main|n_char_in_file_1|0", 1, "main", "main|n_char_in_file_2|0", 1, "main", "main|begin|0", 1, "main", "main|end|0", 1, "main");
+    init_module(2568646267985525997UL, 23, 6, 8, 6, 5, 2568646267985525997UL + 988UL, 2568646267985525997UL + 403UL, 2568646267985525997UL + 199UL, 2568646267985525997UL + 261UL, 2568646267985525997UL + 198UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 210UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 197UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 986UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 193UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 81UL, 2568646267985525997UL + 123UL, 2568646267985525997UL + 25UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 972UL, 2568646267985525997UL + 242UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 980UL, 2568646267985525997UL + 656UL, 2568646267985525997UL + 201UL, 2568646267985525997UL + 282UL, 2568646267985525997UL + 991UL, 2568646267985525997UL + 50UL, 2568646267985525997UL + 990UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 757UL, 2568646267985525997UL + 209UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 208UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 76UL, 2568646267985525997UL + 57UL, 2568646267985525997UL + 125UL, 2568646267985525997UL + 165UL, 2568646267985525997UL + 126UL, 2568646267985525997UL + 166UL, 2568646267985525997UL + 128UL, 2568646267985525997UL + 146UL, "Nucleotide", 0, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "timeval", 2, "long int", (int)__builtin_offsetof(struct timeval, tv_sec), "int", (int)__builtin_offsetof(struct timeval, tv_usec), "clear_whitespaces_do_mapping", 1, "char_mapping", "find_diag", 0, "char_mapping", 0, "read_file", 4, "clear_whitespaces_do_mapping", "fread", "fseek", "ftell", "print_matrix", 0, "main", 3, "checkpoint", "find_diag", "read_file", "read_file|file|0", 3, "ftell", "fseek", "fread", "read_file|n_chars|0", 3, "ftell", "fseek", "fread", "read_file|file_size|0", 2, "fseek", "fread", "read_file|file_buffer|0", 1, "fread", "main|n_char_in_file_1|0", 1, "main", "main|n_char_in_file_2|0", 1, "main", "main|begin|0", 1, "main", "main|end|0", 1, "main", &____alias_loc_id_0, (unsigned)2, 2568646267985525997UL + 125UL, 2568646267985525997UL + 126UL, &____alias_loc_id_1, (unsigned)1, 2568646267985525997UL + 127UL, &____alias_loc_id_2, (unsigned)1, 2568646267985525997UL + 128UL, &____alias_loc_id_3, (unsigned)9, 2568646267985525997UL + 191UL, 2568646267985525997UL + 192UL, 2568646267985525997UL + 193UL, 2568646267985525997UL + 196UL, 2568646267985525997UL + 197UL, 2568646267985525997UL + 198UL, 2568646267985525997UL + 199UL, 2568646267985525997UL + 200UL, 2568646267985525997UL + 982UL, &____alias_loc_id_4, (unsigned)3, 2568646267985525997UL + 201UL, 2568646267985525997UL + 202UL, 2568646267985525997UL + 980UL, &____alias_loc_id_5, (unsigned)26, 2568646267985525997UL + 194UL, 2568646267985525997UL + 195UL, 2568646267985525997UL + 205UL, 2568646267985525997UL + 206UL, 2568646267985525997UL + 207UL, 2568646267985525997UL + 208UL, 2568646267985525997UL + 209UL, 2568646267985525997UL + 210UL, 2568646267985525997UL + 211UL, 2568646267985525997UL + 212UL, 2568646267985525997UL + 213UL, 2568646267985525997UL + 214UL, 2568646267985525997UL + 215UL, 2568646267985525997UL + 216UL, 2568646267985525997UL + 217UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 403UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 757UL, 2568646267985525997UL + 980UL, 2568646267985525997UL + 982UL, 2568646267985525997UL + 986UL, 2568646267985525997UL + 988UL, 2568646267985525997UL + 990UL, &____alias_loc_id_6, (unsigned)2, 2568646267985525997UL + 1UL, 2568646267985525997UL + 2UL, &____alias_loc_id_7, (unsigned)5, 2568646267985525997UL + 25UL, 2568646267985525997UL + 26UL, 2568646267985525997UL + 27UL, 2568646267985525997UL + 28UL, 2568646267985525997UL + 29UL, &____alias_loc_id_8, (unsigned)6, 2568646267985525997UL + 81UL, 2568646267985525997UL + 82UL, 2568646267985525997UL + 83UL, 2568646267985525997UL + 84UL, 2568646267985525997UL + 85UL, 2568646267985525997UL + 123UL, &____alias_loc_id_9, (unsigned)3, 2568646267985525997UL + 129UL, 2568646267985525997UL + 146UL, 2568646267985525997UL + 166UL, &____alias_loc_id_10, (unsigned)2, 2568646267985525997UL + 176UL, 2568646267985525997UL + 177UL, &____alias_loc_id_11, (unsigned)22, 2568646267985525997UL + 191UL, 2568646267985525997UL + 192UL, 2568646267985525997UL + 193UL, 2568646267985525997UL + 194UL, 2568646267985525997UL + 195UL, 2568646267985525997UL + 196UL, 2568646267985525997UL + 197UL, 2568646267985525997UL + 198UL, 2568646267985525997UL + 199UL, 2568646267985525997UL + 201UL, 2568646267985525997UL + 218UL, 2568646267985525997UL + 219UL, 2568646267985525997UL + 363UL, 2568646267985525997UL + 367UL, 2568646267985525997UL + 403UL, 2568646267985525997UL + 494UL, 2568646267985525997UL + 755UL, 2568646267985525997UL + 980UL, 2568646267985525997UL + 982UL, 2568646267985525997UL + 986UL, 2568646267985525997UL + 988UL, 2568646267985525997UL + 990UL);
     register_global_var("global|string_1", "i8*", (void *)(&string_1), 8, 1, 0, 0);
     register_global_var("global|string_2", "i8*", (void *)(&string_2), 8, 1, 0, 0);
     register_global_var("global|tile_width", "i32", (void *)(&tile_width), 4, 0, 0, 0);

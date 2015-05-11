@@ -44,6 +44,13 @@ static int ____must_manage_ljPrint = 2;
 static int ____must_manage_zeroReal3 = 2;
 static int ____must_manage_ljForce = 2;
 static int ____must_manage_ljDestroy = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -60,80 +67,8 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.h" 1
-
-
-
-
-
-
-struct BasePotentialSt;
-struct BasePotentialSt* initLjPot(void);
-# 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
-# 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 61 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 62 "/usr/include/stdlib.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 32 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/stdio.h" 1 3 4
+# 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -141,7 +76,17 @@ struct BasePotentialSt* initLjPot(void);
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 33 "/usr/include/sys/_types.h" 2 3 4
+# 65 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 66 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -313,8 +258,321 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 64 "/usr/include/stdlib.h" 2 3 4
+# 68 "/usr/include/stdio.h" 2 3 4
 
+
+
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 73 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 74 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
+ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.h" 1
+
+
+
+
+
+
+struct BasePotentialSt;
+struct BasePotentialSt* initLjPot(void);
+# 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c" 2
+# 63 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1593,11 +1851,6 @@ errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(maco
 
 
 
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 153 "/usr/include/string.h" 2 3 4
-
 extern "C" {
 void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
 void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
@@ -1794,250 +2047,7 @@ int maxOccupancy(LinkCell* boxes);
 
 
 
-# 1 "/usr/include/stdio.h" 1 3 4
-# 71 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
 
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 438 "/usr/include/stdio.h" 3 4
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 8 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h" 1
 
@@ -2257,18 +2267,18 @@ void ljDestroy(BasePotential** inppot)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(14970133447157970257UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (!inppot) {alias_group_changed(3, (size_t)(14970133447157970233UL), (size_t)(14970133447157970234UL), (size_t)(14970133447157970257UL)); rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy); return;; };
+ if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1); return;; };
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (!pot) {alias_group_changed(3, (size_t)(14970133447157970233UL), (size_t)(14970133447157970234UL), (size_t)(14970133447157970257UL)); rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy); return;; };
+ if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1); return;; };
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  free_wrapper(pot, 14970133447157970243UL);
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  *inppot = __null;
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- alias_group_changed(3, (size_t)(14970133447157970233UL), (size_t)(14970133447157970234UL), (size_t)(14970133447157970257UL)); rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy); return;
+ rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1); return;
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2305,7 +2315,7 @@ BasePotential* initLjPot(void)
  pot->atomicNo = 29;
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- alias_group_changed(2, (size_t)(14970133447157970261UL), (size_t)(14970133447157970263UL)); rm_stack(true, 14970133447157970263UL, "initLjPot", &____must_manage_initLjPot); return (BasePotential*) pot;
+ rm_stack(true, 14970133447157970263UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2); return (BasePotential*) pot;
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2334,7 +2344,7 @@ void ljPrint(FILE* file, BasePotential* pot)
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-alias_group_changed(3, (size_t)(14970133447157970798UL), (size_t)(14970133447157970799UL), (size_t)(14970133447157970800UL)); rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint); }
+rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4); }
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce(SimFlat* s)
@@ -2389,7 +2399,7 @@ int ljForce(SimFlat* s)
 # 171 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  if (nIBox == 0) {continue;; };
 # 172 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- alias_group_changed(33, (size_t)(14970133447157970309UL), (size_t)(14970133447157970310UL), (size_t)(14970133447157970311UL), (size_t)(14970133447157970312UL), (size_t)(14970133447157970313UL), (size_t)(14970133447157970314UL), (size_t)(14970133447157970315UL), (size_t)(14970133447157970316UL), (size_t)(14970133447157970317UL), (size_t)(14970133447157970318UL), (size_t)(14970133447157970319UL), (size_t)(14970133447157970320UL), (size_t)(14970133447157970322UL), (size_t)(14970133447157970323UL), (size_t)(14970133447157970324UL), (size_t)(14970133447157970325UL), (size_t)(14970133447157970326UL), (size_t)(14970133447157970327UL), (size_t)(14970133447157970328UL), (size_t)(14970133447157970329UL), (size_t)(14970133447157970330UL), (size_t)(14970133447157970331UL), (size_t)(14970133447157970332UL), (size_t)(14970133447157970333UL), (size_t)(14970133447157970334UL), (size_t)(14970133447157970335UL), (size_t)(14970133447157970336UL), (size_t)(14970133447157970337UL), (size_t)(14970133447157970338UL), (size_t)(14970133447157970339UL), (size_t)(14970133447157970340UL), (size_t)(14970133447157970504UL), (size_t)(14970133447157970508UL)); lbl_8: int nNbrBoxes; if (____must_checkpoint_ljForce_nNbrBoxes_0 != 0) { register_stack_var("ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_9; } call_lbl_3: calling((void*)&getNeighborBoxes, 3, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); nNbrBoxes = (getNeighborBoxes(s->boxes, iBox, nbrBoxes)) ;
+ alias_group_changed(____alias_loc_id_0); lbl_8: int nNbrBoxes; if (____must_checkpoint_ljForce_nNbrBoxes_0 != 0) { register_stack_var("ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_9; } call_lbl_3: calling((void*)&getNeighborBoxes, 3, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); nNbrBoxes = (getNeighborBoxes(s->boxes, iBox, nbrBoxes)) ;
 # 173 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  { lbl_9: int jTmp; if (____must_checkpoint_ljForce_jTmp_0 != 0) { register_stack_var("ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_10; } for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -2486,13 +2496,13 @@ int ljForce(SimFlat* s)
  s->ePotential = ePot;
 # 232 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 233 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- alias_group_changed(33, (size_t)(14970133447157970309UL), (size_t)(14970133447157970310UL), (size_t)(14970133447157970311UL), (size_t)(14970133447157970312UL), (size_t)(14970133447157970313UL), (size_t)(14970133447157970314UL), (size_t)(14970133447157970315UL), (size_t)(14970133447157970316UL), (size_t)(14970133447157970317UL), (size_t)(14970133447157970318UL), (size_t)(14970133447157970319UL), (size_t)(14970133447157970320UL), (size_t)(14970133447157970322UL), (size_t)(14970133447157970323UL), (size_t)(14970133447157970324UL), (size_t)(14970133447157970325UL), (size_t)(14970133447157970326UL), (size_t)(14970133447157970327UL), (size_t)(14970133447157970328UL), (size_t)(14970133447157970329UL), (size_t)(14970133447157970330UL), (size_t)(14970133447157970331UL), (size_t)(14970133447157970332UL), (size_t)(14970133447157970333UL), (size_t)(14970133447157970334UL), (size_t)(14970133447157970335UL), (size_t)(14970133447157970336UL), (size_t)(14970133447157970337UL), (size_t)(14970133447157970338UL), (size_t)(14970133447157970339UL), (size_t)(14970133447157970340UL), (size_t)(14970133447157970504UL), (size_t)(14970133447157970508UL)); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce); return 0;
+ rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3); return 0;
 # 234 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 
 
 static int module_init() {
-    init_module(14970133447157970232UL, 13, 5, 26, 11, 14970133447157970232UL + 568UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 77UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 664UL, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 566UL, 14970133447157970232UL + 621UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 1UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 276UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 274UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 5, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "LjPotentialSt", 11, "double", (int)__builtin_offsetof(struct LjPotentialSt, cutoff), "double", (int)__builtin_offsetof(struct LjPotentialSt, mass), "double", (int)__builtin_offsetof(struct LjPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, name), "int", (int)__builtin_offsetof(struct LjPotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct LjPotentialSt, force), "*", (int)__builtin_offsetof(struct LjPotentialSt, print), "*", (int)__builtin_offsetof(struct LjPotentialSt, destroy), "double", (int)__builtin_offsetof(struct LjPotentialSt, sigma), "double", (int)__builtin_offsetof(struct LjPotentialSt, epsilon), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "initLjPot", 0, "ljPrint", 0, "zeroReal3", 0, "ljForce", 2, "getNeighborBoxes", "zeroReal3", "ljDestroy", 0, "ljForce|s|0", 1, "getNeighborBoxes", "ljForce|epsilon|0", 1, "getNeighborBoxes", "ljForce|rCut2|0", 1, "getNeighborBoxes", "ljForce|ePot|0", 1, "getNeighborBoxes", "ljForce|s6|0", 1, "getNeighborBoxes", "ljForce|eShift|0", 1, "getNeighborBoxes", "ljForce|nbrBoxes|0", 1, "ljForce", "ljForce|iBox|0", 1, "getNeighborBoxes", "ljForce|nIBox|0", 1, "getNeighborBoxes", "ljForce|nNbrBoxes|0", 1, "getNeighborBoxes", "ljForce|jTmp|0", 1, "getNeighborBoxes", "ljForce|jBox|0", 1, "getNeighborBoxes", "ljForce|nJBox|0", 1, "getNeighborBoxes", "ljForce|iOff|0", 1, "getNeighborBoxes", "ljForce|ii|1", 1, "getNeighborBoxes", "ljForce|iId|0", 1, "getNeighborBoxes", "ljForce|jOff|0", 1, "getNeighborBoxes", "ljForce|ij|0", 1, "getNeighborBoxes", "ljForce|dr|0", 1, "getNeighborBoxes", "ljForce|jId|0", 1, "getNeighborBoxes", "ljForce|r2|0", 1, "getNeighborBoxes", "ljForce|m|0", 1, "getNeighborBoxes", "ljForce|r6|0", 1, "getNeighborBoxes", "ljForce|eLocal|0", 1, "getNeighborBoxes", "ljForce|fr|0", 1, "getNeighborBoxes", "ljForce|m|1", 1, "getNeighborBoxes");
+    init_module(14970133447157970232UL, 13, 5, 26, 1, 11, 14970133447157970232UL + 568UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 77UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 664UL, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 566UL, 14970133447157970232UL + 621UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 1UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 276UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 274UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 5, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "LjPotentialSt", 11, "double", (int)__builtin_offsetof(struct LjPotentialSt, cutoff), "double", (int)__builtin_offsetof(struct LjPotentialSt, mass), "double", (int)__builtin_offsetof(struct LjPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, name), "int", (int)__builtin_offsetof(struct LjPotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct LjPotentialSt, force), "*", (int)__builtin_offsetof(struct LjPotentialSt, print), "*", (int)__builtin_offsetof(struct LjPotentialSt, destroy), "double", (int)__builtin_offsetof(struct LjPotentialSt, sigma), "double", (int)__builtin_offsetof(struct LjPotentialSt, epsilon), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "initLjPot", 0, "ljPrint", 0, "zeroReal3", 0, "ljForce", 2, "getNeighborBoxes", "zeroReal3", "ljDestroy", 0, "ljForce|s|0", 1, "getNeighborBoxes", "ljForce|epsilon|0", 1, "getNeighborBoxes", "ljForce|rCut2|0", 1, "getNeighborBoxes", "ljForce|ePot|0", 1, "getNeighborBoxes", "ljForce|s6|0", 1, "getNeighborBoxes", "ljForce|eShift|0", 1, "getNeighborBoxes", "ljForce|nbrBoxes|0", 1, "ljForce", "ljForce|iBox|0", 1, "getNeighborBoxes", "ljForce|nIBox|0", 1, "getNeighborBoxes", "ljForce|nNbrBoxes|0", 1, "getNeighborBoxes", "ljForce|jTmp|0", 1, "getNeighborBoxes", "ljForce|jBox|0", 1, "getNeighborBoxes", "ljForce|nJBox|0", 1, "getNeighborBoxes", "ljForce|iOff|0", 1, "getNeighborBoxes", "ljForce|ii|1", 1, "getNeighborBoxes", "ljForce|iId|0", 1, "getNeighborBoxes", "ljForce|jOff|0", 1, "getNeighborBoxes", "ljForce|ij|0", 1, "getNeighborBoxes", "ljForce|dr|0", 1, "getNeighborBoxes", "ljForce|jId|0", 1, "getNeighborBoxes", "ljForce|r2|0", 1, "getNeighborBoxes", "ljForce|m|0", 1, "getNeighborBoxes", "ljForce|r6|0", 1, "getNeighborBoxes", "ljForce|eLocal|0", 1, "getNeighborBoxes", "ljForce|fr|0", 1, "getNeighborBoxes", "ljForce|m|1", 1, "getNeighborBoxes", &____alias_loc_id_0, (unsigned)33, 14970133447157970232UL + 77UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 79UL, 14970133447157970232UL + 80UL, 14970133447157970232UL + 81UL, 14970133447157970232UL + 82UL, 14970133447157970232UL + 83UL, 14970133447157970232UL + 84UL, 14970133447157970232UL + 85UL, 14970133447157970232UL + 86UL, 14970133447157970232UL + 87UL, 14970133447157970232UL + 88UL, 14970133447157970232UL + 90UL, 14970133447157970232UL + 91UL, 14970133447157970232UL + 92UL, 14970133447157970232UL + 93UL, 14970133447157970232UL + 94UL, 14970133447157970232UL + 95UL, 14970133447157970232UL + 96UL, 14970133447157970232UL + 97UL, 14970133447157970232UL + 98UL, 14970133447157970232UL + 99UL, 14970133447157970232UL + 100UL, 14970133447157970232UL + 101UL, 14970133447157970232UL + 102UL, 14970133447157970232UL + 103UL, 14970133447157970232UL + 104UL, 14970133447157970232UL + 105UL, 14970133447157970232UL + 106UL, 14970133447157970232UL + 107UL, 14970133447157970232UL + 108UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 276UL, &____alias_loc_id_1, (unsigned)3, 14970133447157970232UL + 1UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 25UL, &____alias_loc_id_2, (unsigned)2, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, &____alias_loc_id_3, (unsigned)33, 14970133447157970232UL + 77UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 79UL, 14970133447157970232UL + 80UL, 14970133447157970232UL + 81UL, 14970133447157970232UL + 82UL, 14970133447157970232UL + 83UL, 14970133447157970232UL + 84UL, 14970133447157970232UL + 85UL, 14970133447157970232UL + 86UL, 14970133447157970232UL + 87UL, 14970133447157970232UL + 88UL, 14970133447157970232UL + 90UL, 14970133447157970232UL + 91UL, 14970133447157970232UL + 92UL, 14970133447157970232UL + 93UL, 14970133447157970232UL + 94UL, 14970133447157970232UL + 95UL, 14970133447157970232UL + 96UL, 14970133447157970232UL + 97UL, 14970133447157970232UL + 98UL, 14970133447157970232UL + 99UL, 14970133447157970232UL + 100UL, 14970133447157970232UL + 101UL, 14970133447157970232UL + 102UL, 14970133447157970232UL + 103UL, 14970133447157970232UL + 104UL, 14970133447157970232UL + 105UL, 14970133447157970232UL + 106UL, 14970133447157970232UL + 107UL, 14970133447157970232UL + 108UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 276UL, &____alias_loc_id_4, (unsigned)3, 14970133447157970232UL + 566UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 568UL, &____alias_loc_id_5, (unsigned)2, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL);
     return 0;
 }
 

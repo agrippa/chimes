@@ -1,12 +1,12 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 5 alias_group_changed(3, (size_t)(14214025774788400673UL), (size_t)(14214025774788400674UL), (size_t)(14214025774788400675UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 7 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 9 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 5 alias_group_changed(____alias_loc_id_0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 7 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 9 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 23 new_stack((void *)(&haha_this_sux2), "haha_this_sux2", &____must_manage_haha_this_sux2, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 11 1 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 16 5 rm_stack(false, 0UL, "main", (int *)0x0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 11 1 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 16 5 rm_stack(false, 0UL, "main", (int *)0x0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 33 new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(14214025774788400685UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 33 init_chimes(); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 117  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5  call_lbl_2: calling((void*)&haha_this_sux2, 2, 0UL, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 131  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 46  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 150  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 

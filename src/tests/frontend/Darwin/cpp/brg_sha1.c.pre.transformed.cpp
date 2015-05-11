@@ -29,6 +29,18 @@ static int ____must_manage_rng_rand = 2;
 static int ____must_manage_sha1_compile = 2;
 static int ____must_manage_sha1_begin = 2;
 static int ____must_manage_rng_showtype = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -46,62 +58,8 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 4 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 1 "/usr/include/string.h" 1 3 4
-# 61 "/usr/include/string.h" 3 4
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 32 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/stdio.h" 1 3 4
+# 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -109,7 +67,17 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 33 "/usr/include/sys/_types.h" 2 3 4
+# 65 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 66 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -281,155 +249,10 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 62 "/usr/include/string.h" 2 3 4
-
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 64 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 65 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 66 "/usr/include/string.h" 2 3 4
+# 68 "/usr/include/stdio.h" 2 3 4
 
 
 
-extern "C" {
-void *memchr(const void *, int, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memcpy(void *, const void *, size_t);
-void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
-char *strcat(char *, const char *);
-char *strchr(const char *, int);
-int strcmp(const char *, const char *);
-int strcoll(const char *, const char *);
-char *strcpy(char *, const char *);
-size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror" );
-size_t strlen(const char *);
-char *strncat(char *, const char *, size_t);
-int strncmp(const char *, const char *, size_t);
-char *strncpy(char *, const char *, size_t);
-char *strpbrk(const char *, const char *);
-char *strrchr(const char *, int);
-size_t strspn(const char *, const char *);
-char *strstr(const char *, const char *);
-char *strtok(char *, const char *);
-size_t strxfrm(char *, const char *, size_t);
-}
-# 103 "/usr/include/string.h" 3 4
-extern "C" {
-char *strtok_r(char *, const char *, char **);
-}
-# 115 "/usr/include/string.h" 3 4
-extern "C" {
-int strerror_r(int, char *, size_t);
-char *strdup(const char *);
-void *memccpy(void *, const void *, int, size_t);
-}
-# 129 "/usr/include/string.h" 3 4
-extern "C" {
-char *stpcpy(char *, const char *);
-char *stpncpy(char *, const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strndup(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-size_t strnlen(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strsignal(int sig);
-}
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 142 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 143 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 153 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern8(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern16(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-
-char *strcasestr(const char *, const char *);
-char *strnstr(const char *, const char *, size_t);
-size_t strlcat(char *, const char *, size_t);
-size_t strlcpy(char *, const char *, size_t);
-void strmode(int, char *);
-char *strsep(char **, const char *);
-
-
-void swab(const void * , void * , ssize_t);
-}
-
-
-
-
-
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 65 "/usr/include/strings.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 66 "/usr/include/strings.h" 2 3 4
-
-extern "C" {
-
-
-int bcmp(const void *, const void *, size_t) ;
-void bcopy(const void *, void *, size_t) ;
-void bzero(void *, size_t) ;
-char *index(const char *, int) ;
-char *rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-}
-
-
-
-extern "C" {
-int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-int fls(int) __attribute__((availability(macosx,introduced=10.5)));
-int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-# 1 "/usr/include/string.h" 1 3 4
-# 93 "/usr/include/strings.h" 2 3 4
-# 177 "/usr/include/string.h" 2 3 4
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 71 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
 # 31 "/usr/include/sys/_types/_va_list.h" 3 4
 typedef __darwin_va_list va_list;
@@ -633,7 +456,12 @@ int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)))
 int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
 }
-# 438 "/usr/include/stdio.h" 3 4
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
 extern "C" {
 int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
 int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
@@ -671,7 +499,195 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 38 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 4 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 36 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 1 "/usr/include/string.h" 1 3 4
+# 64 "/usr/include/string.h" 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 65 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 66 "/usr/include/string.h" 2 3 4
+
+
+
+extern "C" {
+void *memchr(const void *, int, size_t);
+int memcmp(const void *, const void *, size_t);
+void *memcpy(void *, const void *, size_t);
+void *memmove(void *, const void *, size_t);
+void *memset(void *, int, size_t);
+char *strcat(char *, const char *);
+char *strchr(const char *, int);
+int strcmp(const char *, const char *);
+int strcoll(const char *, const char *);
+char *strcpy(char *, const char *);
+size_t strcspn(const char *, const char *);
+char *strerror(int) __asm("_" "strerror" );
+size_t strlen(const char *);
+char *strncat(char *, const char *, size_t);
+int strncmp(const char *, const char *, size_t);
+char *strncpy(char *, const char *, size_t);
+char *strpbrk(const char *, const char *);
+char *strrchr(const char *, int);
+size_t strspn(const char *, const char *);
+char *strstr(const char *, const char *);
+char *strtok(char *, const char *);
+size_t strxfrm(char *, const char *, size_t);
+}
+# 103 "/usr/include/string.h" 3 4
+extern "C" {
+char *strtok_r(char *, const char *, char **);
+}
+# 115 "/usr/include/string.h" 3 4
+extern "C" {
+int strerror_r(int, char *, size_t);
+char *strdup(const char *);
+void *memccpy(void *, const void *, int, size_t);
+}
+# 129 "/usr/include/string.h" 3 4
+extern "C" {
+char *stpcpy(char *, const char *);
+char *stpncpy(char *, const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+char *strndup(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+size_t strnlen(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+char *strsignal(int sig);
+}
+
+
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 142 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 143 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(macosx,introduced=10.9)));
+}
+
+
+
+
+
+
+
+extern "C" {
+void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
+void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern8(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
+void memset_pattern16(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
+
+char *strcasestr(const char *, const char *);
+char *strnstr(const char *, const char *, size_t);
+size_t strlcat(char *, const char *, size_t);
+size_t strlcpy(char *, const char *, size_t);
+void strmode(int, char *);
+char *strsep(char **, const char *);
+
+
+void swab(const void * , void * , ssize_t);
+}
+
+
+
+
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 65 "/usr/include/strings.h" 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 66 "/usr/include/strings.h" 2 3 4
+
+extern "C" {
+
+
+int bcmp(const void *, const void *, size_t) ;
+void bcopy(const void *, void *, size_t) ;
+void bzero(void *, size_t) ;
+char *index(const char *, int) ;
+char *rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+}
+
+
+
+extern "C" {
+int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+int fls(int) __attribute__((availability(macosx,introduced=10.5)));
+int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
+int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
+}
+
+
+
+# 1 "/usr/include/string.h" 1 3 4
+# 93 "/usr/include/strings.h" 2 3 4
+# 177 "/usr/include/string.h" 2 3 4
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.h" 1
@@ -2529,7 +2545,7 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
 
 
 static int module_init() {
-    init_module(2768207732101748571UL, 18, 11, 4, 2, 2768207732101748571UL + 568UL, 2768207732101748571UL + 586UL, 2768207732101748571UL + 607UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4947UL, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4946UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 567UL, 2768207732101748571UL + 585UL, 2768207732101748571UL + 1UL, 2768207732101748571UL + 63UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 480UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 434UL, 2768207732101748571UL + 246UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 521UL, 2768207732101748571UL + 566UL, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 245UL, 2768207732101748571UL + 100UL, 2768207732101748571UL + 243UL, 2768207732101748571UL + 435UL, 2768207732101748571UL + 479UL, 2768207732101748571UL + 482UL, 2768207732101748571UL + 520UL, 2768207732101748571UL + 589UL, 2768207732101748571UL + 605UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof(struct state_t, state), "sha1", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_nextrand", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_showstate", 0, "rng_init", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_spawn", 3, "sha1_begin", "sha1_end", "sha1_hash", "sha1_hash", 1, "sha1_compile", "sha1_end", 1, "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 0, "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1");
+    init_module(2768207732101748571UL, 18, 11, 4, 0, 2, 2768207732101748571UL + 568UL, 2768207732101748571UL + 586UL, 2768207732101748571UL + 607UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4947UL, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4946UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 567UL, 2768207732101748571UL + 585UL, 2768207732101748571UL + 1UL, 2768207732101748571UL + 63UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 480UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 434UL, 2768207732101748571UL + 246UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 521UL, 2768207732101748571UL + 566UL, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 245UL, 2768207732101748571UL + 100UL, 2768207732101748571UL + 243UL, 2768207732101748571UL + 435UL, 2768207732101748571UL + 479UL, 2768207732101748571UL + 482UL, 2768207732101748571UL + 520UL, 2768207732101748571UL + 589UL, 2768207732101748571UL + 605UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof(struct state_t, state), "sha1", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_nextrand", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_showstate", 0, "rng_init", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_spawn", 3, "sha1_begin", "sha1_end", "sha1_hash", "sha1_hash", 1, "sha1_compile", "sha1_end", 1, "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 0, "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1", &____alias_loc_id_0, (unsigned)4, 2768207732101748571UL + 1UL, 2768207732101748571UL + 2UL, 2768207732101748571UL + 4UL, 2768207732101748571UL + 5UL, &____alias_loc_id_1, (unsigned)2, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, &____alias_loc_id_2, (unsigned)8, 2768207732101748571UL + 100UL, 2768207732101748571UL + 101UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 103UL, 2768207732101748571UL + 104UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 106UL, 2768207732101748571UL + 245UL, &____alias_loc_id_3, (unsigned)6, 2768207732101748571UL + 246UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 248UL, 2768207732101748571UL + 249UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 434UL, &____alias_loc_id_4, (unsigned)4, 2768207732101748571UL + 435UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 437UL, 2768207732101748571UL + 439UL, &____alias_loc_id_5, (unsigned)3, 2768207732101748571UL + 482UL, 2768207732101748571UL + 483UL, 2768207732101748571UL + 484UL, &____alias_loc_id_6, (unsigned)3, 2768207732101748571UL + 521UL, 2768207732101748571UL + 523UL, 2768207732101748571UL + 524UL, &____alias_loc_id_7, (unsigned)2, 2768207732101748571UL + 567UL, 2768207732101748571UL + 568UL, &____alias_loc_id_8, (unsigned)2, 2768207732101748571UL + 589UL, 2768207732101748571UL + 590UL, &____alias_loc_id_9, (unsigned)8, 2768207732101748571UL + 607UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 609UL, 2768207732101748571UL + 610UL, 2768207732101748571UL + 611UL, 2768207732101748571UL + 612UL, 2768207732101748571UL + 613UL, 2768207732101748571UL + 4919UL, &____alias_loc_id_10, (unsigned)3, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4927UL);
     return 0;
 }
 

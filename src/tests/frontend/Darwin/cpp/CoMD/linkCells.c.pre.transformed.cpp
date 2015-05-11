@@ -28,6 +28,19 @@ static int ____must_manage_putAtomInBox = 2;
 static int ____must_manage_destroyLinkCells = 2;
 static int ____must_manage_getBoxFromTuple = 2;
 static int ____must_manage_moveAtom = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -44,68 +57,8 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c" 2
-# 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 61 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 62 "/usr/include/stdlib.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 32 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/stdio.h" 1 3 4
+# 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -113,7 +66,17 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 33 "/usr/include/sys/_types.h" 2 3 4
+# 65 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 66 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -285,8 +248,309 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 64 "/usr/include/stdlib.h" 2 3 4
+# 68 "/usr/include/stdio.h" 2 3 4
 
+
+
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 73 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 74 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
+ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c" 2
+# 62 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1544,256 +1808,8 @@ void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 int maxOccupancy(LinkCell* boxes);
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c" 2
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
+# 65 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 
-# 1 "/usr/include/stdio.h" 1 3 4
-# 71 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 66 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 64 "/usr/include/string.h" 3 4
 # 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
@@ -2696,7 +2712,7 @@ LinkCell* initLinkCells(const Domain* domain, real_t cutoff)
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  (__builtin_expect(!((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 109, "(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)") : (void)0);
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- alias_group_changed(7, (size_t)(7522830976577679905UL), (size_t)(7522830976577679906UL), (size_t)(7522830976577679907UL), (size_t)(7522830976577679908UL), (size_t)(7522830976577679909UL), (size_t)(7522830976577679926UL), (size_t)(7522830976577680092UL)); rm_stack(true, 7522830976577679926UL, "initLinkCells", &____must_manage_initLinkCells); return ll;
+ rm_stack(true, 7522830976577679926UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_1); return ll;
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2705,9 +2721,9 @@ void destroyLinkCells(LinkCell** boxes)
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 {new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(7522830976577680167UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- if (!boxes) {alias_group_changed(2, (size_t)(7522830976577680141UL), (size_t)(7522830976577680167UL)); rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells); return;; };
+ if (!boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_2); return;; };
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- if (!*boxes) {alias_group_changed(2, (size_t)(7522830976577680141UL), (size_t)(7522830976577680167UL)); rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells); return;; };
+ if (!*boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_2); return;; };
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  free_wrapper((*boxes)->nAtoms, 7522830976577680156UL);
@@ -2717,7 +2733,7 @@ void destroyLinkCells(LinkCell** boxes)
  *boxes = __null;
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- alias_group_changed(2, (size_t)(7522830976577680141UL), (size_t)(7522830976577680167UL)); rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells); return;
+ rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_2); return;
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2754,7 +2770,7 @@ int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes)
  } }
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- alias_group_changed(8, (size_t)(7522830976577680169UL), (size_t)(7522830976577680170UL), (size_t)(7522830976577680171UL), (size_t)(7522830976577680175UL), (size_t)(7522830976577680176UL), (size_t)(7522830976577680177UL), (size_t)(7522830976577680178UL), (size_t)(7522830976577680254UL)); rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes); return count;
+ rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_3); return count;
 # 146 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 159 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2803,7 +2819,7 @@ void putAtomInBox(LinkCell* boxes, Atoms* atoms,
 # 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  atoms->p[iOff][2] = pz;
 # 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-alias_group_changed(16, (size_t)(7522830976577680811UL), (size_t)(7522830976577680812UL), (size_t)(7522830976577680813UL), (size_t)(7522830976577680814UL), (size_t)(7522830976577680815UL), (size_t)(7522830976577680816UL), (size_t)(7522830976577680817UL), (size_t)(7522830976577680818UL), (size_t)(7522830976577680819UL), (size_t)(7522830976577680820UL), (size_t)(7522830976577680821UL), (size_t)(7522830976577680822UL), (size_t)(7522830976577680823UL), (size_t)(7522830976577680867UL), (size_t)(7522830976577680899UL), (size_t)(7522830976577680966UL)); rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox); }
+rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox, ____alias_loc_id_6); }
 # 186 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 187 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 188 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2829,7 +2845,7 @@ int getBoxFromTuple(LinkCell* boxes, int ix, int iy, int iz)
  (__builtin_expect(!(iBox < boxes->nTotalBoxes), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 237, "iBox < boxes->nTotalBoxes") : (void)0);
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 239 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- alias_group_changed(6, (size_t)(7522830976577680537UL), (size_t)(7522830976577680538UL), (size_t)(7522830976577680539UL), (size_t)(7522830976577680540UL), (size_t)(7522830976577680541UL), (size_t)(7522830976577680542UL)); rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple); return iBox;
+ rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_5); return iBox;
 # 240 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 241 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2862,7 +2878,7 @@ void moveAtom(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
  if (jBox > boxes->nLocalBoxes) {--atoms->nLocal; };
 # 260 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 261 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- alias_group_changed(9, (size_t)(7522830976577681136UL), (size_t)(7522830976577681137UL), (size_t)(7522830976577681138UL), (size_t)(7522830976577681139UL), (size_t)(7522830976577681140UL), (size_t)(7522830976577681141UL), (size_t)(7522830976577681142UL), (size_t)(7522830976577681199UL), (size_t)(7522830976577681238UL)); rm_stack(false, 0UL, "moveAtom", &____must_manage_moveAtom); return;
+ rm_stack(false, 0UL, "moveAtom", &____must_manage_moveAtom, ____alias_loc_id_8); return;
 # 262 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 277 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2894,7 +2910,7 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms)
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  } }
 # 294 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-alias_group_changed(6, (size_t)(7522830976577681369UL), (size_t)(7522830976577681370UL), (size_t)(7522830976577681371UL), (size_t)(7522830976577681372UL), (size_t)(7522830976577681373UL), (size_t)(7522830976577681374UL)); rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells); }
+rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells, ____alias_loc_id_10); }
 # 295 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 296 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 297 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2910,14 +2926,14 @@ int maxOccupancy(LinkCell* boxes)
  int globalMax; ;
 # 304 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 305 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- do { alias_group_changed(3, (size_t)(7522830976577681474UL), (size_t)(7522830976577681475UL), (size_t)(7522830976577681476UL)); call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
+ do { alias_group_changed(____alias_loc_id_0); call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
 # 306 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  call_lbl_3: calling((void*)&maxIntParallel, 3, 0UL, 3, (size_t)(7522830976577681475UL), (size_t)(7522830976577681477UL), (size_t)(0UL)); maxIntParallel(&localMax, &globalMax, 1);
 # 307 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  do { call_lbl_4: calling((void*)&profileStop, 4, 0UL, 1, (size_t)(0UL)); profileStop(commReduceTimer); } while(0);
 # 308 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 309 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy); return globalMax;
+ rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0); return globalMax;
 # 310 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 311 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2945,12 +2961,12 @@ void copyAtom(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int
 # 324 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  call_lbl_4: calling((void*)&memcpy, 4, 0UL, 3, (size_t)(7522830976577681278UL), (size_t)(7522830976577681278UL), (size_t)(0UL)); memcpy(atoms->U+jOff, atoms->U+iOff, sizeof(real_t));
 # 325 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-alias_group_changed(9, (size_t)(7522830976577681242UL), (size_t)(7522830976577681243UL), (size_t)(7522830976577681244UL), (size_t)(7522830976577681245UL), (size_t)(7522830976577681246UL), (size_t)(7522830976577681247UL), (size_t)(7522830976577681248UL), (size_t)(7522830976577681249UL), (size_t)(7522830976577681278UL)); rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom); }
+rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_9); }
 # 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 int getBoxFromCoord(LinkCell* boxes, real_t rr[3])
 # 338 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(7522830976577681134UL), (size_t)(7522830976577681135UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
+{new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(7522830976577681134UL), (size_t)(7522830976577681135UL)); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 339 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  const real_t *localMin; localMin = (boxes->localMin) ;
 # 340 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2975,7 +2991,7 @@ int getBoxFromCoord(LinkCell* boxes, real_t rr[3])
  if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
 # 367 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 368 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- alias_group_changed(8, (size_t)(7522830976577680975UL), (size_t)(7522830976577680976UL), (size_t)(7522830976577680977UL), (size_t)(7522830976577680978UL), (size_t)(7522830976577680979UL), (size_t)(7522830976577680980UL), (size_t)(7522830976577680981UL), (size_t)(7522830976577680982UL)); rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord); call_lbl_6: calling((void*)&getBoxFromTuple, 6, 0UL, 4, (size_t)(7522830976577681134UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); return getBoxFromTuple(boxes, ix, iy, iz);
+ rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_7); call_lbl_5: calling((void*)&getBoxFromTuple, 5, 0UL, 4, (size_t)(7522830976577681134UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); return getBoxFromTuple(boxes, ix, iy, iz);
 # 369 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 # 370 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2987,7 +3003,7 @@ void emptyHaloCells(LinkCell* boxes)
 # 374 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  { int ii; for ( ii = (boxes->nLocalBoxes) ;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 376 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-alias_group_changed(3, (size_t)(7522830976577681444UL), (size_t)(7522830976577681445UL), (size_t)(7522830976577681464UL)); rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells); }
+rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_11); }
 # 386 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 386 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 void getTuple(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
@@ -3042,11 +3058,11 @@ void getTuple(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 457 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  *izp = iz;
 # 458 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-alias_group_changed(13, (size_t)(7522830976577680255UL), (size_t)(7522830976577680256UL), (size_t)(7522830976577680257UL), (size_t)(7522830976577680258UL), (size_t)(7522830976577680259UL), (size_t)(7522830976577680260UL), (size_t)(7522830976577680261UL), (size_t)(7522830976577680262UL), (size_t)(7522830976577680263UL), (size_t)(7522830976577680264UL), (size_t)(7522830976577680534UL), (size_t)(7522830976577680535UL), (size_t)(7522830976577680536UL)); rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple); }
+rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_4); }
 
 
 static int module_init() {
-    init_module(7522830976577679904UL, 38, 12, 3, 4, 7522830976577679904UL + 237UL, 7522830976577679904UL + 263UL, 7522830976577679904UL + 22UL, 7522830976577679904UL + 188UL, 7522830976577679904UL + 1074UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1075UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1072UL, 7522830976577679904UL + 1231UL, 7522830976577679904UL + 1073UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1071UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1UL, 7522830976577679904UL + 226UL, 7522830976577679904UL + 1569UL, 7522830976577679904UL + 1560UL, 7522830976577679904UL + 3UL, 7522830976577679904UL + 22UL, 7522830976577679904UL + 1465UL, 7522830976577679904UL + 1538UL, 7522830976577679904UL + 1293UL, 7522830976577679904UL + 1295UL, 7522830976577679904UL + 1466UL, 7522830976577679904UL + 1539UL, 7522830976577679904UL + 1460UL, 7522830976577679904UL + 1374UL, 7522830976577679904UL + 633UL, 7522830976577679904UL + 888UL, 7522830976577679904UL + 1339UL, 7522830976577679904UL + 1460UL, 7522830976577679904UL + 1338UL, 7522830976577679904UL + 1459UL, 7522830976577679904UL + 1232UL, 7522830976577679904UL + 1293UL, 7522830976577679904UL + 1233UL, 7522830976577679904UL + 1334UL, 7522830976577679904UL + 638UL, 7522830976577679904UL + 888UL, 7522830976577679904UL + 245UL, 7522830976577679904UL + 252UL, 7522830976577679904UL + 267UL, 7522830976577679904UL + 350UL, 7522830976577679904UL + 265UL, 7522830976577679904UL + 348UL, 7522830976577679904UL + 263UL, 7522830976577679904UL + 245UL, 7522830976577679904UL + 907UL, 7522830976577679904UL + 1061UL, 7522830976577679904UL + 1061UL, 7522830976577679904UL + 963UL, 7522830976577679904UL + 1540UL, 7522830976577679904UL + 1569UL, 7522830976577679904UL + 908UL, 7522830976577679904UL + 1062UL, 7522830976577679904UL + 1062UL, 7522830976577679904UL + 995UL, 7522830976577679904UL + 1601UL, 7522830976577679904UL + 1603UL, 7522830976577679904UL + 355UL, 7522830976577679904UL + 632UL, 7522830976577679904UL + 354UL, 7522830976577679904UL + 631UL, 7522830976577679904UL + 353UL, 7522830976577679904UL + 630UL, 7522830976577679904UL + 1539UL, 7522830976577679904UL + 1511UL, 7522830976577679904UL + 351UL, 7522830976577679904UL + 628UL, 7522830976577679904UL + 1570UL, 7522830976577679904UL + 1601UL, 7522830976577679904UL + 359UL, 7522830976577679904UL + 628UL, 7522830976577679904UL + 1538UL, 7522830976577679904UL + 1498UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "TimerHandle", 0, "getNeighborBoxes", 2, "getBoxFromTuple", "getTuple", "initLinkCells", 0, "getBoxFromCoord", 1, "getBoxFromTuple", "getTuple", 0, "copyAtom", 0, "updateLinkCells", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom", "emptyHaloCells", 0, "maxOccupancy", 3, "maxIntParallel", "profileStart", "profileStop", "putAtomInBox", 1, "getBoxFromCoord", "destroyLinkCells", 0, "getBoxFromTuple", 0, "moveAtom", 1, "copyAtom", "getNeighborBoxes|ix|0", 1, "getNeighborBoxes", "putAtomInBox|xyz|0", 1, "putAtomInBox", "maxOccupancy|localMax|0", 1, "maxOccupancy");
+    init_module(7522830976577679904UL, 38, 12, 3, 1, 4, 7522830976577679904UL + 237UL, 7522830976577679904UL + 263UL, 7522830976577679904UL + 22UL, 7522830976577679904UL + 188UL, 7522830976577679904UL + 1074UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1075UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1072UL, 7522830976577679904UL + 1231UL, 7522830976577679904UL + 1073UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1071UL, 7522830976577679904UL + 1230UL, 7522830976577679904UL + 1UL, 7522830976577679904UL + 226UL, 7522830976577679904UL + 1569UL, 7522830976577679904UL + 1560UL, 7522830976577679904UL + 3UL, 7522830976577679904UL + 22UL, 7522830976577679904UL + 1465UL, 7522830976577679904UL + 1538UL, 7522830976577679904UL + 1293UL, 7522830976577679904UL + 1295UL, 7522830976577679904UL + 1466UL, 7522830976577679904UL + 1539UL, 7522830976577679904UL + 1460UL, 7522830976577679904UL + 1374UL, 7522830976577679904UL + 633UL, 7522830976577679904UL + 888UL, 7522830976577679904UL + 1339UL, 7522830976577679904UL + 1460UL, 7522830976577679904UL + 1338UL, 7522830976577679904UL + 1459UL, 7522830976577679904UL + 1232UL, 7522830976577679904UL + 1293UL, 7522830976577679904UL + 1233UL, 7522830976577679904UL + 1334UL, 7522830976577679904UL + 638UL, 7522830976577679904UL + 888UL, 7522830976577679904UL + 245UL, 7522830976577679904UL + 252UL, 7522830976577679904UL + 267UL, 7522830976577679904UL + 350UL, 7522830976577679904UL + 265UL, 7522830976577679904UL + 348UL, 7522830976577679904UL + 263UL, 7522830976577679904UL + 245UL, 7522830976577679904UL + 907UL, 7522830976577679904UL + 1061UL, 7522830976577679904UL + 1061UL, 7522830976577679904UL + 963UL, 7522830976577679904UL + 1540UL, 7522830976577679904UL + 1569UL, 7522830976577679904UL + 908UL, 7522830976577679904UL + 1062UL, 7522830976577679904UL + 1062UL, 7522830976577679904UL + 995UL, 7522830976577679904UL + 1601UL, 7522830976577679904UL + 1603UL, 7522830976577679904UL + 355UL, 7522830976577679904UL + 632UL, 7522830976577679904UL + 354UL, 7522830976577679904UL + 631UL, 7522830976577679904UL + 353UL, 7522830976577679904UL + 630UL, 7522830976577679904UL + 1539UL, 7522830976577679904UL + 1511UL, 7522830976577679904UL + 351UL, 7522830976577679904UL + 628UL, 7522830976577679904UL + 1570UL, 7522830976577679904UL + 1601UL, 7522830976577679904UL + 359UL, 7522830976577679904UL + 628UL, 7522830976577679904UL + 1538UL, 7522830976577679904UL + 1498UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "TimerHandle", 0, "getNeighborBoxes", 2, "getBoxFromTuple", "getTuple", "initLinkCells", 0, "getBoxFromCoord", 1, "getBoxFromTuple", "getTuple", 0, "copyAtom", 0, "updateLinkCells", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom", "emptyHaloCells", 0, "maxOccupancy", 3, "maxIntParallel", "profileStart", "profileStop", "putAtomInBox", 1, "getBoxFromCoord", "destroyLinkCells", 0, "getBoxFromTuple", 0, "moveAtom", 1, "copyAtom", "getNeighborBoxes|ix|0", 1, "getNeighborBoxes", "putAtomInBox|xyz|0", 1, "putAtomInBox", "maxOccupancy|localMax|0", 1, "maxOccupancy", &____alias_loc_id_0, (unsigned)3, 7522830976577679904UL + 1570UL, 7522830976577679904UL + 1571UL, 7522830976577679904UL + 1572UL, &____alias_loc_id_1, (unsigned)7, 7522830976577679904UL + 1UL, 7522830976577679904UL + 2UL, 7522830976577679904UL + 3UL, 7522830976577679904UL + 4UL, 7522830976577679904UL + 5UL, 7522830976577679904UL + 22UL, 7522830976577679904UL + 188UL, &____alias_loc_id_2, (unsigned)2, 7522830976577679904UL + 237UL, 7522830976577679904UL + 263UL, &____alias_loc_id_3, (unsigned)8, 7522830976577679904UL + 265UL, 7522830976577679904UL + 266UL, 7522830976577679904UL + 267UL, 7522830976577679904UL + 271UL, 7522830976577679904UL + 272UL, 7522830976577679904UL + 273UL, 7522830976577679904UL + 274UL, 7522830976577679904UL + 350UL, &____alias_loc_id_4, (unsigned)13, 7522830976577679904UL + 351UL, 7522830976577679904UL + 352UL, 7522830976577679904UL + 353UL, 7522830976577679904UL + 354UL, 7522830976577679904UL + 355UL, 7522830976577679904UL + 356UL, 7522830976577679904UL + 357UL, 7522830976577679904UL + 358UL, 7522830976577679904UL + 359UL, 7522830976577679904UL + 360UL, 7522830976577679904UL + 630UL, 7522830976577679904UL + 631UL, 7522830976577679904UL + 632UL, &____alias_loc_id_5, (unsigned)6, 7522830976577679904UL + 633UL, 7522830976577679904UL + 634UL, 7522830976577679904UL + 635UL, 7522830976577679904UL + 636UL, 7522830976577679904UL + 637UL, 7522830976577679904UL + 638UL, &____alias_loc_id_6, (unsigned)16, 7522830976577679904UL + 907UL, 7522830976577679904UL + 908UL, 7522830976577679904UL + 909UL, 7522830976577679904UL + 910UL, 7522830976577679904UL + 911UL, 7522830976577679904UL + 912UL, 7522830976577679904UL + 913UL, 7522830976577679904UL + 914UL, 7522830976577679904UL + 915UL, 7522830976577679904UL + 916UL, 7522830976577679904UL + 917UL, 7522830976577679904UL + 918UL, 7522830976577679904UL + 919UL, 7522830976577679904UL + 963UL, 7522830976577679904UL + 995UL, 7522830976577679904UL + 1062UL, &____alias_loc_id_7, (unsigned)8, 7522830976577679904UL + 1071UL, 7522830976577679904UL + 1072UL, 7522830976577679904UL + 1073UL, 7522830976577679904UL + 1074UL, 7522830976577679904UL + 1075UL, 7522830976577679904UL + 1076UL, 7522830976577679904UL + 1077UL, 7522830976577679904UL + 1078UL, &____alias_loc_id_8, (unsigned)9, 7522830976577679904UL + 1232UL, 7522830976577679904UL + 1233UL, 7522830976577679904UL + 1234UL, 7522830976577679904UL + 1235UL, 7522830976577679904UL + 1236UL, 7522830976577679904UL + 1237UL, 7522830976577679904UL + 1238UL, 7522830976577679904UL + 1295UL, 7522830976577679904UL + 1334UL, &____alias_loc_id_9, (unsigned)9, 7522830976577679904UL + 1338UL, 7522830976577679904UL + 1339UL, 7522830976577679904UL + 1340UL, 7522830976577679904UL + 1341UL, 7522830976577679904UL + 1342UL, 7522830976577679904UL + 1343UL, 7522830976577679904UL + 1344UL, 7522830976577679904UL + 1345UL, 7522830976577679904UL + 1374UL, &____alias_loc_id_10, (unsigned)6, 7522830976577679904UL + 1465UL, 7522830976577679904UL + 1466UL, 7522830976577679904UL + 1467UL, 7522830976577679904UL + 1468UL, 7522830976577679904UL + 1469UL, 7522830976577679904UL + 1470UL, &____alias_loc_id_11, (unsigned)3, 7522830976577679904UL + 1540UL, 7522830976577679904UL + 1541UL, 7522830976577679904UL + 1560UL);
     return 0;
 }
 

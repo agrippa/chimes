@@ -27,6 +27,20 @@ static int ____must_manage_addRealParallel = 2;
 static int ____must_manage_getNRanks = 2;
 static int ____must_manage_barrierParallel = 2;
 static int ____must_manage_sendReceiveParallel = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -41,155 +55,6 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 4 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 5 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 6 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 7 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
-
-
-
-
-
-
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
-typedef double real_t;
-
-
-
-
-typedef real_t real3[3];
-
-static void zeroReal3(real3 a)
-{
-   a[0] = 0.0;
-   a[1] = 0.0;
-   a[2] = 0.0;
-}
-# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 2
-
-
-typedef struct RankReduceDataSt
-{
-   double val;
-   int rank;
-} RankReduceData;
-
-
-int getNRanks(void);
-
-
-int getMyRank(void);
-
-
-int printRank(void);
-
-
-void timestampBarrier(const char* msg);
-
-
-void initParallel(int *argc, char ***argv);
-
-
-void destroyParallel(void);
-
-
-void barrierParallel(void);
-
-
-int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
-                        void* recvBuf, int recvLen, int source);
-
-
-void addIntParallel(int* sendBuf, int* recvBuf, int count);
-
-
-void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count);
-
-
-void addDoubleParallel(double* sendBuf, double* recvBuf, int count);
-
-
-void maxIntParallel(int* sendBuf, int* recvBuf, int count);
-
-
-void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
-
-
-void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
-
-
-void bcastParallel(void* buf, int len, int root);
-
-
-int builtWithMpi(void);
-# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
-# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 12 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -629,7 +494,157 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 15 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 4 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 5 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 6 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 7 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 1
+
+
+
+
+
+
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
+typedef double real_t;
+
+
+
+
+typedef real_t real3[3];
+
+static void zeroReal3(real3 a)
+{
+   a[0] = 0.0;
+   a[1] = 0.0;
+   a[2] = 0.0;
+}
+# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.h" 2
+
+
+typedef struct RankReduceDataSt
+{
+   double val;
+   int rank;
+} RankReduceData;
+
+
+int getNRanks(void);
+
+
+int getMyRank(void);
+
+
+int printRank(void);
+
+
+void timestampBarrier(const char* msg);
+
+
+void initParallel(int *argc, char ***argv);
+
+
+void destroyParallel(void);
+
+
+void barrierParallel(void);
+
+
+int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
+                        void* recvBuf, int recvLen, int source);
+
+
+void addIntParallel(int* sendBuf, int* recvBuf, int count);
+
+
+void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count);
+
+
+void addDoubleParallel(double* sendBuf, double* recvBuf, int count);
+
+
+void maxIntParallel(int* sendBuf, int* recvBuf, int count);
+
+
+void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
+
+
+void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count);
+
+
+void bcastParallel(void* buf, int len, int root);
+
+
+int builtWithMpi(void);
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c" 2
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 12 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+# 14 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
+
 # 1 "/usr/include/time.h" 1 3 4
 # 67 "/usr/include/time.h" 3 4
 # 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
@@ -2018,7 +2033,7 @@ int getNRanks()
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {new_stack((void *)(&getNRanks), "getNRanks", &____must_manage_getNRanks, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   rm_stack(false, 0UL, "getNRanks", &____must_manage_getNRanks); return nRanks;
+   rm_stack(false, 0UL, "getNRanks", &____must_manage_getNRanks, 0); return nRanks;
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2027,7 +2042,7 @@ int getMyRank()
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {new_stack((void *)(&getMyRank), "getMyRank", &____must_manage_getMyRank, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   rm_stack(false, 0UL, "getMyRank", &____must_manage_getMyRank); return myRank;
+   rm_stack(false, 0UL, "getMyRank", &____must_manage_getMyRank, 0); return myRank;
 # 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 # 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2040,9 +2055,9 @@ int printRank()
 # 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 {new_stack((void *)(&printRank), "printRank", &____must_manage_printRank, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   if (myRank == 0) {alias_group_changed(1, (size_t)(2720369932807153854UL)); rm_stack(false, 0UL, "printRank", &____must_manage_printRank); return 1;; };
+   if (myRank == 0) {rm_stack(false, 0UL, "printRank", &____must_manage_printRank, ____alias_loc_id_2); return 1;; };
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(1, (size_t)(2720369932807153854UL)); rm_stack(false, 0UL, "printRank", &____must_manage_printRank); return 0;
+   rm_stack(false, 0UL, "printRank", &____must_manage_printRank, ____alias_loc_id_2); return 0;
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2053,11 +2068,11 @@ void timestampBarrier(const char* msg)
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
     call_lbl_1: calling((void*)&barrierParallel, 1, 0UL, 0); barrierParallel();
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-    call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier); return;; };
+    call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_3); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(1, (size_t)(2720369932807153864UL)); lbl_0: time_t t; if (____must_checkpoint_timestampBarrier_t_0 != 0) { register_stack_var("timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } call_lbl_6: calling((void*)&time, 6, 0UL, 1, (size_t)(2720369932807154229UL)); t = (time(__null)) ;
+   alias_group_changed(____alias_loc_id_0); lbl_0: time_t t; if (____must_checkpoint_timestampBarrier_t_0 != 0) { register_stack_var("timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } call_lbl_5: calling((void*)&time, 5, 0UL, 1, (size_t)(2720369932807154229UL)); t = (time(__null)) ;
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(1, (size_t)(2720369932807153865UL)); char *timeString; call_lbl_8: calling((void*)&ctime, 8, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); timeString = (ctime(&t)) ;
+   alias_group_changed(____alias_loc_id_1); char *timeString; call_lbl_7: calling((void*)&ctime, 7, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); timeString = (ctime(&t)) ;
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2065,7 +2080,7 @@ void timestampBarrier(const char* msg)
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fflush(__stdoutp);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier); }
+rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_3); }
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void initParallel(int* argc, char*** argv)
@@ -2112,7 +2127,7 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
     call_lbl_3: calling((void*)&memcpy, 3, 0UL, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); memcpy(recvBuf, sendBuf, sendLen);
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(6, (size_t)(2720369932807153910UL), (size_t)(2720369932807153911UL), (size_t)(2720369932807153912UL), (size_t)(2720369932807153913UL), (size_t)(2720369932807153914UL), (size_t)(2720369932807153915UL)); rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel); return sendLen;
+   rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel, ____alias_loc_id_5); return sendLen;
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
@@ -2128,7 +2143,7 @@ void addIntParallel(int* sendBuf, int* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807153964UL), (size_t)(2720369932807153965UL), (size_t)(2720369932807153966UL), (size_t)(2720369932807153967UL), (size_t)(2720369932807153998UL)); rm_stack(false, 0UL, "addIntParallel", &____must_manage_addIntParallel); }
+rm_stack(false, 0UL, "addIntParallel", &____must_manage_addIntParallel, ____alias_loc_id_6); }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count)
@@ -2141,7 +2156,7 @@ void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154000UL), (size_t)(2720369932807154001UL), (size_t)(2720369932807154002UL), (size_t)(2720369932807154003UL), (size_t)(2720369932807154034UL)); rm_stack(false, 0UL, "addRealParallel", &____must_manage_addRealParallel); }
+rm_stack(false, 0UL, "addRealParallel", &____must_manage_addRealParallel, ____alias_loc_id_7); }
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addDoubleParallel(double* sendBuf, double* recvBuf, int count)
@@ -2154,7 +2169,7 @@ void addDoubleParallel(double* sendBuf, double* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154036UL), (size_t)(2720369932807154037UL), (size_t)(2720369932807154038UL), (size_t)(2720369932807154039UL), (size_t)(2720369932807154070UL)); rm_stack(false, 0UL, "addDoubleParallel", &____must_manage_addDoubleParallel); }
+rm_stack(false, 0UL, "addDoubleParallel", &____must_manage_addDoubleParallel, ____alias_loc_id_8); }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void maxIntParallel(int* sendBuf, int* recvBuf, int count)
@@ -2167,7 +2182,7 @@ void maxIntParallel(int* sendBuf, int* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154072UL), (size_t)(2720369932807154073UL), (size_t)(2720369932807154074UL), (size_t)(2720369932807154075UL), (size_t)(2720369932807154106UL)); rm_stack(false, 0UL, "maxIntParallel", &____must_manage_maxIntParallel); }
+rm_stack(false, 0UL, "maxIntParallel", &____must_manage_maxIntParallel, ____alias_loc_id_9); }
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2189,7 +2204,7 @@ void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int
    } }
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154108UL), (size_t)(2720369932807154109UL), (size_t)(2720369932807154110UL), (size_t)(2720369932807154111UL), (size_t)(2720369932807154156UL)); rm_stack(false, 0UL, "minRankDoubleParallel", &____must_manage_minRankDoubleParallel); }
+rm_stack(false, 0UL, "minRankDoubleParallel", &____must_manage_minRankDoubleParallel, ____alias_loc_id_10); }
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
@@ -2210,7 +2225,7 @@ void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int
    } }
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154158UL), (size_t)(2720369932807154159UL), (size_t)(2720369932807154160UL), (size_t)(2720369932807154161UL), (size_t)(2720369932807154206UL)); rm_stack(false, 0UL, "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel); }
+rm_stack(false, 0UL, "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel, ____alias_loc_id_11); }
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2231,14 +2246,14 @@ int builtWithMpi(void)
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   rm_stack(false, 0UL, "builtWithMpi", &____must_manage_builtWithMpi); return 0;
+   rm_stack(false, 0UL, "builtWithMpi", &____must_manage_builtWithMpi, 0); return 0;
 # 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 
 static int module_init() {
-    init_module(2720369932807153849UL, 20, 16, 2, 1, 2720369932807153849UL + 151UL, 2720369932807153849UL + 184UL, 2720369932807153849UL + 309UL, 2720369932807153849UL + 356UL, 2720369932807153849UL + 152UL, 2720369932807153849UL + 185UL, 2720369932807153849UL + 15UL, 2720369932807153849UL + 42UL, 2720369932807153849UL + 17UL, 2720369932807153849UL + 29UL, 2720369932807153849UL + 259UL, 2720369932807153849UL + 306UL, 2720369932807153849UL + 375UL, 2720369932807153849UL + 34UL, 2720369932807153849UL + 310UL, 2720369932807153849UL + 357UL, 2720369932807153849UL + 51UL, 2720369932807153849UL + 58UL, 2720369932807153849UL + 52UL, 2720369932807153849UL + 59UL, 2720369932807153849UL + 115UL, 2720369932807153849UL + 148UL, 2720369932807153849UL + 61UL, 2720369932807153849UL + 92UL, 2720369932807153849UL + 260UL, 2720369932807153849UL + 307UL, 2720369932807153849UL + 116UL, 2720369932807153849UL + 149UL, 2720369932807153849UL + 64UL, 2720369932807153849UL + 91UL, 2720369932807153849UL + 187UL, 2720369932807153849UL + 220UL, 2720369932807153849UL + 188UL, 2720369932807153849UL + 221UL, 2720369932807153849UL + 224UL, 2720369932807153849UL + 257UL, 2720369932807153849UL + 223UL, 2720369932807153849UL + 256UL, 2720369932807153849UL + 359UL, 2720369932807153849UL + 369UL, "RankReduceDataSt", 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank), "initParallel", 0, "maxIntParallel", 0, "timestampBarrier", 4, "barrierParallel", "ctime", "printRank", "time", "destroyParallel", 0, "bcastParallel", 0, "addIntParallel", 0, "minRankDoubleParallel", 0, "printRank", 0, "getMyRank", 0, "addDoubleParallel", 0, "maxRankDoubleParallel", 0, "builtWithMpi", 0, "addRealParallel", 0, "getNRanks", 0, "barrierParallel", 0, "sendReceiveParallel", 0, "timestampBarrier|msg|0", 2, "time", "ctime", "timestampBarrier|t|0", 1, "timestampBarrier");
+    init_module(2720369932807153849UL, 20, 16, 2, 2, 1, 2720369932807153849UL + 151UL, 2720369932807153849UL + 184UL, 2720369932807153849UL + 309UL, 2720369932807153849UL + 356UL, 2720369932807153849UL + 152UL, 2720369932807153849UL + 185UL, 2720369932807153849UL + 15UL, 2720369932807153849UL + 42UL, 2720369932807153849UL + 17UL, 2720369932807153849UL + 29UL, 2720369932807153849UL + 259UL, 2720369932807153849UL + 306UL, 2720369932807153849UL + 375UL, 2720369932807153849UL + 34UL, 2720369932807153849UL + 310UL, 2720369932807153849UL + 357UL, 2720369932807153849UL + 51UL, 2720369932807153849UL + 58UL, 2720369932807153849UL + 52UL, 2720369932807153849UL + 59UL, 2720369932807153849UL + 115UL, 2720369932807153849UL + 148UL, 2720369932807153849UL + 61UL, 2720369932807153849UL + 92UL, 2720369932807153849UL + 260UL, 2720369932807153849UL + 307UL, 2720369932807153849UL + 116UL, 2720369932807153849UL + 149UL, 2720369932807153849UL + 64UL, 2720369932807153849UL + 91UL, 2720369932807153849UL + 187UL, 2720369932807153849UL + 220UL, 2720369932807153849UL + 188UL, 2720369932807153849UL + 221UL, 2720369932807153849UL + 224UL, 2720369932807153849UL + 257UL, 2720369932807153849UL + 223UL, 2720369932807153849UL + 256UL, 2720369932807153849UL + 359UL, 2720369932807153849UL + 369UL, "RankReduceDataSt", 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank), "initParallel", 0, "maxIntParallel", 0, "timestampBarrier", 4, "barrierParallel", "ctime", "printRank", "time", "destroyParallel", 0, "bcastParallel", 0, "addIntParallel", 0, "minRankDoubleParallel", 0, "printRank", 0, "getMyRank", 0, "addDoubleParallel", 0, "maxRankDoubleParallel", 0, "builtWithMpi", 0, "addRealParallel", 0, "getNRanks", 0, "barrierParallel", 0, "sendReceiveParallel", 0, "timestampBarrier|msg|0", 2, "time", "ctime", "timestampBarrier|t|0", 1, "timestampBarrier", &____alias_loc_id_0, (unsigned)1, 2720369932807153849UL + 15UL, &____alias_loc_id_1, (unsigned)1, 2720369932807153849UL + 16UL, &____alias_loc_id_2, (unsigned)1, 2720369932807153849UL + 5UL, &____alias_loc_id_3, (unsigned)3, 2720369932807153849UL + 15UL, 2720369932807153849UL + 17UL, 2720369932807153849UL + 29UL, &____alias_loc_id_4, (unsigned)2, 2720369932807153849UL + 51UL, 2720369932807153849UL + 52UL, &____alias_loc_id_5, (unsigned)6, 2720369932807153849UL + 61UL, 2720369932807153849UL + 62UL, 2720369932807153849UL + 63UL, 2720369932807153849UL + 64UL, 2720369932807153849UL + 65UL, 2720369932807153849UL + 66UL, &____alias_loc_id_6, (unsigned)5, 2720369932807153849UL + 115UL, 2720369932807153849UL + 116UL, 2720369932807153849UL + 117UL, 2720369932807153849UL + 118UL, 2720369932807153849UL + 149UL, &____alias_loc_id_7, (unsigned)5, 2720369932807153849UL + 151UL, 2720369932807153849UL + 152UL, 2720369932807153849UL + 153UL, 2720369932807153849UL + 154UL, 2720369932807153849UL + 185UL, &____alias_loc_id_8, (unsigned)5, 2720369932807153849UL + 187UL, 2720369932807153849UL + 188UL, 2720369932807153849UL + 189UL, 2720369932807153849UL + 190UL, 2720369932807153849UL + 221UL, &____alias_loc_id_9, (unsigned)5, 2720369932807153849UL + 223UL, 2720369932807153849UL + 224UL, 2720369932807153849UL + 225UL, 2720369932807153849UL + 226UL, 2720369932807153849UL + 257UL, &____alias_loc_id_10, (unsigned)5, 2720369932807153849UL + 259UL, 2720369932807153849UL + 260UL, 2720369932807153849UL + 261UL, 2720369932807153849UL + 262UL, 2720369932807153849UL + 307UL, &____alias_loc_id_11, (unsigned)5, 2720369932807153849UL + 309UL, 2720369932807153849UL + 310UL, 2720369932807153849UL + 311UL, 2720369932807153849UL + 312UL, 2720369932807153849UL + 357UL, &____alias_loc_id_12, (unsigned)3, 2720369932807153849UL + 359UL, 2720369932807153849UL + 360UL, 2720369932807153849UL + 361UL);
     register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4, 0, 0, 0);
     register_global_var("global|myRank", "i32", (void *)(&myRank), 4, 0, 0, 0);
     return 0;

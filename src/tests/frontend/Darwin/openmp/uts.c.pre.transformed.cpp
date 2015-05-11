@@ -41,6 +41,34 @@ static int ____must_manage_uts_printParams = 2;
 static int ____must_manage_uts_helpMessage = 2;
 static int ____must_manage_uts_paramsToStr = 2;
 static int ____must_manage_uts_numChildren_geo = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
+static unsigned ____alias_loc_id_13;
+static unsigned ____alias_loc_id_14;
+static unsigned ____alias_loc_id_15;
+static unsigned ____alias_loc_id_16;
+static unsigned ____alias_loc_id_17;
+static unsigned ____alias_loc_id_18;
+static unsigned ____alias_loc_id_19;
+static unsigned ____alias_loc_id_20;
+static unsigned ____alias_loc_id_21;
+static unsigned ____alias_loc_id_22;
+static unsigned ____alias_loc_id_23;
+static unsigned ____alias_loc_id_24;
+static unsigned ____alias_loc_id_25;
+static unsigned ____alias_loc_id_26;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -55,74 +83,8 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-# 15 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 61 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 62 "/usr/include/stdlib.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 32 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/stdio.h" 1 3 4
+# 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -130,7 +92,17 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 33 "/usr/include/sys/_types.h" 2 3 4
+# 65 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 66 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -300,8 +272,315 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 64 "/usr/include/stdlib.h" 2 3 4
+# 68 "/usr/include/stdio.h" 2 3 4
 
+
+
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 73 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 74 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) ;
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
+# 15 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -767,8 +1046,7 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 155 "/usr/include/sys/signal.h" 2 3 4
+
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1229,10 +1507,6 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
-
-
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1534,10 +1808,7 @@ errno_t memset_s(void *, rsize_t, int, rsize_t) ;
 
 
 
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 153 "/usr/include/string.h" 2 3 4
+
 
 extern "C" {
 void *memmem(const void *, size_t, const void *, size_t) ;
@@ -1592,248 +1863,8 @@ int flsll(long long) ;
 # 93 "/usr/include/strings.h" 2 3 4
 # 177 "/usr/include/string.h" 2 3 4
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 71 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
+# 17 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 
-
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 438 "/usr/include/stdio.h" 3 4
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 18 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c" 2
 # 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 1 3 4
 # 48 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/math.h" 3 4
 extern "C" {
@@ -2808,9 +2839,9 @@ void uts_error(char *str) {new_stack((void *)(&uts_error), "uts_error", &____mus
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("*** Error: %s\n", str);
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819127UL)); call_lbl_3: calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(1);
+  alias_group_changed(____alias_loc_id_0); call_lbl_3: calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(1);
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error); }
+rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0); }
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 double uts_wctime() {new_stack((void *)(&uts_wctime), "uts_wctime", &____must_manage_uts_wctime, 0, 0); if (____chimes_replaying) { goto lbl_0; }
@@ -2819,7 +2850,7 @@ double uts_wctime() {new_stack((void *)(&uts_wctime), "uts_wctime", &____must_ma
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   gettimeofday(&tv, __null);
 # 136 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime); return (tv.tv_sec + 1E-6 * tv.tv_usec);
+  rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, 0); return (tv.tv_sec + 1E-6 * tv.tv_usec);
 # 137 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 138 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2835,7 +2866,7 @@ double rng_toProb(int n) {new_stack((void *)(&rng_toProb), "rng_toProb", &____mu
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819153UL)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb); return ((n<0)? 0.0 : ((double) n)/2147483648.0);
+  rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_18); return ((n<0)? 0.0 : ((double) n)/2147483648.0);
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2849,24 +2880,24 @@ void uts_initRoot(Node * root, int type) {new_stack((void *)(&uts_initRoot), "ut
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   root->numChildren = -1;
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(3, (size_t)(11896266734391819173UL), (size_t)(11896266734391819174UL), (size_t)(11896266734391819204UL)); call_lbl_2: calling((void*)&rng_init, 2, 0UL, 2, (size_t)(11896266734391819204UL), (size_t)(0UL)); rng_init(root->state.state, rootId);
+  alias_group_changed(____alias_loc_id_1); call_lbl_2: calling((void*)&rng_init, 2, 0UL, 2, (size_t)(11896266734391819204UL), (size_t)(0UL)); rng_init(root->state.state, rootId);
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n", type, root); };
 # 158 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot); }
+rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0); }
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 int uts_numChildren_bin(Node * parent) {new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(11896266734391819233UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819208UL)); int v; call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(parent->state.state)) ;
+  alias_group_changed(____alias_loc_id_2); int v; call_lbl_2: calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(parent->state.state)) ;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    double d; call_lbl_3: calling((void*)&rng_toProb, 3, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(v)) ;
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(2, (size_t)(11896266734391819209UL), (size_t)(11896266734391819210UL)); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin); return (d < nonLeafProb) ? nonLeafBF : 0;
+  rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_19); return (d < nonLeafProb) ? nonLeafBF : 0;
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2908,7 +2939,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       }
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_6: calling((void*)&sin, 6, 0UL, 1, (size_t)(0UL)); b_i = pow(b_0,
+      alias_group_changed(____alias_loc_id_4); call_lbl_6: calling((void*)&sin, 6, 0UL, 1, (size_t)(0UL)); b_i = pow(b_0,
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
                 sin(2.0*3.141592653589793*(double) depth / (double) gen_mx));
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2943,7 +2974,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(4, (size_t)(11896266734391819235UL), (size_t)(11896266734391819236UL), (size_t)(11896266734391819237UL), (size_t)(11896266734391819240UL)); call_lbl_8: calling((void*)&rng_rand, 8, 0UL, 1, (size_t)(11896266734391819340UL)); h = rng_rand(parent->state.state);
+  alias_group_changed(____alias_loc_id_3); call_lbl_8: calling((void*)&rng_rand, 8, 0UL, 1, (size_t)(11896266734391819340UL)); h = rng_rand(parent->state.state);
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    call_lbl_9: calling((void*)&rng_toProb, 9, 0UL, 1, (size_t)(0UL)); u = rng_toProb(h);
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2953,7 +2984,7 @@ int uts_numChildren_geo(Node * parent) {new_stack((void *)(&uts_numChildren_geo)
   numChildren = floor(log(1 - u) / log(1 - p));
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(3, (size_t)(11896266734391819238UL), (size_t)(11896266734391819239UL), (size_t)(11896266734391819241UL)); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo); return numChildren;
+  rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_20); return numChildren;
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2969,25 +3000,25 @@ int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), "uts_nu
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case BIN:
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height == 0) {numChildren = (int)floor(b_0); } else {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_3: calling((void*)&uts_numChildren_bin, 3, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
+      if (parent->height == 0) {numChildren = (int)floor(b_0); } else {alias_group_changed(____alias_loc_id_6); call_lbl_3: calling((void*)&uts_numChildren_bin, 3, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case GEO:
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_5: calling((void*)&uts_numChildren_geo, 5, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent);
+      alias_group_changed(____alias_loc_id_7); call_lbl_5: calling((void*)&uts_numChildren_geo, 5, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent);
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case HYBRID:
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_7: calling((void*)&uts_numChildren_geo, 7, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent); } else {alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_9: calling((void*)&uts_numChildren_bin, 9, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
+      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(____alias_loc_id_8); call_lbl_7: calling((void*)&uts_numChildren_geo, 7, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(parent); } else {alias_group_changed(____alias_loc_id_9); call_lbl_9: calling((void*)&uts_numChildren_bin, 9, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(parent); } ;
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(2, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL)); call_lbl_11: calling((void*)&uts_error, 11, 0UL, 1, (size_t)(11896266734391820034UL)); default:
+    alias_group_changed(____alias_loc_id_5); call_lbl_11: calling((void*)&uts_error, 11, 0UL, 1, (size_t)(11896266734391820034UL)); default:
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       uts_error("parTreeSearch(): Unknown tree type");
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3027,37 +3058,37 @@ int uts_numChildren(Node *parent) {new_stack((void *)(&uts_numChildren), "uts_nu
   }
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(3, (size_t)(11896266734391819346UL), (size_t)(11896266734391819347UL), (size_t)(11896266734391819348UL)); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren); return numChildren;
+  rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_21); return numChildren;
 # 269 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 270 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 272 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-int uts_childType(Node *parent) {new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(11896266734391819462UL)); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } default: { chimes_error(); } } }
+int uts_childType(Node *parent) {new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(11896266734391819462UL)); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
 # 273 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   switch (type) {
 # 274 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case BIN:
 # 275 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391819434UL)); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType); return BIN;
+      rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22); return BIN;
 # 276 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case GEO:
 # 277 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391819434UL)); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType); return GEO;
+      rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22); return GEO;
 # 278 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case HYBRID:
 # 279 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391819434UL)); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType); return GEO;; } else {alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391819434UL)); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType); return BIN;; } ;
+      if (parent->height < shiftDepth * gen_mx) {rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22); return GEO;; } else {rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22); return BIN;; } ;
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(1, (size_t)(11896266734391819434UL)); call_lbl_10: calling((void*)&uts_error, 10, 0UL, 1, (size_t)(11896266734391820037UL)); default:
+    alias_group_changed(____alias_loc_id_10); call_lbl_6: calling((void*)&uts_error, 6, 0UL, 1, (size_t)(11896266734391820037UL)); default:
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       uts_error("uts_get_childtype(): Unknown tree type");
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391819434UL)); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType); return -1;
+      rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22); return -1;
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391819434UL)); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType); }
+rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22); }
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 290 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3065,7 +3096,7 @@ alias_group_changed(2, (size_t)(11896266734391819433UL), (size_t)(11896266734391
 int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(11896266734391819610UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(2, (size_t)(11896266734391819463UL), (size_t)(11896266734391819464UL)); call_lbl_3: calling((void*)&impl_getName, 3, 11896266734391819476UL, 0); ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", impl_getName());
+  alias_group_changed(____alias_loc_id_11); call_lbl_3: calling((void*)&impl_getName, 3, 11896266734391819476UL, 0); ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", impl_getName());
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 295 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 296 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3114,12 +3145,12 @@ int uts_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&uts_paramsToStr)
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(4, (size_t)(11896266734391819464UL), (size_t)(11896266734391819465UL), (size_t)(11896266734391819466UL), (size_t)(11896266734391819467UL)); call_lbl_13: calling((void*)&rng_showtype, 13, 0UL, 2, (size_t)(11896266734391819610UL), (size_t)(0UL)); ind = rng_showtype(strBuf, ind);
+  alias_group_changed(____alias_loc_id_12); call_lbl_13: calling((void*)&rng_showtype, 13, 0UL, 2, (size_t)(11896266734391819610UL), (size_t)(0UL)); ind = rng_showtype(strBuf, ind);
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 325 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(1, (size_t)(11896266734391819464UL)); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr); return ind;
+  rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_23); return ind;
 # 326 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 }
 # 327 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3136,15 +3167,15 @@ void uts_printParams() {new_stack((void *)(&uts_printParams), "uts_printParams",
 # 334 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
 # 335 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(2, (size_t)(11896266734391819616UL), (size_t)(11896266734391819617UL)); call_lbl_2: calling((void*)&uts_paramsToStr, 2, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); ind = uts_paramsToStr(strBuf, ind);
+    alias_group_changed(____alias_loc_id_13); call_lbl_2: calling((void*)&uts_paramsToStr, 2, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); ind = uts_paramsToStr(strBuf, ind);
 # 336 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(1, (size_t)(11896266734391819617UL)); call_lbl_4: calling((void*)&impl_paramsToStr, 4, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); ind = impl_paramsToStr(strBuf, ind);
+    alias_group_changed(____alias_loc_id_14); call_lbl_4: calling((void*)&impl_paramsToStr, 4, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); ind = impl_paramsToStr(strBuf, ind);
 # 337 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     printf("%s\n",strBuf);
 # 338 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 339 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-alias_group_changed(2, (size_t)(11896266734391819616UL), (size_t)(11896266734391819617UL)); rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams); }
+rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_24); }
 # 340 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 341 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(11896266734391819884UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
@@ -3155,12 +3186,12 @@ void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams
 # 344 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
 # 345 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    if (argv[i][0] == '-' && argv[i][1] == 'h') {{ alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_2: calling((void*)&uts_helpMessage, 2, 0UL, 0); uts_helpMessage(); call_lbl_3: calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(0); }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i + 1) { err = i; break; }
+    if (argv[i][0] == '-' && argv[i][1] == 'h') {{ alias_group_changed(____alias_loc_id_15); call_lbl_2: calling((void*)&uts_helpMessage, 2, 0UL, 0); uts_helpMessage(); call_lbl_3: calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(0); }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i + 1) { err = i; break; }
 # 352 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 353 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 354 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 355 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_6: calling((void*)&impl_parseParam, 6, 0UL, 2, (size_t)(11896266734391819886UL), (size_t)(11896266734391819886UL)); if (!impl_parseParam(argv[i], argv[i+1])) {
+    alias_group_changed(____alias_loc_id_17); call_lbl_6: calling((void*)&impl_parseParam, 6, 0UL, 2, (size_t)(11896266734391819886UL), (size_t)(11896266734391819886UL)); if (!impl_parseParam(argv[i], argv[i+1])) {
 # 356 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       i += 2;
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3244,11 +3275,11 @@ void uts_parseParams(int argc, char *argv[]){new_stack((void *)(&uts_parseParams
 # 399 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     printf("Try -h for help.\n");
 # 400 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); call_lbl_22: calling((void*)&impl_abort, 22, 0UL, 1, (size_t)(0UL)); impl_abort(4);
+    alias_group_changed(____alias_loc_id_16); call_lbl_22: calling((void*)&impl_abort, 22, 0UL, 1, (size_t)(0UL)); impl_abort(4);
 # 401 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 402 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-alias_group_changed(6, (size_t)(11896266734391819640UL), (size_t)(11896266734391819641UL), (size_t)(11896266734391819642UL), (size_t)(11896266734391819643UL), (size_t)(11896266734391820020UL), (size_t)(11896266734391820021UL)); rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams); }
+rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_25); }
 # 403 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 404 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 void uts_helpMessage() {new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } }
@@ -3293,7 +3324,7 @@ void uts_helpMessage() {new_stack((void *)(&uts_helpMessage), "uts_helpMessage",
 # 425 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("\n");
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage); }
+rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0); }
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3322,11 +3353,11 @@ void uts_showStats(int nPes, int chunkSize, double walltime, int nNodes, int nLe
 # 442 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 443 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-alias_group_changed(6, (size_t)(11896266734391819934UL), (size_t)(11896266734391819935UL), (size_t)(11896266734391819936UL), (size_t)(11896266734391819937UL), (size_t)(11896266734391819938UL), (size_t)(11896266734391819939UL)); rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats); }
+rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_26); }
 
 
 static int module_init() {
-    init_module(11896266734391819126UL, 11, 13, 19, 5, 11896266734391819126UL + 308UL, 11896266734391819126UL + 336UL, 11896266734391819126UL + 888UL, 11896266734391819126UL + 363UL, 11896266734391819126UL + 47UL, 11896266734391819126UL + 78UL, 11896266734391819126UL + 337UL, 11896266734391819126UL + 484UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 760UL, 11896266734391819126UL + 893UL, 11896266734391819126UL + 401UL, 11896266734391819126UL + 1UL, 11896266734391819126UL + 8UL, 11896266734391819126UL + 109UL, 11896266734391819126UL + 214UL, 11896266734391819126UL + 82UL, 11896266734391819126UL + 107UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 220UL, 11896266734391819126UL + 305UL, "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec), "uts_geoshape_e", 0, "uts_trees_e", 0, "uts_numChildren_bin", 2, "rng_rand", "rng_toProb", "uts_childType", 1, "uts_error", "uts_error", 1, "impl_abort", "uts_showStats", 0, "rng_toProb", 0, "uts_initRoot", 1, "rng_init", "uts_numChildren", 3, "uts_error", "uts_numChildren_bin", "uts_numChildren_geo", "uts_parseParams", 3, "impl_abort", "impl_parseParam", "uts_helpMessage", "uts_wctime", 0, "uts_printParams", 2, "impl_paramsToStr", "uts_paramsToStr", "uts_helpMessage", 2, "impl_getName", "impl_helpMessage", "uts_paramsToStr", 2, "impl_getName", "rng_showtype", "uts_numChildren_geo", 3, "rng_rand", "rng_toProb", "sin", "uts_wctime|tv|0", 1, "uts_wctime", "uts_initRoot|root|0", 1, "rng_init", "uts_initRoot|type|0", 1, "rng_init", "uts_numChildren_geo|parent|0", 2, "sin", "rng_rand", "uts_numChildren_geo|b_i|0", 2, "sin", "rng_rand", "uts_numChildren_geo|p|0", 1, "rng_rand", "uts_numChildren|parent|0", 3, "uts_numChildren_geo", "uts_numChildren_bin", "uts_error", "uts_numChildren|numChildren|0", 3, "uts_numChildren_geo", "uts_numChildren_bin", "uts_error", "uts_paramsToStr|strBuf|0", 2, "rng_showtype", "impl_getName", "uts_paramsToStr|ind|0", 2, "rng_showtype", "impl_getName", "uts_paramsToStr|q|0", 1, "rng_showtype", "uts_paramsToStr|m|0", 1, "rng_showtype", "uts_paramsToStr|es|0", 1, "rng_showtype", "uts_printParams|strBuf|0", 1, "uts_printParams", "uts_printParams|ind|0", 2, "uts_paramsToStr", "impl_paramsToStr", "uts_parseParams|argc|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", "uts_parseParams|argv|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", "uts_parseParams|i|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", "uts_parseParams|err|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort");
+    init_module(11896266734391819126UL, 11, 13, 19, 18, 5, 11896266734391819126UL + 308UL, 11896266734391819126UL + 336UL, 11896266734391819126UL + 888UL, 11896266734391819126UL + 363UL, 11896266734391819126UL + 47UL, 11896266734391819126UL + 78UL, 11896266734391819126UL + 337UL, 11896266734391819126UL + 484UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 760UL, 11896266734391819126UL + 893UL, 11896266734391819126UL + 401UL, 11896266734391819126UL + 1UL, 11896266734391819126UL + 8UL, 11896266734391819126UL + 109UL, 11896266734391819126UL + 214UL, 11896266734391819126UL + 82UL, 11896266734391819126UL + 107UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 758UL, 11896266734391819126UL + 220UL, 11896266734391819126UL + 305UL, "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec), "uts_geoshape_e", 0, "uts_trees_e", 0, "uts_numChildren_bin", 2, "rng_rand", "rng_toProb", "uts_childType", 1, "uts_error", "uts_error", 1, "impl_abort", "uts_showStats", 0, "rng_toProb", 0, "uts_initRoot", 1, "rng_init", "uts_numChildren", 3, "uts_error", "uts_numChildren_bin", "uts_numChildren_geo", "uts_parseParams", 3, "impl_abort", "impl_parseParam", "uts_helpMessage", "uts_wctime", 0, "uts_printParams", 2, "impl_paramsToStr", "uts_paramsToStr", "uts_helpMessage", 2, "impl_getName", "impl_helpMessage", "uts_paramsToStr", 2, "impl_getName", "rng_showtype", "uts_numChildren_geo", 3, "rng_rand", "rng_toProb", "sin", "uts_wctime|tv|0", 1, "uts_wctime", "uts_initRoot|root|0", 1, "rng_init", "uts_initRoot|type|0", 1, "rng_init", "uts_numChildren_geo|parent|0", 2, "sin", "rng_rand", "uts_numChildren_geo|b_i|0", 2, "sin", "rng_rand", "uts_numChildren_geo|p|0", 1, "rng_rand", "uts_numChildren|parent|0", 3, "uts_numChildren_geo", "uts_numChildren_bin", "uts_error", "uts_numChildren|numChildren|0", 3, "uts_numChildren_geo", "uts_numChildren_bin", "uts_error", "uts_paramsToStr|strBuf|0", 2, "rng_showtype", "impl_getName", "uts_paramsToStr|ind|0", 2, "rng_showtype", "impl_getName", "uts_paramsToStr|q|0", 1, "rng_showtype", "uts_paramsToStr|m|0", 1, "rng_showtype", "uts_paramsToStr|es|0", 1, "rng_showtype", "uts_printParams|strBuf|0", 1, "uts_printParams", "uts_printParams|ind|0", 2, "uts_paramsToStr", "impl_paramsToStr", "uts_parseParams|argc|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", "uts_parseParams|argv|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", "uts_parseParams|i|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", "uts_parseParams|err|0", 3, "uts_helpMessage", "impl_parseParam", "impl_abort", &____alias_loc_id_0, (unsigned)1, 11896266734391819126UL + 1UL, &____alias_loc_id_1, (unsigned)3, 11896266734391819126UL + 47UL, 11896266734391819126UL + 48UL, 11896266734391819126UL + 78UL, &____alias_loc_id_2, (unsigned)1, 11896266734391819126UL + 82UL, &____alias_loc_id_3, (unsigned)4, 11896266734391819126UL + 109UL, 11896266734391819126UL + 110UL, 11896266734391819126UL + 111UL, 11896266734391819126UL + 114UL, &____alias_loc_id_4, (unsigned)4, 11896266734391819126UL + 109UL, 11896266734391819126UL + 110UL, 11896266734391819126UL + 111UL, 11896266734391819126UL + 114UL, &____alias_loc_id_5, (unsigned)2, 11896266734391819126UL + 220UL, 11896266734391819126UL + 221UL, &____alias_loc_id_6, (unsigned)2, 11896266734391819126UL + 220UL, 11896266734391819126UL + 221UL, &____alias_loc_id_7, (unsigned)2, 11896266734391819126UL + 220UL, 11896266734391819126UL + 221UL, &____alias_loc_id_8, (unsigned)2, 11896266734391819126UL + 220UL, 11896266734391819126UL + 221UL, &____alias_loc_id_9, (unsigned)2, 11896266734391819126UL + 220UL, 11896266734391819126UL + 221UL, &____alias_loc_id_10, (unsigned)1, 11896266734391819126UL + 308UL, &____alias_loc_id_11, (unsigned)2, 11896266734391819126UL + 337UL, 11896266734391819126UL + 338UL, &____alias_loc_id_12, (unsigned)4, 11896266734391819126UL + 338UL, 11896266734391819126UL + 339UL, 11896266734391819126UL + 340UL, 11896266734391819126UL + 341UL, &____alias_loc_id_13, (unsigned)2, 11896266734391819126UL + 490UL, 11896266734391819126UL + 491UL, &____alias_loc_id_14, (unsigned)1, 11896266734391819126UL + 491UL, &____alias_loc_id_15, (unsigned)6, 11896266734391819126UL + 514UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 516UL, 11896266734391819126UL + 517UL, 11896266734391819126UL + 894UL, 11896266734391819126UL + 895UL, &____alias_loc_id_16, (unsigned)6, 11896266734391819126UL + 514UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 516UL, 11896266734391819126UL + 517UL, 11896266734391819126UL + 894UL, 11896266734391819126UL + 895UL, &____alias_loc_id_17, (unsigned)6, 11896266734391819126UL + 514UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 516UL, 11896266734391819126UL + 517UL, 11896266734391819126UL + 894UL, 11896266734391819126UL + 895UL, &____alias_loc_id_18, (unsigned)1, 11896266734391819126UL + 27UL, &____alias_loc_id_19, (unsigned)2, 11896266734391819126UL + 83UL, 11896266734391819126UL + 84UL, &____alias_loc_id_20, (unsigned)3, 11896266734391819126UL + 112UL, 11896266734391819126UL + 113UL, 11896266734391819126UL + 115UL, &____alias_loc_id_21, (unsigned)3, 11896266734391819126UL + 220UL, 11896266734391819126UL + 221UL, 11896266734391819126UL + 222UL, &____alias_loc_id_22, (unsigned)2, 11896266734391819126UL + 307UL, 11896266734391819126UL + 308UL, &____alias_loc_id_23, (unsigned)1, 11896266734391819126UL + 338UL, &____alias_loc_id_24, (unsigned)2, 11896266734391819126UL + 490UL, 11896266734391819126UL + 491UL, &____alias_loc_id_25, (unsigned)6, 11896266734391819126UL + 514UL, 11896266734391819126UL + 515UL, 11896266734391819126UL + 516UL, 11896266734391819126UL + 517UL, 11896266734391819126UL + 894UL, 11896266734391819126UL + 895UL, &____alias_loc_id_26, (unsigned)6, 11896266734391819126UL + 808UL, 11896266734391819126UL + 809UL, 11896266734391819126UL + 810UL, 11896266734391819126UL + 811UL, 11896266734391819126UL + 812UL, 11896266734391819126UL + 813UL);
     register_global_var("global|uts_trees_str", "[3 x i8*]", (void *)(&uts_trees_str), 24, 0, 0, 0);
     register_global_var("global|uts_geoshapes_str", "[4 x i8*]", (void *)(&uts_geoshapes_str), 32, 0, 0, 0);
     register_global_var("global|type", "i32", (void *)(&type), 4, 0, 0, 0);

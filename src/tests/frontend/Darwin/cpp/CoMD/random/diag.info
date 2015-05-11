@@ -1,8 +1,8 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 32 4 alias_group_changed(4, (size_t)(13664289541852258049UL), (size_t)(13664289541852258050UL), (size_t)(13664289541852258051UL), (size_t)(13664289541852258052UL)); rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 32 4 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 1 new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(13664289541852258059UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 49 4 alias_group_changed(2, (size_t)(13664289541852258098UL), (size_t)(13664289541852258115UL)); rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 49 4 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 1 new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(13664289541852258115UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 75 4 alias_group_changed(6, (size_t)(13664289541852258118UL), (size_t)(13664289541852258119UL), (size_t)(13664289541852258120UL), (size_t)(13664289541852258121UL), (size_t)(13664289541852258122UL), (size_t)(13664289541852258123UL)); rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 75 4 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 67 1 new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 24 4 real_t rsq; real_t v1; real_t v2; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 24 20 

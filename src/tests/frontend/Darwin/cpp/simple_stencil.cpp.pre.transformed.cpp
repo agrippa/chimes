@@ -12,6 +12,10 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "simple_stencil.cpp.pre.transformed.cpp" 2
+
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -28,55 +32,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -518,7 +473,58 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -1760,7 +1766,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
  next = tmp;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983328UL), (size_t)(7654350934130983345UL)); call_lbl_7: calling((void*)&checkpoint, 7, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_0); call_lbl_7: calling((void*)&checkpoint, 7, 0UL, 0); checkpoint();
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1780,13 +1786,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  free_wrapper(next, 7654350934130983345UL);
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- alias_group_changed(11, (size_t)(7654350934130983319UL), (size_t)(7654350934130983320UL), (size_t)(7654350934130983321UL), (size_t)(7654350934130983322UL), (size_t)(7654350934130983323UL), (size_t)(7654350934130983324UL), (size_t)(7654350934130983325UL), (size_t)(7654350934130983326UL), (size_t)(7654350934130983327UL), (size_t)(7654350934130983329UL), (size_t)(7654350934130983345UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1); return 0;
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 }
 
 
 static int module_init() {
-    init_module(7654350934130983318UL, 5, 1, 0, 3, 7654350934130983318UL + 9UL, 7654350934130983318UL + 27UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 27UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 151UL, 7654350934130983318UL + 11UL, 7654350934130983318UL + 129UL, 7654350934130983318UL + 10UL, 7654350934130983318UL + 27UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "main", 1, "checkpoint");
+    init_module(7654350934130983318UL, 5, 1, 0, 1, 3, 7654350934130983318UL + 9UL, 7654350934130983318UL + 27UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 27UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 151UL, 7654350934130983318UL + 11UL, 7654350934130983318UL + 129UL, 7654350934130983318UL + 10UL, 7654350934130983318UL + 27UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)11, 7654350934130983318UL + 1UL, 7654350934130983318UL + 2UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 4UL, 7654350934130983318UL + 5UL, 7654350934130983318UL + 6UL, 7654350934130983318UL + 7UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 9UL, 7654350934130983318UL + 10UL, 7654350934130983318UL + 27UL, &____alias_loc_id_1, (unsigned)11, 7654350934130983318UL + 1UL, 7654350934130983318UL + 2UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 4UL, 7654350934130983318UL + 5UL, 7654350934130983318UL + 6UL, 7654350934130983318UL + 7UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 9UL, 7654350934130983318UL + 11UL, 7654350934130983318UL + 27UL);
     return 0;
 }
 

@@ -32,6 +32,25 @@ static int ____must_manage_parse_config = 2;
 static int ____must_manage_usage = 2;
 static int ____must_manage_rot_y = 2;
 static int ____must_manage_rot_x = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
+static unsigned ____alias_loc_id_13;
+static unsigned ____alias_loc_id_14;
+static unsigned ____alias_loc_id_15;
+static unsigned ____alias_loc_id_16;
+static unsigned ____alias_loc_id_17;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -48,55 +67,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -538,7 +508,58 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2827,19 +2848,19 @@ void init(sphere *s, double cx, double cy, double cz, double radius, double clR,
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  s->clB = clB;
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(9, (size_t)(519228149530227324UL), (size_t)(519228149530227325UL), (size_t)(519228149530227326UL), (size_t)(519228149530227327UL), (size_t)(519228149530227328UL), (size_t)(519228149530227329UL), (size_t)(519228149530227330UL), (size_t)(519228149530227331UL), (size_t)(519228149530227360UL)); rm_stack(false, 0UL, "init", &____must_manage_init); }
+rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_5); }
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 double get_coord(double i1, double i2, double w1, double w2, double p) {new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(5, (size_t)(519228149530227404UL), (size_t)(519228149530227405UL), (size_t)(519228149530227406UL), (size_t)(519228149530227407UL), (size_t)(519228149530227408UL)); rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord); return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
+ rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_6); return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 }
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 double modv(double vx, double vy, double vz) {new_stack((void *)(&modv), "modv", &____must_manage_modv, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(3, (size_t)(519228149530227438UL), (size_t)(519228149530227439UL), (size_t)(519228149530227440UL)); rm_stack(false, 0UL, "modv", &____must_manage_modv); return sqrt(vx * vx + vy * vy + vz * vz);
+ rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_7); return sqrt(vx * vx + vy * vy + vz * vz);
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 }
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2852,7 +2873,7 @@ void move(sphere *self, double vx, double vy, double vz) {new_stack((void *)(&mo
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  self->cz += vz;
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(5, (size_t)(519228149530227464UL), (size_t)(519228149530227465UL), (size_t)(519228149530227466UL), (size_t)(519228149530227467UL), (size_t)(519228149530227495UL)); rm_stack(false, 0UL, "move", &____must_manage_move); }
+rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_8); }
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 void move_to(sphere *self, double vx, double vy, double vz) {new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(519228149530227524UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2863,33 +2884,33 @@ void move_to(sphere *self, double vx, double vy, double vz) {new_stack((void *)(
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  self->cz = vz;
 # 66 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(5, (size_t)(519228149530227499UL), (size_t)(519228149530227500UL), (size_t)(519228149530227501UL), (size_t)(519228149530227502UL), (size_t)(519228149530227524UL)); rm_stack(false, 0UL, "move_to", &____must_manage_move_to); }
+rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_9); }
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 void rot_x(sphere *self, double angle) {new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 2, (size_t)(519228149530227575UL), (size_t)(0UL), "rot_x|self|0", &____must_checkpoint_rot_x_self_0, "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_x|angle|0", &____must_checkpoint_rot_x_angle_0, "double", (void *)(&angle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(2, (size_t)(519228149530227528UL), (size_t)(519228149530227529UL)); lbl_0: double y; if (____must_checkpoint_rot_x_y_0 != 0) { register_stack_var("rot_x|y|0", &____must_checkpoint_rot_x_y_0, "double", (void *)(&y), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
+ alias_group_changed(____alias_loc_id_0); lbl_0: double y; if (____must_checkpoint_rot_x_y_0 != 0) { register_stack_var("rot_x|y|0", &____must_checkpoint_rot_x_y_0, "double", (void *)(&y), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227530UL)); double z; call_lbl_5: calling((void*)&sin, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&cos, 6, 0UL, 1, (size_t)(0UL)); z = (self->cy * sin(angle) + self->cz * cos(angle)) ;
+ alias_group_changed(____alias_loc_id_1); double z; call_lbl_5: calling((void*)&sin, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&cos, 6, 0UL, 1, (size_t)(0UL)); z = (self->cy * sin(angle) + self->cz * cos(angle)) ;
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  self->cy = y;
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  self->cz = z;
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(2, (size_t)(519228149530227531UL), (size_t)(519228149530227575UL)); rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x); }
+rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_10); }
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 void rot_y(sphere *self, double angle) {new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 2, (size_t)(519228149530227626UL), (size_t)(0UL), "rot_y|self|0", &____must_checkpoint_rot_y_self_0, "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_y|angle|0", &____must_checkpoint_rot_y_angle_0, "double", (void *)(&angle), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(2, (size_t)(519228149530227579UL), (size_t)(519228149530227580UL)); lbl_0: double x; if (____must_checkpoint_rot_y_x_0 != 0) { register_stack_var("rot_y|x|0", &____must_checkpoint_rot_y_x_0, "double", (void *)(&x), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
+ alias_group_changed(____alias_loc_id_2); lbl_0: double x; if (____must_checkpoint_rot_y_x_0 != 0) { register_stack_var("rot_y|x|0", &____must_checkpoint_rot_y_x_0, "double", (void *)(&x), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&cos, 2, 0UL, 1, (size_t)(0UL)); call_lbl_3: calling((void*)&sin, 3, 0UL, 1, (size_t)(0UL)); x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(1, (size_t)(519228149530227581UL)); double z; call_lbl_5: calling((void*)&sin, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&cos, 6, 0UL, 1, (size_t)(0UL)); z = (self->cx * sin(angle) + self->cz * cos(angle)) ;
+ alias_group_changed(____alias_loc_id_3); double z; call_lbl_5: calling((void*)&sin, 5, 0UL, 1, (size_t)(0UL)); call_lbl_6: calling((void*)&cos, 6, 0UL, 1, (size_t)(0UL)); z = (self->cx * sin(angle) + self->cz * cos(angle)) ;
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  self->cx = x;
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  self->cz = z;
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(2, (size_t)(519228149530227582UL), (size_t)(519228149530227626UL)); rm_stack(false, 0UL, "rot_y", &____must_manage_rot_y); }
+rm_stack(false, 0UL, "rot_y", &____must_manage_rot_y, ____alias_loc_id_11); }
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 double get_sphere_intersec(double cx, double cy, double cz, double radius,
@@ -2918,7 +2939,7 @@ double get_sphere_intersec(double cx, double cy, double cz, double radius,
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  }
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(17, (size_t)(519228149530227628UL), (size_t)(519228149530227629UL), (size_t)(519228149530227630UL), (size_t)(519228149530227631UL), (size_t)(519228149530227632UL), (size_t)(519228149530227633UL), (size_t)(519228149530227634UL), (size_t)(519228149530227635UL), (size_t)(519228149530227636UL), (size_t)(519228149530227637UL), (size_t)(519228149530227638UL), (size_t)(519228149530227639UL), (size_t)(519228149530227640UL), (size_t)(519228149530227641UL), (size_t)(519228149530227642UL), (size_t)(519228149530227643UL), (size_t)(519228149530227644UL)); rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec); return t;
+ rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_12); return t;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 }
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2931,7 +2952,7 @@ double get_cos_angle_v1v2(double v1x, double v1y, double v1z, double v2x,
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  double b; call_lbl_2: calling((void*)&modv, 2, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); b = (modv(v2x, v2y, v2z)) ;
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(8, (size_t)(519228149530227806UL), (size_t)(519228149530227807UL), (size_t)(519228149530227808UL), (size_t)(519228149530227809UL), (size_t)(519228149530227810UL), (size_t)(519228149530227811UL), (size_t)(519228149530227812UL), (size_t)(519228149530227813UL)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
+ rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_13); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 }
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -2944,7 +2965,7 @@ void usage(char **argv) {new_stack((void *)(&usage), "usage", &____must_manage_u
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  exit(1);
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(1, (size_t)(519228149530227860UL)); rm_stack(false, 0UL, "usage", &____must_manage_usage); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_14); }
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 void parse_three_doubles(char *def, double *a, double *b, double *c) {new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(519228149530227924UL), (size_t)(519228149530227926UL), (size_t)(519228149530227931UL), (size_t)(519228149530227936UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2969,7 +2990,7 @@ void parse_three_doubles(char *def, double *a, double *b, double *c) {new_stack(
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  *c = atof(second_comma + 1);
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(11, (size_t)(519228149530227875UL), (size_t)(519228149530227876UL), (size_t)(519228149530227877UL), (size_t)(519228149530227878UL), (size_t)(519228149530227879UL), (size_t)(519228149530227880UL), (size_t)(519228149530227905UL), (size_t)(519228149530227907UL), (size_t)(519228149530227926UL), (size_t)(519228149530227931UL), (size_t)(519228149530227936UL)); rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles); }
+rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_15); }
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 void parse_config(int argc, char **argv, config *conf) {new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(519228149530228232UL), (size_t)(519228149530228171UL)); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(28): { goto call_lbl_28; } case(37): { goto call_lbl_37; } default: { chimes_error(); } } }
@@ -3124,7 +3145,7 @@ void parse_config(int argc, char **argv, config *conf) {new_stack((void *)(&pars
 # 206 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  }
 # 207 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
-alias_group_changed(19, (size_t)(519228149530227946UL), (size_t)(519228149530227947UL), (size_t)(519228149530227948UL), (size_t)(519228149530227949UL), (size_t)(519228149530227950UL), (size_t)(519228149530227951UL), (size_t)(519228149530227952UL), (size_t)(519228149530227953UL), (size_t)(519228149530227954UL), (size_t)(519228149530227955UL), (size_t)(519228149530227956UL), (size_t)(519228149530228080UL), (size_t)(519228149530228082UL), (size_t)(519228149530228098UL), (size_t)(519228149530228114UL), (size_t)(519228149530228130UL), (size_t)(519228149530228146UL), (size_t)(519228149530228171UL), (size_t)(519228149530228726UL)); rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config); }
+rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_16); }
 # 208 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 209 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(519228149530228714UL)); if (____chimes_replaying) { goto lbl_0; }
@@ -3260,7 +3281,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 287 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 288 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 289 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(31, (size_t)(519228149530228240UL), (size_t)(519228149530228241UL), (size_t)(519228149530228242UL), (size_t)(519228149530228244UL), (size_t)(519228149530228245UL), (size_t)(519228149530228246UL), (size_t)(519228149530228247UL), (size_t)(519228149530228248UL), (size_t)(519228149530228249UL), (size_t)(519228149530228250UL), (size_t)(519228149530228251UL), (size_t)(519228149530228252UL), (size_t)(519228149530228253UL), (size_t)(519228149530228254UL), (size_t)(519228149530228255UL), (size_t)(519228149530228256UL), (size_t)(519228149530228257UL), (size_t)(519228149530228258UL), (size_t)(519228149530228259UL), (size_t)(519228149530228260UL), (size_t)(519228149530228261UL), (size_t)(519228149530228262UL), (size_t)(519228149530228263UL), (size_t)(519228149530228264UL), (size_t)(519228149530228265UL), (size_t)(519228149530228266UL), (size_t)(519228149530228267UL), (size_t)(519228149530228268UL), (size_t)(519228149530228269UL), (size_t)(519228149530228270UL), (size_t)(519228149530228289UL)); call_lbl_13: calling((void*)&checkpoint, 13, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_4); call_lbl_13: calling((void*)&checkpoint, 13, 0UL, 0); checkpoint();
 # 290 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 291 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
@@ -3271,13 +3292,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 295 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
  free_wrapper(screen, 519228149530228289UL);
 # 296 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
- alias_group_changed(6, (size_t)(519228149530228240UL), (size_t)(519228149530228241UL), (size_t)(519228149530228242UL), (size_t)(519228149530228244UL), (size_t)(519228149530228245UL), (size_t)(519228149530228246UL)); rm_stack(false, 0UL, "main", (int *)0x0); return (0);
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_17); return (0);
 # 297 "/Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c"
 }
 
 
 static int module_init() {
-    init_module(519228149530227323UL, 31, 13, 7, 3, 519228149530227323UL + 627UL, 519228149530227323UL + 871UL, 519228149530227323UL + 625UL, 519228149530227323UL + 848UL, 519228149530227323UL + 624UL, 519228149530227323UL + 909UL, 519228149530227323UL + 555UL, 519228149530227323UL + 613UL, 519228149530227323UL + 554UL, 519228149530227323UL + 608UL, 519228149530227323UL + 557UL, 519228149530227323UL + 584UL, 519228149530227323UL + 628UL, 519228149530227323UL + 757UL, 519228149530227323UL + 553UL, 519228149530227323UL + 603UL, 519228149530227323UL + 552UL, 519228149530227323UL + 601UL, 519228149530227323UL + 633UL, 519228149530227323UL + 823UL, 519228149530227323UL + 176UL, 519228149530227323UL + 201UL, 519228149530227323UL + 256UL, 519228149530227323UL + 303UL, 519228149530227323UL + 1UL, 519228149530227323UL + 37UL, 519228149530227323UL + 919UL, 519228149530227323UL + 1391UL, 519228149530227323UL + 1398UL, 519228149530227323UL + 898UL, 519228149530227323UL + 933UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 548UL, 519228149530227323UL + 543UL, 519228149530227323UL + 629UL, 519228149530227323UL + 759UL, 519228149530227323UL + 935UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 630UL, 519228149530227323UL + 775UL, 519228149530227323UL + 631UL, 519228149530227323UL + 791UL, 519228149530227323UL + 632UL, 519228149530227323UL + 807UL, 519228149530227323UL + 556UL, 519228149530227323UL + 582UL, 519228149530227323UL + 205UL, 519228149530227323UL + 252UL, 519228149530227323UL + 141UL, 519228149530227323UL + 172UL, 519228149530227323UL + 943UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 848UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 537UL, 519228149530227323UL + 548UL, 519228149530227323UL + 1405UL, 519228149530227323UL + 871UL, 519228149530227323UL + 920UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 921UL, 519228149530227323UL + 966UL, "_config", 17, "double", (int)__builtin_offsetof(struct _config, px), "double", (int)__builtin_offsetof(struct _config, py), "double", (int)__builtin_offsetof(struct _config, pz), "double", (int)__builtin_offsetof(struct _config, lx), "double", (int)__builtin_offsetof(struct _config, ly), "double", (int)__builtin_offsetof(struct _config, lz), "double", (int)__builtin_offsetof(struct _config, dx), "double", (int)__builtin_offsetof(struct _config, dy), "double", (int)__builtin_offsetof(struct _config, dz), "double", (int)__builtin_offsetof(struct _config, svx), "double", (int)__builtin_offsetof(struct _config, svy), "double", (int)__builtin_offsetof(struct _config, svz), "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof(struct _config, spheres), "int", (int)__builtin_offsetof(struct _config, nspheres), "int", (int)__builtin_offsetof(struct _config, nt), "_rgb", 3, "double", (int)__builtin_offsetof(struct _rgb, r), "double", (int)__builtin_offsetof(struct _rgb, g), "double", (int)__builtin_offsetof(struct _rgb, b), "_sphere", 7, "double", (int)__builtin_offsetof(struct _sphere, cx), "double", (int)__builtin_offsetof(struct _sphere, cy), "double", (int)__builtin_offsetof(struct _sphere, cz), "double", (int)__builtin_offsetof(struct _sphere, radius), "double", (int)__builtin_offsetof(struct _sphere, clR), "double", (int)__builtin_offsetof(struct _sphere, clG), "double", (int)__builtin_offsetof(struct _sphere, clB), "get_cos_angle_v1v2", 1, "modv", "main", 7, "checkpoint", "get_coord", "get_cos_angle_v1v2", "get_sphere_intersec", "modv", "move", "parse_config", "modv", 0, "move", 0, "get_sphere_intersec", 0, "move_to", 0, "get_coord", 0, "parse_three_doubles", 0, "init", 0, "parse_config", 3, "init", "parse_three_doubles", "usage", "usage", 0, "rot_y", 2, "cos", "sin", "rot_x", 2, "cos", "sin", "rot_x|self|0", 2, "sin", "cos", "rot_x|angle|0", 2, "sin", "cos", "rot_x|y|0", 2, "sin", "cos", "rot_y|self|0", 2, "sin", "cos", "rot_y|angle|0", 2, "sin", "cos", "rot_y|x|0", 2, "sin", "cos", "main|conf|0", 1, "main");
+    init_module(519228149530227323UL, 31, 13, 7, 5, 3, 519228149530227323UL + 627UL, 519228149530227323UL + 871UL, 519228149530227323UL + 625UL, 519228149530227323UL + 848UL, 519228149530227323UL + 624UL, 519228149530227323UL + 909UL, 519228149530227323UL + 555UL, 519228149530227323UL + 613UL, 519228149530227323UL + 554UL, 519228149530227323UL + 608UL, 519228149530227323UL + 557UL, 519228149530227323UL + 584UL, 519228149530227323UL + 628UL, 519228149530227323UL + 757UL, 519228149530227323UL + 553UL, 519228149530227323UL + 603UL, 519228149530227323UL + 552UL, 519228149530227323UL + 601UL, 519228149530227323UL + 633UL, 519228149530227323UL + 823UL, 519228149530227323UL + 176UL, 519228149530227323UL + 201UL, 519228149530227323UL + 256UL, 519228149530227323UL + 303UL, 519228149530227323UL + 1UL, 519228149530227323UL + 37UL, 519228149530227323UL + 919UL, 519228149530227323UL + 1391UL, 519228149530227323UL + 1398UL, 519228149530227323UL + 898UL, 519228149530227323UL + 933UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 548UL, 519228149530227323UL + 543UL, 519228149530227323UL + 629UL, 519228149530227323UL + 759UL, 519228149530227323UL + 935UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 630UL, 519228149530227323UL + 775UL, 519228149530227323UL + 631UL, 519228149530227323UL + 791UL, 519228149530227323UL + 632UL, 519228149530227323UL + 807UL, 519228149530227323UL + 556UL, 519228149530227323UL + 582UL, 519228149530227323UL + 205UL, 519228149530227323UL + 252UL, 519228149530227323UL + 141UL, 519228149530227323UL + 172UL, 519228149530227323UL + 943UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 848UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 537UL, 519228149530227323UL + 548UL, 519228149530227323UL + 1405UL, 519228149530227323UL + 871UL, 519228149530227323UL + 920UL, 519228149530227323UL + 1202UL, 519228149530227323UL + 921UL, 519228149530227323UL + 966UL, "_config", 17, "double", (int)__builtin_offsetof(struct _config, px), "double", (int)__builtin_offsetof(struct _config, py), "double", (int)__builtin_offsetof(struct _config, pz), "double", (int)__builtin_offsetof(struct _config, lx), "double", (int)__builtin_offsetof(struct _config, ly), "double", (int)__builtin_offsetof(struct _config, lz), "double", (int)__builtin_offsetof(struct _config, dx), "double", (int)__builtin_offsetof(struct _config, dy), "double", (int)__builtin_offsetof(struct _config, dz), "double", (int)__builtin_offsetof(struct _config, svx), "double", (int)__builtin_offsetof(struct _config, svy), "double", (int)__builtin_offsetof(struct _config, svz), "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof(struct _config, spheres), "int", (int)__builtin_offsetof(struct _config, nspheres), "int", (int)__builtin_offsetof(struct _config, nt), "_rgb", 3, "double", (int)__builtin_offsetof(struct _rgb, r), "double", (int)__builtin_offsetof(struct _rgb, g), "double", (int)__builtin_offsetof(struct _rgb, b), "_sphere", 7, "double", (int)__builtin_offsetof(struct _sphere, cx), "double", (int)__builtin_offsetof(struct _sphere, cy), "double", (int)__builtin_offsetof(struct _sphere, cz), "double", (int)__builtin_offsetof(struct _sphere, radius), "double", (int)__builtin_offsetof(struct _sphere, clR), "double", (int)__builtin_offsetof(struct _sphere, clG), "double", (int)__builtin_offsetof(struct _sphere, clB), "get_cos_angle_v1v2", 1, "modv", "main", 7, "checkpoint", "get_coord", "get_cos_angle_v1v2", "get_sphere_intersec", "modv", "move", "parse_config", "modv", 0, "move", 0, "get_sphere_intersec", 0, "move_to", 0, "get_coord", 0, "parse_three_doubles", 0, "init", 0, "parse_config", 3, "init", "parse_three_doubles", "usage", "usage", 0, "rot_y", 2, "cos", "sin", "rot_x", 2, "cos", "sin", "rot_x|self|0", 2, "sin", "cos", "rot_x|angle|0", 2, "sin", "cos", "rot_x|y|0", 2, "sin", "cos", "rot_y|self|0", 2, "sin", "cos", "rot_y|angle|0", 2, "sin", "cos", "rot_y|x|0", 2, "sin", "cos", "main|conf|0", 1, "main", &____alias_loc_id_0, (unsigned)2, 519228149530227323UL + 205UL, 519228149530227323UL + 206UL, &____alias_loc_id_1, (unsigned)1, 519228149530227323UL + 207UL, &____alias_loc_id_2, (unsigned)2, 519228149530227323UL + 256UL, 519228149530227323UL + 257UL, &____alias_loc_id_3, (unsigned)1, 519228149530227323UL + 258UL, &____alias_loc_id_4, (unsigned)31, 519228149530227323UL + 917UL, 519228149530227323UL + 918UL, 519228149530227323UL + 919UL, 519228149530227323UL + 921UL, 519228149530227323UL + 922UL, 519228149530227323UL + 923UL, 519228149530227323UL + 924UL, 519228149530227323UL + 925UL, 519228149530227323UL + 926UL, 519228149530227323UL + 927UL, 519228149530227323UL + 928UL, 519228149530227323UL + 929UL, 519228149530227323UL + 930UL, 519228149530227323UL + 931UL, 519228149530227323UL + 932UL, 519228149530227323UL + 933UL, 519228149530227323UL + 934UL, 519228149530227323UL + 935UL, 519228149530227323UL + 936UL, 519228149530227323UL + 937UL, 519228149530227323UL + 938UL, 519228149530227323UL + 939UL, 519228149530227323UL + 940UL, 519228149530227323UL + 941UL, 519228149530227323UL + 942UL, 519228149530227323UL + 943UL, 519228149530227323UL + 944UL, 519228149530227323UL + 945UL, 519228149530227323UL + 946UL, 519228149530227323UL + 947UL, 519228149530227323UL + 966UL, &____alias_loc_id_5, (unsigned)9, 519228149530227323UL + 1UL, 519228149530227323UL + 2UL, 519228149530227323UL + 3UL, 519228149530227323UL + 4UL, 519228149530227323UL + 5UL, 519228149530227323UL + 6UL, 519228149530227323UL + 7UL, 519228149530227323UL + 8UL, 519228149530227323UL + 37UL, &____alias_loc_id_6, (unsigned)5, 519228149530227323UL + 81UL, 519228149530227323UL + 82UL, 519228149530227323UL + 83UL, 519228149530227323UL + 84UL, 519228149530227323UL + 85UL, &____alias_loc_id_7, (unsigned)3, 519228149530227323UL + 115UL, 519228149530227323UL + 116UL, 519228149530227323UL + 117UL, &____alias_loc_id_8, (unsigned)5, 519228149530227323UL + 141UL, 519228149530227323UL + 142UL, 519228149530227323UL + 143UL, 519228149530227323UL + 144UL, 519228149530227323UL + 172UL, &____alias_loc_id_9, (unsigned)5, 519228149530227323UL + 176UL, 519228149530227323UL + 177UL, 519228149530227323UL + 178UL, 519228149530227323UL + 179UL, 519228149530227323UL + 201UL, &____alias_loc_id_10, (unsigned)2, 519228149530227323UL + 208UL, 519228149530227323UL + 252UL, &____alias_loc_id_11, (unsigned)2, 519228149530227323UL + 259UL, 519228149530227323UL + 303UL, &____alias_loc_id_12, (unsigned)17, 519228149530227323UL + 305UL, 519228149530227323UL + 306UL, 519228149530227323UL + 307UL, 519228149530227323UL + 308UL, 519228149530227323UL + 309UL, 519228149530227323UL + 310UL, 519228149530227323UL + 311UL, 519228149530227323UL + 312UL, 519228149530227323UL + 313UL, 519228149530227323UL + 314UL, 519228149530227323UL + 315UL, 519228149530227323UL + 316UL, 519228149530227323UL + 317UL, 519228149530227323UL + 318UL, 519228149530227323UL + 319UL, 519228149530227323UL + 320UL, 519228149530227323UL + 321UL, &____alias_loc_id_13, (unsigned)8, 519228149530227323UL + 483UL, 519228149530227323UL + 484UL, 519228149530227323UL + 485UL, 519228149530227323UL + 486UL, 519228149530227323UL + 487UL, 519228149530227323UL + 488UL, 519228149530227323UL + 489UL, 519228149530227323UL + 490UL, &____alias_loc_id_14, (unsigned)1, 519228149530227323UL + 537UL, &____alias_loc_id_15, (unsigned)11, 519228149530227323UL + 552UL, 519228149530227323UL + 553UL, 519228149530227323UL + 554UL, 519228149530227323UL + 555UL, 519228149530227323UL + 556UL, 519228149530227323UL + 557UL, 519228149530227323UL + 582UL, 519228149530227323UL + 584UL, 519228149530227323UL + 603UL, 519228149530227323UL + 608UL, 519228149530227323UL + 613UL, &____alias_loc_id_16, (unsigned)19, 519228149530227323UL + 623UL, 519228149530227323UL + 624UL, 519228149530227323UL + 625UL, 519228149530227323UL + 626UL, 519228149530227323UL + 627UL, 519228149530227323UL + 628UL, 519228149530227323UL + 629UL, 519228149530227323UL + 630UL, 519228149530227323UL + 631UL, 519228149530227323UL + 632UL, 519228149530227323UL + 633UL, 519228149530227323UL + 757UL, 519228149530227323UL + 759UL, 519228149530227323UL + 775UL, 519228149530227323UL + 791UL, 519228149530227323UL + 807UL, 519228149530227323UL + 823UL, 519228149530227323UL + 848UL, 519228149530227323UL + 1403UL, &____alias_loc_id_17, (unsigned)6, 519228149530227323UL + 917UL, 519228149530227323UL + 918UL, 519228149530227323UL + 919UL, 519228149530227323UL + 921UL, 519228149530227323UL + 922UL, 519228149530227323UL + 923UL);
     return 0;
 }
 
