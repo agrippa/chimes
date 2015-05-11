@@ -1,6 +1,6 @@
 GXX=g++
 NVCC=nvcc
-GXX_FLAGS=-pg -fPIC -Wall -O3
+GXX_FLAGS=-g -fPIC -Wall -O3
 NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
     global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \
@@ -22,10 +22,11 @@ else
 endif
 
 CHIMES_LIB=libchimes.so
+CHIMES_DUMMY_LIB=libchimes_dummy.so
 CHIMES_STATIC_LIB=libchimes.a
 CHIMES_CPP_LIB=libchimes_cpp.so
 
-all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} benchmark_timers
+all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} benchmark_timers
 
 benchmark_timers: benchmark_timers.cpp
 	${GXX} ${GXX_FLAGS} -o benchmark_timers benchmark_timers.cpp -lrt
@@ -39,6 +40,9 @@ ${CHIMES_LIB}: ${SRC} libchimes_cuda.o build-xxhash
 
 ${CHIMES_STATIC_LIB}: ${OBJ} libchimes_cuda.o build-xxhash
 	ar rcs libchimes.a ${OBJ} libchimes_cuda.o
+
+${CHIMES_DUMMY_LIB}: libchimes_dummy.cpp
+	${GXX} ${GXX_FLAGS} -shared libchimes_dummy.cpp -o ${CHIMES_DUMMY_LIB}
 
 %.o: %.cpp
 	${GXX} ${GXX_FLAGS} -DCUDA_SUPPORT -I${CUDA_HOME}/include $< --compile -fPIC -o $@
