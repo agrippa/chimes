@@ -106,8 +106,6 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
     clang::SourceLocation start = d->getLocStart();
     clang::SourceLocation end = d->getLocEnd();
 
-    if (is_omp_for_iter_declaration(d)) return "";
-
     std::stringstream acc;
 
     bool anyInitLists = false;
@@ -541,6 +539,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
     for (std::vector<DeclarationInfo>::iterator i = vars_to_classify.begin(),
             e = vars_to_classify.end(); i != e; i++) {
         DeclarationInfo curr = *i;
+
+        if (is_omp_for_iter_declaration(curr.get_decl())) continue;
+
         bool hoistable = is_hoistable(curr.get_decl(), curr.get_allocs());
         OMPRegion *region;
         if (hoistable) {
