@@ -162,7 +162,7 @@ class checkpoint_ctx {
 void new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned n_args, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
+        const char *funcname, int *conditional, int ngroups, ...);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
@@ -1460,8 +1460,19 @@ static void add_return_alias(bool has_return_alias, size_t returned_alias,
     }
 }
 
+static inline void alias_group_changed_helper(int ngroups, va_list vl,
+        thread_ctx *ctx) {
+    for (int i = 0; i < ngroups; i++) {
+        size_t group = va_arg(vl, size_t);
+
+        if (valid_group(group)) {
+            ctx->add_changed_group(group);
+        }
+    }
+}
+
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional) {
+        const char *funcname, int *conditional, int ngroups, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1474,6 +1485,12 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
         fprintf(stderr, "Leaving %s, dont need to manage stack\n", funcname);
 #endif
         add_return_alias(has_return_alias, returned_alias, ctx);
+
+        va_list vl;
+        va_start(vl, ngroups);
+        alias_group_changed_helper(ngroups, vl, ctx);
+        va_end(vl);
+
         return;
     }
 #ifdef VERBOSE
@@ -1489,6 +1506,11 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
 
     ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
+
+    va_list vl;
+    va_start(vl, ngroups);
+    alias_group_changed_helper(ngroups, vl, ctx);
+    va_end(vl);
 
     if (____chimes_rerunning && ctx->get_stack_nesting() < 0) {
 #ifdef VERBOSE
@@ -1704,13 +1726,7 @@ int alias_group_changed(int ngroups, ...) {
     thread_ctx *ctx = get_my_context();
     va_list vl;
     va_start(vl, ngroups);
-    for (int i = 0; i < ngroups; i++) {
-        size_t group = va_arg(vl, size_t);
-
-        if (valid_group(group)) {
-            ctx->add_changed_group(group);
-        }
-    }
+    alias_group_changed_helper(ngroups, vl, ctx);
     va_end(vl);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
@@ -2551,7 +2567,7 @@ void checkpoint() {
         while (clock() - exit_time < my_delta) ;
     }
 
-    rm_stack(false, 0, "checkpoint", NULL);
+    rm_stack(false, 0, "checkpoint", NULL, 0);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CHECKPOINT, __start_time);
