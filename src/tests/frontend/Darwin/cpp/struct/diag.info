@@ -1,8 +1,8 @@
 InsertText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 5 alias_group_changed(6, (size_t)(1432567827179872241UL), (size_t)(1432567827179872242UL), (size_t)(1432567827179872243UL), (size_t)(1432567827179872244UL), (size_t)(1432567827179872245UL), (size_t)(1432567827179872305UL)); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 25 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 46 , 1432567827179872305UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)
-InsertText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 28 5 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 28 5 rm_stack(false, 0UL, "main", (int *)0x0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 33 new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 5  foo test; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 13 
@@ -15,4 +15,4 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 14  if
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 6  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 16  register_stack_var("main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 16  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 129  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 149  if (____chimes_replaying) { goto lbl_0; } 

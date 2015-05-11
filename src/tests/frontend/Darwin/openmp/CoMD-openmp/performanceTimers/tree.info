@@ -1,8 +1,8 @@
-_Z12profileStart11TimerHandle 0 DOES_NOT _ZL7getTimev
-_ZL7getTimev 0 DOES_NOT gettimeofday
-_Z11profileStop11TimerHandle 0 DOES_NOT _ZL7getTimev
-_Z14getElapsedTime11TimerHandle 0 DOES_NOT _ZL7getTickv
-_ZL7getTickv 0 DOES_NOT
-_Z23printPerformanceResultsii 0 MAY _Z9getMyRankv _Z9getNRanksv _Z9printRankv _ZL10timerStatsv _ZL7getTickv fprintf
-_ZL10timerStatsv 0 MAY _Z17addDoubleParallelPdS_i _Z21maxRankDoubleParallelP16RankReduceDataStS0_i _Z21minRankDoubleParallelP16RankReduceDataStS0_i _Z9getMyRankv _Z9getNRanksv sqrt
-_Z27printPerformanceResultsYamlP7__sFILE 0 MAY _Z9getMyRankv _Z9getNRanksv _Z9printRankv _ZL7getTickv fprintf
+profileStart 0 DOES_NOT getTime
+getTime 0 DOES_NOT
+profileStop 0 DOES_NOT getTime
+getElapsedTime 0 DOES_NOT getTick
+getTick 0 DOES_NOT
+printPerformanceResults 0 MAY getMyRank getNRanks getTick printRank timerStats
+timerStats 0 MAY addDoubleParallel getMyRank getNRanks maxRankDoubleParallel minRankDoubleParallel
+printPerformanceResultsYaml 0 MAY getMyRank getNRanks getTick printRank

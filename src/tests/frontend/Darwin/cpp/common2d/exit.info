@@ -1,5 +1,5 @@
-save_text 0 8 9 10
+save_text 0 1 2 3 4 5 6 7 8 9 10
 init_data 0 99 100 101 102 103 104 105 106 107 108 109 222 223 224 225
 usage 0 235
 default_config 0 247 284
-setup_config 0 288 406
+setup_config 0 285 286 287 288 406 423

@@ -586,9 +586,19 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
             line = line.substr(end + 1);
         } while (end != std::string::npos);
 
-        assert(call_tree->find(name) == call_tree->end());
-        call_tree->insert(std::pair<std::string, FunctionCallees *>(name,
-                    callees));
+        if (call_tree->find(name) != call_tree->end()) {
+            /*
+             * TODO An unforunate side effect of supporting CUDA but not C++ is
+             * that CUDA drags some C++ things in with it (e.g. multiple
+             * constructors for the dim3 type). To support this, we'll probably
+             * need to add C++ support.
+             */
+            assert("dim3::dim3" == name);
+        } else {
+            assert(call_tree->find(name) == call_tree->end());
+            call_tree->insert(std::pair<std::string, FunctionCallees *>(name,
+                        callees));
+        }
     }
 
     return (call_tree);
@@ -1046,7 +1056,7 @@ bool DesiredInsertions::always_checkpoints(StackAlloc *alloc) {
             e = checkpoint_causes->end(); i != e; i++) {
         std::string cause = *i;
 
-        if (cause == "_Z10checkpointv") return (true);
+        if (cause == "checkpoint") return (true);
 
         if (call_tree->find(cause) == call_tree->end()) {
             /*
@@ -1064,6 +1074,10 @@ bool DesiredInsertions::always_checkpoints(StackAlloc *alloc) {
         }
     }
     return (false);
+}
+
+bool DesiredInsertions::has_callees(std::string name) {
+    return (call_tree->find(name) != call_tree->end());
 }
 
 FunctionCallees *DesiredInsertions::get_callees(std::string name) {

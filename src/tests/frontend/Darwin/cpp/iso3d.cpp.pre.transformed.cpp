@@ -15,6 +15,8 @@ typedef long unsigned int size_t;
 static int ____must_checkpoint_main_conf_0 = 2;
 static int ____must_checkpoint_main_elapsed_s_0 = 2;
 static int ____must_checkpoint_main_point_rate_0 = 2;
+
+static int ____must_manage_fwd = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -36,11 +38,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -70,7 +73,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2928,7 +2931,7 @@ static void fwd(float *next, float *curr, float *vsq,
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  float *c_coeff, int nx, int ny, int nz, int dimx, int dimy, int dimz,
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- int radius) {new_stack((void *)(&fwd), 11, 0, (size_t)(636351199311517835UL), (size_t)(636351199311517836UL), (size_t)(636351199311517837UL), (size_t)(636351199311517838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+ int radius) {new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(636351199311517835UL), (size_t)(636351199311517836UL), (size_t)(636351199311517837UL), (size_t)(636351199311517838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  { int z; for ( z = (0) ; z < nz; z++) {
@@ -2981,10 +2984,10 @@ static void fwd(float *next, float *curr, float *vsq,
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  } }
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-alias_group_changed(25, (size_t)(636351199311517512UL), (size_t)(636351199311517513UL), (size_t)(636351199311517514UL), (size_t)(636351199311517515UL), (size_t)(636351199311517516UL), (size_t)(636351199311517517UL), (size_t)(636351199311517518UL), (size_t)(636351199311517519UL), (size_t)(636351199311517520UL), (size_t)(636351199311517521UL), (size_t)(636351199311517522UL), (size_t)(636351199311517523UL), (size_t)(636351199311517524UL), (size_t)(636351199311517525UL), (size_t)(636351199311517526UL), (size_t)(636351199311517527UL), (size_t)(636351199311517528UL), (size_t)(636351199311517529UL), (size_t)(636351199311517530UL), (size_t)(636351199311517531UL), (size_t)(636351199311517532UL), (size_t)(636351199311517533UL), (size_t)(636351199311517534UL), (size_t)(636351199311517535UL), (size_t)(636351199311517835UL)); rm_stack(false, 0UL); }
+alias_group_changed(25, (size_t)(636351199311517512UL), (size_t)(636351199311517513UL), (size_t)(636351199311517514UL), (size_t)(636351199311517515UL), (size_t)(636351199311517516UL), (size_t)(636351199311517517UL), (size_t)(636351199311517518UL), (size_t)(636351199311517519UL), (size_t)(636351199311517520UL), (size_t)(636351199311517521UL), (size_t)(636351199311517522UL), (size_t)(636351199311517523UL), (size_t)(636351199311517524UL), (size_t)(636351199311517525UL), (size_t)(636351199311517526UL), (size_t)(636351199311517527UL), (size_t)(636351199311517528UL), (size_t)(636351199311517529UL), (size_t)(636351199311517530UL), (size_t)(636351199311517531UL), (size_t)(636351199311517532UL), (size_t)(636351199311517533UL), (size_t)(636351199311517534UL), (size_t)(636351199311517535UL), (size_t)(636351199311517835UL)); rm_stack(false, 0UL, "fwd", &____must_manage_fwd); }
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(636351199311517481UL)); if (____chimes_replaying) { goto lbl_0; }
+int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(636351199311517481UL)); if (____chimes_replaying) { goto lbl_0; }
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  lbl_0: config conf; register_stack_var("main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
@@ -3031,7 +3034,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2,
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  fprintf(__stderrp, "Allocations failed\n");
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- alias_group_changed(13, (size_t)(636351199311517110UL), (size_t)(636351199311517114UL), (size_t)(636351199311517115UL), (size_t)(636351199311517116UL), (size_t)(636351199311517117UL), (size_t)(636351199311517118UL), (size_t)(636351199311517119UL), (size_t)(636351199311517120UL), (size_t)(636351199311517121UL), (size_t)(636351199311517122UL), (size_t)(636351199311517123UL), (size_t)(636351199311517131UL), (size_t)(636351199311517132UL)); rm_stack(false, 0UL); return 1;
+ alias_group_changed(13, (size_t)(636351199311517110UL), (size_t)(636351199311517114UL), (size_t)(636351199311517115UL), (size_t)(636351199311517116UL), (size_t)(636351199311517117UL), (size_t)(636351199311517118UL), (size_t)(636351199311517119UL), (size_t)(636351199311517120UL), (size_t)(636351199311517121UL), (size_t)(636351199311517122UL), (size_t)(636351199311517123UL), (size_t)(636351199311517131UL), (size_t)(636351199311517132UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 1;
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  }
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
@@ -3120,13 +3123,13 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), 2,
  free_wrapper(srcs, 636351199311517463UL);
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 164 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- alias_group_changed(13, (size_t)(636351199311517110UL), (size_t)(636351199311517114UL), (size_t)(636351199311517115UL), (size_t)(636351199311517116UL), (size_t)(636351199311517117UL), (size_t)(636351199311517118UL), (size_t)(636351199311517119UL), (size_t)(636351199311517120UL), (size_t)(636351199311517121UL), (size_t)(636351199311517122UL), (size_t)(636351199311517123UL), (size_t)(636351199311517131UL), (size_t)(636351199311517132UL)); rm_stack(false, 0UL); return 0;
+ alias_group_changed(13, (size_t)(636351199311517110UL), (size_t)(636351199311517114UL), (size_t)(636351199311517115UL), (size_t)(636351199311517116UL), (size_t)(636351199311517117UL), (size_t)(636351199311517118UL), (size_t)(636351199311517119UL), (size_t)(636351199311517120UL), (size_t)(636351199311517121UL), (size_t)(636351199311517122UL), (size_t)(636351199311517123UL), (size_t)(636351199311517131UL), (size_t)(636351199311517132UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 }
 
 
 static int module_init() {
-    init_module(636351199311517109UL, 14, 2, 3, 2, 636351199311517109UL + 11UL, 636351199311517109UL + 247UL, 636351199311517109UL + 13UL, 636351199311517109UL + 244UL, 636351199311517109UL + 12UL, 636351199311517109UL + 244UL, 636351199311517109UL + 15UL, 636351199311517109UL + 354UL, 636351199311517109UL + 14UL, 636351199311517109UL + 246UL, 636351199311517109UL + 406UL, 636351199311517109UL + 729UL, 636351199311517109UL + 405UL, 636351199311517109UL + 728UL, 636351199311517109UL + 404UL, 636351199311517109UL + 727UL, 636351199311517109UL + 3UL, 636351199311517109UL + 372UL, 636351199311517109UL + 354UL, 636351199311517109UL + 356UL, 636351199311517109UL + 403UL, 636351199311517109UL + 726UL, 636351199311517109UL + 4UL, 636351199311517109UL + 180UL, 636351199311517109UL + 20UL, 636351199311517109UL + 244UL, 636351199311517109UL + 750UL, 636351199311517109UL + 302UL, "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "main", 15, "_Z10checkpointv", "_Z12setup_configP7_configiPPc", "_Z13init_progressiii", "_Z14config_sourcesPP7_sourcePiiii", "_Z14sample_sourcesP7_sourceiif", "_Z15finish_progressv", "_Z15save_layer_textPfiiiiiPKci", "_Z15update_progressi", "_Z7secondsv", "_Z9init_dataPfS_S_S_iiiff", "_ZL3fwdPfS_S_S_iiiiiii", "fprintf", "free", "malloc", "printf", "_ZL3fwdPfS_S_S_iiiiiii", 0, "main|conf|0", 1, "main", "main|elapsed_s|0", 2, "_Z15save_layer_textPfiiiiiPKci", "_Z15finish_progressv", "main|point_rate|0", 1, "_Z15save_layer_textPfiiiiiPKci");
+    init_module(636351199311517109UL, 14, 2, 3, 2, 636351199311517109UL + 11UL, 636351199311517109UL + 247UL, 636351199311517109UL + 13UL, 636351199311517109UL + 244UL, 636351199311517109UL + 12UL, 636351199311517109UL + 244UL, 636351199311517109UL + 15UL, 636351199311517109UL + 354UL, 636351199311517109UL + 14UL, 636351199311517109UL + 246UL, 636351199311517109UL + 406UL, 636351199311517109UL + 729UL, 636351199311517109UL + 405UL, 636351199311517109UL + 728UL, 636351199311517109UL + 404UL, 636351199311517109UL + 727UL, 636351199311517109UL + 3UL, 636351199311517109UL + 372UL, 636351199311517109UL + 354UL, 636351199311517109UL + 356UL, 636351199311517109UL + 403UL, 636351199311517109UL + 726UL, 636351199311517109UL + 4UL, 636351199311517109UL + 180UL, 636351199311517109UL + 20UL, 636351199311517109UL + 244UL, 636351199311517109UL + 750UL, 636351199311517109UL + 302UL, "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "fwd", 0, "main", 11, "checkpoint", "config_sources", "finish_progress", "fwd", "init_data", "init_progress", "sample_sources", "save_layer_text", "seconds", "setup_config", "update_progress", "main|conf|0", 1, "main", "main|elapsed_s|0", 2, "save_layer_text", "finish_progress", "main|point_rate|0", 1, "save_layer_text");
     return 0;
 }
 

@@ -243,6 +243,7 @@ class FunctionCallees {
             checkpoint_causes.insert(cause);
         }
         CREATES_CHECKPOINT get_may_checkpoint() { return may_checkpoint; }
+        bool get_calls_unknown_functions() { return calls_unknown_functions; }
     private:
         std::string name;
         bool calls_unknown_functions;
@@ -396,6 +397,7 @@ public:
 
     bool always_checkpoints(StackAlloc *alloc);
     FunctionCallees *get_callees(std::string name);
+    bool has_callees(std::string name);
 
 private:
         std::string lines_info_file, struct_info_file,

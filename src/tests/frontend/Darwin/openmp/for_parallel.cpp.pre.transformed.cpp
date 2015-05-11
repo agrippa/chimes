@@ -27,11 +27,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -61,7 +62,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1782,7 +1783,7 @@ extern void wait_for_checkpoint();
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
      int a; a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
@@ -1808,13 +1809,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
     alias_group_changed(8, (size_t)(383979529920101859UL), (size_t)(383979529920101860UL), (size_t)(383979529920101861UL), (size_t)(383979529920101862UL), (size_t)(383979529920101863UL), (size_t)(383979529920101864UL), (size_t)(383979529920101865UL), (size_t)(383979529920101866UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-    rm_stack(false, 0UL); return 0;
+    rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 18 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 }
 
 
 static int module_init() {
-    init_module(383979529920101858UL, 1, 1, 0, 0, 383979529920101858UL + 3UL, 383979529920101858UL + 39UL, "main", 3, "_Z10checkpointv", "omp_get_thread_num", "printf");
+    init_module(383979529920101858UL, 1, 1, 0, 0, 383979529920101858UL + 3UL, 383979529920101858UL + 39UL, "main", 1, "checkpoint");
     return 0;
 }
 

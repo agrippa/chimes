@@ -1,2 +1,2 @@
-_Z3fooi 0 DOES _Z10checkpointv __assert_rtn
-main 0 DOES _Z3fooi
+foo 0 DOES checkpoint
+main 0 DOES foo

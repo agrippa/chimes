@@ -33,11 +33,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +68,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1735,7 +1736,7 @@ int b = 3;
 const char *hello_world = "hello world";
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  a = 4;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
@@ -1745,13 +1746,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  alias_group_changed(4, (size_t)(9397157703034130344UL), (size_t)(9397157703034130345UL), (size_t)(9397157703034130346UL), (size_t)(9397157703034130366UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
- rm_stack(false, 0UL); return b + a;
+ rm_stack(false, 0UL, "main", (int *)0x0); return b + a;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 }
 
 
 static int module_init() {
-    init_module(9397157703034130343UL, 2, 1, 0, 0, 9397157703034130343UL + 3UL, 9397157703034130343UL + 19UL, 9397157703034130343UL + 26UL, 9397157703034130343UL + 10UL, "main", 2, "_Z10checkpointv", "printf");
+    init_module(9397157703034130343UL, 2, 1, 0, 0, 9397157703034130343UL + 3UL, 9397157703034130343UL + 19UL, 9397157703034130343UL + 26UL, 9397157703034130343UL + 10UL, "main", 1, "checkpoint");
     register_global_var("global|a", "i32", (void *)(&a), 4, 0, 0, 0);
     register_global_var("global|b", "i32", (void *)(&b), 4, 0, 0, 0);
     register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8, 1, 0, 0);

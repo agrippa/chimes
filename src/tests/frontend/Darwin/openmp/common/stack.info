@@ -1,4 +1,4 @@
-/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp seconds|tp|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1 _Z7secondsv
+/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp seconds|tp|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1 seconds
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp seconds|tzp|0 " %struct.timezone = type { i32, i32 } " 64 0 1 timezone 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp seconds|i|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp ricker_wavelet|source|0 " float* " 64 1 0 0

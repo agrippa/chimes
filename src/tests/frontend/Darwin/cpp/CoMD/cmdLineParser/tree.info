@@ -1,9 +1,9 @@
-_Z6addArgPKccicPviS0_ 0 DOES_NOT _ZL10lastOptionP10MyOptionSt _ZL13myOptionAllocPKccicPviS0_
-_ZL13myOptionAllocPKccicPviS0_ 0 DOES_NOT _ZL9dupStringPKc calloc strlen
-_ZL10lastOptionP10MyOptionSt 0 DOES_NOT
-_Z8freeArgsv 0 DOES_NOT _ZL12myOptionFreeP10MyOptionSt
-_ZL12myOptionFreeP10MyOptionSt 0 DOES_NOT free
-_Z9printArgsv 0 DOES_NOT fprintf sprintf
-_Z11processArgsiPPc 0 MAY _ZL10findOptionP10MyOptionSth calloc fprintf free getopt_long sscanf strcat strncpy
-_ZL10findOptionP10MyOptionSth 0 DOES_NOT
-_ZL9dupStringPKc 0 DOES_NOT calloc strcpy strlen
+addArg 0 DOES_NOT lastOption myOptionAlloc
+myOptionAlloc 0 DOES_NOT dupString
+lastOption 0 DOES_NOT
+freeArgs 0 DOES_NOT myOptionFree
+myOptionFree 0 DOES_NOT
+printArgs 0 DOES_NOT
+processArgs 0 MAY findOption getopt_long strncpy
+findOption 0 DOES_NOT
+dupString 0 DOES_NOT

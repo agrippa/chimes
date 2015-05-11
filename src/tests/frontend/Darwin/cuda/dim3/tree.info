@@ -1,8 +1,8 @@
-main 0 DOES _Z10checkpointv _ZN4dim3C1Ejjj
-_ZN4dim3C1Ejjj 0 DOES_NOT _ZN4dim3C2Ejjj
-_ZL45__sti____cudaRegisterAll_12_dim3_cpp1_ii_mainv 1 MAY __cudaRegisterFatBinary atexit
-_ZL31__nv_cudaEntityRegisterCallbackPPv 0 DOES_NOT _ZL37__nv_save_fatbinhandle_for_managed_rtPPv
-_ZL26__cudaUnregisterBinaryUtilv 0 MAY _ZL22____nv_dummy_param_refPv __cudaUnregisterFatBinary
-_ZL22____nv_dummy_param_refPv 0 DOES_NOT
-_ZL37__nv_save_fatbinhandle_for_managed_rtPPv 0 DOES_NOT
-_ZN4dim3C2Ejjj 0 DOES_NOT
+main 0 DOES checkpoint
+dim3::dim3 0 DOES_NOT
+__sti____cudaRegisterAll_12_dim3_cpp1_ii_main 1 MAY __cudaRegisterFatBinary atexit
+__nv_cudaEntityRegisterCallback 0 DOES_NOT __nv_save_fatbinhandle_for_managed_rt
+__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref __cudaUnregisterFatBinary
+____nv_dummy_param_ref 0 DOES_NOT
+__nv_save_fatbinhandle_for_managed_rt 0 DOES_NOT
+dim3::dim3 0 DOES_NOT

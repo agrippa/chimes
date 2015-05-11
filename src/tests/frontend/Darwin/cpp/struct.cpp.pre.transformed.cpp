@@ -33,11 +33,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +68,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1740,7 +1741,7 @@ typedef struct _foo {
 } foo;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)); if (____chimes_replaying) { goto lbl_0; }
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
  lbl_0: foo test; register_stack_var("main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { goto lbl_1; } ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
@@ -1769,13 +1770,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  (__builtin_expect(!(test2[0].a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 26, "test2[0].a == 3") : (void)0);
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- rm_stack(false, 0UL); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 }
 
 
 static int module_init() {
-    init_module(1432567827179872240UL, 4, 1, 0, 1, 1432567827179872240UL + 93UL, 1432567827179872240UL + 26UL, 1432567827179872240UL + 3UL, 1432567827179872240UL + 81UL, 1432567827179872240UL + 5UL, 1432567827179872240UL + 65UL, 1432567827179872240UL + 4UL, 1432567827179872240UL + 42UL, "_foo", 3, "int", (int)__builtin_offsetof(struct _foo, a), "int*", (int)__builtin_offsetof(struct _foo, b), "int**", (int)__builtin_offsetof(struct _foo, c), "main", 4, "_Z10checkpointv", "__assert_rtn", "fprintf", "malloc");
+    init_module(1432567827179872240UL, 4, 1, 0, 1, 1432567827179872240UL + 93UL, 1432567827179872240UL + 26UL, 1432567827179872240UL + 3UL, 1432567827179872240UL + 81UL, 1432567827179872240UL + 5UL, 1432567827179872240UL + 65UL, 1432567827179872240UL + 4UL, 1432567827179872240UL + 42UL, "_foo", 3, "int", (int)__builtin_offsetof(struct _foo, a), "int*", (int)__builtin_offsetof(struct _foo, b), "int**", (int)__builtin_offsetof(struct _foo, c), "main", 1, "checkpoint");
     return 0;
 }
 

@@ -1,13 +1,13 @@
-_Z9uts_errorPc 0 MAY _Z10impl_aborti printf
-_Z10uts_wctimev 0 DOES_NOT gettimeofday
-_Z10rng_toProbi 0 DOES_NOT printf
-_Z12uts_initRootP6node_ti 0 MAY printf rng_init
-_Z19uts_numChildren_binP6node_t 0 MAY _Z10rng_toProbi rng_rand
-_Z19uts_numChildren_geoP6node_t 0 MAY _Z10rng_toProbi floor log rng_rand sin
-_Z15uts_numChildrenP6node_t 0 MAY _Z19uts_numChildren_binP6node_t _Z19uts_numChildren_geoP6node_t _Z9uts_errorPc ceil floor printf
-_Z13uts_childTypeP6node_t 0 MAY _Z9uts_errorPc
-_Z15uts_paramsToStrPci 0 MAY _Z12impl_getNamev ceil rng_showtype sprintf
-_Z15uts_printParamsv 0 MAY _Z15uts_paramsToStrPci _Z16impl_paramsToStrPci printf
-_Z15uts_parseParamsiPPc 0 MAY _Z10impl_aborti _Z15impl_parseParamPcS_ _Z15uts_helpMessagev atof atoi printf strlen
-_Z15uts_helpMessagev 0 MAY _Z12impl_getNamev _Z16impl_helpMessagev printf
-_Z13uts_showStatsiidiii 0 DOES_NOT printf
+uts_error 0 MAY impl_abort
+uts_wctime 0 DOES_NOT
+rng_toProb 0 DOES_NOT
+uts_initRoot 0 MAY rng_init
+uts_numChildren_bin 0 MAY rng_rand rng_toProb
+uts_numChildren_geo 0 MAY rng_rand rng_toProb sin
+uts_numChildren 0 MAY uts_error uts_numChildren_bin uts_numChildren_geo
+uts_childType 0 MAY uts_error
+uts_paramsToStr 0 MAY impl_getName rng_showtype
+uts_printParams 0 MAY impl_paramsToStr uts_paramsToStr
+uts_parseParams 0 MAY impl_abort impl_parseParam uts_helpMessage
+uts_helpMessage 0 MAY impl_getName impl_helpMessage
+uts_showStats 0 DOES_NOT

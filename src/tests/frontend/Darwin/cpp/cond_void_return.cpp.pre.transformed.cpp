@@ -12,6 +12,8 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "cond_void_return.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_bar = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +35,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +70,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1488,14 +1491,14 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-void bar(int *A, int *B) {new_stack((void *)(&bar), 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void bar(int *A, int *B) {new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  A[0] = 3;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  if (A[0] == 3) {
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL); return;
+ alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL, "bar", &____must_manage_bar); return;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1503,12 +1506,12 @@ void bar(int *A, int *B) {new_stack((void *)(&bar), 2, 0, (size_t)(7569268050213
  B[0] = 3;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL); return;
+ alias_group_changed(4, (size_t)(7569268050213511356UL), (size_t)(7569268050213511357UL), (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); rm_stack(false, 0UL, "bar", &____must_manage_bar); return;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); if (____chimes_replaying) { goto lbl_0; }
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  lbl_0: int *A; register_stack_var("main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_1; } A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1525,13 +1528,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
  (__builtin_expect(!(B != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 25, "B != NULL") : (void)0);
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- rm_stack(false, 0UL); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0); return 0;
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
 
 
 static int module_init() {
-    init_module(7569268050213511355UL, 5, 2, 0, 0, 7569268050213511355UL + 1UL, 7569268050213511355UL + 21UL, 7569268050213511355UL + 27UL, 7569268050213511355UL + 73UL, 7569268050213511355UL + 2UL, 7569268050213511355UL + 22UL, 7569268050213511355UL + 28UL, 7569268050213511355UL + 36UL, 7569268050213511355UL + 29UL, 7569268050213511355UL + 60UL, "main", 4, "_Z10checkpointv", "_Z3barPiS_", "__assert_rtn", "malloc", "_Z3barPiS_", 0);
+    init_module(7569268050213511355UL, 5, 2, 0, 0, 7569268050213511355UL + 1UL, 7569268050213511355UL + 21UL, 7569268050213511355UL + 27UL, 7569268050213511355UL + 73UL, 7569268050213511355UL + 2UL, 7569268050213511355UL + 22UL, 7569268050213511355UL + 28UL, 7569268050213511355UL + 36UL, 7569268050213511355UL + 29UL, 7569268050213511355UL + 60UL, "main", 2, "bar", "checkpoint", "bar", 0);
     return 0;
 }
 

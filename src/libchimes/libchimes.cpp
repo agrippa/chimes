@@ -159,9 +159,10 @@ class checkpoint_ctx {
 };
 
 // functions defined in this file
-void new_stack(void *func_ptr, unsigned n_local_arg_aliases, unsigned n_args,
-        ...);
-void rm_stack(bool has_return_alias, size_t returned_alias);
+void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned n_args, ...);
+void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
@@ -649,7 +650,7 @@ void init_chimes() {
      * Figure out all of the functions in this executable that may cause a
      * checkpoint to be created.
      */
-    does_checkpoint["_Z10checkpointv"] = true;
+    does_checkpoint["checkpoint"] = true;
     bool changed;
     do {
         changed = false;
@@ -666,19 +667,40 @@ void init_chimes() {
             }
 
             bool causes_checkpoint = false;
+#ifdef VERBOSE
+            std::string checkpoint_causer;
+#endif
             for (set<string>::iterator callee_iter = i->second.begin(),
                     callee_end = i->second.end(); callee_iter != callee_end;
                     callee_iter++) {
                 string callee = *callee_iter;
-                if (does_checkpoint.find(callee) != does_checkpoint.end() &&
-                        does_checkpoint[callee]) {
+                /*
+                 * If this is either a function that we don't know about (and
+                 * therefore can't know if it will checkpoint or not), or a
+                 * function that we think will checkpoint, then apply that
+                 * property transitively to the current function.
+                 */
+                if (call_tree.find(callee) == call_tree.end() ||
+                        (does_checkpoint.find(callee) != does_checkpoint.end() &&
+                        does_checkpoint[callee])) {
                     causes_checkpoint = true;
+#ifdef VERBOSE
+                    checkpoint_causer = callee;
+#endif
                     break;
                 }
             }
 
             if (does_checkpoint.find(func) == does_checkpoint.end()) {
                 // No existing knowledge of this function
+#ifdef VERBOSE
+                fprintf(stderr, "%s causes checkpoint? %s", func.c_str(),
+                        (causes_checkpoint ? "true" : "false"));
+                if (causes_checkpoint) {
+                    fprintf(stderr, " (because %s)", checkpoint_causer.c_str());
+                }
+                fprintf(stderr, "\n");
+#endif
                 does_checkpoint[func] = causes_checkpoint;
                 changed = true;
             } else {
@@ -688,6 +710,11 @@ void init_chimes() {
                  */
                 if (causes_checkpoint && !does_checkpoint[func]){ 
                     does_checkpoint[func] = true;
+#ifdef VERBOSE
+                fprintf(stderr, "%s causes checkpoint? true (because %s)\n",
+                        func.c_str(), (causes_checkpoint ? "true" : "false"),
+                        checkpoint_causer.c_str());
+#endif
                     changed = true;
                 }
             }
@@ -705,7 +732,10 @@ void init_chimes() {
             string cause = *cause_iter;
             if (does_checkpoint.find(cause) == does_checkpoint.end() ||
                     does_checkpoint[cause]) {
-                // fprintf(stderr, "Must checkpoint %s becuase of %s\n", varname.c_str(), cause.c_str());
+#ifdef VERBOSE
+                fprintf(stderr, "Must checkpoint %s because of %s\n",
+                        varname.c_str(), cause.c_str());
+#endif
                 must_checkpoint = true;
                 break;
             }
@@ -1244,27 +1274,89 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 #endif
 }
 
-void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
-        unsigned int nargs, ...) {
+static bool need_to_manage_stack(int *conditional, string funcname) {
+    if (conditional) {
+        if (*conditional == 2) {
+            const map<string, bool>::iterator does_checkpoint_iter =
+                does_checkpoint.find(funcname);
+            if (does_checkpoint_iter != does_checkpoint.end() && !does_checkpoint_iter->second) {
+                *conditional = 0;
+                return (false);
+            } else {
+                *conditional = 1;
+            }
+        } else if (*conditional == 0) {
+            return (false);
+        }
+    }
+    return (true);
+}
+
+static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
+        va_list vl, bool pre_stack_increment) {
+    const unsigned stack_minimum = (pre_stack_increment ? 0 : 1);
+    for (unsigned i = 0; i < n_local_arg_aliases; i++) {
+        size_t alias = va_arg(vl, size_t);
+        if (ctx->get_stack()->size() > stack_minimum) {
+            if (valid_group(alias) && valid_group(ctx->get_parent_alias(i))) {
+                assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
+                merge_alias_groups(alias, ctx->get_parent_alias(i));
+                assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+            }
+        }
+    }
+}
+
+void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
+
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
     if (!ctx->get_printed_func_ptr_mismatch() && program_stack->size() > 0 &&
             func_ptr != ctx->get_func_ptr()) {
         fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
-                "function that we entered (%p). Possibly passed through a "
-                "third-party library.\n", ctx->get_func_ptr(), func_ptr);
+                "function that we entered (%p) for function %s. Possibly passed"
+                " through a third-party library.\n", ctx->get_func_ptr(),
+                func_ptr, funcname);
         ctx->set_printed_func_ptr_mismatch(true);
     }
 
-    int calling_label = ctx->get_calling_label();
-    assert(program_stack->size() == 0 || calling_label >= 0);
-    if (calling_label >= 0) {
+    if (!need_to_manage_stack(conditional, std::string(funcname))) {
+#ifdef VERBOSE
+        fprintf(stderr, "Entering %s, dont need to manage stack\n", funcname);
+#endif
+        if (program_stack->size() != 0 &&
+                n_local_arg_aliases != ctx->get_n_parent_aliases()) {
+            if (!ctx->get_printed_func_args_mismatch()) {
+                fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
+                        "expected aliases (%u) passed to %s, ignoring\n",
+                        ctx->get_n_parent_aliases(), n_local_arg_aliases, funcname);
+                ctx->set_printed_func_args_mismatch(true);
+            }
+        } else {
+            va_list vl;
+            va_start(vl, nargs);
+            add_argument_aliases(n_local_arg_aliases, ctx, vl, true);
+            va_end(vl);
+        }
+
+        ctx->push_return_alias();
+
+        return;
+    }
+#ifdef VERBOSE
+    fprintf(stderr, "Entering %s, need to manage stack\n", funcname);
+#endif
+
+    if (program_stack->size() > 0) {
+        int calling_label = ctx->get_calling_label();
+        assert(calling_label >= 0);
         ctx->get_stack_tracker().push(calling_label);
     }
     program_stack->push_back(new stack_frame());
@@ -1294,16 +1386,7 @@ void new_stack(void *func_ptr, unsigned int n_local_arg_aliases,
             va_arg(vl, size_t);
         }
     } else {
-        for (unsigned i = 0; i < n_local_arg_aliases; i++) {
-            size_t alias = va_arg(vl, size_t);
-            if (program_stack->size() > 1) {
-                if (valid_group(alias) && valid_group(ctx->get_parent_alias(i))) {
-                    assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
-                    merge_alias_groups(alias, ctx->get_parent_alias(i));
-                    assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
-                }
-            }
-        }
+        add_argument_aliases(n_local_arg_aliases, ctx, vl, false);
     }
 
     ctx->push_return_alias();
@@ -1361,18 +1444,8 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias,
 #endif
 }
 
-void rm_stack(bool has_return_alias, size_t returned_alias) {
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
-#endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
-    thread_ctx *ctx = get_my_context();
-    std::vector<stack_frame *> *program_stack = ctx->get_stack();
-    stack_frame *curr = program_stack->back();
-    program_stack->pop_back();
-    delete curr;
-
+static void add_return_alias(bool has_return_alias, size_t returned_alias,
+        thread_ctx *ctx) {
     size_t this_return_alias = ctx->pop_return_alias();
 
     /*
@@ -1384,9 +1457,35 @@ void rm_stack(bool has_return_alias, size_t returned_alias) {
         assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
         merge_alias_groups(this_return_alias, returned_alias);
         assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
-
-        assert(aliased(this_return_alias, returned_alias, true));
     }
+}
+
+void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ms();
+#endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
+
+    thread_ctx *ctx = get_my_context();
+    if (!need_to_manage_stack(conditional, std::string(funcname))) {
+#ifdef VERBOSE
+        fprintf(stderr, "Leaving %s, dont need to manage stack\n", funcname);
+#endif
+        add_return_alias(has_return_alias, returned_alias, ctx);
+        return;
+    }
+#ifdef VERBOSE
+    fprintf(stderr, "Leaving %s, need to manage stack\n", funcname);
+#endif
+
+    std::vector<stack_frame *> *program_stack = ctx->get_stack();
+    stack_frame *curr = program_stack->back();
+    program_stack->pop_back();
+    delete curr;
+
+    add_return_alias(has_return_alias, returned_alias, ctx);
 
     ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
@@ -1520,7 +1619,9 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
         perf_profile::current_time_ms();
 
     const string mangled_name_str(mangled_name);
-    // fprintf(stderr, "Thinking about registering %s\n", mangled_name);
+#ifdef VERBOSE
+    fprintf(stderr, "Thinking about registering %s...\n", mangled_name);
+#endif
     /*
      * If cond_registration is NULL, it means this variable was marked as
      * something that had to be checkpointed unconditionally.
@@ -1529,7 +1630,9 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
         return;
     }
 
-    // fprintf(stderr, "  Actually Registering %s\n", mangled_name);
+#ifdef VERBOSE
+    fprintf(stderr, "  Actually registering %s\n", mangled_name);
+#endif
 
     // Skip the expensive stack var creation if we can
     std::vector<stack_frame *> *program_stack = get_my_stack();
@@ -1920,6 +2023,12 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
 static void restore_program_stack(vector<stack_frame *> *unpacked,
         vector<stack_frame *> *real) {
 
+#ifdef VERBOSE
+    fprintf(stderr, "Restoring program stack. Unpacked program stack has %d "
+            "frames, live program stack has %d frames.\n", unpacked->size(),
+            real->size());
+#endif
+
     assert(unpacked->size() == real->size());
 
     vector<stack_frame *>::iterator unpacked_stack_iter = unpacked->begin();
@@ -1931,6 +2040,22 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
             live_stack_iter != live_stack_end) {
         stack_frame *live = *live_stack_iter;
         stack_frame *unpacked = *unpacked_stack_iter;
+
+#ifdef VERBOSE
+        fprintf(stderr, "  Frame: unpacked has %d vars, live has %d vars\n",
+                unpacked->size(), live->size());
+        fprintf(stderr, "    Unpacked: ");
+        for (stack_frame::iterator i = unpacked->begin(),
+                e = unpacked->end(); i != e; i++) {
+            fprintf(stderr, "%s ", i->first.c_str());
+        }
+        fprintf(stderr, "\n    Live:     ");
+        for (stack_frame::iterator i = live->begin(),
+                e = live->end(); i != e; i++) {
+            fprintf(stderr, "%s ", i->first.c_str());
+        }
+        fprintf(stderr, "\n");
+#endif
 
         /*
          * It is possible that live is larger than unpacked if the
@@ -2063,7 +2188,7 @@ void checkpoint() {
         perf_profile::current_time_ms();
 
     clock_t enter_time = clock();
-    new_stack((void *)checkpoint, 0, 0);
+    new_stack((void *)checkpoint, "checkpoint", NULL, 0, 0);
     const bool was_a_replay = ____chimes_replaying;
     checkpoint_ctx *curr_ckpt;
 
@@ -2426,7 +2551,7 @@ void checkpoint() {
         while (clock() - exit_time < my_delta) ;
     }
 
-    rm_stack(false, 0);
+    rm_stack(false, 0, "checkpoint", NULL);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CHECKPOINT, __start_time);

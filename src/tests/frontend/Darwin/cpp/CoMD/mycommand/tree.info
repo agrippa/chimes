@@ -1,2 +1,2 @@
-_Z16parseCommandLineiPPc 0 MAY _Z11processArgsiPPc _Z6addArgPKccicPviS0_ _Z8freeArgsv _Z9printArgsv exit strcmp strcpy strlen
-_Z12printCmdYamlP7__sFILEP9CommandSt 0 MAY _Z9printRankv fflush fprintf
+parseCommandLine 0 MAY addArg freeArgs printArgs processArgs
+printCmdYaml 0 MAY printRank

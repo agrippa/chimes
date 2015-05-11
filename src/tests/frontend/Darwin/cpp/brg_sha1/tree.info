@@ -5,7 +5,7 @@ sha1_end 0 DOES_NOT sha1_compile
 rng_spawn 0 DOES_NOT sha1_begin sha1_end sha1_hash
 rng_rand 0 DOES_NOT
 rng_nextrand 0 DOES_NOT sha1_begin sha1_end sha1_hash
-rng_showstate 0 DOES_NOT sprintf
-rng_showtype 0 DOES_NOT sprintf
+rng_showstate 0 DOES_NOT
+rng_showtype 0 DOES_NOT
 sha1_compile 0 DOES_NOT
 sha1 0 DOES_NOT sha1_begin sha1_end sha1_hash

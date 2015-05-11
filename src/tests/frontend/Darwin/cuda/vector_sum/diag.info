@@ -21,10 +21,10 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 1 len=8 cud
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 10 , 0UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 1 len=8 cudaFree_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 10 , 0UL
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 rm_stack(false, 0UL); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 33 new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 1 new_stack((void *)(&kernel), 4, 0, (size_t)(10983886093799451031UL), (size_t)(10983886093799451032UL), (size_t)(10983886093799451033UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(false, 0UL); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 rm_stack(false, 0UL, "main", (int *)0x0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 33 new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 1 new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 4, 0, (size_t)(10983886093799451031UL), (size_t)(10983886093799451032UL), (size_t)(10983886093799451033UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1 cudaError_t error; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 18 
@@ -81,4 +81,4 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 45 21
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 2  lbl_10: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  if (____must_checkpoint_main_fp_0 != 0) { register_stack_var("main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 53 10  if (____chimes_replaying) {  switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 130  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 150  if (____chimes_replaying) { goto lbl_0; } 

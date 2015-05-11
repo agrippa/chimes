@@ -19,29 +19,29 @@
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp find_diag|col|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|argc|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|argv|0 " i8** " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|i|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|j|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|nthreads|0 " i32 " 32 0 0 1 _fopen _Z10checkpointv _Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_name_1|0 " i8* " 64 1 0 1 _fopen _Z10checkpointv _Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_name_2|0 " i8* " 64 1 0 1 _fopen _Z10checkpointv _Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_1|0 " %struct.__sFILE* " 64 1 0 1 _fopen _Z10checkpointv _Z9read_fileP7__sFILEPm
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|i|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|j|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|nthreads|0 " i32 " 32 0 0 1 checkpoint read_file
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_name_1|0 " i8* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_name_2|0 " i8* " 64 1 0 1 checkpoint read_file
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_1|0 " %struct.__sFILE* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|n_char_in_file_1|0 " i64 " 64 0 0 1 main
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_2|0 " %struct.__sFILE* " 64 1 0 1 _Z10checkpointv _Z9read_fileP7__sFILEPm
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|file_2|0 " %struct.__sFILE* " 64 1 0 1 checkpoint read_file
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|n_char_in_file_2|0 " i64 " 64 0 0 1 main
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|begin|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1 main
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|end|0 " %struct.timeval = type { i64, i32 } " 128 0 1 timeval 0 1 main
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|ii|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|jj|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|threadId|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|local_matrix|0 " i32** " 64 1 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|tile_edge_x|0 " i32* " 64 1 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|tile_edge_y|0 " i32* " 64 1 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|diag_index|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|char_from_1|0 " i8 " 8 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|char_from_2|0 " i8 " 8 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|diag_score|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|left_score|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|top_score|0 " i32 " 32 0 0 1 _Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|bigger_of_left_top|0 " i32 " 32 0 0 1 _Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|ii|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|jj|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|threadId|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|local_matrix|0 " i32** " 64 1 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|tile_edge_x|0 " i32* " 64 1 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|tile_edge_y|0 " i32* " 64 1 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|diag_index|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|char_from_1|0 " i8 " 8 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|char_from_2|0 " i8 " 8 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|diag_score|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|left_score|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|top_score|0 " i32 " 32 0 0 1 checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|bigger_of_left_top|0 " i32 " 32 0 0 1 checkpoint
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|diag_zero|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp main|score|0 " i32 " 32 0 0 0

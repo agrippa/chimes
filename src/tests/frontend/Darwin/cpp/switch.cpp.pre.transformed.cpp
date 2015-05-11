@@ -12,6 +12,9 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "switch.cpp.pre.transformed.cpp" 2
+
+static int ____must_manage_foo = 2;
+static int ____must_manage_bar = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,11 +36,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -67,7 +71,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1477,21 +1481,21 @@ extern void wait_for_checkpoint();
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int foo(int a) {new_stack((void *)(&foo), 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int foo(int a) {new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- alias_group_changed(1, (size_t)(1464087543762942922UL)); rm_stack(false, 0UL); return a + 3;
+ alias_group_changed(1, (size_t)(1464087543762942922UL)); rm_stack(false, 0UL, "foo", &____must_manage_foo); return a + 3;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int bar(int b) {new_stack((void *)(&bar), 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int bar(int b) {new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- alias_group_changed(1, (size_t)(1464087543762942931UL)); rm_stack(false, 0UL); return b + 5;
+ alias_group_changed(1, (size_t)(1464087543762942931UL)); rm_stack(false, 0UL, "bar", &____must_manage_bar); return b + 5;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 }
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)); if (____chimes_replaying) { goto lbl_0; }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  lbl_0: int d; register_stack_var("main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
@@ -1517,13 +1521,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), 2, 0,
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  alias_group_changed(4, (size_t)(1464087543762942938UL), (size_t)(1464087543762942939UL), (size_t)(1464087543762942940UL), (size_t)(1464087543762942941UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- rm_stack(false, 0UL); return d;
+ rm_stack(false, 0UL, "main", (int *)0x0); return d;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 }
 
 
 static int module_init() {
-    init_module(1464087543762942921UL, 1, 3, 0, 0, 1464087543762942921UL + 19UL, 1464087543762942921UL + 43UL, "main", 3, "_Z10checkpointv", "_Z3bari", "_Z3fooi", "_Z3fooi", 0, "_Z3bari", 0);
+    init_module(1464087543762942921UL, 1, 3, 0, 0, 1464087543762942921UL + 19UL, 1464087543762942921UL + 43UL, "main", 3, "bar", "checkpoint", "foo", "foo", 0, "bar", 0);
     return 0;
 }
 

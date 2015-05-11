@@ -17,6 +17,18 @@ static int ____must_checkpoint_rng_init_ctx_0 = 2;
 static int ____must_checkpoint_rng_spawn_ctx_0 = 2;
 static int ____must_checkpoint_rng_nextrand_ctx_0 = 2;
 static int ____must_checkpoint_sha1_cx_0 = 2;
+
+static int ____must_manage_sha1 = 2;
+static int ____must_manage_rng_nextrand = 2;
+static int ____must_manage_rng_showstate = 2;
+static int ____must_manage_rng_init = 2;
+static int ____must_manage_rng_spawn = 2;
+static int ____must_manage_sha1_hash = 2;
+static int ____must_manage_sha1_end = 2;
+static int ____must_manage_rng_rand = 2;
+static int ____must_manage_sha1_compile = 2;
+static int ____must_manage_sha1_begin = 2;
+static int ____must_manage_rng_showtype = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -39,11 +51,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -73,7 +86,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2516,7 +2529,7 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
 
 
 static int module_init() {
-    init_module(2768207732101748571UL, 18, 11, 4, 2, 2768207732101748571UL + 568UL, 2768207732101748571UL + 586UL, 2768207732101748571UL + 607UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4947UL, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4946UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 567UL, 2768207732101748571UL + 585UL, 2768207732101748571UL + 1UL, 2768207732101748571UL + 63UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 480UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 434UL, 2768207732101748571UL + 246UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 521UL, 2768207732101748571UL + 566UL, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 245UL, 2768207732101748571UL + 100UL, 2768207732101748571UL + 243UL, 2768207732101748571UL + 435UL, 2768207732101748571UL + 479UL, 2768207732101748571UL + 482UL, 2768207732101748571UL + 520UL, 2768207732101748571UL + 589UL, 2768207732101748571UL + 605UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof(struct state_t, state), "sha1", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_nextrand", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_showstate", 1, "sprintf", "rng_init", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_spawn", 3, "sha1_begin", "sha1_end", "sha1_hash", "sha1_hash", 1, "sha1_compile", "sha1_end", 1, "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 1, "sprintf", "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1");
+    init_module(2768207732101748571UL, 18, 11, 4, 2, 2768207732101748571UL + 568UL, 2768207732101748571UL + 586UL, 2768207732101748571UL + 607UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4947UL, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4946UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 567UL, 2768207732101748571UL + 585UL, 2768207732101748571UL + 1UL, 2768207732101748571UL + 63UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 480UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 434UL, 2768207732101748571UL + 246UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 521UL, 2768207732101748571UL + 566UL, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 245UL, 2768207732101748571UL + 100UL, 2768207732101748571UL + 243UL, 2768207732101748571UL + 435UL, 2768207732101748571UL + 479UL, 2768207732101748571UL + 482UL, 2768207732101748571UL + 520UL, 2768207732101748571UL + 589UL, 2768207732101748571UL + 605UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof(struct state_t, state), "sha1", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_nextrand", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_showstate", 0, "rng_init", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_spawn", 3, "sha1_begin", "sha1_end", "sha1_hash", "sha1_hash", 1, "sha1_compile", "sha1_end", 1, "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 0, "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1");
     return 0;
 }
 

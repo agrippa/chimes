@@ -10,6 +10,23 @@ typedef long unsigned int size_t;
 # 1 "parallel.c.pre.transformed.cpp"
 static int ____must_checkpoint_timestampBarrier_msg_0 = 2;
 static int ____must_checkpoint_timestampBarrier_t_0 = 2;
+
+static int ____must_manage_initParallel = 2;
+static int ____must_manage_maxIntParallel = 2;
+static int ____must_manage_timestampBarrier = 2;
+static int ____must_manage_destroyParallel = 2;
+static int ____must_manage_bcastParallel = 2;
+static int ____must_manage_addIntParallel = 2;
+static int ____must_manage_minRankDoubleParallel = 2;
+static int ____must_manage_printRank = 2;
+static int ____must_manage_getMyRank = 2;
+static int ____must_manage_addDoubleParallel = 2;
+static int ____must_manage_maxRankDoubleParallel = 2;
+static int ____must_manage_builtWithMpi = 2;
+static int ____must_manage_addRealParallel = 2;
+static int ____must_manage_getNRanks = 2;
+static int ____must_manage_barrierParallel = 2;
+static int ____must_manage_sendReceiveParallel = 2;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -29,11 +46,12 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, unsigned n_local_arg_aliases,
-        unsigned nargs, ...);
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -63,7 +81,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1998,18 +2016,18 @@ static int nRanks = 1;
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int getNRanks()
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&getNRanks), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&getNRanks), "getNRanks", &____must_manage_getNRanks, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   rm_stack(false, 0UL); return nRanks;
+   rm_stack(false, 0UL, "getNRanks", &____must_manage_getNRanks); return nRanks;
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int getMyRank()
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&getMyRank), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&getMyRank), "getMyRank", &____must_manage_getMyRank, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   rm_stack(false, 0UL); return myRank;
+   rm_stack(false, 0UL, "getMyRank", &____must_manage_getMyRank); return myRank;
 # 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 # 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2020,22 +2038,22 @@ int getMyRank()
 # 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int printRank()
 # 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&printRank), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&printRank), "printRank", &____must_manage_printRank, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   if (myRank == 0) {alias_group_changed(1, (size_t)(2720369932807153854UL)); rm_stack(false, 0UL); return 1;; };
+   if (myRank == 0) {alias_group_changed(1, (size_t)(2720369932807153854UL)); rm_stack(false, 0UL, "printRank", &____must_manage_printRank); return 1;; };
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(1, (size_t)(2720369932807153854UL)); rm_stack(false, 0UL); return 0;
+   alias_group_changed(1, (size_t)(2720369932807153854UL)); rm_stack(false, 0UL, "printRank", &____must_manage_printRank); return 0;
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void timestampBarrier(const char* msg)
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&timestampBarrier), 1, 1, (size_t)(2720369932807153891UL), "timestampBarrier|msg|0", &____must_checkpoint_timestampBarrier_msg_0, "i8*", (void *)(&msg), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&timestampBarrier), "timestampBarrier", &____must_manage_timestampBarrier, 1, 1, (size_t)(2720369932807153891UL), "timestampBarrier|msg|0", &____must_checkpoint_timestampBarrier_msg_0, "i8*", (void *)(&msg), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
     call_lbl_1: calling((void*)&barrierParallel, 1, 0UL, 0); barrierParallel();
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-    call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL); return;; };
+    call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    alias_group_changed(1, (size_t)(2720369932807153864UL)); lbl_0: time_t t; if (____must_checkpoint_timestampBarrier_t_0 != 0) { register_stack_var("timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } call_lbl_6: calling((void*)&time, 6, 0UL, 1, (size_t)(2720369932807154229UL)); t = (time(__null)) ;
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2047,7 +2065,7 @@ void timestampBarrier(const char* msg)
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    fflush(__stdoutp);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL); }
+alias_group_changed(3, (size_t)(2720369932807153864UL), (size_t)(2720369932807153866UL), (size_t)(2720369932807153878UL)); rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier); }
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void initParallel(int* argc, char*** argv)
@@ -2086,7 +2104,7 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
                         void* recvBuf, int recvLen, int source)
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&sendReceiveParallel), 6, 0, (size_t)(2720369932807153941UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2720369932807153940UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
+{new_stack((void *)(&sendReceiveParallel), "sendReceiveParallel", &____must_manage_sendReceiveParallel, 6, 0, (size_t)(2720369932807153941UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2720369932807153940UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } }
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
@@ -2094,7 +2112,7 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
     call_lbl_3: calling((void*)&memcpy, 3, 0UL, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); memcpy(recvBuf, sendBuf, sendLen);
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(6, (size_t)(2720369932807153910UL), (size_t)(2720369932807153911UL), (size_t)(2720369932807153912UL), (size_t)(2720369932807153913UL), (size_t)(2720369932807153914UL), (size_t)(2720369932807153915UL)); rm_stack(false, 0UL); return sendLen;
+   alias_group_changed(6, (size_t)(2720369932807153910UL), (size_t)(2720369932807153911UL), (size_t)(2720369932807153912UL), (size_t)(2720369932807153913UL), (size_t)(2720369932807153914UL), (size_t)(2720369932807153915UL)); rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel); return sendLen;
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
@@ -2102,7 +2120,7 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addIntParallel(int* sendBuf, int* recvBuf, int count)
 # 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&addIntParallel), 3, 0, (size_t)(2720369932807153997UL), (size_t)(2720369932807153998UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&addIntParallel), "addIntParallel", &____must_manage_addIntParallel, 3, 0, (size_t)(2720369932807153997UL), (size_t)(2720369932807153998UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2110,12 +2128,12 @@ void addIntParallel(int* sendBuf, int* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807153964UL), (size_t)(2720369932807153965UL), (size_t)(2720369932807153966UL), (size_t)(2720369932807153967UL), (size_t)(2720369932807153998UL)); rm_stack(false, 0UL); }
+alias_group_changed(5, (size_t)(2720369932807153964UL), (size_t)(2720369932807153965UL), (size_t)(2720369932807153966UL), (size_t)(2720369932807153967UL), (size_t)(2720369932807153998UL)); rm_stack(false, 0UL, "addIntParallel", &____must_manage_addIntParallel); }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count)
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&addRealParallel), 3, 0, (size_t)(2720369932807154033UL), (size_t)(2720369932807154034UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&addRealParallel), "addRealParallel", &____must_manage_addRealParallel, 3, 0, (size_t)(2720369932807154033UL), (size_t)(2720369932807154034UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2123,12 +2141,12 @@ void addRealParallel(real_t* sendBuf, real_t* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154000UL), (size_t)(2720369932807154001UL), (size_t)(2720369932807154002UL), (size_t)(2720369932807154003UL), (size_t)(2720369932807154034UL)); rm_stack(false, 0UL); }
+alias_group_changed(5, (size_t)(2720369932807154000UL), (size_t)(2720369932807154001UL), (size_t)(2720369932807154002UL), (size_t)(2720369932807154003UL), (size_t)(2720369932807154034UL)); rm_stack(false, 0UL, "addRealParallel", &____must_manage_addRealParallel); }
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void addDoubleParallel(double* sendBuf, double* recvBuf, int count)
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&addDoubleParallel), 3, 0, (size_t)(2720369932807154069UL), (size_t)(2720369932807154070UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&addDoubleParallel), "addDoubleParallel", &____must_manage_addDoubleParallel, 3, 0, (size_t)(2720369932807154069UL), (size_t)(2720369932807154070UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2136,12 +2154,12 @@ void addDoubleParallel(double* sendBuf, double* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154036UL), (size_t)(2720369932807154037UL), (size_t)(2720369932807154038UL), (size_t)(2720369932807154039UL), (size_t)(2720369932807154070UL)); rm_stack(false, 0UL); }
+alias_group_changed(5, (size_t)(2720369932807154036UL), (size_t)(2720369932807154037UL), (size_t)(2720369932807154038UL), (size_t)(2720369932807154039UL), (size_t)(2720369932807154070UL)); rm_stack(false, 0UL, "addDoubleParallel", &____must_manage_addDoubleParallel); }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void maxIntParallel(int* sendBuf, int* recvBuf, int count)
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&maxIntParallel), 3, 0, (size_t)(2720369932807154105UL), (size_t)(2720369932807154106UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&maxIntParallel), "maxIntParallel", &____must_manage_maxIntParallel, 3, 0, (size_t)(2720369932807154105UL), (size_t)(2720369932807154106UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2149,13 +2167,13 @@ void maxIntParallel(int* sendBuf, int* recvBuf, int count)
    { int ii; for ( ii = (0) ;ii < count; ++ii) { recvBuf[ii] = sendBuf[ii]; } };
 # 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154072UL), (size_t)(2720369932807154073UL), (size_t)(2720369932807154074UL), (size_t)(2720369932807154075UL), (size_t)(2720369932807154106UL)); rm_stack(false, 0UL); }
+alias_group_changed(5, (size_t)(2720369932807154072UL), (size_t)(2720369932807154073UL), (size_t)(2720369932807154074UL), (size_t)(2720369932807154075UL), (size_t)(2720369932807154106UL)); rm_stack(false, 0UL, "maxIntParallel", &____must_manage_maxIntParallel); }
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&minRankDoubleParallel), 3, 0, (size_t)(2720369932807154155UL), (size_t)(2720369932807154156UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&minRankDoubleParallel), "minRankDoubleParallel", &____must_manage_minRankDoubleParallel, 3, 0, (size_t)(2720369932807154155UL), (size_t)(2720369932807154156UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2171,12 +2189,12 @@ void minRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int
    } }
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154108UL), (size_t)(2720369932807154109UL), (size_t)(2720369932807154110UL), (size_t)(2720369932807154111UL), (size_t)(2720369932807154156UL)); rm_stack(false, 0UL); }
+alias_group_changed(5, (size_t)(2720369932807154108UL), (size_t)(2720369932807154109UL), (size_t)(2720369932807154110UL), (size_t)(2720369932807154111UL), (size_t)(2720369932807154156UL)); rm_stack(false, 0UL, "minRankDoubleParallel", &____must_manage_minRankDoubleParallel); }
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int count)
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&maxRankDoubleParallel), 3, 0, (size_t)(2720369932807154205UL), (size_t)(2720369932807154206UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&maxRankDoubleParallel), "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel, 3, 0, (size_t)(2720369932807154205UL), (size_t)(2720369932807154206UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2192,7 +2210,7 @@ void maxRankDoubleParallel(RankReduceData* sendBuf, RankReduceData* recvBuf, int
    } }
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-alias_group_changed(5, (size_t)(2720369932807154158UL), (size_t)(2720369932807154159UL), (size_t)(2720369932807154160UL), (size_t)(2720369932807154161UL), (size_t)(2720369932807154206UL)); rm_stack(false, 0UL); }
+alias_group_changed(5, (size_t)(2720369932807154158UL), (size_t)(2720369932807154159UL), (size_t)(2720369932807154160UL), (size_t)(2720369932807154161UL), (size_t)(2720369932807154206UL)); rm_stack(false, 0UL, "maxRankDoubleParallel", &____must_manage_maxRankDoubleParallel); }
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2208,19 +2226,19 @@ void bcastParallel(void* buf, int count, int root)
 # 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 int builtWithMpi(void)
 # 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-{new_stack((void *)(&builtWithMpi), 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+{new_stack((void *)(&builtWithMpi), "builtWithMpi", &____must_manage_builtWithMpi, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   rm_stack(false, 0UL); return 0;
+   rm_stack(false, 0UL, "builtWithMpi", &____must_manage_builtWithMpi); return 0;
 # 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 }
 
 
 static int module_init() {
-    init_module(2720369932807153849UL, 20, 16, 2, 1, 2720369932807153849UL + 151UL, 2720369932807153849UL + 184UL, 2720369932807153849UL + 309UL, 2720369932807153849UL + 356UL, 2720369932807153849UL + 152UL, 2720369932807153849UL + 185UL, 2720369932807153849UL + 15UL, 2720369932807153849UL + 42UL, 2720369932807153849UL + 17UL, 2720369932807153849UL + 29UL, 2720369932807153849UL + 259UL, 2720369932807153849UL + 306UL, 2720369932807153849UL + 375UL, 2720369932807153849UL + 34UL, 2720369932807153849UL + 310UL, 2720369932807153849UL + 357UL, 2720369932807153849UL + 51UL, 2720369932807153849UL + 58UL, 2720369932807153849UL + 52UL, 2720369932807153849UL + 59UL, 2720369932807153849UL + 115UL, 2720369932807153849UL + 148UL, 2720369932807153849UL + 61UL, 2720369932807153849UL + 92UL, 2720369932807153849UL + 260UL, 2720369932807153849UL + 307UL, 2720369932807153849UL + 116UL, 2720369932807153849UL + 149UL, 2720369932807153849UL + 64UL, 2720369932807153849UL + 91UL, 2720369932807153849UL + 187UL, 2720369932807153849UL + 220UL, 2720369932807153849UL + 188UL, 2720369932807153849UL + 221UL, 2720369932807153849UL + 224UL, 2720369932807153849UL + 257UL, 2720369932807153849UL + 223UL, 2720369932807153849UL + 256UL, 2720369932807153849UL + 359UL, 2720369932807153849UL + 369UL, "RankReduceDataSt", 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank), "_Z13bcastParallelPvii", 0, "_Z17addDoubleParallelPdS_i", 0, "_Z14maxIntParallelPiS_i", 0, "_Z9getNRanksv", 0, "_Z15barrierParallelv", 0, "_Z21maxRankDoubleParallelP16RankReduceDataStS0_i", 0, "_Z12builtWithMpiv", 0, "_Z9getMyRankv", 0, "_Z14addIntParallelPiS_i", 0, "_Z16timestampBarrierPKc", 6, "_Z15barrierParallelv", "_Z9printRankv", "ctime", "fflush", "fprintf", "time", "_Z12initParallelPiPPPc", 0, "_Z9printRankv", 0, "_Z15addRealParallelPdS_i", 0, "_Z19sendReceiveParallelPviiS_ii", 1, "__assert_rtn", "_Z21minRankDoubleParallelP16RankReduceDataStS0_i", 0, "_Z15destroyParallelv", 0, "timestampBarrier|msg|0", 2, "time", "ctime", "timestampBarrier|t|0", 1, "_Z16timestampBarrierPKc");
+    init_module(2720369932807153849UL, 20, 16, 2, 1, 2720369932807153849UL + 151UL, 2720369932807153849UL + 184UL, 2720369932807153849UL + 309UL, 2720369932807153849UL + 356UL, 2720369932807153849UL + 152UL, 2720369932807153849UL + 185UL, 2720369932807153849UL + 15UL, 2720369932807153849UL + 42UL, 2720369932807153849UL + 17UL, 2720369932807153849UL + 29UL, 2720369932807153849UL + 259UL, 2720369932807153849UL + 306UL, 2720369932807153849UL + 375UL, 2720369932807153849UL + 34UL, 2720369932807153849UL + 310UL, 2720369932807153849UL + 357UL, 2720369932807153849UL + 51UL, 2720369932807153849UL + 58UL, 2720369932807153849UL + 52UL, 2720369932807153849UL + 59UL, 2720369932807153849UL + 115UL, 2720369932807153849UL + 148UL, 2720369932807153849UL + 61UL, 2720369932807153849UL + 92UL, 2720369932807153849UL + 260UL, 2720369932807153849UL + 307UL, 2720369932807153849UL + 116UL, 2720369932807153849UL + 149UL, 2720369932807153849UL + 64UL, 2720369932807153849UL + 91UL, 2720369932807153849UL + 187UL, 2720369932807153849UL + 220UL, 2720369932807153849UL + 188UL, 2720369932807153849UL + 221UL, 2720369932807153849UL + 224UL, 2720369932807153849UL + 257UL, 2720369932807153849UL + 223UL, 2720369932807153849UL + 256UL, 2720369932807153849UL + 359UL, 2720369932807153849UL + 369UL, "RankReduceDataSt", 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank), "initParallel", 0, "maxIntParallel", 0, "timestampBarrier", 4, "barrierParallel", "ctime", "printRank", "time", "destroyParallel", 0, "bcastParallel", 0, "addIntParallel", 0, "minRankDoubleParallel", 0, "printRank", 0, "getMyRank", 0, "addDoubleParallel", 0, "maxRankDoubleParallel", 0, "builtWithMpi", 0, "addRealParallel", 0, "getNRanks", 0, "barrierParallel", 0, "sendReceiveParallel", 0, "timestampBarrier|msg|0", 2, "time", "ctime", "timestampBarrier|t|0", 1, "timestampBarrier");
     register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4, 0, 0, 0);
     register_global_var("global|myRank", "i32", (void *)(&myRank), 4, 0, 0, 0);
     return 0;
