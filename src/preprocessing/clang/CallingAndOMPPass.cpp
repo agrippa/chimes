@@ -102,7 +102,7 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
 
 std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
         std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force,
-        clang::SourceLocation blockStart) {
+        std::stringstream *entry_ss, DeclarationInfo *info) {
     clang::SourceLocation start = d->getLocStart();
     clang::SourceLocation end = d->getLocEnd();
 
@@ -110,7 +110,6 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
 
     std::stringstream acc;
 
-    bool all_unique = true;
     bool anyInitLists = false;
     bool add_wrapping_lbl = false;
     for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
@@ -120,9 +119,6 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
 
             if (allocs.find(v) != allocs.end()) {
                 StackAlloc *alloc = allocs.at(v);
-                if (!alloc->get_is_unique_in_function()) {
-                    all_unique = false;
-                }
                 /*
                  * If this was identified as a variable which may have a
                  * STORE->LOAD pair across a function call which MAY/DOES create
@@ -157,8 +153,6 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
     }
 
     if (add_wrapping_lbl) {
-        std::string decl_str = stmtToString(d);
-
         std::stringstream label_ss;
         int lbl = getNextRegisterLabel();
         label_ss << "lbl_" << lbl;
@@ -174,21 +168,49 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
                 "; } ";
         }
 
-        if (!all_unique) {
+        if (!info->is_hoisted()) {
             InsertTextBefore(start, ss.str());
             InsertTextAfterToken(end, acc.str());
             InsertTextAfterToken(end, ss2.str());
         } else {
-            RemoveText(clang::SourceRange(start, end));
-            std::stringstream everything;
-            everything << ss.str() << decl_str << acc.str() << ss2.str();
-            InsertTextAfterToken(blockStart, everything.str());
+            assert(info->get_as_string().size() > 0);
+            *entry_ss << ss.str() << info->get_as_string() << acc.str() << ss2.str();
         }
 
         return label_ss.str();
     }
 
     return "";
+}
+
+static bool is_hoistable(const clang::DeclStmt *d,
+        std::map<clang::VarDecl *, StackAlloc *> allocs) {
+    bool hoistable = true;
+    for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
+            e = d->decl_end(); i != e; i++) {
+        clang::Decl *dd = *i;
+        if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
+
+            if (allocs.find(v) != allocs.end()) {
+                StackAlloc *alloc = allocs.at(v);
+                /*
+                 * An allocation cannot be moved if it either does not have a
+                 * unique name in this function, or is array typed (in case of a
+                 * dynamically size array allocation with a dependency on some
+                 * other variable specifying its size). This is a rather coarse
+                 * approach and could be dramatically improved (e.g. a variable
+                 * doesn't have to be completely unique in a function to be
+                 * hoisted).
+                 */
+                if (!alloc->get_is_unique_in_function() ||
+                        (alloc->is_array_type() &&
+                         !alloc->is_statically_sized_array_type())) {
+                    hoistable = false;
+                }
+            }
+        }
+    }
+    return (hoistable);
 }
 
 // region may be NULL
@@ -244,6 +266,8 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     } else if (vars_in_regions.find(region) != vars_in_regions.end()) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
         std::string first_label;
+        std::stringstream entry_ss;
+
         for (unsigned i = 0; i < vars->size(); i++) {
             DeclarationInfo curr = (*vars)[i];
             const clang::DeclStmt *d = curr.get_decl();
@@ -253,16 +277,16 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             if (i == vars->size() - 1) force = &transition_str;
 
             if (i == 0) {
-                first_label = handleDecl(d, allocs, force, toInsertAt);
+                first_label = handleDecl(d, allocs, force, &entry_ss, &curr);
             } else {
-                handleDecl(d, allocs, force, toInsertAt);
+                handleDecl(d, allocs, force, &entry_ss, &curr);
             }
         }
 
-        std::stringstream entry_ss;
-        entry_ss << " if (____chimes_replaying) { goto " << first_label <<
-            "; } ";
-        InsertTextAfterToken(toInsertAt, entry_ss.str());
+        std::stringstream full_entry_ss;
+        full_entry_ss << " if (____chimes_replaying) { goto " << first_label <<
+            "; } " << entry_ss.str();
+        InsertTextAfterToken(toInsertAt, full_entry_ss.str());
     } else {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { " << transition_str <<
@@ -517,12 +541,27 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
     for (std::vector<DeclarationInfo>::iterator i = vars_to_classify.begin(),
             e = vars_to_classify.end(); i != e; i++) {
         DeclarationInfo curr = *i;
-        OMPRegion *region = ompTree->find_containing_region(curr.get_decl());
+        bool hoistable = is_hoistable(curr.get_decl(), curr.get_allocs());
+        OMPRegion *region;
+        if (hoistable) {
+            region = NULL;
+            curr.hoist(stmtToString(curr.get_decl()));
+            RemoveText(clang::SourceRange(curr.get_decl()->getLocStart(),
+                        curr.get_decl()->getLocEnd()));
+        } else {
+            region = ompTree->find_containing_region(curr.get_decl());
+        }
         if (vars_in_regions.find(region) == vars_in_regions.end()) {
             vars_in_regions[region] =
                 new std::vector<DeclarationInfo>();
         }
-        vars_in_regions[region]->push_back(curr);
+
+        std::vector<DeclarationInfo> *vars = vars_in_regions[region];
+        if (hoistable) {
+            vars->insert(vars->begin(), curr);
+        } else {
+            vars->push_back(curr);
+        }
     }
 
     VisitRegion(NULL);

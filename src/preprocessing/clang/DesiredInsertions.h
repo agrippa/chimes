@@ -239,6 +239,15 @@ public:
     bool get_is_ptr() { return is_ptr; }
     bool get_is_struct() { return is_struct; }
     bool is_array_type() { return full_type[0] == '['; }
+    bool is_statically_sized_array_type() {
+        if (is_array_type()) {
+            int index = 1;
+            while (full_type[index] != ' ') index++;
+            std::string size_str = full_type.substr(1, index - 1);
+            return (size_str != "na");
+        }
+        return (false);
+    }
 
 private:
     std::string enclosing_file;

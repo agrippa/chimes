@@ -1750,9 +1750,10 @@ int bar(int b) {new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (si
 }
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)); if (____chimes_replaying) { goto lbl_0; } lbl_0: int d;
+ register_stack_var("main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- lbl_0: int d; register_stack_var("main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+ ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  switch(argc) {
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"

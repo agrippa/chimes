@@ -14,14 +14,23 @@ class DeclarationInfo {
     public:
         DeclarationInfo(const clang::DeclStmt *set_decl,
                 std::map<clang::VarDecl *, StackAlloc *> set_allocs) :
-            decl(set_decl), allocs(set_allocs) {}
+            decl(set_decl), allocs(set_allocs), hoisted(false) {}
 
         const clang::DeclStmt *get_decl() { return decl; }
         std::map<clang::VarDecl *, StackAlloc *> get_allocs() { return allocs; }
 
+        void hoist(std::string set_as_string) {
+            hoisted = true;
+            as_string = set_as_string;
+        }
+        bool is_hoisted() { return hoisted; }
+        std::string get_as_string() { return as_string; }
+
     private:
         const clang::DeclStmt *decl;
         std::map<clang::VarDecl *, StackAlloc *> allocs;
+        bool hoisted;
+        std::string as_string;
 };
 
 class CallLocation {
@@ -83,7 +92,8 @@ private:
 
     std::string handleDecl(const clang::DeclStmt *d,
             std::map<clang::VarDecl *, StackAlloc *> allocs,
-            std::string *force, clang::SourceLocation blockStart);
+            std::string *force, std::stringstream *entry_ss,
+            DeclarationInfo *info);
     void VisitRegion(OMPRegion *region);
 
     std::set<std::string> supported_omp_clauses;
