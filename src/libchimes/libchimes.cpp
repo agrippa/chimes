@@ -1465,9 +1465,8 @@ static inline void alias_group_changed_helper(int ngroups, va_list vl,
     for (int i = 0; i < ngroups; i++) {
         size_t group = va_arg(vl, size_t);
 
-        if (valid_group(group)) {
-            ctx->add_changed_group(group);
-        }
+        assert(valid_group(group));
+        ctx->add_changed_group(group);
     }
 }
 
