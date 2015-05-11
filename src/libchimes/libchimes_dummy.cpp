@@ -7,6 +7,8 @@
  * compiler is able to make.
  */
 
+int ____chimes_replaying = 0;
+
 void init_chimes() { }
 
 void calling(void *func_ptr, int lbl, size_t set_return_alias,

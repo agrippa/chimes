@@ -101,7 +101,8 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
 }
 
 std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
-        std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force) {
+        std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force,
+        clang::SourceLocation blockStart) {
     clang::SourceLocation start = d->getLocStart();
     clang::SourceLocation end = d->getLocEnd();
 
@@ -109,6 +110,7 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
 
     std::stringstream acc;
 
+    bool all_unique = true;
     bool anyInitLists = false;
     bool add_wrapping_lbl = false;
     for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
@@ -118,6 +120,9 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
 
             if (allocs.find(v) != allocs.end()) {
                 StackAlloc *alloc = allocs.at(v);
+                if (!alloc->get_is_unique_in_function()) {
+                    all_unique = false;
+                }
                 /*
                  * If this was identified as a variable which may have a
                  * STORE->LOAD pair across a function call which MAY/DOES create
@@ -152,6 +157,8 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
     }
 
     if (add_wrapping_lbl) {
+        std::string decl_str = stmtToString(d);
+
         std::stringstream label_ss;
         int lbl = getNextRegisterLabel();
         label_ss << "lbl_" << lbl;
@@ -167,9 +174,16 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
                 "; } ";
         }
 
-        InsertTextBefore(start, ss.str());
-        InsertTextAfterToken(end, acc.str());
-        InsertTextAfterToken(end, ss2.str());
+        if (!all_unique) {
+            InsertTextBefore(start, ss.str());
+            InsertTextAfterToken(end, acc.str());
+            InsertTextAfterToken(end, ss2.str());
+        } else {
+            RemoveText(clang::SourceRange(start, end));
+            std::stringstream everything;
+            everything << ss.str() << decl_str << acc.str() << ss2.str();
+            InsertTextAfterToken(blockStart, everything.str());
+        }
 
         return label_ss.str();
     }
@@ -239,9 +253,9 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             if (i == vars->size() - 1) force = &transition_str;
 
             if (i == 0) {
-                first_label = handleDecl(d, allocs, force);
+                first_label = handleDecl(d, allocs, force, toInsertAt);
             } else {
-                handleDecl(d, allocs, force);
+                handleDecl(d, allocs, force, toInsertAt);
             }
         }
 
@@ -253,10 +267,6 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { " << transition_str <<
             " } ";
-        /*
-         * Increment past the semicolon at the end of the function call. This is
-         * fragile.
-         */
         InsertTextAfterToken(toInsertAt, entry_ss.str());
     }
 
