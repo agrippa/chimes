@@ -428,6 +428,9 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
     std::ifstream fp;
     fp.open(stack_allocs_file, std::ios::in);
 
+    // Mapping from func|var name to is unique? information
+    std::map<std::string, bool> is_unique_in_function;
+
     std::map<std::string, StackAlloc *> *allocs =
         new std::map<std::string, StackAlloc *>();
 
@@ -540,6 +543,24 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
 
         assert(allocs->find(mangled_name) == allocs->end());
         (*allocs)[mangled_name] = alloc;
+
+        std::string func_var_name = alloc->get_func_var_name_from_mangled_name();
+        if (is_unique_in_function.find(func_var_name) == is_unique_in_function.end()) {
+            is_unique_in_function.insert(std::pair<std::string, bool>(func_var_name, true));
+        } else {
+            is_unique_in_function[func_var_name] = false;
+        }
+    }
+
+    for (std::map<std::string, StackAlloc *>::iterator i = allocs->begin(),
+            e = allocs->end(); i != e; i++) {
+        StackAlloc *alloc = i->second;
+        std::string func_var_name = alloc->get_func_var_name_from_mangled_name();
+        assert(is_unique_in_function.find(func_var_name) !=
+                is_unique_in_function.end());
+        if (is_unique_in_function[func_var_name]) {
+            alloc->set_is_unique_in_function(true);
+        }
     }
 
     return allocs;

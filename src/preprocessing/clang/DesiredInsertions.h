@@ -194,7 +194,27 @@ public:
         enclosing_file(set_enclosing_file),
         mangled_varname(set_mangled_name), full_type(set_full_type),
         type_size_in_bits(set_type_size_in_bits), is_ptr(set_is_ptr),
-        is_struct(set_is_struct) { }
+        is_struct(set_is_struct), is_unique_in_function(false) { }
+
+    std::string get_function_from_mangled_name() {
+        size_t index = mangled_varname.find('|');
+        return mangled_varname.substr(0, index);
+    }
+
+    std::string get_varname_from_mangled_name() {
+        size_t first_index = mangled_varname.find('|');
+        std::string suffix = mangled_varname.substr(first_index + 1);
+        size_t second_index = suffix.find('|');
+        return suffix.substr(0, second_index);
+    }
+
+    std::string get_func_var_name_from_mangled_name() {
+        size_t second_index = mangled_varname.rfind('|');
+        return mangled_varname.substr(0, second_index);
+    }
+
+    bool set_is_unique_in_function(bool s) { is_unique_in_function = s; }
+    bool get_is_unique_in_function() { return is_unique_in_function; }
 
     bool get_may_checkpoint() { return may_checkpoint; }
     void set_may_checkpoint(bool s) { may_checkpoint = s; }
@@ -231,6 +251,7 @@ private:
     std::vector<std::string> ptr_fields;
     bool may_checkpoint;
     std::set<std::string> checkpoint_causes;
+    bool is_unique_in_function;
 };
 
 enum CREATES_CHECKPOINT { DOES_NOT = 0, MAY = 1, DOES = 2 };

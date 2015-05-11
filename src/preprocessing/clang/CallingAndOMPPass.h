@@ -83,7 +83,7 @@ private:
 
     std::string handleDecl(const clang::DeclStmt *d,
             std::map<clang::VarDecl *, StackAlloc *> allocs,
-            std::string *force);
+            std::string *force, clang::SourceLocation blockStart);
     void VisitRegion(OMPRegion *region);
 
     std::set<std::string> supported_omp_clauses;
