@@ -16,6 +16,9 @@ static int ____must_checkpoint_printCmdYaml_cmd_0 = 2;
 
 static int ____must_manage_parseCommandLine = 2;
 static int ____must_manage_printCmdYaml = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -30,72 +33,6 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.h" 1
-
-
-
-
-
-
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -535,10 +472,68 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.h" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
 
 
 
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.h" 1
+# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.h"
 typedef struct CommandSt
 {
    char potDir[1024];
@@ -1998,7 +1993,7 @@ Command parseCommandLine(int argc, char** argv)
      lbl_0: int help; if (____must_checkpoint_parseCommandLine_help_0 != 0) { register_stack_var("parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } default: { chimes_error(); } } } help = (0) ;
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(4, (size_t)(6351733837270304102UL), (size_t)(6351733837270304103UL), (size_t)(6351733837270304104UL), (size_t)(6351733837270304242UL)); call_lbl_8: calling((void*)&addArg, 8, 0UL, 7, (size_t)(6351733837270304336UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6351733837270304104UL), (size_t)(0UL), (size_t)(6351733837270304340UL)); addArg("help", 'h', 0, 'i', &(help), 0, "print this message");
+   alias_group_changed(____alias_loc_id_0); call_lbl_8: calling((void*)&addArg, 8, 0UL, 7, (size_t)(6351733837270304336UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6351733837270304104UL), (size_t)(0UL), (size_t)(6351733837270304340UL)); addArg("help", 'h', 0, 'i', &(help), 0, "print this message");
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
     call_lbl_9: calling((void*)&addArg, 9, 0UL, 7, (size_t)(6351733837270304338UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6351733837270304242UL), (size_t)(0UL), (size_t)(6351733837270304342UL)); addArg("potDir", 'd', 1, 's', cmd.potDir, sizeof(cmd.potDir), "potential directory");
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2063,7 +2058,7 @@ Command parseCommandLine(int argc, char** argv)
     call_lbl_34: calling((void*)&freeArgs, 34, 0UL, 0); freeArgs();
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine); return cmd;
+   rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0); return cmd;
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 }
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2072,7 +2067,7 @@ void printCmdYaml(FILE* file, Command* cmd)
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(6351733837270304331UL), (size_t)(6351733837270304332UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(2, (size_t)(6351733837270304267UL), (size_t)(6351733837270304268UL)); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml); return;; };
+   alias_group_changed(____alias_loc_id_1); call_lbl_2: calling((void*)&printRank, 2, 0UL, 0); if (!printRank()) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0); return;; };
 # 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2140,11 +2135,11 @@ void printCmdYaml(FILE* file, Command* cmd)
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fflush(file);
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml); }
+rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0); }
 
 
 static int module_init() {
-    init_module(6351733837270304101UL, 3, 2, 5, 4, 6351733837270304101UL + 166UL, 6351733837270304101UL + 230UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 143UL, 6351733837270304101UL + 167UL, 6351733837270304101UL + 231UL, "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "parseCommandLine", 4, "addArg", "freeArgs", "printArgs", "processArgs", "printCmdYaml", 1, "printRank", "parseCommandLine|argc|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|argv|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|help|0", 1, "parseCommandLine", "printCmdYaml|file|0", 1, "printRank", "printCmdYaml|cmd|0", 1, "printRank");
+    init_module(6351733837270304101UL, 3, 2, 5, 2, 4, 6351733837270304101UL + 166UL, 6351733837270304101UL + 230UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 143UL, 6351733837270304101UL + 167UL, 6351733837270304101UL + 231UL, "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "parseCommandLine", 4, "addArg", "freeArgs", "printArgs", "processArgs", "printCmdYaml", 1, "printRank", "parseCommandLine|argc|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|argv|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|help|0", 1, "parseCommandLine", "printCmdYaml|file|0", 1, "printRank", "printCmdYaml|cmd|0", 1, "printRank", &____alias_loc_id_0, (unsigned)4, 6351733837270304101UL + 1UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 3UL, 6351733837270304101UL + 141UL, &____alias_loc_id_1, (unsigned)2, 6351733837270304101UL + 166UL, 6351733837270304101UL + 167UL);
     return 0;
 }
 

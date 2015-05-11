@@ -17,6 +17,16 @@ static int ____must_checkpoint_main_elapsed_s_0 = 2;
 static int ____must_checkpoint_main_point_rate_0 = 2;
 
 static int ____must_manage_fwd = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -33,56 +43,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
-# 34 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -524,7 +484,57 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 35 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp" 2
+# 35 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2966,14 +2976,14 @@ static void fwd(float *next, float *curr, float *vsq,
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  } }
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
-alias_group_changed(20, (size_t)(636351188801416980UL), (size_t)(636351188801416981UL), (size_t)(636351188801416982UL), (size_t)(636351188801416983UL), (size_t)(636351188801416984UL), (size_t)(636351188801416985UL), (size_t)(636351188801416986UL), (size_t)(636351188801416987UL), (size_t)(636351188801416988UL), (size_t)(636351188801416989UL), (size_t)(636351188801416990UL), (size_t)(636351188801416991UL), (size_t)(636351188801416992UL), (size_t)(636351188801416993UL), (size_t)(636351188801416994UL), (size_t)(636351188801416995UL), (size_t)(636351188801416996UL), (size_t)(636351188801416997UL), (size_t)(636351188801416998UL), (size_t)(636351188801417188UL)); rm_stack(false, 0UL, "fwd", &____must_manage_fwd); }
+rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8); }
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); if (____chimes_replaying) { goto lbl_0; }
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  lbl_0: config conf; register_stack_var("main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { goto lbl_1; } ;
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(3, (size_t)(636351188801416609UL), (size_t)(636351188801416610UL), (size_t)(636351188801416611UL)); call_lbl_3: calling((void*)&setup_config, 3, 0UL, 3, (size_t)(636351188801416612UL), (size_t)(0UL), (size_t)(636351188801416950UL)); setup_config(&conf, argc, argv);
+ alias_group_changed(____alias_loc_id_0); call_lbl_3: calling((void*)&setup_config, 3, 0UL, 3, (size_t)(636351188801416612UL), (size_t)(0UL), (size_t)(636351188801416950UL)); setup_config(&conf, argc, argv);
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  call_lbl_4: calling((void*)&init_progress, 4, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_progress(conf.progress_width, conf.nsteps, conf.progress_disabled);
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3014,20 +3024,20 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "m
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  fprintf(__stderrp, "Allocations failed\n");
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(12, (size_t)(636351188801416609UL), (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL), (size_t)(636351188801416629UL), (size_t)(636351188801416630UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 1;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7); return 1;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(9, (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL)); call_lbl_16: calling((void*)&config_sources, 16, 0UL, 5, (size_t)(636351188801416612UL), (size_t)(636351188801416612UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
+ alias_group_changed(____alias_loc_id_1); call_lbl_15: calling((void*)&config_sources, 15, 0UL, 5, (size_t)(636351188801416612UL), (size_t)(636351188801416612UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); config_sources(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps);
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- lbl_10: float **srcs; register_stack_var("main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } call_lbl_17: calling((void*)&sample_sources, 17, 636351188801416932UL, 4, (size_t)(636351188801416773UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt)) ;
+ lbl_10: float **srcs; register_stack_var("main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_11; } call_lbl_16: calling((void*)&sample_sources, 16, 636351188801416932UL, 4, (size_t)(636351188801416773UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt)) ;
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(1, (size_t)(636351188801416622UL)); call_lbl_19: calling((void*)&init_data, 19, 0UL, 8, (size_t)(636351188801416828UL), (size_t)(636351188801416828UL), (size_t)(636351188801416830UL), (size_t)(636351188801416831UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dx, dt);
+ alias_group_changed(____alias_loc_id_2); call_lbl_18: calling((void*)&init_data, 18, 0UL, 8, (size_t)(636351188801416828UL), (size_t)(636351188801416828UL), (size_t)(636351188801416830UL), (size_t)(636351188801416831UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); init_data(curr, next, vsq, c_coeff, dimx, dimy, dx, dt);
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- lbl_11: double start; register_stack_var("main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_20: calling((void*)&seconds, 20, 0UL, 0); start = (seconds()) ;
+ lbl_11: double start; register_stack_var("main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_12; } call_lbl_19: calling((void*)&seconds, 19, 0UL, 0); start = (seconds()) ;
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  { lbl_12: int step; register_stack_var("main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_13; } for ( step = (0) ; step < conf.nsteps; step++) {
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3042,7 +3052,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "m
  } }
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- call_lbl_21: calling((void*)&fwd, 21, 0UL, 9, (size_t)(636351188801416828UL), (size_t)(636351188801416828UL), (size_t)(636351188801416830UL), (size_t)(636351188801416831UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy,
+ call_lbl_20: calling((void*)&fwd, 20, 0UL, 9, (size_t)(636351188801416828UL), (size_t)(636351188801416828UL), (size_t)(636351188801416830UL), (size_t)(636351188801416831UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); fwd(next, curr, vsq, c_coeff, conf.nx, conf.ny, dimx, dimy,
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  conf.radius);
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3055,21 +3065,21 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "m
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(8, (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416623UL), (size_t)(636351188801416624UL), (size_t)(636351188801416625UL), (size_t)(636351188801416626UL), (size_t)(636351188801416627UL), (size_t)(636351188801416828UL)); call_lbl_23: calling((void*)&checkpoint, 23, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_3); call_lbl_22: calling((void*)&checkpoint, 22, 0UL, 0); checkpoint();
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- call_lbl_24: calling((void*)&update_progress, 24, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
+ call_lbl_23: calling((void*)&update_progress, 23, 0UL, 1, (size_t)(0UL)); update_progress(step + 1);
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  } }
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(8, (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416623UL), (size_t)(636351188801416624UL), (size_t)(636351188801416625UL), (size_t)(636351188801416626UL), (size_t)(636351188801416627UL), (size_t)(636351188801416828UL)); lbl_16: double elapsed_s; if (____must_checkpoint_main_elapsed_s_0 != 0) { register_stack_var("main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_17; } call_lbl_26: calling((void*)&seconds, 26, 0UL, 0); elapsed_s = (seconds() - start) ;
+ alias_group_changed(____alias_loc_id_4); lbl_16: double elapsed_s; if (____must_checkpoint_main_elapsed_s_0 != 0) { register_stack_var("main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_17; } call_lbl_25: calling((void*)&seconds, 25, 0UL, 0); elapsed_s = (seconds() - start) ;
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(1, (size_t)(636351188801416628UL)); call_lbl_28: calling((void*)&finish_progress, 28, 0UL, 0); finish_progress();
+ alias_group_changed(____alias_loc_id_5); call_lbl_27: calling((void*)&finish_progress, 27, 0UL, 0); finish_progress();
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- lbl_17: float point_rate; if (____must_checkpoint_main_point_rate_0 != 0) { register_stack_var("main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(28): { goto call_lbl_28; } case(31): { goto call_lbl_31; } default: { chimes_error(); } } } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
+ lbl_17: float point_rate; if (____must_checkpoint_main_point_rate_0 != 0) { register_stack_var("main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } case(30): { goto call_lbl_30; } default: { chimes_error(); } } } point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3078,7 +3088,7 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "m
 # 137 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  if (conf.save_text) {
 # 138 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(1, (size_t)(636351188801416629UL)); call_lbl_31: calling((void*)&save_text, 31, 0UL, 7, (size_t)(636351188801416828UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(636351188801417212UL), (size_t)(0UL)); save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
+ alias_group_changed(____alias_loc_id_6); call_lbl_30: calling((void*)&save_text, 30, 0UL, 7, (size_t)(636351188801416828UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(636351188801417212UL), (size_t)(0UL)); save_text(curr, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius);
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  }
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3100,13 +3110,13 @@ int main( int argc, char *argv[] ) {init_chimes(); new_stack((void *)(&main), "m
  free_wrapper(srcs, 636351188801416932UL);
 # 149 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- alias_group_changed(12, (size_t)(636351188801416609UL), (size_t)(636351188801416613UL), (size_t)(636351188801416614UL), (size_t)(636351188801416615UL), (size_t)(636351188801416616UL), (size_t)(636351188801416617UL), (size_t)(636351188801416618UL), (size_t)(636351188801416619UL), (size_t)(636351188801416620UL), (size_t)(636351188801416621UL), (size_t)(636351188801416629UL), (size_t)(636351188801416630UL)); rm_stack(false, 0UL, "main", (int *)0x0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7); return 0;
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 }
 
 
 static int module_init() {
-    init_module(636351188801416608UL, 14, 2, 3, 2, 636351188801416608UL + 11UL, 636351188801416608UL + 220UL, 636351188801416608UL + 10UL, 636351188801416608UL + 223UL, 636351188801416608UL + 13UL, 636351188801416608UL + 222UL, 636351188801416608UL + 12UL, 636351188801416608UL + 220UL, 636351188801416608UL + 601UL, 636351188801416608UL + 274UL, 636351188801416608UL + 14UL, 636351188801416608UL + 324UL, 636351188801416608UL + 19UL, 636351188801416608UL + 220UL, 636351188801416608UL + 3UL, 636351188801416608UL + 342UL, 636351188801416608UL + 4UL, 636351188801416608UL + 165UL, 636351188801416608UL + 324UL, 636351188801416608UL + 326UL, 636351188801416608UL + 373UL, 636351188801416608UL + 581UL, 636351188801416608UL + 372UL, 636351188801416608UL + 580UL, 636351188801416608UL + 375UL, 636351188801416608UL + 583UL, 636351188801416608UL + 374UL, 636351188801416608UL + 582UL, "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "fwd", 0, "main", 11, "checkpoint", "config_sources", "finish_progress", "fwd", "init_data", "init_progress", "sample_sources", "save_text", "seconds", "setup_config", "update_progress", "main|conf|0", 1, "main", "main|elapsed_s|0", 2, "save_text", "finish_progress", "main|point_rate|0", 1, "save_text");
+    init_module(636351188801416608UL, 14, 2, 3, 7, 2, 636351188801416608UL + 11UL, 636351188801416608UL + 220UL, 636351188801416608UL + 10UL, 636351188801416608UL + 223UL, 636351188801416608UL + 13UL, 636351188801416608UL + 222UL, 636351188801416608UL + 12UL, 636351188801416608UL + 220UL, 636351188801416608UL + 601UL, 636351188801416608UL + 274UL, 636351188801416608UL + 14UL, 636351188801416608UL + 324UL, 636351188801416608UL + 19UL, 636351188801416608UL + 220UL, 636351188801416608UL + 3UL, 636351188801416608UL + 342UL, 636351188801416608UL + 4UL, 636351188801416608UL + 165UL, 636351188801416608UL + 324UL, 636351188801416608UL + 326UL, 636351188801416608UL + 373UL, 636351188801416608UL + 581UL, 636351188801416608UL + 372UL, 636351188801416608UL + 580UL, 636351188801416608UL + 375UL, 636351188801416608UL + 583UL, 636351188801416608UL + 374UL, 636351188801416608UL + 582UL, "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "fwd", 0, "main", 11, "checkpoint", "config_sources", "finish_progress", "fwd", "init_data", "init_progress", "sample_sources", "save_text", "seconds", "setup_config", "update_progress", "main|conf|0", 1, "main", "main|elapsed_s|0", 2, "save_text", "finish_progress", "main|point_rate|0", 1, "save_text", &____alias_loc_id_0, (unsigned)3, 636351188801416608UL + 1UL, 636351188801416608UL + 2UL, 636351188801416608UL + 3UL, &____alias_loc_id_1, (unsigned)9, 636351188801416608UL + 5UL, 636351188801416608UL + 6UL, 636351188801416608UL + 7UL, 636351188801416608UL + 8UL, 636351188801416608UL + 9UL, 636351188801416608UL + 10UL, 636351188801416608UL + 11UL, 636351188801416608UL + 12UL, 636351188801416608UL + 13UL, &____alias_loc_id_2, (unsigned)1, 636351188801416608UL + 14UL, &____alias_loc_id_3, (unsigned)8, 636351188801416608UL + 11UL, 636351188801416608UL + 12UL, 636351188801416608UL + 15UL, 636351188801416608UL + 16UL, 636351188801416608UL + 17UL, 636351188801416608UL + 18UL, 636351188801416608UL + 19UL, 636351188801416608UL + 220UL, &____alias_loc_id_4, (unsigned)8, 636351188801416608UL + 11UL, 636351188801416608UL + 12UL, 636351188801416608UL + 15UL, 636351188801416608UL + 16UL, 636351188801416608UL + 17UL, 636351188801416608UL + 18UL, 636351188801416608UL + 19UL, 636351188801416608UL + 220UL, &____alias_loc_id_5, (unsigned)1, 636351188801416608UL + 20UL, &____alias_loc_id_6, (unsigned)1, 636351188801416608UL + 21UL, &____alias_loc_id_7, (unsigned)12, 636351188801416608UL + 1UL, 636351188801416608UL + 5UL, 636351188801416608UL + 6UL, 636351188801416608UL + 7UL, 636351188801416608UL + 8UL, 636351188801416608UL + 9UL, 636351188801416608UL + 10UL, 636351188801416608UL + 11UL, 636351188801416608UL + 12UL, 636351188801416608UL + 13UL, 636351188801416608UL + 21UL, 636351188801416608UL + 22UL, &____alias_loc_id_8, (unsigned)20, 636351188801416608UL + 372UL, 636351188801416608UL + 373UL, 636351188801416608UL + 374UL, 636351188801416608UL + 375UL, 636351188801416608UL + 376UL, 636351188801416608UL + 377UL, 636351188801416608UL + 378UL, 636351188801416608UL + 379UL, 636351188801416608UL + 380UL, 636351188801416608UL + 381UL, 636351188801416608UL + 382UL, 636351188801416608UL + 383UL, 636351188801416608UL + 384UL, 636351188801416608UL + 385UL, 636351188801416608UL + 386UL, 636351188801416608UL + 387UL, 636351188801416608UL + 388UL, 636351188801416608UL + 389UL, 636351188801416608UL + 390UL, 636351188801416608UL + 580UL);
     return 0;
 }
 

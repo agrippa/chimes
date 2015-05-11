@@ -12,6 +12,9 @@ typedef long unsigned int size_t;
 # 3 "<command line>" 2
 # 1 "<built-in>" 2
 # 1 "globals.cpp.pre.transformed.cpp" 2
+
+
+static unsigned ____alias_loc_id_0;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -28,55 +31,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -518,7 +472,58 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+
 # 1 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h" 1
 
 
@@ -1744,15 +1749,15 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  printf("auto global\n");
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
- alias_group_changed(4, (size_t)(9397157703034130344UL), (size_t)(9397157703034130345UL), (size_t)(9397157703034130346UL), (size_t)(9397157703034130366UL)); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_0); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0); return b + a;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0); return b + a;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 }
 
 
 static int module_init() {
-    init_module(9397157703034130343UL, 2, 1, 0, 0, 9397157703034130343UL + 3UL, 9397157703034130343UL + 19UL, 9397157703034130343UL + 26UL, 9397157703034130343UL + 10UL, "main", 1, "checkpoint");
+    init_module(9397157703034130343UL, 2, 1, 0, 1, 0, 9397157703034130343UL + 3UL, 9397157703034130343UL + 19UL, 9397157703034130343UL + 26UL, 9397157703034130343UL + 10UL, "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)4, 9397157703034130343UL + 1UL, 9397157703034130343UL + 2UL, 9397157703034130343UL + 3UL, 9397157703034130343UL + 23UL);
     register_global_var("global|a", "i32", (void *)(&a), 4, 0, 0, 0);
     register_global_var("global|b", "i32", (void *)(&b), 4, 0, 0, 0);
     register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8, 1, 0, 0);

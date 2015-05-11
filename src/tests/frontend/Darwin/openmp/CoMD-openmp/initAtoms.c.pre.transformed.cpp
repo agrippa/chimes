@@ -66,6 +66,28 @@ static int ____must_manage_initAtoms = 2;
 static int ____must_manage_zeroReal3 = 2;
 static int ____must_manage_randomDisplacements = 2;
 static int ____must_manage_computeVcm = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
+static unsigned ____alias_loc_id_13;
+static unsigned ____alias_loc_id_14;
+static unsigned ____alias_loc_id_15;
+static unsigned ____alias_loc_id_16;
+static unsigned ____alias_loc_id_17;
+static unsigned ____alias_loc_id_18;
+static unsigned ____alias_loc_id_19;
+static unsigned ____alias_loc_id_20;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -80,77 +102,8 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 61 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 62 "/usr/include/stdlib.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 32 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/stdio.h" 1 3 4
+# 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -158,7 +111,17 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 33 "/usr/include/sys/_types.h" 2 3 4
+# 65 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 66 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -328,8 +291,318 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 64 "/usr/include/stdlib.h" 2 3 4
+# 68 "/usr/include/stdio.h" 2 3 4
 
+
+
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 73 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 74 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) ;
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 2 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 3 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -795,8 +1068,7 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 155 "/usr/include/sys/signal.h" 2 3 4
+
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1257,10 +1529,6 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
-
-
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -2137,260 +2405,7 @@ int maxOccupancy(LinkCell* boxes);
 
 
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 1
-
-
-
-
-
-
-# 1 "/usr/include/stdio.h" 1 3 4
-# 71 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-
-
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
-
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h"
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h" 1
 
 
@@ -2593,7 +2608,7 @@ Atoms* initAtoms(LinkCell* boxes)
    } }
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   alias_group_changed(6, (size_t)(13706408354153104289UL), (size_t)(13706408354153104290UL), (size_t)(13706408354153104291UL), (size_t)(13706408354153104292UL), (size_t)(13706408354153104296UL), (size_t)(13706408354153104308UL)); rm_stack(true, 13706408354153104296UL, "initAtoms", &____must_manage_initAtoms); return atoms;
+   rm_stack(true, 13706408354153104296UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_14); return atoms;
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2634,7 +2649,7 @@ void destroyAtoms(Atoms *atoms)
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    free_wrapper(atoms, 13706408354153104527UL);
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-alias_group_changed(2, (size_t)(13706408354153104436UL), (size_t)(13706408354153104527UL)); rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms); }
+rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_16); }
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2678,7 +2693,7 @@ void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   do { alias_group_changed(22, (size_t)(13706408354153104529UL), (size_t)(13706408354153104530UL), (size_t)(13706408354153104531UL), (size_t)(13706408354153104532UL), (size_t)(13706408354153104533UL), (size_t)(13706408354153104534UL), (size_t)(13706408354153104535UL), (size_t)(13706408354153104536UL), (size_t)(13706408354153104538UL), (size_t)(13706408354153104539UL), (size_t)(13706408354153104540UL), (size_t)(13706408354153104541UL), (size_t)(13706408354153104542UL), (size_t)(13706408354153104543UL), (size_t)(13706408354153104544UL), (size_t)(13706408354153104545UL), (size_t)(13706408354153104546UL), (size_t)(13706408354153104547UL), (size_t)(13706408354153104548UL), (size_t)(13706408354153104549UL), (size_t)(13706408354153104550UL), (size_t)(13706408354153104551UL)); call_lbl_5: calling((void*)&profileStart, 5, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
+   do { alias_group_changed(____alias_loc_id_1); call_lbl_5: calling((void*)&profileStart, 5, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
 # 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_6: calling((void*)&addIntParallel, 6, 0UL, 3, (size_t)(13706408354153104792UL), (size_t)(13706408354153104792UL), (size_t)(0UL)); addIntParallel(&s->atoms->nLocal, &s->atoms->nGlobal, 1);
 # 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2687,7 +2702,7 @@ void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    (__builtin_expect(!(s->atoms->nGlobal == nb*nx*ny*nz), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, "s->atoms->nGlobal == nb*nx*ny*nz") : (void)0);
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "createFccLattice", &____must_manage_createFccLattice); }
+rm_stack(false, 0UL, "createFccLattice", &____must_manage_createFccLattice, 0); }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2698,16 +2713,16 @@ void setVcm(SimFlat* s, real_t newVcm[3])
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     lbl_0: real_t oldVcm[3]; if (____must_checkpoint_setVcm_oldVcm_0 != 0) { register_stack_var("setVcm|oldVcm|0", &____must_checkpoint_setVcm_oldVcm_0, "[3 x double]", (void *)(oldVcm), (size_t)24, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   alias_group_changed(2, (size_t)(13706408354153104858UL), (size_t)(13706408354153104859UL)); call_lbl_2: calling((void*)&computeVcm, 2, 0UL, 2, (size_t)(13706408354153105013UL), (size_t)(13706408354153104860UL)); computeVcm(s, oldVcm);
+   alias_group_changed(____alias_loc_id_2); call_lbl_2: calling((void*)&computeVcm, 2, 0UL, 2, (size_t)(13706408354153105013UL), (size_t)(13706408354153104860UL)); computeVcm(s, oldVcm);
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    lbl_1: real_t vShift[3]; if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
+    lbl_1: real_t vShift[3]; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[0] = (newVcm[0] - oldVcm[0]);
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vShift[1] = (newVcm[1] - oldVcm[1]);
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   vShift[2] = (newVcm[2] - oldVcm[2]); { call_lbl_5: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
+   vShift[2] = (newVcm[2] - oldVcm[2]); { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2739,12 +2754,12 @@ void setVcm(SimFlat* s, real_t newVcm[3])
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-alias_group_changed(7, (size_t)(13706408354153104861UL), (size_t)(13706408354153104862UL), (size_t)(13706408354153104863UL), (size_t)(13706408354153104864UL), (size_t)(13706408354153104865UL), (size_t)(13706408354153104866UL), (size_t)(13706408354153104937UL)); rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm); }
+rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_17); }
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setTemperature(SimFlat* s, real_t temperature)
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(13706408354153105477UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0); { call_lbl_20: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(20, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; ; if (____chimes_replaying) { goto lbl_0; }
+{new_stack((void *)(&setTemperature), "setTemperature", &____must_manage_setTemperature, 2, 2, (size_t)(13706408354153105477UL), (size_t)(0UL), "setTemperature|s|0", &____must_checkpoint_setTemperature_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "setTemperature|temperature|0", &____must_checkpoint_setTemperature_temperature_0, "double", (void *)(&temperature), (size_t)8, 0, 0, 0); { call_lbl_18: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(18, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1; ; if (____chimes_replaying) { goto lbl_0; }
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2767,13 +2782,13 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
           real_t sigma; sigma = (sqrt(kB_eV * temperature / mass)) ;
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(9, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105206UL), (size_t)(13706408354153105255UL)); uint64_t seed; call_lbl_3: calling((void*)&mkSeed, 3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
+         alias_group_changed(____alias_loc_id_4); uint64_t seed; call_lbl_3: calling((void*)&mkSeed, 3, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 123)) ;
 # 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105207UL)); call_lbl_5: calling((void*)&gasdev, 5, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
+         alias_group_changed(____alias_loc_id_6); call_lbl_5: calling((void*)&gasdev, 5, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
 # 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105255UL)); call_lbl_7: calling((void*)&gasdev, 7, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
+         alias_group_changed(____alias_loc_id_7); call_lbl_7: calling((void*)&gasdev, 7, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105255UL)); call_lbl_9: calling((void*)&gasdev, 9, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
+         alias_group_changed(____alias_loc_id_8); call_lbl_9: calling((void*)&gasdev, 9, 0UL, 1, (size_t)(13706408354153105207UL)); s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2781,18 +2796,18 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (temperature == 0.) {alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105209UL), (size_t)(13706408354153105255UL)); rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature); return;; };
+   if (temperature == 0.) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_19); return;; };
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     lbl_0: real_t vZero[3] = { 0., 0., 0. }; if (____must_checkpoint_setTemperature_vZero_0 != 0) { register_stack_var("setTemperature|vZero|0", &____must_checkpoint_setTemperature_vZero_0, "[3 x double]", (void *)(vZero), (size_t)24, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ;
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   alias_group_changed(9, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105204UL), (size_t)(13706408354153105205UL), (size_t)(13706408354153105206UL), (size_t)(13706408354153105255UL)); call_lbl_13: calling((void*)&setVcm, 13, 0UL, 2, (size_t)(13706408354153105477UL), (size_t)(13706408354153105208UL)); setVcm(s, vZero);
+   alias_group_changed(____alias_loc_id_5); call_lbl_12: calling((void*)&setVcm, 12, 0UL, 2, (size_t)(13706408354153105477UL), (size_t)(13706408354153105208UL)); setVcm(s, vZero);
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_14: calling((void*)&kineticEnergy, 14, 0UL, 1, (size_t)(13706408354153105477UL)); kineticEnergy(s);
+    call_lbl_13: calling((void*)&kineticEnergy, 13, 0UL, 1, (size_t)(13706408354153105477UL)); kineticEnergy(s);
 # 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
      lbl_1: real_t temp; if (____must_checkpoint_setTemperature_temp_0 != 0) { register_stack_var("setTemperature|temp|0", &____must_checkpoint_setTemperature_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-     lbl_2: real_t scaleFactor; if (____must_checkpoint_setTemperature_scaleFactor_0 != 0) { register_stack_var("setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } scaleFactor = (sqrt(temperature / temp)); { call_lbl_21: unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(21, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; ;
+     lbl_2: real_t scaleFactor; if (____must_checkpoint_setTemperature_scaleFactor_0 != 0) { register_stack_var("setTemperature|scaleFactor|0", &____must_checkpoint_setTemperature_scaleFactor_0, "double", (void *)(&scaleFactor), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(16): { goto call_lbl_16; } default: { chimes_error(); } } } scaleFactor = (sqrt(temperature / temp)); { call_lbl_19: unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(19, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; ;
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2818,11 +2833,11 @@ void setTemperature(SimFlat* s, real_t temperature)
 # 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); }
 # 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   alias_group_changed(6, (size_t)(13706408354153105209UL), (size_t)(13706408354153105210UL), (size_t)(13706408354153105211UL), (size_t)(13706408354153105212UL), (size_t)(13706408354153105213UL), (size_t)(13706408354153105255UL)); call_lbl_17: calling((void*)&kineticEnergy, 17, 0UL, 1, (size_t)(13706408354153105477UL)); kineticEnergy(s);
+   alias_group_changed(____alias_loc_id_9); call_lbl_16: calling((void*)&kineticEnergy, 16, 0UL, 1, (size_t)(13706408354153105477UL)); kineticEnergy(s);
 # 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
 # 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153105200UL), (size_t)(13706408354153105201UL), (size_t)(13706408354153105202UL), (size_t)(13706408354153105203UL), (size_t)(13706408354153105209UL), (size_t)(13706408354153105255UL)); rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature); }
+rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_19); }
 # 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2831,7 +2846,7 @@ alias_group_changed(7, (size_t)(13706408354153105199UL), (size_t)(13706408354153
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void randomDisplacements(SimFlat* s, real_t delta)
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-{new_stack((void *)(&randomDisplacements), "randomDisplacements", &____must_manage_randomDisplacements, 2, 2, (size_t)(13706408354153105606UL), (size_t)(0UL), "randomDisplacements|s|0", &____must_checkpoint_randomDisplacements_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", &____must_checkpoint_randomDisplacements_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0); { call_lbl_11: unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(11, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ; if (____chimes_replaying) { switch(get_next_call()) { case(11): { goto call_lbl_11; } default: { chimes_error(); } } }
+{new_stack((void *)(&randomDisplacements), "randomDisplacements", &____must_manage_randomDisplacements, 2, 2, (size_t)(13706408354153105606UL), (size_t)(0UL), "randomDisplacements|s|0", &____must_checkpoint_randomDisplacements_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "randomDisplacements|delta|0", &____must_checkpoint_randomDisplacements_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0); { call_lbl_10: unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(10, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ; if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } default: { chimes_error(); } } }
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2847,19 +2862,19 @@ void randomDisplacements(SimFlat* s, real_t delta)
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       {
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); uint64_t seed; call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
+         alias_group_changed(____alias_loc_id_10); uint64_t seed; call_lbl_2: calling((void*)&mkSeed, 2, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); seed = (mkSeed(s->atoms->gid[iOff], 457)) ;
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105494UL)); call_lbl_4: calling((void*)&lcg61, 4, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][0] += (2.0*lcg61(&seed)-1.0) * delta;
+         alias_group_changed(____alias_loc_id_11); call_lbl_4: calling((void*)&lcg61, 4, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][0] += (2.0*lcg61(&seed)-1.0) * delta;
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105536UL)); call_lbl_6: calling((void*)&lcg61, 6, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][1] += (2.0*lcg61(&seed)-1.0) * delta;
+         alias_group_changed(____alias_loc_id_12); call_lbl_6: calling((void*)&lcg61, 6, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][1] += (2.0*lcg61(&seed)-1.0) * delta;
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-         alias_group_changed(1, (size_t)(13706408354153105536UL)); call_lbl_8: calling((void*)&lcg61, 8, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][2] += (2.0*lcg61(&seed)-1.0) * delta;
+         alias_group_changed(____alias_loc_id_13); call_lbl_8: calling((void*)&lcg61, 8, 0UL, 1, (size_t)(13706408354153105494UL)); s->atoms->r[iOff][2] += (2.0*lcg61(&seed)-1.0) * delta;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       } }
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); }
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-alias_group_changed(6, (size_t)(13706408354153105489UL), (size_t)(13706408354153105490UL), (size_t)(13706408354153105491UL), (size_t)(13706408354153105492UL), (size_t)(13706408354153105493UL), (size_t)(13706408354153105536UL)); rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements); }
+rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_20); }
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2869,7 +2884,7 @@ void computeVcm(SimFlat* s, real_t vcm[3])
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     lbl_0: real_t vcmLocal[4] = { 0., 0., 0., 0. }; if (____must_checkpoint_computeVcm_vcmLocal_0 != 0) { register_stack_var("computeVcm|vcmLocal|0", &____must_checkpoint_computeVcm_vcmLocal_0, "[4 x double]", (void *)(vcmLocal), (size_t)32, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ;
 # 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    lbl_1: real_t vcmSum[4] = { 0., 0., 0., 0. }; if (____must_checkpoint_computeVcm_vcmSum_0 != 0) { register_stack_var("computeVcm|vcmSum|0", &____must_checkpoint_computeVcm_vcmSum_0, "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+    lbl_1: real_t vcmSum[4] = { 0., 0., 0., 0. }; if (____must_checkpoint_computeVcm_vcmSum_0 != 0) { register_stack_var("computeVcm|vcmSum|0", &____must_checkpoint_computeVcm_vcmSum_0, "[4 x double]", (void *)(vcmSum), (size_t)32, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v0; v0 = (0.) ;
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2877,7 +2892,7 @@ void computeVcm(SimFlat* s, real_t vcm[3])
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     real_t v2; v2 = (0.) ;
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    real_t v3; v3 = (0.); { call_lbl_7: unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(7, &____chimes_region_id4, 0); int ____chimes_first_iter4 = 1; ;
+    real_t v3; v3 = (0.); { call_lbl_6: unsigned ____chimes_parent_stack_depth4 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth4 = get_thread_stack_depth(); size_t ____chimes_region_id4; unsigned ____chimes_parent_thread4 = entering_omp_parallel(6, &____chimes_region_id4, 0); int ____chimes_first_iter4 = 1; ;
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2920,7 +2935,7 @@ void computeVcm(SimFlat* s, real_t vcm[3])
   vcmLocal[3] = v3;
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   do { alias_group_changed(11, (size_t)(13706408354153105015UL), (size_t)(13706408354153105016UL), (size_t)(13706408354153105017UL), (size_t)(13706408354153105019UL), (size_t)(13706408354153105020UL), (size_t)(13706408354153105021UL), (size_t)(13706408354153105022UL), (size_t)(13706408354153105023UL), (size_t)(13706408354153105024UL), (size_t)(13706408354153105025UL), (size_t)(13706408354153105026UL)); call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
+   do { alias_group_changed(____alias_loc_id_3); call_lbl_2: calling((void*)&profileStart, 2, 0UL, 1, (size_t)(0UL)); profileStart(commReduceTimer); } while(0);
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     call_lbl_3: calling((void*)&addRealParallel, 3, 0UL, 3, (size_t)(13706408354153105017UL), (size_t)(13706408354153105018UL), (size_t)(0UL)); addRealParallel(vcmLocal, vcmSum, 4);
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2935,11 +2950,11 @@ void computeVcm(SimFlat* s, real_t vcm[3])
 # 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[2] = vcmSum[2]/totalMass;
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-alias_group_changed(2, (size_t)(13706408354153105027UL), (size_t)(13706408354153105179UL)); rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm); }
+rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_18); }
 
 
 static int module_init() {
-    init_module(13706408354153104288UL, 24, 8, 49, 11, 13706408354153104288UL + 571UL, 13706408354153104288UL + 726UL, 13706408354153104288UL + 570UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 153UL, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 794UL, 13706408354153104288UL + 1UL, 13706408354153104288UL + 130UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, 13706408354153104288UL + 911UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 967UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 727UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 649UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 1248UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 891UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 5, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "setTemperature", 4, "gasdev", "kineticEnergy", "mkSeed", "setVcm", "setVcm", 1, "computeVcm", "createFccLattice", 4, "addIntParallel", "profileStart", "profileStop", "putAtomInBox", "destroyAtoms", 0, "initAtoms", 1, "zeroReal3", "zeroReal3", 0, "randomDisplacements", 2, "lcg61", "mkSeed", "computeVcm", 3, "addRealParallel", "profileStart", "profileStop", "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|lat|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|s|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMax|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nb|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|basis|0", 1, "createFccLattice", "createFccLattice|begin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|end|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|px|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|py|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|pz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ix|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iy|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ib|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ry|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|id|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "setVcm|s|0", 1, "computeVcm", "setVcm|newVcm|0", 1, "computeVcm", "setVcm|oldVcm|0", 1, "setVcm", "computeVcm|vcm|0", 3, "profileStop", "profileStart", "addRealParallel", "computeVcm|vcmLocal|0", 1, "computeVcm", "computeVcm|vcmSum|0", 1, "computeVcm", "setTemperature|s|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|temperature|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iBox|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iOff|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|ii|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iType|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|mass|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|sigma|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|seed|0", 1, "setTemperature", "setTemperature|vZero|0", 1, "setTemperature", "setTemperature|temp|0", 1, "kineticEnergy", "setTemperature|scaleFactor|0", 1, "kineticEnergy", "setTemperature|iBox|1", 1, "kineticEnergy", "setTemperature|iOff|1", 1, "kineticEnergy", "setTemperature|ii|1", 1, "kineticEnergy", "randomDisplacements|s|0", 2, "mkSeed", "lcg61", "randomDisplacements|delta|0", 2, "mkSeed", "lcg61", "randomDisplacements|iBox|0", 2, "mkSeed", "lcg61", "randomDisplacements|iOff|0", 2, "mkSeed", "lcg61", "randomDisplacements|ii|0", 2, "mkSeed", "lcg61", "randomDisplacements|seed|0", 1, "randomDisplacements");
+    init_module(13706408354153104288UL, 24, 8, 49, 14, 11, 13706408354153104288UL + 571UL, 13706408354153104288UL + 726UL, 13706408354153104288UL + 570UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 153UL, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 794UL, 13706408354153104288UL + 1UL, 13706408354153104288UL + 130UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, 13706408354153104288UL + 911UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 967UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 727UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 649UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 1248UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 891UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 5, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "setTemperature", 4, "gasdev", "kineticEnergy", "mkSeed", "setVcm", "setVcm", 1, "computeVcm", "createFccLattice", 4, "addIntParallel", "profileStart", "profileStop", "putAtomInBox", "destroyAtoms", 0, "initAtoms", 1, "zeroReal3", "zeroReal3", 0, "randomDisplacements", 2, "lcg61", "mkSeed", "computeVcm", 3, "addRealParallel", "profileStart", "profileStop", "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|lat|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|s|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMax|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nb|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|basis|0", 1, "createFccLattice", "createFccLattice|begin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|end|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|px|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|py|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|pz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ix|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iy|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ib|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ry|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|id|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "setVcm|s|0", 1, "computeVcm", "setVcm|newVcm|0", 1, "computeVcm", "setVcm|oldVcm|0", 1, "setVcm", "computeVcm|vcm|0", 3, "profileStop", "profileStart", "addRealParallel", "computeVcm|vcmLocal|0", 1, "computeVcm", "computeVcm|vcmSum|0", 1, "computeVcm", "setTemperature|s|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|temperature|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iBox|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iOff|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|ii|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iType|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|mass|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|sigma|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|seed|0", 1, "setTemperature", "setTemperature|vZero|0", 1, "setTemperature", "setTemperature|temp|0", 1, "kineticEnergy", "setTemperature|scaleFactor|0", 1, "kineticEnergy", "setTemperature|iBox|1", 1, "kineticEnergy", "setTemperature|iOff|1", 1, "kineticEnergy", "setTemperature|ii|1", 1, "kineticEnergy", "randomDisplacements|s|0", 2, "mkSeed", "lcg61", "randomDisplacements|delta|0", 2, "mkSeed", "lcg61", "randomDisplacements|iBox|0", 2, "mkSeed", "lcg61", "randomDisplacements|iOff|0", 2, "mkSeed", "lcg61", "randomDisplacements|ii|0", 2, "mkSeed", "lcg61", "randomDisplacements|seed|0", 1, "randomDisplacements", &____alias_loc_id_0, (unsigned)22, 13706408354153104288UL + 241UL, 13706408354153104288UL + 242UL, 13706408354153104288UL + 243UL, 13706408354153104288UL + 244UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 248UL, 13706408354153104288UL + 250UL, 13706408354153104288UL + 251UL, 13706408354153104288UL + 252UL, 13706408354153104288UL + 253UL, 13706408354153104288UL + 254UL, 13706408354153104288UL + 255UL, 13706408354153104288UL + 256UL, 13706408354153104288UL + 257UL, 13706408354153104288UL + 258UL, 13706408354153104288UL + 259UL, 13706408354153104288UL + 260UL, 13706408354153104288UL + 261UL, 13706408354153104288UL + 262UL, 13706408354153104288UL + 263UL, &____alias_loc_id_1, (unsigned)22, 13706408354153104288UL + 241UL, 13706408354153104288UL + 242UL, 13706408354153104288UL + 243UL, 13706408354153104288UL + 244UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 248UL, 13706408354153104288UL + 250UL, 13706408354153104288UL + 251UL, 13706408354153104288UL + 252UL, 13706408354153104288UL + 253UL, 13706408354153104288UL + 254UL, 13706408354153104288UL + 255UL, 13706408354153104288UL + 256UL, 13706408354153104288UL + 257UL, 13706408354153104288UL + 258UL, 13706408354153104288UL + 259UL, 13706408354153104288UL + 260UL, 13706408354153104288UL + 261UL, 13706408354153104288UL + 262UL, 13706408354153104288UL + 263UL, &____alias_loc_id_2, (unsigned)2, 13706408354153104288UL + 570UL, 13706408354153104288UL + 571UL, &____alias_loc_id_3, (unsigned)11, 13706408354153104288UL + 727UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 729UL, 13706408354153104288UL + 731UL, 13706408354153104288UL + 732UL, 13706408354153104288UL + 733UL, 13706408354153104288UL + 734UL, 13706408354153104288UL + 735UL, 13706408354153104288UL + 736UL, 13706408354153104288UL + 737UL, 13706408354153104288UL + 738UL, &____alias_loc_id_4, (unsigned)9, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 916UL, 13706408354153104288UL + 917UL, 13706408354153104288UL + 918UL, 13706408354153104288UL + 967UL, &____alias_loc_id_5, (unsigned)9, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 916UL, 13706408354153104288UL + 917UL, 13706408354153104288UL + 918UL, 13706408354153104288UL + 967UL, &____alias_loc_id_6, (unsigned)1, 13706408354153104288UL + 919UL, &____alias_loc_id_7, (unsigned)1, 13706408354153104288UL + 967UL, &____alias_loc_id_8, (unsigned)1, 13706408354153104288UL + 967UL, &____alias_loc_id_9, (unsigned)6, 13706408354153104288UL + 921UL, 13706408354153104288UL + 922UL, 13706408354153104288UL + 923UL, 13706408354153104288UL + 924UL, 13706408354153104288UL + 925UL, 13706408354153104288UL + 967UL, &____alias_loc_id_10, (unsigned)6, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1202UL, 13706408354153104288UL + 1203UL, 13706408354153104288UL + 1204UL, 13706408354153104288UL + 1205UL, 13706408354153104288UL + 1248UL, &____alias_loc_id_11, (unsigned)1, 13706408354153104288UL + 1206UL, &____alias_loc_id_12, (unsigned)1, 13706408354153104288UL + 1248UL, &____alias_loc_id_13, (unsigned)1, 13706408354153104288UL + 1248UL, &____alias_loc_id_14, (unsigned)6, 13706408354153104288UL + 1UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 3UL, 13706408354153104288UL + 4UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, &____alias_loc_id_15, (unsigned)2, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, &____alias_loc_id_16, (unsigned)2, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, &____alias_loc_id_17, (unsigned)7, 13706408354153104288UL + 573UL, 13706408354153104288UL + 574UL, 13706408354153104288UL + 575UL, 13706408354153104288UL + 576UL, 13706408354153104288UL + 577UL, 13706408354153104288UL + 578UL, 13706408354153104288UL + 649UL, &____alias_loc_id_18, (unsigned)2, 13706408354153104288UL + 739UL, 13706408354153104288UL + 891UL, &____alias_loc_id_19, (unsigned)7, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 921UL, 13706408354153104288UL + 967UL, &____alias_loc_id_20, (unsigned)6, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1202UL, 13706408354153104288UL + 1203UL, 13706408354153104288UL + 1204UL, 13706408354153104288UL + 1205UL, 13706408354153104288UL + 1248UL);
     return 0;
 }
 

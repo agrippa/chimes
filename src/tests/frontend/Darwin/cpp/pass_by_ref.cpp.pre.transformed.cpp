@@ -13,6 +13,9 @@ typedef long unsigned int size_t;
 # 1 "<built-in>" 2
 # 1 "pass_by_ref.cpp.pre.transformed.cpp" 2
 static int ____must_checkpoint_main_b_0 = 2;
+
+
+static unsigned ____alias_loc_id_0;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -29,55 +32,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, int ngroups, ...);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -519,7 +473,58 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 2 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -1731,7 +1736,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  lbl_0: int b; register_stack_var("main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- alias_group_changed(3, (size_t)(12387876047547725257UL), (size_t)(12387876047547725258UL), (size_t)(12387876047547725259UL)); call_lbl_3: calling((void*)&foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); foo(&b);
+ alias_group_changed(____alias_loc_id_0); call_lbl_3: calling((void*)&foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); foo(&b);
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
@@ -1741,7 +1746,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 
 
 static int module_init() {
-    init_module(12387876047547725256UL, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "checkpoint", "foo", "main|b|0", 1, "main");
+    init_module(12387876047547725256UL, 1, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "checkpoint", "foo", "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 12387876047547725256UL + 1UL, 12387876047547725256UL + 2UL, 12387876047547725256UL + 3UL);
     return 0;
 }
 

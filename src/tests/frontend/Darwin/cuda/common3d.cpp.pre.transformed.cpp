@@ -22,6 +22,14 @@ static int ____must_manage_setup_config = 2;
 static int ____must_manage_init_data = 2;
 static int ____must_manage_default_config = 2;
 static int ____must_manage_save_layer_text = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
 # 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
@@ -38,59 +46,6 @@ typedef long int ptrdiff_t;
 # 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 61 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 3 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 1
-
-
-
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -532,7 +487,61 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 5 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 3 "<command line>" 2
+# 1 "<built-in>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/include/common3d.h" 1
+
+
+
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2416,7 +2425,7 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(11, (size_t)(17753382427056418425UL), (size_t)(17753382427056418426UL), (size_t)(17753382427056418427UL), (size_t)(17753382427056418428UL), (size_t)(17753382427056418429UL), (size_t)(17753382427056418430UL), (size_t)(17753382427056418431UL), (size_t)(17753382427056418432UL), (size_t)(17753382427056418433UL), (size_t)(17753382427056418434UL), (size_t)(17753382427056418435UL)); rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text); }
+rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2); }
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void init_data(float *curr, float *next, float *vsq,
@@ -2457,7 +2466,7 @@ void init_data(float *curr, float *next, float *vsq,
 # 46 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  h_coeff[4] = -0.001785 * scale;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(16, (size_t)(17753382427056418535UL), (size_t)(17753382427056418536UL), (size_t)(17753382427056418537UL), (size_t)(17753382427056418538UL), (size_t)(17753382427056418539UL), (size_t)(17753382427056418540UL), (size_t)(17753382427056418541UL), (size_t)(17753382427056418542UL), (size_t)(17753382427056418543UL), (size_t)(17753382427056418544UL), (size_t)(17753382427056418545UL), (size_t)(17753382427056418546UL), (size_t)(17753382427056418665UL), (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL)); rm_stack(false, 0UL, "init_data", &____must_manage_init_data); }
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3); }
 # 48 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void usage(char **argv) {new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382427056418690UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2470,7 +2479,7 @@ void usage(char **argv) {new_stack((void *)(&usage), "usage", &____must_manage_u
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  exit(1);
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(1, (size_t)(17753382427056418679UL)); rm_stack(false, 0UL, "usage", &____must_manage_usage); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4); }
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void default_config(config *conf) {new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382427056418731UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2501,7 +2510,7 @@ void default_config(config *conf) {new_stack((void *)(&default_config), "default
 # 70 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->progress_disabled = 0;
 # 71 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(2, (size_t)(17753382427056418691UL), (size_t)(17753382427056418731UL)); rm_stack(false, 0UL, "default_config", &____must_manage_default_config); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5); }
 # 72 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 73 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382427056418861UL), (size_t)(0UL), (size_t)(17753382427056418863UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
@@ -2560,7 +2569,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 101 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  (conf->nsrcs + 1), 17753382427056418791UL, 0, 1, (int)sizeof(struct _source), 0);
 # 102 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(6, (size_t)(17753382427056418732UL), (size_t)(17753382427056418733UL), (size_t)(17753382427056418734UL), (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL), (size_t)(17753382427056418878UL)); call_lbl_10: calling((void*)&parse_source, 10, 0UL, 2, (size_t)(17753382427056418755UL), (size_t)(17753382427056418791UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+ alias_group_changed(____alias_loc_id_0); call_lbl_10: calling((void*)&parse_source, 10, 0UL, 2, (size_t)(17753382427056418755UL), (size_t)(17753382427056418791UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 103 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nsrcs++;
 # 104 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2605,15 +2614,15 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 124 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  if (conf->ngpus == -1) {
 # 125 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- alias_group_changed(6, (size_t)(17753382427056418732UL), (size_t)(17753382427056418733UL), (size_t)(17753382427056418734UL), (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL), (size_t)(17753382427056418878UL)); call_lbl_17: calling((void*)&getNumCUDADevices, 17, 0UL, 0); conf->ngpus = getNumCUDADevices();
+ alias_group_changed(____alias_loc_id_1); call_lbl_17: calling((void*)&getNumCUDADevices, 17, 0UL, 0); conf->ngpus = getNumCUDADevices();
 # 126 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  }
 # 127 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
-alias_group_changed(6, (size_t)(17753382427056418732UL), (size_t)(17753382427056418733UL), (size_t)(17753382427056418734UL), (size_t)(17753382427056418735UL), (size_t)(17753382427056418861UL), (size_t)(17753382427056418878UL)); rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6); }
 
 
 static int module_init() {
-    init_module(17753382427056418424UL, 16, 5, 4, 5, 17753382427056418424UL + 308UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 449UL, 17753382427056418424UL + 418UL, 17753382427056418424UL + 7UL, 17753382427056418424UL + 101UL, 17753382427056418424UL + 310UL, 17753382427056418424UL + 439UL, 17753382427056418424UL + 456UL, 17753382427056418424UL + 331UL, 17753382427056418424UL + 307UL, 17753382427056418424UL + 459UL, 17753382427056418424UL + 1UL, 17753382427056418424UL + 95UL, 17753382427056418424UL + 114UL, 17753382427056418424UL + 244UL, 17753382427056418424UL + 111UL, 17753382427056418424UL + 241UL, 17753382427056418424UL + 266UL, 17753382427056418424UL + 261UL, 17753382427056418424UL + 113UL, 17753382427056418424UL + 243UL, 17753382427056418424UL + 112UL, 17753382427056418424UL + 242UL, 17753382427056418424UL + 9UL, 17753382427056418424UL + 30UL, 17753382427056418424UL + 267UL, 17753382427056418424UL + 307UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 367UL, 17753382427056418424UL + 255UL, 17753382427056418424UL + 266UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_layer_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices");
+    init_module(17753382427056418424UL, 16, 5, 4, 2, 5, 17753382427056418424UL + 308UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 449UL, 17753382427056418424UL + 418UL, 17753382427056418424UL + 7UL, 17753382427056418424UL + 101UL, 17753382427056418424UL + 310UL, 17753382427056418424UL + 439UL, 17753382427056418424UL + 456UL, 17753382427056418424UL + 331UL, 17753382427056418424UL + 307UL, 17753382427056418424UL + 459UL, 17753382427056418424UL + 1UL, 17753382427056418424UL + 95UL, 17753382427056418424UL + 114UL, 17753382427056418424UL + 244UL, 17753382427056418424UL + 111UL, 17753382427056418424UL + 241UL, 17753382427056418424UL + 266UL, 17753382427056418424UL + 261UL, 17753382427056418424UL + 113UL, 17753382427056418424UL + 243UL, 17753382427056418424UL + 112UL, 17753382427056418424UL + 242UL, 17753382427056418424UL + 9UL, 17753382427056418424UL + 30UL, 17753382427056418424UL + 267UL, 17753382427056418424UL + 307UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 367UL, 17753382427056418424UL + 255UL, 17753382427056418424UL + 266UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_layer_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices", &____alias_loc_id_0, (unsigned)6, 17753382427056418424UL + 308UL, 17753382427056418424UL + 309UL, 17753382427056418424UL + 310UL, 17753382427056418424UL + 311UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 454UL, &____alias_loc_id_1, (unsigned)6, 17753382427056418424UL + 308UL, 17753382427056418424UL + 309UL, 17753382427056418424UL + 310UL, 17753382427056418424UL + 311UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 454UL, &____alias_loc_id_2, (unsigned)11, 17753382427056418424UL + 1UL, 17753382427056418424UL + 2UL, 17753382427056418424UL + 3UL, 17753382427056418424UL + 4UL, 17753382427056418424UL + 5UL, 17753382427056418424UL + 6UL, 17753382427056418424UL + 7UL, 17753382427056418424UL + 8UL, 17753382427056418424UL + 9UL, 17753382427056418424UL + 10UL, 17753382427056418424UL + 11UL, &____alias_loc_id_3, (unsigned)16, 17753382427056418424UL + 111UL, 17753382427056418424UL + 112UL, 17753382427056418424UL + 113UL, 17753382427056418424UL + 114UL, 17753382427056418424UL + 115UL, 17753382427056418424UL + 116UL, 17753382427056418424UL + 117UL, 17753382427056418424UL + 118UL, 17753382427056418424UL + 119UL, 17753382427056418424UL + 120UL, 17753382427056418424UL + 121UL, 17753382427056418424UL + 122UL, 17753382427056418424UL + 241UL, 17753382427056418424UL + 242UL, 17753382427056418424UL + 243UL, 17753382427056418424UL + 244UL, &____alias_loc_id_4, (unsigned)1, 17753382427056418424UL + 255UL, &____alias_loc_id_5, (unsigned)2, 17753382427056418424UL + 267UL, 17753382427056418424UL + 307UL, &____alias_loc_id_6, (unsigned)6, 17753382427056418424UL + 308UL, 17753382427056418424UL + 309UL, 17753382427056418424UL + 310UL, 17753382427056418424UL + 311UL, 17753382427056418424UL + 437UL, 17753382427056418424UL + 454UL);
     return 0;
 }
 

@@ -18,6 +18,14 @@ static int ____must_manage_setup_config = 2;
 static int ____must_manage_init_data = 2;
 static int ____must_manage_default_config = 2;
 static int ____must_manage_save_layer_text = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -32,65 +40,6 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common3d.h" 1
-
-
-
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -530,7 +479,67 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 5 "/Users/jmg3/num-debug/src/examples/cpp/include/common3d.h" 2
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common3d.h" 1
+
+
+
+
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2340,7 +2349,7 @@ void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-alias_group_changed(11, (size_t)(4957368879419144138UL), (size_t)(4957368879419144139UL), (size_t)(4957368879419144140UL), (size_t)(4957368879419144141UL), (size_t)(4957368879419144142UL), (size_t)(4957368879419144143UL), (size_t)(4957368879419144144UL), (size_t)(4957368879419144145UL), (size_t)(4957368879419144146UL), (size_t)(4957368879419144147UL), (size_t)(4957368879419144148UL)); rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text); }
+rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2); }
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void init_data(float *curr, float *next, float *vsq,
@@ -2381,7 +2390,7 @@ void init_data(float *curr, float *next, float *vsq,
 # 46 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     h_coeff[4] = -0.001785 * scale;
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-alias_group_changed(16, (size_t)(4957368879419144248UL), (size_t)(4957368879419144249UL), (size_t)(4957368879419144250UL), (size_t)(4957368879419144251UL), (size_t)(4957368879419144252UL), (size_t)(4957368879419144253UL), (size_t)(4957368879419144254UL), (size_t)(4957368879419144255UL), (size_t)(4957368879419144256UL), (size_t)(4957368879419144257UL), (size_t)(4957368879419144258UL), (size_t)(4957368879419144259UL), (size_t)(4957368879419144378UL), (size_t)(4957368879419144379UL), (size_t)(4957368879419144380UL), (size_t)(4957368879419144381UL)); rm_stack(false, 0UL, "init_data", &____must_manage_init_data); }
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3); }
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void usage(char **argv) {new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(4957368879419144403UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2394,7 +2403,7 @@ void usage(char **argv) {new_stack((void *)(&usage), "usage", &____must_manage_u
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     exit(1);
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-alias_group_changed(1, (size_t)(4957368879419144392UL)); rm_stack(false, 0UL, "usage", &____must_manage_usage); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4); }
 # 55 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void default_config(config *conf) {new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(4957368879419144444UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -2425,7 +2434,7 @@ void default_config(config *conf) {new_stack((void *)(&default_config), "default
 # 70 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     conf->progress_disabled = 0;
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-alias_group_changed(2, (size_t)(4957368879419144404UL), (size_t)(4957368879419144444UL)); rm_stack(false, 0UL, "default_config", &____must_manage_default_config); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5); }
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(4957368879419144574UL), (size_t)(0UL), (size_t)(4957368879419144576UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; }
@@ -2484,7 +2493,7 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
                         (conf->nsrcs + 1), 4957368879419144504UL, 0, 1, (int)sizeof(struct _source), 0);
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-                alias_group_changed(6, (size_t)(4957368879419144445UL), (size_t)(4957368879419144446UL), (size_t)(4957368879419144447UL), (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL), (size_t)(4957368879419144591UL)); call_lbl_10: calling((void*)&parse_source, 10, 0UL, 2, (size_t)(4957368879419144468UL), (size_t)(4957368879419144504UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
+                alias_group_changed(____alias_loc_id_0); call_lbl_10: calling((void*)&parse_source, 10, 0UL, 2, (size_t)(4957368879419144468UL), (size_t)(4957368879419144504UL)); parse_source(optarg, conf->srcs + conf->nsrcs);
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
                 conf->nsrcs++;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2529,15 +2538,15 @@ void setup_config(config *conf, int argc, char **argv) {new_stack((void *)(&setu
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     if (conf->ngpus == -1) {
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-        alias_group_changed(6, (size_t)(4957368879419144445UL), (size_t)(4957368879419144446UL), (size_t)(4957368879419144447UL), (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL), (size_t)(4957368879419144591UL)); call_lbl_17: calling((void*)&getNumCUDADevices, 17, 0UL, 0); conf->ngpus = getNumCUDADevices();
+        alias_group_changed(____alias_loc_id_1); call_lbl_17: calling((void*)&getNumCUDADevices, 17, 0UL, 0); conf->ngpus = getNumCUDADevices();
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     }
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-alias_group_changed(6, (size_t)(4957368879419144445UL), (size_t)(4957368879419144446UL), (size_t)(4957368879419144447UL), (size_t)(4957368879419144448UL), (size_t)(4957368879419144574UL), (size_t)(4957368879419144591UL)); rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6); }
 
 
 static int module_init() {
-    init_module(4957368879419144137UL, 16, 5, 4, 5, 4957368879419144137UL + 308UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 449UL, 4957368879419144137UL + 418UL, 4957368879419144137UL + 7UL, 4957368879419144137UL + 101UL, 4957368879419144137UL + 310UL, 4957368879419144137UL + 439UL, 4957368879419144137UL + 456UL, 4957368879419144137UL + 331UL, 4957368879419144137UL + 307UL, 4957368879419144137UL + 459UL, 4957368879419144137UL + 1UL, 4957368879419144137UL + 95UL, 4957368879419144137UL + 114UL, 4957368879419144137UL + 244UL, 4957368879419144137UL + 111UL, 4957368879419144137UL + 241UL, 4957368879419144137UL + 266UL, 4957368879419144137UL + 261UL, 4957368879419144137UL + 113UL, 4957368879419144137UL + 243UL, 4957368879419144137UL + 112UL, 4957368879419144137UL + 242UL, 4957368879419144137UL + 9UL, 4957368879419144137UL + 30UL, 4957368879419144137UL + 267UL, 4957368879419144137UL + 307UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 367UL, 4957368879419144137UL + 255UL, 4957368879419144137UL + 266UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "_config", 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_layer_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices");
+    init_module(4957368879419144137UL, 16, 5, 4, 2, 5, 4957368879419144137UL + 308UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 449UL, 4957368879419144137UL + 418UL, 4957368879419144137UL + 7UL, 4957368879419144137UL + 101UL, 4957368879419144137UL + 310UL, 4957368879419144137UL + 439UL, 4957368879419144137UL + 456UL, 4957368879419144137UL + 331UL, 4957368879419144137UL + 307UL, 4957368879419144137UL + 459UL, 4957368879419144137UL + 1UL, 4957368879419144137UL + 95UL, 4957368879419144137UL + 114UL, 4957368879419144137UL + 244UL, 4957368879419144137UL + 111UL, 4957368879419144137UL + 241UL, 4957368879419144137UL + 266UL, 4957368879419144137UL + 261UL, 4957368879419144137UL + 113UL, 4957368879419144137UL + 243UL, 4957368879419144137UL + 112UL, 4957368879419144137UL + 242UL, 4957368879419144137UL + 9UL, 4957368879419144137UL + 30UL, 4957368879419144137UL + 267UL, 4957368879419144137UL + 307UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 367UL, 4957368879419144137UL + 255UL, 4957368879419144137UL + 266UL, "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "_config", 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_layer_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices", &____alias_loc_id_0, (unsigned)6, 4957368879419144137UL + 308UL, 4957368879419144137UL + 309UL, 4957368879419144137UL + 310UL, 4957368879419144137UL + 311UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 454UL, &____alias_loc_id_1, (unsigned)6, 4957368879419144137UL + 308UL, 4957368879419144137UL + 309UL, 4957368879419144137UL + 310UL, 4957368879419144137UL + 311UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 454UL, &____alias_loc_id_2, (unsigned)11, 4957368879419144137UL + 1UL, 4957368879419144137UL + 2UL, 4957368879419144137UL + 3UL, 4957368879419144137UL + 4UL, 4957368879419144137UL + 5UL, 4957368879419144137UL + 6UL, 4957368879419144137UL + 7UL, 4957368879419144137UL + 8UL, 4957368879419144137UL + 9UL, 4957368879419144137UL + 10UL, 4957368879419144137UL + 11UL, &____alias_loc_id_3, (unsigned)16, 4957368879419144137UL + 111UL, 4957368879419144137UL + 112UL, 4957368879419144137UL + 113UL, 4957368879419144137UL + 114UL, 4957368879419144137UL + 115UL, 4957368879419144137UL + 116UL, 4957368879419144137UL + 117UL, 4957368879419144137UL + 118UL, 4957368879419144137UL + 119UL, 4957368879419144137UL + 120UL, 4957368879419144137UL + 121UL, 4957368879419144137UL + 122UL, 4957368879419144137UL + 241UL, 4957368879419144137UL + 242UL, 4957368879419144137UL + 243UL, 4957368879419144137UL + 244UL, &____alias_loc_id_4, (unsigned)1, 4957368879419144137UL + 255UL, &____alias_loc_id_5, (unsigned)2, 4957368879419144137UL + 267UL, 4957368879419144137UL + 307UL, &____alias_loc_id_6, (unsigned)6, 4957368879419144137UL + 308UL, 4957368879419144137UL + 309UL, 4957368879419144137UL + 310UL, 4957368879419144137UL + 311UL, 4957368879419144137UL + 437UL, 4957368879419144137UL + 454UL);
     return 0;
 }
 

@@ -1,15 +1,15 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 9 alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 9 alias_group_changed(____alias_loc_id_0); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 21 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 42 , 16469201489461360426UL, 0, 0
-InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 10 9 alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); rm_stack(false, 0UL, "main", (int *)0x0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 17 9 alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); rm_stack(false, 0UL, "main", (int *)0x0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 20 5 alias_group_changed(5, (size_t)(16469201489461360416UL), (size_t)(16469201489461360417UL), (size_t)(16469201489461360418UL), (size_t)(16469201489461360419UL), (size_t)(16469201489461360426UL)); rm_stack(false, 0UL, "main", (int *)0x0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 10 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 17 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 20 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 33 new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(16469201489461360461UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 83 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 203  call_lbl_6: calling((void*)&checkpoint, 6, 0UL, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 50  call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 6  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 12  register_stack_var("main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 12  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 12  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 150  if (____chimes_replaying) { goto lbl_0; } 

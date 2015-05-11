@@ -1,6 +1,6 @@
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 32 new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 alias_group_changed(1, (size_t)(1556987170722293722UL)); rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 alias_group_changed(3, (size_t)(1556987170722293708UL), (size_t)(1556987170722293709UL), (size_t)(1556987170722293710UL)); rm_stack(false, 0UL, "main", &____must_manage_main); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 init_chimes(); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 153  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 

@@ -101,6 +101,74 @@ static int ____must_manage_impl_helpMessage = 2;
 static int ____must_manage_ss_error = 2;
 static int ____must_manage_cb_init = 2;
 static int ____must_manage_initRootNode = 2;
+
+static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
+static unsigned ____alias_loc_id_3;
+static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
+static unsigned ____alias_loc_id_6;
+static unsigned ____alias_loc_id_7;
+static unsigned ____alias_loc_id_8;
+static unsigned ____alias_loc_id_9;
+static unsigned ____alias_loc_id_10;
+static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
+static unsigned ____alias_loc_id_13;
+static unsigned ____alias_loc_id_14;
+static unsigned ____alias_loc_id_15;
+static unsigned ____alias_loc_id_16;
+static unsigned ____alias_loc_id_17;
+static unsigned ____alias_loc_id_18;
+static unsigned ____alias_loc_id_19;
+static unsigned ____alias_loc_id_20;
+static unsigned ____alias_loc_id_21;
+static unsigned ____alias_loc_id_22;
+static unsigned ____alias_loc_id_23;
+static unsigned ____alias_loc_id_24;
+static unsigned ____alias_loc_id_25;
+static unsigned ____alias_loc_id_26;
+static unsigned ____alias_loc_id_27;
+static unsigned ____alias_loc_id_28;
+static unsigned ____alias_loc_id_29;
+static unsigned ____alias_loc_id_30;
+static unsigned ____alias_loc_id_31;
+static unsigned ____alias_loc_id_32;
+static unsigned ____alias_loc_id_33;
+static unsigned ____alias_loc_id_34;
+static unsigned ____alias_loc_id_35;
+static unsigned ____alias_loc_id_36;
+static unsigned ____alias_loc_id_37;
+static unsigned ____alias_loc_id_38;
+static unsigned ____alias_loc_id_39;
+static unsigned ____alias_loc_id_40;
+static unsigned ____alias_loc_id_41;
+static unsigned ____alias_loc_id_42;
+static unsigned ____alias_loc_id_43;
+static unsigned ____alias_loc_id_44;
+static unsigned ____alias_loc_id_45;
+static unsigned ____alias_loc_id_46;
+static unsigned ____alias_loc_id_47;
+static unsigned ____alias_loc_id_48;
+static unsigned ____alias_loc_id_49;
+static unsigned ____alias_loc_id_50;
+static unsigned ____alias_loc_id_51;
+static unsigned ____alias_loc_id_52;
+static unsigned ____alias_loc_id_53;
+static unsigned ____alias_loc_id_54;
+static unsigned ____alias_loc_id_55;
+static unsigned ____alias_loc_id_56;
+static unsigned ____alias_loc_id_57;
+static unsigned ____alias_loc_id_58;
+static unsigned ____alias_loc_id_59;
+static unsigned ____alias_loc_id_60;
+static unsigned ____alias_loc_id_61;
+static unsigned ____alias_loc_id_62;
+static unsigned ____alias_loc_id_63;
+static unsigned ____alias_loc_id_64;
+static unsigned ____alias_loc_id_65;
+static unsigned ____alias_loc_id_66;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -115,74 +183,8 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
-extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern int alias_group_changed(int ngroups, ...);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-# 15 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 61 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 62 "/usr/include/stdlib.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 32 "/usr/include/sys/_types.h" 3 4
+# 1 "/usr/include/stdio.h" 1 3 4
+# 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -190,7 +192,17 @@ extern int ____chimes_replaying;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 33 "/usr/include/sys/_types.h" 2 3 4
+# 65 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 66 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -360,8 +372,315 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 64 "/usr/include/stdlib.h" 2 3 4
+# 68 "/usr/include/stdio.h" 2 3 4
 
+
+
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 73 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 74 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) ;
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+extern void init_chimes();
+extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned naliases, ...);
+extern int get_next_call();
+extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings,
+        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned thread,
+        unsigned parent, unsigned threads_in_region, bool spawns_threads,
+        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
+# 15 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -827,8 +1146,7 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 155 "/usr/include/sys/signal.h" 2 3 4
+
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1289,10 +1607,6 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
-
-
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1528,253 +1842,8 @@ void *valloc(size_t);
 
 }
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 71 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
+# 16 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 
-
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 17 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c" 2
 # 1 "/usr/include/string.h" 1 3 4
 # 69 "/usr/include/string.h" 3 4
 extern "C" {
@@ -2802,9 +2871,9 @@ omp_lock_t * omp_global_lock_alloc() {new_stack((void *)(&omp_global_lock_alloc)
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     lbl_0: omp_lock_t *lock; if (____must_checkpoint_omp_global_lock_alloc_lock_0 != 0) { register_stack_var("omp_global_lock_alloc|lock|0", &____must_checkpoint_omp_global_lock_alloc_lock_0, "%struct.omp_lock_t*", (void *)(&lock), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } lock = ((omp_lock_t *)malloc_wrapper(sizeof(omp_lock_t) + 128, 5826008423592869092UL, 0, 1, (int)sizeof(omp_lock_t), 0)) ;
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869090UL)); call_lbl_3: calling((void*)&omp_init_lock, 3, 0UL, 1, (size_t)(5826008423592869092UL)); omp_init_lock(lock);
+  alias_group_changed(____alias_loc_id_0); call_lbl_3: calling((void*)&omp_init_lock, 3, 0UL, 1, (size_t)(5826008423592869092UL)); omp_init_lock(lock);
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  rm_stack(true, 5826008423592869092UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc); return lock;
+  rm_stack(true, 5826008423592869092UL, "omp_global_lock_alloc", &____must_manage_omp_global_lock_alloc, 0); return lock;
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -2937,7 +3006,7 @@ char * impl_getName() {new_stack((void *)(&impl_getName), "impl_getName", &____m
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
    lbl_0: char *name[] = { "Sequential C", "C/OpenMP", "UPC", "SHMEM", "PThreads" }; if (____must_checkpoint_impl_getName_name_0 != 0) { register_stack_var("impl_getName|name|0", &____must_checkpoint_impl_getName_name_0, "[5 x i8*]", (void *)(name), (size_t)40, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869103UL)); rm_stack(true, 5826008423592871087UL, "impl_getName", &____must_manage_impl_getName); return name[1];
+  rm_stack(true, 5826008423592871087UL, "impl_getName", &____must_manage_impl_getName, ____alias_loc_id_48); return name[1];
 # 295 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 296 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -2948,10 +3017,10 @@ int impl_paramsToStr(char *strBuf, int ind) {new_stack((void *)(&impl_paramsToSt
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   ind += sprintf(strBuf+ind, "Execution strategy:  ");
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  if (1) {{ alias_group_changed(2, (size_t)(5826008423592869126UL), (size_t)(5826008423592869127UL)); call_lbl_4: calling((void*)&omp_get_num_threads, 4, 0UL, 0); ind += sprintf(strBuf + ind, "Parallel search using %d threads\n", omp_get_num_threads()); if (doSteal) { ind += sprintf(strBuf + ind, "   Load balance by work stealing, chunk size = %d nodes\n", chunkSize); ind += sprintf(strBuf + ind, "  CBarrier Interval: %d\n", cbint); ind += sprintf(strBuf + ind, "   Polling Interval: %d\n", pollint); } else ind += sprintf(strBuf + ind, "   No load balancing.\n"); }; } else {ind += sprintf(strBuf + ind, "Iterative sequential search\n"); } ;
+  if (1) {{ alias_group_changed(____alias_loc_id_1); call_lbl_4: calling((void*)&omp_get_num_threads, 4, 0UL, 0); ind += sprintf(strBuf + ind, "Parallel search using %d threads\n", omp_get_num_threads()); if (doSteal) { ind += sprintf(strBuf + ind, "   Load balance by work stealing, chunk size = %d nodes\n", chunkSize); ind += sprintf(strBuf + ind, "  CBarrier Interval: %d\n", cbint); ind += sprintf(strBuf + ind, "   Polling Interval: %d\n", pollint); } else ind += sprintf(strBuf + ind, "   No load balancing.\n"); }; } else {ind += sprintf(strBuf + ind, "Iterative sequential search\n"); } ;
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 314 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869127UL)); rm_stack(false, 0UL, "impl_paramsToStr", &____must_manage_impl_paramsToStr); return ind;
+  rm_stack(false, 0UL, "impl_paramsToStr", &____must_manage_impl_paramsToStr, ____alias_loc_id_49); return ind;
 # 315 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -2991,7 +3060,7 @@ int impl_parseParam(char *param, char *value) {new_stack((void *)(&impl_parsePar
   }
 # 355 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 356 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(4, (size_t)(5826008423592869195UL), (size_t)(5826008423592869196UL), (size_t)(5826008423592869197UL), (size_t)(5826008423592871074UL)); rm_stack(false, 0UL, "impl_parseParam", &____must_manage_impl_parseParam); return err;
+  rm_stack(false, 0UL, "impl_parseParam", &____must_manage_impl_parseParam, ____alias_loc_id_50); return err;
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 358 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3019,7 +3088,7 @@ void impl_helpMessage() {new_stack((void *)(&impl_helpMessage), "impl_helpMessag
 # 373 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 374 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "impl_helpMessage", &____must_manage_impl_helpMessage); }
+rm_stack(false, 0UL, "impl_helpMessage", &____must_manage_impl_helpMessage, 0); }
 # 375 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 376 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void impl_abort(int err) {new_stack((void *)(&impl_abort), "impl_abort", &____must_manage_impl_abort, 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
@@ -3034,12 +3103,12 @@ void impl_abort(int err) {new_stack((void *)(&impl_abort), "impl_abort", &____mu
 # 384 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 385 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 386 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5826008423592869241UL)); rm_stack(false, 0UL, "impl_abort", &____must_manage_impl_abort); }
+rm_stack(false, 0UL, "impl_abort", &____must_manage_impl_abort, ____alias_loc_id_51); }
 # 421 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 421 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void ss_mkEmpty(StealStack *s) {new_stack((void *)(&ss_mkEmpty), "ss_mkEmpty", &____must_manage_ss_mkEmpty, 1, 1, (size_t)(5826008423592869274UL), "ss_mkEmpty|s|0", &____must_checkpoint_ss_mkEmpty_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
 # 422 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869250UL)); call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869255UL)); omp_set_lock(s->stackLock);
+  alias_group_changed(____alias_loc_id_2); call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869255UL)); omp_set_lock(s->stackLock);
 # 423 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->sharedStart = 0;
 # 424 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3049,9 +3118,9 @@ void ss_mkEmpty(StealStack *s) {new_stack((void *)(&ss_mkEmpty), "ss_mkEmpty", &
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->workAvail = 0;
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869274UL)); call_lbl_4: calling((void*)&omp_unset_lock, 4, 0UL, 1, (size_t)(5826008423592869255UL)); omp_unset_lock(s->stackLock);
+  alias_group_changed(____alias_loc_id_3); call_lbl_4: calling((void*)&omp_unset_lock, 4, 0UL, 1, (size_t)(5826008423592869255UL)); omp_unset_lock(s->stackLock);
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "ss_mkEmpty", &____must_manage_ss_mkEmpty); }
+rm_stack(false, 0UL, "ss_mkEmpty", &____must_manage_ss_mkEmpty, 0); }
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 430 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 431 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3061,7 +3130,7 @@ void ss_error(char *str) {new_stack((void *)(&ss_error), "ss_error", &____must_m
 # 433 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   exit(4);
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5826008423592869277UL)); rm_stack(false, 0UL, "ss_error", &____must_manage_ss_error); }
+rm_stack(false, 0UL, "ss_error", &____must_manage_ss_error, ____alias_loc_id_52); }
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 437 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3094,7 +3163,7 @@ void ss_init(StealStack *s, int nelts) {new_stack((void *)(&ss_init), "ss_init",
 # 457 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 458 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(4, (size_t)(5826008423592869287UL), (size_t)(5826008423592869288UL), (size_t)(5826008423592869289UL), (size_t)(5826008423592869386UL)); call_lbl_8: calling((void*)&omp_global_lock_alloc, 8, 5826008423592869310UL, 0); s->stackLock=omp_global_lock_alloc();
+  alias_group_changed(____alias_loc_id_4); call_lbl_8: calling((void*)&omp_global_lock_alloc, 8, 5826008423592869310UL, 0); s->stackLock=omp_global_lock_alloc();
 # 459 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 1) {printf("Thread %d init stackLock %p\n", omp_get_thread_num(), (void *)s->stackLock); };
 # 461 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3122,9 +3191,9 @@ void ss_init(StealStack *s, int nelts) {new_stack((void *)(&ss_init), "ss_init",
 # 472 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->nNodes_last = 0;
 # 473 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869386UL)); call_lbl_12: calling((void*)&ss_mkEmpty, 12, 0UL, 1, (size_t)(5826008423592869386UL)); ss_mkEmpty(s);
+  alias_group_changed(____alias_loc_id_5); call_lbl_12: calling((void*)&ss_mkEmpty, 12, 0UL, 1, (size_t)(5826008423592869386UL)); ss_mkEmpty(s);
 # 474 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "ss_init", &____must_manage_ss_init); }
+rm_stack(false, 0UL, "ss_init", &____must_manage_ss_init, 0); }
 # 475 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 476 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 477 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3133,7 +3202,7 @@ void ss_push(StealStack *s, Node *c) {new_stack((void *)(&ss_push), "ss_push", &
 # 479 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (s->top >= s->stackSize) { call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871107UL)); ss_error("ss_push: overflow"); };
 # 481 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) {alias_group_changed(2, (size_t)(5826008423592869388UL), (size_t)(5826008423592869389UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869416UL, 2, (size_t)(5826008423592869467UL), (size_t)(5826008423592871080UL)); printf("ss_push: Thread %d, posn %d: node %s [%d]\n", omp_get_thread_num(), s->top, rng_showstate(c->state.state, debug_str), c->height); };
+  if (debug & 1) {alias_group_changed(____alias_loc_id_6); call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869416UL, 2, (size_t)(5826008423592869467UL), (size_t)(5826008423592871080UL)); printf("ss_push: Thread %d, posn %d: node %s [%d]\n", omp_get_thread_num(), s->top, rng_showstate(c->state.state, debug_str), c->height); };
 # 484 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
    call_lbl_6: calling((void*)&memcpy, 6, 0UL, 3, (size_t)(5826008423592869428UL), (size_t)(5826008423592869467UL), (size_t)(0UL)); memcpy(&(s->stack[s->top]), c, sizeof(Node));
 # 485 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3145,7 +3214,7 @@ void ss_push(StealStack *s, Node *c) {new_stack((void *)(&ss_push), "ss_push", &
 # 488 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->maxTreeDepth = (((s->maxTreeDepth) > (c->height)) ? (s->maxTreeDepth) : (c->height));
 # 489 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(3, (size_t)(5826008423592869388UL), (size_t)(5826008423592869389UL), (size_t)(5826008423592869461UL)); rm_stack(false, 0UL, "ss_push", &____must_manage_ss_push); }
+rm_stack(false, 0UL, "ss_push", &____must_manage_ss_push, ____alias_loc_id_53); }
 # 490 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 491 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 492 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3157,9 +3226,9 @@ Node * ss_top(StealStack *s) {new_stack((void *)(&ss_top), "ss_top", &____must_m
 # 496 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[(s->top) - 1]);
 # 497 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) {alias_group_changed(2, (size_t)(5826008423592869494UL), (size_t)(5826008423592869495UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869532UL, 2, (size_t)(5826008423592869516UL), (size_t)(5826008423592871080UL)); printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", omp_get_thread_num(), s->top - 1, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
+  if (debug & 1) {alias_group_changed(____alias_loc_id_7); call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869532UL, 2, (size_t)(5826008423592869516UL), (size_t)(5826008423592871080UL)); printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", omp_get_thread_num(), s->top - 1, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
 # 501 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592869494UL), (size_t)(5826008423592869495UL)); rm_stack(true, 5826008423592869516UL, "ss_top", &____must_manage_ss_top); return r;
+  rm_stack(true, 5826008423592869516UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_54); return r;
 # 502 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 503 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3175,9 +3244,9 @@ void ss_pop(StealStack *s) {new_stack((void *)(&ss_pop), "ss_pop", &____must_man
 # 510 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   r = &(s->stack[s->top]);
 # 511 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  if (debug & 1) {alias_group_changed(3, (size_t)(5826008423592869544UL), (size_t)(5826008423592869545UL), (size_t)(5826008423592869595UL)); call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869585UL, 2, (size_t)(5826008423592869570UL), (size_t)(5826008423592871080UL)); printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", omp_get_thread_num(), s->top, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
+  if (debug & 1) {alias_group_changed(____alias_loc_id_8); call_lbl_5: calling((void*)&rng_showstate, 5, 5826008423592869585UL, 2, (size_t)(5826008423592869570UL), (size_t)(5826008423592871080UL)); printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", omp_get_thread_num(), s->top, rng_showstate(r->state.state, debug_str), r->height, r->numChildren); };
 # 515 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(3, (size_t)(5826008423592869544UL), (size_t)(5826008423592869545UL), (size_t)(5826008423592869595UL)); rm_stack(false, 0UL, "ss_pop", &____must_manage_ss_pop); }
+rm_stack(false, 0UL, "ss_pop", &____must_manage_ss_pop, ____alias_loc_id_55); }
 # 516 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 517 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 518 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3187,7 +3256,7 @@ int ss_topPosn(StealStack *s)
 # 520 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (s->top <= s->local) { call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871113UL)); ss_error("ss_topPosn: empty local stack"); };
 # 522 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869596UL)); rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn); return s->top - 1;
+  rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn, ____alias_loc_id_56); return s->top - 1;
 # 523 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 524 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3195,7 +3264,7 @@ int ss_topPosn(StealStack *s)
 # 526 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 int ss_localDepth(StealStack *s) {new_stack((void *)(&ss_localDepth), "ss_localDepth", &____must_manage_ss_localDepth, 1, 0, (size_t)(5826008423592869626UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
 # 527 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869615UL)); rm_stack(false, 0UL, "ss_localDepth", &____must_manage_ss_localDepth); return (s->top - s->local);
+  rm_stack(false, 0UL, "ss_localDepth", &____must_manage_ss_localDepth, ____alias_loc_id_57); return (s->top - s->local);
 # 528 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 529 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3203,13 +3272,13 @@ int ss_localDepth(StealStack *s) {new_stack((void *)(&ss_localDepth), "ss_localD
 # 531 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void ss_release(StealStack *s, int k) {new_stack((void *)(&ss_release), "ss_release", &____must_manage_ss_release, 2, 2, (size_t)(5826008423592869672UL), (size_t)(0UL), "ss_release|s|0", &____must_checkpoint_ss_release_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_release|k|0", &____must_checkpoint_ss_release_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
 # 532 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592869627UL), (size_t)(5826008423592869628UL)); call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869635UL)); omp_set_lock(s->stackLock);
+  alias_group_changed(____alias_loc_id_9); call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869635UL)); omp_set_lock(s->stackLock);
 # 533 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (s->top - s->local >= k) {{ s->local += k; s->workAvail += k; s->nRelease++; }; } else { call_lbl_3: calling((void*)&ss_error, 3, 0UL, 1, (size_t)(5826008423592871108UL)); ss_error("ss_release:  do not have k vals to release"); } ;
 # 540 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592869672UL)); call_lbl_5: calling((void*)&omp_unset_lock, 5, 0UL, 1, (size_t)(5826008423592869635UL)); omp_unset_lock(s->stackLock);
+  alias_group_changed(____alias_loc_id_10); call_lbl_5: calling((void*)&omp_unset_lock, 5, 0UL, 1, (size_t)(5826008423592869635UL)); omp_unset_lock(s->stackLock);
 # 541 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "ss_release", &____must_manage_ss_release); }
+rm_stack(false, 0UL, "ss_release", &____must_manage_ss_release, 0); }
 # 542 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 543 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 544 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3219,7 +3288,7 @@ int ss_acquire(StealStack *s, int k) {new_stack((void *)(&ss_acquire), "ss_acqui
 # 547 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
    lbl_0: int avail; if (____must_checkpoint_ss_acquire_avail_0 != 0) { register_stack_var("ss_acquire|avail|0", &____must_checkpoint_ss_acquire_avail_0, "i32", (void *)(&avail), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 548 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592869674UL), (size_t)(5826008423592869675UL)); call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869684UL)); omp_set_lock(s->stackLock);
+  alias_group_changed(____alias_loc_id_11); call_lbl_2: calling((void*)&omp_set_lock, 2, 0UL, 1, (size_t)(5826008423592869684UL)); omp_set_lock(s->stackLock);
 # 549 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   avail = s->local - s->sharedStart;
 # 550 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3233,9 +3302,9 @@ int ss_acquire(StealStack *s, int k) {new_stack((void *)(&ss_acquire), "ss_acqui
 # 554 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 555 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592869676UL), (size_t)(5826008423592869725UL)); call_lbl_4: calling((void*)&omp_unset_lock, 4, 0UL, 1, (size_t)(5826008423592869684UL)); omp_unset_lock(s->stackLock);
+  alias_group_changed(____alias_loc_id_12); call_lbl_4: calling((void*)&omp_unset_lock, 4, 0UL, 1, (size_t)(5826008423592869684UL)); omp_unset_lock(s->stackLock);
 # 556 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  rm_stack(false, 0UL, "ss_acquire", &____must_manage_ss_acquire); return (avail >= k);
+  rm_stack(false, 0UL, "ss_acquire", &____must_manage_ss_acquire, 0); return (avail >= k);
 # 557 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 558 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3261,7 +3330,7 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), "
   if (debug & 32) {printf("Thread %d wants    SS %d\n", omp_get_thread_num(), victim); };
 # 576 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 577 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(3, (size_t)(5826008423592869727UL), (size_t)(5826008423592869728UL), (size_t)(5826008423592869729UL)); call_lbl_6: calling((void*)&omp_set_lock, 6, 0UL, 1, (size_t)(5826008423592869945UL)); omp_set_lock(stealStack[victim]->stackLock);
+  alias_group_changed(____alias_loc_id_13); call_lbl_6: calling((void*)&omp_set_lock, 6, 0UL, 1, (size_t)(5826008423592869945UL)); omp_set_lock(stealStack[victim]->stackLock);
 # 578 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 579 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 580 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3294,7 +3363,7 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), "
 # 607 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 608 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(5, (size_t)(5826008423592869730UL), (size_t)(5826008423592869731UL), (size_t)(5826008423592869732UL), (size_t)(5826008423592869733UL), (size_t)(5826008423592870372UL)); call_lbl_11: calling((void*)&omp_unset_lock, 11, 0UL, 1, (size_t)(5826008423592869945UL)); omp_unset_lock(stealStack[victim]->stackLock);
+  alias_group_changed(____alias_loc_id_14); call_lbl_11: calling((void*)&omp_unset_lock, 11, 0UL, 1, (size_t)(5826008423592869945UL)); omp_unset_lock(stealStack[victim]->stackLock);
 # 609 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 610 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 32) {printf("Thread %d releases SS %d\n", omp_get_thread_num(), victim); };
@@ -3325,7 +3394,7 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), "
 # 628 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
           lbl_7: Node *r; if (____must_checkpoint_ss_steal_r_0 != 0) { register_stack_var("ss_steal|r|0", &____must_checkpoint_ss_steal_r_0, "%struct.node_t*", (void *)(&r), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(6): { goto call_lbl_6; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } case(14): { goto call_lbl_14; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } r = (&(s->stack[s->top + i])) ;
 # 629 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-        alias_group_changed(5, (size_t)(5826008423592869734UL), (size_t)(5826008423592869735UL), (size_t)(5826008423592869736UL), (size_t)(5826008423592869737UL), (size_t)(5826008423592869981UL)); call_lbl_18: calling((void*)&rng_showstate, 18, 5826008423592869937UL, 2, (size_t)(5826008423592869921UL), (size_t)(5826008423592871080UL)); printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
+        alias_group_changed(____alias_loc_id_15); call_lbl_18: calling((void*)&rng_showstate, 18, 5826008423592869937UL, 2, (size_t)(5826008423592869921UL), (size_t)(5826008423592871080UL)); printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
 # 630 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
                omp_get_thread_num(), s->top + i, s->nSteal,
 # 631 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3362,7 +3431,7 @@ int ss_steal(StealStack *s, int victim, int k) {new_stack((void *)(&ss_steal), "
 # 649 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 650 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(4, (size_t)(5826008423592869734UL), (size_t)(5826008423592869735UL), (size_t)(5826008423592869736UL), (size_t)(5826008423592869981UL)); rm_stack(false, 0UL, "ss_steal", &____must_manage_ss_steal); return (ok);
+  rm_stack(false, 0UL, "ss_steal", &____must_manage_ss_steal, ____alias_loc_id_58); return (ok);
 # 651 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 652 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3372,18 +3441,18 @@ int findwork(int k) {new_stack((void *)(&findwork), "findwork", &____must_manage
 # 655 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
    lbl_0: int i; if (____must_checkpoint_findwork_i_0 != 0) { register_stack_var("findwork|i|0", &____must_checkpoint_findwork_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } lbl_1: int v; if (____must_checkpoint_findwork_v_0 != 0) { register_stack_var("findwork|v|0", &____must_checkpoint_findwork_v_0, "i32", (void *)(&v), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 656 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(3, (size_t)(5826008423592869985UL), (size_t)(5826008423592869986UL), (size_t)(5826008423592869987UL)); call_lbl_2: calling((void*)&omp_get_num_threads, 2, 0UL, 0); for (i = 1; i < omp_get_num_threads(); i++) {
+  alias_group_changed(____alias_loc_id_16); call_lbl_2: calling((void*)&omp_get_num_threads, 2, 0UL, 0); for (i = 1; i < omp_get_num_threads(); i++) {
 # 657 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
      call_lbl_4: calling((void*)&omp_get_num_threads, 4, 0UL, 0); v = (omp_get_thread_num() + i) % omp_get_num_threads();
 # 658 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 659 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 660 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 661 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    if (stealStack[v]->workAvail >= k) {alias_group_changed(2, (size_t)(5826008423592869984UL), (size_t)(5826008423592869987UL)); rm_stack(false, 0UL, "findwork", &____must_manage_findwork); return v;; };
+    if (stealStack[v]->workAvail >= k) {rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_59); return v;; };
 # 663 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 664 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592869984UL), (size_t)(5826008423592869987UL)); rm_stack(false, 0UL, "findwork", &____must_manage_findwork); return -1;
+  rm_stack(false, 0UL, "findwork", &____must_manage_findwork, ____alias_loc_id_59); return -1;
 # 665 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 666 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3397,7 +3466,7 @@ void ss_initState(StealStack *s) {new_stack((void *)(&ss_initState), "ss_initSta
 # 673 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   int i; ;
 # 674 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592870026UL)); call_lbl_2: calling((void*)&uts_wctime, 2, 0UL, 0); s->timeLast = uts_wctime();
+  alias_group_changed(____alias_loc_id_17); call_lbl_2: calling((void*)&uts_wctime, 2, 0UL, 0); s->timeLast = uts_wctime();
 # 675 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < 5; i++) {
 # 676 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3411,18 +3480,18 @@ void ss_initState(StealStack *s) {new_stack((void *)(&ss_initState), "ss_initSta
 # 680 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d start state %d (t = %f)\n", omp_get_thread_num(), s->curState, s->timeLast); };
 # 683 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(2, (size_t)(5826008423592870027UL), (size_t)(5826008423592870074UL)); rm_stack(false, 0UL, "ss_initState", &____must_manage_ss_initState); }
+rm_stack(false, 0UL, "ss_initState", &____must_manage_ss_initState, ____alias_loc_id_60); }
 # 684 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 685 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-void ss_setState(StealStack *s, int state){new_stack((void *)(&ss_setState), "ss_setState", &____must_manage_ss_setState, 2, 2, (size_t)(5826008423592870147UL), (size_t)(0UL), "ss_setState|s|0", &____must_checkpoint_ss_setState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_setState|state|0", &____must_checkpoint_ss_setState_state_0, "i32", (void *)(&state), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+void ss_setState(StealStack *s, int state){new_stack((void *)(&ss_setState), "ss_setState", &____must_manage_ss_setState, 2, 2, (size_t)(5826008423592870147UL), (size_t)(0UL), "ss_setState|s|0", &____must_checkpoint_ss_setState_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_setState|state|0", &____must_checkpoint_ss_setState_state_0, "i32", (void *)(&state), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } }
 # 686 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   double time; ;
 # 687 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (state < 0 || state >= 5) { call_lbl_1: calling((void*)&ss_error, 1, 0UL, 1, (size_t)(5826008423592871124UL)); ss_error("ss_setState: thread state out of range"); };
 # 689 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  if (state == s->curState) {alias_group_changed(4, (size_t)(5826008423592870075UL), (size_t)(5826008423592870076UL), (size_t)(5826008423592870077UL), (size_t)(5826008423592870147UL)); rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState); return;; };
+  if (state == s->curState) {rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_61); return;; };
 # 691 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592870075UL), (size_t)(5826008423592870076UL)); call_lbl_5: calling((void*)&uts_wctime, 5, 0UL, 0); time = uts_wctime();
+  alias_group_changed(____alias_loc_id_18); call_lbl_4: calling((void*)&uts_wctime, 4, 0UL, 0); time = uts_wctime();
 # 692 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   s->time[s->curState] += time - s->timeLast;
 # 711 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3436,7 +3505,7 @@ void ss_setState(StealStack *s, int state){new_stack((void *)(&ss_setState), "ss
 # 715 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 8) {printf("Thread %d enter state %d [#%d] (t = %f)\n", omp_get_thread_num(), state, s->entries[state], time); };
 # 718 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(4, (size_t)(5826008423592870075UL), (size_t)(5826008423592870076UL), (size_t)(5826008423592870077UL), (size_t)(5826008423592870147UL)); rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState); }
+rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_61); }
 # 888 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 888 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void initNode(Node * child)
@@ -3450,7 +3519,7 @@ void initNode(Node * child)
   child->numChildren = -1;
 # 907 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 907 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(2, (size_t)(5826008423592870149UL), (size_t)(5826008423592870162UL)); rm_stack(false, 0UL, "initNode", &____must_manage_initNode); }
+rm_stack(false, 0UL, "initNode", &____must_manage_initNode, ____alias_loc_id_62); }
 # 908 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 909 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 910 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3458,10 +3527,10 @@ void initRootNode(Node * root, int type)
 # 911 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 {new_stack((void *)(&initRootNode), "initRootNode", &____must_manage_initRootNode, 2, 0, (size_t)(5826008423592870173UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 912 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(2, (size_t)(5826008423592870163UL), (size_t)(5826008423592870164UL)); call_lbl_2: calling((void*)&uts_initRoot, 2, 0UL, 2, (size_t)(5826008423592870173UL), (size_t)(0UL)); uts_initRoot(root, type);
+  alias_group_changed(____alias_loc_id_19); call_lbl_2: calling((void*)&uts_initRoot, 2, 0UL, 2, (size_t)(5826008423592870173UL), (size_t)(0UL)); uts_initRoot(root, type);
 # 943 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 943 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "initRootNode", &____must_manage_initRootNode); }
+rm_stack(false, 0UL, "initRootNode", &____must_manage_initRootNode, 0); }
 # 944 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 945 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 946 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3482,9 +3551,9 @@ void genChildren(Node * parent, Node * child, StealStack * ss) {new_stack((void 
    lbl_1: int numChildren; if (____must_checkpoint_genChildren_numChildren_0 != 0) { register_stack_var("genChildren|numChildren|0", &____must_checkpoint_genChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } lbl_2: int childType; if (____must_checkpoint_genChildren_childType_0 != 0) { register_stack_var("genChildren|childType|0", &____must_checkpoint_genChildren_childType_0, "i32", (void *)(&childType), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_3; } ;
 # 958 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 959 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(4, (size_t)(5826008423592870177UL), (size_t)(5826008423592870178UL), (size_t)(5826008423592870179UL), (size_t)(5826008423592870180UL)); call_lbl_2: calling((void*)&uts_numChildren, 2, 0UL, 1, (size_t)(5826008423592870283UL)); numChildren = uts_numChildren(parent);
+  alias_group_changed(____alias_loc_id_20); call_lbl_2: calling((void*)&uts_numChildren, 2, 0UL, 1, (size_t)(5826008423592870283UL)); numChildren = uts_numChildren(parent);
 # 960 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592870181UL)); call_lbl_4: calling((void*)&uts_childType, 4, 0UL, 1, (size_t)(5826008423592870283UL)); childType = uts_childType(parent);
+  alias_group_changed(____alias_loc_id_21); call_lbl_4: calling((void*)&uts_childType, 4, 0UL, 1, (size_t)(5826008423592870283UL)); childType = uts_childType(parent);
 # 961 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 962 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 963 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3492,7 +3561,7 @@ void genChildren(Node * parent, Node * child, StealStack * ss) {new_stack((void 
 # 964 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 2) {
 # 965 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870184UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL)); call_lbl_8: calling((void*)&ss_topPosn, 8, 0UL, 1, (size_t)(5826008423592870285UL)); call_lbl_9: calling((void*)&rng_showstate, 9, 5826008423592870219UL, 2, (size_t)(5826008423592870283UL), (size_t)(5826008423592871080UL)); printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
+    alias_group_changed(____alias_loc_id_22); call_lbl_8: calling((void*)&ss_topPosn, 8, 0UL, 1, (size_t)(5826008423592870285UL)); call_lbl_9: calling((void*)&rng_showstate, 9, 5826008423592870219UL, 2, (size_t)(5826008423592870283UL), (size_t)(5826008423592871080UL)); printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
 # 966 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
            omp_get_thread_num(), ss_topPosn(ss),
 # 967 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3524,11 +3593,11 @@ void genChildren(Node * parent, Node * child, StealStack * ss) {new_stack((void 
 # 984 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 985 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 986 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-        alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870184UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL)); call_lbl_11: calling((void*)&rng_spawn, 11, 0UL, 3, (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL), (size_t)(0UL)); rng_spawn(parent->state.state, child->state.state, i);
+        alias_group_changed(____alias_loc_id_23); call_lbl_11: calling((void*)&rng_spawn, 11, 0UL, 3, (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL), (size_t)(0UL)); rng_spawn(parent->state.state, child->state.state, i);
 # 987 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
       }
 # 988 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-      alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870184UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL)); call_lbl_13: calling((void*)&ss_push, 13, 0UL, 2, (size_t)(5826008423592870285UL), (size_t)(5826008423592870284UL)); ss_push(ss, child);
+      alias_group_changed(____alias_loc_id_24); call_lbl_13: calling((void*)&ss_push, 13, 0UL, 2, (size_t)(5826008423592870285UL), (size_t)(5826008423592870284UL)); ss_push(ss, child);
 # 989 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
        call_lbl_14: calling((void*)&releaseNodes, 14, 0UL, 1, (size_t)(5826008423592870285UL)); releaseNodes(ss);
 # 990 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3540,7 +3609,7 @@ void genChildren(Node * parent, Node * child, StealStack * ss) {new_stack((void 
 # 993 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 994 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(5, (size_t)(5826008423592870182UL), (size_t)(5826008423592870183UL), (size_t)(5826008423592870283UL), (size_t)(5826008423592870284UL), (size_t)(5826008423592870285UL)); rm_stack(false, 0UL, "genChildren", &____must_manage_genChildren); }
+rm_stack(false, 0UL, "genChildren", &____must_manage_genChildren, ____alias_loc_id_63); }
 # 1006 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1006 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void cb_init(){new_stack((void *)(&cb_init), "cb_init", &____must_manage_cb_init, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
@@ -3551,7 +3620,7 @@ void cb_init(){new_stack((void *)(&cb_init), "cb_init", &____must_manage_cb_init
 # 1010 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1011 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1012 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592871085UL)); call_lbl_5: calling((void*)&omp_set_lock, 5, 0UL, 1, (size_t)(5826008423592870354UL)); omp_set_lock(cb_lock);
+  alias_group_changed(____alias_loc_id_26); call_lbl_5: calling((void*)&omp_set_lock, 5, 0UL, 1, (size_t)(5826008423592870354UL)); omp_set_lock(cb_lock);
 # 1013 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   cb_count = 0;
 # 1014 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3559,9 +3628,9 @@ void cb_init(){new_stack((void *)(&cb_init), "cb_init", &____must_manage_cb_init
 # 1015 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   cb_done = 0;
 # 1016 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592871074UL)); call_lbl_7: calling((void*)&omp_unset_lock, 7, 0UL, 1, (size_t)(5826008423592870354UL)); omp_unset_lock(cb_lock);
+  alias_group_changed(____alias_loc_id_27); call_lbl_7: calling((void*)&omp_unset_lock, 7, 0UL, 1, (size_t)(5826008423592870354UL)); omp_unset_lock(cb_lock);
 # 1017 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "cb_init", &____must_manage_cb_init); }
+rm_stack(false, 0UL, "cb_init", &____must_manage_cb_init, 0); }
 # 1018 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1019 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1020 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3573,14 +3642,14 @@ int cbarrier_wait() {new_stack((void *)(&cbarrier_wait), "cbarrier_wait", &____m
     lbl_3: int pe; if (____must_checkpoint_cbarrier_wait_pe_0 != 0) { register_stack_var("cbarrier_wait|pe|0", &____must_checkpoint_cbarrier_wait_pe_0, "i32", (void *)(&pe), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } case(14): { goto call_lbl_14; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } pe = (omp_get_thread_num()) ;
 # 1024 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1025 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592870347UL)); call_lbl_3: calling((void*)&omp_set_lock, 3, 0UL, 1, (size_t)(5826008423592870354UL)); omp_set_lock(cb_lock);
+  alias_group_changed(____alias_loc_id_28); call_lbl_3: calling((void*)&omp_set_lock, 3, 0UL, 1, (size_t)(5826008423592870354UL)); omp_set_lock(cb_lock);
 # 1026 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   cb_count++;
 # 1027 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1028 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1029 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1030 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(1, (size_t)(5826008423592871074UL)); call_lbl_5: calling((void*)&omp_get_num_threads, 5, 0UL, 0); if (cb_count == omp_get_num_threads()) {
+  alias_group_changed(____alias_loc_id_29); call_lbl_5: calling((void*)&omp_get_num_threads, 5, 0UL, 0); if (cb_count == omp_get_num_threads()) {
 # 1031 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     cb_done = 1;
 # 1032 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3601,7 +3670,7 @@ int cbarrier_wait() {new_stack((void *)(&cbarrier_wait), "cbarrier_wait", &____m
 # 1041 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   stealStack[omp_get_thread_num()]->nNodes_last = stealStack[pe]->nNodes;
 # 1042 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(4, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870372UL), (size_t)(5826008423592871074UL)); call_lbl_8: calling((void*)&omp_unset_lock, 8, 0UL, 1, (size_t)(5826008423592870354UL)); omp_unset_lock(cb_lock);
+  alias_group_changed(____alias_loc_id_30); call_lbl_8: calling((void*)&omp_unset_lock, 8, 0UL, 1, (size_t)(5826008423592870354UL)); omp_unset_lock(cb_lock);
 # 1043 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1044 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d enter spin-wait, count = %d, done = %d\n", omp_get_thread_num(), l_count, l_done); };
@@ -3628,7 +3697,7 @@ int cbarrier_wait() {new_stack((void *)(&cbarrier_wait), "cbarrier_wait", &____m
 # 1062 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1063 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1064 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(3, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870346UL)); call_lbl_14: calling((void*)&omp_set_lock, 14, 0UL, 1, (size_t)(5826008423592870354UL)); omp_set_lock(cb_lock);
+  alias_group_changed(____alias_loc_id_31); call_lbl_14: calling((void*)&omp_set_lock, 14, 0UL, 1, (size_t)(5826008423592870354UL)); omp_set_lock(cb_lock);
 # 1065 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   cb_count--;
 # 1066 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3643,13 +3712,13 @@ int cbarrier_wait() {new_stack((void *)(&cbarrier_wait), "cbarrier_wait", &____m
 # 1072 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   ++stealStack[omp_get_thread_num()]->wakeups;
 # 1073 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(4, (size_t)(5826008423592870344UL), (size_t)(5826008423592870345UL), (size_t)(5826008423592870372UL), (size_t)(5826008423592871074UL)); call_lbl_17: calling((void*)&omp_unset_lock, 17, 0UL, 1, (size_t)(5826008423592870354UL)); omp_unset_lock(cb_lock);
+  alias_group_changed(____alias_loc_id_32); call_lbl_17: calling((void*)&omp_unset_lock, 17, 0UL, 1, (size_t)(5826008423592870354UL)); omp_unset_lock(cb_lock);
 # 1074 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1075 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (debug & 16) {printf("Thread %d exit idle state, count = %d, done = %d\n", omp_get_thread_num(), l_count, cb_done); };
 # 1078 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1079 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  rm_stack(false, 0UL, "cbarrier_wait", &____must_manage_cbarrier_wait); return cb_done;
+  rm_stack(false, 0UL, "cbarrier_wait", &____must_manage_cbarrier_wait, 0); return cb_done;
 # 1080 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 # 1081 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3668,7 +3737,7 @@ void cbarrier_cancel() {new_stack((void *)(&cbarrier_cancel), "cbarrier_cancel",
   cb_cancel = 1;
 # 1093 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1094 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5826008423592871074UL)); rm_stack(false, 0UL, "cbarrier_cancel", &____must_manage_cbarrier_cancel); }
+rm_stack(false, 0UL, "cbarrier_cancel", &____must_manage_cbarrier_cancel, ____alias_loc_id_65); }
 # 1095 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1096 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void releaseNodes(StealStack *ss){new_stack((void *)(&releaseNodes), "releaseNodes", &____must_manage_releaseNodes, 1, 1, (size_t)(5826008423592870324UL), "releaseNodes|ss|0", &____must_checkpoint_releaseNodes_ss_0, "%struct.stealStack_t*", (void *)(&ss), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
@@ -3678,7 +3747,7 @@ void releaseNodes(StealStack *ss){new_stack((void *)(&releaseNodes), "releaseNod
      call_lbl_1: calling((void*)&ss_localDepth, 1, 0UL, 1, (size_t)(5826008423592870324UL)); if (ss_localDepth(ss) > 2 * chunkSize) {
 # 1099 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1100 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-      alias_group_changed(1, (size_t)(5826008423592870291UL)); call_lbl_3: calling((void*)&ss_setState, 3, 0UL, 2, (size_t)(5826008423592870324UL), (size_t)(0UL)); ss_setState(ss, 3);
+      alias_group_changed(____alias_loc_id_25); call_lbl_3: calling((void*)&ss_setState, 3, 0UL, 2, (size_t)(5826008423592870324UL), (size_t)(0UL)); ss_setState(ss, 3);
 # 1101 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
        call_lbl_4: calling((void*)&ss_release, 4, 0UL, 2, (size_t)(5826008423592870324UL), (size_t)(0UL)); ss_release(ss, chunkSize);
 # 1102 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3704,7 +3773,7 @@ void releaseNodes(StealStack *ss){new_stack((void *)(&releaseNodes), "releaseNod
 # 1116 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   }
 # 1117 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5826008423592870291UL)); rm_stack(false, 0UL, "releaseNodes", &____must_manage_releaseNodes); }
+rm_stack(false, 0UL, "releaseNodes", &____must_manage_releaseNodes, ____alias_loc_id_64); }
 # 1118 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1119 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1120 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3736,7 +3805,7 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
     while (localDepth > 0) {
 # 1139 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1140 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-      alias_group_changed(5, (size_t)(5826008423592870475UL), (size_t)(5826008423592870476UL), (size_t)(5826008423592870479UL), (size_t)(5826008423592870480UL), (size_t)(5826008423592870481UL)); call_lbl_4: calling((void*)&ss_setState, 4, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); ss_setState(ss, 0);
+      alias_group_changed(____alias_loc_id_33); call_lbl_4: calling((void*)&ss_setState, 4, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); ss_setState(ss, 0);
 # 1141 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1142 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1143 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3745,7 +3814,7 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
       if (parent->numChildren < 0){
 # 1145 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1146 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
- alias_group_changed(1, (size_t)(5826008423592870477UL)); call_lbl_7: calling((void*)&genChildren, 7, 0UL, 3, (size_t)(5826008423592870511UL), (size_t)(5826008423592870478UL), (size_t)(5826008423592870576UL)); genChildren(parent,&child,ss);
+ alias_group_changed(____alias_loc_id_36); call_lbl_7: calling((void*)&genChildren, 7, 0UL, 3, (size_t)(5826008423592870511UL), (size_t)(5826008423592870478UL), (size_t)(5826008423592870576UL)); genChildren(parent,&child,ss);
 # 1147 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1148 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
       }
@@ -3757,7 +3826,7 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
 # 1153 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1154 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1155 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-        alias_group_changed(1, (size_t)(5826008423592870477UL)); call_lbl_9: calling((void*)&ss_pop, 9, 0UL, 1, (size_t)(5826008423592870576UL)); ss_pop(ss);
+        alias_group_changed(____alias_loc_id_37); call_lbl_9: calling((void*)&ss_pop, 9, 0UL, 1, (size_t)(5826008423592870576UL)); ss_pop(ss);
 # 1156 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
       }
 # 1157 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3774,7 +3843,7 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
 # 1165 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1166 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1167 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-     call_lbl_13: calling((void*)&ss_acquire, 13, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); if (alias_group_changed(5, (size_t)(5826008423592870475UL), (size_t)(5826008423592870476UL), (size_t)(5826008423592870479UL), (size_t)(5826008423592870480UL), (size_t)(5826008423592870481UL)) || ss_acquire(ss, chunkSize)) {continue;; };
+     call_lbl_13: calling((void*)&ss_acquire, 13, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); if (alias_group_changed(____alias_loc_id_34) || ss_acquire(ss, chunkSize)) {continue;; };
 # 1169 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1170 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1171 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3786,16 +3855,16 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
        lbl_5: int victimId; register_stack_var("parTreeSearch|victimId|0", (int *)0x0, "i32", (void *)(&victimId), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } default: { chimes_error(); } } } ;
 # 1175 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1176 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-      alias_group_changed(1, (size_t)(5826008423592870480UL)); call_lbl_15: calling((void*)&ss_setState, 15, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); ss_setState(ss, 1);
+      alias_group_changed(____alias_loc_id_38); call_lbl_15: calling((void*)&ss_setState, 15, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); ss_setState(ss, 1);
 # 1177 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
        call_lbl_16: calling((void*)&findwork, 16, 0UL, 1, (size_t)(0UL)); victimId = findwork(chunkSize);
 # 1178 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
       while (victimId != -1 && !goodSteal) {
 # 1179 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1180 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
- alias_group_changed(2, (size_t)(5826008423592870480UL), (size_t)(5826008423592870481UL)); call_lbl_18: calling((void*)&ss_steal, 18, 0UL, 3, (size_t)(5826008423592870576UL), (size_t)(0UL), (size_t)(0UL)); goodSteal = ss_steal(ss, victimId, chunkSize);
+ alias_group_changed(____alias_loc_id_39); call_lbl_18: calling((void*)&ss_steal, 18, 0UL, 3, (size_t)(5826008423592870576UL), (size_t)(0UL), (size_t)(0UL)); goodSteal = ss_steal(ss, victimId, chunkSize);
 # 1181 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
- if (!goodSteal) {alias_group_changed(1, (size_t)(5826008423592870480UL)); call_lbl_20: calling((void*)&findwork, 20, 0UL, 1, (size_t)(0UL)); victimId = findwork(chunkSize); };
+ if (!goodSteal) {alias_group_changed(____alias_loc_id_41); call_lbl_20: calling((void*)&findwork, 20, 0UL, 1, (size_t)(0UL)); victimId = findwork(chunkSize); };
 # 1183 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
       }
 # 1184 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3809,7 +3878,7 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
 # 1191 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1192 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1193 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    alias_group_changed(2, (size_t)(5826008423592870480UL), (size_t)(5826008423592870481UL)); call_lbl_22: calling((void*)&ss_setState, 22, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); ss_setState(ss, 2);
+    alias_group_changed(____alias_loc_id_40); call_lbl_22: calling((void*)&ss_setState, 22, 0UL, 2, (size_t)(5826008423592870576UL), (size_t)(0UL)); ss_setState(ss, 2);
 # 1194 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
      call_lbl_23: calling((void*)&cbarrier_wait, 23, 0UL, 0); done = cbarrier_wait();
 # 1195 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -3817,12 +3886,12 @@ void parTreeSearch(StealStack *ss) {new_stack((void *)(&parTreeSearch), "parTree
 # 1196 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1197 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1198 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    alias_group_changed(5, (size_t)(5826008423592870475UL), (size_t)(5826008423592870476UL), (size_t)(5826008423592870479UL), (size_t)(5826008423592870480UL), (size_t)(5826008423592870481UL)); call_lbl_25: calling((void*)&checkpoint, 25, 0UL, 0); checkpoint();
+    alias_group_changed(____alias_loc_id_35); call_lbl_25: calling((void*)&checkpoint, 25, 0UL, 0); checkpoint();
 # 1199 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1200 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1201 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1202 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-rm_stack(false, 0UL, "parTreeSearch", (int *)0x0); }
+rm_stack(false, 0UL, "parTreeSearch", (int *)0x0, 0); }
 # 1230 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1230 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 void showStats(double elapsedSecs) {new_stack((void *)(&showStats), "showStats", &____must_manage_showStats, 1, 1, (size_t)(0UL), "showStats|elapsedSecs|0", &____must_checkpoint_showStats_elapsedSecs_0, "double", (void *)(&elapsedSecs), (size_t)8, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; }
@@ -3835,7 +3904,7 @@ void showStats(double elapsedSecs) {new_stack((void *)(&showStats), "showStats",
 # 1234 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     lbl_9: double twork; if (____must_checkpoint_showStats_twork_0 != 0) { register_stack_var("showStats|twork|0", &____must_checkpoint_showStats_twork_0, "double", (void *)(&twork), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_10; } lbl_10: double tsearch; if (____must_checkpoint_showStats_tsearch_0 != 0) { register_stack_var("showStats|tsearch|0", &____must_checkpoint_showStats_tsearch_0, "double", (void *)(&tsearch), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_11; } lbl_11: double tidle; if (____must_checkpoint_showStats_tidle_0 != 0) { register_stack_var("showStats|tidle|0", &____must_checkpoint_showStats_tidle_0, "double", (void *)(&tidle), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_12; } lbl_12: double tovh; if (____must_checkpoint_showStats_tovh_0 != 0) { register_stack_var("showStats|tovh|0", &____must_checkpoint_showStats_tovh_0, "double", (void *)(&tovh), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_13; } lbl_13: double tcbovh; if (____must_checkpoint_showStats_tcbovh_0 != 0) { register_stack_var("showStats|tcbovh|0", &____must_checkpoint_showStats_tcbovh_0, "double", (void *)(&tcbovh), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_14; } twork = (0.) ; tsearch = (0.) ; tidle = (0.) ; tovh = (0.) ; tcbovh = (0.) ;
 # 1235 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(14, (size_t)(5826008423592870577UL), (size_t)(5826008423592870579UL), (size_t)(5826008423592870580UL), (size_t)(5826008423592870581UL), (size_t)(5826008423592870582UL), (size_t)(5826008423592870583UL), (size_t)(5826008423592870584UL), (size_t)(5826008423592870585UL), (size_t)(5826008423592870586UL), (size_t)(5826008423592870587UL), (size_t)(5826008423592870588UL), (size_t)(5826008423592870589UL), (size_t)(5826008423592870590UL), (size_t)(5826008423592870591UL)); lbl_14: int nthreads; if (____must_checkpoint_showStats_nthreads_0 != 0) { register_stack_var("showStats|nthreads|0", &____must_checkpoint_showStats_nthreads_0, "i32", (void *)(&nthreads), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&omp_get_num_threads, 2, 0UL, 0); nthreads = (omp_get_num_threads()) ;
+  alias_group_changed(____alias_loc_id_42); lbl_14: int nthreads; if (____must_checkpoint_showStats_nthreads_0 != 0) { register_stack_var("showStats|nthreads|0", &____must_checkpoint_showStats_nthreads_0, "i32", (void *)(&nthreads), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } call_lbl_2: calling((void*)&omp_get_num_threads, 2, 0UL, 0); nthreads = (omp_get_num_threads()) ;
 # 1254 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1254 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   for (i = 0; i < nthreads; i++) {
@@ -3875,7 +3944,7 @@ void showStats(double elapsedSecs) {new_stack((void *)(&showStats), "showStats",
   }
 # 1272 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1273 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(15, (size_t)(5826008423592870578UL), (size_t)(5826008423592870579UL), (size_t)(5826008423592870580UL), (size_t)(5826008423592870581UL), (size_t)(5826008423592870582UL), (size_t)(5826008423592870583UL), (size_t)(5826008423592870584UL), (size_t)(5826008423592870585UL), (size_t)(5826008423592870586UL), (size_t)(5826008423592870587UL), (size_t)(5826008423592870588UL), (size_t)(5826008423592870589UL), (size_t)(5826008423592870590UL), (size_t)(5826008423592870591UL), (size_t)(5826008423592870592UL)); call_lbl_5: calling((void*)&uts_showStats, 5, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); uts_showStats(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight);
+  alias_group_changed(____alias_loc_id_43); call_lbl_5: calling((void*)&uts_showStats, 5, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); uts_showStats(nthreads, chunkSize, elapsedSecs, tnodes, tleaves, mheight);
 # 1274 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1275 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
   if (verbose > 1) {
@@ -3952,7 +4021,7 @@ void showStats(double elapsedSecs) {new_stack((void *)(&showStats), "showStats",
   }
 # 1352 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1352 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-alias_group_changed(1, (size_t)(5826008423592870578UL)); rm_stack(false, 0UL, "showStats", &____must_manage_showStats); }
+rm_stack(false, 0UL, "showStats", &____must_manage_showStats, ____alias_loc_id_66); }
 # 1362 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1362 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(5826008423592871071UL)); if (____chimes_replaying) { goto lbl_0; }
@@ -3965,7 +4034,7 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "mai
 # 1368 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1369 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1370 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  alias_group_changed(3, (size_t)(5826008423592871001UL), (size_t)(5826008423592871002UL), (size_t)(5826008423592871003UL)); call_lbl_3: calling((void*)&uts_parseParams, 3, 0UL, 2, (size_t)(0UL), (size_t)(5826008423592871071UL)); uts_parseParams(argc, argv);
+  alias_group_changed(____alias_loc_id_44); call_lbl_3: calling((void*)&uts_parseParams, 3, 0UL, 2, (size_t)(0UL), (size_t)(5826008423592871071UL)); uts_parseParams(argc, argv);
 # 1371 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1372 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1373 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -4003,7 +4072,7 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "mai
 # 1412 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     ss = (StealStack *) stealStack[omp_get_thread_num()];
 # 1413 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    alias_group_changed(2, (size_t)(5826008423592871008UL), (size_t)(5826008423592871081UL)); call_lbl_11: calling((void*)&ss_init, 11, 0UL, 2, (size_t)(5826008423592870372UL), (size_t)(0UL)); ss_init(ss, 500000);
+    alias_group_changed(____alias_loc_id_45); call_lbl_11: calling((void*)&ss_init, 11, 0UL, 2, (size_t)(5826008423592870372UL), (size_t)(0UL)); ss_init(ss, 500000);
 # 1414 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1415 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1416 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -4036,7 +4105,7 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "mai
 # 1432 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
      call_lbl_17: calling((void*)&uts_wctime, 17, 0UL, 0); t1 = uts_wctime();
 # 1433 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    alias_group_changed(1, (size_t)(5826008423592871005UL)); call_lbl_19: calling((void*)&parTreeSearch, 19, 0UL, 1, (size_t)(5826008423592870372UL)); parTreeSearch(ss);
+    alias_group_changed(____alias_loc_id_46); call_lbl_19: calling((void*)&parTreeSearch, 19, 0UL, 1, (size_t)(5826008423592870372UL)); parTreeSearch(ss);
 # 1434 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
      call_lbl_20: calling((void*)&uts_wctime, 20, 0UL, 0); t2 = uts_wctime();
 # 1435 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -4057,7 +4126,7 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "mai
 # 1444 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1445 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1446 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-    alias_group_changed(2, (size_t)(5826008423592871006UL), (size_t)(5826008423592871007UL)); call_lbl_22: calling((void*)&checkpoint, 22, 0UL, 0); checkpoint();
+    alias_group_changed(____alias_loc_id_47); call_lbl_22: calling((void*)&checkpoint, 22, 0UL, 0); checkpoint();
 # 1447 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1448 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1449 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -4072,13 +4141,13 @@ int main(int argc, char *argv[]) {init_chimes(); new_stack((void *)(&main), "mai
 # 1454 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1455 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1456 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  rm_stack(false, 0UL, "main", (int *)0x0); return 0;
+  rm_stack(false, 0UL, "main", (int *)0x0, 0); return 0;
 # 1457 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 }
 
 
 static int module_init() {
-    init_module(5826008423592869089UL, 45, 30, 64, 4, 5826008423592869089UL + 198UL, 5826008423592869089UL + 297UL, 5826008423592869089UL + 1914UL, 5826008423592869089UL + 1982UL, 5826008423592869089UL + 454UL, 5826008423592869089UL + 427UL, 5826008423592869089UL + 455UL, 5826008423592869089UL + 506UL, 5826008423592869089UL + 456UL, 5826008423592869089UL + 481UL, 5826008423592869089UL + 1088UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1074UL, 5826008423592869089UL + 1084UL, 5826008423592869089UL + 405UL, 5826008423592869089UL + 454UL, 5826008423592869089UL + 161UL, 5826008423592869089UL + 185UL, 5826008423592869089UL + 1UL, 5826008423592869089UL + 3UL, 5826008423592869089UL + 406UL, 5826008423592869089UL + 427UL, 5826008423592869089UL + 526UL, 5826008423592869089UL + 537UL, 5826008423592869089UL + 185UL, 5826008423592869089UL + 166UL, 5826008423592869089UL + 506UL, 5826008423592869089UL + 481UL, 5826008423592869089UL + 507UL, 5826008423592869089UL + 525UL, 5826008423592869089UL + 188UL, 5826008423592869089UL + 197UL, 5826008423592869089UL + 937UL, 5826008423592869089UL + 985UL, 5826008423592869089UL + 1388UL, 5826008423592869089UL + 1422UL, 5826008423592869089UL + 892UL, 5826008423592869089UL + 832UL, 5826008423592869089UL + 585UL, 5826008423592869089UL + 636UL, 5826008423592869089UL + 1090UL, 5826008423592869089UL + 1196UL, 5826008423592869089UL + 583UL, 5826008423592869089UL + 546UL, 5826008423592869089UL + 636UL, 5826008423592869089UL + 595UL, 5826008423592869089UL + 300UL, 5826008423592869089UL + 378UL, 5826008423592869089UL + 986UL, 5826008423592869089UL + 1058UL, 5826008423592869089UL + 646UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 1919UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 1089UL, 5826008423592869089UL + 1195UL, 5826008423592869089UL + 648UL, 5826008423592869089UL + 832UL, 5826008423592869089UL + 1202UL, 5826008423592869089UL + 1235UL, 5826008423592869089UL + 106UL, 5826008423592869089UL + 144UL, 5826008423592869089UL + 107UL, 5826008423592869089UL + 145UL, 5826008423592869089UL + 638UL, 5826008423592869089UL + 892UL, 5826008423592869089UL + 1992UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 14UL, 5826008423592869089UL + 1998UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 1996UL, 5826008423592869089UL + 1265UL, 5826008423592869089UL + 1060UL, 5826008423592869089UL + 1073UL, 5826008423592869089UL + 37UL, 5826008423592869089UL + 102UL, 5826008423592869089UL + 645UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 299UL, 5826008423592869089UL + 372UL, 5826008423592869089UL + 297UL, 5826008423592869089UL + 221UL, 5826008423592869089UL + 1386UL, 5826008423592869089UL + 1487UL, 5826008423592869089UL + 372UL, 5826008423592869089UL + 339UL, 5826008423592869089UL + 538UL, 5826008423592869089UL + 583UL, "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state), "omp_lock_t", 1, "[ 64 x unsigned char ]", (int)__builtin_offsetof (omp_lock_t, _x), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "stealStack_t", 23, "int", (int)__builtin_offsetof (struct stealStack_t, stackSize), "int", (int)__builtin_offsetof (struct stealStack_t, workAvail), "int", (int)__builtin_offsetof (struct stealStack_t, sharedStart), "int", (int)__builtin_offsetof (struct stealStack_t, local), "int", (int)__builtin_offsetof (struct stealStack_t, top), "int", (int)__builtin_offsetof (struct stealStack_t, maxStackDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes), "int", (int)__builtin_offsetof (struct stealStack_t, maxTreeDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nLeaves), "int", (int)__builtin_offsetof (struct stealStack_t, nAcquire), "int", (int)__builtin_offsetof (struct stealStack_t, nRelease), "int", (int)__builtin_offsetof (struct stealStack_t, nSteal), "int", (int)__builtin_offsetof (struct stealStack_t, nFail), "int", (int)__builtin_offsetof (struct stealStack_t, wakeups), "int", (int)__builtin_offsetof (struct stealStack_t, falseWakeups), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes_last), "[ 5 x double ]", (int)__builtin_offsetof (struct stealStack_t, time), "double", (int)__builtin_offsetof (struct stealStack_t, timeLast), "[ 5 x int ]", (int)__builtin_offsetof (struct stealStack_t, entries), "int", (int)__builtin_offsetof (struct stealStack_t, curState), "%struct.*", (int)__builtin_offsetof (struct stealStack_t, stackLock), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack_g), "ss_mkEmpty", 2, "omp_set_lock", "omp_unset_lock", "ss_init", 3, "omp_global_lock_alloc", "ss_error", "ss_mkEmpty", "genChildren", 7, "releaseNodes", "rng_showstate", "rng_spawn", "ss_push", "ss_topPosn", "uts_childType", "uts_numChildren", "ss_initState", 1, "uts_wctime", "showStats", 2, "omp_get_num_threads", "uts_showStats", "ss_push", 2, "rng_showstate", "ss_error", "cbarrier_cancel", 0, "parTreeSearch", 12, "cbarrier_wait", "checkpoint", "findwork", "genChildren", "initNode", "releaseNodes", "ss_acquire", "ss_localDepth", "ss_pop", "ss_setState", "ss_steal", "ss_top", "impl_parseParam", 0, "ss_pop", 2, "rng_showstate", "ss_error", "ss_acquire", 2, "omp_set_lock", "omp_unset_lock", "ss_topPosn", 1, "ss_error", "main", 11, "cb_init", "checkpoint", "initRootNode", "parTreeSearch", "showStats", "ss_init", "ss_initState", "ss_push", "uts_parseParams", "uts_printParams", "uts_wctime", "findwork", 1, "omp_get_num_threads", "impl_abort", 0, "initNode", 0, "impl_getName", 0, "ss_top", 2, "rng_showstate", "ss_error", "impl_paramsToStr", 1, "omp_get_num_threads", "ss_setState", 2, "ss_error", "uts_wctime", "ss_localDepth", 0, "releaseNodes", 4, "cbarrier_cancel", "ss_localDepth", "ss_release", "ss_setState", "ss_release", 3, "omp_set_lock", "omp_unset_lock", "ss_error", "omp_global_lock_alloc", 1, "omp_init_lock", "cbarrier_wait", 3, "omp_get_num_threads", "omp_set_lock", "omp_unset_lock", "ss_steal", 4, "omp_set_lock", "omp_unset_lock", "rng_showstate", "ss_error", "impl_helpMessage", 0, "ss_error", 0, "cb_init", 3, "omp_global_lock_alloc", "omp_set_lock", "omp_unset_lock", "initRootNode", 1, "uts_initRoot", "omp_global_lock_alloc|lock|0", 1, "omp_init_lock", "impl_getName|name|0", 1, "impl_getName", "impl_paramsToStr|strBuf|0", 1, "omp_get_num_threads", "impl_paramsToStr|ind|0", 1, "omp_get_num_threads", "ss_mkEmpty|s|0", 2, "omp_unset_lock", "omp_set_lock", "ss_init|s|0", 2, "ss_mkEmpty", "omp_global_lock_alloc", "ss_init|nelts|0", 2, "ss_mkEmpty", "omp_global_lock_alloc", "ss_push|s|0", 1, "rng_showstate", "ss_push|c|0", 1, "rng_showstate", "ss_top|r|0", 1, "rng_showstate", "ss_pop|r|0", 1, "rng_showstate", "ss_release|s|0", 2, "omp_unset_lock", "omp_set_lock", "ss_release|k|0", 2, "omp_unset_lock", "omp_set_lock", "ss_acquire|s|0", 2, "omp_unset_lock", "omp_set_lock", "ss_acquire|k|0", 2, "omp_unset_lock", "omp_set_lock", "ss_acquire|avail|0", 1, "omp_unset_lock", "ss_steal|s|0", 3, "rng_showstate", "omp_unset_lock", "omp_set_lock", "ss_steal|victim|0", 3, "rng_showstate", "omp_unset_lock", "omp_set_lock", "ss_steal|k|0", 3, "rng_showstate", "omp_unset_lock", "omp_set_lock", "ss_steal|victimLocal|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|victimShared|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|victimWorkAvail|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|ok|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|victimStackBase|0", 1, "rng_showstate", "ss_steal|victimSharedStart|0", 1, "rng_showstate", "ss_steal|i|0", 1, "rng_showstate", "ss_steal|r|0", 1, "rng_showstate", "findwork|k|0", 1, "omp_get_num_threads", "findwork|i|0", 1, "omp_get_num_threads", "findwork|v|0", 1, "omp_get_num_threads", "ss_initState|s|0", 1, "uts_wctime", "ss_setState|s|0", 1, "uts_wctime", "ss_setState|state|0", 1, "uts_wctime", "genChildren|parent|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|child|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|ss|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|parentHeight|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|numChildren|0", 5, "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|childType|0", 4, "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|i|0", 3, "ss_push", "rng_spawn", "releaseNodes", "genChildren|j|0", 3, "ss_push", "rng_spawn", "releaseNodes", "releaseNodes|ss|0", 2, "ss_setState", "ss_release", "cbarrier_wait|l_count|0", 2, "omp_unset_lock", "omp_set_lock", "cbarrier_wait|l_done|0", 2, "omp_unset_lock", "omp_set_lock", "cbarrier_wait|l_cancel|0", 2, "omp_unset_lock", "omp_set_lock", "cbarrier_wait|pe|0", 3, "omp_unset_lock", "omp_set_lock", "omp_get_num_threads", "parTreeSearch|child|0", 1, "parTreeSearch", "showStats|elapsedSecs|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|i|0", 1, "uts_showStats", "showStats|tnodes|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tleaves|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|trel|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tacq|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tsteal|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tfail|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|mdepth|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|mheight|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|twork|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tsearch|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tidle|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tovh|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tcbovh|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|nthreads|0", 1, "uts_showStats", "main|root|0", 1, "main");
+    init_module(5826008423592869089UL, 45, 30, 64, 48, 4, 5826008423592869089UL + 198UL, 5826008423592869089UL + 297UL, 5826008423592869089UL + 1914UL, 5826008423592869089UL + 1982UL, 5826008423592869089UL + 454UL, 5826008423592869089UL + 427UL, 5826008423592869089UL + 455UL, 5826008423592869089UL + 506UL, 5826008423592869089UL + 456UL, 5826008423592869089UL + 481UL, 5826008423592869089UL + 1088UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1074UL, 5826008423592869089UL + 1084UL, 5826008423592869089UL + 405UL, 5826008423592869089UL + 454UL, 5826008423592869089UL + 161UL, 5826008423592869089UL + 185UL, 5826008423592869089UL + 1UL, 5826008423592869089UL + 3UL, 5826008423592869089UL + 406UL, 5826008423592869089UL + 427UL, 5826008423592869089UL + 526UL, 5826008423592869089UL + 537UL, 5826008423592869089UL + 185UL, 5826008423592869089UL + 166UL, 5826008423592869089UL + 506UL, 5826008423592869089UL + 481UL, 5826008423592869089UL + 507UL, 5826008423592869089UL + 525UL, 5826008423592869089UL + 188UL, 5826008423592869089UL + 197UL, 5826008423592869089UL + 937UL, 5826008423592869089UL + 985UL, 5826008423592869089UL + 1388UL, 5826008423592869089UL + 1422UL, 5826008423592869089UL + 892UL, 5826008423592869089UL + 832UL, 5826008423592869089UL + 585UL, 5826008423592869089UL + 636UL, 5826008423592869089UL + 1090UL, 5826008423592869089UL + 1196UL, 5826008423592869089UL + 583UL, 5826008423592869089UL + 546UL, 5826008423592869089UL + 636UL, 5826008423592869089UL + 595UL, 5826008423592869089UL + 300UL, 5826008423592869089UL + 378UL, 5826008423592869089UL + 986UL, 5826008423592869089UL + 1058UL, 5826008423592869089UL + 646UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 1919UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 1089UL, 5826008423592869089UL + 1195UL, 5826008423592869089UL + 648UL, 5826008423592869089UL + 832UL, 5826008423592869089UL + 1202UL, 5826008423592869089UL + 1235UL, 5826008423592869089UL + 106UL, 5826008423592869089UL + 144UL, 5826008423592869089UL + 107UL, 5826008423592869089UL + 145UL, 5826008423592869089UL + 638UL, 5826008423592869089UL + 892UL, 5826008423592869089UL + 1992UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 14UL, 5826008423592869089UL + 1998UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 1996UL, 5826008423592869089UL + 1265UL, 5826008423592869089UL + 1060UL, 5826008423592869089UL + 1073UL, 5826008423592869089UL + 37UL, 5826008423592869089UL + 102UL, 5826008423592869089UL + 645UL, 5826008423592869089UL + 856UL, 5826008423592869089UL + 299UL, 5826008423592869089UL + 372UL, 5826008423592869089UL + 297UL, 5826008423592869089UL + 221UL, 5826008423592869089UL + 1386UL, 5826008423592869089UL + 1487UL, 5826008423592869089UL + 372UL, 5826008423592869089UL + 339UL, 5826008423592869089UL + 538UL, 5826008423592869089UL + 583UL, "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state), "omp_lock_t", 1, "[ 64 x unsigned char ]", (int)__builtin_offsetof (omp_lock_t, _x), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "stealStack_t", 23, "int", (int)__builtin_offsetof (struct stealStack_t, stackSize), "int", (int)__builtin_offsetof (struct stealStack_t, workAvail), "int", (int)__builtin_offsetof (struct stealStack_t, sharedStart), "int", (int)__builtin_offsetof (struct stealStack_t, local), "int", (int)__builtin_offsetof (struct stealStack_t, top), "int", (int)__builtin_offsetof (struct stealStack_t, maxStackDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes), "int", (int)__builtin_offsetof (struct stealStack_t, maxTreeDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nLeaves), "int", (int)__builtin_offsetof (struct stealStack_t, nAcquire), "int", (int)__builtin_offsetof (struct stealStack_t, nRelease), "int", (int)__builtin_offsetof (struct stealStack_t, nSteal), "int", (int)__builtin_offsetof (struct stealStack_t, nFail), "int", (int)__builtin_offsetof (struct stealStack_t, wakeups), "int", (int)__builtin_offsetof (struct stealStack_t, falseWakeups), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes_last), "[ 5 x double ]", (int)__builtin_offsetof (struct stealStack_t, time), "double", (int)__builtin_offsetof (struct stealStack_t, timeLast), "[ 5 x int ]", (int)__builtin_offsetof (struct stealStack_t, entries), "int", (int)__builtin_offsetof (struct stealStack_t, curState), "%struct.*", (int)__builtin_offsetof (struct stealStack_t, stackLock), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack_g), "ss_mkEmpty", 2, "omp_set_lock", "omp_unset_lock", "ss_init", 3, "omp_global_lock_alloc", "ss_error", "ss_mkEmpty", "genChildren", 7, "releaseNodes", "rng_showstate", "rng_spawn", "ss_push", "ss_topPosn", "uts_childType", "uts_numChildren", "ss_initState", 1, "uts_wctime", "showStats", 2, "omp_get_num_threads", "uts_showStats", "ss_push", 2, "rng_showstate", "ss_error", "cbarrier_cancel", 0, "parTreeSearch", 12, "cbarrier_wait", "checkpoint", "findwork", "genChildren", "initNode", "releaseNodes", "ss_acquire", "ss_localDepth", "ss_pop", "ss_setState", "ss_steal", "ss_top", "impl_parseParam", 0, "ss_pop", 2, "rng_showstate", "ss_error", "ss_acquire", 2, "omp_set_lock", "omp_unset_lock", "ss_topPosn", 1, "ss_error", "main", 11, "cb_init", "checkpoint", "initRootNode", "parTreeSearch", "showStats", "ss_init", "ss_initState", "ss_push", "uts_parseParams", "uts_printParams", "uts_wctime", "findwork", 1, "omp_get_num_threads", "impl_abort", 0, "initNode", 0, "impl_getName", 0, "ss_top", 2, "rng_showstate", "ss_error", "impl_paramsToStr", 1, "omp_get_num_threads", "ss_setState", 2, "ss_error", "uts_wctime", "ss_localDepth", 0, "releaseNodes", 4, "cbarrier_cancel", "ss_localDepth", "ss_release", "ss_setState", "ss_release", 3, "omp_set_lock", "omp_unset_lock", "ss_error", "omp_global_lock_alloc", 1, "omp_init_lock", "cbarrier_wait", 3, "omp_get_num_threads", "omp_set_lock", "omp_unset_lock", "ss_steal", 4, "omp_set_lock", "omp_unset_lock", "rng_showstate", "ss_error", "impl_helpMessage", 0, "ss_error", 0, "cb_init", 3, "omp_global_lock_alloc", "omp_set_lock", "omp_unset_lock", "initRootNode", 1, "uts_initRoot", "omp_global_lock_alloc|lock|0", 1, "omp_init_lock", "impl_getName|name|0", 1, "impl_getName", "impl_paramsToStr|strBuf|0", 1, "omp_get_num_threads", "impl_paramsToStr|ind|0", 1, "omp_get_num_threads", "ss_mkEmpty|s|0", 2, "omp_unset_lock", "omp_set_lock", "ss_init|s|0", 2, "ss_mkEmpty", "omp_global_lock_alloc", "ss_init|nelts|0", 2, "ss_mkEmpty", "omp_global_lock_alloc", "ss_push|s|0", 1, "rng_showstate", "ss_push|c|0", 1, "rng_showstate", "ss_top|r|0", 1, "rng_showstate", "ss_pop|r|0", 1, "rng_showstate", "ss_release|s|0", 2, "omp_unset_lock", "omp_set_lock", "ss_release|k|0", 2, "omp_unset_lock", "omp_set_lock", "ss_acquire|s|0", 2, "omp_unset_lock", "omp_set_lock", "ss_acquire|k|0", 2, "omp_unset_lock", "omp_set_lock", "ss_acquire|avail|0", 1, "omp_unset_lock", "ss_steal|s|0", 3, "rng_showstate", "omp_unset_lock", "omp_set_lock", "ss_steal|victim|0", 3, "rng_showstate", "omp_unset_lock", "omp_set_lock", "ss_steal|k|0", 3, "rng_showstate", "omp_unset_lock", "omp_set_lock", "ss_steal|victimLocal|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|victimShared|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|victimWorkAvail|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|ok|0", 2, "rng_showstate", "omp_unset_lock", "ss_steal|victimStackBase|0", 1, "rng_showstate", "ss_steal|victimSharedStart|0", 1, "rng_showstate", "ss_steal|i|0", 1, "rng_showstate", "ss_steal|r|0", 1, "rng_showstate", "findwork|k|0", 1, "omp_get_num_threads", "findwork|i|0", 1, "omp_get_num_threads", "findwork|v|0", 1, "omp_get_num_threads", "ss_initState|s|0", 1, "uts_wctime", "ss_setState|s|0", 1, "uts_wctime", "ss_setState|state|0", 1, "uts_wctime", "genChildren|parent|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|child|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|ss|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|parentHeight|0", 6, "uts_numChildren", "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|numChildren|0", 5, "uts_childType", "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|childType|0", 4, "ss_push", "rng_spawn", "rng_showstate", "releaseNodes", "genChildren|i|0", 3, "ss_push", "rng_spawn", "releaseNodes", "genChildren|j|0", 3, "ss_push", "rng_spawn", "releaseNodes", "releaseNodes|ss|0", 2, "ss_setState", "ss_release", "cbarrier_wait|l_count|0", 2, "omp_unset_lock", "omp_set_lock", "cbarrier_wait|l_done|0", 2, "omp_unset_lock", "omp_set_lock", "cbarrier_wait|l_cancel|0", 2, "omp_unset_lock", "omp_set_lock", "cbarrier_wait|pe|0", 3, "omp_unset_lock", "omp_set_lock", "omp_get_num_threads", "parTreeSearch|child|0", 1, "parTreeSearch", "showStats|elapsedSecs|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|i|0", 1, "uts_showStats", "showStats|tnodes|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tleaves|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|trel|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tacq|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tsteal|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tfail|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|mdepth|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|mheight|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|twork|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tsearch|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tidle|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tovh|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|tcbovh|0", 2, "uts_showStats", "omp_get_num_threads", "showStats|nthreads|0", 1, "uts_showStats", "main|root|0", 1, "main", &____alias_loc_id_0, (unsigned)1, 5826008423592869089UL + 1UL, &____alias_loc_id_1, (unsigned)2, 5826008423592869089UL + 37UL, 5826008423592869089UL + 38UL, &____alias_loc_id_2, (unsigned)1, 5826008423592869089UL + 161UL, &____alias_loc_id_3, (unsigned)1, 5826008423592869089UL + 185UL, &____alias_loc_id_4, (unsigned)4, 5826008423592869089UL + 198UL, 5826008423592869089UL + 199UL, 5826008423592869089UL + 200UL, 5826008423592869089UL + 297UL, &____alias_loc_id_5, (unsigned)1, 5826008423592869089UL + 297UL, &____alias_loc_id_6, (unsigned)2, 5826008423592869089UL + 299UL, 5826008423592869089UL + 300UL, &____alias_loc_id_7, (unsigned)2, 5826008423592869089UL + 405UL, 5826008423592869089UL + 406UL, &____alias_loc_id_8, (unsigned)3, 5826008423592869089UL + 455UL, 5826008423592869089UL + 456UL, 5826008423592869089UL + 506UL, &____alias_loc_id_9, (unsigned)2, 5826008423592869089UL + 538UL, 5826008423592869089UL + 539UL, &____alias_loc_id_10, (unsigned)1, 5826008423592869089UL + 583UL, &____alias_loc_id_11, (unsigned)2, 5826008423592869089UL + 585UL, 5826008423592869089UL + 586UL, &____alias_loc_id_12, (unsigned)2, 5826008423592869089UL + 587UL, 5826008423592869089UL + 636UL, &____alias_loc_id_13, (unsigned)3, 5826008423592869089UL + 638UL, 5826008423592869089UL + 639UL, 5826008423592869089UL + 640UL, &____alias_loc_id_14, (unsigned)5, 5826008423592869089UL + 641UL, 5826008423592869089UL + 642UL, 5826008423592869089UL + 643UL, 5826008423592869089UL + 644UL, 5826008423592869089UL + 1283UL, &____alias_loc_id_15, (unsigned)5, 5826008423592869089UL + 645UL, 5826008423592869089UL + 646UL, 5826008423592869089UL + 647UL, 5826008423592869089UL + 648UL, 5826008423592869089UL + 892UL, &____alias_loc_id_16, (unsigned)3, 5826008423592869089UL + 896UL, 5826008423592869089UL + 897UL, 5826008423592869089UL + 898UL, &____alias_loc_id_17, (unsigned)1, 5826008423592869089UL + 937UL, &____alias_loc_id_18, (unsigned)2, 5826008423592869089UL + 986UL, 5826008423592869089UL + 987UL, &____alias_loc_id_19, (unsigned)2, 5826008423592869089UL + 1074UL, 5826008423592869089UL + 1075UL, &____alias_loc_id_20, (unsigned)4, 5826008423592869089UL + 1088UL, 5826008423592869089UL + 1089UL, 5826008423592869089UL + 1090UL, 5826008423592869089UL + 1091UL, &____alias_loc_id_21, (unsigned)1, 5826008423592869089UL + 1092UL, &____alias_loc_id_22, (unsigned)5, 5826008423592869089UL + 1093UL, 5826008423592869089UL + 1094UL, 5826008423592869089UL + 1095UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1195UL, &____alias_loc_id_23, (unsigned)5, 5826008423592869089UL + 1093UL, 5826008423592869089UL + 1094UL, 5826008423592869089UL + 1095UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1195UL, &____alias_loc_id_24, (unsigned)5, 5826008423592869089UL + 1093UL, 5826008423592869089UL + 1094UL, 5826008423592869089UL + 1095UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1195UL, &____alias_loc_id_25, (unsigned)1, 5826008423592869089UL + 1202UL, &____alias_loc_id_26, (unsigned)1, 5826008423592869089UL + 1996UL, &____alias_loc_id_27, (unsigned)1, 5826008423592869089UL + 1985UL, &____alias_loc_id_28, (unsigned)1, 5826008423592869089UL + 1258UL, &____alias_loc_id_29, (unsigned)1, 5826008423592869089UL + 1985UL, &____alias_loc_id_30, (unsigned)4, 5826008423592869089UL + 1255UL, 5826008423592869089UL + 1256UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 1985UL, &____alias_loc_id_31, (unsigned)3, 5826008423592869089UL + 1255UL, 5826008423592869089UL + 1256UL, 5826008423592869089UL + 1257UL, &____alias_loc_id_32, (unsigned)4, 5826008423592869089UL + 1255UL, 5826008423592869089UL + 1256UL, 5826008423592869089UL + 1283UL, 5826008423592869089UL + 1985UL, &____alias_loc_id_33, (unsigned)5, 5826008423592869089UL + 1386UL, 5826008423592869089UL + 1387UL, 5826008423592869089UL + 1390UL, 5826008423592869089UL + 1391UL, 5826008423592869089UL + 1392UL, &____alias_loc_id_34, (unsigned)5, 5826008423592869089UL + 1386UL, 5826008423592869089UL + 1387UL, 5826008423592869089UL + 1390UL, 5826008423592869089UL + 1391UL, 5826008423592869089UL + 1392UL, &____alias_loc_id_35, (unsigned)5, 5826008423592869089UL + 1386UL, 5826008423592869089UL + 1387UL, 5826008423592869089UL + 1390UL, 5826008423592869089UL + 1391UL, 5826008423592869089UL + 1392UL, &____alias_loc_id_36, (unsigned)1, 5826008423592869089UL + 1388UL, &____alias_loc_id_37, (unsigned)1, 5826008423592869089UL + 1388UL, &____alias_loc_id_38, (unsigned)1, 5826008423592869089UL + 1391UL, &____alias_loc_id_39, (unsigned)2, 5826008423592869089UL + 1391UL, 5826008423592869089UL + 1392UL, &____alias_loc_id_40, (unsigned)2, 5826008423592869089UL + 1391UL, 5826008423592869089UL + 1392UL, &____alias_loc_id_41, (unsigned)1, 5826008423592869089UL + 1391UL, &____alias_loc_id_42, (unsigned)14, 5826008423592869089UL + 1488UL, 5826008423592869089UL + 1490UL, 5826008423592869089UL + 1491UL, 5826008423592869089UL + 1492UL, 5826008423592869089UL + 1493UL, 5826008423592869089UL + 1494UL, 5826008423592869089UL + 1495UL, 5826008423592869089UL + 1496UL, 5826008423592869089UL + 1497UL, 5826008423592869089UL + 1498UL, 5826008423592869089UL + 1499UL, 5826008423592869089UL + 1500UL, 5826008423592869089UL + 1501UL, 5826008423592869089UL + 1502UL, &____alias_loc_id_43, (unsigned)15, 5826008423592869089UL + 1489UL, 5826008423592869089UL + 1490UL, 5826008423592869089UL + 1491UL, 5826008423592869089UL + 1492UL, 5826008423592869089UL + 1493UL, 5826008423592869089UL + 1494UL, 5826008423592869089UL + 1495UL, 5826008423592869089UL + 1496UL, 5826008423592869089UL + 1497UL, 5826008423592869089UL + 1498UL, 5826008423592869089UL + 1499UL, 5826008423592869089UL + 1500UL, 5826008423592869089UL + 1501UL, 5826008423592869089UL + 1502UL, 5826008423592869089UL + 1503UL, &____alias_loc_id_44, (unsigned)3, 5826008423592869089UL + 1912UL, 5826008423592869089UL + 1913UL, 5826008423592869089UL + 1914UL, &____alias_loc_id_45, (unsigned)2, 5826008423592869089UL + 1919UL, 5826008423592869089UL + 1992UL, &____alias_loc_id_46, (unsigned)1, 5826008423592869089UL + 1916UL, &____alias_loc_id_47, (unsigned)2, 5826008423592869089UL + 1917UL, 5826008423592869089UL + 1918UL, &____alias_loc_id_48, (unsigned)1, 5826008423592869089UL + 14UL, &____alias_loc_id_49, (unsigned)1, 5826008423592869089UL + 38UL, &____alias_loc_id_50, (unsigned)4, 5826008423592869089UL + 106UL, 5826008423592869089UL + 107UL, 5826008423592869089UL + 108UL, 5826008423592869089UL + 1985UL, &____alias_loc_id_51, (unsigned)1, 5826008423592869089UL + 152UL, &____alias_loc_id_52, (unsigned)1, 5826008423592869089UL + 188UL, &____alias_loc_id_53, (unsigned)3, 5826008423592869089UL + 299UL, 5826008423592869089UL + 300UL, 5826008423592869089UL + 372UL, &____alias_loc_id_54, (unsigned)2, 5826008423592869089UL + 405UL, 5826008423592869089UL + 406UL, &____alias_loc_id_55, (unsigned)3, 5826008423592869089UL + 455UL, 5826008423592869089UL + 456UL, 5826008423592869089UL + 506UL, &____alias_loc_id_56, (unsigned)1, 5826008423592869089UL + 507UL, &____alias_loc_id_57, (unsigned)1, 5826008423592869089UL + 526UL, &____alias_loc_id_58, (unsigned)4, 5826008423592869089UL + 645UL, 5826008423592869089UL + 646UL, 5826008423592869089UL + 647UL, 5826008423592869089UL + 892UL, &____alias_loc_id_59, (unsigned)2, 5826008423592869089UL + 895UL, 5826008423592869089UL + 898UL, &____alias_loc_id_60, (unsigned)2, 5826008423592869089UL + 938UL, 5826008423592869089UL + 985UL, &____alias_loc_id_61, (unsigned)4, 5826008423592869089UL + 986UL, 5826008423592869089UL + 987UL, 5826008423592869089UL + 988UL, 5826008423592869089UL + 1058UL, &____alias_loc_id_62, (unsigned)2, 5826008423592869089UL + 1060UL, 5826008423592869089UL + 1073UL, &____alias_loc_id_63, (unsigned)5, 5826008423592869089UL + 1093UL, 5826008423592869089UL + 1094UL, 5826008423592869089UL + 1194UL, 5826008423592869089UL + 1195UL, 5826008423592869089UL + 1196UL, &____alias_loc_id_64, (unsigned)1, 5826008423592869089UL + 1202UL, &____alias_loc_id_65, (unsigned)1, 5826008423592869089UL + 1985UL, &____alias_loc_id_66, (unsigned)1, 5826008423592869089UL + 1489UL);
     register_global_var("global|doSteal", "i32", (void *)(&doSteal), 4, 0, 0, 0);
     register_global_var("global|chunkSize", "i32", (void *)(&chunkSize), 4, 0, 0, 0);
     register_global_var("global|cbint", "i32", (void *)(&cbint), 4, 0, 0, 0);
