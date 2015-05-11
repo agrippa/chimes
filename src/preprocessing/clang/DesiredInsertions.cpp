@@ -177,6 +177,8 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
     std::map<std::string, FunctionExit *> *result =
         new std::map<std::string, FunctionExit *>();
 
+    assert(state_change_insertions != NULL);
+
     std::ifstream fp;
     fp.open(exit_file, std::ios::in);
     std::string line;
@@ -191,14 +193,14 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
         if (end == std::string::npos) {
             // No terminating aliases
             size_t return_alias = unique_alias(strtoul(line.c_str(), NULL, 10));
-            FunctionExit *info = new FunctionExit(return_alias);
+            FunctionExit *info = new FunctionExit(0, return_alias);
             (*result)[funcname] = info;
         } else {
             // At least one terminating alias
             size_t return_alias = unique_alias(
                     strtoul(line.substr(0, end).c_str(), NULL, 10));
             line = line.substr(end + 1);
-            FunctionExit *info = new FunctionExit(return_alias);
+            FunctionExit *info = new FunctionExit(count_locs++, return_alias);
 
             end = line.find(' ');
             while (end != std::string::npos) {
@@ -671,6 +673,8 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
     std::ifstream fp;
     fp.open(lines_info_file, std::ios::in);
 
+    assert(func_exits == NULL);
+
     std::vector<StateChangeInsertion *> *result =
         new std::vector<StateChangeInsertion *>();
 
@@ -703,9 +707,10 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
             line = line.substr(group_end + 2);
         }
 
-        StateChangeInsertion *change = new StateChangeInsertion(filename,
+        StateChangeInsertion *change = new StateChangeInsertion(count_locs, filename,
                 line_no, col, groups);
         result->push_back(change);
+        count_locs++;
     }
 
     fp.close();
@@ -726,6 +731,20 @@ bool DesiredInsertions::contains(int line, int col, const char *filename) {
     return false;
 }
 
+unsigned DesiredInsertions::get_loc_id(int line, int col,
+        const char *filename) {
+    std::string filename_str(filename);
+    for (std::vector<StateChangeInsertion *>::iterator i =
+            state_change_insertions->begin(), e =
+            state_change_insertions->end(); i != e; i++) {
+        StateChangeInsertion *insert = *i;
+        if (insert->get_line() == line && insert->get_col() == col &&
+                insert->get_filename() == filename_str) {
+            return insert->get_id();
+        }
+    }
+    assert(false);
+}
 
 std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,
         const char *filename) {
@@ -1085,4 +1104,10 @@ FunctionCallees *DesiredInsertions::get_callees(std::string name) {
         return NULL;
     }
     return (call_tree->at(name));
+}
+
+std::string DesiredInsertions::get_alias_loc_var(unsigned id) {
+    std::stringstream ss;
+    ss << "____alias_loc_id_" << id;
+    return ss.str();
 }

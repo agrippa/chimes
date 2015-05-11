@@ -57,7 +57,7 @@ class checkpointable_heap_allocation {
                 CHECK(cudaMemcpy(buffer, other->get_address(), size,
                             cudaMemcpyDeviceToHost));
 #else
-                assert(false);
+                VERIFY(false);
 #endif
             } else {
                 memcpy(buffer, other->get_address(), size);

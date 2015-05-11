@@ -23,6 +23,7 @@
 
 #include "perf_profile.h"
 
+#include "libchimes.h"
 #include "chimes_common.h"
 #include "struct_field.h"
 #include "constant_var.h"
@@ -162,11 +163,11 @@ class checkpoint_ctx {
 void new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned n_args, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, int ngroups, ...);
+        const char *funcname, int *conditional, unsigned loc_id);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
-int alias_group_changed(int ngroups, ...);
+int alias_group_changed(unsigned loc_id);
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...);
 void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
@@ -330,6 +331,14 @@ static map<string, set<string> > var_checkpoint_causes;
 static map<string, bool> need_to_checkpoint;
 
 /*
+ * A mapping from the unique integer ID of a change location (a location where
+ * some alias groups have been modified) to the alias groups that may have been
+ * modified by that location.
+ */
+static map<unsigned, set<size_t> > change_loc_id_to_aliases;
+static unsigned count_change_locations = 1;
+
+/*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
  * to prevent redundant checkpointing of in-memory state that hasn't changed
  * since the last checkpoint. Currently, we use a high-throughput hashing
@@ -409,7 +418,7 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
         result = true;
     } else {
         if (need_to_lock) {
-            assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+            VERIFY(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
         }
 
         if (aliased_groups.find(group1) != aliased_groups.end() &&
@@ -419,7 +428,7 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
         }
 
         if (need_to_lock) {
-            assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+            VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
         }
     }
     return result;
@@ -625,7 +634,7 @@ void init_chimes() {
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
     pthread_to_id[self] = 0;
-    thread_ctxs[0] = new thread_ctx(self);
+    thread_ctxs[0] = new thread_ctx(self, count_change_locations);
 
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
     if (chimes_disable_throttling && strlen(chimes_disable_throttling) > 0) {
@@ -915,7 +924,7 @@ void init_chimes() {
                     translate_cuda_pointers(alloc->get_address(), nelems,
                             sizeof(void *), ptr_offsets, old_to_new);
 #else
-                    assert(false);
+                    VERIFY(false);
 #endif
                 } else {
                     void **arr = (void **)(alloc->get_address());
@@ -943,7 +952,7 @@ void init_chimes() {
                                 nelems, elem_size, *ptr_field_offsets,
                                 old_to_new);
 #else
-                        assert(false);
+                        VERIFY(false);
 #endif
                     } else {
                         /*
@@ -1053,7 +1062,7 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 
     if (aliased(alias1, alias2, false)) return;
 
-    assert(pthread_rwlock_rdlock(&contains_lock) == 0);
+    VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
     size_t alias1_alias, alias2_alias;
     map<size_t, size_t>::iterator child1_iter = find_alias_in_contains(alias1,
             &alias1_alias);
@@ -1078,7 +1087,7 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
             merge_alias_groups(child1, child2);
         }
     }
-    assert(pthread_rwlock_unlock(&contains_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
     map<size_t, vector<size_t> *>::iterator existing1_iter =
         aliased_groups.find(alias1);
@@ -1140,11 +1149,11 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, int nstructs, ...) {
+        int nvars, int n_change_locs, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
-    assert(pthread_mutex_lock(&module_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&module_mutex) == 0);
 
     bool replay = (getenv("CHIMES_CHECKPOINT_FILE") != NULL);
     va_list vl;
@@ -1155,7 +1164,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     assert(!initialized);
     initialized_modules.insert(module_id);
 
-    assert(pthread_rwlock_wrlock(&contains_lock) == 0);
+    VERIFY(pthread_rwlock_wrlock(&contains_lock) == 0);
     for (int i = 0; i < n_contains_mappings; i++) {
         size_t container = va_arg(vl, size_t);
         size_t child = va_arg(vl, size_t);
@@ -1165,7 +1174,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             contains[container] = child;
         }
     }
-    assert(pthread_rwlock_unlock(&contains_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
     for (int i = 0; i < nstructs; i++) {
         char *struct_name = va_arg(vl, char *);
@@ -1265,9 +1274,24 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         }
     }
 
+    // Generate unique IDs for each change location
+    for (int i = 0; i < n_change_locs; i++) {
+        unsigned this_loc_id = count_change_locations++;
+
+        unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
+        unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+        change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
+                    this_loc_id, set<size_t>()));
+        for (unsigned j = 0; j < n_aliases_at_loc; j++) {
+            size_t alias = va_arg(vl, size_t);
+            change_loc_id_to_aliases[this_loc_id].insert(alias);
+        }
+        *change_loc_id_ptr = this_loc_id;
+    }
+
     va_end(vl);
 
-    assert(pthread_mutex_unlock(&module_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&module_mutex) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(INIT_MODULE, __start_time);
@@ -1299,9 +1323,9 @@ static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
         size_t alias = va_arg(vl, size_t);
         if (ctx->get_stack()->size() > stack_minimum) {
             if (valid_group(alias) && valid_group(ctx->get_parent_alias(i))) {
-                assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
+                VERIFY(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
                 merge_alias_groups(alias, ctx->get_parent_alias(i));
-                assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+                VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
             }
         }
     }
@@ -1454,24 +1478,20 @@ static void add_return_alias(bool has_return_alias, size_t returned_alias,
      */
     if (has_return_alias && valid_group(returned_alias)) {
         assert(valid_group(this_return_alias));
-        assert(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
+        VERIFY(pthread_rwlock_wrlock(&aliased_groups_lock) == 0);
         merge_alias_groups(this_return_alias, returned_alias);
-        assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+        VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
     }
 }
 
-static inline void alias_group_changed_helper(int ngroups, va_list vl,
+static inline void alias_group_changed_helper(unsigned loc_id,
         thread_ctx *ctx) {
-    for (int i = 0; i < ngroups; i++) {
-        size_t group = va_arg(vl, size_t);
-
-        assert(valid_group(group));
-        ctx->add_changed_group(group);
-    }
+    assert(loc_id > 0); // 0 is reserved to indicate an invalid loc
+    ctx->add_changed_loc(loc_id);
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, int ngroups, ...) {
+        const char *funcname, int *conditional, unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1485,10 +1505,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
 #endif
         add_return_alias(has_return_alias, returned_alias, ctx);
 
-        va_list vl;
-        va_start(vl, ngroups);
-        alias_group_changed_helper(ngroups, vl, ctx);
-        va_end(vl);
+        if (loc_id > 0) {
+            alias_group_changed_helper(loc_id, ctx);
+        }
 
         return;
     }
@@ -1506,10 +1525,9 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
     ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
 
-    va_list vl;
-    va_start(vl, ngroups);
-    alias_group_changed_helper(ngroups, vl, ctx);
-    va_end(vl);
+    if (loc_id > 0) {
+        alias_group_changed_helper(loc_id, ctx);
+    }
 
     if (____chimes_rerunning && ctx->get_stack_nesting() < 0) {
 #ifdef VERBOSE
@@ -1558,9 +1576,9 @@ static string get_nested_array_type(string array_type) {
     while (remove_braces[index] >= '0' && remove_braces[index] <= '9') {
         index++;
     }
-    assert(remove_braces[index++] == ' ');
-    assert(remove_braces[index++] == 'x');
-    assert(remove_braces[index++] == ' ');
+    VERIFY(remove_braces[index++] == ' ');
+    VERIFY(remove_braces[index++] == 'x');
+    VERIFY(remove_braces[index++] == ' ');
     return remove_braces.substr(index);
 }
 
@@ -1688,10 +1706,10 @@ void register_global_var(const char *mangled_name, const char *full_type,
 
     std::string mangled_name_str(mangled_name);
 
-    assert(pthread_rwlock_wrlock(&globals_lock) == 0);
+    VERIFY(pthread_rwlock_wrlock(&globals_lock) == 0);
     assert(global_vars.find(mangled_name_str) == global_vars.end());
     global_vars[mangled_name_str] = new_var;
-    assert(pthread_rwlock_unlock(&globals_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&globals_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_GLOBAL_VAR, __start_time);
@@ -1706,27 +1724,24 @@ void register_constant(size_t const_id, void *address, size_t length) {
 
     constant_var *var = new constant_var(const_id, address, length);
 
-    assert(pthread_rwlock_wrlock(&constants_lock) == 0);
+    VERIFY(pthread_rwlock_wrlock(&constants_lock) == 0);
     assert(constants.find(const_id) == constants.end());
     constants[const_id] = var;
-    assert(pthread_rwlock_unlock(&constants_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&constants_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_CONSTANT, __start_time);
 #endif
 }
 
-int alias_group_changed(int ngroups, ...) {
+int alias_group_changed(unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
-    va_list vl;
-    va_start(vl, ngroups);
-    alias_group_changed_helper(ngroups, vl, ctx);
-    va_end(vl);
+    alias_group_changed_helper(loc_id, ctx);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ALIAS_GROUP_CHANGED, __start_time);
@@ -1743,7 +1758,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     heap_allocation *alloc = new heap_allocation(new_ptr, nbytes, group,
             is_cuda_alloc, is_ptr, is_struct, *hash_chunker);
 
-    alias_group_changed(1, group);
+    get_my_context()->add_changed_alias(group);
 
     if (is_struct) {
         alloc->add_struct_elem_size(elem_size);
@@ -1753,14 +1768,14 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
         if (n_ptr_field_offsets > 0) free(ptr_field_offsets);
     }
 
-    assert(pthread_rwlock_wrlock(&heap_lock) == 0);
+    VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
     assert(heap.find(new_ptr) == heap.end());
     heap.insert(pair<void *, heap_allocation *>(new_ptr, alloc));
     if (alias_to_heap.find(group) == alias_to_heap.end()) {
         alias_to_heap[group] = new vector<heap_allocation *>();
     }
     alias_to_heap[group]->push_back(alloc);
-    assert(pthread_rwlock_unlock(&heap_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
 /*
@@ -1868,7 +1883,8 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         old_size = alloc->get_size();
         assert(alloc->get_alias_group() == group);
         alloc->update_size(nbytes);
-        alias_group_changed(1, group);
+
+        get_my_context()->add_changed_alias(group);
     } else {
         /*
          * An initial allocation, or a movement of an old allocation. In either
@@ -1942,7 +1958,7 @@ void free_helper(void *ptr) {
     size_t group = in_heap->second->get_alias_group();
 
     // Update heap metadata
-    assert(pthread_rwlock_wrlock(&heap_lock) == 0);
+    VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
     vector<heap_allocation *>::iterator in_alias_to_heap =
         std::find(alias_to_heap[group]->begin(), alias_to_heap[group]->end(),
                 in_heap->second);
@@ -1950,15 +1966,15 @@ void free_helper(void *ptr) {
     alias_to_heap[group]->erase(in_alias_to_heap);
 
     heap.erase(in_heap);
-    assert(pthread_rwlock_unlock(&heap_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 
-    assert(pthread_rwlock_rdlock(&heap_lock) == 0);
+    VERIFY(pthread_rwlock_rdlock(&heap_lock) == 0);
     map<void *, heap_allocation *>::iterator in_heap = heap.find(ptr);
     assert(in_heap != heap.end());
-    assert(pthread_rwlock_unlock(&heap_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 
     assert(in_heap->second->get_address() == ptr);
 
@@ -2011,11 +2027,11 @@ typedef struct _checkpoint_thread_ctx {
 static void *checkpoint_func(void *data);
 
 void wait_for_checkpoint() {
-    assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
     if (checkpoint_thread_running) {
         pthread_join(checkpoint_thread, NULL);
     }
-    assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 }
 
 static void update_live_var(string name, stack_var *dead, stack_var *live) {
@@ -2108,7 +2124,7 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
 
-    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
 
     if (checkpoint_initializing == 0) {
         // first thread in the checkpoint
@@ -2134,7 +2150,7 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
                 (curr_ckpt->get_threads_in_checkpoint() !=
                     curr_ckpt->get_thread_count() ||
                  regions_initializing)) {
-            assert(pthread_cond_wait(&thread_count_cond, &thread_count_mutex) == 0);
+            VERIFY(pthread_cond_wait(&thread_count_cond, &thread_count_mutex) == 0);
         }
         if (curr_ckpt->is_checkpoint_in_progress() &&
                 curr_ckpt->get_threads_in_checkpoint() ==
@@ -2193,6 +2209,19 @@ bool within_overhead_bounds() {
     double curr_percent_overhead = (double)chimes_overhead /
         (double)running_time;
     return (curr_percent_overhead < target_time_overhead);
+}
+
+static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
+    if (aliased_groups.find(group) != aliased_groups.end()) {
+        for (vector<size_t>::iterator iter =
+                aliased_groups[group]->begin(), end =
+                aliased_groups[group]->end(); iter != end;
+                iter++) {
+            all_changed->insert(*iter);
+        }
+    } else {
+        all_changed->insert(group);
+    }
 }
 
 void checkpoint() {
@@ -2317,13 +2346,13 @@ void checkpoint() {
         }
     } else if (checkpointing_thread && !checkpoint_thread_running &&
             within_overhead_bounds()) {
-        assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
+        VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
-        assert(get_my_context()->get_first_parallel_for_nesting() == 0);
-        assert(get_my_context()->get_first_critical_nesting() == 0);
+        VERIFY(get_my_context()->get_first_parallel_for_nesting() == 0);
+        VERIFY(get_my_context()->get_first_critical_nesting() == 0);
 
         if (checkpoint_thread_running) {
-            assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+            VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
         } else {
             checkpoint_thread_running = 1;
 
@@ -2341,21 +2370,23 @@ void checkpoint() {
                 thread_ctx *ctx = i->second;
                 set_of_aliases *changed = ctx->get_changed_groups();
 
-                for (size_t ii = 0; ii < INIT_SET_SIZE; ii++) {
-                    for (size_t iii = 0; iii < (changed->len)[ii]; iii++) {
-                        size_t group = (changed->set)[ii][iii];
-
-                        if (aliased_groups.find(group) != aliased_groups.end()) {
-                            for (vector<size_t>::iterator iter =
-                                    aliased_groups[group]->begin(), end =
-                                    aliased_groups[group]->end(); iter != end;
-                                    iter++) {
-                                all_changed->insert(*iter);
-                            }
-                        } else {
-                            all_changed->insert(group);
+                for (unsigned loc = 0; loc < changed->capacity; loc++) {
+                    if ((changed->set)[loc]) {
+                        for (set<size_t>::iterator iter =
+                                change_loc_id_to_aliases[loc].begin(), end =
+                                change_loc_id_to_aliases[loc].end();
+                                iter != end; iter++) {
+                            size_t group = *iter;
+                            collect_all_aliases(group, all_changed);
                         }
                     }
+                }
+
+                for (set<size_t>::iterator iter =
+                        changed->explicit_aliases.begin(), end =
+                        changed->explicit_aliases.end(); iter != end; iter++) {
+                    size_t group = *iter;
+                    collect_all_aliases(group, all_changed);
                 }
                 ctx->clear_changed_groups();
             }
@@ -2523,18 +2554,18 @@ void checkpoint() {
                 info->get_stack_tracker().copy(checkpoint_ctx->stack_trackers->at(thread));
             }
 
-            assert(pthread_rwlock_rdlock(&contains_lock) == 0);
+            VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
             checkpoint_ctx->contains_serialized = serialize_containers(
                     &contains, &(checkpoint_ctx->contains_serialized_len));
-            assert(pthread_rwlock_unlock(&contains_lock) == 0);
+            VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
-            assert(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+            VERIFY(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
             checkpoint_ctx->serialized_alias_groups = serialize_alias_groups(
                     &aliased_groups,
                     &(checkpoint_ctx->serialized_alias_groups_len));
-            assert(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+            VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
-            assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+            VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
             pthread_create(&checkpoint_thread, NULL, checkpoint_func,
                     checkpoint_ctx);
@@ -2546,7 +2577,7 @@ void checkpoint() {
         if (was_a_replay) {
             curr_ckpt->set_exit_time();
         }
-        assert(pthread_cond_broadcast(&thread_count_cond) == 0);
+        VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
     }
     clock_t exit_time;
     if (was_a_replay) {
@@ -2554,12 +2585,12 @@ void checkpoint() {
         unsigned nthreads_left = curr_ckpt->decr_threads_in_checkpoint();
         if (nthreads_left == 0) {
             // Free checkpoint metadata and remove from checkpoint_info
-            assert(checkpoint_info.erase(curr_ckpt->get_id()) == 1);
+            VERIFY(checkpoint_info.erase(curr_ckpt->get_id()) == 1);
             delete curr_ckpt;
         }
     }
 
-    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     if (was_a_replay) {
         clock_t my_delta = checkpoint_entry_deltas->at(get_my_tid());
@@ -2739,7 +2770,7 @@ static int wait_for_running_writes(struct aiocb * aio_list[],
                         curr->aio_fildes,
                         ((unsigned char *)curr->aio_buf) + written,
                         left, curr->aio_offset + written, count_bytes, "retry", NULL);
-                assert(aio_write(aio_list[a]) == 0);
+                VERIFY(aio_write(aio_list[a]) == 0);
                 a++;
             } else {
                 // Write is finished
@@ -2967,7 +2998,7 @@ void *checkpoint_func(void *data) {
                 &count_bytes, dump_filename, &async_tokens);
     }
 
-    assert(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
+    VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
             dump_filename) == heap_offset_offset);
     safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
             dump_filename);
@@ -3056,13 +3087,13 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
 
     va_end(vl);
 
-    assert(pthread_mutex_lock(&regions_executed_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&regions_executed_mutex) == 0);
     *unique_region_id = (regions_executed++);
-    assert(pthread_mutex_unlock(&regions_executed_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&regions_executed_mutex) == 0);
 
-    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     regions_initializing++;
-    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     int my_tid = get_my_tid();
     ADD_TO_OVERHEAD
@@ -3085,12 +3116,12 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     unsigned global_tid;
     pthread_t self = pthread_self();
 
-    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     if (regions_counted.find(region_id) == regions_counted.end()) {
         if (!spawns_threads || is_parallel_for) {
             threads_in_region = 1;
         }
-        assert(regions_counted.insert(std::pair<size_t, unsigned>(region_id,
+        VERIFY(regions_counted.insert(std::pair<size_t, unsigned>(region_id,
                         threads_in_region - 1)).second);
         /*
          * Parallel fors make counting threads difficult. Depending on the loop
@@ -3105,9 +3136,9 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         }
         regions_initializing--;
 
-        assert(pthread_cond_broadcast(&thread_count_cond) == 0);
+        VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
     }
-    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
     if (____chimes_replaying) {
         /*
@@ -3141,19 +3172,19 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
                     global_tid + 1);
         }
 
-        assert(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
+        VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
-            assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-            thread_ctxs[global_tid] = new thread_ctx(self);
-            assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+            VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+            thread_ctxs[global_tid] = new thread_ctx(self, count_change_locations);
+            VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
             pthread_to_id[self] = global_tid;
         } else {
             assert(global_tid == pthread_to_id[self]);
         }
-        assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+        VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
     } else {
-        assert(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
+        VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
             /*
              * If this thread is being launched for the first time here, first
@@ -3162,17 +3193,17 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
             global_tid = __sync_fetch_and_add(&count_threads, 1);
 
             // Then create a thread ctx for it
-            assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+            VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
             thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid,
-                        new thread_ctx(self)));
-            assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+                        new thread_ctx(self, count_change_locations)));
+            VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
             // Store the mapping from pthread_t to self
             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
         } else {
             global_tid = pthread_to_id.at(self);
         }
-        assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+        VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
     }
 
     thread_ctx *ctx = get_my_context();
@@ -3262,7 +3293,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
 
     vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
-    assert(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+    VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
 
     int nthreads_joined = 0;
 
@@ -3285,12 +3316,12 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
 
             if (program_stack->size() == 0) {
                 // Erase this thread
-                assert(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
+                VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
                 map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
                         ctx->get_pthread());
                 assert(found != pthread_to_id.end());
                 pthread_to_id.erase(found);
-                assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+                VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
 
                 __sync_fetch_and_add(&dead_thread_time, ctx->elapsed_time());
 
@@ -3315,7 +3346,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         thread_ctxs.erase(curr);
     }
 
-    assert(pthread_mutex_lock(&thread_count_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     
     /*
      * It is possible for a parallel region to be created by a thread which is
@@ -3330,15 +3361,15 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
      */
     if (regions_counted.find(region_id) != regions_counted.end()) {
         thread_count -= regions_counted.at(region_id);
-        assert(regions_counted.erase(region_id) == 1);
+        VERIFY(regions_counted.erase(region_id) == 1);
     } else {
         regions_initializing--;
     }
 
-    assert(pthread_cond_broadcast(&thread_count_cond) == 0);
-    assert(pthread_mutex_unlock(&thread_count_mutex) == 0);
+    VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
+    VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
-    assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(LEAVING_OMP_PARALLEL, __start_time);
@@ -3352,18 +3383,18 @@ void chimes_error() {
 static unsigned get_my_tid() {
     pthread_t self = pthread_self();
 
-    assert(pthread_rwlock_rdlock(&pthread_to_id_lock) == 0);
+    VERIFY(pthread_rwlock_rdlock(&pthread_to_id_lock) == 0);
     assert(pthread_to_id.find(self) != pthread_to_id.end());
     unsigned self_id = pthread_to_id[self];
-    assert(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
 
     return self_id;
 }
 
 static thread_ctx *get_context_for(unsigned tid) {
-    assert(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
+    VERIFY(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
     thread_ctx *result = thread_ctxs.at(tid);
-    assert(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+    VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
     return result;
 }
@@ -3384,7 +3415,7 @@ void onexit() {
 #ifdef VERBOSE
     fprintf(stderr, "Locking...\n");
 #endif
-    assert(pthread_mutex_lock(&checkpoint_mutex) == 0);
+    VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
 #ifdef VERBOSE
     fprintf(stderr, "Done\n");
 #endif
@@ -3397,7 +3428,7 @@ void onexit() {
         fprintf(stderr, "Done\n");
 #endif
     }
-    assert(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+    VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 #ifdef __CHIMES_PROFILE
     fprintf(stderr, "%s\n", pp.tostr().c_str());
 #endif

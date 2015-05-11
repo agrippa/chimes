@@ -3,6 +3,12 @@
 
 #include <stdio.h>
 
+#define VERIFY(cond) \
+    if (!(cond)) { \
+        fprintf(stderr, "VERIFY failure @ %s:%d\n", __FILE__, __LINE__); \
+        abort(); \
+    }
+
 #ifdef CUDA_SUPPORT
 #include <driver_types.h>
 
