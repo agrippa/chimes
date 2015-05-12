@@ -24,8 +24,9 @@ def parseMetadata(filename):
         starting_line = int(tokens[0])
         ending_line = int(tokens[1])
         varname = tokens[2]
-        assert(starting_line not in clauses.keys())
-        clauses[starting_line] = ClauseInsertion(ending_line, varname)
+        if starting_line not in clauses.keys():
+            clauses[starting_line] = []
+        clauses[starting_line].append(ClauseInsertion(ending_line, varname))
 
     fp.close()
     return clauses
@@ -102,12 +103,16 @@ if __name__ == '__main__':
 
           if pragmaHasForClause(acc):
               assert(line_no in clauses)
-              clause = clauses[line_no] 
-              assert(count_lines == (clause.ending_line - line_no))
+              list_of_clauses = clauses[line_no]
 
               # This should only remove the trailing newline
               unfiltered_acc = unfiltered_acc.strip()
-              unfiltered_acc += ' firstprivate(' + clause.varname + ')\n'
+
+              for clause in list_of_clauses:
+                  assert(count_lines == (clause.ending_line - line_no))
+
+                  unfiltered_acc += ' firstprivate(' + clause.varname + ')'
+              unfiltered_acc += '\n'
 
           sys.stdout.write(unfiltered_acc)
       else:

@@ -2767,11 +2767,13 @@ void checkpoint() {
 #endif
 }
 
+#ifdef VERBOSE
 static void add_nesting(int nesting) {
     for (int i = 0; i < nesting; i++) {
         fprintf(stderr, "  ");
     }
 }
+#endif
 
 static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
         std::set<void *> *visited) {

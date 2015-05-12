@@ -349,6 +349,10 @@ int main(int argc, const char **argv) {
    * It is required that CallingAndOMPPass run after SplitInitsPass in case a
    * variable is initialized with a function call, which would cause problems
    * with inserting jumps to that call.
+   *
+   * CallingAndOMPPass also messes with line numbers more than any other pass.
+   * As a result, it would be preferred that it be kept as the last pass in
+   * general.
    */
   passes.push_back(new Pass(new CallingAndOMPPass(), ".register"));
 

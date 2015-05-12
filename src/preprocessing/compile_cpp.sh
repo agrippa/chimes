@@ -143,6 +143,10 @@ else
     LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
 fi
 
+if [[ $ENABLE_OMP == 1 ]]; then
+    GXX_FLAGS="${GXX_FLAGS} -fopenmp"
+fi
+
 STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
             "stddef.h" 2>/dev/null | head -n 1))
 
