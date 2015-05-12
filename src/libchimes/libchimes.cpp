@@ -187,8 +187,8 @@ static void skip(int fd, ssize_t size, const char *msg, const char *filename);
 static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
         const char *filename);
 static void *translate_old_ptr(void *ptr,
-        std::map<void *, ptr_and_size *> *old_to_new);
-static void fix_stack_or_global_pointer(void *container, string type);
+        std::map<void *, ptr_and_size *> *old_to_new, void *container);
+static void fix_stack_or_global_pointer(void *container, string type, int nesting);
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 void free_helper(void *ptr);
 static stack_var *get_var(const char *mangled_name, const char *full_type,
@@ -338,6 +338,12 @@ static map<string, bool> need_to_checkpoint;
  */
 static map<unsigned, set<size_t> > change_loc_id_to_aliases;
 static unsigned count_change_locations = 1;
+
+/*
+ * During resume, track what locations in memory (heap or stack) have already
+ * had their values updated.
+ */
+static set<void *> *already_translated = NULL;
 
 /*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
@@ -494,6 +500,11 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
         void *buffer = malloc(buffer_length);
         safe_read(fd, buffer, buffer_length, "buffer", checkpoint_file);
 
+#ifdef VERBOSE
+        fprintf(stderr, "read_heap_from_file: loading old_address=%p\n",
+                old_address);
+#endif
+
         heap_allocation *alloc = NULL;
         memory_filled *already_filled = NULL;
         /*
@@ -512,6 +523,10 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                 new_address = malloc(size);
                 assert(new_address != NULL);
             }
+#ifdef VERBOSE
+            fprintf(stderr, "  first load of this heap allocation, "
+                    "new_address=%p\n", new_address);
+#endif
 
             alloc = new heap_allocation(new_address, size,
                     group, is_cuda_alloc, elem_is_ptr, elem_is_struct,
@@ -544,10 +559,17 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             assert(filled->find(old_address) != filled->end());
             assert(old_to_alloc->find(old_address) != old_to_alloc->end());
 
+#ifdef VERBOSE
+            fprintf(stderr, "  not the first load of this heap allocation\n");
+#endif
+
             alloc = old_to_alloc->at(old_address);
             already_filled = filled->at(old_address);
         }
 
+#ifdef VERBOSE
+        fprintf(stderr, "  ranges:\n");
+#endif
         /*
          * Populate the live buffer in alloc based on the already filled ranges
          * in already_filled and the available ranges in ranges.
@@ -560,6 +582,9 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             size_t range_start = range_iter->first;
             size_t range_end = range_iter->second;
             unsigned char *in_buffer = ((unsigned char *)buffer) + sofar;
+#ifdef VERBOSE
+            fprintf(stderr, "    %lu -> %lu\n", range_start, range_end);
+#endif
 
             vector<pair<size_t, size_t> > *needed = already_filled->offer(
                     range_start, range_end);
@@ -570,6 +595,11 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
                 size_t in_buf_offset = needed_iter->first - range_start;
                 assert(needed_iter->second <= range_end);
                 size_t in_buf_length = needed_iter->second - needed_iter->first;
+
+#ifdef VERBOSE
+                fprintf(stderr, "      using %lu -> %lu\n", needed_iter->first,
+                        needed_iter->second);
+#endif
 
                 if (alloc->get_is_cuda_alloc()) {
                     CHECK(cudaMemcpy(c_new_address + needed_iter->first,
@@ -722,8 +752,7 @@ void init_chimes() {
                     does_checkpoint[func] = true;
 #ifdef VERBOSE
                 fprintf(stderr, "%s causes checkpoint? true (because %s)\n",
-                        func.c_str(), (causes_checkpoint ? "true" : "false"),
-                        checkpoint_causer.c_str());
+                        func.c_str(), checkpoint_causer.c_str());
 #endif
                     changed = true;
                 }
@@ -761,6 +790,8 @@ void init_chimes() {
         fprintf(stderr, "Using checkpoint file %s\n", checkpoint_file);
 #endif
         ____chimes_replaying = 1;
+        already_translated = new set<void *>();
+
         int fd = open(checkpoint_file, O_RDONLY);
         if (fd < 0) {
             fprintf(stderr, "Error opening checkpoint file %s\n",
@@ -881,6 +912,21 @@ void init_chimes() {
                 filled->begin(), filled_e = filled->end(); filled_i != filled_e;
                 filled_i++) {
             memory_filled *curr = filled_i->second;
+#ifdef VERBOSE
+            if (!curr->empty()) {
+                fprintf(stderr, "non-empty range for old_address=%p, "
+                        "missing:\n");
+                vector<pair<size_t, size_t> > *not_filled =
+                    curr->get_not_filled();
+                for (vector<pair<size_t, size_t> >::iterator missing_i =
+                        not_filled->begin(), missing_e = not_filled->end();
+                        missing_i != missing_e; missing_i++) {
+                    size_t start = missing_i->first;
+                    size_t end = missing_i->second;
+                    fprintf(stderr, "  %lu -> %lu\n", start, end);
+                }
+            }
+#endif
             assert(curr->empty());
         }
 
@@ -930,8 +976,12 @@ void init_chimes() {
                 } else {
                     void **arr = (void **)(alloc->get_address());
 
+#ifdef VERBOSE
+                    fprintf(stderr, "translating an array of pointers, arr=%p "
+                            "nelems=%d\n", arr, nelems);
+#endif
                     for (int i = 0; i < nelems; i++) {
-                        void *new_ptr = translate_old_ptr(arr[i], old_to_new);
+                        void *new_ptr = translate_old_ptr(arr[i], old_to_new, arr + i);
                         if (new_ptr != NULL) arr[i] = new_ptr;
                     }
 
@@ -956,6 +1006,10 @@ void init_chimes() {
                         VERIFY(false);
 #endif
                     } else {
+#ifdef VERBOSE
+                        fprintf(stderr, "translating struct elements in an "
+                                "array nelems=%d\n", nelems);
+#endif
                         /*
                          * Iterate through all of the structs in the array and
                          * convert the pointers at the specified offsets.
@@ -969,7 +1023,7 @@ void init_chimes() {
                                     f_iter++) {
                                 unsigned char *field_address = this_struct + *f_iter;
                                 void **ptr_address = (void **)field_address;
-                                void *new_address = translate_old_ptr(*ptr_address, old_to_new);
+                                void *new_address = translate_old_ptr(*ptr_address, old_to_new, ptr_address);
                                 if (new_address != NULL) *ptr_address = new_address;
                             }
                         }
@@ -1023,7 +1077,9 @@ void init_chimes() {
 }
 
 static void *translate_old_ptr(void *ptr,
-        std::map<void *, ptr_and_size *> *old_to_new) {
+        std::map<void *, ptr_and_size *> *old_to_new, void *container) {
+    assert(already_translated);
+
     unsigned char *c_ptr = (unsigned char *)ptr;
     for (std::map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
             e = old_to_new->end(); i != e; i++) {
@@ -1031,6 +1087,12 @@ static void *translate_old_ptr(void *ptr,
         unsigned char *c_old_ptr = (unsigned char *)(i->first);
         size_t diff_in_bytes = c_ptr - c_old_ptr;
         if (diff_in_bytes < n->get_size()) {
+#ifdef VERBOSE
+            fprintf(stderr, "found matching old allocation starting at %p, "
+                    "size %lu, diff %lu, new ptr %p\n", i->first, n->get_size(),
+                    diff_in_bytes, n->get_ptr());
+#endif
+            already_translated->insert(container);
             return ((unsigned char *)n->get_ptr()) + diff_in_bytes;
         }
     }
@@ -1569,6 +1631,11 @@ static bool is_array_type(string type) {
     return (type[0] == '[' && type[type.length() - 1] == ']');
 }
 
+static string get_points_to_type(string ptr_type) {
+    assert(is_pointer_type(ptr_type));
+    return ptr_type.substr(0, ptr_type.size() - 1);
+}
+
 static string get_nested_array_type(string array_type) {
     assert(is_array_type(array_type));
     string remove_braces = array_type.substr(1, array_type.length() - 2);
@@ -1579,7 +1646,7 @@ static string get_nested_array_type(string array_type) {
     while (remove_braces[index] != ' ') index++; // iterate over array length
     // trailing whitespace following array length
     while (remove_braces[index] == ' ') index++;
-    VERIFY(remove_braces[index] == 'x');
+    VERIFY(remove_braces[index++] == 'x');
     while (remove_braces[index] == ' ') index++;
 
     int type_start = index;
@@ -1812,6 +1879,17 @@ int alias_group_changed(unsigned loc_id) {
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
+#ifdef VERBOSE
+    fprintf(stderr, "alias_group_changed: location=%u\n", loc_id);
+    fprintf(stderr, "  maps to alias groups: ");
+    assert(change_loc_id_to_aliases.find(loc_id) != change_loc_id_to_aliases.end());
+    set<size_t> aliases = change_loc_id_to_aliases.at(loc_id);
+    for (set<size_t>::iterator i = aliases.begin(), e = aliases.end(); i != e; i++) {
+        fprintf(stderr, "%lu ", *i);
+    }
+    fprintf(stderr, "\n");
+#endif
+
     thread_ctx *ctx = get_my_context();
     alias_group_changed_helper(loc_id, ctx);
     ADD_TO_OVERHEAD
@@ -1872,9 +1950,14 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         perf_profile::current_time_ms();
     assert(valid_group(group));
 
+#ifdef VERBOSE
+    fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu is_ptr=%d "
+            "is_struct=%d\n", nbytes, group, is_ptr, is_struct);
+#endif
+
     void *ptr = malloc(nbytes);
 
-    if (ptr != NULL) {
+    if (nbytes > 0 && ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
 
         __sync_fetch_and_add(&total_allocations, nbytes);
@@ -2388,7 +2471,7 @@ void checkpoint() {
                             var->get_name().c_str(), var->get_type().c_str());
 #endif
                     fix_stack_or_global_pointer(var->get_address(),
-                            var->get_type());
+                            var->get_type(), 0);
                 }
             }
         }
@@ -2397,21 +2480,10 @@ void checkpoint() {
                 global_vars.begin(), globals_end = global_vars.end();
                 globals_iter != globals_end; globals_iter++) {
             stack_var *var = globals_iter->second;
-            fix_stack_or_global_pointer(var->get_address(), var->get_type());
-
-            if (is_array_type(var->get_type())) {
-                string nested_type =get_nested_array_type(var->get_type()); 
-                if (is_pointer_type(nested_type)) {
-                    size_t size = var->get_size();
-                    assert(size % sizeof(void*) == 0);
-                    size_t npointers = size / sizeof(void*);
-                    void **container = (void **)var->get_address();
-                    for (unsigned i = 0; i < npointers; i++) {
-                        fix_stack_or_global_pointer(container + i, nested_type);
-                    }
-                }
-            }
+            fix_stack_or_global_pointer(var->get_address(), var->get_type(), 0);
         }
+
+        delete already_translated;
 
         ____chimes_replaying = 0;
         ____chimes_rerunning = 1;
@@ -2466,6 +2538,15 @@ void checkpoint() {
                 }
                 ctx->clear_changed_groups();
             }
+#ifdef VERBOSE
+            fprintf(stderr, "checkpointing the following alias groups:\n");
+            for (set<size_t>::iterator changed_iter = all_changed->begin(),
+                    changed_end = all_changed->end();
+                    changed_iter != changed_end; changed_iter++) {
+                size_t alias = *changed_iter;
+                fprintf(stderr, "    %lu\n", alias);
+            }
+#endif
 
             vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
             heap_to_checkpoint_sorted.reserve(heap.size());
@@ -2482,6 +2563,12 @@ void checkpoint() {
                  */
                 if (all_changed->find(curr->get_alias_group()) !=
                         all_changed->end() || curr->get_is_cuda_alloc()) {
+#ifdef VERBOSE
+                    fprintf(stderr, "  because of group %lu we checkpoint heap "
+                            "allocation %p, size=%lu\n",
+                            curr->get_alias_group(), curr->get_address(),
+                            curr->get_size());
+#endif
                     heap_to_checkpoint_sorted.push_back(
                             pair<size_t, heap_allocation *>(curr->get_size(),
                                 curr));
@@ -2680,19 +2767,100 @@ void checkpoint() {
 #endif
 }
 
-static void fix_stack_or_global_pointer(void *container, string type) {
+static void add_nesting(int nesting) {
+    for (int i = 0; i < nesting; i++) {
+        fprintf(stderr, "  ");
+    }
+}
+
+static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
+        std::set<void *> *visited) {
+    if (visited->find(ptr) != visited->end()) return;
+    visited->insert(ptr);
+
+    unsigned char *c_ptr = (unsigned char *)ptr;
+    size_t size = alloc->get_size();
+
+    for (size_t i = 0; i < size - (sizeof(void *) - 1); i++) {
+        void **container = (void **)(c_ptr + i);
+        void *possible_address = *container;
+
+        void *new_ptr = translate_old_ptr(possible_address, old_to_new, container);
+        if (new_ptr != NULL) {
+            *container = new_ptr;
+        }
+
+        if (already_translated->find(container) != already_translated->end()) {
+            assert(heap.find(*container) != heap.end());
+            heap_allocation *alloc = heap[*container];
+            brute_force_pointer_fixing(*container, alloc, visited);
+        }
+    }
+}
+
+/*
+ * container points to the location in live memory where an object (pointer,
+ * struct, array) to be updated is stored. type stores the full type of the
+ * current address being operated on.
+ */
+static void fix_stack_or_global_pointer(void *container, string type, int nesting) {
 
 #ifdef VERBOSE
+    add_nesting(nesting);
     fprintf(stderr, "fix_stack_or_global_pointer: %s (ptr? %d struct? %d "
-            "array? %d)%p\n", type.c_str(), is_pointer_type(type),
+            "array? %d) %p\n", type.c_str(), is_pointer_type(type),
             is_struct_type(type), is_array_type(type), container);
 #endif
 
     if (is_pointer_type(type)) {
         void **nested_container = (void **)container;
-        void *new_ptr = translate_old_ptr(*nested_container, old_to_new);
+        void *new_ptr = translate_old_ptr(*nested_container, old_to_new, nested_container);
+#ifdef VERBOSE
+        add_nesting(nesting);
+        fprintf(stderr, "  translated old ptr=%p to new ptr=%p\n",
+                *nested_container, new_ptr);
+#endif
         if (new_ptr != NULL) {
             *nested_container = new_ptr;
+        }
+        
+        if (already_translated->find(nested_container) != already_translated->end()) {
+            string points_to = get_points_to_type(type);
+#ifdef VERBOSE
+            add_nesting(nesting);
+            fprintf(stderr, "  points_to=%s, is struct? %d\n",
+                    points_to.c_str(), is_struct_type(points_to));
+#endif
+
+            if (points_to == "void") {
+#ifdef VERBOSE
+                fprintf(stderr, "  void pointer... matching heap allocation? "
+                        "%d\n", (heap.find(*nested_container) != heap.end()));
+#endif
+                assert(heap.find(*nested_container) != heap.end());
+                heap_allocation *alloc = heap[*nested_container];
+
+                /*
+                 * Since its a pointer to void, we just take a look at each
+                 * possible pointer in the allocated region and see if we
+                 * can do a successful translation. Unfortunately we have
+                 * zero type information here, so if there are any nested
+                 * pointers below this level there's no way to get to them. At
+                 * best, we can brute force search as long as we have heap
+                 * allocation information and a pointer to traverse.
+                 */
+                std::set<void *> visited;
+                brute_force_pointer_fixing(*nested_container, alloc, &visited);
+// #ifdef VERBOSE
+//                     fprintf(stderr, "    heap allocation: size=%lu "
+//                             "n_elem_ptrs=%d\n", alloc->get_size(),
+//                             alloc->get_ptr_field_offsets()->size());
+// #endif
+            } else {
+                if (is_struct_type(points_to)) {
+                    fix_stack_or_global_pointer(*nested_container, points_to, nesting + 1);
+                }
+            }
         }
     } else if (is_struct_type(type)) {
 
@@ -2709,8 +2877,7 @@ static void fix_stack_or_global_pointer(void *container, string type) {
             string curr = fields->at(field_index).get_ty();
             unsigned char *field_ptr = ((unsigned char *)container) +
                 (*fields)[field_index].get_offset();
-            fix_stack_or_global_pointer((void *)field_ptr, curr);
-
+            fix_stack_or_global_pointer((void *)field_ptr, curr, nesting + 1);
         }
     } else if (is_array_type(type)) {
         string nested = get_nested_array_type(type);
@@ -2719,10 +2886,8 @@ static void fix_stack_or_global_pointer(void *container, string type) {
             void **ptr_container = (void **)container;
 
             for (int i = 0; i < array_length; i++) {
-                void *new_ptr = translate_old_ptr(*ptr_container, old_to_new);
-                if (new_ptr != NULL) {
-                    *ptr_container = new_ptr;
-                }
+                fix_stack_or_global_pointer(ptr_container + i, nested,
+                        nesting + 1);
             }
         }
     }

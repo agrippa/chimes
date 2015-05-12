@@ -671,6 +671,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     assert 'CHIMES_CHECKPOINT_FILE' not in env
     env['CHIMES_DISABLE_THROTTLING'] = 'TRUE'
     stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
+
     if code != test.expected_code:
         sys.stderr.write('Test ' + test.name + ' expected exit code ' +
                          str(test.expected_code) + ' but got ' + str(code) +
@@ -695,7 +696,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
                                         test.expected_num_checkpoints:
         sys.stderr.write('Test ' + test.name + ' expected ' +
                          str(test.expected_num_checkpoints) + ' checkpoints, ' +
-                         'but only found ' + str(len(chimes_files)) + '\n')
+                         'but found ' + str(len(chimes_files)) + '\n')
         sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
@@ -716,6 +717,12 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
                              str(code) + '\n')
             sys.stderr.write('Folder ' + work_folder + '\n')
             print_and_abort(stdout, stderr)
+
+        if config.verbose:
+            sys.stderr.write('========== RESUME of checkpoint ' + checkpoint +
+                  ' ==========')
+            print_and_abort(stdout, stderr, abort=False)
+
         completed_checkpoints += 1
 
     for checkpoint in list_checkpoint_files():

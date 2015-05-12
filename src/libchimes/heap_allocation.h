@@ -87,6 +87,10 @@ class memory_filled {
             return (not_filled->size() == 0);
         }
 
+        vector<pair<size_t, size_t> > *get_not_filled() {
+            return not_filled;
+        }
+
     private:
         vector<pair<size_t, size_t> > *not_filled;
         size_t length;

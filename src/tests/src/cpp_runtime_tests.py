@@ -18,6 +18,8 @@ NESTED_STACK_STRUCT = RuntimeTest('NestedStackStruct',
                                   ['nested_stack_struct.cpp'], 0, 1)
 NESTED_MALLOCS = RuntimeTest('NestedMallocs',
                              ['nested_mallocs.cpp'], 0, 1)
+NESTED_STRUCT_PTRS = RuntimeTest('NestedStructPtrs', ['nested_struct_ptrs.cpp'], 0, 3)
+ARRAY_OF_PTRS_STRUCT_MEMBER = RuntimeTest('ArrayOfPtrsStructMember', ['array_of_ptrs_struct_member.cpp '], 0, 3)
 FUNC_PTR = RuntimeTest('FuncPtr', ['func_ptr.cpp'], 11, 1)
 COMD_FREE = RuntimeTest('ComdFree', ['comd_free.cpp'], 0, 1)
 COMD_FREE_COMPLEX = RuntimeTest('ComdFreeComplex', ['comd_free_complex.cpp'], 30,
@@ -78,12 +80,13 @@ RAY_TRACER = RuntimeTest('RayTracer', ['ray_tracer.c'], 0, 10,
                          cli_args=RAY_TRACER_ARGS)
 
 TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
-         NESTED_STACK_STRUCT, NESTED_MALLOCS, COMD_FREE, COMD_FREE_COMPLEX,
-         COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP, STRESS_HASHING, HEAP_POINTERS,
-         HEAP_INDIRECTION, FREE, REALLOC, CALLOC, GLOBALS, CONSTANTS,
-         PARTIAL_CHECKPOINT, SWAPPED_PTRS, SWAPPED_NESTED_PTRS,
-         MULTI_CHECKPOINT, ISO2D, ISO3D, SMITH_WATERMAN, LULESH, COMD, UTS,
-         RAY_TRACER]
+         NESTED_STACK_STRUCT, NESTED_MALLOCS, NESTED_STRUCT_PTRS,
+         ARRAY_OF_PTRS_STRUCT_MEMBER, COMD_FREE,
+         COMD_FREE_COMPLEX, COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP,
+         STRESS_HASHING, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, CALLOC,
+         GLOBALS, CONSTANTS, PARTIAL_CHECKPOINT, SWAPPED_PTRS,
+         SWAPPED_NESTED_PTRS, MULTI_CHECKPOINT, ISO2D, ISO3D, SMITH_WATERMAN,
+         LULESH, COMD, UTS, RAY_TRACER]
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

@@ -1337,8 +1337,12 @@ static std::string demangleStructName(std::string mangled) {
     return removed_prefix;
 }
 
-static std::string DType_to_string(DIType curr, int nesting, DITypeIdentifierMap &TypeIdentifierMap) {
+static std::string DType_to_string(DIType curr, int nesting,
+        DITypeIdentifierMap &TypeIdentifierMap) {
     assert(curr.isType());
+
+    llvm::errs() << "    " << curr.isBasicType() << " " <<
+        curr.isCompositeType() << " " << curr.isDerivedType() << "\n";
 
     if (curr.isBasicType()) {
         return curr.getName().str();
@@ -1390,16 +1394,19 @@ static std::string DType_to_string(DIType curr, int nesting, DITypeIdentifierMap
     } else if (curr.isDerivedType()) {
         DIDerivedType derived(curr);
         DIType from = derived.getTypeDerivedFrom().resolve(TypeIdentifierMap);
+        llvm::errs() << "      " << from.isType() << " " << (curr.getTag() == dwarf::DW_TAG_pointer_type) << "\n";
+
+        std::string child;
         if (from.isType()) {
-            std::string child = DType_to_string(from, nesting + 1,
+            child = DType_to_string(from, nesting + 1,
                     TypeIdentifierMap);
-            if (curr.getTag() == dwarf::DW_TAG_pointer_type) {
-                return (child + "*");
-            } else {
-                return (child);
-            }
         } else {
-            return "";
+            child = "void";
+        }
+        if (curr.getTag() == dwarf::DW_TAG_pointer_type) {
+            return (child + "*");
+        } else {
+            return (child);
         }
     } else {
         llvm::errs() << curr.getName().str() << "\n";
@@ -1440,6 +1447,8 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
             }
             std::vector<StructFieldInfo> fields;
 
+            llvm::errs() << "Looking at struct " << struct_name << " with " << fields_defs.getNumElements() << " members\n";
+
             for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
                 DIDescriptor field = fields_defs.getElement(f);
                 if (field.getTag() == dwarf::DW_TAG_member) {
@@ -1458,6 +1467,7 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
 
                         DIType from = derived.getTypeDerivedFrom().resolve(TypeIdentifierMap);
                         std::string type = DType_to_string(from, 1, TypeIdentifierMap);
+                        llvm::errs() << "  " << fieldname << " " << type << "\n";
                         fields.push_back(StructFieldInfo(fieldname, type));
                     }
                 }
