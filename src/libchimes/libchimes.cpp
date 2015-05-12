@@ -1574,27 +1574,41 @@ static string get_nested_array_type(string array_type) {
     string remove_braces = array_type.substr(1, array_type.length() - 2);
     // Increment past array length
     int index = 0;
-    while (remove_braces[index] >= '0' && remove_braces[index] <= '9') {
-        index++;
+    // remove any leading whitespace before array dimension
+    while (remove_braces[index] == ' ') index++;
+    while (remove_braces[index] != ' ') index++; // iterate over array length
+    // trailing whitespace following array length
+    while (remove_braces[index] == ' ') index++;
+    VERIFY(remove_braces[index] == 'x');
+    while (remove_braces[index] == ' ') index++;
+
+    int type_start = index;
+    string just_type = remove_braces.substr(type_start);
+    while (just_type[just_type.size() - 1] == ' ') {
+        just_type = just_type.substr(0, just_type.size() - 1);
     }
-    VERIFY(remove_braces[index++] == ' ');
-    VERIFY(remove_braces[index++] == 'x');
-    VERIFY(remove_braces[index++] == ' ');
-    return remove_braces.substr(index);
+    return just_type;
 }
 
-#if 0
 static int get_array_length(string array_type) {
     assert(is_array_type(array_type));
     string remove_braces = array_type.substr(1, array_type.length() - 2);
-    // Increment past array length
+
     int index = 0;
-    while (remove_braces[index] >= '0' && remove_braces[index] <= '9') {
-        index++;
-    }
-    return atoi(remove_braces.substr(0, index).c_str());
+    // remove any leading whitespace before array dimension
+    while (remove_braces[index] == ' ') index++;
+
+    int length_start = index;
+    string length = remove_braces.substr(length_start);
+    index = 0;
+
+    while (length[index] != ' ') index++; // iterate over array length
+    length = length.substr(0, index);
+
+    assert(length != "na");
+
+    return atoi(length.c_str());
 }
-#endif
 
 static bool is_struct_type(string type) {
     size_t index = type.find("%struct.");
@@ -1651,7 +1665,7 @@ inline void register_stack_var_helper(std::string mangled_name_str,
         std::vector<stack_frame *> *program_stack) {
 
 #ifdef VERBOSE
-    fprintf(stderr, "  Actually registering %s\n", mangled_name);
+    fprintf(stderr, "  Actually registering %s\n", mangled_name_str.c_str());
 #endif
 
     // Skip the expensive stack var creation if we can
@@ -2369,6 +2383,10 @@ void checkpoint() {
                         var_end = frame->end(); var_iter != var_end;
                         var_iter++) {
                     stack_var *var = var_iter->second;
+#ifdef VERBOSE
+                    fprintf(stderr, "Fixing stack variable %s of type %s\n",
+                            var->get_name().c_str(), var->get_type().c_str());
+#endif
                     fix_stack_or_global_pointer(var->get_address(),
                             var->get_type());
                 }
@@ -2664,6 +2682,12 @@ void checkpoint() {
 
 static void fix_stack_or_global_pointer(void *container, string type) {
 
+#ifdef VERBOSE
+    fprintf(stderr, "fix_stack_or_global_pointer: %s (ptr? %d struct? %d "
+            "array? %d)%p\n", type.c_str(), is_pointer_type(type),
+            is_struct_type(type), is_array_type(type), container);
+#endif
+
     if (is_pointer_type(type)) {
         void **nested_container = (void **)container;
         void *new_ptr = translate_old_ptr(*nested_container, old_to_new);
@@ -2687,6 +2711,19 @@ static void fix_stack_or_global_pointer(void *container, string type) {
                 (*fields)[field_index].get_offset();
             fix_stack_or_global_pointer((void *)field_ptr, curr);
 
+        }
+    } else if (is_array_type(type)) {
+        string nested = get_nested_array_type(type);
+        if (is_pointer_type(nested)) {
+            int array_length = get_array_length(type);
+            void **ptr_container = (void **)container;
+
+            for (int i = 0; i < array_length; i++) {
+                void *new_ptr = translate_old_ptr(*ptr_container, old_to_new);
+                if (new_ptr != NULL) {
+                    *ptr_container = new_ptr;
+                }
+            }
         }
     }
 }
