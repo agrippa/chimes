@@ -85,6 +85,8 @@ static void printThings(SimFlat* s, int iStep, double elapsedTime);
 static void printSimulationDataYaml(FILE* file, SimFlat* s);
 static void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeType[8]);
 
+static int iStepPrev = -1; 
+static int firstCall = 1;
 
 int main(int argc, char** argv)
 {
@@ -353,8 +355,6 @@ void sumAtoms(SimFlat* s)
 void printThings(SimFlat* s, int iStep, double elapsedTime)
 {
    // keep track previous value of iStep so we can calculate number of steps.
-   static int iStepPrev = -1; 
-   static int firstCall = 1;
 
    int nEval = iStep - iStepPrev; // gives nEval = 1 for zeroth step.
    iStepPrev = iStep;

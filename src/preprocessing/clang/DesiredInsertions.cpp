@@ -1127,6 +1127,14 @@ FunctionCallees *DesiredInsertions::get_callees(std::string name) {
     return (call_tree->at(name));
 }
 
+bool DesiredInsertions::may_cause_checkpoint(std::string fname) {
+    bool may = true;
+    if (has_callees(fname)) {
+        may = (get_callees(fname)->get_may_checkpoint() != DOES_NOT);
+    }
+    return (may);
+}
+
 std::string DesiredInsertions::get_alias_loc_var(unsigned id) {
     std::stringstream ss;
     ss << "____alias_loc_id_" << id;

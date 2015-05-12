@@ -152,10 +152,10 @@ int ljForce(SimFlat* s)
    real_t ePot = 0.0;
    s->ePotential = 0.0;
    int fSize = s->boxes->nTotalBoxes*MAXATOMS;
-   for (int ii=0; ii<fSize; ++ii)
+   for (int iii=0; iii<fSize; ++iii)
    {
-      zeroReal3(s->atoms->f[ii]);
-      s->atoms->U[ii] = 0.;
+      zeroReal3(s->atoms->f[iii]);
+      s->atoms->U[iii] = 0.;
    }
    
    real_t s6 = sigma*sigma*sigma*sigma*sigma*sigma;
@@ -192,10 +192,10 @@ int ljForce(SimFlat* s)
                if (jBox < s->boxes->nLocalBoxes && jId <= iId )
                   continue; // don't double count local-local pairs.
                real_t r2 = 0.0;
-               for (int m=0; m<3; m++)
+               for (int m1=0; m1<3; m1++)
                {
-                  dr[m] = s->atoms->r[iOff][m]-s->atoms->r[jOff][m];
-                  r2+=dr[m]*dr[m];
+                  dr[m1] = s->atoms->r[iOff][m1]-s->atoms->r[jOff][m1];
+                  r2+=dr[m1]*dr[m1];
                }
 
                if ( r2 > rCut2) continue;
@@ -217,10 +217,10 @@ int ljForce(SimFlat* s)
 
                // different formulation to avoid sqrt computation
                real_t fr = - 4.0*epsilon*r6*r2*(12.0*r6 - 6.0);
-               for (int m=0; m<3; m++)
+               for (int m2=0; m2<3; m2++)
                {
-                  s->atoms->f[iOff][m] -= dr[m]*fr;
-                  s->atoms->f[jOff][m] += dr[m]*fr;
+                  s->atoms->f[iOff][m2] -= dr[m2]*fr;
+                  s->atoms->f[jOff][m2] += dr[m2]*fr;
                }
             } // loop over atoms in jBox
          } // loop over atoms in iBox

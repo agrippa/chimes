@@ -59,10 +59,6 @@
 #include "timestep.h"
 #include "constants.h"
 
-#ifdef __CHIMES_SUPPORT
-#include "checkpoint.h"
-#endif
-
 #define REDIRECT_OUTPUT 0
 #define   MIN(A,B) ((A) < (B) ? (A) : (B))
 
@@ -83,6 +79,8 @@ static void printThings(SimFlat* s, int iStep, double elapsedTime);
 static void printSimulationDataYaml(FILE* file, SimFlat* s);
 static void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeType[8]);
 
+static int iStepPrev = -1; 
+static int firstCall = 1;
 
 int main(int argc, char** argv)
 {
@@ -126,10 +124,6 @@ int main(int argc, char** argv)
       stopTimer(timestepTimer);
 
       iStep += printRate;
-
-#ifdef __CHIMES_SUPPORT
-      checkpoint();
-#endif
    }
    profileStop(loopTimer);
 
@@ -351,8 +345,6 @@ void sumAtoms(SimFlat* s)
 void printThings(SimFlat* s, int iStep, double elapsedTime)
 {
    // keep track previous value of iStep so we can calculate number of steps.
-   static int iStepPrev = -1; 
-   static int firstCall = 1;
 
    int nEval = iStep - iStepPrev; // gives nEval = 1 for zeroth step.
    iStepPrev = iStep;
