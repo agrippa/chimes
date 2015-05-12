@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdarg.h>
 
 /*
  * This file contains dummy (empty) definitions for all libchimes APIs. This
@@ -16,17 +17,45 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias,
 
 int get_next_call() { return (0); }
 void new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...) { }
+        unsigned n_local_arg_aliases, unsigned nargs, ...) {
+    if (conditional) { *conditional = 0; }
+}
 
 void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...) { }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id) { }
+        const char *funcname, int *conditional, unsigned loc_id) {
+    if (conditional) { *conditional = 0; }
+}
 
 void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...) { }
+        int is_struct, int n_ptr_fields, ...) {
+    if (cond_registration) { *cond_registration = 0; }
+}
+
+void register_stack_vars(int nvars, ...) {
+    va_list vl;
+    va_start(vl, nvars);
+    for (int i = 0; i < nvars; i++) {
+        va_arg(vl, const char *);
+        int *cond_registration = va_arg(vl, int *);
+        va_arg(vl, const char *);
+        va_arg(vl, void *);
+        va_arg(vl, size_t);
+        va_arg(vl, int);
+        va_arg(vl, int);
+        int n_ptr_fields = va_arg(vl, int);
+
+        *cond_registration == 0;
+
+        for (int j = 0; j < n_ptr_fields; j++) {
+            va_arg(vl, int);
+        }
+    }
+    va_end(vl);
+}
 
 void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,

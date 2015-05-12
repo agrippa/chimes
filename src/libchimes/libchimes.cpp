@@ -167,6 +167,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
+void register_stack_vars(int nvars, ...);
 int alias_group_changed(unsigned loc_id);
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...);
@@ -375,14 +376,14 @@ enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     REALLOC_WRAPPER, FREE_WRAPPER, CALLOC_WRAPPER, REGISTER_CONSTANT,
     LEAVING_OMP_PARALLEL, REGISTER_THREAD_LOCAL_STACK_VARS,
     ENTERING_OMP_PARALLEL, CHECKPOINT_THREAD, CHECKPOINT, INIT_CHIMES,
-    WAIT_FOR_ALL_THREADS, HASHING, N_LABELS };
+    WAIT_FOR_ALL_THREADS, HASHING, REGISTER_STACK_VARS, N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
     "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
     "free_wrapper", "calloc_wrapper", "register_constant",
     "leaving_omp_parallel", "register_thread_local_stack_vars",
     "entering_omp_parallel", "checkpoint_thread", "checkpoint", "init_chimes",
-    "wait_for_all_threads", "hashing" };
+    "wait_for_all_threads", "hashing", "register_stack_vars" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
@@ -1620,6 +1621,10 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
 }
 
 static bool need_to_register(int *cond_registration, string mangled_name) {
+    /*
+     * If cond_registration is NULL, it means this variable was marked as
+     * something that had to be checkpointed unconditionally.
+     */
     if (cond_registration) {
         if (*cond_registration == 2) { // UNKNOWN
             const map<string, bool>::iterator must_checkpoint_iter =
@@ -1638,6 +1643,73 @@ static bool need_to_register(int *cond_registration, string mangled_name) {
     }
 
     return (true);
+}
+
+inline void register_stack_var_helper(std::string mangled_name_str,
+        int *cond_registration, const char *full_type, void *ptr, size_t size,
+        int is_ptr, int is_struct, int n_ptr_fields, va_list vl,
+        std::vector<stack_frame *> *program_stack) {
+
+#ifdef VERBOSE
+    fprintf(stderr, "  Actually registering %s\n", mangled_name);
+#endif
+
+    // Skip the expensive stack var creation if we can
+    if (!program_stack->back()->stack_var_exists(mangled_name_str,
+                ptr)) {
+
+        stack_var *new_var = get_var(mangled_name_str.c_str(), full_type, ptr,
+                size, is_ptr, is_struct, n_ptr_fields, vl);
+
+        program_stack->back()->add_stack_var(new_var);
+    }
+}
+
+void register_stack_vars(int nvars, ...) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ms();
+#endif
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ms();
+
+    std::vector<stack_frame *> *program_stack = NULL;
+
+    va_list vl;
+    va_start(vl, nvars);
+    for (int i = 0; i < nvars; i++) {
+        const char *mangled_name = va_arg(vl, const char *);
+        int *cond_registration = va_arg(vl, int *);
+        const char *full_type = va_arg(vl, const char *);
+        void *ptr = va_arg(vl, void *);
+        size_t size = va_arg(vl, size_t);
+        int is_ptr = va_arg(vl, int);
+        int is_struct = va_arg(vl, int);
+        int n_ptr_fields = va_arg(vl, int);
+
+        const string mangled_name_str(mangled_name);
+
+#ifdef VERBOSE
+        fprintf(stderr, "Thinking about registering %s...\n", mangled_name);
+#endif
+        if (!need_to_register(cond_registration, mangled_name_str)) {
+            // Need to consume extra arguments that weren't used by the helper
+            for (int j = 0; j < n_ptr_fields; j++) {
+                va_arg(vl, int);
+            }
+        } else {
+            // Really try to avoid contending for the thread-specific data structures
+            if (!program_stack) program_stack = get_my_stack();
+            register_stack_var_helper(mangled_name_str, cond_registration, full_type,
+                    ptr, size, is_ptr, is_struct, n_ptr_fields, vl, program_stack);
+        }
+    }
+    va_end(vl);
+
+    ADD_TO_OVERHEAD
+#ifdef __CHIMES_PROFILE
+    pp.add_time(REGISTER_STACK_VARS, __start_time);
+#endif
+
 }
 
 /*
@@ -1661,31 +1733,17 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 #ifdef VERBOSE
     fprintf(stderr, "Thinking about registering %s...\n", mangled_name);
 #endif
-    /*
-     * If cond_registration is NULL, it means this variable was marked as
-     * something that had to be checkpointed unconditionally.
-     */
     if (!need_to_register(cond_registration, mangled_name_str)) {
         return;
     }
 
-#ifdef VERBOSE
-    fprintf(stderr, "  Actually registering %s\n", mangled_name);
-#endif
-
-    // Skip the expensive stack var creation if we can
+    va_list vl;
+    va_start(vl, n_ptr_fields);
     std::vector<stack_frame *> *program_stack = get_my_stack();
-    if (!program_stack->back()->stack_var_exists(mangled_name_str,
-                ptr)) {
+    register_stack_var_helper(mangled_name_str, cond_registration, full_type,
+            ptr, size, is_ptr, is_struct, n_ptr_fields, vl, program_stack);
+    va_end(vl);
 
-        va_list vl;
-        va_start(vl, n_ptr_fields);
-        stack_var *new_var = get_var(mangled_name, full_type, ptr, size, is_ptr,
-                is_struct, n_ptr_fields, vl);
-        va_end(vl);
-
-        program_stack->back()->add_stack_var(new_var);
-    }
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_STACK_VAR, __start_time);

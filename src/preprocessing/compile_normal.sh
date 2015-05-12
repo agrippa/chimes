@@ -90,6 +90,7 @@ done
 
 echo ${ABS_INPUTS[@]}
 
+GXX=${GXX:-/usr/bin/g++}
 LAST_FILES=()
 OBJ_FILES=()
 OUTPUT=$(pwd)/${OUTPUT_FILE}
@@ -110,7 +111,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     if [[ ${EXT} == "cpp" || ${EXT} == "cc" || ${EXT} == "c" ]]; then
-        g++ --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
+        ${GXX} --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
     elif [[ ${EXT} == "cu" ]]; then
         nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
                    ${INCLUDES}
@@ -139,7 +140,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    g++ -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
+    ${GXX} -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
         ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
         -lcudart
 

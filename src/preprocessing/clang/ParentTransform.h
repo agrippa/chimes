@@ -51,6 +51,7 @@ protected:
 
     std::string constructRegisterStackVarArgs(StackAlloc *alloc);
     std::string constructRegisterStackVar(StackAlloc *alloc);
+    std::string get_cond_registration_varname(std::string mangled_varname);
     void visitChildren(const clang::Stmt *s);
     const clang::Stmt *getParentMayBeNull(const clang::Stmt *s);
     const clang::Stmt *getParent(const clang::Stmt *s);

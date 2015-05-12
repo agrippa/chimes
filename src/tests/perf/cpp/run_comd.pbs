@@ -1,0 +1,9 @@
+#PBS -N CoMD
+#PBS -q parallel
+#PBS -l walltime=4:00:00
+#PBS -l nodes=1:ppn=12
+#PBS -M jmg3@rice.edu
+#PBS -m abe
+
+cd /home/jmg3/num-debug/src/tests/perf/cpp && ./compile_comd.sh
+cd /home/jmg3/num-debug/src/tests/perf/cpp && ./run_comd.sh &> log.comd

@@ -4,7 +4,8 @@
 
 extern DesiredInsertions *insertions;
 
-static std::string get_cond_registration_varname(std::string mangled_varname) {
+std::string ParentTransform::get_cond_registration_varname(
+        std::string mangled_varname) {
     std::string cond_varname(mangled_varname);
     std::replace(cond_varname.begin(), cond_varname.end(), '|', '_');
 
@@ -16,10 +17,7 @@ static std::string get_cond_registration_varname(std::string mangled_varname) {
 std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     assert(alloc->get_may_checkpoint());
 
-    int first_pipe = alloc->get_mangled_varname().find('|');
-    std::string actual_name = alloc->get_mangled_varname().substr(
-            first_pipe + 1);;
-    actual_name = actual_name.substr(0, actual_name.find('|'));
+    std::string actual_name = alloc->get_varname_from_mangled_name();
     std::string cond_varname = get_cond_registration_varname(
             alloc->get_mangled_varname());
 

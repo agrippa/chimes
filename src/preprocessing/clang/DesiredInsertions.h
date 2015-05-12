@@ -436,6 +436,7 @@ public:
     bool always_checkpoints(StackAlloc *alloc);
     FunctionCallees *get_callees(std::string name);
     bool has_callees(std::string name);
+    bool may_cause_checkpoint(std::string fname);
 
     std::string get_alias_loc_var(unsigned id);
 

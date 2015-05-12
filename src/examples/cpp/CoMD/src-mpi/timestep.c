@@ -8,6 +8,10 @@
 #include "parallel.h"
 #include "performanceTimers.h"
 
+#ifdef __CHIMES_SUPPORT
+#include "checkpoint.h"
+#endif
+
 static void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);
 static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 
@@ -36,21 +40,41 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
       advanceVelocity(s, s->boxes->nLocalBoxes, 0.5*dt); 
       stopTimer(velocityTimer);
 
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
+
       startTimer(positionTimer);
       advancePosition(s, s->boxes->nLocalBoxes, dt);
       stopTimer(positionTimer);
+
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
 
       startTimer(redistributeTimer);
       redistributeAtoms(s);
       stopTimer(redistributeTimer);
 
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
+
       startTimer(computeForceTimer);
       computeForce(s);
       stopTimer(computeForceTimer);
 
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
+
       startTimer(velocityTimer);
       advanceVelocity(s, s->boxes->nLocalBoxes, 0.5*dt); 
       stopTimer(velocityTimer);
+
+#ifdef __CHIMES_SUPPORT
+      checkpoint();
+#endif
    }
 
    kineticEnergy(s);

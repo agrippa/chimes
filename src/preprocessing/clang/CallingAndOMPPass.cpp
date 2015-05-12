@@ -100,9 +100,93 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
     return allocs;
 }
 
+std::string CallingAndOMPPass::constructStartingRegistrations(
+        std::vector<DeclarationInfo> *vars, unsigned n_hoisted,
+        std::string *transition_str_ptr) {
+    std::stringstream acc_args;
+    std::stringstream acc_decls;
+    std::stringstream acc_conds;
+    bool any_unconditional_vars = false;
+    unsigned count_args = 0;
+    unsigned count_decls = 0;
+    unsigned count_conds = 0;
+
+    for (unsigned i = 0; i < n_hoisted; i++) {
+        DeclarationInfo curr = vars->at(i);
+        const clang::DeclStmt *d = curr.get_decl();
+        std::map<clang::VarDecl *, StackAlloc *> allocs = curr.get_allocs();
+
+        for (clang::DeclStmt::const_decl_iterator i = d->decl_begin(),
+                e = d->decl_end(); i != e; i++) {
+            clang::Decl *dd = *i;
+            if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
+
+                if (allocs.find(v) != allocs.end()) {
+                    StackAlloc *alloc = allocs.at(v);
+                    /*
+                     * If this was identified as a variable which may have a
+                     * STORE->LOAD pair across a function call which MAY/DOES
+                     * create a checkpoint.
+                     *
+                     * alloc->checkpoint_causes only includes functions which
+                     * MAY or DOES create a checkpoint, no DOES_NOT.
+                     */
+                    assert(alloc->get_may_checkpoint() || alloc->is_array_type());
+
+                    assert(curr.get_as_string().size() > 0);
+                    acc_decls << curr.get_as_string();
+                    count_decls++;
+
+                    if (alloc->get_may_checkpoint()) {
+                        if (count_args > 0) {
+                            acc_args << ", ";
+                        }
+                        acc_args << constructRegisterStackVarArgs(alloc);
+                        if (insertions->always_checkpoints(alloc)) {
+                            any_unconditional_vars = true;
+                        } else {
+                            if (count_conds > 0) {
+                                acc_conds << " || ";
+                            }
+                            acc_conds << get_cond_registration_varname(
+                                    alloc->get_mangled_varname());
+                            count_conds++;
+                        }
+                        count_args++;
+                    }
+                }
+            }
+        }
+    }
+
+    if (count_decls > 0) {
+        std::stringstream complete;
+        complete << acc_decls.str();
+        if (count_args > 0) {
+            if (!any_unconditional_vars && acc_conds.str().size() > 0) {
+                complete << " if (" << acc_conds.str() << ") {";
+            }
+            complete << " register_stack_vars(" << count_args << ", " <<
+                acc_args.str() << "); ";
+            if (!any_unconditional_vars && acc_conds.str().size() > 0) {
+                complete << " } ";
+            }
+        }
+
+        if (n_hoisted == vars->size()) {
+            complete << " if (____chimes_replaying) { " <<
+                *transition_str_ptr << " } ";
+        } else {
+            complete << " if (____chimes_replaying) { goto lbl_0; } ";
+        }
+        return complete.str();
+    } else {
+        return "";
+    }
+}
+
 std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
-        std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force,
-        std::stringstream *entry_ss, DeclarationInfo *info) {
+        std::map<clang::VarDecl *, StackAlloc *> allocs, std::string *force) {
     clang::SourceLocation start = d->getLocStart();
     clang::SourceLocation end = d->getLocEnd();
 
@@ -166,14 +250,9 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
                 "; } ";
         }
 
-        if (!info->is_hoisted()) {
-            InsertTextBefore(start, ss.str());
-            InsertTextAfterToken(end, acc.str());
-            InsertTextAfterToken(end, ss2.str());
-        } else {
-            assert(info->get_as_string().size() > 0);
-            *entry_ss << ss.str() << info->get_as_string() << acc.str() << ss2.str();
-        }
+        InsertTextBefore(start, ss.str());
+        InsertTextAfterToken(end, acc.str());
+        InsertTextAfterToken(end, ss2.str());
 
         return label_ss.str();
     }
@@ -229,7 +308,9 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             e = calls->end(); i != e; i++) {
         ContainedFunctionCall call = *i;
         int lbl = call.get_lbl();
-        ss << "case(" << lbl << "): { goto call_lbl_" << lbl << "; } ";
+        if (lbl != -1) {
+            ss << "case(" << lbl << "): { goto call_lbl_" << lbl << "; } ";
+        }
     }
     ss << "default: { chimes_error(); } } ";
     std::string transition_str = ss.str();
@@ -264,10 +345,23 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     } else if (vars_in_regions.find(region) != vars_in_regions.end()) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
         std::string first_label;
-        std::stringstream entry_ss;
+        std::string entry_str;
 
-        for (unsigned i = 0; i < vars->size(); i++) {
+        bool first_is_hoisted = (*vars)[0].is_hoisted();
+
+        unsigned n_hoisted = 0;
+        while (n_hoisted < vars->size() && vars->at(n_hoisted).is_hoisted()) {
+            n_hoisted++;
+        }
+
+        if (n_hoisted > 0) {
+            entry_str = constructStartingRegistrations(vars, n_hoisted,
+                    &transition_str);
+        }
+
+        for (unsigned i = n_hoisted; i < vars->size(); i++) {
             DeclarationInfo curr = (*vars)[i];
+            assert(!curr.is_hoisted());
             const clang::DeclStmt *d = curr.get_decl();
             std::map<clang::VarDecl *, StackAlloc *> allocs = curr.get_allocs();
 
@@ -275,16 +369,22 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             if (i == vars->size() - 1) force = &transition_str;
 
             if (i == 0) {
-                first_label = handleDecl(d, allocs, force, &entry_ss, &curr);
+                first_label = handleDecl(d, allocs, force);
             } else {
-                handleDecl(d, allocs, force, &entry_ss, &curr);
+                handleDecl(d, allocs, force);
             }
         }
 
-        std::stringstream full_entry_ss;
-        full_entry_ss << " if (____chimes_replaying) { goto " << first_label <<
-            "; } " << entry_ss.str();
-        InsertTextAfterToken(toInsertAt, full_entry_ss.str());
+        if (first_is_hoisted) {
+            InsertTextAfterToken(toInsertAt, entry_str);
+        } else {
+            std::stringstream entry_ss;
+            if (!first_is_hoisted) {
+                entry_ss << " if (____chimes_replaying) { goto " <<
+                    first_label << "; } ";
+            }
+            InsertTextAfterToken(toInsertAt, entry_ss.str());
+        }
     } else {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { " << transition_str <<
@@ -515,15 +615,21 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     insertions->findFirstMatchingCallsite(i->first,
                         loc.get_funcname());
 
+                bool may_cause_checkpoint = true;
                 std::string func_symbol;
                 if (loc.get_funcname() == "anon") {
                     func_symbol = stmtToString(loc.get_call()->getCallee());
                 } else {
                     func_symbol = "&" + loc.get_funcname();
+                    may_cause_checkpoint = insertions->may_cause_checkpoint(
+                            loc.get_funcname());
                 }
 
                 std::stringstream ss;
-                ss << " call_lbl_" << loc.get_label() << ": calling((void*)" <<
+                if (may_cause_checkpoint) {
+                    ss << " call_lbl_" << loc.get_label() << ": ";
+                }
+                ss << " calling((void*)" <<
                     func_symbol << ", " << loc.get_label() << ", " <<
                     callsite.get_return_alias() << "UL, " << callsite.nparams();
                 for (unsigned a = 0; a < callsite.nparams(); a++) {
@@ -651,7 +757,13 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                     calls_found[line_no] =
                         std::vector<CallLocation>();
                 }
-                int lbl = getNextFunctionLabel();
+                int lbl;
+                if (callee_name == "anon" ||
+                        insertions->may_cause_checkpoint(callee_name)) {
+                    lbl = getNextFunctionLabel();
+                } else {
+                    lbl = -1;
+                }
                 calls_found[line_no].push_back(CallLocation(
                             callee_name, presumed.getColumn(), lbl, call));
             }
