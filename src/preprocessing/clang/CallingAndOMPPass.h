@@ -74,6 +74,8 @@ private:
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
+    std::string insert_at_front;
+
     std::string get_chimes_parent_thread_varname();
     bool is_inside_if_cond(const clang::Stmt *stmt);
     bool is_inside_while_cond(const clang::Stmt *stmt);

@@ -377,8 +377,9 @@ int getBoxFromCoord(LinkCell* boxes, real_t rr[3])
    }
    else
       iz = gridSize[2];
-   
-   return getBoxFromTuple(boxes, ix, iy, iz);
+  
+   int result = getBoxFromTuple(boxes, ix, iy, iz);
+   return result;
 }
 
 /// Set the number of atoms to zero in all halo link cells.

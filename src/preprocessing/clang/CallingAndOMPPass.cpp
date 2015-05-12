@@ -333,15 +333,14 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             assert(for_stmt);
             toInsertAt = for_stmt->getBody()->getLocStart();
         } else {
-            toInsertAt = region->get_start().getLocWithOffset(1);
+            toInsertAt = region->get_start();
         }
     }
 
     if (region != NULL && (region->is_parallel_for() ||
                 region->get_is_critical())) {
-        std::stringstream entry_ss;
-        entry_ss << " if (____chimes_replaying) { chimes_error(); } ";
-        InsertTextAfterToken(toInsertAt, entry_ss.str());
+        InsertTextAfterToken(toInsertAt,
+                " ; if (____chimes_replaying) { chimes_error(); } ");
     } else if (vars_in_regions.find(region) != vars_in_regions.end()) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
         std::string first_label;
@@ -376,20 +375,29 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         }
 
         if (first_is_hoisted) {
-            InsertTextAfterToken(toInsertAt, entry_str);
+            assert(region == NULL);
+            insert_at_front = entry_str + " " + insert_at_front;
+            // InsertTextAfterToken(toInsertAt, " ; " + entry_str);
         } else {
             std::stringstream entry_ss;
-            if (!first_is_hoisted) {
-                entry_ss << " if (____chimes_replaying) { goto " <<
-                    first_label << "; } ";
+            entry_ss << " if (____chimes_replaying) { goto " <<
+                first_label << "; } ";
+            if (region == NULL) {
+                insert_at_front = insert_at_front + " " + entry_ss.str();
+            } else {
+                InsertTextAfterToken(toInsertAt, " ; " + entry_ss.str());
             }
-            InsertTextAfterToken(toInsertAt, entry_ss.str());
         }
     } else {
         std::stringstream entry_ss;
         entry_ss << " if (____chimes_replaying) { " << transition_str <<
             " } ";
-        InsertTextAfterToken(toInsertAt, entry_ss.str());
+
+        if (region == NULL) {
+            insert_at_front = entry_ss.str() + " " + insert_at_front;
+        } else {
+            InsertTextAfterToken(toInsertAt, "; " + entry_ss.str());
+        }
     }
 
     for (std::vector<OMPRegion *>::iterator i = children.begin(),
@@ -452,6 +460,20 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
     std::vector<OpenMPPragma> *omp_pragmas = insertions->get_omp_pragmas_for(
             curr_func_decl, *SM);
 
+    /*
+     * It is possible for the insertion of some text during this initial pass
+     * over the OMP regions to clash with later text under VisitRegion. If this
+     * happens in an undesirable order (e.g. we wanted the text from VisitRegion
+     * to come first at a shared location) then we get syntax errors in the
+     * generated code.
+     *
+     * Specifically, we're protecting against insertions of
+     * entering_omp_parallel calls immediately following new_stack calls that
+     * interfere with variable hoisting.
+     */
+    insert_at_front.clear();
+
+    // For each OMP region, collect insertions
     for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
             e = omp_pragmas->end(); i != e; i++) {
         OpenMPPragma pragma = *i;
@@ -536,7 +558,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
         int lbl = getNextFunctionLabel();
 
-        OMPRegion *region = new OMPRegion(pragma.get_line(),
+        OMPRegion *region = new OMPRegion(pragma.get_line(), pragma.get_last_line(),
                 post->getLocStart(), post->getLocEnd(), pragma_name, clauses,
                 lbl, is_parallel_for, post, is_critical);
         ompTree->add_region(region);
@@ -569,7 +591,12 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     pragma.get_last_line(), blocker_varname);
         }
 
-        InsertTextAfterToken(pre_loc, entering_ss.str());
+        assert(new_stack_calls.find(curr_func_decl) != new_stack_calls.end());
+        if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
+            insert_at_front = entering_ss.str();
+        } else {
+            InsertTextAfterToken(pre_loc, entering_ss.str());
+        }
 
         std::stringstream register_ss;
         if (is_parallel_for) {
@@ -599,6 +626,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         InsertTextAfterToken(post_loc, leaving_stream.str());
     }
 
+    // For each call made, create its text insertions
     for (std::map<int, std::vector<CallLocation>>::iterator i =
             calls_found.begin(), e = calls_found.end(); i != e; i++) {
         std::vector<CallLocation> calls = i->second;
@@ -642,11 +670,19 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         }
     }
 
+    /*
+     * For each declaration, decide to hoist it or classify it into a region in
+     * this function.
+     */
     for (std::vector<DeclarationInfo>::iterator i = vars_to_classify.begin(),
             e = vars_to_classify.end(); i != e; i++) {
         DeclarationInfo curr = *i;
+        std::map<clang::VarDecl *, StackAlloc *> allocs = curr.get_allocs();
 
         if (is_omp_for_iter_declaration(curr.get_decl())) continue;
+
+        OMPRegion *true_region =
+            ompTree->find_containing_region(curr.get_decl());
 
         bool hoistable = is_hoistable(curr.get_decl(), curr.get_allocs());
         OMPRegion *region;
@@ -655,6 +691,15 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             curr.hoist(stmtToString(curr.get_decl()));
             RemoveText(clang::SourceRange(curr.get_decl()->getLocStart(),
                         curr.get_decl()->getLocEnd()));
+            if (true_region) {
+                for (std::map<clang::VarDecl *, StackAlloc *>::iterator ii =
+                        allocs.begin(), ee = allocs.end(); ii != ee; ii++) {
+                    std::string varname =
+                        ii->second->get_varname_from_mangled_name();
+                    insertions->AppendFirstPrivate(true_region->get_line(),
+                            true_region->get_last_line(), varname);
+                }
+            }
         } else {
             region = ompTree->find_containing_region(curr.get_decl());
         }
@@ -672,6 +717,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
     }
 
     VisitRegion(NULL);
+
+    InsertTextAfterToken(new_stack_calls[curr_func_decl]->getLocEnd(),
+            " ; " + insert_at_front);
 
     vars_in_regions.clear();
     calls_found.clear();

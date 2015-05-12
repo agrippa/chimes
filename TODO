@@ -25,3 +25,4 @@
 6. Add support for dynamically sized stack arrays, eg. int arr[num_threads].
 7. Don't support function-local static variables (splitting variable declaration
    from assignment breaks them).
+8. Don't support directly returning function call results.
