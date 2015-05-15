@@ -6,6 +6,11 @@ from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
                    get_aliases_changed
 
 
+class FunctionInfo(object):
+    def __init__(self, name):
+        self.name = name
+
+
 class GlobalVar(object):
     def __init__(self, name, full_type, type_size_in_bits, is_ptr, is_struct):
         self.name = name
@@ -55,6 +60,18 @@ def parse_64bit_int(s):
         # 2.x separates int and long, so we need to explicitly ask for long
         i = long(s)
     return i
+
+
+def get_functions(func_filename):
+    functions = []
+    fp = open(func_filename, 'r')
+
+    for line in fp:
+        tokens = line.split()
+        functions.append(FunctionInfo(tokens[0]))
+
+    fp.close()
+    return functions
 
 
 def get_module_id_str(module_id_filename):
@@ -182,11 +199,11 @@ def write_constant(c, module_id_str):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 12:
+    if len(sys.argv) != 13:
         print('usage: python module_init.py input-file output-file ' +
               'module-id-file reachable-file globals-file structs-file ' +
               'constants-file stack-var-file call-tree-file lines-file ' +
-              'exits-file')
+              'exits-file func-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
@@ -200,6 +217,7 @@ if __name__ == '__main__':
     call_tree_filename = sys.argv[9]
     lines_filename = sys.argv[10]
     exits_filename = sys.argv[11]
+    func_filename = sys.argv[12]
 
     module_id_str = get_module_id_str(module_id_filename)
     reachable = get_reachable_mappings(reachable_filename)
@@ -210,6 +228,7 @@ if __name__ == '__main__':
     call_tree = get_call_tree(call_tree_filename)
     changed = get_aliases_changed(lines_filename)
     exits = get_exit_info(exits_filename)
+    functions = get_functions(func_filename)
 
     input_file = open(input_filename, 'r')
     output_file = open(output_filename, 'w')
@@ -274,6 +293,12 @@ if __name__ == '__main__':
 
     for c in constants:
         write_constant(c, module_id_str)
+
+    output_file.write('    register_functions(' + str(len(functions)) + ', "' +
+                      input_filename + '"')
+    for f in functions:
+        output_file.write(', "' + f.name + '", &' + f.name)
+    output_file.write(');\n')
 
     output_file.write('    return 0;\n')
     output_file.write('}\n\n')

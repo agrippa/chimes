@@ -495,20 +495,22 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
+extern void register_functions(int nfunctions, const char *module_name, ...);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -530,7 +532,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2507,6 +2509,7 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
 
 static int module_init() {
     init_module(3105055156744228427UL, 18, 11, 4, 0, 2, 3105055156744228427UL + 568UL, 3105055156744228427UL + 586UL, 3105055156744228427UL + 607UL, 3105055156744228427UL + 4919UL, 3105055156744228427UL + 4926UL, 3105055156744228427UL + 4947UL, 3105055156744228427UL + 4925UL, 3105055156744228427UL + 4946UL, 3105055156744228427UL + 608UL, 3105055156744228427UL + 4919UL, 3105055156744228427UL + 567UL, 3105055156744228427UL + 585UL, 3105055156744228427UL + 1UL, 3105055156744228427UL + 63UL, 3105055156744228427UL + 436UL, 3105055156744228427UL + 480UL, 3105055156744228427UL + 247UL, 3105055156744228427UL + 434UL, 3105055156744228427UL + 246UL, 3105055156744228427UL + 433UL, 3105055156744228427UL + 521UL, 3105055156744228427UL + 566UL, 3105055156744228427UL + 67UL, 3105055156744228427UL + 99UL, 3105055156744228427UL + 102UL, 3105055156744228427UL + 245UL, 3105055156744228427UL + 100UL, 3105055156744228427UL + 243UL, 3105055156744228427UL + 435UL, 3105055156744228427UL + 479UL, 3105055156744228427UL + 482UL, 3105055156744228427UL + 520UL, 3105055156744228427UL + 589UL, 3105055156744228427UL + 605UL, 3105055156744228427UL + 105UL, 3105055156744228427UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "sha1", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_nextrand", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_showstate", 0, "rng_init", 3, "sha1_begin", "sha1_end", "sha1_hash", "rng_spawn", 3, "sha1_begin", "sha1_end", "sha1_hash", "sha1_hash", 1, "sha1_compile", "sha1_end", 1, "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 0, "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1", &____alias_loc_id_0, (unsigned)4, 3105055156744228427UL + 1UL, 3105055156744228427UL + 2UL, 3105055156744228427UL + 4UL, 3105055156744228427UL + 5UL, &____alias_loc_id_1, (unsigned)2, 3105055156744228427UL + 67UL, 3105055156744228427UL + 99UL, &____alias_loc_id_2, (unsigned)8, 3105055156744228427UL + 100UL, 3105055156744228427UL + 101UL, 3105055156744228427UL + 102UL, 3105055156744228427UL + 103UL, 3105055156744228427UL + 104UL, 3105055156744228427UL + 105UL, 3105055156744228427UL + 106UL, 3105055156744228427UL + 245UL, &____alias_loc_id_3, (unsigned)6, 3105055156744228427UL + 246UL, 3105055156744228427UL + 247UL, 3105055156744228427UL + 248UL, 3105055156744228427UL + 249UL, 3105055156744228427UL + 433UL, 3105055156744228427UL + 434UL, &____alias_loc_id_4, (unsigned)4, 3105055156744228427UL + 435UL, 3105055156744228427UL + 436UL, 3105055156744228427UL + 437UL, 3105055156744228427UL + 439UL, &____alias_loc_id_5, (unsigned)3, 3105055156744228427UL + 482UL, 3105055156744228427UL + 483UL, 3105055156744228427UL + 484UL, &____alias_loc_id_6, (unsigned)3, 3105055156744228427UL + 521UL, 3105055156744228427UL + 523UL, 3105055156744228427UL + 524UL, &____alias_loc_id_7, (unsigned)2, 3105055156744228427UL + 567UL, 3105055156744228427UL + 568UL, &____alias_loc_id_8, (unsigned)2, 3105055156744228427UL + 589UL, 3105055156744228427UL + 590UL, &____alias_loc_id_9, (unsigned)8, 3105055156744228427UL + 607UL, 3105055156744228427UL + 608UL, 3105055156744228427UL + 609UL, 3105055156744228427UL + 610UL, 3105055156744228427UL + 611UL, 3105055156744228427UL + 612UL, 3105055156744228427UL + 613UL, 3105055156744228427UL + 4919UL, &____alias_loc_id_10, (unsigned)3, 3105055156744228427UL + 4925UL, 3105055156744228427UL + 4926UL, 3105055156744228427UL + 4927UL);
+    register_functions(11, "brg_sha1.c.pre.register.cpp", "rng_init", &rng_init, "sha1_begin", &sha1_begin, "sha1_hash", &sha1_hash, "sha1_end", &sha1_end, "rng_spawn", &rng_spawn, "rng_rand", &rng_rand, "rng_nextrand", &rng_nextrand, "rng_showstate", &rng_showstate, "rng_showtype", &rng_showtype, "sha1_compile", &sha1_compile, "sha1", &sha1);
     return 0;
 }
 

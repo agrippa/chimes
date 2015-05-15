@@ -26,22 +26,38 @@ extern std::string constructMangledName(std::string varname);
 
 CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0),
         blocker_varname_counter(0), parent_stack_depth_varname_counter(0),
-        call_stack_depth_varname_counter(0), region_varname_counter(0) {
-    supported_omp_clauses.insert("private");
-    supported_omp_clauses.insert("firstprivate");
-    supported_omp_clauses.insert("reduction"); // no explicit support required
+        call_stack_depth_varname_counter(0), region_varname_counter(0),
+        disable_varname_counter(0) {
+    std::set<std::string> supported_parallel_clauses;
+    supported_parallel_clauses.insert("private");
+    supported_parallel_clauses.insert("firstprivate");
+    supported_parallel_clauses.insert("reduction"); // no explicit support required
     /*
      * We don't actually support checkpointing inside parallel for loops, but we
      * allow them to exist as long as checkpoint() isn't called inside.
      */
-    supported_omp_clauses.insert("for");
+    supported_parallel_clauses.insert("for");
     // doesn't seem like anything special needs to be done to support this
-    supported_omp_clauses.insert("shared");
+    supported_parallel_clauses.insert("shared");
+    supported_omp_clauses.insert(pair<string, set<string> >("parallel",
+                supported_parallel_clauses));
+
+    std::set<std::string> supported_for_clauses;
+    supported_for_clauses.insert("firstprivate");
+    supported_omp_clauses.insert(pair<string, set<string> >("for",
+                supported_for_clauses));
 
     supported_omp_pragmas.insert("parallel");
     supported_omp_pragmas.insert("for");
     supported_omp_pragmas.insert("critical");
     supported_omp_pragmas.insert("barrier");
+}
+
+std::string CallingAndOMPPass::get_unique_argument_varname() {
+    std::stringstream ss;
+    ss << "____chimes_arg" << arg_counter;
+    arg_counter++;
+    return ss.str();
 }
 
 std::string CallingAndOMPPass::get_unique_parent_stack_depth_varname() {
@@ -79,6 +95,12 @@ std::string CallingAndOMPPass::get_unique_region_varname() {
     return ss.str();
 }
 
+std::string CallingAndOMPPass::get_unique_disable_varname() {
+    std::stringstream ss;
+    ss << "____chimes_disable" << (disable_varname_counter++);
+    return ss.str();
+}
+
 std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations(
         const clang::DeclStmt *d) {
     std::map<clang::VarDecl *, StackAlloc *> allocs;
@@ -102,7 +124,7 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
 
 std::string CallingAndOMPPass::constructStartingRegistrations(
         std::vector<DeclarationInfo> *vars, unsigned n_hoisted,
-        std::string *transition_str_ptr) {
+        std::string *transition_str_ptr, bool has_callbacks) {
     std::stringstream acc_args;
     std::stringstream acc_decls;
     std::stringstream acc_conds;
@@ -173,7 +195,7 @@ std::string CallingAndOMPPass::constructStartingRegistrations(
             }
         }
 
-        if (n_hoisted == vars->size()) {
+        if (n_hoisted == vars->size() && !has_callbacks) {
             complete << " if (____chimes_replaying) { " <<
                 *transition_str_ptr << " } ";
         } else {
@@ -292,6 +314,10 @@ static bool is_hoistable(const clang::DeclStmt *d,
 
 // region may be NULL
 void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
+    if (region && !region->resumable()) {
+        return;
+    }
+
     std::vector<OMPRegion *> children = ompTree->get_all_children(region);
     std::vector<ContainedFunctionCall> *calls = ompTree->get_contained_calls(
             region);
@@ -302,7 +328,9 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             e = children.end(); i != e; i++) {
         OMPRegion *region = *i;
         int lbl = region->get_lbl();
-        ss << "case(" << lbl << "): { goto call_lbl_" << lbl << "; } ";
+        if (region->resumable()) {
+            ss << "case(" << lbl << "): { goto call_lbl_" << lbl << "; } ";
+        }
     }
     for (std::vector<ContainedFunctionCall>::iterator i = calls->begin(),
             e = calls->end(); i != e; i++) {
@@ -341,7 +369,8 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
                 region->get_is_critical())) {
         InsertTextAfterToken(toInsertAt,
                 " ; if (____chimes_replaying) { chimes_error(); } ");
-    } else if (vars_in_regions.find(region) != vars_in_regions.end()) {
+    } else if (vars_in_regions.find(region) != vars_in_regions.end() ||
+            calls_to_register_callbacks.size() > 0) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
         std::string first_label;
         std::string entry_str;
@@ -355,7 +384,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
 
         if (n_hoisted > 0) {
             entry_str = constructStartingRegistrations(vars, n_hoisted,
-                    &transition_str);
+                    &transition_str, calls_to_register_callbacks.size() > 0);
         }
 
         for (unsigned i = n_hoisted; i < vars->size(); i++) {
@@ -365,13 +394,42 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             std::map<clang::VarDecl *, StackAlloc *> allocs = curr.get_allocs();
 
             std::string *force = NULL;
-            if (i == vars->size() - 1) force = &transition_str;
+            if (i == vars->size() - 1 &&
+                    calls_to_register_callbacks.size() == 0) {
+                force = &transition_str;
+            }
 
             if (i == 0) {
                 first_label = handleDecl(d, allocs, force);
             } else {
                 handleDecl(d, allocs, force);
             }
+        }
+
+        for (unsigned i = 0; i < calls_to_register_callbacks.size(); i++) {
+            const CallExpr *c = calls_to_register_callbacks[i];
+            int lbl = getNextRegisterLabel();
+            std::stringstream label_ss;
+            label_ss << " lbl_" << lbl;
+
+            std::stringstream ss;
+            ss << " " << label_ss.str() << ": ";
+
+            if (first_label.size() == 0) {
+                first_label = label_ss.str();
+            }
+
+            std::stringstream ss2;
+            if (i == calls_to_register_callbacks.size() - 1) {
+                ss2 << "; if (____chimes_replaying) { " << transition_str <<
+                    " } ";
+            } else {
+                ss2 << "; if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
+                    "; } ";
+            }
+
+            InsertTextBefore(c->getLocStart(), ss.str());
+            InsertTextAfterToken(c->getLocEnd(), ss2.str());
         }
 
         if (first_is_hoisted) {
@@ -439,6 +497,159 @@ bool CallingAndOMPPass::is_inside_while_cond(const clang::Stmt *stmt) {
     }
 }
 
+void CallingAndOMPPass::verify_supported_clauses(std::string pragma_name,
+        map<string, vector<string> > *clauses) {
+    set<string> supported;
+    if (supported_omp_clauses.find(pragma_name) !=
+            supported_omp_clauses.end()) {
+        supported = supported_omp_clauses[pragma_name];
+    }
+
+    for(map<string, vector<string> >::iterator clause_i = clauses->begin(),
+            clause_e = clauses->end(); clause_i != clause_e; clause_i++) {
+        if (supported.find(clause_i->first) == supported.end()) {
+            llvm::errs() << "Unsupported OMP clause " << clause_i->first <<
+                " for pragma " << pragma_name << "\n";
+            assert(false);
+        }
+    }
+}
+
+std::set<std::string> CallingAndOMPPass::get_private_vars(map<string,
+        vector<string> > *clauses) {
+    std::set<std::string> private_vars;
+
+    if (clauses->find("private") != clauses->end()) {
+        std::vector<std::string> args = clauses->at("private");
+        for (std::vector<std::string>::iterator argi = args.begin(),
+                arge = args.end(); argi != arge; argi++) {
+            private_vars.insert(*argi);
+        }
+    }
+    if (clauses->find("firstprivate") != clauses->end()) {
+        std::vector<std::string> args = clauses->at("firstprivate");
+        for (std::vector<std::string>::iterator argi = args.begin(),
+                arge = args.end(); argi != arge; argi++) {
+            private_vars.insert(*argi);
+        }
+    }
+
+    /*
+     * This block of code finds the stack variables that will be hoisted out of
+     * OMP regions and ensures that they are passed to the
+     * register_thread_local_stack_vars call made below.
+     */
+    for (std::vector<DeclarationInfo>::iterator i = vars_to_classify.begin(),
+            e = vars_to_classify.end(); i != e; i++) {
+        DeclarationInfo curr = *i;
+        std::map<clang::VarDecl *, StackAlloc *> allocs =
+            curr.get_allocs();
+
+        if (is_omp_for_iter_declaration(curr.get_decl())) continue;
+
+        OMPRegion *true_region =
+            ompTree->find_containing_region(curr.get_decl());
+
+        bool hoistable = is_hoistable(curr.get_decl(), allocs);
+        /*
+         * If is hoistable, and is hoisted out of an OMP region, then we need to
+         * register this variable as a thread local variable when we enter that
+         * OMP region.
+         */
+        if (hoistable && true_region) {
+            for (std::map<clang::VarDecl *, StackAlloc *>::iterator ii =
+                    allocs.begin(), ee = allocs.end(); ii != ee; ii++) {
+                std::string varname =
+                    ii->second->get_varname_from_mangled_name();
+                private_vars.insert(varname);
+            }
+        }
+    }
+
+    return (private_vars);
+}
+
+std::string CallingAndOMPPass::get_region_setup_code(
+        std::set<std::string> private_vars, bool is_parallel_for,
+        std::string disable_varname, std::string blocker_varname,
+        std::string parent_thread_varname, std::string stack_depth_varname,
+        std::string region_id_varname, std::string call_depth_varname,
+        OMPRegion *region, OpenMPPragma pragma) {
+    /*
+     * This block of code generates the code that must be run
+     * immediately prior to entering a parallel OMP region.
+     */
+    stringstream entering_ss;
+    // Call label to jump to when resuming inside this parallel region
+    entering_ss << "; " << " { call_lbl_" << region->get_lbl() << ": ";
+    if (is_parallel_for) {
+        entering_ss << " bool " + disable_varname +
+            " = disable_current_thread(); ";
+    }
+    entering_ss << "unsigned " << stack_depth_varname <<
+        " = get_parent_vars_stack_depth(); ";
+    entering_ss << "unsigned " << call_depth_varname <<
+        " = get_thread_stack_depth(); ";
+    // Unique region ID
+    entering_ss << "size_t " << region_id_varname << "; ";
+    entering_ss << "unsigned " << parent_thread_varname <<
+        " = entering_omp_parallel(" << region->get_lbl() << ", &" <<
+        region_id_varname << ", " << private_vars.size();
+    for (std::set<std::string>::iterator varsi = private_vars.begin(),
+            varse = private_vars.end(); varsi != varse; varsi++) {
+        entering_ss << ", &" << *varsi;
+    }
+    entering_ss << "); ";
+
+    if (is_parallel_for) {
+        entering_ss << "int " << blocker_varname << " = 1; ";
+        insertions->AppendFirstPrivate(pragma.get_line(),
+                pragma.get_last_line(), blocker_varname);
+    }
+
+    return (entering_ss.str());
+}
+
+std::string CallingAndOMPPass::get_region_interior_code(bool is_parallel_for,
+        std::string blocker_varname, std::string parent_thread_varname,
+        std::string stack_depth_varname, std::string region_id_varname,
+        std::set<std::string> private_vars) {
+    std::stringstream register_ss;
+    if (is_parallel_for) {
+        register_ss << "if (" << blocker_varname << ") {";
+    }
+    register_ss << " " <<
+        "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
+        parent_thread_varname << ", " << "LIBCHIMES_NUM_THREADS(), " <<
+        stack_depth_varname << ", " << region_id_varname << ", " <<
+        private_vars.size();
+    for (std::set<std::string>::iterator varsi = private_vars.begin(),
+            varse = private_vars.end(); varsi != varse; varsi++) {
+        register_ss << ", &" << *varsi;
+    }
+    register_ss << "); ";
+    if (is_parallel_for) {
+        register_ss << blocker_varname << " = 0; }";
+    }
+
+    return (register_ss.str());
+}
+
+std::string CallingAndOMPPass::get_region_cleanup_code(bool is_parallel_for,
+        std::string disable_varname, std::string call_depth_varname,
+        std::string region_id_varname) {
+    std::stringstream leaving_stream;
+    leaving_stream << " leaving_omp_parallel(" << call_depth_varname <<
+        ", " << region_id_varname << "); ";
+    if (is_parallel_for) {
+        leaving_stream << " reenable_current_thread(" << disable_varname <<
+                "); ";
+    }
+    leaving_stream << " } ";
+
+    return (leaving_stream.str());
+}
+
 void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
@@ -473,24 +684,63 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
      */
     insert_at_front.clear();
 
-    // For each OMP region, collect insertions
+    // First build the tree of nested OMP regions
     for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
             e = omp_pragmas->end(); i != e; i++) {
         OpenMPPragma pragma = *i;
         std::string pragma_name = pragma.get_pragma_name();
         std::map<std::string, std::vector<std::string> > clauses =
             pragma.get_clauses();
-        bool is_parallel_for = (clauses.find("for") != clauses.end() ||
-                pragma_name == "for");
+        bool is_parallel_for = (pragma_name == "parallel" &&
+                clauses.find("for") != clauses.end());
+        bool is_omp_for = (pragma_name == "for");
         bool is_critical = (pragma_name == "critical");
         bool is_barrier = (pragma_name == "barrier");
-        bool spawns_threads = (pragma_name == "parallel");
+
         if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
             llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
             assert(false);
         }
 
         if (is_barrier) continue;
+        // if (pragma_name != "parallel" || is_parallel_for) continue;
+
+        assert(successors.find(pragma.get_line()) != successors.end());
+        const clang::Stmt *post = successors[pragma.get_line()];
+
+        int lbl = getNextFunctionLabel();
+
+        OMPRegion *region = new OMPRegion(pragma.get_line(),
+                pragma.get_last_line(), post->getLocStart(), post->getLocEnd(),
+                pragma_name, clauses, lbl, is_parallel_for, is_omp_for, post,
+                is_critical);
+        ompTree->add_region(region);
+    }
+
+    // For each OMP region, collect insertions
+    for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
+            e = omp_pragmas->end(); i != e; i++) {
+        OpenMPPragma pragma = *i;
+
+        std::string pragma_name = pragma.get_pragma_name();
+        std::map<std::string, std::vector<std::string> > clauses =
+            pragma.get_clauses();
+        bool is_barrier = (pragma_name == "barrier");
+        bool is_parallel = (pragma_name == "parallel");
+        bool is_for = (pragma_name == "for");
+        bool is_critical = (pragma_name == "critical");
+        if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
+            llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
+            assert(false);
+        }
+
+        OMPRegion *region = ompTree->find_region_for_line(pragma.get_line());
+        if (!region) continue;
+
+        verify_supported_clauses(pragma_name, &clauses);
+
+        bool is_parallel_for = region->is_parallel_for();
+        bool is_omp_for = region->is_omp_for();
 
         assert(predecessors.find(pragma.get_line()) != predecessors.end());
         assert(successors.find(pragma.get_line()) != successors.end());
@@ -522,108 +772,66 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         const clang::Stmt *post = successors[pragma.get_line()];
         clang::SourceLocation post_loc = post->getLocEnd();
         clang::SourceLocation inner_loc = post->getLocStart();
-        if (is_parallel_for) {
+        if (is_parallel_for || is_omp_for) {
             const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(
                     post);
             assert(for_stmt);
             inner_loc = for_stmt->getBody()->getLocStart();
         }
 
-        std::set<std::string> private_vars;
+        if (is_parallel) {
+            std::string disable_varname = get_unique_disable_varname();
+            string blocker_varname = get_unique_blocker_varname();
+            string parent_thread_varname = get_chimes_parent_thread_varname();
+            string stack_depth_varname =
+                get_unique_parent_stack_depth_varname();
+            string region_id_varname = get_unique_region_varname();
+            string call_depth_varname = get_unique_call_stack_depth_varname();
 
-        for(map<string, vector<string> >::iterator clause_i = clauses.begin(),
-                clause_e = clauses.end(); clause_i != clause_e; clause_i++) {
-            if (supported_omp_clauses.find(clause_i->first) ==
-                    supported_omp_clauses.end()) {
-                llvm::errs() << "Unsupported OMP clause " << clause_i->first <<
-                    "\n";
-                assert(false);
+            std::set<std::string> private_vars = get_private_vars(&clauses);
+
+            std::string region_entry_code = get_region_setup_code(private_vars,
+                    is_parallel_for, disable_varname, blocker_varname,
+                    parent_thread_varname, stack_depth_varname,
+                    region_id_varname, call_depth_varname, region, pragma);
+
+            assert(new_stack_calls.find(curr_func_decl) !=
+                    new_stack_calls.end());
+            if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
+                insert_at_front = region_entry_code;
+            } else {
+                InsertTextAfterToken(pre_loc, region_entry_code);
             }
-        }
 
-        if (clauses.find("private") != clauses.end()) {
-            std::vector<std::string> args = clauses["private"];
-            for (std::vector<std::string>::iterator argi = args.begin(),
-                    arge = args.end(); argi != arge; argi++) {
-                private_vars.insert(*argi);
+            std::string interior = get_region_interior_code(is_parallel_for,
+                    blocker_varname, parent_thread_varname,
+                    stack_depth_varname, region_id_varname, private_vars);
+            InsertTextAfterToken(inner_loc, interior);
+
+            std::string leaving = get_region_cleanup_code(is_parallel_for,
+                    disable_varname, call_depth_varname, region_id_varname);
+            InsertTextAfterToken(post_loc, leaving);
+
+        } else if (is_critical || is_for) {
+            // Disable any threads inside
+            std::string disable_varname = get_unique_disable_varname();
+            std::string pre = " bool " + disable_varname +
+                " = disable_current_thread(); ";
+            std::string post = " reenable_current_thread(" + disable_varname +
+                "); ";
+
+            assert(new_stack_calls.find(curr_func_decl) !=
+                    new_stack_calls.end());
+            if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
+                insert_at_front = pre;
+            } else {
+                InsertTextAfterToken(pre_loc, pre);
             }
-        }
-        if (clauses.find("firstprivate") != clauses.end()) {
-            std::vector<std::string> args = clauses["firstprivate"];
-            for (std::vector<std::string>::iterator argi = args.begin(),
-                    arge = args.end(); argi != arge; argi++) {
-                private_vars.insert(*argi);
-            }
-        }
 
-        int lbl = getNextFunctionLabel();
-
-        OMPRegion *region = new OMPRegion(pragma.get_line(), pragma.get_last_line(),
-                post->getLocStart(), post->getLocEnd(), pragma_name, clauses,
-                lbl, is_parallel_for, post, is_critical);
-        ompTree->add_region(region);
-
-        //TODO kinda hacky....
-        std::string parent_thread_varname = get_chimes_parent_thread_varname();
-        std::string stack_depth_varname = get_unique_parent_stack_depth_varname();
-        std::string call_depth_varname = get_unique_call_stack_depth_varname();
-        std::string region_id_varname = get_unique_region_varname();
-
-        std::stringstream entering_ss;
-        entering_ss << "; " << " { call_lbl_" << lbl << ": unsigned " <<
-            stack_depth_varname << " = get_parent_vars_stack_depth(); " <<
-            "unsigned " << call_depth_varname << " = get_thread_stack_depth(); " <<
-            "size_t " << region_id_varname << "; " << 
-            "unsigned " << parent_thread_varname <<
-            " = entering_omp_parallel(" << lbl << ", &" << region_id_varname <<
-            ", " << private_vars.size();
-        for (std::set<std::string>::iterator varsi = private_vars.begin(),
-                varse = private_vars.end(); varsi != varse; varsi++) {
-            entering_ss << ", &" << *varsi;
-        }
-        entering_ss << "); ";
-        std::string blocker_varname;
-        if (is_parallel_for) {
-            blocker_varname = get_unique_blocker_varname();
-            entering_ss << "int " << blocker_varname << " = 1; ";
-
-            insertions->AppendFirstPrivate(pragma.get_line(),
-                    pragma.get_last_line(), blocker_varname);
-        }
-
-        assert(new_stack_calls.find(curr_func_decl) != new_stack_calls.end());
-        if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
-            insert_at_front = entering_ss.str();
+            InsertTextAfterToken(post_loc, post);
         } else {
-            InsertTextAfterToken(pre_loc, entering_ss.str());
+            assert(false);
         }
-
-        std::stringstream register_ss;
-        if (is_parallel_for) {
-            register_ss << "if (" << blocker_varname << ") {";
-        }
-        register_ss << " " <<
-            "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-            parent_thread_varname << ", " << "LIBCHIMES_NUM_THREADS(), " <<
-            (spawns_threads ? "true" : "false") << ", " <<
-            (is_parallel_for ? "true" : "false") << ", " <<
-            (is_critical ? "true" : "false") << ", " <<
-            stack_depth_varname << ", " << region_id_varname << ", " <<
-            private_vars.size();
-        for (std::set<std::string>::iterator varsi = private_vars.begin(),
-                varse = private_vars.end(); varsi != varse; varsi++) {
-            register_ss << ", &" << *varsi;
-        }
-        register_ss << "); ";
-        if (is_parallel_for) {
-            register_ss << blocker_varname << " = 0; }";
-        }
-        InsertTextAfterToken(inner_loc, register_ss.str());
-
-        std::stringstream leaving_stream;
-        leaving_stream << " leaving_omp_parallel(" << call_depth_varname <<
-            ", " << region_id_varname << "); } ";
-        InsertTextAfterToken(post_loc, leaving_stream.str());
     }
 
     // For each call made, create its text insertions
@@ -637,35 +845,70 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             CallLocation loc = *ii;
 
             if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
-                ompTree->add_function_call(loc.get_call(), loc.get_label());
+                if (ompTree->add_function_call(loc.get_call(), loc.get_label())) {
 
-                AliasesPassedToCallSite callsite =
-                    insertions->findFirstMatchingCallsite(i->first,
-                        loc.get_funcname());
-
-                bool may_cause_checkpoint = true;
-                std::string func_symbol;
-                if (loc.get_funcname() == "anon") {
-                    func_symbol = stmtToString(loc.get_call()->getCallee());
-                } else {
-                    func_symbol = "&" + loc.get_funcname();
-                    may_cause_checkpoint = insertions->may_cause_checkpoint(
+                    AliasesPassedToCallSite callsite =
+                        insertions->findFirstMatchingCallsite(i->first,
                             loc.get_funcname());
-                }
 
-                std::stringstream ss;
-                if (may_cause_checkpoint) {
-                    ss << " call_lbl_" << loc.get_label() << ": ";
-                }
-                ss << " calling((void*)" <<
-                    func_symbol << ", " << loc.get_label() << ", " <<
-                    callsite.get_return_alias() << "UL, " << callsite.nparams();
-                for (unsigned a = 0; a < callsite.nparams(); a++) {
-                    ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
-                }
-                ss << "); ";
+                    bool may_cause_checkpoint = true;
+                    std::string func_symbol;
+                    if (loc.get_funcname() == "anon") {
+                        func_symbol = stmtToString(loc.get_call()->getCallee());
+                    } else {
+                        func_symbol = "&" + loc.get_funcname();
+                        may_cause_checkpoint = insertions->may_cause_checkpoint(
+                                loc.get_funcname());
+                    }
 
-                InsertAtFront(loc.get_call(), ss.str());
+                    std::stringstream ss;
+                    if (may_cause_checkpoint) {
+                        ss << " call_lbl_" << loc.get_label() << ": ";
+                    }
+
+                    std::vector<string> arg_varnames;
+                    for (int i = 0; i < loc.get_call()->getNumArgs(); i++) {
+                        std::string varname = get_unique_argument_varname();
+                        const Expr *arg = loc.get_call()->getArg(i);
+                        std::string type_str = arg->getType().getAsString();
+                        if (type_str.find("(*)") != std::string::npos) {
+                            /*
+                             * If one of the arguments is a multi-dimensional stack
+                             * array, we need to special case the declaration of its
+                             * copy.
+                             */
+                            assert(type_str.find("(*)") == type_str.rfind("(*)"));
+                            size_t index = type_str.find("(*)");
+                            type_str.insert(index + 2, varname);
+                            ss << " " << type_str << ";";
+                        } else {
+                            ss << " " << arg->getType().getAsString() << " " <<
+                                varname << "; ";
+                        }
+                        arg_varnames.push_back(varname);
+                    }
+
+                    ss << " if (!____chimes_replaying) { ";
+                    for (int i = 0; i < loc.get_call()->getNumArgs(); i++) {
+                        const Expr *arg = loc.get_call()->getArg(i);
+                        ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
+                            "); ";
+                        ReplaceText(clang::SourceRange(arg->getLocStart(),
+                                    arg->getLocEnd()), arg_varnames[i]);
+                    }
+                    ss << " } ";
+
+
+                    ss << " calling((void*)" <<
+                        func_symbol << ", " << loc.get_label() << ", " <<
+                        callsite.get_return_alias() << "UL, " << callsite.nparams();
+                    for (unsigned a = 0; a < callsite.nparams(); a++) {
+                        ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
+                    }
+                    ss << "); ";
+
+                    InsertAtFront(loc.get_call(), ss.str());
+                }
             }
         }
     }
@@ -716,6 +959,18 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         }
     }
 
+    for (std::vector<const CallExpr *>::iterator i =
+            calls_to_register_callbacks.begin(), e =
+            calls_to_register_callbacks.end(); i != e; i++) {
+        const CallExpr *call = *i;
+        OMPRegion *region = ompTree->find_containing_region(call);
+        if (region != NULL) {
+            fprintf(stderr, "Calls to register_custom_init_handler must be in "
+                    "single-threaded regions.\n");
+            exit(1);
+        }
+    }
+
     VisitRegion(NULL);
 
     InsertTextAfterToken(new_stack_calls[curr_func_decl]->getLocEnd(),
@@ -723,7 +978,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
     vars_in_regions.clear();
     calls_found.clear();
+    calls_passed_to_other_calls.clear();
     vars_to_classify.clear();
+    calls_to_register_callbacks.clear();
 }
 
 void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
@@ -792,37 +1049,51 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                 callee_name = call->getDirectCallee()->getNameAsString();
             }
 
-            /*
-             * This means we can't support checkpoints from inside
-             * constructors.
-             */
-            if (!clang::isa<const clang::CXXConstructExpr>(call)) {
-
-                clang::PresumedLoc presumed = SM->getPresumedLoc(start);
-                int line_no = presumed.getLine();
-
-                if (calls_found.find(line_no) == calls_found.end()) {
-                    calls_found[line_no] =
-                        std::vector<CallLocation>();
+            if (callee_name == "register_custom_init_handler") {
+                calls_to_register_callbacks.push_back(call);
+            } else {
+                for (unsigned i = 0; i < call->getNumArgs(); i++) {
+                    if (const clang::CallExpr *arg =
+                            clang::dyn_cast<const clang::CallExpr>(
+                                call->getArg(i))) {
+                        calls_passed_to_other_calls.insert(arg);
+                    }
                 }
-                int lbl;
-                if (callee_name == "anon" ||
-                        insertions->may_cause_checkpoint(callee_name)) {
-                    lbl = getNextFunctionLabel();
-                } else {
-                    lbl = -1;
-                }
-                calls_found[line_no].push_back(CallLocation(
-                            callee_name, presumed.getColumn(), lbl, call));
-            }
 
-            if (callee_name == "new_stack") {
-                if (new_stack_calls.find(curr_func_decl) !=
-                        new_stack_calls.end()) {
-                    llvm::errs() << curr_func << "\n";
-                    assert(false);
+                /*
+                 * This means we can't support checkpoints from inside
+                 * constructors.
+                 */
+                if (calls_passed_to_other_calls.find(call) ==
+                        calls_passed_to_other_calls.end() &&
+                        !clang::isa<const clang::CXXConstructExpr>(call)) {
+
+                    clang::PresumedLoc presumed = SM->getPresumedLoc(start);
+                    int line_no = presumed.getLine();
+
+                    if (calls_found.find(line_no) == calls_found.end()) {
+                        calls_found[line_no] =
+                            std::vector<CallLocation>();
+                    }
+                    int lbl;
+                    if (callee_name == "anon" ||
+                            insertions->may_cause_checkpoint(callee_name)) {
+                        lbl = getNextFunctionLabel();
+                    } else {
+                        lbl = -1;
+                    }
+                    calls_found[line_no].push_back(CallLocation(
+                                callee_name, presumed.getColumn(), lbl, call));
                 }
-                new_stack_calls[curr_func_decl] = call;
+
+                if (callee_name == "new_stack") {
+                    if (new_stack_calls.find(curr_func_decl) !=
+                            new_stack_calls.end()) {
+                        llvm::errs() << curr_func << "\n";
+                        assert(false);
+                    }
+                    new_stack_calls[curr_func_decl] = call;
+                }
             }
         }
 

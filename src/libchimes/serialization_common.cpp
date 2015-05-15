@@ -157,6 +157,10 @@ stack_var *deserialize_var(unsigned char **ptr_to_iter) {
     void *address;
     memcpy(&address, address_ptr, sizeof(address));
 
+#ifdef VERBOSE
+    fprintf(stderr, "  Address: %p\n", address);
+#endif
+
     size_t size;
     unsigned char *size_ptr = address_ptr + sizeof(address);
     memcpy(&size, size_ptr, sizeof(size));

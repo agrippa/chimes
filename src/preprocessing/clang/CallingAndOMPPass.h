@@ -70,10 +70,12 @@ public:
 private:
     std::map<clang::VarDecl *, StackAlloc *> hasValidDeclarations(
             const clang::DeclStmt *d);
+    std::set<const clang::CallExpr *> calls_passed_to_other_calls;
     std::map<int, std::vector<CallLocation>> calls_found;
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
+    std::vector<const CallExpr *> calls_to_register_callbacks;
     std::string insert_at_front;
 
     std::string get_chimes_parent_thread_varname();
@@ -83,6 +85,8 @@ private:
     std::string get_unique_parent_stack_depth_varname();
     std::string get_unique_call_stack_depth_varname();
     std::string get_unique_region_varname();
+    std::string get_unique_argument_varname();
+    std::string get_unique_disable_varname();
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is
@@ -97,16 +101,36 @@ private:
             std::string *force);
     std::string constructStartingRegistrations(
             std::vector<DeclarationInfo> *vars, unsigned n_hoisted,
-            std::string *transition_str_ptr);
+            std::string *transition_str_ptr, bool has_callbacks);
     void VisitRegion(OMPRegion *region);
+    void verify_supported_clauses(std::string pragma_name,
+            std::map<std::string, std::vector<std::string> > *clauses);
 
-    std::set<std::string> supported_omp_clauses;
+    std::set<std::string> get_private_vars(std::map<std::string,
+            std::vector<std::string> > *clauses);
+    std::string get_region_setup_code(std::set<std::string> private_vars,
+            bool is_parallel_for, std::string disable_varname,
+            std::string blocker_varname, std::string parent_thread_varname,
+            std::string stack_depth_varname, std::string region_id_varname,
+            std::string call_depth_varname, OMPRegion *region,
+            OpenMPPragma pragma);
+    std::string get_region_interior_code(bool is_parallel_for,
+            std::string blocker_varname, std::string parent_thread_varname,
+            std::string stack_depth_varname, std::string region_id_varname,
+            std::set<std::string> private_vars);
+    std::string get_region_cleanup_code(bool is_parallel_for,
+            std::string disable_varname, std::string call_depth_varname,
+            std::string region_id_varname);
+
+    std::map<std::string, std::set<std::string> > supported_omp_clauses;
     std::set<std::string> supported_omp_pragmas;
     int chimes_parent_thread_counter;
     int blocker_varname_counter;
     int parent_stack_depth_varname_counter;
     int call_stack_depth_varname_counter;
     int region_varname_counter;
+    int disable_varname_counter;
+    int arg_counter;
 };
 
 #endif

@@ -88,13 +88,40 @@ OMPRegion *OMPTree::find_containing_region(const clang::Stmt *d) {
     return NULL;
 }
 
-void OMPTree::add_function_call(const clang::CallExpr *call, int lbl) {
+OMPRegion *OMPTree::find_region_for_line(int line) {
+    std::vector<OMPRegion *> todo;
+
+    for (std::vector<OMPRegion *>::iterator i = leaves.begin(),
+            e = leaves.end(); i != e; i++) {
+        todo.push_back(*i);
+    }
+
+    while (todo.size() > 0) {
+        std::vector<OMPRegion *>::iterator front = todo.begin();
+        OMPRegion *region = *front;
+        todo.erase(front);
+
+        if (region->get_line() == line) {
+            return region;
+        }
+
+        if (region->get_parent() != NULL) todo.push_back(region->get_parent());
+    }
+    return NULL;
+}
+
+bool OMPTree::add_function_call(const clang::CallExpr *call, int lbl) {
     OMPRegion *region = find_containing_region(call);
+
+    if (region != NULL && !region->resumable()) {
+        return false;
+    }
 
     if (calls_in_regions.find(region) == calls_in_regions.end()) {
         calls_in_regions[region] = new std::vector<ContainedFunctionCall>();
     }
     calls_in_regions[region]->push_back(ContainedFunctionCall(call, lbl));
+    return true;
 }
 
 std::string OMPTree::str() {

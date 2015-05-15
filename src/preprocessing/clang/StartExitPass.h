@@ -24,6 +24,12 @@ public:
 
     std::string constructFunctionEndingStmts(bool inserting_rm,
             bool conditional_management);
+
+    std::string get_unique_disable_varname();
+
+private:
+    int count_disable_variables = 0;
+    std::string *current_disable_varname;
 };
 
 #endif
