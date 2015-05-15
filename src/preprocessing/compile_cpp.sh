@@ -189,6 +189,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
            ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF} ${DEFINES}
 
+    echo $OPT -basicaa -load $LLVM_LIB -play < \
+           ${BITCODE_FILE}
     echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
     cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
            ${BITCODE_FILE} &>${ANALYSIS_LOG_FILE} > $TMP_OBJ_FILE
@@ -211,6 +213,27 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
         ${INFO_FILE_PREFIX}.exit.info
     mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
+
+    echo     ${TRANSFORM} \
+            -l ${INFO_FILE_PREFIX}.lines.info \
+            -s ${INFO_FILE_PREFIX}.struct.info \
+            -a ${INFO_FILE_PREFIX}.stack.info \
+            -i ${INPUT} \
+            -m ${INFO_FILE_PREFIX}.heap.info \
+            -d ${INFO_FILE_PREFIX}.diag.info \
+            -f ${INFO_FILE_PREFIX}.func.info \
+            -k ${INFO_FILE_PREFIX}.call.info \
+            -x ${INFO_FILE_PREFIX}.exit.info \
+            -r ${INFO_FILE_PREFIX}.reachable.info \
+            -o ${INFO_FILE_PREFIX}.module.info \
+            -w ${WORK_DIR} \
+            -c true \
+            -t ${INFO_FILE_PREFIX}.omp.info \
+            -v ${INFO_FILE_PREFIX}.firstprivate.info \
+            -b ${INFO_FILE_PREFIX}.tree.info \
+            ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
+
 
     ${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \
@@ -244,16 +267,17 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
         ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
-        ${INFO_FILE_PREFIX}.exit.info
+        ${INFO_FILE_PREFIX}.exit.info ${INFO_FILE_PREFIX}.func.info
 
     echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
     cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \
-        ${INFO_FILE_PREFIX}.firstprivate.info > ${FINAL_FILE}.tmp &&
-        mv ${FINAL_FILE}.tmp ${FINAL_FILE}
+        ${INFO_FILE_PREFIX}.firstprivate.info > ${FINAL_FILE}.tmp
+    mv ${WORK_DIR}/${FINAL_FILE}.tmp ${WORK_DIR}/${FINAL_FILE}
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \
-        -o ${FINAL_FILE}.post && mv ${FINAL_FILE}.post ${FINAL_FILE}
+        -o ${FINAL_FILE}.post
+    mv ${WORK_DIR}/${FINAL_FILE}.post ${WORK_DIR}/${FINAL_FILE}
 
     FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
     OBJ_FILE=${FINAL_FILE}.o

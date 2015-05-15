@@ -96,7 +96,7 @@ double shiftDepth = 0.5;
 int computeGranularity = 1;
 
 /* display parameters */
-int debug    = 0;
+int debug    = 255;
 int verbose  = 1;
 
 

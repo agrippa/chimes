@@ -25,7 +25,7 @@
 
 using namespace llvm;
 
-// #define VERBOSE
+#define VERBOSE
 
 namespace {
 
@@ -761,6 +761,10 @@ void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
         if (F != NULL && !F->empty()) {
             std::string demangled = demangledFunctionName(F->getName().str());
 
+            // Special, inserted functions that we don't care about
+            if (demangled == "__cxx_global_var_init" ||
+                    demangled.find("_GLOBAL__sub") == 0) continue;
+
             demangled = removeTemplatedMangling(demangled);
             fprintf(fp, "%s", demangled.c_str());
 
@@ -1341,6 +1345,14 @@ static std::string DType_to_string(DIType curr, int nesting,
         DITypeIdentifierMap &TypeIdentifierMap) {
     assert(curr.isType());
 
+#ifdef VERBOSE
+    for (int i = 0; i < nesting; i++) llvm::errs() << "  ";
+    llvm::errs() << "DType_to_string: \"" << curr.getName().str() <<
+        "\" (basic? " << curr.isBasicType() << ", composite? " <<
+        curr.isCompositeType() << ", derived? " << curr.isDerivedType() <<
+        ", tag=" << curr.getTag() << "\n";
+#endif
+
     if (curr.isBasicType()) {
         return curr.getName().str();
     } else if (curr.isCompositeType()) {
@@ -1369,7 +1381,11 @@ static std::string DType_to_string(DIType curr, int nesting,
                 return "";
             }
             case (dwarf::DW_TAG_structure_type): {
-                return "%struct." + composite.getName().str();
+                if (composite.getName().str().size() == 0) {
+                    return "";
+                } else {
+                    return "%struct." + composite.getName().str();
+                }
             }
             case (dwarf::DW_TAG_union_type): {
                 assert(false);
@@ -1396,9 +1412,23 @@ static std::string DType_to_string(DIType curr, int nesting,
         if (from.isType()) {
             child = DType_to_string(from, nesting + 1,
                     TypeIdentifierMap);
+            if (child.size() == 0) {
+                switch (from.getTag()) {
+                    case (dwarf::DW_TAG_subroutine_type):
+                        child = "";
+                        break;
+                    case (dwarf::DW_TAG_structure_type):
+                        child = "%struct." + curr.getName().str();
+                        break;
+                    default:
+                        fprintf(stderr, "Unsupported tag=%d\n", from.getTag());
+                        assert(false);
+                }
+            }
         } else {
             child = "void";
         }
+
         if (curr.getTag() == dwarf::DW_TAG_pointer_type) {
             return (child + "*");
         } else {
@@ -1443,6 +1473,10 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
             }
             std::vector<StructFieldInfo> fields;
 
+#ifdef VERBOSE
+            llvm::errs() << "Looking for fields in " << struct_name << "\n";
+#endif
+
             for (unsigned int f = 0; f < fields_defs.getNumElements(); f++) {
                 DIDescriptor field = fields_defs.getElement(f);
                 if (field.getTag() == dwarf::DW_TAG_member) {
@@ -1458,9 +1492,17 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
                     } else {
                         assert(di_field.isDerivedType());
                         DIDerivedType derived(di_field);
+#ifdef VERBOSE
+                        llvm::errs() << "Field " << fieldname << "\n";
+#endif
 
-                        DIType from = derived.getTypeDerivedFrom().resolve(TypeIdentifierMap);
-                        std::string type = DType_to_string(from, 1, TypeIdentifierMap);
+                        DIType from = derived.getTypeDerivedFrom().resolve(
+                                TypeIdentifierMap);
+                        std::string type = DType_to_string(from, 1,
+                                TypeIdentifierMap);
+#ifdef VERBOSE
+                        llvm::errs() << "  Type: " << type << "\n";
+#endif
                         fields.push_back(StructFieldInfo(fieldname, type));
                     }
                 }

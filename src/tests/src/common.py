@@ -704,6 +704,14 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     start_time = time.time()
     total_checkpoints = len(chimes_files)
     completed_checkpoints = 0
+
+    if config.verbose:
+        sys.stderr.write('Test ' + test.name + ' produced ' +
+                         str(len(chimes_files)) +
+                         ' checkpoint files initially:\n')
+        for f in chimes_files:
+            sys.stderr.write('  ' + f + '\n')
+
     while len(chimes_files) > 0 and (time.time() - start_time) < MAX_TEST_TIME:
         checkpoint = random.choice(chimes_files)
         chimes_files.remove(checkpoint)

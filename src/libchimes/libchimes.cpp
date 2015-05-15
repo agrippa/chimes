@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+#include <omp.h>
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -34,6 +35,7 @@
 #include "thread_serialization.h"
 #include "global_serialization.h"
 #include "constant_serialization.h"
+#include "function_serialization.h"
 #include "trace_serialization.h"
 #include "container_serialization.h"
 #include "alias_groups_serialization.h"
@@ -160,7 +162,7 @@ class checkpoint_ctx {
 };
 
 // functions defined in this file
-void new_stack(void *func_ptr, const char *funcname, int *conditional,
+int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned n_args, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id);
@@ -195,6 +197,10 @@ static stack_var *get_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         va_list vl);
 static bool need_to_register(int *cond_registration, string mangled_name);
+inline void register_stack_var_helper(std::string mangled_name_str,
+        int *cond_registration, const char *full_type, void *ptr, size_t size,
+        int is_ptr, int is_struct, int n_ptr_fields, va_list vl,
+        std::vector<stack_frame *> *program_stack);
 
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
@@ -239,6 +245,14 @@ static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
  */
 static map<size_t, constant_var *> constants;
 static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
+
+/*
+ * A mapping from module name to a mapping from unique function name to a
+ * pointer to that function in the running application. Multiple modules (i.e.
+ * files) may have definitions of the same function, e.g. for inline functions
+ * or just repeated function names.
+ */
+static map<string, map<string, void *> > functions;
 
 /*
  * A mapping from alias groups to the alias group that they may contain (in the
@@ -294,8 +308,7 @@ static std::map<size_t, checkpoint_ctx*> checkpoint_info;
  * enter a new parallel region to provide a unique ID for that instance of
  * parallelism.
  */
-static size_t regions_executed = 0;
-static pthread_mutex_t regions_executed_mutex = PTHREAD_MUTEX_INITIALIZER;
+static unsigned long long regions_executed = 0;
 
 /*
  * A mapping from function name to functions called by that function. If a
@@ -345,6 +358,8 @@ static unsigned count_change_locations = 1;
  */
 static set<void *> *already_translated = NULL;
 
+static map<string, void (*)(void *)> init_handlers;
+
 /*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
  * to prevent redundant checkpointing of in-memory state that hasn't changed
@@ -382,14 +397,16 @@ enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     REALLOC_WRAPPER, FREE_WRAPPER, CALLOC_WRAPPER, REGISTER_CONSTANT,
     LEAVING_OMP_PARALLEL, REGISTER_THREAD_LOCAL_STACK_VARS,
     ENTERING_OMP_PARALLEL, CHECKPOINT_THREAD, CHECKPOINT, INIT_CHIMES,
-    WAIT_FOR_ALL_THREADS, HASHING, REGISTER_STACK_VARS, N_LABELS };
+    WAIT_FOR_ALL_THREADS, HASHING, REGISTER_STACK_VARS, REGISTER_FUNCTIONS,
+    N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
     "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
     "free_wrapper", "calloc_wrapper", "register_constant",
     "leaving_omp_parallel", "register_thread_local_stack_vars",
     "entering_omp_parallel", "checkpoint_thread", "checkpoint", "init_chimes",
-    "wait_for_all_threads", "hashing", "register_stack_vars" };
+    "wait_for_all_threads", "hashing", "register_stack_vars",
+    "register_functions" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
@@ -397,6 +414,7 @@ perf_profile pp(PROFILE_LABELS, N_LABELS);
 static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
 static map<std::string, stack_var *> *unpacked_global_vars;
 static map<size_t, constant_var*> *unpacked_constants;
+static map<string, map<string, void *> > *unpacked_functions;
 static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
 static map<unsigned, clock_t> *checkpoint_entry_deltas;
 /*
@@ -449,6 +467,11 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
     uint64_t n_heap_allocs;
     safe_read(fd, &n_heap_allocs, sizeof(n_heap_allocs), "n_heap_allocs",
             checkpoint_file);
+
+#ifdef VERBOSE
+    fprintf(stderr, "\nHeap serialized to file %s has %d allocations\n\n",
+            checkpoint_file, n_heap_allocs);
+#endif
     for (unsigned int i = 0; i < n_heap_allocs; i++) {
         void *old_address;
         size_t size;
@@ -654,6 +677,23 @@ static void read_heap_from_previous_checkpoint(
     }
 }
 
+void init_omp_lock(void *ptr) {
+    omp_lock_t *omp_ptr = (omp_lock_t *)ptr;
+    omp_init_lock(omp_ptr);
+}
+
+/*
+ * The obj_name argument should be a string literal, as this function is called
+ * on resume before the rest of the program stack is reconstructed.
+ */
+void register_custom_init_handler(const char *obj_name, void (*fp)(void *)) {
+    string obj_name_str(obj_name);
+    assert(init_handlers.find(obj_name_str) == init_handlers.end());
+    assert(thread_count == 1); // not thread-safe
+
+    init_handlers[obj_name_str] = fp;
+}
+
 void init_chimes() {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -661,6 +701,8 @@ void init_chimes() {
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
     atexit(onexit);
+
+    register_custom_init_handler("omp_lock_t", init_omp_lock);
 
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
@@ -786,6 +828,12 @@ void init_chimes() {
 
     char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
+        /*
+         * Any checkpoints created during this resume should be a new branch in
+         * the tree of checkpoints.
+         */
+        strcpy(previous_checkpoint_filename, checkpoint_file);
+
 #ifdef VERBOSE
         fprintf(stderr, "Using checkpoint file %s\n", checkpoint_file);
 #endif
@@ -875,6 +923,18 @@ void init_chimes() {
         unpacked_constants = deserialize_constants(constants_serialized,
                 constants_serialized_len);
 
+        // read in function pointers from previous program execution
+        uint64_t functions_serialized_len;
+        safe_read(fd, &functions_serialized_len,
+                sizeof(functions_serialized_len), "functions_serialized_len",
+                checkpoint_file);
+        unsigned char *functions_serialized = (unsigned char *)malloc(
+                functions_serialized_len);
+        safe_read(fd, functions_serialized, functions_serialized_len,
+                "functions_serialized", checkpoint_file);
+        unpacked_functions = deserialize_functions(functions_serialized,
+                functions_serialized_len);
+
         // read in thread state
         uint64_t thread_hierarchy_serialized_len;
         safe_read(fd, &thread_hierarchy_serialized_len,
@@ -915,7 +975,7 @@ void init_chimes() {
 #ifdef VERBOSE
             if (!curr->empty()) {
                 fprintf(stderr, "non-empty range for old_address=%p, "
-                        "missing:\n");
+                        "missing:\n", filled_i->first);
                 vector<pair<size_t, size_t> > *not_filled =
                     curr->get_not_filled();
                 for (vector<pair<size_t, size_t> >::iterator missing_i =
@@ -947,6 +1007,27 @@ void init_chimes() {
             old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
                         new ptr_and_size(live->get_address(),
                             live->get_length())));
+        }
+
+        for (map<string, map<string, void *> >::iterator m_i =
+                functions.begin(), m_e = functions.end(); m_i != m_e; m_i++) {
+            string module_name = m_i->first;
+
+            assert(unpacked_functions->find(module_name) != unpacked_functions->end());
+            map<string, void *> dead_funcs = unpacked_functions->at(module_name);
+
+            for (map<string, void *>::iterator i = m_i->second.begin(),
+                    e = m_i->second.end(); i != e; i++) {
+                string funcname = i->first;
+                void *live = i->second;
+
+                assert(dead_funcs.find(funcname) != dead_funcs.end());
+                void *dead = dead_funcs.at(funcname);
+
+                assert(old_to_new->find(dead) == old_to_new->end());
+                old_to_new->insert(pair<void *, ptr_and_size *>(dead,
+                            new ptr_and_size(live, 1)));
+            }
         }
 
         /*
@@ -1079,6 +1160,16 @@ void init_chimes() {
 static void *translate_old_ptr(void *ptr,
         std::map<void *, ptr_and_size *> *old_to_new, void *container) {
     assert(already_translated);
+
+    if (already_translated->find(container) != already_translated->end()) {
+        /*
+         * Don't try to re-update locations that we've already updated. If the
+         * address space of the old program and the new program overlap, then
+         * this may lead to us doubly updating a location to some new address in
+         * the new address space.
+         */
+        return NULL;
+    }
 
     unsigned char *c_ptr = (unsigned char *)ptr;
     for (std::map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
@@ -1394,7 +1485,7 @@ static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
     }
 }
 
-void new_stack(void *func_ptr, const char *funcname, int *conditional,
+int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -1405,13 +1496,15 @@ void new_stack(void *func_ptr, const char *funcname, int *conditional,
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
-    if (!ctx->get_printed_func_ptr_mismatch() && program_stack->size() > 0 &&
-            func_ptr != ctx->get_func_ptr()) {
-        fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
-                "function that we entered (%p) for function %s. Possibly passed"
-                " through a third-party library.\n", ctx->get_func_ptr(),
-                func_ptr, funcname);
-        ctx->set_printed_func_ptr_mismatch(true);
+    if (program_stack->size() != 0 && func_ptr != ctx->get_func_ptr()) {
+        if (!ctx->get_printed_func_ptr_mismatch() && program_stack->size() > 0) {
+            fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
+                    "function that we entered (%p) for function %s. Possibly passed"
+                    " through a third-party library.\n", ctx->get_func_ptr(),
+                    func_ptr, funcname);
+            ctx->set_printed_func_ptr_mismatch(true);
+        }
+        return (1);
     }
 
     if (!need_to_manage_stack(conditional, std::string(funcname))) {
@@ -1435,8 +1528,9 @@ void new_stack(void *func_ptr, const char *funcname, int *conditional,
 
         ctx->push_return_alias();
 
-        return;
+        return 0;
     }
+
 #ifdef VERBOSE
     fprintf(stderr, "Entering %s, need to manage stack\n", funcname);
 #endif
@@ -1488,10 +1582,11 @@ void new_stack(void *func_ptr, const char *funcname, int *conditional,
         int is_struct = va_arg(vl, int);
         int n_ptr_fields = va_arg(vl, int);
 
-        if (need_to_register(cond_registration, std::string(mangled_name))) {
-            stack_var *new_var = get_var(mangled_name, full_type, ptr, size,
-                    is_ptr, is_struct, n_ptr_fields, vl);
-            program_stack->back()->add_stack_var(new_var);
+        std::string mangled_name_str(mangled_name);
+        if (need_to_register(cond_registration, mangled_name_str)) {
+            register_stack_var_helper(mangled_name_str, cond_registration,
+                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, vl,
+                    program_stack);
         }
     }
 
@@ -1501,6 +1596,7 @@ void new_stack(void *func_ptr, const char *funcname, int *conditional,
 #ifdef __CHIMES_PROFILE
     pp.add_time(NEW_STACK, __start_time);
 #endif
+    return 0;
 }
 
 void calling(void *func_ptr, int lbl, size_t set_return_alias,
@@ -1511,8 +1607,13 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias,
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
+
     ctx->set_func_ptr(func_ptr);
-    ctx->set_calling_label(lbl);
+
+    if (!ctx->is_disabled()) {
+        ctx->set_calling_label(lbl);
+    }
+
     ctx->set_return_alias(set_return_alias);
 
     ctx->ensure_parent_alias_capacity(naliases);
@@ -1554,7 +1655,7 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id) {
+        const char *funcname, int *conditional, unsigned loc_id, int disabled) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1562,6 +1663,18 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
         perf_profile::current_time_ms();
 
     thread_ctx *ctx = get_my_context();
+
+    if (ctx->is_disabled() || disabled) {
+        if (loc_id > 0) {
+            alias_group_changed_helper(loc_id, ctx);
+        }
+        if (!disabled) {
+            add_return_alias(has_return_alias, returned_alias, ctx);
+        }
+
+        return;
+    }
+
     if (!need_to_manage_stack(conditional, std::string(funcname))) {
 #ifdef VERBOSE
         fprintf(stderr, "Leaving %s, dont need to manage stack\n", funcname);
@@ -1753,7 +1866,8 @@ void register_stack_vars(int nvars, ...) {
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
 
-    std::vector<stack_frame *> *program_stack = NULL;
+    thread_ctx *ctx = get_my_context();
+    std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
     va_list vl;
     va_start(vl, nvars);
@@ -1772,16 +1886,16 @@ void register_stack_vars(int nvars, ...) {
 #ifdef VERBOSE
         fprintf(stderr, "Thinking about registering %s...\n", mangled_name);
 #endif
-        if (!need_to_register(cond_registration, mangled_name_str)) {
+        if (ctx->is_disabled() ||
+                !need_to_register(cond_registration, mangled_name_str)) {
             // Need to consume extra arguments that weren't used by the helper
             for (int j = 0; j < n_ptr_fields; j++) {
                 va_arg(vl, int);
             }
         } else {
-            // Really try to avoid contending for the thread-specific data structures
-            if (!program_stack) program_stack = get_my_stack();
-            register_stack_var_helper(mangled_name_str, cond_registration, full_type,
-                    ptr, size, is_ptr, is_struct, n_ptr_fields, vl, program_stack);
+            register_stack_var_helper(mangled_name_str, cond_registration,
+                    full_type, ptr, size, is_ptr, is_struct, n_ptr_fields, vl,
+                    program_stack);
         }
     }
     va_end(vl);
@@ -1814,7 +1928,8 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 #ifdef VERBOSE
     fprintf(stderr, "Thinking about registering %s...\n", mangled_name);
 #endif
-    if (!need_to_register(cond_registration, mangled_name_str)) {
+    if (get_my_context()->is_disabled() ||
+            !need_to_register(cond_registration, mangled_name_str)) {
         return;
     }
 
@@ -1873,6 +1988,39 @@ void register_constant(size_t const_id, void *address, size_t length) {
 #endif
 }
 
+void register_functions(int nfunctions, const char *module_name, ...) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ms();
+#endif
+
+    std::string module_name_str(module_name);
+    assert(functions.find(module_name_str) == functions.end());
+    functions.insert(pair<string, map<string, void *> >(module_name_str,
+                map<string, void *>()));
+
+    va_list vl;
+    va_start(vl, module_name);
+    for (int i = 0; i < nfunctions; i++) {
+        char *func_name = va_arg(vl, char *);
+        void *func_ptr = va_arg(vl, void *);
+
+        string func_name_str(func_name);
+#ifdef VERBOSE
+        fprintf(stderr, "register_functions: module=%s name=%s ptr=%p\n",
+                module_name, func_name_str.c_str(), func_ptr);
+#endif
+        assert(functions[module_name_str].find(func_name_str) ==
+                functions[module_name_str].end());
+
+        functions[module_name_str][func_name_str] = func_ptr;
+    }
+    va_end(vl);
+
+#ifdef __CHIMES_PROFILE
+    pp.add_time(REGISTER_FUNCTIONS, __start_time);
+#endif
+}
+
 int alias_group_changed(unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -1882,9 +2030,11 @@ int alias_group_changed(unsigned loc_id) {
 #ifdef VERBOSE
     fprintf(stderr, "alias_group_changed: location=%u\n", loc_id);
     fprintf(stderr, "  maps to alias groups: ");
-    assert(change_loc_id_to_aliases.find(loc_id) != change_loc_id_to_aliases.end());
+    assert(change_loc_id_to_aliases.find(loc_id) !=
+            change_loc_id_to_aliases.end());
     set<size_t> aliases = change_loc_id_to_aliases.at(loc_id);
-    for (set<size_t>::iterator i = aliases.begin(), e = aliases.end(); i != e; i++) {
+    for (set<size_t>::iterator i = aliases.begin(), e = aliases.end(); i != e;
+            i++) {
         fprintf(stderr, "%lu ", *i);
     }
     fprintf(stderr, "\n");
@@ -2161,10 +2311,12 @@ typedef struct _checkpoint_thread_ctx {
     unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
     unsigned char *constants_serialized;
+    unsigned char *functions_serialized;
     unsigned char *thread_hierarchy_serialized;
     uint64_t stacks_serialized_len;
     uint64_t globals_serialized_len;
     uint64_t constants_serialized_len;
+    uint64_t functions_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
@@ -2210,8 +2362,8 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
         vector<stack_frame *> *real) {
 
 #ifdef VERBOSE
-    fprintf(stderr, "Restoring program stack. Unpacked program stack has %d "
-            "frames, live program stack has %d frames.\n", unpacked->size(),
+    fprintf(stderr, "Restoring program stack. Unpacked program stack has %lu "
+            "frames, live program stack has %lu frames.\n", unpacked->size(),
             real->size());
 #endif
 
@@ -2379,6 +2531,25 @@ static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
     }
 }
 
+bool disable_current_thread() {
+    thread_ctx *ctx = get_my_context();
+    std::vector<stack_frame *> *stack = ctx->get_stack();
+
+    if (!ctx->is_disabled()) {
+        ctx->set_disabled_nesting(stack->size());
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void reenable_current_thread(bool was_disabled) {
+    thread_ctx *ctx = get_my_context();
+    if (was_disabled) {
+        ctx->set_disabled_nesting(0);
+    }
+}
+
 void checkpoint() {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -2390,6 +2561,8 @@ void checkpoint() {
     new_stack((void *)checkpoint, "checkpoint", NULL, 0, 0);
     const bool was_a_replay = ____chimes_replaying;
     checkpoint_ctx *curr_ckpt;
+
+    VERIFY(!get_my_context()->is_disabled());
 
     bool checkpointing_thread = wait_for_all_threads(&enter_time, &curr_ckpt);
 
@@ -2438,6 +2611,12 @@ void checkpoint() {
             stack_var *live = found->second;
 
             update_live_var(name, dead, live);
+
+            assert(dead->get_size() == live->get_size());
+
+            assert(old_to_new->find(dead->get_address()) == old_to_new->end());
+            old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
+                        new ptr_and_size(live->get_address(), live->get_size())));
         }
 
         /*
@@ -2495,9 +2674,6 @@ void checkpoint() {
     } else if (checkpointing_thread && !checkpoint_thread_running &&
             within_overhead_bounds()) {
         VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-
-        VERIFY(get_my_context()->get_first_parallel_for_nesting() == 0);
-        VERIFY(get_my_context()->get_first_critical_nesting() == 0);
 
         if (checkpoint_thread_running) {
             VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
@@ -2696,6 +2872,8 @@ void checkpoint() {
                     &checkpoint_ctx->globals_serialized_len);
             checkpoint_ctx->constants_serialized = serialize_constants(&constants,
                     &checkpoint_ctx->constants_serialized_len);
+            checkpoint_ctx->functions_serialized = serialize_functions(
+                    &functions, &checkpoint_ctx->functions_serialized_len);
             checkpoint_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
                     &thread_ctxs,
                     &checkpoint_ctx->thread_hierarchy_serialized_len);
@@ -2760,7 +2938,7 @@ void checkpoint() {
         while (clock() - exit_time < my_delta) ;
     }
 
-    rm_stack(false, 0, "checkpoint", NULL, 0);
+    rm_stack(false, 0, "checkpoint", NULL, 0, 0);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CHECKPOINT, __start_time);
@@ -2805,7 +2983,8 @@ static void brute_force_pointer_fixing(void *ptr, heap_allocation *alloc,
  * struct, array) to be updated is stored. type stores the full type of the
  * current address being operated on.
  */
-static void fix_stack_or_global_pointer(void *container, string type, int nesting) {
+static void fix_stack_or_global_pointer(void *container, string type,
+        int nesting) {
 
 #ifdef VERBOSE
     add_nesting(nesting);
@@ -2816,7 +2995,8 @@ static void fix_stack_or_global_pointer(void *container, string type, int nestin
 
     if (is_pointer_type(type)) {
         void **nested_container = (void **)container;
-        void *new_ptr = translate_old_ptr(*nested_container, old_to_new, nested_container);
+        void *new_ptr = translate_old_ptr(*nested_container, old_to_new,
+                nested_container);
 #ifdef VERBOSE
         add_nesting(nesting);
         fprintf(stderr, "  translated old ptr=%p to new ptr=%p\n",
@@ -2825,7 +3005,11 @@ static void fix_stack_or_global_pointer(void *container, string type, int nestin
         if (new_ptr != NULL) {
             *nested_container = new_ptr;
         }
-        
+       
+        /*
+         * If the current item has been successfully updated to the new address
+         * space we are operating in.
+         */
         if (already_translated->find(nested_container) != already_translated->end()) {
             string points_to = get_points_to_type(type);
 #ifdef VERBOSE
@@ -2853,14 +3037,10 @@ static void fix_stack_or_global_pointer(void *container, string type, int nestin
                  */
                 std::set<void *> visited;
                 brute_force_pointer_fixing(*nested_container, alloc, &visited);
-// #ifdef VERBOSE
-//                     fprintf(stderr, "    heap allocation: size=%lu "
-//                             "n_elem_ptrs=%d\n", alloc->get_size(),
-//                             alloc->get_ptr_field_offsets()->size());
-// #endif
             } else {
                 if (is_struct_type(points_to)) {
-                    fix_stack_or_global_pointer(*nested_container, points_to, nesting + 1);
+                    fix_stack_or_global_pointer(*nested_container, points_to,
+                            nesting + 1);
                 }
             }
         }
@@ -2871,15 +3051,35 @@ static void fix_stack_or_global_pointer(void *container, string type, int nestin
             struct_name = struct_name.substr(0, struct_name.find("=") - 1);
         }
 
-        assert(structs.find(struct_name) != structs.end());
-        std::vector<struct_field> *fields = structs.at(struct_name);
+        if (structs.find(struct_name) == structs.end()) {
+            fprintf(stderr, "Missing struct definition \"%s\"\n",
+                    struct_name.c_str());
+            exit(1);
+        }
 
-        for (unsigned field_index = 0; field_index < fields->size();
-                field_index++) {
-            string curr = fields->at(field_index).get_ty();
-            unsigned char *field_ptr = ((unsigned char *)container) +
-                (*fields)[field_index].get_offset();
-            fix_stack_or_global_pointer((void *)field_ptr, curr, nesting + 1);
+        if (init_handlers.find(struct_name) != init_handlers.end()) {
+#ifdef VERBOSE
+            fprintf(stderr, "Using custom initialization handler for struct of "
+                    "type %s\n", struct_name.c_str());
+#endif
+            void (*fp)(void *) = init_handlers[struct_name];
+            fp(container);
+        } else {
+#ifdef VERBOSE
+            fprintf(stderr, "Using automated initialization for struct of "
+                    "type %s\n", struct_name.c_str());
+#endif
+
+            std::vector<struct_field> *fields = structs.at(struct_name);
+
+            for (unsigned field_index = 0; field_index < fields->size();
+                    field_index++) {
+                string curr = fields->at(field_index).get_ty();
+                unsigned char *field_ptr = ((unsigned char *)container) +
+                    (*fields)[field_index].get_offset();
+                fix_stack_or_global_pointer((void *)field_ptr, curr, nesting +
+                        1);
+            }
         }
     } else if (is_array_type(type)) {
         string nested = get_nested_array_type(type);
@@ -3071,6 +3271,8 @@ void *checkpoint_func(void *data) {
     uint64_t globals_serialized_len = ctx->globals_serialized_len;
     unsigned char *constants_serialized = ctx->constants_serialized;
     uint64_t constants_serialized_len = ctx->constants_serialized_len;
+    unsigned char *functions_serialized = ctx->functions_serialized;
+    uint64_t functions_serialized_len = ctx->functions_serialized_len;
     unsigned char *thread_hierarchy_serialized =
         ctx->thread_hierarchy_serialized;
     uint64_t thread_hierarchy_serialized_len =
@@ -3104,6 +3306,11 @@ void *checkpoint_func(void *data) {
         sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
         fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
     }
+
+#ifdef VERBOSE
+    fprintf(stderr, "Creating checkpoint in \"%s\", previous_checkpoint="
+            "\"%s\"\n", dump_filename, previous_checkpoint_filename);
+#endif
 
     // Write the name of the preceding checkpoint file out
     size_t filename_length = strlen(previous_checkpoint_filename) + 1;
@@ -3168,6 +3375,13 @@ void *checkpoint_func(void *data) {
             sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
     prep_async_safe_write(fd, constants_serialized,
             constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
+
+    // Write the function pointers out
+    prep_async_safe_write(fd, &functions_serialized_len,
+            sizeof(functions_serialized_len), count_bytes, &count_bytes,
+            "functions_serialized_len", &async_tokens);
+    prep_async_safe_write(fd, functions_serialized, functions_serialized_len,
+            count_bytes, &count_bytes, "functions_serialized", &async_tokens);
 
     // Write out the thread hierarchy
     prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
@@ -3274,6 +3488,7 @@ void *checkpoint_func(void *data) {
     free(stacks_serialized);
     free(globals_serialized);
     free(constants_serialized);
+    free(functions_serialized);
     free(thread_hierarchy_serialized);
     free(serialized_times);
     free(serialized_traces);
@@ -3313,6 +3528,19 @@ static stack_var *find_var(void *addr,
     return NULL;
 }
 
+/*
+ * entering_omp_parallel is responsible for:
+ *   1. adding to the trace of jumps that will be necessary to resume from
+ *      inside this parallel region.
+ *   2. storing the parent addresses of any region-private variables.
+ *   3. Fetching a unique ID for the region we are about to enter and passing it
+ *      back to the host application through unique_region_id.
+ *   4. Incrementing the number of regions initializing to prevent a checkpoint
+ *      from being taken while threads are being created and ensure that all
+ *      active threads are included in that checkpoint.
+ *   5. Getting the parent TID for this region and returning it to the host
+ *      application.
+ */
 unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
         unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
@@ -3325,39 +3553,39 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     ctx->get_stack_tracker().push(lbl);
     ctx->create_new_parent_vars_context();
 
-    va_list vl;
-    va_start(vl, nlocals);
+    if (!ctx->is_disabled()) {
+        va_list vl;
+        va_start(vl, nlocals);
 
-    for (unsigned i = 0; i < nlocals; i++) {
-        void *addr = va_arg(vl, void *);
-        stack_var *var = find_var(addr, ctx->get_stack());
-        /*
-         * var may be null here if the analysis stage determined that this
-         * function could not possibly create a checkpoint (or be part of a
-         * stack trace with a checkpoint). In that case, it optimizes out the
-         * analysis of stack variables and register_stack_var calls will be
-         * missing.
-         *
-         * To address that, we accept var as potentially NULL here and must
-         * handle that as we generate the child context in
-         * register_thread_local_stack_vars. If the parent entry for a variable
-         * is NULL, we can safely assume that we will never query for metadata
-         * on the child either.
-         */
-        ctx->add_parent_var(var);
+        for (unsigned i = 0; i < nlocals; i++) {
+            void *addr = va_arg(vl, void *);
+            stack_var *var = find_var(addr, ctx->get_stack());
+            /*
+             * var may be null here if the analysis stage determined that this
+             * function could not possibly create a checkpoint (or be part of a
+             * stack trace with a checkpoint). In that case, it optimizes out the
+             * analysis of stack variables and register_stack_var calls will be
+             * missing.
+             *
+             * To address that, we accept var as potentially NULL here and must
+             * handle that as we generate the child context in
+             * register_thread_local_stack_vars. If the parent entry for a variable
+             * is NULL, we can safely assume that we will never query for metadata
+             * on the child either.
+             */
+            ctx->add_parent_var(var);
+        }
+
+        va_end(vl);
     }
 
-    va_end(vl);
-
-    VERIFY(pthread_mutex_lock(&regions_executed_mutex) == 0);
-    *unique_region_id = (regions_executed++);
-    VERIFY(pthread_mutex_unlock(&regions_executed_mutex) == 0);
+    *unique_region_id = __sync_fetch_and_add(&regions_executed, 1);
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     regions_initializing++;
     VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
-    int my_tid = get_my_tid();
+    const int my_tid = get_my_tid();
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(ENTERING_OMP_PARALLEL, __start_time);
@@ -3367,8 +3595,7 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
 }
 
 void register_thread_local_stack_vars(unsigned relation, unsigned parent,
-        unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+        unsigned threads_in_region, unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -3380,22 +3607,20 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     if (regions_counted.find(region_id) == regions_counted.end()) {
-        if (!spawns_threads || is_parallel_for) {
-            threads_in_region = 1;
-        }
+        /*
+         * If we haven't already accounted for this parallel region then update
+         * the number of running threads and the number of initializing regions
+         * once the first thread in the region gets here.
+         */
         VERIFY(regions_counted.insert(std::pair<size_t, unsigned>(region_id,
                         threads_in_region - 1)).second);
+
         /*
-         * Parallel fors make counting threads difficult. Depending on the loop
-         * predicate, the number of actively executing threads may not equal the
-         * number of threads in the team, so just relying on omp_get_num_threads
-         * can be innaccurate. However, for the moment we don't support
-         * checkpointing inside a parallel for, so we don't need an accurate
-         * thread count within it.
+         * -1 below because one of the threads in this region will be the parent
+         * thread, and so we already know about it.
          */
-        if (spawns_threads && !is_parallel_for) {
-            thread_count += (threads_in_region - 1);
-        }
+        thread_count += (threads_in_region - 1);
+
         regions_initializing--;
 
         VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
@@ -3434,6 +3659,10 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
                     global_tid + 1);
         }
 
+        /*
+         * On resume, store a mapping from the pthread this OMP logical thread
+         * is running on to its CHIMES global TID.
+         */
         VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
             VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
@@ -3475,40 +3704,40 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     ctx->increment_stack_nesting();
 
     thread_ctx *parent_ctx = get_context_for(parent);
-    if (is_parallel_for && ctx->get_first_parallel_for_nesting() == 0) {
-        ctx->set_first_parallel_for_nesting(stack->size());
-    }
-    if (is_critical && ctx->get_first_critical_nesting() == 0) {
-        ctx->set_first_critical_nesting(stack->size());
+    if (parent_ctx->get_disabled_nesting() != 0) {
+        ctx->set_disabled_nesting(1);
     }
 
-    vector<stack_var *>& parent_vars = parent_ctx->get_parent_vars_at_depth(
-            parent_stack_depth);
-    assert(parent_vars.size() == nlocals);
+    if (!ctx->is_disabled()) {
+        vector<stack_var *>& parent_vars = parent_ctx->get_parent_vars_at_depth(
+                parent_stack_depth);
+        assert(parent_vars.size() == nlocals);
 
-    va_list vl;
-    va_start(vl, nlocals);
-    for (unsigned l = 0; l < nlocals; l++) {
-        void *child_addr = va_arg(vl, void *);
-        stack_var *parent_var = parent_vars[l];
+        va_list vl;
+        va_start(vl, nlocals);
+        for (unsigned l = 0; l < nlocals; l++) {
+            void *child_addr = va_arg(vl, void *);
+            stack_var *parent_var = parent_vars[l];
 
-        /*
-         * See the comment above in entering_omp_parallel on why parent_var
-         * might be NULL.
-         */
-        if (parent_var != NULL) {
-            stack_var *child_var = new stack_var(parent_var->get_name().c_str(),
-                    parent_var->get_type().c_str(), child_addr,
-                    parent_var->get_size(), parent_var->check_is_ptr());
-            for (vector<int>::iterator i =
-                    parent_var->get_ptr_offsets()->begin(),
-                    e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
-                child_var->add_pointer_offset(*i);
+            /*
+             * See the comment above in entering_omp_parallel on why parent_var
+             * might be NULL.
+             */
+            if (parent_var != NULL) {
+                stack_var *child_var = new stack_var(
+                        parent_var->get_name().c_str(),
+                        parent_var->get_type().c_str(), child_addr,
+                        parent_var->get_size(), parent_var->check_is_ptr());
+                for (vector<int>::iterator i =
+                        parent_var->get_ptr_offsets()->begin(),
+                        e = parent_var->get_ptr_offsets()->end(); i != e; i++) {
+                    child_var->add_pointer_offset(*i);
+                }
+                stack->back()->add_stack_var(child_var);
             }
-            stack->back()->add_stack_var(child_var);
         }
+        va_end(vl);
     }
-    va_end(vl);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_THREAD_LOCAL_STACK_VARS, __start_time);
@@ -3590,13 +3819,8 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
                 to_erase.push_back(i);
                 nthreads_joined++;
             } else {
-                if (program_stack->size() <
-                        ctx->get_first_parallel_for_nesting()) {
-                    ctx->set_first_parallel_for_nesting(0);
-                }
-                if (program_stack->size() <
-                        ctx->get_first_critical_nesting()) {
-                    ctx->set_first_critical_nesting(0);
+                if (program_stack->size() < ctx->get_disabled_nesting()) {
+                    ctx->set_disabled_nesting(0);
                 }
             }
         }

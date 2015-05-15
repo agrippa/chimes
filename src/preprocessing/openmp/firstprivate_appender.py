@@ -101,8 +101,7 @@ if __name__ == '__main__':
               acc += ' ' + stripped_line
               unfiltered_acc += line
 
-          if pragmaHasForClause(acc):
-              assert(line_no in clauses)
+          if line_no in clauses:
               list_of_clauses = clauses[line_no]
 
               # This should only remove the trailing newline

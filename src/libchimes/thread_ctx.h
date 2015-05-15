@@ -34,7 +34,7 @@ class thread_ctx {
         thread_ctx(pthread_t set_pthread, unsigned n_change_locs) :
                 pthread(set_pthread), stack_nesting(0),
                 changed_groups(n_change_locs), calling_label(-1), func_ptr(NULL),
-                first_parallel_for_nesting(0), first_critical_nesting(0),
+                disabled_nesting(0),
                 parent_aliases_capacity(PARENT_ALIASES_INIT_SIZE),
                 parent_aliases_length(0), printed_func_ptr_mismatch(false),
                 printed_func_args_mismatch(false) {
@@ -102,18 +102,14 @@ class thread_ctx {
             return parents.size() > 0;
         }
 
-        unsigned get_first_parallel_for_nesting() {
-            return first_parallel_for_nesting;
+        void set_disabled_nesting(unsigned s) {
+            disabled_nesting = s;
         }
-        void set_first_parallel_for_nesting(unsigned s) {
-            first_parallel_for_nesting = s;
+        bool is_disabled() {
+            return (disabled_nesting != 0);
         }
-
-        unsigned get_first_critical_nesting() {
-            return first_critical_nesting;
-        }
-        void set_first_critical_nesting(unsigned s) {
-            first_critical_nesting = s;
+        unsigned get_disabled_nesting() {
+            return (disabled_nesting);
         }
 
         void increment_stack_nesting() { stack_nesting++; }
@@ -174,8 +170,12 @@ class thread_ctx {
         set_of_aliases changed_groups;
         int calling_label;
         void *func_ptr;
-        unsigned first_parallel_for_nesting;
-        unsigned first_critical_nesting;
+
+        /*
+         * A thread can be disabled if it is inside an OMP region that is not
+         * simply a parallel (e.g. a for, a critical, etc).
+         */
+        unsigned disabled_nesting;
 
         size_t *parent_aliases;
         size_t parent_aliases_capacity;

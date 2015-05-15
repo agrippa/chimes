@@ -21,6 +21,13 @@ static std::string get_cond_management_varname(std::string func) {
     return ("____must_manage_" + func);
 }
 
+std::string StartExitPass::get_unique_disable_varname() {
+    int id = count_disable_variables++;
+    std::stringstream ss;
+    ss << "____chimes_disable" << id;
+    return ss.str();
+}
+
 static bool need_stack_management_calls(std::string func) {
     FunctionCallees *callees = insertions->get_callees(func);
     FunctionArgumentAliasGroups *funcAliases =
@@ -44,6 +51,10 @@ static bool perform_conditional_stack_management(FunctionCallees *callees) {
 }
 
 void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
+    if (!current_disable_varname) {
+        current_disable_varname = new std::string(get_unique_disable_varname());
+    }
+
     clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
     if (func != NULL && func->isThisDeclarationADefinition()) {
         clang::SourceLocation declEnd = func->getBody()->getLocStart();
@@ -87,8 +98,9 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
                 } else {
                     address_of_cond_varname = "(int *)0x0";
                 }
-                ss << "new_stack((void *)(&" << curr_func << "), \"" <<
-                    curr_func << "\", " << address_of_cond_varname << ", " <<
+                ss << "const int " << *current_disable_varname << " = new_stack((void *)(&" <<
+                    curr_func << "), \"" << curr_func << "\", " <<
+                    address_of_cond_varname << ", " <<
                     funcAliases->nargs() << ", " << nCheckpointedArgs;
                 for (unsigned i = 0; i < funcAliases->nargs(); i++) {
                     ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
@@ -137,16 +149,23 @@ void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
                     if (insertions->isMainFile(locloc.getFilename())) {
                         InsertText(cmpd->getLocEnd(),
                                 constructFunctionEndingStmts(
-                                    inserting_stack_mgmt, conditional_management), true, true);
+                                    inserting_stack_mgmt,
+                                    conditional_management), true, true);
                     }
                 }
             }
         }
     }
+    delete current_disable_varname;
+    current_disable_varname = NULL;
 }
 
 std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
         bool conditional_management) {
+    if (!current_disable_varname) {
+        current_disable_varname = new std::string(get_unique_disable_varname());
+    }
+
     FunctionExit *info = insertions->getFunctionExitInfo(curr_func);
     std::set<size_t> groups_changed =
         info->get_groups_changed_at_termination();
@@ -168,11 +187,12 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
         }
         if (info->get_return_alias() == 0) {
             ss << "rm_stack(false, 0UL, \"" << curr_func << "\", " <<
-                address_of_cond_varname << ", " << loc_id << "); ";
+                address_of_cond_varname << ", " << loc_id << ", " <<
+                *current_disable_varname << "); ";
         } else {
             ss << "rm_stack(true, " << info->get_return_alias() << "UL, \"" <<
                 curr_func << "\", " << address_of_cond_varname << ", " <<
-                loc_id << "); ";
+                loc_id << ", " << *current_disable_varname << "); ";
         }
     } else {
         if (groups_changed.size() > 0) {
@@ -202,7 +222,8 @@ void StartExitPass::VisitStmt(const clang::Stmt *s) {
             // See note above in VisitTopLevel on missing function info.
             if (insertions->findMatchingFunctionNullReturn(curr_func) != NULL) {
                 InsertText(start, constructFunctionEndingStmts(
-                            inserting_stack_mgmt, conditional_management), true, true);
+                            inserting_stack_mgmt, conditional_management), true,
+                        true);
             }
         }
     }

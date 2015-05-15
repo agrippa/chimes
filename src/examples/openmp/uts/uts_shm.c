@@ -1132,8 +1132,9 @@ void parTreeSearch(StealStack *ss) {
 
   /* tree search */
   while (done == 0) {
-   
+  
     int localDepth = ss_localDepth(ss);
+    fprintf(stderr, "Thread %d localDepth %d\n", omp_get_thread_num(), localDepth);
     /* local work */
     while (localDepth > 0) {
 
@@ -1428,8 +1429,7 @@ int main(int argc, char *argv[]) {
 #endif
     
     /* time parallel search */
-    ss_initState(ss);
-    t1 = uts_wctime();
+    ss_initState(ss); t1 = uts_wctime();
     parTreeSearch(ss);
     t2 = uts_wctime();
     et = t2 - t1;
