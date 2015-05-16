@@ -121,6 +121,7 @@ private:
     std::string get_region_cleanup_code(bool is_parallel_for,
             std::string disable_varname, std::string call_depth_varname,
             std::string region_id_varname);
+    bool has_side_effects(const Expr *arg);
 
     std::map<std::string, std::set<std::string> > supported_omp_clauses;
     std::set<std::string> supported_omp_pragmas;

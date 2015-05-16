@@ -15,9 +15,9 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.c
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 5  void *tmp;  tmp = (haha_this_sux_part_deux()) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 42 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 185  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 25  ({  if (!____chimes_replaying) {  }  calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0); (haha_this_sux_part_deux)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 25  ({  calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0); (haha_this_sux_part_deux)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 49 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 46  ({  call_lbl_3:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 46  ({  call_lbl_3:  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 57 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 15 

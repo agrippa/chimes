@@ -1759,7 +1759,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
  } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: if (!____chimes_replaying) { } calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);

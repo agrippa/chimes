@@ -1757,7 +1757,7 @@ int b;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  c = (a + b) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_2: if (!____chimes_replaying) { } calling((void*)checkpoint, 2, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, 0); (checkpoint)(); }) ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  (__builtin_expect(!(a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 8, "a == 3") : (void)0);
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
@@ -1774,7 +1774,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = 
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  int a; a = (3) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- alias_group_changed(____alias_loc_id_1); int b; b = ( ({ call_lbl_3: int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (a); } calling((void*)foo, 3, 0UL, 1, (size_t)(0UL)); (foo)(____chimes_arg0); }) ) ;
+ alias_group_changed(____alias_loc_id_1); int b; b = ( ({ call_lbl_3: calling((void*)foo, 3, 0UL, 1, (size_t)(0UL)); (foo)(a); }) ) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_disable1); return b;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"

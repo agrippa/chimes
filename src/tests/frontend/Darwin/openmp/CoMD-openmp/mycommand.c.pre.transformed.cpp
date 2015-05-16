@@ -2033,7 +2033,7 @@ Command parseCommandLine(int argc, char** argv)
     ({ call_lbl_24: const char * ____chimes_arg121; char ____chimes_arg122; int ____chimes_arg123; char ____chimes_arg124; void * ____chimes_arg125; int ____chimes_arg126; const char * ____chimes_arg127; if (!____chimes_replaying) { ____chimes_arg121 = ("delta"); ____chimes_arg122 = ('r'); ____chimes_arg123 = (1); ____chimes_arg124 = ('d'); ____chimes_arg125 = (&(cmd.initialDelta)); ____chimes_arg126 = (0); ____chimes_arg127 = ("initial delta (Angstroms)"); } calling((void*)addArg, 24, 0UL, 7, (size_t)(6351733837270304347UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6351733837270304242UL), (size_t)(0UL), (size_t)(6351733837270304350UL)); (addArg)(____chimes_arg121, ____chimes_arg122, ____chimes_arg123, ____chimes_arg124, ____chimes_arg125, ____chimes_arg126, ____chimes_arg127); }) ;
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    ({ call_lbl_25: int ____chimes_arg128; char ** ____chimes_arg129; if (!____chimes_replaying) { ____chimes_arg128 = (argc); ____chimes_arg129 = (argv); } calling((void*)processArgs, 25, 0UL, 2, (size_t)(0UL), (size_t)(6351733837270304244UL)); (processArgs)(____chimes_arg128, ____chimes_arg129); }) ;
+    ({ call_lbl_25: calling((void*)processArgs, 25, 0UL, 2, (size_t)(0UL), (size_t)(6351733837270304244UL)); (processArgs)(argc, argv); }) ;
 # 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2052,15 +2052,15 @@ Command parseCommandLine(int argc, char** argv)
 # 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    {
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-       ({ call_lbl_31: if (!____chimes_replaying) { } calling((void*)printArgs, 31, 0UL, 0); (printArgs)(); }) ;
+       ({ call_lbl_31: calling((void*)printArgs, 31, 0UL, 0); (printArgs)(); }) ;
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-       ({ call_lbl_32: if (!____chimes_replaying) { } calling((void*)freeArgs, 32, 0UL, 0); (freeArgs)(); }) ;
+       ({ call_lbl_32: calling((void*)freeArgs, 32, 0UL, 0); (freeArgs)(); }) ;
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
       exit(2);
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    }
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    ({ call_lbl_34: if (!____chimes_replaying) { } calling((void*)freeArgs, 34, 0UL, 0); (freeArgs)(); }) ;
+    ({ call_lbl_34: calling((void*)freeArgs, 34, 0UL, 0); (freeArgs)(); }) ;
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_disable0); return cmd;
@@ -2072,7 +2072,7 @@ void printCmdYaml(FILE* file, Command* cmd)
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {const int ____chimes_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(6351733837270304331UL), (size_t)(6351733837270304332UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(____alias_loc_id_1); if (! ({ call_lbl_2: if (!____chimes_replaying) { } calling((void*)printRank, 2, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_disable1); return;; };
+   alias_group_changed(____alias_loc_id_1); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_disable1); return;; };
 # 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"

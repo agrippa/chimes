@@ -1765,13 +1765,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = 
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  case 0:
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- d = ({ int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argc); } calling((void*)foo, -1, 0UL, 1, (size_t)(0UL)); (foo)(____chimes_arg0); }) ;
+ d = ({ calling((void*)foo, -1, 0UL, 1, (size_t)(0UL)); (foo)(argc); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  break;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  case 1:
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- d = ({ int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argc); } calling((void*)bar, -1, 0UL, 1, (size_t)(0UL)); (bar)(____chimes_arg1); }) ;
+ d = ({ calling((void*)bar, -1, 0UL, 1, (size_t)(0UL)); (bar)(argc); }) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  break;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
@@ -1781,7 +1781,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = 
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  }
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: if (!____chimes_replaying) { } calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable2); return d;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"

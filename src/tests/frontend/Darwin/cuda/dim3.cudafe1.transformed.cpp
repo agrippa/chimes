@@ -26822,7 +26822,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
  blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: if (!____chimes_replaying) { } calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"

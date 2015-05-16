@@ -1817,7 +1817,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-    alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: if (!____chimes_replaying) { } calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+    alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;

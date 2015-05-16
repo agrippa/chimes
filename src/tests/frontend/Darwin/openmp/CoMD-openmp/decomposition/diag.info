@@ -32,9 +32,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decom
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 62 61 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 4  int iz;  iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 61 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 90  ({  call_lbl_3:  if (!____chimes_replaying) {  }  calling((void*)getNRanks, 3, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 90  ({  call_lbl_3:  calling((void*)getNRanks, 3, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 100 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 69  ({  call_lbl_7:  if (!____chimes_replaying) {  }  calling((void*)getMyRank, 7, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 69  ({  call_lbl_7:  calling((void*)getMyRank, 7, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 79 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15 

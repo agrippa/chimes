@@ -15,9 +15,9 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 5  foo *f;  f = ((foo *)malloc_wrapper(sizeof(foo), 805989342579701535UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 105 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 46  ({  call_lbl_4:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 46  ({  call_lbl_4:  calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 57 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 20 5  ({  call_lbl_5:  if (!____chimes_replaying) {  }  calling((void*)wait_for_checkpoint, 5, 0UL, 0); (wait_for_checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 20 5  ({  call_lbl_5:  calling((void*)wait_for_checkpoint, 5, 0UL, 0); (wait_for_checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 20 25 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 12 

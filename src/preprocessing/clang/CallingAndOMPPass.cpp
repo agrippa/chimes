@@ -7,10 +7,13 @@
 #include <clang/AST/ASTContext.h>
 #include <clang/AST/Stmt.h>
 #include <clang/AST/Decl.h>
+#include <clang/AST/Expr.h>
 #include <llvm/Support/raw_ostream.h>
 
 using namespace std;
 using namespace clang;
+
+// #define VERBOSE
 
 /**
  * This pass is responsible for setting up the intra-function jumps for both OMP
@@ -650,6 +653,72 @@ std::string CallingAndOMPPass::get_region_cleanup_code(bool is_parallel_for,
     return (leaving_stream.str());
 }
 
+bool CallingAndOMPPass::has_side_effects(const Expr *arg) {
+    switch (arg->getStmtClass()) {
+        case (clang::Stmt::ImplicitCastExprClass): {
+            const Expr *sub = dyn_cast<ImplicitCastExpr>(arg)->getSubExpr();
+
+            if (isa<clang::DeclRefExpr>(sub) ||
+                    isa<clang::StringLiteral>(sub)) {
+                return false;
+            }
+            if (isa<clang::ImplicitCastExpr>(sub)) {
+                const Expr *sub_sub =
+                    dyn_cast<ImplicitCastExpr>(sub)->getSubExpr();
+                if (isa<clang::DeclRefExpr>(sub_sub)) {
+                    return false;
+                } else {
+#ifdef VERBOSE
+                    std::string st = dyn_cast<clang::ImplicitCastExpr>(
+                            sub)->getSubExpr()->getStmtClassName();
+                    llvm::errs() << "    Doubly nested ImplicitCast " << st <<
+                        "\n";
+#endif
+                }
+            }
+#ifdef VERBOSE
+            llvm::errs() << "  ImplicitCast NESTED " <<
+                sub->getStmtClassName() << "\n";
+#endif
+        }
+        case (clang::Stmt::DeclRefExprClass): {
+            return false;
+        }
+        case (clang::Stmt::IntegerLiteralClass): {
+            return false;
+        }
+        case (clang::Stmt::UnaryOperatorClass): {
+            const UnaryOperator *unary = dyn_cast<UnaryOperator>(arg);
+            const Expr *sub = unary->getSubExpr();
+            switch (unary->getOpcode()) {
+                case (UO_AddrOf): {
+                    switch (sub->getStmtClass()) {
+                        case (clang::Stmt::DeclRefExprClass):
+                            // Address of a variable
+                            return false;
+                        case (clang::Stmt::ParenExprClass):
+#ifdef VERBOSE
+                            llvm::errs() << "Paren child is " <<
+                                dyn_cast<ParenExpr>(
+                                        sub)->getSubExpr()->getStmtClassName()
+                                << "\n";
+#endif
+                            break;
+                    }
+                }
+            }
+#ifdef VERBOSE
+            llvm::errs() << "  UnaryOp NESTED " << sub->getStmtClassName() <<
+                " " << "opcode=" << unary->getOpcode() << "\n";
+#endif
+        }
+    }
+#ifdef VERBOSE
+    llvm::errs() << "ARG is a " << arg->getStmtClassName() << "\n";
+#endif
+    return true;
+}
+
 void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
@@ -877,45 +946,56 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         nargs--;
                     }
 
+                    int count_args_with_side_effects = 0;
                     std::vector<string> arg_varnames;
                     for (int i = 0; i < nargs; i++) {
                         std::string varname = get_unique_argument_varname();
                         const Expr *arg = loc.get_call()->getArg(i);
                         assert(!isa<CXXDefaultArgExpr>(arg));
 
-                        llvm::errs() << "arg is a " << arg->getStmtClassName() << "\n";
+                        if (has_side_effects(arg)) {
 
-                        std::string type_str = arg->getType().getAsString();
-                        if (type_str.find("(*)") != std::string::npos) {
-                            /*
-                             * If one of the arguments is a multi-dimensional stack
-                             * array, we need to special case the declaration of its
-                             * copy.
-                             */
-                            assert(type_str.find("(*)") == type_str.rfind("(*)"));
-                            size_t index = type_str.find("(*)");
-                            type_str.insert(index + 2, varname);
-                            ss << " " << type_str << ";";
+                            std::string type_str = arg->getType().getAsString();
+                            if (type_str.find("(*)") != std::string::npos) {
+                                /*
+                                 * If one of the arguments is a multi-dimensional stack
+                                 * array, we need to special case the declaration of its
+                                 * copy.
+                                 */
+                                assert(type_str.find("(*)") == type_str.rfind("(*)"));
+                                size_t index = type_str.find("(*)");
+                                type_str.insert(index + 2, varname);
+                                ss << " " << type_str << ";";
+                            } else {
+                                ss << " " << arg->getType().getAsString() << " " <<
+                                    varname << "; ";
+                            }
+                            arg_varnames.push_back(varname);
+                            count_args_with_side_effects++;
                         } else {
-                            ss << " " << arg->getType().getAsString() << " " <<
-                                varname << "; ";
+                            arg_varnames.push_back(stmtToString(arg));
                         }
-                        arg_varnames.push_back(varname);
                     }
 
                     std::stringstream replace_func_call;
                     replace_func_call << "(" << func_symbol << ")(";
 
-                    ss << " if (!____chimes_replaying) { ";
+                    if (count_args_with_side_effects > 0) {
+                        ss << " if (!____chimes_replaying) { ";
+                    }
                     for (int i = 0; i < nargs; i++) {
                         const Expr *arg = loc.get_call()->getArg(i);
-                        ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
-                            "); ";
+                        if (has_side_effects(arg)) {
+                            ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
+                                "); ";
+                        }
 
                         if (i > 0) replace_func_call << ", ";
                         replace_func_call << arg_varnames[i];
                     }
-                    ss << " } ";
+                    if (count_args_with_side_effects > 0) {
+                        ss << " } ";
+                    }
                     replace_func_call << ")";
 
                     ss << " calling((void*)" <<

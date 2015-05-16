@@ -1771,7 +1771,7 @@ foo test;
  fprintf(__stderrp, "Hello before checkpointing\n");
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: if (!____chimes_replaying) { } calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
  (__builtin_expect(!(test.a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 23, "test.a == 3") : (void)0);

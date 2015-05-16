@@ -2020,7 +2020,7 @@ time_t rawtime;
 char filename[64];
  if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   if (! ({ call_lbl_1: if (!____chimes_replaying) { } calling((void*)printRank, 1, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2, ____chimes_disable1); return;; };
+   if (! ({ call_lbl_1: calling((void*)printRank, 1, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2, ____chimes_disable1); return;; };
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
@@ -2054,9 +2054,9 @@ void yamlAppInfo(FILE* file)
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   alias_group_changed(____alias_loc_id_0); if (! ({ call_lbl_2: if (!____chimes_replaying) { } calling((void*)printRank, 2, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0, ____chimes_disable2); return;; };
+   alias_group_changed(____alias_loc_id_0); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0, ____chimes_disable2); return;; };
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    ({ FILE * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (file); } calling((void*)printSeparator, -1, 0UL, 1, (size_t)(5761392777509905349UL)); (printSeparator)(____chimes_arg2); }) ;
+    ({ calling((void*)printSeparator, -1, 0UL, 1, (size_t)(5761392777509905349UL)); (printSeparator)(file); }) ;
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Mini-Application Name    : %s\n", CoMDVariant);
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2082,14 +2082,14 @@ void yamlAppInfo(FILE* file)
 # 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"  LDFLAGS: %s\n", "'-lm '");
 # 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   fprintf(file,"  using MPI: %s\n", ({ call_lbl_17: if (!____chimes_replaying) { } calling((void*)builtWithMpi, 17, 0UL, 0); (builtWithMpi)(); }) ? "true":"false");
+   fprintf(file,"  using MPI: %s\n", ({ call_lbl_17: calling((void*)builtWithMpi, 17, 0UL, 0); (builtWithMpi)(); }) ? "true":"false");
 # 85 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 86 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"  Double Precision: %s\n", (sizeof(real_t)==sizeof(double)?"true":"false"));
 # 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
 # 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    ({ call_lbl_19: char * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (timestring); } calling((void*)getTimeString, 19, 0UL, 1, (size_t)(5761392777509905295UL)); (getTimeString)(____chimes_arg3); }) ;
+    ({ call_lbl_19: calling((void*)getTimeString, 19, 0UL, 1, (size_t)(5761392777509905295UL)); (getTimeString)(timestring); }) ;
 # 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Run Date/Time: %s\n", timestring);
 # 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2104,7 +2104,7 @@ void yamlEnd(void)
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 {const int ____chimes_disable3 = new_stack((void *)(&yamlEnd), "yamlEnd", &____must_manage_yamlEnd, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   if (! ({ call_lbl_1: if (!____chimes_replaying) { } calling((void*)printRank, 1, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_disable3); return;; };
+   if (! ({ call_lbl_1: calling((void*)printRank, 1, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_disable3); return;; };
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"

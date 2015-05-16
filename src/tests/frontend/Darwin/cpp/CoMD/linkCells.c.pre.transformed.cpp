@@ -2755,7 +2755,7 @@ int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int iy; int iz; ;
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ LinkCell * ____chimes_arg0; int ____chimes_arg1; int * ____chimes_arg2; int * ____chimes_arg3; int * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg0 = (boxes); ____chimes_arg1 = (iBox); ____chimes_arg2 = (&ix); ____chimes_arg3 = (&iy); ____chimes_arg4 = (&iz); } calling((void*)getTuple, -1, 0UL, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); (getTuple)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4); }) ;
+ ({ int * ____chimes_arg2; int * ____chimes_arg3; int * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg2 = (&ix); ____chimes_arg3 = (&iy); ____chimes_arg4 = (&iz); } calling((void*)getTuple, -1, 0UL, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); (getTuple)(boxes, iBox, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4); }) ;
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int count; count = (0) ;
@@ -2766,7 +2766,7 @@ int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  { int k; for ( k = (iz - 1) ; k<=iz+1; k++) {
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- nbrBoxes[count++] = ({ LinkCell * ____chimes_arg5; int ____chimes_arg6; int ____chimes_arg7; int ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg5 = (boxes); ____chimes_arg6 = (i); ____chimes_arg7 = (j); ____chimes_arg8 = (k); } calling((void*)getBoxFromTuple, -1, 0UL, 4, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(____chimes_arg5, ____chimes_arg6, ____chimes_arg7, ____chimes_arg8); }) ;
+ nbrBoxes[count++] = ({ calling((void*)getBoxFromTuple, -1, 0UL, 4, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(boxes, i, j, k); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  } }
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2795,7 +2795,7 @@ void putAtomInBox(LinkCell* boxes, Atoms* atoms,
 # 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- int iBox; iBox = ( ({ LinkCell * ____chimes_arg9; real_t * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg9 = (boxes); ____chimes_arg10 = (xyz); } calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577680965UL), (size_t)(7522830976577680821UL)); (getBoxFromCoord)(____chimes_arg9, ____chimes_arg10); }) ) ;
+ int iBox; iBox = ( ({ calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577680965UL), (size_t)(7522830976577680821UL)); (getBoxFromCoord)(boxes, xyz); }) ) ;
 # 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int iOff; iOff = (iBox * 64) ;
 # 169 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2866,7 +2866,7 @@ void moveAtom(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
 # 248 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int nj; nj = (boxes->nAtoms[jBox]) ;
 # 249 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ LinkCell * ____chimes_arg11; Atoms * ____chimes_arg12; int ____chimes_arg13; int ____chimes_arg14; int ____chimes_arg15; int ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg11 = (boxes); ____chimes_arg12 = (atoms); ____chimes_arg13 = (iId); ____chimes_arg14 = (iBox); ____chimes_arg15 = (nj); ____chimes_arg16 = (jBox); } calling((void*)copyAtom, -1, 0UL, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, ____chimes_arg14, ____chimes_arg15, ____chimes_arg16); }) ;
+ ({ calling((void*)copyAtom, -1, 0UL, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(boxes, atoms, iId, iBox, nj, jBox); }) ;
 # 250 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  boxes->nAtoms[jBox]++;
 # 251 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2878,7 +2878,7 @@ void moveAtom(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
 # 255 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int ni; ni = (boxes->nAtoms[iBox]) ;
 # 256 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- if (ni) { ({ LinkCell * ____chimes_arg17; Atoms * ____chimes_arg18; int ____chimes_arg19; int ____chimes_arg20; int ____chimes_arg21; int ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg17 = (boxes); ____chimes_arg18 = (atoms); ____chimes_arg19 = (ni); ____chimes_arg20 = (iBox); ____chimes_arg21 = (iId); ____chimes_arg22 = (iBox); } calling((void*)copyAtom, -1, 0UL, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(____chimes_arg17, ____chimes_arg18, ____chimes_arg19, ____chimes_arg20, ____chimes_arg21, ____chimes_arg22); }) ; };
+ if (ni) { ({ calling((void*)copyAtom, -1, 0UL, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(boxes, atoms, ni, iBox, iId, iBox); }) ; };
 # 257 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 258 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  if (jBox > boxes->nLocalBoxes) {--atoms->nLocal; };
@@ -2893,7 +2893,7 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms)
 # 278 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 {const int ____chimes_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 279 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ LinkCell * ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (boxes); } calling((void*)emptyHaloCells, -1, 0UL, 1, (size_t)(7522830976577681446UL)); (emptyHaloCells)(____chimes_arg23); }) ;
+ ({ calling((void*)emptyHaloCells, -1, 0UL, 1, (size_t)(7522830976577681446UL)); (emptyHaloCells)(boxes); }) ;
 # 280 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 281 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  { int iBox; for ( iBox = (0) ; iBox<boxes->nLocalBoxes; ++iBox)
@@ -2908,9 +2908,9 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms)
 # 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  {
 # 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- int jBox; jBox = ( ({ LinkCell * ____chimes_arg24; real_t * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (boxes); ____chimes_arg25 = (atoms->r[iOff + ii]); } calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(____chimes_arg24, ____chimes_arg25); }) ) ;
+ int jBox; jBox = ( ({ real_t * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg25 = (atoms->r[iOff + ii]); } calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, ____chimes_arg25); }) ) ;
 # 288 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- if (jBox != iBox) { ({ LinkCell * ____chimes_arg26; Atoms * ____chimes_arg27; int ____chimes_arg28; int ____chimes_arg29; int ____chimes_arg30; if (!____chimes_replaying) { ____chimes_arg26 = (boxes); ____chimes_arg27 = (atoms); ____chimes_arg28 = (ii); ____chimes_arg29 = (iBox); ____chimes_arg30 = (jBox); } calling((void*)moveAtom, -1, 0UL, 5, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (moveAtom)(____chimes_arg26, ____chimes_arg27, ____chimes_arg28, ____chimes_arg29, ____chimes_arg30); }) ; } else {++ii; } ;
+ if (jBox != iBox) { ({ calling((void*)moveAtom, -1, 0UL, 5, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (moveAtom)(boxes, atoms, ii, iBox, jBox); }) ; } else {++ii; } ;
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  }
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2998,7 +2998,7 @@ int getBoxFromCoord(LinkCell* boxes, real_t rr[3])
  if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
 # 367 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 368 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- int result; result = ( ({ LinkCell * ____chimes_arg48; int ____chimes_arg49; int ____chimes_arg50; int ____chimes_arg51; if (!____chimes_replaying) { ____chimes_arg48 = (boxes); ____chimes_arg49 = (ix); ____chimes_arg50 = (iy); ____chimes_arg51 = (iz); } calling((void*)getBoxFromTuple, -1, 0UL, 4, (size_t)(7522830976577681138UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(____chimes_arg48, ____chimes_arg49, ____chimes_arg50, ____chimes_arg51); }) ) ;
+ int result; result = ( ({ calling((void*)getBoxFromTuple, -1, 0UL, 4, (size_t)(7522830976577681138UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(boxes, ix, iy, iz); }) ) ;
 # 369 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_7, ____chimes_disable9); return result;
 # 370 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"

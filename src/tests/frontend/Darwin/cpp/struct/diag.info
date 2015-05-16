@@ -10,7 +10,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 5  foo tes
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 13 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 5  foo *test2;  test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 1432567827179872305UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 196 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 46  ({  call_lbl_5:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 46  ({  call_lbl_5:  calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 57 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 14 

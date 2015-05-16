@@ -18,13 +18,13 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 13 5  int
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 13 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 16 9  int inside;  inside = (6) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 16 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 6 5  ({  call_lbl_1:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 1, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 6 5  ({  call_lbl_1:  calling((void*)checkpoint, 1, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 6 16 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 5 92  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 13 20 ;  { call_lbl_6: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 3, &a, &b, &c); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 15 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 22 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 50  ({  call_lbl_4:  if (!____chimes_replaying) {  }  calling((void*)foo, 4, 0UL, 0); (foo)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 50  ({  call_lbl_4:  calling((void*)foo, 4, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 54 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 15 5 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/barrier.cpp 9 179  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  

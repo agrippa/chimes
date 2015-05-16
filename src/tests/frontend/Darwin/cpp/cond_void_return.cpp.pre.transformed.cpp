@@ -1780,9 +1780,9 @@ int *A;
  B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- ({ int * ____chimes_arg0; int * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg0 = (A); ____chimes_arg1 = (B); } calling((void*)bar, -1, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(____chimes_arg0, ____chimes_arg1); }) ;
+ ({ calling((void*)bar, -1, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) ;
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: if (!____chimes_replaying) { } calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  (__builtin_expect(!(A[0] == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 24, "A[0] == 3") : (void)0);

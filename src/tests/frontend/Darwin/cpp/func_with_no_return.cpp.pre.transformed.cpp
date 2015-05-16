@@ -1745,7 +1745,7 @@ rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_p
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
- ({ if (!____chimes_replaying) { } calling((void*)haha_this_sux_part_canc, -1, 0UL, 0); (haha_this_sux_part_canc)(); }) ;
+ ({ calling((void*)haha_this_sux_part_canc, -1, 0UL, 0); (haha_this_sux_part_canc)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_disable1); return 0;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"

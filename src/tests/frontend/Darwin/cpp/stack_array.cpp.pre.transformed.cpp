@@ -1758,7 +1758,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
  a[3] = a[1];
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: if (!____chimes_replaying) { } calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
  (__builtin_expect(!(a[0] == 5), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 11, "a[0] == 5") : (void)0);

@@ -1744,9 +1744,9 @@ void *haha_this_sux_part_deux() {const int ____chimes_disable0 = new_stack((void
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(651168722096376646UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- tmp = ( ({ if (!____chimes_replaying) { } calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0); (haha_this_sux_part_deux)(); }) ) ;
+ tmp = ( ({ calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0); (haha_this_sux_part_deux)(); }) ) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: if (!____chimes_replaying) { } calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return ((int *)tmp)[0];
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"

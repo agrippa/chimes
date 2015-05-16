@@ -1796,7 +1796,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
 void foo() {const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
-     ({ call_lbl_1: if (!____chimes_replaying) { } calling((void*)checkpoint, 1, 0UL, 0); (checkpoint)(); }) ;
+     ({ call_lbl_1: calling((void*)checkpoint, 1, 0UL, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
 rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_disable0); }
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
@@ -1837,7 +1837,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = 
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
         printf("hello from %d : %d\n", omp_get_thread_num(), inside);
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
-        alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: if (!____chimes_replaying) { } calling((void*)foo, 4, 0UL, 0); (foo)(); }) ;
+        alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)foo, 4, 0UL, 0); (foo)(); }) ;
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/critical.cpp"
