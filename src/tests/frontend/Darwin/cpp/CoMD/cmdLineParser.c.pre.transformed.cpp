@@ -2754,7 +2754,7 @@ MyOption *o;
 # 207 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
  case 's':
 # 208 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_12: char * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = ((char *)o->ptr); } calling((void*)strncpy, 12, 8793756385240104735UL, 3, (size_t)(8793756385240104848UL), (size_t)(8793756385240104706UL), (size_t)(0UL)); (strncpy)(____chimes_arg13, (char *)optarg, o->sz); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_12: char * ____chimes_arg13; const char * ____chimes_arg14; size_t ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg13 = ((char *)o->ptr); ____chimes_arg14 = ((char *)optarg); ____chimes_arg15 = (o->sz); } calling((void*)strncpy, 12, 8793756385240104735UL, 3, (size_t)(8793756385240104848UL), (size_t)(8793756385240104706UL), (size_t)(0UL)); (strncpy)(____chimes_arg13, ____chimes_arg14, ____chimes_arg15); }) ;
 # 209 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"
  ((char*)o->ptr)[o->sz-1] = '\0';
 # 210 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c"

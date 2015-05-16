@@ -2075,9 +2075,9 @@ void timestampBarrier(const char* msg)
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (! ({ calling((void*)printRank, -1, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_3, ____chimes_disable3); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(____alias_loc_id_0); t = ( ({ call_lbl_3: calling((void*)time, 3, 0UL, 1, (size_t)(2720369932807154229UL)); (time)(__null); }) ) ;
+   alias_group_changed(____alias_loc_id_0); t = ( ({ call_lbl_3: time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (__null); } calling((void*)time, 3, 0UL, 1, (size_t)(2720369932807154229UL)); (time)(____chimes_arg0); }) ) ;
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-   alias_group_changed(____alias_loc_id_1); char *timeString; timeString = ( ({ call_lbl_5: calling((void*)ctime, 5, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); (ctime)(&t); }) ) ;
+   alias_group_changed(____alias_loc_id_1); char *timeString; timeString = ( ({ call_lbl_5: const time_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (&t); } calling((void*)ctime, 5, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); (ctime)(____chimes_arg1); }) ) ;
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
