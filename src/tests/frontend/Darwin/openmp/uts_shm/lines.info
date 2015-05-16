@@ -24,25 +24,25 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 986 9 : { 1093, 1094, 1095, 1194, 1195 } prop:call:rng_spawn
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 988 7 : { 1093, 1094, 1095, 1194, 1195 } prop:call:_Z7ss_pushP12stealStack_tP6node_t
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1100 7 : { 1202 } prop:call:_Z11ss_setStateP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1012 3 : { 1996 } prop:call:omp_set_lock
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1016 3 : { 1985 } direct:call:omp_unset_lock
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1012 3 : { 2002 } prop:call:omp_set_lock
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1016 3 : { 1991 } direct:call:omp_unset_lock
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1025 3 : { 1258 } direct:call:omp_set_lock
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1030 19 : { 1985 } direct:call:omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1042 3 : { 1255, 1256, 1283, 1985 } prop:call:omp_unset_lock
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1030 19 : { 1991 } direct:call:omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1042 3 : { 1255, 1256, 1283, 1991 } prop:call:omp_unset_lock
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1064 3 : { 1255, 1256, 1257 } prop:call:omp_set_lock
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1073 3 : { 1255, 1256, 1283, 1985 } direct:call:omp_unset_lock
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1140 7 : { 1386, 1387, 1390, 1391, 1392 } prop:call:_Z11ss_setStateP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1167 9 : { 1386, 1387, 1390, 1391, 1392 } prop:call:_Z10ss_acquireP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1198 5 : { 1386, 1387, 1390, 1391, 1392 } prop:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1146 2 : { 1388 } prop:call:_Z11genChildrenP6node_tS0_P12stealStack_t
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1155 9 : { 1388 } prop:call:_Z6ss_popP12stealStack_t
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1176 7 : { 1391 } direct:call:_Z11ss_setStateP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1180 14 : { 1391, 1392 } prop:call:_Z8ss_stealP12stealStack_tii
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1193 5 : { 1391, 1392 } prop:call:_Z11ss_setStateP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1181 30 : { 1391 } prop:call:_Z8findworki
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1235 18 : { 1488, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502 } direct:call:omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1273 3 : { 1489, 1490, 1491, 1492, 1493, 1494, 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503 } prop:call:_Z13uts_showStatsiidiii
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 3 : { 1912, 1913, 1914 } direct:call:_Z15uts_parseParamsiPPc
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1413 5 : { 1919, 1992 } direct:call:_Z7ss_initP12stealStack_ti
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1433 5 : { 1916 } direct:call:_Z13parTreeSearchP12stealStack_t
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1446 5 : { 1917, 1918 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1073 3 : { 1255, 1256, 1283, 1991 } direct:call:omp_unset_lock
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1141 7 : { 1386, 1387, 1390, 1391, 1392 } prop:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1168 9 : { 1386, 1387, 1390, 1391, 1392 } prop:call:_Z10ss_acquireP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1199 5 : { 1386, 1387, 1390, 1391, 1392 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1147 2 : { 1388 } prop:call:_Z11genChildrenP6node_tS0_P12stealStack_t
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1156 9 : { 1388 } prop:call:_Z6ss_popP12stealStack_t
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1177 7 : { 1391 } direct:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1181 14 : { 1391, 1392 } prop:call:_Z8ss_stealP12stealStack_tii
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1194 5 : { 1391, 1392 } prop:call:_Z11ss_setStateP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1182 30 : { 1391 } prop:call:_Z8findworki
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1236 18 : { 1494, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508 } direct:call:omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1274 3 : { 1495, 1496, 1497, 1498, 1499, 1500, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509 } prop:call:_Z13uts_showStatsiidiii
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1371 3 : { 1918, 1919, 1920 } direct:call:_Z15uts_parseParamsiPPc
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1414 5 : { 1925, 1998 } direct:call:_Z7ss_initP12stealStack_ti
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1433 5 : { 1922 } direct:call:_Z13parTreeSearchP12stealStack_t
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1446 5 : { 1923, 1924 } direct:call:_Z10checkpointv

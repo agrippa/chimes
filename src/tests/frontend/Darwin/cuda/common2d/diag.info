@@ -2,16 +2,18 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 17
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 9 alias_group_changed(____alias_loc_id_1); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 95 40 len=7 realloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 96 41 , 17753382416546318259UL, 0, 1, (int)sizeof(struct _source), 0
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 8 71 new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 24 1 rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 49 new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(17753382416546318145UL), (size_t)(17753382416546318146UL), (size_t)(17753382416546318147UL), (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 46 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 25 new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382416546318169UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 53 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 35 new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382416546318207UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 69 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 71 56 new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382416546318329UL), (size_t)(0UL), (size_t)(17753382416546318331UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 122 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 8 71 const int ____chimes_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 24 1 rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2, ____chimes_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 49 const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(17753382416546318145UL), (size_t)(17753382416546318146UL), (size_t)(17753382416546318147UL), (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 46 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 25 const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382416546318169UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 53 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_disable2); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 35 const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382416546318207UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 69 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_disable3); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 71 56 const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382416546318329UL), (size_t)(0UL), (size_t)(17753382416546318331UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 122 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_disable4); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 8 72 const int ____chimes_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 8 325 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 9 37 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 15 5 {  int y; 
@@ -22,6 +24,8 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 16 9 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 19 9  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 16 14  x = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 16 23 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 50 const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(17753382416546318145UL), (size_t)(17753382416546318146UL), (size_t)(17753382416546318147UL), (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 356 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 30 5 {  size_t i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 32 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 30 10  i = (0) ;
@@ -32,18 +36,29 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 35 22 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 40 5  float scale;  scale = (1. / (dx * dx)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 40 33 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 26 const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382416546318169UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 158 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 36 const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382416546318207UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 195 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 71 57 const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382416546318329UL), (size_t)(0UL), (size_t)(17753382416546318331UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 71 600 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5 int c; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 10 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 8 293  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 39 5  call_lbl_1: calling((void*)&memset, 1, 0UL, 3, (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 324  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 126  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 163  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 75 5  call_lbl_1: calling((void*)&default_config, 1, 0UL, 1, (size_t)(17753382416546318329UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 58  call_lbl_8: calling((void*)&parse_source, 8, 0UL, 2, (size_t)(17753382416546318231UL), (size_t)(17753382416546318259UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 114 13  call_lbl_13: calling((void*)&usage, 13, 0UL, 1, (size_t)(17753382416546318331UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 50  call_lbl_15: calling((void*)&getNumCUDADevices, 15, 0UL, 0); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 10  if (____must_checkpoint_setup_config_c_0 != 0) { register_stack_var("setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 10  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 71 568  if (____chimes_replaying) { goto lbl_0; } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 8 324  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 39 5  ({  call_lbl_1:  void * ____chimes_arg0;  int ____chimes_arg1;  unsigned long ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg0 = (h_coeff); ____chimes_arg1 = (0); ____chimes_arg2 = (20 * sizeof(float));  }  calling((void*)memset, 1, 0UL, 3, (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 39 42 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 157  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 194  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 75 5  ({  config * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (conf);  }  calling((void*)default_config, -1, 0UL, 1, (size_t)(17753382416546318329UL)); (default_config)(____chimes_arg3); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 75 24 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 58  ({  call_lbl_7:  char * ____chimes_arg4;  source * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg4 = (optarg); ____chimes_arg5 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 7, 0UL, 2, (size_t)(17753382416546318231UL), (size_t)(17753382416546318259UL)); (parse_source)(____chimes_arg4, ____chimes_arg5); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 103 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 17  ({  char ** ____chimes_arg6;  if (!____chimes_replaying) { ____chimes_arg6 = (argv);  }  calling((void*)usage, -1, 0UL, 1, (size_t)(17753382416546318331UL)); (usage)(____chimes_arg6); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 27 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 64  ({  call_lbl_13:  if (!____chimes_replaying) {  }  calling((void*)getNumCUDADevices, 13, 0UL, 0); (getNumCUDADevices)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 82 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 10 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 71 599  ; int c;
+ if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  

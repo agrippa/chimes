@@ -815,8 +815,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         } else if (is_critical || is_for) {
             // Disable any threads inside
             std::string disable_varname = get_unique_disable_varname();
-            std::string pre = " bool " + disable_varname +
-                " = disable_current_thread(); ";
+            std::string pre = "; bool " + disable_varname + "; " +
+                disable_varname + " = disable_current_thread(); ";
             std::string post = " reenable_current_thread(" + disable_varname +
                 "); ";
 
@@ -856,7 +856,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     if (loc.get_funcname() == "anon") {
                         func_symbol = stmtToString(loc.get_call()->getCallee());
                     } else {
-                        func_symbol = "&" + loc.get_funcname();
+                        func_symbol = loc.get_funcname();
                         may_cause_checkpoint = insertions->may_cause_checkpoint(
                                 loc.get_funcname());
                     }
@@ -866,8 +866,16 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         ss << " call_lbl_" << loc.get_label() << ": ";
                     }
 
+                    int nargs = loc.get_call()->getNumArgs();
+                    while (nargs > 0) {
+                        std::string s = stmtToString(loc.get_call()->getArg(
+                                    nargs - 1));
+                        if (s.size() > 0) break;
+                        nargs--;
+                    }
+
                     std::vector<string> arg_varnames;
-                    for (int i = 0; i < loc.get_call()->getNumArgs(); i++) {
+                    for (int i = 0; i < nargs; i++) {
                         std::string varname = get_unique_argument_varname();
                         const Expr *arg = loc.get_call()->getArg(i);
                         std::string type_str = arg->getType().getAsString();
@@ -888,16 +896,20 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         arg_varnames.push_back(varname);
                     }
 
+                    std::stringstream replace_func_call;
+                    replace_func_call << "(" << func_symbol << ")(";
+
                     ss << " if (!____chimes_replaying) { ";
-                    for (int i = 0; i < loc.get_call()->getNumArgs(); i++) {
+                    for (int i = 0; i < nargs; i++) {
                         const Expr *arg = loc.get_call()->getArg(i);
                         ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
                             "); ";
-                        ReplaceText(clang::SourceRange(arg->getLocStart(),
-                                    arg->getLocEnd()), arg_varnames[i]);
+
+                        if (i > 0) replace_func_call << ", ";
+                        replace_func_call << arg_varnames[i];
                     }
                     ss << " } ";
-
+                    replace_func_call << ")";
 
                     ss << " calling((void*)" <<
                         func_symbol << ", " << loc.get_label() << ", " <<
@@ -907,7 +919,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
                     ss << "); ";
 
-                    InsertAtFront(loc.get_call(), ss.str());
+                    // InsertAtFront(loc.get_call(), ss.str());
+                    ReplaceText(clang::SourceRange(loc.get_call()->getLocStart(), loc.get_call()->getLocEnd()),
+                            " ({ " + ss.str() + replace_func_call.str() + "; }) ");
                 }
             }
         }

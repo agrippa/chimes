@@ -4,9 +4,9 @@ getNeighborBoxes 348 0 350
 getTuple 628 0 630 631 632
 getBoxFromTuple 888 0 0 0
 putAtomInBox 1061 1062 0 0 0 0 0 0 0 0
-getBoxFromCoord 1230 1231
-moveAtom 1293 1334 0 0 0
-copyAtom 1459 1460 0 0 0 0
-updateLinkCells 1538 1539
-emptyHaloCells 1569
-maxOccupancy 1601
+getBoxFromCoord 1234 1235
+moveAtom 1297 1338 0 0 0
+copyAtom 1463 1464 0 0 0 0
+updateLinkCells 1542 1543
+emptyHaloCells 1573
+maxOccupancy 1605

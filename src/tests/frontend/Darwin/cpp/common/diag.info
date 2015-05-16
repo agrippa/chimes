@@ -8,31 +8,35 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 161 31 len=6 m
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 161 64 , 7724169104006700759UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 225 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 225 10 , 7724169104006700759UL
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 48 5 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 18 new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 70 new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7724169104006700394UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 60 1 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 46 new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 93 1 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 76 new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 125 1 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 142 5 rm_stack(true, 7724169104006700643UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 71 new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7724169104006700702UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 159 20 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 56 new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 176 1 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 182 9 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 36 new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 215 1 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 219 9 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 24 new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 226 1 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 48 5 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 18 const int ____chimes_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 70 const int ____chimes_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7724169104006700394UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 60 1 rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 46 const int ____chimes_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 93 1 rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_disable2); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 76 const int ____chimes_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 125 1 rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_disable3); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 142 5 rm_stack(true, 7724169104006700643UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_disable4); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 71 const int ____chimes_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7724169104006700702UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 159 20 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_disable5); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 56 const int ____chimes_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 176 1 rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_disable5); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 182 9 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_disable6); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 36 const int ____chimes_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 215 1 rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_disable6); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 219 9 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_disable7); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 24 const int ____chimes_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 226 1 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_disable7); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 19 const int ____chimes_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 123 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 5  struct timeval tp; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 22 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 5  struct timezone tzp; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 46 24 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 47 36 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 71 const int ____chimes_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7724169104006700394UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 274 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 5  float shift;  shift = (-1.55939996F / freq) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 52 34 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 54 5 {  int i; 
@@ -45,6 +49,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 9  flo
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 56 50 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 9  float sqr_pi_freq_t;  sqr_pi_freq_t = (pi_freq_t * pi_freq_t) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 57 52 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 47 const int ____chimes_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 232 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 5  char *x_str;  x_str = (optarg) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 63 25 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 64 5  char *first_comma;  first_comma = (strchr(x_str, ',')) ;
@@ -59,36 +65,48 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 5  cha
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 78 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 5  char *time_str;  time_str = (third_comma + 1) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 84 37 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 77 const int ____chimes_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 313 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 124 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 110 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 9  source *curr;  curr = ((*srcs) + i) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 111 35 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 72 const int ____chimes_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7724169104006700702UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 275 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 5  float **src_samples;  src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 7724169104006700643UL, 1, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 128 105 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 141 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 134 19 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 57 const int ____chimes_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 224 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 5 int i; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 146 10 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 37 const int ____chimes_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 180 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 179 5 int i; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 179 10 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 191 5  double perc_progress;  perc_progress = ((double)progress / (double)progress_goal) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 191 68 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 192 5  int ticks;  ticks = ((int)(perc_progress * progress_length)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 192 55 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 6  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 23  if (____must_checkpoint_seconds_tp_0 != 0) { register_stack_var("seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 23  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 91  if (____chimes_replaying) { goto lbl_0; } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 242  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 200  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 281  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 140 9  call_lbl_7: calling((void*)&ricker_wavelet, 7, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 243  if (____chimes_replaying) {  switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 192  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 148  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 5  call_lbl_2: calling((void*)&update_progress, 2, 0UL, 1, (size_t)(0UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 121  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 25 const int ____chimes_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 153 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 6 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 45 23 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 122  ; struct timeval tp;
+ if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 273  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 231  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 312  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 140 9  ({  float * ____chimes_arg0;  int ____chimes_arg1;  float ____chimes_arg2;  float ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg0 = (src_samples[i]); ____chimes_arg1 = (nsteps); ____chimes_arg2 = (dt); ____chimes_arg3 = (srcs[i].freq);  }  calling((void*)ricker_wavelet, -1, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 140 64 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 274  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 223  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 179  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 5  ({  int ____chimes_arg4;  if (!____chimes_replaying) { ____chimes_arg4 = (progress_goal);  }  calling((void*)update_progress, -1, 0UL, 1, (size_t)(0UL)); (update_progress)(____chimes_arg4); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 34 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 152  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

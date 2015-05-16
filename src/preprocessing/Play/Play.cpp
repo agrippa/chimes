@@ -25,7 +25,7 @@
 
 using namespace llvm;
 
-#define VERBOSE
+// #define VERBOSE
 
 namespace {
 

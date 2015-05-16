@@ -1,4 +1,4 @@
-__fatBinC_Wrapper_t 1 magic "int" version "int" data "long long unsigned int*"
+__fatBinC_Wrapper_t 1 magic "int" version "int" data "long long unsigned int*" filename_or_fatbins "void*"
 _config 0 nx "int" ny "int" nz "int" nsteps "int" save_text "int" verbose "int" radius "int" ngpus "int" srcs "%struct._source*" nsrcs "int" progress_width "int" progress_disabled "int"
 _source 0 x "int" y "int" freq "float" t "int"
 cudaError 0

@@ -552,12 +552,14 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
@@ -565,7 +567,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 57 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 59 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2841,7 +2843,7 @@ void uts_error(char *str) {const int ____chimes_disable0 = new_stack((void *)(&u
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("*** Error: %s\n", str);
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(____alias_loc_id_0); call_lbl_3: int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (1); } calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(____chimes_arg0);
+  alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (1); } calling((void*)impl_abort, 3, 0UL, 1, (size_t)(0UL)); (impl_abort)(____chimes_arg0); }) ;
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_disable0); }
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -2883,7 +2885,7 @@ void uts_initRoot(Node * root, int type) {const int ____chimes_disable3 = new_st
 # 153 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   root->numChildren = -1;
 # 154 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(____alias_loc_id_1); call_lbl_2: uint8 * ____chimes_arg1; int ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (root->state.state); ____chimes_arg2 = (rootId); } calling((void*)&rng_init, 2, 0UL, 2, (size_t)(11896266734391819204UL), (size_t)(0UL)); rng_init(____chimes_arg1, ____chimes_arg2);
+  alias_group_changed(____alias_loc_id_1); ({ call_lbl_2: uint8 * ____chimes_arg1; int ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (root->state.state); ____chimes_arg2 = (rootId); } calling((void*)rng_init, 2, 0UL, 2, (size_t)(11896266734391819204UL), (size_t)(0UL)); (rng_init)(____chimes_arg1, ____chimes_arg2); }) ;
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n", type, root); };
@@ -2895,9 +2897,9 @@ rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chime
 int uts_numChildren_bin(Node * parent) {const int ____chimes_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(11896266734391819233UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(____alias_loc_id_2); int v; call_lbl_2: uint8 * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state); } calling((void*)&rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); v = (rng_rand(____chimes_arg3)) ;
+  alias_group_changed(____alias_loc_id_2); int v; v = ( ({ call_lbl_2: uint8 * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state); } calling((void*)rng_rand, 2, 0UL, 1, (size_t)(11896266734391819233UL)); (rng_rand)(____chimes_arg3); }) ) ;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   double d; int ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (v); } calling((void*)&rng_toProb, -1, 0UL, 1, (size_t)(0UL)); d = (rng_toProb(____chimes_arg4)) ;
+   double d; d = ( ({ int ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (v); } calling((void*)rng_toProb, -1, 0UL, 1, (size_t)(0UL)); (rng_toProb)(____chimes_arg4); }) ) ;
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_19, ____chimes_disable4); return (d < nonLeafProb) ? nonLeafBF : 0;
@@ -2979,9 +2981,9 @@ double b_i;
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(____alias_loc_id_3); call_lbl_7: uint8 * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (parent->state.state); } calling((void*)&rng_rand, 7, 0UL, 1, (size_t)(11896266734391819340UL)); h = rng_rand(____chimes_arg5);
+  alias_group_changed(____alias_loc_id_3); h = ({ call_lbl_7: uint8 * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (parent->state.state); } calling((void*)rng_rand, 7, 0UL, 1, (size_t)(11896266734391819340UL)); (rng_rand)(____chimes_arg5); }) ;
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   int ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (h); } calling((void*)&rng_toProb, -1, 0UL, 1, (size_t)(0UL)); u = rng_toProb(____chimes_arg6);
+  u = ({ int ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (h); } calling((void*)rng_toProb, -1, 0UL, 1, (size_t)(0UL)); (rng_toProb)(____chimes_arg6); }) ;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3006,27 +3008,27 @@ int uts_numChildren(Node *parent) {const int ____chimes_disable6 = new_stack((vo
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case BIN:
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height == 0) {numChildren = (int)floor(b_0); } else {alias_group_changed(____alias_loc_id_6); call_lbl_3: Node * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (parent); } calling((void*)&uts_numChildren_bin, 3, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(____chimes_arg7); } ;
+      if (parent->height == 0) {numChildren = (int)floor(b_0); } else {alias_group_changed(____alias_loc_id_6); numChildren = ({ call_lbl_3: Node * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (parent); } calling((void*)uts_numChildren_bin, 3, 0UL, 1, (size_t)(11896266734391819431UL)); (uts_numChildren_bin)(____chimes_arg7); }) ; } ;
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case GEO:
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      alias_group_changed(____alias_loc_id_7); call_lbl_5: Node * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = (parent); } calling((void*)&uts_numChildren_geo, 5, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(____chimes_arg8);
+      alias_group_changed(____alias_loc_id_7); numChildren = ({ call_lbl_5: Node * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = (parent); } calling((void*)uts_numChildren_geo, 5, 0UL, 1, (size_t)(11896266734391819431UL)); (uts_numChildren_geo)(____chimes_arg8); }) ;
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     case HYBRID:
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(____alias_loc_id_8); call_lbl_7: Node * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = (parent); } calling((void*)&uts_numChildren_geo, 7, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_geo(____chimes_arg9); } else {alias_group_changed(____alias_loc_id_9); call_lbl_9: Node * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (parent); } calling((void*)&uts_numChildren_bin, 9, 0UL, 1, (size_t)(11896266734391819431UL)); numChildren = uts_numChildren_bin(____chimes_arg10); } ;
+      if (parent->height < shiftDepth * gen_mx) {alias_group_changed(____alias_loc_id_8); numChildren = ({ call_lbl_7: Node * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = (parent); } calling((void*)uts_numChildren_geo, 7, 0UL, 1, (size_t)(11896266734391819431UL)); (uts_numChildren_geo)(____chimes_arg9); }) ; } else {alias_group_changed(____alias_loc_id_9); numChildren = ({ call_lbl_9: Node * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (parent); } calling((void*)uts_numChildren_bin, 9, 0UL, 1, (size_t)(11896266734391819431UL)); (uts_numChildren_bin)(____chimes_arg10); }) ; } ;
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       break;
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_5); call_lbl_11: char * ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = ("parTreeSearch(): Unknown tree type"); } calling((void*)&uts_error, 11, 0UL, 1, (size_t)(11896266734391820034UL)); default:
+    alias_group_changed(____alias_loc_id_5); default:
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      uts_error(____chimes_arg11);
+       ({ call_lbl_11: char * ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 11, 0UL, 1, (size_t)(11896266734391820034UL)); (uts_error)(____chimes_arg11); }) ;
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3086,9 +3088,9 @@ int uts_childType(Node *parent) {const int ____chimes_disable7 = new_stack((void
 # 279 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       if (parent->height < shiftDepth * gen_mx) {rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22, ____chimes_disable7); return GEO;; } else {rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22, ____chimes_disable7); return BIN;; } ;
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_10); call_lbl_6: char * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)&uts_error, 6, 0UL, 1, (size_t)(11896266734391820037UL)); default:
+    alias_group_changed(____alias_loc_id_10); default:
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-      uts_error(____chimes_arg12);
+       ({ call_lbl_6: char * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)uts_error, 6, 0UL, 1, (size_t)(11896266734391820037UL)); (uts_error)(____chimes_arg12); }) ;
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_22, ____chimes_disable7); return -1;
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3154,7 +3156,7 @@ double q;
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-  alias_group_changed(____alias_loc_id_12); call_lbl_12: char * ____chimes_arg13; int ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg13 = (strBuf); ____chimes_arg14 = (ind); } calling((void*)&rng_showtype, 12, 0UL, 2, (size_t)(11896266734391819610UL), (size_t)(0UL)); ind = rng_showtype(____chimes_arg13, ____chimes_arg14);
+  alias_group_changed(____alias_loc_id_12); ind = ({ call_lbl_12: char * ____chimes_arg13; int ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg13 = (strBuf); ____chimes_arg14 = (ind); } calling((void*)rng_showtype, 12, 0UL, 2, (size_t)(11896266734391819610UL), (size_t)(0UL)); (rng_showtype)(____chimes_arg13, ____chimes_arg14); }) ;
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3178,9 +3180,9 @@ char strBuf[5000];
 # 334 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   if (verbose > 0) {
 # 335 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_13); call_lbl_2: char * ____chimes_arg15; int ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg15 = (strBuf); ____chimes_arg16 = (ind); } calling((void*)&uts_paramsToStr, 2, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); ind = uts_paramsToStr(____chimes_arg15, ____chimes_arg16);
+    alias_group_changed(____alias_loc_id_13); ind = ({ call_lbl_2: char * ____chimes_arg15; int ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg15 = (strBuf); ____chimes_arg16 = (ind); } calling((void*)uts_paramsToStr, 2, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); (uts_paramsToStr)(____chimes_arg15, ____chimes_arg16); }) ;
 # 336 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_14); call_lbl_4: char * ____chimes_arg17; int ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg17 = (strBuf); ____chimes_arg18 = (ind); } calling((void*)&impl_paramsToStr, 4, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); ind = impl_paramsToStr(____chimes_arg17, ____chimes_arg18);
+    alias_group_changed(____alias_loc_id_14); ind = ({ call_lbl_4: char * ____chimes_arg17; int ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg17 = (strBuf); ____chimes_arg18 = (ind); } calling((void*)impl_paramsToStr, 4, 0UL, 2, (size_t)(11896266734391819616UL), (size_t)(0UL)); (impl_paramsToStr)(____chimes_arg17, ____chimes_arg18); }) ;
 # 337 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     printf("%s\n",strBuf);
 # 338 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3199,12 +3201,12 @@ int i;
 # 344 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   while (i < argc && err == -1) {
 # 345 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    if (argv[i][0] == '-' && argv[i][1] == 'h') {{ alias_group_changed(____alias_loc_id_15); call_lbl_2: if (!____chimes_replaying) { } calling((void*)&uts_helpMessage, 2, 0UL, 0); uts_helpMessage(); call_lbl_3: int ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg19 = (0); } calling((void*)&impl_abort, 3, 0UL, 1, (size_t)(0UL)); impl_abort(____chimes_arg19); }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i + 1) { err = i; break; }
+    if (argv[i][0] == '-' && argv[i][1] == 'h') {{ alias_group_changed(____alias_loc_id_15); ({ call_lbl_2: if (!____chimes_replaying) { } calling((void*)uts_helpMessage, 2, 0UL, 0); (uts_helpMessage)(); }) ; ({ call_lbl_3: int ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg19 = (0); } calling((void*)impl_abort, 3, 0UL, 1, (size_t)(0UL)); (impl_abort)(____chimes_arg19); }) ; }; } else if (argv[i][0] != '-' || strlen(argv[i]) != 2 || argc <= i + 1) { err = i; break; }
 # 352 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 353 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 354 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 355 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_17); call_lbl_6: char * ____chimes_arg20; char * ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg20 = (argv[i]); ____chimes_arg21 = (argv[i + 1]); } calling((void*)&impl_parseParam, 6, 0UL, 2, (size_t)(11896266734391819886UL), (size_t)(11896266734391819886UL)); if (!impl_parseParam(____chimes_arg20, ____chimes_arg21)) {
+    alias_group_changed(____alias_loc_id_17); if (! ({ call_lbl_6: char * ____chimes_arg20; char * ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg20 = (argv[i]); ____chimes_arg21 = (argv[i + 1]); } calling((void*)impl_parseParam, 6, 0UL, 2, (size_t)(11896266734391819886UL), (size_t)(11896266734391819886UL)); (impl_parseParam)(____chimes_arg20, ____chimes_arg21); }) ) {
 # 356 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       i += 2;
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3288,7 +3290,7 @@ int i;
 # 399 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
     printf("Try -h for help.\n");
 # 400 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_22: int ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg22 = (4); } calling((void*)&impl_abort, 22, 0UL, 1, (size_t)(0UL)); impl_abort(____chimes_arg22);
+    alias_group_changed(____alias_loc_id_16); ({ call_lbl_22: int ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg22 = (4); } calling((void*)impl_abort, 22, 0UL, 1, (size_t)(0UL)); (impl_abort)(____chimes_arg22); }) ;
 # 401 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 402 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -3333,7 +3335,7 @@ void uts_helpMessage() {const int ____chimes_disable11 = new_stack((void *)(&uts
 # 423 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("\n  Additional Implementation Parameters:\n");
 # 424 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   call_lbl_18: if (!____chimes_replaying) { } calling((void*)&impl_helpMessage, 18, 0UL, 0); impl_helpMessage();
+   ({ call_lbl_18: if (!____chimes_replaying) { } calling((void*)impl_helpMessage, 18, 0UL, 0); (impl_helpMessage)(); }) ;
 # 425 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   printf("\n");
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c"

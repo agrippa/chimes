@@ -68,6 +68,8 @@ protected:
     void ReplaceText(clang::SourceLocation loc, unsigned len,
             std::string new_str);
     void ReplaceText(clang::SourceRange range, std::string s);
+    void ReplaceWholeStatement(const clang::Stmt *s,
+        std::string st);
 
     std::string stmtToString(const clang::Stmt* s);
 

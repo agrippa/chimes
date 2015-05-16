@@ -1,29 +1,30 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 90 4 : { 1, 2, 3 } direct:call:_Z12initParallelPiPPPc
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 104 4 : { 5 } direct:call:_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 107 4 : { 7 } direct:call:_Z16timestampBarrierPKc
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 115 4 : { 8, 9, 10 } direct:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 7 : { 10 } direct:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 15 : { 136, 309 } direct:call:_ZL13initPotentialiPKcS0_S0_
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 187 4 : { 137, 309 } prop:call:_ZL12sanityChecks9CommandStddPc
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 196 18 : { 139, 309 } direct:call:_Z17initDecompositioniiiPd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 17 : { 309 } direct:call:_Z13initLinkCellsPK8DomainStd
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 200 17 : { 309 } direct:call:_Z9initAtomsP10LinkCellSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 203 4 : { 309 } direct:call:_Z16createFccLatticeiiidP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 210 9 : { 309 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 389 17 : { 332, 333 } direct:call:_Z12maxOccupancyP10LinkCellSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 392 9 : { 334 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 432 4 : { 335, 336, 337, 338, 339, 340, 341, 342 } direct:call:_Z14printSeparatorP7__sFILE
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 288 4 : { 671 } direct:call:_ZL8sumAtomsP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 293 8 : { 672, 678 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 342 9 : { 727, 728, 773 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 360 9 : { 786, 787, 788, 789, 1367 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 306 8 : { 919, 920 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 233 4 : { 1003, 1004, 1005 } prop:call:_Z16destroyLinkCellsPP10LinkCellSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 22 : { 1075, 1076, 1077, 1078, 1079 } prop:call:_Z10initEamPotPKcS0_S0_
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 267 75 : { 1075, 1076, 1077, 1078, 1079 } prop:call:_Z9initLjPotv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 449 18 : { 1119, 1120, 1121, 1122, 1123 } direct:call:_Z9getNRanksv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 452 11 : { 1122 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 11 : { 1122, 1124, 1125, 1126, 1127, 1128, 1129 } prop:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 476 8 : { 1122, 1124, 1125, 1126, 1127, 1128, 1129 } prop:call:strcasecmp
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 479 11 : { 1122 } direct:call:_Z9printRankv
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 485 4 : { 1130 } direct:call:_Z13bcastParallelPvii
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 4 : { 1, 2, 3 } direct:call:_Z12initParallelPiPPPc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 4 : { 5 } direct:call:_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 105 4 : { 7 } direct:call:_Z16timestampBarrierPKc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 4 : { 8, 9, 10 } direct:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 116 12 : { 10 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 128 4 : { 10 } prop:call:_Z11profileStop11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 15 : { 135, 308 } direct:call:_ZL13initPotentialiPKcS0_S0_
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 : { 136, 308 } prop:call:_ZL12sanityChecks9CommandStddPc
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 18 : { 138, 308 } direct:call:_Z17initDecompositioniiiPd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 17 : { 308 } direct:call:_Z13initLinkCellsPK8DomainStd
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 17 : { 308 } direct:call:_Z9initAtomsP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 4 : { 308 } direct:call:_Z16createFccLatticeiiidP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 9 : { 308 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 17 : { 331, 332 } direct:call:_Z12maxOccupancyP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 9 : { 333 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 4 : { 334, 335, 336, 337, 338, 339, 340, 341 } direct:call:_Z14printSeparatorP7__sFILE
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 4 : { 670 } direct:call:_ZL8sumAtomsP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 : { 671, 677 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 9 : { 726, 727, 772 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 9 : { 785, 786, 787, 788, 1366 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 8 : { 918, 919 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 4 : { 1002, 1003, 1004 } prop:call:_Z16destroyLinkCellsPP10LinkCellSt
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 22 : { 1074, 1075, 1076, 1077, 1078 } prop:call:_Z10initEamPotPKcS0_S0_
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 75 : { 1074, 1075, 1076, 1077, 1078 } prop:call:_Z9initLjPotv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 18 : { 1118, 1119, 1120, 1121, 1122 } direct:call:_Z9getNRanksv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 11 : { 1121 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 11 : { 1121, 1123, 1124, 1125, 1126, 1127, 1128 } prop:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 8 : { 1121, 1123, 1124, 1125, 1126, 1127, 1128 } prop:call:strcasecmp
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 11 : { 1121 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 4 : { 1129 } direct:call:_Z13bcastParallelPvii

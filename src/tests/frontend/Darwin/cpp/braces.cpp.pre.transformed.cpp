@@ -479,20 +479,22 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
+extern void register_functions(int nfunctions, const char *module_name, ...);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -501,12 +503,14 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
@@ -514,7 +518,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1730,11 +1734,13 @@ void *valloc(size_t);
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*fp)(void *));
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
  if (argc == 0) {printf("hello there\n"); };
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
@@ -1745,13 +1751,14 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
  { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0); return 0;
+ rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_disable0); return 0;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 }
 
 
 static int module_init() {
     init_module(1263163414597574803UL, 1, 1, 0, 0, 0, 1263163414597574803UL + 3UL, 1263163414597574803UL + 35UL, "main", 0, &____alias_loc_id_0, (unsigned)4, 1263163414597574803UL + 1UL, 1263163414597574803UL + 2UL, 1263163414597574803UL + 3UL, 1263163414597574803UL + 4UL);
+    register_functions(1, "braces.cpp.pre.register.cpp", "main", &main);
     return 0;
 }
 

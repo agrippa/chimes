@@ -1,4 +1,4 @@
-timestep 0 MAY advancePosition advanceVelocity computeForce kineticEnergy profileStart profileStop redistributeAtoms
+timestep 0 DOES advancePosition advanceVelocity checkpoint computeForce kineticEnergy profileStart profileStop redistributeAtoms
 advanceVelocity 0 DOES_NOT
 advancePosition 0 DOES_NOT
 redistributeAtoms 0 MAY haloExchange profileStart profileStop sortAtomsInCell updateLinkCells

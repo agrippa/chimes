@@ -1,6 +1,6 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 37 12 : { 1, 2, 3, 4 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 58 4 : { 1, 2, 3, 4 } prop:call:_Z13kineticEnergyP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 146 4 : { 380 } direct:call:_Z15updateLinkCellsP10LinkCellStP7AtomsSt
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 153 58 : { 381 } prop:call:_Z15sortAtomsInCellP7AtomsStP10LinkCellSti
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 65 4 : { 429 } direct:call:NULL
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 123 9 : { 441, 442, 443, 444, 445, 446, 447, 448 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 41 12 : { 1, 2, 3, 4 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 82 4 : { 1, 2, 3, 4 } prop:call:_Z13kineticEnergyP9SimFlatSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 170 4 : { 385 } direct:call:_Z15updateLinkCellsP10LinkCellStP7AtomsSt
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 177 58 : { 386 } prop:call:_Z15sortAtomsInCellP7AtomsStP10LinkCellSti
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 89 4 : { 434 } direct:call:NULL
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 147 9 : { 446, 447, 448, 449, 450, 451, 452, 453 } prop:call:_Z12profileStart11TimerHandle
