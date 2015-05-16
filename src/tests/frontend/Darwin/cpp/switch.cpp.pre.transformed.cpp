@@ -482,20 +482,22 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
+extern void register_functions(int nfunctions, const char *module_name, ...);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -504,12 +506,14 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
@@ -517,7 +521,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1733,25 +1737,27 @@ void *valloc(size_t);
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*fp)(void *));
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int foo(int a) {new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int foo(int a) {const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1); return a + 3;
+ rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_disable0); return a + 3;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int bar(int b) {new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int bar(int b) {const int ____chimes_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2); return b + 5;
+ rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_disable1); return b + 5;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 }
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)); if (____chimes_replaying) { goto lbl_0; } lbl_0: int d;
- register_stack_var("main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)) ; int d;
+ register_stack_vars(1, "main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
@@ -1759,13 +1765,13 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  case 0:
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- call_lbl_2: calling((void*)&foo, 2, 0UL, 1, (size_t)(0UL)); d = foo(argc);
+ d = ({ int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argc); } calling((void*)foo, -1, 0UL, 1, (size_t)(0UL)); (foo)(____chimes_arg0); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  break;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  case 1:
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- call_lbl_3: calling((void*)&bar, 3, 0UL, 1, (size_t)(0UL)); d = bar(argc);
+ d = ({ int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argc); } calling((void*)bar, -1, 0UL, 1, (size_t)(0UL)); (bar)(____chimes_arg1); }) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  break;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
@@ -1775,15 +1781,16 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  }
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- alias_group_changed(____alias_loc_id_0); call_lbl_5: calling((void*)&checkpoint, 5, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: if (!____chimes_replaying) { } calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0); return d;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable2); return d;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 }
 
 
 static int module_init() {
     init_module(1464087543762942921UL, 1, 3, 0, 1, 0, 1464087543762942921UL + 19UL, 1464087543762942921UL + 43UL, "main", 3, "bar", "checkpoint", "foo", "foo", 0, "bar", 0, &____alias_loc_id_0, (unsigned)4, 1464087543762942921UL + 17UL, 1464087543762942921UL + 18UL, 1464087543762942921UL + 19UL, 1464087543762942921UL + 20UL, &____alias_loc_id_1, (unsigned)1, 1464087543762942921UL + 1UL, &____alias_loc_id_2, (unsigned)1, 1464087543762942921UL + 10UL);
+    register_functions(3, "switch.cpp.pre.register.cpp", "foo", &foo, "bar", &bar, "main", &main);
     return 0;
 }
 

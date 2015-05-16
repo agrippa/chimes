@@ -3,22 +3,30 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 4 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 9 , 14970133447157970243UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 37 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 62 , 14970133447157970263UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 99 18 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 101 15 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 105 4 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 1 new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(14970133447157970257UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 126 4 rm_stack(true, 14970133447157970263UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 1 new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 1 new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(14970133447157970853UL), (size_t)(14970133447157970854UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 141 1 rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 233 4 rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 1 new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(14970133447157970504UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 99 18 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 101 15 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 105 4 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 1 const int ____chimes_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(14970133447157970257UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 126 4 rm_stack(true, 14970133447157970263UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 1 const int ____chimes_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 1 const int ____chimes_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(14970133447157970853UL), (size_t)(14970133447157970854UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 141 1 rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_disable2); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 233 4 rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_disable3); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 1 const int ____chimes_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(14970133447157970504UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 2 const int ____chimes_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(14970133447157970257UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 146 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 100 4  LjPotential *pot;  pot = ((LjPotential *)(*inppot)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 100 46 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 2 const int ____chimes_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 112 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 4  LjPotential *pot;  pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 14970133447157970263UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 304 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 2 const int ____chimes_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(14970133447157970853UL), (size_t)(14970133447157970854UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 174 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 131 4  LjPotential *ljPot;  ljPot = ((LjPotential *)pot) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 131 43 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 2 const int ____chimes_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(14970133447157970504UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 245 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 145 4  LjPotential *pot;  pot = ((LjPotential *)s->pot) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 145 45 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 146 4  real_t sigma;  sigma = (pot->sigma) ;
@@ -33,10 +41,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 1
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 21 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 154 4  int fSize;  fSize = (s->boxes->nTotalBoxes * 64) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 154 40 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 4 {  int ii; 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 4 {  int iii; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 159 4  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 9  ii = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 17 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 9  iii = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 155 18 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 4  real_t s6;  s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 51 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 163 4  real_t rCut6;  rCut6 = (s6 / (rCut2 * rCut2 * rCut2)) ;
@@ -77,98 +85,100 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 1
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 45 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 16  real_t r2;  r2 = (0.) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 31 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 16 {  int m; 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 16 {  int m1; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 199 16  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 21  m = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 28 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 21  m1 = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 29 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 16  real_t r6;  r6 = (s6 * (r2 * r2 * r2)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 43 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 16  real_t eLocal;  eLocal = (r6 * (r6 - 1.) - eShift) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 56 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 16  real_t fr;  fr = (-4. * epsilon * r6 * r2 * (12. * r6 - 6.)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 63 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 16 {  int m; 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 16 {  int m2; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 224 16  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 21  m = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 28 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 114  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 80  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 142  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  } 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  call_lbl_1: calling((void*)&zeroReal3, 1, 0UL, 1, (size_t)(14970133447157970508UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 65  call_lbl_3: calling((void*)&getNeighborBoxes, 3, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5  lbl_0: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19  if (____must_checkpoint_ljForce_epsilon_0 != 0) { register_stack_var("ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 5  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 17  if (____must_checkpoint_ljForce_rCut2_0 != 0) { register_stack_var("ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 17  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 5  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 16  if (____must_checkpoint_ljForce_ePot_0 != 0) { register_stack_var("ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 16  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 5  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 14  if (____must_checkpoint_ljForce_s6_0 != 0) { register_stack_var("ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 14  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 5  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 18  if (____must_checkpoint_ljForce_eShift_0 != 0) { register_stack_var("ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 18  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 4  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 20  if (____must_checkpoint_ljForce_nbrBoxes_0 != 0) { register_stack_var("ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 20  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 7  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 15  if (____must_checkpoint_ljForce_iBox_0 != 0) { register_stack_var("ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 15  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 8  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 17  if (____must_checkpoint_ljForce_nIBox_0 != 0) { register_stack_var("ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 17  if (____chimes_replaying) { goto lbl_8; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 49  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 62  if (____must_checkpoint_ljForce_nNbrBoxes_0 != 0) { register_stack_var("ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 62  if (____chimes_replaying) { goto lbl_9; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 10  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 18  if (____must_checkpoint_ljForce_jTmp_0 != 0) { register_stack_var("ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 18  if (____chimes_replaying) { goto lbl_10; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 11  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 19  if (____must_checkpoint_ljForce_jBox_0 != 0) { register_stack_var("ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 19  if (____chimes_replaying) { goto lbl_11; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 11  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 20  if (____must_checkpoint_ljForce_nJBox_0 != 0) { register_stack_var("ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 20  if (____chimes_replaying) { goto lbl_12; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 13  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 21  if (____must_checkpoint_ljForce_iOff_0 != 0) { register_stack_var("ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 21  if (____chimes_replaying) { goto lbl_13; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 24  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 30  if (____must_checkpoint_ljForce_ii_1 != 0) { register_stack_var("ljForce|ii|1", &____must_checkpoint_ljForce_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 30  if (____chimes_replaying) { goto lbl_14; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 14  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 21  if (____must_checkpoint_ljForce_iId_0 != 0) { register_stack_var("ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 21  if (____chimes_replaying) { goto lbl_15; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 16  lbl_15: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 24  if (____must_checkpoint_ljForce_jOff_0 != 0) { register_stack_var("ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 24  if (____chimes_replaying) { goto lbl_16; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 27  lbl_16: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 33  if (____must_checkpoint_ljForce_ij_0 != 0) { register_stack_var("ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 33  if (____chimes_replaying) { goto lbl_17; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 16  lbl_17: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 28  if (____must_checkpoint_ljForce_dr_0 != 0) { register_stack_var("ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 28  if (____chimes_replaying) { goto lbl_18; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 17  lbl_18: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 24  if (____must_checkpoint_ljForce_jId_0 != 0) { register_stack_var("ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 24  if (____chimes_replaying) { goto lbl_19; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 17  lbl_19: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 26  if (____must_checkpoint_ljForce_r2_0 != 0) { register_stack_var("ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 26  if (____chimes_replaying) { goto lbl_20; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 19  lbl_20: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 24  if (____must_checkpoint_ljForce_m_0 != 0) { register_stack_var("ljForce|m|0", &____must_checkpoint_ljForce_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 24  if (____chimes_replaying) { goto lbl_21; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 17  lbl_21: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 26  if (____must_checkpoint_ljForce_r6_0 != 0) { register_stack_var("ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 26  if (____chimes_replaying) { goto lbl_22; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 17  lbl_22: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 30  if (____must_checkpoint_ljForce_eLocal_0 != 0) { register_stack_var("ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 30  if (____chimes_replaying) { goto lbl_23; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 17  lbl_23: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 26  if (____must_checkpoint_ljForce_fr_0 != 0) { register_stack_var("ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 26  if (____chimes_replaying) { goto lbl_24; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 19  lbl_24: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 24  if (____must_checkpoint_ljForce_m_1 != 0) { register_stack_var("ljForce|m|1", &____must_checkpoint_ljForce_m_1, "i32", (void *)(&m), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 24  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 213  if (____chimes_replaying) { goto lbl_0; } 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 21  m2 = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 29 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 145  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 111  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 173  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  real_t * ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (s->atoms->f[iii]);  }  calling((void*)zeroReal3, -1, 0UL, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(____chimes_arg0); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 33 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 78  ({  call_lbl_2:  LinkCell * ____chimes_arg1;  int ____chimes_arg2;  int * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); ____chimes_arg2 = (iBox); ____chimes_arg3 = (nbrBoxes);  }  calling((void*)getNeighborBoxes, 2, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(____chimes_arg1, ____chimes_arg2, ____chimes_arg3); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 119 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 17 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 152 16 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 161 14 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 164 18 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 4 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 166 20 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 7 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 168 15 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 8 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 170 17 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 49 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 62 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 174 18 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 11 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 176 19 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 11 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 180 20 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 13 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 21 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 24 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 184 30 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 14 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 186 21 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 16 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 24 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 27 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 188 33 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 16 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 190 28 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 17 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 191 24 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 17 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 194 26 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 19 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 195 25 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 17 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 206 26 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 17 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 207 30 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 17 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 219 26 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 19 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 25 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 144 244  ; int m2;
+real_t fr;
+real_t eLocal;
+real_t r6;
+int m1;
+real_t r2;
+int jId;
+real_t dr[3];
+int ij;
+int jOff;
+int iId;
+int ii;
+int iOff;
+int nJBox;
+int jBox;
+int jTmp;
+int nNbrBoxes;
+int nIBox;
+int iBox;
+int nbrBoxes[27];
+real_t eShift;
+real_t s6;
+real_t ePot;
+real_t rCut2;
+real_t epsilon;
+ if (____must_checkpoint_ljForce_m2_0 || ____must_checkpoint_ljForce_fr_0 || ____must_checkpoint_ljForce_eLocal_0 || ____must_checkpoint_ljForce_r6_0 || ____must_checkpoint_ljForce_m1_0 || ____must_checkpoint_ljForce_r2_0 || ____must_checkpoint_ljForce_jId_0 || ____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_ij_0 || ____must_checkpoint_ljForce_jOff_0 || ____must_checkpoint_ljForce_iId_0 || ____must_checkpoint_ljForce_ii_0 || ____must_checkpoint_ljForce_iOff_0 || ____must_checkpoint_ljForce_nJBox_0 || ____must_checkpoint_ljForce_jBox_0 || ____must_checkpoint_ljForce_jTmp_0 || ____must_checkpoint_ljForce_nNbrBoxes_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(25, "ljForce|m2|0", &____must_checkpoint_ljForce_m2_0, "i32", (void *)(&m2), (size_t)4, 0, 0, 0, "ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0, "ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0, "ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0, "ljForce|m1|0", &____must_checkpoint_ljForce_m1_0, "i32", (void *)(&m1), (size_t)4, 0, 0, 0, "ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0, "ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0, "ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0, "ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0, "ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0, "ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0, "ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0, "ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  

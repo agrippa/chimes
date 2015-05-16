@@ -1,0 +1,4 @@
+_Z10checkpointv 6 5 0
+omp_get_thread_num 20 40 0
+printf 20 9 0 36 0 0
+_Z3foov 21 9 0

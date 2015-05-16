@@ -480,20 +480,22 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
+extern void register_functions(int nfunctions, const char *module_name, ...);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -502,12 +504,14 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
@@ -515,7 +519,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1731,35 +1735,40 @@ void *valloc(size_t);
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*fp)(void *));
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-int foo(int a, int b) {new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+int foo(int a, int b) {const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1); return a + b;
+ rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_disable0); return a + b;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)) ; int *ptr;
+int a;
+ register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- lbl_0: int a; register_stack_var("main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } a = (3 + 4 + 5 + 6) ;
+ a = (3 + 4 + 5 + 6) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- lbl_1: int *ptr; register_stack_var("main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ptr = ((int *)malloc_wrapper(100, 1300474033434903700UL, 0, 0)) ;
+ ptr = ((int *)malloc_wrapper(100, 1300474033434903700UL, 0, 0)) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
  ptr[0] = 42;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- alias_group_changed(____alias_loc_id_0); call_lbl_4: calling((void*)&checkpoint, 4, 0UL, 0); checkpoint();
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: if (!____chimes_replaying) { } calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0); call_lbl_6: calling((void*)&foo, 6, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); return foo(ptr[0], a);
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return ({ int ____chimes_arg0; int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg0 = (ptr[0]); ____chimes_arg1 = (a); } calling((void*)foo, -1, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(____chimes_arg0, ____chimes_arg1); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 
 
 static int module_init() {
     init_module(1300474033434903672UL, 2, 2, 0, 1, 0, 1300474033434903672UL + 19UL, 1300474033434903672UL + 28UL, 1300474033434903672UL + 17UL, 1300474033434903672UL + 42UL, "main", 2, "checkpoint", "foo", "foo", 0, &____alias_loc_id_0, (unsigned)6, 1300474033434903672UL + 15UL, 1300474033434903672UL + 16UL, 1300474033434903672UL + 17UL, 1300474033434903672UL + 18UL, 1300474033434903672UL + 19UL, 1300474033434903672UL + 28UL, &____alias_loc_id_1, (unsigned)2, 1300474033434903672UL + 1UL, 1300474033434903672UL + 2UL);
+    register_functions(2, "multi_line_decl.cpp.pre.register.cpp", "foo", &foo, "main", &main);
     return 0;
 }
 

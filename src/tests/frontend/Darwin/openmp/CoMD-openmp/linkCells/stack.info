@@ -54,6 +54,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c getBoxFromCoord|ix|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c getBoxFromCoord|iy|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c getBoxFromCoord|iz|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c getBoxFromCoord|result|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c moveAtom|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c moveAtom|atoms|0 " %struct.AtomsSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c moveAtom|iId|0 " i32 " 32 0 0 0

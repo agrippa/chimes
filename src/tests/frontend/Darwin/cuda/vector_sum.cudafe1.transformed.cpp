@@ -26775,70 +26775,91 @@ extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned 
 # 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int get_next_call();
 # 11 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void new_stack(void * func_ptr, const char * funcname, int * conditional, unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern int new_stack(void * func_ptr, const char * funcname, int * conditional, unsigned n_local_arg_aliases, unsigned nargs, ...);
 # 13 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 # 15 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void rm_stack(bool has_return_alias, size_t returned_alias, const char * funcname, int * conditional, unsigned loc_id);
+extern void rm_stack(bool has_return_alias, size_t returned_alias, const char * funcname, int * conditional, unsigned loc_id, int disabled);
 # 17 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, int * cond_registration, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
 # 20 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void register_stack_vars(int nvars, ...);
+# 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 23 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 24 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_constant(size_t const_id, void * address, size_t length);
-# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int alias_group_changed(unsigned loc_id);
 # 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
+extern void register_functions(int nfunctions, const char * module_name, ...);
+# 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern int alias_group_changed(unsigned loc_id);
 # 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
 # 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
 # 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void free_wrapper(void * ptr, size_t group);
+extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
 # 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
+extern void free_wrapper(void * ptr, size_t group);
+# 35 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern bool disable_current_thread();
 # 36 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_thread_local_stack_vars(unsigned thread, unsigned parent, unsigned threads_in_region, bool spawns_threads, bool is_parallel_for, bool is_critical, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
+extern void reenable_current_thread(bool was_disabled);
+# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
 # 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void register_thread_local_stack_vars(unsigned relation, unsigned parent, unsigned threads_in_region, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
+# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth, size_t region_id);
-# 42 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 46 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned get_parent_vars_stack_depth();
-# 43 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned get_thread_stack_depth();
-# 45 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void chimes_error();
 # 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void chimes_error();
+# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 51 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 # 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+# 70 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 extern void checkpoint();
 # 13 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 extern void wait_for_checkpoint();
+# 14 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void register_custom_init_handler(const char * obj_name, void (* fp)(void *));
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 void kernel(int *A, int *B, int *C, int N) ;
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); if (____chimes_replaying) { goto lbl_0; }
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)) ; FILE *fp;
+int blocks_per_grid;
+int threads_per_block;
+int *d_C;
+int *d_B;
+int *d_A;
+int *h_C;
+int *h_B;
+int *h_A;
+int N;
+int i;
+ register_stack_vars(11, "main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "main|blocks_per_grid|0", (int *)0x0, "i32", (void *)(&blocks_per_grid), (size_t)4, 0, 0, 0, "main|threads_per_block|0", (int *)0x0, "i32", (void *)(&threads_per_block), (size_t)4, 0, 0, 0, "main|d_C|0", (int *)0x0, "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0, "main|d_B|0", (int *)0x0, "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0, "main|d_A|0", (int *)0x0, "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0, "main|h_C|0", (int *)0x0, "i32*", (void *)(&h_C), (size_t)8, 1, 0, 0, "main|h_B|0", (int *)0x0, "i32*", (void *)(&h_B), (size_t)8, 1, 0, 0, "main|h_A|0", (int *)0x0, "i32*", (void *)(&h_A), (size_t)8, 1, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } } } ; ;
 # 21 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaError_t error; ;
 # 22 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_0: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } ;
+ ;
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_1: int N; register_stack_var("main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } N = ((1024 * 1024)) ;
+ N = ((1024 * 1024)) ;
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_2: int *h_A; register_stack_var("main|h_A|0", (int *)0x0, "i32*", (void *)(&h_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_3; } lbl_3: int *h_B; register_stack_var("main|h_B|0", (int *)0x0, "i32*", (void *)(&h_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_4; } lbl_4: int *h_C; register_stack_var("main|h_C|0", (int *)0x0, "i32*", (void *)(&h_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_5; } ;
+ ;
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_5: int *d_A; register_stack_var("main|d_A|0", (int *)0x0, "i32*", (void *)(&d_A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_6; } lbl_6: int *d_B; register_stack_var("main|d_B|0", (int *)0x0, "i32*", (void *)(&d_B), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_7; } lbl_7: int *d_C; register_stack_var("main|d_C|0", (int *)0x0, "i32*", (void *)(&d_C), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_8; } ;
+ ;
 # 28 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 h_A = ((int *)malloc_wrapper(sizeof(int) * N, 10983886093799450819UL, 0, 0));
 # 29 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26860,21 +26881,21 @@ for (i = 0; i < N; i++) {
 # 39 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 }
 # 41 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(____alias_loc_id_1); call_lbl_10: calling((void*)&cudaMemcpy, 10, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450819UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_A, h_A, sizeof(int) * N, cudaMemcpyHostToDevice);
+alias_group_changed(____alias_loc_id_1); ({ call_lbl_10: void * ____chimes_arg0; const void * ____chimes_arg1; unsigned long ____chimes_arg2; enum cudaMemcpyKind ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (d_A); ____chimes_arg1 = (h_A); ____chimes_arg2 = (sizeof(int) * N); ____chimes_arg3 = (cudaMemcpyHostToDevice); } calling((void*)cudaMemcpy, 10, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450819UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3); }) ;
 # 42 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_11: calling((void*)&cudaMemcpy, 11, 0UL, 4, (size_t)(10983886093799450922UL), (size_t)(10983886093799450825UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
+ ({ call_lbl_11: void * ____chimes_arg4; const void * ____chimes_arg5; unsigned long ____chimes_arg6; enum cudaMemcpyKind ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg4 = (d_B); ____chimes_arg5 = (h_B); ____chimes_arg6 = (sizeof(int) * N); ____chimes_arg7 = (cudaMemcpyHostToDevice); } calling((void*)cudaMemcpy, 11, 0UL, 4, (size_t)(10983886093799450922UL), (size_t)(10983886093799450825UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg4, ____chimes_arg5, ____chimes_arg6, ____chimes_arg7); }) ;
 # 44 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_8: int threads_per_block; register_stack_var("main|threads_per_block|0", (int *)0x0, "i32", (void *)(&threads_per_block), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_9; } threads_per_block = (128) ;
+ threads_per_block = (128) ;
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_9: int blocks_per_grid; register_stack_var("main|blocks_per_grid|0", (int *)0x0, "i32", (void *)(&blocks_per_grid), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_10; } blocks_per_grid = (((N + threads_per_block) - 1) / threads_per_block) ;
+ blocks_per_grid = (((N + threads_per_block) - 1) / threads_per_block) ;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(____alias_loc_id_2); call_lbl_13: calling((void*)&cudaConfigureCall, 13, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10983886093799451192UL)); call_lbl_14: calling((void*)&kernel, 14, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450922UL), (size_t)(10983886093799450929UL), (size_t)(0UL)); (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : (kernel)(d_A, d_B, d_C, N);
+alias_group_changed(____alias_loc_id_2); ( ({ call_lbl_13: dim3 ____chimes_arg8; dim3 ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg8 = (blocks_per_grid); ____chimes_arg9 = (threads_per_block); } calling((void*)cudaConfigureCall, 13, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10983886093799451192UL)); (cudaConfigureCall)(____chimes_arg8, ____chimes_arg9); }) ) ? (void)0 : ({ call_lbl_14: int * ____chimes_arg10; int * ____chimes_arg11; int * ____chimes_arg12; int ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg10 = (d_A); ____chimes_arg11 = (d_B); ____chimes_arg12 = (d_C); ____chimes_arg13 = (N); } calling((void*)kernel, 14, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450922UL), (size_t)(10983886093799450929UL), (size_t)(0UL)); (kernel)(____chimes_arg10, ____chimes_arg11, ____chimes_arg12, ____chimes_arg13); }) ;
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_15: calling((void*)&cudaMemcpy, 15, 0UL, 4, (size_t)(10983886093799450927UL), (size_t)(10983886093799450929UL), (size_t)(0UL), (size_t)(0UL)); cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
+ ({ call_lbl_15: void * ____chimes_arg14; const void * ____chimes_arg15; unsigned long ____chimes_arg16; enum cudaMemcpyKind ____chimes_arg17; if (!____chimes_replaying) { ____chimes_arg14 = (h_C); ____chimes_arg15 = (d_C); ____chimes_arg16 = (sizeof(int) * N); ____chimes_arg17 = (cudaMemcpyDeviceToHost); } calling((void*)cudaMemcpy, 15, 0UL, 4, (size_t)(10983886093799450927UL), (size_t)(10983886093799450929UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg14, ____chimes_arg15, ____chimes_arg16, ____chimes_arg17); }) ;
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- call_lbl_16: calling((void*)&checkpoint, 16, 0UL, 0); checkpoint();
+ ({ call_lbl_16: if (!____chimes_replaying) { } calling((void*)checkpoint, 16, 0UL, 0); (checkpoint)(); }) ;
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- lbl_10: FILE *fp; if (____must_checkpoint_main_fp_0 != 0) { register_stack_var("main|fp|0", &____must_checkpoint_main_fp_0, "%struct.__sFILE*", (void *)(&fp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } } } fp = (fopen("dump.out", "w")) ;
+ fp = (fopen("dump.out", "w")) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 for (i = 0; i < N; i++) {
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26890,7 +26911,7 @@ cudaFree_wrapper(d_B, 0UL);
 # 61 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaFree_wrapper(d_C, 0UL);
 # 63 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, 0); return 0;
+rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
 # 64 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 }
 # 1 "vector_sum.cudafe1.stub.c"
@@ -27737,7 +27758,8 @@ static void __sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762(void) { __cu
 
 
 static int module_init() {
-    init_module(10983886093799450781UL, 23, 10, 9, 10, 11, 10983886093799450781UL + 338UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 310UL, 10983886093799450781UL + 409UL, 10983886093799450781UL + 396UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 394UL, 10983886093799450781UL + 403UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 252UL, 10983886093799450781UL + 232UL, 10983886093799450781UL + 250UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 251UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 189UL, 10983886093799450781UL + 347UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 146UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 44UL, 10983886093799450781UL + 364UL, 10983886093799450781UL + 387UL, 10983886093799450781UL + 205UL, 10983886093799450781UL + 223UL, 10983886093799450781UL + 303UL, 10983886093799450781UL + 309UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 298UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 297UL, 10983886093799450781UL + 260UL, 10983886093799450781UL + 296UL, 10983886093799450781UL + 321UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 11UL, 10983886093799450781UL + 141UL, 10983886093799450781UL + 10UL, 10983886093799450781UL + 140UL, 10983886093799450781UL + 12UL, 10983886093799450781UL + 148UL, 10983886093799450781UL + 19UL, 10983886093799450781UL + 156UL, "__fatBinC_Wrapper_t", 3, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "__sFILE", 19, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "cudaError", 1, "cudaLaunch", "kernel", 1, "__device_stub__Z6kernelPiS_S_i", "____nv_dummy_param_ref", 0, "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762", 2, "__cudaRegisterFatBinary", "atexit", "__device_stub__Z6kernelPiS_S_i", 2, "cudaError", "cudaSetupArgument", "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_cudaEntityRegisterCallback", 2, "__cudaRegisterFunction", "__nv_save_fatbinhandle_for_managed_rt", "__nv_save_fatbinhandle_for_managed_rt", 0, "dim3::dim3", 0, "main", 6, "checkpoint", "cudaConfigureCall", "cudaFree", "cudaMalloc", "cudaMemcpy", "kernel", "main|d_A|0", 1, "main", "main|d_B|0", 1, "main", "main|d_C|0", 1, "main", "main|fp|0", 1, "cudaFree", "__device_stub__Z6kernelPiS_S_i|__par0|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par1|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par2|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par3|0", 1, "__device_stub__Z6kernelPiS_S_i", "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0", 1, "_ZL55__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762v", &____alias_loc_id_0, (unsigned)7, 10983886093799450781UL + 1UL, 10983886093799450781UL + 2UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 6UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 9UL, &____alias_loc_id_1, (unsigned)3, 10983886093799450781UL + 5UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 44UL, &____alias_loc_id_2, (unsigned)2, 10983886093799450781UL + 13UL, 10983886093799450781UL + 14UL, &____alias_loc_id_3, (unsigned)2, 10983886093799450781UL + 5UL, 10983886093799450781UL + 19UL, &____alias_loc_id_4, (unsigned)4, 10983886093799450781UL + 232UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 235UL, &____alias_loc_id_5, (unsigned)4, 10983886093799450781UL + 260UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 263UL, &____alias_loc_id_6, (unsigned)1, 10983886093799450781UL + 394UL, &____alias_loc_id_7, (unsigned)1, 10983886093799450781UL + 303UL, &____alias_loc_id_8, (unsigned)2, 10983886093799450781UL + 310UL, 10983886093799450781UL + 396UL, &____alias_loc_id_9, (unsigned)2, 10983886093799450781UL + 321UL, 10983886093799450781UL + 396UL, &____alias_loc_id_10, (unsigned)4, 10983886093799450781UL + 205UL, 10983886093799450781UL + 206UL, 10983886093799450781UL + 207UL, 10983886093799450781UL + 208UL, &____alias_loc_id_11, (unsigned)2, 10983886093799450781UL + 338UL, 10983886093799450781UL + 396UL, &____alias_loc_id_12, (unsigned)2, 10983886093799450781UL + 347UL, 10983886093799450781UL + 396UL, &____alias_loc_id_13, (unsigned)5, 10983886093799450781UL + 364UL, 10983886093799450781UL + 365UL, 10983886093799450781UL + 366UL, 10983886093799450781UL + 367UL, 10983886093799450781UL + 387UL);
+    init_module(10983886093799450781UL, 23, 10, 9, 10, 11, 10983886093799450781UL + 338UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 310UL, 10983886093799450781UL + 409UL, 10983886093799450781UL + 396UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 394UL, 10983886093799450781UL + 403UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 252UL, 10983886093799450781UL + 232UL, 10983886093799450781UL + 250UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 251UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 189UL, 10983886093799450781UL + 347UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 146UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 44UL, 10983886093799450781UL + 364UL, 10983886093799450781UL + 387UL, 10983886093799450781UL + 205UL, 10983886093799450781UL + 223UL, 10983886093799450781UL + 303UL, 10983886093799450781UL + 309UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 298UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 297UL, 10983886093799450781UL + 260UL, 10983886093799450781UL + 296UL, 10983886093799450781UL + 321UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 11UL, 10983886093799450781UL + 141UL, 10983886093799450781UL + 10UL, 10983886093799450781UL + 140UL, 10983886093799450781UL + 12UL, 10983886093799450781UL + 148UL, 10983886093799450781UL + 19UL, 10983886093799450781UL + 156UL, "__fatBinC_Wrapper_t", 4, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "void*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, filename_or_fatbins), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "cudaError", 1, "cudaLaunch", "kernel", 1, "__device_stub__Z6kernelPiS_S_i", "____nv_dummy_param_ref", 0, "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762", 2, "__cudaRegisterFatBinary", "atexit", "__device_stub__Z6kernelPiS_S_i", 2, "cudaError", "cudaSetupArgument", "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_cudaEntityRegisterCallback", 2, "__cudaRegisterFunction", "__nv_save_fatbinhandle_for_managed_rt", "__nv_save_fatbinhandle_for_managed_rt", 0, "dim3::dim3", 0, "main", 6, "checkpoint", "cudaConfigureCall", "cudaFree", "cudaMalloc", "cudaMemcpy", "kernel", "main|d_A|0", 1, "main", "main|d_B|0", 1, "main", "main|d_C|0", 1, "main", "main|fp|0", 1, "cudaFree", "__device_stub__Z6kernelPiS_S_i|__par0|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par1|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par2|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par3|0", 1, "__device_stub__Z6kernelPiS_S_i", "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0", 1, "_ZL55__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762v", &____alias_loc_id_0, (unsigned)7, 10983886093799450781UL + 1UL, 10983886093799450781UL + 2UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 6UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 9UL, &____alias_loc_id_1, (unsigned)3, 10983886093799450781UL + 5UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 44UL, &____alias_loc_id_2, (unsigned)2, 10983886093799450781UL + 13UL, 10983886093799450781UL + 14UL, &____alias_loc_id_3, (unsigned)2, 10983886093799450781UL + 5UL, 10983886093799450781UL + 19UL, &____alias_loc_id_4, (unsigned)4, 10983886093799450781UL + 232UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 235UL, &____alias_loc_id_5, (unsigned)4, 10983886093799450781UL + 260UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 263UL, &____alias_loc_id_6, (unsigned)1, 10983886093799450781UL + 394UL, &____alias_loc_id_7, (unsigned)1, 10983886093799450781UL + 303UL, &____alias_loc_id_8, (unsigned)2, 10983886093799450781UL + 310UL, 10983886093799450781UL + 396UL, &____alias_loc_id_9, (unsigned)2, 10983886093799450781UL + 321UL, 10983886093799450781UL + 396UL, &____alias_loc_id_10, (unsigned)4, 10983886093799450781UL + 205UL, 10983886093799450781UL + 206UL, 10983886093799450781UL + 207UL, 10983886093799450781UL + 208UL, &____alias_loc_id_11, (unsigned)2, 10983886093799450781UL + 338UL, 10983886093799450781UL + 396UL, &____alias_loc_id_12, (unsigned)2, 10983886093799450781UL + 347UL, 10983886093799450781UL + 396UL, &____alias_loc_id_13, (unsigned)5, 10983886093799450781UL + 364UL, 10983886093799450781UL + 365UL, 10983886093799450781UL + 366UL, 10983886093799450781UL + 367UL, 10983886093799450781UL + 387UL);
+    register_functions(8, "vector_sum.cudafe1.register.cpp", "main", &main, "kernel", &kernel, "__device_stub__Z6kernelPiS_S_i", &__device_stub__Z6kernelPiS_S_i, "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762", &__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762, "__nv_cudaEntityRegisterCallback", &__nv_cudaEntityRegisterCallback, "__cudaUnregisterBinaryUtil", &__cudaUnregisterBinaryUtil, "____nv_dummy_param_ref", &____nv_dummy_param_ref, "__nv_save_fatbinhandle_for_managed_rt", &__nv_save_fatbinhandle_for_managed_rt);
     return 0;
 }
 

@@ -66,9 +66,12 @@ def get_functions(func_filename):
     functions = []
     fp = open(func_filename, 'r')
 
+    invalid_cuda_functions = ['dim3::dim3', 'cudaError']
+
     for line in fp:
         tokens = line.split()
-        functions.append(FunctionInfo(tokens[0]))
+        if tokens[0] not in invalid_cuda_functions:
+            functions.append(FunctionInfo(tokens[0]))
 
     fp.close()
     return functions

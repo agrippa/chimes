@@ -481,20 +481,22 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
+extern void register_functions(int nfunctions, const char *module_name, ...);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -503,12 +505,14 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
@@ -516,7 +520,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1724,24 +1728,26 @@ void *valloc(size_t);
 extern void checkpoint();
 
 extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*fp)(void *));
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 int a = 3;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
-void haha_this_sux_part_canc() {new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void haha_this_sux_part_canc() {const int ____chimes_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
  a = 4;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
-rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0); }
+rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_disable0); }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
-int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
- call_lbl_2: calling((void*)&haha_this_sux_part_canc, 2, 0UL, 0); haha_this_sux_part_canc();
+ ({ if (!____chimes_replaying) { } calling((void*)haha_this_sux_part_canc, -1, 0UL, 0); (haha_this_sux_part_canc)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1); return 0;
+ rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_disable1); return 0;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 }
 
@@ -1749,6 +1755,7 @@ int main(int argc, char **argv) {init_chimes(); new_stack((void *)(&main), "main
 static int module_init() {
     init_module(1556987170722293705UL, 1, 2, 0, 0, 0, 1556987170722293705UL + 5UL, 1556987170722293705UL + 14UL, "main", 1, "haha_this_sux_part_canc", "haha_this_sux_part_canc", 0, &____alias_loc_id_0, (unsigned)1, 1556987170722293705UL + 17UL, &____alias_loc_id_1, (unsigned)3, 1556987170722293705UL + 3UL, 1556987170722293705UL + 4UL, 1556987170722293705UL + 5UL);
     register_global_var("global|a", "i32", (void *)(&a), 4, 0, 0, 0);
+    register_functions(2, "func_with_no_return.cpp.pre.register.cpp", "haha_this_sux_part_canc", &haha_this_sux_part_canc, "main", &main);
     return 0;
 }
 

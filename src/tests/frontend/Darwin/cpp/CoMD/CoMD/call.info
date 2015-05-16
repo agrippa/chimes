@@ -1,128 +1,127 @@
-_Z12initParallelPiPPPc 90 4 0 2 3
-_Z12profileStart11TimerHandle 91 4 0 0
-_ZL14initSubsystemsv 92 4 0
-_Z16timestampBarrierPKc 93 4 0 1345
-_Z11yamlAppInfoP7__sFILE 96 4 0 896
-_Z16parseCommandLineiPPc 98 18 0 4 0 121
-_Z12printCmdYamlP7__sFILEP9CommandSt 100 4 0 896 4
-memcpy 102 19 0 6 4 0
-_ZL14initSimulation9CommandSt 102 19 64 6
-_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt 104 4 0 896 64
-_ZL12initValidateP9SimFlatSt 106 25 39 64
-_Z16timestampBarrierPKc 107 4 0 1345
-_Z16timestampBarrierPKc 109 4 0 1348
-_Z12profileStart11TimerHandle 115 4 0 0
-_Z12profileStart11TimerHandle 118 12 0 0
-_ZL8sumAtomsP9SimFlatSt 119 7 0 64
-_Z11profileStop11TimerHandle 120 12 0 0
-_Z14getElapsedTime11TimerHandle 122 31 0 0
-_ZL11printThingsP9SimFlatStid 122 7 0 64 0 0
-_Z12profileStart11TimerHandle 124 12 0 0
-_Z8timestepP9SimFlatStid 125 7 0 64 0 0
-_Z11profileStop11TimerHandle 126 12 0 0
-_Z10checkpointv 131 7 0
-_Z11profileStop11TimerHandle 134 4 0 0
-_ZL8sumAtomsP9SimFlatSt 136 4 0 64
-_Z14getElapsedTime11TimerHandle 137 28 0 0
-_ZL11printThingsP9SimFlatStid 137 4 0 64 0 0
-_Z16timestampBarrierPKc 138 4 0 1349
-_ZL14validateResultPK10ValidateStP9SimFlatSt 141 4 0 39 64
-_Z11profileStop11TimerHandle 142 4 0 0
-_Z23printPerformanceResultsii 144 4 0 0 0
-_ZL17destroySimulationPP9SimFlatSt 147 4 0 5
-free 148 4 0 39
-_ZL18finalizeSubsystemsv 149 4 0
-_Z16timestampBarrierPKc 151 4 0 1350
-_Z15destroyParallelv 152 4 0
-_Z9yamlBeginv 250 4 0
-malloc 170 29 309 0
-_ZL13initPotentialiPKcS0_S0_ 181 15 1390 0 326 326 326
-memcpy 187 4 0 138 326 0
-_ZL12sanityChecks9CommandStddPc 187 4 0 138 0 0 1390
-_ZL11initSpeciesP15BasePotentialSt 189 19 1390 1390
-_Z17initDecompositioniiiPd 196 18 1390 0 0 0 139
-_Z13initLinkCellsPK8DomainStd 199 17 1390 1390 0
-_Z9initAtomsP10LinkCellSt 200 17 1390 1390
-_Z16createFccLatticeiiidP9SimFlatSt 203 4 0 0 0 0 0 309
-_Z14setTemperatureP9SimFlatStd 204 4 0 309 0
-_Z19randomDisplacementsP9SimFlatStd 205 4 0 309 0
-_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt 207 24 1390 1390 1390
-_Z12profileStart11TimerHandle 210 9 0 0
-_Z17redistributeAtomsP9SimFlatSt 211 4 0 309
-_Z11profileStop11TimerHandle 212 9 0 0
-_Z12profileStart11TimerHandle 214 9 0 0
-_Z12computeForceP9SimFlatSt 215 4 0 309
-_Z11profileStop11TimerHandle 216 9 0 0
-_Z13kineticEnergyP9SimFlatSt 218 4 0 309
-_Z12maxOccupancyP10LinkCellSt 389 17 0 350
-_Z9printRankv 392 9 0
-fprintf 395 4 0 669 1349
-fprintf 396 4 0 669 1352 0
-fprintf 398 4 0 669 1353 0 0 0
-fprintf 400 4 0 669 1353 0 0 0
-_Z14printSeparatorP7__sFILE 402 4 0 669
-fprintf 403 4 0 669 1355
-fprintf 404 4 0 669 1356 0 0 0
-fprintf 406 4 0 669 1357 0 0 0 0
-fprintf 409 4 0 669 1353 0 0 0
-fprintf 411 4 0 669 1359 0 0 0
-fprintf 415 4 0 669 1360 0 0
-_Z14printSeparatorP7__sFILE 417 4 0 669
-fprintf 418 4 0 669 1361
-anon 419 4 0 669 350
-_Z14printSeparatorP7__sFILE 432 4 0 669
-fprintf 433 4 0 669 1362
-fprintf 434 4 0 669 1357 0
-fprintf 435 4 0 669 1359 0 0
-fprintf 436 4 0 669 1365 0
-fprintf 437 4 0 669 1366 0
-fflush 439 4 0 669
-_ZL8sumAtomsP9SimFlatSt 288 4 0 726
-malloc 289 31 678 0
-_Z9printRankv 293 8 0
-fprintf 295 7 0 896 1371
-_Z14printSeparatorP7__sFILE 296 7 0 896
-fprintf 297 7 0 896 1365 0 0
-fprintf 299 7 0 896 1371
-_Z12profileStart11TimerHandle 342 9 0 0
-_Z14addIntParallelPiS_i 343 4 0 773 773 0
-_Z11profileStop11TimerHandle 344 9 0 0
-_Z9printRankv 360 9 0
-fprintf 366 7 0 896 1369
-fflush 369 7 0 896
-fprintf 380 4 0 896 1370 0 0 0 0 0 0 0 0
-_Z9printRankv 306 8 0
-fprintf 312 7 0 896 1371
-fprintf 313 7 0 896 1371
-fprintf 314 7 0 896 1372
-fprintf 316 7 0 896 1373 0
-fprintf 317 7 0 896 1373 0
-fprintf 318 7 0 896 1372 0
-fprintf 321 10 0 896 1376 0
-fprintf 326 10 0 896 1377
-fprintf 327 10 0 896 1373 0
-fprintf 328 10 0 896 1377
-free 232 14 0 1023
-_Z16destroyLinkCellsPP10LinkCellSt 233 4 0 1014
-_Z12destroyAtomsP7AtomsSt 234 4 0 1023
-_Z19destroyHaloExchangePP14HaloExchangeSt 235 4 0 1014
-free 236 4 0 1023
-free 237 4 0 1023
-free 238 4 0 1014
-_Z7yamlEndv 258 4 0
-_Z10initEamPotPKcS0_S0_ 267 22 1113 1116 1117 1118
-_Z9initLjPotv 267 75 1113
-__assert_rtn 271 35 0 1387 1385 0 1382
-_Z9getNRanksv 449 18 0
-_Z9printRankv 452 11 0
-fprintf 452 25 0 896 1359
-_Z9printRankv 468 11 0
-fprintf 468 25 0 896 1381 0 0 0
-strcasecmp 476 8 0 1276 1382
-_Z9printRankv 479 11 0
-fprintf 479 25 0 896 1370 1276
-_Z13bcastParallelPvii 485 4 0 1130 0 0
-__assert_rtn 488 53 0 1350 1385 0 1355
-exit 490 24 0 0
-malloc 277 41 1282 0
-strcpy 279 4 1291 1282 1306
+_Z12initParallelPiPPPc 88 4 0 2 3
+_Z12profileStart11TimerHandle 89 4 0 0
+_ZL14initSubsystemsv 90 4 0
+_Z16timestampBarrierPKc 91 4 0 1344
+_Z11yamlAppInfoP7__sFILE 94 4 0 895
+_Z16parseCommandLineiPPc 96 18 0 4 0 120
+_Z12printCmdYamlP7__sFILEP9CommandSt 98 4 0 895 4
+memcpy 100 19 0 6 4 0
+_ZL14initSimulation9CommandSt 100 19 64 6
+_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt 102 4 0 895 64
+_ZL12initValidateP9SimFlatSt 104 25 39 64
+_Z16timestampBarrierPKc 105 4 0 1344
+_Z16timestampBarrierPKc 107 4 0 1347
+_Z12profileStart11TimerHandle 113 4 0 0
+_Z12profileStart11TimerHandle 116 12 0 0
+_ZL8sumAtomsP9SimFlatSt 117 7 0 64
+_Z11profileStop11TimerHandle 118 12 0 0
+_Z14getElapsedTime11TimerHandle 120 31 0 0
+_ZL11printThingsP9SimFlatStid 120 7 0 64 0 0
+_Z12profileStart11TimerHandle 122 12 0 0
+_Z8timestepP9SimFlatStid 123 7 0 64 0 0
+_Z11profileStop11TimerHandle 124 12 0 0
+_Z11profileStop11TimerHandle 128 4 0 0
+_ZL8sumAtomsP9SimFlatSt 130 4 0 64
+_Z14getElapsedTime11TimerHandle 131 28 0 0
+_ZL11printThingsP9SimFlatStid 131 4 0 64 0 0
+_Z16timestampBarrierPKc 132 4 0 1348
+_ZL14validateResultPK10ValidateStP9SimFlatSt 135 4 0 39 64
+_Z11profileStop11TimerHandle 136 4 0 0
+_Z23printPerformanceResultsii 138 4 0 0 0
+_ZL17destroySimulationPP9SimFlatSt 141 4 0 5
+free 142 4 0 39
+_ZL18finalizeSubsystemsv 143 4 0
+_Z16timestampBarrierPKc 145 4 0 1349
+_Z15destroyParallelv 146 4 0
+_Z9yamlBeginv 244 4 0
+malloc 164 29 308 0
+_ZL13initPotentialiPKcS0_S0_ 175 15 1389 0 325 325 325
+memcpy 181 4 0 137 325 0
+_ZL12sanityChecks9CommandStddPc 181 4 0 137 0 0 1389
+_ZL11initSpeciesP15BasePotentialSt 183 19 1389 1389
+_Z17initDecompositioniiiPd 190 18 1389 0 0 0 138
+_Z13initLinkCellsPK8DomainStd 193 17 1389 1389 0
+_Z9initAtomsP10LinkCellSt 194 17 1389 1389
+_Z16createFccLatticeiiidP9SimFlatSt 197 4 0 0 0 0 0 308
+_Z14setTemperatureP9SimFlatStd 198 4 0 308 0
+_Z19randomDisplacementsP9SimFlatStd 199 4 0 308 0
+_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt 201 24 1389 1389 1389
+_Z12profileStart11TimerHandle 204 9 0 0
+_Z17redistributeAtomsP9SimFlatSt 205 4 0 308
+_Z11profileStop11TimerHandle 206 9 0 0
+_Z12profileStart11TimerHandle 208 9 0 0
+_Z12computeForceP9SimFlatSt 209 4 0 308
+_Z11profileStop11TimerHandle 210 9 0 0
+_Z13kineticEnergyP9SimFlatSt 212 4 0 308
+_Z12maxOccupancyP10LinkCellSt 381 17 0 349
+_Z9printRankv 384 9 0
+fprintf 387 4 0 668 1348
+fprintf 388 4 0 668 1351 0
+fprintf 390 4 0 668 1352 0 0 0
+fprintf 392 4 0 668 1352 0 0 0
+_Z14printSeparatorP7__sFILE 394 4 0 668
+fprintf 395 4 0 668 1354
+fprintf 396 4 0 668 1355 0 0 0
+fprintf 398 4 0 668 1356 0 0 0 0
+fprintf 401 4 0 668 1352 0 0 0
+fprintf 403 4 0 668 1358 0 0 0
+fprintf 407 4 0 668 1359 0 0
+_Z14printSeparatorP7__sFILE 409 4 0 668
+fprintf 410 4 0 668 1360
+anon 411 4 0 668 349
+_Z14printSeparatorP7__sFILE 424 4 0 668
+fprintf 425 4 0 668 1361
+fprintf 426 4 0 668 1356 0
+fprintf 427 4 0 668 1358 0 0
+fprintf 428 4 0 668 1364 0
+fprintf 429 4 0 668 1365 0
+fflush 431 4 0 668
+_ZL8sumAtomsP9SimFlatSt 282 4 0 725
+malloc 283 31 677 0
+_Z9printRankv 287 8 0
+fprintf 289 7 0 895 1370
+_Z14printSeparatorP7__sFILE 290 7 0 895
+fprintf 291 7 0 895 1364 0 0
+fprintf 293 7 0 895 1370
+_Z12profileStart11TimerHandle 336 9 0 0
+_Z14addIntParallelPiS_i 337 4 0 772 772 0
+_Z11profileStop11TimerHandle 338 9 0 0
+_Z9printRankv 352 9 0
+fprintf 358 7 0 895 1368
+fflush 361 7 0 895
+fprintf 372 4 0 895 1369 0 0 0 0 0 0 0 0
+_Z9printRankv 300 8 0
+fprintf 306 7 0 895 1370
+fprintf 307 7 0 895 1370
+fprintf 308 7 0 895 1371
+fprintf 310 7 0 895 1372 0
+fprintf 311 7 0 895 1372 0
+fprintf 312 7 0 895 1371 0
+fprintf 315 10 0 895 1375 0
+fprintf 320 10 0 895 1376
+fprintf 321 10 0 895 1372 0
+fprintf 322 10 0 895 1376
+free 226 14 0 1022
+_Z16destroyLinkCellsPP10LinkCellSt 227 4 0 1013
+_Z12destroyAtomsP7AtomsSt 228 4 0 1022
+_Z19destroyHaloExchangePP14HaloExchangeSt 229 4 0 1013
+free 230 4 0 1022
+free 231 4 0 1022
+free 232 4 0 1013
+_Z7yamlEndv 252 4 0
+_Z10initEamPotPKcS0_S0_ 261 22 1112 1115 1116 1117
+_Z9initLjPotv 261 75 1112
+__assert_rtn 265 35 0 1386 1384 0 1381
+_Z9getNRanksv 441 18 0
+_Z9printRankv 444 11 0
+fprintf 444 25 0 895 1358
+_Z9printRankv 460 11 0
+fprintf 460 25 0 895 1380 0 0 0
+strcasecmp 468 8 0 1275 1381
+_Z9printRankv 471 11 0
+fprintf 471 25 0 895 1369 1275
+_Z13bcastParallelPvii 477 4 0 1129 0 0
+__assert_rtn 480 53 0 1349 1384 0 1354
+exit 482 24 0 0
+malloc 271 41 1281 0
+strcpy 273 4 1290 1281 1305

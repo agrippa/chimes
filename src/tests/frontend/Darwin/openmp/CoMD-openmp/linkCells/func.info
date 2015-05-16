@@ -4,9 +4,9 @@ destroyLinkCells 411
 getTuple 690 0 692 693 694
 getBoxFromTuple 950 0 0 0
 putAtomInBox 1123 1124 0 0 0 0 0 0 0 0
-getBoxFromCoord 1292 1293
-moveAtom 1355 1396 0 0 0
-copyAtom 1521 1522 0 0 0 0
-updateLinkCells 1600 1601
-emptyHaloCells 1631
-maxOccupancy 1663
+getBoxFromCoord 1296 1297
+moveAtom 1359 1400 0 0 0
+copyAtom 1525 1526 0 0 0 0
+updateLinkCells 1604 1605
+emptyHaloCells 1635
+maxOccupancy 1667

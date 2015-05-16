@@ -493,20 +493,22 @@ extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...);
 extern int get_next_call();
-extern void new_stack(void *func_ptr, const char *funcname, int *conditional,
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
+extern void register_functions(int nfunctions, const char *module_name, ...);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -515,12 +517,14 @@ extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
 extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id);
@@ -528,7 +532,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 62 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2521,20 +2525,21 @@ static int progress_num_ticks = -1;
 static int progress_disabled = 0;
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-double seconds() {new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); if (____chimes_replaying) { goto lbl_0; }
+double seconds() {const int ____chimes_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
+ if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- lbl_0: struct timeval tp; if (____must_checkpoint_seconds_tp_0 != 0) { register_stack_var("seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
+ ;
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  struct timezone tzp; ;
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  int i; i = (gettimeofday(&tp, &tzp)) ;
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
+ rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 }
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void ricker_wavelet(float *source, int nsteps, float dt, float freq) {new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7724169104006700394UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void ricker_wavelet(float *source, int nsteps, float dt, float freq) {const int ____chimes_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(7724169104006700394UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  float shift; shift = (-1.55939996F / freq) ;
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2551,10 +2556,10 @@ void ricker_wavelet(float *source, int nsteps, float dt, float freq) {new_stack(
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  } }
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1); }
+rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_disable1); }
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void parse_source(char *optarg, source *out) {const int ____chimes_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(7724169104006700488UL), (size_t)(7724169104006700489UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  char *x_str; x_str = (optarg) ;
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2615,10 +2620,10 @@ void parse_source(char *optarg, source *out) {new_stack((void *)(&parse_source),
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  out->t = atoi(time_str);
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2); }
+rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_disable2); }
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(7724169104006700619UL), (size_t)(7724169104006700620UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (*nsrcs == 0) {
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2676,10 +2681,10 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {new_
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  } }
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3); }
+rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_disable3); }
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7724169104006700702UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } }
+float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(7724169104006700702UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 7724169104006700643UL, 1, 0)) ;
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2704,16 +2709,16 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {new_stack
 # 139 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- call_lbl_7: calling((void*)&ricker_wavelet, 7, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ricker_wavelet(src_samples[i], nsteps, dt, srcs[i].freq);
+ ({ float * ____chimes_arg0; int ____chimes_arg1; float ____chimes_arg2; float ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (src_samples[i]); ____chimes_arg1 = (nsteps); ____chimes_arg2 = (dt); ____chimes_arg3 = (srcs[i].freq); } calling((void*)ricker_wavelet, -1, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  } }
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- rm_stack(true, 7724169104006700643UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4); return src_samples;
+ rm_stack(true, 7724169104006700643UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_disable4); return src_samples;
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 }
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 145 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void init_progress(int length, int goal, int disabled) {const int ____chimes_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 146 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  int i; ;
 # 147 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2738,7 +2743,7 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
  progress_disabled = disabled;
 # 158 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 159 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5); return;; };
+ if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_disable5); return;; };
 # 160 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 161 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 7724169104006700759UL, 0, 0);
@@ -2768,17 +2773,17 @@ void init_progress(int length, int goal, int disabled) {new_stack((void *)(&init
 # 175 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "%s", progress_buffer);
 # 176 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5); }
+rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_disable5); }
 # 177 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 178 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void update_progress(int progress) {new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+void update_progress(int progress) {const int ____chimes_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 179 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  int i; ;
 # 180 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 181 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (progress_disabled) {
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6); return;
+ rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_disable6); return;
 # 183 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 184 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -2837,26 +2842,26 @@ void update_progress(int progress) {new_stack((void *)(&update_progress), "updat
 # 214 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  progress_num_ticks = ticks;
 # 215 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6); }
+rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_disable6); }
 # 216 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 217 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-void finish_progress() {new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+void finish_progress() {const int ____chimes_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 218 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  if (progress_disabled) {
 # 219 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0); return;
+ rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_disable7); return;
 # 220 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  }
 # 221 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 222 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
- call_lbl_2: calling((void*)&update_progress, 2, 0UL, 1, (size_t)(0UL)); update_progress(progress_goal);
+ ({ int ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (progress_goal); } calling((void*)update_progress, -1, 0UL, 1, (size_t)(0UL)); (update_progress)(____chimes_arg4); }) ;
 # 223 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  fprintf(__stderrp, "\n");
 # 224 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 225 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
  free_wrapper(progress_buffer, 7724169104006700759UL);
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0); }
+rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_disable7); }
 
 
 static int module_init() {
@@ -2866,6 +2871,7 @@ static int module_init() {
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4, 0, 0, 0);
     register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4, 0, 0, 0);
     register_global_var("global|progress_num_ticks", "i32", (void *)(&progress_num_ticks), 4, 0, 0, 0);
+    register_functions(8, "common.cpp.pre.register.cpp", "seconds", &seconds, "ricker_wavelet", &ricker_wavelet, "parse_source", &parse_source, "config_sources", &config_sources, "sample_sources", &sample_sources, "init_progress", &init_progress, "update_progress", &update_progress, "finish_progress", &finish_progress);
     return 0;
 }
 

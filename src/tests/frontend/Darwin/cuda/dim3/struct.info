@@ -1,4 +1,4 @@
-__fatBinC_Wrapper_t 1 magic "int" version "int" data "long long unsigned int*"
+__fatBinC_Wrapper_t 1 magic "int" version "int" data "long long unsigned int*" filename_or_fatbins "void*"
 dim3 0 x "unsigned int" y "unsigned int" z "unsigned int"
 div_t 1 quot "int" rem "int"
 ldiv_t 1 quot "long int" rem "long int"

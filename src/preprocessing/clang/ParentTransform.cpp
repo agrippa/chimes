@@ -111,6 +111,21 @@ void ParentTransform::setParent(const clang::Stmt *child,
     parentMap[child] = parent;
 }
 
+void ParentTransform::ReplaceWholeStatement(const clang::Stmt *s,
+        std::string st) {
+    const clang::Stmt *parent = getParent(s);
+    while (!clang::isa<clang::CompoundStmt>(parent) &&
+            !clang::isa<clang::CaseStmt>(parent)) {
+        s = parent;
+        parent = getParent(s);
+    }
+    clang::SourceLocation start = s->getLocStart();
+    clang::SourceLocation end = s->getLocEnd();
+    rewriter->ReplaceText(clang::SourceRange(start, end),
+            st);
+    insertions->AppendToDiagnostics("ReplaceText", start, st, *SM);
+}
+
 clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
         std::string st) {
     const clang::Stmt *parent = getParent(s);

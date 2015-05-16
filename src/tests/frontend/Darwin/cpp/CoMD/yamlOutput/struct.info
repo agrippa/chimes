@@ -1,4 +1,4 @@
-__sFILE 0 _p "unsigned char*" _r "int" _w "int" _flags "short" _file "short" _bf "%struct.__sbuf" _lbfsize "int" _close "*" _read "*" _seek "*" _write "*" _ub "%struct.__sbuf" _extra "%struct.__sFILEX*" _ur "int" _ubuf "[ 3 x unsigned char ]" _nbuf "[ 1 x unsigned char ]" _lb "%struct.__sbuf" _blksize "int" _offset "long long int"
+__sFILE 0 _p "unsigned char*" _r "int" _w "int" _flags "short" _file "short" _bf "%struct.__sbuf" _lbfsize "int" _cookie "void*" _close "*" _read "*" _seek "*" _write "*" _ub "%struct.__sbuf" _extra "%struct.__sFILEX*" _ur "int" _ubuf "[ 3 x unsigned char ]" _nbuf "[ 1 x unsigned char ]" _lb "%struct.__sbuf" _blksize "int" _offset "long long int"
 __sFILEX 0
 __sbuf 0 _base "unsigned char*" _size "int"
 tm 0 tm_sec "int" tm_min "int" tm_hour "int" tm_mday "int" tm_mon "int" tm_year "int" tm_wday "int" tm_yday "int" tm_isdst "int" tm_gmtoff "long int" tm_zone "char*"
