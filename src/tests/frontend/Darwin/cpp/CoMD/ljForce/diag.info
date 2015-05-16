@@ -102,9 +102,9 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 145  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 111  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 173  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  real_t * ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (s->atoms->f[iii]);  }  calling((void*)zeroReal3, -1, 0UL, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(____chimes_arg0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  calling((void*)zeroReal3, -1, 0UL, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(s->atoms->f[iii]); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 78  ({  call_lbl_2:  LinkCell * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes);  }  calling((void*)getNeighborBoxes, 2, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 78  ({  call_lbl_2:  calling((void*)getNeighborBoxes, 2, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 119 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19 

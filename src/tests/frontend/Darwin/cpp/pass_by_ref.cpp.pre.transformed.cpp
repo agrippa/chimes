@@ -1743,7 +1743,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: int * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (&b); } calling((void*)foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); (foo)(____chimes_arg0); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"

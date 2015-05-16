@@ -3026,9 +3026,9 @@ config conf;
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  ;
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: config * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (&conf); } calling((void*)setup_config, 3, 0UL, 3, (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(636351199311517481UL)); (setup_config)(____chimes_arg0, argc, argv); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)setup_config, 3, 0UL, 3, (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(636351199311517481UL)); (setup_config)(&conf, argc, argv); }) ;
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- ({ call_lbl_4: int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled); } calling((void*)init_progress, 4, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ;
+ ({ call_lbl_4: calling((void*)init_progress, 4, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); }) ;
 # 90 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 91 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  dx = (20.F) ;
@@ -3074,12 +3074,12 @@ config conf;
  }
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- alias_group_changed(____alias_loc_id_1); ({ call_lbl_15: source ** ____chimes_arg6; int * ____chimes_arg7; int ____chimes_arg8; int ____chimes_arg9; int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps); } calling((void*)config_sources, 15, 0UL, 5, (size_t)(636351199311517113UL), (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ;
+ alias_group_changed(____alias_loc_id_1); ({ call_lbl_15: source ** ____chimes_arg6; int * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); } calling((void*)config_sources, 15, 0UL, 5, (size_t)(636351199311517113UL), (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, conf.nx, conf.ny, conf.nsteps); }) ;
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- srcs = ( ({ call_lbl_16: source * ____chimes_arg11; int ____chimes_arg12; int ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps); } calling((void*)sample_sources, 16, 636351199311517463UL, 4, (size_t)(636351199311517289UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) ;
+ srcs = ( ({ call_lbl_16: calling((void*)sample_sources, 16, 636351199311517463UL, 4, (size_t)(636351199311517289UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) ;
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- alias_group_changed(____alias_loc_id_2); ({ call_lbl_18: int ____chimes_arg19; int ____chimes_arg20; int ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg19 = (dimx); ____chimes_arg20 = (dimy); ____chimes_arg21 = (dimz); } calling((void*)init_data, 18, 0UL, 9, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, ____chimes_arg19, ____chimes_arg20, ____chimes_arg21, dx, dt); }) ;
+ alias_group_changed(____alias_loc_id_2); ({ call_lbl_18: calling((void*)init_data, 18, 0UL, 9, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ;
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  start = ( ({ call_lbl_19: calling((void*)seconds, 19, 0UL, 0); (seconds)(); }) ) ;
@@ -3098,7 +3098,7 @@ config conf;
  } }
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- ({ int ____chimes_arg28; int ____chimes_arg29; int ____chimes_arg30; int ____chimes_arg31; int ____chimes_arg32; int ____chimes_arg33; int ____chimes_arg34; if (!____chimes_replaying) { ____chimes_arg28 = (conf.nx); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nz); ____chimes_arg31 = (dimx); ____chimes_arg32 = (dimy); ____chimes_arg33 = (dimz); ____chimes_arg34 = (conf.radius); } calling((void*)fwd, -1, 0UL, 11, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd)(next, curr, vsq, c_coeff, ____chimes_arg28, ____chimes_arg29, ____chimes_arg30, ____chimes_arg31, ____chimes_arg32, ____chimes_arg33, ____chimes_arg34); }) ;
+ ({ calling((void*)fwd, -1, 0UL, 11, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd)(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); }) ;
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  tmp = (next) ;
@@ -3132,7 +3132,7 @@ config conf;
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  if (conf.save_text != -1) {
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
- alias_group_changed(____alias_loc_id_6); ({ call_lbl_29: int ____chimes_arg37; int ____chimes_arg38; int ____chimes_arg39; int ____chimes_arg40; int ____chimes_arg41; const char * ____chimes_arg42; int ____chimes_arg43; if (!____chimes_replaying) { ____chimes_arg37 = (conf.save_text); ____chimes_arg38 = (dimx); ____chimes_arg39 = (dimy); ____chimes_arg40 = (conf.ny); ____chimes_arg41 = (conf.nx); ____chimes_arg42 = ("snap.text"); ____chimes_arg43 = (conf.radius); } calling((void*)save_layer_text, 29, 0UL, 8, (size_t)(636351199311517353UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(636351199311517862UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg37, ____chimes_arg38, ____chimes_arg39, ____chimes_arg40, ____chimes_arg41, ____chimes_arg42, ____chimes_arg43); }) ;
+ alias_group_changed(____alias_loc_id_6); ({ call_lbl_29: calling((void*)save_layer_text, 29, 0UL, 8, (size_t)(636351199311517353UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(636351199311517862UL), (size_t)(0UL)); (save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ;
 # 153 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
  }
 # 154 "/Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp"

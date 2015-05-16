@@ -2755,7 +2755,7 @@ int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 133 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int iy; int iz; ;
 # 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ int * ____chimes_arg2; int * ____chimes_arg3; int * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg2 = (&ix); ____chimes_arg3 = (&iy); ____chimes_arg4 = (&iz); } calling((void*)getTuple, -1, 0UL, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); (getTuple)(boxes, iBox, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4); }) ;
+ ({ calling((void*)getTuple, -1, 0UL, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); (getTuple)(boxes, iBox, &ix, &iy, &iz); }) ;
 # 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  int count; count = (0) ;
@@ -2908,7 +2908,7 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms)
 # 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  {
 # 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- int jBox; jBox = ( ({ real_t * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg25 = (atoms->r[iOff + ii]); } calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, ____chimes_arg25); }) ) ;
+ int jBox; jBox = ( ({ calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, atoms->r[iOff + ii]); }) ) ;
 # 288 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  if (jBox != iBox) { ({ calling((void*)moveAtom, -1, 0UL, 5, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (moveAtom)(boxes, atoms, ii, iBox, jBox); }) ; } else {++ii; } ;
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2933,11 +2933,11 @@ int maxOccupancy(LinkCell* boxes)
  int globalMax; ;
 # 304 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 305 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- do { alias_group_changed(____alias_loc_id_0); ({ call_lbl_2: enum TimerHandle ____chimes_arg31; if (!____chimes_replaying) { ____chimes_arg31 = (commReduceTimer); } calling((void*)profileStart, 2, 0UL, 1, (size_t)(0UL)); (profileStart)(____chimes_arg31); }) ; } while(0);
+ do { alias_group_changed(____alias_loc_id_0); ({ call_lbl_2: calling((void*)profileStart, 2, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 306 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_3: int * ____chimes_arg32; int * ____chimes_arg33; int ____chimes_arg34; if (!____chimes_replaying) { ____chimes_arg32 = (&localMax); ____chimes_arg33 = (&globalMax); ____chimes_arg34 = (1); } calling((void*)maxIntParallel, 3, 0UL, 3, (size_t)(7522830976577681479UL), (size_t)(7522830976577681481UL), (size_t)(0UL)); (maxIntParallel)(____chimes_arg32, ____chimes_arg33, ____chimes_arg34); }) ;
+ ({ call_lbl_3: calling((void*)maxIntParallel, 3, 0UL, 3, (size_t)(7522830976577681479UL), (size_t)(7522830976577681481UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
 # 307 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- do { ({ call_lbl_4: enum TimerHandle ____chimes_arg35; if (!____chimes_replaying) { ____chimes_arg35 = (commReduceTimer); } calling((void*)profileStop, 4, 0UL, 1, (size_t)(0UL)); (profileStop)(____chimes_arg35); }) ; } while(0);
+ do { ({ call_lbl_4: calling((void*)profileStop, 4, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 308 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 309 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0, ____chimes_disable7); return globalMax;
@@ -2960,13 +2960,13 @@ void copyAtom(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int
 # 320 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  atoms->iSpecies[jOff] = atoms->iSpecies[iOff];
 # 321 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_1: void * ____chimes_arg36; const void * ____chimes_arg37; unsigned long ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg36 = (atoms->r[jOff]); ____chimes_arg37 = (atoms->r[iOff]); ____chimes_arg38 = (sizeof(real3)); } calling((void*)memcpy, 1, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg36, ____chimes_arg37, ____chimes_arg38); }) ;
+ ({ call_lbl_1: unsigned long ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg38 = (sizeof(real3)); } calling((void*)memcpy, 1, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->r[jOff], atoms->r[iOff], ____chimes_arg38); }) ;
 # 322 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_2: void * ____chimes_arg39; const void * ____chimes_arg40; unsigned long ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg39 = (atoms->p[jOff]); ____chimes_arg40 = (atoms->p[iOff]); ____chimes_arg41 = (sizeof(real3)); } calling((void*)memcpy, 2, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg39, ____chimes_arg40, ____chimes_arg41); }) ;
+ ({ call_lbl_2: unsigned long ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg41 = (sizeof(real3)); } calling((void*)memcpy, 2, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->p[jOff], atoms->p[iOff], ____chimes_arg41); }) ;
 # 323 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_3: void * ____chimes_arg42; const void * ____chimes_arg43; unsigned long ____chimes_arg44; if (!____chimes_replaying) { ____chimes_arg42 = (atoms->f[jOff]); ____chimes_arg43 = (atoms->f[iOff]); ____chimes_arg44 = (sizeof(real3)); } calling((void*)memcpy, 3, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg42, ____chimes_arg43, ____chimes_arg44); }) ;
+ ({ call_lbl_3: unsigned long ____chimes_arg44; if (!____chimes_replaying) { ____chimes_arg44 = (sizeof(real3)); } calling((void*)memcpy, 3, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->f[jOff], atoms->f[iOff], ____chimes_arg44); }) ;
 # 324 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_4: void * ____chimes_arg45; const void * ____chimes_arg46; unsigned long ____chimes_arg47; if (!____chimes_replaying) { ____chimes_arg45 = (atoms->U + jOff); ____chimes_arg46 = (atoms->U + iOff); ____chimes_arg47 = (sizeof(real_t)); } calling((void*)memcpy, 4, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg45, ____chimes_arg46, ____chimes_arg47); }) ;
+ ({ call_lbl_4: unsigned long ____chimes_arg47; if (!____chimes_replaying) { ____chimes_arg47 = (sizeof(real_t)); } calling((void*)memcpy, 4, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->U + jOff, atoms->U + iOff, ____chimes_arg47); }) ;
 # 325 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_9, ____chimes_disable8); }
 # 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"

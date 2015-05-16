@@ -85,15 +85,15 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 9  ({  calling((void*)printRank, -1, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 62  ({  call_lbl_3:  time_t * ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (__null);  }  calling((void*)time, 3, 0UL, 1, (size_t)(3632450578146407936UL)); (time)(____chimes_arg0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 62  ({  call_lbl_3:  calling((void*)time, 3, 0UL, 1, (size_t)(3632450578146407936UL)); (time)(__null); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 57 79  ({  call_lbl_5:  const time_t * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (&t);  }  calling((void*)ctime, 5, 3632450578146407585UL, 1, (size_t)(3632450578146407572UL)); (ctime)(____chimes_arg1); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 57 79  ({  call_lbl_5:  calling((void*)ctime, 5, 3632450578146407585UL, 1, (size_t)(3632450578146407572UL)); (ctime)(&t); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 57 87 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 46 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 54 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 52 279  ; time_t t;
  if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 107 4  ({  call_lbl_3:  const void * ____chimes_arg3;  size_t ____chimes_arg4;  if (!____chimes_replaying) { ____chimes_arg3 = (sendBuf); ____chimes_arg4 = (sendLen);  }  calling((void*)memcpy, 3, 0UL, 3, (size_t)(3632450578146407647UL), (size_t)(3632450578146407648UL), (size_t)(0UL)); (memcpy)(recvBuf, ____chimes_arg3, ____chimes_arg4); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 107 4  ({  call_lbl_3:  calling((void*)memcpy, 3, 0UL, 3, (size_t)(3632450578146407647UL), (size_t)(3632450578146407648UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 107 36 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 95 267  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 114 207  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

@@ -2380,7 +2380,7 @@ void init_data(float *curr, float *next, float *vsq,
     } }
 # 39 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 40 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-     ({ call_lbl_1: void * ____chimes_arg0; int ____chimes_arg1; unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg0 = (h_coeff); ____chimes_arg1 = (0); ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 3, (size_t)(4957368879419144381UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2); }) ;
+     ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 3, (size_t)(4957368879419144381UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
      float scale; scale = (1. / (dx * dx)) ;
 # 42 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"

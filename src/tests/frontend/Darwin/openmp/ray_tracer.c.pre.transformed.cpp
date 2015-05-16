@@ -3100,7 +3100,7 @@ config conf;
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       ;
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     ({ config * ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg41 = (&conf); } calling((void*)parse_config, -1, 0UL, 3, (size_t)(0UL), (size_t)(2899028330670200666UL), (size_t)(2899028330670200195UL)); (parse_config)(argc, argv, ____chimes_arg41); }) ;
+     ({ calling((void*)parse_config, -1, 0UL, 3, (size_t)(0UL), (size_t)(2899028330670200666UL), (size_t)(2899028330670200195UL)); (parse_config)(argc, argv, &conf); }) ;
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
        screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 2899028330670200241UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3227,7 +3227,7 @@ config conf;
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           ({ sphere * ____chimes_arg42; double ____chimes_arg43; double ____chimes_arg44; double ____chimes_arg45; if (!____chimes_replaying) { ____chimes_arg42 = (conf.spheres + i); ____chimes_arg43 = (conf.svx); ____chimes_arg44 = (conf.svy); ____chimes_arg45 = (conf.svz); } calling((void*)move, -1, 0UL, 4, (size_t)(2899028330670200477UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (move)(____chimes_arg42, ____chimes_arg43, ____chimes_arg44, ____chimes_arg45); }) ;
+           ({ sphere * ____chimes_arg42; if (!____chimes_replaying) { ____chimes_arg42 = (conf.spheres + i); } calling((void*)move, -1, 0UL, 4, (size_t)(2899028330670200477UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (move)(____chimes_arg42, conf.svx, conf.svy, conf.svz); }) ;
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       } }
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"

@@ -45,7 +45,7 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 73 598
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 5 int c; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 74 10 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 8 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 40 5  ({  call_lbl_1:  void * ____chimes_arg0;  int ____chimes_arg1;  unsigned long ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg0 = (h_coeff); ____chimes_arg1 = (0); ____chimes_arg2 = (20 * sizeof(float));  }  calling((void*)memset, 1, 0UL, 3, (size_t)(8205091211441270861UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 40 5  ({  call_lbl_1:  unsigned long ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float));  }  calling((void*)memset, 1, 0UL, 3, (size_t)(8205091211441270861UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 40 42 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 29 366  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp 49 156  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
