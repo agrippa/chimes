@@ -3041,7 +3041,7 @@ void ss_init(StealStack *s, int nelts) {const int ____chimes_disable7 = new_stac
 # 453 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  nbytes, 0);
 # 454 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874755UL)); (ss_error)("ss_init: unable to allocate space for stealstack"); }) ;
+ ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = ("ss_init: unable to allocate space for stealstack"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874755UL)); (ss_error)(____chimes_arg0); }) ;
 # 455 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
 # 456 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3082,11 +3082,11 @@ rm_stack(false, 0UL, "ss_init", &____must_manage_ss_init, ____alias_loc_id_31, _
 # 476 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 void ss_push(StealStack *s, Node *c) {const int ____chimes_disable8 = new_stack((void *)(&ss_push), "ss_push", &____must_manage_ss_push, 2, 2, (size_t)(5273863086679873223UL), (size_t)(5273863086679873229UL), "ss_push|s|0", &____must_checkpoint_ss_push_s_0, "%struct.stealStack_t*", (void *)(&s), (size_t)8, 1, 0, 0, "ss_push|c|0", &____must_checkpoint_ss_push_c_0, "%struct.node_t*", (void *)(&c), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 477 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top >= s->stackSize) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874757UL)); (ss_error)("ss_push: overflow"); }) ; };
+ if (s->top >= s->stackSize) { ({ char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = ("ss_push: overflow"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874757UL)); (ss_error)(____chimes_arg2); }) ; };
 # 479 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  if (debug & 1) {alias_group_changed(____alias_loc_id_0); printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, rng_showstate(c->state.state, debug_str), c->height); };
 # 482 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- ({ call_lbl_3: unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (sizeof(Node)); } calling((void*)memcpy, 3, 0UL, 3, (size_t)(5273863086679873190UL), (size_t)(5273863086679873229UL), (size_t)(0UL)); (memcpy)(&(s->stack[s->top]), c, ____chimes_arg5); }) ;
+ ({ call_lbl_3: void * ____chimes_arg3; unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (&(s->stack[s->top])); ____chimes_arg5 = (sizeof(Node)); } calling((void*)memcpy, 3, 0UL, 3, (size_t)(5273863086679873190UL), (size_t)(5273863086679873229UL), (size_t)(0UL)); (memcpy)(____chimes_arg3, c, ____chimes_arg5); }) ;
 # 483 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  s->top++;
 # 484 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3105,7 +3105,7 @@ Node * ss_top(StealStack *s) {const int ____chimes_disable9 = new_stack((void *)
 # 491 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 492 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top <= s->local) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874759UL)); (ss_error)("ss_top: empty local stack"); }) ; };
+ if (s->top <= s->local) { ({ char * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = ("ss_top: empty local stack"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874759UL)); (ss_error)(____chimes_arg6); }) ; };
 # 494 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  r = &(s->stack[(s->top) - 1]);
 # 495 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3122,7 +3122,7 @@ void ss_pop(StealStack *s) {const int ____chimes_disable10 = new_stack((void *)(
 # 504 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 505 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top <= s->local) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874759UL)); (ss_error)("ss_pop: empty local stack"); }) ; };
+ if (s->top <= s->local) { ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ("ss_pop: empty local stack"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874759UL)); (ss_error)(____chimes_arg7); }) ; };
 # 507 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  s->top--;
 # 508 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3138,7 +3138,7 @@ int ss_topPosn(StealStack *s)
 # 517 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 {const int ____chimes_disable11 = new_stack((void *)(&ss_topPosn), "ss_topPosn", &____must_manage_ss_topPosn, 1, 0, (size_t)(5273863086679873374UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 518 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top <= s->local) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874763UL)); (ss_error)("ss_topPosn: empty local stack"); }) ; };
+ if (s->top <= s->local) { ({ char * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = ("ss_topPosn: empty local stack"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874763UL)); (ss_error)(____chimes_arg8); }) ; };
 # 520 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  rm_stack(false, 0UL, "ss_topPosn", &____must_manage_ss_topPosn, ____alias_loc_id_35, ____chimes_disable11); return s->top - 1;
 # 521 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3158,7 +3158,7 @@ void ss_release(StealStack *s, int k) {const int ____chimes_disable13 = new_stac
 # 530 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 531 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top - s->local >= k) {{ s->local += k; s->workAvail += k; s->nRelease++; }; } else { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874758UL)); (ss_error)("ss_release:  do not have k vals to release"); }) ; } ;
+ if (s->top - s->local >= k) {{ s->local += k; s->workAvail += k; s->nRelease++; }; } else { ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("ss_release:  do not have k vals to release"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874758UL)); (ss_error)(____chimes_arg9); }) ; } ;
 # 538 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ;
 # 539 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3209,10 +3209,10 @@ int victimShared;
  ;
 # 564 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 565 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->sharedStart != s->top) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874765UL)); (ss_error)("ss_steal: thief attempts to steal onto non-empty stack"); }) ; };
+ if (s->sharedStart != s->top) { ({ char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = ("ss_steal: thief attempts to steal onto non-empty stack"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874765UL)); (ss_error)(____chimes_arg10); }) ; };
 # 567 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 568 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (s->top + k >= s->stackSize) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874766UL)); (ss_error)("ss_steal: steal will overflow thief's stack"); }) ; };
+ if (s->top + k >= s->stackSize) { ({ char * ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = ("ss_steal: steal will overflow thief's stack"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874766UL)); (ss_error)(____chimes_arg11); }) ; };
 # 570 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 571 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 572 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3237,7 +3237,7 @@ int victimShared;
  victimWorkAvail = stealStack[victim]->workAvail;
 # 588 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 589 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (victimLocal - victimShared != victimWorkAvail) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874769UL)); (ss_error)("ss_steal: stealStack invariant violated"); }) ; };
+ if (victimLocal - victimShared != victimWorkAvail) { ({ char * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = ("ss_steal: stealStack invariant violated"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874769UL)); (ss_error)(____chimes_arg12); }) ; };
 # 591 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 592 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  ok = victimWorkAvail >= k;
@@ -3269,7 +3269,7 @@ int victimShared;
 # 617 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 618 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 619 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- ({ call_lbl_4: unsigned long ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg15 = (k * sizeof(Node)); } calling((void*)memcpy, 4, 0UL, 3, (size_t)(5273863086679873648UL), (size_t)(5273863086679873671UL), (size_t)(0UL)); (memcpy)(&(s->stack[s->top]), victimSharedStart, ____chimes_arg15); }) ;
+ ({ call_lbl_4: void * ____chimes_arg13; unsigned long ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg13 = (&(s->stack[s->top])); ____chimes_arg15 = (k * sizeof(Node)); } calling((void*)memcpy, 4, 0UL, 3, (size_t)(5273863086679873648UL), (size_t)(5273863086679873671UL), (size_t)(0UL)); (memcpy)(____chimes_arg13, victimSharedStart, ____chimes_arg15); }) ;
 # 620 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 621 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 622 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3376,7 +3376,7 @@ void ss_setState(StealStack *s, int state){const int ____chimes_disable18 = new_
 # 684 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  double time; ;
 # 685 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- if (state < 0 || state >= 5) { ({ calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874774UL)); (ss_error)("ss_setState: thread state out of range"); }) ; };
+ if (state < 0 || state >= 5) { ({ char * ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg16 = ("ss_setState: thread state out of range"); } calling((void*)ss_error, -1, 0UL, 1, (size_t)(5273863086679874774UL)); (ss_error)(____chimes_arg16); }) ; };
 # 687 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  if (state == s->curState) {rm_stack(false, 0UL, "ss_setState", &____must_manage_ss_setState, ____alias_loc_id_42, ____chimes_disable18); return;; };
 # 689 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -3487,7 +3487,7 @@ int parentHeight;
 # 982 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 983 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 # 984 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
- alias_group_changed(____alias_loc_id_10); ({ call_lbl_8: calling((void*)rng_spawn, 8, 0UL, 3, (size_t)(5273863086679874002UL), (size_t)(5273863086679874003UL), (size_t)(0UL)); (rng_spawn)(parent->state.state, child->state.state, i); }) ;
+ alias_group_changed(____alias_loc_id_10); ({ call_lbl_8: uint8 * ____chimes_arg21; uint8 * ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg21 = (parent->state.state); ____chimes_arg22 = (child->state.state); } calling((void*)rng_spawn, 8, 0UL, 3, (size_t)(5273863086679874002UL), (size_t)(5273863086679874003UL), (size_t)(0UL)); (rng_spawn)(____chimes_arg21, ____chimes_arg22, i); }) ;
 # 985 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
  }
 # 986 "/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"

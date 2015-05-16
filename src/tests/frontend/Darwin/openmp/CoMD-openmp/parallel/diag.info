@@ -85,9 +85,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/paral
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 53 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 54 9  ({  calling((void*)printRank, -1, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 54 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 62  ({  call_lbl_3:  calling((void*)time, 3, 0UL, 1, (size_t)(2720369932807154229UL)); (time)(__null); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 62  ({  call_lbl_3:  time_t * ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (__null);  }  calling((void*)time, 3, 0UL, 1, (size_t)(2720369932807154229UL)); (time)(____chimes_arg0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 57 79  ({  call_lbl_5:  calling((void*)ctime, 5, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); (ctime)(&t); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 57 79  ({  call_lbl_5:  const time_t * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (&t);  }  calling((void*)ctime, 5, 2720369932807153878UL, 1, (size_t)(2720369932807153865UL)); (ctime)(____chimes_arg1); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 57 87 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 46 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 54 

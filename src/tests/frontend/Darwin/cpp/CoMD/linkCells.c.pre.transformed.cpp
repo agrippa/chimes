@@ -2908,7 +2908,7 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms)
 # 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  {
 # 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- int jBox; jBox = ( ({ calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, atoms->r[iOff + ii]); }) ) ;
+ int jBox; jBox = ( ({ real_t * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg25 = (atoms->r[iOff + ii]); } calling((void*)getBoxFromCoord, -1, 0UL, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, ____chimes_arg25); }) ) ;
 # 288 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  if (jBox != iBox) { ({ calling((void*)moveAtom, -1, 0UL, 5, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (moveAtom)(boxes, atoms, ii, iBox, jBox); }) ; } else {++ii; } ;
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -2960,13 +2960,13 @@ void copyAtom(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int
 # 320 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
  atoms->iSpecies[jOff] = atoms->iSpecies[iOff];
 # 321 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_1: unsigned long ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg38 = (sizeof(real3)); } calling((void*)memcpy, 1, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->r[jOff], atoms->r[iOff], ____chimes_arg38); }) ;
+ ({ call_lbl_1: void * ____chimes_arg36; const void * ____chimes_arg37; unsigned long ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg36 = (atoms->r[jOff]); ____chimes_arg37 = (atoms->r[iOff]); ____chimes_arg38 = (sizeof(real3)); } calling((void*)memcpy, 1, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg36, ____chimes_arg37, ____chimes_arg38); }) ;
 # 322 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_2: unsigned long ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg41 = (sizeof(real3)); } calling((void*)memcpy, 2, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->p[jOff], atoms->p[iOff], ____chimes_arg41); }) ;
+ ({ call_lbl_2: void * ____chimes_arg39; const void * ____chimes_arg40; unsigned long ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg39 = (atoms->p[jOff]); ____chimes_arg40 = (atoms->p[iOff]); ____chimes_arg41 = (sizeof(real3)); } calling((void*)memcpy, 2, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg39, ____chimes_arg40, ____chimes_arg41); }) ;
 # 323 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_3: unsigned long ____chimes_arg44; if (!____chimes_replaying) { ____chimes_arg44 = (sizeof(real3)); } calling((void*)memcpy, 3, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->f[jOff], atoms->f[iOff], ____chimes_arg44); }) ;
+ ({ call_lbl_3: void * ____chimes_arg42; const void * ____chimes_arg43; unsigned long ____chimes_arg44; if (!____chimes_replaying) { ____chimes_arg42 = (atoms->f[jOff]); ____chimes_arg43 = (atoms->f[iOff]); ____chimes_arg44 = (sizeof(real3)); } calling((void*)memcpy, 3, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg42, ____chimes_arg43, ____chimes_arg44); }) ;
 # 324 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
- ({ call_lbl_4: unsigned long ____chimes_arg47; if (!____chimes_replaying) { ____chimes_arg47 = (sizeof(real_t)); } calling((void*)memcpy, 4, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(atoms->U + jOff, atoms->U + iOff, ____chimes_arg47); }) ;
+ ({ call_lbl_4: void * ____chimes_arg45; const void * ____chimes_arg46; unsigned long ____chimes_arg47; if (!____chimes_replaying) { ____chimes_arg45 = (atoms->U + jOff); ____chimes_arg46 = (atoms->U + iOff); ____chimes_arg47 = (sizeof(real_t)); } calling((void*)memcpy, 4, 0UL, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg45, ____chimes_arg46, ____chimes_arg47); }) ;
 # 325 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_9, ____chimes_disable8); }
 # 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"

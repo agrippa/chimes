@@ -2314,7 +2314,7 @@ HaloExchange *hh;
    parms->nCells[5] = parms->nCells[4];
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   { lbl_0: int ii; if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } for ( ii = (0) ;ii < 6; ++ii) { alias_group_changed(____alias_loc_id_1); parms->cellList[ii] = ({ call_lbl_5: calling((void*)mkAtomCellList, 5, 18379826249005484565UL, 3, (size_t)(18379826249005484479UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, parms->nCells[ii]); }) ; } };
+   { lbl_0: int ii; if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } for ( ii = (0) ;ii < 6; ++ii) { alias_group_changed(____alias_loc_id_1); parms->cellList[ii] = ({ call_lbl_5: int ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parms->nCells[ii]); } calling((void*)mkAtomCellList, 5, 18379826249005484565UL, 3, (size_t)(18379826249005484479UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, ____chimes_arg3); }) ; } };
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    { int ii; for ( ii = (0) ; ii<6; ++ii)
@@ -2405,9 +2405,9 @@ HaloExchange *hh;
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    {
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-      alias_group_changed(____alias_loc_id_11); parms->sendCells[ii] = ({ call_lbl_5: calling((void*)mkForceSendCellList, 5, 18379826249005485600UL, 3, (size_t)(18379826249005485520UL), (size_t)(0UL), (size_t)(0UL)); (mkForceSendCellList)(boxes, ii, parms->nCells[ii]); }) ;
+      alias_group_changed(____alias_loc_id_11); parms->sendCells[ii] = ({ call_lbl_5: int ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (parms->nCells[ii]); } calling((void*)mkForceSendCellList, 5, 18379826249005485600UL, 3, (size_t)(18379826249005485520UL), (size_t)(0UL), (size_t)(0UL)); (mkForceSendCellList)(boxes, ii, ____chimes_arg7); }) ;
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-      alias_group_changed(____alias_loc_id_12); parms->recvCells[ii] = ({ call_lbl_7: calling((void*)mkForceRecvCellList, 7, 18379826249005485600UL, 3, (size_t)(18379826249005485520UL), (size_t)(0UL), (size_t)(0UL)); (mkForceRecvCellList)(boxes, ii, parms->nCells[ii]); }) ;
+      alias_group_changed(____alias_loc_id_12); parms->recvCells[ii] = ({ call_lbl_7: int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (parms->nCells[ii]); } calling((void*)mkForceRecvCellList, 7, 18379826249005485600UL, 3, (size_t)(18379826249005485520UL), (size_t)(0UL), (size_t)(0UL)); (mkForceRecvCellList)(boxes, ii, ____chimes_arg10); }) ;
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2502,9 +2502,9 @@ int faceM;
       recvBufP = ((char *)malloc_wrapper(haloExchange->bufCapacity, 18379826249005486489UL, 0, 0)) ;
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   alias_group_changed(____alias_loc_id_16); nSendM = ( ({ call_lbl_6: calling((void*)haloExchange->loadBuffer, 6, 0UL, 4, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(18379826249005486486UL)); (haloExchange->loadBuffer)(haloExchange->parms, data, faceM, sendBufM); }) ) ;
+   alias_group_changed(____alias_loc_id_16); nSendM = ( ({ call_lbl_6: void * ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg38 = (haloExchange->parms); } calling((void*)haloExchange->loadBuffer, 6, 0UL, 4, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(18379826249005486486UL)); (haloExchange->loadBuffer)(____chimes_arg38, data, faceM, sendBufM); }) ) ;
 # 295 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   alias_group_changed(____alias_loc_id_17); nSendP = ( ({ call_lbl_8: calling((void*)haloExchange->loadBuffer, 8, 0UL, 4, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(18379826249005486496UL)); (haloExchange->loadBuffer)(haloExchange->parms, data, faceP, sendBufP); }) ) ;
+   alias_group_changed(____alias_loc_id_17); nSendP = ( ({ call_lbl_8: void * ____chimes_arg42; if (!____chimes_replaying) { ____chimes_arg42 = (haloExchange->parms); } calling((void*)haloExchange->loadBuffer, 8, 0UL, 4, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(18379826249005486496UL)); (haloExchange->loadBuffer)(____chimes_arg42, data, faceP, sendBufP); }) ) ;
 # 296 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 297 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       nbrRankM = (haloExchange->nbrRank[faceM]) ;
@@ -2517,16 +2517,16 @@ int faceM;
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    do { alias_group_changed(____alias_loc_id_18); ({ call_lbl_10: calling((void*)profileStart, 10, 0UL, 1, (size_t)(0UL)); (profileStart)(commHaloTimer); }) ; } while(0);
 # 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   nRecvP = ({ call_lbl_11: calling((void*)sendReceiveParallel, 11, 0UL, 6, (size_t)(18379826249005486486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486489UL), (size_t)(0UL), (size_t)(0UL)); (sendReceiveParallel)(sendBufM, nSendM, nbrRankM, recvBufP, haloExchange->bufCapacity, nbrRankP); }) ;
+   nRecvP = ({ call_lbl_11: int ____chimes_arg51; if (!____chimes_replaying) { ____chimes_arg51 = (haloExchange->bufCapacity); } calling((void*)sendReceiveParallel, 11, 0UL, 6, (size_t)(18379826249005486486UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486489UL), (size_t)(0UL), (size_t)(0UL)); (sendReceiveParallel)(sendBufM, nSendM, nbrRankM, recvBufP, ____chimes_arg51, nbrRankP); }) ;
 # 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   alias_group_changed(____alias_loc_id_19); nRecvM = ({ call_lbl_13: calling((void*)sendReceiveParallel, 13, 0UL, 6, (size_t)(18379826249005486496UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486499UL), (size_t)(0UL), (size_t)(0UL)); (sendReceiveParallel)(sendBufP, nSendP, nbrRankP, recvBufM, haloExchange->bufCapacity, nbrRankM); }) ;
+   alias_group_changed(____alias_loc_id_19); nRecvM = ({ call_lbl_13: int ____chimes_arg57; if (!____chimes_replaying) { ____chimes_arg57 = (haloExchange->bufCapacity); } calling((void*)sendReceiveParallel, 13, 0UL, 6, (size_t)(18379826249005486496UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486499UL), (size_t)(0UL), (size_t)(0UL)); (sendReceiveParallel)(sendBufP, nSendP, nbrRankP, recvBufM, ____chimes_arg57, nbrRankM); }) ;
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    do { alias_group_changed(____alias_loc_id_20); ({ call_lbl_15: calling((void*)profileStop, 15, 0UL, 1, (size_t)(0UL)); (profileStop)(commHaloTimer); }) ; } while(0);
 # 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ call_lbl_16: calling((void*)haloExchange->unloadBuffer, 16, 0UL, 5, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486499UL)); (haloExchange->unloadBuffer)(haloExchange->parms, data, faceM, nRecvM, recvBufM); }) ;
+    ({ call_lbl_16: void * ____chimes_arg60; if (!____chimes_replaying) { ____chimes_arg60 = (haloExchange->parms); } calling((void*)haloExchange->unloadBuffer, 16, 0UL, 5, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486499UL)); (haloExchange->unloadBuffer)(____chimes_arg60, data, faceM, nRecvM, recvBufM); }) ;
 # 308 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-    ({ call_lbl_17: calling((void*)haloExchange->unloadBuffer, 17, 0UL, 5, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486489UL)); (haloExchange->unloadBuffer)(haloExchange->parms, data, faceP, nRecvP, recvBufP); }) ;
+    ({ call_lbl_17: void * ____chimes_arg65; if (!____chimes_replaying) { ____chimes_arg65 = (haloExchange->parms); } calling((void*)haloExchange->unloadBuffer, 17, 0UL, 5, (size_t)(18379826249005486511UL), (size_t)(18379826249005486515UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005486489UL)); (haloExchange->unloadBuffer)(____chimes_arg65, data, faceP, nRecvP, recvBufP); }) ;
 # 309 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    free_wrapper(recvBufP, 18379826249005486489UL);
 # 310 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2719,7 +2719,7 @@ SimFlat *s;
 # 432 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
          pz = (buf[ii].pz) ;
 # 433 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-      alias_group_changed(____alias_loc_id_8); ({ call_lbl_4: calling((void*)putAtomInBox, 4, 0UL, 10, (size_t)(18379826249005485196UL), (size_t)(18379826249005485196UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, gid, type, rx, ry, rz, px, py, pz); }) ;
+      alias_group_changed(____alias_loc_id_8); ({ call_lbl_4: LinkCell * ____chimes_arg74; Atoms * ____chimes_arg75; if (!____chimes_replaying) { ____chimes_arg74 = (s->boxes); ____chimes_arg75 = (s->atoms); } calling((void*)putAtomInBox, 4, 0UL, 10, (size_t)(18379826249005485196UL), (size_t)(18379826249005485196UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg74, ____chimes_arg75, gid, type, rx, ry, rz, px, py, pz); }) ;
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"

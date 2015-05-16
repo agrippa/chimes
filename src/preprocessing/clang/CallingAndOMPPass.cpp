@@ -680,6 +680,7 @@ bool CallingAndOMPPass::has_side_effects(const Expr *arg) {
             llvm::errs() << "  ImplicitCast NESTED " <<
                 sub->getStmtClassName() << "\n";
 #endif
+            break;
         }
         case (clang::Stmt::DeclRefExprClass): {
             return false;
@@ -711,6 +712,7 @@ bool CallingAndOMPPass::has_side_effects(const Expr *arg) {
             llvm::errs() << "  UnaryOp NESTED " << sub->getStmtClassName() <<
                 " " << "opcode=" << unary->getOpcode() << "\n";
 #endif
+            break;
         }
     }
 #ifdef VERBOSE
@@ -954,7 +956,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         assert(!isa<CXXDefaultArgExpr>(arg));
 
                         if (has_side_effects(arg)) {
-
                             std::string type_str = arg->getType().getAsString();
                             if (type_str.find("(*)") != std::string::npos) {
                                 /*
@@ -973,7 +974,13 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                             arg_varnames.push_back(varname);
                             count_args_with_side_effects++;
                         } else {
-                            arg_varnames.push_back(stmtToString(arg));
+                            std::string arg_str = stmtToString(arg);
+#ifdef VERBOSE
+                            llvm::errs() << "Deciding " << arg_str <<
+                                " does not have side effects, class=" <<
+                                arg->getStmtClassName() << "\n";
+#endif
+                            arg_varnames.push_back(arg_str);
                         }
                     }
 

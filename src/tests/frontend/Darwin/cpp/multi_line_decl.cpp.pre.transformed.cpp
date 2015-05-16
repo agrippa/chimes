@@ -1761,7 +1761,7 @@ int a;
  alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return ({ calling((void*)foo, -1, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(ptr[0], a); }) ;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return ({ int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (ptr[0]); } calling((void*)foo, -1, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(____chimes_arg0, a); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 

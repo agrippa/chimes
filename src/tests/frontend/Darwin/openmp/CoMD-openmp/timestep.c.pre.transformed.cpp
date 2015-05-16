@@ -2168,7 +2168,7 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { alias_group_changed(____alias_loc_id_0); ({ call_lbl_2: calling((void*)profileStart, 2, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-       ({ double ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (0.5 * dt); } calling((void*)advanceVelocity, -1, 0UL, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); (advanceVelocity)(s, s->boxes->nLocalBoxes, ____chimes_arg3); }) ;
+       ({ int ____chimes_arg2; double ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg2 = (s->boxes->nLocalBoxes); ____chimes_arg3 = (0.5 * dt); } calling((void*)advanceVelocity, -1, 0UL, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); (advanceVelocity)(s, ____chimes_arg2, ____chimes_arg3); }) ;
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { ({ call_lbl_3: calling((void*)profileStop, 3, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2180,7 +2180,7 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { ({ call_lbl_5: calling((void*)profileStart, 5, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-       ({ calling((void*)advancePosition, -1, 0UL, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); (advancePosition)(s, s->boxes->nLocalBoxes, dt); }) ;
+       ({ int ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (s->boxes->nLocalBoxes); } calling((void*)advancePosition, -1, 0UL, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); (advancePosition)(s, ____chimes_arg7, dt); }) ;
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { ({ call_lbl_6: calling((void*)profileStop, 6, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2216,7 +2216,7 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { ({ call_lbl_16: calling((void*)profileStart, 16, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-       ({ double ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg19 = (0.5 * dt); } calling((void*)advanceVelocity, -1, 0UL, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); (advanceVelocity)(s, s->boxes->nLocalBoxes, ____chimes_arg19); }) ;
+       ({ int ____chimes_arg18; double ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (s->boxes->nLocalBoxes); ____chimes_arg19 = (0.5 * dt); } calling((void*)advanceVelocity, -1, 0UL, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); (advanceVelocity)(s, ____chimes_arg18, ____chimes_arg19); }) ;
 # 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
       do { ({ call_lbl_17: calling((void*)profileStop, 17, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2380,12 +2380,12 @@ void redistributeAtoms(SimFlat* sim)
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7181207812802620678UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   alias_group_changed(____alias_loc_id_2); ({ call_lbl_2: calling((void*)updateLinkCells, 2, 0UL, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620680UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
+   alias_group_changed(____alias_loc_id_2); ({ call_lbl_2: LinkCell * ____chimes_arg28; Atoms * ____chimes_arg29; if (!____chimes_replaying) { ____chimes_arg28 = (sim->boxes); ____chimes_arg29 = (sim->atoms); } calling((void*)updateLinkCells, 2, 0UL, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620680UL)); (updateLinkCells)(____chimes_arg28, ____chimes_arg29); }) ;
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { ({ call_lbl_3: calling((void*)profileStart, 3, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
 # 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-    ({ call_lbl_4: calling((void*)haloExchange, 4, 0UL, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620678UL)); (haloExchange)(sim->atomExchange, sim); }) ;
+    ({ call_lbl_4: HaloExchange * ____chimes_arg31; if (!____chimes_replaying) { ____chimes_arg31 = (sim->atomExchange); } calling((void*)haloExchange, 4, 0UL, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620678UL)); (haloExchange)(____chimes_arg31, sim); }) ;
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    do { ({ call_lbl_5: calling((void*)profileStop, 5, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0); { call_lbl_9: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(9, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ;
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
