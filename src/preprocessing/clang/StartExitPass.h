@@ -29,7 +29,7 @@ public:
 
 private:
     int count_disable_variables = 0;
-    std::string *current_disable_varname;
+    std::string *current_disable_varname = NULL;
 };
 
 #endif
