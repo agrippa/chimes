@@ -881,6 +881,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     for (int i = 0; i < nargs; i++) {
                         std::string varname = get_unique_argument_varname();
                         const Expr *arg = loc.get_call()->getArg(i);
+                        assert(!isa<CXXDefaultArgExpr>(arg));
+
+                        llvm::errs() << "arg is a " << arg->getStmtClassName() << "\n";
+
                         std::string type_str = arg->getType().getAsString();
                         if (type_str.find("(*)") != std::string::npos) {
                             /*
