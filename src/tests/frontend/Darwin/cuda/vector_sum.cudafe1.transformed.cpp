@@ -26881,9 +26881,9 @@ for (i = 0; i < N; i++) {
 # 39 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 }
 # 41 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-alias_group_changed(____alias_loc_id_1); ({ call_lbl_10: void * ____chimes_arg0; const void * ____chimes_arg1; unsigned long ____chimes_arg2; enum cudaMemcpyKind ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (d_A); ____chimes_arg1 = (h_A); ____chimes_arg2 = (sizeof(int) * N); ____chimes_arg3 = (cudaMemcpyHostToDevice); } calling((void*)cudaMemcpy, 10, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450819UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3); }) ;
+alias_group_changed(____alias_loc_id_1); ({ call_lbl_10: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (sizeof(int) * N); } calling((void*)cudaMemcpy, 10, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450819UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(d_A, h_A, ____chimes_arg2, cudaMemcpyHostToDevice); }) ;
 # 42 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- ({ call_lbl_11: void * ____chimes_arg4; const void * ____chimes_arg5; unsigned long ____chimes_arg6; enum cudaMemcpyKind ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg4 = (d_B); ____chimes_arg5 = (h_B); ____chimes_arg6 = (sizeof(int) * N); ____chimes_arg7 = (cudaMemcpyHostToDevice); } calling((void*)cudaMemcpy, 11, 0UL, 4, (size_t)(10983886093799450922UL), (size_t)(10983886093799450825UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg4, ____chimes_arg5, ____chimes_arg6, ____chimes_arg7); }) ;
+ ({ call_lbl_11: unsigned long ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (sizeof(int) * N); } calling((void*)cudaMemcpy, 11, 0UL, 4, (size_t)(10983886093799450922UL), (size_t)(10983886093799450825UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(d_B, h_B, ____chimes_arg6, cudaMemcpyHostToDevice); }) ;
 # 44 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  threads_per_block = (128) ;
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -26891,7 +26891,7 @@ alias_group_changed(____alias_loc_id_1); ({ call_lbl_10: void * ____chimes_arg0;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 alias_group_changed(____alias_loc_id_2); ( ({ call_lbl_13: dim3 ____chimes_arg8; dim3 ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg8 = (blocks_per_grid); ____chimes_arg9 = (threads_per_block); } calling((void*)cudaConfigureCall, 13, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10983886093799451192UL)); (cudaConfigureCall)(____chimes_arg8, ____chimes_arg9); }) ) ? (void)0 : ({ call_lbl_14: calling((void*)kernel, 14, 0UL, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450922UL), (size_t)(10983886093799450929UL), (size_t)(0UL)); (kernel)(d_A, d_B, d_C, N); }) ;
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- ({ call_lbl_15: void * ____chimes_arg14; const void * ____chimes_arg15; unsigned long ____chimes_arg16; enum cudaMemcpyKind ____chimes_arg17; if (!____chimes_replaying) { ____chimes_arg14 = (h_C); ____chimes_arg15 = (d_C); ____chimes_arg16 = (sizeof(int) * N); ____chimes_arg17 = (cudaMemcpyDeviceToHost); } calling((void*)cudaMemcpy, 15, 0UL, 4, (size_t)(10983886093799450927UL), (size_t)(10983886093799450929UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg14, ____chimes_arg15, ____chimes_arg16, ____chimes_arg17); }) ;
+ ({ call_lbl_15: unsigned long ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg16 = (sizeof(int) * N); } calling((void*)cudaMemcpy, 15, 0UL, 4, (size_t)(10983886093799450927UL), (size_t)(10983886093799450929UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(h_C, d_C, ____chimes_arg16, cudaMemcpyDeviceToHost); }) ;
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  ({ call_lbl_16: calling((void*)checkpoint, 16, 0UL, 0); (checkpoint)(); }) ;
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

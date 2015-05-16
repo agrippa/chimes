@@ -1930,7 +1930,7 @@ static void getTimeString(char* timestring)
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  struct tm *timeinfo; ;
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- alias_group_changed(____alias_loc_id_1); ({ call_lbl_2: time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (&rawtime); } calling((void*)time, 2, 0UL, 1, (size_t)(12737042733622956005UL)); (time)(____chimes_arg0); }) ;
+ alias_group_changed(____alias_loc_id_1); ({ call_lbl_2: calling((void*)time, 2, 0UL, 1, (size_t)(12737042733622956005UL)); (time)(&rawtime); }) ;
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  timeinfo = localtime(&rawtime);
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -1968,7 +1968,7 @@ char filename[64];
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  ;
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
- ({ call_lbl_3: time_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (&rawtime); } calling((void*)time, 3, 0UL, 1, (size_t)(12737042733622955889UL)); (time)(____chimes_arg1); }) ;
+ ({ call_lbl_3: calling((void*)time, 3, 0UL, 1, (size_t)(12737042733622955889UL)); (time)(&rawtime); }) ;
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  struct tm *ptm; ptm = (localtime(&rawtime)) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"

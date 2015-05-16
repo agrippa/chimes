@@ -2661,7 +2661,7 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {const int
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
         }
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-         ({ float * ____chimes_arg0; float ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg0 = (src_samples[i]); ____chimes_arg3 = (srcs[i].freq); } calling((void*)ricker_wavelet, -1, 0UL, 4, (size_t)(8150615911090656359UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(____chimes_arg0, nsteps, dt, ____chimes_arg3); }) ;
+         ({ calling((void*)ricker_wavelet, -1, 0UL, 4, (size_t)(8150615911090656359UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(src_samples[i], nsteps, dt, srcs[i].freq); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"

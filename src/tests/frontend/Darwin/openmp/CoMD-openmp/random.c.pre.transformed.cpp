@@ -1131,7 +1131,7 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite)
 # 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
       iSeed = (((4294967296ULL) * s1) + s2) ;
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ uint64_t * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (&iSeed); } calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803911UL)); (lcg61)(____chimes_arg2); }) ; } };
+   { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803911UL)); (lcg61)(&iSeed); }) ; } };
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_disable2); return iSeed;

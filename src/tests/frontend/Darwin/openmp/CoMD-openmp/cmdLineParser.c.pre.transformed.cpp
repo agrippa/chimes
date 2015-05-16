@@ -2622,7 +2622,7 @@ MyOption *o;
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break;; };
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      o = ({ unsigned char ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (c); } calling((void*)findOption, -1, 7180137057745129449UL, 2, (size_t)(7180137057745129449UL), (size_t)(0UL)); (findOption)(myargs, ____chimes_arg12); }) ;
+      o = ({ calling((void*)findOption, -1, 7180137057745129449UL, 2, (size_t)(7180137057745129449UL), (size_t)(0UL)); (findOption)(myargs, c); }) ;
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2678,7 +2678,7 @@ MyOption *o;
 # 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
             case 's':
 # 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-               alias_group_changed(____alias_loc_id_0); ({ call_lbl_12: char * ____chimes_arg13; const char * ____chimes_arg14; size_t ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg13 = ((char *)o->ptr); ____chimes_arg14 = ((char *)optarg); ____chimes_arg15 = (o->sz); } calling((void*)strncpy, 12, 7180137057745129336UL, 3, (size_t)(7180137057745129449UL), (size_t)(7180137057745129307UL), (size_t)(0UL)); (strncpy)(____chimes_arg13, ____chimes_arg14, ____chimes_arg15); }) ;
+               alias_group_changed(____alias_loc_id_0); ({ call_lbl_12: char * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = ((char *)o->ptr); } calling((void*)strncpy, 12, 7180137057745129336UL, 3, (size_t)(7180137057745129449UL), (size_t)(7180137057745129307UL), (size_t)(0UL)); (strncpy)(____chimes_arg13, (char *)optarg, o->sz); }) ;
 # 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
                ((char*)o->ptr)[o->sz-1] = '\0';
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"

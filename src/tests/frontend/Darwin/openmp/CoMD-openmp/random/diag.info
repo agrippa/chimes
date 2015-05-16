@@ -30,7 +30,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/rando
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 26 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 22 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 42 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57  ({  uint64_t * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = (&iSeed);  }  calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803911UL)); (lcg61)(____chimes_arg2); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57  ({  calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803911UL)); (lcg61)(&iSeed); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 69 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 19 
