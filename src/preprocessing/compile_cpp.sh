@@ -19,7 +19,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O0"
+GXX_FLAGS="-g -O2"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
@@ -80,11 +80,6 @@ while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
     esac
 done
 
-if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
-    echo "The profile (-p) and dummy (-d) flags are mutually exclusive"
-    exit 1
-fi
-
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
     echo usage: compile_cpp.sh [-c] [-k] [-p] [-v] [-s] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
     exit 1
@@ -134,7 +129,10 @@ FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appen
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
-if [[ $PROFILE == 1 ]]; then
+if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    GXX_FLAGS="${GXX_FLAGS} -pg"
+elif [[ $PROFILE == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $DUMMY == 1 ]]; then

@@ -6,4 +6,4 @@
 #PBS -m abe
 
 cd /home/jmg3/num-debug/src/tests/perf/cpp && ./compile_comd.sh
-cd /home/jmg3/num-debug/src/tests/perf/cpp && ./run_comd.sh &> log.comd
+cd /home/jmg3/num-debug/src/tests/perf/cpp && ./run_comd.sh

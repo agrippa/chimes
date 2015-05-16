@@ -57,14 +57,9 @@ ISO3D = RuntimeTest('Iso3D',
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
                     cli_args='-i 3')
-SMITH_WATERMAN_ARGS=CHIMES_HOME + \
-                    '/src/tests/runtime/cpp/smithWaterman/string1.txt ' + \
-                    CHIMES_HOME + \
-                    '/src/tests/runtime/cpp/smithWaterman/string2.txt ' + \
-                    '1 1'
 SMITH_WATERMAN = RuntimeTest('SmithWaterman',
                              ['smithWaterman/smith_waterman.cpp'], 0, -1,
-                             cli_args=SMITH_WATERMAN_ARGS)
+                             cli_args='20 20')
 LULESH = RuntimeTest('Lulesh', ['lulesh/LULESH.cc'], 0, -1, cli_args='1')
 COMD = RuntimeTest('CoMD',
                    ['CoMD/src-mpi/CoMD.c', 'CoMD/src-mpi/decomposition.c',

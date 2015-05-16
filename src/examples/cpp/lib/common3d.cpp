@@ -28,12 +28,13 @@ void init_data(TYPE *curr, TYPE *next, TYPE *vsq,
                 const int dimx, const int dimy, const int dimz,
                 const TYPE dx, const TYPE dt) {
     // init the vsq array -------------------------
-    for (size_t i = 0; i < dimx * dimy * dimz; i++) {
+    size_t len = (size_t)dimx * (size_t)dimy * (size_t)dimz;
+    for (size_t i = 0; i < len; i++) {
         vsq[i] = 2500. * 2500. * dt * dt; // velocity constant at 2.5 km/s
     }
     
     // init the pressure arrays -------------------
-    for (size_t i = 0; i < dimx * dimy * dimz; i++) {
+    for (size_t i = 0; i < len; i++) {
         curr[i] = next[i] = 0;
     }
 

@@ -25,14 +25,9 @@ ISO3D_OMP = RuntimeTest('Iso3D-OMP',
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
                     cli_args='-i 3')
-SMITH_WATERMAN_ARGS=CHIMES_HOME + \
-                    '/src/examples/cpp/smithWaterman/string1.txt ' + \
-                    CHIMES_HOME + \
-                    '/src/examples/cpp/smithWaterman/string2.txt ' + \
-                    '1 1'
 SMITH_WATERMAN_OMP = RuntimeTest('SmithWaterman-OMP',
                              ['smithWaterman/smith_waterman_omp.cpp'], 0, -1,
-                             cli_args=SMITH_WATERMAN_ARGS)
+                             cli_args='12 12 1 1')
 LULESH_OMP = RuntimeTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'], 0, -1, cli_args='1')
 COMD_OMP = RuntimeTest('CoMD-OMP', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
                      'CoMD/src-openmp/haloExchange.c', 'CoMD/src-openmp/linkCells.c',
