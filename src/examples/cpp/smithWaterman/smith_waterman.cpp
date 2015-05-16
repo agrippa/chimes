@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <time.h>
+#include <assert.h>
 
 #ifdef __CHIMES_SUPPORT
 #include "checkpoint.h"
@@ -12,21 +13,10 @@
 #define TRANSVERSION_PENALTY -4
 #define MATCH 2
 
+#define INDEX(row, col, ncols) ((row) * (ncols) + (col))
+
 signed char* string_1;
 signed char* string_2;
-
-int tile_width;
-int tile_height;
-
-int n_tiles_x;
-int n_tiles_y;
-
-int ** tile_edges_x;
-int ** tile_edges_y;
-int * tile_diag;
-
-int nthreads;
-int *** worker_tiles;
 
 enum Nucleotide {GAP=0, ADENINE, CYTOSINE, GUANINE, THYMINE};
 
@@ -93,151 +83,89 @@ signed char* read_file( FILE* file, size_t* n_chars ) {
     return file_buffer;
 }
 
-int find_diag(int row, int col) {
-	return (n_tiles_y - 1) + (col - row);
+static void random_init(signed char *s, unsigned long long len) {
+    for (unsigned long long i = 0; i < len; i++) {
+        int r = rand() % 5;
+        assert(r >= 0 && r < 5);
+        s[i] = r;
+    }
 }
 
 int main ( int argc, char* argv[] ) {
-    int i, j;
+    unsigned long long i, j;
 	int nthreads = 1;
 
-	if ( argc < 5 ) {
-		fprintf(stderr, "Usage: %s fileName1 fileName2 tileWidth tileHeight\n", argv[0]);
+	if ( argc < 3 ) {
+        fprintf(stderr, "Usage: %s length1 length2\n", argv[0]);
 		exit(1);
 	}
 
-	char* file_name_1 = argv[1];
-	char* file_name_2 = argv[2];
+    unsigned long long length1 = strtoull(argv[1], NULL, 10);
+    unsigned long long length2 = strtoull(argv[2], NULL, 10);
 
-    tile_width = (int) atoi (argv[3]);
-    tile_height = (int) atoi (argv[4]);
+    unsigned long long n_char_in_file_1 = length1;
+    unsigned long long n_char_in_file_2 = length2;
+
+    string_1 = (signed char *)malloc(n_char_in_file_1);
+    string_2 = (signed char *)malloc(n_char_in_file_2);
+
+    srand(123);
+    random_init(string_1, n_char_in_file_1);
+    random_init(string_2, n_char_in_file_2);
+    fprintf(stdout, "Working on matrix of size %llu x %llu\n",
+            n_char_in_file_1, n_char_in_file_2);
+
+    int **matrix = (int **)malloc(sizeof(int *) * (n_char_in_file_1 + 1));
+    assert(matrix);
+    for (unsigned long long i = 0; i < n_char_in_file_1 + 1; i++) {
+        matrix[i] = (int *)malloc(sizeof(int) * (n_char_in_file_2 + 1));
+        assert(matrix[i]);
+    }
+
+    for (i = 0; i < n_char_in_file_2 + 1; i++) {
+        matrix[0][i] = GAP_PENALTY * (i);
+    }
+    for (i = 0; i < n_char_in_file_1 + 1; i++) {
+        matrix[i][0] = GAP_PENALTY * (i * n_char_in_file_2);
+    }
 	
-	FILE* file_1 = fopen(file_name_1, "r");
-	if (!file_1) { fprintf(stderr, "could not open file %s\n",file_name_1); exit(1); }
-	size_t n_char_in_file_1 = 0;
-	string_1 = read_file(file_1, &n_char_in_file_1);
-	fprintf(stdout, "Size of input string 1 is %u\n", (unsigned)n_char_in_file_1 );
-	
-	FILE* file_2 = fopen(file_name_2, "r");
-	if (!file_2) { fprintf(stderr, "could not open file %s\n",file_name_2); exit(1); }
-	size_t n_char_in_file_2 = 0;
-	string_2 = read_file(file_2, &n_char_in_file_2);
-	fprintf(stdout, "Size of input string 2 is %u\n", (unsigned)n_char_in_file_2 );
-	
-	fprintf(stdout, "Tile width is %d\n", tile_width);
-	fprintf(stdout, "Tile height is %d\n", tile_height);
-	
-	if (n_char_in_file_1 % tile_width)
-		{ fprintf(stderr, "tile width does not evenly divide string1\n"); exit(1); }
-
-	if (n_char_in_file_2 % tile_height)
-		{ fprintf(stderr, "tile height does not evenly divide string2\n"); exit(1); }
-
-	n_tiles_x = n_char_in_file_1/tile_width;
-	n_tiles_y = n_char_in_file_2/tile_height;
-	
-	// Allocate space for edge data and diagonals
-	tile_diag = (int*)malloc(sizeof(int)*(n_tiles_x + n_tiles_y - 1));
-
-	tile_edges_x = (int**)malloc(sizeof(int*)*n_tiles_x);
-	for (i = 0; i < n_tiles_x; i++) {
-		tile_edges_x[i] = (int*)malloc(sizeof(int)*(tile_width));
-		for (j = 0; j < tile_width; j++)
-			tile_edges_x[i][j] = GAP_PENALTY*(i*tile_width+j);
-		tile_diag[find_diag(0,i)] = GAP_PENALTY*(i*tile_width);
-	}
-
-	tile_edges_y = (int**)malloc(sizeof(int*)*n_tiles_y);
-	for (i = 0; i < n_tiles_y; i++) {
-		tile_edges_y[i] = (int*)malloc(sizeof(int)*(tile_height));
-		for (j = 0; j < tile_height; j++)
-			tile_edges_y[i][j] = GAP_PENALTY*(i*tile_height+j);
-		tile_diag[find_diag(i,0)] = GAP_PENALTY*(i*tile_height);
-	}
-
-	worker_tiles = (int***)malloc(sizeof(int**)*nthreads);
-	for (i = 0; i < nthreads; i++) {
-		worker_tiles[i] = (int**)malloc(sizeof(int*)*(tile_height+1));
-		for (j = 0; j < tile_height+1; j++)
-			worker_tiles[i][j] = (int*)malloc(sizeof(int)*(tile_width+1));
-	}
-
     struct timeval begin,end;
     gettimeofday(&begin,0);
 
-	//finish {
-		for ( i = 0; i < n_tiles_y; i++ ) {
-			for ( j = 0; j < n_tiles_x; j++ ) {
-				//async await
-				{
-					int ii, jj;
-					int threadId = 0;
-					int ** local_matrix = worker_tiles[threadId];
-					int * tile_edge_x = tile_edges_x[j];
-					int * tile_edge_y = tile_edges_y[i];
-					int diag_index = find_diag(i,j);
+    for (i = 1; i < n_char_in_file_1 + 1; i++) {
+        for (j = 1; j < n_char_in_file_2 + 1; j++) {
+            signed char char_from_1 = string_1[i - 1];
+            signed char char_from_2 = string_2[j - 1];
 
-                	for ( ii = 1; ii < tile_height+1; ++ii )
-                    	local_matrix[ii][0] = tile_edge_y[ii-1];
+            int diag_score = matrix[i - 1][j - 1] +
+                alignment_score_matrix[char_from_2][char_from_1];
+            int left_score = matrix[i][j - 1] +
+                alignment_score_matrix[char_from_1][GAP];
+            int top_score = matrix[i - 1][j] +
+                alignment_score_matrix[GAP][char_from_2];
 
-                	for ( jj = 1; jj < tile_width+1; ++jj )
-                    	local_matrix[0][jj] = tile_edge_x[jj-1];
-
-                	local_matrix[0][0] = tile_diag[diag_index];
-
-                	for ( ii = 1; ii < tile_height+1; ++ii ) {
-                    	for ( jj = 1; jj < tile_width+1; ++jj ) {
-                        	signed char char_from_1 = string_1[(j)*tile_width+jj-1];
-                        	signed char char_from_2 = string_2[(i)*tile_height+ii-1];
-
-                        	int diag_score = local_matrix[ii-1][jj-1] + alignment_score_matrix[char_from_2][char_from_1];
-                        	int left_score = local_matrix[ii  ][jj-1] + alignment_score_matrix[char_from_1][GAP];
-                        	int  top_score = local_matrix[ii-1][jj  ] + alignment_score_matrix[GAP][char_from_2];
-
-                        	int bigger_of_left_top = (left_score > top_score) ? left_score : top_score;
-                        	local_matrix[ii][jj] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-                    	}
-                	}
-
-                	for ( ii = 1; ii < tile_height+1; ++ii )
-                    	tile_edge_y[ii-1] = local_matrix[ii][tile_width];
-
-                	for ( jj = 1; jj < tile_width+1; ++jj )
-                    	tile_edge_x[jj-1] = local_matrix[tile_height][jj];
-
-                	tile_diag[diag_index] = local_matrix[tile_height][tile_width];
-				}
-			}
-
+            int bigger_of_left_top = (left_score > top_score) ? left_score :
+                top_score;
+            matrix[i][j] = (bigger_of_left_top > diag_score) ?
+                bigger_of_left_top : diag_score;
+        }
 #ifdef __CHIMES_SUPPORT
-       checkpoint();
+        checkpoint();
 #endif
-		}
-	//}
+    }
 
     gettimeofday(&end,0);
-    fprintf(stdout, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
+    fprintf(stdout, "The computation took %f seconds\n",
+            ((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*
+            1.0/1000000);
 
-	int diag_zero = find_diag(0,0);
-    int score = tile_diag[diag_zero];
+    int score = matrix[n_char_in_file_1][n_char_in_file_2];
     fprintf(stdout, "score: %d\n", score);
 
-	for (i = 0; i < n_tiles_x; i++)
-		free(tile_edges_x[i]);
-	free(tile_edges_x);
-
-	for (i = 0; i < n_tiles_y; i++)
-		free(tile_edges_y[i]);
-	free(tile_edges_y);
-
-	free(tile_diag);
-
-	for (i = 0; i < nthreads; i++) {
-		for (j = 0; j < tile_height+1; j++)
-			free(worker_tiles[i][j]);
-		free(worker_tiles[i]);
-	}
-	free(worker_tiles);
+    for (unsigned long long i = 0; i < n_char_in_file_1 + 1; i++) {
+        free(matrix[i]);
+    }
+    free(matrix);
 
     return 0;
 }

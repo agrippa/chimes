@@ -2,7 +2,7 @@
 
 GXX=/opt/apps/gcc/4.8.2/bin/g++ \
 # GXX=/usr/local/bin/g++ \
-    ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -s \
+    ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -s -d \
     -i ${CHIMES_HOME}/src/examples/cpp/iso3d.cpp \
     -i ${CHIMES_HOME}/src/examples/cpp/lib/common.cpp \
     -i ${CHIMES_HOME}/src/examples/cpp/lib/common3d.cpp \

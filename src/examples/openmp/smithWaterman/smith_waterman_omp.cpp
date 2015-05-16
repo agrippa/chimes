@@ -277,6 +277,26 @@ static char alignment_score_matrix[5][5] =
     {GAP_PENALTY,TRANSVERSION_PENALTY,TRANSITION_PENALTY,TRANSVERSION_PENALTY, MATCH}
 };
 
+static void random_init(signed char *s, unsigned long long len) {
+    for (unsigned long long i = 0; i < len; i++) {
+        int r = rand() % 4;
+        switch (r) {
+            case (0):
+                s[i] = 'A';
+                break;
+            case (1):
+                s[i] = 'C';
+                break;
+            case (2):
+                s[i] = 'G';
+                break;
+            case (3):
+                s[i] = 'T';
+                break;
+        }
+    }
+}
+
 size_t clear_whitespaces_do_mapping ( signed char* buffer, long size ) {
     size_t non_ws_index = 0, traverse_index = 0;
 
@@ -368,7 +388,6 @@ void task_func(int i, int j, tiles_to_run *next) {
 	if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {
 #pragma omp critical
         {
-// #pragma omp flush
             if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
                 int success = PUT_DIAG(i,j);
                 if (success) {
@@ -395,7 +414,6 @@ void task_func(int i, int j, tiles_to_run *next) {
                     add_tile_to_run(row, col, next);
                 }
             }
-// #pragma omp flush
         }
 	}
 
@@ -413,29 +431,26 @@ int main ( int argc, char* argv[] ) {
 	}
 
     if ( argc < 5 ) {
-        fprintf(stderr, "Usage: %s fileName1 fileName2 tileWidth tileHeight\n", argv[0]);
+        fprintf(stderr, "Usage: %s length1 length2 tileWidth tileHeight\n", argv[0]);
         exit(1);
     }
 
     fprintf(stdout, "Running SmithWaterman (OpenMP) with %d threads\n", nthreads);
 
-    char* file_name_1 = argv[1];
-    char* file_name_2 = argv[2];
+    unsigned long long length1 = strtoull(argv[1], NULL, 10);
+    unsigned long long length2 = strtoull(argv[2], NULL, 10);
 
     tile_width = (int) atoi (argv[3]);
     tile_height = (int) atoi (argv[4]);
 
-    FILE* file_1 = fopen(file_name_1, "r");
-    if (!file_1) { fprintf(stderr, "could not open file \"%s\"\n",file_name_1); exit(1); }
-    size_t n_char_in_file_1 = 0;
-    string_1 = read_file(file_1, &n_char_in_file_1);
-    fprintf(stdout, "Size of input string 1 is %u\n", (unsigned)n_char_in_file_1 );
+    unsigned long long n_char_in_file_1 = length1;
+    unsigned long long n_char_in_file_2 = length2;
 
-    FILE* file_2 = fopen(file_name_2, "r");
-    if (!file_2) { fprintf(stderr, "could not open file \"%s\"\n",file_name_2); exit(1); }
-    size_t n_char_in_file_2 = 0;
-    string_2 = read_file(file_2, &n_char_in_file_2);
-    fprintf(stdout, "Size of input string 2 is %u\n", (unsigned)n_char_in_file_2 );
+    string_1 = (signed char *)malloc(n_char_in_file_1);
+    string_2 = (signed char *)malloc(n_char_in_file_2);
+
+    random_init(string_1, n_char_in_file_1);
+    random_init(string_2, n_char_in_file_2);
 
     fprintf(stdout, "Tile width  %d\n", tile_width);
     fprintf(stdout, "Tile height %d\n", tile_height);

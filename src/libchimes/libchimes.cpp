@@ -201,6 +201,8 @@ inline void register_stack_var_helper(std::string mangled_name_str,
         int *cond_registration, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, va_list vl,
         std::vector<stack_frame *> *program_stack);
+static inline void alias_group_changed_helper(unsigned loc_id,
+        thread_ctx *ctx);
 
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
@@ -379,7 +381,7 @@ static double target_checkpoint_size_perc = 0.1;
 
 // The target amount of overhead to add to the host program.
 static bool disable_throttling = false;
-static double target_time_overhead = 0.1;
+static double target_time_overhead = 0.05;
 static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
 
@@ -1599,7 +1601,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return 0;
 }
 
-void calling(void *func_ptr, int lbl, size_t set_return_alias,
+void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
         unsigned naliases, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -1614,6 +1616,9 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias,
         ctx->set_calling_label(lbl);
     }
 
+    if (loc_id > 0) {
+        alias_group_changed_helper(loc_id, ctx);
+    }
     ctx->set_return_alias(set_return_alias);
 
     ctx->ensure_parent_alias_capacity(naliases);
@@ -2432,6 +2437,11 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 #endif
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
+
+    if (thread_count == 1 && !regions_initializing) {
+        // quick exit on single-threaded case
+        return true;
+    }
 
     if (checkpoint_initializing == 0) {
         // first thread in the checkpoint

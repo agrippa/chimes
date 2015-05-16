@@ -955,7 +955,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         const Expr *arg = loc.get_call()->getArg(i);
                         assert(!isa<CXXDefaultArgExpr>(arg));
 
-                        if (has_side_effects(arg)) {
+                        if (may_cause_checkpoint && has_side_effects(arg)) {
                             std::string type_str = arg->getType().getAsString();
                             if (type_str.find("(*)") != std::string::npos) {
                                 /*
@@ -992,7 +992,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
                     for (int i = 0; i < nargs; i++) {
                         const Expr *arg = loc.get_call()->getArg(i);
-                        if (has_side_effects(arg)) {
+                        if (may_cause_checkpoint && has_side_effects(arg)) {
                             ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
                                 "); ";
                         }
@@ -1013,7 +1013,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
                     ss << "); ";
 
-                    // InsertAtFront(loc.get_call(), ss.str());
                     ReplaceText(clang::SourceRange(loc.get_call()->getLocStart(), loc.get_call()->getLocEnd()),
                             " ({ " + ss.str() + replace_func_call.str() + "; }) ");
                 }

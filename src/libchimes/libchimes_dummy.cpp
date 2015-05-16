@@ -12,7 +12,7 @@ int ____chimes_replaying = 0;
 
 void init_chimes() { }
 
-void calling(void *func_ptr, int lbl, size_t set_return_alias,
+void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
         unsigned naliases, ...) { }
 
 int get_next_call() { return (0); }
