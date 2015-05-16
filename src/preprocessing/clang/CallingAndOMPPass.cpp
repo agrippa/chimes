@@ -867,18 +867,13 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
 
                     /*
-                     * For some reason, some functions seem to take more
-                     * arguments than they actually require (and these arguments
-                     * are invisible in the source code and map to empty string
-                     * when you print them). Here, we filter them out of the
-                     * tail end of the arguments.
+                     * Default parameters cannot be checkpointed, nor are they
+                     * printable.
                      */
                     int nargs = loc.get_call()->getNumArgs();
-                    while (nargs > 0) {
-                        std::string s = stmtToString(loc.get_call()->getArg(
-                                    nargs - 1));
-                        if (s.size() > 0) break;
-                        llvm::errs() << "STMT " << loc.get_call()->getArg(nargs - 1)->getStmtClassName() << "\n";
+                    while (nargs > 0 &&
+                            isa<CXXDefaultArgExpr>(loc.get_call()->getArg(
+                                    nargs - 1))) {
                         nargs--;
                     }
 
