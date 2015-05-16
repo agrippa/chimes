@@ -1822,7 +1822,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
             printf("hello from %d : %d\n", omp_get_thread_num(), inside);
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-            alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: if (!____chimes_replaying) { } calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+            alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
         } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"

@@ -1759,9 +1759,9 @@ rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____c
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(14214025774788400685UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
- ({ if (!____chimes_replaying) { } calling((void*)haha_this_sux2, -1, 0UL, 0); (haha_this_sux2)(); }) ;
+ ({ calling((void*)haha_this_sux2, -1, 0UL, 0); (haha_this_sux2)(); }) ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: if (!____chimes_replaying) { } calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return 0;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp"

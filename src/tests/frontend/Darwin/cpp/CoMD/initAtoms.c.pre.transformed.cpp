@@ -2756,7 +2756,7 @@ const real_t *localMin;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  px=py=pz=0.0;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; ({ call_lbl_3: LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; int ____chimes_arg5; int ____chimes_arg6; real_t ____chimes_arg7; real_t ____chimes_arg8; real_t ____chimes_arg9; real_t ____chimes_arg10; real_t ____chimes_arg11; real_t ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); ____chimes_arg5 = (id); ____chimes_arg6 = (0); ____chimes_arg7 = (rx); ____chimes_arg8 = (ry); ____chimes_arg9 = (rz); ____chimes_arg10 = (px); ____chimes_arg11 = (py); ____chimes_arg12 = (pz); } calling((void*)putAtomInBox, 3, 0UL, 10, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5, ____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10, ____chimes_arg11, ____chimes_arg12); }) ; } } } }; } }
+ { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; ({ call_lbl_3: LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; int ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); ____chimes_arg6 = (0); } calling((void*)putAtomInBox, 3, 0UL, 10, (size_t)(13592833164869971119UL), (size_t)(13592833164869971119UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, ____chimes_arg6, rx, ry, rz, px, py, pz); }) ; } } } }; } }
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2782,7 +2782,7 @@ real_t oldVcm[3];
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  ;
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(____alias_loc_id_2); ({ call_lbl_2: SimFlat * ____chimes_arg18; real_t * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (s); ____chimes_arg19 = (oldVcm); } calling((void*)computeVcm, 2, 0UL, 2, (size_t)(13592833164869971340UL), (size_t)(13592833164869971187UL)); (computeVcm)(____chimes_arg18, ____chimes_arg19); }) ;
+ alias_group_changed(____alias_loc_id_2); ({ call_lbl_2: calling((void*)computeVcm, 2, 0UL, 2, (size_t)(13592833164869971340UL), (size_t)(13592833164869971187UL)); (computeVcm)(s, oldVcm); }) ;
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  ;
@@ -2864,9 +2864,9 @@ int iType;
 # 178 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  ;
 # 179 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(____alias_loc_id_5); ({ call_lbl_12: SimFlat * ____chimes_arg25; real_t * ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg25 = (s); ____chimes_arg26 = (vZero); } calling((void*)setVcm, 12, 0UL, 2, (size_t)(13592833164869971784UL), (size_t)(13592833164869971515UL)); (setVcm)(____chimes_arg25, ____chimes_arg26); }) ;
+ alias_group_changed(____alias_loc_id_5); ({ call_lbl_12: calling((void*)setVcm, 12, 0UL, 2, (size_t)(13592833164869971784UL), (size_t)(13592833164869971515UL)); (setVcm)(s, vZero); }) ;
 # 180 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- ({ call_lbl_13: SimFlat * ____chimes_arg27; if (!____chimes_replaying) { ____chimes_arg27 = (s); } calling((void*)kineticEnergy, 13, 0UL, 1, (size_t)(13592833164869971784UL)); (kineticEnergy)(____chimes_arg27); }) ;
+ ({ call_lbl_13: calling((void*)kineticEnergy, 13, 0UL, 1, (size_t)(13592833164869971784UL)); (kineticEnergy)(s); }) ;
 # 181 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2891,7 +2891,7 @@ int iType;
 # 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  } }
 # 193 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- alias_group_changed(____alias_loc_id_9); ({ call_lbl_16: SimFlat * ____chimes_arg28; if (!____chimes_replaying) { ____chimes_arg28 = (s); } calling((void*)kineticEnergy, 16, 0UL, 1, (size_t)(13592833164869971784UL)); (kineticEnergy)(____chimes_arg28); }) ;
+ alias_group_changed(____alias_loc_id_9); ({ call_lbl_16: calling((void*)kineticEnergy, 16, 0UL, 1, (size_t)(13592833164869971784UL)); (kineticEnergy)(s); }) ;
 # 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
 # 195 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -2972,7 +2972,7 @@ real_t vcmLocal[4] = { 0., 0., 0., 0. };
 # 235 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  do { alias_group_changed(____alias_loc_id_3); ({ call_lbl_2: enum TimerHandle ____chimes_arg34; if (!____chimes_replaying) { ____chimes_arg34 = (commReduceTimer); } calling((void*)profileStart, 2, 0UL, 1, (size_t)(0UL)); (profileStart)(____chimes_arg34); }) ; } while(0);
 # 236 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
- ({ call_lbl_3: real_t * ____chimes_arg35; real_t * ____chimes_arg36; int ____chimes_arg37; if (!____chimes_replaying) { ____chimes_arg35 = (vcmLocal); ____chimes_arg36 = (vcmSum); ____chimes_arg37 = (4); } calling((void*)addRealParallel, 3, 0UL, 3, (size_t)(13592833164869971344UL), (size_t)(13592833164869971345UL), (size_t)(0UL)); (addRealParallel)(____chimes_arg35, ____chimes_arg36, ____chimes_arg37); }) ;
+ ({ call_lbl_3: int ____chimes_arg37; if (!____chimes_replaying) { ____chimes_arg37 = (4); } calling((void*)addRealParallel, 3, 0UL, 3, (size_t)(13592833164869971344UL), (size_t)(13592833164869971345UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, ____chimes_arg37); }) ;
 # 237 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
  do { ({ call_lbl_4: enum TimerHandle ____chimes_arg38; if (!____chimes_replaying) { ____chimes_arg38 = (commReduceTimer); } calling((void*)profileStop, 4, 0UL, 1, (size_t)(0UL)); (profileStop)(____chimes_arg38); }) ; } while(0);
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"

@@ -1093,9 +1093,9 @@ real_t gasdev(uint64_t* seed)
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  {
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- v1 = 2.0* ({ uint64_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (seed); } calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(____chimes_arg0); }) -1.0;
+ v1 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) -1.0;
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- v2 = 2.0* ({ uint64_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (seed); } calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(____chimes_arg1); }) -1.0;
+ v2 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) -1.0;
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  rsq = v1*v1+v2*v2;
 # 30 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"

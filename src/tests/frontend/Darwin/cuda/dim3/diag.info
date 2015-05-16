@@ -6,7 +6,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 49 const int 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 4 181 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 1  dim3 blocks;  blocks = dim3(4, 256) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 20 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 42  ({  call_lbl_4:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 42  ({  call_lbl_4:  calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 6 53 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 2 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/dim3.cu 5 13 

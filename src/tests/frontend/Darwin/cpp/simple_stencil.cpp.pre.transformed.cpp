@@ -1779,7 +1779,7 @@ int i;
  next = tmp;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_7: if (!____chimes_replaying) { } calling((void*)checkpoint, 7, 0UL, 0); (checkpoint)(); }) ;
+ alias_group_changed(____alias_loc_id_0); ({ call_lbl_7: calling((void*)checkpoint, 7, 0UL, 0); (checkpoint)(); }) ;
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"

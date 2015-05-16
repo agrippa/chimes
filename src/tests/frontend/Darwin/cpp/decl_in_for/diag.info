@@ -10,7 +10,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 6 5 {  int i;
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 8 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 6 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 6 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 46  ({  call_lbl_3:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 46  ({  call_lbl_3:  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 57 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 11 

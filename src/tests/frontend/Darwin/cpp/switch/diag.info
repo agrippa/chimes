@@ -16,11 +16,11 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 5 int d; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 3 123  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 7 123  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 17  ({  int ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (argc);  }  calling((void*)foo, -1, 0UL, 1, (size_t)(0UL)); (foo)(____chimes_arg0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 17  ({  calling((void*)foo, -1, 0UL, 1, (size_t)(0UL)); (foo)(argc); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 17  ({  int ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (argc);  }  calling((void*)bar, -1, 0UL, 1, (size_t)(0UL)); (bar)(____chimes_arg1); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 17  ({  calling((void*)bar, -1, 0UL, 1, (size_t)(0UL)); (bar)(argc); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 46  ({  call_lbl_3:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 46  ({  call_lbl_3:  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 57 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10 

@@ -6,7 +6,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 49 con
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 181 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 int a[] = { 1, 2, 3, 4, 5 }; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 46  ({  call_lbl_3:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 46  ({  call_lbl_3:  calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 57 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 

@@ -17,7 +17,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 15 5  int 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 15 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 46  int b;  b = (foo(a)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 46  ({  call_lbl_2:  if (!____chimes_replaying) {  }  calling((void*)checkpoint, 2, 0UL, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 46  ({  call_lbl_2:  calling((void*)checkpoint, 2, 0UL, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 57 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 5 11 
@@ -26,6 +26,6 @@ RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 6 11
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 4 173  ; int c;
 int b;
  register_stack_vars(2, "foo|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0, "foo|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 60  ({  call_lbl_3:  int ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (a);  }  calling((void*)foo, 3, 0UL, 1, (size_t)(0UL)); (foo)(____chimes_arg0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 60  ({  call_lbl_3:  calling((void*)foo, 3, 0UL, 1, (size_t)(0UL)); (foo)(a); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 65 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 14 179  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

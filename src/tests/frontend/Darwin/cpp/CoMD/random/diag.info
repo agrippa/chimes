@@ -24,9 +24,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 4 {  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 61  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 9  jj = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 28 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 16  ({  uint64_t * ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (seed);  }  calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(____chimes_arg0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 16  ({  calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 26 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 28 16  ({  uint64_t * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (seed);  }  calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(____chimes_arg1); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 28 16  ({  calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 28 26 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

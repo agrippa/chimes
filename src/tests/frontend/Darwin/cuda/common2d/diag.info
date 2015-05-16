@@ -50,13 +50,13 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 3
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 28 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 48 157  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 55 194  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 75 5  ({  config * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (conf);  }  calling((void*)default_config, -1, 0UL, 1, (size_t)(17753382416546318329UL)); (default_config)(____chimes_arg3); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 75 5  ({  calling((void*)default_config, -1, 0UL, 1, (size_t)(17753382416546318329UL)); (default_config)(conf); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 75 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 58  ({  call_lbl_7:  char * ____chimes_arg4;  source * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg4 = (optarg); ____chimes_arg5 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 7, 0UL, 2, (size_t)(17753382416546318231UL), (size_t)(17753382416546318259UL)); (parse_source)(____chimes_arg4, ____chimes_arg5); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 58  ({  call_lbl_7:  source * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 7, 0UL, 2, (size_t)(17753382416546318231UL), (size_t)(17753382416546318259UL)); (parse_source)(optarg, ____chimes_arg5); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 97 103 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 17  ({  char ** ____chimes_arg6;  if (!____chimes_replaying) { ____chimes_arg6 = (argv);  }  calling((void*)usage, -1, 0UL, 1, (size_t)(17753382416546318331UL)); (usage)(____chimes_arg6); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 17  ({  calling((void*)usage, -1, 0UL, 1, (size_t)(17753382416546318331UL)); (usage)(argv); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 115 27 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 64  ({  call_lbl_13:  if (!____chimes_replaying) {  }  calling((void*)getNumCUDADevices, 13, 0UL, 0); (getNumCUDADevices)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 64  ({  call_lbl_13:  calling((void*)getNumCUDADevices, 13, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 120 82 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp 72 10 
