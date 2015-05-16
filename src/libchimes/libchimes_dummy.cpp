@@ -16,16 +16,17 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned naliases, ...) { }
 
 int get_next_call() { return (0); }
-void new_stack(void *func_ptr, const char *funcname, int *conditional,
+int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...) {
     if (conditional) { *conditional = 0; }
+    return 1;
 }
 
 void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs, int nstructs, ...) { }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id) {
+        const char *funcname, int *conditional, unsigned loc_id, int disabled) {
     if (conditional) { *conditional = 0; }
 }
 
@@ -48,7 +49,9 @@ void register_stack_vars(int nvars, ...) {
         va_arg(vl, int);
         int n_ptr_fields = va_arg(vl, int);
 
-        *cond_registration == 0;
+        if (cond_registration) {
+            *cond_registration = 0;
+        }
 
         for (int j = 0; j < n_ptr_fields; j++) {
             va_arg(vl, int);
@@ -64,6 +67,8 @@ void register_global_var(const char *mangled_name, const char *full_type,
 void register_constant(size_t const_id, void *address,
         size_t length) { }
 
+void register_functions(int nfunctions, const char *module_name,  ...) { }
+
 int alias_group_changed(unsigned loc_id) { return 0; }
 
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
@@ -76,6 +81,10 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...) { return realloc(ptr, nbytes); }
 
 void free_wrapper(void *ptr, size_t group) { free(ptr); }
+
+bool disable_current_thread() { return true; }
+
+void reenable_current_thread(bool was_disabled) { }
 
 unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...) { return 0; }

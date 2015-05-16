@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 GXX=/opt/apps/gcc/4.8.2/bin/g++ \
 # GXX=/usr/local/bin/g++ \
     ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -s -k -d \
