@@ -73,7 +73,6 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                 assert((callee_name == "anon" &&
                             state->get_reason() == "NULL") ||
                         callee_name == state->get_reason());
-                llvm::errs() << "looking for \"" << callee_name << "\" in ignorable? " << (ignorable->find(callee_name) != ignorable->end()) << "\n";
                 do_insert = (ignorable->find(callee_name) != ignorable->end());
             }
 
