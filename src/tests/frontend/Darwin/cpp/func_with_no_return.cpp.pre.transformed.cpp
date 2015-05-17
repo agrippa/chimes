@@ -1736,18 +1736,18 @@ extern void register_custom_init_handler(const char *obj_name,
 int a = 3;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
-void haha_this_sux_part_canc() {const int ____chimes_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void haha_this_sux_part_canc() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
  a = 4;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
-rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_disable0); }
+rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_did_disable0); }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
  ({ calling((void*)haha_this_sux_part_canc, -1, 0UL, 0, 0); (haha_this_sux_part_canc)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_disable1); return 0;
+ rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable1); return 0;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp"
 }
 

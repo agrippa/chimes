@@ -1794,7 +1794,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
      int a; a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
@@ -1829,7 +1829,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 18 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 19 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
+    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 20 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 }
 

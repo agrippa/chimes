@@ -2274,20 +2274,20 @@ static void ljPrint(FILE* file, BasePotential* pot);
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 void ljDestroy(BasePotential** inppot)
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{const int ____chimes_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(17518077371777717474UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(17518077371777717474UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_disable0); return;; };
+   if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;; };
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_disable0); return;; };
+   if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;; };
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    free_wrapper(pot, 17518077371777717460UL);
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    *inppot = __null;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_disable0); return;
+   rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 }
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2295,7 +2295,7 @@ void ljDestroy(BasePotential** inppot)
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 BasePotential* initLjPot(void)
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{const int ____chimes_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 17518077371777717480UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2324,14 +2324,14 @@ BasePotential* initLjPot(void)
    pot->atomicNo = 29;
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   rm_stack(true, 17518077371777717480UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_1, ____chimes_disable1); return (BasePotential*) pot;
+   rm_stack(true, 17518077371777717480UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_1, ____chimes_did_disable1); return (BasePotential*) pot;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 }
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 void ljPrint(FILE* file, BasePotential* pot)
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{const int ____chimes_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(17518077371777717976UL), (size_t)(17518077371777717977UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(17518077371777717976UL), (size_t)(17518077371777717977UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     LjPotential *ljPot; ljPot = ((LjPotential *)pot) ;
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2353,12 +2353,12 @@ void ljPrint(FILE* file, BasePotential* pot)
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_3, ____chimes_disable2); }
+rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_3, ____chimes_did_disable2); }
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 int ljForce(SimFlat* s)
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-{const int ____chimes_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 0, (size_t)(17518077371777717714UL)) ; real3 dr;
+{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 0, (size_t)(17518077371777717714UL)) ; real3 dr;
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)s->pot) ;
@@ -2506,7 +2506,7 @@ int ljForce(SimFlat* s)
    s->ePotential = ePot;
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_2, ____chimes_disable3); return 0;
+   rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_2, ____chimes_did_disable3); return 0;
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 }
 

@@ -2477,7 +2477,7 @@ static int progress_num_ticks = -1;
 static int progress_disabled = 0;
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-double seconds() {const int ____chimes_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
+double seconds() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
  if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i32 }", (void *)(&tp), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 45 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
       ;
@@ -2486,12 +2486,12 @@ double seconds() {const int ____chimes_disable0 = new_stack((void *)(&seconds), 
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-    rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
+    rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 }
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-void ricker_wavelet(float *source, int nsteps, float dt, float freq) {const int ____chimes_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(8150615911090656090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void ricker_wavelet(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(8150615911090656090UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
      float shift; shift = (-1.55939996F / freq) ;
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2508,10 +2508,10 @@ void ricker_wavelet(float *source, int nsteps, float dt, float freq) {const int 
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_disable1); }
+rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alias_loc_id_1, ____chimes_did_disable1); }
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-void parse_source(char *optarg, source *out) {const int ____chimes_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(8150615911090656184UL), (size_t)(8150615911090656185UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void parse_source(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(8150615911090656184UL), (size_t)(8150615911090656185UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
      char *x_str; x_str = (optarg) ;
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2572,10 +2572,10 @@ void parse_source(char *optarg, source *out) {const int ____chimes_disable2 = ne
 # 92 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     out->t = atoi(time_str);
 # 93 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_disable2); }
+rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_loc_id_2, ____chimes_did_disable2); }
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(8150615911090656315UL), (size_t)(8150615911090656316UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(8150615911090656315UL), (size_t)(8150615911090656316UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 96 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     if (*nsrcs == 0) {
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2633,10 +2633,10 @@ void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {cons
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_disable3); }
+rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alias_loc_id_3, ____chimes_did_disable3); }
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(8150615911090656398UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(8150615911090656398UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
      float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 8150615911090656339UL, 1, 0)) ;
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2665,12 +2665,12 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {const int
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-    rm_stack(true, 8150615911090656339UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_disable4); return src_samples;
+    rm_stack(true, 8150615911090656339UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return src_samples;
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 }
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-void init_progress(int length, int goal, int disabled) {const int ____chimes_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void init_progress(int length, int goal, int disabled) {const int ____chimes_did_disable5 = new_stack((void *)(&init_progress), "init_progress", &____must_manage_init_progress, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     int i; ;
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2695,7 +2695,7 @@ void init_progress(int length, int goal, int disabled) {const int ____chimes_dis
     progress_disabled = disabled;
 # 158 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-    if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_disable5); return;; };
+    if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); return;; };
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 8150615911090656455UL, 0, 0);
@@ -2725,17 +2725,17 @@ void init_progress(int length, int goal, int disabled) {const int ____chimes_dis
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     fprintf(__stderrp, "%s", progress_buffer);
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_disable5); }
+rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); }
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-void update_progress(int progress) {const int ____chimes_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void update_progress(int progress) {const int ____chimes_did_disable6 = new_stack((void *)(&update_progress), "update_progress", &____must_manage_update_progress, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     int i; ;
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     if (progress_disabled) {
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-        rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_disable6); return;
+        rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6); return;
 # 183 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     }
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2794,14 +2794,14 @@ void update_progress(int progress) {const int ____chimes_disable6 = new_stack((v
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     progress_num_ticks = ticks;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_disable6); }
+rm_stack(false, 0UL, "update_progress", &____must_manage_update_progress, ____alias_loc_id_6, ____chimes_did_disable6); }
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-void finish_progress() {const int ____chimes_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void finish_progress() {const int ____chimes_did_disable7 = new_stack((void *)(&finish_progress), "finish_progress", &____must_manage_finish_progress, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     if (progress_disabled) {
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-        rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_disable7); return;
+        rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); return;
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     }
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2813,7 +2813,7 @@ void finish_progress() {const int ____chimes_disable7 = new_stack((void *)(&fini
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     free_wrapper(progress_buffer, 8150615911090656455UL);
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_disable7); }
+rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); }
 
 
 static int module_init() {

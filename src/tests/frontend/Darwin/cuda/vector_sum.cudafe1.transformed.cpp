@@ -26836,7 +26836,7 @@ void kernel(int *A, int *B, int *C, int N) ;
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)) ; int *d_C;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)) ; int *d_C;
 int *d_B;
 int *d_A;
 int *h_C;
@@ -26904,7 +26904,7 @@ cudaFree_wrapper(d_B, 0UL);
 # 61 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaFree_wrapper(d_C, 0UL);
 # 63 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_disable0); return 0;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0); return 0;
 # 64 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 }
 # 1 "vector_sum.cudafe1.stub.c"

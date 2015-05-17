@@ -1794,14 +1794,14 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
-void foo() {const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+void foo() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
      ({ call_lbl_1: calling((void*)checkpoint, 1, 0UL, 0, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
-rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_disable0); }
+rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_did_disable0); }
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12944292527628856474UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12944292527628856474UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 10 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
      int a; a = (3) ;
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
@@ -1836,7 +1836,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = 
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return 0;
+    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
 }
 

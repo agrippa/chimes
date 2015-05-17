@@ -1756,16 +1756,16 @@ typedef struct _foo {
 } foo;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
-void handler(void *ptr) {const int ____chimes_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(805989342579701521UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void handler(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(805989342579701521UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  foo *f_ptr; f_ptr = ((foo *)ptr) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  f_ptr->a = 42;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
-rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_disable0); }
+rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0); }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(805989342579701558UL)) ; foo *f;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(805989342579701558UL)) ; foo *f;
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
@@ -1783,7 +1783,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = 
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  (__builtin_expect(!(f->a == 42), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp", 22, "f->a == 42") : (void)0);
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 }
 

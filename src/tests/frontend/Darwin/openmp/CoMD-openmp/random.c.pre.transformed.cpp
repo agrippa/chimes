@@ -1080,7 +1080,7 @@ extern double significand(double) __attribute__((deprecated));
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 real_t gasdev(uint64_t* seed)
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(16794414226779803848UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(16794414226779803848UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    real_t rsq; real_t v1; real_t v2; ;
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
@@ -1097,14 +1097,14 @@ real_t gasdev(uint64_t* seed)
    } while (rsq >= 1.0 || rsq == 0.0);
 # 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_disable0); return v2 * sqrt(-2.0*log(rsq)/rsq);
+   rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0); return v2 * sqrt(-2.0*log(rsq)/rsq);
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 }
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 double lcg61(uint64_t* seed)
 # 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(16794414226779803904UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(16794414226779803904UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
     static double convertToDouble; convertToDouble = (1. / (2305843009213693951ULL)) ;
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
@@ -1114,14 +1114,14 @@ double lcg61(uint64_t* seed)
    *seed %= (2305843009213693951ULL);
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_disable1); return *seed*convertToDouble;
+   rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1); return *seed*convertToDouble;
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 }
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 uint64_t mkSeed(uint32_t id, uint32_t callSite)
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-{const int ____chimes_disable2 = new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; uint64_t iSeed;
+{const int ____chimes_did_disable2 = new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; uint64_t iSeed;
  if (____must_checkpoint_mkSeed_iSeed_0) { register_stack_vars(1, "mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
     uint32_t s1; s1 = (id * (2654435761UL)) ;
@@ -1134,7 +1134,7 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite)
    { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(16794414226779803911UL)); (lcg61)(&iSeed); }) ; } };
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_disable2); return iSeed;
+   rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2); return iSeed;
 # 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 }
 

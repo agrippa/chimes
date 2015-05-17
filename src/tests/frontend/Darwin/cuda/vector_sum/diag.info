@@ -16,13 +16,13 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 1 len=8 cud
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 60 10 , 0UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 1 len=8 cudaFree_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 61 10 , 0UL
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 33 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 1 const int ____chimes_disable1 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 4, 0, (size_t)(10983886093799451031UL), (size_t)(10983886093799451032UL), (size_t)(10983886093799451033UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, 0, ____chimes_disable1); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 63 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 1 const int ____chimes_did_disable1 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 4, 0, (size_t)(10983886093799451031UL), (size_t)(10983886093799451032UL), (size_t)(10983886093799451033UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 18 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, 0, ____chimes_did_disable1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 49 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 182 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 49 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10983886093799450970UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 186 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 1 cudaError_t error; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 21 18 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 22 1 int i; ;
@@ -55,7 +55,7 @@ RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 11
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 19 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 21 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 26 29 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 179  ; int *d_C;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 20 183  ; int *d_C;
 int *d_B;
 int *d_A;
 int *h_C;

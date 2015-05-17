@@ -1,7 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 72 5 : { 125, 126 } direct:call:fseek
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 74 5 : { 127 } direct:call:fseek
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 78 31 : { 128 } direct:call:fread
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 103 34 : { 176, 177, 178, 181 } prop:call:strtoull
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 104 34 : { 182 } direct:call:strtoull
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 112 5 : { 183, 184, 185, 591 } direct:call:srand
-/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 153 9 : { 179, 180, 186, 187, 190, 191, 192, 193, 194, 195, 456, 458 } prop:call:checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 73 22 : { 125, 126 } direct:call:ftell
+/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp 153 9 : { 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 190, 191, 192, 193, 194, 195, 456, 458, 591 } prop:call:checkpoint

@@ -1751,21 +1751,21 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
-int foo(int *a, int s) {const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(15092453942527021220UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int foo(int *a, int s) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(15092453942527021220UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
  *a = s;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
-int bar() {const int ____chimes_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int bar() {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
- rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_disable1); return 6;
+ rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_did_disable1); return 6;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
 }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15092453942527021252UL)) ; int b;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15092453942527021252UL)) ; int b;
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
  ;
@@ -1779,7 +1779,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = 
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
  (__builtin_expect(!(b == 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp", 19, "b == 9") : (void)0);
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable2); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); return 0;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp"
 }
 

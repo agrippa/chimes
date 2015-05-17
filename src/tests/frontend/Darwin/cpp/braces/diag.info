@@ -1,10 +1,10 @@
-InsertText /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 14 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 33 const int ____chimes_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 14 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 49 const int ____chimes_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 192 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 49 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 196 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 5 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 53  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 11 19 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 191  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/braces.cpp 4 195  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

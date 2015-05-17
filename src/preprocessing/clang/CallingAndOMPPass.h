@@ -124,13 +124,13 @@ private:
 
     std::map<std::string, std::set<std::string> > supported_omp_clauses;
     std::set<std::string> supported_omp_pragmas;
-    int chimes_parent_thread_counter;
-    int blocker_varname_counter;
-    int parent_stack_depth_varname_counter;
-    int call_stack_depth_varname_counter;
-    int region_varname_counter;
-    int disable_varname_counter;
-    int arg_counter;
+    int chimes_parent_thread_counter = 0;
+    int blocker_varname_counter = 0;
+    int parent_stack_depth_varname_counter = 0;
+    int call_stack_depth_varname_counter = 0;
+    int region_varname_counter = 0;
+    int disable_varname_counter = 0;
+    int arg_counter = 0;
 };
 
 #endif

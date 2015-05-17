@@ -2944,7 +2944,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 static void fwd(float *next, float *curr, float *vsq,
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {const int ____chimes_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+ float *c_coeff, int nx, int ny, int dimx, int dimy, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  { int y; for ( y = (0) ; y < ny; y++) {
@@ -2982,10 +2982,10 @@ static void fwd(float *next, float *curr, float *vsq,
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  } }
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
-rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_disable0); }
+rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable0); }
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
-int main( int argc, char *argv[] ) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)) ; float point_rate;
+int main( int argc, char *argv[] ) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)) ; float point_rate;
 double elapsed_s;
 float *tmp;
 int src_offset;
@@ -3048,7 +3048,7 @@ config conf;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  fprintf(__stderrp, "Allocations failed\n");
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_disable1); return 1;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_did_disable1); return 1;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
  }
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
@@ -3132,7 +3132,7 @@ config conf;
  free_wrapper(srcs, 636351188801416932UL);
 # 149 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 # 150 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_disable1); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_did_disable1); return 0;
 # 151 "/Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp"
 }
 

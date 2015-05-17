@@ -1751,14 +1751,14 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-void bar(int *A, int *B) {const int ____chimes_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void bar(int *A, int *B) {const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  A[0] = 3;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  if (A[0] == 3) {
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_disable0); return;
+ rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable0); return;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1766,12 +1766,12 @@ void bar(int *A, int *B) {const int ____chimes_disable0 = new_stack((void *)(&ba
  B[0] = 3;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_disable0); return;
+ rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable0); return;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)) ; int *B;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)) ; int *B;
 int *A;
  register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1790,7 +1790,7 @@ int *A;
  (__builtin_expect(!(B != __null), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 25, "B != NULL") : (void)0);
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 }
 

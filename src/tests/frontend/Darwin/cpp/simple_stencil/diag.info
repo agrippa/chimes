@@ -6,11 +6,11 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 5 len=4
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 10 , 7654350934130983345UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 10 , 7654350934130983345UL
-InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 33 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 49 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 181 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 49 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 185 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 5 int i; int iter; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 16 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 8 5  int N;  N = (1024) ;
@@ -41,7 +41,7 @@ RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 6
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 15 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 10 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 18 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 178  ; int *tmp;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 182  ; int *tmp;
 int *next;
 int *curr;
 int niters;

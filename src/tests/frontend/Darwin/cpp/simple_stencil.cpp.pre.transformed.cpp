@@ -1735,7 +1735,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)) ; int *tmp;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)) ; int *tmp;
 int *next;
 int *curr;
 int niters;
@@ -1799,7 +1799,7 @@ int i;
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  free_wrapper(next, 7654350934130983345UL);
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_disable0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 0;
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 }
 

@@ -1731,7 +1731,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16469201489461360461UL)) ; int *A;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16469201489461360461UL)) ; int *A;
  register_stack_vars(1, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
@@ -1743,7 +1743,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  if (A[0] == 3) {
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_disable0); return 1;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 1;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
@@ -1755,12 +1755,12 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_disable0); return A[0];
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return A[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  }
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_disable0); return 3;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 3;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 }
 

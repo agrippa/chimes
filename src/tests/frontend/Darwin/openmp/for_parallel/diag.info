@@ -1,8 +1,8 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 17 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 33 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 17 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 49 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 180 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 49 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 184 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 6 5  int a;  a = (3) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 6 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 7 5  int b;  b = (4) ;
@@ -16,4 +16,4 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 13 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  reenable_current_thread(____chimes_disable0);  } 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 15 5  ({  call_lbl_3:  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 15 16 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 177  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp 5 181  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

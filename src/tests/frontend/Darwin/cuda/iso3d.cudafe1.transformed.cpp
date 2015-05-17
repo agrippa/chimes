@@ -26994,7 +26994,7 @@ void fwd_kernel(float *next, float *curr, float *vsq, float *c_coeff, int
 nx, int ny, int nz, int dimx, int dimy, int radius) ;
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-int main(int argc, char *argv[]) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)) ; int i;
+int main(int argc, char *argv[]) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)) ; int i;
 float point_rate;
 double total_s;
 double compute_s;
@@ -27034,7 +27034,7 @@ if (((conf.nx) % 32) != 0) {
 # 80 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 fprintf(__stderrp, "Invalid nx configuration, must be an even multiple of %d\n", 32);
 # 82 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); return 1;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 1;
 # 83 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 }
 # 84 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27042,7 +27042,7 @@ if (((conf.ny) % 16) != 0) {
 # 85 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 fprintf(__stderrp, "Invalid ny configuration, must be an even multiple of %d\n", 16);
 # 87 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); return 1;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 1;
 # 88 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 }
 # 90 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27082,7 +27082,7 @@ if ((((curr == (__null)) || (next == (__null))) || (vsq == (__null))) || c_coeff
 # 111 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 fprintf(__stderrp, "Allocations failed\n");
 # 112 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); return 1;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 1;
 # 113 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 }
 # 115 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27188,7 +27188,7 @@ free_wrapper(srcs, 2433535641213254663UL);
 # 188 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 { lbl_14: cudaError_t error; if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(38): { goto call_lbl_38; } case(55): { goto call_lbl_55; } case(61): { goto call_lbl_61; } case(62): { goto call_lbl_62; } case(63): { goto call_lbl_63; } case(64): { goto call_lbl_64; } case(69): { goto call_lbl_69; } case(75): { goto call_lbl_75; } case(76): { goto call_lbl_76; } case(78): { goto call_lbl_78; } default: { chimes_error(); } } } error = (cudaFree_wrapper(d_c_coeff, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 188); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 190 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); return 0;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 0;
 # 191 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 }
 # 1 "iso3d.cudafe1.stub.c"
