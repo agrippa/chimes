@@ -1440,7 +1440,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                     this_loc_id, set<size_t>()));
         for (unsigned j = 0; j < n_aliases_at_loc; j++) {
             size_t alias = va_arg(vl, size_t);
-            change_loc_id_to_aliases[this_loc_id].insert(alias);
+            change_loc_id_to_aliases.at(this_loc_id).insert(alias);
         }
         *change_loc_id_ptr = this_loc_id;
     }
@@ -1498,18 +1498,23 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
-    if (program_stack->size() != 0 && func_ptr != ctx->get_func_ptr()) {
-        if (!ctx->get_printed_func_ptr_mismatch() && program_stack->size() > 0) {
+    if (program_stack->size() > 0 && func_ptr != ctx->get_func_ptr()) {
+        if (!ctx->get_printed_func_ptr_mismatch()) {
             fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
                     "function that we entered (%p) for function %s. Possibly passed"
                     " through a third-party library.\n", ctx->get_func_ptr(),
                     func_ptr, funcname);
             ctx->set_printed_func_ptr_mismatch(true);
         }
-        return (1);
+        if (disable_current_thread()) {
+            return 1;
+        } else {
+            return 2;
+        }
     }
 
-    if (!need_to_manage_stack(conditional, std::string(funcname))) {
+    if (!need_to_manage_stack(conditional, std::string(funcname)) ||
+            ctx->is_disabled()) {
 #ifdef VERBOSE
         fprintf(stderr, "Entering %s, dont need to manage stack\n", funcname);
 #endif
@@ -1660,7 +1665,8 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled) {
+        const char *funcname, int *conditional, unsigned loc_id,
+        int did_disable) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1669,29 +1675,23 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
 
     thread_ctx *ctx = get_my_context();
 
-    if (ctx->is_disabled() || disabled) {
-        if (loc_id > 0) {
-            alias_group_changed_helper(loc_id, ctx);
-        }
-        if (!disabled) {
-            add_return_alias(has_return_alias, returned_alias, ctx);
-        }
-
-        return;
-    }
-
-    if (!need_to_manage_stack(conditional, std::string(funcname))) {
+    if (!need_to_manage_stack(conditional, std::string(funcname)) ||
+            ctx->is_disabled()) {
 #ifdef VERBOSE
         fprintf(stderr, "Leaving %s, dont need to manage stack\n", funcname);
 #endif
-        add_return_alias(has_return_alias, returned_alias, ctx);
-
         if (loc_id > 0) {
             alias_group_changed_helper(loc_id, ctx);
         }
+        if (!did_disable) {
+            add_return_alias(has_return_alias, returned_alias, ctx);
+        }
+
+        reenable_current_thread(did_disable == 1);
 
         return;
     }
+
 #ifdef VERBOSE
     fprintf(stderr, "Leaving %s, need to manage stack\n", funcname);
 #endif
@@ -2550,7 +2550,10 @@ bool disable_current_thread() {
 
 void reenable_current_thread(bool was_disabled) {
     thread_ctx *ctx = get_my_context();
+    std::vector<stack_frame *> *stack = ctx->get_stack();
+
     if (was_disabled) {
+        assert(stack->size() == ctx->get_disabled_nesting());
         ctx->set_disabled_nesting(0);
     }
 }
@@ -2702,8 +2705,8 @@ void checkpoint() {
                 for (unsigned loc = 0; loc < changed->capacity; loc++) {
                     if ((changed->set)[loc]) {
                         for (set<size_t>::iterator iter =
-                                change_loc_id_to_aliases[loc].begin(), end =
-                                change_loc_id_to_aliases[loc].end();
+                                change_loc_id_to_aliases.at(loc).begin(), end =
+                                change_loc_id_to_aliases.at(loc).end();
                                 iter != end; iter++) {
                             size_t group = *iter;
                             collect_all_aliases(group, all_changed);
@@ -3709,7 +3712,7 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     ctx->increment_stack_nesting();
 
     thread_ctx *parent_ctx = get_context_for(parent);
-    if (parent_ctx->get_disabled_nesting() != 0) {
+    if (parent_ctx->get_disabled_nesting() != 0 && parent_ctx != ctx) {
         ctx->set_disabled_nesting(1);
     }
 
