@@ -213,7 +213,7 @@ public:
         return mangled_varname.substr(0, second_index);
     }
 
-    bool set_is_unique_in_function(bool s) { is_unique_in_function = s; }
+    void set_is_unique_in_function(bool s) { is_unique_in_function = s; }
     bool get_is_unique_in_function() { return is_unique_in_function; }
 
     bool get_may_checkpoint() { return may_checkpoint; }
@@ -357,7 +357,8 @@ private:
 
 class DesiredInsertions {
 public:
-    DesiredInsertions(const char *module_name,
+    DesiredInsertions(bool set_resumable_version,
+            const char *module_name,
             const char *lines_info_filename,
             const char *struct_info_filename,
             const char *stack_allocs_filename,
@@ -367,6 +368,7 @@ public:
             const char *exit_filename, const char *reachable_filename,
             const char *omp_filename, const char *firstprivate_filename,
             const char *call_tree_filename) :
+            resumable_version(set_resumable_version),
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -398,6 +400,8 @@ public:
         diagnostics.close();
         firstprivate.close();
     }
+
+    bool is_resumable_version() { return resumable_version; }
 
     bool contains(int line, int col, const char *filename);
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
@@ -456,6 +460,7 @@ public:
     std::string get_alias_loc_var(unsigned id);
 
 private:
+        bool resumable_version;
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,

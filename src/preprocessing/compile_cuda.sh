@@ -246,6 +246,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -t ${INFO_FILE_PREFIX}.omp.info \
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
             -b ${INFO_FILE_PREFIX}.tree.info \
+            -e true \
             ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
