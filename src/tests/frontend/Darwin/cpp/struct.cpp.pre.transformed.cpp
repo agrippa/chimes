@@ -1771,7 +1771,7 @@ foo test;
  fprintf(__stderrp, "Hello before checkpointing\n");
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
  (__builtin_expect(!(test.a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 23, "test.a == 3") : (void)0);

@@ -15,11 +15,12 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_return
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 14 186 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 5  void *tmp;  tmp = (haha_this_sux_part_trois()) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 43 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 5  call_lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 5 193  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 25  ({  calling((void*)haha_this_sux_part_trois, -1, 16401429439071256631UL, 0, 0); (haha_this_sux_part_trois)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 5  ({  call_lbl_2:  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 16 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 16 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 15 15 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp 14 183  ; void *tmp;

@@ -1755,7 +1755,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  void *tmp; tmp = ( ({ calling((void*)foo, -1, 8715185705475396347UL, 0, 0); (foo)(); }) ) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
- ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp"

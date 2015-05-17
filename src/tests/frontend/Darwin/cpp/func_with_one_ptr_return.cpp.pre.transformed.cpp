@@ -1746,7 +1746,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  tmp = ( ({ calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0, 0); (haha_this_sux_part_deux)(); }) ) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ((int *)tmp)[0];
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"

@@ -25,8 +25,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 9 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 22 24 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 5  FILE *fp;  fp = (fopen("dump.out", "w")) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 29 38 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9  ({  call_lbl_6:  calling((void*)checkpoint, 6, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 20 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 9  call_lbl_6: 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 22  ({  calling((void*)checkpoint, 6, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 26 33 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 10 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 7 12 

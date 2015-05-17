@@ -1776,9 +1776,9 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
  f->a = 3;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- ({ call_lbl_4: calling((void*)wait_for_checkpoint, 4, 0UL, 0, 0); (wait_for_checkpoint)(); }) ;
+ call_lbl_4: ({ calling((void*)wait_for_checkpoint, 4, 0UL, 0, 0); (wait_for_checkpoint)(); }) ;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  (__builtin_expect(!(f->a == 42), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp", 22, "f->a == 42") : (void)0);

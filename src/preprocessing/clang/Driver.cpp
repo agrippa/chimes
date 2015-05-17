@@ -17,6 +17,7 @@
 #include "InitPass.h"
 #include "StartExitPass.h"
 #include "CallingAndOMPPass.h"
+#include "CallLabelInsertPass.h"
 #include "SplitInitsPass.h"
 #include "MallocPass.h"
 #include "AliasChangedPass.h"
@@ -84,6 +85,7 @@ std::string curr_func;
 FunctionDecl *curr_func_decl = NULL;
 std::vector<StackAlloc *> *insert_at_front = NULL;
 std::set<std::string> *ignorable = NULL;
+std::map<int, std::vector<CallLabel> > call_lbls;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -363,6 +365,7 @@ int main(int argc, const char **argv) {
    * As a result, it would be preferred that it be kept as the last pass in
    * general.
    */
+  passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl"));
   passes.push_back(new Pass(new CallingAndOMPPass(), ".register"));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<

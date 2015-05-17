@@ -1753,7 +1753,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  if (A[0] == 2) {
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return A[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"

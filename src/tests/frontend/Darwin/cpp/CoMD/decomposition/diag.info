@@ -30,8 +30,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decompositi
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 62 61 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 63 4  int iz;  iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 63 61 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 28  ({  call_lbl_4:  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 38 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 18  call_lbl_4: 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 41  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 51 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 731  ; Domain *dd;

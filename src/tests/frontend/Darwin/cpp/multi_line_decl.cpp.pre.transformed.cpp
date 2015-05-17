@@ -1758,7 +1758,7 @@ int a;
  ptr[0] = 42;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(ptr[0], a); }) ;

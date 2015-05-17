@@ -16,11 +16,12 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 82 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 5  int *B;  B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 82 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 5  call_lbl_4: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 188  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5  ({  calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 5  ({  call_lbl_4:  calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 16 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18  ({  calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 6 
