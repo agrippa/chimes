@@ -74,6 +74,9 @@ static llvm::cl::opt<std::string> firstprivate_file("v",
 static llvm::cl::opt<std::string> call_tree_file("b",
         llvm::cl::desc("call tree file"),
         llvm::cl::value_desc("call_tree_info"));
+static llvm::cl::opt<std::string> resumable_version_flag("e",
+        llvm::cl::desc("resumable version flag"),
+        llvm::cl::value_desc("resumable_version"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -288,6 +291,7 @@ int main(int argc, const char **argv) {
   check_opt(omp_file, "OpenMP file");
   check_opt(firstprivate_file, "Firstprivate file");
   check_opt(call_tree_file, "Call tree file");
+  check_opt(resumable_version_flag, "Resumable version");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -309,12 +313,17 @@ int main(int argc, const char **argv) {
       updateFile = false;
   }
 
+  bool resumable_version = false;
+  if (resumable_version_flag.compare("true") == 0) {
+      resumable_version = true;
+  }
+
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
           op.getSourcePathList()[0].rfind('/') + 1);
   just_filename = just_filename.substr(0, just_filename.rfind("."));
 
-  insertions = new DesiredInsertions(original_file.c_str(),
+  insertions = new DesiredInsertions(resumable_version, original_file.c_str(),
               line_info_file.c_str(), struct_file.c_str(),
               stack_allocs_file.c_str(), heap_file.c_str(),
               original_file.c_str(), diag_file.c_str(),
