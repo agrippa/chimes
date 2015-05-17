@@ -468,7 +468,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1794,13 +1794,13 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
      int a; a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
      int b; b = (4) ;
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-     int c; c = (5); { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
+     int c; c = (5); { call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
@@ -1817,7 +1817,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-    alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+     ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;

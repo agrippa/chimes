@@ -1,4 +1,4 @@
-main 0 DOES checkpoint cudaConfigureCall cudaFree cudaMalloc cudaMemcpy kernel
+main 0 DOES checkpoint kernel
 dim3::dim3 0 DOES_NOT
 kernel 0 MAY __device_stub__Z6kernelPiS_S_i
 __device_stub__Z6kernelPiS_S_i 0 MAY cudaError cudaSetupArgument

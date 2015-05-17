@@ -480,7 +480,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1757,7 +1757,7 @@ int bar(int b) {const int ____chimes_disable1 = new_stack((void *)(&bar), "bar",
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1464087543762942964UL)) ; int d;
- register_stack_vars(1, "main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "main|d|0", (int *)0x0, "i32", (void *)(&d), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
@@ -1765,13 +1765,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = 
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  case 0:
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- d = ({ calling((void*)foo, -1, 0UL, 1, (size_t)(0UL)); (foo)(argc); }) ;
+ d = ({ calling((void*)foo, -1, 0UL, 0, 1, (size_t)(0UL)); (foo)(argc); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  break;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  case 1:
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- d = ({ calling((void*)bar, -1, 0UL, 1, (size_t)(0UL)); (bar)(argc); }) ;
+ d = ({ calling((void*)bar, -1, 0UL, 0, 1, (size_t)(0UL)); (bar)(argc); }) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  break;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
@@ -1781,7 +1781,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable2 = 
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  }
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable2); return d;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/switch.cpp"

@@ -477,7 +477,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1742,7 +1742,7 @@ int niters;
 int N;
 int iter;
 int i;
- register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1779,7 +1779,7 @@ int i;
  next = tmp;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_7: calling((void*)checkpoint, 7, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_6: calling((void*)checkpoint, 6, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"

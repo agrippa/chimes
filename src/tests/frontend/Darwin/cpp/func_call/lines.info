@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 5 : { 1, 2, 3 } direct:call:_Z10checkpointv
-/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 13 : { 63, 64, 65, 66 } direct:call:_Z3fooi
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 7 5 : { 1, 2, 3 } direct:call:checkpoint
+/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp 16 13 : { 63, 64, 65, 66 } direct:call:foo

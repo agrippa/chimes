@@ -68,6 +68,9 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
 
 void ParentTransform::visitChildren(const clang::Stmt *s) {
     setRootFlag(false);
+    bool old = inside_function_arguments;
+    inside_function_arguments = (isa<CallExpr>(s) || old);
+
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
             e = s->child_end(); i != e; i++) {
         const clang::Stmt *child = *i;
@@ -77,6 +80,8 @@ void ParentTransform::visitChildren(const clang::Stmt *s) {
             VisitStmt(child);
         }
     }
+
+    inside_function_arguments = old;
 }
 
 std::string ParentTransform::stmtToString(const clang::Stmt* s) {
@@ -320,4 +325,10 @@ bool ParentTransform::is_omp_for_iter_declaration(const Stmt *s) {
     return false;
 }
 
-
+std::string ParentTransform::get_callee_name(const CallExpr *call) {
+    if (call->getDirectCallee() == NULL) {
+        return ("anon");
+    } else {
+        return (call->getDirectCallee()->getNameAsString());
+    }
+}

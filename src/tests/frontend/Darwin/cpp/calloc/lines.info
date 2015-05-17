@@ -1,1 +1,1 @@
-/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 5 : { 1, 2, 3, 4 } direct:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 5 : { 1, 2, 3, 4 } direct:call:checkpoint

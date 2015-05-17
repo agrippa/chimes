@@ -478,7 +478,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1768,7 +1768,7 @@ rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, __
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(805989342579701558UL)) ; foo *f;
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ;
+ lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  f = ((foo *)malloc_wrapper(sizeof(foo), 805989342579701535UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
@@ -1776,9 +1776,9 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = 
  f->a = 3;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- ({ call_lbl_5: calling((void*)wait_for_checkpoint, 5, 0UL, 0); (wait_for_checkpoint)(); }) ;
+ ({ call_lbl_4: calling((void*)wait_for_checkpoint, 4, 0UL, 0, 0); (wait_for_checkpoint)(); }) ;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  (__builtin_expect(!(f->a == 42), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp", 22, "f->a == 42") : (void)0);

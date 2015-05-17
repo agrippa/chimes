@@ -2438,11 +2438,6 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
 
-    if (thread_count == 1 && !regions_initializing) {
-        // quick exit on single-threaded case
-        return true;
-    }
-
     if (checkpoint_initializing == 0) {
         // first thread in the checkpoint
         size_t checkpoint_id = sync_id_counter++;

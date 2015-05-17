@@ -474,7 +474,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1088,9 +1088,9 @@ real_t gasdev(uint64_t* seed)
 # 25 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    {
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-      v1 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803848UL)); (lcg61)(seed); }) -1.0;
+      v1 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(16794414226779803848UL)); (lcg61)(seed); }) -1.0;
 # 27 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-      v2 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803848UL)); (lcg61)(seed); }) -1.0;
+      v2 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(16794414226779803848UL)); (lcg61)(seed); }) -1.0;
 # 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
       rsq = v1*v1+v2*v2;
 # 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
@@ -1131,7 +1131,7 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite)
 # 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
       iSeed = (((4294967296ULL) * s1) + s2) ;
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(16794414226779803911UL)); (lcg61)(&iSeed); }) ; } };
+   { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(16794414226779803911UL)); (lcg61)(&iSeed); }) ; } };
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_disable2); return iSeed;

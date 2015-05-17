@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 49 : { 1, 2, 3, 4 } direct:call:_Z9getNRanksv
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 17 : { 5, 34 } direct:call:_Z9getMyRankv
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 49 : { 1, 2, 3, 4 } direct:call:getNRanks
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 17 : { 5, 34 } direct:call:getMyRank

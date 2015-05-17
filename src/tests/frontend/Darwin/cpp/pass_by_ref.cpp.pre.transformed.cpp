@@ -477,7 +477,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1739,13 +1739,13 @@ extern void foo(int *A);
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)) ; int b;
- register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)foo, 3, 0UL, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
+ ({ call_lbl_2: calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return b;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"

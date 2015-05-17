@@ -1,2 +1,2 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 212 4 : { 1, 2, 3, 141 } direct:call:_Z6addArgPKccicPviS0_
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 254 9 : { 166, 167 } direct:call:_Z9printRankv
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 212 4 : { 1, 2, 3, 141 } direct:call:addArg
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 254 9 : { 166, 167 } direct:call:printRank

@@ -1,17 +1,15 @@
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 102 17 alias_group_changed(____alias_loc_id_0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 125 9 alias_group_changed(____alias_loc_id_1); 
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 100 40 len=7 realloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 101 41 , 17753382427056418791UL, 0, 1, (int)sizeof(struct _source), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 101 40 len=7 realloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 102 41 , 17753382427056418792UL, 0, 1, (int)sizeof(struct _source), 0
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 8 71 const int ____chimes_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(17753382427056418519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382427056418525UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 24 1 rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 29 49 const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17753382427056418665UL), (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 47 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_disable1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 49 25 const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382427056418690UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 54 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_disable2); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 56 35 const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382427056418731UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 71 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_disable3); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 73 56 const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382427056418861UL), (size_t)(0UL), (size_t)(17753382427056418863UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 127 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_disable4); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 29 49 const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL), (size_t)(17753382427056418669UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 48 1 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 50 25 const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382427056418691UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 55 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_disable2); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 57 35 const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382427056418732UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 72 1 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_disable3); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 56 const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382427056418862UL), (size_t)(0UL), (size_t)(17753382427056418864UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 128 1 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_disable4); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 8 72 const int ____chimes_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(17753382427056418519UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382427056418525UL), (size_t)(0UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 8 358 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 9 5  FILE *fp;  fp = (fopen(filename, "wb")) ;
@@ -24,41 +22,43 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 9 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 19 9  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 14  x = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 16 23 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 29 50 const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17753382427056418665UL), (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 29 50 const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(17753382427056418666UL), (size_t)(17753382427056418667UL), (size_t)(17753382427056418668UL), (size_t)(17753382427056418669UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 29 371 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 5 {  size_t i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 33 5  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 10  i = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 22 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 5 {  size_t i; 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 38 5  }
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 10  i = (0) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 36 22 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 41 5  float scale;  scale = (1. / (dx * dx)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 41 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 49 26 const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382427056418690UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 49 158 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 56 36 const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382427056418731UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 56 195 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 73 57 const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382427056418861UL), (size_t)(0UL), (size_t)(17753382427056418863UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 73 600 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 5 int c; ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 10 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 5  size_t len;  len = ((size_t)dimx * (size_t)dimy * (size_t)dimz) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 31 60 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 32 5 {  size_t i; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 34 5  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 32 10  i = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 32 22 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 37 5 {  size_t i; 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 39 5  }
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 37 10  i = (0) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 37 22 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 42 5  float scale;  scale = (1. / (dx * dx)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 42 33 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 50 26 const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382427056418691UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 50 158 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 57 36 const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382427056418732UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 57 195 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 57 const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382427056418862UL), (size_t)(0UL), (size_t)(17753382427056418864UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 600 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 75 5 int c; ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 75 10 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 8 357  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 40 5  ({  call_lbl_1:  unsigned long ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float));  }  calling((void*)memset, 1, 0UL, 3, (size_t)(17753382427056418668UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 40 42 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 41 5  ({  call_lbl_1:  unsigned long ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float));  }  calling((void*)memset, 1, 0UL, 0, 3, (size_t)(17753382427056418669UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 41 42 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 29 370  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 49 157  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 56 194  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 77 5  ({  calling((void*)default_config, -1, 0UL, 1, (size_t)(17753382427056418861UL)); (default_config)(conf); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 77 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 102 58  ({  call_lbl_9:  source * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 9, 0UL, 2, (size_t)(17753382427056418755UL), (size_t)(17753382427056418791UL)); (parse_source)(optarg, ____chimes_arg5); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 102 103 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 120 17  ({  calling((void*)usage, -1, 0UL, 1, (size_t)(17753382427056418863UL)); (usage)(argv); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 120 27 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 125 64  ({  call_lbl_15:  calling((void*)getNumCUDADevices, 15, 0UL, 0); (getNumCUDADevices)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 125 82 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 5 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 10 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 73 599  ; int c;
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 50 157  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 57 194  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 78 5  ({  calling((void*)default_config, -1, 0UL, 0, 1, (size_t)(17753382427056418862UL)); (default_config)(conf); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 78 24 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 103 17  ({  call_lbl_8:  source * ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(17753382427056418756UL), (size_t)(17753382427056418792UL)); (parse_source)(optarg, ____chimes_arg5); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 103 62 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 121 17  ({  calling((void*)usage, -1, 0UL, 0, 1, (size_t)(17753382427056418864UL)); (usage)(argv); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 121 27 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 126 23  ({  call_lbl_13:  calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 126 41 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 75 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 75 10 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp 74 599  ; int c;
+ if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  }  

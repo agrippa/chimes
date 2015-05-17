@@ -482,7 +482,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1093,9 +1093,9 @@ real_t gasdev(uint64_t* seed)
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  {
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- v1 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) -1.0;
+ v1 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) -1.0;
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- v2 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) -1.0;
+ v2 = 2.0* ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(13664289541852258059UL)); (lcg61)(seed); }) -1.0;
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  rsq = v1*v1+v2*v2;
 # 30 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
@@ -1136,7 +1136,7 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite)
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  iSeed = ((4294967296ULL * s1) + s2) ;
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
- { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling((void*)lcg61, -1, 0UL, 1, (size_t)(13664289541852258122UL)); (lcg61)(&iSeed); }) ; } };
+ { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling((void*)lcg61, -1, 0UL, 0, 1, (size_t)(13664289541852258122UL)); (lcg61)(&iSeed); }) ; } };
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
  rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_disable2); return iSeed;

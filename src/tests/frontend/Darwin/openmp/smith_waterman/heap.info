@@ -1,26 +1,28 @@
-301 47 351 malloc
-461 21 141 malloc
-468 20 141 malloc
-482 24 550 malloc 1 0
-484 27 552 malloc
-491 24 550 malloc 1 0
-493 27 552 malloc
-500 25 529 malloc 1 0
-502 28 741 malloc 1 0
-503 71 743 malloc
-515 21 141 malloc
-516 22 141 malloc
-552 41 1400 malloc 0 1 _tiles_to_run q base
-553 26 1409 malloc 0 1 _tile
-560 41 1400 malloc 0 1 _tiles_to_run q base
-561 26 1409 malloc 0 1 _tile
-604 43 743 free
-606 3 741 free
-608 2 529 free
-610 36 552 free
-612 2 550 free
-614 36 552 free
-616 2 550 free
-618 2 141 free
-620 2 641 free
-621 2 641 free
+321 47 351 malloc
+449 31 641 malloc
+450 31 641 malloc
+476 21 141 malloc
+483 20 141 malloc
+497 24 550 malloc 1 0
+499 27 552 malloc
+506 24 550 malloc 1 0
+508 27 552 malloc
+515 25 529 malloc 1 0
+517 28 741 malloc 1 0
+518 71 743 malloc
+530 21 141 malloc
+531 22 141 malloc
+567 41 1376 malloc 0 1 _tiles_to_run q base
+568 26 1385 malloc 0 1 _tile
+575 41 1376 malloc 0 1 _tiles_to_run q base
+576 26 1385 malloc 0 1 _tile
+619 43 743 free
+621 3 741 free
+623 2 529 free
+625 36 552 free
+627 2 550 free
+629 36 552 free
+631 2 550 free
+633 2 141 free
+635 2 641 free
+636 2 641 free

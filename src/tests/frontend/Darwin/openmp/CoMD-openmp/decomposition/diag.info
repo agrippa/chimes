@@ -1,5 +1,3 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 4 alias_group_changed(____alias_loc_id_0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 4 alias_group_changed(____alias_loc_id_1); 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 46 , 12059379678030502379UL, 0, 1, (int)sizeof(struct DomainSt), 0
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 4 rm_stack(true, 12059379678030502379UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_disable0); 
@@ -10,8 +8,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decom
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 728 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 4  Domain *dd;  dd = ((Domain *)malloc_wrapper(sizeof(Domain), 12059379678030502379UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 119 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 45  int myRank;  myRank = (getMyRank()) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 69 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 4  int myRank;  myRank = (getMyRank()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 28 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 4 {  int i; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 39 4  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 34 9  i = (0) ;
@@ -32,12 +30,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decom
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 62 61 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 4  int iz;  iz = ((procCoord[2] + diz + procGrid[2]) % procGrid[2]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 63 61 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 90  ({  call_lbl_3:  calling((void*)getNRanks, 3, 0UL, 0); (getNRanks)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 100 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 69  ({  call_lbl_7:  calling((void*)getMyRank, 7, 0UL, 0); (getMyRank)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 28  ({  call_lbl_4:  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 38 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 15 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 19 727  ; Domain *dd;
- if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 58 199  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

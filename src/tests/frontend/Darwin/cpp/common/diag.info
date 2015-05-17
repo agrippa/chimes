@@ -102,11 +102,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 44 12
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 51 273  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 62 231  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 95 312  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 140 9  ({  float * ____chimes_arg0;  float ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg0 = (src_samples[i]); ____chimes_arg3 = (srcs[i].freq);  }  calling((void*)ricker_wavelet, -1, 0UL, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(____chimes_arg0, nsteps, dt, ____chimes_arg3); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 140 9  ({  calling((void*)ricker_wavelet, -1, 0UL, 0, 4, (size_t)(7724169104006700663UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(src_samples[i], nsteps, dt, srcs[i].freq); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 140 64 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 127 274  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 145 223  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 178 179  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 5  ({  calling((void*)update_progress, -1, 0UL, 1, (size_t)(0UL)); (update_progress)(progress_goal); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 5  ({  calling((void*)update_progress, -1, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(progress_goal); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 222 34 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/lib/common.cpp 217 152  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

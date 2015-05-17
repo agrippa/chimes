@@ -1,10 +1,8 @@
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 32 1 : { 1, 2, 3, 6, 7, 8, 9 } direct:call:cudaMalloc
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 41 1 : { 5, 38, 44 } prop:call:cudaMemcpy
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 2 : { 13, 14 } direct:call:cudaConfigureCall
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 59 1 : { 5, 19 } prop:call:cudaFree
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 : { 232, 233, 234, 235 } direct:call:_Z30__device_stub__Z6kernelPiS_S_iPiS_S_i
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 51 1 : { 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 38, 44 } prop:call:checkpoint
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 47 69 : { 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 38, 44 } prop:call:kernel
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu 13 2 : { 232, 233, 234, 235 } direct:call:__device_stub__Z6kernelPiS_S_i
 /tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c 9 88 : { 260, 261, 262, 263 } direct:call:cudaSetupArgument
-/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c 9 226 : { 394 } direct:call:_ZN42_GLOBAL__N__18_vector_sum_cpp1_ii_36d5b76210cudaLaunchIcEE9cudaErrorPT_
+/tmp/chimes-frontend/nvcc/vector_sum.cudafe1.stub.c 9 226 : { 394 } direct:call:cudaError
 /Developer/NVIDIA/CUDA-6.5/bin/../include/cuda_runtime.h 1510 8 : { 303 } direct:call:cudaLaunch
 vector_sum.cudafe1.stub.c 2 78 : { 310, 396 } direct:call:NULL
 vector_sum.cudafe1.stub.c 1 138 : { 321, 396 } direct:call:__cudaRegisterFunction

@@ -89,6 +89,12 @@ protected:
     int startingLine(const clang::Stmt *stmt);
     int endingLine(const clang::Stmt *stmt);
 
+    bool currently_inside_function_arguments() {
+        return inside_function_arguments;
+    }
+
+    std::string get_callee_name(const CallExpr *call);
+
 private:
     clang::Rewriter *rewriter;
     std::map<const clang::Stmt *, const clang::Stmt *> parentMap;
@@ -99,6 +105,8 @@ private:
     int curr_register_label = 0;
     int curr_function_label = 0;
     bool root_flag;
+
+    bool inside_function_arguments = false;
 };
 
 #endif

@@ -1,84 +1,81 @@
 _Z9GUID_DIAGii 230 19 0 0 0
-__assert_rtn 233 64 0 1678 1679 0 1680
+__assert_rtn 233 64 0 1704 1705 0 1706
 _Z3PUTii 242 41 0 0 0
 _Z3PUTii 243 41 0 0 0
 _Z3PUTii 244 41 0 0 0
-fprintf 264 13 0 255 1678 0
-fprintf 266 9 0 255 1683
-fprintf 268 5 0 255 1680
-_Z12char_mappingc 288 42 0 0
-fseek 297 5 0 370 0 0
-ftell 298 22 0 370
-fseek 299 5 0 370 0 0
-malloc 301 47 351 0
-fread 303 31 0 351 0 0 370
-_Z28clear_whitespaces_do_mappingPal 307 16 0 351 0
-__assert_rtn 312 56 0 1685 1679 0 1686
-__assert_rtn 319 47 0 1687 1679 0 1688
-omp_get_thread_num 332 17 0
-_Z8PUT_DIAGii 373 31 0 0 0
-_Z15add_tile_to_runiiP13_tiles_to_run 377 21 0 0 0 919
-_Z8PUT_RCOLii 382 31 0 0 0
-_Z15add_tile_to_runiiP13_tiles_to_run 386 21 0 0 0 919
-_Z8PUT_BROWii 391 31 0 0 0
-_Z15add_tile_to_runiiP13_tiles_to_run 395 21 0 0 0 919
-omp_get_num_threads 412 14 0
-fprintf 416 9 0 255 1691 968
-exit 417 9 0 0
-fprintf 420 5 0 255 1692 0
-atoi 425 24 0 968
-atoi 426 25 0 968
-_fopen 428 20 987 968 1683
-fprintf 429 20 0 255 1694 968
-exit 429 84 0 0
-_Z9read_fileP7__sFILEPm 431 16 641 987 929
-fprintf 432 5 0 255 1695 0
-_fopen 434 20 1008 968 1683
-fprintf 435 20 0 255 1694 968
-exit 435 84 0 0
-_Z9read_fileP7__sFILEPm 437 16 641 1008 931
-fprintf 438 5 0 255 1695 0
-fprintf 440 5 0 255 1685 0
-fprintf 441 5 0 255 1685 0
-fprintf 443 42 0 255 1699
-exit 443 115 0 0
-fprintf 444 43 0 255 1700
-exit 444 117 0 0
-fprintf 449 5 0 255 1701 0 0
-malloc 461 21 141 0
-malloc 468 20 141 0
-_Z8PUT_DIAGii 470 2 0 0 0
-_Z8PUT_DIAGii 474 3 0 0 0
-_Z8PUT_DIAGii 478 3 0 0 0
-malloc 482 24 550 0
-malloc 484 27 552 0
-_Z8PUT_RCOLii 487 3 0 0 0
-malloc 491 24 550 0
-malloc 493 27 552 0
-_Z8PUT_BROWii 496 3 0 0 0
-malloc 500 25 529 0
-malloc 502 28 741 0
-malloc 503 71 743 0
-malloc 515 21 141 0
-malloc 516 22 141 0
-gettimeofday 550 5 0 1675 1705
-malloc 552 41 1400 0
-malloc 553 26 1409 0
-malloc 560 41 1400 0
-malloc 561 26 1409 0
-_Z13pop_next_tileP13_tiles_to_run 575 28 1496 1400
-_Z9task_funciiP13_tiles_to_run 580 21 0 0 0 1400
-_Z10checkpointv 594 9 0
-gettimeofday 598 5 0 1675 1705
-fprintf 600 5 0 255 1702 0
-fprintf 601 5 0 255 1703 0
-free 604 43 0 743
-free 606 3 0 741
-free 608 2 0 529
-free 610 36 0 552
-free 612 2 0 550
-free 614 36 0 552
-free 616 2 0 550
-free 618 2 0 141
-free 620 2 0 641
-free 621 2 0 641
+fprintf 264 13 0 255 1704 0
+fprintf 266 9 0 255 1709
+fprintf 268 5 0 255 1706
+_Z12char_mappingc 308 42 0 0
+fseek 317 5 0 370 0 0
+ftell 318 22 0 370
+fseek 319 5 0 370 0 0
+malloc 321 47 351 0
+fread 323 31 0 351 0 0 370
+_Z28clear_whitespaces_do_mappingPal 327 16 0 351 0
+__assert_rtn 332 56 0 1711 1705 0 1712
+__assert_rtn 339 47 0 1713 1705 0 1714
+omp_get_thread_num 352 17 0
+_Z8PUT_DIAGii 392 31 0 0 0
+_Z15add_tile_to_runiiP13_tiles_to_run 396 21 0 0 0 919
+_Z8PUT_RCOLii 401 31 0 0 0
+_Z15add_tile_to_runiiP13_tiles_to_run 405 21 0 0 0 919
+_Z8PUT_BROWii 410 31 0 0 0
+_Z15add_tile_to_runiiP13_tiles_to_run 414 21 0 0 0 919
+omp_get_num_threads 430 14 0
+fprintf 434 9 0 255 1717 966
+exit 435 9 0 0
+fprintf 438 5 0 255 1717 0
+strtoull 440 34 0 966 1728 0
+strtoull 441 34 0 966 1728 0
+atoi 443 24 0 966
+atoi 444 25 0 966
+malloc 449 31 641 0
+malloc 450 31 641 0
+_ZL11random_initPay 452 5 0 641 0
+_ZL11random_initPay 453 5 0 641 0
+fprintf 455 5 0 255 1711 0
+fprintf 456 5 0 255 1711 0
+fprintf 458 42 0 255 1721
+exit 458 115 0 0
+fprintf 459 43 0 255 1722
+exit 459 117 0 0
+fprintf 464 5 0 255 1723 0 0
+malloc 476 21 141 0
+malloc 483 20 141 0
+_Z8PUT_DIAGii 485 2 0 0 0
+_Z8PUT_DIAGii 489 3 0 0 0
+_Z8PUT_DIAGii 493 3 0 0 0
+malloc 497 24 550 0
+malloc 499 27 552 0
+_Z8PUT_RCOLii 502 3 0 0 0
+malloc 506 24 550 0
+malloc 508 27 552 0
+_Z8PUT_BROWii 511 3 0 0 0
+malloc 515 25 529 0
+malloc 517 28 741 0
+malloc 518 71 743 0
+malloc 530 21 141 0
+malloc 531 22 141 0
+gettimeofday 565 5 0 1701 1727
+malloc 567 41 1376 0
+malloc 568 26 1385 0
+malloc 575 41 1376 0
+malloc 576 26 1385 0
+_Z13pop_next_tileP13_tiles_to_run 590 28 1472 1376
+_Z9task_funciiP13_tiles_to_run 595 21 0 0 0 1376
+_Z10checkpointv 609 9 0
+gettimeofday 613 5 0 1701 1727
+fprintf 615 5 0 255 1724 0
+fprintf 616 5 0 255 1725 0
+free 619 43 0 743
+free 621 3 0 741
+free 623 2 0 529
+free 625 36 0 552
+free 627 2 0 550
+free 629 36 0 552
+free 631 2 0 550
+free 633 2 0 141
+free 635 2 0 641
+free 636 2 0 641
+rand 282 17 0

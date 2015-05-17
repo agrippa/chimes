@@ -506,7 +506,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -2120,15 +2120,15 @@ int printRank()
 void timestampBarrier(const char* msg)
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
 {const int ____chimes_disable3 = new_stack((void *)(&timestampBarrier), "timestampBarrier", &____must_manage_timestampBarrier, 1, 1, (size_t)(3632450578146407598UL), "timestampBarrier|msg|0", &____must_checkpoint_timestampBarrier_msg_0, "i8*", (void *)(&msg), (size_t)8, 1, 0, 0) ; time_t t;
- if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
- ({ calling((void*)barrierParallel, -1, 0UL, 0); (barrierParallel)(); }) ;
+ ({ calling((void*)barrierParallel, -1, 0UL, 0, 0); (barrierParallel)(); }) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
- if (! ({ calling((void*)printRank, -1, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_3, ____chimes_disable3); return;; };
+ if (! ({ calling((void*)printRank, -1, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_3, ____chimes_disable3); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
- alias_group_changed(____alias_loc_id_0); t = ( ({ call_lbl_3: time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (__null); } calling((void*)time, 3, 0UL, 1, (size_t)(3632450578146407936UL)); (time)(____chimes_arg0); }) ) ;
+ t = ( ({ call_lbl_2: time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (__null); } calling((void*)time, 2, 0UL, 0, 1, (size_t)(3632450578146407936UL)); (time)(____chimes_arg0); }) ) ;
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
- alias_group_changed(____alias_loc_id_1); char *timeString; timeString = ( ({ call_lbl_5: const time_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (&t); } calling((void*)ctime, 5, 3632450578146407585UL, 1, (size_t)(3632450578146407572UL)); (ctime)(____chimes_arg1); }) ) ;
+ char *timeString; timeString = ( ({ call_lbl_3: const time_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (&t); } calling((void*)ctime, 3, 3632450578146407585UL, 0, 1, (size_t)(3632450578146407572UL)); (ctime)(____chimes_arg1); }) ) ;
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
  timeString[24] = '\0';
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
@@ -2180,7 +2180,7 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
  (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c", 106, "source == dest") : (void)0);
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
- ({ call_lbl_3: calling((void*)memcpy, 3, 0UL, 3, (size_t)(3632450578146407647UL), (size_t)(3632450578146407648UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) ;
+ ({ call_lbl_3: calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(3632450578146407647UL), (size_t)(3632450578146407648UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) ;
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
  rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel, ____alias_loc_id_5, ____chimes_disable7); return sendLen;

@@ -1,6 +1,6 @@
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 12 : { 1, 2, 3, 4 } prop:call:_Z12profileStart11TimerHandle
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 80 4 : { 1, 2, 3, 4 } prop:call:_Z13kineticEnergyP9SimFlatSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 4 : { 385 } direct:call:_Z15updateLinkCellsP10LinkCellStP7AtomsSt
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 58 : { 386 } prop:call:_Z15sortAtomsInCellP7AtomsStP10LinkCellSti
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 12 : { 1, 2, 3, 4 } prop:call:profileStart
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 80 4 : { 1, 2, 3, 4 } prop:call:kineticEnergy
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 4 : { 385 } direct:call:updateLinkCells
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 58 : { 386 } prop:call:sortAtomsInCell
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 4 : { 434 } direct:call:NULL
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 139 9 : { 446, 447, 448, 449, 450, 451, 452 } prop:call:_Z12profileStart11TimerHandle
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 139 9 : { 446, 447, 448, 449, 450, 451, 452 } prop:call:profileStart

@@ -2,5 +2,5 @@ char_mapping 0 DOES_NOT
 print_matrix 0 DOES_NOT
 clear_whitespaces_do_mapping 0 DOES_NOT char_mapping
 read_file 0 MAY clear_whitespaces_do_mapping fread fseek ftell
-find_diag 0 DOES_NOT
-main 0 DOES checkpoint find_diag read_file
+main 0 DOES checkpoint random_init srand strtoull
+random_init 0 DOES_NOT

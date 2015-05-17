@@ -477,7 +477,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1732,7 +1732,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16469201489461360461UL)) ; int *A;
- register_stack_vars(1, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
@@ -1753,7 +1753,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  if (A[0] == 2) {
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_disable0); return A[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/propagation.cpp"

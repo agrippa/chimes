@@ -15,4 +15,5 @@ read_file 0 MAY clear_whitespaces_do_mapping fread fseek ftell
 add_tile_to_run 0 DOES_NOT
 pop_next_tile 0 DOES_NOT
 task_func 0 DOES_NOT PUT_BROW PUT_DIAG PUT_RCOL add_tile_to_run
-main 0 DOES PUT_BROW PUT_DIAG PUT_RCOL checkpoint omp_get_num_threads pop_next_tile read_file task_func
+main 0 DOES PUT_BROW PUT_DIAG PUT_RCOL checkpoint omp_get_num_threads pop_next_tile random_init strtoull task_func
+random_init 0 DOES_NOT
