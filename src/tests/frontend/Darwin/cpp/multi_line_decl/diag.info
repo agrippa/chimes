@@ -13,9 +13,10 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 5 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 10 10 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 5  int *ptr;  ptr = ((int *)malloc_wrapper(100, 1300474033434903700UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 11 71 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 5  call_lbl_3: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 5  ({  call_lbl_3:  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 16 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 29 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82  ({  calling((void*)foo, -1, 0UL, 0, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(ptr[0], a); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 95 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 6 

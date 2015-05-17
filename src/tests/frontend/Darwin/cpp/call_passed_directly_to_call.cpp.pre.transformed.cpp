@@ -1774,7 +1774,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
  ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); (foo)(&b, bar()); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
- ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  (__builtin_expect(!(b == 6), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp", 19, "b == 6") : (void)0);

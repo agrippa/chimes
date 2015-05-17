@@ -762,6 +762,20 @@ bool DesiredInsertions::contains(int line, int col, const char *filename) {
     return false;
 }
 
+void DesiredInsertions::update_alias_change_locations(int line, int col,
+        const char *filename, int delta) {
+    std::string filename_str(filename);
+    for (std::vector<StateChangeInsertion *>::iterator i =
+            state_change_insertions->begin(), e =
+            state_change_insertions->end(); i != e; i++) {
+        StateChangeInsertion *insert = *i;
+        if (insert->get_line() == line && insert->get_col() >= col &&
+                insert->get_filename() == filename_str) {
+            insert->set_col(insert->get_col() + delta);
+        }
+    }
+}
+
 StateChangeInsertion *DesiredInsertions::get_matching(int line, int col,
         const char *filename) {
     std::string filename_str(filename);

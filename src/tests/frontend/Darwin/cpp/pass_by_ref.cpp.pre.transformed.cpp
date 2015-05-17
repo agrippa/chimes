@@ -1743,9 +1743,9 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- ({ call_lbl_2: calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
+ call_lbl_2: ({ calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
+ call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"

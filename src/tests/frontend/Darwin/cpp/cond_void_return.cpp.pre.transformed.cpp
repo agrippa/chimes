@@ -1782,7 +1782,7 @@ int *A;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  ({ calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) ;
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  (__builtin_expect(!(A[0] == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 24, "A[0] == 3") : (void)0);

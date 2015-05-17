@@ -109,30 +109,41 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 159 5 {  int i;
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 161 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 159 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 159 19 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 88 5  call_lbl_2: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 89 5  call_lbl_3: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 115 5  call_lbl_13: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 116 21  call_lbl_14: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 118 5  call_lbl_15: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 120 21  call_lbl_16: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 137 9  call_lbl_17: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 140 9  call_lbl_18: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 142 66  call_lbl_20: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 144 5  call_lbl_21: 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 151 9  call_lbl_23: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 54 351  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 88 5  ({  call_lbl_2:  calling((void*)setup_config, 2, 0UL, ____alias_loc_id_0, 3, (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(636351199311517481UL)); (setup_config)(&conf, argc, argv); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 88 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 89 5  ({  call_lbl_3:  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 3, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 89 75 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 115 5  ({  call_lbl_13:  source ** ____chimes_arg6;  int * ____chimes_arg7;  int ____chimes_arg8;  int ____chimes_arg9;  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps);  }  calling((void*)config_sources, 13, 0UL, ____alias_loc_id_1, 5, (size_t)(636351199311517113UL), (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 115 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 116 29  ({  call_lbl_14:  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 14, 636351199311517463UL, 0, 4, (size_t)(636351199311517289UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 116 82 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 118 5  ({  call_lbl_15:  calling((void*)init_data, 15, 0UL, ____alias_loc_id_2, 9, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 118 65 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 120 30  ({  call_lbl_16:  calling((void*)seconds, 16, 0UL, 0, 0); (seconds)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 120 38 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 88 18  ({  calling((void*)setup_config, 2, 0UL, ____alias_loc_id_0, 3, (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(636351199311517481UL)); (setup_config)(&conf, argc, argv); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 88 48 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 89 18  ({  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 3, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 89 88 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 115 19  ({  source ** ____chimes_arg6;  int * ____chimes_arg7;  int ____chimes_arg8;  int ____chimes_arg9;  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps);  }  calling((void*)config_sources, 13, 0UL, ____alias_loc_id_1, 5, (size_t)(636351199311517113UL), (size_t)(636351199311517113UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 115 88 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 116 43  ({  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 14, 636351199311517463UL, 0, 4, (size_t)(636351199311517289UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 116 96 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 118 19  ({  calling((void*)init_data, 15, 0UL, ____alias_loc_id_2, 9, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 118 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 120 44  ({  calling((void*)seconds, 16, 0UL, 0, 0); (seconds)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 120 52 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 129 9  ({  calling((void*)fwd, -1, 0UL, 0, 11, (size_t)(636351199311517353UL), (size_t)(636351199311517353UL), (size_t)(636351199311517355UL), (size_t)(636351199311517356UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd)(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 130 46 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 137 9  ({  call_lbl_17:  calling((void*)checkpoint, 17, 0UL, ____alias_loc_id_3, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 137 20 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 140 9  ({  call_lbl_18:  int ____chimes_arg35;  if (!____chimes_replaying) { ____chimes_arg35 = (step + 1);  }  calling((void*)update_progress, 18, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg35); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 140 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 142 79  ({  call_lbl_20:  calling((void*)seconds, 20, 0UL, 0, 0); (seconds)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 142 87 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 144 5  ({  call_lbl_21:  calling((void*)finish_progress, 21, 0UL, ____alias_loc_id_5, 0); (finish_progress)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 144 21 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 151 9  ({  call_lbl_23:  int ____chimes_arg37;  int ____chimes_arg40;  int ____chimes_arg41;  int ____chimes_arg43;  if (!____chimes_replaying) { ____chimes_arg37 = (conf.save_text); ____chimes_arg40 = (conf.ny); ____chimes_arg41 = (conf.nx); ____chimes_arg43 = (conf.radius);  }  calling((void*)save_layer_text, 23, 0UL, ____alias_loc_id_6, 8, (size_t)(636351199311517353UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(636351199311517862UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg37, dimx, dimy, ____chimes_arg40, ____chimes_arg41, "snap.text", ____chimes_arg43); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 137 23  ({  calling((void*)checkpoint, 17, 0UL, ____alias_loc_id_3, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 137 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 140 23  ({  int ____chimes_arg35;  if (!____chimes_replaying) { ____chimes_arg35 = (step + 1);  }  calling((void*)update_progress, 18, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg35); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 140 47 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 142 93  ({  calling((void*)seconds, 20, 0UL, 0, 0); (seconds)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 142 101 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 144 19  ({  calling((void*)finish_progress, 21, 0UL, ____alias_loc_id_5, 0); (finish_progress)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 144 35 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 151 23  ({  int ____chimes_arg37;  int ____chimes_arg40;  int ____chimes_arg41;  int ____chimes_arg43;  if (!____chimes_replaying) { ____chimes_arg37 = (conf.save_text); ____chimes_arg40 = (conf.ny); ____chimes_arg41 = (conf.nx); ____chimes_arg43 = (conf.radius);  }  calling((void*)save_layer_text, 23, 0UL, ____alias_loc_id_6, 8, (size_t)(636351199311517353UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(636351199311517862UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg37, dimx, dimy, ____chimes_arg40, ____chimes_arg41, "snap.text", ____chimes_arg43); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 152 41 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 87 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso3d.cpp 87 17 

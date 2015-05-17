@@ -2663,7 +2663,7 @@ typedef real8 Real_t ;
 inline real8 SQRT(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_18, ____chimes_did_disable0); return sqrt(arg) ; }
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-inline real8 CBRT(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, 0, ____chimes_did_disable1); return ({ call_lbl_2: calling((void*)cbrt, 2, 0UL, 0, 1, (size_t)(0UL)); (cbrt)(arg); }) ; }
+inline real8 CBRT(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, 0, ____chimes_did_disable1); call_lbl_2: return ({ calling((void*)cbrt, 2, 0UL, 0, 1, (size_t)(0UL)); (cbrt)(arg); }) ; }
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 inline real8 FABS(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_14, ____chimes_did_disable2); return fabs(arg) ; }
@@ -2886,11 +2886,11 @@ struct Mesh {
 # 362 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->zd = (Real_t *)malloc_wrapper(size * sizeof(Real_t), 16832839476487305676UL, 0, 0);
 # 363 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_7: void * ____chimes_arg1; unsigned long ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg1 = (mesh->xd); ____chimes_arg3 = (size * sizeof(Real_t)); } calling((void*)memset, 7, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg1, 0, ____chimes_arg3); }) ;
+ call_lbl_7: ({ void * ____chimes_arg1; unsigned long ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg1 = (mesh->xd); ____chimes_arg3 = (size * sizeof(Real_t)); } calling((void*)memset, 7, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg1, 0, ____chimes_arg3); }) ;
 # 364 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_8: void * ____chimes_arg4; unsigned long ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg4 = (mesh->yd); ____chimes_arg6 = (size * sizeof(Real_t)); } calling((void*)memset, 8, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg4, 0, ____chimes_arg6); }) ;
+ call_lbl_8: ({ void * ____chimes_arg4; unsigned long ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg4 = (mesh->yd); ____chimes_arg6 = (size * sizeof(Real_t)); } calling((void*)memset, 8, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg4, 0, ____chimes_arg6); }) ;
 # 365 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_9: void * ____chimes_arg7; unsigned long ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg7 = (mesh->zd); ____chimes_arg9 = (size * sizeof(Real_t)); } calling((void*)memset, 9, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg7, 0, ____chimes_arg9); }) ;
+ call_lbl_9: ({ void * ____chimes_arg7; unsigned long ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg7 = (mesh->zd); ____chimes_arg9 = (size * sizeof(Real_t)); } calling((void*)memset, 9, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg7, 0, ____chimes_arg9); }) ;
 # 366 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 367 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->xdd = (Real_t *)malloc_wrapper(size * sizeof(Real_t), 16832839476487305676UL, 0, 0);
@@ -2899,11 +2899,11 @@ struct Mesh {
 # 369 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->zdd = (Real_t *)malloc_wrapper(size * sizeof(Real_t), 16832839476487305676UL, 0, 0);
 # 370 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_13: void * ____chimes_arg10; unsigned long ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg10 = (mesh->xdd); ____chimes_arg12 = (size * sizeof(Real_t)); } calling((void*)memset, 13, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg10, 0, ____chimes_arg12); }) ;
+ call_lbl_13: ({ void * ____chimes_arg10; unsigned long ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg10 = (mesh->xdd); ____chimes_arg12 = (size * sizeof(Real_t)); } calling((void*)memset, 13, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg10, 0, ____chimes_arg12); }) ;
 # 371 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_14: void * ____chimes_arg13; unsigned long ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg13 = (mesh->ydd); ____chimes_arg15 = (size * sizeof(Real_t)); } calling((void*)memset, 14, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg13, 0, ____chimes_arg15); }) ;
+ call_lbl_14: ({ void * ____chimes_arg13; unsigned long ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg13 = (mesh->ydd); ____chimes_arg15 = (size * sizeof(Real_t)); } calling((void*)memset, 14, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg13, 0, ____chimes_arg15); }) ;
 # 372 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_15: void * ____chimes_arg16; unsigned long ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg16 = (mesh->zdd); ____chimes_arg18 = (size * sizeof(Real_t)); } calling((void*)memset, 15, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg16, 0, ____chimes_arg18); }) ;
+ call_lbl_15: ({ void * ____chimes_arg16; unsigned long ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg16 = (mesh->zdd); ____chimes_arg18 = (size * sizeof(Real_t)); } calling((void*)memset, 15, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg16, 0, ____chimes_arg18); }) ;
 # 373 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 374 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->fx = (Real_t *)malloc_wrapper(size * sizeof(Real_t), 16832839476487305676UL, 0, 0);
@@ -2915,7 +2915,7 @@ struct Mesh {
 # 378 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->nodalMass = (Real_t *)malloc_wrapper(size * sizeof(Real_t), 16832839476487305676UL, 0, 0);
 # 379 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_20: void * ____chimes_arg19; unsigned long ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg19 = (mesh->nodalMass); ____chimes_arg21 = (size * sizeof(Real_t)); } calling((void*)memset, 20, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg19, 0, ____chimes_arg21); }) ;
+ call_lbl_20: ({ void * ____chimes_arg19; unsigned long ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg19 = (mesh->nodalMass); ____chimes_arg21 = (size * sizeof(Real_t)); } calling((void*)memset, 20, 0UL, 0, 3, (size_t)(16832839476487305676UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg19, 0, ____chimes_arg21); }) ;
 # 380 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  rm_stack(false, 0UL, "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, ____alias_loc_id_7, ____chimes_did_disable3); }
 # 381 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -2947,12 +2947,12 @@ struct Mesh {
 # 396 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->e = (Real_t *)malloc_wrapper(size * sizeof(Real_t), 16832839476487305834UL, 0, 0);
 # 397 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_11: void * ____chimes_arg22; unsigned long ____chimes_arg24; if (!____chimes_replaying) { ____chimes_arg22 = (mesh->e); ____chimes_arg24 = (size * sizeof(Real_t)); } calling((void*)memset, 11, 0UL, 0, 3, (size_t)(16832839476487305834UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg22, 0, ____chimes_arg24); }) ;
+ call_lbl_11: ({ void * ____chimes_arg22; unsigned long ____chimes_arg24; if (!____chimes_replaying) { ____chimes_arg22 = (mesh->e); ____chimes_arg24 = (size * sizeof(Real_t)); } calling((void*)memset, 11, 0UL, 0, 3, (size_t)(16832839476487305834UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg22, 0, ____chimes_arg24); }) ;
 # 398 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 399 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->p = (Real_t*)malloc_wrapper(size * sizeof(Real_t), 16832839476487305834UL, 0, 0);
 # 400 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_13: void * ____chimes_arg25; unsigned long ____chimes_arg27; if (!____chimes_replaying) { ____chimes_arg25 = (mesh->p); ____chimes_arg27 = (size * sizeof(Real_t)); } calling((void*)memset, 13, 0UL, 0, 3, (size_t)(16832839476487305834UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg25, 0, ____chimes_arg27); }) ;
+ call_lbl_13: ({ void * ____chimes_arg25; unsigned long ____chimes_arg27; if (!____chimes_replaying) { ____chimes_arg25 = (mesh->p); ____chimes_arg27 = (size * sizeof(Real_t)); } calling((void*)memset, 13, 0UL, 0, 3, (size_t)(16832839476487305834UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg25, 0, ____chimes_arg27); }) ;
 # 401 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mesh->q = (Real_t*)malloc_wrapper(size * sizeof(Real_t), 16832839476487305834UL, 0, 0);
 # 402 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4282,7 +4282,7 @@ Index_t numElem;
 # 1241 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  mass1=mesh.elemMass[i2];
 # 1242 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- volume13= ({ call_lbl_1: Real_t ____chimes_arg358; if (!____chimes_replaying) { ____chimes_arg358 = (determ[i2]); } calling((void*)CBRT, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (CBRT)(____chimes_arg358); }) ;
+ call_lbl_1: volume13= ({ Real_t ____chimes_arg358; if (!____chimes_replaying) { ____chimes_arg358 = (determ[i2]); } calling((void*)CBRT, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (CBRT)(____chimes_arg358); }) ;
 # 1243 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1244 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  n0si2 = (elemToNode[0]) ;
@@ -4508,7 +4508,7 @@ Real_t x1[8];
 # 1364 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  if ( hgcoef > Real_t(0.) ) {
 # 1365 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_8: calling((void*)CalcFBHourglassForceForElems, 8, 0UL, ____alias_loc_id_4, 8, (size_t)(16832839476487313956UL), (size_t)(16832839476487313783UL), (size_t)(16832839476487313790UL), (size_t)(16832839476487313797UL), (size_t)(16832839476487313762UL), (size_t)(16832839476487313769UL), (size_t)(16832839476487313776UL), (size_t)(0UL)); (CalcFBHourglassForceForElems)(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
+ call_lbl_8: ({ calling((void*)CalcFBHourglassForceForElems, 8, 0UL, ____alias_loc_id_4, 8, (size_t)(16832839476487313956UL), (size_t)(16832839476487313783UL), (size_t)(16832839476487313790UL), (size_t)(16832839476487313797UL), (size_t)(16832839476487313762UL), (size_t)(16832839476487313769UL), (size_t)(16832839476487313776UL), (size_t)(0UL)); (CalcFBHourglassForceForElems)(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
 # 1366 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  }
 # 1367 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4577,7 +4577,7 @@ Real_t *sigxx;
  } }
 # 1402 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1403 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_6: calling((void*)CalcHourglassControlForElems, 6, 0UL, ____alias_loc_id_3, 2, (size_t)(16832839476487313437UL), (size_t)(0UL)); (CalcHourglassControlForElems)(determ, hgcoef); }) ;
+ call_lbl_6: ({ calling((void*)CalcHourglassControlForElems, 6, 0UL, ____alias_loc_id_3, 2, (size_t)(16832839476487313437UL), (size_t)(0UL)); (CalcHourglassControlForElems)(determ, hgcoef); }) ;
 # 1404 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1405 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  free_wrapper(determ, 16832839476487313437UL) ;
@@ -4611,7 +4611,7 @@ static inline void CalcForceForNodes()
 # 1420 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1421 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1422 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_1: calling((void*)CalcVolumeForceForElems, 1, 0UL, ____alias_loc_id_2, 0); (CalcVolumeForceForElems)(); }) ;
+ call_lbl_1: ({ calling((void*)CalcVolumeForceForElems, 1, 0UL, ____alias_loc_id_2, 0); (CalcVolumeForceForElems)(); }) ;
 # 1423 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1424 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1425 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4740,7 +4740,7 @@ Real_t delt;
 # 1496 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1497 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1498 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_1: calling((void*)CalcForceForNodes, 1, 0UL, ____alias_loc_id_1, 0); (CalcForceForNodes)(); }) ;
+ call_lbl_1: ({ calling((void*)CalcForceForNodes, 1, 0UL, ____alias_loc_id_1, 0); (CalcForceForNodes)(); }) ;
 # 1499 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1500 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  ({ calling((void*)CalcAccelerationForNodes, -1, 0UL, 0, 0); (CalcAccelerationForNodes)(); }) ;
@@ -6663,7 +6663,7 @@ void LagrangeLeapFrog()
 # 2647 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2648 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2649 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_1: calling((void*)LagrangeNodal, 1, 0UL, 0, 0); (LagrangeNodal)(); }) ;
+ call_lbl_1: ({ calling((void*)LagrangeNodal, 1, 0UL, 0, 0); (LagrangeNodal)(); }) ;
 # 2650 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2651 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2652 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7051,7 +7051,7 @@ Index_t edgeElems;
 # 2878 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  ({ calling((void*)TimeIncrement, -1, 0UL, 0, 0); (TimeIncrement)(); }) ;
 # 2879 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_4: calling((void*)LagrangeLeapFrog, 4, 0UL, ____alias_loc_id_0, 0); (LagrangeLeapFrog)(); }) ;
+ call_lbl_4: ({ calling((void*)LagrangeLeapFrog, 4, 0UL, ____alias_loc_id_0, 0); (LagrangeLeapFrog)(); }) ;
 # 2880 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2881 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2882 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7060,7 +7060,7 @@ Index_t edgeElems;
 # 2885 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2886 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2887 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
- ({ call_lbl_5: calling((void*)checkpoint, 5, 0UL, 0, 0); (checkpoint)(); }) ;
+ call_lbl_5: ({ calling((void*)checkpoint, 5, 0UL, 0, 0); (checkpoint)(); }) ;
 # 2888 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2889 "/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
  }

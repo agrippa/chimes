@@ -13,12 +13,13 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 12 186 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 13 5 int b; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 13 10 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 17 5  call_lbl_2: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 4 169  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 8 107  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 15 5  ({  calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); (foo)(&b, bar()); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 15 18 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 17 5  ({  call_lbl_2:  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 17 16 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 17 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 17 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 13 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 13 10 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp 12 183  ; int b;

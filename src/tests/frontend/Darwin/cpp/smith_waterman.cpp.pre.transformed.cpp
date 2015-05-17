@@ -2056,7 +2056,7 @@ signed char* read_file( FILE* file, size_t* n_chars ) {const int ____chimes_did_
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fseek (file, 0L, 2);
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- long file_size; file_size = ( ({ call_lbl_2: calling((void*)ftell, 2, 0UL, 0, 1, (size_t)(2568646267985526162UL)); (ftell)(file); }) ) ;
+ long file_size; call_lbl_2: file_size = ( ({ calling((void*)ftell, 2, 0UL, 0, 1, (size_t)(2568646267985526162UL)); (ftell)(file); }) ) ;
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  fseek (file, 0L, 0);
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
@@ -2202,7 +2202,7 @@ unsigned long long j;
  }
 # 152 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 153 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
- ({ call_lbl_17: calling((void*)checkpoint, 17, 0UL, ____alias_loc_id_1, 0); (checkpoint)(); }) ;
+ call_lbl_17: ({ calling((void*)checkpoint, 17, 0UL, ____alias_loc_id_1, 0); (checkpoint)(); }) ;
 # 154 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
 # 155 "/Users/jmg3/num-debug/src/examples/cpp/smithWaterman/smith_waterman.cpp"
  }

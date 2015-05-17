@@ -13,6 +13,7 @@
 using namespace std;
 using namespace clang;
 
+
 // #define VERBOSE
 
 /**
@@ -24,6 +25,7 @@ extern DesiredInsertions *insertions;
 extern std::string stmtToString(const clang::Stmt *S, clang::ASTContext *Context);
 extern clang::FunctionDecl *curr_func_decl;
 extern std::set<std::string> *ignorable;
+extern std::map<int, std::vector<CallLabel> > call_lbls;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -911,13 +913,19 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         std::vector<CallLocation> calls = i->second;
         std::sort(calls.begin(), calls.end());
 
-        for (std::vector<CallLocation>::iterator ii = calls.begin(),
-                ee = calls.end(); ii != ee; ii++) {
-            CallLocation loc = *ii;
+        assert(call_lbls.find(i->first) != call_lbls.end());
+        std::vector<CallLabel> lbls = call_lbls.at(i->first);
+        assert(lbls.size() == calls.size());
+        std::sort(lbls.begin(), lbls.end());
+
+        for (int c = 0; c < calls.size(); c++) {
+            CallLocation loc = calls[c];
+            CallLabel lbl = lbls[c];
+
             const CallExpr *call = loc.get_call();
 
             if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
-                if (ompTree->add_function_call(call, loc.get_label())) {
+                if (ompTree->add_function_call(call, lbl.get_lbl())) {
 
                     AliasesPassedToCallSite callsite =
                         insertions->findFirstMatchingCallsite(i->first,
@@ -934,9 +942,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
 
                     std::stringstream ss;
-                    if (may_cause_checkpoint) {
-                        ss << " call_lbl_" << loc.get_label() << ": ";
-                    }
+                    // if (may_cause_checkpoint) {
+                    //     ss << " call_lbl_" << loc.get_label() << ": ";
+                    // }
 
                     /*
                      * Default parameters cannot be checkpointed, nor are they
@@ -1016,7 +1024,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                             insertions->get_alias_loc_var(state->get_id()));
 
                     ss << " calling((void*)" <<
-                        func_symbol << ", " << loc.get_label() << ", " <<
+                        func_symbol << ", " << lbl.get_lbl() << ", " <<
                         callsite.get_return_alias() << "UL, " << loc_arg <<
                         ", " << callsite.nparams();
                     for (unsigned a = 0; a < callsite.nparams(); a++) {
@@ -1025,7 +1033,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     ss << "); ";
 
                     ReplaceText(clang::SourceRange(call->getLocStart(),
-                                loc.get_call()->getLocEnd()),
+                                call->getLocEnd()),
                             " ({ " + ss.str() + replace_func_call.str() + "; }) ");
                 }
             }
@@ -1178,15 +1186,8 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                         calls_found[line_no] =
                             std::vector<CallLocation>();
                     }
-                    int lbl;
-                    if (callee_name == "anon" ||
-                            insertions->may_cause_checkpoint(callee_name)) {
-                        lbl = getNextFunctionLabel();
-                    } else {
-                        lbl = -1;
-                    }
-                    calls_found[line_no].push_back(CallLocation(
-                                callee_name, presumed.getColumn(), lbl, call));
+                    calls_found.at(line_no).push_back(CallLocation(
+                                callee_name, presumed.getColumn(), call));
                 }
 
                 if (callee_name == "new_stack") {

@@ -334,6 +334,7 @@ public:
     unsigned get_id() { return (id); }
     int get_line() { return line_no; }
     int get_col() { return col; }
+    void set_col(int c) { col = c; }
     void update_line(int set_line) { line_no = set_line; }
     std::string get_filename() { return filename; }
     std::vector<size_t> *get_groups() { return groups; }
@@ -406,6 +407,8 @@ public:
     bool contains(int line, int col, const char *filename);
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
 
+    void update_alias_change_locations(int line, int col,
+            const char *filename, int delta);
     StateChangeInsertion *get_matching(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     StructFields *get_struct_fields_for(std::string name);

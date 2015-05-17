@@ -98,13 +98,14 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 16 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 224 16  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 21  m2 = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 220 29 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 24  call_lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 110 115  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 177  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  calling((void*)zeroReal3, -1, 0UL, 0, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(s->atoms->f[iii]); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 37  ({  call_lbl_1:  LinkCell * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes);  }  calling((void*)getNeighborBoxes, 1, 0UL, 0, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 78 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 50  ({  LinkCell * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes);  }  calling((void*)getNeighborBoxes, 1, 0UL, 0, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 91 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 149 5 

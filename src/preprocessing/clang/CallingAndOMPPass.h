@@ -33,13 +33,27 @@ class DeclarationInfo {
         std::string as_string;
 };
 
+class CallLabel {
+    public:
+        CallLabel(int set_col, int set_lbl) : col(set_col), lbl(set_lbl) { }
+        int get_col() { return col; }
+        int get_lbl() { return lbl; }
+
+        bool operator < (const CallLabel& other) const {
+            return col < other.col;
+        }
+
+    private:
+        int col;
+        int lbl;
+};
+
 class CallLocation {
     public:
-        CallLocation(std::string set_funcname, int set_col, int set_label,
+        CallLocation(std::string set_funcname, int set_col,
                 const clang::CallExpr *set_call) : funcname(set_funcname),
-                col(set_col), label(set_label), call(set_call) {}
+                col(set_col), call(set_call) {}
         int get_col() { return col; }
-        int get_label() { return label; }
         const clang::CallExpr *get_call() { return call; }
         std::string get_funcname() { return funcname; }
 
@@ -50,7 +64,6 @@ class CallLocation {
     private:
         std::string funcname;
         int col;
-        int label;
         const clang::CallExpr *call;
 };
 
@@ -70,7 +83,6 @@ public:
 private:
     std::map<clang::VarDecl *, StackAlloc *> hasValidDeclarations(
             const clang::DeclStmt *d);
-    std::map<int, std::vector<CallLocation>> calls_found;
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
@@ -94,6 +106,7 @@ private:
      */
     std::map<int, const clang::Stmt *> predecessors;
     std::map<int, const clang::Stmt *> successors;
+    std::map<int, std::vector<CallLocation>> calls_found;
 
     std::string handleDecl(const clang::DeclStmt *d,
             std::map<clang::VarDecl *, StackAlloc *> allocs,

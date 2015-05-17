@@ -1763,7 +1763,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  tmp = ( ({ calling((void*)haha_this_sux_part_trois, -1, 16401429439071256631UL, 0, 0); (haha_this_sux_part_trois)(); }) ) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ((int *)tmp)[0];
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"

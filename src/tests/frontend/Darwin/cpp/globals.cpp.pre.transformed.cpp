@@ -1755,7 +1755,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  printf("auto global\n");
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
- ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b + a;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"

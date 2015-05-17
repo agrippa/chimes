@@ -9,8 +9,9 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 49 con
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 186 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 16469201489461360426UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 83 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 9  ({  call_lbl_4:  calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 20 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 9  call_lbl_4: 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 22  ({  calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 33 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 12 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 183  ; int *A;

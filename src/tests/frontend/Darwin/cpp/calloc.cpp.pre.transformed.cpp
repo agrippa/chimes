@@ -1745,7 +1745,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
  alloc = ((int *)calloc_wrapper(10, sizeof(int), 2173952053329873812UL, 0, 0)) ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
- ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
  alloc[0] = 4;

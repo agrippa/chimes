@@ -1757,7 +1757,7 @@ int b;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  c = (a + b) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- ({ call_lbl_1: calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  (__builtin_expect(!(a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp", 8, "a == 3") : (void)0);
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
@@ -1774,7 +1774,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  int a; a = (3) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
- int b; b = ( ({ call_lbl_2: calling((void*)foo, 2, 0UL, 0, 1, (size_t)(0UL)); (foo)(a); }) ) ;
+ int b; call_lbl_2: b = ( ({ calling((void*)foo, 2, 0UL, 0, 1, (size_t)(0UL)); (foo)(a); }) ) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return b;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/func_call.cpp"

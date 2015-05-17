@@ -2453,7 +2453,7 @@ void init_data(float *curr, float *next, float *vsq,
  } }
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 39 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 0, 3, (size_t)(8205091200931170341UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
+ call_lbl_1: ({ unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 0, 3, (size_t)(8205091200931170341UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  float scale; scale = (1. / (dx * dx)) ;
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2563,7 +2563,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  (conf->nsrcs + 1), 8205091200931170452UL, 0, 1, (int)sizeof(struct _source), 0);
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- ({ call_lbl_6: source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
+ call_lbl_6: ({ source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  conf->nsrcs++;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2608,7 +2608,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  if (conf->ngpus == -1) {
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
- conf->ngpus = ({ call_lbl_11: calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
+ call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  }
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
