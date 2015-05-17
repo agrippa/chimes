@@ -1,4 +1,4 @@
-GXX=g++
+GXX?=g++
 NVCC=nvcc
 GXX_FLAGS=-g -fPIC -Wall -O3
 NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20

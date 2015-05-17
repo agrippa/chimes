@@ -145,8 +145,9 @@ if [[ $ENABLE_OMP == 1 ]]; then
     GXX_FLAGS="${GXX_FLAGS} -fopenmp"
 fi
 
-STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
-            "stddef.h" 2>/dev/null | head -n 1))
+# STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
+#             "stddef.h" 2>/dev/null | head -n 1))
+STDDEF_FOLDER=.
 
 for INPUT in ${ABS_INPUTS[@]}; do
     INFO_FILE_PREFIX=${WORK_DIR}/$(basename ${INPUT})
@@ -263,7 +264,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     LAST_FILES+=($FINAL_FILE)
     OBJ_FILES+=($OBJ_FILE)
 
-    ${GXX} --compile -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
+    echo Compiling to object file ${OBJ_FILE}
+    ${GXX} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
         -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
@@ -272,11 +274,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
     fi
 done
 
-for f in ${LAST_FILES[@]}; do
-    echo $f
-done
 
 if [[ $COMPILE == 1 ]]; then
+    for f in ${LAST_FILES[@]}; do
+        echo $f
+    done
+
     for f in ${OBJ_FILES[@]}; do
         echo $f
     done
@@ -286,9 +289,14 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
+    echo 'Linking final executable'
     ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${OBJ_FILE_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}
+
+    for f in ${LAST_FILES[@]}; do
+        echo $f
+    done
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
