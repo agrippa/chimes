@@ -2398,7 +2398,7 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 void save_text(float *field, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
- const int ny, const int nx, const char *filename, int radius) {const int ____chimes_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+ const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(17753382416546318007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17753382416546318012UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  FILE *fp; fp = (fopen(filename, "wb")) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
@@ -2428,14 +2428,14 @@ void save_text(float *field, const int dimx, const int dimy,
 # 23 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  fclose(fp);
 # 24 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2, ____chimes_disable0); }
+rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2, ____chimes_did_disable0); }
 # 25 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 void init_data(float *curr, float *next, float *vsq,
 # 27 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  float *h_coeff, const int dimx, const int dimy,
 # 28 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
- const float dx, const float dt) {const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(17753382416546318145UL), (size_t)(17753382416546318146UL), (size_t)(17753382416546318147UL), (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ const float dx, const float dt) {const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(17753382416546318145UL), (size_t)(17753382416546318146UL), (size_t)(17753382416546318147UL), (size_t)(17753382416546318148UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 29 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 30 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  { size_t i; for ( i = (0) ; i < dimx * dimy; i++) {
@@ -2467,10 +2467,10 @@ void init_data(float *curr, float *next, float *vsq,
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  h_coeff[4] = -0.001785 * scale;
 # 46 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_disable1); }
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); }
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 48 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-void usage(char **argv) {const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382416546318169UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void usage(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(17753382416546318169UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
 # 50 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
@@ -2480,10 +2480,10 @@ void usage(char **argv) {const int ____chimes_disable2 = new_stack((void *)(&usa
 # 52 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  exit(1);
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_disable2); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); }
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 55 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-void default_config(config *conf) {const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382416546318207UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void default_config(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(17753382416546318207UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 56 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  conf->nx = 2 * 256;
 # 57 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
@@ -2509,10 +2509,10 @@ void default_config(config *conf) {const int ____chimes_disable3 = new_stack((vo
 # 68 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  conf->progress_disabled = 0;
 # 69 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_disable3); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); }
 # 70 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
 # 71 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-void setup_config(config *conf, int argc, char **argv) {const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382416546318329UL), (size_t)(0UL), (size_t)(17753382416546318331UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
+void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(17753382416546318329UL), (size_t)(0UL), (size_t)(17753382416546318331UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
  if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
 # 72 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  ;
@@ -2612,7 +2612,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_dis
 # 121 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
  }
 # 122 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common2d.cpp"
-rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_disable4); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); }
 
 
 static int module_init() {

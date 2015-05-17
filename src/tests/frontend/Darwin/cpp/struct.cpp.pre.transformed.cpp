@@ -1752,7 +1752,7 @@ typedef struct _foo {
 } foo;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)) ; foo *test2;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)) ; foo *test2;
 foo test;
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
@@ -1783,7 +1783,7 @@ foo test;
  (__builtin_expect(!(test2[0].a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 26, "test2[0].a == 3") : (void)0);
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 }
 

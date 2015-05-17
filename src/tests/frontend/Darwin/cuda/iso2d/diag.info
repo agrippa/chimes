@@ -36,16 +36,16 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 180 23 len=8 cudaFr
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 180 32 , 0UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 181 23 len=8 cudaFree_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 181 32 , 0UL
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 77 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 82 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 106 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 183 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 34 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2433535641109194314UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 50 1 const int ____chimes_disable1 = new_stack((void *)(&fwd_kernel), "fwd_kernel", &____must_manage_fwd_kernel, 8, 0, (size_t)(2433535641109194419UL), (size_t)(2433535641109194420UL), (size_t)(2433535641109194421UL), (size_t)(2433535641109194422UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 67 1 rm_stack(false, 0UL, "fwd_kernel", &____must_manage_fwd_kernel, 0, ____chimes_disable1); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 77 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 82 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 106 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 183 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2433535641109194314UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 50 1 const int ____chimes_did_disable1 = new_stack((void *)(&fwd_kernel), "fwd_kernel", &____must_manage_fwd_kernel, 8, 0, (size_t)(2433535641109194419UL), (size_t)(2433535641109194420UL), (size_t)(2433535641109194421UL), (size_t)(2433535641109194422UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 67 1 rm_stack(false, 0UL, "fwd_kernel", &____must_manage_fwd_kernel, 0, ____chimes_did_disable1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 34 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 50 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641109194314UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 182 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 50 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641109194314UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 186 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 1  config conf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 70 12 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 85 1  float dx;  dx = ((20.F)) ;
@@ -255,7 +255,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 180 21  if
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 181 4  lbl_14: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 181 21  if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 181 21  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(38): { goto call_lbl_38; } case(55): { goto call_lbl_55; } case(61): { goto call_lbl_61; } case(62): { goto call_lbl_62; } case(63): { goto call_lbl_63; } case(64): { goto call_lbl_64; } case(69): { goto call_lbl_69; } case(75): { goto call_lbl_75; } case(76): { goto call_lbl_76; } case(78): { goto call_lbl_78; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 179  ; int i;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso2d.cu 69 183  ; int i;
 float point_rate;
 double total_s;
 double compute_s;

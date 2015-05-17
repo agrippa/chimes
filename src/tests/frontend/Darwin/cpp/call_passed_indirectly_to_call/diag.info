@@ -1,25 +1,25 @@
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 24 const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(15092453942527021220UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 6 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 9 5 rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_disable1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 11 const int ____chimes_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 20 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable2); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 33 const int ____chimes_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(15092453942527021252UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 24 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(15092453942527021220UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 6 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 9 5 rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 11 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 20 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(15092453942527021252UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 25 const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(15092453942527021220UL), (size_t)(0UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 166 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 12 const int ____chimes_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 104 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 49 const int ____chimes_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15092453942527021252UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 182 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 25 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(15092453942527021220UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 170 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 12 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 108 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 49 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15092453942527021252UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 186 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 13 5 int b; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 13 10 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 165  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 103  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 4 169  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 8 107  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 15 5  ({  calling((void*)foo, -1, 0UL, 0, 2, (size_t)(15092453942527021228UL), (size_t)(0UL)); (foo)(&b, bar() + 9); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 15 22 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 17 5  ({  call_lbl_2:  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 17 16 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 13 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 13 10 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 179  ; int b;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 12 183  ; int b;
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  

@@ -2269,20 +2269,20 @@ static void ljPrint(FILE* file, BasePotential* pot);
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy(BasePotential** inppot)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(14970133447157970257UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(14970133447157970257UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_disable0); return;; };
+ if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;; };
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_disable0); return;; };
+ if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;; };
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  free_wrapper(pot, 14970133447157970243UL);
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  *inppot = __null;
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_disable0); return;
+ rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2290,7 +2290,7 @@ void ljDestroy(BasePotential** inppot)
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 BasePotential* initLjPot(void)
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  LjPotential *pot; pot = ((LjPotential *)malloc_wrapper(sizeof(LjPotential), 14970133447157970263UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy))) ;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2319,14 +2319,14 @@ BasePotential* initLjPot(void)
  pot->atomicNo = 29;
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- rm_stack(true, 14970133447157970263UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_disable1); return (BasePotential*) pot;
+ rm_stack(true, 14970133447157970263UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1); return (BasePotential*) pot;
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint(FILE* file, BasePotential* pot)
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(14970133447157970853UL), (size_t)(14970133447157970854UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(14970133447157970853UL), (size_t)(14970133447157970854UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 131 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  LjPotential *ljPot; ljPot = ((LjPotential *)pot) ;
 # 132 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2348,12 +2348,12 @@ void ljPrint(FILE* file, BasePotential* pot)
 # 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
 # 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_disable2); }
+rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2); }
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce(SimFlat* s)
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-{const int ____chimes_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(14970133447157970504UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int m2;
+{const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(14970133447157970504UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int m2;
 real_t fr;
 real_t eLocal;
 real_t r6;
@@ -2525,7 +2525,7 @@ real_t epsilon;
  s->ePotential = ePot;
 # 232 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 233 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
- rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_disable3); return 0;
+ rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3); return 0;
 # 234 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 

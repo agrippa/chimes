@@ -1950,7 +1950,7 @@ int builtWithMpi(void);
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 Command parseCommandLine(int argc, char** argv)
 # 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-{const int ____chimes_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(6351733837270304242UL), (size_t)(0UL), (size_t)(6351733837270304244UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int help;
+{const int ____chimes_did_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(6351733837270304242UL), (size_t)(0UL), (size_t)(6351733837270304244UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int help;
  if (____must_checkpoint_parseCommandLine_help_0) { register_stack_vars(1, "parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(33): { goto call_lbl_33; } default: { chimes_error(); } } } ; ;
 # 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
     Command cmd; ;
@@ -2063,16 +2063,16 @@ Command parseCommandLine(int argc, char** argv)
     ({ call_lbl_33: calling((void*)freeArgs, 33, 0UL, 0, 0); (freeArgs)(); }) ;
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_disable0); return cmd;
+   rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); return cmd;
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 }
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 void printCmdYaml(FILE* file, Command* cmd)
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-{const int ____chimes_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(6351733837270304331UL), (size_t)(6351733837270304332UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(6351733837270304331UL), (size_t)(6351733837270304332UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(____alias_loc_id_1); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_disable1); return;; };
+   alias_group_changed(____alias_loc_id_1); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
 # 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2140,7 +2140,7 @@ void printCmdYaml(FILE* file, Command* cmd)
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fflush(file);
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_disable1); }
+rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); }
 
 
 static int module_init() {

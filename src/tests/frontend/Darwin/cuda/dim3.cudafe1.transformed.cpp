@@ -26817,14 +26817,14 @@ extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char * obj_name, void (* fp)(void *));
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
  register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
  blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
  ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
+rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 }
 # 1 "dim3.cudafe1.stub.c"

@@ -1686,16 +1686,16 @@ static TimerGlobal perfGlobal;
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStart(const enum TimerHandle handle)
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfTimer[handle].start = ({ calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) ;
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_13, ____chimes_disable0); }
+rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_13, ____chimes_did_disable0); }
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void profileStop(const enum TimerHandle handle)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfTimer[handle].count += 1;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1705,7 +1705,7 @@ void profileStop(const enum TimerHandle handle)
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfTimer[handle].elapsed += delta;
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_15, ____chimes_disable1); }
+rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_15, ____chimes_did_disable1); }
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1713,14 +1713,14 @@ rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 double getElapsedTime(const enum TimerHandle handle)
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  double etime; etime = ( ({ calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) * (double)perfTimer[handle].elapsed) ;
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  perfTimer[handle].elapsed = 0;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_16, ____chimes_disable2); return etime;
+ rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_16, ____chimes_did_disable2); return etime;
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 # 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1731,7 +1731,7 @@ double getElapsedTime(const enum TimerHandle handle)
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResults(int nGlobalAtoms, int printRate)
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0) ; double totalTime;
+{const int ____chimes_did_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0) ; double totalTime;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(3, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
@@ -1740,7 +1740,7 @@ double tick;
  ({ call_lbl_1: calling((void*)timerStats, 1, 0UL, ____alias_loc_id_0, 0); (timerStats)(); }) ;
 # 124 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_18, ____chimes_disable3); return;; };
+ if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_18, ____chimes_did_disable3); return;; };
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1814,16 +1814,16 @@ double tick;
 # 177 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(__stdoutp, "---------------------------------------------------\n\n");
 # 178 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_18, ____chimes_disable3); }
+rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_18, ____chimes_did_disable3); }
 # 179 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 180 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void printPerformanceResultsYaml(FILE* file)
 # 181 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(17287627617634550259UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; double loopTime;
+{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(17287627617634550259UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(2, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- alias_group_changed(____alias_loc_id_11); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_20, ____chimes_disable4); return;; };
+ alias_group_changed(____alias_loc_id_11); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_20, ____chimes_did_disable4); return;; };
 # 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  tick = ( ({ calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) ) ;
@@ -1916,12 +1916,12 @@ double tick;
 # 231 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  fprintf(file, "\n");
 # 232 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_20, ____chimes_disable4); }
+rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_20, ____chimes_did_disable4); }
 # 243 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 243 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static uint64_t getTime(void)
 # 244 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0) ; struct timeval ptime;
+{const int ____chimes_did_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0) ; struct timeval ptime;
  if (____must_checkpoint_getTime_ptime_0) { register_stack_vars(1, "getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 245 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  ;
@@ -1933,7 +1933,7 @@ static uint64_t getTime(void)
  t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
 # 249 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 250 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_14, ____chimes_disable5); return t;
+ rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_14, ____chimes_did_disable5); return t;
 # 251 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 # 252 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1944,11 +1944,11 @@ static uint64_t getTime(void)
 # 257 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 static double getTick(void)
 # 258 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 259 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  double seconds_per_cycle; seconds_per_cycle = (9.9999999999999995E-7) ;
 # 260 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
- rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_17, ____chimes_disable6); return seconds_per_cycle;
+ rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_17, ____chimes_did_disable6); return seconds_per_cycle;
 # 261 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 # 262 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -1956,7 +1956,7 @@ static double getTick(void)
 # 264 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 void timerStats(void)
 # 265 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0) ; double temp;
+{const int ____chimes_did_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0) ; double temp;
 RankReduceData reduceRecvBuf[11];
 RankReduceData reduceSendBuf[11];
 double recvBuf[11];
@@ -2035,7 +2035,7 @@ double sendBuf[11];
 # 307 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
  } }
 # 308 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_19, ____chimes_disable7); }
+rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_19, ____chimes_did_disable7); }
 
 
 static int module_init() {

@@ -19,14 +19,14 @@ ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 163 9 len=4 free
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 163 20 , 11766212510299734345UL
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 165 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 165 10 , 11766212510299734343UL
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 21 const int ____chimes_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(11766212510299734727UL), (size_t)(11766212510299734728UL), (size_t)(11766212510299734729UL), (size_t)(11766212510299734730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 87 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 115 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_disable1); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 167 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_disable1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 36 const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(11766212510299734361UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 21 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(11766212510299734727UL), (size_t)(11766212510299734728UL), (size_t)(11766212510299734729UL), (size_t)(11766212510299734730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 87 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 115 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_did_disable1); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 167 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 36 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(11766212510299734361UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 36 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 22 const int ____chimes_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(11766212510299734727UL), (size_t)(11766212510299734728UL), (size_t)(11766212510299734729UL), (size_t)(11766212510299734730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 356 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 22 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(11766212510299734727UL), (size_t)(11766212510299734728UL), (size_t)(11766212510299734729UL), (size_t)(11766212510299734730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 360 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 56 5  size_t total_iters;  total_iters = (nz * ny * nx) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 56 38 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 60 9  int z;  z = ((i / (ny * nx))) ;
@@ -57,8 +57,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 76 13  int 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 77 28 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 78 13  int x_neg_offset;  x_neg_offset = ((((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x - d)))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 79 28 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 52 const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11766212510299734361UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 185 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 52 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11766212510299734361UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 189 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 90 5  config conf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 90 16 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 94 5  float dx;  dx = (20.F) ;
@@ -108,7 +108,7 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 162 19
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 56 54 ;  { call_lbl_2:  bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 59 46 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 86 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  reenable_current_thread(____chimes_disable0);  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 54 359  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 91 5  ({  call_lbl_2:  calling((void*)setup_config, 2, 0UL, ____alias_loc_id_0, 3, (size_t)(11766212510299733993UL), (size_t)(0UL), (size_t)(11766212510299734361UL)); (setup_config)(&conf, argc, argv); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 91 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 92 5  ({  call_lbl_3:  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 3, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) 
@@ -171,7 +171,7 @@ RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 145 47
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 145 63 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 149 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 149 22 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 182  ; float point_rate;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 89 186  ; float point_rate;
 double elapsed_s;
 float *tmp;
 int src_offset;

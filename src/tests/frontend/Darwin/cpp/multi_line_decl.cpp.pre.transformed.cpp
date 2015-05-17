@@ -1740,14 +1740,14 @@ extern void register_custom_init_handler(const char *obj_name,
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-int foo(int a, int b) {const int ____chimes_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int foo(int a, int b) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_disable0); return a + b;
+ rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return a + b;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)) ; int *ptr;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1300474033434903714UL)) ; int *ptr;
 int a;
  register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
@@ -1761,7 +1761,7 @@ int a;
  ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(ptr[0], a); }) ;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(0UL), (size_t)(0UL)); (foo)(ptr[0], a); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 

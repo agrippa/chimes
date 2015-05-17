@@ -1747,7 +1747,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)) ; int a;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)) ; int a;
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  a = (0) ;
@@ -1764,7 +1764,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 }
 

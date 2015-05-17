@@ -1,13 +1,13 @@
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 32 const int ____chimes_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_disable1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 const int ____chimes_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 32 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 8 1 rm_stack(false, 0UL, "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 12 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 33 const int ____chimes_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 185 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 49 const int ____chimes_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 192 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 184  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_canc), "haha_this_sux_part_canc", &____must_manage_haha_this_sux_part_canc, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 189 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 49 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 196 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 188  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5  ({  calling((void*)haha_this_sux_part_canc, -1, 0UL, 0, 0); (haha_this_sux_part_canc)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 29 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 191  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 195  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

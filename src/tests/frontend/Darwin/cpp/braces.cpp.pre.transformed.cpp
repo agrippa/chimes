@@ -1740,7 +1740,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
  if (argc == 0) {printf("hello there\n"); };
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
@@ -1751,7 +1751,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
  { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_disable0); return 0;
+ rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 }
 

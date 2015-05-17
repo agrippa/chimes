@@ -1,8 +1,8 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 19 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 33 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 19 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 33 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 49 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 181 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 49 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 185 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 6 5  int a;  a = (3) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 6 14 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 7 5  int b;  b = (4) ;
@@ -21,4 +21,4 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 1
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 15 24 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 10 5 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 13 9 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 178  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp 5 182  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  

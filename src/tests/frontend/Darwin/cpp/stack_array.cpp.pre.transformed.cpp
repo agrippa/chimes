@@ -1748,7 +1748,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7686840342758601679UL)) ; int a[] = { 1, 2, 3, 4, 5 };
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7686840342758601679UL)) ; int a[] = { 1, 2, 3, 4, 5 };
  register_stack_vars(1, "main|a|0", (int *)0x0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
  ;
@@ -1772,7 +1772,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
  (__builtin_expect(!(a[4] == 1), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp", 15, "a[4] == 1") : (void)0);
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
- rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp"
 }
 

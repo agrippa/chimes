@@ -2267,7 +2267,7 @@ static int sortAtomsById(const void* a, const void* b);
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 HaloExchange* initAtomHaloExchange(Domain* domain, LinkCell* boxes)
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable0 = new_stack((void *)(&initAtomHaloExchange), "initAtomHaloExchange", &____must_manage_initAtomHaloExchange, 2, 2, (size_t)(18379826249005484718UL), (size_t)(18379826249005484479UL), "initAtomHaloExchange|domain|0", &____must_checkpoint_initAtomHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0, "initAtomHaloExchange|boxes|0", &____must_checkpoint_initAtomHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0) ; AtomExchangeParms *parms;
+{const int ____chimes_did_disable0 = new_stack((void *)(&initAtomHaloExchange), "initAtomHaloExchange", &____must_manage_initAtomHaloExchange, 2, 2, (size_t)(18379826249005484718UL), (size_t)(18379826249005484479UL), "initAtomHaloExchange|domain|0", &____must_checkpoint_initAtomHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0, "initAtomHaloExchange|boxes|0", &____must_checkpoint_initAtomHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0) ; AtomExchangeParms *parms;
 int maxSize;
 int size2;
 int size1;
@@ -2346,14 +2346,14 @@ HaloExchange *hh;
 # 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    hh->parms = parms;
 # 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(true, 18379826249005484463UL, "initAtomHaloExchange", &____must_manage_initAtomHaloExchange, ____alias_loc_id_21, ____chimes_disable0); return hh;
+   rm_stack(true, 18379826249005484463UL, "initAtomHaloExchange", &____must_manage_initAtomHaloExchange, ____alias_loc_id_21, ____chimes_did_disable0); return hh;
 # 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 HaloExchange* initForceHaloExchange(Domain* domain, LinkCell* boxes)
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable1 = new_stack((void *)(&initForceHaloExchange), "initForceHaloExchange", &____must_manage_initForceHaloExchange, 2, 1, (size_t)(18379826249005485634UL), (size_t)(18379826249005485520UL), "initForceHaloExchange|boxes|0", &____must_checkpoint_initForceHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0) ; int ii;
+{const int ____chimes_did_disable1 = new_stack((void *)(&initForceHaloExchange), "initForceHaloExchange", &____must_manage_initForceHaloExchange, 2, 1, (size_t)(18379826249005485634UL), (size_t)(18379826249005485520UL), "initForceHaloExchange|boxes|0", &____must_checkpoint_initForceHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0) ; int ii;
 ForceExchangeParms *parms;
 int maxSize;
 int size2;
@@ -2414,14 +2414,14 @@ HaloExchange *hh;
 # 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    hh->parms = parms;
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(true, 18379826249005485513UL, "initForceHaloExchange", &____must_manage_initForceHaloExchange, ____alias_loc_id_27, ____chimes_disable1); return hh;
+   rm_stack(true, 18379826249005485513UL, "initForceHaloExchange", &____must_manage_initForceHaloExchange, ____alias_loc_id_27, ____chimes_did_disable1); return hh;
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void destroyHaloExchange(HaloExchange** haloExchange)
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(18379826249005486357UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&destroyHaloExchange), "destroyHaloExchange", &____must_manage_destroyHaloExchange, 1, 0, (size_t)(18379826249005486357UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    free_wrapper((*haloExchange)->parms, 18379826249005486348UL);
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2429,23 +2429,23 @@ void destroyHaloExchange(HaloExchange** haloExchange)
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    *haloExchange = __null;
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "destroyHaloExchange", &____must_manage_destroyHaloExchange, ____alias_loc_id_33, ____chimes_disable2); }
+rm_stack(false, 0UL, "destroyHaloExchange", &____must_manage_destroyHaloExchange, ____alias_loc_id_33, ____chimes_did_disable2); }
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void haloExchange(HaloExchange* haloExchangeData, void* data)
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable3 = new_stack((void *)(&haloExchange), "haloExchange", &____must_manage_haloExchange, 2, 2, (size_t)(18379826249005486382UL), (size_t)(18379826249005486383UL), "haloExchange|haloExchangeData|0", &____must_checkpoint_haloExchange_haloExchangeData_0, "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", &____must_checkpoint_haloExchange_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0) ; int iAxis;
+{const int ____chimes_did_disable3 = new_stack((void *)(&haloExchange), "haloExchange", &____must_manage_haloExchange, 2, 2, (size_t)(18379826249005486382UL), (size_t)(18379826249005486383UL), "haloExchange|haloExchangeData|0", &____must_checkpoint_haloExchange_haloExchangeData_0, "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", &____must_checkpoint_haloExchange_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0) ; int iAxis;
  if (____must_checkpoint_haloExchange_iAxis_0) { register_stack_vars(1, "haloExchange|iAxis|0", &____must_checkpoint_haloExchange_iAxis_0, "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 255 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    { for ( iAxis = (0) ;iAxis < 3; ++iAxis) { ({ call_lbl_1: calling((void*)exchangeData, 1, 0UL, 0, 3, (size_t)(18379826249005486382UL), (size_t)(18379826249005486383UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) ; } };
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "haloExchange", &____must_manage_haloExchange, ____alias_loc_id_34, ____chimes_disable3); }
+rm_stack(false, 0UL, "haloExchange", &____must_manage_haloExchange, ____alias_loc_id_34, ____chimes_did_disable3); }
 # 258 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 259 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 260 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 HaloExchange* initHaloExchange(Domain* domain)
 # 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable4 = new_stack((void *)(&initHaloExchange), "initHaloExchange", &____must_manage_initHaloExchange, 1, 1, (size_t)(18379826249005484771UL), "initHaloExchange|domain|0", &____must_checkpoint_initHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0) ; HaloExchange *hh;
+{const int ____chimes_did_disable4 = new_stack((void *)(&initHaloExchange), "initHaloExchange", &____must_manage_initHaloExchange, 1, 1, (size_t)(18379826249005484771UL), "initHaloExchange|domain|0", &____must_checkpoint_initHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0) ; HaloExchange *hh;
  if (____must_checkpoint_initHaloExchange_hh_0) { register_stack_vars(1, "initHaloExchange|hh|0", &____must_checkpoint_initHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
 # 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       hh = ((HaloExchange *)malloc_wrapper(sizeof(HaloExchange), 18379826249005484727UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms))) ;
@@ -2467,14 +2467,14 @@ HaloExchange* initHaloExchange(Domain* domain)
    hh->bufCapacity = 0;
 # 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(true, 18379826249005484727UL, "initHaloExchange", &____must_manage_initHaloExchange, ____alias_loc_id_22, ____chimes_disable4); return hh;
+   rm_stack(true, 18379826249005484727UL, "initHaloExchange", &____must_manage_initHaloExchange, ____alias_loc_id_22, ____chimes_did_disable4); return hh;
 # 274 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void exchangeData(HaloExchange* haloExchange, void* data, int iAxis)
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable5 = new_stack((void *)(&exchangeData), "exchangeData", (int *)0, 3, 2, (size_t)(18379826249005486490UL), (size_t)(18379826249005486515UL), (size_t)(0UL), "exchangeData|haloExchange|0", &____must_checkpoint_exchangeData_haloExchange_0, "%struct.HaloExchangeSt*", (void *)(&haloExchange), (size_t)8, 1, 0, 0, "exchangeData|data|0", &____must_checkpoint_exchangeData_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0) ; int nRecvP;
+{const int ____chimes_did_disable5 = new_stack((void *)(&exchangeData), "exchangeData", (int *)0, 3, 2, (size_t)(18379826249005486490UL), (size_t)(18379826249005486515UL), (size_t)(0UL), "exchangeData|haloExchange|0", &____must_checkpoint_exchangeData_haloExchange_0, "%struct.HaloExchangeSt*", (void *)(&haloExchange), (size_t)8, 1, 0, 0, "exchangeData|data|0", &____must_checkpoint_exchangeData_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0) ; int nRecvP;
 int nRecvM;
 int nbrRankP;
 int nbrRankM;
@@ -2536,12 +2536,12 @@ int faceM;
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    free_wrapper(sendBufM, 18379826249005486486UL);
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_disable5); }
+rm_stack(false, 0UL, "exchangeData", (int *)0x0, 0, ____chimes_did_disable5); }
 # 334 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 334 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 int* mkAtomCellList(LinkCell* boxes, int iFace, const int nCells)
 # 335 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable6 = new_stack((void *)(&mkAtomCellList), "mkAtomCellList", &____must_manage_mkAtomCellList, 3, 2, (size_t)(18379826249005485422UL), (size_t)(0UL), (size_t)(0UL), "mkAtomCellList|boxes|0", &____must_checkpoint_mkAtomCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkAtomCellList|nCells|0", &____must_checkpoint_mkAtomCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0) ; int iz;
+{const int ____chimes_did_disable6 = new_stack((void *)(&mkAtomCellList), "mkAtomCellList", &____must_manage_mkAtomCellList, 3, 2, (size_t)(18379826249005485422UL), (size_t)(0UL), (size_t)(0UL), "mkAtomCellList|boxes|0", &____must_checkpoint_mkAtomCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkAtomCellList|nCells|0", &____must_checkpoint_mkAtomCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0) ; int iz;
 int iy;
 int ix;
 int count;
@@ -2599,14 +2599,14 @@ int *list;
 # 359 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 359, "count == nCells") : (void)0);
 # 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(true, 18379826249005485420UL, "mkAtomCellList", &____must_manage_mkAtomCellList, ____alias_loc_id_26, ____chimes_disable6); return list;
+   rm_stack(true, 18379826249005485420UL, "mkAtomCellList", &____must_manage_mkAtomCellList, ____alias_loc_id_26, ____chimes_did_disable6); return list;
 # 361 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf)
 # 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable7 = new_stack((void *)(&loadAtomsBuffer), "loadAtomsBuffer", &____must_manage_loadAtomsBuffer, 4, 0, (size_t)(18379826249005485060UL), (size_t)(18379826249005485061UL), (size_t)(0UL), (size_t)(18379826249005485063UL)) ; real3 shift;
+{const int ____chimes_did_disable7 = new_stack((void *)(&loadAtomsBuffer), "loadAtomsBuffer", &____must_manage_loadAtomsBuffer, 4, 0, (size_t)(18379826249005485060UL), (size_t)(18379826249005485061UL), (size_t)(0UL), (size_t)(18379826249005485063UL)) ; real3 shift;
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 372 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     AtomExchangeParms *parms; parms = ((AtomExchangeParms *)vparms) ;
@@ -2667,14 +2667,14 @@ int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf)
 # 401 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 402 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(false, 0UL, "loadAtomsBuffer", &____must_manage_loadAtomsBuffer, ____alias_loc_id_23, ____chimes_disable7); return nBuf*sizeof(AtomMsg);
+   rm_stack(false, 0UL, "loadAtomsBuffer", &____must_manage_loadAtomsBuffer, ____alias_loc_id_23, ____chimes_did_disable7); return nBuf*sizeof(AtomMsg);
 # 403 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf)
 # 416 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable8 = new_stack((void *)(&unloadAtomsBuffer), "unloadAtomsBuffer", &____must_manage_unloadAtomsBuffer, 5, 0, (size_t)(18379826249005485215UL), (size_t)(18379826249005485216UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005485219UL)) ; real_t pz;
+{const int ____chimes_did_disable8 = new_stack((void *)(&unloadAtomsBuffer), "unloadAtomsBuffer", &____must_manage_unloadAtomsBuffer, 5, 0, (size_t)(18379826249005485215UL), (size_t)(18379826249005485216UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005485219UL)) ; real_t pz;
 real_t py;
 real_t px;
 real_t rz;
@@ -2723,12 +2723,12 @@ SimFlat *s;
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "unloadAtomsBuffer", &____must_manage_unloadAtomsBuffer, ____alias_loc_id_24, ____chimes_disable8); }
+rm_stack(false, 0UL, "unloadAtomsBuffer", &____must_manage_unloadAtomsBuffer, ____alias_loc_id_24, ____chimes_did_disable8); }
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void destroyAtomsExchange(void* vparms)
 # 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable9 = new_stack((void *)(&destroyAtomsExchange), "destroyAtomsExchange", &____must_manage_destroyAtomsExchange, 1, 0, (size_t)(18379826249005485257UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&destroyAtomsExchange), "destroyAtomsExchange", &____must_manage_destroyAtomsExchange, 1, 0, (size_t)(18379826249005485257UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 439 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     AtomExchangeParms *parms; parms = ((AtomExchangeParms *)vparms) ;
 # 440 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2743,12 +2743,12 @@ void destroyAtomsExchange(void* vparms)
 # 445 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 446 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "destroyAtomsExchange", &____must_manage_destroyAtomsExchange, ____alias_loc_id_25, ____chimes_disable9); }
+rm_stack(false, 0UL, "destroyAtomsExchange", &____must_manage_destroyAtomsExchange, ____alias_loc_id_25, ____chimes_did_disable9); }
 # 455 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 455 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 int* mkForceSendCellList(LinkCell* boxes, int face, int nCells)
 # 456 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable10 = new_stack((void *)(&mkForceSendCellList), "mkForceSendCellList", &____must_manage_mkForceSendCellList, 3, 2, (size_t)(18379826249005486142UL), (size_t)(0UL), (size_t)(0UL), "mkForceSendCellList|boxes|0", &____must_checkpoint_mkForceSendCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceSendCellList|nCells|0", &____must_checkpoint_mkForceSendCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0) ; int iz;
+{const int ____chimes_did_disable10 = new_stack((void *)(&mkForceSendCellList), "mkForceSendCellList", &____must_manage_mkForceSendCellList, 3, 2, (size_t)(18379826249005486142UL), (size_t)(0UL), (size_t)(0UL), "mkForceSendCellList|boxes|0", &____must_checkpoint_mkForceSendCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceSendCellList|nCells|0", &____must_checkpoint_mkForceSendCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0) ; int iz;
 int iy;
 int ix;
 int count;
@@ -2837,14 +2837,14 @@ int *list;
 # 496 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 496, "count == nCells") : (void)0);
 # 497 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(true, 18379826249005486140UL, "mkForceSendCellList", &____must_manage_mkForceSendCellList, ____alias_loc_id_31, ____chimes_disable10); return list;
+   rm_stack(true, 18379826249005486140UL, "mkForceSendCellList", &____must_manage_mkForceSendCellList, ____alias_loc_id_31, ____chimes_did_disable10); return list;
 # 498 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 507 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 507 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 int* mkForceRecvCellList(LinkCell* boxes, int face, int nCells)
 # 508 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable11 = new_stack((void *)(&mkForceRecvCellList), "mkForceRecvCellList", &____must_manage_mkForceRecvCellList, 3, 2, (size_t)(18379826249005486339UL), (size_t)(0UL), (size_t)(0UL), "mkForceRecvCellList|boxes|0", &____must_checkpoint_mkForceRecvCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceRecvCellList|nCells|0", &____must_checkpoint_mkForceRecvCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0) ; int iz;
+{const int ____chimes_did_disable11 = new_stack((void *)(&mkForceRecvCellList), "mkForceRecvCellList", &____must_manage_mkForceRecvCellList, 3, 2, (size_t)(18379826249005486339UL), (size_t)(0UL), (size_t)(0UL), "mkForceRecvCellList|boxes|0", &____must_checkpoint_mkForceRecvCellList_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0, "mkForceRecvCellList|nCells|0", &____must_checkpoint_mkForceRecvCellList_nCells_0, "i32", (void *)(&nCells), (size_t)4, 0, 0, 0) ; int iz;
 int iy;
 int ix;
 int count;
@@ -2933,7 +2933,7 @@ int *list;
 # 548 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 548, "count == nCells") : (void)0);
 # 549 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(true, 18379826249005486337UL, "mkForceRecvCellList", &____must_manage_mkForceRecvCellList, ____alias_loc_id_32, ____chimes_disable11); return list;
+   rm_stack(true, 18379826249005486337UL, "mkForceRecvCellList", &____must_manage_mkForceRecvCellList, ____alias_loc_id_32, ____chimes_did_disable11); return list;
 # 550 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 551 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2946,7 +2946,7 @@ int *list;
 # 558 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 int loadForceBuffer(void* vparms, void* vdata, int face, char* charBuf)
 # 559 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable12 = new_stack((void *)(&loadForceBuffer), "loadForceBuffer", &____must_manage_loadForceBuffer, 4, 0, (size_t)(18379826249005485755UL), (size_t)(18379826249005485756UL), (size_t)(0UL), (size_t)(18379826249005485758UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&loadForceBuffer), "loadForceBuffer", &____must_manage_loadForceBuffer, 4, 0, (size_t)(18379826249005485755UL), (size_t)(18379826249005485756UL), (size_t)(0UL), (size_t)(18379826249005485758UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 560 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     ForceExchangeParms *parms; parms = ((ForceExchangeParms *)vparms) ;
 # 561 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2981,7 +2981,7 @@ int loadForceBuffer(void* vparms, void* vdata, int face, char* charBuf)
 # 576 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 577 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(false, 0UL, "loadForceBuffer", &____must_manage_loadForceBuffer, ____alias_loc_id_28, ____chimes_disable12); return nBuf*sizeof(ForceMsg);
+   rm_stack(false, 0UL, "loadForceBuffer", &____must_manage_loadForceBuffer, ____alias_loc_id_28, ____chimes_did_disable12); return nBuf*sizeof(ForceMsg);
 # 578 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 # 579 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2994,7 +2994,7 @@ int loadForceBuffer(void* vparms, void* vdata, int face, char* charBuf)
 # 586 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void unloadForceBuffer(void* vparms, void* vdata, int face, int bufSize, char* charBuf)
 # 587 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable13 = new_stack((void *)(&unloadForceBuffer), "unloadForceBuffer", &____must_manage_unloadForceBuffer, 5, 0, (size_t)(18379826249005485812UL), (size_t)(18379826249005485906UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005485909UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&unloadForceBuffer), "unloadForceBuffer", &____must_manage_unloadForceBuffer, 5, 0, (size_t)(18379826249005485812UL), (size_t)(18379826249005485906UL), (size_t)(0UL), (size_t)(0UL), (size_t)(18379826249005485909UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 588 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     ForceExchangeParms *parms; parms = ((ForceExchangeParms *)vparms) ;
 # 589 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3033,12 +3033,12 @@ void unloadForceBuffer(void* vparms, void* vdata, int face, int bufSize, char* c
 # 606 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    (__builtin_expect(!(iBuf == bufSize/ sizeof(ForceMsg)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 606, "iBuf == bufSize/ sizeof(ForceMsg)") : (void)0);
 # 607 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "unloadForceBuffer", &____must_manage_unloadForceBuffer, ____alias_loc_id_29, ____chimes_disable13); }
+rm_stack(false, 0UL, "unloadForceBuffer", &____must_manage_unloadForceBuffer, ____alias_loc_id_29, ____chimes_did_disable13); }
 # 608 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 609 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void destroyForceExchange(void* vparms)
 # 610 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable14 = new_stack((void *)(&destroyForceExchange), "destroyForceExchange", &____must_manage_destroyForceExchange, 1, 0, (size_t)(18379826249005485947UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&destroyForceExchange), "destroyForceExchange", &____must_manage_destroyForceExchange, 1, 0, (size_t)(18379826249005485947UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 611 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     ForceExchangeParms *parms; parms = ((ForceExchangeParms *)vparms) ;
 # 612 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3053,12 +3053,12 @@ void destroyForceExchange(void* vparms)
 # 617 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 618 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "destroyForceExchange", &____must_manage_destroyForceExchange, ____alias_loc_id_30, ____chimes_disable14); }
+rm_stack(false, 0UL, "destroyForceExchange", &____must_manage_destroyForceExchange, ____alias_loc_id_30, ____chimes_did_disable14); }
 # 628 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 628 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void sortAtomsInCell(Atoms* atoms, LinkCell* boxes, int iBox)
 # 629 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(18379826249005486831UL), (size_t)(18379826249005486832UL), (size_t)(0UL)) ; if (____chimes_replaying) { goto lbl_0; } ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(18379826249005486831UL), (size_t)(18379826249005486832UL), (size_t)(0UL)) ; if (____chimes_replaying) { goto lbl_0; } ; ;
 # 630 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     int nAtoms; nAtoms = (boxes->nAtoms[iBox]) ;
 # 631 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3117,7 +3117,7 @@ void sortAtomsInCell(Atoms* atoms, LinkCell* boxes, int iBox)
    } }
 # 659 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 660 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-rm_stack(false, 0UL, "sortAtomsInCell", &____must_manage_sortAtomsInCell, ____alias_loc_id_35, ____chimes_disable15); }
+rm_stack(false, 0UL, "sortAtomsInCell", &____must_manage_sortAtomsInCell, ____alias_loc_id_35, ____chimes_did_disable15); }
 # 661 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 662 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 663 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3127,7 +3127,7 @@ rm_stack(false, 0UL, "sortAtomsInCell", &____must_manage_sortAtomsInCell, ____al
 # 667 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 int sortAtomsById(const void* a, const void* b)
 # 668 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-{const int ____chimes_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(18379826249005486881UL), (size_t)(18379826249005486882UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(18379826249005486881UL), (size_t)(18379826249005486882UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 669 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     int aId; aId = (((AtomMsg *)a)->gid) ;
 # 670 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3136,9 +3136,9 @@ int sortAtomsById(const void* a, const void* b)
    (__builtin_expect(!(aId != bId), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 671, "aId != bId") : (void)0);
 # 672 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 673 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (aId < bId) {rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_36, ____chimes_disable16); return -1;; };
+   if (aId < bId) {rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_36, ____chimes_did_disable16); return -1;; };
 # 675 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_36, ____chimes_disable16); return 1;
+   rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_36, ____chimes_did_disable16); return 1;
 # 676 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 }
 

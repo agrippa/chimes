@@ -19,14 +19,14 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 9 len=4 free_wr
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 146 20 , 636351188801416934UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 148 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 148 10 , 636351188801416932UL
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 73 const int ____chimes_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 73 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 100 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_disable1); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 150 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_disable1); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 36 const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 73 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 73 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 100 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_did_disable1); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 150 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_7, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 36 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 36 init_chimes(); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 74 const int ____chimes_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 369 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 74 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 9, 0, (size_t)(636351188801417188UL), (size_t)(636351188801417189UL), (size_t)(636351188801417190UL), (size_t)(636351188801417191UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 373 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 55 5 {  int y; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 72 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 55 10  y = (0) ;
@@ -53,8 +53,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 64 17  int x_p
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 64 86 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 65 17  int x_neg_offset;  x_neg_offset = ((((radius) + (y)) * (dimx) + ((radius) + (x - d)))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 65 86 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 52 const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 183 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 52 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(636351188801416950UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 187 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 5  config conf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 76 16 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 80 5  float dx;  dx = (20.F) ;
@@ -99,7 +99,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 145 5 {  int i;
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 147 5  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 145 10  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 145 19 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 368  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 53 372  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 5  ({  call_lbl_2:  calling((void*)setup_config, 2, 0UL, ____alias_loc_id_0, 3, (size_t)(636351188801416612UL), (size_t)(0UL), (size_t)(636351188801416950UL)); (setup_config)(&conf, argc, argv); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 77 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 78 5  ({  call_lbl_3:  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 3, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) 
@@ -160,7 +160,7 @@ RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 47
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 63 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 133 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 133 22 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 180  ; float point_rate;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/iso2d.cpp 75 184  ; float point_rate;
 double elapsed_s;
 float *tmp;
 int src_offset;
