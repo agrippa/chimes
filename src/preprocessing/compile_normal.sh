@@ -111,9 +111,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     if [[ ${EXT} == "cpp" || ${EXT} == "cc" || ${EXT} == "c" ]]; then
-        ${GXX} --compile ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
+        ${GXX} -c ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
     elif [[ ${EXT} == "cu" ]]; then
-        nvcc -arch=sm_20 --compile ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
+        nvcc -arch=sm_20 -c ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
                    ${INCLUDES}
     else
         echo Unsupported file format: ${EXT}
