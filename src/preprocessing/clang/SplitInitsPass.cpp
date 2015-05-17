@@ -59,7 +59,7 @@ void SplitInitsPass::VisitStmt(const clang::Stmt *s) {
                 if (clang::VarDecl *v = clang::dyn_cast<clang::VarDecl>(dd)) {
 
                     // If this local variable declaration has an initializer
-                    if (v->getName().str().find("____chimes_disable") != 0 && 
+                    if (v->getName().str().find("____chimes_did_disable") != 0 && 
                             v->hasInit() &&
                             !clang::isa<clang::InitListExpr>(v->getInit())) {
                         clang::SourceLocation decl_start = v->getLocStart();

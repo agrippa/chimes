@@ -24,7 +24,7 @@ static std::string get_cond_management_varname(std::string func) {
 std::string StartExitPass::get_unique_disable_varname() {
     int id = count_disable_variables++;
     std::stringstream ss;
-    ss << "____chimes_disable" << id;
+    ss << "____chimes_did_disable" << id;
     return ss.str();
 }
 
