@@ -1,4 +1,4 @@
-main 0 1 5 6 7 8 9 10 11 12 13 49
+main 0 1 5 6 7 8 9 10 11 12 13 44 45 46 47 48 49
 dim3 0 737 738 739 740
 fwd_kernel 0
 __device_stub__Z10fwd_kernelPfS_S_S_iiii 0

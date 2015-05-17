@@ -478,7 +478,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1773,16 +1773,16 @@ void bar(int *A, int *B) {const int ____chimes_disable0 = new_stack((void *)(&ba
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)) ; int *B;
 int *A;
- register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- ({ calling((void*)bar, -1, 0UL, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) ;
+ ({ calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) ;
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  (__builtin_expect(!(A[0] == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp", 24, "A[0] == 3") : (void)0);

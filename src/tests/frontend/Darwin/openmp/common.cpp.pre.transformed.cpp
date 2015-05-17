@@ -483,7 +483,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -2661,7 +2661,7 @@ float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) {const int
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
         }
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-         ({ calling((void*)ricker_wavelet, -1, 0UL, 4, (size_t)(8150615911090656359UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(src_samples[i], nsteps, dt, srcs[i].freq); }) ;
+         ({ calling((void*)ricker_wavelet, -1, 0UL, 0, 4, (size_t)(8150615911090656359UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (ricker_wavelet)(src_samples[i], nsteps, dt, srcs[i].freq); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2806,7 +2806,7 @@ void finish_progress() {const int ____chimes_disable7 = new_stack((void *)(&fini
     }
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-     ({ calling((void*)update_progress, -1, 0UL, 1, (size_t)(0UL)); (update_progress)(progress_goal); }) ;
+     ({ calling((void*)update_progress, -1, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(progress_goal); }) ;
 # 223 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     fprintf(__stderrp, "\n");
 # 224 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"

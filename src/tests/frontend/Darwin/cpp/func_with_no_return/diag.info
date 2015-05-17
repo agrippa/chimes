@@ -8,6 +8,6 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 49 const int ____chimes_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1556987170722293719UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 192 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 184  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5  ({  calling((void*)haha_this_sux_part_canc, -1, 0UL, 0); (haha_this_sux_part_canc)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5  ({  calling((void*)haha_this_sux_part_canc, -1, 0UL, 0, 0); (haha_this_sux_part_canc)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 191  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

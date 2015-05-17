@@ -9,6 +9,7 @@
 #include <llvm/ADT/ArrayRef.h>
 
 extern DesiredInsertions *insertions;
+extern std::set<std::string> *ignorable;
 
 static std::vector<MatchedLocation *> already_matched;
 
@@ -59,49 +60,64 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                     start_loc.getFilename());
 
             // Get the list of alias groups changed at this location
-            unsigned loc_id = insertions->get_loc_id(
+            StateChangeInsertion *state = insertions->get_matching(
                     start_loc.getLine(), start_loc.getColumn(),
                     start_loc.getFilename());
+            assert(state);
+            unsigned loc_id = state->get_id();
 
-            // Generate the alias_group_changed callback
-            std::stringstream ss;
-            ss << "alias_group_changed(" << \
-                insertions->get_alias_loc_var(loc_id) << ")";
+            bool do_insert = true;
+            if (const CallExpr *call = dyn_cast<CallExpr>(s)) {
+                std::string callee_name = get_callee_name(call);
+                assert(state->is_call());
+                assert((callee_name == "anon" &&
+                            state->get_reason() == "NULL") ||
+                        callee_name == state->get_reason());
+                llvm::errs() << "looking for \"" << callee_name << "\" in ignorable? " << (ignorable->find(callee_name) != ignorable->end()) << "\n";
+                do_insert = (ignorable->find(callee_name) != ignorable->end());
+            }
 
-            unsigned int inserted_line = start_loc.getLine();
-            unsigned int inserted_col = start_loc.getColumn();
-            unsigned int ninserted;
+            if (do_insert) {
+                // Generate the alias_group_changed callback
+                std::stringstream ss;
+                ss << "alias_group_changed(" << \
+                    insertions->get_alias_loc_var(loc_id) << ")";
 
-            // Insert the API call
-            switch (parent->getStmtClass()) {
-                case clang::Stmt::IfStmtClass: {
-                    ss << " || ";
-                    InsertText(start, ss.str(), true, true);
-                    ninserted = ss.str().length();
-                    break;
-                }
-                case clang::Stmt::ForStmtClass: {
-                    const clang::ForStmt *f = clang::dyn_cast<clang::ForStmt>(parent);
-                    if (f->getInit() == s || f->getInc() == s) {
-                        ss << ", ";
+                unsigned int inserted_line = start_loc.getLine();
+                unsigned int inserted_col = start_loc.getColumn();
+                unsigned int ninserted;
+
+                // Insert the API call
+                switch (parent->getStmtClass()) {
+                    case clang::Stmt::IfStmtClass: {
+                        ss << " || ";
                         InsertText(start, ss.str(), true, true);
                         ninserted = ss.str().length();
-                    } else if (f->getCond() == s) {
-                        llvm::errs() << "Unsupported\n";
-                        assert(false);
-                    } else {
-                        llvm::errs() << "Unsupported\n";
-                        assert(false);
+                        break;
                     }
-                    break;
-                }
-                default: {
-                    ss << "; ";
-                    clang::PresumedLoc insert_loc = InsertAtFront(s, ss.str());
-                    inserted_line = insert_loc.getLine();
-                    inserted_col = insert_loc.getColumn();
-                    ninserted = ss.str().length();
-                    break;
+                    case clang::Stmt::ForStmtClass: {
+                        const clang::ForStmt *f = clang::dyn_cast<clang::ForStmt>(parent);
+                        if (f->getInit() == s || f->getInc() == s) {
+                            ss << ", ";
+                            InsertText(start, ss.str(), true, true);
+                            ninserted = ss.str().length();
+                        } else if (f->getCond() == s) {
+                            llvm::errs() << "Unsupported\n";
+                            assert(false);
+                        } else {
+                            llvm::errs() << "Unsupported\n";
+                            assert(false);
+                        }
+                        break;
+                    }
+                    default: {
+                        ss << "; ";
+                        clang::PresumedLoc insert_loc = InsertAtFront(s, ss.str());
+                        inserted_line = insert_loc.getLine();
+                        inserted_col = insert_loc.getColumn();
+                        ninserted = ss.str().length();
+                        break;
+                    }
                 }
             }
         }

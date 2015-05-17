@@ -320,9 +320,15 @@ private:
  */
 class StateChangeInsertion {
 public:
-    StateChangeInsertion(unsigned set_id, std::string set_filename, int set_line_no,
-            int set_col, std::vector<size_t> *set_groups) : id(set_id),
-            filename(set_filename), line_no(set_line_no), col(set_col), groups(set_groups) {
+    StateChangeInsertion(unsigned set_id, std::string set_filename,
+            int set_line_no, int set_col, std::vector<size_t> *set_groups,
+            std::string set_direct, std::string set_call,
+            std::string set_reason) :
+            id(set_id), filename(set_filename), line_no(set_line_no),
+            col(set_col), groups(set_groups) {
+        direct = (set_direct == "direct");
+        call = (set_call == "call");
+        reason = set_reason;
     }
 
     unsigned get_id() { return (id); }
@@ -332,12 +338,21 @@ public:
     std::string get_filename() { return filename; }
     std::vector<size_t> *get_groups() { return groups; }
 
+    bool is_direct() { return direct; }
+    bool is_call() { return call; }
+    bool is_terminator() { return !call; }
+    std::string get_reason() { return reason; }
+
 private:
     unsigned id;
     std::string filename;
     int line_no;
     int col;
     std::vector<size_t> *groups;
+
+    bool direct;
+    bool call;
+    std::string reason;
 };
 
 class DesiredInsertions {
@@ -387,7 +402,7 @@ public:
     bool contains(int line, int col, const char *filename);
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
 
-    unsigned get_loc_id(int line, int col, const char *filename);
+    StateChangeInsertion *get_matching(int line, int col, const char *filename);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     StructFields *get_struct_fields_for(std::string name);
     std::vector<ReachableInfo> *get_reachable() { return reachable; }

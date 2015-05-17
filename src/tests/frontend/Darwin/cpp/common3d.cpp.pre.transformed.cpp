@@ -491,7 +491,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -2438,196 +2438,198 @@ void init_data(float *curr, float *next, float *vsq,
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
  const int dimx, const int dimy, const int dimz,
 # 29 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- const float dx, const float dt) {const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(8205091211441270858UL), (size_t)(8205091211441270859UL), (size_t)(8205091211441270860UL), (size_t)(8205091211441270861UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+ const float dx, const float dt) {const int ____chimes_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 9, 0, (size_t)(8205091211441270859UL), (size_t)(8205091211441270860UL), (size_t)(8205091211441270861UL), (size_t)(8205091211441270862UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 30 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
 # 31 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- { size_t i; for ( i = (0) ; i < dimx * dimy * dimz; i++) {
+ size_t len; len = ((size_t)dimx * (size_t)dimy * (size_t)dimz) ;
 # 32 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- vsq[i] = 2500. * 2500. * dt * dt;
+ { size_t i; for ( i = (0) ; i < len; i++) {
 # 33 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- } }
+ vsq[i] = 2500. * 2500. * dt * dt;
 # 34 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ } }
 # 35 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
 # 36 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- { size_t i; for ( i = (0) ; i < dimx * dimy * dimz; i++) {
 # 37 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- curr[i] = next[i] = 0;
+ { size_t i; for ( i = (0) ; i < len; i++) {
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- } }
+ curr[i] = next[i] = 0;
 # 39 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ } }
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 3, (size_t)(8205091211441270861UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- float scale; scale = (1. / (dx * dx)) ;
+ ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 0, 3, (size_t)(8205091211441270862UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
 # 42 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- h_coeff[0] = -8.541666 * scale;
+ float scale; scale = (1. / (dx * dx)) ;
 # 43 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- h_coeff[1] = 1.600000 * scale;
+ h_coeff[0] = -8.541666 * scale;
 # 44 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- h_coeff[2] = -0.200000 * scale;
+ h_coeff[1] = 1.600000 * scale;
 # 45 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- h_coeff[3] = 0.025397 * scale;
+ h_coeff[2] = -0.200000 * scale;
 # 46 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- h_coeff[4] = -0.001785 * scale;
+ h_coeff[3] = 0.025397 * scale;
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_disable1); }
+ h_coeff[4] = -0.001785 * scale;
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_disable1); }
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-void usage(char **argv) {const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(8205091211441270883UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- fprintf(__stderrp, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
+void usage(char **argv) {const int ____chimes_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(8205091211441270884UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
+ fprintf(__stderrp, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- argv[0]);
+ "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- exit(1);
+ argv[0]);
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_disable2); }
+ exit(1);
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_disable2); }
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-void default_config(config *conf) {const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(8205091211441270924UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nx = 2 * 256;
+void default_config(config *conf) {const int ____chimes_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(8205091211441270925UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->ny = 2 * 256;
+ conf->nx = 2 * 256;
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nz = 2 * 256;
+ conf->ny = 2 * 256;
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nsteps = 100;
+ conf->nz = 2 * 256;
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->save_text = -1;
+ conf->nsteps = 100;
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->verbose = 0;
+ conf->save_text = -1;
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->radius = 4;
+ conf->verbose = 0;
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->ngpus = -1;
+ conf->radius = 4;
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ conf->ngpus = -1;
 # 66 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->srcs = __null;
 # 67 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nsrcs = 0;
+ conf->srcs = __null;
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ conf->nsrcs = 0;
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->progress_width = 80;
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->progress_disabled = 0;
+ conf->progress_width = 80;
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_disable3); }
+ conf->progress_disabled = 0;
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_disable3); }
 # 73 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-void setup_config(config *conf, int argc, char **argv) {const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(8205091211441271054UL), (size_t)(0UL), (size_t)(8205091211441271056UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } ; ;
 # 74 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- ;
+void setup_config(config *conf, int argc, char **argv) {const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(8205091211441271055UL), (size_t)(0UL), (size_t)(8205091211441271057UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
+ if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
 # 75 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- opterr = 0;
+ ;
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ opterr = 0;
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- ({ calling((void*)default_config, -1, 0UL, 1, (size_t)(8205091211441271054UL)); (default_config)(conf); }) ;
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ ({ calling((void*)default_config, -1, 0UL, 0, 1, (size_t)(8205091211441271055UL)); (default_config)(conf); }) ;
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- switch (c) {
+ while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'x':
+ switch (c) {
 # 82 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nx = atoi(optarg);
+ case 'x':
 # 83 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->nx = atoi(optarg);
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'y':
+ break;
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->ny = atoi(optarg);
+ case 'y':
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->ny = atoi(optarg);
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'z':
+ break;
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nz = atoi(optarg);
+ case 'z':
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->nz = atoi(optarg);
 # 90 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'i':
+ break;
 # 91 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nsteps = atoi(optarg);
+ case 'i':
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->nsteps = atoi(optarg);
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'v':
+ break;
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->verbose = 1;
+ case 'v':
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->verbose = 1;
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 't':
+ break;
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->save_text = atoi(optarg);
+ case 't':
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->save_text = atoi(optarg);
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'p':
+ break;
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+ case 'p':
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- (conf->nsrcs + 1), 8205091211441270984UL, 0, 1, (int)sizeof(struct _source), 0);
+ conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_9: source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 9, 0UL, 2, (size_t)(8205091211441270948UL), (size_t)(8205091211441270984UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
+ (conf->nsrcs + 1), 8205091211441270985UL, 0, 1, (int)sizeof(struct _source), 0);
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->nsrcs++;
+ ({ call_lbl_8: source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(8205091211441270949UL), (size_t)(8205091211441270985UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->nsrcs++;
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'r':
+ break;
 # 106 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->radius = atoi(optarg);
+ case 'r':
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->radius = atoi(optarg);
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'g':
+ break;
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->ngpus = atoi(optarg);
+ case 'g':
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->ngpus = atoi(optarg);
 # 111 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'w':
+ break;
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->progress_width = atoi(optarg);
+ case 'w':
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- break;
+ conf->progress_width = atoi(optarg);
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case 'd':
-# 115 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- conf->progress_disabled = 1;
-# 116 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
  break;
+# 115 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ case 'd':
+# 116 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ conf->progress_disabled = 1;
 # 117 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- case '?':
+ break;
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- fprintf(__stderrp, "Missing argument to option %c\n", optopt);
+ case '?':
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- default:
+ fprintf(__stderrp, "Missing argument to option %c\n", optopt);
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- ({ calling((void*)usage, -1, 0UL, 1, (size_t)(8205091211441271056UL)); (usage)(argv); }) ;
+ default:
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- }
+ ({ calling((void*)usage, -1, 0UL, 0, 1, (size_t)(8205091211441271057UL)); (usage)(argv); }) ;
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
  }
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
-# 124 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- if (conf->ngpus == -1) {
-# 125 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
- alias_group_changed(____alias_loc_id_1); conf->ngpus = ({ call_lbl_15: calling((void*)getNumCUDADevices, 15, 0UL, 0); (getNumCUDADevices)(); }) ;
-# 126 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
  }
+# 124 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+# 125 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ if (conf->ngpus == -1) {
+# 126 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ conf->ngpus = ({ call_lbl_13: calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
 # 127 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
+ }
+# 128 "/Users/jmg3/num-debug/src/examples/cpp/lib/common3d.cpp"
 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_disable4); }
 
 
 static int module_init() {
-    init_module(8205091211441270617UL, 16, 5, 4, 2, 5, 8205091211441270617UL + 308UL, 8205091211441270617UL + 437UL, 8205091211441270617UL + 449UL, 8205091211441270617UL + 418UL, 8205091211441270617UL + 7UL, 8205091211441270617UL + 101UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 439UL, 8205091211441270617UL + 456UL, 8205091211441270617UL + 331UL, 8205091211441270617UL + 307UL, 8205091211441270617UL + 459UL, 8205091211441270617UL + 1UL, 8205091211441270617UL + 95UL, 8205091211441270617UL + 114UL, 8205091211441270617UL + 244UL, 8205091211441270617UL + 111UL, 8205091211441270617UL + 241UL, 8205091211441270617UL + 266UL, 8205091211441270617UL + 261UL, 8205091211441270617UL + 113UL, 8205091211441270617UL + 243UL, 8205091211441270617UL + 112UL, 8205091211441270617UL + 242UL, 8205091211441270617UL + 9UL, 8205091211441270617UL + 30UL, 8205091211441270617UL + 267UL, 8205091211441270617UL + 307UL, 8205091211441270617UL + 437UL, 8205091211441270617UL + 367UL, 8205091211441270617UL + 255UL, 8205091211441270617UL + 266UL, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_layer_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices", &____alias_loc_id_0, (unsigned)6, 8205091211441270617UL + 308UL, 8205091211441270617UL + 309UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 437UL, 8205091211441270617UL + 454UL, &____alias_loc_id_1, (unsigned)6, 8205091211441270617UL + 308UL, 8205091211441270617UL + 309UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 437UL, 8205091211441270617UL + 454UL, &____alias_loc_id_2, (unsigned)11, 8205091211441270617UL + 1UL, 8205091211441270617UL + 2UL, 8205091211441270617UL + 3UL, 8205091211441270617UL + 4UL, 8205091211441270617UL + 5UL, 8205091211441270617UL + 6UL, 8205091211441270617UL + 7UL, 8205091211441270617UL + 8UL, 8205091211441270617UL + 9UL, 8205091211441270617UL + 10UL, 8205091211441270617UL + 11UL, &____alias_loc_id_3, (unsigned)16, 8205091211441270617UL + 111UL, 8205091211441270617UL + 112UL, 8205091211441270617UL + 113UL, 8205091211441270617UL + 114UL, 8205091211441270617UL + 115UL, 8205091211441270617UL + 116UL, 8205091211441270617UL + 117UL, 8205091211441270617UL + 118UL, 8205091211441270617UL + 119UL, 8205091211441270617UL + 120UL, 8205091211441270617UL + 121UL, 8205091211441270617UL + 122UL, 8205091211441270617UL + 241UL, 8205091211441270617UL + 242UL, 8205091211441270617UL + 243UL, 8205091211441270617UL + 244UL, &____alias_loc_id_4, (unsigned)1, 8205091211441270617UL + 255UL, &____alias_loc_id_5, (unsigned)2, 8205091211441270617UL + 267UL, 8205091211441270617UL + 307UL, &____alias_loc_id_6, (unsigned)6, 8205091211441270617UL + 308UL, 8205091211441270617UL + 309UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 437UL, 8205091211441270617UL + 454UL);
+    init_module(8205091211441270617UL, 16, 5, 4, 2, 5, 8205091211441270617UL + 308UL, 8205091211441270617UL + 460UL, 8205091211441270617UL + 309UL, 8205091211441270617UL + 438UL, 8205091211441270617UL + 7UL, 8205091211441270617UL + 101UL, 8205091211441270617UL + 457UL, 8205091211441270617UL + 332UL, 8205091211441270617UL + 450UL, 8205091211441270617UL + 419UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 440UL, 8205091211441270617UL + 438UL, 8205091211441270617UL + 368UL, 8205091211441270617UL + 1UL, 8205091211441270617UL + 95UL, 8205091211441270617UL + 114UL, 8205091211441270617UL + 245UL, 8205091211441270617UL + 111UL, 8205091211441270617UL + 242UL, 8205091211441270617UL + 113UL, 8205091211441270617UL + 244UL, 8205091211441270617UL + 112UL, 8205091211441270617UL + 243UL, 8205091211441270617UL + 9UL, 8205091211441270617UL + 30UL, 8205091211441270617UL + 267UL, 8205091211441270617UL + 262UL, 8205091211441270617UL + 268UL, 8205091211441270617UL + 308UL, 8205091211441270617UL + 256UL, 8205091211441270617UL + 267UL, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_layer_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices", &____alias_loc_id_0, (unsigned)6, 8205091211441270617UL + 309UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 312UL, 8205091211441270617UL + 438UL, 8205091211441270617UL + 455UL, &____alias_loc_id_1, (unsigned)6, 8205091211441270617UL + 309UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 312UL, 8205091211441270617UL + 438UL, 8205091211441270617UL + 455UL, &____alias_loc_id_2, (unsigned)11, 8205091211441270617UL + 1UL, 8205091211441270617UL + 2UL, 8205091211441270617UL + 3UL, 8205091211441270617UL + 4UL, 8205091211441270617UL + 5UL, 8205091211441270617UL + 6UL, 8205091211441270617UL + 7UL, 8205091211441270617UL + 8UL, 8205091211441270617UL + 9UL, 8205091211441270617UL + 10UL, 8205091211441270617UL + 11UL, &____alias_loc_id_3, (unsigned)17, 8205091211441270617UL + 111UL, 8205091211441270617UL + 112UL, 8205091211441270617UL + 113UL, 8205091211441270617UL + 114UL, 8205091211441270617UL + 115UL, 8205091211441270617UL + 116UL, 8205091211441270617UL + 117UL, 8205091211441270617UL + 118UL, 8205091211441270617UL + 119UL, 8205091211441270617UL + 120UL, 8205091211441270617UL + 121UL, 8205091211441270617UL + 122UL, 8205091211441270617UL + 123UL, 8205091211441270617UL + 242UL, 8205091211441270617UL + 243UL, 8205091211441270617UL + 244UL, 8205091211441270617UL + 245UL, &____alias_loc_id_4, (unsigned)1, 8205091211441270617UL + 256UL, &____alias_loc_id_5, (unsigned)2, 8205091211441270617UL + 268UL, 8205091211441270617UL + 308UL, &____alias_loc_id_6, (unsigned)6, 8205091211441270617UL + 309UL, 8205091211441270617UL + 310UL, 8205091211441270617UL + 311UL, 8205091211441270617UL + 312UL, 8205091211441270617UL + 438UL, 8205091211441270617UL + 455UL);
     register_functions(5, "common3d.cpp.pre.register.cpp", "save_layer_text", &save_layer_text, "init_data", &init_data, "usage", &usage, "default_config", &default_config, "setup_config", &setup_config);
     return 0;
 }

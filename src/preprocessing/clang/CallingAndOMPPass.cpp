@@ -914,9 +914,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         for (std::vector<CallLocation>::iterator ii = calls.begin(),
                 ee = calls.end(); ii != ee; ii++) {
             CallLocation loc = *ii;
+            const CallExpr *call = loc.get_call();
 
             if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
-                if (ompTree->add_function_call(loc.get_call(), loc.get_label())) {
+                if (ompTree->add_function_call(call, loc.get_label())) {
 
                     AliasesPassedToCallSite callsite =
                         insertions->findFirstMatchingCallsite(i->first,
@@ -925,7 +926,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     bool may_cause_checkpoint = true;
                     std::string func_symbol;
                     if (loc.get_funcname() == "anon") {
-                        func_symbol = stmtToString(loc.get_call()->getCallee());
+                        func_symbol = stmtToString(call->getCallee());
                     } else {
                         func_symbol = loc.get_funcname();
                         may_cause_checkpoint = insertions->may_cause_checkpoint(
@@ -941,9 +942,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                      * Default parameters cannot be checkpointed, nor are they
                      * printable.
                      */
-                    int nargs = loc.get_call()->getNumArgs();
+                    int nargs = call->getNumArgs();
                     while (nargs > 0 &&
-                            isa<CXXDefaultArgExpr>(loc.get_call()->getArg(
+                            isa<CXXDefaultArgExpr>(call->getArg(
                                     nargs - 1))) {
                         nargs--;
                     }
@@ -952,7 +953,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     std::vector<string> arg_varnames;
                     for (int i = 0; i < nargs; i++) {
                         std::string varname = get_unique_argument_varname();
-                        const Expr *arg = loc.get_call()->getArg(i);
+                        const Expr *arg = call->getArg(i);
                         assert(!isa<CXXDefaultArgExpr>(arg));
 
                         if (may_cause_checkpoint && has_side_effects(arg)) {
@@ -991,7 +992,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         ss << " if (!____chimes_replaying) { ";
                     }
                     for (int i = 0; i < nargs; i++) {
-                        const Expr *arg = loc.get_call()->getArg(i);
+                        const Expr *arg = call->getArg(i);
                         if (may_cause_checkpoint && has_side_effects(arg)) {
                             ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
                                 "); ";
@@ -1005,15 +1006,26 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
                     replace_func_call << ")";
 
+                    clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
+                            call->getLocStart());
+                    StateChangeInsertion *state = insertions->get_matching(
+                            call_start_loc.getLine(),
+                            call_start_loc.getColumn(),
+                            call_start_loc.getFilename());
+                    std::string loc_arg = (state == NULL ? "0" :
+                            insertions->get_alias_loc_var(state->get_id()));
+
                     ss << " calling((void*)" <<
                         func_symbol << ", " << loc.get_label() << ", " <<
-                        callsite.get_return_alias() << "UL, " << callsite.nparams();
+                        callsite.get_return_alias() << "UL, " << loc_arg <<
+                        ", " << callsite.nparams();
                     for (unsigned a = 0; a < callsite.nparams(); a++) {
                         ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
                     }
                     ss << "); ";
 
-                    ReplaceText(clang::SourceRange(loc.get_call()->getLocStart(), loc.get_call()->getLocEnd()),
+                    ReplaceText(clang::SourceRange(call->getLocStart(),
+                                loc.get_call()->getLocEnd()),
                             " ({ " + ss.str() + replace_func_call.str() + "; }) ");
                 }
             }
@@ -1085,7 +1097,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
 
     vars_in_regions.clear();
     calls_found.clear();
-    calls_passed_to_other_calls.clear();
     vars_to_classify.clear();
     calls_to_register_callbacks.clear();
 }
@@ -1149,32 +1160,17 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
         if (const clang::CallExpr *call =
                 clang::dyn_cast<const clang::CallExpr>(s)) {
 
-            std::string callee_name;
-            if (call->getDirectCallee() == NULL) {
-                callee_name = "anon";
-            } else {
-                callee_name = call->getDirectCallee()->getNameAsString();
-            }
+            std::string callee_name = get_callee_name(call);
 
             if (callee_name == "register_custom_init_handler") {
                 calls_to_register_callbacks.push_back(call);
             } else {
-                for (unsigned i = 0; i < call->getNumArgs(); i++) {
-                    if (const clang::CallExpr *arg =
-                            clang::dyn_cast<const clang::CallExpr>(
-                                call->getArg(i))) {
-                        calls_passed_to_other_calls.insert(arg);
-                    }
-                }
-
-                /*
-                 * This means we can't support checkpoints from inside
-                 * constructors.
-                 */
-                if (calls_passed_to_other_calls.find(call) ==
-                        calls_passed_to_other_calls.end() &&
+                if (!currently_inside_function_arguments() &&
                         !clang::isa<const clang::CXXConstructExpr>(call)) {
-
+                    /*
+                     * This means we can't support checkpoints from inside
+                     * constructors.
+                     */
                     clang::PresumedLoc presumed = SM->getPresumedLoc(start);
                     int line_no = presumed.getLine();
 

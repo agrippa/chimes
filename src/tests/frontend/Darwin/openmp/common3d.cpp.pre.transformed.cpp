@@ -483,7 +483,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -2380,7 +2380,7 @@ void init_data(float *curr, float *next, float *vsq,
     } }
 # 39 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 40 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-     ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 3, (size_t)(4957368879419144381UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
+     ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 0, 3, (size_t)(4957368879419144381UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
 # 41 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
      float scale; scale = (1. / (dx * dx)) ;
 # 42 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2442,14 +2442,14 @@ rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alia
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 void setup_config(config *conf, int argc, char **argv) {const int ____chimes_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(4957368879419144574UL), (size_t)(0UL), (size_t)(4957368879419144576UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
- if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
      ;
 # 75 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     opterr = 0;
 # 76 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 77 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-     ({ calling((void*)default_config, -1, 0UL, 1, (size_t)(4957368879419144574UL)); (default_config)(conf); }) ;
+     ({ calling((void*)default_config, -1, 0UL, 0, 1, (size_t)(4957368879419144574UL)); (default_config)(conf); }) ;
 # 78 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
 # 79 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:t:p:g:w:d")) != -1) {
@@ -2498,7 +2498,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_dis
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
                         (conf->nsrcs + 1), 4957368879419144504UL, 0, 1, (int)sizeof(struct _source), 0);
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-                alias_group_changed(____alias_loc_id_0); ({ call_lbl_9: source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 9, 0UL, 2, (size_t)(4957368879419144468UL), (size_t)(4957368879419144504UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
+                 ({ call_lbl_8: source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(4957368879419144468UL), (size_t)(4957368879419144504UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
                 conf->nsrcs++;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2534,7 +2534,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_dis
 # 119 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
             default:
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-                 ({ calling((void*)usage, -1, 0UL, 1, (size_t)(4957368879419144576UL)); (usage)(argv); }) ;
+                 ({ calling((void*)usage, -1, 0UL, 0, 1, (size_t)(4957368879419144576UL)); (usage)(argv); }) ;
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
         }
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
@@ -2543,7 +2543,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_dis
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     if (conf->ngpus == -1) {
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
-        alias_group_changed(____alias_loc_id_1); conf->ngpus = ({ call_lbl_15: calling((void*)getNumCUDADevices, 15, 0UL, 0); (getNumCUDADevices)(); }) ;
+        conf->ngpus = ({ call_lbl_13: calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"
     }
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp"

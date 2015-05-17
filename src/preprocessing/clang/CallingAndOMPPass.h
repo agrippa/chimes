@@ -70,7 +70,6 @@ public:
 private:
     std::map<clang::VarDecl *, StackAlloc *> hasValidDeclarations(
             const clang::DeclStmt *d);
-    std::set<const clang::CallExpr *> calls_passed_to_other_calls;
     std::map<int, std::vector<CallLocation>> calls_found;
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;

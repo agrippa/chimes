@@ -26754,7 +26754,7 @@ extern "C" FILE *funopen(const void *, int (*)(void *, char *, int), int (*)(voi
 # 7 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_chimes();
 # 8 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned naliases, ...);
+extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned loc_id, unsigned naliases, ...);
 # 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int get_next_call();
 # 11 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
@@ -26818,11 +26818,11 @@ extern void register_custom_init_handler(const char * obj_name, void (* fp)(void
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
- register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
  blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-alias_group_changed(____alias_loc_id_0); ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable0); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"

@@ -476,7 +476,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1748,7 +1748,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)) ; int a;
- register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  a = (0) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
@@ -1759,7 +1759,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = 
  } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);

@@ -723,13 +723,23 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
             size_t group = unique_alias(strtoul(group_str.c_str(), NULL, 10));
             groups->push_back(group);
 
-            if (line[group_end + 1] == '}') break;
+            if (line[group_end + 1] == '}') {
+                line = line.substr(group_end + 3);
+                break;
+            }
 
             line = line.substr(group_end + 2);
         }
 
-        StateChangeInsertion *change = new StateChangeInsertion(count_locs, filename,
-                line_no, col, groups);
+        size_t first_colon = line.find(':');
+        std::string direct = line.substr(0, first_colon);
+        line = line.substr(first_colon + 1);
+        size_t second_colon = line.find(':');
+        std::string call = line.substr(0, second_colon);
+        std::string reason = line.substr(second_colon + 1);
+
+        StateChangeInsertion *change = new StateChangeInsertion(count_locs,
+                filename, line_no, col, groups, direct, call, reason);
         result->push_back(change);
         count_locs++;
     }
@@ -752,7 +762,7 @@ bool DesiredInsertions::contains(int line, int col, const char *filename) {
     return false;
 }
 
-unsigned DesiredInsertions::get_loc_id(int line, int col,
+StateChangeInsertion *DesiredInsertions::get_matching(int line, int col,
         const char *filename) {
     std::string filename_str(filename);
     for (std::vector<StateChangeInsertion *>::iterator i =
@@ -761,10 +771,10 @@ unsigned DesiredInsertions::get_loc_id(int line, int col,
         StateChangeInsertion *insert = *i;
         if (insert->get_line() == line && insert->get_col() == col &&
                 insert->get_filename() == filename_str) {
-            return insert->get_id();
+            return insert;
         }
     }
-    assert(false);
+    return (NULL);
 }
 
 std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,

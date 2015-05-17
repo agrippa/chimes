@@ -1,7 +1,7 @@
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 297 5 : { 330, 331 } direct:call:fseek
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 299 5 : { 332 } direct:call:fseek
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 303 31 : { 333 } direct:call:fread
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 412 14 : { 920, 921, 922 } direct:call:omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 431 16 : { 926, 927, 928, 929, 1659 } prop:call:_Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 437 16 : { 930, 931, 1657 } prop:call:_Z9read_fileP7__sFILEPm
-/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 594 9 : { 141, 529, 550, 552, 741, 923, 924, 932, 933, 934, 935, 936, 937, 938, 939, 940, 1400, 1409, 1657, 1659, 1665, 1667, 1669, 1677 } prop:call:_Z10checkpointv
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 317 5 : { 330, 331 } direct:call:fseek
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 319 5 : { 332 } direct:call:fseek
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 323 31 : { 333 } direct:call:fread
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 430 14 : { 920, 921, 922 } direct:call:omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 440 34 : { 1685 } prop:call:strtoull
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 441 34 : { 926 } direct:call:strtoull
+/Users/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 609 9 : { 141, 529, 550, 552, 741, 923, 924, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 1376, 1385, 1683, 1685, 1691, 1693, 1695, 1703 } prop:call:checkpoint

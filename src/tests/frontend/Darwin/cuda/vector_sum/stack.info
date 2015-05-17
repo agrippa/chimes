@@ -1,16 +1,16 @@
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|argc|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|argv|0 " i8** " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|i|0 " i32 " 32 0 0 1 checkpoint cudaConfigureCall cudaFree cudaMemcpy kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|N|0 " i32 " 32 0 0 1 checkpoint cudaConfigureCall cudaFree cudaMalloc cudaMemcpy kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_A|0 " i32* " 64 1 0 1 checkpoint cudaConfigureCall cudaFree cudaMalloc cudaMemcpy kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_B|0 " i32* " 64 1 0 1 checkpoint cudaConfigureCall cudaFree cudaMalloc cudaMemcpy kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_C|0 " i32* " 64 1 0 1 checkpoint cudaConfigureCall cudaFree cudaMalloc cudaMemcpy kernel
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|i|0 " i32 " 32 0 0 1 checkpoint kernel
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|N|0 " i32 " 32 0 0 1 checkpoint kernel
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_A|0 " i32* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_B|0 " i32* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|h_C|0 " i32* " 64 1 0 1 checkpoint kernel
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_A|0 " i32* " 64 1 0 1 main
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_B|0 " i32* " 64 1 0 1 main
 /Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|d_C|0 " i32* " 64 1 0 1 main
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|threads_per_block|0 " i32 " 32 0 0 1 checkpoint cudaConfigureCall cudaFree cudaMemcpy kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|blocks_per_grid|0 " i32 " 32 0 0 1 checkpoint cudaConfigureCall cudaFree cudaMemcpy kernel
-/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|fp|0 " %struct.__sFILE* " 64 1 0 1 cudaFree
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|threads_per_block|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|blocks_per_grid|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu main|fp|0 " %struct.__sFILE* " 64 1 0 0
 /Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|this|0 " %struct.dim3* " 64 1 0 0
 /Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vx|0 " i32 " 32 0 0 0
 /Developer/NVIDIA/CUDA-6.5/include/vector_types.h dim3|vy|0 " i32 " 32 0 0 0

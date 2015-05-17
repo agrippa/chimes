@@ -476,7 +476,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1754,7 +1754,7 @@ typedef struct _foo {
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1432567827179872321UL)) ; foo *test2;
 foo test;
- register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
  ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
@@ -1771,7 +1771,7 @@ foo test;
  fprintf(__stderrp, "Hello before checkpointing\n");
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_5: calling((void*)checkpoint, 5, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_4: calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp"
  (__builtin_expect(!(test.a == 3), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/struct.cpp", 23, "test.a == 3") : (void)0);

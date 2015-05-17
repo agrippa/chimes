@@ -159,12 +159,12 @@ namespace {
         void collectLineToGroupsMappingInFunction(BasicBlock *curr,
                 std::set<BasicBlock *> *visited, std::string filename,
                 std::map<Value *, size_t> value_to_alias_group,
-                std::set<size_t> *changed_at_termination);
+                std::set<size_t> *changed_at_termination, Module &M);
         void unionGroups(int line, int col,
                 std::string filename, std::set<size_t> *groups, std::string reason);
         void unionGroups(int line, int col, std::string filename,
                 std::set<size_t> *groups, bool isIndirect, bool isCall,
-                Function *reason_callee);
+                Function *reason_callee, Module &M);
         void dumpLineToGroupsMappingTo(const char *filename);
 
         std::map<Value *, std::string> *mapValuesToOriginalVarName(Function *F);
@@ -232,7 +232,7 @@ namespace {
         std::map<std::string, std::string> *mapGlobalsToOriginalName(Module &M);
         void propagateGroupsDown(BasicBlock *curr, std::string filename,
                 std::set<size_t> *groups, std::set<BasicBlock *> *visited,
-                std::set<size_t> *changed_at_termination);
+                std::set<size_t> *changed_at_termination, Module &M);
         std::string *getFunctionDisplayName(Function *F, Module &M);
         Hasher *calculate_hashes(Module &M);
         std::string traverseAllUses(const Value *user, int nesting);
@@ -898,7 +898,7 @@ size_t Play::searchForValueInKnownAliases(Value *val,
 
 void Play::unionGroups(int line, int col, std::string filename,
         std::set<size_t> *groups, bool isIndirect, bool isCall,
-        Function *reason) {
+        Function *reason, Module &M) {
     std::ostringstream reason_str;
 
     if (isIndirect) {
@@ -918,7 +918,7 @@ void Play::unionGroups(int line, int col, std::string filename,
     } else if (reason->getName().size() == 0) {
         reason_str << "anon";
     } else {
-        reason_str << reason->getName().str();
+        reason_str << demangledFunctionName(reason->getName().str());
     }
 
     unionGroups(line, col, filename, groups, reason_str.str());
@@ -963,7 +963,7 @@ void Play::unionGroups(int line, int col, std::string filename,
 
 void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
         std::set<size_t> *groups, std::set<BasicBlock *> *visited,
-        std::set<size_t> *changed_at_termination) {
+        std::set<size_t> *changed_at_termination, Module &M) {
     if (visited->find(curr) != visited->end()) {
         /*
          * We have looped back around from the original basic block to itself or
@@ -989,7 +989,7 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
             if (mayCreateCheckpoint(callee) != DOES_NOT) {
                 unionGroups(call->getDebugLoc().getLine(),
                         call->getDebugLoc().getCol(), filename, groups, true,
-                        true, callee);
+                        true, callee, M);
                 return;
             }
         }
@@ -1006,7 +1006,7 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
         for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
             BasicBlock *child = term->getSuccessor(i);
             propagateGroupsDown(child, filename, groups, visited,
-                    changed_at_termination);
+                    changed_at_termination, M);
         }
     }
 }
@@ -1014,7 +1014,7 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
         std::set<BasicBlock *> *visited, std::string filename,
         std::map<Value *, size_t> value_to_alias_group,
-        std::set<size_t> *changed_at_termination) {
+        std::set<size_t> *changed_at_termination, Module &M) {
     assert(curr != NULL);
 
     // Only analyze each basic block once
@@ -1052,7 +1052,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
                 if (groups->size() > 0) {
                     unionGroups(call->getDebugLoc().getLine(),
                             call->getDebugLoc().getCol(), filename, groups,
-                            false, true, callee);
+                            false, true, callee, M);
                     groups = new std::set<size_t>();
                 }
             }
@@ -1066,7 +1066,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
                 BasicBlock *child = term->getSuccessor(i);
                 propagateGroupsDown(child, filename, groups,
-                        &propagation_visited, changed_at_termination);
+                        &propagation_visited, changed_at_termination, M);
             }
         } else {
             for (std::set<size_t>::iterator i = groups->begin(), e =
@@ -1079,7 +1079,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
     for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
         BasicBlock *child = term->getSuccessor(i);
         collectLineToGroupsMappingInFunction(child, visited, filename,
-                value_to_alias_group, changed_at_termination);
+                value_to_alias_group, changed_at_termination, M);
     }
 }
 
@@ -1163,7 +1163,7 @@ std::map<Function *, std::set<size_t> *> *Play::collectLineToGroupsMapping(
                 std::set<size_t> *changed_at_termination = new std::set<size_t>();
 
                 collectLineToGroupsMappingInFunction(&entry, &visited, filename,
-                        value_to_alias_group, changed_at_termination);
+                        value_to_alias_group, changed_at_termination, M);
 
                 (*result)[F] = changed_at_termination;
             }

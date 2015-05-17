@@ -1,15 +1,6 @@
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 4 alias_group_changed(____alias_loc_id_0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 4 alias_group_changed(____alias_loc_id_1); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 4 alias_group_changed(____alias_loc_id_2); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 4 alias_group_changed(____alias_loc_id_3); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 4 alias_group_changed(____alias_loc_id_11); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 4 alias_group_changed(____alias_loc_id_12); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 4 alias_group_changed(____alias_loc_id_4); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 49 alias_group_changed(____alias_loc_id_5); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 7 alias_group_changed(____alias_loc_id_6); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 4 alias_group_changed(____alias_loc_id_7); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4 alias_group_changed(____alias_loc_id_8); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4 alias_group_changed(____alias_loc_id_9); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 7 alias_group_changed(____alias_loc_id_10); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 93 1 const int ____chimes_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 95 1 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_13, ____chimes_disable0); 
@@ -119,22 +110,22 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performance
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 307 4  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 304 9  ii = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 304 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30  ({  calling((void*)getTime, -1, 0UL, 0); (getTime)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30  ({  calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 38 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 93 135  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 31  ({  calling((void*)getTime, -1, 0UL, 0); (getTime)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 31  ({  calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 39 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 98 132  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 29  ({  calling((void*)getTick, -1, 0UL, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 29  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 37 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 109 141  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 45  ({  call_lbl_2:  calling((void*)timerStats, 2, 0UL, 0); (timerStats)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 56 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 9  ({  call_lbl_3:  calling((void*)printRank, 3, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 4  ({  call_lbl_1:  calling((void*)timerStats, 1, 0UL, ____alias_loc_id_0, 0); (timerStats)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 15 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 9  ({  call_lbl_2:  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27  ({  calling((void*)getTick, -1, 0UL, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 107  ({  call_lbl_16:  calling((void*)getNRanks, 16, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 107  ({  call_lbl_13:  calling((void*)getNRanks, 13, 0UL, 0, 0); (getNRanks)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 117 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 16 
@@ -147,14 +138,14 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/p
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 135 13  if (____chimes_replaying) { goto lbl_1; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 151 7  lbl_1: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 151 13  if (____must_checkpoint_printPerformanceResults_ii_1 != 0) { register_stack_var("printPerformanceResults|ii|1", &____must_checkpoint_printPerformanceResults_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 151 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 151 13  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(13): { goto call_lbl_13; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 121 484  ; double totalTime;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(3, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 51  ({  call_lbl_2:  calling((void*)printRank, 2, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 51  ({  call_lbl_2:  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 61 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27  ({  calling((void*)getTick, -1, 0UL, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 35 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 16 
@@ -168,20 +159,18 @@ RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performa
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 244 105  ; struct timeval ptime;
  if (____must_checkpoint_getTime_ptime_0) { register_stack_vars(1, "getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i32 }", (void *)(&ptime), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 258 105  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 45  ({  call_lbl_2:  calling((void*)addDoubleParallel, 2, 0UL, 3, (size_t)(10568076854246273307UL), (size_t)(10568076854246273308UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 95 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 147  ({  call_lbl_4:  calling((void*)getNRanks, 4, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 4  ({  call_lbl_1:  calling((void*)addDoubleParallel, 1, 0UL, ____alias_loc_id_4, 3, (size_t)(10568076854246273307UL), (size_t)(10568076854246273308UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 54 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 147  ({  call_lbl_3:  calling((void*)getNRanks, 3, 0UL, 0, 0); (getNRanks)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 157 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 73  ({  call_lbl_6:  calling((void*)getMyRank, 6, 0UL, 0); (getMyRank)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 83 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 45  ({  call_lbl_8:  calling((void*)minRankDoubleParallel, 8, 0UL, 3, (size_t)(10568076854246273311UL), (size_t)(10568076854246273312UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 111 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 45  ({  call_lbl_10:  calling((void*)maxRankDoubleParallel, 10, 0UL, 3, (size_t)(10568076854246273311UL), (size_t)(10568076854246273312UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 111 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 45  ({  call_lbl_12:  calling((void*)addDoubleParallel, 12, 0UL, 3, (size_t)(10568076854246273307UL), (size_t)(10568076854246273308UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 95 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 99  ({  call_lbl_15:  calling((void*)getNRanks, 15, 0UL, 0); (getNRanks)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 109 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 32  ({  call_lbl_4:  calling((void*)getMyRank, 4, 0UL, ____alias_loc_id_6, 0); (getMyRank)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 42 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 4  ({  call_lbl_5:  calling((void*)minRankDoubleParallel, 5, 0UL, ____alias_loc_id_7, 3, (size_t)(10568076854246273311UL), (size_t)(10568076854246273312UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 70 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4  ({  call_lbl_6:  calling((void*)maxRankDoubleParallel, 6, 0UL, ____alias_loc_id_8, 3, (size_t)(10568076854246273311UL), (size_t)(10568076854246273312UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 70 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4  ({  call_lbl_7:  calling((void*)addDoubleParallel, 7, 0UL, ____alias_loc_id_9, 3, (size_t)(10568076854246273307UL), (size_t)(10568076854246273308UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 54 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 22 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 24 
@@ -209,7 +198,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/p
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 298 13  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 304 7  lbl_5: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 304 13  if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 304 13  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(10): { goto call_lbl_10; } case(12): { goto call_lbl_12; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 304 13  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 265 114  ; double temp;
 RankReduceData reduceRecvBuf[11];
 RankReduceData reduceSendBuf[11];

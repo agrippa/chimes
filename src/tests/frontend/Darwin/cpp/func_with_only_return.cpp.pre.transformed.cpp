@@ -477,7 +477,7 @@ FILE *funopen(const void *,
 
 extern void init_chimes();
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned naliases, ...);
+        unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
@@ -1746,11 +1746,11 @@ void *haha_this_sux() {const int ____chimes_disable0 = new_stack((void *)(&haha_
 }
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- void *tmp; tmp = ( ({ calling((void*)haha_this_sux, -1, 2786831167442144610UL, 0); (haha_this_sux)(); }) ) ;
+ void *tmp; tmp = ( ({ calling((void*)haha_this_sux, -1, 2786831167442144610UL, 0, 0); (haha_this_sux)(); }) ) ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- alias_group_changed(____alias_loc_id_0); ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, 0); (checkpoint)(); }) ;
+ ({ call_lbl_2: calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_disable1); return 0;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"

@@ -1,37 +1,5 @@
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 1 alias_group_changed(____alias_loc_id_0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 1 alias_group_changed(____alias_loc_id_1); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 1 alias_group_changed(____alias_loc_id_2); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 188 alias_group_changed(____alias_loc_id_3); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 3 alias_group_changed(____alias_loc_id_4); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 188 alias_group_changed(____alias_loc_id_5); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 3 alias_group_changed(____alias_loc_id_6); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 187 alias_group_changed(____alias_loc_id_7); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 3 alias_group_changed(____alias_loc_id_8); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 1 alias_group_changed(____alias_loc_id_10); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 3 alias_group_changed(____alias_loc_id_11); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 3 alias_group_changed(____alias_loc_id_13); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 3 alias_group_changed(____alias_loc_id_15); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 3 alias_group_changed(____alias_loc_id_17); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 1 alias_group_changed(____alias_loc_id_19); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 3 alias_group_changed(____alias_loc_id_20); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 1 alias_group_changed(____alias_loc_id_21); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 1 alias_group_changed(____alias_loc_id_24); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 3 alias_group_changed(____alias_loc_id_22); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 173 alias_group_changed(____alias_loc_id_25); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 1 alias_group_changed(____alias_loc_id_26); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 3 alias_group_changed(____alias_loc_id_27); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 1 alias_group_changed(____alias_loc_id_29); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 1 alias_group_changed(____alias_loc_id_30); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 1 alias_group_changed(____alias_loc_id_31); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 3 alias_group_changed(____alias_loc_id_32); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 166 alias_group_changed(____alias_loc_id_33); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 3 alias_group_changed(____alias_loc_id_34); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 166 alias_group_changed(____alias_loc_id_35); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 3 alias_group_changed(____alias_loc_id_36); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 165 alias_group_changed(____alias_loc_id_37); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 3 alias_group_changed(____alias_loc_id_38); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 169 alias_group_changed(____alias_loc_id_39); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 50 2 alias_group_changed(____alias_loc_id_40); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 1 alias_group_changed(____alias_loc_id_18); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 1 alias_group_changed(____alias_loc_id_20); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 105 27 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 105 53 , 2433535641213254369UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 107 18 len=6 malloc_wrapper
@@ -42,12 +10,12 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 109 17 len=6 malloc
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 109 24 , 2433535641213254349UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 23 len=10 cudaMalloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 54 , 0UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 64 len=10 cudaMalloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 95 , 0UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 64 len=10 cudaMalloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 94 , 0UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 64 len=10 cudaMalloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 117 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 54 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 53 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 76 , 0UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 176 1 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 176 6 , 2433535641213254369UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 177 1 len=4 free_wrapper
@@ -60,18 +28,18 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 181 1 len=4 free_wr
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 181 12 , 2433535641213254665UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 183 1 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 183 6 , 2433535641213254663UL
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 65 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 74 , 0UL
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 65 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 74 , 0UL
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 65 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 74 , 0UL
-ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 65 len=8 cudaFree_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 74 , 0UL
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 82 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_46, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 87 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_46, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 112 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_46, ____chimes_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 190 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_46, ____chimes_disable0); 
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 32 , 0UL
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 82 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 87 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 112 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 190 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_disable0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 74 34 const int ____chimes_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 50 1 const int ____chimes_disable1 = new_stack((void *)(&fwd_kernel), "fwd_kernel", &____must_manage_fwd_kernel, 10, 0, (size_t)(2433535641213254863UL), (size_t)(2433535641213254864UL), (size_t)(2433535641213254865UL), (size_t)(2433535641213254866UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 72 1 rm_stack(false, 0UL, "fwd_kernel", &____must_manage_fwd_kernel, 0, ____chimes_disable1); 
@@ -102,28 +70,28 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 120 1 float *d
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 120 43 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 3  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_curr), nbytes, 0UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 80 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 44  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_next), nbytes, 0UL, 0, 0)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 121 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 44  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_vsq), nbytes, 0UL, 0, 0)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 120 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 44  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_c_coeff), (20) * sizeof(float), 0UL, 0, 0)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 138 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 3  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_next), nbytes, 0UL, 0, 0)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 80 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 3  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_vsq), nbytes, 0UL, 0, 0)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 3  cudaError_t error;  error = (cudaMalloc_wrapper((void **)(&d_c_coeff), (20) * sizeof(float), 0UL, 0, 0)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 97 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 126 1  dim3 block;  block = dim3(32, 16) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 126 19 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 127 1  dim3 grid;  grid = dim3((conf.nx) / (block.x), (conf.ny) / (block.y)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 127 56 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 43  double mem_start;  mem_start = (seconds()) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 71 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 45  cudaError_t error;  error = (cudaMemcpy(d_curr, curr, nbytes, cudaMemcpyHostToDevice)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 121 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 45  cudaError_t error;  error = (cudaMemcpy(d_next, next, nbytes, cudaMemcpyHostToDevice)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 121 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 45  cudaError_t error;  error = (cudaMemcpy(d_vsq, vsq, nbytes, cudaMemcpyHostToDevice)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 119 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 45  cudaError_t error;  error = (cudaMemcpy(d_c_coeff, c_coeff, (20) * sizeof(float), cudaMemcpyHostToDevice)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 141 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 43  double start;  start = (seconds()) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 67 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 1  double mem_start;  mem_start = (seconds()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 29 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 3  cudaError_t error;  error = (cudaMemcpy(d_curr, curr, nbytes, cudaMemcpyHostToDevice)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 3  cudaError_t error;  error = (cudaMemcpy(d_next, next, nbytes, cudaMemcpyHostToDevice)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 3  cudaError_t error;  error = (cudaMemcpy(d_vsq, vsq, nbytes, cudaMemcpyHostToDevice)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 77 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 3  cudaError_t error;  error = (cudaMemcpy(d_c_coeff, c_coeff, (20) * sizeof(float), cudaMemcpyHostToDevice)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 99 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 1  double start;  start = (seconds()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 25 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 137 1 {  int step; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 157 1  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 137 6  step = (0) ;
@@ -134,16 +102,16 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 138 6  src = (
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 138 17 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 140 1  int src_offset;  src_offset = ((((((conf.radius) + 0) * dimy) * dimx) + (((conf.radius) + (((conf.srcs)[src]).y)) * dimx)) + ((conf.radius) + (((conf.srcs)[src]).x))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 140 152 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 45  cudaError_t error;  error = (cudaMemcpy(d_curr + src_offset, (srcs[src]) + step, sizeof(float), cudaMemcpyHostToDevice)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 155 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 3  cudaError_t error;  error = (cudaMemcpy(d_curr + src_offset, (srcs[src]) + step, sizeof(float), cudaMemcpyHostToDevice)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 113 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 148 1  float *tmp;  tmp = (d_next) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 148 20 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 45  cudaError_t error;  error = (cudaDeviceSynchronize()) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 88 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 3  cudaError_t error;  error = (cudaDeviceSynchronize()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 43  double compute_s;  compute_s = (seconds() - start) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 79 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 45  cudaError_t error;  error = (cudaMemcpy(curr, d_curr, nbytes, cudaMemcpyDeviceToHost)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 121 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 3  cudaError_t error;  error = (cudaMemcpy(curr, d_curr, nbytes, cudaMemcpyDeviceToHost)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 79 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 43  double total_s;  total_s = (seconds() - mem_start) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 81 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 166 1  float point_rate;  point_rate = (((((float)(conf.nx)) * (conf.ny)) * (conf.nz)) / (compute_s / (conf.nsteps))) ;
@@ -152,58 +120,44 @@ InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 180 1 {  int i;
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 182 1  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 180 6  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 180 15 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 45  cudaError_t error;  error = (cudaFree_wrapper(d_curr, 0UL)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 94 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 45  cudaError_t error;  error = (cudaFree_wrapper(d_next, 0UL)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 94 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 45  cudaError_t error;  error = (cudaFree_wrapper(d_vsq, 0UL)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 93 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 45  cudaError_t error;  error = (cudaFree_wrapper(d_c_coeff, 0UL)) ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 97 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 42  ({  call_lbl_3:  calling((void*)setup_config, 3, 0UL, 3, (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(2433535641213254749UL)); (setup_config)(&conf, argc, argv); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 72 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 77 1  ({  call_lbl_4:  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 4, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 3  cudaError_t error;  error = (cudaFree_wrapper(d_curr, 0UL)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 52 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 3  cudaError_t error;  error = (cudaFree_wrapper(d_next, 0UL)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 52 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 3  cudaError_t error;  error = (cudaFree_wrapper(d_vsq, 0UL)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 51 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 3  cudaError_t error;  error = (cudaFree_wrapper(d_c_coeff, 0UL)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 55 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 1  ({  call_lbl_2:  calling((void*)setup_config, 2, 0UL, ____alias_loc_id_0, 3, (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(2433535641213254749UL)); (setup_config)(&conf, argc, argv); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 76 31 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 77 1  ({  call_lbl_3:  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 3, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 77 71 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 42  ({  call_lbl_19:  source ** ____chimes_arg6;  int * ____chimes_arg7;  int ____chimes_arg8;  int ____chimes_arg9;  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg6 = (&(conf.srcs)); ____chimes_arg7 = (&(conf.nsrcs)); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps);  }  calling((void*)config_sources, 19, 0UL, 5, (size_t)(2433535641213254016UL), (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 115 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 116 25  ({  call_lbl_20:  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 20, 2433535641213254663UL, 4, (size_t)(2433535641213254407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 1  ({  call_lbl_17:  source ** ____chimes_arg6;  int * ____chimes_arg7;  int ____chimes_arg8;  int ____chimes_arg9;  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg6 = (&(conf.srcs)); ____chimes_arg7 = (&(conf.nsrcs)); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps);  }  calling((void*)config_sources, 17, 0UL, ____alias_loc_id_1, 5, (size_t)(2433535641213254016UL), (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 115 74 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 116 25  ({  call_lbl_18:  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 18, 2433535641213254663UL, 0, 4, (size_t)(2433535641213254407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 116 78 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 42  ({  call_lbl_22:  calling((void*)init_data, 22, 0UL, 9, (size_t)(2433535641213254565UL), (size_t)(2433535641213254647UL), (size_t)(2433535641213254349UL), (size_t)(2433535641213254369UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 102 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 76  ({  call_lbl_48:  calling((void*)seconds, 48, 0UL, 0); (seconds)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 84 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 75  ({  call_lbl_50:  calling((void*)cudaMemcpy, 50, 0UL, 4, (size_t)(2433535641213254529UL), (size_t)(2433535641213254565UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(d_curr, curr, nbytes, cudaMemcpyHostToDevice); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 130 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 75  ({  call_lbl_55:  calling((void*)cudaMemcpy, 55, 0UL, 4, (size_t)(2433535641213254529UL), (size_t)(2433535641213254647UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(d_next, next, nbytes, cudaMemcpyHostToDevice); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 130 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 75  ({  call_lbl_60:  calling((void*)cudaMemcpy, 60, 0UL, 4, (size_t)(2433535641213254512UL), (size_t)(2433535641213254349UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(d_vsq, vsq, nbytes, cudaMemcpyHostToDevice); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 128 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 75  ({  call_lbl_65:  unsigned long ____chimes_arg38;  if (!____chimes_replaying) { ____chimes_arg38 = ((20) * sizeof(float));  }  calling((void*)cudaMemcpy, 65, 0UL, 4, (size_t)(2433535641213254513UL), (size_t)(2433535641213254369UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(d_c_coeff, c_coeff, ____chimes_arg38, cudaMemcpyHostToDevice); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 150 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 68  ({  call_lbl_70:  calling((void*)seconds, 70, 0UL, 0); (seconds)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 76 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 75  ({  call_lbl_72:  void * ____chimes_arg40;  const void * ____chimes_arg41;  unsigned long ____chimes_arg42;  if (!____chimes_replaying) { ____chimes_arg40 = (d_curr + src_offset); ____chimes_arg41 = ((srcs[src]) + step); ____chimes_arg42 = (sizeof(float));  }  calling((void*)cudaMemcpy, 72, 0UL, 4, (size_t)(2433535641213254529UL), (size_t)(2433535641213254665UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(____chimes_arg40, ____chimes_arg41, ____chimes_arg42, cudaMemcpyHostToDevice); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 164 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 44  ({  call_lbl_77:  dim3 ____chimes_arg44;  dim3 ____chimes_arg45;  if (!____chimes_replaying) { ____chimes_arg44 = (grid); ____chimes_arg45 = (block);  }  calling((void*)cudaConfigureCall, 77, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2433535641213255098UL)); (cudaConfigureCall)(____chimes_arg44, ____chimes_arg45); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 88  ({  call_lbl_78:  int ____chimes_arg50;  int ____chimes_arg51;  int ____chimes_arg52;  int ____chimes_arg55;  if (!____chimes_replaying) { ____chimes_arg50 = (conf.nx); ____chimes_arg51 = (conf.ny); ____chimes_arg52 = (conf.nz); ____chimes_arg55 = (conf.radius);  }  calling((void*)fwd_kernel, 78, 0UL, 10, (size_t)(2433535641213254529UL), (size_t)(2433535641213254529UL), (size_t)(2433535641213254512UL), (size_t)(2433535641213254513UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd_kernel)(d_next, d_curr, d_vsq, d_c_coeff, ____chimes_arg50, ____chimes_arg51, ____chimes_arg52, dimx, dimy, ____chimes_arg55); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 185 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 43  ({  call_lbl_80:  calling((void*)checkpoint, 80, 0UL, 0); (checkpoint)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 54 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 156 1  ({  call_lbl_81:  int ____chimes_arg56;  if (!____chimes_replaying) { ____chimes_arg56 = (step + 1);  }  calling((void*)update_progress, 81, 0UL, 1, (size_t)(0UL)); (update_progress)(____chimes_arg56); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 1  ({  call_lbl_19:  calling((void*)init_data, 19, 0UL, ____alias_loc_id_2, 9, (size_t)(2433535641213254565UL), (size_t)(2433535641213254647UL), (size_t)(2433535641213254349UL), (size_t)(2433535641213254369UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 118 61 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 34  ({  call_lbl_38:  calling((void*)seconds, 38, 0UL, 0, 0); (seconds)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 42 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 26  ({  call_lbl_55:  calling((void*)seconds, 55, 0UL, 0, 0); (seconds)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 34 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 46  ({  call_lbl_61:  int ____chimes_arg28;  int ____chimes_arg29;  int ____chimes_arg30;  int ____chimes_arg33;  if (!____chimes_replaying) { ____chimes_arg28 = (conf.nx); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nz); ____chimes_arg33 = (conf.radius);  }  calling((void*)fwd_kernel, 61, 0UL, ____alias_loc_id_15, 10, (size_t)(2433535641213254529UL), (size_t)(2433535641213254529UL), (size_t)(2433535641213254512UL), (size_t)(2433535641213254513UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd_kernel)(d_next, d_curr, d_vsq, d_c_coeff, ____chimes_arg28, ____chimes_arg29, ____chimes_arg30, dimx, dimy, ____chimes_arg33); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 146 143 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 1  ({  call_lbl_62:  calling((void*)checkpoint, 62, 0UL, ____alias_loc_id_14, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 153 12 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 156 1  ({  call_lbl_63:  int ____chimes_arg34;  if (!____chimes_replaying) { ____chimes_arg34 = (step + 1);  }  calling((void*)update_progress, 63, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg34); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 156 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 75  ({  call_lbl_83:  calling((void*)cudaDeviceSynchronize, 83, 0UL, 0); (cudaDeviceSynchronize)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 97 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 76  ({  call_lbl_89:  calling((void*)seconds, 89, 0UL, 0); (seconds)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 33  ({  call_lbl_64:  calling((void*)cudaDeviceSynchronize, 64, 0UL, 0, 0); (cudaDeviceSynchronize)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 55 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 76  ({  call_lbl_69:  calling((void*)seconds, 69, 0UL, 0, 0); (seconds)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 84 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 75  ({  call_lbl_91:  calling((void*)cudaMemcpy, 91, 0UL, 4, (size_t)(2433535641213254565UL), (size_t)(2433535641213254529UL), (size_t)(0UL), (size_t)(0UL)); (cudaMemcpy)(curr, d_curr, nbytes, cudaMemcpyDeviceToHost); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 130 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 72  ({  call_lbl_96:  calling((void*)seconds, 96, 0UL, 0); (seconds)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 72  ({  call_lbl_75:  calling((void*)seconds, 75, 0UL, 0, 0); (seconds)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 80 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 43  ({  call_lbl_98:  calling((void*)finish_progress, 98, 0UL, 0); (finish_progress)(); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 59 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 43  ({  call_lbl_101:  int ____chimes_arg62;  int ____chimes_arg65;  int ____chimes_arg66;  int ____chimes_arg68;  if (!____chimes_replaying) { ____chimes_arg62 = (conf.save_text); ____chimes_arg65 = (conf.ny); ____chimes_arg66 = (conf.nx); ____chimes_arg68 = (conf.radius);  }  calling((void*)save_layer_text, 101, 0UL, 8, (size_t)(2433535641213254565UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2433535641213255080UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg62, dimx, dimy, ____chimes_arg65, ____chimes_arg66, "snap.text", ____chimes_arg68); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 135 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 1  ({  call_lbl_76:  calling((void*)finish_progress, 76, 0UL, ____alias_loc_id_21, 0); (finish_progress)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 164 17 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 1  ({  call_lbl_78:  int ____chimes_arg36;  int ____chimes_arg39;  int ____chimes_arg40;  int ____chimes_arg42;  if (!____chimes_replaying) { ____chimes_arg36 = (conf.save_text); ____chimes_arg39 = (conf.ny); ____chimes_arg40 = (conf.nx); ____chimes_arg42 = (conf.radius);  }  calling((void*)save_layer_text, 78, 0UL, ____alias_loc_id_22, 8, (size_t)(2433535641213254565UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2433535641213255080UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg36, dimx, dimy, ____chimes_arg39, ____chimes_arg40, "snap.text", ____chimes_arg42); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 172 93 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 75 2 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 75 13 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 90 2 
@@ -240,10 +194,10 @@ RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 126 2
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 126 12 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 127 2 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 127 11 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 44 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 60 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 44 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 56 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 2 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 129 18 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 2 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 136 14 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 137 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 137 12 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 138 4 
@@ -263,48 +217,48 @@ RemoveTextEnd /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 180 9
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 4  lbl_0: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 21  register_stack_var("main|error|0", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 21  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 45  lbl_1: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 62  register_stack_var("main|error|1", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 62  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 45  lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 62  register_stack_var("main|error|2", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 62  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 45  lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 62  register_stack_var("main|error|3", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 62  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 46  lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 63  register_stack_var("main|error|4", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 63  if (____chimes_replaying) { goto lbl_5; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 46  lbl_5: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 63  register_stack_var("main|error|5", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 63  if (____chimes_replaying) { goto lbl_6; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 46  lbl_6: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 63  register_stack_var("main|error|6", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 63  if (____chimes_replaying) { goto lbl_7; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 46  lbl_7: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 63  register_stack_var("main|error|7", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 63  if (____chimes_replaying) { goto lbl_8; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 46  lbl_8: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 63  register_stack_var("main|error|8", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 63  if (____chimes_replaying) { goto lbl_9; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 46  lbl_9: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 63  if (____must_checkpoint_main_error_9 != 0) { register_stack_var("main|error|9", &____must_checkpoint_main_error_9, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 63  if (____chimes_replaying) { goto lbl_10; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 46  lbl_10: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 63  if (____must_checkpoint_main_error_10 != 0) { register_stack_var("main|error|10", &____must_checkpoint_main_error_10, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 63  if (____chimes_replaying) { goto lbl_11; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 46  lbl_11: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 63  if (____must_checkpoint_main_error_11 != 0) { register_stack_var("main|error|11", &____must_checkpoint_main_error_11, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 63  if (____chimes_replaying) { goto lbl_12; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 46  lbl_12: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 63  if (____must_checkpoint_main_error_12 != 0) { register_stack_var("main|error|12", &____must_checkpoint_main_error_12, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 63  if (____chimes_replaying) { goto lbl_13; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 46  lbl_13: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 63  if (____must_checkpoint_main_error_13 != 0) { register_stack_var("main|error|13", &____must_checkpoint_main_error_13, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 63  if (____chimes_replaying) { goto lbl_14; } 
-InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 46  lbl_14: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 63  if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 63  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } case(48): { goto call_lbl_48; } case(50): { goto call_lbl_50; } case(55): { goto call_lbl_55; } case(60): { goto call_lbl_60; } case(65): { goto call_lbl_65; } case(70): { goto call_lbl_70; } case(72): { goto call_lbl_72; } case(77): { goto call_lbl_77; } case(78): { goto call_lbl_78; } case(80): { goto call_lbl_80; } case(81): { goto call_lbl_81; } case(83): { goto call_lbl_83; } case(89): { goto call_lbl_89; } case(91): { goto call_lbl_91; } case(96): { goto call_lbl_96; } case(98): { goto call_lbl_98; } case(101): { goto call_lbl_101; } default: { chimes_error(); } }  } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 4  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 21  register_stack_var("main|error|1", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 21  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 4  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 21  register_stack_var("main|error|2", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 21  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 4  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 21  register_stack_var("main|error|3", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 21  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 4  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 21  register_stack_var("main|error|4", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 131 21  if (____chimes_replaying) { goto lbl_5; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 4  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 21  register_stack_var("main|error|5", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 132 21  if (____chimes_replaying) { goto lbl_6; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 4  lbl_6: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 21  register_stack_var("main|error|6", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 133 21  if (____chimes_replaying) { goto lbl_7; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 4  lbl_7: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 21  register_stack_var("main|error|7", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 134 21  if (____chimes_replaying) { goto lbl_8; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 4  lbl_8: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 21  register_stack_var("main|error|8", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 142 21  if (____chimes_replaying) { goto lbl_9; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 4  lbl_9: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 21  if (____must_checkpoint_main_error_9 != 0) { register_stack_var("main|error|9", &____must_checkpoint_main_error_9, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 158 21  if (____chimes_replaying) { goto lbl_10; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 4  lbl_10: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 21  if (____must_checkpoint_main_error_10 != 0) { register_stack_var("main|error|10", &____must_checkpoint_main_error_10, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 161 21  if (____chimes_replaying) { goto lbl_11; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 4  lbl_11: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 21  if (____must_checkpoint_main_error_11 != 0) { register_stack_var("main|error|11", &____must_checkpoint_main_error_11, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 21  if (____chimes_replaying) { goto lbl_12; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 4  lbl_12: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 21  if (____must_checkpoint_main_error_12 != 0) { register_stack_var("main|error|12", &____must_checkpoint_main_error_12, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 21  if (____chimes_replaying) { goto lbl_13; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 4  lbl_13: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 21  if (____must_checkpoint_main_error_13 != 0) { register_stack_var("main|error|13", &____must_checkpoint_main_error_13, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 21  if (____chimes_replaying) { goto lbl_14; } 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 4  lbl_14: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 21  if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 21  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(38): { goto call_lbl_38; } case(55): { goto call_lbl_55; } case(61): { goto call_lbl_61; } case(62): { goto call_lbl_62; } case(63): { goto call_lbl_63; } case(64): { goto call_lbl_64; } case(69): { goto call_lbl_69; } case(75): { goto call_lbl_75; } case(76): { goto call_lbl_76; } case(78): { goto call_lbl_78; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 74 179  ; int i;
 float point_rate;
 double total_s;

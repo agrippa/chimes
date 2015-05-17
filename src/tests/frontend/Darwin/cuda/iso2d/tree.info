@@ -1,4 +1,4 @@
-main 0 DOES checkpoint config_sources cudaConfigureCall cudaDeviceSynchronize cudaFree cudaGetErrorString cudaMalloc cudaMemcpy finish_progress fwd_kernel init_data init_progress sample_sources save_text seconds setup_config update_progress
+main 0 DOES checkpoint config_sources cudaDeviceSynchronize cudaGetErrorString finish_progress fwd_kernel init_data init_progress sample_sources save_text seconds setup_config update_progress
 dim3::dim3 0 DOES_NOT
 fwd_kernel 0 MAY __device_stub__Z10fwd_kernelPfS_S_S_iiii
 __device_stub__Z10fwd_kernelPfS_S_S_iiii 0 MAY cudaError cudaSetupArgument
