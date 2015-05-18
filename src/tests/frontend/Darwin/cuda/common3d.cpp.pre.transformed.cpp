@@ -2458,7 +2458,7 @@ void init_data(float *curr, float *next, float *vsq,
  } }
 # 40 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
 # 41 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- ({ call_lbl_1: unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 0, 3, (size_t)(17753382427056418669UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
+ call_lbl_1: ({ unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (20 * sizeof(float)); } calling((void*)memset, 1, 0UL, 0, 3, (size_t)(17753382427056418669UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, ____chimes_arg2); }) ;
 # 42 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  float scale; scale = (1. / (dx * dx)) ;
 # 43 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2576,7 +2576,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did
 # 102 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  (conf->nsrcs + 1), 17753382427056418792UL, 0, 1, (int)sizeof(struct _source), 0);
 # 103 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- ({ call_lbl_8: source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(17753382427056418756UL), (size_t)(17753382427056418792UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
+ call_lbl_8: ({ source * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(17753382427056418756UL), (size_t)(17753382427056418792UL)); (parse_source)(optarg, ____chimes_arg5); }) ;
 # 104 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  conf->nsrcs++;
 # 105 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
@@ -2621,7 +2621,7 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did
 # 125 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  if (conf->ngpus == -1) {
 # 126 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
- conf->ngpus = ({ call_lbl_13: calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
+ call_lbl_13: conf->ngpus = ({ calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
 # 127 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"
  }
 # 128 "/Users/jmg3/num-debug/src/examples/cuda/../cpp/lib/common3d.cpp"

@@ -26882,11 +26882,11 @@ cudaMemcpy(d_B, h_B, sizeof(int) * N, cudaMemcpyHostToDevice);
 # 45 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  int blocks_per_grid; blocks_per_grid = (((N + threads_per_block) - 1) / threads_per_block) ;
 # 47 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
-(cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : ({ call_lbl_11: calling((void*)kernel, 11, 0UL, ____alias_loc_id_1, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450922UL), (size_t)(10983886093799450929UL), (size_t)(0UL)); (kernel)(d_A, d_B, d_C, N); }) ;
+ call_lbl_11: (cudaConfigureCall(blocks_per_grid, threads_per_block)) ? (void)0 : ({ calling((void*)kernel, 11, 0UL, ____alias_loc_id_1, 4, (size_t)(10983886093799450921UL), (size_t)(10983886093799450922UL), (size_t)(10983886093799450929UL), (size_t)(0UL)); (kernel)(d_A, d_B, d_C, N); }) ;
 # 49 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 cudaMemcpy(h_C, d_C, sizeof(int) * N, cudaMemcpyDeviceToHost);
 # 51 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
- ({ call_lbl_13: calling((void*)checkpoint, 13, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_13: ({ calling((void*)checkpoint, 13, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 53 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
  FILE *fp; fp = (fopen("dump.out", "w")) ;
 # 54 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"

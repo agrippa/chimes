@@ -8,12 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "ray_tracer.c.pre.transformed.cpp"
-static int ____must_checkpoint_rot_x_self_0 = 2;
-static int ____must_checkpoint_rot_x_angle_0 = 2;
-static int ____must_checkpoint_rot_x_y_0 = 2;
-static int ____must_checkpoint_rot_y_self_0 = 2;
-static int ____must_checkpoint_rot_y_angle_0 = 2;
-static int ____must_checkpoint_rot_y_x_0 = 2;
 static int ____must_checkpoint_main_conf_0 = 2;
 
 static int ____must_manage_get_cos_angle_v1v2 = 2;
@@ -43,10 +37,6 @@ static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
-static unsigned ____alias_loc_id_14;
-static unsigned ____alias_loc_id_15;
-static unsigned ____alias_loc_id_16;
-static unsigned ____alias_loc_id_17;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -2778,19 +2768,19 @@ void init(sphere *s, double cx, double cy, double cz, double radius, double clR,
 # 45 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     s->clB = clB;
 # 46 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_5, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "init", &____must_manage_init, ____alias_loc_id_1, ____chimes_did_disable0); }
 # 47 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 double get_coord(double i1, double i2, double w1, double w2, double p) {const int ____chimes_did_disable1 = new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 49 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_6, ____chimes_did_disable1); return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
+    rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 }
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 double modv(double vx, double vy, double vz) {const int ____chimes_did_disable2 = new_stack((void *)(&modv), "modv", &____must_manage_modv, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_7, ____chimes_did_disable2); return sqrt(vx * vx + vy * vy + vz * vz);
+    rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); return sqrt(vx * vx + vy * vy + vz * vz);
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 }
 # 55 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -2803,7 +2793,7 @@ void move(sphere *self, double vx, double vy, double vz) {const int ____chimes_d
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     self->cz += vz;
 # 60 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_8, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_4, ____chimes_did_disable3); }
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 void move_to(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(2899028330670199476UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
@@ -2814,35 +2804,33 @@ void move_to(sphere *self, double vx, double vy, double vz) {const int ____chime
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     self->cz = vz;
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_9, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_5, ____chimes_did_disable4); }
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-void rot_x(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 2, (size_t)(2899028330670199527UL), (size_t)(0UL), "rot_x|self|0", &____must_checkpoint_rot_x_self_0, "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_x|angle|0", &____must_checkpoint_rot_x_angle_0, "double", (void *)(&angle), (size_t)8, 0, 0, 0) ; double y;
- if (____must_checkpoint_rot_x_y_0) { register_stack_vars(1, "rot_x|y|0", &____must_checkpoint_rot_x_y_0, "double", (void *)(&y), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+void rot_x(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(2899028330670199527UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-       y = (self->cy * ({ call_lbl_1: calling((void*)cos, 1, 0UL, 0, 1, (size_t)(0UL)); (cos)(angle); }) - self->cz * ({ call_lbl_2: calling((void*)sin, 2, 0UL, 0, 1, (size_t)(0UL)); (sin)(angle); }) ) ;
+     double y; y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
 # 70 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     double z; z = (self->cy * ({ call_lbl_3: calling((void*)sin, 3, 0UL, 0, 1, (size_t)(0UL)); (sin)(angle); }) + self->cz * ({ call_lbl_4: calling((void*)cos, 4, 0UL, 0, 1, (size_t)(0UL)); (cos)(angle); }) ) ;
+     double z; z = (self->cy * sin(angle) + self->cz * cos(angle)) ;
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     self->cy = y;
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     self->cz = z;
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_10, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_6, ____chimes_did_disable5); }
 # 74 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 75 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-void rot_y(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 2, (size_t)(2899028330670199578UL), (size_t)(0UL), "rot_y|self|0", &____must_checkpoint_rot_y_self_0, "%struct._sphere*", (void *)(&self), (size_t)8, 1, 0, 0, "rot_y|angle|0", &____must_checkpoint_rot_y_angle_0, "double", (void *)(&angle), (size_t)8, 0, 0, 0) ; double x;
- if (____must_checkpoint_rot_y_x_0) { register_stack_vars(1, "rot_y|x|0", &____must_checkpoint_rot_y_x_0, "double", (void *)(&x), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+void rot_y(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(2899028330670199578UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 76 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     x = (self->cx * ({ call_lbl_1: calling((void*)cos, 1, 0UL, 0, 1, (size_t)(0UL)); (cos)(angle); }) - self->cz * ({ call_lbl_2: calling((void*)sin, 2, 0UL, 0, 1, (size_t)(0UL)); (sin)(angle); }) ) ;
+   double x; x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
 # 77 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-   double z; z = (self->cx * ({ call_lbl_3: calling((void*)sin, 3, 0UL, 0, 1, (size_t)(0UL)); (sin)(angle); }) + self->cz * ({ call_lbl_4: calling((void*)cos, 4, 0UL, 0, 1, (size_t)(0UL)); (cos)(angle); }) ) ;
+   double z; z = (self->cx * sin(angle) + self->cz * cos(angle)) ;
 # 78 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
   self->cx = x;
 # 79 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
   self->cz = z;
 # 80 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "rot_y", &____must_manage_rot_y, ____alias_loc_id_11, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "rot_y", &____must_manage_rot_y, ____alias_loc_id_7, ____chimes_did_disable6); }
 # 81 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 82 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 double get_sphere_intersec(double cx, double cy, double cz, double radius,
@@ -2871,7 +2859,7 @@ double get_sphere_intersec(double cx, double cy, double cz, double radius,
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     }
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_12, ____chimes_did_disable7); return t;
+    rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); return t;
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 }
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -2884,7 +2872,7 @@ double get_cos_angle_v1v2(double v1x, double v1y, double v1z, double v2x,
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
      double b; b = ( ({ calling((void*)modv, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (modv)(v2x, v2y, v2z); }) ) ;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_13, ____chimes_did_disable8); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
+    rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 }
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -2897,7 +2885,7 @@ void usage(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     exit(1);
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_14, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_10, ____chimes_did_disable9); }
 # 113 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 114 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 void parse_three_doubles(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(2899028330670199876UL), (size_t)(2899028330670199878UL), (size_t)(2899028330670199883UL), (size_t)(2899028330670199888UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
@@ -2922,7 +2910,7 @@ void parse_three_doubles(char *def, double *a, double *b, double *c) {const int 
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     *c = atof(second_comma + 1);
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_15, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_11, ____chimes_did_disable10); }
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 void parse_config(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(2899028330670200184UL), (size_t)(2899028330670200123UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
@@ -3071,7 +3059,7 @@ void parse_config(int argc, char **argv, config *conf) {const int ____chimes_did
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     }
 # 207 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_16, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_12, ____chimes_did_disable11); }
 # 208 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 209 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2899028330670200666UL)) ; double fact;
@@ -3109,7 +3097,7 @@ config conf;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;; { call_lbl_7: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(7, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;; { call_lbl_0: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(0, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3233,7 +3221,7 @@ config conf;
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-         ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_4, 0); (checkpoint)(); }) ;
+         call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 290 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3244,13 +3232,13 @@ config conf;
 # 295 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     free_wrapper(screen, 2899028330670200241UL);
 # 296 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_17, ____chimes_did_disable12); return (0);
+    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable12); return (0);
 # 297 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 }
 
 
 static int module_init() {
-    init_module(2899028330670199275UL, 31, 13, 7, 5, 3, 2899028330670199275UL + 627UL, 2899028330670199275UL + 871UL, 2899028330670199275UL + 625UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 624UL, 2899028330670199275UL + 909UL, 2899028330670199275UL + 555UL, 2899028330670199275UL + 613UL, 2899028330670199275UL + 554UL, 2899028330670199275UL + 608UL, 2899028330670199275UL + 557UL, 2899028330670199275UL + 584UL, 2899028330670199275UL + 628UL, 2899028330670199275UL + 757UL, 2899028330670199275UL + 553UL, 2899028330670199275UL + 603UL, 2899028330670199275UL + 552UL, 2899028330670199275UL + 601UL, 2899028330670199275UL + 633UL, 2899028330670199275UL + 823UL, 2899028330670199275UL + 176UL, 2899028330670199275UL + 201UL, 2899028330670199275UL + 256UL, 2899028330670199275UL + 303UL, 2899028330670199275UL + 1UL, 2899028330670199275UL + 37UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 1391UL, 2899028330670199275UL + 1398UL, 2899028330670199275UL + 898UL, 2899028330670199275UL + 933UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 548UL, 2899028330670199275UL + 543UL, 2899028330670199275UL + 629UL, 2899028330670199275UL + 759UL, 2899028330670199275UL + 935UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 630UL, 2899028330670199275UL + 775UL, 2899028330670199275UL + 631UL, 2899028330670199275UL + 791UL, 2899028330670199275UL + 632UL, 2899028330670199275UL + 807UL, 2899028330670199275UL + 556UL, 2899028330670199275UL + 582UL, 2899028330670199275UL + 205UL, 2899028330670199275UL + 252UL, 2899028330670199275UL + 141UL, 2899028330670199275UL + 172UL, 2899028330670199275UL + 943UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 537UL, 2899028330670199275UL + 548UL, 2899028330670199275UL + 1405UL, 2899028330670199275UL + 871UL, 2899028330670199275UL + 920UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 966UL, "_config", 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt), "_rgb", 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b), "_sphere", 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB), "get_cos_angle_v1v2", 1, "modv", "main", 7, "checkpoint", "get_coord", "get_cos_angle_v1v2", "get_sphere_intersec", "modv", "move", "parse_config", "modv", 0, "move", 0, "get_sphere_intersec", 0, "move_to", 0, "get_coord", 0, "parse_three_doubles", 0, "init", 0, "parse_config", 3, "init", "parse_three_doubles", "usage", "usage", 0, "rot_y", 2, "cos", "sin", "rot_x", 2, "cos", "sin", "rot_x|self|0", 2, "sin", "cos", "rot_x|angle|0", 2, "sin", "cos", "rot_x|y|0", 2, "sin", "cos", "rot_y|self|0", 2, "sin", "cos", "rot_y|angle|0", 2, "sin", "cos", "rot_y|x|0", 2, "sin", "cos", "main|conf|0", 1, "main", &____alias_loc_id_0, (unsigned)2, 2899028330670199275UL + 205UL, 2899028330670199275UL + 206UL, &____alias_loc_id_1, (unsigned)1, 2899028330670199275UL + 207UL, &____alias_loc_id_2, (unsigned)2, 2899028330670199275UL + 256UL, 2899028330670199275UL + 257UL, &____alias_loc_id_3, (unsigned)1, 2899028330670199275UL + 258UL, &____alias_loc_id_4, (unsigned)31, 2899028330670199275UL + 917UL, 2899028330670199275UL + 918UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 922UL, 2899028330670199275UL + 923UL, 2899028330670199275UL + 924UL, 2899028330670199275UL + 925UL, 2899028330670199275UL + 926UL, 2899028330670199275UL + 927UL, 2899028330670199275UL + 928UL, 2899028330670199275UL + 929UL, 2899028330670199275UL + 930UL, 2899028330670199275UL + 931UL, 2899028330670199275UL + 932UL, 2899028330670199275UL + 933UL, 2899028330670199275UL + 934UL, 2899028330670199275UL + 935UL, 2899028330670199275UL + 936UL, 2899028330670199275UL + 937UL, 2899028330670199275UL + 938UL, 2899028330670199275UL + 939UL, 2899028330670199275UL + 940UL, 2899028330670199275UL + 941UL, 2899028330670199275UL + 942UL, 2899028330670199275UL + 943UL, 2899028330670199275UL + 944UL, 2899028330670199275UL + 945UL, 2899028330670199275UL + 946UL, 2899028330670199275UL + 947UL, 2899028330670199275UL + 966UL, &____alias_loc_id_5, (unsigned)9, 2899028330670199275UL + 1UL, 2899028330670199275UL + 2UL, 2899028330670199275UL + 3UL, 2899028330670199275UL + 4UL, 2899028330670199275UL + 5UL, 2899028330670199275UL + 6UL, 2899028330670199275UL + 7UL, 2899028330670199275UL + 8UL, 2899028330670199275UL + 37UL, &____alias_loc_id_6, (unsigned)5, 2899028330670199275UL + 81UL, 2899028330670199275UL + 82UL, 2899028330670199275UL + 83UL, 2899028330670199275UL + 84UL, 2899028330670199275UL + 85UL, &____alias_loc_id_7, (unsigned)3, 2899028330670199275UL + 115UL, 2899028330670199275UL + 116UL, 2899028330670199275UL + 117UL, &____alias_loc_id_8, (unsigned)5, 2899028330670199275UL + 141UL, 2899028330670199275UL + 142UL, 2899028330670199275UL + 143UL, 2899028330670199275UL + 144UL, 2899028330670199275UL + 172UL, &____alias_loc_id_9, (unsigned)5, 2899028330670199275UL + 176UL, 2899028330670199275UL + 177UL, 2899028330670199275UL + 178UL, 2899028330670199275UL + 179UL, 2899028330670199275UL + 201UL, &____alias_loc_id_10, (unsigned)2, 2899028330670199275UL + 208UL, 2899028330670199275UL + 252UL, &____alias_loc_id_11, (unsigned)2, 2899028330670199275UL + 259UL, 2899028330670199275UL + 303UL, &____alias_loc_id_12, (unsigned)17, 2899028330670199275UL + 305UL, 2899028330670199275UL + 306UL, 2899028330670199275UL + 307UL, 2899028330670199275UL + 308UL, 2899028330670199275UL + 309UL, 2899028330670199275UL + 310UL, 2899028330670199275UL + 311UL, 2899028330670199275UL + 312UL, 2899028330670199275UL + 313UL, 2899028330670199275UL + 314UL, 2899028330670199275UL + 315UL, 2899028330670199275UL + 316UL, 2899028330670199275UL + 317UL, 2899028330670199275UL + 318UL, 2899028330670199275UL + 319UL, 2899028330670199275UL + 320UL, 2899028330670199275UL + 321UL, &____alias_loc_id_13, (unsigned)8, 2899028330670199275UL + 483UL, 2899028330670199275UL + 484UL, 2899028330670199275UL + 485UL, 2899028330670199275UL + 486UL, 2899028330670199275UL + 487UL, 2899028330670199275UL + 488UL, 2899028330670199275UL + 489UL, 2899028330670199275UL + 490UL, &____alias_loc_id_14, (unsigned)1, 2899028330670199275UL + 537UL, &____alias_loc_id_15, (unsigned)11, 2899028330670199275UL + 552UL, 2899028330670199275UL + 553UL, 2899028330670199275UL + 554UL, 2899028330670199275UL + 555UL, 2899028330670199275UL + 556UL, 2899028330670199275UL + 557UL, 2899028330670199275UL + 582UL, 2899028330670199275UL + 584UL, 2899028330670199275UL + 603UL, 2899028330670199275UL + 608UL, 2899028330670199275UL + 613UL, &____alias_loc_id_16, (unsigned)19, 2899028330670199275UL + 623UL, 2899028330670199275UL + 624UL, 2899028330670199275UL + 625UL, 2899028330670199275UL + 626UL, 2899028330670199275UL + 627UL, 2899028330670199275UL + 628UL, 2899028330670199275UL + 629UL, 2899028330670199275UL + 630UL, 2899028330670199275UL + 631UL, 2899028330670199275UL + 632UL, 2899028330670199275UL + 633UL, 2899028330670199275UL + 757UL, 2899028330670199275UL + 759UL, 2899028330670199275UL + 775UL, 2899028330670199275UL + 791UL, 2899028330670199275UL + 807UL, 2899028330670199275UL + 823UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 1403UL, &____alias_loc_id_17, (unsigned)6, 2899028330670199275UL + 917UL, 2899028330670199275UL + 918UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 922UL, 2899028330670199275UL + 923UL);
+    init_module(2899028330670199275UL, 31, 13, 1, 1, 3, 2899028330670199275UL + 627UL, 2899028330670199275UL + 871UL, 2899028330670199275UL + 625UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 624UL, 2899028330670199275UL + 909UL, 2899028330670199275UL + 555UL, 2899028330670199275UL + 613UL, 2899028330670199275UL + 554UL, 2899028330670199275UL + 608UL, 2899028330670199275UL + 557UL, 2899028330670199275UL + 584UL, 2899028330670199275UL + 628UL, 2899028330670199275UL + 757UL, 2899028330670199275UL + 553UL, 2899028330670199275UL + 603UL, 2899028330670199275UL + 552UL, 2899028330670199275UL + 601UL, 2899028330670199275UL + 633UL, 2899028330670199275UL + 823UL, 2899028330670199275UL + 176UL, 2899028330670199275UL + 201UL, 2899028330670199275UL + 256UL, 2899028330670199275UL + 303UL, 2899028330670199275UL + 1UL, 2899028330670199275UL + 37UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 1391UL, 2899028330670199275UL + 1398UL, 2899028330670199275UL + 898UL, 2899028330670199275UL + 933UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 548UL, 2899028330670199275UL + 543UL, 2899028330670199275UL + 629UL, 2899028330670199275UL + 759UL, 2899028330670199275UL + 935UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 630UL, 2899028330670199275UL + 775UL, 2899028330670199275UL + 631UL, 2899028330670199275UL + 791UL, 2899028330670199275UL + 632UL, 2899028330670199275UL + 807UL, 2899028330670199275UL + 556UL, 2899028330670199275UL + 582UL, 2899028330670199275UL + 205UL, 2899028330670199275UL + 252UL, 2899028330670199275UL + 141UL, 2899028330670199275UL + 172UL, 2899028330670199275UL + 943UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 537UL, 2899028330670199275UL + 548UL, 2899028330670199275UL + 1405UL, 2899028330670199275UL + 871UL, 2899028330670199275UL + 920UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 966UL, "_config", 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt), "_rgb", 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b), "_sphere", 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB), "get_cos_angle_v1v2", 1, "modv", "main", 7, "checkpoint", "get_coord", "get_cos_angle_v1v2", "get_sphere_intersec", "modv", "move", "parse_config", "modv", 0, "move", 0, "get_sphere_intersec", 0, "move_to", 0, "get_coord", 0, "parse_three_doubles", 0, "init", 0, "parse_config", 3, "init", "parse_three_doubles", "usage", "usage", 0, "rot_y", 0, "rot_x", 0, "main|conf|0", 1, "main", &____alias_loc_id_0, (unsigned)31, 2899028330670199275UL + 917UL, 2899028330670199275UL + 918UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 922UL, 2899028330670199275UL + 923UL, 2899028330670199275UL + 924UL, 2899028330670199275UL + 925UL, 2899028330670199275UL + 926UL, 2899028330670199275UL + 927UL, 2899028330670199275UL + 928UL, 2899028330670199275UL + 929UL, 2899028330670199275UL + 930UL, 2899028330670199275UL + 931UL, 2899028330670199275UL + 932UL, 2899028330670199275UL + 933UL, 2899028330670199275UL + 934UL, 2899028330670199275UL + 935UL, 2899028330670199275UL + 936UL, 2899028330670199275UL + 937UL, 2899028330670199275UL + 938UL, 2899028330670199275UL + 939UL, 2899028330670199275UL + 940UL, 2899028330670199275UL + 941UL, 2899028330670199275UL + 942UL, 2899028330670199275UL + 943UL, 2899028330670199275UL + 944UL, 2899028330670199275UL + 945UL, 2899028330670199275UL + 946UL, 2899028330670199275UL + 947UL, 2899028330670199275UL + 966UL, &____alias_loc_id_1, (unsigned)9, 2899028330670199275UL + 1UL, 2899028330670199275UL + 2UL, 2899028330670199275UL + 3UL, 2899028330670199275UL + 4UL, 2899028330670199275UL + 5UL, 2899028330670199275UL + 6UL, 2899028330670199275UL + 7UL, 2899028330670199275UL + 8UL, 2899028330670199275UL + 37UL, &____alias_loc_id_2, (unsigned)5, 2899028330670199275UL + 81UL, 2899028330670199275UL + 82UL, 2899028330670199275UL + 83UL, 2899028330670199275UL + 84UL, 2899028330670199275UL + 85UL, &____alias_loc_id_3, (unsigned)3, 2899028330670199275UL + 115UL, 2899028330670199275UL + 116UL, 2899028330670199275UL + 117UL, &____alias_loc_id_4, (unsigned)5, 2899028330670199275UL + 141UL, 2899028330670199275UL + 142UL, 2899028330670199275UL + 143UL, 2899028330670199275UL + 144UL, 2899028330670199275UL + 172UL, &____alias_loc_id_5, (unsigned)5, 2899028330670199275UL + 176UL, 2899028330670199275UL + 177UL, 2899028330670199275UL + 178UL, 2899028330670199275UL + 179UL, 2899028330670199275UL + 201UL, &____alias_loc_id_6, (unsigned)5, 2899028330670199275UL + 205UL, 2899028330670199275UL + 206UL, 2899028330670199275UL + 207UL, 2899028330670199275UL + 208UL, 2899028330670199275UL + 252UL, &____alias_loc_id_7, (unsigned)5, 2899028330670199275UL + 256UL, 2899028330670199275UL + 257UL, 2899028330670199275UL + 258UL, 2899028330670199275UL + 259UL, 2899028330670199275UL + 303UL, &____alias_loc_id_8, (unsigned)17, 2899028330670199275UL + 305UL, 2899028330670199275UL + 306UL, 2899028330670199275UL + 307UL, 2899028330670199275UL + 308UL, 2899028330670199275UL + 309UL, 2899028330670199275UL + 310UL, 2899028330670199275UL + 311UL, 2899028330670199275UL + 312UL, 2899028330670199275UL + 313UL, 2899028330670199275UL + 314UL, 2899028330670199275UL + 315UL, 2899028330670199275UL + 316UL, 2899028330670199275UL + 317UL, 2899028330670199275UL + 318UL, 2899028330670199275UL + 319UL, 2899028330670199275UL + 320UL, 2899028330670199275UL + 321UL, &____alias_loc_id_9, (unsigned)8, 2899028330670199275UL + 483UL, 2899028330670199275UL + 484UL, 2899028330670199275UL + 485UL, 2899028330670199275UL + 486UL, 2899028330670199275UL + 487UL, 2899028330670199275UL + 488UL, 2899028330670199275UL + 489UL, 2899028330670199275UL + 490UL, &____alias_loc_id_10, (unsigned)1, 2899028330670199275UL + 537UL, &____alias_loc_id_11, (unsigned)11, 2899028330670199275UL + 552UL, 2899028330670199275UL + 553UL, 2899028330670199275UL + 554UL, 2899028330670199275UL + 555UL, 2899028330670199275UL + 556UL, 2899028330670199275UL + 557UL, 2899028330670199275UL + 582UL, 2899028330670199275UL + 584UL, 2899028330670199275UL + 603UL, 2899028330670199275UL + 608UL, 2899028330670199275UL + 613UL, &____alias_loc_id_12, (unsigned)19, 2899028330670199275UL + 623UL, 2899028330670199275UL + 624UL, 2899028330670199275UL + 625UL, 2899028330670199275UL + 626UL, 2899028330670199275UL + 627UL, 2899028330670199275UL + 628UL, 2899028330670199275UL + 629UL, 2899028330670199275UL + 630UL, 2899028330670199275UL + 631UL, 2899028330670199275UL + 632UL, 2899028330670199275UL + 633UL, 2899028330670199275UL + 757UL, 2899028330670199275UL + 759UL, 2899028330670199275UL + 775UL, 2899028330670199275UL + 791UL, 2899028330670199275UL + 807UL, 2899028330670199275UL + 823UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 1403UL, &____alias_loc_id_13, (unsigned)6, 2899028330670199275UL + 917UL, 2899028330670199275UL + 918UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 922UL, 2899028330670199275UL + 923UL);
     register_functions(13, "ray_tracer.c.pre.register.cpp", "init", &init, "get_coord", &get_coord, "modv", &modv, "move", &move, "move_to", &move_to, "rot_x", &rot_x, "rot_y", &rot_y, "get_sphere_intersec", &get_sphere_intersec, "get_cos_angle_v1v2", &get_cos_angle_v1v2, "usage", &usage, "parse_three_doubles", &parse_three_doubles, "parse_config", &parse_config, "main", &main);
     return 0;
 }

@@ -2790,37 +2790,37 @@ Command cmd;
  if (____must_checkpoint_main_iStep_0 || ____must_checkpoint_main_printRate_0 || ____must_checkpoint_main_nSteps_0 || ____must_checkpoint_main_validate_0 || ____must_checkpoint_main_sim_0 || ____must_checkpoint_main_cmd_0) { register_stack_vars(6, "main|iStep|0", &____must_checkpoint_main_iStep_0, "i32", (void *)(&iStep), (size_t)4, 0, 0, 0, "main|printRate|0", &____must_checkpoint_main_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0, "main|nSteps|0", &____must_checkpoint_main_nSteps_0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "main|validate|0", &____must_checkpoint_main_validate_0, "%struct.ValidateSt*", (void *)(&validate), (size_t)8, 1, 0, 0, "main|sim|0", &____must_checkpoint_main_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0, "main|cmd|0", &____must_checkpoint_main_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } default: { chimes_error(); } } } ; ;
 # 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_2: calling((void*)initParallel, 2, 0UL, ____alias_loc_id_0, 2, (size_t)(15748557669205416349UL), (size_t)(15748557669205416350UL)); (initParallel)(&argc, &argv); }) ;
+    call_lbl_2: ({ calling((void*)initParallel, 2, 0UL, ____alias_loc_id_0, 2, (size_t)(15748557669205416349UL), (size_t)(15748557669205416350UL)); (initParallel)(&argc, &argv); }) ;
 # 91 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_3: calling((void*)profileStart, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(totalTimer); }) ;
+    call_lbl_3: ({ calling((void*)profileStart, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(totalTimer); }) ;
 # 92 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_4: calling((void*)initSubsystems, 4, 0UL, 0, 0); (initSubsystems)(); }) ;
+    call_lbl_4: ({ calling((void*)initSubsystems, 4, 0UL, 0, 0); (initSubsystems)(); }) ;
 # 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_5: calling((void*)timestampBarrier, 5, 0UL, 0, 1, (size_t)(15748557669205417563UL)); (timestampBarrier)("Starting Initialization\n"); }) ;
+    call_lbl_5: ({ calling((void*)timestampBarrier, 5, 0UL, 0, 1, (size_t)(15748557669205417563UL)); (timestampBarrier)("Starting Initialization\n"); }) ;
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_6: calling((void*)yamlAppInfo, 6, 0UL, 0, 1, (size_t)(15748557669205417114UL)); (yamlAppInfo)(__stdoutp); }) ;
+    call_lbl_6: ({ calling((void*)yamlAppInfo, 6, 0UL, 0, 1, (size_t)(15748557669205417114UL)); (yamlAppInfo)(__stdoutp); }) ;
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       cmd = Command(parseCommandLine(argc, argv)) ;
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_8: calling((void*)printCmdYaml, 8, 0UL, 0, 2, (size_t)(15748557669205417114UL), (size_t)(15748557669205416351UL)); (printCmdYaml)(__stdoutp, &cmd); }) ;
+    call_lbl_8: ({ calling((void*)printCmdYaml, 8, 0UL, 0, 2, (size_t)(15748557669205417114UL), (size_t)(15748557669205416351UL)); (printCmdYaml)(__stdoutp, &cmd); }) ;
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      sim = ( ({ call_lbl_9: Command ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (cmd); } calling((void*)initSimulation, 9, 15748557669205416411UL, 0, 1, (size_t)(15748557669205416353UL)); (initSimulation)(____chimes_arg7); }) ) ;
+       call_lbl_9: sim = ( ({ Command ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (cmd); } calling((void*)initSimulation, 9, 15748557669205416411UL, 0, 1, (size_t)(15748557669205416353UL)); (initSimulation)(____chimes_arg7); }) ) ;
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_10: calling((void*)printSimulationDataYaml, 10, 0UL, ____alias_loc_id_1, 2, (size_t)(15748557669205417114UL), (size_t)(15748557669205416411UL)); (printSimulationDataYaml)(__stdoutp, sim); }) ;
+    call_lbl_10: ({ calling((void*)printSimulationDataYaml, 10, 0UL, ____alias_loc_id_1, 2, (size_t)(15748557669205417114UL), (size_t)(15748557669205416411UL)); (printSimulationDataYaml)(__stdoutp, sim); }) ;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      validate = ( ({ call_lbl_11: calling((void*)initValidate, 11, 15748557669205416386UL, 0, 1, (size_t)(15748557669205416411UL)); (initValidate)(sim); }) ) ;
+       call_lbl_11: validate = ( ({ calling((void*)initValidate, 11, 15748557669205416386UL, 0, 1, (size_t)(15748557669205416411UL)); (initValidate)(sim); }) ) ;
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_12: calling((void*)timestampBarrier, 12, 0UL, ____alias_loc_id_2, 1, (size_t)(15748557669205417563UL)); (timestampBarrier)("Initialization Finished\n"); }) ;
+    call_lbl_12: ({ calling((void*)timestampBarrier, 12, 0UL, ____alias_loc_id_2, 1, (size_t)(15748557669205417563UL)); (timestampBarrier)("Initialization Finished\n"); }) ;
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_13: calling((void*)timestampBarrier, 13, 0UL, 0, 1, (size_t)(15748557669205417566UL)); (timestampBarrier)("Starting simulation\n"); }) ;
+    call_lbl_13: ({ calling((void*)timestampBarrier, 13, 0UL, 0, 1, (size_t)(15748557669205417566UL)); (timestampBarrier)("Starting simulation\n"); }) ;
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2830,63 +2830,63 @@ Command cmd;
 # 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       iStep = (0) ;
 # 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_14: calling((void*)profileStart, 14, 0UL, ____alias_loc_id_3, 1, (size_t)(0UL)); (profileStart)(loopTimer); }) ;
+    call_lbl_14: ({ calling((void*)profileStart, 14, 0UL, ____alias_loc_id_3, 1, (size_t)(0UL)); (profileStart)(loopTimer); }) ;
 # 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    for (; iStep<nSteps;)
 # 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      do { ({ call_lbl_15: calling((void*)profileStart, 15, 0UL, ____alias_loc_id_4, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0UL, ____alias_loc_id_4, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       ({ call_lbl_16: calling((void*)sumAtoms, 16, 0UL, 0, 1, (size_t)(15748557669205416411UL)); (sumAtoms)(sim); }) ;
+       call_lbl_16: ({ calling((void*)sumAtoms, 16, 0UL, 0, 1, (size_t)(15748557669205416411UL)); (sumAtoms)(sim); }) ;
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      do { ({ call_lbl_17: calling((void*)profileStop, 17, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+      do { call_lbl_17: ({ calling((void*)profileStop, 17, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       ({ call_lbl_18: double ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg19 = (getElapsedTime(timestepTimer)); } calling((void*)printThings, 18, 0UL, 0, 3, (size_t)(15748557669205416411UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_arg19); }) ;
+       call_lbl_18: ({ double ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg19 = (getElapsedTime(timestepTimer)); } calling((void*)printThings, 18, 0UL, 0, 3, (size_t)(15748557669205416411UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_arg19); }) ;
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      do { ({ call_lbl_19: calling((void*)profileStart, 19, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ; } while(0);
+      do { call_lbl_19: ({ calling((void*)profileStart, 19, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ; } while(0);
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       ({ call_lbl_20: double ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (sim->dt); } calling((void*)timestep, 20, 0UL, 0, 3, (size_t)(15748557669205416411UL), (size_t)(0UL), (size_t)(0UL)); (timestep)(sim, printRate, ____chimes_arg23); }) ;
+       call_lbl_20: ({ double ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (sim->dt); } calling((void*)timestep, 20, 0UL, 0, 3, (size_t)(15748557669205416411UL), (size_t)(0UL), (size_t)(0UL)); (timestep)(sim, printRate, ____chimes_arg23); }) ;
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      do { ({ call_lbl_21: calling((void*)profileStop, 21, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(timestepTimer); }) ; } while(0);
+      do { call_lbl_21: ({ calling((void*)profileStop, 21, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(timestepTimer); }) ; } while(0);
 # 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       iStep += printRate;
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_22: calling((void*)profileStop, 22, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStop)(loopTimer); }) ;
+    call_lbl_22: ({ calling((void*)profileStop, 22, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStop)(loopTimer); }) ;
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_23: calling((void*)sumAtoms, 23, 0UL, 0, 1, (size_t)(15748557669205416411UL)); (sumAtoms)(sim); }) ;
+    call_lbl_23: ({ calling((void*)sumAtoms, 23, 0UL, 0, 1, (size_t)(15748557669205416411UL)); (sumAtoms)(sim); }) ;
 # 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_24: double ____chimes_arg29; if (!____chimes_replaying) { ____chimes_arg29 = (getElapsedTime(timestepTimer)); } calling((void*)printThings, 24, 0UL, 0, 3, (size_t)(15748557669205416411UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_arg29); }) ;
+    call_lbl_24: ({ double ____chimes_arg29; if (!____chimes_replaying) { ____chimes_arg29 = (getElapsedTime(timestepTimer)); } calling((void*)printThings, 24, 0UL, 0, 3, (size_t)(15748557669205416411UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_arg29); }) ;
 # 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_25: calling((void*)timestampBarrier, 25, 0UL, 0, 1, (size_t)(15748557669205417567UL)); (timestampBarrier)("Ending simulation\n"); }) ;
+    call_lbl_25: ({ calling((void*)timestampBarrier, 25, 0UL, 0, 1, (size_t)(15748557669205417567UL)); (timestampBarrier)("Ending simulation\n"); }) ;
 # 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_26: calling((void*)validateResult, 26, 0UL, 0, 2, (size_t)(15748557669205416386UL), (size_t)(15748557669205416411UL)); (validateResult)(validate, sim); }) ;
+    call_lbl_26: ({ calling((void*)validateResult, 26, 0UL, 0, 2, (size_t)(15748557669205416386UL), (size_t)(15748557669205416411UL)); (validateResult)(validate, sim); }) ;
 # 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_27: calling((void*)profileStop, 27, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(totalTimer); }) ;
+    call_lbl_27: ({ calling((void*)profileStop, 27, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(totalTimer); }) ;
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_28: int ____chimes_arg34; int ____chimes_arg35; if (!____chimes_replaying) { ____chimes_arg34 = (sim->atoms->nGlobal); ____chimes_arg35 = (sim->printRate); } calling((void*)printPerformanceResults, 28, 0UL, 0, 2, (size_t)(0UL), (size_t)(0UL)); (printPerformanceResults)(____chimes_arg34, ____chimes_arg35); }) ;
+    call_lbl_28: ({ int ____chimes_arg34; int ____chimes_arg35; if (!____chimes_replaying) { ____chimes_arg34 = (sim->atoms->nGlobal); ____chimes_arg35 = (sim->printRate); } calling((void*)printPerformanceResults, 28, 0UL, 0, 2, (size_t)(0UL), (size_t)(0UL)); (printPerformanceResults)(____chimes_arg34, ____chimes_arg35); }) ;
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_29: calling((void*)destroySimulation, 29, 0UL, 0, 1, (size_t)(15748557669205416352UL)); (destroySimulation)(&sim); }) ;
+    call_lbl_29: ({ calling((void*)destroySimulation, 29, 0UL, 0, 1, (size_t)(15748557669205416352UL)); (destroySimulation)(&sim); }) ;
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    free_wrapper(validate, 15748557669205416386UL);
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_31: calling((void*)finalizeSubsystems, 31, 0UL, 0, 0); (finalizeSubsystems)(); }) ;
+    call_lbl_31: ({ calling((void*)finalizeSubsystems, 31, 0UL, 0, 0); (finalizeSubsystems)(); }) ;
 # 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_32: calling((void*)timestampBarrier, 32, 0UL, 0, 1, (size_t)(15748557669205417568UL)); (timestampBarrier)("CoMD Ending\n"); }) ;
+    call_lbl_32: ({ calling((void*)timestampBarrier, 32, 0UL, 0, 1, (size_t)(15748557669205417568UL)); (timestampBarrier)("CoMD Ending\n"); }) ;
 # 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_33: calling((void*)destroyParallel, 33, 0UL, 0, 0); (destroyParallel)(); }) ;
+    call_lbl_33: ({ calling((void*)destroyParallel, 33, 0UL, 0, 0); (destroyParallel)(); }) ;
 # 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable0); return 0;
@@ -2922,7 +2922,7 @@ SimFlat *sim;
    sim->atomExchange = __null;
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   sim->pot = ({ call_lbl_2: int ____chimes_arg38; const char * ____chimes_arg39; const char * ____chimes_arg40; const char * ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg38 = (cmd.doeam); ____chimes_arg39 = (cmd.potDir); ____chimes_arg40 = (cmd.potName); ____chimes_arg41 = (cmd.potType); } calling((void*)initPotential, 2, 15748557669205417603UL, ____alias_loc_id_6, 4, (size_t)(0UL), (size_t)(15748557669205416672UL), (size_t)(15748557669205416672UL), (size_t)(15748557669205416672UL)); (initPotential)(____chimes_arg38, ____chimes_arg39, ____chimes_arg40, ____chimes_arg41); }) ;
+    call_lbl_2: sim->pot = ({ int ____chimes_arg38; const char * ____chimes_arg39; const char * ____chimes_arg40; const char * ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg38 = (cmd.doeam); ____chimes_arg39 = (cmd.potDir); ____chimes_arg40 = (cmd.potName); ____chimes_arg41 = (cmd.potType); } calling((void*)initPotential, 2, 15748557669205417603UL, ____alias_loc_id_6, 4, (size_t)(0UL), (size_t)(15748557669205416672UL), (size_t)(15748557669205416672UL), (size_t)(15748557669205416672UL)); (initPotential)(____chimes_arg38, ____chimes_arg39, ____chimes_arg40, ____chimes_arg41); }) ;
 # 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       latticeConstant = (cmd.lat) ;
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -2930,7 +2930,7 @@ SimFlat *sim;
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_3: Command ____chimes_arg42; real_t ____chimes_arg43; char * ____chimes_arg45; if (!____chimes_replaying) { ____chimes_arg42 = (cmd); ____chimes_arg43 = (sim->pot->cutoff); ____chimes_arg45 = (sim->pot->latticeType); } calling((void*)sanityChecks, 3, 0UL, ____alias_loc_id_7, 4, (size_t)(15748557669205416484UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205417603UL)); (sanityChecks)(____chimes_arg42, ____chimes_arg43, latticeConstant, ____chimes_arg45); }) ;
+    call_lbl_3: ({ Command ____chimes_arg42; real_t ____chimes_arg43; char * ____chimes_arg45; if (!____chimes_replaying) { ____chimes_arg42 = (cmd); ____chimes_arg43 = (sim->pot->cutoff); ____chimes_arg45 = (sim->pot->latticeType); } calling((void*)sanityChecks, 3, 0UL, ____alias_loc_id_7, 4, (size_t)(15748557669205416484UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205417603UL)); (sanityChecks)(____chimes_arg42, ____chimes_arg43, latticeConstant, ____chimes_arg45); }) ;
 # 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    sim->species = ({ calling((void*)initSpecies, -1, 15748557669205417603UL, 0, 1, (size_t)(15748557669205417603UL)); (initSpecies)(sim->pot); }) ;
@@ -2945,41 +2945,41 @@ SimFlat *sim;
    globalExtent[2] = cmd.nz * latticeConstant;
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   sim->domain = ({ call_lbl_4: int ____chimes_arg47; int ____chimes_arg48; int ____chimes_arg49; if (!____chimes_replaying) { ____chimes_arg47 = (cmd.xproc); ____chimes_arg48 = (cmd.yproc); ____chimes_arg49 = (cmd.zproc); } calling((void*)initDecomposition, 4, 15748557669205417603UL, ____alias_loc_id_8, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205416485UL)); (initDecomposition)(____chimes_arg47, ____chimes_arg48, ____chimes_arg49, globalExtent); }) ;
+    call_lbl_4: sim->domain = ({ int ____chimes_arg47; int ____chimes_arg48; int ____chimes_arg49; if (!____chimes_replaying) { ____chimes_arg47 = (cmd.xproc); ____chimes_arg48 = (cmd.yproc); ____chimes_arg49 = (cmd.zproc); } calling((void*)initDecomposition, 4, 15748557669205417603UL, ____alias_loc_id_8, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205416485UL)); (initDecomposition)(____chimes_arg47, ____chimes_arg48, ____chimes_arg49, globalExtent); }) ;
 # 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   sim->boxes = ({ call_lbl_5: const struct DomainSt * ____chimes_arg51; real_t ____chimes_arg52; if (!____chimes_replaying) { ____chimes_arg51 = (sim->domain); ____chimes_arg52 = (sim->pot->cutoff); } calling((void*)initLinkCells, 5, 15748557669205417603UL, ____alias_loc_id_9, 2, (size_t)(15748557669205417603UL), (size_t)(0UL)); (initLinkCells)(____chimes_arg51, ____chimes_arg52); }) ;
+    call_lbl_5: sim->boxes = ({ const struct DomainSt * ____chimes_arg51; real_t ____chimes_arg52; if (!____chimes_replaying) { ____chimes_arg51 = (sim->domain); ____chimes_arg52 = (sim->pot->cutoff); } calling((void*)initLinkCells, 5, 15748557669205417603UL, ____alias_loc_id_9, 2, (size_t)(15748557669205417603UL), (size_t)(0UL)); (initLinkCells)(____chimes_arg51, ____chimes_arg52); }) ;
 # 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   sim->atoms = ({ call_lbl_6: LinkCell * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg53 = (sim->boxes); } calling((void*)initAtoms, 6, 15748557669205417603UL, ____alias_loc_id_10, 1, (size_t)(15748557669205417603UL)); (initAtoms)(____chimes_arg53); }) ;
+    call_lbl_6: sim->atoms = ({ LinkCell * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg53 = (sim->boxes); } calling((void*)initAtoms, 6, 15748557669205417603UL, ____alias_loc_id_10, 1, (size_t)(15748557669205417603UL)); (initAtoms)(____chimes_arg53); }) ;
 # 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_7: int ____chimes_arg54; int ____chimes_arg55; int ____chimes_arg56; if (!____chimes_replaying) { ____chimes_arg54 = (cmd.nx); ____chimes_arg55 = (cmd.ny); ____chimes_arg56 = (cmd.nz); } calling((void*)createFccLattice, 7, 0UL, ____alias_loc_id_11, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205416655UL)); (createFccLattice)(____chimes_arg54, ____chimes_arg55, ____chimes_arg56, latticeConstant, sim); }) ;
+    call_lbl_7: ({ int ____chimes_arg54; int ____chimes_arg55; int ____chimes_arg56; if (!____chimes_replaying) { ____chimes_arg54 = (cmd.nx); ____chimes_arg55 = (cmd.ny); ____chimes_arg56 = (cmd.nz); } calling((void*)createFccLattice, 7, 0UL, ____alias_loc_id_11, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15748557669205416655UL)); (createFccLattice)(____chimes_arg54, ____chimes_arg55, ____chimes_arg56, latticeConstant, sim); }) ;
 # 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_8: double ____chimes_arg60; if (!____chimes_replaying) { ____chimes_arg60 = (cmd.temperature); } calling((void*)setTemperature, 8, 0UL, 0, 2, (size_t)(15748557669205416655UL), (size_t)(0UL)); (setTemperature)(sim, ____chimes_arg60); }) ;
+    call_lbl_8: ({ double ____chimes_arg60; if (!____chimes_replaying) { ____chimes_arg60 = (cmd.temperature); } calling((void*)setTemperature, 8, 0UL, 0, 2, (size_t)(15748557669205416655UL), (size_t)(0UL)); (setTemperature)(sim, ____chimes_arg60); }) ;
 # 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_9: double ____chimes_arg62; if (!____chimes_replaying) { ____chimes_arg62 = (cmd.initialDelta); } calling((void*)randomDisplacements, 9, 0UL, 0, 2, (size_t)(15748557669205416655UL), (size_t)(0UL)); (randomDisplacements)(sim, ____chimes_arg62); }) ;
+    call_lbl_9: ({ double ____chimes_arg62; if (!____chimes_replaying) { ____chimes_arg62 = (cmd.initialDelta); } calling((void*)randomDisplacements, 9, 0UL, 0, 2, (size_t)(15748557669205416655UL), (size_t)(0UL)); (randomDisplacements)(sim, ____chimes_arg62); }) ;
 # 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   sim->atomExchange = ({ call_lbl_10: Domain * ____chimes_arg63; LinkCell * ____chimes_arg64; if (!____chimes_replaying) { ____chimes_arg63 = (sim->domain); ____chimes_arg64 = (sim->boxes); } calling((void*)initAtomHaloExchange, 10, 15748557669205417603UL, 0, 2, (size_t)(15748557669205417603UL), (size_t)(15748557669205417603UL)); (initAtomHaloExchange)(____chimes_arg63, ____chimes_arg64); }) ;
+    call_lbl_10: sim->atomExchange = ({ Domain * ____chimes_arg63; LinkCell * ____chimes_arg64; if (!____chimes_replaying) { ____chimes_arg63 = (sim->domain); ____chimes_arg64 = (sim->boxes); } calling((void*)initAtomHaloExchange, 10, 15748557669205417603UL, 0, 2, (size_t)(15748557669205417603UL), (size_t)(15748557669205417603UL)); (initAtomHaloExchange)(____chimes_arg63, ____chimes_arg64); }) ;
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   do { ({ call_lbl_11: calling((void*)profileStart, 11, 0UL, ____alias_loc_id_12, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+   do { call_lbl_11: ({ calling((void*)profileStart, 11, 0UL, ____alias_loc_id_12, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
 # 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_12: calling((void*)redistributeAtoms, 12, 0UL, 0, 1, (size_t)(15748557669205416655UL)); (redistributeAtoms)(sim); }) ;
+    call_lbl_12: ({ calling((void*)redistributeAtoms, 12, 0UL, 0, 1, (size_t)(15748557669205416655UL)); (redistributeAtoms)(sim); }) ;
 # 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   do { ({ call_lbl_13: calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+   do { call_lbl_13: ({ calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
 # 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   do { ({ call_lbl_14: calling((void*)profileStart, 14, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+   do { call_lbl_14: ({ calling((void*)profileStart, 14, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_15: calling((void*)computeForce, 15, 0UL, 0, 1, (size_t)(15748557669205416655UL)); (computeForce)(sim); }) ;
+    call_lbl_15: ({ calling((void*)computeForce, 15, 0UL, 0, 1, (size_t)(15748557669205416655UL)); (computeForce)(sim); }) ;
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   do { ({ call_lbl_16: calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+   do { call_lbl_16: ({ calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_17: calling((void*)kineticEnergy, 17, 0UL, 0, 1, (size_t)(15748557669205416655UL)); (kineticEnergy)(sim); }) ;
+    call_lbl_17: ({ calling((void*)kineticEnergy, 17, 0UL, 0, 1, (size_t)(15748557669205416655UL)); (kineticEnergy)(sim); }) ;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    rm_stack(true, 15748557669205416655UL, "initSimulation", &____must_manage_initSimulation, 0, ____chimes_did_disable1); return sim;
@@ -3005,11 +3005,11 @@ void destroySimulation(SimFlat** ps)
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    if (pot) {free_wrapper(pot, 15748557669205417241UL); };
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_4: LinkCell ** ____chimes_arg72; if (!____chimes_replaying) { ____chimes_arg72 = (&(s->boxes)); } calling((void*)destroyLinkCells, 4, 0UL, ____alias_loc_id_20, 1, (size_t)(15748557669205417232UL)); (destroyLinkCells)(____chimes_arg72); }) ;
+    call_lbl_4: ({ LinkCell ** ____chimes_arg72; if (!____chimes_replaying) { ____chimes_arg72 = (&(s->boxes)); } calling((void*)destroyLinkCells, 4, 0UL, ____alias_loc_id_20, 1, (size_t)(15748557669205417232UL)); (destroyLinkCells)(____chimes_arg72); }) ;
 # 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_5: Atoms * ____chimes_arg73; if (!____chimes_replaying) { ____chimes_arg73 = (s->atoms); } calling((void*)destroyAtoms, 5, 0UL, 0, 1, (size_t)(15748557669205417241UL)); (destroyAtoms)(____chimes_arg73); }) ;
+    call_lbl_5: ({ Atoms * ____chimes_arg73; if (!____chimes_replaying) { ____chimes_arg73 = (s->atoms); } calling((void*)destroyAtoms, 5, 0UL, 0, 1, (size_t)(15748557669205417241UL)); (destroyAtoms)(____chimes_arg73); }) ;
 # 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_6: HaloExchange ** ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg74 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 6, 0UL, 0, 1, (size_t)(15748557669205417232UL)); (destroyHaloExchange)(____chimes_arg74); }) ;
+    call_lbl_6: ({ HaloExchange ** ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg74 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 6, 0UL, 0, 1, (size_t)(15748557669205417232UL)); (destroyHaloExchange)(____chimes_arg74); }) ;
 # 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    free_wrapper(s->species, 15748557669205417241UL);
 # 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3033,7 +3033,7 @@ void initSubsystems(void)
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_1: calling((void*)yamlBegin, 1, 0UL, 0, 0); (yamlBegin)(); }) ;
+    call_lbl_1: ({ calling((void*)yamlBegin, 1, 0UL, 0, 0); (yamlBegin)(); }) ;
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 rm_stack(false, 0UL, "initSubsystems", &____must_manage_initSubsystems, 0, ____chimes_did_disable3); }
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3045,7 +3045,7 @@ void finalizeSubsystems(void)
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_1: calling((void*)yamlEnd, 1, 0UL, 0, 0); (yamlEnd)(); }) ;
+    call_lbl_1: ({ calling((void*)yamlEnd, 1, 0UL, 0, 0); (yamlEnd)(); }) ;
 # 255 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 rm_stack(false, 0UL, "finalizeSubsystems", &____must_manage_finalizeSubsystems, 0, ____chimes_did_disable4); }
 # 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3061,7 +3061,7 @@ BasePotential* initPotential(
       pot = (__null) ;
 # 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 263 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (doeam) {pot = ({ call_lbl_1: calling((void*)initEamPot, 1, 15748557669205417331UL, ____alias_loc_id_21, 3, (size_t)(15748557669205417334UL), (size_t)(15748557669205417335UL), (size_t)(15748557669205417336UL)); (initEamPot)(potDir, potName, potType); }) ; } else {pot = ({ call_lbl_2: calling((void*)initLjPot, 2, 15748557669205417331UL, ____alias_loc_id_22, 0); (initLjPot)(); }) ; } ;
+   if (doeam) { call_lbl_1: pot = ({ calling((void*)initEamPot, 1, 15748557669205417331UL, ____alias_loc_id_21, 3, (size_t)(15748557669205417334UL), (size_t)(15748557669205417335UL), (size_t)(15748557669205417336UL)); (initEamPot)(potDir, potName, potType); }) ; } else { call_lbl_2: pot = ({ calling((void*)initLjPot, 2, 15748557669205417331UL, ____alias_loc_id_22, 0); (initLjPot)(); }) ; } ;
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    (__builtin_expect(!(pot), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c", 267, "pot") : (void)0);
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3094,7 +3094,7 @@ Validate* initValidate(SimFlat* sim)
 {const int ____chimes_did_disable7 = new_stack((void *)(&initValidate), "initValidate", &____must_manage_initValidate, 1, 1, (size_t)(15748557669205416944UL), "initValidate|sim|0", &____must_checkpoint_initValidate_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; Validate *val;
  if (____must_checkpoint_initValidate_val_0) { register_stack_vars(1, "initValidate|val|0", &____must_checkpoint_initValidate_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_1: calling((void*)sumAtoms, 1, 0UL, ____alias_loc_id_15, 1, (size_t)(15748557669205416944UL)); (sumAtoms)(sim); }) ;
+    call_lbl_1: ({ calling((void*)sumAtoms, 1, 0UL, ____alias_loc_id_15, 1, (size_t)(15748557669205416944UL)); (sumAtoms)(sim); }) ;
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       val = ((Validate *)malloc_wrapper(sizeof(Validate), 15748557669205416896UL, 0, 1, (int)sizeof(struct ValidateSt), 0)) ;
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3103,13 +3103,13 @@ Validate* initValidate(SimFlat* sim)
    val->nAtoms0 = sim->atoms->nGlobal;
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (alias_group_changed(____alias_loc_id_16) || ({ call_lbl_4: calling((void*)printRank, 4, 0UL, 0, 0); (printRank)(); }) )
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_16) || ({ calling((void*)printRank, 4, 0UL, 0, 0); (printRank)(); }) )
 # 290 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       fprintf(__stdoutp, "\n");
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-       ({ call_lbl_6: calling((void*)printSeparator, 6, 0UL, 0, 1, (size_t)(15748557669205417114UL)); (printSeparator)(__stdoutp); }) ;
+       call_lbl_6: ({ calling((void*)printSeparator, 6, 0UL, 0, 1, (size_t)(15748557669205417114UL)); (printSeparator)(__stdoutp); }) ;
 # 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       fprintf(__stdoutp, "Initial energy : %14.12f, atom count : %d \n",
 # 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3128,7 +3128,7 @@ void validateResult(const Validate* val, SimFlat* sim)
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&validateResult), "validateResult", &____must_manage_validateResult, 2, 2, (size_t)(15748557669205417217UL), (size_t)(15748557669205417218UL), "validateResult|val|0", &____must_checkpoint_validateResult_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0, "validateResult|sim|0", &____must_checkpoint_validateResult_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (alias_group_changed(____alias_loc_id_19) || ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) )
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_19) || ({ calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) )
 # 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3194,11 +3194,11 @@ void sumAtoms(SimFlat* s)
    } }
 # 337 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 338 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   do { ({ call_lbl_1: calling((void*)profileStart, 1, 0UL, ____alias_loc_id_17, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_17, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 339 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_2: int * ____chimes_arg81; int * ____chimes_arg82; if (!____chimes_replaying) { ____chimes_arg81 = (&s->atoms->nLocal); ____chimes_arg82 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 2, 0UL, 0, 3, (size_t)(15748557669205416991UL), (size_t)(15748557669205416991UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg81, ____chimes_arg82, 1); }) ;
+    call_lbl_2: ({ int * ____chimes_arg81; int * ____chimes_arg82; if (!____chimes_replaying) { ____chimes_arg81 = (&s->atoms->nLocal); ____chimes_arg82 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 2, 0UL, 0, 3, (size_t)(15748557669205416991UL), (size_t)(15748557669205416991UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg81, ____chimes_arg82, 1); }) ;
 # 340 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   do { ({ call_lbl_3: calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 341 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 rm_stack(false, 0UL, "sumAtoms", &____must_manage_sumAtoms, 0, ____chimes_did_disable9); }
 # 342 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3219,7 +3219,7 @@ void printThings(SimFlat* s, int iStep, double elapsedTime)
    iStepPrev = iStep;
 # 353 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 354 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(____alias_loc_id_18); if (! ({ call_lbl_2: calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printThings", &____must_manage_printThings, ____alias_loc_id_29, ____chimes_did_disable10); return;; };
+   alias_group_changed(____alias_loc_id_18); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printThings", &____must_manage_printThings, ____alias_loc_id_29, ____chimes_did_disable10); return;; };
 # 356 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    if (firstCall)
@@ -3268,11 +3268,11 @@ void printSimulationDataYaml(FILE* file, SimFlat* s)
  if (____must_checkpoint_printSimulationDataYaml_maxOcc_0) { register_stack_vars(1, "printSimulationDataYaml|maxOcc|0", &____must_checkpoint_printSimulationDataYaml_maxOcc_0, "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(9): { goto call_lbl_9; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } ; ;
 # 382 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 383 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      maxOcc = ( ({ call_lbl_1: LinkCell * ____chimes_arg85; if (!____chimes_replaying) { ____chimes_arg85 = (s->boxes); } calling((void*)maxOccupancy, 1, 0UL, 0, 1, (size_t)(15748557669205416688UL)); (maxOccupancy)(____chimes_arg85); }) ) ;
+       call_lbl_1: maxOcc = ( ({ LinkCell * ____chimes_arg85; if (!____chimes_replaying) { ____chimes_arg85 = (s->boxes); } calling((void*)maxOccupancy, 1, 0UL, 0, 1, (size_t)(15748557669205416688UL)); (maxOccupancy)(____chimes_arg85); }) ) ;
 # 384 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 385 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 386 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   alias_group_changed(____alias_loc_id_14); if (! ({ call_lbl_3: calling((void*)printRank, 3, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printSimulationDataYaml", (int *)0x0, 0, ____chimes_did_disable11); return;; };
+   alias_group_changed(____alias_loc_id_14); call_lbl_3: if (! ({ calling((void*)printRank, 3, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printSimulationDataYaml", (int *)0x0, 0, ____chimes_did_disable11); return;; };
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 389 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    fprintf(file,"Simulation data: \n");
@@ -3289,7 +3289,7 @@ void printSimulationDataYaml(FILE* file, SimFlat* s)
 # 395 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
            s->domain->globalMax[0], s->domain->globalMax[1], s->domain->globalMax[2]);
 # 396 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_9: calling((void*)printSeparator, 9, 0UL, 0, 1, (size_t)(15748557669205416887UL)); (printSeparator)(file); }) ;
+    call_lbl_9: ({ calling((void*)printSeparator, 9, 0UL, 0, 1, (size_t)(15748557669205416887UL)); (printSeparator)(file); }) ;
 # 397 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    fprintf(file,"Decomposition data: \n");
 # 398 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3319,11 +3319,11 @@ void printSimulationDataYaml(FILE* file, SimFlat* s)
 # 410 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
            maxOcc, 64);
 # 411 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_16: calling((void*)printSeparator, 16, 0UL, 0, 1, (size_t)(15748557669205416887UL)); (printSeparator)(file); }) ;
+    call_lbl_16: ({ calling((void*)printSeparator, 16, 0UL, 0, 1, (size_t)(15748557669205416887UL)); (printSeparator)(file); }) ;
 # 412 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    fprintf(file,"Potential data: \n");
 # 413 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_18: BasePotential * ____chimes_arg89; if (!____chimes_replaying) { ____chimes_arg89 = (s->pot); } calling((void*)s->pot->print, 18, 0UL, 0, 2, (size_t)(15748557669205416887UL), (size_t)(15748557669205416688UL)); (s->pot->print)(file, ____chimes_arg89); }) ;
+    call_lbl_18: ({ BasePotential * ____chimes_arg89; if (!____chimes_replaying) { ____chimes_arg89 = (s->pot); } calling((void*)s->pot->print, 18, 0UL, 0, 2, (size_t)(15748557669205416887UL), (size_t)(15748557669205416688UL)); (s->pot->print)(file, ____chimes_arg89); }) ;
 # 414 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    fflush(file);
@@ -3350,13 +3350,13 @@ int failCode;
 # 424 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
     int nProcs; nProcs = (cmd.xproc * cmd.yproc * cmd.zproc) ;
 # 425 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (nProcs != ({ call_lbl_1: calling((void*)getNRanks, 1, 0UL, ____alias_loc_id_23, 0); (getNRanks)(); }) )
+    call_lbl_1: if (nProcs != ({ calling((void*)getNRanks, 1, 0UL, ____alias_loc_id_23, 0); (getNRanks)(); }) )
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       failCode |= 1;
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      if (alias_group_changed(____alias_loc_id_24) || ({ call_lbl_3: calling((void*)printRank, 3, 0UL, 0, 0); (printRank)(); }) ) {fprintf(__stdoutp, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
+       call_lbl_3: if (alias_group_changed(____alias_loc_id_24) || ({ calling((void*)printRank, 3, 0UL, 0, 0); (printRank)(); }) ) {fprintf(__stdoutp, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
 # 431 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 432 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
@@ -3381,25 +3381,25 @@ int failCode;
 # 443 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       failCode |= 2;
 # 444 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      if (alias_group_changed(____alias_loc_id_25) || ({ call_lbl_6: calling((void*)printRank, 6, 0UL, 0, 0); (printRank)(); }) ) {fprintf(__stdoutp, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
+       call_lbl_6: if (alias_group_changed(____alias_loc_id_25) || ({ calling((void*)printRank, 6, 0UL, 0, 0); (printRank)(); }) ) {fprintf(__stdoutp, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
 # 449 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 450 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 451 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 452 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-   if (alias_group_changed(____alias_loc_id_26) || ({ call_lbl_9: calling((void*)strcasecmp, 9, 0UL, 0, 2, (size_t)(15748557669205417494UL), (size_t)(15748557669205417595UL)); (strcasecmp)(latticeType, "FCC"); }) != 0)
+    call_lbl_9: if (alias_group_changed(____alias_loc_id_26) || ({ calling((void*)strcasecmp, 9, 0UL, 0, 2, (size_t)(15748557669205417494UL), (size_t)(15748557669205417595UL)); (strcasecmp)(latticeType, "FCC"); }) != 0)
 # 453 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    {
 # 454 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       failCode |= 4;
 # 455 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-      if (alias_group_changed(____alias_loc_id_27) || ({ call_lbl_11: calling((void*)printRank, 11, 0UL, 0, 0); (printRank)(); }) ) {fprintf(__stdoutp, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
+       call_lbl_11: if (alias_group_changed(____alias_loc_id_27) || ({ calling((void*)printRank, 11, 0UL, 0, 0); (printRank)(); }) ) {fprintf(__stdoutp, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
 # 459 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
    }
 # 460 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
       checkCode = (failCode) ;
 # 461 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
-    ({ call_lbl_13: void * ____chimes_arg92; int ____chimes_arg93; if (!____chimes_replaying) { ____chimes_arg92 = (&checkCode); ____chimes_arg93 = (sizeof(int)); } calling((void*)bcastParallel, 13, 0UL, ____alias_loc_id_28, 3, (size_t)(15748557669205417348UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg92, ____chimes_arg93, 0); }) ;
+    call_lbl_13: ({ void * ____chimes_arg92; int ____chimes_arg93; if (!____chimes_replaying) { ____chimes_arg92 = (&checkCode); ____chimes_arg93 = (sizeof(int)); } calling((void*)bcastParallel, 13, 0UL, ____alias_loc_id_28, 3, (size_t)(15748557669205417348UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg92, ____chimes_arg93, 0); }) ;
 # 462 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 463 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"
 # 464 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c"

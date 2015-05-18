@@ -3,8 +3,8 @@ get_coord 0 DOES_NOT
 modv 0 DOES_NOT
 move 0 DOES_NOT
 move_to 0 DOES_NOT
-rot_x 0 MAY cos sin
-rot_y 0 MAY cos sin
+rot_x 0 DOES_NOT
+rot_y 0 DOES_NOT
 get_sphere_intersec 0 DOES_NOT
 get_cos_angle_v1v2 0 DOES_NOT modv
 usage 0 DOES_NOT

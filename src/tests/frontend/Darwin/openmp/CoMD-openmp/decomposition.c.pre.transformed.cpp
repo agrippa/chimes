@@ -1845,7 +1845,7 @@ Domain* initDecomposition(int xproc, int yproc, int zproc, real3 globalExtent)
    dd->procGrid[2] = zproc;
 # 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
 # 27 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
-    int myRank; myRank = ( ({ call_lbl_4: calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) ) ;
 # 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c"

@@ -6,8 +6,8 @@
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_bin|parent|0 " %struct.node_t* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_bin|v|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_bin|d|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|parent|0 " %struct.node_t* " 64 1 0 1 rng_rand sin
-/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|b_i|0 " double " 64 0 0 1 rng_rand sin
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|parent|0 " %struct.node_t* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|b_i|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|depth|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|numChildren|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/uts/uts.c uts_numChildren_geo|h|0 " i32 " 32 0 0 0

@@ -22,13 +22,13 @@
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c move_to|vx|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c move_to|vy|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c move_to|vz|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|self|0 " %struct._sphere* " 64 1 0 1 cos sin
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|angle|0 " double " 64 0 0 1 cos sin
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|y|0 " double " 64 0 0 1 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|self|0 " %struct._sphere* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|angle|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|y|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_x|z|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|self|0 " %struct._sphere* " 64 1 0 1 cos sin
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|angle|0 " double " 64 0 0 1 cos sin
-/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|x|0 " double " 64 0 0 1 cos sin
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|self|0 " %struct._sphere* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|angle|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|x|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c rot_y|z|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_sphere_intersec|cx|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c get_sphere_intersec|cy|0 " double " 64 0 0 0

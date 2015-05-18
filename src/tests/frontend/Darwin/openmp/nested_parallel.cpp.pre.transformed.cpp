@@ -1794,13 +1794,13 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2139544371637214133UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(0): { goto call_lbl_0; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
      int a; a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
      int b; b = (4) ;
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-     int c; c = (5); { call_lbl_5: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 3, &a, &b, &c); ;
+     int c; c = (5); { call_lbl_0: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(0, &____chimes_region_id0, 3, &a, &b, &c); ;
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
@@ -1808,9 +1808,9 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ; if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } }
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-         int inside; inside = (6); { call_lbl_6: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 1, &inside); ;
+         int inside; inside = (6); { call_lbl_1: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(1, &____chimes_region_id1, 1, &inside); ;
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
@@ -1822,7 +1822,7 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
             printf("hello from %d : %d\n", omp_get_thread_num(), inside);
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
-             ({ call_lbl_3: calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+             call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
         } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/nested_parallel.cpp"
