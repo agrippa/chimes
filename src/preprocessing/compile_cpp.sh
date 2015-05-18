@@ -131,6 +131,8 @@ FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appen
 CHIMES_DEF=-D__CHIMES_SUPPORT
 LLVM_LIB=$(get_llvm_lib)
 
+echo Using GXX ${GXX}
+
 if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
     GXX_FLAGS="${GXX_FLAGS} -pg"
@@ -269,19 +271,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     mv ${WORK_DIR}/${FINAL_FILE}.post ${WORK_DIR}/${FINAL_FILE}
 
     FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
-    OBJ_FILE=${FINAL_FILE}.o
 
     LAST_FILES+=($FINAL_FILE)
-    OBJ_FILES+=($OBJ_FILE)
-
-    echo Compiling to object file ${OBJ_FILE}
-    ${GXX} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
-        -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
-
-    if [[ ! -f ${OBJ_FILE} ]]; then
-        echo "Missing object file $OBJ_FILE for input $INPUT"
-        exit 1
-    fi
 done
 
 for f in ${LAST_FILES[@]}; do
@@ -289,16 +280,26 @@ for f in ${LAST_FILES[@]}; do
 done
 
 if [[ $COMPILE == 1 ]]; then
-    for f in ${OBJ_FILES[@]}; do
-        echo $f
+    for FINAL_FILE in ${LAST_FILES[@]}; do
+        OBJ_FILE=${FINAL_FILE}.o
+
+        ${GXX} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
+            -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
+
+        if [[ ! -f ${OBJ_FILE} ]]; then
+            echo "Missing object file $OBJ_FILE for input $INPUT"
+            exit 1
+        fi
+
+        echo $OBJ_FILE
     done
 else
-    OBJ_FILE_STR=""
-    for f in ${OBJ_FILES[@]}; do
-        OBJ_FILE_STR="${OBJ_FILE_STR} $f"
+    FILES_STR=""
+    for f in ${LAST_FILES[@]}; do
+        FILES_STR="${FILES_STR} $f"
     done
 
-    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${OBJ_FILE_STR} \
+    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}
 

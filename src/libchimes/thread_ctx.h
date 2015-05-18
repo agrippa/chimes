@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include <vector>
 #include <set>
+#include <stdarg.h>
 
 #include "set_of_aliases.h"
 #include "perf_profile.h"
@@ -69,17 +70,19 @@ class thread_ctx {
             assert(i < parent_aliases_length);
             return parent_aliases[i];
         }
-        void clear_parent_aliases() { parent_aliases_length = 0; }
-        void add_parent_alias(size_t alias) {
-            parent_aliases[parent_aliases_length++] = alias;
-        }
-        void ensure_parent_alias_capacity(unsigned size) {
-            if (size > parent_aliases_capacity) {
+
+        void init_parent_aliases(va_list vl, unsigned naliases) {
+            if (naliases > parent_aliases_capacity) {
                 parent_aliases_capacity *= 2;
                 parent_aliases = (size_t *)realloc(parent_aliases,
                         sizeof(size_t) * parent_aliases_capacity);
                 assert(parent_aliases);
             }
+
+            for (unsigned i = 0; i < naliases; i++) {
+                parent_aliases[i] = va_arg(vl, size_t);
+            }
+            parent_aliases_length = naliases;
         }
 
         std::vector<stack_frame *> *get_stack() { return &program_stack; }
