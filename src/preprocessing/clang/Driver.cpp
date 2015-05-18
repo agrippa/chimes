@@ -324,8 +324,8 @@ public:
                     }
                     assert(func_start_line != -1);
                     *dump_decls << curr_func << " " << filename << " " <<
-                        func_start_line << " " << function_decl << "; " <<
-                        old_function_decl << ";\n-----\n";
+                        func_start_line << " " << function_decl <<
+                        "; " << old_function_decl << ";\n-----\n";
 
                     *dump_bodies <<
                         R.getRewrittenText(fdecl->getSourceRange()) << "\n\n";

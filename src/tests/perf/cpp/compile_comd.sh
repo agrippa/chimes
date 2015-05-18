@@ -2,8 +2,8 @@
 
 set -e
 
-GXX=/opt/apps/gcc/4.8.2/bin/g++ \
 # GXX=/usr/local/bin/g++ \
+GXX=/opt/apps/gcc/4.8.2/bin/g++ \
     ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -s -k -d \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/CoMD.c \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/decomposition.c \
@@ -21,8 +21,8 @@ GXX=/opt/apps/gcc/4.8.2/bin/g++ \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/yamlOutput.c \
     -o comd_chimes
 
-GXX=/opt/apps/gcc/4.8.2/bin/g++ \
 # GXX=/usr/local/bin/g++ \
+GXX=/opt/apps/gcc/4.8.2/bin/g++ \
     ${CHIMES_HOME}/src/preprocessing/compile_normal.sh \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/CoMD.c \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/decomposition.c \

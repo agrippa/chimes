@@ -95,6 +95,8 @@ LAST_FILES=()
 OBJ_FILES=()
 OUTPUT=$(pwd)/${OUTPUT_FILE}
 
+echo Using GXX ${GXX}
+
 if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
 fi
