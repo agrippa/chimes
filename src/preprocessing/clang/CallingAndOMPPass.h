@@ -69,22 +69,22 @@ class CallLocation {
 
 class CallingAndOMPPass : public ParentTransform {
 public:
-    CallingAndOMPPass();
+    CallingAndOMPPass(bool set_gen_quick);
 
     void VisitStmt(const clang::Stmt *s) override;
-    void VisitTopLevel(clang::Decl *toplevel) override;
+    void VisitTopLevel(clang::FunctionDecl *toplevel) override;
 
     bool usesStackInfo() override { return false; }
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return true; }
     bool createsFunctionLabels() override { return true; }
     bool createsOMPTree() override { return true; }
+    bool requiresMangledVarsReset() { return true; }
 
 private:
     std::map<clang::VarDecl *, StackAlloc *> hasValidDeclarations(
             const clang::DeclStmt *d);
     std::map<OMPRegion *, std::vector<DeclarationInfo> *> vars_in_regions;
-    std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
     std::vector<DeclarationInfo> vars_to_classify;
     std::vector<const CallExpr *> calls_to_register_callbacks;
     std::string insert_at_front;
@@ -107,6 +107,7 @@ private:
     std::map<int, const clang::Stmt *> predecessors;
     std::map<int, const clang::Stmt *> successors;
     std::map<int, std::vector<CallLocation>> calls_found;
+    std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
 
     std::string handleDecl(const clang::DeclStmt *d,
             std::map<clang::VarDecl *, StackAlloc *> allocs,
@@ -144,6 +145,8 @@ private:
     int region_varname_counter = 0;
     int disable_varname_counter = 0;
     int arg_counter = 0;
+
+    bool gen_quick;
 };
 
 #endif

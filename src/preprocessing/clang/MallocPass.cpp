@@ -11,7 +11,7 @@ using namespace std;
 
 extern DesiredInsertions *insertions;
 
-void MallocPass::VisitTopLevel(clang::Decl *toplevel) {
+void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
    
     // For each line that has a memory allocation or free statement
     for (map<int, map<string, vector<FoundAlloc> *> *>::iterator i =

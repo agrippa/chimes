@@ -85,8 +85,12 @@ if __name__ == '__main__':
 
   while len(line) > 0:
       stripped_line = line.strip()
+
+      # sys.stderr.write(stripped_line + '\n')
+
       tokens = stripped_line.split()
       if len(tokens) >= 2 and tokens[0] == '#pragma' and tokens[1] == 'omp':
+          # sys.stderr.write('previous_line=' + previous_line + '\n')
           line_no = getLineNumberFromPreprocessorLine(previous_line)
 
           unfiltered_acc = line

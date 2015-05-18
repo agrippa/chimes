@@ -14,13 +14,14 @@ class StartExitPass : public ParentTransform {
 public:
     StartExitPass() { }
 
-    void VisitTopLevel(clang::Decl *toplevel) override;
+    void VisitTopLevel(clang::FunctionDecl *toplevel) override;
     void VisitStmt(const clang::Stmt *s) override;
     bool usesStackInfo() override { return true; }
     bool setsLastGoto() override { return false; }
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
     bool createsOMPTree() override { return false; }
+    bool requiresMangledVarsReset() { return false; }
 
     std::string constructFunctionEndingStmts(bool inserting_rm,
             bool conditional_management);

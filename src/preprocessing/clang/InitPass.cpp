@@ -9,13 +9,13 @@
 
 extern DesiredInsertions *insertions;
 
-void InitPass::VisitTopLevel(clang::Decl *toplevel) {
+void InitPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
     clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
     if (func != NULL && func->isMain() &&
             func->isThisDeclarationADefinition()) {
         clang::SourceLocation end = func->getBody()->getLocStart();
 
-        InsertTextAfterToken(end, "init_chimes(); ");
+        // InsertTextAfterToken(end, "init_chimes(); ");
     }
 }
 

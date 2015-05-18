@@ -894,9 +894,14 @@ OpenMPPragma *DesiredInsertions::get_omp_pragma_for(int line_no) {
     return NULL;
 }
 
-AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
-        std::string callee_name) {
-    std::vector<AliasesPassedToCallSite>::iterator i = callsites->begin();
+std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::getCallsiteStart() {
+    return callsites->begin();
+}
+
+std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatchingCallsiteAfter(
+        int line, std::string callee_name,
+        std::vector<AliasesPassedToCallSite>::iterator start) {
+    std::vector<AliasesPassedToCallSite>::iterator i = start;
     std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
     while (i != e) {
         AliasesPassedToCallSite curr = *i;
@@ -921,9 +926,10 @@ AliasesPassedToCallSite DesiredInsertions::findFirstMatchingCallsite(int line,
         assert(false);
     }
 
-    AliasesPassedToCallSite result = *i;
-    callsites->erase(i);
-    return result;
+    return i;
+    // AliasesPassedToCallSite result = *i;
+    // callsites->erase(i);
+    // return result;
 }
 
 FunctionArgumentAliasGroups* DesiredInsertions::findMatchingFunctionNullReturn(

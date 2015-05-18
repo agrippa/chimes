@@ -20,6 +20,7 @@ public:
     bool createsRegisterLabels() override { return false; }
     bool createsFunctionLabels() override { return false; }
     bool createsOMPTree() override { return false; }
+    bool requiresMangledVarsReset() { return false; }
 };
 
 #endif
