@@ -121,9 +121,11 @@ GXX=${GXX:-/usr/bin/g++}
 CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
+CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
+ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
@@ -175,8 +177,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Inserting braces in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${BRACE_INSERT} -o ${PREPROCESS_FILE}.braces \
         ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-        -I${CUDA_HOME}/include $INCLUDES \
-        ${CHIMES_DEF} ${DEFINES}
+        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
@@ -226,7 +227,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -t ${INFO_FILE_PREFIX}.omp.info \
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
             -b ${INFO_FILE_PREFIX}.tree.info \
-            -e true \
+            -q ${INFO_FILE_PREFIX}.quick \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -234,10 +235,23 @@ for INPUT in ${ABS_INPUTS[@]}; do
     EXT="${TRANSFORMED_FILE##*.}"
     NAME="${TRANSFORMED_FILE%.*}"
     TRANSFORMED_FILE=${NAME}.register.${EXT}
+    INCLUDE_QUICK_FILE=${NAME}.quick.${EXT}
+    HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 
-    echo Setting up module initialization for ${TRANSFORMED_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} ${TRANSFORMED_FILE} ${FINAL_FILE} \
+    echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
+    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} \
+        ${INCLUDE_QUICK_FILE} ${INFO_FILE_PREFIX}.quick.bodies \
+        ${INFO_FILE_PREFIX}.quick.decls
+
+    echo Hardcoding quick/resumable calls when possible in ${INCLUDE_QUICK_FILE}
+    cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
+        -d ${INFO_FILE_PREFIX}.quick.decls ${INCLUDE_QUICK_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
+
+    echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} ${HARDCODED_CALLS_FILE} ${FINAL_FILE} \
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \

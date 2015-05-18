@@ -24,7 +24,7 @@ ISO3D_OMP = RuntimeTest('Iso3D-OMP',
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
-                    cli_args='-i 3')
+                    cli_args='-i 10')
 SMITH_WATERMAN_OMP = RuntimeTest('SmithWaterman-OMP',
                              ['smithWaterman/smith_waterman_omp.cpp'], 0, -1,
                              cli_args='12 12 1 1')

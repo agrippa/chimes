@@ -29,10 +29,13 @@ extern std::map<int, std::vector<CallLabel> > call_lbls;
 
 extern std::string constructMangledName(std::string varname);
 
-CallingAndOMPPass::CallingAndOMPPass() : chimes_parent_thread_counter(0),
+CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
+        chimes_parent_thread_counter(0),
         blocker_varname_counter(0), parent_stack_depth_varname_counter(0),
         call_stack_depth_varname_counter(0), region_varname_counter(0),
         disable_varname_counter(0) {
+    gen_quick = set_gen_quick;
+
     std::set<std::string> supported_parallel_clauses;
     supported_parallel_clauses.insert("private");
     supported_parallel_clauses.insert("firstprivate");
@@ -200,11 +203,13 @@ std::string CallingAndOMPPass::constructStartingRegistrations(
             }
         }
 
-        if (n_hoisted == vars->size() && !has_callbacks) {
-            complete << " if (____chimes_replaying) { " <<
-                *transition_str_ptr << " } ";
-        } else {
-            complete << " if (____chimes_replaying) { goto lbl_0; } ";
+        if (!gen_quick) {
+            if (n_hoisted == vars->size() && !has_callbacks) {
+                complete << " if (____chimes_replaying) { " <<
+                    *transition_str_ptr << " } ";
+            } else {
+                complete << " if (____chimes_replaying) { goto lbl_0; } ";
+            }
         }
         return complete.str();
     } else {
@@ -270,11 +275,13 @@ std::string CallingAndOMPPass::handleDecl(const clang::DeclStmt *d,
         ss << " " << label_ss.str() << ": ";
 
         std::stringstream ss2;
-        if (force != NULL) {
-            ss2 << " if (____chimes_replaying) { " << *force << " } ";
-        } else {
-            ss2 << " if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
-                "; } ";
+        if (!gen_quick) {
+            if (force != NULL) {
+                ss2 << " if (____chimes_replaying) { " << *force << " } ";
+            } else {
+                ss2 << " if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
+                    "; } ";
+            }
         }
 
         InsertTextBefore(start, ss.str());
@@ -372,8 +379,10 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
 
     if (region != NULL && (region->is_parallel_for() ||
                 region->get_is_critical())) {
-        InsertTextAfterToken(toInsertAt,
-                " ; if (____chimes_replaying) { chimes_error(); } ");
+        if (!gen_quick) {
+            InsertTextAfterToken(toInsertAt,
+                    " ; if (____chimes_replaying) { chimes_error(); } ");
+        }
     } else if (vars_in_regions.find(region) != vars_in_regions.end() ||
             calls_to_register_callbacks.size() > 0) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
@@ -425,12 +434,14 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             }
 
             std::stringstream ss2;
-            if (i == calls_to_register_callbacks.size() - 1) {
-                ss2 << "; if (____chimes_replaying) { " << transition_str <<
-                    " } ";
-            } else {
-                ss2 << "; if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
-                    "; } ";
+            if (!gen_quick) {
+                if (i == calls_to_register_callbacks.size() - 1) {
+                    ss2 << "; if (____chimes_replaying) { " << transition_str <<
+                        " } ";
+                } else {
+                    ss2 << "; if (____chimes_replaying) { goto lbl_" << (lbl + 1) <<
+                        "; } ";
+                }
             }
 
             InsertTextBefore(c->getLocStart(), ss.str());
@@ -440,11 +451,12 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         if (first_is_hoisted) {
             assert(region == NULL);
             insert_at_front = entry_str + " " + insert_at_front;
-            // InsertTextAfterToken(toInsertAt, " ; " + entry_str);
         } else {
             std::stringstream entry_ss;
-            entry_ss << " if (____chimes_replaying) { goto " <<
-                first_label << "; } ";
+            if (!gen_quick) {
+                entry_ss << " if (____chimes_replaying) { goto " <<
+                    first_label << "; } ";
+            }
             if (region == NULL) {
                 insert_at_front = insert_at_front + " " + entry_ss.str();
             } else {
@@ -453,8 +465,10 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         }
     } else {
         std::stringstream entry_ss;
-        entry_ss << " if (____chimes_replaying) { " << transition_str <<
-            " } ";
+        if (!gen_quick) {
+            entry_ss << " if (____chimes_replaying) { " << transition_str <<
+                " } ";
+        }
 
         if (region == NULL) {
             insert_at_front = entry_ss.str() + " " + insert_at_front;
@@ -608,8 +622,10 @@ std::string CallingAndOMPPass::get_region_setup_code(
 
     if (is_parallel_for) {
         entering_ss << "int " << blocker_varname << " = 1; ";
-        insertions->AppendFirstPrivate(pragma.get_line(),
-                pragma.get_last_line(), blocker_varname);
+        if (!gen_quick) {
+            insertions->AppendFirstPrivate(pragma.get_line(),
+                    pragma.get_last_line(), blocker_varname);
+        }
     }
 
     return (entering_ss.str());
@@ -723,7 +739,7 @@ bool CallingAndOMPPass::has_side_effects(const Expr *arg) {
     return true;
 }
 
-void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
+void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
         /*
@@ -739,6 +755,16 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
          * abort.
          */
         return;
+    }
+
+    clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
+    int current_name_len = toplevel->getNameInfo().getAsString().size();
+    if (gen_quick) {
+        ReplaceText(name_start, current_name_len,
+                toplevel->getNameInfo().getAsString() + "_quick");
+    } else {
+        ReplaceText(name_start, current_name_len,
+                toplevel->getNameInfo().getAsString() + "_resumable");
     }
 
     std::vector<OpenMPPragma> *omp_pragmas = insertions->get_omp_pragmas_for(
@@ -776,7 +802,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         }
 
         if (is_barrier) continue;
-        // if (pragma_name != "parallel" || is_parallel_for) continue;
 
         assert(successors.find(pragma.get_line()) != successors.end());
         const clang::Stmt *post = successors[pragma.get_line()];
@@ -907,6 +932,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
         }
     }
 
+    std::map<std::string, std::vector<AliasesPassedToCallSite>::iterator> call_tracker;
     // For each call made, create its text insertions
     for (std::map<int, std::vector<CallLocation>>::iterator i =
             calls_found.begin(), e = calls_found.end(); i != e; i++) {
@@ -927,9 +953,23 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {
 
-                    AliasesPassedToCallSite callsite =
-                        insertions->findFirstMatchingCallsite(i->first,
-                            loc.get_funcname());
+                    std::vector<AliasesPassedToCallSite>::iterator found;
+                    if (call_tracker.find(loc.get_funcname()) !=
+                            call_tracker.end()) {
+                        found = insertions->findFirstMatchingCallsiteAfter(
+                                i->first, loc.get_funcname(),
+                                call_tracker.at(loc.get_funcname()));
+                    } else {
+                        std::vector<AliasesPassedToCallSite>::iterator begin =
+                            insertions->getCallsiteStart();
+                        found = insertions->findFirstMatchingCallsiteAfter(
+                                i->first, loc.get_funcname(), begin);
+                    }
+                    call_tracker[loc.get_funcname()] = found;
+                    AliasesPassedToCallSite callsite = *found;
+                    // AliasesPassedToCallSite callsite =
+                    //     insertions->findFirstMatchingCallsite(i->first,
+                    //         loc.get_funcname());
 
                     bool may_cause_checkpoint = true;
                     std::string func_symbol;
@@ -942,9 +982,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
 
                     std::stringstream ss;
-                    // if (may_cause_checkpoint) {
-                    //     ss << " call_lbl_" << loc.get_label() << ": ";
-                    // }
 
                     /*
                      * Default parameters cannot be checkpointed, nor are they
@@ -964,7 +1001,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                         const Expr *arg = call->getArg(i);
                         assert(!isa<CXXDefaultArgExpr>(arg));
 
-                        if (may_cause_checkpoint && has_side_effects(arg)) {
+                        if (!gen_quick && may_cause_checkpoint && has_side_effects(arg)) {
                             std::string type_str = arg->getType().getAsString();
                             if (type_str.find("(*)") != std::string::npos) {
                                 /*
@@ -1001,7 +1038,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
                     }
                     for (int i = 0; i < nargs; i++) {
                         const Expr *arg = call->getArg(i);
-                        if (may_cause_checkpoint && has_side_effects(arg)) {
+                        if (!gen_quick && may_cause_checkpoint && has_side_effects(arg)) {
                             ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
                                 "); ";
                         }
@@ -1061,7 +1098,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::Decl *toplevel) {
             curr.hoist(stmtToString(curr.get_decl()));
             RemoveText(clang::SourceRange(curr.get_decl()->getLocStart(),
                         curr.get_decl()->getLocEnd()));
-            if (true_region) {
+            if (!gen_quick && true_region) {
                 for (std::map<clang::VarDecl *, StackAlloc *>::iterator ii =
                         allocs.begin(), ee = allocs.end(); ii != ee; ii++) {
                     std::string varname =
@@ -1190,15 +1227,17 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                                 callee_name, presumed.getColumn(), call));
                 }
 
-                if (callee_name == "new_stack") {
-                    if (new_stack_calls.find(curr_func_decl) !=
-                            new_stack_calls.end()) {
-                        llvm::errs() << curr_func << "\n";
-                        assert(false);
-                    }
-                    new_stack_calls[curr_func_decl] = call;
-                }
             }
+
+            if (callee_name == "new_stack") {
+                if (new_stack_calls.find(curr_func_decl) !=
+                        new_stack_calls.end()) {
+                    llvm::errs() << curr_func << "\n";
+                    assert(false);
+                }
+                new_stack_calls[curr_func_decl] = call;
+            }
+
         }
 
         if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {

@@ -75,9 +75,9 @@ static llvm::cl::opt<std::string> firstprivate_file("v",
 static llvm::cl::opt<std::string> call_tree_file("b",
         llvm::cl::desc("call tree file"),
         llvm::cl::value_desc("call_tree_info"));
-static llvm::cl::opt<std::string> resumable_version_flag("e",
-        llvm::cl::desc("resumable version flag"),
-        llvm::cl::value_desc("resumable_version"));
+static llvm::cl::opt<std::string> quick_version_file("q",
+        llvm::cl::desc("quick version file"),
+        llvm::cl::value_desc("quick_version"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -86,6 +86,8 @@ FunctionDecl *curr_func_decl = NULL;
 std::vector<StackAlloc *> *insert_at_front = NULL;
 std::set<std::string> *ignorable = NULL;
 std::map<int, std::vector<CallLabel> > call_lbls;
+std::map<std::string, int> earliest_call_line;
+std::map<std::string, int> function_starting_lines;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -94,17 +96,22 @@ static std::map<std::string, int> num_call_labels;
 
 class Pass {
 public:
-    Pass(ParentTransform *set_impl,
-            const char *set_suffix) : impl(set_impl), suffix(set_suffix) { }
+    Pass(ParentTransform *set_impl, const char *set_suffix,
+            const char *set_dump_file) : impl(set_impl), suffix(set_suffix),
+            dump_file(set_dump_file) { }
 
     ParentTransform *get_impl() { return impl; }
     std::string get_suffix() { return suffix; }
+    std::string get_dump_file() { return dump_file; }
 private:
     ParentTransform *impl;
     std::string suffix;
+    std::string dump_file;
 };
 
 ParentTransform *curr_visitor = NULL;
+std::ofstream *dump_bodies = NULL;
+std::ofstream *dump_decls = NULL;
 std::vector<Pass *> passes;
 
 std::string stmtToString(const clang::Stmt *S, ASTContext *Context) {
@@ -173,7 +180,8 @@ public:
                     for (FunctionDecl::param_iterator i = fdecl->param_begin(),
                             e = fdecl->param_end(); i != e; i++) {
                         ParmVarDecl *param = *i;
-                        std::string mangled = constructMangledName(param->getName().str());
+                        std::string mangled = constructMangledName(
+                                param->getName().str());
                         StackAlloc *alloc = insertions->findStackAlloc(mangled);
                         if (alloc != NULL) {
                             insert_at_front->push_back(alloc);
@@ -191,6 +199,9 @@ public:
                 id_str << demangled_filename << ":" << curr_func << ":" <<
                     pre_loc.getLine() << ":" << pre_loc.getColumn();
 
+                unsigned resetMangledLength;
+                if (visitor->requiresMangledVarsReset())
+                    resetMangledLength = created_vars.size();
                 if (visitor->createsOMPTree())
                     visitor->resetOMPTree();
                 if (visitor->createsRegisterLabels())
@@ -211,11 +222,133 @@ public:
                 // llvm::errs() << curr_func << ":\n";
                 // (*b)->dump();
                 // llvm::errs() << "\n\n";
-                visitor->Visit((*b)->getBody());
-                visitor->VisitTopLevel(*b);
+                visitor->Visit(fdecl->getBody());
+                visitor->VisitTopLevel(fdecl);
+
+                if (!visitor->requiresMangledVarsReset() &&
+                        visitor->createsFunctionLabels()) {
+                    num_call_labels[id_str.str()] =
+                        visitor->get_current_function_label();
+                }
+
+                if (visitor->requiresMangledVarsReset()) {
+                    while (created_vars.size() > resetMangledLength) {
+                        created_vars.pop_back();
+                    }
+                }
+
+                if (dump_bodies &&
+                        insertions->findMatchingFunctionNullReturn(curr_func) !=
+                            NULL) {
+                    /*
+                     * Function declaration transformed during "quick" pass with
+                     * the suffix "_quick". If this function does not end with
+                     * that suffix, it was not transformed during this pass.
+                     */
+                    std::string function_decl = R.getRewrittenText(
+                            clang::SourceRange(fdecl->getLocStart(),
+                                fdecl->getBody()->getLocStart()));
+
+                    // Remove leading whitespace
+                    int index = 0;
+                    while (isspace(function_decl[index])) index++;
+                    function_decl = function_decl.substr(index);
+
+                    // Find open paren for parameters
+                    index = 0;
+                    while (function_decl[index] != '(') index++;
+                    int open_paren_index = index;
+                    index++;
+
+                    /*
+                     * Find closing paren for parameters and trim the function
+                     * decl to end there.
+                     */
+                    int nesting = 1;
+                    while (nesting > 0) {
+                        if (function_decl[index] == '(') nesting++;
+                        else if (function_decl[index] == ')') nesting--;
+                        index++;
+                    }
+                    function_decl = function_decl.substr(0, index);
+
+                    // Save the _quick version of this function declaration
+                    std::string old_function_decl = function_decl;
+
+                    // Check that it is a _quick declaration
+                    index = open_paren_index;
+                    /*
+                     * Account for whitespace between function name and open
+                     * paren.
+                     */
+                    while (isspace(old_function_decl[index - 1])) index--;
+                    std::string suffix = old_function_decl.substr(index - 6, 6);
+                    if (suffix != "_quick") {
+                        continue;
+                    }
+                    /*
+                     * Convert back to the original declaration with the _quick
+                     * suffix removed. We could probably do this cleaner by
+                     * getting it before the transformation pass.
+                     */
+                    old_function_decl = old_function_decl.substr(0, index - 6) +
+                        old_function_decl.substr(index);
+
+                    /*
+                     * may be possible if a function is never called within
+                     * its compilation unit, but is accessible outside? In which
+                     * case we wouldn't need to add any declarations. also fails
+                     * in the case of main.
+                     */
+                    int func_start_line = -1;
+                    assert(function_starting_lines.find(curr_func) !=
+                            function_starting_lines.end());
+                    if (earliest_call_line.find(curr_func) !=
+                            earliest_call_line.end()) {
+                        const int called_line = earliest_call_line[curr_func];
+                        for (std::map<std::string, int>::iterator s_i =
+                                function_starting_lines.begin(), s_e =
+                                function_starting_lines.end(); s_i != s_e; s_i++) {
+                            int curr = s_i->second;
+                            if (curr <= called_line && (func_start_line == -1 ||
+                                        curr > func_start_line)) {
+                                func_start_line = curr;
+                            }
+                        }
+
+                        if (function_starting_lines[curr_func] < func_start_line) {
+                            func_start_line = function_starting_lines[curr_func];
+                        }
+                    } else {
+                        func_start_line = function_starting_lines[curr_func];
+                    }
+                    assert(func_start_line != -1);
+                    *dump_decls << curr_func << " " << filename << " " <<
+                        func_start_line << " " << function_decl << "; " <<
+                        old_function_decl << ";\n-----\n";
+
+                    *dump_bodies <<
+                        R.getRewrittenText(fdecl->getSourceRange()) << "\n\n";
+
+                    *dump_bodies << old_function_decl << " { ";
+                    if (fdecl->getName().str() == "main") {
+                        *dump_bodies << "init_chimes(); ";
+                    }
+                    if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
+                        *dump_bodies << "return ";
+                    }
+                    std::stringstream arg_ss;
+                    for (unsigned p = 0; p < fdecl->getNumParams(); p++) {
+                        const ParmVarDecl *parm = fdecl->getParamDecl(p);
+                        if (p != 0) arg_ss << ", ";
+                        arg_ss << parm->getName().str();
+                    }
+                    *dump_bodies << "(____chimes_replaying ? " << fdecl->getName().str() << "_resumable(" << arg_ss.str() << ") : " << fdecl->getName().str() << "_quick(" << arg_ss.str() << ")); }\n\n";
+                }
             }
         }
     }
+
     return true;
   }
 
@@ -293,7 +426,7 @@ int main(int argc, const char **argv) {
   check_opt(omp_file, "OpenMP file");
   check_opt(firstprivate_file, "Firstprivate file");
   check_opt(call_tree_file, "Call tree file");
-  check_opt(resumable_version_flag, "Resumable version");
+  check_opt(quick_version_file, "Quick version");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -315,17 +448,12 @@ int main(int argc, const char **argv) {
       updateFile = false;
   }
 
-  bool resumable_version = false;
-  if (resumable_version_flag.compare("true") == 0) {
-      resumable_version = true;
-  }
-
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
           op.getSourcePathList()[0].rfind('/') + 1);
   just_filename = just_filename.substr(0, just_filename.rfind("."));
 
-  insertions = new DesiredInsertions(resumable_version, original_file.c_str(),
+  insertions = new DesiredInsertions(original_file.c_str(),
               line_info_file.c_str(), struct_file.c_str(),
               stack_allocs_file.c_str(), heap_file.c_str(),
               original_file.c_str(), diag_file.c_str(),
@@ -351,11 +479,12 @@ int main(int argc, const char **argv) {
    * This pass also gets messed up if the input filename isn't the original
    * file.
    */
-  passes.push_back(new Pass(new AliasChangedPass(), ".alias"));
-  passes.push_back(new Pass(new MallocPass(), ".malloc"));
-  passes.push_back(new Pass(new StartExitPass(), ".start"));
-  passes.push_back(new Pass(new InitPass(), ".init"));
-  passes.push_back(new Pass(new SplitInitsPass(), ".split"));
+  passes.push_back(new Pass(new AliasChangedPass(), ".alias", ""));
+  passes.push_back(new Pass(new MallocPass(), ".malloc", ""));
+  passes.push_back(new Pass(new StartExitPass(), ".start", ""));
+  passes.push_back(new Pass(new InitPass(), ".init", ""));
+  passes.push_back(new Pass(new SplitInitsPass(), ".split", ""));
+
   /*
    * It is required that CallingAndOMPPass run after SplitInitsPass in case a
    * variable is initialized with a function call, which would cause problems
@@ -365,8 +494,10 @@ int main(int argc, const char **argv) {
    * As a result, it would be preferred that it be kept as the last pass in
    * general.
    */
-  passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl"));
-  passes.push_back(new Pass(new CallingAndOMPPass(), ".register"));
+  passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", ""));
+  passes.push_back(new Pass(new CallingAndOMPPass(true), ".garbage",
+              quick_version_file.c_str()));
+  passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", ""));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
       NumDebugFrontendAction<TransformASTConsumer>>();
@@ -390,8 +521,13 @@ int main(int argc, const char **argv) {
 
       std::stringstream ss;
       ss << working_directory << "/" << just_filename << pass->get_suffix() << ".cpp";
+      std::string old = current_output_file;
       current_output_file = ss.str();
       curr_visitor = pass->get_impl();
+      if (pass->get_dump_file().size() > 0) {
+          dump_bodies = new std::ofstream(pass->get_dump_file() + ".bodies");
+          dump_decls = new std::ofstream(pass->get_dump_file() + ".decls");
+      }
 
       llvm::errs() << "Outputting to " << current_output_file << "\n";
 
@@ -401,6 +537,16 @@ int main(int argc, const char **argv) {
       first_pass = false;
 
       insertions->update_line_numbers();
+      if (pass->get_dump_file().size() > 0) {
+          dump_bodies->close(); dump_bodies = NULL;
+          dump_decls->close(); dump_decls = NULL;
+          /*
+           * Reset so that the next pass reads from the same input as this pass.
+           * This assumes that the dump file was used to output the true data
+           * from this file, and any other output is garbage.
+           */
+          current_output_file = old;
+      }
   }
 
   delete insertions;

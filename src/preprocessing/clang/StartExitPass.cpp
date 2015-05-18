@@ -50,112 +50,110 @@ static bool perform_conditional_stack_management(FunctionCallees *callees) {
             !callees->get_calls_unknown_functions());
 }
 
-void StartExitPass::VisitTopLevel(clang::Decl *toplevel) {
+void StartExitPass::VisitTopLevel(clang::FunctionDecl *func) {
     if (!current_disable_varname) {
         current_disable_varname = new std::string(get_unique_disable_varname());
     }
 
-    clang::FunctionDecl *func = clang::dyn_cast<clang::FunctionDecl>(toplevel);
-    if (func != NULL && func->isThisDeclarationADefinition()) {
-        clang::SourceLocation declEnd = func->getBody()->getLocStart();
+    clang::SourceLocation declEnd = func->getBody()->getLocStart();
 
-        FunctionArgumentAliasGroups *funcAliases =
-            insertions->findMatchingFunctionNullReturn(curr_func);
+    FunctionArgumentAliasGroups *funcAliases =
+        insertions->findMatchingFunctionNullReturn(curr_func);
 
-        FunctionCallees *callees = insertions->get_callees(curr_func);
-        bool inserting_stack_mgmt = need_stack_management_calls(curr_func);
-        bool conditional_management = perform_conditional_stack_management(
-                callees);
+    FunctionCallees *callees = insertions->get_callees(curr_func);
+    bool inserting_stack_mgmt = need_stack_management_calls(curr_func);
+    bool conditional_management = perform_conditional_stack_management(
+            callees);
 
-        /*
-         * There may be no function info for a given function if it is a static
-         * function that is never called in its compilation unit (i.e. a
-         * function that LLVM can determine is never called). In that case, it
-         * won't even bother presenting that function declaration to us as part
-         * of the initial analysis pass. Then, we won't have any function input
-         * or exit metadata.
-         */
-        if (funcAliases != NULL) {
-            std::stringstream ss;
+    /*
+     * There may be no function info for a given function if it is a static
+     * function that is never called in its compilation unit (i.e. a
+     * function that LLVM can determine is never called). In that case, it
+     * won't even bother presenting that function declaration to us as part
+     * of the initial analysis pass. Then, we won't have any function input
+     * or exit metadata.
+     */
+    if (funcAliases != NULL) {
+        std::stringstream ss;
 
-            if (inserting_stack_mgmt) {
-                int nCheckpointedArgs = 0;
-                if (insert_at_front != NULL) {
-                    for (std::vector<StackAlloc *>::iterator i =
-                            insert_at_front->begin(), e = insert_at_front->end();
-                            i != e; i++) {
-                        StackAlloc *alloc = *i;
-                        if (alloc->get_may_checkpoint()) {
-                            nCheckpointedArgs++;
-                        }
+        if (inserting_stack_mgmt) {
+            int nCheckpointedArgs = 0;
+            if (insert_at_front != NULL) {
+                for (std::vector<StackAlloc *>::iterator i =
+                        insert_at_front->begin(), e = insert_at_front->end();
+                        i != e; i++) {
+                    StackAlloc *alloc = *i;
+                    if (alloc->get_may_checkpoint()) {
+                        nCheckpointedArgs++;
                     }
                 }
-                std::string cond_varname = get_cond_management_varname(
-                        curr_func);
-                std::string address_of_cond_varname;
-                if (conditional_management) {
-                    address_of_cond_varname = ("&" + cond_varname);
-                } else {
-                    address_of_cond_varname = "(int *)0x0";
-                }
-                ss << "const int " << *current_disable_varname << " = new_stack((void *)(&" <<
-                    curr_func << "), \"" << curr_func << "\", " <<
-                    address_of_cond_varname << ", " <<
-                    funcAliases->nargs() << ", " << nCheckpointedArgs;
-                for (unsigned i = 0; i < funcAliases->nargs(); i++) {
-                    ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
-                }
-
-                /*
-                 * Insert stack registrations for parameters to functions.
-                 */
-                if (insert_at_front != NULL) {
-                    for (std::vector<StackAlloc *>::iterator i =
-                            insert_at_front->begin(), e = insert_at_front->end();
-                            i != e; i++) {
-                        StackAlloc *alloc = *i;
-
-                        if (alloc->get_may_checkpoint()) {
-                            std::string args = constructRegisterStackVarArgs(alloc);
-                            ss << ", " << args;
-                        }
-                    }
-                    insert_at_front = NULL;
-                }
-
-                ss << "); ";
+            }
+            std::string cond_varname = get_cond_management_varname(
+                    curr_func);
+            std::string address_of_cond_varname;
+            if (conditional_management) {
+                address_of_cond_varname = ("&" + cond_varname);
+            } else {
+                address_of_cond_varname = "(int *)0x0";
+            }
+            ss << "const int " << *current_disable_varname << " = new_stack((void *)(&" <<
+                curr_func << "), \"" << curr_func << "\", " <<
+                address_of_cond_varname << ", " <<
+                funcAliases->nargs() << ", " << nCheckpointedArgs;
+            for (unsigned i = 0; i < funcAliases->nargs(); i++) {
+                ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
             }
 
-            // Insert rm_stack at end of function's body if this is a void
-            const clang::Stmt *body = func->getBody();
-            assert(clang::isa<clang::CompoundStmt>(body));
-            const clang::CompoundStmt *cmpd =
-                clang::dyn_cast<const clang::CompoundStmt>(body);
-
             /*
-             * If a function is empty, its body will have no instructions and
-             * there's no need to add instrumentation
+             * Insert stack registrations for parameters to functions.
              */
-            if (cmpd->size() > 0) {
-                if (ss.str().size() > 0) {
-                    InsertTextAfterToken(declEnd, ss.str());
-                }
+            if (insert_at_front != NULL) {
+                for (std::vector<StackAlloc *>::iterator i =
+                        insert_at_front->begin(), e = insert_at_front->end();
+                        i != e; i++) {
+                    StackAlloc *alloc = *i;
 
-                const clang::Stmt *last = cmpd->body_back();
-                if (!clang::isa<clang::ReturnStmt>(last)) {
-                    // implicit return at end of void funct
-                    clang::SourceLocation loc = cmpd->getLocStart();
-                    clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
-                    if (insertions->isMainFile(locloc.getFilename())) {
-                        InsertText(cmpd->getLocEnd(),
-                                constructFunctionEndingStmts(
-                                    inserting_stack_mgmt,
-                                    conditional_management), true, true);
+                    if (alloc->get_may_checkpoint()) {
+                        std::string args = constructRegisterStackVarArgs(alloc);
+                        ss << ", " << args;
                     }
+                }
+                insert_at_front = NULL;
+            }
+
+            ss << "); ";
+        }
+
+        // Insert rm_stack at end of function's body if this is a void
+        const clang::Stmt *body = func->getBody();
+        assert(clang::isa<clang::CompoundStmt>(body));
+        const clang::CompoundStmt *cmpd =
+            clang::dyn_cast<const clang::CompoundStmt>(body);
+
+        /*
+         * If a function is empty, its body will have no instructions and
+         * there's no need to add instrumentation
+         */
+        if (cmpd->size() > 0) {
+            if (ss.str().size() > 0) {
+                InsertTextAfterToken(declEnd, ss.str());
+            }
+
+            const clang::Stmt *last = cmpd->body_back();
+            if (!clang::isa<clang::ReturnStmt>(last)) {
+                // implicit return at end of void funct
+                clang::SourceLocation loc = cmpd->getLocStart();
+                clang::PresumedLoc locloc = SM->getPresumedLoc(loc);
+                if (insertions->isMainFile(locloc.getFilename())) {
+                    InsertText(cmpd->getLocEnd(),
+                            constructFunctionEndingStmts(
+                                inserting_stack_mgmt,
+                                conditional_management), true, true);
                 }
             }
         }
     }
+
     delete current_disable_varname;
     current_disable_varname = NULL;
 }

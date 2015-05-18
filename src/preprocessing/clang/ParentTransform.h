@@ -14,7 +14,7 @@ using namespace clang;
 
 class ParentTransform : public clang::ConstStmtVisitor<ParentTransform> {
 public:
-    ParentTransform() { }
+    // ParentTransform() { }
 
     void setRewriter(clang::Rewriter &R) {
         rewriter = &R;
@@ -28,7 +28,8 @@ public:
     virtual bool createsRegisterLabels() = 0;
     virtual bool createsFunctionLabels() = 0;
     virtual bool createsOMPTree() = 0;
-    virtual void VisitTopLevel(clang::Decl *toplevel) {}
+    virtual bool requiresMangledVarsReset() = 0;
+    virtual void VisitTopLevel(clang::FunctionDecl *toplevel) {}
 
     void setLastGoto(clang::SourceLocation last);
     clang::SourceLocation getLastGoto();
@@ -44,6 +45,7 @@ public:
     void resetOMPTree();
 
     clang::SourceManager *getSM() { return SM; }
+    int get_current_function_label() { return curr_function_label; }
 protected:
     clang::ASTContext *Context;
     clang::SourceManager *SM;

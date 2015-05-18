@@ -358,7 +358,7 @@ private:
 
 class DesiredInsertions {
 public:
-    DesiredInsertions(bool set_resumable_version,
+    DesiredInsertions(
             const char *module_name,
             const char *lines_info_filename,
             const char *struct_info_filename,
@@ -369,7 +369,6 @@ public:
             const char *exit_filename, const char *reachable_filename,
             const char *omp_filename, const char *firstprivate_filename,
             const char *call_tree_filename) :
-            resumable_version(set_resumable_version),
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -378,8 +377,8 @@ public:
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
             omp_file(omp_filename), firstprivate_file(firstprivate_filename),
-            call_tree_file(call_tree_filename), state_change_insertions(NULL),
-            func_exits(NULL) {
+            call_tree_file(call_tree_filename),
+            state_change_insertions(NULL), func_exits(NULL) {
         module_id = hash(module_name);
         // parseStateChangeInsertions must be called before parseFunctionExits
         state_change_insertions = parseStateChangeInsertions();
@@ -401,8 +400,6 @@ public:
         diagnostics.close();
         firstprivate.close();
     }
-
-    bool is_resumable_version() { return resumable_version; }
 
     bool contains(int line, int col, const char *filename);
     std::vector<size_t> *get_groups(int line, int col, const char *filename);
@@ -444,8 +441,11 @@ public:
             std::string varname);
 
     FunctionExit *getFunctionExitInfo(std::string funcname);
-    AliasesPassedToCallSite findFirstMatchingCallsite(int line,
-            std::string callee_name);
+    std::vector<AliasesPassedToCallSite>::iterator getCallsiteStart();
+
+    std::vector<AliasesPassedToCallSite>::iterator findFirstMatchingCallsiteAfter(
+            int line, std::string callee_name,
+            std::vector<AliasesPassedToCallSite>::iterator start);
     FunctionArgumentAliasGroups findMatchingFunction(std::string func);
     FunctionArgumentAliasGroups* findMatchingFunctionNullReturn(
             std::string func);
@@ -463,7 +463,6 @@ public:
     std::string get_alias_loc_var(unsigned id);
 
 private:
-        bool resumable_version;
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
