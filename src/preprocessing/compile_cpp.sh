@@ -145,10 +145,6 @@ if [[ $ENABLE_OMP == 1 ]]; then
     GXX_FLAGS="${GXX_FLAGS} -fopenmp"
 fi
 
-# STDDEF_FOLDER=$(dirname $(find $(dirname $(dirname ${GXX})) -name \
-#             "stddef.h" 2>/dev/null | head -n 1))
-STDDEF_FOLDER=.
-
 for INPUT in ${ABS_INPUTS[@]}; do
     INFO_FILE_PREFIX=${WORK_DIR}/$(basename ${INPUT})
     PREPROCESS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.cpp
@@ -179,7 +175,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Inserting braces in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${BRACE_INSERT} -o ${PREPROCESS_FILE}.braces \
         ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-        -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES \
+        -I${CUDA_HOME}/include $INCLUDES \
         ${CHIMES_DEF} ${DEFINES}
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
@@ -232,7 +228,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -b ${INFO_FILE_PREFIX}.tree.info \
             -e true \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
+            -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -274,12 +270,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
     fi
 done
 
+for f in ${LAST_FILES[@]}; do
+    echo $f
+done
 
 if [[ $COMPILE == 1 ]]; then
-    for f in ${LAST_FILES[@]}; do
-        echo $f
-    done
-
     for f in ${OBJ_FILES[@]}; do
         echo $f
     done
@@ -289,14 +284,9 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    echo 'Linking final executable'
     ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${OBJ_FILE_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}
-
-    for f in ${LAST_FILES[@]}; do
-        echo $f
-    done
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

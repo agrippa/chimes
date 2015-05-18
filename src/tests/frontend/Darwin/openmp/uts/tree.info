@@ -3,7 +3,7 @@ uts_wctime 0 DOES_NOT
 rng_toProb 0 DOES_NOT
 uts_initRoot 0 MAY rng_init
 uts_numChildren_bin 0 MAY rng_rand rng_toProb
-uts_numChildren_geo 0 MAY rng_rand rng_toProb sin
+uts_numChildren_geo 0 MAY rng_rand rng_toProb
 uts_numChildren 0 MAY uts_error uts_numChildren_bin uts_numChildren_geo
 uts_childType 0 MAY uts_error
 uts_paramsToStr 0 MAY impl_getName rng_showtype

@@ -2075,9 +2075,9 @@ void timestampBarrier(const char* msg)
 # 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    if (! ({ calling((void*)printRank, -1, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_3, ____chimes_did_disable3); return;; };
 # 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-      t = ( ({ call_lbl_2: time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (__null); } calling((void*)time, 2, 0UL, 0, 1, (size_t)(2720369932807154229UL)); (time)(____chimes_arg0); }) ) ;
+       call_lbl_2: t = ( ({ time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (__null); } calling((void*)time, 2, 0UL, 0, 1, (size_t)(2720369932807154229UL)); (time)(____chimes_arg0); }) ) ;
 # 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-    char *timeString; timeString = ( ({ call_lbl_3: const time_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (&t); } calling((void*)ctime, 3, 2720369932807153878UL, 0, 1, (size_t)(2720369932807153865UL)); (ctime)(____chimes_arg1); }) ) ;
+    char *timeString; call_lbl_3: timeString = ( ({ const time_t * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (&t); } calling((void*)ctime, 3, 2720369932807153878UL, 0, 1, (size_t)(2720369932807153865UL)); (ctime)(____chimes_arg1); }) ) ;
 # 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    timeString[24] = '\0';
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
@@ -2129,7 +2129,7 @@ int sendReceiveParallel(void* sendBuf, int sendLen, int dest,
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    (__builtin_expect(!(source == dest), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c", 106, "source == dest") : (void)0);
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
-    ({ call_lbl_3: calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) ;
+    call_lbl_3: ({ calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) ;
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c"
    rm_stack(false, 0UL, "sendReceiveParallel", &____must_manage_sendReceiveParallel, ____alias_loc_id_5, ____chimes_did_disable7); return sendLen;
