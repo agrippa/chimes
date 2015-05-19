@@ -1487,6 +1487,8 @@ static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
     }
 }
 
+enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
+
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __CHIMES_PROFILE
@@ -1507,9 +1509,9 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
             ctx->set_printed_func_ptr_mismatch(true);
         }
         if (disable_current_thread()) {
-            return 1;
+            return DISABLED;
         } else {
-            return 2;
+            return ALREADY_DISABLED;
         }
     }
 
@@ -1518,24 +1520,16 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 #ifdef VERBOSE
         fprintf(stderr, "Entering %s, dont need to manage stack\n", funcname);
 #endif
-        if (program_stack->size() != 0 &&
-                n_local_arg_aliases != ctx->get_n_parent_aliases()) {
-            if (!ctx->get_printed_func_args_mismatch()) {
-                fprintf(stderr, "WARNING: Mismatch in # passed aliases (%lu) and # "
-                        "expected aliases (%u) passed to %s, ignoring\n",
-                        ctx->get_n_parent_aliases(), n_local_arg_aliases, funcname);
-                ctx->set_printed_func_args_mismatch(true);
-            }
-        } else {
-            va_list vl;
-            va_start(vl, nargs);
-            add_argument_aliases(n_local_arg_aliases, ctx, vl, true);
-            va_end(vl);
-        }
+        assert(program_stack->size() == 0 ||
+                n_local_arg_aliases == ctx->get_n_parent_aliases());
+        va_list vl;
+        va_start(vl, nargs);
+        add_argument_aliases(n_local_arg_aliases, ctx, vl, true);
+        va_end(vl);
 
         ctx->push_return_alias();
 
-        return 0;
+        return NOT_DISABLED;
     }
 
 #ifdef VERBOSE
@@ -1603,7 +1597,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 #ifdef __CHIMES_PROFILE
     pp.add_time(NEW_STACK, __start_time);
 #endif
-    return 0;
+    return NOT_DISABLED;
 }
 
 void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
@@ -1626,14 +1620,9 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
     }
     ctx->set_return_alias(set_return_alias);
 
-    ctx->ensure_parent_alias_capacity(naliases);
-    ctx->clear_parent_aliases();
-
     va_list vl;
     va_start(vl, naliases);
-    for (unsigned i = 0; i < naliases; i++) {
-        ctx->add_parent_alias(va_arg(vl, size_t));
-    }
+    ctx->init_parent_aliases(vl, naliases);
     va_end(vl);
 
     ADD_TO_OVERHEAD
@@ -1683,11 +1672,11 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
         if (loc_id > 0) {
             alias_group_changed_helper(loc_id, ctx);
         }
-        if (!did_disable) {
+        if (did_disable == NOT_DISABLED) {
             add_return_alias(has_return_alias, returned_alias, ctx);
         }
 
-        reenable_current_thread(did_disable == 1);
+        reenable_current_thread(did_disable == DISABLED);
 
         return;
     }
