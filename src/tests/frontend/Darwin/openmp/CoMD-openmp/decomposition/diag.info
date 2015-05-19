@@ -1,3 +1,7 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 18 9 len=17 initDecomposition_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 46 , 12059379678030502383UL, 0, 1, (int)sizeof(struct DomainSt), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 57 5 len=12 processorNum_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 26 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 22 46 , 12059379678030502383UL, 0, 1, (int)sizeof(struct DomainSt), 0
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 49 4 rm_stack(true, 12059379678030502383UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0); 

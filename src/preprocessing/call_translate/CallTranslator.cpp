@@ -15,6 +15,7 @@
 #include <sstream>
 
 extern bool curr_func_is_quick;
+extern bool curr_func_is_npm;
 
 void CallTranslator::visitChildren(const clang::Stmt *s) {
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
@@ -52,29 +53,32 @@ void CallTranslator::VisitStmt(const clang::Stmt *s) {
     // Insert braces around all if and for statement bodies
     if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
         const clang::FunctionDecl *callee = call->getDirectCallee();
-        if (callee) {
+        if (callee && SM->isInMainFile(callee->getLocStart())) {
             std::string callee_name = callee->getNameAsString();
             assert(callee_name.size() > 0);
-            if (is_transformed(callee_name)) {
 
-                std::string replace_with;
-                if (curr_func_is_quick == YES) {
-                    replace_with = callee_name + "_quick";
+            std::string replace_with;
+            if (is_quick_transformed(callee_name) &&
+                    curr_func_is_quick == YES) {
+                replace_with = callee_name + "_quick";
+            } else if (is_npm_transformed(callee_name) &&
+                    curr_func_is_npm == YES) {
+                llvm::errs() << "TRANSFORMING CALL TO " << callee_name << "\n";
+                replace_with = callee_name + "_npm";
+            }
+
+            if (replace_with.size() > 0) {
+                std::stringstream ss;
+                ss << replace_with << "(";
+
+                for (int i = 0; i < call->getNumArgs(); i++) {
+                    if (i != 0) ss << ", ";
+                    ss << to_string(call->getArg(i));
                 }
-
-                if (replace_with.size() > 0) {
-                    std::stringstream ss;
-                    ss << replace_with << "(";
-
-                    for (int i = 0; i < call->getNumArgs(); i++) {
-                        if (i != 0) ss << ", ";
-                        ss << to_string(call->getArg(i));
-                    }
-                    ss << ")";
-                    rewriter->ReplaceText(clang::SourceRange(
-                                call->getLocStart(), call->getLocEnd()),
-                            ss.str());
-                }
+                ss << ")";
+                rewriter->ReplaceText(clang::SourceRange(
+                            call->getLocStart(), call->getLocEnd()),
+                        ss.str());
             }
         }
     }

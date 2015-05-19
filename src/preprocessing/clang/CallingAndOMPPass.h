@@ -80,6 +80,7 @@ public:
     bool createsFunctionLabels() override { return true; }
     bool createsOMPTree() override { return true; }
     bool requiresMangledVarsReset() { return true; }
+    bool transformsOriginal() { return gen_quick; }
 
 private:
     std::map<clang::VarDecl *, StackAlloc *> hasValidDeclarations(
@@ -106,8 +107,8 @@ private:
      */
     std::map<int, const clang::Stmt *> predecessors;
     std::map<int, const clang::Stmt *> successors;
-    std::map<int, std::vector<CallLocation>> calls_found;
     std::map<clang::FunctionDecl *, const clang::CallExpr *> new_stack_calls;
+    std::map<int, std::vector<CallLocation>> calls_found;
 
     std::string handleDecl(const clang::DeclStmt *d,
             std::map<clang::VarDecl *, StackAlloc *> allocs,
@@ -135,6 +136,16 @@ private:
             std::string disable_varname, std::string call_depth_varname,
             std::string region_id_varname);
     bool has_side_effects(const Expr *arg);
+    int extractArgsWithSideEffects(const CallExpr *call,
+            CallLocation *loc, int nargs, std::stringstream *ss,
+            std::vector<std::string> *arg_varnames);
+    bool needsToBeHoisted(std::string funcname, const Expr *arg);
+    std::string get_func_symbol(const CallExpr *call, CallLocation *loc);
+    void collectCallAliasPairings(
+            std::string callee, AliasesPassedToCallSite callsite,
+            std::vector<std::pair<size_t, size_t> > *new_aliases,
+            std::set<std::string> *changed_alias_locs,
+            std::set<std::string> *visited);
 
     std::map<std::string, std::set<std::string> > supported_omp_clauses;
     std::set<std::string> supported_omp_pragmas;

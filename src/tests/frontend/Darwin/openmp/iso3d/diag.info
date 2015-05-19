@@ -1,3 +1,24 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 52 13 len=3 fwd_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 109 31 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 109 54 , 11766212510299734236UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 110 28 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 110 35 , 11766212510299734233UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 111 28 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 111 35 , 11766212510299734233UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 112 27 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 112 34 , 11766212510299734235UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 158 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 158 10 , 11766212510299734236UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 159 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 159 10 , 11766212510299734233UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 160 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 160 10 , 11766212510299734233UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 161 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 161 10 , 11766212510299734235UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 163 9 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 163 20 , 11766212510299734345UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 165 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 165 10 , 11766212510299734343UL
 InsertText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 145 5 alias_group_changed(____alias_loc_id_4); 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 109 31 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 109 54 , 11766212510299734236UL, 0, 0
@@ -133,7 +154,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 121 19  ({ 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 121 79 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 123 44  ({  calling((void*)seconds, 15, 0UL, 0, 0); (seconds)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 123 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 132 9  ({  calling((void*)fwd, -1, 0UL, 0, 11, (size_t)(11766212510299734233UL), (size_t)(11766212510299734233UL), (size_t)(11766212510299734235UL), (size_t)(11766212510299734236UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd)(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 132 9 ({ calling_npm(4, 0, 11766212510299734233UL, 11766212510299734727UL, 11766212510299734233UL, 11766212510299734728UL, 11766212510299734235UL, 11766212510299734729UL, 11766212510299734236UL, 11766212510299734730UL); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 133 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 140 23  ({  calling((void*)checkpoint, 16, 0UL, ____alias_loc_id_3, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 140 34 
@@ -221,17 +242,17 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 121 19  ({ 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 121 79 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 123 44  ({  calling((void*)seconds, 15, 0UL, 0, 0); (seconds)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 123 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 132 9  ({  calling((void*)fwd, -1, 0UL, 0, 11, (size_t)(11766212510299734233UL), (size_t)(11766212510299734233UL), (size_t)(11766212510299734235UL), (size_t)(11766212510299734236UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd)(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 132 9 ({ calling_npm(4, 0, 11766212510299734233UL, 11766212510299734727UL, 11766212510299734233UL, 11766212510299734728UL, 11766212510299734235UL, 11766212510299734729UL, 11766212510299734236UL, 11766212510299734730UL); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 133 46 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 140 23  ({  calling((void*)checkpoint, 16, 0UL, ____alias_loc_id_3, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 140 34 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 143 23  ({  int ____chimes_arg35;  if (!____chimes_replaying) { ____chimes_arg35 = (step + 1);  }  calling((void*)update_progress, 17, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg35); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 143 23  ({  int ____chimes_arg24;  if (!____chimes_replaying) { ____chimes_arg24 = (step + 1);  }  calling((void*)update_progress, 17, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg24); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 143 47 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 145 93  ({  calling((void*)seconds, 19, 0UL, 0, 0); (seconds)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 145 101 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 147 19  ({  calling((void*)finish_progress, 20, 0UL, ____alias_loc_id_5, 0); (finish_progress)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 147 35 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 154 23  ({  int ____chimes_arg37;  int ____chimes_arg40;  int ____chimes_arg41;  int ____chimes_arg43;  if (!____chimes_replaying) { ____chimes_arg37 = (conf.save_text); ____chimes_arg40 = (conf.ny); ____chimes_arg41 = (conf.nx); ____chimes_arg43 = (conf.radius);  }  calling((void*)save_layer_text, 22, 0UL, ____alias_loc_id_6, 8, (size_t)(11766212510299734233UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(11766212510299734754UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg37, dimx, dimy, ____chimes_arg40, ____chimes_arg41, "snap.text", ____chimes_arg43); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 154 23  ({  int ____chimes_arg26;  int ____chimes_arg29;  int ____chimes_arg30;  int ____chimes_arg32;  if (!____chimes_replaying) { ____chimes_arg26 = (conf.save_text); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nx); ____chimes_arg32 = (conf.radius);  }  calling((void*)save_layer_text, 22, 0UL, ____alias_loc_id_6, 8, (size_t)(11766212510299734233UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(11766212510299734754UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg26, dimx, dimy, ____chimes_arg29, ____chimes_arg30, "snap.text", ____chimes_arg32); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 155 41 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 90 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/iso3d.cpp 90 17 

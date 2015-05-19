@@ -1,3 +1,6 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 6 len=7 handler_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 21 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 38 , 805989342579701535UL, 0, 1, (int)sizeof(struct _foo), 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 21 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 38 , 805989342579701535UL, 0, 1, (int)sizeof(struct _foo), 0
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 25 const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(805989342579701521UL)); 

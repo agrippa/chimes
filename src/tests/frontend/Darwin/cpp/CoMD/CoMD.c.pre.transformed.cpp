@@ -569,6 +569,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -611,7 +612,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2894,6 +2895,7 @@ static int iStepPrev = -1;
 static int firstCall = 1;
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+SimFlat* initSimulation_npm(Command cmd);void destroySimulation_npm(SimFlat** ps);void initSubsystems_npm(void);void finalizeSubsystems_npm(void);Validate* initValidate_npm(SimFlat* sim);void validateResult_npm(const Validate* val, SimFlat* sim);void sumAtoms_npm(SimFlat* s);void printThings_npm(SimFlat* s, int iStep, double elapsedTime);void printSimulationDataYaml_npm(FILE* file, SimFlat* s);
 int main_quick(int argc, char** argv); int main(int argc, char** argv);SimFlat* initSimulation_quick(Command cmd); SimFlat* initSimulation(Command cmd);void destroySimulation_quick(SimFlat** ps); void destroySimulation(SimFlat** ps);void initSubsystems_quick(void); void initSubsystems(void);void finalizeSubsystems_quick(void); void finalizeSubsystems(void);Validate* initValidate_quick(SimFlat* sim); Validate* initValidate(SimFlat* sim);void validateResult_quick(const Validate* val, SimFlat* sim); void validateResult(const Validate* val, SimFlat* sim);void sumAtoms_quick(SimFlat* s); void sumAtoms(SimFlat* s);void printThings_quick(SimFlat* s, int iStep, double elapsedTime); void printThings(SimFlat* s, int iStep, double elapsedTime);void printSimulationDataYaml_quick(FILE* file, SimFlat* s); void printSimulationDataYaml(FILE* file, SimFlat* s);
 int main_resumable(int argc, char** argv)
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3012,6 +3014,7 @@ Command cmd;
 }
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+BasePotential* initPotential_npm( int doeam, const char* potDir, const char* potName, const char* potType);SpeciesData* initSpecies_npm(BasePotential* pot);void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latticeType[8]);
 BasePotential* initPotential_quick( int doeam, const char* potDir, const char* potName, const char* potType); BasePotential* initPotential( int doeam, const char* potDir, const char* potName, const char* potType);SpeciesData* initSpecies_quick(BasePotential* pot); SpeciesData* initSpecies(BasePotential* pot);void sanityChecks_quick(Command cmd, double cutoff, double latticeConst, char latticeType[8]); void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeType[8]);
 SimFlat* initSimulation_resumable(Command cmd)
 # 163 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3052,7 +3055,7 @@ SimFlat *sim;
  call_lbl_3: ({ Command ____chimes_arg44; real_t ____chimes_arg45; char * ____chimes_arg47; if (!____chimes_replaying) { ____chimes_arg44 = (cmd); ____chimes_arg45 = (sim->pot->cutoff); ____chimes_arg47 = (sim->pot->latticeType); } calling((void*)sanityChecks, 3, 0UL, ____alias_loc_id_9, 4, (size_t)(13807915916850228135UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229387UL)); (sanityChecks)(____chimes_arg44, ____chimes_arg45, latticeConstant, ____chimes_arg47); }) ;
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 183 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- sim->species = ({ calling((void*)initSpecies, -1, 13807915916850229387UL, 0, 1, (size_t)(13807915916850229387UL)); (initSpecies)(sim->pot); }) ;
+ sim->species = ({ calling_npm(2, 0, 13807915916850229387UL, 13807915916850229279UL, 13807915916850229387UL, 13807915916850229303UL); initSpecies_npm(sim->pot); });
 # 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  ;
@@ -3064,23 +3067,23 @@ SimFlat *sim;
  globalExtent[2] = cmd.nz * latticeConstant;
 # 189 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 190 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_4: sim->domain = ({ int ____chimes_arg49; int ____chimes_arg50; int ____chimes_arg51; if (!____chimes_replaying) { ____chimes_arg49 = (cmd.xproc); ____chimes_arg50 = (cmd.yproc); ____chimes_arg51 = (cmd.zproc); } calling((void*)initDecomposition, 4, 13807915916850229387UL, ____alias_loc_id_10, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228136UL)); (initDecomposition)(____chimes_arg49, ____chimes_arg50, ____chimes_arg51, globalExtent); }) ;
+ call_lbl_4: sim->domain = ({ int ____chimes_arg48; int ____chimes_arg49; int ____chimes_arg50; if (!____chimes_replaying) { ____chimes_arg48 = (cmd.xproc); ____chimes_arg49 = (cmd.yproc); ____chimes_arg50 = (cmd.zproc); } calling((void*)initDecomposition, 4, 13807915916850229387UL, ____alias_loc_id_10, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228136UL)); (initDecomposition)(____chimes_arg48, ____chimes_arg49, ____chimes_arg50, globalExtent); }) ;
 # 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 193 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_5: sim->boxes = ({ const struct DomainSt * ____chimes_arg53; real_t ____chimes_arg54; if (!____chimes_replaying) { ____chimes_arg53 = (sim->domain); ____chimes_arg54 = (sim->pot->cutoff); } calling((void*)initLinkCells, 5, 13807915916850229387UL, ____alias_loc_id_11, 2, (size_t)(13807915916850229387UL), (size_t)(0UL)); (initLinkCells)(____chimes_arg53, ____chimes_arg54); }) ;
+ call_lbl_5: sim->boxes = ({ const struct DomainSt * ____chimes_arg52; real_t ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg52 = (sim->domain); ____chimes_arg53 = (sim->pot->cutoff); } calling((void*)initLinkCells, 5, 13807915916850229387UL, ____alias_loc_id_11, 2, (size_t)(13807915916850229387UL), (size_t)(0UL)); (initLinkCells)(____chimes_arg52, ____chimes_arg53); }) ;
 # 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_6: sim->atoms = ({ LinkCell * ____chimes_arg55; if (!____chimes_replaying) { ____chimes_arg55 = (sim->boxes); } calling((void*)initAtoms, 6, 13807915916850229387UL, ____alias_loc_id_12, 1, (size_t)(13807915916850229387UL)); (initAtoms)(____chimes_arg55); }) ;
+ call_lbl_6: sim->atoms = ({ LinkCell * ____chimes_arg54; if (!____chimes_replaying) { ____chimes_arg54 = (sim->boxes); } calling((void*)initAtoms, 6, 13807915916850229387UL, ____alias_loc_id_12, 1, (size_t)(13807915916850229387UL)); (initAtoms)(____chimes_arg54); }) ;
 # 195 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 196 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 197 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_7: ({ int ____chimes_arg56; int ____chimes_arg57; int ____chimes_arg58; if (!____chimes_replaying) { ____chimes_arg56 = (cmd.nx); ____chimes_arg57 = (cmd.ny); ____chimes_arg58 = (cmd.nz); } calling((void*)createFccLattice, 7, 0UL, ____alias_loc_id_13, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228306UL)); (createFccLattice)(____chimes_arg56, ____chimes_arg57, ____chimes_arg58, latticeConstant, sim); }) ;
+ call_lbl_7: ({ int ____chimes_arg55; int ____chimes_arg56; int ____chimes_arg57; if (!____chimes_replaying) { ____chimes_arg55 = (cmd.nx); ____chimes_arg56 = (cmd.ny); ____chimes_arg57 = (cmd.nz); } calling((void*)createFccLattice, 7, 0UL, ____alias_loc_id_13, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228306UL)); (createFccLattice)(____chimes_arg55, ____chimes_arg56, ____chimes_arg57, latticeConstant, sim); }) ;
 # 198 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_8: ({ double ____chimes_arg62; if (!____chimes_replaying) { ____chimes_arg62 = (cmd.temperature); } calling((void*)setTemperature, 8, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (setTemperature)(sim, ____chimes_arg62); }) ;
+ call_lbl_8: ({ double ____chimes_arg61; if (!____chimes_replaying) { ____chimes_arg61 = (cmd.temperature); } calling((void*)setTemperature, 8, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (setTemperature)(sim, ____chimes_arg61); }) ;
 # 199 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_9: ({ double ____chimes_arg64; if (!____chimes_replaying) { ____chimes_arg64 = (cmd.initialDelta); } calling((void*)randomDisplacements, 9, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (randomDisplacements)(sim, ____chimes_arg64); }) ;
+ call_lbl_9: ({ double ____chimes_arg63; if (!____chimes_replaying) { ____chimes_arg63 = (cmd.initialDelta); } calling((void*)randomDisplacements, 9, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (randomDisplacements)(sim, ____chimes_arg63); }) ;
 # 200 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 201 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_10: sim->atomExchange = ({ Domain * ____chimes_arg65; LinkCell * ____chimes_arg66; if (!____chimes_replaying) { ____chimes_arg65 = (sim->domain); ____chimes_arg66 = (sim->boxes); } calling((void*)initAtomHaloExchange, 10, 13807915916850229387UL, 0, 2, (size_t)(13807915916850229387UL), (size_t)(13807915916850229387UL)); (initAtomHaloExchange)(____chimes_arg65, ____chimes_arg66); }) ;
+ call_lbl_10: sim->atomExchange = ({ Domain * ____chimes_arg64; LinkCell * ____chimes_arg65; if (!____chimes_replaying) { ____chimes_arg64 = (sim->domain); ____chimes_arg65 = (sim->boxes); } calling((void*)initAtomHaloExchange, 10, 13807915916850229387UL, 0, 2, (size_t)(13807915916850229387UL), (size_t)(13807915916850229387UL)); (initAtomHaloExchange)(____chimes_arg64, ____chimes_arg65); }) ;
 # 202 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 203 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 204 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3124,11 +3127,11 @@ void destroySimulation_resumable(SimFlat** ps)
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  if (pot) {free_wrapper(pot, 13807915916850229020UL); };
 # 227 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_4: ({ LinkCell ** ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg74 = (&(s->boxes)); } calling((void*)destroyLinkCells, 4, 0UL, ____alias_loc_id_23, 1, (size_t)(13807915916850229011UL)); (destroyLinkCells)(____chimes_arg74); }) ;
+ call_lbl_4: ({ LinkCell ** ____chimes_arg73; if (!____chimes_replaying) { ____chimes_arg73 = (&(s->boxes)); } calling((void*)destroyLinkCells, 4, 0UL, ____alias_loc_id_23, 1, (size_t)(13807915916850229011UL)); (destroyLinkCells)(____chimes_arg73); }) ;
 # 228 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_5: ({ Atoms * ____chimes_arg75; if (!____chimes_replaying) { ____chimes_arg75 = (s->atoms); } calling((void*)destroyAtoms, 5, 0UL, 0, 1, (size_t)(13807915916850229020UL)); (destroyAtoms)(____chimes_arg75); }) ;
+ call_lbl_5: ({ Atoms * ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg74 = (s->atoms); } calling((void*)destroyAtoms, 5, 0UL, 0, 1, (size_t)(13807915916850229020UL)); (destroyAtoms)(____chimes_arg74); }) ;
 # 229 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_6: ({ HaloExchange ** ____chimes_arg76; if (!____chimes_replaying) { ____chimes_arg76 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 6, 0UL, 0, 1, (size_t)(13807915916850229011UL)); (destroyHaloExchange)(____chimes_arg76); }) ;
+ call_lbl_6: ({ HaloExchange ** ____chimes_arg75; if (!____chimes_replaying) { ____chimes_arg75 = (&(s->atomExchange)); } calling((void*)destroyHaloExchange, 6, 0UL, 0, 1, (size_t)(13807915916850229011UL)); (destroyHaloExchange)(____chimes_arg75); }) ;
 # 230 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  free_wrapper(s->species, 13807915916850229020UL);
 # 231 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3315,7 +3318,7 @@ void sumAtoms_resumable(SimFlat* s)
 # 336 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_20, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_2: ({ int * ____chimes_arg83; int * ____chimes_arg84; if (!____chimes_replaying) { ____chimes_arg83 = (&s->atoms->nLocal); ____chimes_arg84 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 2, 0UL, 0, 3, (size_t)(13807915916850228770UL), (size_t)(13807915916850228770UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg83, ____chimes_arg84, 1); }) ;
+ call_lbl_2: ({ int * ____chimes_arg82; int * ____chimes_arg83; if (!____chimes_replaying) { ____chimes_arg82 = (&s->atoms->nLocal); ____chimes_arg83 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 2, 0UL, 0, 3, (size_t)(13807915916850228770UL), (size_t)(13807915916850228770UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg82, ____chimes_arg83, 1); }) ;
 # 338 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 339 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3394,7 +3397,7 @@ int maxOcc;
  if (____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0 || ____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0 || ____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0 || ____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0 || ____must_checkpoint_printSimulationDataYaml_totalMemLocal_0 || ____must_checkpoint_printSimulationDataYaml_perAtomSize_0 || ____must_checkpoint_printSimulationDataYaml_maxOcc_0) { register_stack_vars(8, "printSimulationDataYaml|paddedMemTotal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemTotal_0, "float", (void *)(&paddedMemTotal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|paddedMemLocal|0", &____must_checkpoint_printSimulationDataYaml_paddedMemLocal_0, "float", (void *)(&paddedMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|nTotalBoxes|0", &____must_checkpoint_printSimulationDataYaml_nTotalBoxes_0, "i32", (void *)(&nTotalBoxes), (size_t)4, 0, 0, 0, "printSimulationDataYaml|nLocalBoxes|0", &____must_checkpoint_printSimulationDataYaml_nLocalBoxes_0, "i32", (void *)(&nLocalBoxes), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemGlobal|0", &____must_checkpoint_printSimulationDataYaml_totalMemGlobal_0, "float", (void *)(&totalMemGlobal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|totalMemLocal|0", &____must_checkpoint_printSimulationDataYaml_totalMemLocal_0, "float", (void *)(&totalMemLocal), (size_t)4, 0, 0, 0, "printSimulationDataYaml|perAtomSize|0", &____must_checkpoint_printSimulationDataYaml_perAtomSize_0, "i32", (void *)(&perAtomSize), (size_t)4, 0, 0, 0, "printSimulationDataYaml|maxOcc|0", &____must_checkpoint_printSimulationDataYaml_maxOcc_0, "i32", (void *)(&maxOcc), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(9): { goto call_lbl_9; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 380 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 381 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_1: maxOcc = ( ({ LinkCell * ____chimes_arg87; if (!____chimes_replaying) { ____chimes_arg87 = (s->boxes); } calling((void*)maxOccupancy, 1, 0UL, 0, 1, (size_t)(13807915916850228347UL)); (maxOccupancy)(____chimes_arg87); }) ) ;
+ call_lbl_1: maxOcc = ( ({ LinkCell * ____chimes_arg86; if (!____chimes_replaying) { ____chimes_arg86 = (s->boxes); } calling((void*)maxOccupancy, 1, 0UL, 0, 1, (size_t)(13807915916850228347UL)); (maxOccupancy)(____chimes_arg86); }) ) ;
 # 382 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 383 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 384 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3449,7 +3452,7 @@ int maxOcc;
 # 410 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  fprintf(file,"Potential data: \n");
 # 411 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_18: ({ BasePotential * ____chimes_arg91; if (!____chimes_replaying) { ____chimes_arg91 = (s->pot); } calling((void*)s->pot->print, 18, 0UL, 0, 2, (size_t)(13807915916850228666UL), (size_t)(13807915916850228347UL)); (s->pot->print)(file, ____chimes_arg91); }) ;
+ call_lbl_18: ({ BasePotential * ____chimes_arg90; if (!____chimes_replaying) { ____chimes_arg90 = (s->pot); } calling((void*)s->pot->print, 18, 0UL, 0, 2, (size_t)(13807915916850228666UL), (size_t)(13807915916850228347UL)); (s->pot->print)(file, ____chimes_arg90); }) ;
 # 412 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 413 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 414 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3557,7 +3560,7 @@ int failCode;
 # 476 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  checkCode = (failCode) ;
 # 477 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- call_lbl_13: ({ void * ____chimes_arg95; int ____chimes_arg96; if (!____chimes_replaying) { ____chimes_arg95 = (&checkCode); ____chimes_arg96 = (sizeof(int)); } calling((void*)bcastParallel, 13, 0UL, ____alias_loc_id_31, 3, (size_t)(13807915916850229127UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg95, ____chimes_arg96, 0); }) ;
+ call_lbl_13: ({ void * ____chimes_arg94; int ____chimes_arg95; if (!____chimes_replaying) { ____chimes_arg94 = (&checkCode); ____chimes_arg95 = (sizeof(int)); } calling((void*)bcastParallel, 13, 0UL, ____alias_loc_id_31, 3, (size_t)(13807915916850229127UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg94, ____chimes_arg95, 0); }) ;
 # 478 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 479 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 480 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -3724,7 +3727,7 @@ SimFlat *sim;
  call_lbl_3: ({ calling((void*)sanityChecks, 3, 0UL, ____alias_loc_id_9, 4, (size_t)(13807915916850228135UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229387UL)); sanityChecks_quick(cmd, sim->pot->cutoff, latticeConstant, sim->pot->latticeType); }) ;
 # 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 183 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
- sim->species = ({ calling((void*)initSpecies, -1, 13807915916850229387UL, 0, 1, (size_t)(13807915916850229387UL)); initSpecies_quick(sim->pot); }) ;
+ sim->species = ({ calling_npm(2, 0, 13807915916850229387UL, 13807915916850229279UL, 13807915916850229387UL, 13807915916850229303UL); initSpecies_npm(sim->pot); });
 # 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
  ;
@@ -4248,8 +4251,526 @@ void sanityChecks(Command cmd, double cutoff, double latticeConst, char latticeT
 
 
 
+SimFlat* initSimulation_npm(Command cmd)
+# 163 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 164 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ SimFlat* sim = (SimFlat*)malloc_wrapper(sizeof(SimFlat), 13807915916850228306UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange));
+# 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->nSteps = cmd.nSteps;
+# 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->printRate = cmd.printRate;
+# 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->dt = cmd.dt;
+# 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->domain = __null;
+# 169 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->boxes = __null;
+# 170 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->atoms = __null;
+# 171 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->ePotential = 0.0;
+# 172 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->eKinetic = 0.0;
+# 173 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->atomExchange = __null;
+# 174 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 175 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->pot = initPotential_npm(cmd.doeam, cmd.potDir, cmd.potName, cmd.potType);
+# 176 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t latticeConstant = cmd.lat;
+# 177 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (cmd.lat < 0.) {latticeConstant = sim->pot->lat; };
+# 179 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 180 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 181 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sanityChecks_npm(cmd, sim->pot->cutoff, latticeConstant, sim->pot->latticeType);
+# 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 183 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->species = initSpecies_npm(sim->pot);
+# 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real3 globalExtent;
+# 186 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ globalExtent[0] = cmd.nx * latticeConstant;
+# 187 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ globalExtent[1] = cmd.ny * latticeConstant;
+# 188 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ globalExtent[2] = cmd.nz * latticeConstant;
+# 189 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 190 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->domain = initDecomposition(
+# 191 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ cmd.xproc, cmd.yproc, cmd.zproc, globalExtent);
+# 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 193 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->boxes = initLinkCells(sim->domain, sim->pot->cutoff);
+# 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->atoms = initAtoms(sim->boxes);
+# 195 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 196 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 197 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ createFccLattice(cmd.nx, cmd.ny, cmd.nz, latticeConstant, sim);
+# 198 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ setTemperature(sim, cmd.temperature);
+# 199 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ randomDisplacements(sim, cmd.initialDelta);
+# 200 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 201 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->atomExchange = initAtomHaloExchange(sim->domain, sim->boxes);
+# 202 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 203 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 204 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ do { profileStart(redistributeTimer); } while(0);
+# 205 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ redistributeAtoms(sim);
+# 206 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ do { profileStop(redistributeTimer); } while(0);
+# 207 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 208 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ do { profileStart(computeForceTimer); } while(0);
+# 209 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ computeForce(sim);
+# 210 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ do { profileStop(computeForceTimer); } while(0);
+# 211 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 212 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ kineticEnergy(sim);
+# 213 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 214 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ return sim;
+# 215 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void destroySimulation_npm(SimFlat** ps)
+# 219 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 220 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (!ps) {return;; };
+# 221 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 222 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ SimFlat* s = *ps;
+# 223 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (!s) {return;; };
+# 224 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 225 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ BasePotential* pot = s->pot;
+# 226 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (pot) {free_wrapper(pot, 13807915916850229020UL); };
+# 227 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ destroyLinkCells(&(s->boxes));
+# 228 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ destroyAtoms(s->atoms);
+# 229 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ destroyHaloExchange(&(s->atomExchange));
+# 230 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ free_wrapper(s->species, 13807915916850229020UL);
+# 231 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ free_wrapper(s->domain, 13807915916850229020UL);
+# 232 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ free_wrapper(s, 13807915916850229011UL);
+# 233 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ *ps = __null;
+# 234 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 235 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ return;
+# 236 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void initSubsystems_npm(void)
+# 239 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 240 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 241 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 242 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 243 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 244 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ yamlBegin();
+# 245 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void finalizeSubsystems_npm(void)
+# 248 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 249 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 250 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 251 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 252 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ yamlEnd();
+# 253 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+BasePotential* initPotential_npm(
+# 257 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int doeam, const char* potDir, const char* potName, const char* potType)
+# 258 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 259 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ BasePotential* pot = __null;
+# 260 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 261 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (doeam) {pot = initEamPot(potDir, potName, potType); } else {pot = initLjPot(); } ;
+# 265 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ (__builtin_expect(!(pot), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c", 265, "pot") : (void)0);
+# 266 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ return pot;
+# 267 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+SpeciesData* initSpecies_npm(BasePotential* pot)
+# 270 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 271 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ SpeciesData* species = (SpeciesData*)malloc_wrapper(sizeof(SpeciesData), 13807915916850229279UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0);
+# 272 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 273 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ strcpy(species->name, pot->name);
+# 274 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ species->atomicNo = pot->atomicNo;
+# 275 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ species->mass = pot->mass;
+# 276 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 277 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ return species;
+# 278 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+Validate* initValidate_npm(SimFlat* sim)
+# 281 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 282 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sumAtoms_npm(sim);
+# 283 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ Validate* val = (Validate*)malloc_wrapper(sizeof(Validate), 13807915916850228675UL, 0, 1, (int)sizeof(struct ValidateSt), 0);
+# 284 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ val->eTot0 = (sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal;
+# 285 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ val->nAtoms0 = sim->atoms->nGlobal;
+# 286 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 287 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (printRank())
+# 288 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 289 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "\n");
+# 290 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ printSeparator(__stdoutp);
+# 291 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "Initial energy : %14.12f, atom count : %d \n",
+# 292 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ val->eTot0, val->nAtoms0);
+# 293 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "\n");
+# 294 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 295 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ return val;
+# 296 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void validateResult_npm(const Validate* val, SimFlat* sim)
+# 299 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 300 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (printRank())
+# 301 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 302 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t eFinal = (sim->ePotential + sim->eKinetic) / sim->atoms->nGlobal;
+# 303 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 304 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int nAtomsDelta = (sim->atoms->nGlobal - val->nAtoms0);
+# 305 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 306 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "\n");
+# 307 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "\n");
+# 308 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "Simulation Validation:\n");
+# 309 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 310 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "  Initial energy  : %14.12f\n", val->eTot0);
+# 311 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "  Final energy    : %14.12f\n", eFinal);
+# 312 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "  eFinal/eInitial : %f\n", eFinal/val->eTot0);
+# 313 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if ( nAtomsDelta == 0)
+# 314 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 315 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "  Final atom count : %d, no atoms lost\n",
+# 316 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ sim->atoms->nGlobal);
+# 317 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 318 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ else
+# 319 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 320 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "#############################\n");
+# 321 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "# WARNING: %6d atoms lost #\n", nAtomsDelta);
+# 322 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, "#############################\n");
+# 323 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 324 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 325 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void sumAtoms_npm(SimFlat* s)
+# 328 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 329 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 330 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->atoms->nLocal = 0;
+# 331 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ for (int i = 0; i < s->boxes->nLocalBoxes; i++)
+# 332 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 333 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->atoms->nLocal += s->boxes->nAtoms[i];
+# 334 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 335 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 336 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ do { profileStart(commReduceTimer); } while(0);
+# 337 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ addIntParallel(&s->atoms->nLocal, &s->atoms->nGlobal, 1);
+# 338 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ do { profileStop(commReduceTimer); } while(0);
+# 339 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void printThings_npm(SimFlat* s, int iStep, double elapsedTime)
+# 346 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 347 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 348 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 349 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int nEval = iStep - iStepPrev;
+# 350 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ iStepPrev = iStep;
+# 351 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 352 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (!printRank()) {return;; };
+# 354 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 355 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (firstCall)
+# 356 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 357 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ firstCall = 0;
+# 358 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp,
+# 359 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ "#                                                                                         Performance\n"
+# 360 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ "#  Loop   Time(fs)       Total Energy   Potential Energy     Kinetic Energy  Temperature   (us/atom)     # Atoms\n");
+# 361 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fflush(__stdoutp);
+# 362 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 363 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 364 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t time = iStep*s->dt;
+# 365 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t eTotal = (s->ePotential+s->eKinetic) / s->atoms->nGlobal;
+# 366 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t eK = s->eKinetic / s->atoms->nGlobal;
+# 367 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t eU = s->ePotential / s->atoms->nGlobal;
+# 368 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ real_t Temp = (s->eKinetic / s->atoms->nGlobal) / (kB_eV * 1.5);
+# 369 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 370 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double timePerAtom = 1.0e6*elapsedTime/(double)(nEval*s->atoms->nLocal);
+# 371 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 372 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(__stdoutp, " %6d %10.2f %18.12f %18.12f %18.12f %12.4f %10.4f %12d\n",
+# 373 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ iStep, time, eTotal, eU, eK, Temp, timePerAtom, s->atoms->nGlobal);
+# 374 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void printSimulationDataYaml_npm(FILE* file, SimFlat* s)
+# 379 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 380 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 381 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int maxOcc = maxOccupancy(s->boxes);
+# 382 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 383 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 384 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (!printRank()) {return;; };
+# 386 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 387 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"Simulation data: \n");
+# 388 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Total atoms        : %d\n",
+# 389 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->atoms->nGlobal);
+# 390 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Min global bounds  : [ %14.10f, %14.10f, %14.10f ]\n",
+# 391 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->domain->globalMin[0], s->domain->globalMin[1], s->domain->globalMin[2]);
+# 392 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Max global bounds  : [ %14.10f, %14.10f, %14.10f ]\n",
+# 393 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->domain->globalMax[0], s->domain->globalMax[1], s->domain->globalMax[2]);
+# 394 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ printSeparator(file);
+# 395 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"Decomposition data: \n");
+# 396 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Processors         : %6d,%6d,%6d\n",
+# 397 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->domain->procGrid[0], s->domain->procGrid[1], s->domain->procGrid[2]);
+# 398 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Local boxes        : %6d,%6d,%6d = %8d\n",
+# 399 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->boxes->gridSize[0], s->boxes->gridSize[1], s->boxes->gridSize[2],
+# 400 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->boxes->gridSize[0]*s->boxes->gridSize[1]*s->boxes->gridSize[2]);
+# 401 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Box size           : [ %14.10f, %14.10f, %14.10f ]\n",
+# 402 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->boxes->boxSize[0], s->boxes->boxSize[1], s->boxes->boxSize[2]);
+# 403 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"  Box factor         : [ %14.10f, %14.10f, %14.10f ] \n",
+# 404 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->boxes->boxSize[0]/s->pot->cutoff,
+# 405 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->boxes->boxSize[1]/s->pot->cutoff,
+# 406 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->boxes->boxSize[2]/s->pot->cutoff);
+# 407 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file, "  Max Link Cell Occupancy: %d of %d\n",
+# 408 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ maxOcc, 64);
+# 409 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ printSeparator(file);
+# 410 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"Potential data: \n");
+# 411 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ s->pot->print(file, s->pot);
+# 412 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 413 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 414 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int perAtomSize = 10*sizeof(real_t)+2*sizeof(int);
+# 415 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ float mbPerAtom = perAtomSize/1024/1024;
+# 416 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ float totalMemLocal = (float)(perAtomSize*s->atoms->nLocal)/1024/1024;
+# 417 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ float totalMemGlobal = (float)(perAtomSize*s->atoms->nGlobal)/1024/1024;
+# 418 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 419 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int nLocalBoxes = s->boxes->gridSize[0]*s->boxes->gridSize[1]*s->boxes->gridSize[2];
+# 420 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int nTotalBoxes = (s->boxes->gridSize[0]+2)*(s->boxes->gridSize[1]+2)*(s->boxes->gridSize[2]+2);
+# 421 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ float paddedMemLocal = (float) nLocalBoxes*(perAtomSize*64)/1024/1024;
+# 422 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ float paddedMemTotal = (float) nTotalBoxes*(perAtomSize*64)/1024/1024;
+# 423 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 424 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ printSeparator(file);
+# 425 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file,"Memory data: \n");
+# 426 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file, "  Intrinsic atom footprint = %4d B/atom \n", perAtomSize);
+# 427 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file, "  Total atom footprint     = %7.3f MB (%6.2f MB/node)\n", totalMemGlobal, totalMemLocal);
+# 428 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file, "  Link cell atom footprint = %7.3f MB/node\n", paddedMemLocal);
+# 429 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fprintf(file, "  Link cell atom footprint = %7.3f MB/node (including halo cell data\n", paddedMemTotal);
+# 430 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 431 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ fflush(file);
+# 432 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latticeType[8])
+# 436 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+{
+# 437 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int failCode = 0;
+# 438 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 439 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 440 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int nProcs = cmd.xproc * cmd.yproc * cmd.zproc;
+# 441 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (nProcs != getNRanks())
+# 442 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 443 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ failCode |= 1;
+# 444 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (printRank()) {fprintf(__stdoutp, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
+# 447 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 448 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 449 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 450 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double minx = 2*cutoff*cmd.xproc;
+# 451 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double miny = 2*cutoff*cmd.yproc;
+# 452 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double minz = 2*cutoff*cmd.zproc;
+# 453 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double sizex = cmd.nx*latticeConst;
+# 454 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double sizey = cmd.ny*latticeConst;
+# 455 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ double sizez = cmd.nz*latticeConst;
+# 456 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 457 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if ( sizex < minx || sizey < miny || sizez < minz)
+# 458 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 459 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ failCode |= 2;
+# 460 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (printRank()) {fprintf(__stdoutp, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
+# 465 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 466 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 467 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 468 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (strcasecmp(latticeType, "FCC") != 0)
+# 469 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ {
+# 470 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ failCode |= 4;
+# 471 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (printRank()) {fprintf(__stdoutp, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
+# 475 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ }
+# 476 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ int checkCode = failCode;
+# 477 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ bcastParallel(&checkCode, sizeof(int), 0);
+# 478 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 479 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 480 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ (__builtin_expect(!(checkCode == failCode), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c", 480, "checkCode == failCode") : (void)0);
+# 481 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+# 482 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+ if (failCode != 0) {exit(failCode); };
+# 484 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(13807915916850227990UL, 34, 13, 46, 32, 13, 13807915916850227990UL + 1128UL, 13807915916850227990UL + 1283UL, 13807915916850227990UL + 1086UL, 13807915916850227990UL + 1120UL, 13807915916850227990UL + 1085UL, 13807915916850227990UL + 1125UL, 13807915916850227990UL + 1084UL, 13807915916850227990UL + 1124UL, 13807915916850227990UL + 339UL, 13807915916850227990UL + 676UL, 13807915916850227990UL + 316UL, 13807915916850227990UL + 1397UL, 13807915916850227990UL + 66UL, 13807915916850227990UL + 112UL, 13807915916850227990UL + 1083UL, 13807915916850227990UL + 1123UL, 13807915916850227990UL + 143UL, 13807915916850227990UL + 316UL, 13807915916850227990UL + 794UL, 13807915916850227990UL + 920UL, 13807915916850227990UL + 733UL, 13807915916850227990UL + 697UL, 13807915916850227990UL + 3UL, 13807915916850227990UL + 128UL, 13807915916850227990UL + 5UL, 13807915916850227990UL + 66UL, 13807915916850227990UL + 734UL, 13807915916850227990UL + 778UL, 13807915916850227990UL + 7UL, 13807915916850227990UL + 41UL, 13807915916850227990UL + 340UL, 13807915916850227990UL + 677UL, 13807915916850227990UL + 1010UL, 13807915916850227990UL + 1066UL, 13807915916850227990UL + 1011UL, 13807915916850227990UL + 1021UL, 13807915916850227990UL + 1012UL, 13807915916850227990UL + 1030UL, 13807915916850227990UL + 678UL, 13807915916850227990UL + 733UL, 13807915916850227990UL + 679UL, 13807915916850227990UL + 685UL, 13807915916850227990UL + 1353UL, 13807915916850227990UL + 904UL, 13807915916850227990UL + 677UL, 13807915916850227990UL + 357UL, 13807915916850227990UL + 778UL, 13807915916850227990UL + 780UL, 13807915916850227990UL + 920UL, 13807915916850227990UL + 848UL, 13807915916850227990UL + 1021UL, 13807915916850227990UL + 1030UL, 13807915916850227990UL + 1285UL, 13807915916850227990UL + 1289UL, 13807915916850227990UL + 1284UL, 13807915916850227990UL + 1313UL, 13807915916850227990UL + 780UL, 13807915916850227990UL + 760UL, 13807915916850227990UL + 1066UL, 13807915916850227990UL + 1021UL, 13807915916850227990UL + 357UL, 13807915916850227990UL + 546UL, 13807915916850227990UL + 1007UL, 13807915916850227990UL + 947UL, 13807915916850227990UL + 926UL, 13807915916850227990UL + 1006UL, 13807915916850227990UL + 927UL, 13807915916850227990UL + 1007UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof(struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof(struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof(struct CommandSt, potType), "int", (int)__builtin_offsetof(struct CommandSt, doeam), "int", (int)__builtin_offsetof(struct CommandSt, nx), "int", (int)__builtin_offsetof(struct CommandSt, ny), "int", (int)__builtin_offsetof(struct CommandSt, nz), "int", (int)__builtin_offsetof(struct CommandSt, xproc), "int", (int)__builtin_offsetof(struct CommandSt, yproc), "int", (int)__builtin_offsetof(struct CommandSt, zproc), "int", (int)__builtin_offsetof(struct CommandSt, nSteps), "int", (int)__builtin_offsetof(struct CommandSt, printRate), "double", (int)__builtin_offsetof(struct CommandSt, dt), "double", (int)__builtin_offsetof(struct CommandSt, lat), "double", (int)__builtin_offsetof(struct CommandSt, temperature), "double", (int)__builtin_offsetof(struct CommandSt, initialDelta), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "TimerHandle", 0, "ValidateSt", 2, "double", (int)__builtin_offsetof(struct ValidateSt, eTot0), "int", (int)__builtin_offsetof(struct ValidateSt, nAtoms0), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "validateResult", 1, "printRank", "initPotential", 2, "initEamPot", "initLjPot", "finalizeSubsystems", 1, "yamlEnd", "initSimulation", 15, "computeForce", "createFccLattice", "initAtomHaloExchange", "initAtoms", "initDecomposition", "initLinkCells", "initPotential", "initSpecies", "kineticEnergy", "profileStart", "profileStop", "randomDisplacements", "redistributeAtoms", "sanityChecks", "setTemperature", "initSpecies", 0, "initSubsystems", 1, "yamlBegin", "sanityChecks", 4, "bcastParallel", "getNRanks", "printRank", "strcasecmp", "printSimulationDataYaml", 3, "maxOccupancy", "printRank", "printSeparator", "sumAtoms", 3, "addIntParallel", "profileStart", "profileStop", "initValidate", 3, "printRank", "printSeparator", "sumAtoms", "main", 20, "destroyParallel", "destroySimulation", "finalizeSubsystems", "getElapsedTime", "initParallel", "initSimulation", "initSubsystems", "initValidate", "parseCommandLine", "printCmdYaml", "printPerformanceResults", "printSimulationDataYaml", "printThings", "profileStart", "profileStop", "sumAtoms", "timestampBarrier", "timestep", "validateResult", "yamlAppInfo", "printThings", 1, "printRank", "destroySimulation", 3, "destroyAtoms", "destroyHaloExchange", "destroyLinkCells", "main|argc|0", 1, "main", "main|argv|0", 20, "yamlAppInfo", "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printSimulationDataYaml", "printPerformanceResults", "printCmdYaml", "parseCommandLine", "initValidate", "initSubsystems", "initSimulation", "initParallel", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|cmd|0", 1, "main", "main|sim|0", 1, "main", "main|validate|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|nSteps|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|printRate|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|iStep|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|____chimes_unroll_var_0|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|____chimes_unroll_var_1|0", 8, "validateResult", "timestampBarrier", "profileStop", "printThings", "printPerformanceResults", "finalizeSubsystems", "destroySimulation", "destroyParallel", "initSimulation|sim|0", 14, "setTemperature", "sanityChecks", "redistributeAtoms", "randomDisplacements", "profileStop", "profileStart", "kineticEnergy", "initPotential", "initLinkCells", "initDecomposition", "initAtoms", "initAtomHaloExchange", "createFccLattice", "computeForce", "initSimulation|latticeConstant|0", 13, "setTemperature", "sanityChecks", "redistributeAtoms", "randomDisplacements", "profileStop", "profileStart", "kineticEnergy", "initLinkCells", "initDecomposition", "initAtoms", "initAtomHaloExchange", "createFccLattice", "computeForce", "initSimulation|globalExtent|0", 1, "initSimulation", "printSimulationDataYaml|file|0", 1, "_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt", "printSimulationDataYaml|s|0", 1, "_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt", "printSimulationDataYaml|maxOcc|0", 1, "_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt", "printSimulationDataYaml|perAtomSize|0", 1, "printSeparator", "printSimulationDataYaml|totalMemLocal|0", 1, "printSeparator", "printSimulationDataYaml|totalMemGlobal|0", 1, "printSeparator", "printSimulationDataYaml|nLocalBoxes|0", 1, "printSeparator", "printSimulationDataYaml|nTotalBoxes|0", 1, "printSeparator", "printSimulationDataYaml|paddedMemLocal|0", 1, "printSeparator", "printSimulationDataYaml|paddedMemTotal|0", 1, "printSeparator", "initValidate|sim|0", 3, "sumAtoms", "printSeparator", "printRank", "initValidate|val|0", 2, "printSeparator", "printRank", "sumAtoms|s|0", 3, "profileStop", "profileStart", "addIntParallel", "printThings|s|0", 1, "printRank", "printThings|iStep|0", 1, "printRank", "printThings|elapsedTime|0", 1, "printRank", "printThings|nEval|0", 1, "printRank", "validateResult|val|0", 1, "printRank", "validateResult|sim|0", 1, "printRank", "destroySimulation|ps|0", 3, "destroyLinkCells", "destroyHaloExchange", "destroyAtoms", "destroySimulation|s|0", 3, "destroyLinkCells", "destroyHaloExchange", "destroyAtoms", "initPotential|pot|0", 2, "initLjPot", "initEamPot", "sanityChecks|cutoff|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|latticeConst|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|latticeType|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|failCode|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|minx|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|miny|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|minz|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|sizex|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|sizey|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|sizez|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|checkCode|0", 1, "sanityChecks", &____alias_loc_id_0, (unsigned)3, 13807915916850227990UL + 1UL, 13807915916850227990UL + 2UL, 13807915916850227990UL + 3UL, &____alias_loc_id_1, (unsigned)1, 13807915916850227990UL + 5UL, &____alias_loc_id_2, (unsigned)1, 13807915916850227990UL + 7UL, &____alias_loc_id_3, (unsigned)3, 13807915916850227990UL + 8UL, 13807915916850227990UL + 9UL, 13807915916850227990UL + 10UL, &____alias_loc_id_4, (unsigned)1, 13807915916850227990UL + 11UL, &____alias_loc_id_5, (unsigned)1, 13807915916850227990UL + 10UL, &____alias_loc_id_6, (unsigned)1, 13807915916850227990UL + 10UL, &____alias_loc_id_7, (unsigned)1, 13807915916850227990UL + 12UL, &____alias_loc_id_8, (unsigned)2, 13807915916850227990UL + 143UL, 13807915916850227990UL + 316UL, &____alias_loc_id_9, (unsigned)2, 13807915916850227990UL + 144UL, 13807915916850227990UL + 316UL, &____alias_loc_id_10, (unsigned)2, 13807915916850227990UL + 146UL, 13807915916850227990UL + 316UL, &____alias_loc_id_11, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_12, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_13, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_14, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_15, (unsigned)2, 13807915916850227990UL + 339UL, 13807915916850227990UL + 340UL, &____alias_loc_id_16, (unsigned)1, 13807915916850227990UL + 341UL, &____alias_loc_id_17, (unsigned)8, 13807915916850227990UL + 342UL, 13807915916850227990UL + 343UL, 13807915916850227990UL + 344UL, 13807915916850227990UL + 345UL, 13807915916850227990UL + 346UL, 13807915916850227990UL + 347UL, 13807915916850227990UL + 348UL, 13807915916850227990UL + 349UL, &____alias_loc_id_18, (unsigned)1, 13807915916850227990UL + 678UL, &____alias_loc_id_19, (unsigned)2, 13807915916850227990UL + 679UL, 13807915916850227990UL + 685UL, &____alias_loc_id_20, (unsigned)3, 13807915916850227990UL + 734UL, 13807915916850227990UL + 735UL, 13807915916850227990UL + 780UL, &____alias_loc_id_21, (unsigned)5, 13807915916850227990UL + 794UL, 13807915916850227990UL + 795UL, 13807915916850227990UL + 796UL, 13807915916850227990UL + 797UL, 13807915916850227990UL + 1374UL, &____alias_loc_id_22, (unsigned)2, 13807915916850227990UL + 926UL, 13807915916850227990UL + 927UL, &____alias_loc_id_23, (unsigned)3, 13807915916850227990UL + 1010UL, 13807915916850227990UL + 1011UL, 13807915916850227990UL + 1012UL, &____alias_loc_id_24, (unsigned)5, 13807915916850227990UL + 1082UL, 13807915916850227990UL + 1083UL, 13807915916850227990UL + 1084UL, 13807915916850227990UL + 1085UL, 13807915916850227990UL + 1086UL, &____alias_loc_id_25, (unsigned)5, 13807915916850227990UL + 1082UL, 13807915916850227990UL + 1083UL, 13807915916850227990UL + 1084UL, 13807915916850227990UL + 1085UL, 13807915916850227990UL + 1086UL, &____alias_loc_id_26, (unsigned)5, 13807915916850227990UL + 1126UL, 13807915916850227990UL + 1127UL, 13807915916850227990UL + 1128UL, 13807915916850227990UL + 1129UL, 13807915916850227990UL + 1130UL, &____alias_loc_id_27, (unsigned)1, 13807915916850227990UL + 1129UL, &____alias_loc_id_28, (unsigned)7, 13807915916850227990UL + 1129UL, 13807915916850227990UL + 1131UL, 13807915916850227990UL + 1132UL, 13807915916850227990UL + 1133UL, 13807915916850227990UL + 1134UL, 13807915916850227990UL + 1135UL, 13807915916850227990UL + 1136UL, &____alias_loc_id_29, (unsigned)7, 13807915916850227990UL + 1129UL, 13807915916850227990UL + 1131UL, 13807915916850227990UL + 1132UL, 13807915916850227990UL + 1133UL, 13807915916850227990UL + 1134UL, 13807915916850227990UL + 1135UL, 13807915916850227990UL + 1136UL, &____alias_loc_id_30, (unsigned)1, 13807915916850227990UL + 1129UL, &____alias_loc_id_31, (unsigned)1, 13807915916850227990UL + 1137UL, &____alias_loc_id_32, (unsigned)7, 13807915916850227990UL + 798UL, 13807915916850227990UL + 799UL, 13807915916850227990UL + 800UL, 13807915916850227990UL + 801UL, 13807915916850227990UL + 802UL, 13807915916850227990UL + 803UL, 13807915916850227990UL + 1374UL, &____alias_loc_id_33, (unsigned)2, 13807915916850227990UL + 928UL, 13807915916850227990UL + 929UL, &____alias_loc_id_34, (unsigned)3, 13807915916850227990UL + 1010UL, 13807915916850227990UL + 1011UL, 13807915916850227990UL + 1066UL, &____alias_loc_id_35, (unsigned)1, 13807915916850227990UL + 1086UL, &____alias_loc_id_36, (unsigned)3, 13807915916850227990UL + 1284UL, 13807915916850227990UL + 1285UL, 13807915916850227990UL + 1289UL);
+    init_module(13807915916850227990UL, 34, 13, 46, 32, 13, 13807915916850227990UL + 1128UL, 13807915916850227990UL + 1283UL, 13807915916850227990UL + 1086UL, 13807915916850227990UL + 1120UL, 13807915916850227990UL + 1085UL, 13807915916850227990UL + 1125UL, 13807915916850227990UL + 1084UL, 13807915916850227990UL + 1124UL, 13807915916850227990UL + 339UL, 13807915916850227990UL + 676UL, 13807915916850227990UL + 316UL, 13807915916850227990UL + 1397UL, 13807915916850227990UL + 66UL, 13807915916850227990UL + 112UL, 13807915916850227990UL + 1083UL, 13807915916850227990UL + 1123UL, 13807915916850227990UL + 143UL, 13807915916850227990UL + 316UL, 13807915916850227990UL + 794UL, 13807915916850227990UL + 920UL, 13807915916850227990UL + 733UL, 13807915916850227990UL + 697UL, 13807915916850227990UL + 3UL, 13807915916850227990UL + 128UL, 13807915916850227990UL + 5UL, 13807915916850227990UL + 66UL, 13807915916850227990UL + 734UL, 13807915916850227990UL + 778UL, 13807915916850227990UL + 7UL, 13807915916850227990UL + 41UL, 13807915916850227990UL + 340UL, 13807915916850227990UL + 677UL, 13807915916850227990UL + 1010UL, 13807915916850227990UL + 1066UL, 13807915916850227990UL + 1011UL, 13807915916850227990UL + 1021UL, 13807915916850227990UL + 1012UL, 13807915916850227990UL + 1030UL, 13807915916850227990UL + 678UL, 13807915916850227990UL + 733UL, 13807915916850227990UL + 679UL, 13807915916850227990UL + 685UL, 13807915916850227990UL + 1353UL, 13807915916850227990UL + 904UL, 13807915916850227990UL + 677UL, 13807915916850227990UL + 357UL, 13807915916850227990UL + 778UL, 13807915916850227990UL + 780UL, 13807915916850227990UL + 920UL, 13807915916850227990UL + 848UL, 13807915916850227990UL + 1021UL, 13807915916850227990UL + 1030UL, 13807915916850227990UL + 1285UL, 13807915916850227990UL + 1289UL, 13807915916850227990UL + 1284UL, 13807915916850227990UL + 1313UL, 13807915916850227990UL + 780UL, 13807915916850227990UL + 760UL, 13807915916850227990UL + 1066UL, 13807915916850227990UL + 1021UL, 13807915916850227990UL + 357UL, 13807915916850227990UL + 546UL, 13807915916850227990UL + 1007UL, 13807915916850227990UL + 947UL, 13807915916850227990UL + 926UL, 13807915916850227990UL + 1006UL, 13807915916850227990UL + 927UL, 13807915916850227990UL + 1007UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof(struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof(struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof(struct CommandSt, potType), "int", (int)__builtin_offsetof(struct CommandSt, doeam), "int", (int)__builtin_offsetof(struct CommandSt, nx), "int", (int)__builtin_offsetof(struct CommandSt, ny), "int", (int)__builtin_offsetof(struct CommandSt, nz), "int", (int)__builtin_offsetof(struct CommandSt, xproc), "int", (int)__builtin_offsetof(struct CommandSt, yproc), "int", (int)__builtin_offsetof(struct CommandSt, zproc), "int", (int)__builtin_offsetof(struct CommandSt, nSteps), "int", (int)__builtin_offsetof(struct CommandSt, printRate), "double", (int)__builtin_offsetof(struct CommandSt, dt), "double", (int)__builtin_offsetof(struct CommandSt, lat), "double", (int)__builtin_offsetof(struct CommandSt, temperature), "double", (int)__builtin_offsetof(struct CommandSt, initialDelta), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "TimerHandle", 0, "ValidateSt", 2, "double", (int)__builtin_offsetof(struct ValidateSt, eTot0), "int", (int)__builtin_offsetof(struct ValidateSt, nAtoms0), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "validateResult", 1, "printRank", "initPotential", 2, "initEamPot", "initLjPot", "finalizeSubsystems", 1, "yamlEnd", "initSimulation", 17, "initPotential", "sanityChecks", "initSpecies", "initDecomposition", "initLinkCells", "initAtoms", "createFccLattice", "setTemperature", "randomDisplacements", "initAtomHaloExchange", "profileStart", "redistributeAtoms", "profileStop", "profileStart", "computeForce", "profileStop", "kineticEnergy", "initSpecies", 0, "initSubsystems", 1, "yamlBegin", "sanityChecks", 6, "getNRanks", "printRank", "printRank", "strcasecmp", "printRank", "bcastParallel", "printSimulationDataYaml", 5, "maxOccupancy", "printRank", "printSeparator", "printSeparator", "printSeparator", "sumAtoms", 3, "profileStart", "addIntParallel", "profileStop", "initValidate", 3, "sumAtoms", "printRank", "printSeparator", "main", 33, "initParallel", "profileStart", "initSubsystems", "timestampBarrier", "yamlAppInfo", "parseCommandLine", "printCmdYaml", "initSimulation", "printSimulationDataYaml", "initValidate", "timestampBarrier", "timestampBarrier", "profileStart", "profileStart", "sumAtoms", "profileStop", "getElapsedTime", "printThings", "profileStart", "timestep", "profileStop", "profileStop", "sumAtoms", "getElapsedTime", "printThings", "timestampBarrier", "validateResult", "profileStop", "printPerformanceResults", "destroySimulation", "finalizeSubsystems", "timestampBarrier", "destroyParallel", "printThings", 1, "printRank", "destroySimulation", 3, "destroyLinkCells", "destroyAtoms", "destroyHaloExchange", "main|argc|0", 1, "main", "main|argv|0", 20, "yamlAppInfo", "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printSimulationDataYaml", "printPerformanceResults", "printCmdYaml", "parseCommandLine", "initValidate", "initSubsystems", "initSimulation", "initParallel", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|cmd|0", 1, "main", "main|sim|0", 1, "main", "main|validate|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|nSteps|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|printRate|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|iStep|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|____chimes_unroll_var_0|0", 12, "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printPerformanceResults", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel", "main|____chimes_unroll_var_1|0", 8, "validateResult", "timestampBarrier", "profileStop", "printThings", "printPerformanceResults", "finalizeSubsystems", "destroySimulation", "destroyParallel", "initSimulation|sim|0", 14, "setTemperature", "sanityChecks", "redistributeAtoms", "randomDisplacements", "profileStop", "profileStart", "kineticEnergy", "initPotential", "initLinkCells", "initDecomposition", "initAtoms", "initAtomHaloExchange", "createFccLattice", "computeForce", "initSimulation|latticeConstant|0", 13, "setTemperature", "sanityChecks", "redistributeAtoms", "randomDisplacements", "profileStop", "profileStart", "kineticEnergy", "initLinkCells", "initDecomposition", "initAtoms", "initAtomHaloExchange", "createFccLattice", "computeForce", "initSimulation|globalExtent|0", 1, "initSimulation", "printSimulationDataYaml|file|0", 1, "_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt", "printSimulationDataYaml|s|0", 1, "_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt", "printSimulationDataYaml|maxOcc|0", 1, "_ZL23printSimulationDataYamlP7__sFILEP9SimFlatSt", "printSimulationDataYaml|perAtomSize|0", 1, "printSeparator", "printSimulationDataYaml|totalMemLocal|0", 1, "printSeparator", "printSimulationDataYaml|totalMemGlobal|0", 1, "printSeparator", "printSimulationDataYaml|nLocalBoxes|0", 1, "printSeparator", "printSimulationDataYaml|nTotalBoxes|0", 1, "printSeparator", "printSimulationDataYaml|paddedMemLocal|0", 1, "printSeparator", "printSimulationDataYaml|paddedMemTotal|0", 1, "printSeparator", "initValidate|sim|0", 3, "sumAtoms", "printSeparator", "printRank", "initValidate|val|0", 2, "printSeparator", "printRank", "sumAtoms|s|0", 3, "profileStop", "profileStart", "addIntParallel", "printThings|s|0", 1, "printRank", "printThings|iStep|0", 1, "printRank", "printThings|elapsedTime|0", 1, "printRank", "printThings|nEval|0", 1, "printRank", "validateResult|val|0", 1, "printRank", "validateResult|sim|0", 1, "printRank", "destroySimulation|ps|0", 3, "destroyLinkCells", "destroyHaloExchange", "destroyAtoms", "destroySimulation|s|0", 3, "destroyLinkCells", "destroyHaloExchange", "destroyAtoms", "initPotential|pot|0", 2, "initLjPot", "initEamPot", "sanityChecks|cutoff|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|latticeConst|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|latticeType|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|failCode|0", 4, "strcasecmp", "printRank", "getNRanks", "bcastParallel", "sanityChecks|minx|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|miny|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|minz|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|sizex|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|sizey|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|sizez|0", 3, "strcasecmp", "printRank", "bcastParallel", "sanityChecks|checkCode|0", 1, "sanityChecks", &____alias_loc_id_0, (unsigned)3, 13807915916850227990UL + 1UL, 13807915916850227990UL + 2UL, 13807915916850227990UL + 3UL, &____alias_loc_id_1, (unsigned)1, 13807915916850227990UL + 5UL, &____alias_loc_id_2, (unsigned)1, 13807915916850227990UL + 7UL, &____alias_loc_id_3, (unsigned)3, 13807915916850227990UL + 8UL, 13807915916850227990UL + 9UL, 13807915916850227990UL + 10UL, &____alias_loc_id_4, (unsigned)1, 13807915916850227990UL + 11UL, &____alias_loc_id_5, (unsigned)1, 13807915916850227990UL + 10UL, &____alias_loc_id_6, (unsigned)1, 13807915916850227990UL + 10UL, &____alias_loc_id_7, (unsigned)1, 13807915916850227990UL + 12UL, &____alias_loc_id_8, (unsigned)2, 13807915916850227990UL + 143UL, 13807915916850227990UL + 316UL, &____alias_loc_id_9, (unsigned)2, 13807915916850227990UL + 144UL, 13807915916850227990UL + 316UL, &____alias_loc_id_10, (unsigned)2, 13807915916850227990UL + 146UL, 13807915916850227990UL + 316UL, &____alias_loc_id_11, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_12, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_13, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_14, (unsigned)1, 13807915916850227990UL + 316UL, &____alias_loc_id_15, (unsigned)2, 13807915916850227990UL + 339UL, 13807915916850227990UL + 340UL, &____alias_loc_id_16, (unsigned)1, 13807915916850227990UL + 341UL, &____alias_loc_id_17, (unsigned)8, 13807915916850227990UL + 342UL, 13807915916850227990UL + 343UL, 13807915916850227990UL + 344UL, 13807915916850227990UL + 345UL, 13807915916850227990UL + 346UL, 13807915916850227990UL + 347UL, 13807915916850227990UL + 348UL, 13807915916850227990UL + 349UL, &____alias_loc_id_18, (unsigned)1, 13807915916850227990UL + 678UL, &____alias_loc_id_19, (unsigned)2, 13807915916850227990UL + 679UL, 13807915916850227990UL + 685UL, &____alias_loc_id_20, (unsigned)3, 13807915916850227990UL + 734UL, 13807915916850227990UL + 735UL, 13807915916850227990UL + 780UL, &____alias_loc_id_21, (unsigned)5, 13807915916850227990UL + 794UL, 13807915916850227990UL + 795UL, 13807915916850227990UL + 796UL, 13807915916850227990UL + 797UL, 13807915916850227990UL + 1374UL, &____alias_loc_id_22, (unsigned)2, 13807915916850227990UL + 926UL, 13807915916850227990UL + 927UL, &____alias_loc_id_23, (unsigned)3, 13807915916850227990UL + 1010UL, 13807915916850227990UL + 1011UL, 13807915916850227990UL + 1012UL, &____alias_loc_id_24, (unsigned)5, 13807915916850227990UL + 1082UL, 13807915916850227990UL + 1083UL, 13807915916850227990UL + 1084UL, 13807915916850227990UL + 1085UL, 13807915916850227990UL + 1086UL, &____alias_loc_id_25, (unsigned)5, 13807915916850227990UL + 1082UL, 13807915916850227990UL + 1083UL, 13807915916850227990UL + 1084UL, 13807915916850227990UL + 1085UL, 13807915916850227990UL + 1086UL, &____alias_loc_id_26, (unsigned)5, 13807915916850227990UL + 1126UL, 13807915916850227990UL + 1127UL, 13807915916850227990UL + 1128UL, 13807915916850227990UL + 1129UL, 13807915916850227990UL + 1130UL, &____alias_loc_id_27, (unsigned)1, 13807915916850227990UL + 1129UL, &____alias_loc_id_28, (unsigned)7, 13807915916850227990UL + 1129UL, 13807915916850227990UL + 1131UL, 13807915916850227990UL + 1132UL, 13807915916850227990UL + 1133UL, 13807915916850227990UL + 1134UL, 13807915916850227990UL + 1135UL, 13807915916850227990UL + 1136UL, &____alias_loc_id_29, (unsigned)7, 13807915916850227990UL + 1129UL, 13807915916850227990UL + 1131UL, 13807915916850227990UL + 1132UL, 13807915916850227990UL + 1133UL, 13807915916850227990UL + 1134UL, 13807915916850227990UL + 1135UL, 13807915916850227990UL + 1136UL, &____alias_loc_id_30, (unsigned)1, 13807915916850227990UL + 1129UL, &____alias_loc_id_31, (unsigned)1, 13807915916850227990UL + 1137UL, &____alias_loc_id_32, (unsigned)7, 13807915916850227990UL + 798UL, 13807915916850227990UL + 799UL, 13807915916850227990UL + 800UL, 13807915916850227990UL + 801UL, 13807915916850227990UL + 802UL, 13807915916850227990UL + 803UL, 13807915916850227990UL + 1374UL, &____alias_loc_id_33, (unsigned)2, 13807915916850227990UL + 928UL, 13807915916850227990UL + 929UL, &____alias_loc_id_34, (unsigned)3, 13807915916850227990UL + 1010UL, 13807915916850227990UL + 1011UL, 13807915916850227990UL + 1066UL, &____alias_loc_id_35, (unsigned)1, 13807915916850227990UL + 1086UL, &____alias_loc_id_36, (unsigned)3, 13807915916850227990UL + 1284UL, 13807915916850227990UL + 1285UL, 13807915916850227990UL + 1289UL);
     register_global_var("global|iStepPrev", "i32", (void *)(&iStepPrev), 4, 0, 0, 0);
     register_global_var("global|firstCall", "i32", (void *)(&firstCall), 4, 0, 0, 0);
     register_functions(13, "CoMD.c.pre.hard.cpp", "main", &main, "initSubsystems", &initSubsystems, "initSimulation", &initSimulation, "printSimulationDataYaml", &printSimulationDataYaml, "initValidate", &initValidate, "sumAtoms", &sumAtoms, "printThings", &printThings, "validateResult", &validateResult, "destroySimulation", &destroySimulation, "finalizeSubsystems", &finalizeSubsystems, "initPotential", &initPotential, "sanityChecks", &sanityChecks, "initSpecies", &initSpecies);

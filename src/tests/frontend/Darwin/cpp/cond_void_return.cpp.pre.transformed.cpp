@@ -477,6 +477,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -519,7 +520,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1751,6 +1752,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+void bar_npm(int *A, int *B);
 void bar_quick(int *A, int *B); void bar(int *A, int *B);
 void bar_resumable(int *A, int *B) {const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1782,7 +1784,7 @@ int *A;
  B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- ({ calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) ;
+ ({ calling_npm(2, 0, 7569268050213511391UL, 7569268050213511376UL, 7569268050213511415UL, 7569268050213511377UL); bar_npm(A, B); });
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1825,7 +1827,7 @@ int *A;
  B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
- ({ calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); bar_quick(A, B); }) ;
+ ({ calling_npm(2, 0, 7569268050213511391UL, 7569268050213511376UL, 7569268050213511415UL, 7569268050213511377UL); bar_npm(A, B); });
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
  call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 23 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1840,6 +1842,29 @@ int *A;
 }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
+
+void bar_npm(int *A, int *B) {
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ A[0] = 3;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ if (A[0] == 3) {
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ return;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ }
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ B[0] = 3;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+ return;
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
+}
+
+
 
 
 

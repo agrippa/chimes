@@ -26769,60 +26769,62 @@ extern "C" FILE *funopen(const void *, int (*)(void *, char *, int), int (*)(voi
 # 7 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_chimes();
 # 8 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
+# 9 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void calling(void * func_ptr, int lbl, size_t set_return_alias, unsigned loc_id, unsigned naliases, ...);
-# 10 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int get_next_call();
 # 11 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern int get_next_call();
+# 12 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int new_stack(void * func_ptr, const char * funcname, int * conditional, unsigned n_local_arg_aliases, unsigned nargs, ...);
-# 13 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 14 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-# 15 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 16 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void rm_stack(bool has_return_alias, size_t returned_alias, const char * funcname, int * conditional, unsigned loc_id, int disabled);
-# 17 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 18 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_stack_var(const char * mangled_name, int * cond_registration, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 20 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_stack_vars(int nvars, ...);
 # 21 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern void register_stack_vars(int nvars, ...);
+# 22 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_global_var(const char * mangled_name, const char * full_type, void * ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields, ...);
-# 24 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 25 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_constant(size_t const_id, void * address, size_t length);
-# 26 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void register_functions(int nfunctions, const char * module_name, ...);
 # 27 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern int alias_group_changed(unsigned loc_id);
+extern void register_functions(int nfunctions, const char * module_name, ...);
 # 28 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern int alias_group_changed(unsigned loc_id);
+# 29 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 30 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 31 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 32 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 33 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void *realloc_wrapper(void * ptr, size_t nbytes, size_t group, int is_ptr, int is_struct, ...);
-# 34 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern void free_wrapper(void * ptr, size_t group);
 # 35 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern bool disable_current_thread();
+extern void free_wrapper(void * ptr, size_t group);
 # 36 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern bool disable_current_thread();
+# 37 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void reenable_current_thread(bool was_disabled);
-# 38 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 39 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned entering_omp_parallel(unsigned lbl, size_t * region_id, unsigned nlocals, ...);
-# 40 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 41 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void register_thread_local_stack_vars(unsigned relation, unsigned parent, unsigned threads_in_region, unsigned parent_stack_depth, size_t region_id, unsigned nlocals, ...);
-# 44 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 45 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth, size_t region_id);
-# 46 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern unsigned get_parent_vars_stack_depth();
 # 47 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern unsigned get_parent_vars_stack_depth();
+# 48 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern unsigned get_thread_stack_depth();
-# 49 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 50 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern void chimes_error();
-# 53 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 54 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaMalloc_wrapper(void ** ptr, size_t size, size_t group, int is_ptr, int is_struct, ...);
-# 55 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 56 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 cudaError_t cudaFree_wrapper(void * ptr, size_t group);
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 # 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+# 68 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-# 70 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 71 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern int ____chimes_replaying;
 # 11 "/Users/jmg3/num-debug/src/libchimes/checkpoint.h"
 extern void checkpoint();
@@ -26832,6 +26834,7 @@ extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char * obj_name, void (* fp)(void *));
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
+void kernel_npm( int *__cuda_0,int *__cuda_1,int *__cuda_2,int __cuda_3);
 void kernel(int *A, int *B, int *C, int N) ;
 # 14 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
 # 20 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
@@ -27825,8 +27828,21 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 
+void kernel_npm( int *__cuda_0,int *__cuda_1,int *__cuda_2,int __cuda_3)
+# 13 "/Users/jmg3/num-debug/src/examples/cuda/vector_sum.cu"
+{__device_stub__Z6kernelPiS_S_i( __cuda_0,__cuda_1,__cuda_2,__cuda_3);
+
+
+
+
+}
+
+
+
+
+
 static int module_init() {
-    init_module(10983886093799450781UL, 23, 10, 8, 8, 11, 10983886093799450781UL + 338UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 310UL, 10983886093799450781UL + 409UL, 10983886093799450781UL + 396UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 394UL, 10983886093799450781UL + 403UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 252UL, 10983886093799450781UL + 232UL, 10983886093799450781UL + 250UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 251UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 189UL, 10983886093799450781UL + 347UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 146UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 44UL, 10983886093799450781UL + 364UL, 10983886093799450781UL + 387UL, 10983886093799450781UL + 205UL, 10983886093799450781UL + 223UL, 10983886093799450781UL + 303UL, 10983886093799450781UL + 309UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 298UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 297UL, 10983886093799450781UL + 260UL, 10983886093799450781UL + 296UL, 10983886093799450781UL + 321UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 11UL, 10983886093799450781UL + 141UL, 10983886093799450781UL + 10UL, 10983886093799450781UL + 140UL, 10983886093799450781UL + 12UL, 10983886093799450781UL + 148UL, 10983886093799450781UL + 19UL, 10983886093799450781UL + 156UL, "__fatBinC_Wrapper_t", 4, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "void*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, filename_or_fatbins), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "cudaError", 1, "cudaLaunch", "kernel", 1, "__device_stub__Z6kernelPiS_S_i", "____nv_dummy_param_ref", 0, "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762", 2, "__cudaRegisterFatBinary", "atexit", "__device_stub__Z6kernelPiS_S_i", 2, "cudaError", "cudaSetupArgument", "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_cudaEntityRegisterCallback", 2, "__cudaRegisterFunction", "__nv_save_fatbinhandle_for_managed_rt", "__nv_save_fatbinhandle_for_managed_rt", 0, "dim3::dim3", 0, "main", 2, "checkpoint", "kernel", "main|d_A|0", 1, "main", "main|d_B|0", 1, "main", "main|d_C|0", 1, "main", "__device_stub__Z6kernelPiS_S_i|__par0|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par1|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par2|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par3|0", 1, "__device_stub__Z6kernelPiS_S_i", "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0", 1, "_ZL55__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762v", &____alias_loc_id_0, (unsigned)12, 10983886093799450781UL + 1UL, 10983886093799450781UL + 2UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 5UL, 10983886093799450781UL + 6UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 13UL, 10983886093799450781UL + 14UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 44UL, &____alias_loc_id_1, (unsigned)12, 10983886093799450781UL + 1UL, 10983886093799450781UL + 2UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 5UL, 10983886093799450781UL + 6UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 13UL, 10983886093799450781UL + 14UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 44UL, &____alias_loc_id_2, (unsigned)4, 10983886093799450781UL + 232UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 235UL, &____alias_loc_id_3, (unsigned)4, 10983886093799450781UL + 260UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 263UL, &____alias_loc_id_4, (unsigned)1, 10983886093799450781UL + 394UL, &____alias_loc_id_5, (unsigned)1, 10983886093799450781UL + 303UL, &____alias_loc_id_6, (unsigned)2, 10983886093799450781UL + 310UL, 10983886093799450781UL + 396UL, &____alias_loc_id_7, (unsigned)2, 10983886093799450781UL + 321UL, 10983886093799450781UL + 396UL, &____alias_loc_id_8, (unsigned)2, 10983886093799450781UL + 5UL, 10983886093799450781UL + 19UL, &____alias_loc_id_9, (unsigned)4, 10983886093799450781UL + 205UL, 10983886093799450781UL + 206UL, 10983886093799450781UL + 207UL, 10983886093799450781UL + 208UL, &____alias_loc_id_10, (unsigned)2, 10983886093799450781UL + 338UL, 10983886093799450781UL + 396UL, &____alias_loc_id_11, (unsigned)2, 10983886093799450781UL + 347UL, 10983886093799450781UL + 396UL, &____alias_loc_id_12, (unsigned)5, 10983886093799450781UL + 364UL, 10983886093799450781UL + 365UL, 10983886093799450781UL + 366UL, 10983886093799450781UL + 367UL, 10983886093799450781UL + 387UL);
+    init_module(10983886093799450781UL, 23, 10, 8, 8, 11, 10983886093799450781UL + 338UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 310UL, 10983886093799450781UL + 409UL, 10983886093799450781UL + 396UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 394UL, 10983886093799450781UL + 403UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 252UL, 10983886093799450781UL + 232UL, 10983886093799450781UL + 250UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 251UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 189UL, 10983886093799450781UL + 347UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 146UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 44UL, 10983886093799450781UL + 364UL, 10983886093799450781UL + 387UL, 10983886093799450781UL + 205UL, 10983886093799450781UL + 223UL, 10983886093799450781UL + 303UL, 10983886093799450781UL + 309UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 298UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 297UL, 10983886093799450781UL + 260UL, 10983886093799450781UL + 296UL, 10983886093799450781UL + 321UL, 10983886093799450781UL + 345UL, 10983886093799450781UL + 11UL, 10983886093799450781UL + 141UL, 10983886093799450781UL + 10UL, 10983886093799450781UL + 140UL, 10983886093799450781UL + 12UL, 10983886093799450781UL + 148UL, 10983886093799450781UL + 19UL, 10983886093799450781UL + 156UL, "__fatBinC_Wrapper_t", 4, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "void*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, filename_or_fatbins), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "cudaError", 1, "cudaLaunch", "kernel", 1, "__device_stub__Z6kernelPiS_S_i", "____nv_dummy_param_ref", 0, "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762", 2, "__cudaRegisterFatBinary", "atexit", "__device_stub__Z6kernelPiS_S_i", 5, "cudaSetupArgument", "cudaSetupArgument", "cudaSetupArgument", "cudaSetupArgument", "cudaError", "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_cudaEntityRegisterCallback", 2, "__nv_save_fatbinhandle_for_managed_rt", "__cudaRegisterFunction", "__nv_save_fatbinhandle_for_managed_rt", 0, "dim3::dim3", 0, "main", 2, "kernel", "checkpoint", "main|d_A|0", 1, "main", "main|d_B|0", 1, "main", "main|d_C|0", 1, "main", "__device_stub__Z6kernelPiS_S_i|__par0|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par1|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par2|0", 1, "__device_stub__Z6kernelPiS_S_i", "__device_stub__Z6kernelPiS_S_i|__par3|0", 1, "__device_stub__Z6kernelPiS_S_i", "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762|callback_fp|0", 1, "_ZL55__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762v", &____alias_loc_id_0, (unsigned)12, 10983886093799450781UL + 1UL, 10983886093799450781UL + 2UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 5UL, 10983886093799450781UL + 6UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 13UL, 10983886093799450781UL + 14UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 44UL, &____alias_loc_id_1, (unsigned)12, 10983886093799450781UL + 1UL, 10983886093799450781UL + 2UL, 10983886093799450781UL + 3UL, 10983886093799450781UL + 5UL, 10983886093799450781UL + 6UL, 10983886093799450781UL + 7UL, 10983886093799450781UL + 8UL, 10983886093799450781UL + 9UL, 10983886093799450781UL + 13UL, 10983886093799450781UL + 14UL, 10983886093799450781UL + 38UL, 10983886093799450781UL + 44UL, &____alias_loc_id_2, (unsigned)4, 10983886093799450781UL + 232UL, 10983886093799450781UL + 233UL, 10983886093799450781UL + 234UL, 10983886093799450781UL + 235UL, &____alias_loc_id_3, (unsigned)4, 10983886093799450781UL + 260UL, 10983886093799450781UL + 261UL, 10983886093799450781UL + 262UL, 10983886093799450781UL + 263UL, &____alias_loc_id_4, (unsigned)1, 10983886093799450781UL + 394UL, &____alias_loc_id_5, (unsigned)1, 10983886093799450781UL + 303UL, &____alias_loc_id_6, (unsigned)2, 10983886093799450781UL + 310UL, 10983886093799450781UL + 396UL, &____alias_loc_id_7, (unsigned)2, 10983886093799450781UL + 321UL, 10983886093799450781UL + 396UL, &____alias_loc_id_8, (unsigned)2, 10983886093799450781UL + 5UL, 10983886093799450781UL + 19UL, &____alias_loc_id_9, (unsigned)4, 10983886093799450781UL + 205UL, 10983886093799450781UL + 206UL, 10983886093799450781UL + 207UL, 10983886093799450781UL + 208UL, &____alias_loc_id_10, (unsigned)2, 10983886093799450781UL + 338UL, 10983886093799450781UL + 396UL, &____alias_loc_id_11, (unsigned)2, 10983886093799450781UL + 347UL, 10983886093799450781UL + 396UL, &____alias_loc_id_12, (unsigned)5, 10983886093799450781UL + 364UL, 10983886093799450781UL + 365UL, 10983886093799450781UL + 366UL, 10983886093799450781UL + 367UL, 10983886093799450781UL + 387UL);
     register_functions(8, "vector_sum.cudafe1.hard.cpp", "main", &main, "kernel", &kernel, "__device_stub__Z6kernelPiS_S_i", &__device_stub__Z6kernelPiS_S_i, "__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762", &__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762, "__nv_cudaEntityRegisterCallback", &__nv_cudaEntityRegisterCallback, "__cudaUnregisterBinaryUtil", &__cudaUnregisterBinaryUtil, "____nv_dummy_param_ref", &____nv_dummy_param_ref, "__nv_save_fatbinhandle_for_managed_rt", &__nv_save_fatbinhandle_for_managed_rt);
     return 0;
 }

@@ -1,11 +1,11 @@
-main 0 DOES checkpoint config_sources cudaDeviceSynchronize cudaGetErrorString finish_progress fwd_kernel init_data init_progress sample_sources save_layer_text seconds setup_config update_progress
+main 0 DOES setup_config 76 1 init_progress 77 1 config_sources 115 1 sample_sources 116 16 init_data 118 1 cudaGetErrorString 121 228 cudaGetErrorString 122 228 cudaGetErrorString 123 227 cudaGetErrorString 124 245 seconds 129 20 cudaGetErrorString 131 246 cudaGetErrorString 132 246 cudaGetErrorString 133 244 cudaGetErrorString 134 0 seconds 136 16 cudaGetErrorString 142 0 fwd_kernel 146 46 checkpoint 153 1 update_progress 156 1 cudaDeviceSynchronize 158 23 cudaGetErrorString 158 213 seconds 159 20 cudaGetErrorString 161 247 seconds 162 18 finish_progress 164 1 save_layer_text 172 1 cudaGetErrorString 185 207 cudaGetErrorString 186 207 cudaGetErrorString 187 206 cudaGetErrorString 188 210
 dim3::dim3 0 DOES_NOT
-fwd_kernel 0 MAY __device_stub__Z10fwd_kernelPfS_S_S_iiiiii
-__device_stub__Z10fwd_kernelPfS_S_S_iiiiii 0 MAY cudaError cudaSetupArgument
-cudaError 0 MAY cudaLaunch
-__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf 1 MAY __cudaRegisterFatBinary atexit
-__nv_cudaEntityRegisterCallback 0 MAY __cudaRegisterFunction __nv_save_fatbinhandle_for_managed_rt
-__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref __cudaUnregisterFatBinary
+fwd_kernel 0 MAY __device_stub__Z10fwd_kernelPfS_S_S_iiiiii 50 2
+__device_stub__Z10fwd_kernelPfS_S_S_iiiiii 0 MAY cudaSetupArgument 9 181 cudaSetupArgument 9 215 cudaSetupArgument 9 249 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaError 9 0
+cudaError 0 MAY cudaLaunch 1510 8
+__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf 1 MAY __cudaRegisterFatBinary 2 73 atexit 2 73
+__nv_cudaEntityRegisterCallback 0 MAY __nv_save_fatbinhandle_for_managed_rt 1 92 __cudaRegisterFunction 1 138
+__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref 237 3 __cudaUnregisterFatBinary 238 3
 ____nv_dummy_param_ref 0 DOES_NOT
 __nv_save_fatbinhandle_for_managed_rt 0 DOES_NOT
 dim3::dim3 0 DOES_NOT

@@ -1,3 +1,23 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 83 11 len=13 initLinkCells_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 52 , 7522830976577679926UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 56 , 7522830976577680092UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 19 , 7522830976577680156UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 10 , 7522830976577680149UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 387 6 len=8 getTuple_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 30 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 52 , 7522830976577679926UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 105 23 len=6 malloc_wrapper
@@ -154,16 +174,16 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCel
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 169  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4  ({  calling((void*)getTuple, -1, 0UL, 0, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); (getTuple)(boxes, iBox, &ix, &iy, &iz); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4 ({ calling_npm(4, 0, 7522830976577680252UL, 7522830976577680532UL, 7522830976577680172UL, 7522830976577680534UL, 7522830976577680173UL, 7522830976577680535UL, 7522830976577680174UL, 7522830976577680536UL); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 39 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 33  ({  calling((void*)getBoxFromTuple, -1, 0UL, 0, 4, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(boxes, i, j, k); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 33 ({ calling_npm(1, 0, 7522830976577680252UL, 7522830976577680792UL); getBoxFromTuple_npm(boxes, i, j, k); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 60 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 217  ; int ix;
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 24  ({  calling((void*)getBoxFromCoord, -1, 0UL, 0, 2, (size_t)(7522830976577680965UL), (size_t)(7522830976577680821UL)); (getBoxFromCoord)(boxes, xyz); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 24 ({ calling_npm(3, 0, 7522830976577680965UL, 7522830976577681138UL, 7522830976577680821UL, 7522830976577681139UL, 7522830976577681138UL, 7522830976577680792UL); getBoxFromCoord_npm(boxes, xyz); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 50 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
@@ -172,17 +192,17 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCel
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 211  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4  ({  calling((void*)copyAtom, -1, 0UL, 0, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(boxes, atoms, iId, iBox, nj, jBox); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4 ({ calling_npm(2, 0, 7522830976577681201UL, 7522830976577681367UL, 7522830976577681242UL, 7522830976577681368UL); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 46 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13  ({  calling((void*)copyAtom, -1, 0UL, 0, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(boxes, atoms, ni, iBox, iId, iBox); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13 ({ calling_npm(2, 0, 7522830976577681201UL, 7522830976577681367UL, 7522830976577681242UL, 7522830976577681368UL); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 55 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 223  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4  ({  calling((void*)emptyHaloCells, -1, 0UL, 0, 1, (size_t)(7522830976577681446UL)); (emptyHaloCells)(boxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4 ({ calling_npm(1, 0, 7522830976577681446UL, 7522830976577681477UL); emptyHaloCells_npm(boxes); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 30  ({  calling((void*)getBoxFromCoord, -1, 0UL, 0, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, atoms->r[iOff + ii]); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 30 ({ calling_npm(3, 0, 7522830976577681446UL, 7522830976577681138UL, 7522830976577681419UL, 7522830976577681139UL, 7522830976577681138UL, 7522830976577680792UL); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 72 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29  ({  calling((void*)moveAtom, -1, 0UL, 0, 5, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (moveAtom)(boxes, atoms, ii, iBox, jBox); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29 ({ calling_npm(4, 0, 7522830976577681446UL, 7522830976577681201UL, 7522830976577681447UL, 7522830976577681242UL, 7522830976577681201UL, 7522830976577681367UL, 7522830976577681242UL, 7522830976577681368UL); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 66 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 199  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_quick
@@ -207,7 +227,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 324 68 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 238  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 28  ({  calling((void*)getBoxFromTuple, -1, 0UL, 0, 4, (size_t)(7522830976577681138UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(boxes, ix, iy, iz); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 28 ({ calling_npm(1, 0, 7522830976577681138UL, 7522830976577680792UL); getBoxFromTuple_npm(boxes, ix, iy, iz); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 61 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 199  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_quick
@@ -219,16 +239,16 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCel
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 113 6 len=16 destroyLinkCells_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 169  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 131 5 len=16 getNeighborBoxes_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4  ({  calling((void*)getTuple, -1, 0UL, 0, 5, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(7522830976577680172UL), (size_t)(7522830976577680173UL), (size_t)(7522830976577680174UL)); (getTuple)(boxes, iBox, &ix, &iy, &iz); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 4 ({ calling_npm(4, 0, 7522830976577680252UL, 7522830976577680532UL, 7522830976577680172UL, 7522830976577680534UL, 7522830976577680173UL, 7522830976577680535UL, 7522830976577680174UL, 7522830976577680536UL); getTuple_npm(boxes, iBox, &ix, &iy, &iz); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 134 39 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 33  ({  calling((void*)getBoxFromTuple, -1, 0UL, 0, 4, (size_t)(7522830976577680252UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(boxes, i, j, k); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 33 ({ calling_npm(1, 0, 7522830976577680252UL, 7522830976577680792UL); getBoxFromTuple_npm(boxes, i, j, k); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 140 60 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 133 10 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 217  ; int ix;
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 159 6 len=12 putAtomInBox_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 24  ({  calling((void*)getBoxFromCoord, -1, 0UL, 0, 2, (size_t)(7522830976577680965UL), (size_t)(7522830976577680821UL)); (getBoxFromCoord)(boxes, xyz); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 24 ({ calling_npm(3, 0, 7522830976577680965UL, 7522830976577681138UL, 7522830976577680821UL, 7522830976577681139UL, 7522830976577681138UL, 7522830976577680792UL); getBoxFromCoord_npm(boxes, xyz); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 167 50 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 164 17 
@@ -237,17 +257,17 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCel
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 193 5 len=15 getBoxFromTuple_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 211  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 246 6 len=8 moveAtom_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4  ({  calling((void*)copyAtom, -1, 0UL, 0, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(boxes, atoms, iId, iBox, nj, jBox); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 4 ({ calling_npm(2, 0, 7522830976577681201UL, 7522830976577681367UL, 7522830976577681242UL, 7522830976577681368UL); copyAtom_npm(boxes, atoms, iId, iBox, nj, jBox); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 249 46 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13  ({  calling((void*)copyAtom, -1, 0UL, 0, 6, (size_t)(7522830976577681201UL), (size_t)(7522830976577681242UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (copyAtom)(boxes, atoms, ni, iBox, iId, iBox); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 13 ({ calling_npm(2, 0, 7522830976577681201UL, 7522830976577681367UL, 7522830976577681242UL, 7522830976577681368UL); copyAtom_npm(boxes, atoms, ni, iBox, iId, iBox); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 256 55 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 223  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 277 6 len=15 updateLinkCells_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4  ({  calling((void*)emptyHaloCells, -1, 0UL, 0, 1, (size_t)(7522830976577681446UL)); (emptyHaloCells)(boxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 4 ({ calling_npm(1, 0, 7522830976577681446UL, 7522830976577681477UL); emptyHaloCells_npm(boxes); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 279 24 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 30  ({  calling((void*)getBoxFromCoord, -1, 0UL, 0, 2, (size_t)(7522830976577681446UL), (size_t)(7522830976577681419UL)); (getBoxFromCoord)(boxes, atoms->r[iOff + ii]); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 30 ({ calling_npm(3, 0, 7522830976577681446UL, 7522830976577681138UL, 7522830976577681419UL, 7522830976577681139UL, 7522830976577681138UL, 7522830976577680792UL); getBoxFromCoord_npm(boxes, atoms->r[iOff + ii]); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 287 72 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29  ({  calling((void*)moveAtom, -1, 0UL, 0, 5, (size_t)(7522830976577681446UL), (size_t)(7522830976577681447UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (moveAtom)(boxes, atoms, ii, iBox, jBox); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 29 ({ calling_npm(4, 0, 7522830976577681446UL, 7522830976577681201UL, 7522830976577681447UL, 7522830976577681242UL, 7522830976577681201UL, 7522830976577681367UL, 7522830976577681242UL, 7522830976577681368UL); moveAtom_npm(boxes, atoms, ii, iBox, jBox); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 66 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 199  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_resumable
@@ -262,17 +282,17 @@ RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 29
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 157  ; int localMax;
  if (____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(1, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 315 6 len=8 copyAtom_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 321 17  ({  void * ____chimes_arg36;  const void * ____chimes_arg37;  unsigned long ____chimes_arg38;  if (!____chimes_replaying) { ____chimes_arg36 = (atoms->r[jOff]); ____chimes_arg37 = (atoms->r[iOff]); ____chimes_arg38 = (sizeof(real3));  }  calling((void*)memcpy, 1, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg36, ____chimes_arg37, ____chimes_arg38); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 321 17  ({  void * ____chimes_arg5;  const void * ____chimes_arg6;  unsigned long ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg5 = (atoms->r[jOff]); ____chimes_arg6 = (atoms->r[iOff]); ____chimes_arg7 = (sizeof(real3));  }  calling((void*)memcpy, 1, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg5, ____chimes_arg6, ____chimes_arg7); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 321 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 322 17  ({  void * ____chimes_arg39;  const void * ____chimes_arg40;  unsigned long ____chimes_arg41;  if (!____chimes_replaying) { ____chimes_arg39 = (atoms->p[jOff]); ____chimes_arg40 = (atoms->p[iOff]); ____chimes_arg41 = (sizeof(real3));  }  calling((void*)memcpy, 2, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg39, ____chimes_arg40, ____chimes_arg41); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 322 17  ({  void * ____chimes_arg8;  const void * ____chimes_arg9;  unsigned long ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg8 = (atoms->p[jOff]); ____chimes_arg9 = (atoms->p[iOff]); ____chimes_arg10 = (sizeof(real3));  }  calling((void*)memcpy, 2, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 322 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 323 17  ({  void * ____chimes_arg42;  const void * ____chimes_arg43;  unsigned long ____chimes_arg44;  if (!____chimes_replaying) { ____chimes_arg42 = (atoms->f[jOff]); ____chimes_arg43 = (atoms->f[iOff]); ____chimes_arg44 = (sizeof(real3));  }  calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg42, ____chimes_arg43, ____chimes_arg44); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 323 17  ({  void * ____chimes_arg11;  const void * ____chimes_arg12;  unsigned long ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (atoms->f[jOff]); ____chimes_arg12 = (atoms->f[iOff]); ____chimes_arg13 = (sizeof(real3));  }  calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 323 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 324 17  ({  void * ____chimes_arg45;  const void * ____chimes_arg46;  unsigned long ____chimes_arg47;  if (!____chimes_replaying) { ____chimes_arg45 = (atoms->U + jOff); ____chimes_arg46 = (atoms->U + iOff); ____chimes_arg47 = (sizeof(real_t));  }  calling((void*)memcpy, 4, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg45, ____chimes_arg46, ____chimes_arg47); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 324 17  ({  void * ____chimes_arg14;  const void * ____chimes_arg15;  unsigned long ____chimes_arg16;  if (!____chimes_replaying) { ____chimes_arg14 = (atoms->U + jOff); ____chimes_arg15 = (atoms->U + iOff); ____chimes_arg16 = (sizeof(real_t));  }  calling((void*)memcpy, 4, 0UL, 0, 3, (size_t)(7522830976577681282UL), (size_t)(7522830976577681282UL), (size_t)(0UL)); (memcpy)(____chimes_arg14, ____chimes_arg15, ____chimes_arg16); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 324 68 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 238  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 337 5 len=15 getBoxFromCoord_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 28  ({  calling((void*)getBoxFromTuple, -1, 0UL, 0, 4, (size_t)(7522830976577681138UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (getBoxFromTuple)(boxes, ix, iy, iz); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 28 ({ calling_npm(1, 0, 7522830976577681138UL, 7522830976577680792UL); getBoxFromTuple_npm(boxes, ix, iy, iz); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 368 61 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 199  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 373 6 len=14 emptyHaloCells_resumable

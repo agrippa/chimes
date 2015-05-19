@@ -1,3 +1,5 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 186 9 len=16 parseCommandLine_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 252 6 len=12 printCmdYaml_npm
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 254 4 alias_group_changed(____alias_loc_id_1); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 249 4 rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c 187 1 const int ____chimes_did_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(6238158647987170569UL), (size_t)(0UL), (size_t)(6238158647987170571UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 

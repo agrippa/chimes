@@ -476,6 +476,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -518,7 +519,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1768,8 +1769,12 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 
+
+
+
+
 static int module_init() {
-    init_module(12387876047547725256UL, 1, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "checkpoint", "foo", "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 12387876047547725256UL + 1UL, 12387876047547725256UL + 2UL, 12387876047547725256UL + 3UL);
+    init_module(12387876047547725256UL, 1, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "foo", "checkpoint", "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 12387876047547725256UL + 1UL, 12387876047547725256UL + 2UL, 12387876047547725256UL + 3UL);
     register_functions(1, "pass_by_ref.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }

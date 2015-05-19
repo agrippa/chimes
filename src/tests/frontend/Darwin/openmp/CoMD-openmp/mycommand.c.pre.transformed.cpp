@@ -475,6 +475,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -517,7 +518,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 59 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1948,6 +1949,7 @@ int builtWithMpi(void);
 # 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c" 2
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+Command parseCommandLine_npm(int argc, char** argv);
 Command parseCommandLine_quick(int argc, char** argv); Command parseCommandLine(int argc, char** argv);
 Command parseCommandLine_resumable(int argc, char** argv)
 # 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2069,6 +2071,7 @@ Command parseCommandLine_resumable(int argc, char** argv)
 }
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+void printCmdYaml_npm(FILE* file, Command* cmd);
 void printCmdYaml_quick(FILE* file, Command* cmd); void printCmdYaml(FILE* file, Command* cmd);
 void printCmdYaml_resumable(FILE* file, Command* cmd)
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2342,8 +2345,204 @@ void printCmdYaml(FILE* file, Command* cmd) { (____chimes_replaying ? printCmdYa
 
 
 
+Command parseCommandLine_npm(int argc, char** argv)
+# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+{
+# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   Command cmd;
+# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   memset(cmd.potDir, 0, 1024);
+# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   memset(cmd.potName, 0, 1024);
+# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   memset(cmd.potType, 0, 1024);
+# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   strcpy(cmd.potDir, "pots");
+# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   strcpy(cmd.potName, "\0");
+# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   strcpy(cmd.potType, "funcfl");
+# 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.doeam = 0;
+# 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.nx = 20;
+# 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.ny = 20;
+# 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.nz = 20;
+# 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.xproc = 1;
+# 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.yproc = 1;
+# 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.zproc = 1;
+# 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.nSteps = 100;
+# 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.printRate = 10;
+# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.dt = 1.0;
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.lat = -1.0;
+# 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.temperature = 600.0;
+# 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   cmd.initialDelta = 0.0;
+# 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   int help=0;
+# 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("help", 'h', 0, 'i', &(help), 0, "print this message");
+# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("potDir", 'd', 1, 's', cmd.potDir, sizeof(cmd.potDir), "potential directory");
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("potName", 'p', 1, 's', cmd.potName, sizeof(cmd.potName), "potential name");
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("potType", 't', 1, 's', cmd.potType, sizeof(cmd.potType), "potential type (funcfl or setfl)");
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("doeam", 'e', 0, 'i', &(cmd.doeam), 0, "compute eam potentials");
+# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("nx", 'x', 1, 'i', &(cmd.nx), 0, "number of unit cells in x");
+# 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("ny", 'y', 1, 'i', &(cmd.ny), 0, "number of unit cells in y");
+# 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("nz", 'z', 1, 'i', &(cmd.nz), 0, "number of unit cells in z");
+# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("xproc", 'i', 1, 'i', &(cmd.xproc), 0, "processors in x direction");
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("yproc", 'j', 1, 'i', &(cmd.yproc), 0, "processors in y direction");
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("zproc", 'k', 1, 'i', &(cmd.zproc), 0, "processors in z direction");
+# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("nSteps", 'N', 1, 'i', &(cmd.nSteps), 0, "number of time steps");
+# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("printRate", 'n', 1, 'i', &(cmd.printRate), 0, "number of steps between output");
+# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("dt", 'D', 1, 'd', &(cmd.dt), 0, "time step (in fs)");
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("lat", 'l', 1, 'd', &(cmd.lat), 0, "lattice parameter (Angstroms)");
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("temp", 'T', 1, 'd', &(cmd.temperature), 0, "initial temperature (K)");
+# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   addArg("delta", 'r', 1, 'd', &(cmd.initialDelta), 0, "initial delta (Angstroms)");
+# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   processArgs(argc,argv);
+# 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   if (strlen(cmd.potName) == 0)
+# 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   {
+# 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+      if (strcmp(cmd.potType, "setfl") == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
+# 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+      if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
+# 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   }
+# 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   if (help)
+# 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   {
+# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+      printArgs();
+# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+      freeArgs();
+# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+      exit(2);
+# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   }
+# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   freeArgs();
+# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+# 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   return cmd;
+# 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+}
+
+void printCmdYaml_npm(FILE* file, Command* cmd)
+# 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+{
+# 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   if (!printRank()) {return;; };
+# 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   fprintf(file,
+# 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "Command Line Parameters:\n"
+# 258 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  doeam: %d\n"
+# 259 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  potDir: %s\n"
+# 260 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  potName: %s\n"
+# 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  potType: %s\n"
+# 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  nx: %d\n"
+# 263 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  ny: %d\n"
+# 264 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  nz: %d\n"
+# 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  xproc: %d\n"
+# 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  yproc: %d\n"
+# 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  zproc: %d\n"
+# 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  Lattice constant: %g Angstroms\n"
+# 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  nSteps: %d\n"
+# 270 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  printRate: %d\n"
+# 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  Time step: %g fs\n"
+# 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  Initial Temperature: %g K\n"
+# 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "  Initial Delta: %g Angstroms\n"
+# 274 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           "\n",
+# 275 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->doeam,
+# 276 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->potDir,
+# 277 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->potName,
+# 278 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->potType,
+# 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->nx, cmd->ny, cmd->nz,
+# 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->xproc, cmd->yproc, cmd->zproc,
+# 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->lat,
+# 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->nSteps,
+# 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->printRate,
+# 284 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->dt,
+# 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->temperature,
+# 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+           cmd->initialDelta
+# 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   );
+# 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+   fflush(file);
+# 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(6351733837270304101UL, 3, 2, 5, 2, 4, 6351733837270304101UL + 166UL, 6351733837270304101UL + 230UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 143UL, 6351733837270304101UL + 167UL, 6351733837270304101UL + 231UL, "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "parseCommandLine", 4, "addArg", "freeArgs", "printArgs", "processArgs", "printCmdYaml", 1, "printRank", "parseCommandLine|argc|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|argv|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|help|0", 1, "parseCommandLine", "printCmdYaml|file|0", 1, "printRank", "printCmdYaml|cmd|0", 1, "printRank", &____alias_loc_id_0, (unsigned)4, 6351733837270304101UL + 1UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 3UL, 6351733837270304101UL + 141UL, &____alias_loc_id_1, (unsigned)2, 6351733837270304101UL + 166UL, 6351733837270304101UL + 167UL);
+    init_module(6351733837270304101UL, 3, 2, 5, 2, 4, 6351733837270304101UL + 166UL, 6351733837270304101UL + 230UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 143UL, 6351733837270304101UL + 167UL, 6351733837270304101UL + 231UL, "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "parseCommandLine", 21, "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "processArgs", "printArgs", "freeArgs", "freeArgs", "printCmdYaml", 1, "printRank", "parseCommandLine|argc|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|argv|0", 4, "processArgs", "printArgs", "freeArgs", "addArg", "parseCommandLine|help|0", 1, "parseCommandLine", "printCmdYaml|file|0", 1, "printRank", "printCmdYaml|cmd|0", 1, "printRank", &____alias_loc_id_0, (unsigned)4, 6351733837270304101UL + 1UL, 6351733837270304101UL + 2UL, 6351733837270304101UL + 3UL, 6351733837270304101UL + 141UL, &____alias_loc_id_1, (unsigned)2, 6351733837270304101UL + 166UL, 6351733837270304101UL + 167UL);
     register_functions(2, "mycommand.c.pre.hard.cpp", "parseCommandLine", &parseCommandLine, "printCmdYaml", &printCmdYaml);
     return 0;
 }

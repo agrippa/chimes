@@ -237,6 +237,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -v ${INFO_FILE_PREFIX}.firstprivate.info \
             -b ${INFO_FILE_PREFIX}.tree.info \
             -q ${INFO_FILE_PREFIX}.quick \
+            -n ${INFO_FILE_PREFIX}.npm \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -246,18 +247,27 @@ for INPUT in ${ABS_INPUTS[@]}; do
     TRANSFORMED_FILE=${NAME}.register.${EXT}
     INCLUDE_QUICK_FILE=${NAME}.quick.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
+    FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
+    NPM_FILE=${NAME}.npm.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 
     echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
-    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} \
-        ${INCLUDE_QUICK_FILE} ${INFO_FILE_PREFIX}.quick.bodies \
-        ${INFO_FILE_PREFIX}.quick.decls
+    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} ${INCLUDE_QUICK_FILE} \
+        -b ${INFO_FILE_PREFIX}.quick.bodies -d ${INFO_FILE_PREFIX}.quick.decls
 
-    echo Hardcoding quick/resumable calls when possible in ${INCLUDE_QUICK_FILE}
+    echo Adding firstprivate clauses to parallel for loops in ${INCLUDE_QUICK_FILE}
+    cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${INCLUDE_QUICK_FILE} \
+        ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
+
+    echo Adding NPM function declarations and bodies to ${FIRSTPRIVATE_FILE}
+    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${FIRSTPRIVATE_FILE} ${NPM_FILE} \
+        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls
+
+    echo Hardcoding quick/resumable/npm calls when possible in ${NPM_FILE}
     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
-        -d ${INFO_FILE_PREFIX}.quick.decls ${INCLUDE_QUICK_FILE} -- \
-        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
-        ${CHIMES_DEF} ${DEFINES}
+        -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
+        ${NPM_FILE} -- -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include \
+        $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
     echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
     cd ${WORK_DIR} && python ${MODULE_INIT} ${HARDCODED_CALLS_FILE} ${FINAL_FILE} \
@@ -266,11 +276,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
         ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
         ${INFO_FILE_PREFIX}.exit.info ${INFO_FILE_PREFIX}.func.info
-
-    echo Adding firstprivate clauses to parallel for loops in ${FINAL_FILE}
-    cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${FINAL_FILE} \
-        ${INFO_FILE_PREFIX}.firstprivate.info > ${FINAL_FILE}.tmp
-    mv ${WORK_DIR}/${FINAL_FILE}.tmp ${WORK_DIR}/${FINAL_FILE}
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \

@@ -1600,6 +1600,28 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return NOT_DISABLED;
 }
 
+void calling_npm(int n_new_aliases, int n_change_locs, ...) {
+    thread_ctx *ctx = get_my_context();
+
+    va_list vl;
+    va_start(vl, n_change_locs);
+
+    for (int i = 0; i < n_new_aliases; i++) {
+        size_t parent = va_arg(vl, size_t);
+        size_t child = va_arg(vl, size_t);
+
+        assert(valid_group(parent) && valid_group(child));
+        merge_alias_groups(parent, child);
+    }
+
+    for (int i = 0; i < n_change_locs; i++) {
+        unsigned loc_id = va_arg(vl, unsigned);
+        assert(loc_id > 0);
+        alias_group_changed_helper(loc_id, ctx);
+    }
+    va_end(vl);
+}
+
 void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
         unsigned naliases, ...) {
 #ifdef __CHIMES_PROFILE
@@ -1609,15 +1631,31 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
         perf_profile::current_time_ms();
     thread_ctx *ctx = get_my_context();
 
+    /* Function pointer is only necessary if calling a function outside of our
+     * compilation unit, where we need to verify that the function we're
+     * entering is one that was transformed.
+     */
     ctx->set_func_ptr(func_ptr);
 
+    /*
+     * only necessary if there is a checkpoint call somewhere underneath us on
+     * the stack
+     */
     if (!ctx->is_disabled()) {
         ctx->set_calling_label(lbl);
     }
 
+    /*
+     * only necessary if the call being made is unknown and we cannot hoist the
+     * alias group changes out of it as well.
+     */
     if (loc_id > 0) {
         alias_group_changed_helper(loc_id, ctx);
     }
+
+    /*
+     * the below mappings should be possible at compile time
+     */
     ctx->set_return_alias(set_return_alias);
 
     va_list vl;

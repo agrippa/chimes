@@ -1,1 +1,1 @@
-main 0 DOES checkpoint foo
+main 0 DOES foo 10 5 checkpoint 11 5

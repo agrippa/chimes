@@ -1,3 +1,8 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 28 13 len=13 getTimeString_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 45 6 len=9 yamlBegin_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 63 6 len=11 yamlAppInfo_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 90 6 len=7 yamlEnd_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 98 6 len=14 printSeparator_npm
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 4 alias_group_changed(____alias_loc_id_0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 29 1 const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(12737042733622956041UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 43 1 rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_5, ____chimes_did_disable0); 
@@ -70,7 +75,7 @@ char filename[64];
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 63 6 len=11 yamlAppInfo_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 63  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 4  ({  calling((void*)printSeparator, -1, 0UL, 0, 1, (size_t)(12737042733622955998UL)); (printSeparator)(file); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 4 ({ calling_npm(1, 0, 12737042733622955998UL, 12737042733622956005UL); printSeparator_npm(file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 23 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 80 77  ({  calling((void*)builtWithMpi, 16, 0UL, 0, 0); (builtWithMpi)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 80 90 
@@ -114,7 +119,7 @@ char filename[64];
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 63 6 len=11 yamlAppInfo_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 63  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 65 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 4  ({  calling((void*)printSeparator, -1, 0UL, 0, 1, (size_t)(12737042733622955998UL)); (printSeparator)(file); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 4 ({ calling_npm(1, 0, 12737042733622955998UL, 12737042733622956005UL); printSeparator_npm(file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 67 23 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 80 77  ({  calling((void*)builtWithMpi, 16, 0UL, 0, 0); (builtWithMpi)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c 80 90 

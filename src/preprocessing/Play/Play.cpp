@@ -2422,10 +2422,29 @@ static void printGroupsChanged(FILE *fp, Function *F,
     }
 }
 
+class CallLocation {
+    public:
+        CallLocation(std::string set_name, int set_line, int set_col) :
+            name(set_name), line(set_line), col(set_col) { }
+
+        std::string get_name() { return name; }
+        int get_line() { return line; }
+        int get_col() { return col; }
+
+    private:
+        std::string name;
+        int line;
+        int col;
+};
+
 /*
  * This function dumps a list of the names of the functions called for each
  * function defined in this module. If a callee name cannot be resolved (e.g. it
  * is a function pointer) we explicitly indicate this in the dumped output.
+ *
+ * The dumped DOES/DOES NOT/MAY checkpoint relationship is indicative of this
+ * function and all of its callees. It will only be DOES_NOT if calling this
+ * function can never result in a function being created.
  */
 void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
     FILE *fp = fopen(output_file, "w");
@@ -2434,7 +2453,7 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
         Function *F = &*I;
 
         bool contains_unknown_functions = false;
-        std::set<std::string> called;
+        std::vector<CallLocation> called;
 
         if (F->empty()) continue;
 
@@ -2460,7 +2479,9 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
                                     doesFunctionCreateCheckpoint.end() ||
                                     doesFunctionCreateCheckpoint[demangled] !=
                                     DOES_NOT) {
-                                called.insert(demangled);
+                                called.push_back(CallLocation(demangled,
+                                            call->getDebugLoc().getLine(),
+                                            call->getDebugLoc().getCol()));
                             }
                         }
                     }
@@ -2482,10 +2503,11 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
             fprintf(fp, " MAY");
         }
 
-        for (std::set<std::string>::iterator i = called.begin(),
+        for (std::vector<CallLocation>::iterator i = called.begin(),
                 e = called.end(); i != e; i++) {
-            std::string curr = *i;
-            fprintf(fp, " %s", curr.c_str());
+            CallLocation curr = *i;
+            fprintf(fp, " %s %d %d", curr.get_name().c_str(), curr.get_line(),
+                    curr.get_col());
         }
         fprintf(fp, "\n");
     }

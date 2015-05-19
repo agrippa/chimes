@@ -477,6 +477,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -519,7 +520,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1741,6 +1742,7 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+void *haha_this_sux_part_trois_npm();
 void *haha_this_sux_part_trois_quick(); void *haha_this_sux_part_trois();
 void *haha_this_sux_part_trois_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_trois), "haha_this_sux_part_trois", &____must_manage_haha_this_sux_part_trois, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
@@ -1763,7 +1765,7 @@ int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16401429439071256640UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- tmp = ( ({ calling((void*)haha_this_sux_part_trois, -1, 16401429439071256631UL, 0, 0); (haha_this_sux_part_trois)(); }) ) ;
+ tmp = (({ calling_npm(1, 0, 16401429439071256631UL, 16401429439071256641UL); haha_this_sux_part_trois_npm(); })) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
@@ -1791,7 +1793,7 @@ void *haha_this_sux_part_trois() { return (____chimes_replaying ? haha_this_sux_
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16401429439071256640UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); ; ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
- tmp = ( ({ calling((void*)haha_this_sux_part_trois, -1, 16401429439071256631UL, 0, 0); haha_this_sux_part_trois_quick(); }) ) ;
+ tmp = (({ calling_npm(1, 0, 16401429439071256631UL, 16401429439071256641UL); haha_this_sux_part_trois_npm(); })) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
@@ -1803,8 +1805,28 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 
+void *haha_this_sux_part_trois_npm() {
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+ int *A = (int *)malloc_wrapper(sizeof(int) * 10, 16401429439071256641UL, 0, 0);
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+ if (A[0]) {
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+ return A;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+ } else {
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+ return __null;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+ }
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(16401429439071256598UL, 4, 2, 0, 1, 0, 16401429439071256598UL + 1UL, 16401429439071256598UL + 43UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 42UL, 16401429439071256598UL + 26UL, 16401429439071256598UL + 33UL, 16401429439071256598UL + 2UL, 16401429439071256598UL + 43UL, "main", 2, "checkpoint", "haha_this_sux_part_trois", "haha_this_sux_part_trois", 0, &____alias_loc_id_0, (unsigned)4, 16401429439071256598UL + 23UL, 16401429439071256598UL + 24UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 26UL, &____alias_loc_id_1, (unsigned)2, 16401429439071256598UL + 1UL, 16401429439071256598UL + 2UL);
+    init_module(16401429439071256598UL, 4, 2, 0, 1, 0, 16401429439071256598UL + 1UL, 16401429439071256598UL + 43UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 42UL, 16401429439071256598UL + 26UL, 16401429439071256598UL + 33UL, 16401429439071256598UL + 2UL, 16401429439071256598UL + 43UL, "main", 2, "haha_this_sux_part_trois", "checkpoint", "haha_this_sux_part_trois", 0, &____alias_loc_id_0, (unsigned)4, 16401429439071256598UL + 23UL, 16401429439071256598UL + 24UL, 16401429439071256598UL + 25UL, 16401429439071256598UL + 26UL, &____alias_loc_id_1, (unsigned)2, 16401429439071256598UL + 1UL, 16401429439071256598UL + 2UL);
     register_functions(2, "func_with_two_ptr_returns.cpp.pre.hard.cpp", "haha_this_sux_part_trois", &haha_this_sux_part_trois, "main", &main);
     return 0;
 }

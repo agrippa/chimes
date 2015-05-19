@@ -2,7 +2,7 @@ seconds 0 DOES_NOT
 ricker_wavelet 0 DOES_NOT
 parse_source 0 DOES_NOT
 config_sources 0 DOES_NOT
-sample_sources 0 DOES_NOT ricker_wavelet
+sample_sources 0 DOES_NOT ricker_wavelet 140 9
 init_progress 0 DOES_NOT
 update_progress 0 DOES_NOT
-finish_progress 0 DOES_NOT update_progress
+finish_progress 0 DOES_NOT update_progress 222 5

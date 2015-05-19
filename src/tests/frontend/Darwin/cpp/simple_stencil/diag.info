@@ -6,6 +6,14 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 5 len=4
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 10 , 7654350934130983345UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 5 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 10 , 7654350934130983345UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 24 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 11 45 , 7654350934130983345UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 24 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 12 45 , 7654350934130983345UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 35 10 , 7654350934130983345UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 5 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 36 10 , 7654350934130983345UL
 InsertText /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 37 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp 6 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)); ;

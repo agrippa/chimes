@@ -10,6 +10,7 @@
 
 extern DesiredInsertions *insertions;
 extern std::set<std::string> *ignorable;
+extern std::map<std::string, std::set<std::string>> func_to_alias_locs;
 
 static std::vector<MatchedLocation *> already_matched;
 
@@ -65,6 +66,15 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                     start_loc.getFilename());
             assert(state);
             unsigned loc_id = state->get_id();
+
+            if (func_to_alias_locs.find(curr_func) ==
+                    func_to_alias_locs.end()) {
+                func_to_alias_locs.insert(std::pair<std::string,
+                        std::set<std::string>>(curr_func,
+                            std::set<std::string>()));
+            }
+            func_to_alias_locs[curr_func].insert(insertions->get_alias_loc_var(
+                        loc_id));
 
             bool do_insert = true;
             if (const CallExpr *call = dyn_cast<CallExpr>(s)) {

@@ -604,6 +604,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -646,7 +647,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 59 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2265,6 +2266,7 @@ static void destroyForceExchange(void* vparms);
 static int sortAtomsById(const void* a, const void* b);
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes);HaloExchange* initHaloExchange_npm(Domain* domain);int* mkAtomCellList_npm(LinkCell* boxes, int iFace, const int nCells);
 HaloExchange* initAtomHaloExchange_quick(Domain* domain, LinkCell* boxes); HaloExchange* initAtomHaloExchange(Domain* domain, LinkCell* boxes);HaloExchange* initHaloExchange_quick(Domain* domain); HaloExchange* initHaloExchange(Domain* domain);int* mkAtomCellList_quick(LinkCell* boxes, int iFace, const int nCells); int* mkAtomCellList(LinkCell* boxes, int iFace, const int nCells);
 HaloExchange* initAtomHaloExchange_resumable(Domain* domain, LinkCell* boxes)
 # 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2352,6 +2354,7 @@ HaloExchange *hh;
 }
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+HaloExchange* initForceHaloExchange_npm(Domain* domain, LinkCell* boxes);int* mkForceSendCellList_npm(LinkCell* boxes, int face, int nCells);int* mkForceRecvCellList_npm(LinkCell* boxes, int face, int nCells);
 HaloExchange* initForceHaloExchange_quick(Domain* domain, LinkCell* boxes); HaloExchange* initForceHaloExchange(Domain* domain, LinkCell* boxes);int* mkForceSendCellList_quick(LinkCell* boxes, int face, int nCells); int* mkForceSendCellList(LinkCell* boxes, int face, int nCells);int* mkForceRecvCellList_quick(LinkCell* boxes, int face, int nCells); int* mkForceRecvCellList(LinkCell* boxes, int face, int nCells);
 HaloExchange* initForceHaloExchange_resumable(Domain* domain, LinkCell* boxes)
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2421,6 +2424,7 @@ HaloExchange *hh;
 }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void destroyHaloExchange_npm(HaloExchange** haloExchange);
 void destroyHaloExchange_quick(HaloExchange** haloExchange); void destroyHaloExchange(HaloExchange** haloExchange);
 void destroyHaloExchange_resumable(HaloExchange** haloExchange)
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2435,6 +2439,7 @@ void destroyHaloExchange_resumable(HaloExchange** haloExchange)
 rm_stack(false, 0UL, "destroyHaloExchange", &____must_manage_destroyHaloExchange, ____alias_loc_id_33, ____chimes_did_disable2); }
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void haloExchange_npm(HaloExchange* haloExchangeData, void* data);void exchangeData_npm(HaloExchange* haloExchange, void* data, int iAxis);
 void haloExchange_quick(HaloExchange* haloExchangeData, void* data); void haloExchange(HaloExchange* haloExchangeData, void* data);void exchangeData_quick(HaloExchange* haloExchange, void* data, int iAxis); void exchangeData(HaloExchange* haloExchange, void* data, int iAxis);
 void haloExchange_resumable(HaloExchange* haloExchangeData, void* data)
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2608,6 +2613,7 @@ int *list;
 }
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+int loadAtomsBuffer_npm(void* vparms, void* data, int face, char* charBuf);
 int loadAtomsBuffer_quick(void* vparms, void* data, int face, char* charBuf); int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf);
 int loadAtomsBuffer_resumable(void* vparms, void* data, int face, char* charBuf)
 # 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2677,6 +2683,7 @@ int loadAtomsBuffer_resumable(void* vparms, void* data, int face, char* charBuf)
 }
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void unloadAtomsBuffer_npm(void* vparms, void* data, int face, int bufSize, char* charBuf);
 void unloadAtomsBuffer_quick(void* vparms, void* data, int face, int bufSize, char* charBuf); void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
 void unloadAtomsBuffer_resumable(void* vparms, void* data, int face, int bufSize, char* charBuf)
 # 416 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2732,6 +2739,7 @@ SimFlat *s;
 rm_stack(false, 0UL, "unloadAtomsBuffer", &____must_manage_unloadAtomsBuffer, ____alias_loc_id_24, ____chimes_did_disable8); }
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void destroyAtomsExchange_npm(void* vparms);
 void destroyAtomsExchange_quick(void* vparms); void destroyAtomsExchange(void* vparms);
 void destroyAtomsExchange_resumable(void* vparms)
 # 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2951,6 +2959,7 @@ int *list;
 # 556 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 557 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 558 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+int loadForceBuffer_npm(void* vparms, void* vdata, int face, char* charBuf);
 int loadForceBuffer_quick(void* vparms, void* vdata, int face, char* charBuf); int loadForceBuffer(void* vparms, void* vdata, int face, char* charBuf);
 int loadForceBuffer_resumable(void* vparms, void* vdata, int face, char* charBuf)
 # 559 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3000,6 +3009,7 @@ int loadForceBuffer_resumable(void* vparms, void* vdata, int face, char* charBuf
 # 584 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 585 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 586 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void unloadForceBuffer_npm(void* vparms, void* vdata, int face, int bufSize, char* charBuf);
 void unloadForceBuffer_quick(void* vparms, void* vdata, int face, int bufSize, char* charBuf); void unloadForceBuffer(void* vparms, void* vdata, int face, int bufSize, char* charBuf);
 void unloadForceBuffer_resumable(void* vparms, void* vdata, int face, int bufSize, char* charBuf)
 # 587 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3045,6 +3055,7 @@ void unloadForceBuffer_resumable(void* vparms, void* vdata, int face, int bufSiz
 rm_stack(false, 0UL, "unloadForceBuffer", &____must_manage_unloadForceBuffer, ____alias_loc_id_29, ____chimes_did_disable13); }
 # 608 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 609 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void destroyForceExchange_npm(void* vparms);
 void destroyForceExchange_quick(void* vparms); void destroyForceExchange(void* vparms);
 void destroyForceExchange_resumable(void* vparms)
 # 610 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3066,6 +3077,7 @@ void destroyForceExchange_resumable(void* vparms)
 rm_stack(false, 0UL, "destroyForceExchange", &____must_manage_destroyForceExchange, ____alias_loc_id_30, ____chimes_did_disable14); }
 # 628 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 628 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+void sortAtomsInCell_npm(Atoms* atoms, LinkCell* boxes, int iBox);
 void sortAtomsInCell_quick(Atoms* atoms, LinkCell* boxes, int iBox); void sortAtomsInCell(Atoms* atoms, LinkCell* boxes, int iBox);
 void sortAtomsInCell_resumable(Atoms* atoms, LinkCell* boxes, int iBox)
 # 629 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3136,6 +3148,7 @@ rm_stack(false, 0UL, "sortAtomsInCell", &____must_manage_sortAtomsInCell, ____al
 # 665 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 666 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 667 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+int sortAtomsById_npm(const void* a, const void* b);
 int sortAtomsById_quick(const void* a, const void* b); int sortAtomsById(const void* a, const void* b);
 int sortAtomsById_resumable(const void* a, const void* b)
 # 668 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -4032,8 +4045,785 @@ int sortAtomsById(const void* a, const void* b) { return (____chimes_replaying ?
 
 
 
+HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes)
+# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   HaloExchange* hh = initHaloExchange_npm(domain);
+# 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int size0 = (boxes->gridSize[1]+2)*(boxes->gridSize[2]+2);
+# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int size1 = (boxes->gridSize[0]+2)*(boxes->gridSize[2]+2);
+# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int size2 = (boxes->gridSize[0]+2)*(boxes->gridSize[1]+2);
+# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int maxSize = ((size0) > (size1) ? (size0) : (size1));
+# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   maxSize = ((size1) > (size2) ? (size1) : (size2));
+# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->bufCapacity = maxSize*2*64*sizeof(AtomMsg);
+# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->loadBuffer = loadAtomsBuffer;
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->unloadBuffer = unloadAtomsBuffer;
+# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->destroy = destroyAtomsExchange;
+# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomExchangeParms* parms = (AtomExchangeParms*)malloc_wrapper(sizeof(AtomExchangeParms), 18379826249005486931UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0);
+# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[0] = 2*(boxes->gridSize[1]+2)*(boxes->gridSize[2]+2);
+# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[2] = 2*(boxes->gridSize[0]+2)*(boxes->gridSize[2]+2);
+# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[4] = 2*(boxes->gridSize[0]+2)*(boxes->gridSize[1]+2);
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[1] = parms->nCells[0];
+# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[3] = parms->nCells[2];
+# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[5] = parms->nCells[4];
+# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii = 0;ii < 6; ++ii) { parms->cellList[ii] = mkAtomCellList_npm(boxes, ii, parms->nCells[ii]); };
+# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=0; ii<6; ++ii)
+# 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      parms->pbcFactor[ii] = (real_t*)malloc_wrapper(3*sizeof(real_t), 18379826249005484565UL, 0, 0);
+# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int jj = 0;jj < 3; ++jj) { parms->pbcFactor[ii][jj] = 0.; };
+# 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* procCoord = domain->procCoord;
+# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* procGrid = domain->procGrid;
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.; };
+# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS] - 1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.; };
+# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.; };
+# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS] - 1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.; };
+# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.; };
+# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS] - 1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.; };
+# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->parms = parms;
+# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return hh;
+# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+HaloExchange* initForceHaloExchange_npm(Domain* domain, LinkCell* boxes)
+# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   HaloExchange* hh = initHaloExchange_npm(domain);
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->loadBuffer = loadForceBuffer;
+# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->unloadBuffer = unloadForceBuffer;
+# 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->destroy = destroyForceExchange;
+# 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int size0 = (boxes->gridSize[1])*(boxes->gridSize[2]);
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int size1 = (boxes->gridSize[0]+2)*(boxes->gridSize[2]);
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int size2 = (boxes->gridSize[0]+2)*(boxes->gridSize[1]+2);
+# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int maxSize = ((size0) > (size1) ? (size0) : (size1));
+# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   maxSize = ((size1) > (size2) ? (size1) : (size2));
+# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->bufCapacity = (maxSize)*64*sizeof(ForceMsg);
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceExchangeParms* parms = (ForceExchangeParms*)malloc_wrapper(sizeof(ForceExchangeParms), 18379826249005486934UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0);
+# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[0] = (boxes->gridSize[1] )*(boxes->gridSize[2] );
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[2] = (boxes->gridSize[0]+2)*(boxes->gridSize[2] );
+# 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[4] = (boxes->gridSize[0]+2)*(boxes->gridSize[1]+2);
+# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[1] = parms->nCells[0];
+# 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[3] = parms->nCells[2];
+# 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   parms->nCells[5] = parms->nCells[4];
+# 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 236 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=0; ii<6; ++ii)
+# 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      parms->sendCells[ii] = mkForceSendCellList_npm(boxes, ii, parms->nCells[ii]);
+# 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      parms->recvCells[ii] = mkForceRecvCellList_npm(boxes, ii, parms->nCells[ii]);
+# 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->parms = parms;
+# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return hh;
+# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void destroyHaloExchange_npm(HaloExchange** haloExchange)
+# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   free_wrapper((*haloExchange)->parms, 18379826249005486348UL);
+# 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   free_wrapper(*haloExchange, 18379826249005486346UL);
+# 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   *haloExchange = __null;
+# 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void haloExchange_npm(HaloExchange* haloExchangeData, void* data)
+# 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 255 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int iAxis = 0;iAxis < 3; ++iAxis) { exchangeData_npm(haloExchangeData, data, iAxis); };
+# 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+HaloExchange* initHaloExchange_npm(Domain* domain)
+# 261 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 262 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   HaloExchange* hh = (HaloExchange*)malloc_wrapper(sizeof(HaloExchange), 18379826249005484727UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms));
+# 263 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 264 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 265 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->nbrRank[0] = processorNum(domain, -1, 0, 0);
+# 266 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->nbrRank[1] = processorNum(domain, +1, 0, 0);
+# 267 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->nbrRank[2] = processorNum(domain, 0, -1, 0);
+# 268 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->nbrRank[3] = processorNum(domain, 0, +1, 0);
+# 269 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->nbrRank[4] = processorNum(domain, 0, 0, -1);
+# 270 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->nbrRank[5] = processorNum(domain, 0, 0, +1);
+# 271 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   hh->bufCapacity = 0;
+# 272 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 273 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return hh;
+# 274 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void exchangeData_npm(HaloExchange* haloExchange, void* data, int iAxis)
+# 285 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 286 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int faceM = 2*iAxis;
+# 287 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int faceP = faceM+1;
+# 288 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 289 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   char* sendBufM = (char*)malloc_wrapper(haloExchange->bufCapacity, 18379826249005486486UL, 0, 0);
+# 290 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   char* sendBufP = (char*)malloc_wrapper(haloExchange->bufCapacity, 18379826249005486496UL, 0, 0);
+# 291 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   char* recvBufM = (char*)malloc_wrapper(haloExchange->bufCapacity, 18379826249005486499UL, 0, 0);
+# 292 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   char* recvBufP = (char*)malloc_wrapper(haloExchange->bufCapacity, 18379826249005486489UL, 0, 0);
+# 293 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 294 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nSendM = haloExchange->loadBuffer(haloExchange->parms, data, faceM, sendBufM);
+# 295 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nSendP = haloExchange->loadBuffer(haloExchange->parms, data, faceP, sendBufP);
+# 296 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 297 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nbrRankM = haloExchange->nbrRank[faceM];
+# 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nbrRankP = haloExchange->nbrRank[faceP];
+# 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nRecvM, nRecvP;
+# 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   do { profileStart(commHaloTimer); } while(0);
+# 303 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   nRecvP = sendReceiveParallel(sendBufM, nSendM, nbrRankM, recvBufP, haloExchange->bufCapacity, nbrRankP);
+# 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   nRecvM = sendReceiveParallel(sendBufP, nSendP, nbrRankP, recvBufM, haloExchange->bufCapacity, nbrRankM);
+# 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   do { profileStop(commHaloTimer); } while(0);
+# 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   haloExchange->unloadBuffer(haloExchange->parms, data, faceM, nRecvM, recvBufM);
+# 308 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   haloExchange->unloadBuffer(haloExchange->parms, data, faceP, nRecvP, recvBufP);
+# 309 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   free_wrapper(recvBufP, 18379826249005486489UL);
+# 310 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   free_wrapper(recvBufM, 18379826249005486499UL);
+# 311 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   free_wrapper(sendBufP, 18379826249005486496UL);
+# 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   free_wrapper(sendBufM, 18379826249005486486UL);
+# 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+int* mkAtomCellList_npm(LinkCell* boxes, int iFace, const int nCells)
+# 335 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 336 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* list = (int*)malloc_wrapper(nCells*sizeof(int), 18379826249005485420UL, 0, 0);
+# 337 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int xBegin = -1;
+# 338 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int xEnd = boxes->gridSize[0]+1;
+# 339 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int yBegin = -1;
+# 340 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int yEnd = boxes->gridSize[1]+1;
+# 341 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int zBegin = -1;
+# 342 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int zEnd = boxes->gridSize[2]+1;
+# 343 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 344 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (iFace == 0) {xEnd = xBegin + 2; };
+# 345 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (iFace == 1) {xBegin = xEnd - 2; };
+# 346 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (iFace == 2) {yEnd = yBegin + 2; };
+# 347 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (iFace == 3) {yBegin = yEnd - 2; };
+# 348 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (iFace == 4) {zEnd = zBegin + 2; };
+# 349 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (iFace == 5) {zBegin = zEnd - 2; };
+# 350 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 351 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int count = 0;
+# 352 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ix=xBegin; ix<xEnd; ++ix) {
+# 353 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int iy=yBegin; iy<yEnd; ++iy) {
+# 354 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         for (int iz=zBegin; iz<zEnd; ++iz) {
+# 355 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+            list[count++] = getBoxFromTuple(boxes, ix, iy, iz);
+# 356 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         }
+# 357 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      }
+# 358 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 359 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 359, "count == nCells") : (void)0);
+# 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return list;
+# 361 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+int loadAtomsBuffer_npm(void* vparms, void* data, int face, char* charBuf)
+# 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 372 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomExchangeParms* parms = (AtomExchangeParms*) vparms;
+# 373 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   SimFlat* s = (SimFlat*) data;
+# 374 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomMsg* buf = (AtomMsg*) charBuf;
+# 375 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 376 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   real_t* pbcFactor = parms->pbcFactor[face];
+# 377 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   real3 shift;
+# 378 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   shift[0] = pbcFactor[0] * s->domain->globalExtent[0];
+# 379 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   shift[1] = pbcFactor[1] * s->domain->globalExtent[1];
+# 380 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   shift[2] = pbcFactor[2] * s->domain->globalExtent[2];
+# 381 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 382 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nCells = parms->nCells[face];
+# 383 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* cellList = parms->cellList[face];
+# 384 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nBuf = 0;
+# 385 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int iCell=0; iCell<nCells; ++iCell)
+# 386 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 387 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int iBox = cellList[iCell];
+# 388 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int iOff = iBox*64;
+# 389 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int ii=iOff; ii<iOff+s->boxes->nAtoms[iBox]; ++ii)
+# 390 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      {
+# 391 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].gid = s->atoms->gid[ii];
+# 392 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].type = s->atoms->iSpecies[ii];
+# 393 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].rx = s->atoms->r[ii][0] + shift[0];
+# 394 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].ry = s->atoms->r[ii][1] + shift[1];
+# 395 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].rz = s->atoms->r[ii][2] + shift[2];
+# 396 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].px = s->atoms->p[ii][0];
+# 397 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].py = s->atoms->p[ii][1];
+# 398 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].pz = s->atoms->p[ii][2];
+# 399 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         ++nBuf;
+# 400 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      }
+# 401 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 402 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return nBuf*sizeof(AtomMsg);
+# 403 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void unloadAtomsBuffer_npm(void* vparms, void* data, int face, int bufSize, char* charBuf)
+# 416 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomExchangeParms* parms = (AtomExchangeParms*) vparms;
+# 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   SimFlat* s = (SimFlat*) data;
+# 419 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomMsg* buf = (AtomMsg*) charBuf;
+# 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nBuf = bufSize / sizeof(AtomMsg);
+# 421 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(bufSize % sizeof(AtomMsg) == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 421, "bufSize % sizeof(AtomMsg) == 0") : (void)0);
+# 422 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 423 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=0; ii<nBuf; ++ii)
+# 424 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 425 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int gid = buf[ii].gid;
+# 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int type = buf[ii].type;
+# 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      real_t rx = buf[ii].rx;
+# 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      real_t ry = buf[ii].ry;
+# 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      real_t rz = buf[ii].rz;
+# 430 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      real_t px = buf[ii].px;
+# 431 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      real_t py = buf[ii].py;
+# 432 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      real_t pz = buf[ii].pz;
+# 433 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      putAtomInBox(s->boxes, s->atoms, gid, type, rx, ry, rz, px, py, pz);
+# 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void destroyAtomsExchange_npm(void* vparms)
+# 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 439 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomExchangeParms* parms = (AtomExchangeParms*) vparms;
+# 440 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 441 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=0; ii<6; ++ii)
+# 442 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 443 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      free_wrapper(parms->pbcFactor[ii], 18379826249005485240UL);
+# 444 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      free_wrapper(parms->cellList[ii], 18379826249005485240UL);
+# 445 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 446 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+int* mkForceSendCellList_npm(LinkCell* boxes, int face, int nCells)
+# 456 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 457 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* list = (int*)malloc_wrapper(nCells*sizeof(int), 18379826249005486140UL, 0, 0);
+# 458 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int xBegin, xEnd, yBegin, yEnd, zBegin, zEnd;
+# 459 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 460 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nx = boxes->gridSize[0];
+# 461 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int ny = boxes->gridSize[1];
+# 462 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nz = boxes->gridSize[2];
+# 463 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   switch(face)
+# 464 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 465 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 0:
+# 466 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=0; xEnd=1; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 467 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 468 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 1:
+# 469 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=nx-1; xEnd=nx; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 470 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 471 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 2:
+# 472 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=0; yEnd=1; zBegin=0; zEnd=nz;
+# 473 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 474 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 3:
+# 475 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=ny-1; yEnd=ny; zBegin=0; zEnd=nz;
+# 476 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 477 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 4:
+# 478 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=0; zEnd=1;
+# 479 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 480 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 5:
+# 481 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=nz-1; zEnd=nz;
+# 482 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 483 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     default:
+# 484 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      (__builtin_expect(!(1==0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 484, "1==0") : (void)0);
+# 485 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 486 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 487 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int count = 0;
+# 488 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ix=xBegin; ix<xEnd; ++ix) {
+# 489 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int iy=yBegin; iy<yEnd; ++iy) {
+# 490 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         for (int iz=zBegin; iz<zEnd; ++iz) {
+# 491 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+            list[count++] = getBoxFromTuple(boxes, ix, iy, iz);
+# 492 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         }
+# 493 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      }
+# 494 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 495 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 496 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 496, "count == nCells") : (void)0);
+# 497 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return list;
+# 498 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+int* mkForceRecvCellList_npm(LinkCell* boxes, int face, int nCells)
+# 508 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 509 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* list = (int*)malloc_wrapper(nCells*sizeof(int), 18379826249005486337UL, 0, 0);
+# 510 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int xBegin, xEnd, yBegin, yEnd, zBegin, zEnd;
+# 511 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 512 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nx = boxes->gridSize[0];
+# 513 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int ny = boxes->gridSize[1];
+# 514 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nz = boxes->gridSize[2];
+# 515 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   switch(face)
+# 516 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 517 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 0:
+# 518 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=0; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 519 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 520 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 1:
+# 521 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=nx; xEnd=nx+1; yBegin=0; yEnd=ny; zBegin=0; zEnd=nz;
+# 522 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 523 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 2:
+# 524 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=0; zBegin=0; zEnd=nz;
+# 525 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 526 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 3:
+# 527 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=ny; yEnd=ny+1; zBegin=0; zEnd=nz;
+# 528 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 529 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 4:
+# 530 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=-1; zEnd=0;
+# 531 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 532 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     case 5:
+# 533 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      xBegin=-1; xEnd=nx+1; yBegin=-1; yEnd=ny+1; zBegin=nz; zEnd=nz+1;
+# 534 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      break;
+# 535 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+     default:
+# 536 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      (__builtin_expect(!(1==0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 536, "1==0") : (void)0);
+# 537 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 538 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 539 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int count = 0;
+# 540 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ix=xBegin; ix<xEnd; ++ix) {
+# 541 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int iy=yBegin; iy<yEnd; ++iy) {
+# 542 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         for (int iz=zBegin; iz<zEnd; ++iz) {
+# 543 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+            list[count++] = getBoxFromTuple(boxes, ix, iy, iz);
+# 544 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         }
+# 545 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      }
+# 546 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 547 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 548 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(count == nCells), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 548, "count == nCells") : (void)0);
+# 549 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return list;
+# 550 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+int loadForceBuffer_npm(void* vparms, void* vdata, int face, char* charBuf)
+# 559 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 560 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceExchangeParms* parms = (ForceExchangeParms*) vparms;
+# 561 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceExchangeData* data = (ForceExchangeData*) vdata;
+# 562 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceMsg* buf = (ForceMsg*) charBuf;
+# 563 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 564 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nCells = parms->nCells[face];
+# 565 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* cellList = parms->sendCells[face];
+# 566 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nBuf = 0;
+# 567 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int iCell=0; iCell<nCells; ++iCell)
+# 568 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 569 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int iBox = cellList[iCell];
+# 570 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int iOff = iBox*64;
+# 571 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int ii=iOff; ii<iOff+data->boxes->nAtoms[iBox]; ++ii)
+# 572 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      {
+# 573 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         buf[nBuf].dfEmbed = data->dfEmbed[ii];
+# 574 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         ++nBuf;
+# 575 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      }
+# 576 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 577 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return nBuf*sizeof(ForceMsg);
+# 578 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void unloadForceBuffer_npm(void* vparms, void* vdata, int face, int bufSize, char* charBuf)
+# 587 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 588 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceExchangeParms* parms = (ForceExchangeParms*) vparms;
+# 589 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceExchangeData* data = (ForceExchangeData*) vdata;
+# 590 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceMsg* buf = (ForceMsg*) charBuf;
+# 591 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(bufSize % sizeof(ForceMsg) == 0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 591, "bufSize % sizeof(ForceMsg) == 0") : (void)0);
+# 592 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 593 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nCells = parms->nCells[face];
+# 594 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int* cellList = parms->recvCells[face];
+# 595 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int iBuf = 0;
+# 596 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int iCell=0; iCell<nCells; ++iCell)
+# 597 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 598 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int iBox = cellList[iCell];
+# 599 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      int iOff = iBox*64;
+# 600 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      for (int ii=iOff; ii<iOff+data->boxes->nAtoms[iBox]; ++ii)
+# 601 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      {
+# 602 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         data->dfEmbed[ii] = buf[iBuf].dfEmbed;
+# 603 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+         ++iBuf;
+# 604 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      }
+# 605 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 606 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(iBuf == bufSize/ sizeof(ForceMsg)), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 606, "iBuf == bufSize/ sizeof(ForceMsg)") : (void)0);
+# 607 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void destroyForceExchange_npm(void* vparms)
+# 610 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 611 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   ForceExchangeParms* parms = (ForceExchangeParms*) vparms;
+# 612 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 613 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=0; ii<6; ++ii)
+# 614 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 615 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      free_wrapper(parms->sendCells[ii], 18379826249005485930UL);
+# 616 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      free_wrapper(parms->recvCells[ii], 18379826249005485930UL);
+# 617 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 618 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+void sortAtomsInCell_npm(Atoms* atoms, LinkCell* boxes, int iBox)
+# 629 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 630 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int nAtoms = boxes->nAtoms[iBox];
+# 631 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 632 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   AtomMsg tmp[nAtoms];
+# 633 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 634 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int begin = iBox*64;
+# 635 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int end = begin + nAtoms;
+# 636 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=begin, iTmp=0; ii<end; ++ii, ++iTmp)
+# 637 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 638 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].gid = atoms->gid[ii];
+# 639 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].type = atoms->iSpecies[ii];
+# 640 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].rx = atoms->r[ii][0];
+# 641 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].ry = atoms->r[ii][1];
+# 642 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].rz = atoms->r[ii][2];
+# 643 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].px = atoms->p[ii][0];
+# 644 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].py = atoms->p[ii][1];
+# 645 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      tmp[iTmp].pz = atoms->p[ii][2];
+# 646 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 647 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   qsort(&tmp, nAtoms, sizeof(AtomMsg), sortAtomsById);
+# 648 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   for (int ii=begin, iTmp=0; ii<end; ++ii, ++iTmp)
+# 649 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   {
+# 650 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->gid[ii] = tmp[iTmp].gid;
+# 651 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->iSpecies[ii] = tmp[iTmp].type;
+# 652 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->r[ii][0] = tmp[iTmp].rx;
+# 653 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->r[ii][1] = tmp[iTmp].ry;
+# 654 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->r[ii][2] = tmp[iTmp].rz;
+# 655 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->p[ii][0] = tmp[iTmp].px;
+# 656 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->p[ii][1] = tmp[iTmp].py;
+# 657 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+      atoms->p[ii][2] = tmp[iTmp].pz;
+# 658 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   }
+# 659 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 660 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+int sortAtomsById_npm(const void* a, const void* b)
+# 668 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+{
+# 669 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int aId = ((AtomMsg*) a)->gid;
+# 670 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   int bId = ((AtomMsg*) b)->gid;
+# 671 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   (__builtin_expect(!(aId != bId), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 671, "aId != bId") : (void)0);
+# 672 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+# 673 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   if (aId < bId) {return -1;; };
+# 675 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+   return 1;
+# 676 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(18379826249005484375UL, 85, 17, 85, 21, 17, 18379826249005484375UL + 882UL, 18379826249005484375UL + 865UL, 18379826249005484375UL + 1269UL, 18379826249005484375UL + 1309UL, 18379826249005484375UL + 887UL, 18379826249005484375UL + 1045UL, 18379826249005484375UL + 2014UL, 18379826249005484375UL + 2111UL, 18379826249005484375UL + 2465UL, 18379826249005484375UL + 2507UL, 18379826249005484375UL + 884UL, 18379826249005484375UL + 1047UL, 18379826249005484375UL + 1262UL, 18379826249005484375UL + 1381UL, 18379826249005484375UL + 1261UL, 18379826249005484375UL + 1380UL, 18379826249005484375UL + 1536UL, 18379826249005484375UL + 1572UL, 18379826249005484375UL + 1267UL, 18379826249005484375UL + 1383UL, 18379826249005484375UL + 1266UL, 18379826249005484375UL + 1381UL, 18379826249005484375UL + 1265UL, 18379826249005484375UL + 1380UL, 18379826249005484375UL + 1052UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 404UL, 18379826249005484375UL + 439UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 2556UL, 18379826249005484375UL + 397UL, 18379826249005484375UL + 685UL, 18379826249005484375UL + 398UL, 18379826249005484375UL + 686UL, 18379826249005484375UL + 2169UL, 18379826249005484375UL + 2457UL, 18379826249005484375UL + 1984UL, 18379826249005484375UL + 2007UL, 18379826249005484375UL + 1050UL, 18379826249005484375UL + 1259UL, 18379826249005484375UL + 1UL, 18379826249005484375UL + 343UL, 18379826249005484375UL + 690UL, 18379826249005484375UL + 841UL, 18379826249005484375UL + 1985UL, 18379826249005484375UL + 2008UL, 18379826249005484375UL + 696UL, 18379826249005484375UL + 844UL, 18379826249005484375UL + 1573UL, 18379826249005484375UL + 1767UL, 18379826249005484375UL + 694UL, 18379826249005484375UL + 840UL, 18379826249005484375UL + 695UL, 18379826249005484375UL + 841UL, 18379826249005484375UL + 1967UL, 18379826249005484375UL + 1982UL, 18379826249005484375UL + 2168UL, 18379826249005484375UL + 2456UL, 18379826249005484375UL + 2009UL, 18379826249005484375UL + 2115UL, 18379826249005484375UL + 407UL, 18379826249005484375UL + 439UL, 18379826249005484375UL + 3UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 347UL, 18379826249005484375UL + 396UL, 18379826249005484375UL + 403UL, 18379826249005484375UL + 688UL, 18379826249005484375UL + 402UL, 18379826249005484375UL + 686UL, 18379826249005484375UL + 401UL, 18379826249005484375UL + 685UL, 18379826249005484375UL + 400UL, 18379826249005484375UL + 688UL, 18379826249005484375UL + 2015UL, 18379826249005484375UL + 2121UL, 18379826249005484375UL + 8UL, 18379826249005484375UL + 2556UL, 18379826249005484375UL + 2017UL, 18379826249005484375UL + 2114UL, 18379826249005484375UL + 1437UL, 18379826249005484375UL + 1448UL, 18379826249005484375UL + 348UL, 18379826249005484375UL + 352UL, 18379826249005484375UL + 2010UL, 18379826249005484375UL + 2140UL, 18379826249005484375UL + 1391UL, 18379826249005484375UL + 1534UL, 18379826249005484375UL + 1390UL, 18379826249005484375UL + 1531UL, 18379826249005484375UL + 2464UL, 18379826249005484375UL + 2506UL, 18379826249005484375UL + 1388UL, 18379826249005484375UL + 1534UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 2559UL, 18379826249005484375UL + 2115UL, 18379826249005484375UL + 2136UL, 18379826249005484375UL + 693UL, 18379826249005484375UL + 844UL, 18379826249005484375UL + 1353UL, 18379826249005484375UL + 1343UL, 18379826249005484375UL + 2172UL, 18379826249005484375UL + 2196UL, 18379826249005484375UL + 1982UL, 18379826249005484375UL + 1971UL, 18379826249005484375UL + 447UL, 18379826249005484375UL + 538UL, 18379826249005484375UL + 845UL, 18379826249005484375UL + 882UL, 18379826249005484375UL + 1384UL, 18379826249005484375UL + 1437UL, 18379826249005484375UL + 1572UL, 18379826249005484375UL + 1555UL, 18379826249005484375UL + 1498UL, 18379826249005484375UL + 1482UL, 18379826249005484375UL + 2UL, 18379826249005484375UL + 104UL, 18379826249005484375UL + 1264UL, 18379826249005484375UL + 1383UL, 18379826249005484375UL + 1770UL, 18379826249005484375UL + 1964UL, 18379826249005484375UL + 846UL, 18379826249005484375UL + 882UL, 18379826249005484375UL + 13UL, 18379826249005484375UL + 343UL, 18379826249005484375UL + 12UL, 18379826249005484375UL + 343UL, 18379826249005484375UL + 1773UL, 18379826249005484375UL + 1962UL, 18379826249005484375UL + 841UL, 18379826249005484375UL + 821UL, 18379826249005484375UL + 2016UL, 18379826249005484375UL + 2124UL, 18379826249005484375UL + 2456UL, 18379826249005484375UL + 2223UL, 18379826249005484375UL + 1393UL, 18379826249005484375UL + 1448UL, 18379826249005484375UL + 1057UL, 18379826249005484375UL + 2559UL, 18379826249005484375UL + 2556UL, 18379826249005484375UL + 190UL, 18379826249005484375UL + 1971UL, 18379826249005484375UL + 1973UL, 18379826249005484375UL + 1576UL, 18379826249005484375UL + 1765UL, 18379826249005484375UL + 1051UL, 18379826249005484375UL + 1145UL, 18379826249005484375UL + 1535UL, 18379826249005484375UL + 1572UL, 18379826249005484375UL + 2457UL, 18379826249005484375UL + 2190UL, 18379826249005484375UL + 689UL, 18379826249005484375UL + 840UL, 18379826249005484375UL + 1389UL, 18379826249005484375UL + 1437UL, 18379826249005484375UL + 1531UL, 18379826249005484375UL + 1498UL, 18379826249005484375UL + 2559UL, 18379826249005484375UL + 1225UL, 18379826249005484375UL + 685UL, 18379826249005484375UL + 439UL, 18379826249005484375UL + 1385UL, 18379826249005484375UL + 1531UL, 18379826249005484375UL + 686UL, 18379826249005484375UL + 447UL, 18379826249005484375UL + 1380UL, 18379826249005484375UL + 1309UL, 18379826249005484375UL + 1381UL, 18379826249005484375UL + 1353UL, "AtomExchangeParmsSt", 3, "[ 6 x int ]", (int)__builtin_offsetof (struct AtomExchangeParmsSt, nCells), "[ 6 x int* ]", (int)__builtin_offsetof (struct AtomExchangeParmsSt, cellList), "[ 6 x double* ]", (int)__builtin_offsetof (struct AtomExchangeParmsSt, pbcFactor), "AtomMsgSt", 8, "int", (int)__builtin_offsetof (struct AtomMsgSt, gid), "int", (int)__builtin_offsetof (struct AtomMsgSt, type), "double", (int)__builtin_offsetof (struct AtomMsgSt, rx), "double", (int)__builtin_offsetof (struct AtomMsgSt, ry), "double", (int)__builtin_offsetof (struct AtomMsgSt, rz), "double", (int)__builtin_offsetof (struct AtomMsgSt, px), "double", (int)__builtin_offsetof (struct AtomMsgSt, py), "double", (int)__builtin_offsetof (struct AtomMsgSt, pz), "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "ForceExchangeDataSt", 2, "double*", (int)__builtin_offsetof (struct ForceExchangeDataSt, dfEmbed), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct ForceExchangeDataSt, boxes), "ForceExchangeParmsSt", 3, "[ 6 x int ]", (int)__builtin_offsetof (struct ForceExchangeParmsSt, nCells), "[ 6 x int* ]", (int)__builtin_offsetof (struct ForceExchangeParmsSt, sendCells), "[ 6 x int* ]", (int)__builtin_offsetof (struct ForceExchangeParmsSt, recvCells), "ForceMsgSt", 1, "double", (int)__builtin_offsetof (struct ForceMsgSt, dfEmbed), "HaloAxisOrder", 0, "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "destroyHaloExchange", 0, "initForceHaloExchange", 3, "initHaloExchange", "mkForceRecvCellList", "mkForceSendCellList", "mkForceSendCellList", 1, "getBoxFromTuple", "sortAtomsById", 0, "loadForceBuffer", 0, "unloadForceBuffer", 0, "initHaloExchange", 1, "processorNum", "mkForceRecvCellList", 1, "getBoxFromTuple", "destroyForceExchange", 0, "unloadAtomsBuffer", 1, "putAtomInBox", "loadAtomsBuffer", 0, "mkAtomCellList", 1, "getBoxFromTuple", "destroyAtomsExchange", 0, "sortAtomsInCell", 0, "haloExchange", 1, "exchangeData", "initAtomHaloExchange", 2, "initHaloExchange", "mkAtomCellList", "exchangeData", 3, "profileStart", "profileStop", "sendReceiveParallel", "initAtomHaloExchange|domain|0", 2, "mkAtomCellList", "initHaloExchange", "initAtomHaloExchange|boxes|0", 2, "mkAtomCellList", "initHaloExchange", "initAtomHaloExchange|hh|0", 1, "mkAtomCellList", "initAtomHaloExchange|size0|0", 1, "mkAtomCellList", "initAtomHaloExchange|size1|0", 1, "mkAtomCellList", "initAtomHaloExchange|size2|0", 1, "mkAtomCellList", "initAtomHaloExchange|maxSize|0", 1, "mkAtomCellList", "initAtomHaloExchange|parms|0", 1, "mkAtomCellList", "initAtomHaloExchange|ii|0", 1, "mkAtomCellList", "initHaloExchange|domain|0", 1, "processorNum", "initHaloExchange|hh|0", 1, "processorNum", "unloadAtomsBuffer|s|0", 1, "putAtomInBox", "unloadAtomsBuffer|buf|0", 1, "putAtomInBox", "unloadAtomsBuffer|nBuf|0", 1, "putAtomInBox", "unloadAtomsBuffer|ii|0", 1, "putAtomInBox", "unloadAtomsBuffer|gid|0", 1, "putAtomInBox", "unloadAtomsBuffer|type|0", 1, "putAtomInBox", "unloadAtomsBuffer|rx|0", 1, "putAtomInBox", "unloadAtomsBuffer|ry|0", 1, "putAtomInBox", "unloadAtomsBuffer|rz|0", 1, "putAtomInBox", "unloadAtomsBuffer|px|0", 1, "putAtomInBox", "unloadAtomsBuffer|py|0", 1, "putAtomInBox", "unloadAtomsBuffer|pz|0", 1, "putAtomInBox", "mkAtomCellList|boxes|0", 1, "getBoxFromTuple", "mkAtomCellList|nCells|0", 1, "getBoxFromTuple", "mkAtomCellList|list|0", 1, "getBoxFromTuple", "mkAtomCellList|xEnd|0", 1, "getBoxFromTuple", "mkAtomCellList|yBegin|0", 1, "getBoxFromTuple", "mkAtomCellList|yEnd|0", 1, "getBoxFromTuple", "mkAtomCellList|zBegin|0", 1, "getBoxFromTuple", "mkAtomCellList|zEnd|0", 1, "getBoxFromTuple", "mkAtomCellList|count|0", 1, "getBoxFromTuple", "mkAtomCellList|ix|0", 1, "getBoxFromTuple", "mkAtomCellList|iy|0", 1, "getBoxFromTuple", "mkAtomCellList|iz|0", 1, "getBoxFromTuple", "initForceHaloExchange|boxes|0", 3, "mkForceSendCellList", "mkForceRecvCellList", "initHaloExchange", "initForceHaloExchange|hh|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|size0|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|size1|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|size2|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|maxSize|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|parms|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|ii|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "mkForceSendCellList|boxes|0", 1, "getBoxFromTuple", "mkForceSendCellList|nCells|0", 1, "getBoxFromTuple", "mkForceSendCellList|list|0", 1, "getBoxFromTuple", "mkForceSendCellList|xEnd|0", 1, "getBoxFromTuple", "mkForceSendCellList|yBegin|0", 1, "getBoxFromTuple", "mkForceSendCellList|yEnd|0", 1, "getBoxFromTuple", "mkForceSendCellList|zBegin|0", 1, "getBoxFromTuple", "mkForceSendCellList|zEnd|0", 1, "getBoxFromTuple", "mkForceSendCellList|count|0", 1, "getBoxFromTuple", "mkForceSendCellList|ix|0", 1, "getBoxFromTuple", "mkForceSendCellList|iy|0", 1, "getBoxFromTuple", "mkForceSendCellList|iz|0", 1, "getBoxFromTuple", "mkForceRecvCellList|boxes|0", 1, "getBoxFromTuple", "mkForceRecvCellList|nCells|0", 1, "getBoxFromTuple", "mkForceRecvCellList|list|0", 1, "getBoxFromTuple", "mkForceRecvCellList|xEnd|0", 1, "getBoxFromTuple", "mkForceRecvCellList|yBegin|0", 1, "getBoxFromTuple", "mkForceRecvCellList|yEnd|0", 1, "getBoxFromTuple", "mkForceRecvCellList|zBegin|0", 1, "getBoxFromTuple", "mkForceRecvCellList|zEnd|0", 1, "getBoxFromTuple", "mkForceRecvCellList|count|0", 1, "getBoxFromTuple", "mkForceRecvCellList|ix|0", 1, "getBoxFromTuple", "mkForceRecvCellList|iy|0", 1, "getBoxFromTuple", "mkForceRecvCellList|iz|0", 1, "getBoxFromTuple", "haloExchange|haloExchangeData|0", 1, "exchangeData", "haloExchange|data|0", 1, "exchangeData", "haloExchange|iAxis|0", 1, "exchangeData", "exchangeData|haloExchange|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|data|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|faceM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|faceP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|sendBufM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|sendBufP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|recvBufM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|recvBufP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nSendM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nSendP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nbrRankM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nbrRankP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nRecvM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nRecvP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "sortAtomsInCell|tmp|0", 1, "sortAtomsInCell", &____alias_loc_id_0, (unsigned)2, 18379826249005484375UL + 1UL, 18379826249005484375UL + 2UL, &____alias_loc_id_1, (unsigned)9, 18379826249005484375UL + 3UL, 18379826249005484375UL + 4UL, 18379826249005484375UL + 5UL, 18379826249005484375UL + 6UL, 18379826249005484375UL + 7UL, 18379826249005484375UL + 8UL, 18379826249005484375UL + 9UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 2556UL, &____alias_loc_id_2, (unsigned)2, 18379826249005484375UL + 347UL, 18379826249005484375UL + 348UL, &____alias_loc_id_3, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_4, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_5, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_6, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_7, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_8, (unsigned)18, 18379826249005484375UL + 689UL, 18379826249005484375UL + 690UL, 18379826249005484375UL + 691UL, 18379826249005484375UL + 692UL, 18379826249005484375UL + 693UL, 18379826249005484375UL + 694UL, 18379826249005484375UL + 695UL, 18379826249005484375UL + 696UL, 18379826249005484375UL + 697UL, 18379826249005484375UL + 698UL, 18379826249005484375UL + 699UL, 18379826249005484375UL + 700UL, 18379826249005484375UL + 701UL, 18379826249005484375UL + 702UL, 18379826249005484375UL + 703UL, 18379826249005484375UL + 704UL, 18379826249005484375UL + 705UL, 18379826249005484375UL + 706UL, &____alias_loc_id_9, (unsigned)15, 18379826249005484375UL + 884UL, 18379826249005484375UL + 885UL, 18379826249005484375UL + 886UL, 18379826249005484375UL + 887UL, 18379826249005484375UL + 888UL, 18379826249005484375UL + 889UL, 18379826249005484375UL + 890UL, 18379826249005484375UL + 891UL, 18379826249005484375UL + 892UL, 18379826249005484375UL + 893UL, 18379826249005484375UL + 894UL, 18379826249005484375UL + 895UL, 18379826249005484375UL + 896UL, 18379826249005484375UL + 897UL, 18379826249005484375UL + 1045UL, &____alias_loc_id_10, (unsigned)2, 18379826249005484375UL + 1050UL, 18379826249005484375UL + 1051UL, &____alias_loc_id_11, (unsigned)9, 18379826249005484375UL + 1052UL, 18379826249005484375UL + 1053UL, 18379826249005484375UL + 1054UL, 18379826249005484375UL + 1055UL, 18379826249005484375UL + 1056UL, 18379826249005484375UL + 1057UL, 18379826249005484375UL + 1058UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 2559UL, &____alias_loc_id_12, (unsigned)1, 18379826249005484375UL + 2559UL, &____alias_loc_id_13, (unsigned)18, 18379826249005484375UL + 1573UL, 18379826249005484375UL + 1574UL, 18379826249005484375UL + 1575UL, 18379826249005484375UL + 1576UL, 18379826249005484375UL + 1577UL, 18379826249005484375UL + 1578UL, 18379826249005484375UL + 1579UL, 18379826249005484375UL + 1580UL, 18379826249005484375UL + 1581UL, 18379826249005484375UL + 1582UL, 18379826249005484375UL + 1583UL, 18379826249005484375UL + 1584UL, 18379826249005484375UL + 1585UL, 18379826249005484375UL + 1586UL, 18379826249005484375UL + 1587UL, 18379826249005484375UL + 1588UL, 18379826249005484375UL + 1589UL, 18379826249005484375UL + 1765UL, &____alias_loc_id_14, (unsigned)18, 18379826249005484375UL + 1770UL, 18379826249005484375UL + 1771UL, 18379826249005484375UL + 1772UL, 18379826249005484375UL + 1773UL, 18379826249005484375UL + 1774UL, 18379826249005484375UL + 1775UL, 18379826249005484375UL + 1776UL, 18379826249005484375UL + 1777UL, 18379826249005484375UL + 1778UL, 18379826249005484375UL + 1779UL, 18379826249005484375UL + 1780UL, 18379826249005484375UL + 1781UL, 18379826249005484375UL + 1782UL, 18379826249005484375UL + 1783UL, 18379826249005484375UL + 1784UL, 18379826249005484375UL + 1785UL, 18379826249005484375UL + 1786UL, 18379826249005484375UL + 1962UL, &____alias_loc_id_15, (unsigned)3, 18379826249005484375UL + 1984UL, 18379826249005484375UL + 1985UL, 18379826249005484375UL + 1986UL, &____alias_loc_id_16, (unsigned)9, 18379826249005484375UL + 2009UL, 18379826249005484375UL + 2010UL, 18379826249005484375UL + 2011UL, 18379826249005484375UL + 2012UL, 18379826249005484375UL + 2013UL, 18379826249005484375UL + 2014UL, 18379826249005484375UL + 2015UL, 18379826249005484375UL + 2016UL, 18379826249005484375UL + 2017UL, &____alias_loc_id_17, (unsigned)1, 18379826249005484375UL + 2018UL, &____alias_loc_id_18, (unsigned)3, 18379826249005484375UL + 2019UL, 18379826249005484375UL + 2020UL, 18379826249005484375UL + 2021UL, &____alias_loc_id_19, (unsigned)1, 18379826249005484375UL + 2023UL, &____alias_loc_id_20, (unsigned)1, 18379826249005484375UL + 2022UL, &____alias_loc_id_21, (unsigned)14, 18379826249005484375UL + 3UL, 18379826249005484375UL + 4UL, 18379826249005484375UL + 5UL, 18379826249005484375UL + 6UL, 18379826249005484375UL + 7UL, 18379826249005484375UL + 8UL, 18379826249005484375UL + 9UL, 18379826249005484375UL + 10UL, 18379826249005484375UL + 11UL, 18379826249005484375UL + 12UL, 18379826249005484375UL + 13UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 190UL, 18379826249005484375UL + 2556UL, &____alias_loc_id_22, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_23, (unsigned)17, 18379826249005484375UL + 397UL, 18379826249005484375UL + 398UL, 18379826249005484375UL + 399UL, 18379826249005484375UL + 400UL, 18379826249005484375UL + 401UL, 18379826249005484375UL + 402UL, 18379826249005484375UL + 403UL, 18379826249005484375UL + 404UL, 18379826249005484375UL + 405UL, 18379826249005484375UL + 406UL, 18379826249005484375UL + 407UL, 18379826249005484375UL + 408UL, 18379826249005484375UL + 409UL, 18379826249005484375UL + 410UL, 18379826249005484375UL + 411UL, 18379826249005484375UL + 412UL, 18379826249005484375UL + 688UL, &____alias_loc_id_24, (unsigned)10, 18379826249005484375UL + 689UL, 18379826249005484375UL + 690UL, 18379826249005484375UL + 691UL, 18379826249005484375UL + 692UL, 18379826249005484375UL + 693UL, 18379826249005484375UL + 694UL, 18379826249005484375UL + 695UL, 18379826249005484375UL + 696UL, 18379826249005484375UL + 697UL, 18379826249005484375UL + 698UL, &____alias_loc_id_25, (unsigned)3, 18379826249005484375UL + 845UL, 18379826249005484375UL + 846UL, 18379826249005484375UL + 847UL, &____alias_loc_id_26, (unsigned)15, 18379826249005484375UL + 884UL, 18379826249005484375UL + 885UL, 18379826249005484375UL + 886UL, 18379826249005484375UL + 887UL, 18379826249005484375UL + 888UL, 18379826249005484375UL + 889UL, 18379826249005484375UL + 890UL, 18379826249005484375UL + 891UL, 18379826249005484375UL + 892UL, 18379826249005484375UL + 893UL, 18379826249005484375UL + 894UL, 18379826249005484375UL + 895UL, 18379826249005484375UL + 896UL, 18379826249005484375UL + 897UL, 18379826249005484375UL + 1045UL, &____alias_loc_id_27, (unsigned)9, 18379826249005484375UL + 1052UL, 18379826249005484375UL + 1053UL, 18379826249005484375UL + 1054UL, 18379826249005484375UL + 1055UL, 18379826249005484375UL + 1056UL, 18379826249005484375UL + 1057UL, 18379826249005484375UL + 1058UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 2559UL, &____alias_loc_id_28, (unsigned)15, 18379826249005484375UL + 1261UL, 18379826249005484375UL + 1262UL, 18379826249005484375UL + 1263UL, 18379826249005484375UL + 1264UL, 18379826249005484375UL + 1265UL, 18379826249005484375UL + 1266UL, 18379826249005484375UL + 1267UL, 18379826249005484375UL + 1268UL, 18379826249005484375UL + 1269UL, 18379826249005484375UL + 1270UL, 18379826249005484375UL + 1271UL, 18379826249005484375UL + 1272UL, 18379826249005484375UL + 1273UL, 18379826249005484375UL + 1274UL, 18379826249005484375UL + 1383UL, &____alias_loc_id_29, (unsigned)16, 18379826249005484375UL + 1384UL, 18379826249005484375UL + 1385UL, 18379826249005484375UL + 1386UL, 18379826249005484375UL + 1387UL, 18379826249005484375UL + 1388UL, 18379826249005484375UL + 1389UL, 18379826249005484375UL + 1390UL, 18379826249005484375UL + 1391UL, 18379826249005484375UL + 1392UL, 18379826249005484375UL + 1393UL, 18379826249005484375UL + 1394UL, 18379826249005484375UL + 1395UL, 18379826249005484375UL + 1396UL, 18379826249005484375UL + 1397UL, 18379826249005484375UL + 1398UL, 18379826249005484375UL + 1498UL, &____alias_loc_id_30, (unsigned)3, 18379826249005484375UL + 1535UL, 18379826249005484375UL + 1536UL, 18379826249005484375UL + 1537UL, &____alias_loc_id_31, (unsigned)18, 18379826249005484375UL + 1573UL, 18379826249005484375UL + 1574UL, 18379826249005484375UL + 1575UL, 18379826249005484375UL + 1576UL, 18379826249005484375UL + 1577UL, 18379826249005484375UL + 1578UL, 18379826249005484375UL + 1579UL, 18379826249005484375UL + 1580UL, 18379826249005484375UL + 1581UL, 18379826249005484375UL + 1582UL, 18379826249005484375UL + 1583UL, 18379826249005484375UL + 1584UL, 18379826249005484375UL + 1585UL, 18379826249005484375UL + 1586UL, 18379826249005484375UL + 1587UL, 18379826249005484375UL + 1588UL, 18379826249005484375UL + 1589UL, 18379826249005484375UL + 1765UL, &____alias_loc_id_32, (unsigned)18, 18379826249005484375UL + 1770UL, 18379826249005484375UL + 1771UL, 18379826249005484375UL + 1772UL, 18379826249005484375UL + 1773UL, 18379826249005484375UL + 1774UL, 18379826249005484375UL + 1775UL, 18379826249005484375UL + 1776UL, 18379826249005484375UL + 1777UL, 18379826249005484375UL + 1778UL, 18379826249005484375UL + 1779UL, 18379826249005484375UL + 1780UL, 18379826249005484375UL + 1781UL, 18379826249005484375UL + 1782UL, 18379826249005484375UL + 1783UL, 18379826249005484375UL + 1784UL, 18379826249005484375UL + 1785UL, 18379826249005484375UL + 1786UL, 18379826249005484375UL + 1962UL, &____alias_loc_id_33, (unsigned)2, 18379826249005484375UL + 1967UL, 18379826249005484375UL + 1982UL, &____alias_loc_id_34, (unsigned)3, 18379826249005484375UL + 1984UL, 18379826249005484375UL + 1985UL, 18379826249005484375UL + 1986UL, &____alias_loc_id_35, (unsigned)13, 18379826249005484375UL + 2168UL, 18379826249005484375UL + 2169UL, 18379826249005484375UL + 2170UL, 18379826249005484375UL + 2171UL, 18379826249005484375UL + 2172UL, 18379826249005484375UL + 2173UL, 18379826249005484375UL + 2174UL, 18379826249005484375UL + 2175UL, 18379826249005484375UL + 2176UL, 18379826249005484375UL + 2177UL, 18379826249005484375UL + 2178UL, 18379826249005484375UL + 2198UL, 18379826249005484375UL + 2223UL, &____alias_loc_id_36, (unsigned)5, 18379826249005484375UL + 2463UL, 18379826249005484375UL + 2464UL, 18379826249005484375UL + 2465UL, 18379826249005484375UL + 2466UL, 18379826249005484375UL + 2467UL);
+    init_module(18379826249005484375UL, 85, 17, 85, 21, 17, 18379826249005484375UL + 882UL, 18379826249005484375UL + 865UL, 18379826249005484375UL + 1269UL, 18379826249005484375UL + 1309UL, 18379826249005484375UL + 887UL, 18379826249005484375UL + 1045UL, 18379826249005484375UL + 2014UL, 18379826249005484375UL + 2111UL, 18379826249005484375UL + 2465UL, 18379826249005484375UL + 2507UL, 18379826249005484375UL + 884UL, 18379826249005484375UL + 1047UL, 18379826249005484375UL + 1262UL, 18379826249005484375UL + 1381UL, 18379826249005484375UL + 1261UL, 18379826249005484375UL + 1380UL, 18379826249005484375UL + 1536UL, 18379826249005484375UL + 1572UL, 18379826249005484375UL + 1267UL, 18379826249005484375UL + 1383UL, 18379826249005484375UL + 1266UL, 18379826249005484375UL + 1381UL, 18379826249005484375UL + 1265UL, 18379826249005484375UL + 1380UL, 18379826249005484375UL + 1052UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 404UL, 18379826249005484375UL + 439UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 2556UL, 18379826249005484375UL + 397UL, 18379826249005484375UL + 685UL, 18379826249005484375UL + 398UL, 18379826249005484375UL + 686UL, 18379826249005484375UL + 2169UL, 18379826249005484375UL + 2457UL, 18379826249005484375UL + 1984UL, 18379826249005484375UL + 2007UL, 18379826249005484375UL + 1050UL, 18379826249005484375UL + 1259UL, 18379826249005484375UL + 1UL, 18379826249005484375UL + 343UL, 18379826249005484375UL + 690UL, 18379826249005484375UL + 841UL, 18379826249005484375UL + 1985UL, 18379826249005484375UL + 2008UL, 18379826249005484375UL + 696UL, 18379826249005484375UL + 844UL, 18379826249005484375UL + 1573UL, 18379826249005484375UL + 1767UL, 18379826249005484375UL + 694UL, 18379826249005484375UL + 840UL, 18379826249005484375UL + 695UL, 18379826249005484375UL + 841UL, 18379826249005484375UL + 1967UL, 18379826249005484375UL + 1982UL, 18379826249005484375UL + 2168UL, 18379826249005484375UL + 2456UL, 18379826249005484375UL + 2009UL, 18379826249005484375UL + 2115UL, 18379826249005484375UL + 407UL, 18379826249005484375UL + 439UL, 18379826249005484375UL + 3UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 347UL, 18379826249005484375UL + 396UL, 18379826249005484375UL + 403UL, 18379826249005484375UL + 688UL, 18379826249005484375UL + 402UL, 18379826249005484375UL + 686UL, 18379826249005484375UL + 401UL, 18379826249005484375UL + 685UL, 18379826249005484375UL + 400UL, 18379826249005484375UL + 688UL, 18379826249005484375UL + 2015UL, 18379826249005484375UL + 2121UL, 18379826249005484375UL + 8UL, 18379826249005484375UL + 2556UL, 18379826249005484375UL + 2017UL, 18379826249005484375UL + 2114UL, 18379826249005484375UL + 1437UL, 18379826249005484375UL + 1448UL, 18379826249005484375UL + 348UL, 18379826249005484375UL + 352UL, 18379826249005484375UL + 2010UL, 18379826249005484375UL + 2140UL, 18379826249005484375UL + 1391UL, 18379826249005484375UL + 1534UL, 18379826249005484375UL + 1390UL, 18379826249005484375UL + 1531UL, 18379826249005484375UL + 2464UL, 18379826249005484375UL + 2506UL, 18379826249005484375UL + 1388UL, 18379826249005484375UL + 1534UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 2559UL, 18379826249005484375UL + 2115UL, 18379826249005484375UL + 2136UL, 18379826249005484375UL + 693UL, 18379826249005484375UL + 844UL, 18379826249005484375UL + 1353UL, 18379826249005484375UL + 1343UL, 18379826249005484375UL + 2172UL, 18379826249005484375UL + 2196UL, 18379826249005484375UL + 1982UL, 18379826249005484375UL + 1971UL, 18379826249005484375UL + 447UL, 18379826249005484375UL + 538UL, 18379826249005484375UL + 845UL, 18379826249005484375UL + 882UL, 18379826249005484375UL + 1384UL, 18379826249005484375UL + 1437UL, 18379826249005484375UL + 1572UL, 18379826249005484375UL + 1555UL, 18379826249005484375UL + 1498UL, 18379826249005484375UL + 1482UL, 18379826249005484375UL + 2UL, 18379826249005484375UL + 104UL, 18379826249005484375UL + 1264UL, 18379826249005484375UL + 1383UL, 18379826249005484375UL + 1770UL, 18379826249005484375UL + 1964UL, 18379826249005484375UL + 846UL, 18379826249005484375UL + 882UL, 18379826249005484375UL + 13UL, 18379826249005484375UL + 343UL, 18379826249005484375UL + 12UL, 18379826249005484375UL + 343UL, 18379826249005484375UL + 1773UL, 18379826249005484375UL + 1962UL, 18379826249005484375UL + 841UL, 18379826249005484375UL + 821UL, 18379826249005484375UL + 2016UL, 18379826249005484375UL + 2124UL, 18379826249005484375UL + 2456UL, 18379826249005484375UL + 2223UL, 18379826249005484375UL + 1393UL, 18379826249005484375UL + 1448UL, 18379826249005484375UL + 1057UL, 18379826249005484375UL + 2559UL, 18379826249005484375UL + 2556UL, 18379826249005484375UL + 190UL, 18379826249005484375UL + 1971UL, 18379826249005484375UL + 1973UL, 18379826249005484375UL + 1576UL, 18379826249005484375UL + 1765UL, 18379826249005484375UL + 1051UL, 18379826249005484375UL + 1145UL, 18379826249005484375UL + 1535UL, 18379826249005484375UL + 1572UL, 18379826249005484375UL + 2457UL, 18379826249005484375UL + 2190UL, 18379826249005484375UL + 689UL, 18379826249005484375UL + 840UL, 18379826249005484375UL + 1389UL, 18379826249005484375UL + 1437UL, 18379826249005484375UL + 1531UL, 18379826249005484375UL + 1498UL, 18379826249005484375UL + 2559UL, 18379826249005484375UL + 1225UL, 18379826249005484375UL + 685UL, 18379826249005484375UL + 439UL, 18379826249005484375UL + 1385UL, 18379826249005484375UL + 1531UL, 18379826249005484375UL + 686UL, 18379826249005484375UL + 447UL, 18379826249005484375UL + 1380UL, 18379826249005484375UL + 1309UL, 18379826249005484375UL + 1381UL, 18379826249005484375UL + 1353UL, "AtomExchangeParmsSt", 3, "[ 6 x int ]", (int)__builtin_offsetof (struct AtomExchangeParmsSt, nCells), "[ 6 x int* ]", (int)__builtin_offsetof (struct AtomExchangeParmsSt, cellList), "[ 6 x double* ]", (int)__builtin_offsetof (struct AtomExchangeParmsSt, pbcFactor), "AtomMsgSt", 8, "int", (int)__builtin_offsetof (struct AtomMsgSt, gid), "int", (int)__builtin_offsetof (struct AtomMsgSt, type), "double", (int)__builtin_offsetof (struct AtomMsgSt, rx), "double", (int)__builtin_offsetof (struct AtomMsgSt, ry), "double", (int)__builtin_offsetof (struct AtomMsgSt, rz), "double", (int)__builtin_offsetof (struct AtomMsgSt, px), "double", (int)__builtin_offsetof (struct AtomMsgSt, py), "double", (int)__builtin_offsetof (struct AtomMsgSt, pz), "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "ForceExchangeDataSt", 2, "double*", (int)__builtin_offsetof (struct ForceExchangeDataSt, dfEmbed), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct ForceExchangeDataSt, boxes), "ForceExchangeParmsSt", 3, "[ 6 x int ]", (int)__builtin_offsetof (struct ForceExchangeParmsSt, nCells), "[ 6 x int* ]", (int)__builtin_offsetof (struct ForceExchangeParmsSt, sendCells), "[ 6 x int* ]", (int)__builtin_offsetof (struct ForceExchangeParmsSt, recvCells), "ForceMsgSt", 1, "double", (int)__builtin_offsetof (struct ForceMsgSt, dfEmbed), "HaloAxisOrder", 0, "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "destroyHaloExchange", 0, "initForceHaloExchange", 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList", "mkForceSendCellList", 1, "getBoxFromTuple", "sortAtomsById", 0, "loadForceBuffer", 0, "unloadForceBuffer", 0, "initHaloExchange", 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "mkForceRecvCellList", 1, "getBoxFromTuple", "destroyForceExchange", 0, "unloadAtomsBuffer", 1, "putAtomInBox", "loadAtomsBuffer", 0, "mkAtomCellList", 1, "getBoxFromTuple", "destroyAtomsExchange", 0, "sortAtomsInCell", 0, "haloExchange", 1, "exchangeData", "initAtomHaloExchange", 2, "initHaloExchange", "mkAtomCellList", "exchangeData", 4, "profileStart", "sendReceiveParallel", "sendReceiveParallel", "profileStop", "initAtomHaloExchange|domain|0", 2, "mkAtomCellList", "initHaloExchange", "initAtomHaloExchange|boxes|0", 2, "mkAtomCellList", "initHaloExchange", "initAtomHaloExchange|hh|0", 1, "mkAtomCellList", "initAtomHaloExchange|size0|0", 1, "mkAtomCellList", "initAtomHaloExchange|size1|0", 1, "mkAtomCellList", "initAtomHaloExchange|size2|0", 1, "mkAtomCellList", "initAtomHaloExchange|maxSize|0", 1, "mkAtomCellList", "initAtomHaloExchange|parms|0", 1, "mkAtomCellList", "initAtomHaloExchange|ii|0", 1, "mkAtomCellList", "initHaloExchange|domain|0", 1, "processorNum", "initHaloExchange|hh|0", 1, "processorNum", "unloadAtomsBuffer|s|0", 1, "putAtomInBox", "unloadAtomsBuffer|buf|0", 1, "putAtomInBox", "unloadAtomsBuffer|nBuf|0", 1, "putAtomInBox", "unloadAtomsBuffer|ii|0", 1, "putAtomInBox", "unloadAtomsBuffer|gid|0", 1, "putAtomInBox", "unloadAtomsBuffer|type|0", 1, "putAtomInBox", "unloadAtomsBuffer|rx|0", 1, "putAtomInBox", "unloadAtomsBuffer|ry|0", 1, "putAtomInBox", "unloadAtomsBuffer|rz|0", 1, "putAtomInBox", "unloadAtomsBuffer|px|0", 1, "putAtomInBox", "unloadAtomsBuffer|py|0", 1, "putAtomInBox", "unloadAtomsBuffer|pz|0", 1, "putAtomInBox", "mkAtomCellList|boxes|0", 1, "getBoxFromTuple", "mkAtomCellList|nCells|0", 1, "getBoxFromTuple", "mkAtomCellList|list|0", 1, "getBoxFromTuple", "mkAtomCellList|xEnd|0", 1, "getBoxFromTuple", "mkAtomCellList|yBegin|0", 1, "getBoxFromTuple", "mkAtomCellList|yEnd|0", 1, "getBoxFromTuple", "mkAtomCellList|zBegin|0", 1, "getBoxFromTuple", "mkAtomCellList|zEnd|0", 1, "getBoxFromTuple", "mkAtomCellList|count|0", 1, "getBoxFromTuple", "mkAtomCellList|ix|0", 1, "getBoxFromTuple", "mkAtomCellList|iy|0", 1, "getBoxFromTuple", "mkAtomCellList|iz|0", 1, "getBoxFromTuple", "initForceHaloExchange|boxes|0", 3, "mkForceSendCellList", "mkForceRecvCellList", "initHaloExchange", "initForceHaloExchange|hh|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|size0|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|size1|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|size2|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|maxSize|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|parms|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "initForceHaloExchange|ii|0", 2, "mkForceSendCellList", "mkForceRecvCellList", "mkForceSendCellList|boxes|0", 1, "getBoxFromTuple", "mkForceSendCellList|nCells|0", 1, "getBoxFromTuple", "mkForceSendCellList|list|0", 1, "getBoxFromTuple", "mkForceSendCellList|xEnd|0", 1, "getBoxFromTuple", "mkForceSendCellList|yBegin|0", 1, "getBoxFromTuple", "mkForceSendCellList|yEnd|0", 1, "getBoxFromTuple", "mkForceSendCellList|zBegin|0", 1, "getBoxFromTuple", "mkForceSendCellList|zEnd|0", 1, "getBoxFromTuple", "mkForceSendCellList|count|0", 1, "getBoxFromTuple", "mkForceSendCellList|ix|0", 1, "getBoxFromTuple", "mkForceSendCellList|iy|0", 1, "getBoxFromTuple", "mkForceSendCellList|iz|0", 1, "getBoxFromTuple", "mkForceRecvCellList|boxes|0", 1, "getBoxFromTuple", "mkForceRecvCellList|nCells|0", 1, "getBoxFromTuple", "mkForceRecvCellList|list|0", 1, "getBoxFromTuple", "mkForceRecvCellList|xEnd|0", 1, "getBoxFromTuple", "mkForceRecvCellList|yBegin|0", 1, "getBoxFromTuple", "mkForceRecvCellList|yEnd|0", 1, "getBoxFromTuple", "mkForceRecvCellList|zBegin|0", 1, "getBoxFromTuple", "mkForceRecvCellList|zEnd|0", 1, "getBoxFromTuple", "mkForceRecvCellList|count|0", 1, "getBoxFromTuple", "mkForceRecvCellList|ix|0", 1, "getBoxFromTuple", "mkForceRecvCellList|iy|0", 1, "getBoxFromTuple", "mkForceRecvCellList|iz|0", 1, "getBoxFromTuple", "haloExchange|haloExchangeData|0", 1, "exchangeData", "haloExchange|data|0", 1, "exchangeData", "haloExchange|iAxis|0", 1, "exchangeData", "exchangeData|haloExchange|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|data|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|faceM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|faceP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|sendBufM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|sendBufP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|recvBufM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|recvBufP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nSendM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nSendP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nbrRankM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nbrRankP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nRecvM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "exchangeData|nRecvP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi", "sortAtomsInCell|tmp|0", 1, "sortAtomsInCell", &____alias_loc_id_0, (unsigned)2, 18379826249005484375UL + 1UL, 18379826249005484375UL + 2UL, &____alias_loc_id_1, (unsigned)9, 18379826249005484375UL + 3UL, 18379826249005484375UL + 4UL, 18379826249005484375UL + 5UL, 18379826249005484375UL + 6UL, 18379826249005484375UL + 7UL, 18379826249005484375UL + 8UL, 18379826249005484375UL + 9UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 2556UL, &____alias_loc_id_2, (unsigned)2, 18379826249005484375UL + 347UL, 18379826249005484375UL + 348UL, &____alias_loc_id_3, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_4, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_5, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_6, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_7, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_8, (unsigned)18, 18379826249005484375UL + 689UL, 18379826249005484375UL + 690UL, 18379826249005484375UL + 691UL, 18379826249005484375UL + 692UL, 18379826249005484375UL + 693UL, 18379826249005484375UL + 694UL, 18379826249005484375UL + 695UL, 18379826249005484375UL + 696UL, 18379826249005484375UL + 697UL, 18379826249005484375UL + 698UL, 18379826249005484375UL + 699UL, 18379826249005484375UL + 700UL, 18379826249005484375UL + 701UL, 18379826249005484375UL + 702UL, 18379826249005484375UL + 703UL, 18379826249005484375UL + 704UL, 18379826249005484375UL + 705UL, 18379826249005484375UL + 706UL, &____alias_loc_id_9, (unsigned)15, 18379826249005484375UL + 884UL, 18379826249005484375UL + 885UL, 18379826249005484375UL + 886UL, 18379826249005484375UL + 887UL, 18379826249005484375UL + 888UL, 18379826249005484375UL + 889UL, 18379826249005484375UL + 890UL, 18379826249005484375UL + 891UL, 18379826249005484375UL + 892UL, 18379826249005484375UL + 893UL, 18379826249005484375UL + 894UL, 18379826249005484375UL + 895UL, 18379826249005484375UL + 896UL, 18379826249005484375UL + 897UL, 18379826249005484375UL + 1045UL, &____alias_loc_id_10, (unsigned)2, 18379826249005484375UL + 1050UL, 18379826249005484375UL + 1051UL, &____alias_loc_id_11, (unsigned)9, 18379826249005484375UL + 1052UL, 18379826249005484375UL + 1053UL, 18379826249005484375UL + 1054UL, 18379826249005484375UL + 1055UL, 18379826249005484375UL + 1056UL, 18379826249005484375UL + 1057UL, 18379826249005484375UL + 1058UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 2559UL, &____alias_loc_id_12, (unsigned)1, 18379826249005484375UL + 2559UL, &____alias_loc_id_13, (unsigned)18, 18379826249005484375UL + 1573UL, 18379826249005484375UL + 1574UL, 18379826249005484375UL + 1575UL, 18379826249005484375UL + 1576UL, 18379826249005484375UL + 1577UL, 18379826249005484375UL + 1578UL, 18379826249005484375UL + 1579UL, 18379826249005484375UL + 1580UL, 18379826249005484375UL + 1581UL, 18379826249005484375UL + 1582UL, 18379826249005484375UL + 1583UL, 18379826249005484375UL + 1584UL, 18379826249005484375UL + 1585UL, 18379826249005484375UL + 1586UL, 18379826249005484375UL + 1587UL, 18379826249005484375UL + 1588UL, 18379826249005484375UL + 1589UL, 18379826249005484375UL + 1765UL, &____alias_loc_id_14, (unsigned)18, 18379826249005484375UL + 1770UL, 18379826249005484375UL + 1771UL, 18379826249005484375UL + 1772UL, 18379826249005484375UL + 1773UL, 18379826249005484375UL + 1774UL, 18379826249005484375UL + 1775UL, 18379826249005484375UL + 1776UL, 18379826249005484375UL + 1777UL, 18379826249005484375UL + 1778UL, 18379826249005484375UL + 1779UL, 18379826249005484375UL + 1780UL, 18379826249005484375UL + 1781UL, 18379826249005484375UL + 1782UL, 18379826249005484375UL + 1783UL, 18379826249005484375UL + 1784UL, 18379826249005484375UL + 1785UL, 18379826249005484375UL + 1786UL, 18379826249005484375UL + 1962UL, &____alias_loc_id_15, (unsigned)3, 18379826249005484375UL + 1984UL, 18379826249005484375UL + 1985UL, 18379826249005484375UL + 1986UL, &____alias_loc_id_16, (unsigned)9, 18379826249005484375UL + 2009UL, 18379826249005484375UL + 2010UL, 18379826249005484375UL + 2011UL, 18379826249005484375UL + 2012UL, 18379826249005484375UL + 2013UL, 18379826249005484375UL + 2014UL, 18379826249005484375UL + 2015UL, 18379826249005484375UL + 2016UL, 18379826249005484375UL + 2017UL, &____alias_loc_id_17, (unsigned)1, 18379826249005484375UL + 2018UL, &____alias_loc_id_18, (unsigned)3, 18379826249005484375UL + 2019UL, 18379826249005484375UL + 2020UL, 18379826249005484375UL + 2021UL, &____alias_loc_id_19, (unsigned)1, 18379826249005484375UL + 2023UL, &____alias_loc_id_20, (unsigned)1, 18379826249005484375UL + 2022UL, &____alias_loc_id_21, (unsigned)14, 18379826249005484375UL + 3UL, 18379826249005484375UL + 4UL, 18379826249005484375UL + 5UL, 18379826249005484375UL + 6UL, 18379826249005484375UL + 7UL, 18379826249005484375UL + 8UL, 18379826249005484375UL + 9UL, 18379826249005484375UL + 10UL, 18379826249005484375UL + 11UL, 18379826249005484375UL + 12UL, 18379826249005484375UL + 13UL, 18379826249005484375UL + 88UL, 18379826249005484375UL + 190UL, 18379826249005484375UL + 2556UL, &____alias_loc_id_22, (unsigned)1, 18379826249005484375UL + 352UL, &____alias_loc_id_23, (unsigned)17, 18379826249005484375UL + 397UL, 18379826249005484375UL + 398UL, 18379826249005484375UL + 399UL, 18379826249005484375UL + 400UL, 18379826249005484375UL + 401UL, 18379826249005484375UL + 402UL, 18379826249005484375UL + 403UL, 18379826249005484375UL + 404UL, 18379826249005484375UL + 405UL, 18379826249005484375UL + 406UL, 18379826249005484375UL + 407UL, 18379826249005484375UL + 408UL, 18379826249005484375UL + 409UL, 18379826249005484375UL + 410UL, 18379826249005484375UL + 411UL, 18379826249005484375UL + 412UL, 18379826249005484375UL + 688UL, &____alias_loc_id_24, (unsigned)10, 18379826249005484375UL + 689UL, 18379826249005484375UL + 690UL, 18379826249005484375UL + 691UL, 18379826249005484375UL + 692UL, 18379826249005484375UL + 693UL, 18379826249005484375UL + 694UL, 18379826249005484375UL + 695UL, 18379826249005484375UL + 696UL, 18379826249005484375UL + 697UL, 18379826249005484375UL + 698UL, &____alias_loc_id_25, (unsigned)3, 18379826249005484375UL + 845UL, 18379826249005484375UL + 846UL, 18379826249005484375UL + 847UL, &____alias_loc_id_26, (unsigned)15, 18379826249005484375UL + 884UL, 18379826249005484375UL + 885UL, 18379826249005484375UL + 886UL, 18379826249005484375UL + 887UL, 18379826249005484375UL + 888UL, 18379826249005484375UL + 889UL, 18379826249005484375UL + 890UL, 18379826249005484375UL + 891UL, 18379826249005484375UL + 892UL, 18379826249005484375UL + 893UL, 18379826249005484375UL + 894UL, 18379826249005484375UL + 895UL, 18379826249005484375UL + 896UL, 18379826249005484375UL + 897UL, 18379826249005484375UL + 1045UL, &____alias_loc_id_27, (unsigned)9, 18379826249005484375UL + 1052UL, 18379826249005484375UL + 1053UL, 18379826249005484375UL + 1054UL, 18379826249005484375UL + 1055UL, 18379826249005484375UL + 1056UL, 18379826249005484375UL + 1057UL, 18379826249005484375UL + 1058UL, 18379826249005484375UL + 1138UL, 18379826249005484375UL + 2559UL, &____alias_loc_id_28, (unsigned)15, 18379826249005484375UL + 1261UL, 18379826249005484375UL + 1262UL, 18379826249005484375UL + 1263UL, 18379826249005484375UL + 1264UL, 18379826249005484375UL + 1265UL, 18379826249005484375UL + 1266UL, 18379826249005484375UL + 1267UL, 18379826249005484375UL + 1268UL, 18379826249005484375UL + 1269UL, 18379826249005484375UL + 1270UL, 18379826249005484375UL + 1271UL, 18379826249005484375UL + 1272UL, 18379826249005484375UL + 1273UL, 18379826249005484375UL + 1274UL, 18379826249005484375UL + 1383UL, &____alias_loc_id_29, (unsigned)16, 18379826249005484375UL + 1384UL, 18379826249005484375UL + 1385UL, 18379826249005484375UL + 1386UL, 18379826249005484375UL + 1387UL, 18379826249005484375UL + 1388UL, 18379826249005484375UL + 1389UL, 18379826249005484375UL + 1390UL, 18379826249005484375UL + 1391UL, 18379826249005484375UL + 1392UL, 18379826249005484375UL + 1393UL, 18379826249005484375UL + 1394UL, 18379826249005484375UL + 1395UL, 18379826249005484375UL + 1396UL, 18379826249005484375UL + 1397UL, 18379826249005484375UL + 1398UL, 18379826249005484375UL + 1498UL, &____alias_loc_id_30, (unsigned)3, 18379826249005484375UL + 1535UL, 18379826249005484375UL + 1536UL, 18379826249005484375UL + 1537UL, &____alias_loc_id_31, (unsigned)18, 18379826249005484375UL + 1573UL, 18379826249005484375UL + 1574UL, 18379826249005484375UL + 1575UL, 18379826249005484375UL + 1576UL, 18379826249005484375UL + 1577UL, 18379826249005484375UL + 1578UL, 18379826249005484375UL + 1579UL, 18379826249005484375UL + 1580UL, 18379826249005484375UL + 1581UL, 18379826249005484375UL + 1582UL, 18379826249005484375UL + 1583UL, 18379826249005484375UL + 1584UL, 18379826249005484375UL + 1585UL, 18379826249005484375UL + 1586UL, 18379826249005484375UL + 1587UL, 18379826249005484375UL + 1588UL, 18379826249005484375UL + 1589UL, 18379826249005484375UL + 1765UL, &____alias_loc_id_32, (unsigned)18, 18379826249005484375UL + 1770UL, 18379826249005484375UL + 1771UL, 18379826249005484375UL + 1772UL, 18379826249005484375UL + 1773UL, 18379826249005484375UL + 1774UL, 18379826249005484375UL + 1775UL, 18379826249005484375UL + 1776UL, 18379826249005484375UL + 1777UL, 18379826249005484375UL + 1778UL, 18379826249005484375UL + 1779UL, 18379826249005484375UL + 1780UL, 18379826249005484375UL + 1781UL, 18379826249005484375UL + 1782UL, 18379826249005484375UL + 1783UL, 18379826249005484375UL + 1784UL, 18379826249005484375UL + 1785UL, 18379826249005484375UL + 1786UL, 18379826249005484375UL + 1962UL, &____alias_loc_id_33, (unsigned)2, 18379826249005484375UL + 1967UL, 18379826249005484375UL + 1982UL, &____alias_loc_id_34, (unsigned)3, 18379826249005484375UL + 1984UL, 18379826249005484375UL + 1985UL, 18379826249005484375UL + 1986UL, &____alias_loc_id_35, (unsigned)13, 18379826249005484375UL + 2168UL, 18379826249005484375UL + 2169UL, 18379826249005484375UL + 2170UL, 18379826249005484375UL + 2171UL, 18379826249005484375UL + 2172UL, 18379826249005484375UL + 2173UL, 18379826249005484375UL + 2174UL, 18379826249005484375UL + 2175UL, 18379826249005484375UL + 2176UL, 18379826249005484375UL + 2177UL, 18379826249005484375UL + 2178UL, 18379826249005484375UL + 2198UL, 18379826249005484375UL + 2223UL, &____alias_loc_id_36, (unsigned)5, 18379826249005484375UL + 2463UL, 18379826249005484375UL + 2464UL, 18379826249005484375UL + 2465UL, 18379826249005484375UL + 2466UL, 18379826249005484375UL + 2467UL);
     register_functions(17, "haloExchange.c.pre.hard.cpp", "initAtomHaloExchange", &initAtomHaloExchange, "initHaloExchange", &initHaloExchange, "loadAtomsBuffer", &loadAtomsBuffer, "unloadAtomsBuffer", &unloadAtomsBuffer, "destroyAtomsExchange", &destroyAtomsExchange, "mkAtomCellList", &mkAtomCellList, "initForceHaloExchange", &initForceHaloExchange, "loadForceBuffer", &loadForceBuffer, "unloadForceBuffer", &unloadForceBuffer, "destroyForceExchange", &destroyForceExchange, "mkForceSendCellList", &mkForceSendCellList, "mkForceRecvCellList", &mkForceRecvCellList, "destroyHaloExchange", &destroyHaloExchange, "haloExchange", &haloExchange, "exchangeData", &exchangeData, "sortAtomsInCell", &sortAtomsInCell, "sortAtomsById", &sortAtomsById);
     return 0;
 }

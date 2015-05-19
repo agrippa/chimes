@@ -86,8 +86,8 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc TimeIncrement|olddt|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc TimeIncrement|newdt|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc FABS|arg|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|delt|0 " double " 64 0 0 1 CalcForceForNodes
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|u_cut|0 " double " 64 0 0 1 CalcForceForNodes
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|delt|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|u_cut|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeElements|deltatime|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0 1 omp_get_num_threads
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0 1 omp_get_num_threads
@@ -478,10 +478,10 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcPositionForNodes|i|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|numElem|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|hgcoef|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0 1 CalcHourglassControlForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0 1 CalcHourglassControlForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0 1 CalcHourglassControlForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0 1 CalcHourglassControlForElems
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigxx|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigyy|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|sigzz|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|determ|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcVolumeForceForElems|k|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc InitStressTermsForElems|numElem|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc InitStressTermsForElems|sigxx|0 " double* " 64 1 0 0
@@ -518,12 +518,12 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|hgcoef|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|numElem|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|numElem8|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0 1 CalcFBHourglassForceForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0 1 CalcFBHourglassForceForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0 1 CalcFBHourglassForceForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|x8n|0 " double* " 64 1 0 1 CalcFBHourglassForceForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|y8n|0 " double* " 64 1 0 1 CalcFBHourglassForceForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|z8n|0 " double* " 64 1 0 1 CalcFBHourglassForceForElems
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdx|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdy|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|dvdz|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|x8n|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|y8n|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|z8n|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|i|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|x1|0 " [8 x double] " 512 0 0 1 CalcHourglassControlForElems
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHourglassControlForElems|y1|0 " [8 x double] " 512 0 0 0
@@ -552,28 +552,28 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemVolumeDerivative|x|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemVolumeDerivative|y|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemVolumeDerivative|z|0 " double* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|determ|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|x8n|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|y8n|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|z8n|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|dvdx|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|dvdy|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|dvdz|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourg|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|numElem|0 " i32 " 32 0 0 1 CBRT
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|determ|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|x8n|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|y8n|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|z8n|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|dvdx|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|dvdy|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|dvdz|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourg|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|numElem|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|numElem8|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fx_elem|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fy_elem|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fz_elem|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|gamma|0 " [4 x [8 x double]] " 2048 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fx_local|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fy_local|0 " double* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fz_local|0 " double* " 64 1 0 1 CBRT
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fx_elem|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fy_elem|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fz_elem|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|gamma|0 " [4 x [8 x double]] " 2048 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fx_local|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fy_local|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|fz_local|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hgfx|0 " [8 x double] " 512 0 0 1 CalcFBHourglassForceForElems
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hgfy|0 " [8 x double] " 512 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hgfz|0 " [8 x double] " 512 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|coefficient|0 " double " 64 0 0 1 CBRT
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|coefficient|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourgam0|0 " [4 x double] " 256 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourgam1|0 " [4 x double] " 256 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourgam2|0 " [4 x double] " 256 0 0 0
@@ -585,24 +585,24 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|xd1|0 " [8 x double] " 512 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|yd1|0 " [8 x double] " 512 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|zd1|0 " [8 x double] " 512 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|elemToNode|0 " i32* " 64 1 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i3|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|volinv|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|ss1|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|mass1|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|volume13|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i1|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourmodx|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourmody|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourmodz|0 " double " 64 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n0si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n1si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n2si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n3si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n4si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n5si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n6si2|0 " i32 " 32 0 0 1 CBRT
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n7si2|0 " i32 " 32 0 0 1 CBRT
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|elemToNode|0 " i32* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i3|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|volinv|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|ss1|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|mass1|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|volume13|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i1|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourmodx|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourmody|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|hourmodz|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n0si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n1si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n2si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n3si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n4si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n5si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n6si2|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|n7si2|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|numNode|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|gnode|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|count|0 " i32 " 32 0 0 0

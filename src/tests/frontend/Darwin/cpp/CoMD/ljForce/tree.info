@@ -1,5 +1,5 @@
 ljDestroy 0 DOES_NOT
 initLjPot 0 DOES_NOT
-ljForce 0 MAY getNeighborBoxes zeroReal3
+ljForce 0 MAY zeroReal3 157 7 getNeighborBoxes 172 23
 ljPrint 0 DOES_NOT
 zeroReal3 0 DOES_NOT

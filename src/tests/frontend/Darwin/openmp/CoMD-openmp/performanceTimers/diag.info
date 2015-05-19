@@ -1,3 +1,11 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 92 6 len=12 profileStart_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 97 6 len=11 profileStop_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 108 8 len=14 getElapsedTime_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 120 6 len=23 printPerformanceResults_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 243 17 len=7 getTime_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 257 15 len=7 getTick_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 264 6 len=10 timerStats_npm
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 4 alias_group_changed(____alias_loc_id_3); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 4 alias_group_changed(____alias_loc_id_11); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 49 alias_group_changed(____alias_loc_id_5); 
@@ -135,15 +143,15 @@ InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performance
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4  call_lbl_7: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 39  call_lbl_8: 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 92 6 len=12 profileStart_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30  ({  calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30 ({ calling_npm(0, 0); getTime_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 38 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 93 139  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 97 6 len=11 profileStop_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 31  ({  calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 31 ({ calling_npm(0, 0); getTime_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 39 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 98 136  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 108 8 len=14 getElapsedTime_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 29  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 29 ({ calling_npm(0, 0); getTick_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 37 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 109 145  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 120 6 len=23 printPerformanceResults_quick
@@ -151,7 +159,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/perfo
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 28 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 32 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27 ({ calling_npm(0, 0); getTick_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 86 
@@ -184,7 +192,7 @@ double tick;
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 64  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27 ({ calling_npm(0, 0); getTick_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, 0UL, 0, 0); (getNRanks)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 86 
@@ -260,15 +268,15 @@ double recvBuf[11];
 double sendBuf[11];
  if (____must_checkpoint_timerStats_____chimes_unroll_var_4_0 || ____must_checkpoint_timerStats_temp_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|____chimes_unroll_var_4|0", &____must_checkpoint_timerStats_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 92 6 len=12 profileStart_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30  ({  calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 30 ({ calling_npm(0, 0); getTime_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 94 38 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 93 139  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 97 6 len=11 profileStop_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 31  ({  calling((void*)getTime, -1, 0UL, 0, 0); (getTime)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 31 ({ calling_npm(0, 0); getTime_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 100 39 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 98 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 108 8 len=14 getElapsedTime_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 29  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 29 ({ calling_npm(0, 0); getTick_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 37 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 109 145  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 120 6 len=23 printPerformanceResults_resumable
@@ -276,7 +284,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/perfo
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 28 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 32 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27 ({ calling_npm(0, 0); getTick_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 86 
@@ -309,7 +317,7 @@ double tick;
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 64  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27  ({  calling((void*)getTick, -1, 0UL, 0, 0); (getTick)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27 ({ calling_npm(0, 0); getTick_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, 0UL, 0, 0); (getNRanks)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 86 

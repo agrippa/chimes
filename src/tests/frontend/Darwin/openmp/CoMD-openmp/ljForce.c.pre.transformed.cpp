@@ -476,6 +476,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -518,7 +519,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 59 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2272,6 +2273,7 @@ static int ljForce(SimFlat* s);
 static void ljPrint(FILE* file, BasePotential* pot);
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+void ljDestroy_npm(BasePotential** inppot);
 void ljDestroy_quick(BasePotential** inppot); void ljDestroy(BasePotential** inppot);
 void ljDestroy_resumable(BasePotential** inppot)
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2294,6 +2296,7 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+BasePotential* initLjPot_npm(void);
 BasePotential* initLjPot_quick(void); BasePotential* initLjPot(void);
 BasePotential* initLjPot_resumable(void)
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2331,6 +2334,7 @@ BasePotential* initLjPot_resumable(void)
 }
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+void ljPrint_npm(FILE* file, BasePotential* pot);
 void ljPrint_quick(FILE* file, BasePotential* pot); void ljPrint(FILE* file, BasePotential* pot);
 void ljPrint_resumable(FILE* file, BasePotential* pot)
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2359,6 +2363,7 @@ void ljPrint_resumable(FILE* file, BasePotential* pot)
 rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_3, ____chimes_did_disable2); }
 # 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+int ljForce_npm(SimFlat* s);
 int ljForce_quick(SimFlat* s); int ljForce(SimFlat* s);
 int ljForce_resumable(SimFlat* s)
 # 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -2754,6 +2759,243 @@ int ljForce_quick(SimFlat* s)
 }
 
 int ljForce(SimFlat* s) { return (____chimes_replaying ? ljForce_resumable(s) : ljForce_quick(s)); }
+
+
+
+void ljDestroy_npm(BasePotential** inppot)
+# 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+{
+# 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   if (!inppot) {return;; };
+# 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   LjPotential* pot = (LjPotential*)(*inppot);
+# 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   if (!pot) {return;; };
+# 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   free_wrapper(pot, 17518077371777717460UL);
+# 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   *inppot = __null;
+# 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   return;
+# 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+}
+
+BasePotential* initLjPot_npm(void)
+# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+{
+# 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   LjPotential *pot = (LjPotential*)malloc_wrapper(sizeof(LjPotential), 17518077371777717480UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy));
+# 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->force = ljForce;
+# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->print = ljPrint;
+# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->destroy = ljDestroy;
+# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->sigma = 2.315;
+# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->epsilon = 0.167;
+# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->mass = 63.55 * amuToInternalMass;
+# 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->lat = 3.615;
+# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   strcpy(pot->latticeType, "FCC");
+# 122 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->cutoff = 2.5*pot->sigma;
+# 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   strcpy(pot->name, "Cu");
+# 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   pot->atomicNo = 29;
+# 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   return (BasePotential*) pot;
+# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+}
+
+void ljPrint_npm(FILE* file, BasePotential* pot)
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+{
+# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   LjPotential* ljPot = (LjPotential*) pot;
+# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Potential type   : Lennard-Jones\n");
+# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Species name     : %s\n", ljPot->name);
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Atomic number    : %d\n", ljPot->atomicNo);
+# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Mass             : ""%lg"" amu\n", ljPot->mass / amuToInternalMass);
+# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Lattice Type     : %s\n", ljPot->latticeType);
+# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Lattice spacing  : ""%lg"" Angstroms\n", ljPot->lat);
+# 139 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Cutoff           : ""%lg"" Angstroms\n", ljPot->cutoff);
+# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Epsilon          : ""%lg"" eV\n", ljPot->epsilon);
+# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
+# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+}
+
+int ljForce_npm(SimFlat* s)
+# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+{
+# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   LjPotential* pot = (LjPotential *) s->pot;
+# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t sigma = pot->sigma;
+# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t epsilon = pot->epsilon;
+# 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t rCut = pot->cutoff;
+# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t rCut2 = rCut*rCut;
+# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t ePot = 0.0;
+# 154 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   s->ePotential = 0.0;
+# 155 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   int fSize = s->boxes->nTotalBoxes*64;
+# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+#pragma omp parallel for
+# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 156 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 157 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   for (int ii=0; ii<fSize; ++ii)
+# 158 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   {
+# 159 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+      zeroReal3(s->atoms->f[ii]);
+# 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+      s->atoms->U[ii] = 0.;
+# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   }
+# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t s6 = sigma*sigma*sigma*sigma*sigma*sigma;
+# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t rCut6 = s6 / (rCut2*rCut2*rCut2);
+# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   real_t eShift = 1.0 * rCut6 * (rCut6 - 1.0);
+# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   int nNbrBoxes = 27;
+# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+#pragma omp parallel for reduction(+:ePot)
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
+# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   {
+# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+      int nIBox = s->boxes->nAtoms[iBox];
+# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+      for (int jTmp=0; jTmp<nNbrBoxes; jTmp++)
+# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+      {
+# 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+         int jBox = s->boxes->nbrBoxes[iBox][jTmp];
+# 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+         (__builtin_expect(!(jBox>=0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c", 181, "jBox>=0") : (void)0);
+# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+         int nJBox = s->boxes->nAtoms[jBox];
+# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+         for (int iOff=64*iBox; iOff<(iBox*64 +nIBox); iOff++)
+# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+         {
+# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+            for (int jOff=jBox*64; jOff<(jBox*64 +nJBox); jOff++)
+# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+            {
+# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               real3 dr;
+# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               real_t r2 = 0.0;
+# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               for (int m=0; m<3; m++)
+# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               {
+# 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  dr[m] = s->atoms->r[iOff][m]-s->atoms->r[jOff][m];
+# 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  r2+=dr[m]*dr[m];
+# 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               }
+# 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               if ( r2 <= rCut2 && r2 > 0.0)
+# 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               {
+# 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  r2 = 1.0/r2;
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  real_t r6 = s6 * (r2*r2*r2);
+# 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  real_t eLocal = r6 * (r6 - 1.0) - eShift;
+# 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  s->atoms->U[iOff] += 0.5*eLocal;
+# 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  ePot += 0.5*eLocal;
+# 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  real_t fr = - 4.0*epsilon*r6*r2*(12.0*r6 - 6.0);
+# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  for (int m=0; m<3; m++)
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  {
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                     s->atoms->f[iOff][m] -= dr[m]*fr;
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+                  }
+# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+               }
+# 218 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+            }
+# 219 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+         }
+# 220 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+      }
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   }
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   ePot = ePot*4.0*epsilon;
+# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   s->ePotential = ePot;
+# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+   return 0;
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
+}
+
+
 
 
 

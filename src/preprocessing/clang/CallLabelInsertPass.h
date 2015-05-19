@@ -15,7 +15,6 @@ public:
     CallLabelInsertPass() { }
 
     void VisitStmt(const clang::Stmt *s) override;
-    void VisitTopLevel(clang::FunctionDecl *toplevel) override;
 
     bool usesStackInfo() override { return false; }
     bool setsLastGoto() override { return false; }
@@ -23,6 +22,7 @@ public:
     bool createsFunctionLabels() override { return true; }
     bool createsOMPTree() override { return false; }
     bool requiresMangledVarsReset() { return false; }
+    bool transformsOriginal() { return false; }
 
 private:
 };

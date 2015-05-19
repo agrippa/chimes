@@ -1,3 +1,4 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/critical.cpp 5 6 len=3 foo_npm
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/critical.cpp 5 12 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0x0, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/critical.cpp 7 1 rm_stack(false, 0UL, "foo", (int *)0x0, 0, ____chimes_did_disable0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/critical.cpp 27 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 

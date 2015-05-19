@@ -77,6 +77,9 @@ static llvm::cl::opt<std::string> call_tree_file("b",
 static llvm::cl::opt<std::string> quick_version_file("q",
         llvm::cl::desc("quick version file"),
         llvm::cl::value_desc("quick_version"));
+static llvm::cl::opt<std::string> npm_dump_file("n",
+        llvm::cl::desc("NPM dump file"),
+        llvm::cl::value_desc("npm_dump_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -87,6 +90,8 @@ std::set<std::string> *ignorable = NULL;
 std::map<int, std::vector<CallLabel> > call_lbls;
 std::map<std::string, int> earliest_call_line;
 std::map<std::string, int> function_starting_lines;
+std::map<std::string, std::set<std::string>> func_to_alias_locs;
+std::set<std::string> npm_functions;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -96,20 +101,24 @@ static std::map<std::string, int> num_call_labels;
 class Pass {
 public:
     Pass(ParentTransform *set_impl, const char *set_suffix,
-            const char *set_dump_file) : impl(set_impl), suffix(set_suffix),
-            dump_file(set_dump_file) { }
+            const char *set_dump_file, std::string set_transformed_func_suffix) :
+            impl(set_impl), suffix(set_suffix), dump_file(set_dump_file),
+            transformed_func_suffix(set_transformed_func_suffix) { }
 
     ParentTransform *get_impl() { return impl; }
     std::string get_suffix() { return suffix; }
     std::string get_dump_file() { return dump_file; }
+    std::string get_func_suffix() { return transformed_func_suffix; }
 private:
     ParentTransform *impl;
     std::string suffix;
     std::string dump_file;
+    std::string transformed_func_suffix;
 };
 
 ParentTransform *curr_visitor = NULL;
 std::ofstream *dump_bodies = NULL;
+std::string expected_suffix;
 std::ofstream *dump_decls = NULL;
 std::vector<Pass *> passes;
 
@@ -218,6 +227,8 @@ public:
                     visitor->resetLastGoto();
                 visitor->resetRootFlag();
 
+                insertions->resetHeapAllocIters();
+
                 // llvm::errs() << curr_func << ":\n";
                 // (*b)->dump();
                 // llvm::errs() << "\n\n";
@@ -240,9 +251,10 @@ public:
                         insertions->findMatchingFunctionNullReturn(curr_func) !=
                             NULL) {
                     /*
-                     * Function declaration transformed during "quick" pass with
-                     * the suffix "_quick". If this function does not end with
-                     * that suffix, it was not transformed during this pass.
+                     * Function declaration transformed during this pass with
+                     * the specified suffix (e.g. "_quick", "_npm"). If this
+                     * function does not end with that suffix, it was not
+                     * transformed during this pass.
                      */
                     std::string function_decl = R.getRewrittenText(
                             clang::SourceRange(fdecl->getLocStart(),
@@ -271,26 +283,31 @@ public:
                     }
                     function_decl = function_decl.substr(0, index);
 
-                    // Save the _quick version of this function declaration
+                    // Save the suffixed version of this function declaration
                     std::string old_function_decl = function_decl;
 
-                    // Check that it is a _quick declaration
+                    // Check that it is a suffixed declaration
                     index = open_paren_index;
                     /*
                      * Account for whitespace between function name and open
                      * paren.
                      */
                     while (isspace(old_function_decl[index - 1])) index--;
-                    std::string suffix = old_function_decl.substr(index - 6, 6);
-                    if (suffix != "_quick") {
+                    std::string suffix = "";
+                    if (old_function_decl.size() > expected_suffix.size()) {
+                        suffix = old_function_decl.substr(index -
+                                expected_suffix.size(), expected_suffix.size());
+                    }
+                    if (suffix != expected_suffix) {
                         continue;
                     }
                     /*
-                     * Convert back to the original declaration with the _quick
+                     * Convert back to the original declaration with the
                      * suffix removed. We could probably do this cleaner by
                      * getting it before the transformation pass.
                      */
-                    old_function_decl = old_function_decl.substr(0, index - 6) +
+                    old_function_decl = old_function_decl.substr(0,
+                            index - expected_suffix.size()) +
                         old_function_decl.substr(index);
 
                     /*
@@ -323,26 +340,44 @@ public:
                     }
                     assert(func_start_line != -1);
                     *dump_decls << curr_func << " " << filename << " " <<
-                        func_start_line << " " << function_decl <<
-                        "; " << old_function_decl << ";\n-----\n";
+                        func_start_line << " ";
 
-                    *dump_bodies <<
-                        R.getRewrittenText(fdecl->getSourceRange()) << "\n\n";
+                    if (visitor->transformsOriginal() ||
+                            fdecl->getName().str() != "main") {
+                        *dump_decls << function_decl << "; ";
+                    }
 
-                    *dump_bodies << old_function_decl << " { ";
-                    if (fdecl->getName().str() == "main") {
-                        *dump_bodies << "init_chimes(); ";
+                    if (visitor->transformsOriginal()) {
+                        *dump_decls << old_function_decl << "; ";
                     }
-                    if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
-                        *dump_bodies << "return ";
+                    *dump_decls << "\n-----\n";
+
+                    if (visitor->transformsOriginal() ||
+                            fdecl->getName().str() != "main") {
+                        *dump_bodies <<
+                            R.getRewrittenText(fdecl->getSourceRange()) <<
+                            "\n\n";
                     }
-                    std::stringstream arg_ss;
-                    for (unsigned p = 0; p < fdecl->getNumParams(); p++) {
-                        const ParmVarDecl *parm = fdecl->getParamDecl(p);
-                        if (p != 0) arg_ss << ", ";
-                        arg_ss << parm->getName().str();
+
+                    if (visitor->transformsOriginal()) {
+                        *dump_bodies << old_function_decl << " { ";
+                        if (fdecl->getName().str() == "main") {
+                            *dump_bodies << "init_chimes(); ";
+                        }
+                        if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
+                            *dump_bodies << "return ";
+                        }
+                        std::stringstream arg_ss;
+                        for (unsigned p = 0; p < fdecl->getNumParams(); p++) {
+                            const ParmVarDecl *parm = fdecl->getParamDecl(p);
+                            if (p != 0) arg_ss << ", ";
+                            arg_ss << parm->getName().str();
+                        }
+                        *dump_bodies << "(____chimes_replaying ? " <<
+                            fdecl->getName().str() << "_resumable(" <<
+                            arg_ss.str() << ") : " << fdecl->getName().str() <<
+                            expected_suffix << "(" << arg_ss.str() << ")); }\n\n";
                     }
-                    *dump_bodies << "(____chimes_replaying ? " << fdecl->getName().str() << "_resumable(" << arg_ss.str() << ") : " << fdecl->getName().str() << "_quick(" << arg_ss.str() << ")); }\n\n";
                 }
             }
         }
@@ -426,6 +461,7 @@ int main(int argc, const char **argv) {
   check_opt(firstprivate_file, "Firstprivate file");
   check_opt(call_tree_file, "Call tree file");
   check_opt(quick_version_file, "Quick version");
+  check_opt(npm_dump_file, "NPM Dump file");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -478,10 +514,12 @@ int main(int argc, const char **argv) {
    * This pass also gets messed up if the input filename isn't the original
    * file.
    */
-  passes.push_back(new Pass(new AliasChangedPass(), ".alias", ""));
-  passes.push_back(new Pass(new MallocPass(), ".malloc", ""));
-  passes.push_back(new Pass(new StartExitPass(), ".start", ""));
-  passes.push_back(new Pass(new SplitInitsPass(), ".split", ""));
+  passes.push_back(new Pass(new MallocPass(true), ".garbage",
+              npm_dump_file.c_str(), "_npm"));
+  passes.push_back(new Pass(new AliasChangedPass(), ".alias", "", ""));
+  passes.push_back(new Pass(new MallocPass(false), ".malloc", "", ""));
+  passes.push_back(new Pass(new StartExitPass(), ".start", "", ""));
+  passes.push_back(new Pass(new SplitInitsPass(), ".split", "", ""));
 
   /*
    * It is required that CallingAndOMPPass run after SplitInitsPass in case a
@@ -492,10 +530,10 @@ int main(int argc, const char **argv) {
    * As a result, it would be preferred that it be kept as the last pass in
    * general.
    */
-  passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", ""));
+  passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", "", ""));
   passes.push_back(new Pass(new CallingAndOMPPass(true), ".garbage",
-              quick_version_file.c_str()));
-  passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", ""));
+              quick_version_file.c_str(), "_quick"));
+  passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", "", ""));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
       NumDebugFrontendAction<TransformASTConsumer>>();
@@ -507,27 +545,31 @@ int main(int argc, const char **argv) {
       Pass *pass = *p;
       ClangTool *Tool;
 
+      std::string input_file;
       if (first_pass) {
           Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
+          input_file = op.getSourcePathList()[0];
       } else {
           std::vector<std::string> inputs; inputs.push_back(current_output_file);
           Tool = new ClangTool(op.getCompilations(), inputs);
           if (updateFile) {
               insertions->updateMainFile(current_output_file);
           }
+          input_file = current_output_file;
       }
 
       std::stringstream ss;
       ss << working_directory << "/" << just_filename << pass->get_suffix() << ".cpp";
-      std::string old = current_output_file;
       current_output_file = ss.str();
       curr_visitor = pass->get_impl();
       if (pass->get_dump_file().size() > 0) {
           dump_bodies = new std::ofstream(pass->get_dump_file() + ".bodies");
           dump_decls = new std::ofstream(pass->get_dump_file() + ".decls");
+          expected_suffix = pass->get_func_suffix();
       }
 
-      llvm::errs() << "Outputting to " << current_output_file << "\n";
+      llvm::errs() << "Reading " << input_file << ", outputting to " <<
+          current_output_file << "\n";
 
       int err = Tool->run(factory);
       if (err) return err;
@@ -538,12 +580,13 @@ int main(int argc, const char **argv) {
       if (pass->get_dump_file().size() > 0) {
           dump_bodies->close(); dump_bodies = NULL;
           dump_decls->close(); dump_decls = NULL;
+          expected_suffix = "";
           /*
            * Reset so that the next pass reads from the same input as this pass.
            * This assumes that the dump file was used to output the true data
            * from this file, and any other output is garbage.
            */
-          current_output_file = old;
+          current_output_file = input_file;
       }
   }
 

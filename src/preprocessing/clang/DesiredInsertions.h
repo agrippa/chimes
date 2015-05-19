@@ -265,22 +265,60 @@ private:
 
 enum CREATES_CHECKPOINT { DOES_NOT = 0, MAY = 1, DOES = 2 };
 
+class CheckpointCause {
+    public:
+        CheckpointCause(std::string set_name, int set_line, int set_col) :
+            name(set_name), line(set_line), col(set_col) { }
+
+        std::string get_name() { return name; }
+        int get_line() { return line; }
+        int get_col() { return col; }
+        void update_line(int s) { line = s; }
+
+        bool operator < (const CheckpointCause& other) const {
+            if (line == other.line) {
+                return col < other.col;
+            } else {
+                return line < other.line;
+            }
+        }
+
+    private:
+        std::string name;
+        int line;
+        int col;
+};
+
 class FunctionCallees {
     public:
         FunctionCallees(std::string set_name, bool set_calls_unknown_functions,
                 CREATES_CHECKPOINT set_may_checkpoint) : name(set_name),
                 calls_unknown_functions(set_calls_unknown_functions),
                 may_checkpoint(set_may_checkpoint) { }
-        void add_checkpoint_cause(std::string cause) {
-            checkpoint_causes.insert(cause);
+        void add_checkpoint_cause(std::string cause, int line, int col) {
+            checkpoint_causes.push_back(CheckpointCause(cause, line, col));
         }
+
         CREATES_CHECKPOINT get_may_checkpoint() { return may_checkpoint; }
+
         bool get_calls_unknown_functions() { return calls_unknown_functions; }
+
+        std::vector<CheckpointCause>::iterator begin() {
+            return checkpoint_causes.begin();
+        }
+
+        std::vector<CheckpointCause>::iterator end() {
+            return checkpoint_causes.end();
+        }
+
+        void sort_checkpoint_causes() {
+            std::sort(checkpoint_causes.begin(), checkpoint_causes.end());
+        }
     private:
         std::string name;
         bool calls_unknown_functions;
         CREATES_CHECKPOINT may_checkpoint;
-        std::set<std::string> checkpoint_causes;
+        std::vector<CheckpointCause> checkpoint_causes;
 };
 
 class StructField {
@@ -459,8 +497,11 @@ public:
     FunctionCallees *get_callees(std::string name);
     bool has_callees(std::string name);
     bool may_cause_checkpoint(std::string fname);
+    bool does_not_cause_checkpoint(std::string fname);
 
     std::string get_alias_loc_var(unsigned id);
+
+    void resetHeapAllocIters();
 
 private:
         std::string lines_info_file, struct_info_file,
@@ -476,6 +517,7 @@ private:
         std::vector<StructFields *> *struct_fields;
         std::map<std::string, StackAlloc *> *stack_allocs;
         std::map<int, std::map<std::string, std::vector<HeapAlloc> *> *> *heap_allocs;
+        std::map<int, std::map<std::string, std::vector<HeapAlloc>::iterator> *> heap_alloc_iters;
         std::vector<FunctionArgumentAliasGroups> *functions;
         std::vector<AliasesPassedToCallSite> *callsites;
         std::map<std::string, FunctionExit *> *func_exits;

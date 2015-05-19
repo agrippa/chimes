@@ -1,2 +1,2 @@
-initDecomposition 0 MAY getMyRank getNRanks
+initDecomposition 0 MAY getNRanks 20 35 getMyRank 27 17
 processorNum 0 DOES_NOT

@@ -1,3 +1,62 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 151 15 len=20 initAtomHaloExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 51 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 82 , 9446392186784961646UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 180 39 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 180 61 , 9446392186784959280UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 212 15 len=21 initForceHaloExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 227 53 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 227 85 , 9446392186784961649UL, 0, 1, (int)sizeof(struct ForceExchangeParmsSt), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 246 6 len=19 destroyHaloExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 248 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 248 26 , 9446392186784961063UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 249 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 249 10 , 9446392186784961061UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 253 6 len=12 haloExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 260 15 len=16 initHaloExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 38 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 262 64 , 9446392186784959442UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 284 6 len=12 exchangeData_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 289 28 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 289 49 , 9446392186784961201UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 290 28 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 290 49 , 9446392186784961211UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 291 28 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 291 49 , 9446392186784961214UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 292 28 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 292 49 , 9446392186784961204UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 309 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 309 9 , 9446392186784961204UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 310 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 310 9 , 9446392186784961214UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 311 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 311 9 , 9446392186784961211UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 312 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 312 9 , 9446392186784961201UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 334 6 len=14 mkAtomCellList_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 336 22 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 336 46 , 9446392186784960135UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 370 5 len=15 loadAtomsBuffer_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 415 6 len=17 unloadAtomsBuffer_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 437 6 len=20 destroyAtomsExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 443 7 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 443 31 , 9446392186784959955UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 444 7 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 444 30 , 9446392186784959955UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 455 6 len=19 mkForceSendCellList_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 457 22 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 457 46 , 9446392186784960855UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 507 6 len=19 mkForceRecvCellList_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 509 22 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 509 46 , 9446392186784961052UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 558 5 len=15 loadForceBuffer_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 586 6 len=17 unloadForceBuffer_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 609 6 len=20 destroyForceExchange_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 615 7 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 615 31 , 9446392186784960645UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 616 7 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 616 31 , 9446392186784960645UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 628 6 len=15 sortAtomsInCell_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 667 5 len=13 sortAtomsById_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 51 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 166 82 , 9446392186784961646UL, 0, 1, (int)sizeof(struct AtomExchangeParmsSt), 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 180 39 len=6 malloc_wrapper

@@ -1,3 +1,40 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 105 27 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 105 53 , 2433535641213254405UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 107 18 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 107 25 , 2433535641213254610UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 108 18 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 108 25 , 2433535641213254695UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 109 17 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 109 24 , 2433535641213254382UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 121 54 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 122 54 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 123 53 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 23 len=10 cudaMalloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 124 76 , 0UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 176 1 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 176 6 , 2433535641213254405UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 177 1 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 177 6 , 2433535641213254610UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 178 1 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 178 6 , 2433535641213254695UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 179 1 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 179 6 , 2433535641213254382UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 181 1 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 181 12 , 2433535641213254713UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 183 1 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 183 6 , 2433535641213254711UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 185 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 186 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 187 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 23 len=8 cudaFree_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 188 32 , 0UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 49 6 len=10 fwd_kernel_npm
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 159 1 alias_group_changed(____alias_loc_id_18); 
 InsertText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 162 1 alias_group_changed(____alias_loc_id_20); 
 ReplaceText /Users/jmg3/num-debug/src/examples/cuda/iso3d.cu 105 27 len=6 malloc_wrapper

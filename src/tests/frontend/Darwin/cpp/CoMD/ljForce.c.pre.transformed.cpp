@@ -511,6 +511,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -553,7 +554,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2267,6 +2268,7 @@ static int ljForce(SimFlat* s);
 static void ljPrint(FILE* file, BasePotential* pot);
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+void ljDestroy_npm(BasePotential** inppot);
 void ljDestroy_quick(BasePotential** inppot); void ljDestroy(BasePotential** inppot);
 void ljDestroy_resumable(BasePotential** inppot)
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2289,6 +2291,7 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 107 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 109 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+BasePotential* initLjPot_npm(void);
 BasePotential* initLjPot_quick(void); BasePotential* initLjPot(void);
 BasePotential* initLjPot_resumable(void)
 # 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2326,6 +2329,7 @@ BasePotential* initLjPot_resumable(void)
 }
 # 128 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 129 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+void ljPrint_npm(FILE* file, BasePotential* pot);
 void ljPrint_quick(FILE* file, BasePotential* pot); void ljPrint(FILE* file, BasePotential* pot);
 void ljPrint_resumable(FILE* file, BasePotential* pot)
 # 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2354,6 +2358,7 @@ void ljPrint_resumable(FILE* file, BasePotential* pot)
 rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2); }
 # 142 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 143 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+int ljForce_npm(SimFlat* s);
 int ljForce_quick(SimFlat* s); int ljForce(SimFlat* s);
 int ljForce_resumable(SimFlat* s)
 # 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -2800,8 +2805,245 @@ int ljForce(SimFlat* s) { return (____chimes_replaying ? ljForce_resumable(s) : 
 
 
 
+void ljDestroy_npm(BasePotential** inppot)
+# 98 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{
+# 99 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (!inppot) {return;; };
+# 100 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ LjPotential* pot = (LjPotential*)(*inppot);
+# 101 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (!pot) {return;; };
+# 102 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ free_wrapper(pot, 14970133447157970243UL);
+# 103 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ *inppot = __null;
+# 104 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 105 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ return;
+# 106 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+}
+
+BasePotential* initLjPot_npm(void)
+# 110 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{
+# 111 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ LjPotential *pot = (LjPotential*)malloc_wrapper(sizeof(LjPotential), 14970133447157970263UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy));
+# 112 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->force = ljForce;
+# 113 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->print = ljPrint;
+# 114 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->destroy = ljDestroy;
+# 115 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->sigma = 2.315;
+# 116 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->epsilon = 0.167;
+# 117 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->mass = 63.55 * amuToInternalMass;
+# 118 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 119 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->lat = 3.615;
+# 120 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ strcpy(pot->latticeType, "FCC");
+# 121 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->cutoff = 2.5*pot->sigma;
+# 122 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 123 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ strcpy(pot->name, "Cu");
+# 124 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ pot->atomicNo = 29;
+# 125 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 126 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ return (BasePotential*) pot;
+# 127 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+}
+
+void ljPrint_npm(FILE* file, BasePotential* pot)
+# 130 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{
+# 131 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ LjPotential* ljPot = (LjPotential*) pot;
+# 132 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Potential type   : Lennard-Jones\n");
+# 133 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Species name     : %s\n", ljPot->name);
+# 134 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Atomic number    : %d\n", ljPot->atomicNo);
+# 135 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Mass             : ""%lg"" amu\n", ljPot->mass / amuToInternalMass);
+# 136 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Lattice Type     : %s\n", ljPot->latticeType);
+# 137 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Lattice spacing  : ""%lg"" Angstroms\n", ljPot->lat);
+# 138 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Cutoff           : ""%lg"" Angstroms\n", ljPot->cutoff);
+# 139 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Epsilon          : ""%lg"" eV\n", ljPot->epsilon);
+# 140 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
+# 141 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+}
+
+int ljForce_npm(SimFlat* s)
+# 144 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+{
+# 145 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ LjPotential* pot = (LjPotential *) s->pot;
+# 146 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t sigma = pot->sigma;
+# 147 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t epsilon = pot->epsilon;
+# 148 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t rCut = pot->cutoff;
+# 149 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t rCut2 = rCut*rCut;
+# 150 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 151 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 152 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t ePot = 0.0;
+# 153 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->ePotential = 0.0;
+# 154 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int fSize = s->boxes->nTotalBoxes*64;
+# 155 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int iii=0; iii<fSize; ++iii)
+# 156 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 157 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ zeroReal3(s->atoms->f[iii]);
+# 158 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->atoms->U[iii] = 0.;
+# 159 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 160 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 161 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t s6 = sigma*sigma*sigma*sigma*sigma*sigma;
+# 162 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 163 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t rCut6 = s6 / (rCut2*rCut2*rCut2);
+# 164 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t eShift = 1.0 * rCut6 * (rCut6 - 1.0);
+# 165 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 166 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int nbrBoxes[27];
+# 167 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 168 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
+# 169 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 170 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int nIBox = s->boxes->nAtoms[iBox];
+# 171 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (nIBox == 0) {continue;; };
+# 172 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int nNbrBoxes = getNeighborBoxes(s->boxes, iBox, nbrBoxes);
+# 173 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 174 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int jTmp=0; jTmp<nNbrBoxes; jTmp++)
+# 175 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 176 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int jBox = nbrBoxes[jTmp];
+# 177 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 178 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ (__builtin_expect(!(jBox>=0), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c", 178, "jBox>=0") : (void)0);
+# 179 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 180 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int nJBox = s->boxes->nAtoms[jBox];
+# 181 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (nJBox == 0) {continue;; };
+# 182 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 183 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 184 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int iOff=iBox*64,ii=0; ii<nIBox; ii++,iOff++)
+# 185 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 186 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int iId = s->atoms->gid[iOff];
+# 187 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 188 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int jOff=64*jBox,ij=0; ij<nJBox; ij++,jOff++)
+# 189 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 190 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t dr[3];
+# 191 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ int jId = s->atoms->gid[jOff];
+# 192 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue;; };
+# 194 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t r2 = 0.0;
+# 195 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int m1=0; m1<3; m1++)
+# 196 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 197 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ dr[m1] = s->atoms->r[iOff][m1]-s->atoms->r[jOff][m1];
+# 198 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ r2+=dr[m1]*dr[m1];
+# 199 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 200 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 201 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (r2 > rCut2) {continue;; };
+# 202 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 203 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 204 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 205 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ r2 = 1.0/r2;
+# 206 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t r6 = s6 * (r2*r2*r2);
+# 207 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t eLocal = r6 * (r6 - 1.0) - eShift;
+# 208 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->atoms->U[iOff] += 0.5*eLocal;
+# 209 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->atoms->U[jOff] += 0.5*eLocal;
+# 210 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 211 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 212 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 213 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ if (jBox < s->boxes->nLocalBoxes) {ePot += eLocal; } else {ePot += 0.5 * eLocal; } ;
+# 217 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 218 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 219 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ real_t fr = - 4.0*epsilon*r6*r2*(12.0*r6 - 6.0);
+# 220 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ for (int m2=0; m2<3; m2++)
+# 221 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ {
+# 222 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->atoms->f[iOff][m2] -= dr[m2]*fr;
+# 223 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->atoms->f[jOff][m2] += dr[m2]*fr;
+# 224 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 225 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 226 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 227 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 228 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ }
+# 229 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 230 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ ePot = ePot*4.0*epsilon;
+# 231 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ s->ePotential = ePot;
+# 232 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+# 233 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+ return 0;
+# 234 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(14970133447157970232UL, 13, 5, 26, 1, 11, 14970133447157970232UL + 568UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 77UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 664UL, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 566UL, 14970133447157970232UL + 621UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 1UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 276UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 274UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "LjPotentialSt", 11, "double", (int)__builtin_offsetof(struct LjPotentialSt, cutoff), "double", (int)__builtin_offsetof(struct LjPotentialSt, mass), "double", (int)__builtin_offsetof(struct LjPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, name), "int", (int)__builtin_offsetof(struct LjPotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct LjPotentialSt, force), "*", (int)__builtin_offsetof(struct LjPotentialSt, print), "*", (int)__builtin_offsetof(struct LjPotentialSt, destroy), "double", (int)__builtin_offsetof(struct LjPotentialSt, sigma), "double", (int)__builtin_offsetof(struct LjPotentialSt, epsilon), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "initLjPot", 0, "ljPrint", 0, "zeroReal3", 0, "ljForce", 2, "getNeighborBoxes", "zeroReal3", "ljDestroy", 0, "ljForce|s|0", 1, "getNeighborBoxes", "ljForce|epsilon|0", 1, "getNeighborBoxes", "ljForce|rCut2|0", 1, "getNeighborBoxes", "ljForce|ePot|0", 1, "getNeighborBoxes", "ljForce|s6|0", 1, "getNeighborBoxes", "ljForce|eShift|0", 1, "getNeighborBoxes", "ljForce|nbrBoxes|0", 1, "ljForce", "ljForce|iBox|0", 1, "getNeighborBoxes", "ljForce|nIBox|0", 1, "getNeighborBoxes", "ljForce|nNbrBoxes|0", 1, "getNeighborBoxes", "ljForce|jTmp|0", 1, "getNeighborBoxes", "ljForce|jBox|0", 1, "getNeighborBoxes", "ljForce|nJBox|0", 1, "getNeighborBoxes", "ljForce|iOff|0", 1, "getNeighborBoxes", "ljForce|ii|0", 1, "getNeighborBoxes", "ljForce|iId|0", 1, "getNeighborBoxes", "ljForce|jOff|0", 1, "getNeighborBoxes", "ljForce|ij|0", 1, "getNeighborBoxes", "ljForce|dr|0", 1, "getNeighborBoxes", "ljForce|jId|0", 1, "getNeighborBoxes", "ljForce|r2|0", 1, "getNeighborBoxes", "ljForce|m1|0", 1, "getNeighborBoxes", "ljForce|r6|0", 1, "getNeighborBoxes", "ljForce|eLocal|0", 1, "getNeighborBoxes", "ljForce|fr|0", 1, "getNeighborBoxes", "ljForce|m2|0", 1, "getNeighborBoxes", &____alias_loc_id_0, (unsigned)33, 14970133447157970232UL + 77UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 79UL, 14970133447157970232UL + 80UL, 14970133447157970232UL + 81UL, 14970133447157970232UL + 82UL, 14970133447157970232UL + 83UL, 14970133447157970232UL + 84UL, 14970133447157970232UL + 85UL, 14970133447157970232UL + 86UL, 14970133447157970232UL + 87UL, 14970133447157970232UL + 88UL, 14970133447157970232UL + 90UL, 14970133447157970232UL + 91UL, 14970133447157970232UL + 92UL, 14970133447157970232UL + 93UL, 14970133447157970232UL + 94UL, 14970133447157970232UL + 95UL, 14970133447157970232UL + 96UL, 14970133447157970232UL + 97UL, 14970133447157970232UL + 98UL, 14970133447157970232UL + 99UL, 14970133447157970232UL + 100UL, 14970133447157970232UL + 101UL, 14970133447157970232UL + 102UL, 14970133447157970232UL + 103UL, 14970133447157970232UL + 104UL, 14970133447157970232UL + 105UL, 14970133447157970232UL + 106UL, 14970133447157970232UL + 107UL, 14970133447157970232UL + 108UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 276UL, &____alias_loc_id_1, (unsigned)3, 14970133447157970232UL + 1UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 25UL, &____alias_loc_id_2, (unsigned)2, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, &____alias_loc_id_3, (unsigned)33, 14970133447157970232UL + 77UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 79UL, 14970133447157970232UL + 80UL, 14970133447157970232UL + 81UL, 14970133447157970232UL + 82UL, 14970133447157970232UL + 83UL, 14970133447157970232UL + 84UL, 14970133447157970232UL + 85UL, 14970133447157970232UL + 86UL, 14970133447157970232UL + 87UL, 14970133447157970232UL + 88UL, 14970133447157970232UL + 90UL, 14970133447157970232UL + 91UL, 14970133447157970232UL + 92UL, 14970133447157970232UL + 93UL, 14970133447157970232UL + 94UL, 14970133447157970232UL + 95UL, 14970133447157970232UL + 96UL, 14970133447157970232UL + 97UL, 14970133447157970232UL + 98UL, 14970133447157970232UL + 99UL, 14970133447157970232UL + 100UL, 14970133447157970232UL + 101UL, 14970133447157970232UL + 102UL, 14970133447157970232UL + 103UL, 14970133447157970232UL + 104UL, 14970133447157970232UL + 105UL, 14970133447157970232UL + 106UL, 14970133447157970232UL + 107UL, 14970133447157970232UL + 108UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 276UL, &____alias_loc_id_4, (unsigned)3, 14970133447157970232UL + 566UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 568UL, &____alias_loc_id_5, (unsigned)2, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL);
+    init_module(14970133447157970232UL, 13, 5, 26, 1, 11, 14970133447157970232UL + 568UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 77UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 664UL, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, 14970133447157970232UL + 566UL, 14970133447157970232UL + 621UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 622UL, 14970133447157970232UL + 1UL, 14970133447157970232UL + 25UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 11UL, 14970133447157970232UL + 274UL, 14970133447157970232UL + 276UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 274UL, "AtomsSt", 8, "int", (int)__builtin_offsetof(struct AtomsSt, nLocal), "int", (int)__builtin_offsetof(struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof(struct AtomsSt, gid), "int*", (int)__builtin_offsetof(struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof(struct AtomsSt, f), "double*", (int)__builtin_offsetof(struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof(struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof(struct BasePotentialSt, mass), "double", (int)__builtin_offsetof(struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct BasePotentialSt, name), "int", (int)__builtin_offsetof(struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct BasePotentialSt, force), "*", (int)__builtin_offsetof(struct BasePotentialSt, print), "*", (int)__builtin_offsetof(struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof(struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof(struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof(struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof(struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof(struct HaloExchangeSt, parms), "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof(struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof(struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof(struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof(struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof(struct LinkCellSt, nAtoms), "LjPotentialSt", 11, "double", (int)__builtin_offsetof(struct LjPotentialSt, cutoff), "double", (int)__builtin_offsetof(struct LjPotentialSt, mass), "double", (int)__builtin_offsetof(struct LjPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof(struct LjPotentialSt, name), "int", (int)__builtin_offsetof(struct LjPotentialSt, atomicNo), "*", (int)__builtin_offsetof(struct LjPotentialSt, force), "*", (int)__builtin_offsetof(struct LjPotentialSt, print), "*", (int)__builtin_offsetof(struct LjPotentialSt, destroy), "double", (int)__builtin_offsetof(struct LjPotentialSt, sigma), "double", (int)__builtin_offsetof(struct LjPotentialSt, epsilon), "SimFlatSt", 11, "int", (int)__builtin_offsetof(struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof(struct SimFlatSt, printRate), "double", (int)__builtin_offsetof(struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof(struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof(struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof(struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof(struct SimFlatSt, species), "double", (int)__builtin_offsetof(struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof(struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof(struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof(struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof(struct SpeciesDataSt, name), "int", (int)__builtin_offsetof(struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof(struct SpeciesDataSt, mass), "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "initLjPot", 0, "ljPrint", 0, "zeroReal3", 0, "ljForce", 2, "zeroReal3", "getNeighborBoxes", "ljDestroy", 0, "ljForce|s|0", 1, "getNeighborBoxes", "ljForce|epsilon|0", 1, "getNeighborBoxes", "ljForce|rCut2|0", 1, "getNeighborBoxes", "ljForce|ePot|0", 1, "getNeighborBoxes", "ljForce|s6|0", 1, "getNeighborBoxes", "ljForce|eShift|0", 1, "getNeighborBoxes", "ljForce|nbrBoxes|0", 1, "ljForce", "ljForce|iBox|0", 1, "getNeighborBoxes", "ljForce|nIBox|0", 1, "getNeighborBoxes", "ljForce|nNbrBoxes|0", 1, "getNeighborBoxes", "ljForce|jTmp|0", 1, "getNeighborBoxes", "ljForce|jBox|0", 1, "getNeighborBoxes", "ljForce|nJBox|0", 1, "getNeighborBoxes", "ljForce|iOff|0", 1, "getNeighborBoxes", "ljForce|ii|0", 1, "getNeighborBoxes", "ljForce|iId|0", 1, "getNeighborBoxes", "ljForce|jOff|0", 1, "getNeighborBoxes", "ljForce|ij|0", 1, "getNeighborBoxes", "ljForce|dr|0", 1, "getNeighborBoxes", "ljForce|jId|0", 1, "getNeighborBoxes", "ljForce|r2|0", 1, "getNeighborBoxes", "ljForce|m1|0", 1, "getNeighborBoxes", "ljForce|r6|0", 1, "getNeighborBoxes", "ljForce|eLocal|0", 1, "getNeighborBoxes", "ljForce|fr|0", 1, "getNeighborBoxes", "ljForce|m2|0", 1, "getNeighborBoxes", &____alias_loc_id_0, (unsigned)33, 14970133447157970232UL + 77UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 79UL, 14970133447157970232UL + 80UL, 14970133447157970232UL + 81UL, 14970133447157970232UL + 82UL, 14970133447157970232UL + 83UL, 14970133447157970232UL + 84UL, 14970133447157970232UL + 85UL, 14970133447157970232UL + 86UL, 14970133447157970232UL + 87UL, 14970133447157970232UL + 88UL, 14970133447157970232UL + 90UL, 14970133447157970232UL + 91UL, 14970133447157970232UL + 92UL, 14970133447157970232UL + 93UL, 14970133447157970232UL + 94UL, 14970133447157970232UL + 95UL, 14970133447157970232UL + 96UL, 14970133447157970232UL + 97UL, 14970133447157970232UL + 98UL, 14970133447157970232UL + 99UL, 14970133447157970232UL + 100UL, 14970133447157970232UL + 101UL, 14970133447157970232UL + 102UL, 14970133447157970232UL + 103UL, 14970133447157970232UL + 104UL, 14970133447157970232UL + 105UL, 14970133447157970232UL + 106UL, 14970133447157970232UL + 107UL, 14970133447157970232UL + 108UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 276UL, &____alias_loc_id_1, (unsigned)3, 14970133447157970232UL + 1UL, 14970133447157970232UL + 2UL, 14970133447157970232UL + 25UL, &____alias_loc_id_2, (unsigned)2, 14970133447157970232UL + 29UL, 14970133447157970232UL + 31UL, &____alias_loc_id_3, (unsigned)33, 14970133447157970232UL + 77UL, 14970133447157970232UL + 78UL, 14970133447157970232UL + 79UL, 14970133447157970232UL + 80UL, 14970133447157970232UL + 81UL, 14970133447157970232UL + 82UL, 14970133447157970232UL + 83UL, 14970133447157970232UL + 84UL, 14970133447157970232UL + 85UL, 14970133447157970232UL + 86UL, 14970133447157970232UL + 87UL, 14970133447157970232UL + 88UL, 14970133447157970232UL + 90UL, 14970133447157970232UL + 91UL, 14970133447157970232UL + 92UL, 14970133447157970232UL + 93UL, 14970133447157970232UL + 94UL, 14970133447157970232UL + 95UL, 14970133447157970232UL + 96UL, 14970133447157970232UL + 97UL, 14970133447157970232UL + 98UL, 14970133447157970232UL + 99UL, 14970133447157970232UL + 100UL, 14970133447157970232UL + 101UL, 14970133447157970232UL + 102UL, 14970133447157970232UL + 103UL, 14970133447157970232UL + 104UL, 14970133447157970232UL + 105UL, 14970133447157970232UL + 106UL, 14970133447157970232UL + 107UL, 14970133447157970232UL + 108UL, 14970133447157970232UL + 272UL, 14970133447157970232UL + 276UL, &____alias_loc_id_4, (unsigned)3, 14970133447157970232UL + 566UL, 14970133447157970232UL + 567UL, 14970133447157970232UL + 568UL, &____alias_loc_id_5, (unsigned)2, 14970133447157970232UL + 625UL, 14970133447157970232UL + 638UL);
     register_functions(5, "ljForce.c.pre.hard.cpp", "ljDestroy", &ljDestroy, "initLjPot", &initLjPot, "ljForce", &ljForce, "ljPrint", &ljPrint, "zeroReal3", &zeroReal3);
     return 0;
 }
