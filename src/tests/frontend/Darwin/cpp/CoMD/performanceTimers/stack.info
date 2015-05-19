@@ -10,8 +10,10 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|printRate|0 " i32 " 32 0 0 1 getMyRank getNRanks printRank timerStats
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|tick|0 " double " 64 0 0 1 getMyRank getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|loopTime|0 " double " 64 0 0 1 getMyRank getNRanks
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|____chimes_unroll_var_0|0 " i32 " 32 0 0 1 getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|ii|0 " i32 " 32 0 0 1 getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|totalTime|0 " double " 64 0 0 1 getNRanks
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|____chimes_unroll_var_1|0 " i32 " 32 0 0 1 getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|ii|1 " i32 " 32 0 0 1 getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|atomsPerTask|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|sendBuf|0 " [11 x double] " 704 0 0 1 timerStats
@@ -26,9 +28,12 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|ii|5 " i32 " 32 0 0 1 addDoubleParallel getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|temp|0 " double " 64 0 0 1 addDoubleParallel getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|ii|6 " i32 " 32 0 0 1 getNRanks
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c timerStats|____chimes_unroll_var_4|0 " i32 " 32 0 0 1 getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|file|0 " %struct.__sFILE* " 64 1 0 1 getMyRank getNRanks printRank
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|tick|0 " double " 64 0 0 1 getMyRank getNRanks
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|loopTime|0 " double " 64 0 0 1 getMyRank getNRanks
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|____chimes_unroll_var_2|0 " i32 " 32 0 0 1 getMyRank
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|____chimes_unroll_var_3|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|ii|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|totalTime|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResultsYaml|ii|1 " i32 " 32 0 0 0

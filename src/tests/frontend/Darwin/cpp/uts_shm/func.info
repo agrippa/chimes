@@ -6,24 +6,24 @@ impl_abort 0
 ss_mkEmpty 102
 ss_error 111
 ss_init 203 0
-ss_push 278 284
-ss_top 359
-ss_pop 410
-ss_topPosn 429
-ss_localDepth 441
-ss_release 479 0
-ss_acquire 524 0
-ss_steal 761 0 0
+ss_push 282 288
+ss_top 367
+ss_pop 422
+ss_topPosn 441
+ss_localDepth 453
+ss_release 491 0
+ss_acquire 536 0
+ss_steal 777 0 0
 findwork 0
-ss_initState 850
-ss_setState 922 0
-initNode 937
-initRootNode 948 0
-genChildren 1057 1058 1059
-releaseNodes 1098
+ss_initState 866
+ss_setState 938 0
+initNode 953
+initRootNode 964 0
+genChildren 1081 1082 1083
+releaseNodes 1122
 cb_init
 cbarrier_wait
 cbarrier_cancel
-parTreeSearch 1323
+parTreeSearch 1347
 showStats 0
-main 0 1782
+main 0 1806

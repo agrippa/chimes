@@ -12,10 +12,13 @@
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_init|nbytes|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|s|0 " %struct.stealStack_t* " 64 1 0 1 rng_showstate
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|c|0 " %struct.node_t* " 64 1 0 1 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|s|0 " %struct.stealStack_t* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_push|____chimes_unroll_var_0|0 " i8* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|s|0 " %struct.stealStack_t* " 64 1 0 1 rng_showstate
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|r|0 " %struct.node_t* " 64 1 0 1 rng_showstate
-/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|s|0 " %struct.stealStack_t* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_top|____chimes_unroll_var_1|0 " i8* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|s|0 " %struct.stealStack_t* " 64 1 0 1 rng_showstate
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|r|0 " %struct.node_t* " 64 1 0 1 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_pop|____chimes_unroll_var_2|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_topPosn|s|0 " %struct.stealStack_t* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_localDepth|s|0 " %struct.stealStack_t* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_release|s|0 " %struct.stealStack_t* " 64 1 0 0
@@ -34,6 +37,7 @@
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|victimSharedStart|0 " %struct.node_t* " 64 1 0 1 rng_showstate
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|i|0 " i32 " 32 0 0 1 rng_showstate
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|r|0 " %struct.node_t* " 64 1 0 1 rng_showstate
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c ss_steal|____chimes_unroll_var_3|0 " i8* " 64 1 0 1 rng_showstate
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c findwork|k|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c findwork|i|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c findwork|v|0 " i32 " 32 0 0 0
@@ -51,6 +55,8 @@
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|parentHeight|0 " i32 " 32 0 0 1 releaseNodes rng_showstate rng_spawn ss_push uts_childType uts_numChildren
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|numChildren|0 " i32 " 32 0 0 1 releaseNodes rng_showstate rng_spawn ss_push uts_childType
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|childType|0 " i32 " 32 0 0 1 releaseNodes rng_showstate rng_spawn ss_push
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|____chimes_unroll_var_4|0 " i32 " 32 0 0 1 releaseNodes rng_showstate rng_spawn ss_push
+/Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|____chimes_unroll_var_5|0 " i8* " 64 1 0 1 releaseNodes rng_spawn ss_push
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|i|0 " i32 " 32 0 0 1 releaseNodes rng_spawn ss_push
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c genChildren|j|0 " i32 " 32 0 0 1 releaseNodes rng_spawn ss_push
 /Users/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c releaseNodes|ss|0 " %struct.stealStack_t* " 64 1 0 1 ss_setState

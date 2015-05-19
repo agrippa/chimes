@@ -9,6 +9,7 @@ from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
+NESTED_CALLS = RuntimeTest('NestedCalls', ['nested_calls.cpp'], 15, 2)
 STACK_SCALAR = RuntimeTest('StackScalar', ['stack_scalar.cpp'], 3, 1)
 STACK_STRUCT = RuntimeTest('StackStruct', ['stack_struct.cpp'], 4, 1)
 STACK_ARRAY = RuntimeTest('StackArray', ['stack_array.cpp'], 44, 1)
@@ -78,7 +79,7 @@ RAY_TRACER_ARGS='-x 128 -y 128 -s 512,512,100,100,0.5,0.5,0.5 ' + \
 RAY_TRACER = RuntimeTest('RayTracer', ['ray_tracer.c'], 0, 10,
                          cli_args=RAY_TRACER_ARGS)
 
-TESTS = [STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
+TESTS = [NESTED_CALLS, STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCALAR,
          NESTED_STACK_STRUCT, NESTED_MALLOCS, NESTED_STRUCT_PTRS,
          ARRAY_OF_PTRS_STRUCT_MEMBER, VOID_PTR, COMD_FREE,
          COMD_FREE_COMPLEX, COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP,

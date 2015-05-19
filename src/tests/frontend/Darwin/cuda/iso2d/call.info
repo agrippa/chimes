@@ -1,132 +1,132 @@
-_Z12setup_configP7_configiPPc 71 1 0 4 0 703
+_Z12setup_configP7_configiPPc 71 1 0 4 0 763
 _Z13init_progressiii 72 1 0 0 0 0
-fprintf 75 1 0 567 994 0
-fprintf 80 1 0 567 994 0
-printf 94 1 0 996 0 0
-printf 95 1 0 997 0
-printf 96 1 0 997 0
-malloc 100 18 525 0
-malloc 101 18 525 0
-malloc 102 17 525 0
-malloc 103 27 342 0
-fprintf 105 1 0 567 999
+fprintf 75 1 0 615 1054 0
+fprintf 80 1 0 615 1054 0
+printf 94 1 0 1056 0 0
+printf 95 1 0 1057 0
+printf 96 1 0 1057 0
+malloc 100 18 570 0
+malloc 101 18 570 0
+malloc 102 17 570 0
+malloc 103 27 378 0
+fprintf 105 1 0 615 1059
 _Z14config_sourcesPP7_sourcePiiii 109 1 0 4 4 0 0 0
-_Z14sample_sourcesP7_sourceiif 110 16 617 380 0 0 0
-_Z9init_dataPfS_S_S_iiff 112 1 0 525 525 525 342 0 0 0 0
+_Z14sample_sourcesP7_sourceiif 110 16 665 419 0 0 0
+_Z9init_dataPfS_S_S_iiff 112 1 0 570 570 570 378 0 0 0 0
 cudaMalloc 115 23 0 15 0
-fprintf 115 93 0 567 1000 1001 0
-cudaGetErrorString 115 240 208 0
-fprintf 115 188 0 567 1002 0 208
+fprintf 115 93 0 615 1060 1061 0
+cudaGetErrorString 115 228 222 0
+fprintf 115 255 0 615 1062 0 222
 exit 115 0 0 0
 cudaMalloc 116 23 0 16 0
-fprintf 116 93 0 567 1000 1001 0
-cudaGetErrorString 116 240 225 0
-fprintf 116 188 0 567 1002 0 225
+fprintf 116 93 0 615 1060 1061 0
+cudaGetErrorString 116 228 242 0
+fprintf 116 255 0 615 1062 0 242
 exit 116 0 0 0
 cudaMalloc 117 23 0 17 0
-fprintf 117 92 0 567 1000 1001 0
-cudaGetErrorString 117 239 242 0
-fprintf 117 187 0 567 1002 0 242
+fprintf 117 92 0 615 1060 1061 0
+cudaGetErrorString 117 227 262 0
+fprintf 117 254 0 615 1062 0 262
 exit 117 0 0 0
 cudaMalloc 118 23 0 18 0
-fprintf 118 110 0 567 1000 1001 0
-cudaGetErrorString 118 0 258 0
-fprintf 118 205 0 567 1002 0 258
+fprintf 118 110 0 615 1060 1061 0
+cudaGetErrorString 118 245 281 0
+fprintf 118 0 0 615 1062 0 281
 exit 118 0 0 0
-_ZN4dim3C1Ejjj 120 6 0 23 0 0 0
-_ZN4dim3C1Ejjj 121 6 0 24 0 0 0
+_ZN4dim3C1Ejjj 120 6 0 27 0 0 0
+_ZN4dim3C1Ejjj 121 6 0 28 0 0 0
 _Z7secondsv 123 20 0
-cudaMemcpy 125 23 0 489 525 0 0
-fprintf 125 111 0 567 1000 1001 0
-cudaGetErrorString 125 0 295 0
-fprintf 125 206 0 567 1002 0 295
+cudaMemcpy 125 23 0 531 570 0 0
+fprintf 125 111 0 615 1060 1061 0
+cudaGetErrorString 125 246 321 0
+fprintf 125 0 0 615 1062 0 321
 exit 125 0 0 0
-cudaMemcpy 126 23 0 489 525 0 0
-fprintf 126 111 0 567 1000 1001 0
-cudaGetErrorString 126 0 315 0
-fprintf 126 206 0 567 1002 0 315
+cudaMemcpy 126 23 0 531 570 0 0
+fprintf 126 111 0 615 1060 1061 0
+cudaGetErrorString 126 246 344 0
+fprintf 126 0 0 615 1062 0 344
 exit 126 0 0 0
-cudaMemcpy 127 23 0 476 525 0 0
-fprintf 127 109 0 567 1000 1001 0
-cudaGetErrorString 127 0 335 0
-fprintf 127 204 0 567 1002 0 335
+cudaMemcpy 127 23 0 518 570 0 0
+fprintf 127 109 0 615 1060 1061 0
+cudaGetErrorString 127 244 367 0
+fprintf 127 0 0 615 1062 0 367
 exit 127 0 0 0
-cudaMemcpy 128 23 0 477 342 0 0
-fprintf 128 131 0 567 1000 1001 0
-cudaGetErrorString 128 0 354 0
-fprintf 128 226 0 567 1002 0 354
+cudaMemcpy 128 23 0 519 378 0 0
+fprintf 128 131 0 615 1060 1061 0
+cudaGetErrorString 128 0 389 0
+fprintf 128 0 0 615 1062 0 389
 exit 128 0 0 0
 _Z7secondsv 130 16 0
-cudaMemcpy 136 23 0 489 619 0 0
-fprintf 136 145 0 567 1000 1001 0
-cudaGetErrorString 136 0 441 0
-fprintf 136 240 0 567 1002 0 441
+cudaMemcpy 136 23 0 531 667 0 0
+fprintf 136 145 0 615 1060 1061 0
+cudaGetErrorString 136 0 479 0
+fprintf 136 0 0 615 1062 0 479
 exit 136 0 0 0
-memcpy 140 2 0 35 24 0
-memcpy 140 2 0 36 23 0
-memcpy 140 2 0 37 35 0
-memcpy 140 2 0 38 36 0
-cudaConfigureCall 140 2 0 0 0 0 0 0 1022
-_Z10fwd_kernelPfS_S_S_iiii 140 46 0 489 489 476 477 0 0 0 0
+memcpy 140 2 0 44 28 0
+memcpy 140 2 0 45 27 0
+memcpy 140 2 0 46 44 0
+memcpy 140 2 0 47 45 0
+cudaConfigureCall 140 2 0 0 0 0 0 0 1082
+_Z10fwd_kernelPfS_S_S_iiii 140 46 0 531 531 518 519 0 0 0 0
 _Z10checkpointv 148 1 0
 _Z15update_progressi 151 1 0 0
 cudaDeviceSynchronize 153 23 0
-fprintf 153 78 0 567 1000 1001 0
-cudaGetErrorString 153 225 515 0
-fprintf 153 173 0 567 1002 0 515
-exit 153 253 0 0
+fprintf 153 78 0 615 1060 1061 0
+cudaGetErrorString 153 213 556 0
+fprintf 153 240 0 615 1062 0 556
+exit 153 0 0 0
 _Z7secondsv 154 20 0
-cudaMemcpy 156 23 0 525 489 0 0
-fprintf 156 111 0 567 1000 1001 0
-cudaGetErrorString 156 0 540 0
-fprintf 156 206 0 567 1002 0 540
+cudaMemcpy 156 23 0 570 531 0 0
+fprintf 156 111 0 615 1060 1061 0
+cudaGetErrorString 156 247 584 0
+fprintf 156 0 0 615 1062 0 584
 exit 156 0 0 0
 _Z7secondsv 157 18 0
 _Z15finish_progressv 159 1 0
-fprintf 162 1 0 567 1003 0 0 0
-_Z9save_textPfiiiiPKci 166 1 0 525 0 0 0 0 1004 0
-free 169 1 0 342
-free 170 1 0 525
-free 171 1 0 525
-free 172 1 0 525
-free 174 1 0 619
-free 176 1 0 617
-cudaFree 178 23 0 489
-fprintf 178 71 0 567 1000 1001 0
-cudaGetErrorString 178 218 643 0
-fprintf 178 166 0 567 1002 0 643
-exit 178 246 0 0
-cudaFree 179 23 0 489
-fprintf 179 71 0 567 1000 1001 0
-cudaGetErrorString 179 218 660 0
-fprintf 179 166 0 567 1002 0 660
-exit 179 246 0 0
-cudaFree 180 23 0 476
-fprintf 180 70 0 567 1000 1001 0
-cudaGetErrorString 180 217 677 0
-fprintf 180 165 0 567 1002 0 677
-exit 180 245 0 0
-cudaFree 181 23 0 477
-fprintf 181 74 0 567 1000 1001 0
-cudaGetErrorString 181 221 694 0
-fprintf 181 169 0 567 1002 0 694
-exit 181 249 0 0
-_ZN4dim3C2Ejjj 419 116 0 755 0 0 0
-_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii 50 2 0 808 809 810 811 0 0 0 0
-cudaSetupArgument 9 155 0 826 0 0
-cudaSetupArgument 9 189 0 827 0 0
-cudaSetupArgument 9 223 0 828 0 0
-cudaSetupArgument 9 0 0 829 0 0
-cudaSetupArgument 9 0 0 830 0 0
-cudaSetupArgument 9 0 0 831 0 0
-cudaSetupArgument 9 0 0 832 0 0
-cudaSetupArgument 9 0 0 833 0 0
-_ZN37_GLOBAL__N__13_iso2d_cpp1_ii_2fcd0cad10cudaLaunchIcEE9cudaErrorPT_ 9 0 0 1014
-cudaLaunch 1510 8 0 911
-__cudaRegisterFatBinary 2 73 947 1019
-anon 2 73 0 947
-atexit 2 73 0 1021
-_ZL37__nv_save_fatbinhandle_for_managed_rtPPv 1 92 0 947
-__cudaRegisterFunction 1 138 0 947 1014 1010 1010 0 1016 1016 1017 1017 1018
-_ZL22____nv_dummy_param_refPv 237 3 0 1015
-__cudaUnregisterFatBinary 238 3 0 947
+fprintf 162 1 0 615 1063 0 0 0
+_Z9save_textPfiiiiPKci 166 1 0 570 0 0 0 0 1064 0
+free 169 1 0 378
+free 170 1 0 570
+free 171 1 0 570
+free 172 1 0 570
+free 174 1 0 667
+free 176 1 0 665
+cudaFree 178 23 0 531
+fprintf 178 71 0 615 1060 1061 0
+cudaGetErrorString 178 207 690 0
+fprintf 178 234 0 615 1062 0 690
+exit 178 0 0 0
+cudaFree 179 23 0 531
+fprintf 179 71 0 615 1060 1061 0
+cudaGetErrorString 179 207 710 0
+fprintf 179 234 0 615 1062 0 710
+exit 179 0 0 0
+cudaFree 180 23 0 518
+fprintf 180 70 0 615 1060 1061 0
+cudaGetErrorString 180 206 730 0
+fprintf 180 233 0 615 1062 0 730
+exit 180 0 0 0
+cudaFree 181 23 0 519
+fprintf 181 74 0 615 1060 1061 0
+cudaGetErrorString 181 210 750 0
+fprintf 181 237 0 615 1062 0 750
+exit 181 0 0 0
+_ZN4dim3C2Ejjj 419 116 0 815 0 0 0
+_Z40__device_stub__Z10fwd_kernelPfS_S_S_iiiiPfS_S_S_iiii 50 2 0 868 869 870 871 0 0 0 0
+cudaSetupArgument 9 155 0 886 0 0
+cudaSetupArgument 9 189 0 887 0 0
+cudaSetupArgument 9 223 0 888 0 0
+cudaSetupArgument 9 0 0 889 0 0
+cudaSetupArgument 9 0 0 890 0 0
+cudaSetupArgument 9 0 0 891 0 0
+cudaSetupArgument 9 0 0 892 0 0
+cudaSetupArgument 9 0 0 893 0 0
+_ZN37_GLOBAL__N__13_iso2d_cpp1_ii_2fcd0cad10cudaLaunchIcEE9cudaErrorPT_ 9 0 0 1074
+cudaLaunch 1510 8 0 971
+__cudaRegisterFatBinary 2 73 1007 1079
+anon 2 73 0 1007
+atexit 2 73 0 1081
+_ZL37__nv_save_fatbinhandle_for_managed_rtPPv 1 92 0 1007
+__cudaRegisterFunction 1 138 0 1007 1074 1070 1070 0 1076 1076 1077 1077 1078
+_ZL22____nv_dummy_param_refPv 237 3 0 1075
+__cudaUnregisterFatBinary 238 3 0 1007

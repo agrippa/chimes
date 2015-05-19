@@ -14,7 +14,6 @@
 #include "llvm/Support/raw_ostream.h"
 
 #include "ParentTransform.h"
-#include "InitPass.h"
 #include "StartExitPass.h"
 #include "CallingAndOMPPass.h"
 #include "CallLabelInsertPass.h"
@@ -482,7 +481,6 @@ int main(int argc, const char **argv) {
   passes.push_back(new Pass(new AliasChangedPass(), ".alias", ""));
   passes.push_back(new Pass(new MallocPass(), ".malloc", ""));
   passes.push_back(new Pass(new StartExitPass(), ".start", ""));
-  passes.push_back(new Pass(new InitPass(), ".init", ""));
   passes.push_back(new Pass(new SplitInitsPass(), ".split", ""));
 
   /*

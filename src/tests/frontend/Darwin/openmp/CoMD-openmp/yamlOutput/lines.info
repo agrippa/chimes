@@ -1,2 +1,3 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 9 : { 50 } direct:call:printRank
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 4 : { 115 } direct:call:time
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 4 : { 51 } direct:call:getTimeString
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 4 : { 119 } direct:call:time
