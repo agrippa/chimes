@@ -11,39 +11,58 @@ class Insertion(object):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 5:
+    if len(sys.argv) < 3:
         print('usage: python add_quick_versions.py input-file output-file ' +
-              'bodies-file decl-file')
+              '-b bodies-file -d decl-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
     output_filename = sys.argv[2]
-    bodies_filename = sys.argv[3]
-    decls_filename = sys.argv[4]
+
+    bodies_files = []
+    decl_files = []
+
+    # Parse command line arguments
+    index = 3
+    while index < len(sys.argv):
+        t = sys.argv[index]
+        if t == '-b':
+            bodies_files.append(sys.argv[index + 1])
+        elif t == '-d':
+            decl_files.append(sys.argv[index + 1])
+        else:
+            print 'Unrecognized option "' + t + '"'
+            sys.exit(1)
+        index += 2
+
+    # Parse declarations that need to be inserted in output file at specific
+    # lines in specific files
+    insertions = []
+    for f in decl_files:
+        decls_filename = f
+        data = open(decls_filename, 'r')
+
+        line = data.readline()
+        while len(line) > 0:
+            acc = line
+            line = data.readline()
+            while '-----' not in line:
+                if line[0] != '#':
+                    acc += line
+                line = data.readline()
+
+            tokens = acc.split()
+
+            line = int(tokens[2])
+            filename = tokens[1]
+            insertion = ' '.join(tokens[3:])
+            insertions.append(Insertion(line, filename, insertion))
+
+            line = data.readline()
+        data.close()
 
     inp = open(input_filename, 'r')
     output = open(output_filename, 'w')
-
-    insertions = []
-    data = open(decls_filename, 'r')
-    # Get last line in file
-    line = data.readline()
-    while len(line) > 0:
-      acc = line
-      line = data.readline()
-      while '-----' not in line:
-          if line[0] != '#':
-              acc += line
-          line = data.readline()
-
-      tokens = acc.split()
-
-      line = int(tokens[2])
-      filename = tokens[1]
-      insertion = ' '.join(tokens[3:])
-      insertions.append(Insertion(line, filename, insertion))
-
-      line = data.readline()
 
     curr_file = ''
     curr_line = 0
@@ -66,11 +85,9 @@ if __name__ == '__main__':
         else:
             acc = ''
             for i in insertions:
-                if i.filename == curr_file and i.line == curr_line:
-                    assert not i.matched, 'actual line = ' + str(actual_line) + \
-                     ', target_file=' + i.filename + ', target_line=' + \
-                     str(i.line)
+                if not i.matched and i.filename == curr_file and i.line == curr_line:
                     acc += i.insertion
+                    # Only match once, at the highest point in the file
                     i.matched = True
 
             if len(acc) > 0:
@@ -84,9 +101,11 @@ if __name__ == '__main__':
     for i in insertions:
         assert i.matched, i.filename + ' ' + str(i.line) + ' ' + i.insertion
 
-    bodies_file = open(bodies_filename, 'r')
-    output.write(bodies_file.read())
-    bodies_file.close()
+    # Append all function bodies at the end of the output file
+    for f in bodies_files:
+        bodies_file = open(f, 'r')
+        output.write(bodies_file.read() + '\n\n')
+        bodies_file.close()
 
     output.close()
 

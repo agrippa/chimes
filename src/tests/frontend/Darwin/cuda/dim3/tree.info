@@ -1,8 +1,8 @@
-main 0 DOES checkpoint
+main 0 DOES checkpoint 6 1
 dim3::dim3 0 DOES_NOT
-__sti____cudaRegisterAll_12_dim3_cpp1_ii_main 1 MAY __cudaRegisterFatBinary atexit
-__nv_cudaEntityRegisterCallback 0 DOES_NOT __nv_save_fatbinhandle_for_managed_rt
-__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref __cudaUnregisterFatBinary
+__sti____cudaRegisterAll_12_dim3_cpp1_ii_main 1 MAY __cudaRegisterFatBinary 9 65 atexit 9 65
+__nv_cudaEntityRegisterCallback 0 DOES_NOT __nv_save_fatbinhandle_for_managed_rt 8 87
+__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref 237 3 __cudaUnregisterFatBinary 238 3
 ____nv_dummy_param_ref 0 DOES_NOT
 __nv_save_fatbinhandle_for_managed_rt 0 DOES_NOT
 dim3::dim3 0 DOES_NOT

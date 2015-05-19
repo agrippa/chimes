@@ -1,7 +1,1 @@
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 2879 7 : { 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 1995, 14007 } prop:call:LagrangeLeapFrog
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1498 3 : { 1640, 1641 } direct:call:CalcForceForNodes
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1422 3 : { 1995, 7354, 7355 } prop:call:CalcVolumeForceForElems
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1403 7 : { 7706, 7707, 7708, 7709, 7710, 7711, 7712 } prop:call:CalcHourglassControlForElems
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1365 7 : { 8051, 8052, 8053, 8054, 8055, 8062, 8063, 8064, 8065, 8066, 8067, 8068, 8069, 8070, 8095, 8102, 8109, 8116, 8123, 8130, 8289 } prop:call:CalcFBHourglassForceForElems
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 1242 16 : { 1995, 9061, 9062, 9063, 9064, 9065, 9066, 9067, 9068, 9069, 9073, 9074, 9075, 9076, 9077, 9078, 9079, 9080, 9081, 9082, 9083, 9084, 9085, 9086, 9087, 9088, 9089, 9090, 9091, 9092, 9093, 9094, 9095, 9096, 9097, 9098, 9099, 9100, 9101, 9102, 9103, 9104 } prop:call:CBRT
-/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 96 39 : { 10372 } direct:call:cbrt
+/Users/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc 2887 7 : { 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 1995, 14007 } prop:call:checkpoint

@@ -477,6 +477,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -519,7 +520,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1732,6 +1733,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
+void *haha_this_sux_part_deux_npm();
 void *haha_this_sux_part_deux_quick(); void *haha_this_sux_part_deux();
 void *haha_this_sux_part_deux_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux_part_deux), "haha_this_sux_part_deux", &____must_manage_haha_this_sux_part_deux, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
@@ -1746,7 +1748,7 @@ int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(651168722096376646UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- tmp = ( ({ calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0, 0); (haha_this_sux_part_deux)(); }) ) ;
+ tmp = (({ calling_npm(1, 0, 651168722096376637UL, 651168722096376618UL); haha_this_sux_part_deux_npm(); })) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
@@ -1766,7 +1768,7 @@ void *haha_this_sux_part_deux() { return (____chimes_replaying ? haha_this_sux_p
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(651168722096376646UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); ; ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
- tmp = ( ({ calling((void*)haha_this_sux_part_deux, -1, 651168722096376637UL, 0, 0); haha_this_sux_part_deux_quick(); }) ) ;
+ tmp = (({ calling_npm(1, 0, 651168722096376637UL, 651168722096376618UL); haha_this_sux_part_deux_npm(); })) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
@@ -1778,8 +1780,20 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 
+void *haha_this_sux_part_deux_npm() {
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
+ int *A = (int *)malloc_wrapper(sizeof(int) * 10, 651168722096376618UL, 0, 0);
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
+ return A;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(651168722096376615UL, 3, 2, 0, 1, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL, "haha_this_sux_part_deux", 0, "main", 2, "checkpoint", "haha_this_sux_part_deux", &____alias_loc_id_0, (unsigned)4, 651168722096376615UL + 12UL, 651168722096376615UL + 13UL, 651168722096376615UL + 14UL, 651168722096376615UL + 15UL, &____alias_loc_id_1, (unsigned)1, 651168722096376615UL + 1UL);
+    init_module(651168722096376615UL, 3, 2, 0, 1, 0, 651168722096376615UL + 1UL, 651168722096376615UL + 3UL, 651168722096376615UL + 15UL, 651168722096376615UL + 22UL, 651168722096376615UL + 14UL, 651168722096376615UL + 31UL, "haha_this_sux_part_deux", 0, "main", 2, "haha_this_sux_part_deux", "checkpoint", &____alias_loc_id_0, (unsigned)4, 651168722096376615UL + 12UL, 651168722096376615UL + 13UL, 651168722096376615UL + 14UL, 651168722096376615UL + 15UL, &____alias_loc_id_1, (unsigned)1, 651168722096376615UL + 1UL);
     register_functions(2, "func_with_one_ptr_return.cpp.pre.hard.cpp", "haha_this_sux_part_deux", &haha_this_sux_part_deux, "main", &main);
     return 0;
 }

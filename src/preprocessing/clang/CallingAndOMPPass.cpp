@@ -26,6 +26,8 @@ extern std::string stmtToString(const clang::Stmt *S, clang::ASTContext *Context
 extern clang::FunctionDecl *curr_func_decl;
 extern std::set<std::string> *ignorable;
 extern std::map<int, std::vector<CallLabel> > call_lbls;
+extern std::map<std::string, std::set<string>> func_to_alias_locs;
+extern std::set<std::string> npm_functions;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -739,6 +741,138 @@ bool CallingAndOMPPass::has_side_effects(const Expr *arg) {
     return true;
 }
 
+std::string CallingAndOMPPass::get_func_symbol(const CallExpr *call,
+        CallLocation *loc) {
+    std::string func_symbol;
+    if (loc->get_funcname() == "anon") {
+        func_symbol = stmtToString(call->getCallee());
+    } else {
+        func_symbol = loc->get_funcname();
+    }
+    return (func_symbol);
+}
+
+bool CallingAndOMPPass::needsToBeHoisted(std::string funcname, const Expr *arg) {
+    bool may_cause_checkpoint = true;
+    if (funcname != "anon") {
+        may_cause_checkpoint = insertions->may_cause_checkpoint(funcname);
+    }
+
+    return (!gen_quick && may_cause_checkpoint && has_side_effects(arg));
+}
+
+int CallingAndOMPPass::extractArgsWithSideEffects(const CallExpr *call,
+        CallLocation *loc, int nargs, std::stringstream *ss,
+        std::vector<std::string> *arg_varnames) {
+    int count_args_with_side_effects = 0;
+
+    for (int i = 0; i < nargs; i++) {
+        std::string varname = get_unique_argument_varname();
+        const Expr *arg = call->getArg(i);
+        assert(!isa<CXXDefaultArgExpr>(arg));
+
+        if (needsToBeHoisted(loc->get_funcname(), arg)) {
+            std::string type_str = arg->getType().getAsString();
+            if (type_str.find("(*)") != std::string::npos) {
+                /*
+                 * If one of the arguments is a multi-dimensional stack
+                 * array, we need to special case the declaration of its
+                 * copy.
+                 */
+                assert(type_str.find("(*)") == type_str.rfind("(*)"));
+                size_t index = type_str.find("(*)");
+                type_str.insert(index + 2, varname);
+                *ss << " " << type_str << ";";
+            } else {
+                *ss << " " << arg->getType().getAsString() << " " <<
+                    varname << "; ";
+            }
+            arg_varnames->push_back(varname);
+            count_args_with_side_effects++;
+        } else {
+            std::string arg_str = stmtToString(arg);
+#ifdef VERBOSE
+            llvm::errs() << "Deciding " << arg_str <<
+                " does not have side effects, class=" <<
+                arg->getStmtClassName() << "\n";
+#endif
+            arg_varnames->push_back(arg_str);
+        }
+    }
+
+    return (count_args_with_side_effects);
+}
+
+void CallingAndOMPPass::collectCallAliasPairings(
+        std::string callee, AliasesPassedToCallSite callsite,
+        vector<pair<size_t, size_t> > *new_aliases,
+        set<string> *changed_alias_locs,
+        std::set<std::string> *visited) {
+    if (visited->find(callee) != visited->end()) {
+        return;
+    }
+    visited->insert(callee);
+
+    FunctionArgumentAliasGroups funcAliases =
+        insertions->findMatchingFunction(callee);
+
+    FunctionExit *exit_info = insertions->getFunctionExitInfo(callee);
+    assert(exit_info);
+
+    if (callsite.get_return_alias() == 0UL) {
+        assert(exit_info->get_return_alias() == 0UL);
+    } else {
+        new_aliases->push_back(pair<size_t, size_t>(callsite.get_return_alias(),
+                    exit_info->get_return_alias()));
+    }
+
+    assert(funcAliases.nargs() == callsite.nparams());
+    for (int i = 0; i < funcAliases.nargs(); i++) {
+        size_t parent = callsite.alias_no_for(i);
+        size_t child = funcAliases.alias_no_for(i);
+        if (parent == 0UL || child == 0UL) {
+            assert(child == 0UL && parent == 0UL);
+        } else {
+            new_aliases->push_back(pair<size_t, size_t>(parent, child));
+        }
+    }
+
+    if (func_to_alias_locs.find(callee) != func_to_alias_locs.end()) {
+        set<string> alias_locs = func_to_alias_locs[callee];
+        for (set<string>::iterator loc_iter = alias_locs.begin(), loc_end =
+                alias_locs.end(); loc_iter != loc_end; loc_iter++) {
+            string loc_varname = *loc_iter;
+            changed_alias_locs->insert(loc_varname);
+        }
+    }
+
+    FunctionCallees *callees = insertions->get_callees(callee);
+    assert(callees);
+
+    map<std::string, vector<AliasesPassedToCallSite>::iterator> call_tracker;
+    for (std::vector<CheckpointCause>::iterator i = callees->begin(),
+            e = callees->end(); i != e; i++) {
+        CheckpointCause call = *i;
+
+        std::vector<AliasesPassedToCallSite>::iterator found;
+        if (call_tracker.find(call.get_name()) != call_tracker.end()) {
+            found = insertions->findFirstMatchingCallsiteAfter(
+                    call.get_line(), call.get_name(),
+                    call_tracker.at(call.get_name()));
+        } else {
+            std::vector<AliasesPassedToCallSite>::iterator begin =
+                insertions->getCallsiteStart();
+            found = insertions->findFirstMatchingCallsiteAfter(
+                    call.get_line(), call.get_name(), begin);
+        }
+        call_tracker[call.get_name()] = found;
+        AliasesPassedToCallSite callsite = *found;
+
+        collectCallAliasPairings(call.get_name(), callsite, new_aliases,
+                changed_alias_locs, visited);
+    }
+}
+
 void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
@@ -796,7 +930,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         bool is_critical = (pragma_name == "critical");
         bool is_barrier = (pragma_name == "barrier");
 
-        if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
+        if (supported_omp_pragmas.find(pragma_name) ==
+                supported_omp_pragmas.end()) {
             llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
             assert(false);
         }
@@ -932,7 +1067,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         }
     }
 
-    std::map<std::string, std::vector<AliasesPassedToCallSite>::iterator> call_tracker;
+    map<std::string, vector<AliasesPassedToCallSite>::iterator> call_tracker;
     // For each call made, create its text insertions
     for (std::map<int, std::vector<CallLocation>>::iterator i =
             calls_found.begin(), e = calls_found.end(); i != e; i++) {
@@ -951,37 +1086,69 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             const CallExpr *call = loc.get_call();
 
             if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
-                if (ompTree->add_function_call(call, lbl.get_lbl())) {
 
-                    std::vector<AliasesPassedToCallSite>::iterator found;
-                    if (call_tracker.find(loc.get_funcname()) !=
-                            call_tracker.end()) {
-                        found = insertions->findFirstMatchingCallsiteAfter(
-                                i->first, loc.get_funcname(),
-                                call_tracker.at(loc.get_funcname()));
-                    } else {
-                        std::vector<AliasesPassedToCallSite>::iterator begin =
-                            insertions->getCallsiteStart();
-                        found = insertions->findFirstMatchingCallsiteAfter(
-                                i->first, loc.get_funcname(), begin);
-                    }
-                    call_tracker[loc.get_funcname()] = found;
-                    AliasesPassedToCallSite callsite = *found;
-                    // AliasesPassedToCallSite callsite =
-                    //     insertions->findFirstMatchingCallsite(i->first,
-                    //         loc.get_funcname());
+                std::vector<AliasesPassedToCallSite>::iterator found;
+                if (call_tracker.find(loc.get_funcname()) !=
+                        call_tracker.end()) {
+                    found = insertions->findFirstMatchingCallsiteAfter(
+                            i->first, loc.get_funcname(),
+                            call_tracker.at(loc.get_funcname()));
+                } else {
+                    std::vector<AliasesPassedToCallSite>::iterator begin =
+                        insertions->getCallsiteStart();
+                    found = insertions->findFirstMatchingCallsiteAfter(
+                            i->first, loc.get_funcname(), begin);
+                }
+                call_tracker[loc.get_funcname()] = found;
+                AliasesPassedToCallSite callsite = *found;
 
-                    bool may_cause_checkpoint = true;
-                    std::string func_symbol;
-                    if (loc.get_funcname() == "anon") {
-                        func_symbol = stmtToString(call->getCallee());
-                    } else {
-                        func_symbol = loc.get_funcname();
-                        may_cause_checkpoint = insertions->may_cause_checkpoint(
-                                loc.get_funcname());
-                    }
-
+                bool is_converted_to_npm = (npm_functions.find(
+                            loc.get_funcname()) != npm_functions.end());
+                bool no_checkpoint = insertions->does_not_cause_checkpoint(
+                            loc.get_funcname());
+                if (is_converted_to_npm && no_checkpoint) {
                     std::stringstream ss;
+
+                    std::set<std::string> visited;
+                    vector<pair<size_t, size_t> > new_aliases;
+                    set<string> changed_alias_locs;
+                    collectCallAliasPairings(loc.get_funcname(), callsite,
+                            &new_aliases, &changed_alias_locs, &visited);
+
+                    ss << "({ calling_npm(" << new_aliases.size() << ", " <<
+                        changed_alias_locs.size();
+                    for (vector<pair<size_t, size_t> >::iterator new_iter =
+                            new_aliases.begin(), new_end = new_aliases.end();
+                            new_iter != new_end; new_iter++) {
+                        pair<size_t, size_t> curr = *new_iter;
+                        ss << ", " << curr.first << "UL, " << curr.second <<
+                            "UL";
+                    }
+                    for (set<string>::iterator loc_iter =
+                            changed_alias_locs.begin(), loc_end =
+                            changed_alias_locs.end(); loc_iter != loc_end;
+                            loc_iter++) {
+                        string curr_loc = *loc_iter;
+                        ss << ", " << curr_loc;
+                    }
+                    ss << "); ";
+
+                    ss << loc.get_funcname() + "_npm(";
+                    for (int a = 0; a < call->getNumArgs(); a++) {
+                        const Expr *arg = call->getArg(a);
+                        if (a != 0) ss << ", ";
+                        ss << getRewrittenText(clang::SourceRange(
+                                    arg->getLocStart(), arg->getLocEnd()));
+                    }
+                    ss << "); })";
+                    ReplaceText(clang::SourceRange(call->getLocStart(),
+                                call->getLocEnd()), ss.str());
+
+                    continue;
+                }
+
+                if (ompTree->add_function_call(call, lbl.get_lbl())) {
+                    std::string func_symbol = get_func_symbol(call, &loc);
 
                     /*
                      * Default parameters cannot be checkpointed, nor are they
@@ -994,41 +1161,11 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         nargs--;
                     }
 
-                    int count_args_with_side_effects = 0;
+                    std::stringstream ss;
                     std::vector<string> arg_varnames;
-                    for (int i = 0; i < nargs; i++) {
-                        std::string varname = get_unique_argument_varname();
-                        const Expr *arg = call->getArg(i);
-                        assert(!isa<CXXDefaultArgExpr>(arg));
-
-                        if (!gen_quick && may_cause_checkpoint && has_side_effects(arg)) {
-                            std::string type_str = arg->getType().getAsString();
-                            if (type_str.find("(*)") != std::string::npos) {
-                                /*
-                                 * If one of the arguments is a multi-dimensional stack
-                                 * array, we need to special case the declaration of its
-                                 * copy.
-                                 */
-                                assert(type_str.find("(*)") == type_str.rfind("(*)"));
-                                size_t index = type_str.find("(*)");
-                                type_str.insert(index + 2, varname);
-                                ss << " " << type_str << ";";
-                            } else {
-                                ss << " " << arg->getType().getAsString() << " " <<
-                                    varname << "; ";
-                            }
-                            arg_varnames.push_back(varname);
-                            count_args_with_side_effects++;
-                        } else {
-                            std::string arg_str = stmtToString(arg);
-#ifdef VERBOSE
-                            llvm::errs() << "Deciding " << arg_str <<
-                                " does not have side effects, class=" <<
-                                arg->getStmtClassName() << "\n";
-#endif
-                            arg_varnames.push_back(arg_str);
-                        }
-                    }
+                    int count_args_with_side_effects =
+                        extractArgsWithSideEffects(call, &loc, nargs, &ss,
+                                &arg_varnames);
 
                     std::stringstream replace_func_call;
                     replace_func_call << "(" << func_symbol << ")(";
@@ -1038,7 +1175,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     }
                     for (int i = 0; i < nargs; i++) {
                         const Expr *arg = call->getArg(i);
-                        if (!gen_quick && may_cause_checkpoint && has_side_effects(arg)) {
+                        if (needsToBeHoisted(loc.get_funcname(), arg)) {
                             ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
                                 "); ";
                         }

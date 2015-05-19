@@ -30,7 +30,7 @@ class FoundAlloc {
 
 class MallocPass : public ParentTransform {
 public:
-    MallocPass() {
+    MallocPass(bool set_npm_pass) : npm_pass(set_npm_pass) {
         supportedAllocationFunctions.insert("malloc");
         supportedAllocationFunctions.insert("calloc");
         supportedAllocationFunctions.insert("realloc");
@@ -47,12 +47,14 @@ public:
     bool createsFunctionLabels() override { return false; }
     bool createsOMPTree() override { return false; }
     bool requiresMangledVarsReset() { return false; }
+    bool transformsOriginal() { return false; }
 private:
     std::set<std::string> supportedAllocationFunctions;
 
     // Mapping from line number -> function name -> function call information
     std::map<int, std::map<std::string, std::vector<FoundAlloc> *> *>
         found_allocs;
+    bool npm_pass;
 };
 
 #endif

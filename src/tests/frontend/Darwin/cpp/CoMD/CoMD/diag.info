@@ -1,3 +1,31 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 142 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 142 9 , 13807915916850228031UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 162 10 len=14 initSimulation_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 164 29 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 164 50 , 13807915916850228306UL, 0, 1, (int)sizeof(struct SimFlatSt), 6, (int)__builtin_offsetof(struct SimFlatSt, domain), (int)__builtin_offsetof(struct SimFlatSt, boxes), (int)__builtin_offsetof(struct SimFlatSt, atoms), (int)__builtin_offsetof(struct SimFlatSt, species), (int)__builtin_offsetof(struct SimFlatSt, pot), (int)__builtin_offsetof(struct SimFlatSt, atomExchange)
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 218 6 len=17 destroySimulation_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 226 14 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 226 19 , 13807915916850229020UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 230 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 230 12 , 13807915916850229020UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 231 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 231 12 , 13807915916850229020UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 232 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 232 9 , 13807915916850229011UL
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 238 6 len=14 initSubsystems_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 247 6 len=18 finalizeSubsystems_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 256 16 len=13 initPotential_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 269 14 len=11 initSpecies_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 271 41 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 271 66 , 13807915916850229279UL, 0, 1, (int)sizeof(struct SpeciesDataSt), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 280 11 len=12 initValidate_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 283 31 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 283 53 , 13807915916850228675UL, 0, 1, (int)sizeof(struct ValidateSt), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 298 6 len=14 validateResult_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 327 6 len=8 sumAtoms_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 345 6 len=11 printThings_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 6 len=23 printSimulationDataYaml_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 435 6 len=12 sanityChecks_npm
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 alias_group_changed(____alias_loc_id_19) || 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 8 alias_group_changed(____alias_loc_id_22) || 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 4 alias_group_changed(____alias_loc_id_21); 
@@ -338,7 +366,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 89 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 17  ({  calling((void*)sanityChecks, 3, 0UL, ____alias_loc_id_9, 4, (size_t)(13807915916850228135UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229387UL)); (sanityChecks)(cmd, sim->pot->cutoff, latticeConstant, sim->pot->latticeType); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 91 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 183 19  ({  calling((void*)initSpecies, -1, 13807915916850229387UL, 0, 1, (size_t)(13807915916850229387UL)); (initSpecies)(sim->pot); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 183 19 ({ calling_npm(2, 0, 13807915916850229387UL, 13807915916850229279UL, 13807915916850229387UL, 13807915916850229303UL); initSpecies_npm(sim->pot); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 183 39 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 31  ({  calling((void*)initDecomposition, 4, 13807915916850229387UL, ____alias_loc_id_10, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228136UL)); (initDecomposition)(cmd.xproc, cmd.yproc, cmd.zproc, globalExtent); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 191 52 
@@ -609,21 +637,21 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 89 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 17  ({  Command ____chimes_arg44;  real_t ____chimes_arg45;  char * ____chimes_arg47;  if (!____chimes_replaying) { ____chimes_arg44 = (cmd); ____chimes_arg45 = (sim->pot->cutoff); ____chimes_arg47 = (sim->pot->latticeType);  }  calling((void*)sanityChecks, 3, 0UL, ____alias_loc_id_9, 4, (size_t)(13807915916850228135UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850229387UL)); (sanityChecks)(____chimes_arg44, ____chimes_arg45, latticeConstant, ____chimes_arg47); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 91 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 183 19  ({  calling((void*)initSpecies, -1, 13807915916850229387UL, 0, 1, (size_t)(13807915916850229387UL)); (initSpecies)(sim->pot); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 183 19 ({ calling_npm(2, 0, 13807915916850229387UL, 13807915916850229279UL, 13807915916850229387UL, 13807915916850229303UL); initSpecies_npm(sim->pot); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 183 39 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 31  ({  int ____chimes_arg49;  int ____chimes_arg50;  int ____chimes_arg51;  if (!____chimes_replaying) { ____chimes_arg49 = (cmd.xproc); ____chimes_arg50 = (cmd.yproc); ____chimes_arg51 = (cmd.zproc);  }  calling((void*)initDecomposition, 4, 13807915916850229387UL, ____alias_loc_id_10, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228136UL)); (initDecomposition)(____chimes_arg49, ____chimes_arg50, ____chimes_arg51, globalExtent); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 31  ({  int ____chimes_arg48;  int ____chimes_arg49;  int ____chimes_arg50;  if (!____chimes_replaying) { ____chimes_arg48 = (cmd.xproc); ____chimes_arg49 = (cmd.yproc); ____chimes_arg50 = (cmd.zproc);  }  calling((void*)initDecomposition, 4, 13807915916850229387UL, ____alias_loc_id_10, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228136UL)); (initDecomposition)(____chimes_arg48, ____chimes_arg49, ____chimes_arg50, globalExtent); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 191 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 30  ({  const struct DomainSt * ____chimes_arg53;  real_t ____chimes_arg54;  if (!____chimes_replaying) { ____chimes_arg53 = (sim->domain); ____chimes_arg54 = (sim->pot->cutoff);  }  calling((void*)initLinkCells, 5, 13807915916850229387UL, ____alias_loc_id_11, 2, (size_t)(13807915916850229387UL), (size_t)(0UL)); (initLinkCells)(____chimes_arg53, ____chimes_arg54); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 30  ({  const struct DomainSt * ____chimes_arg52;  real_t ____chimes_arg53;  if (!____chimes_replaying) { ____chimes_arg52 = (sim->domain); ____chimes_arg53 = (sim->pot->cutoff);  }  calling((void*)initLinkCells, 5, 13807915916850229387UL, ____alias_loc_id_11, 2, (size_t)(13807915916850229387UL), (size_t)(0UL)); (initLinkCells)(____chimes_arg52, ____chimes_arg53); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 30  ({  LinkCell * ____chimes_arg55;  if (!____chimes_replaying) { ____chimes_arg55 = (sim->boxes);  }  calling((void*)initAtoms, 6, 13807915916850229387UL, ____alias_loc_id_12, 1, (size_t)(13807915916850229387UL)); (initAtoms)(____chimes_arg55); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 30  ({  LinkCell * ____chimes_arg54;  if (!____chimes_replaying) { ____chimes_arg54 = (sim->boxes);  }  calling((void*)initAtoms, 6, 13807915916850229387UL, ____alias_loc_id_12, 1, (size_t)(13807915916850229387UL)); (initAtoms)(____chimes_arg54); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 17  ({  int ____chimes_arg56;  int ____chimes_arg57;  int ____chimes_arg58;  if (!____chimes_replaying) { ____chimes_arg56 = (cmd.nx); ____chimes_arg57 = (cmd.ny); ____chimes_arg58 = (cmd.nz);  }  calling((void*)createFccLattice, 7, 0UL, ____alias_loc_id_13, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228306UL)); (createFccLattice)(____chimes_arg56, ____chimes_arg57, ____chimes_arg58, latticeConstant, sim); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 17  ({  int ____chimes_arg55;  int ____chimes_arg56;  int ____chimes_arg57;  if (!____chimes_replaying) { ____chimes_arg55 = (cmd.nx); ____chimes_arg56 = (cmd.ny); ____chimes_arg57 = (cmd.nz);  }  calling((void*)createFccLattice, 7, 0UL, ____alias_loc_id_13, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13807915916850228306UL)); (createFccLattice)(____chimes_arg55, ____chimes_arg56, ____chimes_arg57, latticeConstant, sim); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 78 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 198 17  ({  double ____chimes_arg62;  if (!____chimes_replaying) { ____chimes_arg62 = (cmd.temperature);  }  calling((void*)setTemperature, 8, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (setTemperature)(sim, ____chimes_arg62); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 198 17  ({  double ____chimes_arg61;  if (!____chimes_replaying) { ____chimes_arg61 = (cmd.temperature);  }  calling((void*)setTemperature, 8, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (setTemperature)(sim, ____chimes_arg61); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 198 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 17  ({  double ____chimes_arg64;  if (!____chimes_replaying) { ____chimes_arg64 = (cmd.initialDelta);  }  calling((void*)randomDisplacements, 9, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (randomDisplacements)(sim, ____chimes_arg64); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 17  ({  double ____chimes_arg63;  if (!____chimes_replaying) { ____chimes_arg63 = (cmd.initialDelta);  }  calling((void*)randomDisplacements, 9, 0UL, 0, 2, (size_t)(13807915916850228306UL), (size_t)(0UL)); (randomDisplacements)(sim, ____chimes_arg63); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 58 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 201 38  ({  Domain * ____chimes_arg65;  LinkCell * ____chimes_arg66;  if (!____chimes_replaying) { ____chimes_arg65 = (sim->domain); ____chimes_arg66 = (sim->boxes);  }  calling((void*)initAtomHaloExchange, 10, 13807915916850229387UL, 0, 2, (size_t)(13807915916850229387UL), (size_t)(13807915916850229387UL)); (initAtomHaloExchange)(____chimes_arg65, ____chimes_arg66); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 201 38  ({  Domain * ____chimes_arg64;  LinkCell * ____chimes_arg65;  if (!____chimes_replaying) { ____chimes_arg64 = (sim->domain); ____chimes_arg65 = (sim->boxes);  }  calling((void*)initAtomHaloExchange, 10, 13807915916850229387UL, 0, 2, (size_t)(13807915916850229387UL), (size_t)(13807915916850229387UL)); (initAtomHaloExchange)(____chimes_arg64, ____chimes_arg65); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 201 82 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 23  ({  calling((void*)profileStart, 11, 0UL, ____alias_loc_id_14, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 53 
@@ -650,11 +678,11 @@ real_t latticeConstant;
 SimFlat *sim;
  if (____must_checkpoint_initSimulation_globalExtent_0 || ____must_checkpoint_initSimulation_latticeConstant_0 || ____must_checkpoint_initSimulation_sim_0) { register_stack_vars(3, "initSimulation|globalExtent|0", &____must_checkpoint_initSimulation_globalExtent_0, "[3 x double]", (void *)(globalExtent), (size_t)24, 0, 0, 0, "initSimulation|latticeConstant|0", &____must_checkpoint_initSimulation_latticeConstant_0, "double", (void *)(&latticeConstant), (size_t)8, 0, 0, 0, "initSimulation|sim|0", &____must_checkpoint_initSimulation_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 218 6 len=17 destroySimulation_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 17  ({  LinkCell ** ____chimes_arg74;  if (!____chimes_replaying) { ____chimes_arg74 = (&(s->boxes));  }  calling((void*)destroyLinkCells, 4, 0UL, ____alias_loc_id_23, 1, (size_t)(13807915916850229011UL)); (destroyLinkCells)(____chimes_arg74); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 17  ({  LinkCell ** ____chimes_arg73;  if (!____chimes_replaying) { ____chimes_arg73 = (&(s->boxes));  }  calling((void*)destroyLinkCells, 4, 0UL, ____alias_loc_id_23, 1, (size_t)(13807915916850229011UL)); (destroyLinkCells)(____chimes_arg73); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 45 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 17  ({  Atoms * ____chimes_arg75;  if (!____chimes_replaying) { ____chimes_arg75 = (s->atoms);  }  calling((void*)destroyAtoms, 5, 0UL, 0, 1, (size_t)(13807915916850229020UL)); (destroyAtoms)(____chimes_arg75); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 17  ({  Atoms * ____chimes_arg74;  if (!____chimes_replaying) { ____chimes_arg74 = (s->atoms);  }  calling((void*)destroyAtoms, 5, 0UL, 0, 1, (size_t)(13807915916850229020UL)); (destroyAtoms)(____chimes_arg74); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 38 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 17  ({  HaloExchange ** ____chimes_arg76;  if (!____chimes_replaying) { ____chimes_arg76 = (&(s->atomExchange));  }  calling((void*)destroyHaloExchange, 6, 0UL, 0, 1, (size_t)(13807915916850229011UL)); (destroyHaloExchange)(____chimes_arg76); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 17  ({  HaloExchange ** ____chimes_arg75;  if (!____chimes_replaying) { ____chimes_arg75 = (&(s->atomExchange));  }  calling((void*)destroyHaloExchange, 6, 0UL, 0, 1, (size_t)(13807915916850229011UL)); (destroyHaloExchange)(____chimes_arg75); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 55 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 222 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 222 15 
@@ -697,7 +725,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 327 6 len=8 sumAtoms_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 22  ({  calling((void*)profileStart, 1, 0UL, ____alias_loc_id_20, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 17  ({  int * ____chimes_arg83;  int * ____chimes_arg84;  if (!____chimes_replaying) { ____chimes_arg83 = (&s->atoms->nLocal); ____chimes_arg84 = (&s->atoms->nGlobal);  }  calling((void*)addIntParallel, 2, 0UL, 0, 3, (size_t)(13807915916850228770UL), (size_t)(13807915916850228770UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg83, ____chimes_arg84, 1); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 17  ({  int * ____chimes_arg82;  int * ____chimes_arg83;  if (!____chimes_replaying) { ____chimes_arg82 = (&s->atoms->nLocal); ____chimes_arg83 = (&s->atoms->nGlobal);  }  calling((void*)addIntParallel, 2, 0UL, 0, 3, (size_t)(13807915916850228770UL), (size_t)(13807915916850228770UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg82, ____chimes_arg83, 1); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 72 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 338 22  ({  calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 338 49 
@@ -710,7 +738,7 @@ RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 349 14
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 346 540  ; int nEval;
  if (____must_checkpoint_printThings_nEval_0) { register_stack_vars(1, "printThings|nEval|0", &____must_checkpoint_printThings_nEval_0, "i32", (void *)(&nEval), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 6 len=23 printSimulationDataYaml_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 41  ({  LinkCell * ____chimes_arg87;  if (!____chimes_replaying) { ____chimes_arg87 = (s->boxes);  }  calling((void*)maxOccupancy, 1, 0UL, 0, 1, (size_t)(13807915916850228347UL)); (maxOccupancy)(____chimes_arg87); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 41  ({  LinkCell * ____chimes_arg86;  if (!____chimes_replaying) { ____chimes_arg86 = (s->boxes);  }  calling((void*)maxOccupancy, 1, 0UL, 0, 1, (size_t)(13807915916850228347UL)); (maxOccupancy)(____chimes_arg86); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 62 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 64  ({  calling((void*)printRank, 3, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 74 
@@ -718,7 +746,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 36 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 18  ({  calling((void*)printSeparator, 16, 0UL, 0, 1, (size_t)(13807915916850228666UL)); (printSeparator)(file); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 37 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 18  ({  BasePotential * ____chimes_arg91;  if (!____chimes_replaying) { ____chimes_arg91 = (s->pot);  }  calling((void*)s->pot->print, 18, 0UL, 0, 2, (size_t)(13807915916850228666UL), (size_t)(13807915916850228347UL)); (s->pot->print)(file, ____chimes_arg91); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 18  ({  BasePotential * ____chimes_arg90;  if (!____chimes_replaying) { ____chimes_arg90 = (s->pot);  }  calling((void*)s->pot->print, 18, 0UL, 0, 2, (size_t)(13807915916850228666UL), (size_t)(13807915916850228347UL)); (s->pot->print)(file, ____chimes_arg90); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 44 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 18  ({  calling((void*)printSeparator, 19, 0UL, ____alias_loc_id_17, 1, (size_t)(13807915916850228666UL)); (printSeparator)(file); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 37 
@@ -758,7 +786,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 468 94 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 69  ({  calling((void*)printRank, 11, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 79 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 18  ({  void * ____chimes_arg95;  int ____chimes_arg96;  if (!____chimes_replaying) { ____chimes_arg95 = (&checkCode); ____chimes_arg96 = (sizeof(int));  }  calling((void*)bcastParallel, 13, 0UL, ____alias_loc_id_31, 3, (size_t)(13807915916850229127UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg95, ____chimes_arg96, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 18  ({  void * ____chimes_arg94;  int ____chimes_arg95;  if (!____chimes_replaying) { ____chimes_arg94 = (&checkCode); ____chimes_arg95 = (sizeof(int));  }  calling((void*)bcastParallel, 13, 0UL, ____alias_loc_id_31, 3, (size_t)(13807915916850229127UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg94, ____chimes_arg95, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 58 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 437 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 437 17 

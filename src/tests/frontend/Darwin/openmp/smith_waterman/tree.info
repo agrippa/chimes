@@ -4,16 +4,16 @@ GUID_BROW 0 DOES_NOT
 TILE_ROW 0 DOES_NOT
 TILE_COL 0 DOES_NOT
 GUID_KIND 0 DOES_NOT
-PUT 0 DOES_NOT GUID_DIAG
-PUT_DIAG 0 DOES_NOT PUT
-PUT_RCOL 0 DOES_NOT PUT
-PUT_BROW 0 DOES_NOT PUT
+PUT 0 DOES_NOT GUID_DIAG 230 19
+PUT_DIAG 0 DOES_NOT PUT 242 41
+PUT_RCOL 0 DOES_NOT PUT 243 41
+PUT_BROW 0 DOES_NOT PUT 244 41
 char_mapping 0 DOES_NOT
 print_matrix 0 DOES_NOT
-clear_whitespaces_do_mapping 0 DOES_NOT char_mapping
-read_file 0 MAY clear_whitespaces_do_mapping ftell
+clear_whitespaces_do_mapping 0 DOES_NOT char_mapping 308 42
+read_file 0 MAY ftell 318 22 clear_whitespaces_do_mapping 327 16
 add_tile_to_run 0 DOES_NOT
 pop_next_tile 0 DOES_NOT
-task_func 0 DOES_NOT PUT_BROW PUT_DIAG PUT_RCOL add_tile_to_run
-main 0 DOES PUT_BROW PUT_DIAG PUT_RCOL checkpoint omp_get_num_threads pop_next_tile random_init task_func
+task_func 0 DOES_NOT PUT_DIAG 392 31 add_tile_to_run 396 21 PUT_RCOL 401 31 add_tile_to_run 405 21 PUT_BROW 410 31 add_tile_to_run 414 21
+main 0 DOES omp_get_num_threads 430 14 random_init 452 5 random_init 453 5 PUT_DIAG 485 2 PUT_DIAG 489 3 PUT_DIAG 493 3 PUT_RCOL 502 3 PUT_BROW 511 3 pop_next_tile 590 28 task_func 595 21 checkpoint 609 9
 random_init 0 DOES_NOT

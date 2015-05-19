@@ -10,8 +10,31 @@
 using namespace std;
 
 extern DesiredInsertions *insertions;
+extern std::map<std::string, int> function_starting_lines;
+extern std::map<std::string, int> earliest_call_line;
+extern std::set<std::string> npm_functions;
 
 void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
+
+    if (npm_pass) {
+        clang::PresumedLoc presumed_start = SM->getPresumedLoc(
+                toplevel->getLocStart());
+        std::string fname = toplevel->getName().str();
+        assert(function_starting_lines.find(fname) ==
+                function_starting_lines.end());
+        function_starting_lines.insert(std::pair<std::string, int>(fname,
+                    presumed_start.getLine()));
+    }
+
+    if (npm_pass && toplevel->getNameInfo().getAsString() != "main") {
+        clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
+        int current_name_len = toplevel->getNameInfo().getAsString().size();
+
+        npm_functions.insert(toplevel->getNameAsString());
+        ReplaceText(name_start, current_name_len,
+                toplevel->getNameInfo().getAsString() + "_npm");
+
+    }
    
     // For each line that has a memory allocation or free statement
     for (map<int, map<string, vector<FoundAlloc> *> *>::iterator i =
@@ -122,6 +145,20 @@ void MallocPass::VisitStmt(const clang::Stmt *s) {
             const clang::FunctionDecl *callee = call->getDirectCallee();
             if (callee != NULL) {
                 std::string funcname = callee->getNameAsString();
+
+                if (npm_pass) {
+                    if (earliest_call_line.find(funcname) ==
+                            earliest_call_line.end()) {
+                        earliest_call_line[funcname] = start_line;
+                    } else {
+                        if (start_line <
+                                earliest_call_line[funcname]) {
+                            earliest_call_line[funcname] =
+                                start_line;
+                        }
+                    }
+                }
+
 
                 if (supportedAllocationFunctions.find(funcname) !=
                         supportedAllocationFunctions.end()) {

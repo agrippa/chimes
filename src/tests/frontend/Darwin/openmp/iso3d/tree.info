@@ -1,2 +1,2 @@
-main 0 DOES checkpoint config_sources finish_progress fwd init_data init_progress sample_sources save_layer_text seconds setup_config update_progress
+main 0 DOES setup_config 91 5 init_progress 92 5 config_sources 118 5 sample_sources 119 20 init_data 121 5 seconds 123 20 fwd 132 9 checkpoint 140 9 update_progress 143 9 seconds 145 24 finish_progress 147 5 save_layer_text 154 9
 fwd 0 DOES_NOT

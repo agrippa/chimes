@@ -131,6 +131,10 @@ void ParentTransform::ReplaceWholeStatement(const clang::Stmt *s,
     insertions->AppendToDiagnostics("ReplaceText", start, st, *SM);
 }
 
+std::string ParentTransform::getRewrittenText(clang::SourceRange range) {
+    return (rewriter->getRewrittenText(range));
+}
+
 clang::PresumedLoc ParentTransform::InsertAtFront(const clang::Stmt *s,
         std::string st) {
     const clang::Stmt *parent = getParent(s);

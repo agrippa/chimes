@@ -467,6 +467,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -509,7 +510,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 59 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1794,6 +1795,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
+void foo_npm();
 void foo_quick(); void foo();
 void foo_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
@@ -1889,6 +1891,16 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
+
+void foo_npm() {
+# 6 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
+    checkpoint();
+# 7 "/Users/jmg3/num-debug/src/examples/openmp/barrier.cpp"
+}
+
+
 
 
 

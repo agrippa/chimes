@@ -1,3 +1,4 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 6 len=14 haha_this_sux2_npm
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 7 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 9 9 rm_stack(false, 0UL, "haha_this_sux2", &____must_manage_haha_this_sux2, 0, ____chimes_did_disable0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 23 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux2), "haha_this_sux2", &____must_manage_haha_this_sux2, 0, 0); 
@@ -12,7 +13,7 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 6 len=14 haha_this_sux2_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 152  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5  ({  calling((void*)haha_this_sux2, -1, 0UL, 0, 0); (haha_this_sux2)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5 ({ calling_npm(0, 0); haha_this_sux2_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 29 
@@ -20,7 +21,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_r
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 6 len=14 haha_this_sux2_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 5 152  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 13 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5  ({  calling((void*)haha_this_sux2, -1, 0UL, 0, 0); (haha_this_sux2)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 5 ({ calling_npm(0, 0); haha_this_sux2_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 14 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_two_void_returns.cpp 15 29 

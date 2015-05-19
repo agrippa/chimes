@@ -18,8 +18,6 @@ extern DesiredInsertions *insertions;
 extern std::set<std::string> *ignorable;
 extern clang::FunctionDecl *curr_func_decl;
 extern std::map<int, std::vector<CallLabel> > call_lbls;
-extern std::map<std::string, int> earliest_call_line;
-extern std::map<std::string, int> function_starting_lines;
 
 void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
     clang::SourceLocation start = s->getLocStart();
@@ -43,16 +41,6 @@ void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
                 clang::dyn_cast<const clang::CallExpr>(s)) {
 
             std::string callee_name = get_callee_name(call);
-
-            if (earliest_call_line.find(callee_name) ==
-                    earliest_call_line.end()) {
-                earliest_call_line[callee_name] = presumed_start.getLine();
-            } else {
-                if (presumed_start.getLine() <
-                        earliest_call_line[callee_name]) {
-                    earliest_call_line[callee_name] = presumed_start.getLine();
-                }
-            }
 
             if (callee_name != "register_custom_init_handler" &&
                     !currently_inside_function_arguments() && 
@@ -94,14 +82,3 @@ void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
 
     visitChildren(s);
 }
-
-void CallLabelInsertPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
-    clang::PresumedLoc presumed_start = SM->getPresumedLoc(
-            toplevel->getLocStart());
-    std::string fname = toplevel->getName().str();
-    assert(function_starting_lines.find(fname) ==
-            function_starting_lines.end());
-    function_starting_lines.insert(std::pair<std::string, int>(fname,
-                presumed_start.getLine()));
-}
-

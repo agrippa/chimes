@@ -1,3 +1,7 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 18 9 len=17 initDecomposition_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 26 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 46 , 13672999005525477782UL, 0, 1, (int)sizeof(struct DomainSt), 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 57 5 len=12 processorNum_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 26 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 46 , 13672999005525477782UL, 0, 1, (int)sizeof(struct DomainSt), 0
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 49 4 rm_stack(true, 13672999005525477782UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0); 

@@ -29,6 +29,7 @@ public:
     virtual bool createsFunctionLabels() = 0;
     virtual bool createsOMPTree() = 0;
     virtual bool requiresMangledVarsReset() = 0;
+    virtual bool transformsOriginal() = 0;
     virtual void VisitTopLevel(clang::FunctionDecl *toplevel) {}
 
     void setLastGoto(clang::SourceLocation last);
@@ -72,6 +73,7 @@ protected:
     void ReplaceText(clang::SourceRange range, std::string s);
     void ReplaceWholeStatement(const clang::Stmt *s,
         std::string st);
+    std::string getRewrittenText(clang::SourceRange range);
 
     std::string stmtToString(const clang::Stmt* s);
 

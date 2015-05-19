@@ -532,6 +532,7 @@ std::map<std::string, StackAlloc *> *DesiredInsertions::parseStackAllocs() {
             while (1) {
                 size_t end = line.find(' ');
                 std::string cause = line.substr(0, end);
+
                 alloc->add_checkpoint_cause(cause);
 
                 if (end == std::string::npos) break;
@@ -602,12 +603,23 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
         FunctionCallees *callees = new FunctionCallees(name,
                 contains_unknown_functions, may_checkpoint);
 
-        do {
+        while (true) {
             end = line.find(' ');
+            if (end == std::string::npos) break;
+
             std::string func_name = line.substr(0, end);
-            callees->add_checkpoint_cause(func_name);
             line = line.substr(end + 1);
-        } while (end != std::string::npos);
+
+            end = line.find(' ');
+            int line_no = atoi(line.substr(0, end).c_str());
+            line = line.substr(end + 1);
+
+            end = line.find(' ');
+            int col = atoi(line.substr(0, end).c_str());
+            line = line.substr(end + 1);
+
+            callees->add_checkpoint_cause(func_name, line_no, col);
+        }
 
         if (call_tree->find(name) != call_tree->end()) {
             /*
@@ -619,6 +631,7 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
             assert("dim3::dim3" == name);
         } else {
             assert(call_tree->find(name) == call_tree->end());
+            callees->sort_checkpoint_causes();
             call_tree->insert(std::pair<std::string, FunctionCallees *>(name,
                         callees));
         }
@@ -814,27 +827,62 @@ StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
     return iter->second;
 }
 
+
+void DesiredInsertions::resetHeapAllocIters() {
+    heap_alloc_iters.clear();
+
+    for (map<int, map<string, vector<HeapAlloc> *> *>::iterator i =
+            heap_allocs->begin(), e = heap_allocs->end(); i != e; i++) {
+        int line = i->first;
+        map<string, vector<HeapAlloc> *> *per_line = i->second;
+
+        heap_alloc_iters.insert(
+                pair<int, map<string, vector<HeapAlloc>::iterator> *>(line,
+                    new map<string, vector<HeapAlloc>::iterator>()));
+
+        for (map<string, vector<HeapAlloc> *>::iterator ii = per_line->begin(),
+                ee = per_line->end(); ii != ee; ii++) {
+            string func = ii->first;
+            vector<HeapAlloc> *allocs = ii->second;
+            heap_alloc_iters[line]->insert(
+                    pair<string, vector<HeapAlloc>::iterator>(func,
+                        allocs->begin()));
+        }
+    }
+}
+
 bool DesiredInsertions::findNextMatchingMemoryAllocation(int line,
         std::string func, HeapAlloc *ret) {
-    if (heap_allocs->find(line) == heap_allocs->end()) {
+    /*
+     * Thix prefix code is all for safety at the moment, to ensure that the
+     * caller is passing us a valid iterator and not some garbage. It could be
+     * removed in the future.
+     */
+    if (heap_alloc_iters.find(line) == heap_alloc_iters.end()) {
         return false;
     }
 
-    std::map<std::string, std::vector<HeapAlloc> *> *for_line =
-        (*heap_allocs)[line];
-    if (for_line->find(func) == for_line->end()) {
+    assert(heap_allocs->find(line) != heap_allocs->end());
+    map<string, vector<HeapAlloc>::iterator> *iters_for_line =
+        heap_alloc_iters.at(line);
+    map<string, vector<HeapAlloc> *> *for_line = heap_allocs->at(line);
+    if (iters_for_line->find(func) == iters_for_line->end()) {
         return false;
     }
 
-    std::vector<HeapAlloc> *for_func = (*for_line)[func];
+    assert(for_line->find(func) != for_line->end());
+    vector<HeapAlloc>::iterator iter_for_func = iters_for_line->at(func);
+    vector<HeapAlloc> *for_func = for_line->at(func);
 
-    if (for_func->size() == 0) {
+    assert(iter_for_func >= for_func->begin() &&
+            iter_for_func <= for_func->end());
+
+    if (iter_for_func == for_func->end()) {
         return false;
     }
 
-    std::vector<HeapAlloc>::iterator front = for_func->begin();
-    *ret = *front;
-    for_func->erase(front);
+    *ret = *iter_for_func;
+    (*iters_for_line)[func] = (++iter_for_func);
     return true;
 }
 
@@ -1053,6 +1101,15 @@ void DesiredInsertions::update_line_numbers() {
         StateChangeInsertion *insert = *i;
         insert->update_line(lookup_new_line(insert->get_line()));
     }
+
+    for (std::map<std::string, FunctionCallees *>::iterator i =
+            call_tree->begin(), e = call_tree->end(); i != e; i++) {
+        FunctionCallees *callee_info = i->second;
+        for (std::vector<CheckpointCause>::iterator ii = callee_info->begin(),
+                ee = callee_info->end(); ii != ee; ii++) {
+            ii->update_line(lookup_new_line(ii->get_line()));
+        }
+    }
     
     // Update heap allocation line info
     map<int, map<string, vector<HeapAlloc> *> *> *new_heap_allocs =
@@ -1155,6 +1212,13 @@ FunctionCallees *DesiredInsertions::get_callees(std::string name) {
         return NULL;
     }
     return (call_tree->at(name));
+}
+
+bool DesiredInsertions::does_not_cause_checkpoint(std::string fname) {
+    if (has_callees(fname)) {
+        return (get_callees(fname)->get_may_checkpoint() == DOES_NOT);
+    }
+    return false;
 }
 
 bool DesiredInsertions::may_cause_checkpoint(std::string fname) {

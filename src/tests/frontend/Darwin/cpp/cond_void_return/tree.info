@@ -1,2 +1,2 @@
 bar 0 DOES_NOT
-main 0 DOES bar checkpoint
+main 0 DOES bar 21 5 checkpoint 22 5

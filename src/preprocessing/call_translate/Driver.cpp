@@ -22,10 +22,15 @@ using namespace clang::tooling;
 static llvm::cl::OptionCategory ToolingSampleCategory("chimes options");
 static llvm::cl::opt<std::string> output_file("o",
         llvm::cl::desc("Output file"), llvm::cl::value_desc("output_file"));
-static llvm::cl::opt<std::string> data_file("d",
-        llvm::cl::desc("Data file"), llvm::cl::value_desc("data_file"));
+static llvm::cl::opt<std::string> quick_data_file("q",
+        llvm::cl::desc("Quick data file"),
+        llvm::cl::value_desc("quick_data_file"));
+static llvm::cl::opt<std::string> npm_data_file("n",
+        llvm::cl::desc("NPM data file"),
+        llvm::cl::value_desc("npm_data_file"));
 
-INSIDE_QUICK_FUNC curr_func_is_quick = UNKNOWN;
+INSIDE_FUNC curr_func_is_quick = UNKNOWN;
+INSIDE_FUNC curr_func_is_npm = UNKNOWN;
 static CallTranslator *transform = NULL;
 
 class TransformASTConsumer : public ASTConsumer {
@@ -53,13 +58,20 @@ public:
                 std::string fname = fdecl->getName().str();
                 std::string quick("_quick");
                 std::string resumable("_resumable");
+                std::string npm("_npm");
                 if (fname.find(quick) == fname.size() - quick.size()) {
                     curr_func_is_quick = YES;
+                    curr_func_is_npm = NO;
+                } else if (fname.find(npm) == fname.size() - npm.size()) {
+                    curr_func_is_npm = YES;
+                    curr_func_is_quick = NO;
                 } else if (fname.find(resumable) == fname.size() -
                         resumable.size()) {
                     curr_func_is_quick = NO;
+                    curr_func_is_npm = NO;
                 } else {
                     curr_func_is_quick = UNKNOWN;
+                    curr_func_is_npm = UNKNOWN;
                 }
 
                 transform->Visit((*b)->getBody());
@@ -111,7 +123,8 @@ int main(int argc, const char **argv) {
   CommonOptionsParser op(argc, argv, ToolingSampleCategory);
 
   check_opt(output_file, "output_file");
-  check_opt(data_file, "data_file");
+  check_opt(quick_data_file, "quick_data_file");
+  check_opt(npm_data_file, "npm_data_file");
 
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
@@ -122,7 +135,8 @@ int main(int argc, const char **argv) {
       NumDebugFrontendAction<TransformASTConsumer>>();
   FrontendActionFactory *factory = factory_ptr.get();
 
-  transform = new CallTranslator(data_file.c_str());
+  transform = new CallTranslator(quick_data_file.c_str(),
+          npm_data_file.c_str());
   ClangTool *Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
   int err = Tool->run(factory);
   if (err) return err;

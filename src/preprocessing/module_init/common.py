@@ -65,7 +65,15 @@ def get_call_tree(call_tree_filename):
 
     for line in fp:
         tokens = line.split()
-        call_tree[tokens[0]] = Callees(tokens[0], tokens[1], tokens[2], tokens[3:])
+
+        callee_info = tokens[3:]
+        callees = []
+        index = 0
+        while index < len(callee_info):
+            callees.append(callee_info[index])
+            index += 3
+
+        call_tree[tokens[0]] = Callees(tokens[0], tokens[1], tokens[2], callees)
 
     fp.close()
 

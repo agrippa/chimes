@@ -16,7 +16,8 @@ CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
 PASS_BY_REF = FrontendTest('PassByRef', ['pass_by_ref.cpp'],
                            ['pass_by_ref.cpp.pre.transformed.cpp'], ['pass_by_ref'],
                            True)
-SIMPLE_TESTS = ['nested_call.cpp',
+SIMPLE_TESTS = ['npm.cpp',
+                'nested_call.cpp',
                 'nested_indirect_call.cpp',
                 'nested_call_complex.cpp',
                 'switch.cpp',

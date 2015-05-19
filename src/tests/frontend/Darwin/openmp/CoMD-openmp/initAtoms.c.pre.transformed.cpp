@@ -544,6 +544,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -586,7 +587,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 59 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2565,6 +2566,7 @@ static void computeVcm(SimFlat* s, real_t vcm[3]);
 # 21 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 22 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 23 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+Atoms* initAtoms_npm(LinkCell* boxes);
 Atoms* initAtoms_quick(LinkCell* boxes); Atoms* initAtoms(LinkCell* boxes);
 Atoms* initAtoms_resumable(LinkCell* boxes)
 # 24 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2618,6 +2620,7 @@ Atoms* initAtoms_resumable(LinkCell* boxes)
 }
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+void destroyAtoms_npm(Atoms *atoms);
 void destroyAtoms_quick(Atoms *atoms); void destroyAtoms(Atoms *atoms);
 void destroyAtoms_resumable(Atoms *atoms)
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2661,6 +2664,7 @@ rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_lo
 # 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 77 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 78 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s);
 void createFccLattice_quick(int nx, int ny, int nz, real_t lat, SimFlat* s); void createFccLattice(int nx, int ny, int nz, real_t lat, SimFlat* s);
 void createFccLattice_resumable(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 79 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2731,6 +2735,7 @@ rm_stack(false, 0UL, "createFccLattice", &____must_manage_createFccLattice, 0, _
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+void setVcm_npm(SimFlat* s, real_t newVcm[3]);void computeVcm_npm(SimFlat* s, real_t vcm[3]);
 void setVcm_quick(SimFlat* s, real_t newVcm[3]); void setVcm(SimFlat* s, real_t newVcm[3]);void computeVcm_quick(SimFlat* s, real_t vcm[3]); void computeVcm(SimFlat* s, real_t vcm[3]);
 void setVcm_resumable(SimFlat* s, real_t newVcm[3])
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2784,6 +2789,7 @@ real_t oldVcm[3];
 rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_17, ____chimes_did_disable3); }
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+void setTemperature_npm(SimFlat* s, real_t temperature);
 void setTemperature_quick(SimFlat* s, real_t temperature); void setTemperature(SimFlat* s, real_t temperature);
 void setTemperature_resumable(SimFlat* s, real_t temperature)
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -2879,6 +2885,7 @@ rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alia
 # 202 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 203 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+void randomDisplacements_npm(SimFlat* s, real_t delta);
 void randomDisplacements_quick(SimFlat* s, real_t delta); void randomDisplacements(SimFlat* s, real_t delta);
 void randomDisplacements_resumable(SimFlat* s, real_t delta)
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3414,8 +3421,393 @@ void computeVcm(SimFlat* s, real_t vcm[3]) { (____chimes_replaying ? computeVcm_
 
 
 
+Atoms* initAtoms_npm(LinkCell* boxes)
+# 24 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 25 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   Atoms* atoms = (Atoms*)malloc_wrapper(sizeof(Atoms), 13706408354153104296UL, 0, 1, (int)sizeof(struct AtomsSt), 6, (int)__builtin_offsetof(struct AtomsSt, gid), (int)__builtin_offsetof(struct AtomsSt, iSpecies), (int)__builtin_offsetof(struct AtomsSt, r), (int)__builtin_offsetof(struct AtomsSt, p), (int)__builtin_offsetof(struct AtomsSt, f), (int)__builtin_offsetof(struct AtomsSt, U));
+# 26 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 27 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   int maxTotalAtoms = 64*boxes->nTotalBoxes;
+# 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 29 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->gid = (int*) malloc_wrapper(maxTotalAtoms*sizeof(int), 13706408354153104308UL, 0, 0);
+# 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->iSpecies = (int*) malloc_wrapper(maxTotalAtoms*sizeof(int), 13706408354153104308UL, 0, 0);
+# 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->r = (real3*) malloc_wrapper(maxTotalAtoms*sizeof(real3), 13706408354153104308UL, 0, 0);
+# 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->p = (real3*) malloc_wrapper(maxTotalAtoms*sizeof(real3), 13706408354153104308UL, 0, 0);
+# 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->f = (real3*) malloc_wrapper(maxTotalAtoms*sizeof(real3), 13706408354153104308UL, 0, 0);
+# 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->U = (real_t*)malloc_wrapper(maxTotalAtoms*sizeof(real_t), 13706408354153104308UL, 0, 0);
+# 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 36 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->nLocal = 0;
+# 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->nGlobal = 0;
+# 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int iOff = 0; iOff < maxTotalAtoms; iOff++)
+# 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      atoms->gid[iOff] = 0;
+# 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      atoms->iSpecies[iOff] = 0;
+# 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      zeroReal3(atoms->r[iOff]);
+# 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      zeroReal3(atoms->p[iOff]);
+# 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      zeroReal3(atoms->f[iOff]);
+# 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      atoms->U[iOff] = 0.;
+# 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   return atoms;
+# 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+void destroyAtoms_npm(Atoms *atoms)
+# 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (atoms->gid) {free_wrapper(atoms->gid, 13706408354153104441UL); };
+# 55 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->gid = __null;
+# 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (atoms->iSpecies) {free_wrapper(atoms->iSpecies, 13706408354153104441UL); };
+# 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->iSpecies = __null;
+# 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (atoms->r) {free_wrapper(atoms->r, 13706408354153104441UL); };
+# 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->r = __null;
+# 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (atoms->p) {free_wrapper(atoms->p, 13706408354153104441UL); };
+# 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->p = __null;
+# 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (atoms->f) {free_wrapper(atoms->f, 13706408354153104441UL); };
+# 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->f = __null;
+# 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (atoms->U) {free_wrapper(atoms->U, 13706408354153104441UL); };
+# 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   atoms->U = __null;
+# 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   free_wrapper(atoms, 13706408354153104527UL);
+# 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s)
+# 79 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 80 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   const real_t* localMin = s->domain->localMin;
+# 81 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   const real_t* localMax = s->domain->localMax;
+# 82 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   int nb = 4;
+# 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real3 basis[4] = { {0.25, 0.25, 0.25},
+# 85 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {0.25, 0.75, 0.75},
+# 86 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {0.75, 0.25, 0.75},
+# 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {0.75, 0.75, 0.25} };
+# 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   int begin[3];
+# 91 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   int end[3];
+# 92 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int ii=0; ii<3; ++ii)
+# 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      begin[ii] = floor(localMin[ii]/lat);
+# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      end[ii] = ceil (localMax[ii]/lat);
+# 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t px,py,pz;
+# 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   px=py=pz=0.0;
+# 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int ix = begin[0];ix < end[0]; ++ix) { for (int iy = begin[1]; iy < end[1]; ++iy) for (int iz = begin[2]; iz < end[2]; ++iz) for (int ib = 0; ib < nb; ++ib) { real_t rx = (ix + basis[ib][0]) * lat; real_t ry = (iy + basis[ib][1]) * lat; real_t rz = (iz + basis[ib][2]) * lat; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; int id = ib + nb * (iz + nz * (iy + ny * (ix))); putAtomInBox(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }; }
+# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   do { profileStart(commReduceTimer); } while(0);
+# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   addIntParallel(&s->atoms->nLocal, &s->atoms->nGlobal, 1);
+# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   do { profileStop(commReduceTimer); } while(0);
+# 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   (__builtin_expect(!(s->atoms->nGlobal == nb*nx*ny*nz), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c", 120, "s->atoms->nGlobal == nb*nx*ny*nz") : (void)0);
+# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+void setVcm_npm(SimFlat* s, real_t newVcm[3])
+# 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t oldVcm[3];
+# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   computeVcm_npm(s, oldVcm);
+# 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t vShift[3];
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   vShift[0] = (newVcm[0] - oldVcm[0]);
+# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   vShift[1] = (newVcm[1] - oldVcm[1]);
+# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   vShift[2] = (newVcm[2] - oldVcm[2]);
+# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+#pragma omp parallel for
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
+# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+# 139 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {
+# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         int iSpecies = s->atoms->iSpecies[iOff];
+# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         real_t mass = s->species[iSpecies].mass;
+# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][0] += mass * vShift[0];
+# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][1] += mass * vShift[1];
+# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][2] += mass * vShift[2];
+# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      }
+# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+void setTemperature_npm(SimFlat* s, real_t temperature)
+# 161 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 162 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+#pragma omp parallel for
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 163 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 164 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
+# 165 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 166 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+# 167 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {
+# 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         int iType = s->atoms->iSpecies[iOff];
+# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         real_t mass = s->species[iType].mass;
+# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         real_t sigma = sqrt(kB_eV * temperature/mass);
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         uint64_t seed = mkSeed(s->atoms->gid[iOff], 123);
+# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][0] = mass * sigma * gasdev(&seed);
+# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][1] = mass * sigma * gasdev(&seed);
+# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][2] = mass * sigma * gasdev(&seed);
+# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      }
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 178 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   if (temperature == 0.) {return;; };
+# 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t vZero[3] = {0., 0., 0.};
+# 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   setVcm_npm(s, vZero);
+# 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   kineticEnergy(s);
+# 183 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t temp = (s->eKinetic/s->atoms->nGlobal)/kB_eV/1.5;
+# 184 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 185 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t scaleFactor = sqrt(temperature/temp);
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+#pragma omp parallel for
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 186 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 187 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
+# 188 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+# 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {
+# 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][0] *= scaleFactor;
+# 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][1] *= scaleFactor;
+# 193 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->p[iOff][2] *= scaleFactor;
+# 194 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      }
+# 195 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 196 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   kineticEnergy(s);
+# 197 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
+# 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+void randomDisplacements_npm(SimFlat* s, real_t delta)
+# 205 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+#pragma omp parallel for
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 206 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 207 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
+# 208 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 209 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+# 210 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {
+# 211 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         uint64_t seed = mkSeed(s->atoms->gid[iOff], 457);
+# 212 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->r[iOff][0] += (2.0*lcg61(&seed)-1.0) * delta;
+# 213 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->r[iOff][1] += (2.0*lcg61(&seed)-1.0) * delta;
+# 214 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         s->atoms->r[iOff][2] += (2.0*lcg61(&seed)-1.0) * delta;
+# 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      }
+# 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 217 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+void computeVcm_npm(SimFlat* s, real_t vcm[3])
+# 221 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+{
+# 222 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t vcmLocal[4] = {0., 0., 0., 0.};
+# 223 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t vcmSum[4] = {0., 0., 0., 0.};
+# 224 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t v0 = 0.0;
+# 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t v1 = 0.0;
+# 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t v2 = 0.0;
+# 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t v3 = 0.0;
+# 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 229 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+#pragma omp parallel for reduction(+:v0) reduction(+:v1) reduction(+:v2) reduction(+:v3)
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 230 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 231 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; ++iBox)
+# 232 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   {
+# 233 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      for (int iOff=64*iBox, ii=0; ii<s->boxes->nAtoms[iBox]; ++ii, ++iOff)
+# 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      {
+# 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         v0 += s->atoms->p[iOff][0];
+# 236 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         v1 += s->atoms->p[iOff][1];
+# 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         v2 += s->atoms->p[iOff][2];
+# 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         int iSpecies = s->atoms->iSpecies[iOff];
+# 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+         v3 += s->species[iSpecies].mass;
+# 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+      }
+# 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   }
+# 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+  vcmLocal[0] = v0;
+# 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+  vcmLocal[1] = v1;
+# 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+  vcmLocal[2] = v2;
+# 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+  vcmLocal[3] = v3;
+# 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   do { profileStart(commReduceTimer); } while(0);
+# 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   addRealParallel(vcmLocal, vcmSum, 4);
+# 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   do { profileStop(commReduceTimer); } while(0);
+# 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+# 253 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   real_t totalMass = vcmSum[3];
+# 254 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   vcm[0] = vcmSum[0]/totalMass;
+# 255 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   vcm[1] = vcmSum[1]/totalMass;
+# 256 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+   vcm[2] = vcmSum[2]/totalMass;
+# 257 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(13706408354153104288UL, 24, 8, 49, 14, 11, 13706408354153104288UL + 571UL, 13706408354153104288UL + 726UL, 13706408354153104288UL + 570UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 153UL, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 794UL, 13706408354153104288UL + 1UL, 13706408354153104288UL + 130UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, 13706408354153104288UL + 911UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 967UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 727UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 649UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 1248UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 891UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "setTemperature", 4, "gasdev", "kineticEnergy", "mkSeed", "setVcm", "setVcm", 1, "computeVcm", "createFccLattice", 4, "addIntParallel", "profileStart", "profileStop", "putAtomInBox", "destroyAtoms", 0, "initAtoms", 1, "zeroReal3", "zeroReal3", 0, "randomDisplacements", 2, "lcg61", "mkSeed", "computeVcm", 3, "addRealParallel", "profileStart", "profileStop", "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|lat|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|s|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMax|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nb|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|basis|0", 1, "createFccLattice", "createFccLattice|begin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|end|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|px|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|py|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|pz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ix|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iy|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ib|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ry|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|id|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "setVcm|s|0", 1, "computeVcm", "setVcm|newVcm|0", 1, "computeVcm", "setVcm|oldVcm|0", 1, "setVcm", "computeVcm|vcm|0", 3, "profileStop", "profileStart", "addRealParallel", "computeVcm|vcmLocal|0", 1, "computeVcm", "computeVcm|vcmSum|0", 1, "computeVcm", "setTemperature|s|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|temperature|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iBox|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iOff|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|ii|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iType|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|mass|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|sigma|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|seed|0", 1, "setTemperature", "setTemperature|vZero|0", 1, "setTemperature", "setTemperature|temp|0", 1, "kineticEnergy", "setTemperature|scaleFactor|0", 1, "kineticEnergy", "setTemperature|iBox|1", 1, "kineticEnergy", "setTemperature|iOff|1", 1, "kineticEnergy", "setTemperature|ii|1", 1, "kineticEnergy", "randomDisplacements|s|0", 2, "mkSeed", "lcg61", "randomDisplacements|delta|0", 2, "mkSeed", "lcg61", "randomDisplacements|iBox|0", 2, "mkSeed", "lcg61", "randomDisplacements|iOff|0", 2, "mkSeed", "lcg61", "randomDisplacements|ii|0", 2, "mkSeed", "lcg61", "randomDisplacements|seed|0", 1, "randomDisplacements", &____alias_loc_id_0, (unsigned)22, 13706408354153104288UL + 241UL, 13706408354153104288UL + 242UL, 13706408354153104288UL + 243UL, 13706408354153104288UL + 244UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 248UL, 13706408354153104288UL + 250UL, 13706408354153104288UL + 251UL, 13706408354153104288UL + 252UL, 13706408354153104288UL + 253UL, 13706408354153104288UL + 254UL, 13706408354153104288UL + 255UL, 13706408354153104288UL + 256UL, 13706408354153104288UL + 257UL, 13706408354153104288UL + 258UL, 13706408354153104288UL + 259UL, 13706408354153104288UL + 260UL, 13706408354153104288UL + 261UL, 13706408354153104288UL + 262UL, 13706408354153104288UL + 263UL, &____alias_loc_id_1, (unsigned)22, 13706408354153104288UL + 241UL, 13706408354153104288UL + 242UL, 13706408354153104288UL + 243UL, 13706408354153104288UL + 244UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 248UL, 13706408354153104288UL + 250UL, 13706408354153104288UL + 251UL, 13706408354153104288UL + 252UL, 13706408354153104288UL + 253UL, 13706408354153104288UL + 254UL, 13706408354153104288UL + 255UL, 13706408354153104288UL + 256UL, 13706408354153104288UL + 257UL, 13706408354153104288UL + 258UL, 13706408354153104288UL + 259UL, 13706408354153104288UL + 260UL, 13706408354153104288UL + 261UL, 13706408354153104288UL + 262UL, 13706408354153104288UL + 263UL, &____alias_loc_id_2, (unsigned)2, 13706408354153104288UL + 570UL, 13706408354153104288UL + 571UL, &____alias_loc_id_3, (unsigned)11, 13706408354153104288UL + 727UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 729UL, 13706408354153104288UL + 731UL, 13706408354153104288UL + 732UL, 13706408354153104288UL + 733UL, 13706408354153104288UL + 734UL, 13706408354153104288UL + 735UL, 13706408354153104288UL + 736UL, 13706408354153104288UL + 737UL, 13706408354153104288UL + 738UL, &____alias_loc_id_4, (unsigned)9, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 916UL, 13706408354153104288UL + 917UL, 13706408354153104288UL + 918UL, 13706408354153104288UL + 967UL, &____alias_loc_id_5, (unsigned)9, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 916UL, 13706408354153104288UL + 917UL, 13706408354153104288UL + 918UL, 13706408354153104288UL + 967UL, &____alias_loc_id_6, (unsigned)1, 13706408354153104288UL + 919UL, &____alias_loc_id_7, (unsigned)1, 13706408354153104288UL + 967UL, &____alias_loc_id_8, (unsigned)1, 13706408354153104288UL + 967UL, &____alias_loc_id_9, (unsigned)6, 13706408354153104288UL + 921UL, 13706408354153104288UL + 922UL, 13706408354153104288UL + 923UL, 13706408354153104288UL + 924UL, 13706408354153104288UL + 925UL, 13706408354153104288UL + 967UL, &____alias_loc_id_10, (unsigned)6, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1202UL, 13706408354153104288UL + 1203UL, 13706408354153104288UL + 1204UL, 13706408354153104288UL + 1205UL, 13706408354153104288UL + 1248UL, &____alias_loc_id_11, (unsigned)1, 13706408354153104288UL + 1206UL, &____alias_loc_id_12, (unsigned)1, 13706408354153104288UL + 1248UL, &____alias_loc_id_13, (unsigned)1, 13706408354153104288UL + 1248UL, &____alias_loc_id_14, (unsigned)6, 13706408354153104288UL + 1UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 3UL, 13706408354153104288UL + 4UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, &____alias_loc_id_15, (unsigned)2, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, &____alias_loc_id_16, (unsigned)2, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, &____alias_loc_id_17, (unsigned)7, 13706408354153104288UL + 573UL, 13706408354153104288UL + 574UL, 13706408354153104288UL + 575UL, 13706408354153104288UL + 576UL, 13706408354153104288UL + 577UL, 13706408354153104288UL + 578UL, 13706408354153104288UL + 649UL, &____alias_loc_id_18, (unsigned)2, 13706408354153104288UL + 739UL, 13706408354153104288UL + 891UL, &____alias_loc_id_19, (unsigned)7, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 921UL, 13706408354153104288UL + 967UL, &____alias_loc_id_20, (unsigned)6, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1202UL, 13706408354153104288UL + 1203UL, 13706408354153104288UL + 1204UL, 13706408354153104288UL + 1205UL, 13706408354153104288UL + 1248UL);
+    init_module(13706408354153104288UL, 24, 8, 49, 14, 11, 13706408354153104288UL + 571UL, 13706408354153104288UL + 726UL, 13706408354153104288UL + 570UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 153UL, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 794UL, 13706408354153104288UL + 1UL, 13706408354153104288UL + 130UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, 13706408354153104288UL + 911UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, 13706408354153104288UL + 1318UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 967UL, 13706408354153104288UL + 1189UL, 13706408354153104288UL + 965UL, 13706408354153104288UL + 502UL, 13706408354153104288UL + 504UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 792UL, 13706408354153104288UL + 727UL, 13706408354153104288UL + 909UL, 13706408354153104288UL + 725UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 647UL, 13706408354153104288UL + 649UL, 13706408354153104288UL + 1246UL, 13706408354153104288UL + 1248UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 891UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "setTemperature", 7, "mkSeed", "gasdev", "gasdev", "gasdev", "setVcm", "kineticEnergy", "kineticEnergy", "setVcm", 1, "computeVcm", "createFccLattice", 4, "putAtomInBox", "profileStart", "addIntParallel", "profileStop", "destroyAtoms", 0, "initAtoms", 3, "zeroReal3", "zeroReal3", "zeroReal3", "zeroReal3", 0, "randomDisplacements", 4, "mkSeed", "lcg61", "lcg61", "lcg61", "computeVcm", 3, "profileStart", "addRealParallel", "profileStop", "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|lat|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|s|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|localMax|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|nb|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|basis|0", 1, "createFccLattice", "createFccLattice|begin|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|end|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|px|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|py|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|pz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ix|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iy|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|iz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ib|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|ry|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|rz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "createFccLattice|id|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel", "setVcm|s|0", 1, "computeVcm", "setVcm|newVcm|0", 1, "computeVcm", "setVcm|oldVcm|0", 1, "setVcm", "computeVcm|vcm|0", 3, "profileStop", "profileStart", "addRealParallel", "computeVcm|vcmLocal|0", 1, "computeVcm", "computeVcm|vcmSum|0", 1, "computeVcm", "setTemperature|s|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|temperature|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iBox|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iOff|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|ii|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|iType|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|mass|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|sigma|0", 4, "setVcm", "mkSeed", "kineticEnergy", "gasdev", "setTemperature|seed|0", 1, "setTemperature", "setTemperature|vZero|0", 1, "setTemperature", "setTemperature|temp|0", 1, "kineticEnergy", "setTemperature|scaleFactor|0", 1, "kineticEnergy", "setTemperature|iBox|1", 1, "kineticEnergy", "setTemperature|iOff|1", 1, "kineticEnergy", "setTemperature|ii|1", 1, "kineticEnergy", "randomDisplacements|s|0", 2, "mkSeed", "lcg61", "randomDisplacements|delta|0", 2, "mkSeed", "lcg61", "randomDisplacements|iBox|0", 2, "mkSeed", "lcg61", "randomDisplacements|iOff|0", 2, "mkSeed", "lcg61", "randomDisplacements|ii|0", 2, "mkSeed", "lcg61", "randomDisplacements|seed|0", 1, "randomDisplacements", &____alias_loc_id_0, (unsigned)22, 13706408354153104288UL + 241UL, 13706408354153104288UL + 242UL, 13706408354153104288UL + 243UL, 13706408354153104288UL + 244UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 248UL, 13706408354153104288UL + 250UL, 13706408354153104288UL + 251UL, 13706408354153104288UL + 252UL, 13706408354153104288UL + 253UL, 13706408354153104288UL + 254UL, 13706408354153104288UL + 255UL, 13706408354153104288UL + 256UL, 13706408354153104288UL + 257UL, 13706408354153104288UL + 258UL, 13706408354153104288UL + 259UL, 13706408354153104288UL + 260UL, 13706408354153104288UL + 261UL, 13706408354153104288UL + 262UL, 13706408354153104288UL + 263UL, &____alias_loc_id_1, (unsigned)22, 13706408354153104288UL + 241UL, 13706408354153104288UL + 242UL, 13706408354153104288UL + 243UL, 13706408354153104288UL + 244UL, 13706408354153104288UL + 245UL, 13706408354153104288UL + 246UL, 13706408354153104288UL + 247UL, 13706408354153104288UL + 248UL, 13706408354153104288UL + 250UL, 13706408354153104288UL + 251UL, 13706408354153104288UL + 252UL, 13706408354153104288UL + 253UL, 13706408354153104288UL + 254UL, 13706408354153104288UL + 255UL, 13706408354153104288UL + 256UL, 13706408354153104288UL + 257UL, 13706408354153104288UL + 258UL, 13706408354153104288UL + 259UL, 13706408354153104288UL + 260UL, 13706408354153104288UL + 261UL, 13706408354153104288UL + 262UL, 13706408354153104288UL + 263UL, &____alias_loc_id_2, (unsigned)2, 13706408354153104288UL + 570UL, 13706408354153104288UL + 571UL, &____alias_loc_id_3, (unsigned)11, 13706408354153104288UL + 727UL, 13706408354153104288UL + 728UL, 13706408354153104288UL + 729UL, 13706408354153104288UL + 731UL, 13706408354153104288UL + 732UL, 13706408354153104288UL + 733UL, 13706408354153104288UL + 734UL, 13706408354153104288UL + 735UL, 13706408354153104288UL + 736UL, 13706408354153104288UL + 737UL, 13706408354153104288UL + 738UL, &____alias_loc_id_4, (unsigned)9, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 916UL, 13706408354153104288UL + 917UL, 13706408354153104288UL + 918UL, 13706408354153104288UL + 967UL, &____alias_loc_id_5, (unsigned)9, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 916UL, 13706408354153104288UL + 917UL, 13706408354153104288UL + 918UL, 13706408354153104288UL + 967UL, &____alias_loc_id_6, (unsigned)1, 13706408354153104288UL + 919UL, &____alias_loc_id_7, (unsigned)1, 13706408354153104288UL + 967UL, &____alias_loc_id_8, (unsigned)1, 13706408354153104288UL + 967UL, &____alias_loc_id_9, (unsigned)6, 13706408354153104288UL + 921UL, 13706408354153104288UL + 922UL, 13706408354153104288UL + 923UL, 13706408354153104288UL + 924UL, 13706408354153104288UL + 925UL, 13706408354153104288UL + 967UL, &____alias_loc_id_10, (unsigned)6, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1202UL, 13706408354153104288UL + 1203UL, 13706408354153104288UL + 1204UL, 13706408354153104288UL + 1205UL, 13706408354153104288UL + 1248UL, &____alias_loc_id_11, (unsigned)1, 13706408354153104288UL + 1206UL, &____alias_loc_id_12, (unsigned)1, 13706408354153104288UL + 1248UL, &____alias_loc_id_13, (unsigned)1, 13706408354153104288UL + 1248UL, &____alias_loc_id_14, (unsigned)6, 13706408354153104288UL + 1UL, 13706408354153104288UL + 2UL, 13706408354153104288UL + 3UL, 13706408354153104288UL + 4UL, 13706408354153104288UL + 8UL, 13706408354153104288UL + 20UL, &____alias_loc_id_15, (unsigned)2, 13706408354153104288UL + 134UL, 13706408354153104288UL + 147UL, &____alias_loc_id_16, (unsigned)2, 13706408354153104288UL + 148UL, 13706408354153104288UL + 239UL, &____alias_loc_id_17, (unsigned)7, 13706408354153104288UL + 573UL, 13706408354153104288UL + 574UL, 13706408354153104288UL + 575UL, 13706408354153104288UL + 576UL, 13706408354153104288UL + 577UL, 13706408354153104288UL + 578UL, 13706408354153104288UL + 649UL, &____alias_loc_id_18, (unsigned)2, 13706408354153104288UL + 739UL, 13706408354153104288UL + 891UL, &____alias_loc_id_19, (unsigned)7, 13706408354153104288UL + 911UL, 13706408354153104288UL + 912UL, 13706408354153104288UL + 913UL, 13706408354153104288UL + 914UL, 13706408354153104288UL + 915UL, 13706408354153104288UL + 921UL, 13706408354153104288UL + 967UL, &____alias_loc_id_20, (unsigned)6, 13706408354153104288UL + 1201UL, 13706408354153104288UL + 1202UL, 13706408354153104288UL + 1203UL, 13706408354153104288UL + 1204UL, 13706408354153104288UL + 1205UL, 13706408354153104288UL + 1248UL);
     register_functions(8, "initAtoms.c.pre.hard.cpp", "initAtoms", &initAtoms, "zeroReal3", &zeroReal3, "destroyAtoms", &destroyAtoms, "createFccLattice", &createFccLattice, "setVcm", &setVcm, "computeVcm", &computeVcm, "setTemperature", &setTemperature, "randomDisplacements", &randomDisplacements);
     return 0;
 }

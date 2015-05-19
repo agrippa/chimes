@@ -1,5 +1,5 @@
-yamlBegin 0 MAY printRank time
-yamlAppInfo 0 MAY builtWithMpi getTimeString printRank printSeparator
+yamlBegin 0 MAY printRank 47 9 time 52 4
+yamlAppInfo 0 MAY printRank 65 9 printSeparator 67 4 builtWithMpi 80 35 getTimeString 84 4
 printSeparator 0 DOES_NOT
-getTimeString 0 MAY time
-yamlEnd 0 MAY printRank
+getTimeString 0 MAY time 32 4
+yamlEnd 0 MAY printRank 92 9

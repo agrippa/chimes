@@ -476,6 +476,7 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
+extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
@@ -518,7 +519,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1739,6 +1740,7 @@ extern void register_custom_init_handler(const char *obj_name,
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+void *haha_this_sux_npm();
 void *haha_this_sux_quick(); void *haha_this_sux();
 void *haha_this_sux_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux), "haha_this_sux", &____must_manage_haha_this_sux, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
@@ -1750,7 +1752,7 @@ void *haha_this_sux_resumable() {const int ____chimes_did_disable0 = new_stack((
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- void *tmp; tmp = ( ({ calling((void*)haha_this_sux, -1, 2786831167442144610UL, 0, 0); (haha_this_sux)(); }) ) ;
+ void *tmp; tmp = (({ calling_npm(1, 0, 2786831167442144610UL, 2786831167442144618UL); haha_this_sux_npm(); })) ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
@@ -1767,7 +1769,7 @@ void *haha_this_sux() { return (____chimes_replaying ? haha_this_sux_resumable()
 
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)) ; ; ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
- void *tmp; tmp = ( ({ calling((void*)haha_this_sux, -1, 2786831167442144610UL, 0, 0); haha_this_sux_quick(); }) ) ;
+ void *tmp; tmp = (({ calling_npm(1, 0, 2786831167442144610UL, 2786831167442144618UL); haha_this_sux_npm(); })) ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
@@ -1779,8 +1781,18 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 
+void *haha_this_sux_npm() {
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+ return __null;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp"
+}
+
+
+
+
+
 static int module_init() {
-    init_module(2786831167442144598UL, 2, 2, 0, 1, 0, 2786831167442144598UL + 5UL, 2786831167442144598UL + 12UL, 2786831167442144598UL + 4UL, 2786831167442144598UL + 17UL, "main", 2, "checkpoint", "haha_this_sux", "haha_this_sux", 0, &____alias_loc_id_0, (unsigned)4, 2786831167442144598UL + 2UL, 2786831167442144598UL + 3UL, 2786831167442144598UL + 4UL, 2786831167442144598UL + 5UL);
+    init_module(2786831167442144598UL, 2, 2, 0, 1, 0, 2786831167442144598UL + 5UL, 2786831167442144598UL + 12UL, 2786831167442144598UL + 4UL, 2786831167442144598UL + 17UL, "main", 2, "haha_this_sux", "checkpoint", "haha_this_sux", 0, &____alias_loc_id_0, (unsigned)4, 2786831167442144598UL + 2UL, 2786831167442144598UL + 3UL, 2786831167442144598UL + 4UL, 2786831167442144598UL + 5UL);
     register_functions(2, "func_with_only_return.cpp.pre.hard.cpp", "haha_this_sux", &haha_this_sux, "main", &main);
     return 0;
 }

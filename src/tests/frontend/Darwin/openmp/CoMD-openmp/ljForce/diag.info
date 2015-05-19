@@ -1,3 +1,11 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 98 6 len=9 ljDestroy_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 103 4 len=4 free_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 103 9 , 17518077371777717460UL
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 110 16 len=9 initLjPot_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 37 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 62 , 17518077371777717480UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 130 6 len=7 ljPrint_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 144 5 len=7 ljForce_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 103 4 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 103 9 , 17518077371777717460UL
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c 112 37 len=6 malloc_wrapper

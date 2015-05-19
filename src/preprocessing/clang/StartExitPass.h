@@ -22,6 +22,7 @@ public:
     bool createsFunctionLabels() override { return false; }
     bool createsOMPTree() override { return false; }
     bool requiresMangledVarsReset() { return false; }
+    bool transformsOriginal() { return false; }
 
     std::string constructFunctionEndingStmts(bool inserting_rm,
             bool conditional_management);

@@ -1,13 +1,13 @@
-uts_error 0 MAY impl_abort
+uts_error 0 MAY impl_abort 112 3
 uts_wctime 0 DOES_NOT
 rng_toProb 0 DOES_NOT
-uts_initRoot 0 MAY rng_init
-uts_numChildren_bin 0 MAY rng_rand rng_toProb
-uts_numChildren_geo 0 MAY rng_rand rng_toProb
-uts_numChildren 0 MAY uts_error uts_numChildren_bin uts_numChildren_geo
-uts_childType 0 MAY uts_error
-uts_paramsToStr 0 MAY impl_getName rng_showtype
-uts_printParams 0 MAY impl_paramsToStr uts_paramsToStr
-uts_parseParams 0 MAY impl_abort impl_parseParam uts_helpMessage
-uts_helpMessage 0 MAY impl_getName impl_helpMessage
+uts_initRoot 0 MAY rng_init 154 3
+uts_numChildren_bin 0 MAY rng_rand 163 11 rng_toProb 164 14
+uts_numChildren_geo 0 MAY rng_rand 213 7 rng_toProb 214 7
+uts_numChildren 0 MAY uts_numChildren_bin 230 87 uts_numChildren_geo 237 21 uts_numChildren_geo 241 64 uts_numChildren_bin 241 116 uts_error 247 7
+uts_childType 0 MAY uts_error 284 7
+uts_paramsToStr 0 MAY impl_getName 293 37 rng_showtype 322 9
+uts_printParams 0 MAY uts_paramsToStr 335 11 impl_paramsToStr 336 11
+uts_parseParams 0 MAY uts_helpMessage 345 56 impl_abort 345 79 impl_parseParam 355 10 impl_abort 400 5
+uts_helpMessage 0 MAY impl_getName 405 37 impl_helpMessage 424 3
 uts_showStats 0 DOES_NOT

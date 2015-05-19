@@ -1,8 +1,8 @@
-profileStart 0 DOES_NOT getTime
+profileStart 0 DOES_NOT getTime 94 30
 getTime 0 DOES_NOT
-profileStop 0 DOES_NOT getTime
-getElapsedTime 0 DOES_NOT getTick
+profileStop 0 DOES_NOT getTime 100 21
+getElapsedTime 0 DOES_NOT getTick 110 19
 getTick 0 DOES_NOT
-printPerformanceResults 0 MAY getMyRank getNRanks getTick printRank timerStats
-timerStats 0 MAY addDoubleParallel getMyRank getNRanks maxRankDoubleParallel minRankDoubleParallel
-printPerformanceResultsYaml 0 MAY getMyRank getNRanks getTick printRank
+printPerformanceResults 0 MAY timerStats 123 4 printRank 125 9 getTick 129 18 getMyRank 132 35 getNRanks 147 35 getNRanks 160 47
+timerStats 0 MAY addDoubleParallel 271 4 getNRanks 273 95 getMyRank 282 32 minRankDoubleParallel 284 4 maxRankDoubleParallel 290 4 addDoubleParallel 303 4 getNRanks 306 38
+printPerformanceResultsYaml 0 MAY printRank 182 9 getTick 185 18 getNRanks 189 35 getMyRank 191 35

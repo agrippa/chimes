@@ -1,11 +1,11 @@
-main 0 DOES checkpoint kernel
+main 0 DOES kernel 47 69 checkpoint 51 1
 dim3::dim3 0 DOES_NOT
-kernel 0 MAY __device_stub__Z6kernelPiS_S_i
-__device_stub__Z6kernelPiS_S_i 0 MAY cudaError cudaSetupArgument
-cudaError 0 MAY cudaLaunch
-__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762 1 MAY __cudaRegisterFatBinary atexit
-__nv_cudaEntityRegisterCallback 0 MAY __cudaRegisterFunction __nv_save_fatbinhandle_for_managed_rt
-__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref __cudaUnregisterFatBinary
+kernel 0 MAY __device_stub__Z6kernelPiS_S_i 13 2
+__device_stub__Z6kernelPiS_S_i 0 MAY cudaSetupArgument 9 88 cudaSetupArgument 9 122 cudaSetupArgument 9 156 cudaSetupArgument 9 191 cudaError 9 226
+cudaError 0 MAY cudaLaunch 1510 8
+__sti____cudaRegisterAll_18_vector_sum_cpp1_ii_36d5b762 1 MAY __cudaRegisterFatBinary 2 78 atexit 2 78
+__nv_cudaEntityRegisterCallback 0 MAY __nv_save_fatbinhandle_for_managed_rt 1 92 __cudaRegisterFunction 1 138
+__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref 237 3 __cudaUnregisterFatBinary 238 3
 ____nv_dummy_param_ref 0 DOES_NOT
 __nv_save_fatbinhandle_for_managed_rt 0 DOES_NOT
 dim3::dim3 0 DOES_NOT

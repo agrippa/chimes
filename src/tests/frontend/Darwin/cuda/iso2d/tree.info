@@ -1,11 +1,11 @@
-main 0 DOES checkpoint config_sources cudaDeviceSynchronize cudaGetErrorString finish_progress fwd_kernel init_data init_progress sample_sources save_text seconds setup_config update_progress
+main 0 DOES setup_config 71 1 init_progress 72 1 config_sources 109 1 sample_sources 110 16 init_data 112 1 cudaGetErrorString 115 228 cudaGetErrorString 116 228 cudaGetErrorString 117 227 cudaGetErrorString 118 245 seconds 123 20 cudaGetErrorString 125 246 cudaGetErrorString 126 246 cudaGetErrorString 127 244 cudaGetErrorString 128 0 seconds 130 16 cudaGetErrorString 136 0 fwd_kernel 140 46 checkpoint 148 1 update_progress 151 1 cudaDeviceSynchronize 153 23 cudaGetErrorString 153 213 seconds 154 20 cudaGetErrorString 156 247 seconds 157 18 finish_progress 159 1 save_text 166 1 cudaGetErrorString 178 207 cudaGetErrorString 179 207 cudaGetErrorString 180 206 cudaGetErrorString 181 210
 dim3::dim3 0 DOES_NOT
-fwd_kernel 0 MAY __device_stub__Z10fwd_kernelPfS_S_S_iiii
-__device_stub__Z10fwd_kernelPfS_S_S_iiii 0 MAY cudaError cudaSetupArgument
-cudaError 0 MAY cudaLaunch
-__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad 1 MAY __cudaRegisterFatBinary atexit
-__nv_cudaEntityRegisterCallback 0 MAY __cudaRegisterFunction __nv_save_fatbinhandle_for_managed_rt
-__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref __cudaUnregisterFatBinary
+fwd_kernel 0 MAY __device_stub__Z10fwd_kernelPfS_S_S_iiii 50 2
+__device_stub__Z10fwd_kernelPfS_S_S_iiii 0 MAY cudaSetupArgument 9 155 cudaSetupArgument 9 189 cudaSetupArgument 9 223 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaSetupArgument 9 0 cudaError 9 0
+cudaError 0 MAY cudaLaunch 1510 8
+__sti____cudaRegisterAll_13_iso2d_cpp1_ii_2fcd0cad 1 MAY __cudaRegisterFatBinary 2 73 atexit 2 73
+__nv_cudaEntityRegisterCallback 0 MAY __nv_save_fatbinhandle_for_managed_rt 1 92 __cudaRegisterFunction 1 138
+__cudaUnregisterBinaryUtil 0 MAY ____nv_dummy_param_ref 237 3 __cudaUnregisterFatBinary 238 3
 ____nv_dummy_param_ref 0 DOES_NOT
 __nv_save_fatbinhandle_for_managed_rt 0 DOES_NOT
 dim3::dim3 0 DOES_NOT
