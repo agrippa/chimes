@@ -1,6 +1,6 @@
 GXX?=g++
 NVCC=nvcc
-GXX_FLAGS=-fPIC -Wall -O3
+GXX_FLAGS=-fPIC -Wall -O3 -D__CHIMES_PROFILE
 NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \
@@ -13,9 +13,14 @@ OBJ=$(patsubst %.cpp,%.o,$(SRC))
 
 OMP_LIB=-lgomp
 
+IS_LINUX := $(shell uname)
 IS_CLANG := $(shell ${GXX} --version 2>&1 | grep clang | wc -l | bc)
 ifeq ($(IS_CLANG),1)
 	GXX_FLAGS += -stdlib=libstdc++
+endif
+
+ifeq ($(IS_LINUX),Linux)
+	GXX_FLAGS += -lrt
 endif
 
 ifneq ($(wildcard $(CUDA_HOME)/lib64),)

@@ -31,7 +31,7 @@ if __name__ == '__main__':
         elif t == '-d':
             decl_files.append(sys.argv[index + 1])
         else:
-            print 'Unrecognized option "' + t + '"'
+            print('Unrecognized option "' + t + '"')
             sys.exit(1)
         index += 2
 

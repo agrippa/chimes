@@ -4,6 +4,7 @@
 
 #ifdef __CHIMES_PROFILE
 static unsigned long long count_calling = 0;
+static unsigned long long count_calling_npm = 0;
 static unsigned long long count_new_stack = 0;
 static unsigned long long count_rm_stack = 0;
 static unsigned long long count_register_stack_var = 0;
@@ -35,6 +36,7 @@ int ____chimes_replaying = 0;
 #ifdef __CHIMES_PROFILE
 void onexit() {
     fprintf(stderr, "calling %llu\n", count_calling);
+    fprintf(stderr, "calling_npm %llu\n", count_calling_npm);
     fprintf(stderr, "new_stack %llu\n", count_new_stack);
     fprintf(stderr, "rm_stack %llu\n", count_rm_stack);
     fprintf(stderr, "register_stack_var %llu\n", count_register_stack_var);
@@ -58,6 +60,12 @@ void onexit() {
 void init_chimes() {
 #ifdef __CHIMES_PROFILE
     atexit(onexit);
+#endif
+}
+
+void calling_npm(int n_new_aliases, int n_change_locs, ...) {
+#ifdef __CHIMES_PROFILE
+    __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
 }
 

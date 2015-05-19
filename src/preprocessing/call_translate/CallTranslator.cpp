@@ -63,7 +63,6 @@ void CallTranslator::VisitStmt(const clang::Stmt *s) {
                 replace_with = callee_name + "_quick";
             } else if (is_npm_transformed(callee_name) &&
                     curr_func_is_npm == YES) {
-                llvm::errs() << "TRANSFORMING CALL TO " << callee_name << "\n";
                 replace_with = callee_name + "_npm";
             }
 
