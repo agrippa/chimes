@@ -1,7 +1,7 @@
 GXX?=g++
 NVCC=nvcc
-GXX_FLAGS=-g -fPIC -Wall -O0 -DVERBOSE
-NVCC_FLAGS=-g -Xcompiler -fPIC -arch=sm_20
+GXX_FLAGS=-fPIC -Wall -O3
+NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \
 	type_info.cpp serialization_common.cpp perf_profile.cpp \
@@ -62,5 +62,6 @@ build-xxhash:
 	make -C xxhash/
 
 clean:
-	rm -f ${CHIMES_LIB} ${CHIMES_CPP_LIB} libchimes_cuda.o
+	rm -f ${CHIMES_LIB} ${CHIMES_CPP_LIB} libchimes_cuda.o ${CHIMES_STATIC_LIB} \
+		${CHIMES_DUMMY_LIB} ${CHIMES_DUMMY_STATIC_LIB} benchmark_timers
 	make -C xxhash/ clean
