@@ -1,67 +1,67 @@
 _ZL7getTimev 94 30 0
-gettimeofday 247 4 0 14 796
+gettimeofday 247 4 0 14 816
 _ZL7getTimev 100 21 0
 _ZL7getTickv 110 19 0
 _ZL10timerStatsv 123 4 0
 _Z9printRankv 125 9 0
 _ZL7getTickv 129 18 0
-_Z9getMyRankv 132 52 0
-fprintf 132 4 0 181 757 0
-fprintf 133 4 0 181 758
-fprintf 134 4 0 181 758
-fprintf 138 37 0 181 760 155 0 0 0 0
-_Z9getNRanksv 147 65 0
-fprintf 147 4 0 181 761 0
-fprintf 148 4 0 181 762
-fprintf 149 4 0 181 763
-fprintf 153 37 0 181 764 155 0 0 0 0 0 0
+_Z9getMyRankv 132 35 0
+fprintf 132 48 0 189 777 0
+fprintf 133 4 0 189 778
+fprintf 134 4 0 189 778
+fprintf 138 37 0 189 780 160 0 0 0 0
+_Z9getNRanksv 147 35 0
+fprintf 147 48 0 189 781 0
+fprintf 148 4 0 189 782
+fprintf 149 4 0 189 783
+fprintf 153 37 0 189 784 160 0 0 0 0 0 0
 _Z9getNRanksv 160 47 0
-fprintf 167 4 0 181 766
-fprintf 168 4 0 181 767 0
-fprintf 169 4 0 181 766
-fprintf 171 4 0 181 766
-fprintf 172 4 0 181 769 0
-fprintf 173 4 0 181 766
-fprintf 175 4 0 181 766
-fprintf 176 4 0 181 770 0
-fprintf 177 4 0 181 766
-_Z17addDoubleParallelPdS_i 271 4 0 313 314 0
+fprintf 167 4 0 189 786
+fprintf 168 4 0 189 787 0
+fprintf 169 4 0 189 786
+fprintf 171 4 0 189 786
+fprintf 172 4 0 189 789 0
+fprintf 173 4 0 189 786
+fprintf 175 4 0 189 786
+fprintf 176 4 0 189 790 0
+fprintf 177 4 0 189 786
+_Z17addDoubleParallelPdS_i 271 4 0 321 322 0
 _Z9getNRanksv 273 95 0
 _Z9getMyRankv 282 32 0
-_Z21minRankDoubleParallelP16RankReduceDataStS0_i 284 4 0 317 318 0
-_Z21maxRankDoubleParallelP16RankReduceDataStS0_i 290 4 0 317 318 0
-_Z17addDoubleParallelPdS_i 303 4 0 313 314 0
-_Z9getNRanksv 306 57 0
-sqrt 306 29 0 0
+_Z21minRankDoubleParallelP16RankReduceDataStS0_i 284 4 0 325 326 0
+_Z21maxRankDoubleParallelP16RankReduceDataStS0_i 290 4 0 325 326 0
+_Z17addDoubleParallelPdS_i 303 4 0 321 322 0
+_Z9getNRanksv 306 38 0
+sqrt 306 73 0 0
 _Z9printRankv 182 9 0
 _ZL7getTickv 185 18 0
-fprintf 188 4 0 730 757
-_Z9getNRanksv 189 40 0
-fprintf 189 4 0 730 772 0
-fprintf 190 4 0 730 773
-_Z9getMyRankv 191 56 0
-fprintf 191 4 0 730 774 0
-fprintf 197 10 0 730 749 155
-fprintf 198 10 0 730 776 0
-fprintf 199 10 0 730 757 0
-fprintf 200 10 0 730 757 0
-fprintf 201 10 0 730 779 0
-fprintf 205 4 0 730 780
-fprintf 210 10 0 730 749 155
-fprintf 211 10 0 730 781 0
-fprintf 212 10 0 730 782 0
-fprintf 213 10 0 730 781 0
-fprintf 214 10 0 730 782 0
-fprintf 215 10 0 730 782 0
-fprintf 216 10 0 730 786 0
-fprintf 220 4 0 730 774
-fprintf 221 4 0 730 788
-fprintf 222 4 0 730 779 0
-fprintf 223 4 0 730 790
-fprintf 224 4 0 730 786
-fprintf 225 4 0 730 779 0
-fprintf 226 4 0 730 782
-fprintf 227 4 0 730 749
-fprintf 228 4 0 730 779 0
-fprintf 229 4 0 730 776
-fprintf 231 4 0 730 795
+fprintf 188 4 0 750 777
+_Z9getNRanksv 189 35 0
+fprintf 189 48 0 750 792 0
+fprintf 190 4 0 750 793
+_Z9getMyRankv 191 35 0
+fprintf 191 48 0 750 794 0
+fprintf 197 10 0 750 769 160
+fprintf 198 10 0 750 796 0
+fprintf 199 10 0 750 777 0
+fprintf 200 10 0 750 777 0
+fprintf 201 10 0 750 799 0
+fprintf 205 4 0 750 800
+fprintf 210 10 0 750 769 160
+fprintf 211 10 0 750 801 0
+fprintf 212 10 0 750 802 0
+fprintf 213 10 0 750 801 0
+fprintf 214 10 0 750 802 0
+fprintf 215 10 0 750 802 0
+fprintf 216 10 0 750 806 0
+fprintf 220 4 0 750 794
+fprintf 221 4 0 750 808
+fprintf 222 4 0 750 799 0
+fprintf 223 4 0 750 810
+fprintf 224 4 0 750 806
+fprintf 225 4 0 750 799 0
+fprintf 226 4 0 750 802
+fprintf 227 4 0 750 769
+fprintf 228 4 0 750 799 0
+fprintf 229 4 0 750 796
+fprintf 231 4 0 750 815

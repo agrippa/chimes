@@ -12,6 +12,7 @@ static int ____must_checkpoint_yamlBegin_filename_0 = 2;
 static int ____must_checkpoint_yamlBegin_rawtime_0 = 2;
 static int ____must_checkpoint_yamlBegin_sdate_0 = 2;
 static int ____must_checkpoint_yamlAppInfo_file_0 = 2;
+static int ____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0 = 2;
 static int ____must_checkpoint_yamlAppInfo_timestring_0 = 2;
 static int ____must_checkpoint_getTimeString_timestring_0 = 2;
 static int ____must_checkpoint_getTimeString_rawtime_0 = 2;
@@ -27,6 +28,7 @@ static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
+static unsigned ____alias_loc_id_5;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -1983,14 +1985,14 @@ static const char* CoMDVariant = "CoMD-openmp";
 static void getTimeString_quick(char* timestring); static void getTimeString(char* timestring);
 static void getTimeString_resumable(char* timestring)
 # 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(5761392777509905392UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0) ; time_t rawtime;
+{const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(5761392777509905396UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0) ; time_t rawtime;
  if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    struct tm *timeinfo; ;
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_1: ({ calling((void*)time, 1, 0UL, ____alias_loc_id_1, 1, (size_t)(5761392777509905360UL)); (time)(&rawtime); }) ;
+    call_lbl_1: ({ calling((void*)time, 1, 0UL, ____alias_loc_id_2, 1, (size_t)(5761392777509905364UL)); (time)(&rawtime); }) ;
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    timeinfo = localtime(&rawtime);
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2011,7 +2013,7 @@ static void getTimeString_resumable(char* timestring)
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
            timeinfo->tm_sec);
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_5, ____chimes_did_disable0); }
 # 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void yamlBegin_quick(void); void yamlBegin(void);
@@ -2022,7 +2024,7 @@ time_t rawtime;
 char filename[64];
  if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2, ____chimes_did_disable1); return;; };
+    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
@@ -2045,21 +2047,22 @@ char filename[64];
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_3, ____chimes_did_disable1); }
 # 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void yamlAppInfo_quick(FILE* file); void yamlAppInfo(FILE* file);void printSeparator_quick(FILE* file); void printSeparator(FILE* file);
 void yamlAppInfo_resumable(FILE* file)
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(5761392777509905349UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; char timestring[32];
- if (____must_checkpoint_yamlAppInfo_timestring_0) { register_stack_vars(1, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(5761392777509905353UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; char timestring[32];
+int ____chimes_unroll_var_0;
+ if (____must_checkpoint_yamlAppInfo_timestring_0 || ____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0) { register_stack_vars(2, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0, "yamlAppInfo|____chimes_unroll_var_0|0", &____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    alias_group_changed(____alias_loc_id_0); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0, ____chimes_did_disable2); return;; };
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    ({ calling((void*)printSeparator, -1, 0UL, 0, 1, (size_t)(5761392777509905349UL)); (printSeparator)(file); }) ;
+    ({ calling((void*)printSeparator, -1, 0UL, 0, 1, (size_t)(5761392777509905353UL)); (printSeparator)(file); }) ;
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Mini-Application Name    : %s\n", CoMDVariant);
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2085,14 +2088,14 @@ void yamlAppInfo_resumable(FILE* file)
 # 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"  LDFLAGS: %s\n", "'-lm '");
 # 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   fprintf(file,"  using MPI: %s\n", builtWithMpi() ? "true":"false");
+        call_lbl_16: ____chimes_unroll_var_0 = ( ({ calling((void*)builtWithMpi, 16, 0UL, 0, 0); (builtWithMpi)(); }) ) ; fprintf(file,"  using MPI: %s\n", ____chimes_unroll_var_0 ? "true":"false");
 # 85 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 86 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"  Double Precision: %s\n", (sizeof(real_t)==sizeof(double)?"true":"false"));
 # 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
 # 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_18: ({ calling((void*)getTimeString, 18, 0UL, 0, 1, (size_t)(5761392777509905295UL)); (getTimeString)(timestring); }) ;
+    call_lbl_19: ({ calling((void*)getTimeString, 19, 0UL, ____alias_loc_id_1, 1, (size_t)(5761392777509905296UL)); (getTimeString)(timestring); }) ;
 # 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Run Date/Time: %s\n", timestring);
 # 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2117,22 +2120,22 @@ rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disa
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 void printSeparator_resumable(FILE* file)
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(5761392777509905356UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(5761392777509905360UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
       fprintf(file,"\n");
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_4, ____chimes_did_disable4); }
 static void getTimeString_quick(char* timestring)
 # 30 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(5761392777509905392UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0) ; time_t rawtime;
+{const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(5761392777509905396UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0) ; time_t rawtime;
  if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); } ; ;
 # 31 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
 # 32 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    struct tm *timeinfo; ;
 # 33 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_1: ({ calling((void*)time, 1, 0UL, ____alias_loc_id_1, 1, (size_t)(5761392777509905360UL)); (time)(&rawtime); }) ;
+    call_lbl_1: ({ calling((void*)time, 1, 0UL, ____alias_loc_id_2, 1, (size_t)(5761392777509905364UL)); (time)(&rawtime); }) ;
 # 34 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    timeinfo = localtime(&rawtime);
 # 35 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2153,7 +2156,7 @@ static void getTimeString_quick(char* timestring)
 # 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
            timeinfo->tm_sec);
 # 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_5, ____chimes_did_disable0); }
 
 static void getTimeString(char* timestring) { (____chimes_replaying ? getTimeString_resumable(timestring) : getTimeString_quick(timestring)); }
 
@@ -2164,7 +2167,7 @@ time_t rawtime;
 char filename[64];
  if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } ; ;
 # 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2, ____chimes_did_disable1); return;; };
+    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
@@ -2187,21 +2190,22 @@ char filename[64];
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_3, ____chimes_did_disable1); }
 
 void yamlBegin(void) { (____chimes_replaying ? yamlBegin_resumable() : yamlBegin_quick()); }
 
 void yamlAppInfo_quick(FILE* file)
 # 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(5761392777509905349UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; char timestring[32];
- if (____must_checkpoint_yamlAppInfo_timestring_0) { register_stack_vars(1, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(5761392777509905353UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; char timestring[32];
+int ____chimes_unroll_var_0;
+ if (____must_checkpoint_yamlAppInfo_timestring_0 || ____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0) { register_stack_vars(2, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0, "yamlAppInfo|____chimes_unroll_var_0|0", &____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0); } ; ;
 # 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    alias_group_changed(____alias_loc_id_0); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0, ____chimes_did_disable2); return;; };
 # 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    ({ calling((void*)printSeparator, -1, 0UL, 0, 1, (size_t)(5761392777509905349UL)); printSeparator_quick(file); }) ;
+    ({ calling((void*)printSeparator, -1, 0UL, 0, 1, (size_t)(5761392777509905353UL)); printSeparator_quick(file); }) ;
 # 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Mini-Application Name    : %s\n", CoMDVariant);
 # 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2227,14 +2231,14 @@ void yamlAppInfo_quick(FILE* file)
 # 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"  LDFLAGS: %s\n", "'-lm '");
 # 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-   fprintf(file,"  using MPI: %s\n", builtWithMpi() ? "true":"false");
+        call_lbl_16: ____chimes_unroll_var_0 = ( ({ calling((void*)builtWithMpi, 16, 0UL, 0, 0); (builtWithMpi)(); }) ) ; fprintf(file,"  using MPI: %s\n", ____chimes_unroll_var_0 ? "true":"false");
 # 85 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 86 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"  Double Precision: %s\n", (sizeof(real_t)==sizeof(double)?"true":"false"));
 # 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
     ;
 # 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-    call_lbl_18: ({ calling((void*)getTimeString, 18, 0UL, 0, 1, (size_t)(5761392777509905295UL)); getTimeString_quick(timestring); }) ;
+    call_lbl_19: ({ calling((void*)getTimeString, 19, 0UL, ____alias_loc_id_1, 1, (size_t)(5761392777509905296UL)); getTimeString_quick(timestring); }) ;
 # 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
    fprintf(file,"Run Date/Time: %s\n", timestring);
 # 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
@@ -2260,19 +2264,19 @@ void yamlEnd(void) { (____chimes_replaying ? yamlEnd_resumable() : yamlEnd_quick
 
 void printSeparator_quick(FILE* file)
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(5761392777509905356UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(5761392777509905360UL)) ; ; ;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
       fprintf(file,"\n");
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c"
-rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_4, ____chimes_did_disable4); }
 
 void printSeparator(FILE* file) { (____chimes_replaying ? printSeparator_resumable(file) : printSeparator_quick(file)); }
 
 
 
 static int module_init() {
-    init_module(5761392777509905244UL, 6, 5, 7, 2, 4, 5761392777509905244UL + 157UL, 5761392777509905244UL + 61UL, 5761392777509905244UL + 50UL, 5761392777509905244UL + 105UL, 5761392777509905244UL + 115UL, 5761392777509905244UL + 148UL, 5761392777509905244UL + 3UL, 5761392777509905244UL + 13UL, 5761392777509905244UL + 117UL, 5761392777509905244UL + 123UL, 5761392777509905244UL + 106UL, 5761392777509905244UL + 112UL, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "tm", 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone), "printSeparator", 0, "yamlBegin", 2, "printRank", "time", "yamlEnd", 1, "printRank", "yamlAppInfo", 4, "builtWithMpi", "getTimeString", "printRank", "printSeparator", "getTimeString", 1, "time", "yamlBegin|filename|0", 1, "yamlBegin", "yamlBegin|rawtime|0", 1, "yamlBegin", "yamlBegin|sdate|0", 1, "yamlBegin", "yamlAppInfo|file|0", 3, "printRank", "getTimeString", "builtWithMpi", "yamlAppInfo|timestring|0", 1, "yamlAppInfo", "getTimeString|timestring|0", 1, "time", "getTimeString|rawtime|0", 1, "getTimeString", &____alias_loc_id_0, (unsigned)1, 5761392777509905244UL + 50UL, &____alias_loc_id_1, (unsigned)1, 5761392777509905244UL + 115UL, &____alias_loc_id_2, (unsigned)1, 5761392777509905244UL + 3UL, &____alias_loc_id_3, (unsigned)1, 5761392777509905244UL + 106UL, &____alias_loc_id_4, (unsigned)1, 5761392777509905244UL + 117UL);
+    init_module(5761392777509905244UL, 6, 5, 8, 3, 4, 5761392777509905244UL + 50UL, 5761392777509905244UL + 109UL, 5761392777509905244UL + 121UL, 5761392777509905244UL + 127UL, 5761392777509905244UL + 3UL, 5761392777509905244UL + 13UL, 5761392777509905244UL + 110UL, 5761392777509905244UL + 116UL, 5761392777509905244UL + 119UL, 5761392777509905244UL + 152UL, 5761392777509905244UL + 161UL, 5761392777509905244UL + 62UL, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "tm", 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone), "printSeparator", 0, "yamlBegin", 2, "printRank", "time", "yamlEnd", 1, "printRank", "yamlAppInfo", 4, "builtWithMpi", "getTimeString", "printRank", "printSeparator", "getTimeString", 1, "time", "yamlBegin|filename|0", 1, "yamlBegin", "yamlBegin|rawtime|0", 1, "yamlBegin", "yamlBegin|sdate|0", 1, "yamlBegin", "yamlAppInfo|file|0", 3, "printRank", "getTimeString", "builtWithMpi", "yamlAppInfo|____chimes_unroll_var_0|0", 1, "getTimeString", "yamlAppInfo|timestring|0", 1, "yamlAppInfo", "getTimeString|timestring|0", 1, "time", "getTimeString|rawtime|0", 1, "getTimeString", &____alias_loc_id_0, (unsigned)1, 5761392777509905244UL + 50UL, &____alias_loc_id_1, (unsigned)1, 5761392777509905244UL + 51UL, &____alias_loc_id_2, (unsigned)1, 5761392777509905244UL + 119UL, &____alias_loc_id_3, (unsigned)1, 5761392777509905244UL + 3UL, &____alias_loc_id_4, (unsigned)1, 5761392777509905244UL + 110UL, &____alias_loc_id_5, (unsigned)1, 5761392777509905244UL + 121UL);
     register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8, 1, 0, 0);
     register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8, 1, 0, 0);
     register_constant(5761392777509905244UL + 0UL, (void *)CoMDVersion, 4);

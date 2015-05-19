@@ -34,7 +34,7 @@ all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} \
 		${CHIMES_DUMMY_STATIC_LIB} benchmark_timers
 
 benchmark_timers: benchmark_timers.cpp
-	${GXX} ${GXX_FLAGS} -o benchmark_timers benchmark_timers.cpp -lrt
+	${GXX} ${GXX_FLAGS} -o benchmark_timers benchmark_timers.cpp
 
 ${CHIMES_CPP_LIB}: ${SRC} build-xxhash
 	${GXX} ${GXX_FLAGS} -shared ${SRC} -o ${CHIMES_CPP_LIB} ${OMP_LIB} -Lxxhash/ -lxxhash

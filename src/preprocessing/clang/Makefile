@@ -29,7 +29,7 @@ LIBS=-Wl,--start-group -lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lc
 	 -lclangTooling -Wl,--end-group `${LLVM_CONFIG} --ldflags --libs --system-libs`
 endif
 
-OBJS=Driver.o DesiredInsertions.o InitPass.o \
+OBJS=Driver.o DesiredInsertions.o \
      StartExitPass.o ParentTransform.o AliasChangedPass.o MallocPass.o \
      SplitInitsPass.o CallingAndOMPPass.o OMPTree.o CollapsedLines.o CallLabelInsertPass.o
 

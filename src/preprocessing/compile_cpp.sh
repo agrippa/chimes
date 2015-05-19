@@ -19,7 +19,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O2"
+GXX_FLAGS="-g -O0"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
@@ -121,6 +121,7 @@ GXX=${GXX:-/usr/bin/g++}
 CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
+FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
@@ -181,6 +182,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
+
+    echo Unrolling functions in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
+        ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+    cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \

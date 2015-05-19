@@ -1768,13 +1768,13 @@ int bar_resumable() {const int ____chimes_did_disable1 = new_stack((void *)(&bar
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068280UL)) ; int b;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068284UL)) ; int b;
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
- ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); (foo)(&b, bar()); }) ;
+ int ____chimes_unroll_var_0; ____chimes_unroll_var_0 = ( ({ calling((void*)bar, -1, 0UL, 0, 0); (bar)(); }) ) ; ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); (foo)(&b, ____chimes_unroll_var_0); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
@@ -1801,13 +1801,13 @@ int bar_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "
 
 int bar() { return (____chimes_replaying ? bar_resumable() : bar_quick()); }
 
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068280UL)) ; int b;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068284UL)) ; int b;
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); ; ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
- ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); foo_quick(&b, bar_quick()); }) ;
+ int ____chimes_unroll_var_0; ____chimes_unroll_var_0 = ( ({ calling((void*)bar, -1, 0UL, 0, 0); bar_quick(); }) ) ; ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); foo_quick(&b, ____chimes_unroll_var_0); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
@@ -1824,7 +1824,7 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(11947780893324068234UL, 2, 3, 1, 1, 0, 11947780893324068234UL + 2UL, 11947780893324068234UL + 15UL, 11947780893324068234UL + 22UL, 11947780893324068234UL + 46UL, "main", 3, "bar", "checkpoint", "foo", "foo", 0, "bar", 0, "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 11947780893324068234UL + 20UL, 11947780893324068234UL + 21UL, 11947780893324068234UL + 22UL, &____alias_loc_id_1, (unsigned)3, 11947780893324068234UL + 2UL, 11947780893324068234UL + 3UL, 11947780893324068234UL + 15UL);
+    init_module(11947780893324068234UL, 2, 3, 1, 1, 0, 11947780893324068234UL + 2UL, 11947780893324068234UL + 15UL, 11947780893324068234UL + 22UL, 11947780893324068234UL + 50UL, "main", 3, "bar", "checkpoint", "foo", "foo", 0, "bar", 0, "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)4, 11947780893324068234UL + 20UL, 11947780893324068234UL + 21UL, 11947780893324068234UL + 22UL, 11947780893324068234UL + 24UL, &____alias_loc_id_1, (unsigned)3, 11947780893324068234UL + 2UL, 11947780893324068234UL + 3UL, 11947780893324068234UL + 15UL);
     register_functions(3, "call_passed_directly_to_call.cpp.pre.hard.cpp", "foo", &foo, "bar", &bar, "main", &main);
     return 0;
 }

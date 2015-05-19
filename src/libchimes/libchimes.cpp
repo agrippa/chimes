@@ -2350,6 +2350,10 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
 #endif
     memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
     dead->clear_tmp_buffer();
+
+    assert(old_to_new->find(dead->get_address()) == old_to_new->end());
+    old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
+                new ptr_and_size(live->get_address(), live->get_size())));
 }
 
 static void restore_program_stack(vector<stack_frame *> *unpacked,
@@ -2610,10 +2614,6 @@ void checkpoint() {
             update_live_var(name, dead, live);
 
             assert(dead->get_size() == live->get_size());
-
-            assert(old_to_new->find(dead->get_address()) == old_to_new->end());
-            old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-                        new ptr_and_size(live->get_address(), live->get_size())));
         }
 
         /*
