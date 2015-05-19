@@ -1751,22 +1751,25 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
-int foo(int *a, int s) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(11947780893324068249UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int foo_quick(int *a, int s); int foo(int *a, int s);
+int foo_resumable(int *a, int s) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(11947780893324068249UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  *a = s;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
-int bar() {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int bar_quick(); int bar();
+int bar_resumable() {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_did_disable1); return 6;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 }
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068280UL)) ; int b;
- register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068280UL)) ; int b;
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
@@ -1774,7 +1777,40 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
  ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); (foo)(&b, bar()); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
- call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ (__builtin_expect(!(b == 6), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp", 19, "b == 6") : (void)0);
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); return 0;
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+}
+int foo_quick(int *a, int s) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(11947780893324068249UL), (size_t)(0UL)) ; ; ;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ *a = s;
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+
+int foo(int *a, int s) { return (____chimes_replaying ? foo_resumable(a, s) : foo_quick(a, s)); }
+
+int bar_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0) ; ; ;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_did_disable1); return 6;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+}
+
+int bar() { return (____chimes_replaying ? bar_resumable() : bar_quick()); }
+
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11947780893324068280UL)) ; int b;
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); ; ;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ ;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ ({ calling((void*)foo, -1, 0UL, 0, 2, (size_t)(11947780893324068257UL), (size_t)(0UL)); foo_quick(&b, bar_quick()); }) ;
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
+ call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
  (__builtin_expect(!(b == 6), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp", 19, "b == 6") : (void)0);
@@ -1783,10 +1819,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/call_passed_directly_to_call.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(11947780893324068234UL, 2, 3, 1, 1, 0, 11947780893324068234UL + 2UL, 11947780893324068234UL + 15UL, 11947780893324068234UL + 22UL, 11947780893324068234UL + 46UL, "main", 3, "bar", "checkpoint", "foo", "foo", 0, "bar", 0, "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 11947780893324068234UL + 20UL, 11947780893324068234UL + 21UL, 11947780893324068234UL + 22UL, &____alias_loc_id_1, (unsigned)3, 11947780893324068234UL + 2UL, 11947780893324068234UL + 3UL, 11947780893324068234UL + 15UL);
-    register_functions(3, "call_passed_directly_to_call.cpp.pre.register.cpp", "foo", &foo, "bar", &bar, "main", &main);
+    register_functions(3, "call_passed_directly_to_call.cpp.pre.hard.cpp", "foo", &foo, "bar", &bar, "main", &main);
     return 0;
 }
 

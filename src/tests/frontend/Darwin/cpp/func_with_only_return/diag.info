@@ -2,17 +2,26 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 4 5 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 23 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux), "haha_this_sux", &____must_manage_haha_this_sux, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 10 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 24 const int ____chimes_did_disable0 = new_stack((void *)(&haha_this_sux), "haha_this_sux", &____must_manage_haha_this_sux, 0, 0); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 150 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 49 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 185 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2786831167442144615UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 170 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 5  void *tmp;  tmp = (haha_this_sux()) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 32 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 5  call_lbl_2: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 5  call_lbl_1: 
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 7 len=13 haha_this_sux_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 149  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 5 len=4 main_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 25  ({  calling((void*)haha_this_sux, -1, 2786831167442144610UL, 0, 0); (haha_this_sux)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 39 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 29 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 182  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 167  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 7 len=13 haha_this_sux_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 3 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 5 len=4 main_resumable
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 25  ({  calling((void*)haha_this_sux, -1, 2786831167442144610UL, 0, 0); (haha_this_sux)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 8 39 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 9 29 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_only_return.cpp 7 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

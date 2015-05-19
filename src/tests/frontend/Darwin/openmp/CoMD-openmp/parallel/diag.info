@@ -79,9 +79,50 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/paralle
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 16  call_lbl_2: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 57 24  call_lbl_3: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 107 4  call_lbl_3: 
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 31 5 len=9 getNRanks_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 32 115  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 36 5 len=9 getMyRank_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 37 115  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 45 5 len=9 printRank_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 46 115  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 51 6 len=16 timestampBarrier_quick
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 53 4  ({  calling((void*)barrierParallel, -1, 0UL, 0, 0); (barrierParallel)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 53 20 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 54 9  ({  calling((void*)printRank, -1, 0UL, 0, 0); (printRank)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 54 19 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 34  ({  calling((void*)time, 2, 0UL, 0, 1, (size_t)(2720369932807154229UL)); (time)(__null); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 45 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 57 51  ({  calling((void*)ctime, 3, 2720369932807153878UL, 0, 1, (size_t)(2720369932807153865UL)); (ctime)(&t); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 57 59 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 5 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 13 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 52 283  ; time_t t;
+ if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0);  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 93 5 len=19 sendReceiveParallel_quick
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 107 17  ({  calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 107 49 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 95 271  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 113 6 len=14 addIntParallel_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 114 211  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 123 6 len=15 addRealParallel_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 124 214  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 133 6 len=17 addDoubleParallel_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 134 221  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 143 6 len=14 maxIntParallel_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 144 212  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 154 6 len=21 minRankDoubleParallel_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 155 233  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 167 6 len=21 maxRankDoubleParallel_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 168 233  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 188 5 len=12 builtWithMpi_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 189 125  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 31 5 len=9 getNRanks_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 32 115  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 36 5 len=9 getMyRank_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 37 115  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 45 5 len=9 printRank_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 46 115  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 51 6 len=16 timestampBarrier_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 53 4  ({  calling((void*)barrierParallel, -1, 0UL, 0, 0); (barrierParallel)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 53 20 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 54 9  ({  calling((void*)printRank, -1, 0UL, 0, 0); (printRank)(); }) 
@@ -94,13 +135,21 @@ RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parall
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 56 13 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 52 283  ; time_t t;
  if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 93 5 len=19 sendReceiveParallel_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 107 17  ({  calling((void*)memcpy, 3, 0UL, 0, 3, (size_t)(2720369932807153940UL), (size_t)(2720369932807153941UL), (size_t)(0UL)); (memcpy)(recvBuf, sendBuf, sendLen); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 107 49 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 95 271  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 113 6 len=14 addIntParallel_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 114 211  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 123 6 len=15 addRealParallel_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 124 214  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 133 6 len=17 addDoubleParallel_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 134 221  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 143 6 len=14 maxIntParallel_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 144 212  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 154 6 len=21 minRankDoubleParallel_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 155 233  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 167 6 len=21 maxRankDoubleParallel_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 168 233  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 188 5 len=12 builtWithMpi_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/parallel.c 189 125  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

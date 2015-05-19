@@ -30,7 +30,6 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 128 56 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 207 1 rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_12, ____chimes_did_disable11); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 296 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable12); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 33 const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(519228149530228714UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 34 34 const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(519228149530227360UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 34 270 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 48 73 const int ____chimes_did_disable1 = new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
@@ -101,8 +100,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 178 17  cha
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 178 66 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 180 17  char *sixth_comma;  sixth_comma = (strchr(fifth_comma + 1, ',')) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 180 65 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 49 const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(519228149530228714UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 185 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 34 const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(519228149530228714UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 170 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 210 5  config conf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 210 16 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 212 5  rgb *screen;  screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 519228149530228289UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
@@ -167,22 +166,34 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 7 {  int i;
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 286 7  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 12  i = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 21 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 9  call_lbl_3: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 34 269  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 48 261  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 52 190  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 56 234  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 62 246  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 68 189  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 75 189  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 83 370  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 9  call_lbl_2: 
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 33 6 len=4 init_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 34 269  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 48 8 len=9 get_coord_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 48 261  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 52 8 len=4 modv_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 52 190  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 56 6 len=4 move_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 56 234  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 62 6 len=7 move_to_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 62 246  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 68 6 len=5 rot_x_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 68 189  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 75 6 len=5 rot_y_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 75 189  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 82 8 len=19 get_sphere_intersec_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 83 370  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 101 8 len=18 get_cos_angle_v1v2_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 103 22  ({  calling((void*)modv, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (modv)(v1x, v1y, v1z); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 103 40 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 104 22  ({  calling((void*)modv, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (modv)(v2x, v2y, v2z); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 104 40 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 102 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 108 159  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 114 343  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 102 264  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 108 6 len=5 usage_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 108 159  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 114 6 len=19 parse_three_doubles_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 114 343  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 128 6 len=12 parse_config_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 156 17  ({  calling((void*)parse_three_doubles, -1, 0UL, 0, 4, (size_t)(519228149530228194UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL)); (parse_three_doubles)(optarg, &conf->svx, &conf->svy, &conf->svz); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 156 79 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 159 17  ({  calling((void*)parse_three_doubles, -1, 0UL, 0, 4, (size_t)(519228149530228194UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL)); (parse_three_doubles)(optarg, &conf->px, &conf->py, &conf->pz); }) 
@@ -195,7 +206,8 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 192 17  ({ 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 195 65 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 204 13  ({  calling((void*)usage, -1, 0UL, 0, 1, (size_t)(519228149530228232UL)); (usage)(argv); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 204 23 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 128 259  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 128 259  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 5 len=4 main_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 211 5  ({  calling((void*)parse_config, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(519228149530228714UL), (size_t)(519228149530228243UL)); (parse_config)(argc, argv, &conf); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 211 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 220 26  ({  calling((void*)get_coord, -1, 0UL, 0, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_coord)(0., conf.nx, -f_max, f_max, i / conf.ny); }) 
@@ -214,7 +226,153 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 268 34  ({ 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 268 141 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 285 11  ({  calling((void*)move, -1, 0UL, 0, 4, (size_t)(519228149530228525UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (move)(conf.spheres + i, conf.svx, conf.svy, conf.svz); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 285 62 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 22  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 22  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 33 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 210 6 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 210 17 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 212 6 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 212 17 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 214 6 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 214 18 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 220 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 220 18 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 221 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 221 18 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 223 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 223 19 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 224 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 224 19 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 225 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 225 19 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 227 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 227 22 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 232 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 232 22 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 233 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 233 27 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 235 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 235 24 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 236 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 236 23 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 245 10 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 245 19 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 247 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 247 22 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 248 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 248 22 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 249 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 249 22 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 251 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 251 25 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 256 14 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 256 27 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 258 16 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 258 29 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 268 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 268 23 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 272 12 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 272 23 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 215 8  lbl_0: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 215 13  register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 215 13 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 216 7  lbl_1: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 216 12  register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 216 12 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 222 10  lbl_2: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 222 18  register_stack_var("main|t|1", (int *)0x0, "double", (void *)(&t), (size_t)8, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 222 18 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 234 12  lbl_3: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 234 17  register_stack_var("main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 234 17 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 255 14  lbl_4: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 255 19  register_stack_var("main|k|1", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 255 19 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 10  lbl_5: 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 15  register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 15 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 167  ; double fact;
+double cost;
+double tauxlb;
+sphere *sphnb;
+double tauxla;
+double itz;
+double ity;
+double itx;
+rgb color;
+double taux;
+sphere *sphn;
+sphere *spherehit;
+bool bShadow;
+double mod_v;
+double vz;
+double vy;
+double vx;
+double y;
+double x;
+double f_max;
+rgb *screen;
+config conf;
+ register_stack_vars(22, "main|fact|0", (int *)0x0, "double", (void *)(&fact), (size_t)8, 0, 0, 0, "main|cost|0", (int *)0x0, "double", (void *)(&cost), (size_t)8, 0, 0, 0, "main|tauxlb|0", (int *)0x0, "double", (void *)(&tauxlb), (size_t)8, 0, 0, 0, "main|sphnb|0", (int *)0x0, "%struct._sphere*", (void *)(&sphnb), (size_t)8, 1, 0, 0, "main|tauxla|0", (int *)0x0, "double", (void *)(&tauxla), (size_t)8, 0, 0, 0, "main|itz|0", (int *)0x0, "double", (void *)(&itz), (size_t)8, 0, 0, 0, "main|ity|0", (int *)0x0, "double", (void *)(&ity), (size_t)8, 0, 0, 0, "main|itx|0", (int *)0x0, "double", (void *)(&itx), (size_t)8, 0, 0, 0, "main|color|0", (int *)0x0, "%struct._rgb = type { double, double, double }", (void *)(&color), (size_t)24, 0, 1, 0, "main|taux|0", (int *)0x0, "double", (void *)(&taux), (size_t)8, 0, 0, 0, "main|sphn|0", (int *)0x0, "%struct._sphere*", (void *)(&sphn), (size_t)8, 1, 0, 0, "main|spherehit|0", (int *)0x0, "%struct._sphere*", (void *)(&spherehit), (size_t)8, 1, 0, 0, "main|bShadow|0", (int *)0x0, "i8", (void *)(&bShadow), (size_t)1, 0, 0, 0, "main|mod_v|0", (int *)0x0, "double", (void *)(&mod_v), (size_t)8, 0, 0, 0, "main|vz|0", (int *)0x0, "double", (void *)(&vz), (size_t)8, 0, 0, 0, "main|vy|0", (int *)0x0, "double", (void *)(&vy), (size_t)8, 0, 0, 0, "main|vx|0", (int *)0x0, "double", (void *)(&vx), (size_t)8, 0, 0, 0, "main|y|0", (int *)0x0, "double", (void *)(&y), (size_t)8, 0, 0, 0, "main|x|0", (int *)0x0, "double", (void *)(&x), (size_t)8, 0, 0, 0, "main|f_max|0", (int *)0x0, "double", (void *)(&f_max), (size_t)8, 0, 0, 0, "main|screen|0", (int *)0x0, "%struct._rgb*", (void *)(&screen), (size_t)8, 1, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, %struct._sphere*, i32, i32 }", (void *)(&conf), (size_t)120, 0, 1, 1, (int)__builtin_offsetof(struct _config, spheres));  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 33 6 len=4 init_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 34 269  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 48 8 len=9 get_coord_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 48 261  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 52 8 len=4 modv_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 52 190  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 56 6 len=4 move_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 56 234  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 62 6 len=7 move_to_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 62 246  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 68 6 len=5 rot_x_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 68 189  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 75 6 len=5 rot_y_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 75 189  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 82 8 len=19 get_sphere_intersec_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 83 370  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 101 8 len=18 get_cos_angle_v1v2_resumable
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 103 22  ({  calling((void*)modv, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (modv)(v1x, v1y, v1z); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 103 40 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 104 22  ({  calling((void*)modv, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (modv)(v2x, v2y, v2z); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 104 40 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 102 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 108 6 len=5 usage_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 108 159  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 114 6 len=19 parse_three_doubles_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 114 343  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 128 6 len=12 parse_config_resumable
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 156 17  ({  calling((void*)parse_three_doubles, -1, 0UL, 0, 4, (size_t)(519228149530228194UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL)); (parse_three_doubles)(optarg, &conf->svx, &conf->svy, &conf->svz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 156 79 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 159 17  ({  calling((void*)parse_three_doubles, -1, 0UL, 0, 4, (size_t)(519228149530228194UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL)); (parse_three_doubles)(optarg, &conf->px, &conf->py, &conf->pz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 159 76 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 162 17  ({  calling((void*)parse_three_doubles, -1, 0UL, 0, 4, (size_t)(519228149530228194UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL)); (parse_three_doubles)(optarg, &conf->lx, &conf->ly, &conf->lz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 162 76 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 165 17  ({  calling((void*)parse_three_doubles, -1, 0UL, 0, 4, (size_t)(519228149530228194UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL), (size_t)(519228149530228171UL)); (parse_three_doubles)(optarg, &conf->dx, &conf->dy, &conf->dz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 165 76 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 192 17  ({  calling((void*)init, -1, 0UL, 0, 8, (size_t)(519228149530228525UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init)(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 195 65 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 204 13  ({  calling((void*)usage, -1, 0UL, 0, 1, (size_t)(519228149530228232UL)); (usage)(argv); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 204 23 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 128 259  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 5 len=4 main_resumable
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 211 5  ({  calling((void*)parse_config, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(519228149530228714UL), (size_t)(519228149530228243UL)); (parse_config)(argc, argv, &conf); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 211 35 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 220 26  ({  calling((void*)get_coord, -1, 0UL, 0, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_coord)(0., conf.nx, -f_max, f_max, i / conf.ny); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 220 75 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 221 26  ({  calling((void*)get_coord, -1, 0UL, 0, 5, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_coord)(0., conf.ny, -f_max, f_max, i % conf.ny); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 221 75 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 227 34  ({  calling((void*)modv, -1, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (modv)(vx, vy, vz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 227 49 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 236 34  ({  calling((void*)get_sphere_intersec, -1, 0UL, 0, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_sphere_intersec)(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 236 135 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 251 38  ({  calling((void*)get_sphere_intersec, -1, 0UL, 0, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_sphere_intersec)(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 251 192 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 258 42  ({  calling((void*)get_sphere_intersec, -1, 0UL, 0, 10, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_sphere_intersec)(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 258 180 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 268 34  ({  calling((void*)get_cos_angle_v1v2, -1, 0UL, 0, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_cos_angle_v1v2)(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 268 141 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 285 11  ({  calling((void*)move, -1, 0UL, 0, 4, (size_t)(519228149530228525UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (move)(conf.spheres + i, conf.svx, conf.svy, conf.svz); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 285 62 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 22  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 289 33 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 210 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 210 17 
@@ -277,8 +435,8 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 255 19 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 255 19  if (____chimes_replaying) { goto lbl_5; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 10  lbl_5: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 15  register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 15  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 182  ; double fact;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 284 15  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/ray_tracer.c 209 167  ; double fact;
 double cost;
 double tauxlb;
 sphere *sphnb;

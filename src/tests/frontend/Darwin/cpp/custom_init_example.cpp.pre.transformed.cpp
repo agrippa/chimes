@@ -1756,7 +1756,8 @@ typedef struct _foo {
 } foo;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
-void handler(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(805989342579701521UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void handler_quick(void *ptr); void handler(void *ptr);
+void handler_resumable(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(805989342579701521UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  foo *f_ptr; f_ptr = ((foo *)ptr) ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
@@ -1765,10 +1766,11 @@ void handler(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(
 rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0); }
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(805989342579701558UL)) ; foo *f;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(805989342579701558UL)) ; foo *f;
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ;
+ lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ;
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 16 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  f = ((foo *)malloc_wrapper(sizeof(foo), 805989342579701535UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
@@ -1776,9 +1778,40 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
  f->a = 3;
 # 18 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 19 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 20 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
- call_lbl_4: ({ calling((void*)wait_for_checkpoint, 4, 0UL, 0, 0); (wait_for_checkpoint)(); }) ;
+ call_lbl_3: ({ calling((void*)wait_for_checkpoint, 3, 0UL, 0, 0); (wait_for_checkpoint)(); }) ;
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ (__builtin_expect(!(f->a == 42), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp", 22, "f->a == 42") : (void)0);
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+}
+void handler_quick(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(805989342579701521UL)) ; ; ;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ foo *f_ptr; f_ptr = ((foo *)ptr) ;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ f_ptr->a = 42;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0); }
+
+void handler(void *ptr) { (____chimes_replaying ? handler_resumable(ptr) : handler_quick(ptr)); }
+
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(805989342579701558UL)) ; foo *f;
+ register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); ; ;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ lbl_0: register_custom_init_handler("_foo", handler);
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ f = ((foo *)malloc_wrapper(sizeof(foo), 805989342579701535UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ f->a = 3;
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
+ call_lbl_3: ({ calling((void*)wait_for_checkpoint, 3, 0UL, 0, 0); (wait_for_checkpoint)(); }) ;
 # 21 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 # 22 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
  (__builtin_expect(!(f->a == 42), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp", 22, "f->a == 42") : (void)0);
@@ -1787,10 +1820,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 24 "/Users/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(805989342579701508UL, 4, 2, 0, 1, 1, 805989342579701508UL + 1UL, 805989342579701508UL + 13UL, 805989342579701508UL + 18UL, 805989342579701508UL + 50UL, 805989342579701508UL + 2UL, 805989342579701508UL + 13UL, 805989342579701508UL + 19UL, 805989342579701508UL + 27UL, "_foo", 1, "int", (int)__builtin_offsetof(struct _foo, a), "main", 2, "checkpoint", "wait_for_checkpoint", "handler", 0, &____alias_loc_id_0, (unsigned)5, 805989342579701508UL + 16UL, 805989342579701508UL + 17UL, 805989342579701508UL + 18UL, 805989342579701508UL + 19UL, 805989342579701508UL + 27UL, &____alias_loc_id_1, (unsigned)3, 805989342579701508UL + 1UL, 805989342579701508UL + 2UL, 805989342579701508UL + 13UL);
-    register_functions(2, "custom_init_example.cpp.pre.register.cpp", "handler", &handler, "main", &main);
+    register_functions(2, "custom_init_example.cpp.pre.hard.cpp", "handler", &handler, "main", &main);
     return 0;
 }
 

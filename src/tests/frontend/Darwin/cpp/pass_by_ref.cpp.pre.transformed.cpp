@@ -1738,23 +1738,39 @@ extern void register_custom_init_handler(const char *obj_name,
 extern void foo(int *A);
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)) ; int b;
- register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)) ; int b;
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  ;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- call_lbl_2: ({ calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
+ call_lbl_1: ({ calling((void*)foo, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
- call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, 0, 0); (checkpoint)(); }) ;
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+}
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12387876047547725272UL)) ; int b;
+ register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); ; ;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ ;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ call_lbl_1: ({ calling((void*)foo, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(12387876047547725260UL)); (foo)(&b); }) ;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, 0, 0); (checkpoint)(); }) ;
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(12387876047547725256UL, 1, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "checkpoint", "foo", "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 12387876047547725256UL + 1UL, 12387876047547725256UL + 2UL, 12387876047547725256UL + 3UL);
-    register_functions(1, "pass_by_ref.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "pass_by_ref.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 

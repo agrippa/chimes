@@ -1739,13 +1739,31 @@ extern void register_custom_init_handler(const char *obj_name,
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp" 2
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2173952053329873827UL)) ; int *alloc;
- register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2173952053329873827UL)) ; int *alloc;
+ register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
  alloc = ((int *)calloc_wrapper(10, sizeof(int), 2173952053329873812UL, 0, 0)) ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
- call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+ alloc[0] = 4;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+ alloc[1] = 3;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return alloc[1];
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+}
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2173952053329873827UL)) ; int *alloc;
+ register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); ; ;
+# 4 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+ alloc = ((int *)calloc_wrapper(10, sizeof(int), 2173952053329873812UL, 0, 0)) ;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
  alloc[0] = 4;
@@ -1757,10 +1775,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/calloc.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(2173952053329873801UL, 2, 1, 0, 1, 0, 2173952053329873801UL + 3UL, 2173952053329873801UL + 26UL, 2173952053329873801UL + 4UL, 2173952053329873801UL + 11UL, "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)4, 2173952053329873801UL + 1UL, 2173952053329873801UL + 2UL, 2173952053329873801UL + 3UL, 2173952053329873801UL + 4UL, &____alias_loc_id_1, (unsigned)1, 2173952053329873801UL + 11UL);
-    register_functions(1, "calloc.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "calloc.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 

@@ -1735,14 +1735,15 @@ extern void register_custom_init_handler(const char *obj_name,
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp" 2
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)) ; int *tmp;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)) ; int *tmp;
 int *next;
 int *curr;
 int niters;
 int N;
 int iter;
 int i;
- register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  ;
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1779,7 +1780,74 @@ int i;
  next = tmp;
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
- call_lbl_6: ({ calling((void*)checkpoint, 6, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_5: ({ calling((void*)checkpoint, 5, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 29 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ FILE *fp; fp = (fopen("dump.out", "w")) ;
+# 30 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (i = 0; i < N; i++) {
+# 31 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ fprintf(fp, "%d\n", curr[i]);
+# 32 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 33 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ fclose(fp);
+# 34 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 35 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ free_wrapper(curr, 7654350934130983345UL);
+# 36 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ free_wrapper(next, 7654350934130983345UL);
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 0;
+# 38 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+}
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7654350934130983469UL)) ; int *tmp;
+int *next;
+int *curr;
+int niters;
+int N;
+int iter;
+int i;
+ register_stack_vars(7, "main|tmp|0", (int *)0x0, "i32*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "i32*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "i32*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|niters|0", (int *)0x0, "i32", (void *)(&niters), (size_t)4, 0, 0, 0, "main|N|0", (int *)0x0, "i32", (void *)(&N), (size_t)4, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ ;
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ N = (1024) ;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ niters = (10000) ;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ curr = ((int *)malloc_wrapper(N * sizeof(int), 7654350934130983345UL, 0, 0)) ;
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ next = ((int *)malloc_wrapper(N * sizeof(int), 7654350934130983345UL, 0, 0)) ;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (i = 0; i < N; i++) {
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ curr[i] = next[i] = rand() % 100;
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (iter = 0; iter < niters; iter++) {
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ printf("%d / %d\n", iter + 1, niters);
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ for (i = 1; i < N - 1; i++) {
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ next[i] = (curr[i - 1] + curr[i] + curr[i + 1]) / 3;
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ }
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ tmp = (curr) ;
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ curr = next;
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ next = tmp;
+# 25 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+# 26 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
+ call_lbl_5: ({ calling((void*)checkpoint, 5, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
  }
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
@@ -1803,10 +1871,13 @@ int i;
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/simple_stencil.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(7654350934130983318UL, 5, 1, 0, 1, 3, 7654350934130983318UL + 9UL, 7654350934130983318UL + 27UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 27UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 151UL, 7654350934130983318UL + 11UL, 7654350934130983318UL + 129UL, 7654350934130983318UL + 10UL, 7654350934130983318UL + 27UL, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)11, 7654350934130983318UL + 1UL, 7654350934130983318UL + 2UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 4UL, 7654350934130983318UL + 5UL, 7654350934130983318UL + 6UL, 7654350934130983318UL + 7UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 9UL, 7654350934130983318UL + 10UL, 7654350934130983318UL + 27UL, &____alias_loc_id_1, (unsigned)11, 7654350934130983318UL + 1UL, 7654350934130983318UL + 2UL, 7654350934130983318UL + 3UL, 7654350934130983318UL + 4UL, 7654350934130983318UL + 5UL, 7654350934130983318UL + 6UL, 7654350934130983318UL + 7UL, 7654350934130983318UL + 8UL, 7654350934130983318UL + 9UL, 7654350934130983318UL + 11UL, 7654350934130983318UL + 27UL);
-    register_functions(1, "simple_stencil.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "simple_stencil.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 
