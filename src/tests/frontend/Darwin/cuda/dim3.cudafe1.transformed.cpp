@@ -26817,12 +26817,13 @@ extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char * obj_name, void (* fp)(void *));
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 # 4 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
- register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
+ register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
  blocks = dim3(4, 256) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
- call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 7 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 8 "/Users/jmg3/num-debug/src/examples/cuda/dim3.cu"
@@ -27614,11 +27615,24 @@ static void __sti____cudaRegisterAll_12_dim3_cpp1_ii_main(void){__cudaFatCubinHa
 # 2 "dim3.cudafe1.stub.c" 2
 # 1 "dim3.cudafe1.stub.c"
 
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3859550638466940446UL)) ; dim3 blocks;
+ register_stack_vars(1, "main|blocks|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&blocks), (size_t)12, 0, 1, 0); ; ;
+# 5 "dim3.cudafe1.stub.c"
+ blocks = dim3(4, 256) ;
+# 6 "dim3.cudafe1.stub.c"
+ call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 7 "dim3.cudafe1.stub.c"
+rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+# 8 "dim3.cudafe1.stub.c"
+}
+
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
 
 
 static int module_init() {
     init_module(3859550638466940431UL, 8, 7, 2, 2, 6, 3859550638466940431UL + 109UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 18UL, 3859550638466940431UL + 36UL, 3859550638466940431UL + 51UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 40UL, 3859550638466940431UL + 117UL, 3859550638466940431UL + 3UL, 3859550638466940431UL + 15UL, 3859550638466940431UL + 74UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 65UL, 3859550638466940431UL + 72UL, 3859550638466940431UL + 81UL, 3859550638466940431UL + 104UL, "__fatBinC_Wrapper_t", 4, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "void*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, filename_or_fatbins), "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "__nv_cudaEntityRegisterCallback", 1, "__nv_save_fatbinhandle_for_managed_rt", "____nv_dummy_param_ref", 0, "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_save_fatbinhandle_for_managed_rt", 0, "dim3::dim3", 0, "main", 1, "checkpoint", "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main", 2, "__cudaRegisterFatBinary", "atexit", "main|blocks|0", 1, "main", "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main|callback_fp|0", 1, "_ZL45__sti____cudaRegisterAll_12_dim3_cpp1_ii_mainv", &____alias_loc_id_0, (unsigned)3, 3859550638466940431UL + 1UL, 3859550638466940431UL + 2UL, 3859550638466940431UL + 3UL, &____alias_loc_id_1, (unsigned)2, 3859550638466940431UL + 40UL, 3859550638466940431UL + 109UL, &____alias_loc_id_2, (unsigned)4, 3859550638466940431UL + 18UL, 3859550638466940431UL + 19UL, 3859550638466940431UL + 20UL, 3859550638466940431UL + 21UL, &____alias_loc_id_3, (unsigned)2, 3859550638466940431UL + 51UL, 3859550638466940431UL + 109UL, &____alias_loc_id_4, (unsigned)2, 3859550638466940431UL + 65UL, 3859550638466940431UL + 109UL, &____alias_loc_id_5, (unsigned)2, 3859550638466940431UL + 74UL, 3859550638466940431UL + 109UL, &____alias_loc_id_6, (unsigned)5, 3859550638466940431UL + 81UL, 3859550638466940431UL + 82UL, 3859550638466940431UL + 83UL, 3859550638466940431UL + 84UL, 3859550638466940431UL + 104UL);
-    register_functions(6, "dim3.cudafe1.register.cpp", "main", &main, "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main", &__sti____cudaRegisterAll_12_dim3_cpp1_ii_main, "__nv_cudaEntityRegisterCallback", &__nv_cudaEntityRegisterCallback, "__cudaUnregisterBinaryUtil", &__cudaUnregisterBinaryUtil, "____nv_dummy_param_ref", &____nv_dummy_param_ref, "__nv_save_fatbinhandle_for_managed_rt", &__nv_save_fatbinhandle_for_managed_rt);
+    register_functions(6, "dim3.cudafe1.hard.cpp", "main", &main, "__sti____cudaRegisterAll_12_dim3_cpp1_ii_main", &__sti____cudaRegisterAll_12_dim3_cpp1_ii_main, "__nv_cudaEntityRegisterCallback", &__nv_cudaEntityRegisterCallback, "__cudaUnregisterBinaryUtil", &__cudaUnregisterBinaryUtil, "____nv_dummy_param_ref", &____nv_dummy_param_ref, "__nv_save_fatbinhandle_for_managed_rt", &__nv_save_fatbinhandle_for_managed_rt);
     return 0;
 }
 

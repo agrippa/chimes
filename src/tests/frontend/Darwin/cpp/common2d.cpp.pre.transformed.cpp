@@ -2396,7 +2396,8 @@ extern void setup_config(config *conf, int argc, char **argv);
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-void save_text(float *field, const int dimx, const int dimy,
+void save_text_quick(float *field, const int dimx, const int dimy, const int ny, const int nx, const char *filename, int radius); void save_text(float *field, const int dimx, const int dimy, const int ny, const int nx, const char *filename, int radius);
+void save_text_resumable(float *field, const int dimx, const int dimy,
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2431,7 +2432,8 @@ void save_text(float *field, const int dimx, const int dimy,
 rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2, ____chimes_did_disable0); }
 # 25 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 26 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-void init_data(float *curr, float *next, float *vsq,
+void init_data_quick(float *curr, float *next, float *vsq, float *h_coeff, const int dimx, const int dimy, const float dx, const float dt); void init_data(float *curr, float *next, float *vsq, float *h_coeff, const int dimx, const int dimy, const float dx, const float dt);
+void init_data_resumable(float *curr, float *next, float *vsq,
 # 27 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  float *h_coeff, const int dimx, const int dimy,
 # 28 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2470,7 +2472,8 @@ void init_data(float *curr, float *next, float *vsq,
 rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); }
 # 47 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 48 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-void usage(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(8205091200931170362UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void usage_quick(char **argv); void usage(char **argv);
+void usage_resumable(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(8205091200931170362UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2483,7 +2486,8 @@ void usage(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(
 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); }
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-void default_config(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(8205091200931170400UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void default_config_quick(config *conf); void default_config(config *conf);
+void default_config_resumable(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(8205091200931170400UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 56 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  conf->nx = 2 * 256;
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -2512,7 +2516,8 @@ void default_config(config *conf) {const int ____chimes_did_disable3 = new_stack
 rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); }
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 71 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(8205091200931170522UL), (size_t)(0UL), (size_t)(8205091200931170524UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
+void setup_config_quick(config *conf, int argc, char **argv); void setup_config(config *conf, int argc, char **argv);
+void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(8205091200931170522UL), (size_t)(0UL), (size_t)(8205091200931170524UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
  if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
 # 72 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
  ;
@@ -2613,11 +2618,241 @@ void setup_config(config *conf, int argc, char **argv) {const int ____chimes_did
  }
 # 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); }
+void save_text_quick(float *field, const int dimx, const int dimy,
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(8205091200931170200UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(8205091200931170205UL), (size_t)(0UL)) ; ; ;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ FILE *fp; fp = (fopen(filename, "wb")) ;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ if (fp == __null) {
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(__stderrp, "Failed to open output file %s\n", filename);
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ exit(1);
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { int y; for ( y = (0) ; y < ny; y++) {
+# 16 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { int x; for ( x = (0) ; x < nx; x++) {
+# 17 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(fp, "%d %d %.20f\n", y, x,
+# 18 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ field[(((radius) + (y)) * (dimx) + ((radius) + (x)))]);
+# 19 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 20 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(fp, "\n");
+# 21 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 22 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 23 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fclose(fp);
+# 24 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+rm_stack(false, 0UL, "save_text", &____must_manage_save_text, ____alias_loc_id_2, ____chimes_did_disable0); }
+
+void save_text(float *field, const int dimx, const int dimy,
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ const int ny, const int nx, const char *filename, int radius) { (____chimes_replaying ? save_text_resumable(field, dimx, dimy, ny, nx, filename, radius) : save_text_quick(field, dimx, dimy, ny, nx, filename, radius)); }
+
+void init_data_quick(float *curr, float *next, float *vsq,
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ float *h_coeff, const int dimx, const int dimy,
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ const float dx, const float dt) {const int ____chimes_did_disable1 = new_stack((void *)(&init_data), "init_data", &____must_manage_init_data, 8, 0, (size_t)(8205091200931170338UL), (size_t)(8205091200931170339UL), (size_t)(8205091200931170340UL), (size_t)(8205091200931170341UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 29 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 30 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { size_t i; for ( i = (0) ; i < dimx * dimy; i++) {
+# 31 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ vsq[i] = 2500. * 2500. * dt * dt;
+# 32 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 33 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 34 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 35 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ { size_t i; for ( i = (0) ; i < dimx * dimy; i++) {
+# 36 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ curr[i] = next[i] = 0;
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ } }
+# 38 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 39 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ call_lbl_1: ({ calling((void*)memset, 1, 0UL, 0, 3, (size_t)(8205091200931170341UL), (size_t)(0UL), (size_t)(0UL)); (memset)(h_coeff, 0, 20 * sizeof(float)); }) ;
+# 40 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ float scale; scale = (1. / (dx * dx)) ;
+# 41 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[0] = -8.541666 * scale;
+# 42 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[1] = 1.600000 * scale;
+# 43 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[2] = -0.200000 * scale;
+# 44 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[3] = 0.025397 * scale;
+# 45 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ h_coeff[4] = -0.001785 * scale;
+# 46 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); }
+
+void init_data(float *curr, float *next, float *vsq,
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ float *h_coeff, const int dimx, const int dimy,
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ const float dx, const float dt) { (____chimes_replaying ? init_data_resumable(curr, next, vsq, h_coeff, dimx, dimy, dx, dt) : init_data_quick(curr, next, vsq, h_coeff, dimx, dimy, dx, dt)); }
+
+void usage_quick(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(8205091200931170362UL)) ; ; ;
+# 49 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(__stderrp, "usage: %s [-v] [-x nx] [-y ny] [-i iters] "
+# 50 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ "[-t text] [-p x,y,f] [-r radius] [-g ngpus] [-w progress_width]\n",
+# 51 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ argv[0]);
+# 52 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ exit(1);
+# 53 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); }
+
+void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
+
+void default_config_quick(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(8205091200931170400UL)) ; ; ;
+# 56 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nx = 2 * 256;
+# 57 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ny = 2 * 256;
+# 58 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsteps = 100;
+# 59 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->save_text = 0;
+# 60 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->verbose = 0;
+# 61 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->radius = 4;
+# 62 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ngpus = -1;
+# 63 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 64 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->srcs = __null;
+# 65 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsrcs = 0;
+# 66 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 67 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_width = 80;
+# 68 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_disabled = 0;
+# 69 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); }
+
+void default_config(config *conf) { (____chimes_replaying ? default_config_resumable(conf) : default_config_quick(conf)); }
+
+void setup_config_quick(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(8205091200931170522UL), (size_t)(0UL), (size_t)(8205091200931170524UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
+ if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } ; ;
+# 72 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ ;
+# 73 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ opterr = 0;
+# 74 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 75 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ ({ calling((void*)default_config, -1, 0UL, 0, 1, (size_t)(8205091200931170522UL)); default_config_quick(conf); }) ;
+# 76 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 77 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
+# 78 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ switch (c) {
+# 79 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'x':
+# 80 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nx = atoi(optarg);
+# 81 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 82 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'y':
+# 83 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ny = atoi(optarg);
+# 84 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 85 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'i':
+# 86 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsteps = atoi(optarg);
+# 87 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 88 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'v':
+# 89 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->verbose = 1;
+# 90 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 91 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 't':
+# 92 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->save_text = 1;
+# 93 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 94 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'p':
+# 95 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->srcs = (source *)realloc_wrapper(conf->srcs, sizeof(source) *
+# 96 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ (conf->nsrcs + 1), 8205091200931170452UL, 0, 1, (int)sizeof(struct _source), 0);
+# 97 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ call_lbl_6: ({ calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(8205091200931170424UL), (size_t)(8205091200931170452UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
+# 98 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->nsrcs++;
+# 99 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 100 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'r':
+# 101 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->radius = atoi(optarg);
+# 102 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 103 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'g':
+# 104 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->ngpus = atoi(optarg);
+# 105 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 106 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'w':
+# 107 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_width = atoi(optarg);
+# 108 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 109 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case 'd':
+# 110 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ conf->progress_disabled = 1;
+# 111 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ break;
+# 112 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ case '?':
+# 113 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ fprintf(__stderrp, "Missing argument to option %c\n", optopt);
+# 114 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ default:
+# 115 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ ({ calling((void*)usage, -1, 0UL, 0, 1, (size_t)(8205091200931170524UL)); usage_quick(argv); }) ;
+# 116 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 117 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 118 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+# 119 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ if (conf->ngpus == -1) {
+# 120 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
+# 121 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+ }
+# 122 "/Users/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); }
+
+void setup_config(config *conf, int argc, char **argv) { (____chimes_replaying ? setup_config_resumable(conf, argc, argv) : setup_config_quick(conf, argc, argv)); }
+
 
 
 static int module_init() {
     init_module(8205091200931170116UL, 16, 5, 4, 2, 5, 8205091200931170116UL + 235UL, 8205091200931170116UL + 246UL, 8205091200931170116UL + 99UL, 8205091200931170116UL + 222UL, 8205091200931170116UL + 425UL, 8205091200931170116UL + 308UL, 8205091200931170116UL + 418UL, 8205091200931170116UL + 387UL, 8205091200931170116UL + 1UL, 8205091200931170116UL + 84UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 336UL, 8205091200931170116UL + 247UL, 8205091200931170116UL + 284UL, 8205091200931170116UL + 246UL, 8205091200931170116UL + 241UL, 8205091200931170116UL + 6UL, 8205091200931170116UL + 89UL, 8205091200931170116UL + 102UL, 8205091200931170116UL + 225UL, 8205091200931170116UL + 8UL, 8205091200931170116UL + 27UL, 8205091200931170116UL + 100UL, 8205091200931170116UL + 223UL, 8205091200931170116UL + 101UL, 8205091200931170116UL + 224UL, 8205091200931170116UL + 285UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 284UL, 8205091200931170116UL + 428UL, 8205091200931170116UL + 287UL, 8205091200931170116UL + 408UL, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof(struct __sFILE, _p), "int", (int)__builtin_offsetof(struct __sFILE, _r), "int", (int)__builtin_offsetof(struct __sFILE, _w), "short", (int)__builtin_offsetof(struct __sFILE, _flags), "short", (int)__builtin_offsetof(struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _bf), "int", (int)__builtin_offsetof(struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof(struct __sFILE, _cookie), "*", (int)__builtin_offsetof(struct __sFILE, _close), "*", (int)__builtin_offsetof(struct __sFILE, _read), "*", (int)__builtin_offsetof(struct __sFILE, _seek), "*", (int)__builtin_offsetof(struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof(struct __sFILE, _extra), "int", (int)__builtin_offsetof(struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof(struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof(struct __sFILE, _lb), "int", (int)__builtin_offsetof(struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof(struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof(struct __sbuf, _base), "int", (int)__builtin_offsetof(struct __sbuf, _size), "_config", 11, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "usage", 0, "setup_config", 4, "default_config", "getNumCUDADevices", "parse_source", "usage", "init_data", 0, "default_config", 0, "save_text", 0, "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices", "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices", "setup_config|c|0", 2, "parse_source", "getNumCUDADevices", &____alias_loc_id_0, (unsigned)6, 8205091200931170116UL + 285UL, 8205091200931170116UL + 286UL, 8205091200931170116UL + 287UL, 8205091200931170116UL + 288UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 423UL, &____alias_loc_id_1, (unsigned)6, 8205091200931170116UL + 285UL, 8205091200931170116UL + 286UL, 8205091200931170116UL + 287UL, 8205091200931170116UL + 288UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 423UL, &____alias_loc_id_2, (unsigned)10, 8205091200931170116UL + 1UL, 8205091200931170116UL + 2UL, 8205091200931170116UL + 3UL, 8205091200931170116UL + 4UL, 8205091200931170116UL + 5UL, 8205091200931170116UL + 6UL, 8205091200931170116UL + 7UL, 8205091200931170116UL + 8UL, 8205091200931170116UL + 9UL, 8205091200931170116UL + 10UL, &____alias_loc_id_3, (unsigned)15, 8205091200931170116UL + 99UL, 8205091200931170116UL + 100UL, 8205091200931170116UL + 101UL, 8205091200931170116UL + 102UL, 8205091200931170116UL + 103UL, 8205091200931170116UL + 104UL, 8205091200931170116UL + 105UL, 8205091200931170116UL + 106UL, 8205091200931170116UL + 107UL, 8205091200931170116UL + 108UL, 8205091200931170116UL + 109UL, 8205091200931170116UL + 222UL, 8205091200931170116UL + 223UL, 8205091200931170116UL + 224UL, 8205091200931170116UL + 225UL, &____alias_loc_id_4, (unsigned)1, 8205091200931170116UL + 235UL, &____alias_loc_id_5, (unsigned)2, 8205091200931170116UL + 247UL, 8205091200931170116UL + 284UL, &____alias_loc_id_6, (unsigned)6, 8205091200931170116UL + 285UL, 8205091200931170116UL + 286UL, 8205091200931170116UL + 287UL, 8205091200931170116UL + 288UL, 8205091200931170116UL + 406UL, 8205091200931170116UL + 423UL);
-    register_functions(5, "common2d.cpp.pre.register.cpp", "save_text", &save_text, "init_data", &init_data, "usage", &usage, "default_config", &default_config, "setup_config", &setup_config);
+    register_functions(5, "common2d.cpp.pre.hard.cpp", "save_text", &save_text, "init_data", &init_data, "usage", &usage, "default_config", &default_config, "setup_config", &setup_config);
     return 0;
 }
 

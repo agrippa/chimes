@@ -1747,7 +1747,8 @@ int b = 3;
 const char *hello_world = "hello world";
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 # 8 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  a = 4;
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
@@ -1755,11 +1756,27 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  printf("auto global\n");
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
- call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 13 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
  rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b + a;
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
 }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9397157703034130362UL)) ; ; ;
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+ a = 4;
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+ printf("%s\n", hello_world);
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+ printf("auto global\n");
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+ call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b + a;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/globals.cpp"
+}
+
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
 
 
 static int module_init() {
@@ -1768,7 +1785,7 @@ static int module_init() {
     register_global_var("global|b", "i32", (void *)(&b), 4, 0, 0, 0);
     register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8, 1, 0, 0);
     register_constant(9397157703034130343UL + 0UL, (void *)hello_world, 12);
-    register_functions(1, "globals.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "globals.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 

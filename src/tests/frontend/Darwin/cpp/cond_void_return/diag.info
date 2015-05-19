@@ -7,25 +7,40 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 14 5 rm_s
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 26 const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 27 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 33 init_chimes(); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 27 const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(7569268050213511376UL), (size_t)(7569268050213511377UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 189 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 49 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 185 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7569268050213511428UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 170 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511391UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 82 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 5  int *B;  B = ((int *)malloc_wrapper(sizeof(int) * 10, 7569268050213511415UL, 0, 0)) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 82 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 5  call_lbl_4: 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 188  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 5  call_lbl_3: 
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 6 len=3 bar_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 188  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 5 len=4 main_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5  ({  calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18  ({  calling((void*)checkpoint, 4, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 12 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 182  ; int *B;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 167  ; int *B;
 int *A;
- register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
+ register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0);  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 6 len=3 bar_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 188  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 5 len=4 main_resumable
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5  ({  calling((void*)bar, -1, 0UL, 0, 2, (size_t)(7569268050213511391UL), (size_t)(7569268050213511415UL)); (bar)(A, B); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 13 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 29 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 6 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12 
+RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 6 
+RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 19 12 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 167  ; int *B;
+int *A;
+ register_stack_vars(2, "main|B|0", (int *)0x0, "i32*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

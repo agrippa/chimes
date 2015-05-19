@@ -26994,7 +26994,8 @@ void fwd_kernel(float *next, float *curr, float *vsq, float *c_coeff, int
 nx, int ny, int nz, int dimx, int dimy, int radius) ;
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 # 74 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-int main(int argc, char *argv[]) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)) ; int i;
+int main_quick(int argc, char *argv[]); int main(int argc, char *argv[]);
+int main_resumable(int argc, char *argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)) ; int i;
 float point_rate;
 double total_s;
 double compute_s;
@@ -27026,9 +27027,9 @@ config conf;
 # 75 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
  ;
 # 76 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_2: ({ calling((void*)setup_config, 2, 0UL, ____alias_loc_id_0, 3, (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(2433535641213254749UL)); (setup_config)(&conf, argc, argv); }) ;
+ call_lbl_1: ({ calling((void*)setup_config, 1, 0UL, ____alias_loc_id_0, 3, (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(2433535641213254749UL)); (setup_config)(&conf, argc, argv); }) ;
 # 77 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_3: ({ int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled); } calling((void*)init_progress, 3, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ;
+ call_lbl_2: ({ int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled); } calling((void*)init_progress, 2, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ;
 # 79 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 if (((conf.nx) % 32) != 0) {
 # 80 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27086,11 +27087,11 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_dis
 # 113 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 }
 # 115 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_17: ({ source ** ____chimes_arg6; int * ____chimes_arg7; int ____chimes_arg8; int ____chimes_arg9; int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg6 = (&(conf.srcs)); ____chimes_arg7 = (&(conf.nsrcs)); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps); } calling((void*)config_sources, 17, 0UL, ____alias_loc_id_1, 5, (size_t)(2433535641213254016UL), (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ;
+ call_lbl_16: ({ source ** ____chimes_arg6; int * ____chimes_arg7; int ____chimes_arg8; int ____chimes_arg9; int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg6 = (&(conf.srcs)); ____chimes_arg7 = (&(conf.nsrcs)); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps); } calling((void*)config_sources, 16, 0UL, ____alias_loc_id_1, 5, (size_t)(2433535641213254016UL), (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ;
 # 116 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_18: srcs = ( ({ source * ____chimes_arg11; int ____chimes_arg12; int ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps); } calling((void*)sample_sources, 18, 2433535641213254663UL, 0, 4, (size_t)(2433535641213254407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) ;
+ call_lbl_17: srcs = ( ({ source * ____chimes_arg11; int ____chimes_arg12; int ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps); } calling((void*)sample_sources, 17, 2433535641213254663UL, 0, 4, (size_t)(2433535641213254407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) ;
 # 118 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_19: ({ calling((void*)init_data, 19, 0UL, ____alias_loc_id_2, 9, (size_t)(2433535641213254565UL), (size_t)(2433535641213254647UL), (size_t)(2433535641213254349UL), (size_t)(2433535641213254369UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ;
+ call_lbl_18: ({ calling((void*)init_data, 18, 0UL, ____alias_loc_id_2, 9, (size_t)(2433535641213254565UL), (size_t)(2433535641213254647UL), (size_t)(2433535641213254349UL), (size_t)(2433535641213254369UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ;
 # 120 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
  ;
 # 121 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27106,7 +27107,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_dis
 # 127 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
  grid = dim3((conf.nx) / (block.x), (conf.ny) / (block.y)) ;
 # 129 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_38: mem_start = ( ({ calling((void*)seconds, 38, 0UL, 0, 0); (seconds)(); }) ) ;
+ call_lbl_37: mem_start = ( ({ calling((void*)seconds, 37, 0UL, 0, 0); (seconds)(); }) ) ;
 # 131 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 { lbl_4: cudaError_t error; register_stack_var("main|error|4", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_5; } error = (cudaMemcpy(d_curr, curr, nbytes, cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 131); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 132 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27116,7 +27117,7 @@ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_dis
 # 134 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 { lbl_7: cudaError_t error; register_stack_var("main|error|7", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_8; } error = (cudaMemcpy(d_c_coeff, c_coeff, (20) * sizeof(float), cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 135); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 136 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_55: start = ( ({ calling((void*)seconds, 55, 0UL, 0, 0); (seconds)(); }) ) ;
+ call_lbl_54: start = ( ({ calling((void*)seconds, 54, 0UL, 0, 0); (seconds)(); }) ) ;
 # 137 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 { for ( step = (0) ; step < (conf.nsteps); step++) {
 # 138 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27130,7 +27131,7 @@ if ((((conf.srcs)[src]).t) > step) { continue; }
 # 144 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 } } }
 # 146 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_61: (cudaConfigureCall(grid, block)) ? (void)0 : ({ int ____chimes_arg28; int ____chimes_arg29; int ____chimes_arg30; int ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg28 = (conf.nx); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nz); ____chimes_arg33 = (conf.radius); } calling((void*)fwd_kernel, 61, 0UL, ____alias_loc_id_15, 10, (size_t)(2433535641213254529UL), (size_t)(2433535641213254529UL), (size_t)(2433535641213254512UL), (size_t)(2433535641213254513UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd_kernel)(d_next, d_curr, d_vsq, d_c_coeff, ____chimes_arg28, ____chimes_arg29, ____chimes_arg30, dimx, dimy, ____chimes_arg33); }) ;
+ call_lbl_60: (cudaConfigureCall(grid, block)) ? (void)0 : ({ int ____chimes_arg28; int ____chimes_arg29; int ____chimes_arg30; int ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg28 = (conf.nx); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nz); ____chimes_arg33 = (conf.radius); } calling((void*)fwd_kernel, 60, 0UL, ____alias_loc_id_15, 10, (size_t)(2433535641213254529UL), (size_t)(2433535641213254529UL), (size_t)(2433535641213254512UL), (size_t)(2433535641213254513UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd_kernel)(d_next, d_curr, d_vsq, d_c_coeff, ____chimes_arg28, ____chimes_arg29, ____chimes_arg30, dimx, dimy, ____chimes_arg33); }) ;
 # 148 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
  tmp = (d_next) ;
 # 149 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27138,21 +27139,21 @@ d_next = d_curr;
 # 150 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 d_curr = tmp;
 # 153 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_62: ({ calling((void*)checkpoint, 62, 0UL, ____alias_loc_id_14, 0); (checkpoint)(); }) ;
+ call_lbl_61: ({ calling((void*)checkpoint, 61, 0UL, ____alias_loc_id_14, 0); (checkpoint)(); }) ;
 # 156 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_63: ({ int ____chimes_arg34; if (!____chimes_replaying) { ____chimes_arg34 = (step + 1); } calling((void*)update_progress, 63, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg34); }) ;
+ call_lbl_62: ({ int ____chimes_arg34; if (!____chimes_replaying) { ____chimes_arg34 = (step + 1); } calling((void*)update_progress, 62, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg34); }) ;
 # 157 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 } }
 # 158 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-{ lbl_9: cudaError_t error; if (____must_checkpoint_main_error_9 != 0) { register_stack_var("main|error|9", &____must_checkpoint_main_error_9, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_10; } call_lbl_64: error = ( ({ calling((void*)cudaDeviceSynchronize, 64, 0UL, 0, 0); (cudaDeviceSynchronize)(); }) ) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 158); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+{ lbl_9: cudaError_t error; if (____must_checkpoint_main_error_9 != 0) { register_stack_var("main|error|9", &____must_checkpoint_main_error_9, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_10; } call_lbl_63: error = ( ({ calling((void*)cudaDeviceSynchronize, 63, 0UL, 0, 0); (cudaDeviceSynchronize)(); }) ) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 158); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 159 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-alias_group_changed(____alias_loc_id_18); call_lbl_69: compute_s = ( ({ calling((void*)seconds, 69, 0UL, 0, 0); (seconds)(); }) - start) ;
+alias_group_changed(____alias_loc_id_18); call_lbl_68: compute_s = ( ({ calling((void*)seconds, 68, 0UL, 0, 0); (seconds)(); }) - start) ;
 # 161 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 { lbl_10: cudaError_t error; if (____must_checkpoint_main_error_10 != 0) { register_stack_var("main|error|10", &____must_checkpoint_main_error_10, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_11; } error = (cudaMemcpy(curr, d_curr, nbytes, cudaMemcpyDeviceToHost)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 161); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 162 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-alias_group_changed(____alias_loc_id_20); call_lbl_75: total_s = ( ({ calling((void*)seconds, 75, 0UL, 0, 0); (seconds)(); }) - mem_start) ;
+alias_group_changed(____alias_loc_id_20); call_lbl_74: total_s = ( ({ calling((void*)seconds, 74, 0UL, 0, 0); (seconds)(); }) - mem_start) ;
 # 164 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_76: ({ calling((void*)finish_progress, 76, 0UL, ____alias_loc_id_21, 0); (finish_progress)(); }) ;
+ call_lbl_75: ({ calling((void*)finish_progress, 75, 0UL, ____alias_loc_id_21, 0); (finish_progress)(); }) ;
 # 166 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
  point_rate = (((((float)(conf.nx)) * (conf.ny)) * (conf.nz)) / (compute_s / (conf.nsteps))) ;
 # 168 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27160,7 +27161,7 @@ fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/s
 # 171 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 if ((conf.save_text) != (-1)) {
 # 172 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
- call_lbl_78: ({ int ____chimes_arg36; int ____chimes_arg39; int ____chimes_arg40; int ____chimes_arg42; if (!____chimes_replaying) { ____chimes_arg36 = (conf.save_text); ____chimes_arg39 = (conf.ny); ____chimes_arg40 = (conf.nx); ____chimes_arg42 = (conf.radius); } calling((void*)save_layer_text, 78, 0UL, ____alias_loc_id_22, 8, (size_t)(2433535641213254565UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2433535641213255080UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg36, dimx, dimy, ____chimes_arg39, ____chimes_arg40, "snap.text", ____chimes_arg42); }) ;
+ call_lbl_77: ({ int ____chimes_arg36; int ____chimes_arg39; int ____chimes_arg40; int ____chimes_arg42; if (!____chimes_replaying) { ____chimes_arg36 = (conf.save_text); ____chimes_arg39 = (conf.ny); ____chimes_arg40 = (conf.nx); ____chimes_arg42 = (conf.radius); } calling((void*)save_layer_text, 77, 0UL, ____alias_loc_id_22, 8, (size_t)(2433535641213254565UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2433535641213255080UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg36, dimx, dimy, ____chimes_arg39, ____chimes_arg40, "snap.text", ____chimes_arg42); }) ;
 # 174 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 }
 # 176 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -27186,7 +27187,7 @@ free_wrapper(srcs, 2433535641213254663UL);
 # 187 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 { lbl_13: cudaError_t error; if (____must_checkpoint_main_error_13 != 0) { register_stack_var("main|error|13", &____must_checkpoint_main_error_13, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_14; } error = (cudaFree_wrapper(d_vsq, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 187); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 188 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
-{ lbl_14: cudaError_t error; if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(38): { goto call_lbl_38; } case(55): { goto call_lbl_55; } case(61): { goto call_lbl_61; } case(62): { goto call_lbl_62; } case(63): { goto call_lbl_63; } case(64): { goto call_lbl_64; } case(69): { goto call_lbl_69; } case(75): { goto call_lbl_75; } case(76): { goto call_lbl_76; } case(78): { goto call_lbl_78; } default: { chimes_error(); } } } error = (cudaFree_wrapper(d_c_coeff, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 188); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+{ lbl_14: cudaError_t error; if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(37): { goto call_lbl_37; } case(54): { goto call_lbl_54; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } case(62): { goto call_lbl_62; } case(63): { goto call_lbl_63; } case(68): { goto call_lbl_68; } case(74): { goto call_lbl_74; } case(75): { goto call_lbl_75; } case(77): { goto call_lbl_77; } default: { chimes_error(); } } } error = (cudaFree_wrapper(d_c_coeff, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 188); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
 # 190 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 0;
 # 191 "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu"
@@ -28103,11 +28104,211 @@ static void __sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf(void) { __cudaFat
 # 2 "iso3d.cudafe1.stub.c" 2
 # 1 "iso3d.cudafe1.stub.c"
 
+int main_quick(int argc, char *argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2433535641213254749UL)) ; int i;
+float point_rate;
+double total_s;
+double compute_s;
+float *tmp;
+int src_offset;
+int src;
+int step;
+double start;
+double mem_start;
+dim3 grid;
+dim3 block;
+float *d_c_coeff;
+float *d_vsq;
+float *d_next;
+float *d_curr;
+float **srcs;
+float *vsq;
+float *next;
+float *curr;
+float *c_coeff;
+size_t nbytes;
+size_t dimz;
+size_t dimy;
+size_t dimx;
+float dt;
+float dx;
+config conf;
+ register_stack_vars(28, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0, "main|total_s|0", &____must_checkpoint_main_total_s_0, "double", (void *)(&total_s), (size_t)8, 0, 0, 0, "main|compute_s|0", &____must_checkpoint_main_compute_s_0, "double", (void *)(&compute_s), (size_t)8, 0, 0, 0, "main|tmp|0", (int *)0x0, "float*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|src_offset|0", (int *)0x0, "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0, "main|src|0", (int *)0x0, "i32", (void *)(&src), (size_t)4, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|mem_start|0", (int *)0x0, "double", (void *)(&mem_start), (size_t)8, 0, 0, 0, "main|grid|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&grid), (size_t)12, 0, 1, 0, "main|block|0", (int *)0x0, "%struct.dim3 = type { i32, i32, i32 }", (void *)(&block), (size_t)12, 0, 1, 0, "main|d_c_coeff|0", (int *)0x0, "float*", (void *)(&d_c_coeff), (size_t)8, 1, 0, 0, "main|d_vsq|0", (int *)0x0, "float*", (void *)(&d_vsq), (size_t)8, 1, 0, 0, "main|d_next|0", (int *)0x0, "float*", (void *)(&d_next), (size_t)8, 1, 0, 0, "main|d_curr|0", (int *)0x0, "float*", (void *)(&d_curr), (size_t)8, 1, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|nbytes|0", (int *)0x0, "i64", (void *)(&nbytes), (size_t)8, 0, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", (int *)0x0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", (int *)0x0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); ; ;
+# 75 "iso3d.cudafe1.stub.c"
+ ;
+# 76 "iso3d.cudafe1.stub.c"
+ call_lbl_1: ({ calling((void*)setup_config, 1, 0UL, ____alias_loc_id_0, 3, (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(2433535641213254749UL)); (setup_config)(&conf, argc, argv); }) ;
+# 77 "iso3d.cudafe1.stub.c"
+ call_lbl_2: ({ calling((void*)init_progress, 2, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); }) ;
+# 79 "iso3d.cudafe1.stub.c"
+if (((conf.nx) % 32) != 0) {
+# 80 "iso3d.cudafe1.stub.c"
+fprintf(__stderrp, "Invalid nx configuration, must be an even multiple of %d\n", 32);
+# 82 "iso3d.cudafe1.stub.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 1;
+# 83 "iso3d.cudafe1.stub.c"
+}
+# 84 "iso3d.cudafe1.stub.c"
+if (((conf.ny) % 16) != 0) {
+# 85 "iso3d.cudafe1.stub.c"
+fprintf(__stderrp, "Invalid ny configuration, must be an even multiple of %d\n", 16);
+# 87 "iso3d.cudafe1.stub.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 1;
+# 88 "iso3d.cudafe1.stub.c"
+}
+# 90 "iso3d.cudafe1.stub.c"
+ dx = ((20.F)) ;
+# 91 "iso3d.cudafe1.stub.c"
+ dt = ((0.00200000009F)) ;
+# 94 "iso3d.cudafe1.stub.c"
+ dimx = ((conf.nx) + (2 * (conf.radius))) ;
+# 95 "iso3d.cudafe1.stub.c"
+ dimy = ((conf.ny) + (2 * (conf.radius))) ;
+# 96 "iso3d.cudafe1.stub.c"
+ dimz = ((conf.nz) + (2 * (conf.radius))) ;
+# 97 "iso3d.cudafe1.stub.c"
+ nbytes = (((dimx * dimy) * dimz) * sizeof(float)) ;
+# 99 "iso3d.cudafe1.stub.c"
+if (conf.verbose) {
+# 100 "iso3d.cudafe1.stub.c"
+printf("x = %zu, y = %zu, z = %zu\n", dimx, dimy, dimz);
+# 101 "iso3d.cudafe1.stub.c"
+printf("nsteps = %d\n", conf.nsteps);
+# 102 "iso3d.cudafe1.stub.c"
+printf("radius = %d\n", conf.radius);
+# 103 "iso3d.cudafe1.stub.c"
+}
+# 105 "iso3d.cudafe1.stub.c"
+ c_coeff = ((float *)malloc_wrapper(sizeof(float) * (20), 2433535641213254369UL, 0, 0)) ;
+# 106 "iso3d.cudafe1.stub.c"
+ ;
+# 107 "iso3d.cudafe1.stub.c"
+curr = ((float *)malloc_wrapper(nbytes, 2433535641213254565UL, 0, 0));
+# 108 "iso3d.cudafe1.stub.c"
+next = ((float *)malloc_wrapper(nbytes, 2433535641213254647UL, 0, 0));
+# 109 "iso3d.cudafe1.stub.c"
+vsq = ((float *)malloc_wrapper(nbytes, 2433535641213254349UL, 0, 0));
+# 110 "iso3d.cudafe1.stub.c"
+if ((((curr == (__null)) || (next == (__null))) || (vsq == (__null))) || c_coeff) {
+# 111 "iso3d.cudafe1.stub.c"
+fprintf(__stderrp, "Allocations failed\n");
+# 112 "iso3d.cudafe1.stub.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 1;
+# 113 "iso3d.cudafe1.stub.c"
+}
+# 115 "iso3d.cudafe1.stub.c"
+ call_lbl_16: ({ calling((void*)config_sources, 16, 0UL, ____alias_loc_id_1, 5, (size_t)(2433535641213254016UL), (size_t)(2433535641213254016UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(&(conf.srcs), &(conf.nsrcs), conf.nx, conf.ny, conf.nsteps); }) ;
+# 116 "iso3d.cudafe1.stub.c"
+ call_lbl_17: srcs = ( ({ calling((void*)sample_sources, 17, 2433535641213254663UL, 0, 4, (size_t)(2433535641213254407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) ;
+# 118 "iso3d.cudafe1.stub.c"
+ call_lbl_18: ({ calling((void*)init_data, 18, 0UL, ____alias_loc_id_2, 9, (size_t)(2433535641213254565UL), (size_t)(2433535641213254647UL), (size_t)(2433535641213254349UL), (size_t)(2433535641213254369UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ;
+# 120 "iso3d.cudafe1.stub.c"
+ ;
+# 121 "iso3d.cudafe1.stub.c"
+{ lbl_0: cudaError_t error; register_stack_var("main|error|0", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMalloc_wrapper((void **)(&d_curr), nbytes, 0UL, 0, 0)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 121); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 122 "iso3d.cudafe1.stub.c"
+{ lbl_1: cudaError_t error; register_stack_var("main|error|1", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMalloc_wrapper((void **)(&d_next), nbytes, 0UL, 0, 0)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 122); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 123 "iso3d.cudafe1.stub.c"
+{ lbl_2: cudaError_t error; register_stack_var("main|error|2", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMalloc_wrapper((void **)(&d_vsq), nbytes, 0UL, 0, 0)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 123); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 124 "iso3d.cudafe1.stub.c"
+{ lbl_3: cudaError_t error; register_stack_var("main|error|3", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMalloc_wrapper((void **)(&d_c_coeff), (20) * sizeof(float), 0UL, 0, 0)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 124); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 126 "iso3d.cudafe1.stub.c"
+ block = dim3(32, 16) ;
+# 127 "iso3d.cudafe1.stub.c"
+ grid = dim3((conf.nx) / (block.x), (conf.ny) / (block.y)) ;
+# 129 "iso3d.cudafe1.stub.c"
+ call_lbl_37: mem_start = ( ({ calling((void*)seconds, 37, 0UL, 0, 0); (seconds)(); }) ) ;
+# 131 "iso3d.cudafe1.stub.c"
+{ lbl_4: cudaError_t error; register_stack_var("main|error|4", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMemcpy(d_curr, curr, nbytes, cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 131); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 132 "iso3d.cudafe1.stub.c"
+{ lbl_5: cudaError_t error; register_stack_var("main|error|5", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMemcpy(d_next, next, nbytes, cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 132); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 133 "iso3d.cudafe1.stub.c"
+{ lbl_6: cudaError_t error; register_stack_var("main|error|6", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMemcpy(d_vsq, vsq, nbytes, cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 133); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 134 "iso3d.cudafe1.stub.c"
+{ lbl_7: cudaError_t error; register_stack_var("main|error|7", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMemcpy(d_c_coeff, c_coeff, (20) * sizeof(float), cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 135); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 136 "iso3d.cudafe1.stub.c"
+ call_lbl_54: start = ( ({ calling((void*)seconds, 54, 0UL, 0, 0); (seconds)(); }) ) ;
+# 137 "iso3d.cudafe1.stub.c"
+{ for ( step = (0) ; step < (conf.nsteps); step++) {
+# 138 "iso3d.cudafe1.stub.c"
+{ for ( src = (0) ; src < (conf.nsrcs); src++) { {
+# 139 "iso3d.cudafe1.stub.c"
+if ((((conf.srcs)[src]).t) > step) { continue; }
+# 140 "iso3d.cudafe1.stub.c"
+ src_offset = ((((((conf.radius) + 0) * dimy) * dimx) + (((conf.radius) + (((conf.srcs)[src]).y)) * dimx)) + ((conf.radius) + (((conf.srcs)[src]).x))) ;
+# 142 "iso3d.cudafe1.stub.c"
+{ lbl_8: cudaError_t error; register_stack_var("main|error|8", (int *)0x0, "i32", (void *)(&error), (size_t)4, 0, 0, 0); error = (cudaMemcpy(d_curr + src_offset, (srcs[src]) + step, sizeof(float), cudaMemcpyHostToDevice)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 143); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 144 "iso3d.cudafe1.stub.c"
+} } }
+# 146 "iso3d.cudafe1.stub.c"
+ call_lbl_60: (cudaConfigureCall(grid, block)) ? (void)0 : ({ calling((void*)fwd_kernel, 60, 0UL, ____alias_loc_id_15, 10, (size_t)(2433535641213254529UL), (size_t)(2433535641213254529UL), (size_t)(2433535641213254512UL), (size_t)(2433535641213254513UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fwd_kernel)(d_next, d_curr, d_vsq, d_c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, conf.radius); }) ;
+# 148 "iso3d.cudafe1.stub.c"
+ tmp = (d_next) ;
+# 149 "iso3d.cudafe1.stub.c"
+d_next = d_curr;
+# 150 "iso3d.cudafe1.stub.c"
+d_curr = tmp;
+# 153 "iso3d.cudafe1.stub.c"
+ call_lbl_61: ({ calling((void*)checkpoint, 61, 0UL, ____alias_loc_id_14, 0); (checkpoint)(); }) ;
+# 156 "iso3d.cudafe1.stub.c"
+ call_lbl_62: ({ calling((void*)update_progress, 62, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(step + 1); }) ;
+# 157 "iso3d.cudafe1.stub.c"
+} }
+# 158 "iso3d.cudafe1.stub.c"
+{ lbl_9: cudaError_t error; if (____must_checkpoint_main_error_9 != 0) { register_stack_var("main|error|9", &____must_checkpoint_main_error_9, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } call_lbl_63: error = ( ({ calling((void*)cudaDeviceSynchronize, 63, 0UL, 0, 0); (cudaDeviceSynchronize)(); }) ) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 158); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 159 "iso3d.cudafe1.stub.c"
+alias_group_changed(____alias_loc_id_18); call_lbl_68: compute_s = ( ({ calling((void*)seconds, 68, 0UL, 0, 0); (seconds)(); }) - start) ;
+# 161 "iso3d.cudafe1.stub.c"
+{ lbl_10: cudaError_t error; if (____must_checkpoint_main_error_10 != 0) { register_stack_var("main|error|10", &____must_checkpoint_main_error_10, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } error = (cudaMemcpy(curr, d_curr, nbytes, cudaMemcpyDeviceToHost)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 161); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 162 "iso3d.cudafe1.stub.c"
+alias_group_changed(____alias_loc_id_20); call_lbl_74: total_s = ( ({ calling((void*)seconds, 74, 0UL, 0, 0); (seconds)(); }) - mem_start) ;
+# 164 "iso3d.cudafe1.stub.c"
+ call_lbl_75: ({ calling((void*)finish_progress, 75, 0UL, ____alias_loc_id_21, 0); (finish_progress)(); }) ;
+# 166 "iso3d.cudafe1.stub.c"
+ point_rate = (((((float)(conf.nx)) * (conf.ny)) * (conf.nz)) / (compute_s / (conf.nsteps))) ;
+# 168 "iso3d.cudafe1.stub.c"
+fprintf(__stderrp, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n", total_s, compute_s / (conf.nsteps), point_rate / (1000000.0F));
+# 171 "iso3d.cudafe1.stub.c"
+if ((conf.save_text) != (-1)) {
+# 172 "iso3d.cudafe1.stub.c"
+ call_lbl_77: ({ calling((void*)save_layer_text, 77, 0UL, ____alias_loc_id_22, 8, (size_t)(2433535641213254565UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2433535641213255080UL), (size_t)(0UL)); (save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ;
+# 174 "iso3d.cudafe1.stub.c"
+}
+# 176 "iso3d.cudafe1.stub.c"
+free_wrapper(c_coeff, 2433535641213254369UL);
+# 177 "iso3d.cudafe1.stub.c"
+free_wrapper(curr, 2433535641213254565UL);
+# 178 "iso3d.cudafe1.stub.c"
+free_wrapper(next, 2433535641213254647UL);
+# 179 "iso3d.cudafe1.stub.c"
+free_wrapper(vsq, 2433535641213254349UL);
+# 180 "iso3d.cudafe1.stub.c"
+{ for ( i = (0) ; i < (conf.nsrcs); i++) {
+# 181 "iso3d.cudafe1.stub.c"
+free_wrapper(srcs[i], 2433535641213254665UL);
+# 182 "iso3d.cudafe1.stub.c"
+} }
+# 183 "iso3d.cudafe1.stub.c"
+free_wrapper(srcs, 2433535641213254663UL);
+# 185 "iso3d.cudafe1.stub.c"
+{ lbl_11: cudaError_t error; if (____must_checkpoint_main_error_11 != 0) { register_stack_var("main|error|11", &____must_checkpoint_main_error_11, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } error = (cudaFree_wrapper(d_curr, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 185); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 186 "iso3d.cudafe1.stub.c"
+{ lbl_12: cudaError_t error; if (____must_checkpoint_main_error_12 != 0) { register_stack_var("main|error|12", &____must_checkpoint_main_error_12, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } error = (cudaFree_wrapper(d_next, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 186); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 187 "iso3d.cudafe1.stub.c"
+{ lbl_13: cudaError_t error; if (____must_checkpoint_main_error_13 != 0) { register_stack_var("main|error|13", &____must_checkpoint_main_error_13, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } error = (cudaFree_wrapper(d_vsq, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 187); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 188 "iso3d.cudafe1.stub.c"
+{ lbl_14: cudaError_t error; if (____must_checkpoint_main_error_14 != 0) { register_stack_var("main|error|14", &____must_checkpoint_main_error_14, "i32", (void *)(&error), (size_t)4, 0, 0, 0); } error = (cudaFree_wrapper(d_c_coeff, 0UL)) ; if (error != (cudaSuccess)) { fprintf(__stderrp, "Error: %s:%d, ", "/Users/jmg3/num-debug/src/examples/cuda/iso3d.cu", 188); fprintf(__stderrp, "code: %d, reason: %s\n", error, cudaGetErrorString(error)); exit(1); } } ;
+# 190 "iso3d.cudafe1.stub.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable0); return 0;
+# 191 "iso3d.cudafe1.stub.c"
+}
+
+int main(int argc, char *argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
 
 
 static int module_init() {
     init_module(2433535641213254012UL, 31, 10, 28, 33, 10, 2433535641213254012UL + 987UL, 2433535641213254012UL + 1011UL, 2433535641213254012UL + 976UL, 2433535641213254012UL + 1084UL, 2433535641213254012UL + 1057UL, 2433535641213254012UL + 599UL, 2433535641213254012UL + 874UL, 2433535641213254012UL + 958UL, 2433535641213254012UL + 875UL, 2433535641213254012UL + 959UL, 2433535641213254012UL + 872UL, 2433535641213254012UL + 956UL, 2433535641213254012UL + 873UL, 2433535641213254012UL + 957UL, 2433535641213254012UL + 40UL, 2433535641213254012UL + 517UL, 2433535641213254012UL + 1071UL, 2433535641213254012UL + 1011UL, 2433535641213254012UL + 3UL, 2433535641213254012UL + 737UL, 2433535641213254012UL + 4UL, 2433535641213254012UL + 395UL, 2433535641213254012UL + 651UL, 2433535641213254012UL + 653UL, 2433535641213254012UL + 810UL, 2433535641213254012UL + 852UL, 2433535641213254012UL + 811UL, 2433535641213254012UL + 853UL, 2433535641213254012UL + 812UL, 2433535641213254012UL + 854UL, 2433535641213254012UL + 1013UL, 2433535641213254012UL + 1011UL, 2433535641213254012UL + 1069UL, 2433535641213254012UL + 1078UL, 2433535641213254012UL + 772UL, 2433535641213254012UL + 790UL, 2433535641213254012UL + 1030UL, 2433535641213254012UL + 1053UL, 2433535641213254012UL + 11UL, 2433535641213254012UL + 357UL, 2433535641213254012UL + 13UL, 2433535641213254012UL + 635UL, 2433535641213254012UL + 12UL, 2433535641213254012UL + 553UL, 2433535641213254012UL + 15UL, 2433535641213254012UL + 651UL, 2433535641213254012UL + 14UL, 2433535641213254012UL + 337UL, 2433535641213254012UL + 17UL, 2433535641213254012UL + 517UL, 2433535641213254012UL + 16UL, 2433535641213254012UL + 517UL, 2433535641213254012UL + 19UL, 2433535641213254012UL + 501UL, 2433535641213254012UL + 18UL, 2433535641213254012UL + 500UL, 2433535641213254012UL + 969UL, 2433535641213254012UL + 975UL, 2433535641213254012UL + 809UL, 2433535641213254012UL + 851UL, 2433535641213254012UL + 1004UL, 2433535641213254012UL + 1011UL, "__fatBinC_Wrapper_t", 4, "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, magic), "int", (int)__builtin_offsetof(__fatBinC_Wrapper_t, version), "long long unsigned int*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, data), "void*", (int)__builtin_offsetof(__fatBinC_Wrapper_t, filename_or_fatbins), "_config", 12, "int", (int)__builtin_offsetof(struct _config, nx), "int", (int)__builtin_offsetof(struct _config, ny), "int", (int)__builtin_offsetof(struct _config, nz), "int", (int)__builtin_offsetof(struct _config, nsteps), "int", (int)__builtin_offsetof(struct _config, save_text), "int", (int)__builtin_offsetof(struct _config, verbose), "int", (int)__builtin_offsetof(struct _config, radius), "int", (int)__builtin_offsetof(struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof(struct _config, srcs), "int", (int)__builtin_offsetof(struct _config, nsrcs), "int", (int)__builtin_offsetof(struct _config, progress_width), "int", (int)__builtin_offsetof(struct _config, progress_disabled), "_source", 4, "int", (int)__builtin_offsetof(struct _source, x), "int", (int)__builtin_offsetof(struct _source, y), "float", (int)__builtin_offsetof(struct _source, freq), "int", (int)__builtin_offsetof(struct _source, t), "cudaError", 0, "cudaMemcpyKind", 0, "dim3", 3, "unsigned int", (int)__builtin_offsetof(struct dim3, x), "unsigned int", (int)__builtin_offsetof(struct dim3, y), "unsigned int", (int)__builtin_offsetof(struct dim3, z), "div_t", 2, "int", (int)__builtin_offsetof(div_t, quot), "int", (int)__builtin_offsetof(div_t, rem), "ldiv_t", 2, "long int", (int)__builtin_offsetof(ldiv_t, quot), "long int", (int)__builtin_offsetof(ldiv_t, rem), "lldiv_t", 2, "long long int", (int)__builtin_offsetof(lldiv_t, quot), "long long int", (int)__builtin_offsetof(lldiv_t, rem), "uint3", 3, "unsigned int", (int)__builtin_offsetof(struct uint3, x), "unsigned int", (int)__builtin_offsetof(struct uint3, y), "unsigned int", (int)__builtin_offsetof(struct uint3, z), "cudaError", 1, "cudaLaunch", "__nv_cudaEntityRegisterCallback", 2, "__cudaRegisterFunction", "__nv_save_fatbinhandle_for_managed_rt", "fwd_kernel", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", 2, "cudaError", "cudaSetupArgument", "__cudaUnregisterBinaryUtil", 2, "____nv_dummy_param_ref", "__cudaUnregisterFatBinary", "__nv_save_fatbinhandle_for_managed_rt", 0, "____nv_dummy_param_ref", 0, "dim3::dim3", 0, "__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf", 2, "__cudaRegisterFatBinary", "atexit", "main", 13, "checkpoint", "config_sources", "cudaDeviceSynchronize", "cudaGetErrorString", "finish_progress", "fwd_kernel", "init_data", "init_progress", "sample_sources", "save_layer_text", "seconds", "setup_config", "update_progress", "main|conf|0", 1, "main", "main|d_curr|0", 1, "main", "main|d_next|0", 1, "main", "main|d_vsq|0", 1, "main", "main|d_c_coeff|0", 1, "main", "main|block|0", 1, "main", "main|grid|0", 1, "main", "main|error|9", 4, "seconds", "save_layer_text", "finish_progress", "cudaGetErrorString", "main|compute_s|0", 4, "seconds", "save_layer_text", "finish_progress", "cudaGetErrorString", "main|error|10", 4, "seconds", "save_layer_text", "finish_progress", "cudaGetErrorString", "main|total_s|0", 3, "save_layer_text", "finish_progress", "cudaGetErrorString", "main|point_rate|0", 2, "save_layer_text", "cudaGetErrorString", "main|i|0", 1, "cudaGetErrorString", "main|error|11", 1, "cudaGetErrorString", "main|error|12", 1, "cudaGetErrorString", "main|error|13", 1, "cudaGetErrorString", "main|error|14", 1, "cudaGetErrorString", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par0|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par1|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par2|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par3|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par4|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par5|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par6|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par7|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par8|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii|__par9|0", 1, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", "__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf|callback_fp|0", 1, "_ZL50__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baafv", &____alias_loc_id_0, (unsigned)3, 2433535641213254012UL + 1UL, 2433535641213254012UL + 2UL, 2433535641213254012UL + 3UL, &____alias_loc_id_1, (unsigned)10, 2433535641213254012UL + 5UL, 2433535641213254012UL + 6UL, 2433535641213254012UL + 7UL, 2433535641213254012UL + 8UL, 2433535641213254012UL + 9UL, 2433535641213254012UL + 10UL, 2433535641213254012UL + 11UL, 2433535641213254012UL + 12UL, 2433535641213254012UL + 13UL, 2433535641213254012UL + 14UL, &____alias_loc_id_2, (unsigned)1, 2433535641213254012UL + 15UL, &____alias_loc_id_3, (unsigned)4, 2433535641213254012UL + 20UL, 2433535641213254012UL + 21UL, 2433535641213254012UL + 22UL, 2433535641213254012UL + 23UL, &____alias_loc_id_4, (unsigned)4, 2433535641213254012UL + 20UL, 2433535641213254012UL + 21UL, 2433535641213254012UL + 22UL, 2433535641213254012UL + 23UL, &____alias_loc_id_5, (unsigned)4, 2433535641213254012UL + 20UL, 2433535641213254012UL + 21UL, 2433535641213254012UL + 22UL, 2433535641213254012UL + 23UL, &____alias_loc_id_6, (unsigned)4, 2433535641213254012UL + 20UL, 2433535641213254012UL + 21UL, 2433535641213254012UL + 22UL, 2433535641213254012UL + 23UL, &____alias_loc_id_7, (unsigned)4, 2433535641213254012UL + 20UL, 2433535641213254012UL + 21UL, 2433535641213254012UL + 22UL, 2433535641213254012UL + 23UL, &____alias_loc_id_8, (unsigned)5, 2433535641213254012UL + 26UL, 2433535641213254012UL + 27UL, 2433535641213254012UL + 28UL, 2433535641213254012UL + 29UL, 2433535641213254012UL + 30UL, &____alias_loc_id_9, (unsigned)5, 2433535641213254012UL + 26UL, 2433535641213254012UL + 27UL, 2433535641213254012UL + 28UL, 2433535641213254012UL + 29UL, 2433535641213254012UL + 30UL, &____alias_loc_id_10, (unsigned)5, 2433535641213254012UL + 26UL, 2433535641213254012UL + 27UL, 2433535641213254012UL + 28UL, 2433535641213254012UL + 29UL, 2433535641213254012UL + 30UL, &____alias_loc_id_11, (unsigned)5, 2433535641213254012UL + 26UL, 2433535641213254012UL + 27UL, 2433535641213254012UL + 28UL, 2433535641213254012UL + 29UL, 2433535641213254012UL + 30UL, &____alias_loc_id_12, (unsigned)5, 2433535641213254012UL + 26UL, 2433535641213254012UL + 27UL, 2433535641213254012UL + 28UL, 2433535641213254012UL + 29UL, 2433535641213254012UL + 30UL, &____alias_loc_id_13, (unsigned)8, 2433535641213254012UL + 16UL, 2433535641213254012UL + 17UL, 2433535641213254012UL + 31UL, 2433535641213254012UL + 32UL, 2433535641213254012UL + 33UL, 2433535641213254012UL + 34UL, 2433535641213254012UL + 35UL, 2433535641213254012UL + 40UL, &____alias_loc_id_14, (unsigned)8, 2433535641213254012UL + 16UL, 2433535641213254012UL + 17UL, 2433535641213254012UL + 31UL, 2433535641213254012UL + 32UL, 2433535641213254012UL + 33UL, 2433535641213254012UL + 34UL, 2433535641213254012UL + 35UL, 2433535641213254012UL + 40UL, &____alias_loc_id_15, (unsigned)8, 2433535641213254012UL + 16UL, 2433535641213254012UL + 17UL, 2433535641213254012UL + 31UL, 2433535641213254012UL + 32UL, 2433535641213254012UL + 33UL, 2433535641213254012UL + 34UL, 2433535641213254012UL + 35UL, 2433535641213254012UL + 40UL, &____alias_loc_id_16, (unsigned)8, 2433535641213254012UL + 16UL, 2433535641213254012UL + 17UL, 2433535641213254012UL + 31UL, 2433535641213254012UL + 32UL, 2433535641213254012UL + 33UL, 2433535641213254012UL + 34UL, 2433535641213254012UL + 35UL, 2433535641213254012UL + 40UL, &____alias_loc_id_17, (unsigned)1, 2433535641213254012UL + 41UL, &____alias_loc_id_18, (unsigned)1, 2433535641213254012UL + 41UL, &____alias_loc_id_19, (unsigned)2, 2433535641213254012UL + 42UL, 2433535641213254012UL + 43UL, &____alias_loc_id_20, (unsigned)2, 2433535641213254012UL + 42UL, 2433535641213254012UL + 43UL, &____alias_loc_id_21, (unsigned)1, 2433535641213254012UL + 44UL, &____alias_loc_id_22, (unsigned)6, 2433535641213254012UL + 45UL, 2433535641213254012UL + 46UL, 2433535641213254012UL + 47UL, 2433535641213254012UL + 48UL, 2433535641213254012UL + 49UL, 2433535641213254012UL + 50UL, &____alias_loc_id_23, (unsigned)6, 2433535641213254012UL + 45UL, 2433535641213254012UL + 46UL, 2433535641213254012UL + 47UL, 2433535641213254012UL + 48UL, 2433535641213254012UL + 49UL, 2433535641213254012UL + 50UL, &____alias_loc_id_24, (unsigned)6, 2433535641213254012UL + 45UL, 2433535641213254012UL + 46UL, 2433535641213254012UL + 47UL, 2433535641213254012UL + 48UL, 2433535641213254012UL + 49UL, 2433535641213254012UL + 50UL, &____alias_loc_id_25, (unsigned)6, 2433535641213254012UL + 45UL, 2433535641213254012UL + 46UL, 2433535641213254012UL + 47UL, 2433535641213254012UL + 48UL, 2433535641213254012UL + 49UL, 2433535641213254012UL + 50UL, &____alias_loc_id_26, (unsigned)6, 2433535641213254012UL + 45UL, 2433535641213254012UL + 46UL, 2433535641213254012UL + 47UL, 2433535641213254012UL + 48UL, 2433535641213254012UL + 49UL, 2433535641213254012UL + 50UL, &____alias_loc_id_27, (unsigned)10, 2433535641213254012UL + 809UL, 2433535641213254012UL + 810UL, 2433535641213254012UL + 811UL, 2433535641213254012UL + 812UL, 2433535641213254012UL + 813UL, 2433535641213254012UL + 814UL, 2433535641213254012UL + 815UL, 2433535641213254012UL + 816UL, 2433535641213254012UL + 817UL, 2433535641213254012UL + 818UL, &____alias_loc_id_28, (unsigned)10, 2433535641213254012UL + 872UL, 2433535641213254012UL + 873UL, 2433535641213254012UL + 874UL, 2433535641213254012UL + 875UL, 2433535641213254012UL + 876UL, 2433535641213254012UL + 877UL, 2433535641213254012UL + 878UL, 2433535641213254012UL + 879UL, 2433535641213254012UL + 880UL, 2433535641213254012UL + 881UL, &____alias_loc_id_29, (unsigned)1, 2433535641213254012UL + 1069UL, &____alias_loc_id_30, (unsigned)1, 2433535641213254012UL + 969UL, &____alias_loc_id_31, (unsigned)2, 2433535641213254012UL + 976UL, 2433535641213254012UL + 1071UL, &____alias_loc_id_32, (unsigned)2, 2433535641213254012UL + 987UL, 2433535641213254012UL + 1071UL, &____alias_loc_id_33, (unsigned)17, 2433535641213254012UL + 1UL, 2433535641213254012UL + 5UL, 2433535641213254012UL + 6UL, 2433535641213254012UL + 7UL, 2433535641213254012UL + 8UL, 2433535641213254012UL + 9UL, 2433535641213254012UL + 10UL, 2433535641213254012UL + 11UL, 2433535641213254012UL + 12UL, 2433535641213254012UL + 13UL, 2433535641213254012UL + 14UL, 2433535641213254012UL + 45UL, 2433535641213254012UL + 46UL, 2433535641213254012UL + 47UL, 2433535641213254012UL + 48UL, 2433535641213254012UL + 49UL, 2433535641213254012UL + 50UL, &____alias_loc_id_34, (unsigned)4, 2433535641213254012UL + 772UL, 2433535641213254012UL + 773UL, 2433535641213254012UL + 774UL, 2433535641213254012UL + 775UL, &____alias_loc_id_35, (unsigned)2, 2433535641213254012UL + 1004UL, 2433535641213254012UL + 1071UL, &____alias_loc_id_36, (unsigned)2, 2433535641213254012UL + 1013UL, 2433535641213254012UL + 1071UL, &____alias_loc_id_37, (unsigned)5, 2433535641213254012UL + 1030UL, 2433535641213254012UL + 1031UL, 2433535641213254012UL + 1032UL, 2433535641213254012UL + 1033UL, 2433535641213254012UL + 1053UL);
-    register_functions(8, "iso3d.cudafe1.register.cpp", "main", &main, "fwd_kernel", &fwd_kernel, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", &__device_stub__Z10fwd_kernelPfS_S_S_iiiiii, "__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf", &__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf, "__nv_cudaEntityRegisterCallback", &__nv_cudaEntityRegisterCallback, "__cudaUnregisterBinaryUtil", &__cudaUnregisterBinaryUtil, "____nv_dummy_param_ref", &____nv_dummy_param_ref, "__nv_save_fatbinhandle_for_managed_rt", &__nv_save_fatbinhandle_for_managed_rt);
+    register_functions(8, "iso3d.cudafe1.hard.cpp", "main", &main, "fwd_kernel", &fwd_kernel, "__device_stub__Z10fwd_kernelPfS_S_S_iiiiii", &__device_stub__Z10fwd_kernelPfS_S_S_iiiiii, "__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf", &__sti____cudaRegisterAll_13_iso3d_cpp1_ii_d397baaf, "__nv_cudaEntityRegisterCallback", &__nv_cudaEntityRegisterCallback, "__cudaUnregisterBinaryUtil", &__cudaUnregisterBinaryUtil, "____nv_dummy_param_ref", &____nv_dummy_param_ref, "__nv_save_fatbinhandle_for_managed_rt", &__nv_save_fatbinhandle_for_managed_rt);
     return 0;
 }
 

@@ -1747,8 +1747,9 @@ void __assert_rtn(const char *, const char *, int, const char *) __attribute__((
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp" 2
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)) ; int a;
- register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)) ; int a;
+ register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  a = (0) ;
 # 6 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
@@ -1759,7 +1760,27 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
  } }
 # 9 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 10 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
- call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+ call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+# 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+}
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7772930474166261577UL)) ; int a;
+ register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); ; ;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ a = (0) ;
+# 6 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ { int i; for ( i = (0) ; i < 10; i++) {
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ a += i;
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ } }
+# 9 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
+ call_lbl_1: ({ calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 11 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 # 12 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
  (__builtin_expect(!(a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9), 0) ? __assert_rtn(__func__, "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp", 12, "a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9") : (void)0);
@@ -1768,10 +1789,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 14 "/Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(7772930474166261535UL, 1, 1, 0, 1, 0, 7772930474166261535UL + 3UL, 7772930474166261535UL + 42UL, "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)5, 7772930474166261535UL + 1UL, 7772930474166261535UL + 2UL, 7772930474166261535UL + 3UL, 7772930474166261535UL + 4UL, 7772930474166261535UL + 5UL);
-    register_functions(1, "decl_in_for.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "decl_in_for.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 

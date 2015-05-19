@@ -2157,7 +2157,8 @@ static void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);
 static void advancePosition(SimFlat* s, int nBoxes, real_t dt);
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 37 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-double timestep(SimFlat* s, int nSteps, real_t dt)
+double timestep_quick(SimFlat* s, int nSteps, real_t dt); double timestep(SimFlat* s, int nSteps, real_t dt);void computeForce_quick(SimFlat* s); void computeForce(SimFlat* s);void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt); void advanceVelocity(SimFlat* s, int nBoxes, real_t dt);void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt); void advancePosition(SimFlat* s, int nBoxes, real_t dt);void kineticEnergy_quick(SimFlat* s); void kineticEnergy(SimFlat* s);void redistributeAtoms_quick(SimFlat* sim); void redistributeAtoms(SimFlat* sim);
+double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; int ii;
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } default: { chimes_error(); } } } ; ;
@@ -2236,7 +2237,7 @@ double timestep(SimFlat* s, int nSteps, real_t dt)
 }
 # 86 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 87 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-void computeForce(SimFlat* s)
+void computeForce_resumable(SimFlat* s)
 # 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(7181207812802620724UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2246,9 +2247,9 @@ rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 # 91 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 92 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 93 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-void advanceVelocity(SimFlat* s, int nBoxes, real_t dt)
+void advanceVelocity_resumable(SimFlat* s, int nBoxes, real_t dt)
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(7181207812802620503UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;; { call_lbl_0: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(0, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
+{const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(7181207812802620503UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;; { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2277,9 +2278,9 @@ void advanceVelocity(SimFlat* s, int nBoxes, real_t dt)
 rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_6, ____chimes_did_disable2); }
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-void advancePosition(SimFlat* s, int nBoxes, real_t dt)
+void advancePosition_resumable(SimFlat* s, int nBoxes, real_t dt)
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(7181207812802620661UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;; { call_lbl_0: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(0, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1;
+{const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(7181207812802620661UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;; { call_lbl_2: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(2, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1;
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2314,7 +2315,7 @@ rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____al
 # 123 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 124 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 125 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-void kineticEnergy(SimFlat* s)
+void kineticEnergy_resumable(SimFlat* s)
 # 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&kineticEnergy), "kineticEnergy", &____must_manage_kineticEnergy, 1, 1, (size_t)(7181207812802620896UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t eSum[2];
 real_t eLocal[2];
@@ -2326,7 +2327,7 @@ real_t eLocal[2];
 # 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
    eLocal[0] = s->ePotential;
 # 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   eLocal[1] = 0; { call_lbl_0: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(0, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; ;
+   eLocal[1] = 0; { call_lbl_5: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(5, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; ;
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2376,7 +2377,7 @@ real_t eLocal[2];
 rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_9, ____chimes_did_disable4); }
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 168 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-void redistributeAtoms(SimFlat* sim)
+void redistributeAtoms_resumable(SimFlat* sim)
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7181207812802620678UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2387,7 +2388,251 @@ void redistributeAtoms(SimFlat* sim)
 # 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
     call_lbl_3: ({ HaloExchange * ____chimes_arg31; if (!____chimes_replaying) { ____chimes_arg31 = (sim->atomExchange); } calling((void*)haloExchange, 3, 0UL, 0, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620678UL)); (haloExchange)(____chimes_arg31, sim); }) ;
 # 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0); { call_lbl_0: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(0, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ;
+   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0); { call_lbl_7: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(7, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ;
+# 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+#pragma omp parallel for firstprivate(____chimes_first_iter3)
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 177 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   for (int ii = 0;ii < sim->boxes->nTotalBoxes; ++ii) {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } call_lbl_5: sortAtomsInCell(sim->atoms, sim->boxes, ii); } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); reenable_current_thread(____chimes_disable3); } ;
+# 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_8, ____chimes_did_disable5); }
+double timestep_quick(SimFlat* s, int nSteps, real_t dt)
+# 38 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; int ii;
+ register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); ; ;
+# 39 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   { for ( ii = (0) ; ii<nSteps; ++ii)
+# 40 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   {
+# 41 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+# 42 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       ({ calling((void*)advanceVelocity, -1, 0UL, 0, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); advanceVelocity_quick(s, s->boxes->nLocalBoxes, 0.5 * dt); }) ;
+# 43 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+# 44 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 45 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 46 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, 0, 0); (checkpoint)(); }) ;
+# 47 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 48 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 49 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+# 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       ({ calling((void*)advancePosition, -1, 0UL, 0, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); advancePosition_quick(s, s->boxes->nLocalBoxes, dt); }) ;
+# 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+# 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 54 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_6: ({ calling((void*)checkpoint, 6, 0UL, 0, 0); (checkpoint)(); }) ;
+# 55 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 56 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 57 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+# 58 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0UL, 0, 1, (size_t)(7181207812802620300UL)); redistributeAtoms_quick(s); }) ;
+# 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+# 60 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 61 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 62 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_10: ({ calling((void*)checkpoint, 10, 0UL, 0, 0); (checkpoint)(); }) ;
+# 63 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 64 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 65 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+# 66 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_12: ({ calling((void*)computeForce, 12, 0UL, 0, 1, (size_t)(7181207812802620300UL)); computeForce_quick(s); }) ;
+# 67 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+# 68 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 69 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 70 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_14: ({ calling((void*)checkpoint, 14, 0UL, 0, 0); (checkpoint)(); }) ;
+# 71 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 72 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 73 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+# 74 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       ({ calling((void*)advanceVelocity, -1, 0UL, 0, 3, (size_t)(7181207812802620300UL), (size_t)(0UL), (size_t)(0UL)); advanceVelocity_quick(s, s->boxes->nLocalBoxes, 0.5 * dt); }) ;
+# 75 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+# 76 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 77 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 78 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+       call_lbl_17: ({ calling((void*)checkpoint, 17, 0UL, 0, 0); (checkpoint)(); }) ;
+# 79 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 80 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   } }
+# 81 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 82 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    call_lbl_18: ({ calling((void*)kineticEnergy, 18, 0UL, ____alias_loc_id_1, 1, (size_t)(7181207812802620300UL)); kineticEnergy_quick(s); }) ;
+# 83 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 84 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
+# 85 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+}
+
+double timestep(SimFlat* s, int nSteps, real_t dt) { return (____chimes_replaying ? timestep_resumable(s, nSteps, dt) : timestep_quick(s, nSteps, dt)); }
+
+void computeForce_quick(SimFlat* s)
+# 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(7181207812802620724UL)) ; ; ;
+# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    call_lbl_1: ({ calling((void*)s->pot->force, 1, 0UL, ____alias_loc_id_4, 1, (size_t)(7181207812802620724UL)); (s->pot->force)(s); }) ;
+# 90 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
+
+void computeForce(SimFlat* s) { (____chimes_replaying ? computeForce_resumable(s) : computeForce_quick(s)); }
+
+void advanceVelocity_quick(SimFlat* s, int nBoxes, real_t dt)
+# 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(7181207812802620503UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;; { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1;
+# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+#pragma omp parallel for firstprivate(____chimes_first_iter0)
+# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   for (int iBox=0; iBox<nBoxes; iBox++)
+# 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
+# 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+# 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      {
+# 100 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->p[iOff][0] += dt*s->atoms->f[iOff][0];
+# 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->p[iOff][1] += dt*s->atoms->f[iOff][1];
+# 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->p[iOff][2] += dt*s->atoms->f[iOff][2];
+# 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      } }
+# 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+# 105 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_6, ____chimes_did_disable2); }
+
+void advanceVelocity(SimFlat* s, int nBoxes, real_t dt) { (____chimes_replaying ? advanceVelocity_resumable(s, nBoxes, dt) : advanceVelocity_quick(s, nBoxes, dt)); }
+
+void advancePosition_quick(SimFlat* s, int nBoxes, real_t dt)
+# 108 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(7181207812802620661UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;; { call_lbl_2: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(2, &____chimes_region_id1, 0); int ____chimes_first_iter1 = 1;
+# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+#pragma omp parallel for firstprivate(____chimes_first_iter1)
+# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 109 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   for (int iBox=0; iBox<nBoxes; iBox++)
+# 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 0); ____chimes_first_iter1 = 0; }
+# 112 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+# 113 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      {
+# 114 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
+# 115 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+          real_t invMass; invMass = (1. / s->species[iSpecies].mass) ;
+# 116 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->r[iOff][0] += dt*s->atoms->p[iOff][0]*invMass;
+# 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->r[iOff][1] += dt*s->atoms->p[iOff][1]*invMass;
+# 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->r[iOff][2] += dt*s->atoms->p[iOff][2]*invMass;
+# 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      } }
+# 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); reenable_current_thread(____chimes_disable1); }
+# 121 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_7, ____chimes_did_disable3); }
+
+void advancePosition(SimFlat* s, int nBoxes, real_t dt) { (____chimes_replaying ? advancePosition_resumable(s, nBoxes, dt) : advancePosition_quick(s, nBoxes, dt)); }
+
+void kineticEnergy_quick(SimFlat* s)
+# 126 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&kineticEnergy), "kineticEnergy", &____must_manage_kineticEnergy, 1, 1, (size_t)(7181207812802620896UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; real_t eSum[2];
+real_t eLocal[2];
+ if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0); } ; ;
+# 127 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    ;
+# 128 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    real_t kenergy; kenergy = (0.) ;
+# 129 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   eLocal[0] = s->ePotential;
+# 130 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   eLocal[1] = 0; { call_lbl_5: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(5, &____chimes_region_id2, 0); int ____chimes_first_iter2 = 1; ;
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+#pragma omp parallel for reduction(+:kenergy) firstprivate(____chimes_first_iter2)
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 131 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 132 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
+# 133 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 0); ____chimes_first_iter2 = 0; }
+# 134 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      { int iOff; int ii; for ( iOff = (64 * iBox) , ii = (0) ; ii<s->boxes->nAtoms[iBox]; ii++,iOff++)
+# 135 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      {
+# 136 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+          int iSpecies; iSpecies = (s->atoms->iSpecies[iOff]) ;
+# 137 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+          real_t invMass; invMass = (0.5 / s->species[iSpecies].mass) ;
+# 138 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         kenergy += ( s->atoms->p[iOff][0] * s->atoms->p[iOff][0] +
+# 139 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->p[iOff][1] * s->atoms->p[iOff][1] +
+# 140 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+         s->atoms->p[iOff][2] * s->atoms->p[iOff][2] )*invMass;
+# 141 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+      } }
+# 142 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); reenable_current_thread(____chimes_disable2); }
+# 143 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 144 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   eLocal[1] = kenergy;
+# 145 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 146 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    ;
+# 147 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+# 148 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0UL, 0, 3, (size_t)(7181207812802620726UL), (size_t)(7181207812802620733UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
+# 149 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+# 150 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 151 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   s->ePotential = eSum[0];
+# 152 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   s->eKinetic = eSum[1];
+# 153 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_9, ____chimes_did_disable4); }
+
+void kineticEnergy(SimFlat* s) { (____chimes_replaying ? kineticEnergy_resumable(s) : kineticEnergy_quick(s)); }
+
+void redistributeAtoms_quick(SimFlat* sim)
+# 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+{const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7181207812802620678UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; ; ;
+# 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    call_lbl_1: ({ calling((void*)updateLinkCells, 1, 0UL, ____alias_loc_id_2, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620680UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
+# 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+# 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
+# 173 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+    call_lbl_3: ({ calling((void*)haloExchange, 3, 0UL, 0, 2, (size_t)(7181207812802620680UL), (size_t)(7181207812802620678UL)); (haloExchange)(sim->atomExchange, sim); }) ;
+# 174 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
+   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0); { call_lbl_7: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(7, &____chimes_region_id3, 0); int ____chimes_first_iter3 = 1; ;
 # 175 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 176 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
@@ -2400,10 +2645,13 @@ void redistributeAtoms(SimFlat* sim)
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_8, ____chimes_did_disable5); }
 
+void redistributeAtoms(SimFlat* sim) { (____chimes_replaying ? redistributeAtoms_resumable(sim) : redistributeAtoms_quick(sim)); }
+
+
 
 static int module_init() {
     init_module(7181207812802620279UL, 16, 6, 4, 6, 11, 7181207812802620279UL + 21UL, 7181207812802620279UL + 24UL, 7181207812802620279UL + 439UL, 7181207812802620279UL + 441UL, 7181207812802620279UL + 446UL, 7181207812802620279UL + 617UL, 7181207812802620279UL + 445UL, 7181207812802620279UL + 439UL, 7181207812802620279UL + 617UL, 7181207812802620279UL + 502UL, 7181207812802620279UL + 1UL, 7181207812802620279UL + 21UL, 7181207812802620279UL + 382UL, 7181207812802620279UL + 273UL, 7181207812802620279UL + 273UL, 7181207812802620279UL + 275UL, 7181207812802620279UL + 385UL, 7181207812802620279UL + 399UL, 7181207812802620279UL + 228UL, 7181207812802620279UL + 382UL, 7181207812802620279UL + 434UL, 7181207812802620279UL + 445UL, 7181207812802620279UL + 100UL, 7181207812802620279UL + 224UL, 7181207812802620279UL + 224UL, 7181207812802620279UL + 143UL, 7181207812802620279UL + 502UL, 7181207812802620279UL + 504UL, 7181207812802620279UL + 399UL, 7181207812802620279UL + 401UL, 7181207812802620279UL + 143UL, 7181207812802620279UL + 145UL, "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "timestep", 8, "advancePosition", "advanceVelocity", "checkpoint", "computeForce", "kineticEnergy", "profileStart", "profileStop", "redistributeAtoms", "advancePosition", 0, "kineticEnergy", 3, "addRealParallel", "profileStart", "profileStop", "computeForce", 0, "redistributeAtoms", 5, "haloExchange", "profileStart", "profileStop", "sortAtomsInCell", "updateLinkCells", "advanceVelocity", 0, "redistributeAtoms|sim|0", 5, "updateLinkCells", "sortAtomsInCell", "profileStop", "profileStart", "haloExchange", "redistributeAtoms|ii|0", 1, "sortAtomsInCell", "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel", "kineticEnergy|eLocal|0", 1, "kineticEnergy", &____alias_loc_id_0, (unsigned)4, 7181207812802620279UL + 1UL, 7181207812802620279UL + 2UL, 7181207812802620279UL + 3UL, 7181207812802620279UL + 4UL, &____alias_loc_id_1, (unsigned)4, 7181207812802620279UL + 1UL, 7181207812802620279UL + 2UL, 7181207812802620279UL + 3UL, 7181207812802620279UL + 4UL, &____alias_loc_id_2, (unsigned)1, 7181207812802620279UL + 385UL, &____alias_loc_id_3, (unsigned)1, 7181207812802620279UL + 386UL, &____alias_loc_id_4, (unsigned)1, 7181207812802620279UL + 434UL, &____alias_loc_id_5, (unsigned)8, 7181207812802620279UL + 446UL, 7181207812802620279UL + 447UL, 7181207812802620279UL + 448UL, 7181207812802620279UL + 449UL, 7181207812802620279UL + 450UL, 7181207812802620279UL + 451UL, 7181207812802620279UL + 452UL, 7181207812802620279UL + 453UL, &____alias_loc_id_6, (unsigned)7, 7181207812802620279UL + 100UL, 7181207812802620279UL + 101UL, 7181207812802620279UL + 102UL, 7181207812802620279UL + 103UL, 7181207812802620279UL + 104UL, 7181207812802620279UL + 105UL, 7181207812802620279UL + 145UL, &____alias_loc_id_7, (unsigned)9, 7181207812802620279UL + 228UL, 7181207812802620279UL + 229UL, 7181207812802620279UL + 230UL, 7181207812802620279UL + 231UL, 7181207812802620279UL + 232UL, 7181207812802620279UL + 233UL, 7181207812802620279UL + 234UL, 7181207812802620279UL + 235UL, 7181207812802620279UL + 275UL, &____alias_loc_id_8, (unsigned)1, 7181207812802620279UL + 386UL, &____alias_loc_id_9, (unsigned)1, 7181207812802620279UL + 617UL);
-    register_functions(6, "timestep.c.pre.register.cpp", "timestep", &timestep, "advanceVelocity", &advanceVelocity, "advancePosition", &advancePosition, "redistributeAtoms", &redistributeAtoms, "computeForce", &computeForce, "kineticEnergy", &kineticEnergy);
+    register_functions(6, "timestep.c.pre.hard.cpp", "timestep", &timestep, "advanceVelocity", &advanceVelocity, "advancePosition", &advancePosition, "redistributeAtoms", &redistributeAtoms, "computeForce", &computeForce, "kineticEnergy", &kineticEnergy);
     return 0;
 }
 

@@ -35,13 +35,14 @@ class TestConfig(object):
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep, verbose, targets, update_tests, just_compile):
+    def __init__(self, keep, verbose, targets, update_tests, just_compile, force_update):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
         self.custom_compiler = None
         self.custom_compiler_flags = []
         self.update_tests = update_tests
+        self.force_update = force_update
         self.force_sequential = False
         self.just_compile = just_compile
 
@@ -267,6 +268,7 @@ def parse_argv(argv):
     update_tests = False
     targets = []
     just_compile = False
+    force_update = False
 
     i = 1
     while i < len(argv):
@@ -276,6 +278,8 @@ def parse_argv(argv):
             verbose = True
         elif argv[i] == '-u':
             update_tests = True
+        elif argv[i] == '-f':
+            force_update = True
         elif argv[i] == '-t':
             assert len(argv) >= i + 2
             for target in argv[i + 1].split(','):
@@ -290,7 +294,7 @@ def parse_argv(argv):
             usage(argv)
         i += 1
 
-    return TestConfig(keep, verbose, targets, update_tests, just_compile)
+    return TestConfig(keep, verbose, targets, update_tests, just_compile, force_update)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -553,7 +557,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
             if not os.path.isfile(correct):
                 sys.stderr.write('FATAL: Missing file ' + correct + '\n')
-                if config.update_tests and query_user('Copy file from test output?'):
+                if config.force_update or (config.update_tests and \
+                        query_user('Copy file from test output?')):
                     shutil.copyfile(generated, correct)
                 else:
                     sys.exit(1)
@@ -574,9 +579,11 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
         if failure:
             if config.update_tests:
-                run_cmd('view +1 ' + diff_file, False, interactive=True)
+                do_update = True
+                if not config.force_update:
+                    run_cmd('view +1 ' + diff_file, False, interactive=True)
 
-                do_update = query_user('Update test?')
+                    do_update = query_user('Update test?')
 
                 if do_update:
                     for comparison in files_to_compare:

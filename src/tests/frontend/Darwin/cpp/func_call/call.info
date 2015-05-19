@@ -1,5 +1,6 @@
-_Z10checkpointv 7 5 0
-__assert_rtn 8 39 0 83 84 0 85
-__assert_rtn 9 39 0 83 84 0 85
-__assert_rtn 10 43 0 83 84 0 87
-_Z3fooi 16 13 0 0
+_Z10checkpointv 12 5 0
+__assert_rtn 13 39 0 91 92 0 93
+__assert_rtn 14 39 0 91 92 0 93
+__assert_rtn 15 43 0 91 92 0 95
+_Z3fooi 21 13 0 0
+_Z3bari 22 12 0 0

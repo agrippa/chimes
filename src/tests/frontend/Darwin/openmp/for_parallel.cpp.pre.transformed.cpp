@@ -1794,13 +1794,14 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
      int a; a = (3) ;
 # 7 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
      int b; b = (4) ;
 # 8 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-     int c; c = (5); { call_lbl_0: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(0, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
+     int c; c = (5); { call_lbl_4: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
@@ -1817,17 +1818,49 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
     } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
 # 14 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 15 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
-     call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+     call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+# 16 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 17 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+# 18 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+}
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(383979529920101897UL)) ; ; ;
+# 6 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+     int a; a = (3) ;
+# 7 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+     int b; b = (4) ;
+# 8 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+     int c; c = (5); { call_lbl_4: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); int ____chimes_first_iter0 = 1; ;
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+#pragma omp parallel for firstprivate(a) private(b, c) firstprivate(____chimes_first_iter0)
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 9 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 10 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+    for (int i = 0; i < 10; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ____chimes_first_iter0 = 0; }
+# 11 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+         int inside; inside = (6) ;
+# 12 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+        printf("hello from %d : %d\n", omp_get_thread_num(), inside);
+# 13 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+# 14 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+# 15 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
+     call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 16 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 17 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
 # 18 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(383979529920101858UL, 1, 1, 0, 1, 0, 383979529920101858UL + 3UL, 383979529920101858UL + 39UL, "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)8, 383979529920101858UL + 1UL, 383979529920101858UL + 2UL, 383979529920101858UL + 3UL, 383979529920101858UL + 4UL, 383979529920101858UL + 5UL, 383979529920101858UL + 6UL, 383979529920101858UL + 7UL, 383979529920101858UL + 8UL);
-    register_functions(1, "for_parallel.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "for_parallel.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 

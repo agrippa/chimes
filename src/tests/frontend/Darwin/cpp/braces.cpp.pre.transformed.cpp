@@ -1740,7 +1740,22 @@ extern void register_custom_init_handler(const char *obj_name,
 # 2 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 3 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 # 4 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
-int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int main_quick(int argc, char **argv); int main(int argc, char **argv);
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 5 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+ if (argc == 0) {printf("hello there\n"); };
+# 7 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+# 8 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+ if (argc > 0) {printf("hello again\n"); };
+# 10 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+# 11 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+ { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
+# 13 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+# 14 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+ rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+# 15 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
+}
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1263163414597574838UL)) ; ; ;
 # 5 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
  if (argc == 0) {printf("hello there\n"); };
 # 7 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
@@ -1755,10 +1770,13 @@ int main(int argc, char **argv) {init_chimes(); const int ____chimes_did_disable
 # 15 "/Users/jmg3/num-debug/src/examples/cpp/braces.cpp"
 }
 
+int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+
+
 
 static int module_init() {
     init_module(1263163414597574803UL, 1, 1, 0, 0, 0, 1263163414597574803UL + 3UL, 1263163414597574803UL + 35UL, "main", 0, &____alias_loc_id_0, (unsigned)4, 1263163414597574803UL + 1UL, 1263163414597574803UL + 2UL, 1263163414597574803UL + 3UL, 1263163414597574803UL + 4UL);
-    register_functions(1, "braces.cpp.pre.register.cpp", "main", &main);
+    register_functions(1, "braces.cpp.pre.hard.cpp", "main", &main);
     return 0;
 }
 
