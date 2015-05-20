@@ -18,7 +18,9 @@
 #include <math.h>
 
 #include "uts.h"
+#ifdef __CHIMES_SUPPORT
 #include "checkpoint.h"
+#endif
 
 /***********************************************************
  *                                                         *
@@ -1158,7 +1160,9 @@ void parTreeSearch(StealStack *ss) {
       releaseNodes(ss);
       localDepth = ss_localDepth(ss);
 
+#ifdef __CHIMES_SUPPORT
       checkpoint();
+#endif
     }
 
 		

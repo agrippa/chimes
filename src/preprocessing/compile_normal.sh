@@ -17,8 +17,9 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 GXX_FLAGS="-g -O2"
+DEFINES=
 
-while getopts ":kci:I:L:l:o:w:vpy:" opt; do
+while getopts ":kci:I:L:l:o:w:vpy:D:" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -52,6 +53,9 @@ while getopts ":kci:I:L:l:o:w:vpy:" opt; do
             ;;
         y)
             GXX_FLAGS="${GXX_FLAGS} ${OPTARG}"
+            ;;
+        D)
+            DEFINES="$DEFINES -D${OPTARG}"
             ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
@@ -113,10 +117,10 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     if [[ ${EXT} == "cpp" || ${EXT} == "cc" || ${EXT} == "c" ]]; then
-        ${GXX} -c ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES}
+        ${GXX} -c ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${DEFINES}
     elif [[ ${EXT} == "cu" ]]; then
         nvcc -arch=sm_20 -c ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
-                   ${INCLUDES}
+                   ${INCLUDES} ${DEFINES}
     else
         echo Unsupported file format: ${EXT}
         exit 1
@@ -144,7 +148,7 @@ else
 
     ${GXX} -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
         ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
-        -lcudart
+        -lcudart ${DEFINES}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}
