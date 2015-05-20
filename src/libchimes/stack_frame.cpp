@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 
+#include <stdio.h>
 #include "stack_frame.h"
 
 void stack_frame::add_stack_var(stack_var *var) {
@@ -10,6 +11,7 @@ void stack_frame::add_stack_var(stack_var *var) {
         delete var;
     } else {
         locals[var->get_name()] = var;
+        local_addresses[var->get_address()] = var->get_name();
     }
 }
 
