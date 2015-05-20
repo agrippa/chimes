@@ -11,6 +11,8 @@ using namespace std;
 class stack_frame {
     private:
         map<string, stack_var *> locals;
+        map<void *, string> local_addresses;
+
     public:
         stack_frame() { }
         ~stack_frame() {

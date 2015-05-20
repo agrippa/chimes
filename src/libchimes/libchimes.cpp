@@ -1877,7 +1877,8 @@ inline void register_stack_var_helper(std::string mangled_name_str,
         std::vector<stack_frame *> *program_stack) {
 
 #ifdef VERBOSE
-    fprintf(stderr, "  Actually registering %s\n", mangled_name_str.c_str());
+    fprintf(stderr, "  Actually registering %s, address=%p\n",
+            mangled_name_str.c_str(), ptr);
 #endif
 
     // Skip the expensive stack var creation if we can
@@ -2389,9 +2390,23 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
     memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
     dead->clear_tmp_buffer();
 
-    assert(old_to_new->find(dead->get_address()) == old_to_new->end());
-    old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-                new ptr_and_size(live->get_address(), live->get_size())));
+    /*
+     * Some compilers may choose to re-use stack slots with the same address
+     * for temporary variables whose lifetimes do not overlap. As a result,
+     * multiple register_stack_var calls may pass the same address. If that
+     * is the case, we can assume that the old variable is no longer
+     * in-scope and cannot be referenced anymore. We therefore simply assert
+     * that the mapping we would insert is the same that already exists, and
+     * therefore the state of the variable will be updated appropriately.
+     */
+    if (old_to_new->find(dead->get_address()) != old_to_new->end()) {
+        ptr_and_size *existing = old_to_new->at(dead->get_address());
+        assert(existing->get_ptr() == live->get_address());
+        assert(existing->get_size() == live->get_size());
+    } else {
+        old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
+                    new ptr_and_size(live->get_address(), live->get_size())));
+    }
 }
 
 static void restore_program_stack(vector<stack_frame *> *unpacked,
@@ -2444,6 +2459,7 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
          */
         for (stack_frame::iterator i = unpacked->begin(),
                 e = unpacked->end(); i != e; i++) {
+            fprintf(stderr, "unpacked=%s\n", i->first.c_str());
             assert(live->find(i->first) != live->end());
 
             string name = i->first;
