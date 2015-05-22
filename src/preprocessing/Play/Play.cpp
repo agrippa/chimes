@@ -2439,8 +2439,12 @@ class CallLocation {
 
 /*
  * This function dumps a list of the names of the functions called for each
- * function defined in this module. If a callee name cannot be resolved (e.g. it
- * is a function pointer) we explicitly indicate this in the dumped output.
+ * function defined in this module. This list only includes function names for
+ * functions where we don't know if they may or may not create a checkpoint. If
+ * a callee name cannot be resolved (e.g. it
+ * is a function pointer) we explicitly indicate this in the dumped output. The
+ * callee names may include functions that are defined externally to this
+ * compilation unit.
  *
  * The dumped DOES/DOES NOT/MAY checkpoint relationship is indicative of this
  * function and all of its callees. It will only be DOES_NOT if calling this

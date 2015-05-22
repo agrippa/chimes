@@ -1,108 +1,108 @@
-memset 291 3 0 1 0 0
-sprintf 298 10 0 50 1827
-sprintf 299 0 0 50 1828
-printf 369 5 0 1829
-exit 382 3 0 0
-printf 430 3 0 1830 0 111
-exit 431 3 0 0
-printf 438 19 0 1832 0 203 0
-malloc 444 26 134 0
-printf 452 5 0 1833 0 0
-_Z8ss_errorPc 454 5 0 1834
-printf 457 19 0 1828 0 134
-_Z10ss_mkEmptyP12stealStack_t 471 3 0 203
-_Z8ss_errorPc 477 32 0 1836
-rng_showstate 479 53 232 288 1815
-printf 479 95 0 1837 0 0 232 0
-memcpy 482 3 0 249 288 0
-_Z8ss_errorPc 492 28 0 1838
-rng_showstate 495 53 350 338 1815
-printf 495 95 0 1839 0 0 350 0 0
-_Z8ss_errorPc 505 28 0 1838
-rng_showstate 509 53 407 395 1815
-printf 509 95 0 1839 0 0 407 0 0
-_Z8ss_errorPc 518 28 0 1842
-_Z8ss_errorPc 531 107 0 1837
-_Z8ss_errorPc 565 34 0 1844
-_Z8ss_errorPc 568 36 0 1845
-printf 572 20 0 1838 0 0
-printf 582 20 0 1838 0 0
-_Z8ss_errorPc 589 55 0 1848
-printf 608 20 0 1838 0 0
-memcpy 619 5 0 716 742 0
-rng_showstate 627 43 724 716 1815
-printf 627 85 0 1850 0 0 0 724 0 0 0 742
-printf 644 7 0 1851 0 0 0 0 0 0
-_Z10uts_wctimev 672 17 0
-printf 678 19 0 1852 0 0 0
-_Z8ss_errorPc 685 33 0 1853
-_Z10uts_wctimev 689 10 0
-printf 713 19 0 1854 0 0 0 0
-_Z12uts_initRootP6node_ti 910 3 0 964 0
-_Z15uts_numChildrenP6node_t 957 17 0 1081
-_Z13uts_childTypeP6node_t 958 15 0 1081
-_Z10ss_topPosnP12stealStack_t 963 36 0 1083
-rng_showstate 963 86 1014 1081 1815
-printf 963 133 0 1855 0 0 1014 0 0
-rng_spawn 984 9 0 1081 1082 0
-_Z7ss_pushP12stealStack_tP6node_t 986 7 0 1083 1082
-_Z12releaseNodesP12stealStack_t 987 7 0 1083
-_Z13ss_localDepthP12stealStack_t 1096 9 0 1122
-_Z11ss_setStateP12stealStack_ti 1098 7 0 1122 0
-_Z10ss_releaseP12stealStack_ti 1099 7 0 1122 0
-_Z11ss_setStateP12stealStack_ti 1102 9 0 1122 0
-_Z15cbarrier_cancelv 1103 9 0
-_Z11ss_setStateP12stealStack_ti 1112 7 0 1122 0
-printf 1006 19 0 1838 0 1127
-printf 1042 20 0 1858 0 0 0
-printf 1057 20 0 1859 0 0 0 0
-printf 1073 20 0 1858 0 0 0
-_Z8initNodeP6node_t 1129 3 0 1249
-_Z13ss_localDepthP12stealStack_t 1134 22 0 1347
-_Z11ss_setStateP12stealStack_ti 1138 7 0 1347 0
-_Z6ss_topP12stealStack_t 1141 16 1282 1347
-_Z11genChildrenP6node_tS0_P12stealStack_t 1144 2 0 1282 1249 1347
-_Z6ss_popP12stealStack_t 1153 9 0 1347
-_Z12releaseNodesP12stealStack_t 1158 7 0 1347
-_Z13ss_localDepthP12stealStack_t 1159 20 0 1347
-_Z10checkpointv 1161 7 0
-_Z10ss_acquireP12stealStack_ti 1168 9 0 1347 0
-_Z11ss_setStateP12stealStack_ti 1177 7 0 1347 0
-_Z8findworki 1178 18 0 0
-_Z8ss_stealP12stealStack_tii 1181 14 0 1347 0 0
-_Z8findworki 1182 30 0 0
-_Z11ss_setStateP12stealStack_ti 1194 5 0 1347 0
-_Z13cbarrier_waitv 1195 12 0
-printf 1266 5 0 1861
-_Z13uts_showStatsiidiii 1269 3 0 0 0 0 0 0 0
-printf 1273 7 0 1863 0 0 0
-printf 1275 7 0 1864 0
-printf 1278 5 0 1838 0
-printf 1279 5 0 1866 0 0 0
-printf 1281 5 0 1833 0 0
-printf 1288 7 0 1868 0
-printf 1289 7 0 1869 0
-printf 1290 7 0 1869 0
-printf 1291 7 0 1869 0
-printf 1292 7 0 1869 0
+memset 293 3 0 1 0 0
+sprintf 300 10 0 50 1827
+sprintf 301 0 0 50 1828
+printf 371 5 0 1829
+exit 384 3 0 0
+printf 432 3 0 1830 0 111
+exit 433 3 0 0
+printf 440 19 0 1832 0 203 0
+malloc 446 26 134 0
+printf 454 5 0 1833 0 0
+_Z8ss_errorPc 456 5 0 1834
+printf 459 19 0 1828 0 134
+_Z10ss_mkEmptyP12stealStack_t 473 3 0 203
+_Z8ss_errorPc 479 32 0 1836
+rng_showstate 481 53 232 288 1815
+printf 481 95 0 1837 0 0 232 0
+memcpy 484 3 0 249 288 0
+_Z8ss_errorPc 494 28 0 1838
+rng_showstate 497 53 350 338 1815
+printf 497 95 0 1839 0 0 350 0 0
+_Z8ss_errorPc 507 28 0 1838
+rng_showstate 511 53 407 395 1815
+printf 511 95 0 1839 0 0 407 0 0
+_Z8ss_errorPc 520 28 0 1842
+_Z8ss_errorPc 533 107 0 1837
+_Z8ss_errorPc 567 34 0 1844
+_Z8ss_errorPc 570 36 0 1845
+printf 574 20 0 1838 0 0
+printf 584 20 0 1838 0 0
+_Z8ss_errorPc 591 55 0 1848
+printf 610 20 0 1838 0 0
+memcpy 621 5 0 716 742 0
+rng_showstate 629 43 724 716 1815
+printf 629 85 0 1850 0 0 0 724 0 0 0 742
+printf 646 7 0 1851 0 0 0 0 0 0
+_Z10uts_wctimev 674 17 0
+printf 680 19 0 1852 0 0 0
+_Z8ss_errorPc 687 33 0 1853
+_Z10uts_wctimev 691 10 0
+printf 715 19 0 1854 0 0 0 0
+_Z12uts_initRootP6node_ti 912 3 0 964 0
+_Z15uts_numChildrenP6node_t 959 17 0 1081
+_Z13uts_childTypeP6node_t 960 15 0 1081
+_Z10ss_topPosnP12stealStack_t 965 36 0 1083
+rng_showstate 965 86 1014 1081 1815
+printf 965 133 0 1855 0 0 1014 0 0
+rng_spawn 986 9 0 1081 1082 0
+_Z7ss_pushP12stealStack_tP6node_t 988 7 0 1083 1082
+_Z12releaseNodesP12stealStack_t 989 7 0 1083
+_Z13ss_localDepthP12stealStack_t 1098 9 0 1122
+_Z11ss_setStateP12stealStack_ti 1100 7 0 1122 0
+_Z10ss_releaseP12stealStack_ti 1101 7 0 1122 0
+_Z11ss_setStateP12stealStack_ti 1104 9 0 1122 0
+_Z15cbarrier_cancelv 1105 9 0
+_Z11ss_setStateP12stealStack_ti 1114 7 0 1122 0
+printf 1008 19 0 1838 0 1127
+printf 1044 20 0 1858 0 0 0
+printf 1059 20 0 1859 0 0 0 0
+printf 1075 20 0 1858 0 0 0
+_Z8initNodeP6node_t 1131 3 0 1249
+_Z13ss_localDepthP12stealStack_t 1136 22 0 1347
+_Z11ss_setStateP12stealStack_ti 1140 7 0 1347 0
+_Z6ss_topP12stealStack_t 1143 16 1282 1347
+_Z11genChildrenP6node_tS0_P12stealStack_t 1146 2 0 1282 1249 1347
+_Z6ss_popP12stealStack_t 1155 9 0 1347
+_Z12releaseNodesP12stealStack_t 1160 7 0 1347
+_Z13ss_localDepthP12stealStack_t 1161 20 0 1347
+_Z10checkpointv 1164 7 0
+_Z10ss_acquireP12stealStack_ti 1172 9 0 1347 0
+_Z11ss_setStateP12stealStack_ti 1181 7 0 1347 0
+_Z8findworki 1182 18 0 0
+_Z8ss_stealP12stealStack_tii 1185 14 0 1347 0 0
+_Z8findworki 1186 30 0 0
+_Z11ss_setStateP12stealStack_ti 1198 5 0 1347 0
+_Z13cbarrier_waitv 1199 12 0
+printf 1270 5 0 1861
+_Z13uts_showStatsiidiii 1273 3 0 0 0 0 0 0 0
+printf 1277 7 0 1863 0 0 0
+printf 1279 7 0 1864 0
+printf 1282 5 0 1838 0
+printf 1283 5 0 1866 0 0 0
+printf 1285 5 0 1833 0 0
+printf 1292 7 0 1868 0
 printf 1293 7 0 1869 0
 printf 1294 7 0 1869 0
-printf 1295 7 0 1834 0 0
-printf 1297 7 0 1834 0 0
+printf 1295 7 0 1869 0
+printf 1296 7 0 1869 0
+printf 1297 7 0 1869 0
+printf 1298 7 0 1869 0
 printf 1299 7 0 1834 0 0
 printf 1301 7 0 1834 0 0
-printf 1303 7 0 1832 0 0 0
-printf 1306 7 0 1880
-_Z15uts_parseParamsiPPc 1366 3 0 0 1806
-_Z7cb_initv 1374 3 0
-_Z15uts_printParamsv 1384 7 0
-malloc 1407 37 1158 0
-_Z7ss_initP12stealStack_ti 1409 5 0 1158 0
-_Z12initRootNodeP6node_ti 1414 7 0 1758 0
-_Z7ss_pushP12stealStack_tP6node_t 1415 7 0 1158 1758
-_Z12ss_initStateP12stealStack_t 1423 2 0 1158
-_Z10uts_wctimev 1424 10 0
-_Z13parTreeSearchP12stealStack_t 1425 5 0 1158
-_Z10uts_wctimev 1426 10 0
-_Z9showStatsd 1439 7 0 0
-printf 1444 3 0 1882
+printf 1303 7 0 1834 0 0
+printf 1305 7 0 1834 0 0
+printf 1307 7 0 1832 0 0 0
+printf 1310 7 0 1880
+_Z15uts_parseParamsiPPc 1370 3 0 0 1806
+_Z7cb_initv 1378 3 0
+_Z15uts_printParamsv 1388 7 0
+malloc 1411 37 1158 0
+_Z7ss_initP12stealStack_ti 1413 5 0 1158 0
+_Z12initRootNodeP6node_ti 1418 7 0 1758 0
+_Z7ss_pushP12stealStack_tP6node_t 1419 7 0 1158 1758
+_Z12ss_initStateP12stealStack_t 1427 2 0 1158
+_Z10uts_wctimev 1428 10 0
+_Z13parTreeSearchP12stealStack_t 1429 5 0 1158
+_Z10uts_wctimev 1430 10 0
+_Z9showStatsd 1443 7 0 0
+printf 1448 3 0 1882
