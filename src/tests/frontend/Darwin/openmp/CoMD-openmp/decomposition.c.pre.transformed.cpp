@@ -8,6 +8,9 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "decomposition.c.pre.transformed.cpp"
+int ____chimes_does_checkpoint_initDecomposition_npm = 1;
+int ____chimes_does_checkpoint_processorNum_npm = 1;
+
 static int ____must_checkpoint_initDecomposition_xproc_0 = 2;
 static int ____must_checkpoint_initDecomposition_yproc_0 = 2;
 static int ____must_checkpoint_initDecomposition_zproc_0 = 2;
@@ -478,14 +481,17 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
+extern void calling_npm(const char *name, size_t return_alias, int n_params,
+        ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs,
+        int n_provided_npm_functions, int n_external_npm_functions,
+        int n_npm_conditionals, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -521,7 +527,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2088,8 +2094,8 @@ int processorNum_npm(Domain* domain, int dix, int diy, int diz)
 
 
 static int module_init() {
-    init_module(12059379678030502345UL, 5, 2, 6, 2, 1, 12059379678030502345UL + 244UL, 12059379678030502345UL + 330UL, 12059379678030502345UL + 248UL, 12059379678030502345UL + 330UL, 12059379678030502345UL + 249UL, 12059379678030502345UL + 330UL, 12059379678030502345UL + 4UL, 12059379678030502345UL + 234UL, 12059379678030502345UL + 6UL, 12059379678030502345UL + 38UL, "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "processorNum", 0, "initDecomposition", 2, "getNRanks", "getMyRank", "initDecomposition|xproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|yproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|zproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|globalExtent|0", 2, "getNRanks", "getMyRank", "initDecomposition|____chimes_unroll_var_0|0", 1, "getMyRank", "initDecomposition|dd|0", 1, "getMyRank", &____alias_loc_id_0, (unsigned)4, 12059379678030502345UL + 1UL, 12059379678030502345UL + 2UL, 12059379678030502345UL + 3UL, 12059379678030502345UL + 4UL, &____alias_loc_id_1, (unsigned)3, 12059379678030502345UL + 5UL, 12059379678030502345UL + 6UL, 12059379678030502345UL + 38UL, &____alias_loc_id_2, (unsigned)5, 12059379678030502345UL + 5UL, 12059379678030502345UL + 7UL, 12059379678030502345UL + 8UL, 12059379678030502345UL + 9UL, 12059379678030502345UL + 38UL, &____alias_loc_id_3, (unsigned)9, 12059379678030502345UL + 244UL, 12059379678030502345UL + 245UL, 12059379678030502345UL + 246UL, 12059379678030502345UL + 247UL, 12059379678030502345UL + 248UL, 12059379678030502345UL + 249UL, 12059379678030502345UL + 250UL, 12059379678030502345UL + 251UL, 12059379678030502345UL + 252UL);
-    register_functions(2, "decomposition.c.pre.hard.cpp", "initDecomposition", &initDecomposition, "processorNum", &processorNum);
+    init_module(12059379678030502345UL, 5, 2, 6, 4, 2, 0, 2, 1, &____alias_loc_id_0, (unsigned)4, (12059379678030502345UL + 1UL), (12059379678030502345UL + 2UL), (12059379678030502345UL + 3UL), (12059379678030502345UL + 4UL), &____alias_loc_id_1, (unsigned)3, (12059379678030502345UL + 5UL), (12059379678030502345UL + 6UL), (12059379678030502345UL + 38UL), &____alias_loc_id_2, (unsigned)5, (12059379678030502345UL + 5UL), (12059379678030502345UL + 7UL), (12059379678030502345UL + 8UL), (12059379678030502345UL + 9UL), (12059379678030502345UL + 38UL), &____alias_loc_id_3, (unsigned)9, (12059379678030502345UL + 244UL), (12059379678030502345UL + 245UL), (12059379678030502345UL + 246UL), (12059379678030502345UL + 247UL), (12059379678030502345UL + 248UL), (12059379678030502345UL + 249UL), (12059379678030502345UL + 250UL), (12059379678030502345UL + 251UL), (12059379678030502345UL + 252UL), "initDecomposition", (void *)(initDecomposition_npm), 2, &____alias_loc_id_0, &____alias_loc_id_1, 4, 0UL, 0UL, 0UL, (12059379678030502345UL + 234UL), (12059379678030502345UL + 38UL), 4, "getNRanks", 0, 0UL, "__assert_rtn", 4, (12059379678030502345UL + 334UL), (12059379678030502345UL + 335UL), 0UL, (12059379678030502345UL + 336UL), 0UL, "malloc", 1, 0UL, (12059379678030502345UL + 38UL), "getMyRank", 0, 0UL, "processorNum", (void *)(processorNum_npm), 0, 4, (12059379678030502345UL + 330UL), 0UL, 0UL, 0UL, 0UL, 0, "initDecomposition", &(____chimes_does_checkpoint_initDecomposition_npm), "processorNum", &(____chimes_does_checkpoint_processorNum_npm), (12059379678030502345UL + 244UL), (12059379678030502345UL + 330UL), (12059379678030502345UL + 248UL), (12059379678030502345UL + 330UL), (12059379678030502345UL + 249UL), (12059379678030502345UL + 330UL), (12059379678030502345UL + 4UL), (12059379678030502345UL + 234UL), (12059379678030502345UL + 6UL), (12059379678030502345UL + 38UL), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "processorNum", 0, "initDecomposition", 2, "getNRanks", "getMyRank", "initDecomposition|xproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|yproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|zproc|0", 2, "getNRanks", "getMyRank", "initDecomposition|globalExtent|0", 2, "getNRanks", "getMyRank", "initDecomposition|____chimes_unroll_var_0|0", 1, "getMyRank", "initDecomposition|dd|0", 1, "getMyRank");
+    register_functions(2, "decomposition.c.pre.extern_ptrs.cpp", "processorNum", &processorNum, "initDecomposition", &initDecomposition);
     return 0;
 }
 

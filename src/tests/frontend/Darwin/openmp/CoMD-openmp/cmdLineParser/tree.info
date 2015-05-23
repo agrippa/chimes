@@ -4,6 +4,6 @@ lastOption 0 DOES_NOT
 freeArgs 0 DOES_NOT myOptionFree 118 16
 myOptionFree 0 DOES_NOT
 printArgs 0 DOES_NOT
-processArgs 0 MAY findOption 180 11 strncpy 208 16
+processArgs 0 DOES_NOT findOption 180 11
 findOption 0 DOES_NOT
 dupString 0 DOES_NOT

@@ -10,6 +10,7 @@ typedef long unsigned int size_t;
 # 1 "for_parallel.cpp.pre.transformed.cpp"
 
 
+
 static unsigned ____alias_loc_id_0;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/for_parallel.cpp"
 # 1 "/tmp/chimes-frontend//"
@@ -467,14 +468,17 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
+extern void calling_npm(const char *name, size_t return_alias, int n_params,
+        ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs,
+        int n_provided_npm_functions, int n_external_npm_functions,
+        int n_npm_conditionals, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -510,7 +514,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1864,8 +1868,8 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(383979529920101858UL, 1, 1, 0, 1, 0, 383979529920101858UL + 3UL, 383979529920101858UL + 39UL, "main", 1, "checkpoint", &____alias_loc_id_0, (unsigned)8, 383979529920101858UL + 1UL, 383979529920101858UL + 2UL, 383979529920101858UL + 3UL, 383979529920101858UL + 4UL, 383979529920101858UL + 5UL, 383979529920101858UL + 6UL, 383979529920101858UL + 7UL, 383979529920101858UL + 8UL);
-    register_functions(1, "for_parallel.cpp.pre.hard.cpp", "main", &main);
+    init_module(383979529920101858UL, 1, 1, 0, 1, 0, 0, 0, 0, &____alias_loc_id_0, (unsigned)8, (383979529920101858UL + 1UL), (383979529920101858UL + 2UL), (383979529920101858UL + 3UL), (383979529920101858UL + 4UL), (383979529920101858UL + 5UL), (383979529920101858UL + 6UL), (383979529920101858UL + 7UL), (383979529920101858UL + 8UL), (383979529920101858UL + 3UL), (383979529920101858UL + 39UL), "main", 1, "checkpoint");
+    register_functions(1, "for_parallel.cpp.pre.extern_ptrs.cpp", "main", &main);
     return 0;
 }
 

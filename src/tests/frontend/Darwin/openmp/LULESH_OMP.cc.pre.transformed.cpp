@@ -8,44 +8,62 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "LULESH_OMP.cc.pre.transformed.cpp"
+int ____chimes_does_checkpoint_SQRT_npm = 1;
+int ____chimes_does_checkpoint_CBRT_npm = 1;
+int ____chimes_does_checkpoint_FABS_npm = 1;
+int ____chimes_does_checkpoint_AllocateNodalPersistent_npm = 1;
+int ____chimes_does_checkpoint_AllocateElemPersistent_npm = 1;
+int ____chimes_does_checkpoint_AllocateElemTemporary_npm = 1;
+int ____chimes_does_checkpoint_AllocateNodesets_npm = 1;
+int ____chimes_does_checkpoint_AllocateNodeElemIndexes_npm = 1;
+int ____chimes_does_checkpoint_TimeIncrement_npm = 1;
+int ____chimes_does_checkpoint_InitStressTermsForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcElemShapeFunctionDerivatives_npm = 1;
+int ____chimes_does_checkpoint_SumElemFaceNormal_npm = 1;
+int ____chimes_does_checkpoint_CalcElemNodeNormals_npm = 1;
+int ____chimes_does_checkpoint_SumElemStressesToNodeForces_npm = 1;
+int ____chimes_does_checkpoint_IntegrateStressForElems_npm = 1;
+int ____chimes_does_checkpoint_CollectDomainNodesToElemNodes_npm = 1;
+int ____chimes_does_checkpoint_VoluDer_npm = 1;
+int ____chimes_does_checkpoint_CalcElemVolumeDerivative_npm = 1;
+int ____chimes_does_checkpoint_CalcElemFBHourglassForce_npm = 1;
+int ____chimes_does_checkpoint_CalcFBHourglassForceForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcHourglassControlForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcVolumeForceForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcForceForNodes_npm = 1;
+int ____chimes_does_checkpoint_CalcAccelerationForNodes_npm = 1;
+int ____chimes_does_checkpoint_ApplyAccelerationBoundaryConditionsForNodes_npm = 1;
+int ____chimes_does_checkpoint_CalcVelocityForNodes_npm = 1;
+int ____chimes_does_checkpoint_CalcPositionForNodes_npm = 1;
+int ____chimes_does_checkpoint_LagrangeNodal_npm = 1;
+int ____chimes_does_checkpoint_CalcElemVolumeScalar_npm = 1;
+int ____chimes_does_checkpoint_CalcElemVolume_npm = 1;
+int ____chimes_does_checkpoint_AreaFace_npm = 1;
+int ____chimes_does_checkpoint_CalcElemCharacteristicLength_npm = 1;
+int ____chimes_does_checkpoint_CalcElemVelocityGrandient_npm = 1;
+int ____chimes_does_checkpoint_CalcKinematicsForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcLagrangeElements_npm = 1;
+int ____chimes_does_checkpoint_CalcMonotonicQGradientsForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcMonotonicQRegionForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcMonotonicQForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcQForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcPressureForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcEnergyForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcSoundSpeedForElems_npm = 1;
+int ____chimes_does_checkpoint_EvalEOSForElems_npm = 1;
+int ____chimes_does_checkpoint_ApplyMaterialPropertiesForElems_npm = 1;
+int ____chimes_does_checkpoint_UpdateVolumesForElems_npm = 1;
+int ____chimes_does_checkpoint_LagrangeElements_npm = 1;
+int ____chimes_does_checkpoint_CalcCourantConstraintForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcHydroConstraintForElems_npm = 1;
+int ____chimes_does_checkpoint_CalcTimeConstraintsForElems_npm = 1;
+int ____chimes_does_checkpoint_LagrangeLeapFrog_npm = 1;
+
 static int ____must_checkpoint_main_x_local_0 = 2;
 static int ____must_checkpoint_main_start_0 = 2;
 static int ____must_checkpoint_main_end_0 = 2;
-static int ____must_checkpoint_CalcCourantConstraintForElems_dtcourant_0 = 2;
-static int ____must_checkpoint_CalcCourantConstraintForElems_courant_elem_0 = 2;
-static int ____must_checkpoint_CalcCourantConstraintForElems_length_0 = 2;
-static int ____must_checkpoint_CalcCourantConstraintForElems_qqc2_0 = 2;
-static int ____must_checkpoint_CalcHydroConstraintForElems_dthydro_0 = 2;
-static int ____must_checkpoint_CalcHydroConstraintForElems_hydro_elem_0 = 2;
-static int ____must_checkpoint_CalcHydroConstraintForElems_dvovmax_0 = 2;
-static int ____must_checkpoint_CalcHydroConstraintForElems_length_0 = 2;
-static int ____must_checkpoint_CalcLagrangeElements_numElem_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_numElem_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_dt_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_k_0 = 2;
 static int ____must_checkpoint_CalcKinematicsForElems_B_0 = 2;
 static int ____must_checkpoint_CalcKinematicsForElems_x_local_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_y_local_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_z_local_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_xd_local_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_yd_local_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_zd_local_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_detJ_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_volume_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_relativeVolume_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_elemToNode_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_lnode_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_gnode_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_lnode_1 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_gnode_1 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_dt2_0 = 2;
-static int ____must_checkpoint_CalcKinematicsForElems_j_0 = 2;
-static int ____must_checkpoint_CalcElemCharacteristicLength_x_0 = 2;
-static int ____must_checkpoint_CalcElemCharacteristicLength_y_0 = 2;
-static int ____must_checkpoint_CalcElemCharacteristicLength_z_0 = 2;
-static int ____must_checkpoint_CalcElemCharacteristicLength_volume_0 = 2;
-static int ____must_checkpoint_CalcElemCharacteristicLength_a_0 = 2;
-static int ____must_checkpoint_CalcElemCharacteristicLength_charLength_0 = 2;
 static int ____must_checkpoint_IntegrateStressForElems_B_0 = 2;
 static int ____must_checkpoint_CalcHourglassControlForElems_x1_0 = 2;
 static int ____must_checkpoint_CalcFBHourglassForceForElems_hgfx_0 = 2;
@@ -151,16 +169,6 @@ static unsigned ____alias_loc_id_46;
 static unsigned ____alias_loc_id_47;
 static unsigned ____alias_loc_id_48;
 static unsigned ____alias_loc_id_49;
-static unsigned ____alias_loc_id_50;
-static unsigned ____alias_loc_id_51;
-static unsigned ____alias_loc_id_52;
-static unsigned ____alias_loc_id_53;
-static unsigned ____alias_loc_id_54;
-static unsigned ____alias_loc_id_55;
-static unsigned ____alias_loc_id_56;
-static unsigned ____alias_loc_id_57;
-static unsigned ____alias_loc_id_58;
-static unsigned ____alias_loc_id_59;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -617,14 +625,17 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
+extern void calling_npm(const char *name, size_t return_alias, int n_params,
+        ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs,
+        int n_provided_npm_functions, int n_external_npm_functions,
+        int n_npm_conditionals, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -660,7 +671,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2702,17 +2713,17 @@ typedef real8 Real_t ;
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 inline real8 SQRT_npm(real8 arg);
 inline real8 SQRT_quick(real8 arg); inline real8 SQRT(real8 arg);
-inline real8 SQRT_resumable(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_24, ____chimes_did_disable0); return sqrt(arg) ; }
+inline real8 SQRT_resumable(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_14, ____chimes_did_disable0); return sqrt(arg) ; }
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 inline real8 CBRT_npm(real8 arg);
 inline real8 CBRT_quick(real8 arg); inline real8 CBRT(real8 arg);
-inline real8 CBRT_resumable(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_53, ____chimes_did_disable1); return cbrt(arg) ; }
+inline real8 CBRT_resumable(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_43, ____chimes_did_disable1); return cbrt(arg) ; }
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 inline real8 FABS_npm(real8 arg);
 inline real8 FABS_quick(real8 arg); inline real8 FABS(real8 arg);
-inline real8 FABS_resumable(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_20, ____chimes_did_disable2); return fabs(arg) ; }
+inline real8 FABS_resumable(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_9, ____chimes_did_disable2); return fabs(arg) ; }
 # 107 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 108 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 109 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -2931,7 +2942,7 @@ void AllocateNodalPersistent_npm(Domain *self, size_t size);
 void AllocateNodalPersistent_quick(Domain *self, size_t size); void AllocateNodalPersistent(Domain *self, size_t size);
 void AllocateNodalPersistent_resumable(Domain *self, size_t size)
 # 374 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable3 = new_stack((void *)(&AllocateNodalPersistent), "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, 2, 0, (size_t)(12342427844960689334UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&AllocateNodalPersistent), "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, 2, 0, (size_t)(12342427844960689334UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 375 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->x = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0) ;
 # 376 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -2946,11 +2957,11 @@ void AllocateNodalPersistent_resumable(Domain *self, size_t size)
 # 381 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->zd = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0) ;
 # 382 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_7: ({ void * ____chimes_arg0; unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg0 = (self->xd); ____chimes_arg2 = (sizeof(Real_t) * size); } calling((void*)memset, 7, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg0, 0, ____chimes_arg2); }) ;
+    memset(self->xd, 0x00, sizeof(Real_t) * size);
 # 383 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_8: ({ void * ____chimes_arg3; unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (self->yd); ____chimes_arg5 = (sizeof(Real_t) * size); } calling((void*)memset, 8, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg3, 0, ____chimes_arg5); }) ;
+    memset(self->yd, 0x00, sizeof(Real_t) * size);
 # 384 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_9: ({ void * ____chimes_arg6; unsigned long ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg6 = (self->zd); ____chimes_arg8 = (sizeof(Real_t) * size); } calling((void*)memset, 9, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg6, 0, ____chimes_arg8); }) ;
+    memset(self->zd, 0x00, sizeof(Real_t) * size);
 # 385 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 386 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->xdd = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
@@ -2959,11 +2970,11 @@ void AllocateNodalPersistent_resumable(Domain *self, size_t size)
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->zdd = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
 # 389 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_13: ({ void * ____chimes_arg9; unsigned long ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg9 = (self->xdd); ____chimes_arg11 = (sizeof(Real_t) * size); } calling((void*)memset, 13, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg9, 0, ____chimes_arg11); }) ;
+    memset(self->xdd, 0x00, sizeof(Real_t) * size);
 # 390 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_14: ({ void * ____chimes_arg12; unsigned long ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg12 = (self->ydd); ____chimes_arg14 = (sizeof(Real_t) * size); } calling((void*)memset, 14, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg12, 0, ____chimes_arg14); }) ;
+    memset(self->ydd, 0x00, sizeof(Real_t) * size);
 # 391 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_15: ({ void * ____chimes_arg15; unsigned long ____chimes_arg17; if (!____chimes_replaying) { ____chimes_arg15 = (self->zdd); ____chimes_arg17 = (sizeof(Real_t) * size); } calling((void*)memset, 15, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg15, 0, ____chimes_arg17); }) ;
+    memset(self->zdd, 0x00, sizeof(Real_t) * size);
 # 392 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 393 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->fx = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
@@ -2975,16 +2986,16 @@ void AllocateNodalPersistent_resumable(Domain *self, size_t size)
 # 397 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->nodalMass = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
 # 398 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_20: ({ void * ____chimes_arg18; unsigned long ____chimes_arg20; if (!____chimes_replaying) { ____chimes_arg18 = (self->nodalMass); ____chimes_arg20 = (sizeof(Real_t) * size); } calling((void*)memset, 20, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg18, 0, ____chimes_arg20); }) ;
+    memset(self->nodalMass, 0x00, sizeof(Real_t) * size);
 # 399 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, ____alias_loc_id_12, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, ____alias_loc_id_1, ____chimes_did_disable3); }
 # 400 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 401 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void AllocateElemPersistent_npm(Domain *self, size_t size);
 void AllocateElemPersistent_quick(Domain *self, size_t size); void AllocateElemPersistent(Domain *self, size_t size);
 void AllocateElemPersistent_resumable(Domain *self, size_t size)
 # 402 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable4 = new_stack((void *)(&AllocateElemPersistent), "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, 2, 0, (size_t)(12342427844960689533UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&AllocateElemPersistent), "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, 2, 0, (size_t)(12342427844960689533UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 403 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->matElemlist = (Index_t*)malloc_wrapper(sizeof(Index_t) * size, 12342427844960689353UL, 0, 0);
 # 404 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -3009,12 +3020,12 @@ void AllocateElemPersistent_resumable(Domain *self, size_t size)
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->e = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 416 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_11: ({ void * ____chimes_arg21; unsigned long ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg21 = (self->e); ____chimes_arg23 = (sizeof(Real_t) * size); } calling((void*)memset, 11, 0UL, 0, 3, (size_t)(12342427844960689353UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg21, 0, ____chimes_arg23); }) ;
+    memset(self->e, 0x00, sizeof(Real_t) * size);
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->p = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 419 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_13: ({ void * ____chimes_arg24; unsigned long ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg24 = (self->p); ____chimes_arg26 = (sizeof(Real_t) * size); } calling((void*)memset, 13, 0UL, 0, 3, (size_t)(12342427844960689353UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg24, 0, ____chimes_arg26); }) ;
+    memset(self->p, 0x00, sizeof(Real_t) * size);
 # 420 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->q = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 421 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -3042,7 +3053,7 @@ void AllocateElemPersistent_resumable(Domain *self, size_t size)
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->elemMass = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, ____alias_loc_id_13, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, ____alias_loc_id_2, ____chimes_did_disable4); }
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 437 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 438 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -3076,7 +3087,7 @@ void AllocateElemTemporary_resumable(Domain *self, size_t size)
 # 453 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->vnew = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689543UL, 0, 0);
 # 454 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateElemTemporary", &____must_manage_AllocateElemTemporary, ____alias_loc_id_14, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "AllocateElemTemporary", &____must_manage_AllocateElemTemporary, ____alias_loc_id_3, ____chimes_did_disable5); }
 # 455 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 456 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void AllocateNodesets_npm(Domain *self, size_t size);
@@ -3091,7 +3102,7 @@ void AllocateNodesets_resumable(Domain *self, size_t size)
 # 460 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->symmZ = (Index_t*)malloc_wrapper(sizeof(Index_t) * size, 12342427844960689622UL, 0, 0);
 # 461 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateNodesets", &____must_manage_AllocateNodesets, ____alias_loc_id_15, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "AllocateNodesets", &____must_manage_AllocateNodesets, ____alias_loc_id_4, ____chimes_did_disable6); }
 # 462 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 463 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void AllocateNodeElemIndexes_npm(Domain *self);
@@ -3198,7 +3209,7 @@ void AllocateNodeElemIndexes_resumable(Domain *self)
 # 519 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     } }
 # 520 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateNodeElemIndexes", &____must_manage_AllocateNodeElemIndexes, ____alias_loc_id_16, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "AllocateNodeElemIndexes", &____must_manage_AllocateNodeElemIndexes, ____alias_loc_id_5, ____chimes_did_disable7); }
 # 551 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 551 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void TimeIncrement_npm();
@@ -3277,7 +3288,7 @@ void TimeIncrement_resumable()
 # 597 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ++domain.cycle ;
 # 598 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "TimeIncrement", &____must_manage_TimeIncrement, ____alias_loc_id_19, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "TimeIncrement", &____must_manage_TimeIncrement, ____alias_loc_id_8, ____chimes_did_disable8); }
 # 599 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 600 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void InitStressTermsForElems_npm(Index_t numElem, Real_t *sigxx, Real_t *sigyy, Real_t *sigzz);
@@ -3305,7 +3316,7 @@ void InitStressTermsForElems_resumable(Index_t numElem,
 # 610 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
 # 611 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, ____alias_loc_id_47, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, ____alias_loc_id_37, ____chimes_did_disable9); }
 # 612 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 613 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcElemShapeFunctionDerivatives_npm( const Real_t* const x, const Real_t* const y, const Real_t* const z, Real_t b[][8], Real_t* const volume );
@@ -3465,7 +3476,7 @@ void CalcElemShapeFunctionDerivatives_resumable( const Real_t* const x,
 # 699 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  *volume = Real_t(8.) * ( fjxet * cjxet + fjyet * cjyet + fjzet * cjzet);
 # 700 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, ____alias_loc_id_38, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, ____alias_loc_id_28, ____chimes_did_disable10); }
 # 701 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 702 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void SumElemFaceNormal_npm(Real_t *normalX0, Real_t *normalY0, Real_t *normalZ0, Real_t *normalX1, Real_t *normalY1, Real_t *normalZ1, Real_t *normalX2, Real_t *normalY2, Real_t *normalZ2, Real_t *normalX3, Real_t *normalY3, Real_t *normalZ3, const Real_t x0, const Real_t y0, const Real_t z0, const Real_t x1, const Real_t y1, const Real_t z1, const Real_t x2, const Real_t y2, const Real_t z2, const Real_t x3, const Real_t y3, const Real_t z3);
@@ -3535,7 +3546,7 @@ void SumElemFaceNormal_resumable(Real_t *normalX0, Real_t *normalY0, Real_t *nor
 # 735 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  *normalZ3 += areaZ;
 # 736 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, ____alias_loc_id_58, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, ____alias_loc_id_48, ____chimes_did_disable11); }
 # 737 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 738 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcElemNodeNormals_npm(Real_t pfx[8], Real_t pfy[8], Real_t pfz[8], const Real_t x[8], const Real_t y[8], const Real_t z[8]);
@@ -3567,24 +3578,24 @@ void CalcElemNodeNormals_resumable(Real_t pfx[8],
  } }
 # 751 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 752 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
 # 758 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 759 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
 # 765 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 766 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
 # 772 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 773 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
 # 779 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 780 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
 # 786 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 787 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
 # 793 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_56, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_46, ____chimes_did_disable12); }
 # 794 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 795 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void SumElemStressesToNodeForces_npm( const Real_t B[][8], const Real_t stress_xx, const Real_t stress_yy, const Real_t stress_zz, Real_t* const fx, Real_t* const fy, Real_t* const fz );
@@ -3684,7 +3695,7 @@ void SumElemStressesToNodeForces_resumable( const Real_t B[][8],
 # 844 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  fz[7] = -( stress_zz * pfz7 );
 # 845 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, ____alias_loc_id_57, ____chimes_did_disable13); }
+rm_stack(false, 0UL, "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, ____alias_loc_id_47, ____chimes_did_disable13); }
 # 846 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 847 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void IntegrateStressForElems_npm( Index_t numElem, Real_t *sigxx, Real_t *sigyy, Real_t *sigzz, Real_t *determ);
@@ -3752,13 +3763,13 @@ Real_t B[3][8];
 # 876 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 877 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 878 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(5, 0, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
+  ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 5, 12342427844960697514UL, 12342427844960697515UL, 12342427844960697516UL, 12342427844960697513UL, 12342427844960697795UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
 # 880 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 881 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(18, 0, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
+  ({ calling_npm("CalcElemNodeNormals", 0UL, 6, 12342427844960697513UL, 12342427844960697513UL, 12342427844960697513UL, 12342427844960697514UL, 12342427844960697515UL, 12342427844960697516UL); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
 # 883 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 884 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(4, 0, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], &fx_elem[k*8], &fy_elem[k*8], &fz_elem[k*8]); }) ;
+  ({ calling_npm("SumElemStressesToNodeForces", 0UL, 7, 12342427844960697513UL, 0UL, 0UL, 0UL, 12342427844960697547UL, 12342427844960697554UL, 12342427844960697561UL); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], &fx_elem[k*8], &fy_elem[k*8], &fz_elem[k*8]); }) ;
 # 897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); reenable_current_thread(____chimes_disable1); }
@@ -3818,7 +3829,7 @@ Real_t B[3][8];
 # 924 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(fx_elem, 12342427844960697547UL) ;
 # 925 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_48, ____chimes_did_disable14); }
+rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_38, ____chimes_did_disable14); }
 # 926 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 927 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -3904,7 +3915,7 @@ void CollectDomainNodesToElemNodes_resumable(const Index_t* elemToNode,
  elemZ[7] = domain.z[nd7i];
 # 969 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 970 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, ____alias_loc_id_50, ____chimes_did_disable15); }
+rm_stack(false, 0UL, "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, ____alias_loc_id_40, ____chimes_did_disable15); }
 # 971 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 972 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void VoluDer_npm(const Real_t x0, const Real_t x1, const Real_t x2, const Real_t x3, const Real_t x4, const Real_t x5, const Real_t y0, const Real_t y1, const Real_t y2, const Real_t y3, const Real_t y4, const Real_t y5, const Real_t z0, const Real_t z1, const Real_t z2, const Real_t z3, const Real_t z4, const Real_t z5, Real_t* dvdx, Real_t* dvdy, Real_t* dvdz);
@@ -3962,7 +3973,7 @@ void VoluDer_resumable(const Real_t x0, const Real_t x1, const Real_t x2,
 # 999 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  *dvdz *= twelfth;
 # 1000 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "VoluDer", &____must_manage_VoluDer, ____alias_loc_id_55, ____chimes_did_disable16); }
+rm_stack(false, 0UL, "VoluDer", &____must_manage_VoluDer, ____alias_loc_id_45, ____chimes_did_disable16); }
 # 1001 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1002 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcElemVolumeDerivative_npm(Real_t dvdx[8], Real_t dvdy[8], Real_t dvdz[8], const Real_t x[8], const Real_t y[8], const Real_t z[8]);
@@ -3983,23 +3994,23 @@ void CalcElemVolumeDerivative_resumable(Real_t dvdx[8],
 # 1009 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(12342427844960698800UL), (size_t)(12342427844960698801UL), (size_t)(12342427844960698802UL), (size_t)(12342427844960698803UL), (size_t)(12342427844960698804UL), (size_t)(12342427844960698805UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1010 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
 # 1014 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
 # 1018 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
 # 1022 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
 # 1026 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
 # 1030 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
 # 1034 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
 # 1038 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
 # 1042 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_51, ____chimes_did_disable17); }
+rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_41, ____chimes_did_disable17); }
 # 1043 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1044 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcElemFBHourglassForce_npm(Real_t *xd, Real_t *yd, Real_t *zd, Real_t *hourgam0, Real_t *hourgam1, Real_t *hourgam2, Real_t *hourgam3, Real_t *hourgam4, Real_t *hourgam5, Real_t *hourgam6, Real_t *hourgam7, Real_t coefficient, Real_t *hgfx, Real_t *hgfy, Real_t *hgfz );
@@ -4296,7 +4307,7 @@ void CalcElemFBHourglassForce_resumable(Real_t *xd, Real_t *yd, Real_t *zd, Real
 # 1224 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   hourgam7[i02] * h02 + hourgam7[i03] * h03);
 # 1225 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, ____alias_loc_id_54, ____chimes_did_disable18); }
+rm_stack(false, 0UL, "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, ____alias_loc_id_44, ____chimes_did_disable18); }
 # 1226 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1227 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcFBHourglassForceForElems_npm(Real_t *determ, Real_t *x8n, Real_t *y8n, Real_t *z8n, Real_t *dvdx, Real_t *dvdy, Real_t *dvdz, Real_t hourg);
@@ -4527,7 +4538,7 @@ Real_t gamma[4][8];
 # 1358 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   mass1=domain.elemMass[i2];
 # 1359 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  volume13=({ calling_npm(0, 0); CBRT_npm(determ[i2]); });
+  volume13=({ calling_npm("CBRT", 0UL, 1, 0UL); CBRT_npm(determ[i2]); });
 # 1360 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1361 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Index_t n0si2; n0si2 = (elemToNode[0]) ;
@@ -4601,7 +4612,7 @@ Real_t gamma[4][8];
   coefficient = - hourg * Real_t(0.01) * ss1 * mass1 / volume13;
 # 1398 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1399 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(14, 0, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
+  ({ calling_npm("CalcElemFBHourglassForce", 0UL, 15, 12342427844960698836UL, 12342427844960698837UL, 12342427844960698838UL, 12342427844960698828UL, 12342427844960698829UL, 12342427844960698830UL, 12342427844960698831UL, 12342427844960698832UL, 12342427844960698833UL, 12342427844960698834UL, 12342427844960698835UL, 0UL, 12342427844960698824UL, 12342427844960698825UL, 12342427844960698826UL); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
 # 1403 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1404 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   fx_local = &fx_elem[i3] ;
@@ -4718,7 +4729,7 @@ Real_t gamma[4][8];
 # 1494 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(fx_elem, 12342427844960698893UL) ;
 # 1495 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_52, ____chimes_did_disable19); }
+rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_42, ____chimes_did_disable19); }
 # 1496 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1497 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcHourglassControlForElems_npm(Real_t determ[], Real_t hgcoef);
@@ -4768,10 +4779,10 @@ Real_t x1[8];
 # 1515 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Index_t *elemToNode; elemToNode = (domain.nodelist + (8 * i)) ;
 # 1516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(4, 0, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
+  ({ calling_npm("CollectDomainNodesToElemNodes", 0UL, 4, 12342427844960691674UL, 12342427844960697807UL, 12342427844960697808UL, 12342427844960697809UL); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
 # 1517 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1518 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(9, 0, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
+  ({ calling_npm("CalcElemVolumeDerivative", 0UL, 6, 12342427844960697810UL, 12342427844960697811UL, 12342427844960697812UL, 12342427844960697807UL, 12342427844960697808UL, 12342427844960697809UL); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
 # 1519 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1520 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1521 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4810,7 +4821,7 @@ Real_t x1[8];
 # 1540 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  if ( hgcoef > Real_t(0.) ) {
 # 1541 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(21, 0, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
+  ({ calling_npm("CalcFBHourglassForceForElems", 0UL, 8, 12342427844960698034UL, 12342427844960697852UL, 12342427844960697859UL, 12342427844960697866UL, 12342427844960697831UL, 12342427844960697838UL, 12342427844960697845UL, 0UL); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
 # 1542 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 1543 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4828,7 +4839,7 @@ Real_t x1[8];
  free_wrapper(dvdx, 12342427844960697831UL) ;
 # 1550 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1551 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_49, ____chimes_did_disable20); return ;
+ rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_39, ____chimes_did_disable20); return ;
 # 1552 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 1553 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4857,12 +4868,12 @@ void CalcVolumeForceForElems_resumable()
 # 1564 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1565 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1566 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(3, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
+  ({ calling_npm("InitStressTermsForElems", 0UL, 4, 0UL, 12342427844960697441UL, 12342427844960697438UL, 12342427844960697435UL); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
 # 1567 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1568 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1569 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1570 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(31, 0, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }); { call_lbl_11: bool ____chimes_disable6 = disable_current_thread(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(11, &____chimes_region_id6, 1, &numElem); int ____chimes_first_iter6 = 1; ;
+  ({ calling_npm("IntegrateStressForElems", 0UL, 5, 0UL, 12342427844960697441UL, 12342427844960697438UL, 12342427844960697435UL, 12342427844960697417UL); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }); { call_lbl_11: bool ____chimes_disable6 = disable_current_thread(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(11, &____chimes_region_id6, 1, &numElem); int ____chimes_first_iter6 = 1; ;
 # 1571 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1572 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1573 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -4883,7 +4894,7 @@ void CalcVolumeForceForElems_resumable()
   } leaving_omp_parallel(____chimes_call_stack_depth6, ____chimes_region_id6); reenable_current_thread(____chimes_disable6); }
 # 1579 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1580 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(35, 0, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
+  ({ calling_npm("CalcHourglassControlForElems", 0UL, 2, 12342427844960697417UL, 0UL); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1581 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1582 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   free_wrapper(determ, 12342427844960697417UL) ;
@@ -4896,7 +4907,7 @@ void CalcVolumeForceForElems_resumable()
 # 1586 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 1587 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, ____alias_loc_id_46, ____chimes_did_disable21); }
+rm_stack(false, 0UL, "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, ____alias_loc_id_36, ____chimes_did_disable21); }
 # 1588 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1589 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcForceForNodes_npm();
@@ -4925,13 +4936,13 @@ static inline void CalcForceForNodes_resumable()
 # 1598 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1599 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1600 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(69, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcVolumeForceForElems_npm(); }) ;
+ ({ calling_npm("CalcVolumeForceForElems", 0UL, 0); CalcVolumeForceForElems_npm(); }) ;
 # 1601 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1602 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1603 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1604 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1605 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcForceForNodes", &____must_manage_CalcForceForNodes, ____alias_loc_id_41, ____chimes_did_disable22); }
+rm_stack(false, 0UL, "CalcForceForNodes", &____must_manage_CalcForceForNodes, ____alias_loc_id_31, ____chimes_did_disable22); }
 # 1606 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1607 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcAccelerationForNodes_npm();
@@ -4960,7 +4971,7 @@ void CalcAccelerationForNodes_resumable()
 # 1616 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth8, ____chimes_region_id8); reenable_current_thread(____chimes_disable8); }
 # 1617 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcAccelerationForNodes", &____must_manage_CalcAccelerationForNodes, ____alias_loc_id_42, ____chimes_did_disable23); }
+rm_stack(false, 0UL, "CalcAccelerationForNodes", &____must_manage_CalcAccelerationForNodes, ____alias_loc_id_32, ____chimes_did_disable23); }
 # 1618 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1619 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1620 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5017,7 +5028,7 @@ void ApplyAccelerationBoundaryConditionsForNodes_resumable()
 # 1641 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9); }
 # 1642 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "ApplyAccelerationBoundaryConditionsForNodes", &____must_manage_ApplyAccelerationBoundaryConditionsForNodes, ____alias_loc_id_43, ____chimes_did_disable24); }
+rm_stack(false, 0UL, "ApplyAccelerationBoundaryConditionsForNodes", &____must_manage_ApplyAccelerationBoundaryConditionsForNodes, ____alias_loc_id_33, ____chimes_did_disable24); }
 # 1643 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1644 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcVelocityForNodes_npm(const Real_t dt, const Real_t u_cut);
@@ -5046,27 +5057,27 @@ void CalcVelocityForNodes_resumable(const Real_t dt, const Real_t u_cut)
 # 1654 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   xdtmp = domain.xd[i] + domain.xdd[i] * dt ;
 # 1655 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
 # 1656 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.xd[i] = xdtmp ;
 # 1657 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1658 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ydtmp = domain.yd[i] + domain.ydd[i] * dt ;
 # 1659 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
 # 1660 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.yd[i] = ydtmp ;
 # 1661 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1662 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   zdtmp = domain.zd[i] + domain.zdd[i] * dt ;
 # 1663 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
 # 1664 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.zd[i] = zdtmp ;
 # 1665 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth10, ____chimes_region_id10); reenable_current_thread(____chimes_disable13); }
 # 1666 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcVelocityForNodes", &____must_manage_CalcVelocityForNodes, ____alias_loc_id_44, ____chimes_did_disable25); }
+rm_stack(false, 0UL, "CalcVelocityForNodes", &____must_manage_CalcVelocityForNodes, ____alias_loc_id_34, ____chimes_did_disable25); }
 # 1667 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1668 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcPositionForNodes_npm(const Real_t dt);
@@ -5098,7 +5109,7 @@ void CalcPositionForNodes_resumable(const Real_t dt)
 # 1679 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth11, ____chimes_region_id11); reenable_current_thread(____chimes_disable14); }
 # 1680 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcPositionForNodes", &____must_manage_CalcPositionForNodes, ____alias_loc_id_45, ____chimes_did_disable26); }
+rm_stack(false, 0UL, "CalcPositionForNodes", &____must_manage_CalcPositionForNodes, ____alias_loc_id_35, ____chimes_did_disable26); }
 # 1681 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1682 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void LagrangeNodal_npm();
@@ -5116,22 +5127,22 @@ void LagrangeNodal_resumable()
 # 1688 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1689 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1690 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(69, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcForceForNodes_npm(); });
+ ({ calling_npm("CalcForceForNodes", 0UL, 0); CalcForceForNodes_npm(); });
 # 1691 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1692 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcAccelerationForNodes_npm(); });
+ ({ calling_npm("CalcAccelerationForNodes", 0UL, 0); CalcAccelerationForNodes_npm(); });
 # 1693 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1694 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
+ ({ calling_npm("ApplyAccelerationBoundaryConditionsForNodes", 0UL, 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
 # 1695 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1696 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcVelocityForNodes_npm(delt, u_cut); }) ;
+ ({ calling_npm("CalcVelocityForNodes", 0UL, 2, 0UL, 0UL); CalcVelocityForNodes_npm(delt, u_cut); }) ;
 # 1697 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1698 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcPositionForNodes_npm(delt); });
+ ({ calling_npm("CalcPositionForNodes", 0UL, 1, 0UL); CalcPositionForNodes_npm(delt); });
 # 1699 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1700 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_21, ____chimes_did_disable27); return;
+ rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_10, ____chimes_did_disable27); return;
 # 1701 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 1702 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5264,7 +5275,7 @@ Real_t CalcElemVolumeScalar_resumable( const Real_t x0, const Real_t x1,
  volume *= twelveth;
 # 1784 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1785 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcElemVolumeScalar", &____must_manage_CalcElemVolumeScalar, ____alias_loc_id_59, ____chimes_did_disable28); return volume ;
+ rm_stack(false, 0UL, "CalcElemVolumeScalar", &____must_manage_CalcElemVolumeScalar, ____alias_loc_id_49, ____chimes_did_disable28); return volume ;
 # 1786 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 1787 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5277,7 +5288,7 @@ Real_t CalcElemVolume_resumable( const Real_t x[8], const Real_t y[8], const Rea
 # 1790 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable29 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 3, 0, (size_t)(12342427844960691029UL), (size_t)(12342427844960691030UL), (size_t)(12342427844960691031UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1791 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_18, ____chimes_did_disable29); return ({ calling_npm(0, 0); CalcElemVolumeScalar_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
+ rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_7, ____chimes_did_disable29); return ({ calling_npm("CalcElemVolumeScalar", 0UL, 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcElemVolumeScalar_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
 # 1794 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 1795 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5314,7 +5325,7 @@ Real_t AreaFace_resumable( const Real_t x0, const Real_t x1,
 # 1810 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t area; area = ((fx * fx + fy * fy + fz * fz) * (gx * gx + gy * gy + gz * gz) - (fx * gx + fy * gy + fz * gz) * (fx * gx + fy * gy + fz * gz)) ;
 # 1815 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_40, ____chimes_did_disable30); return area ;
+ rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_30, ____chimes_did_disable30); return area ;
 # 1816 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 1817 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5331,47 +5342,45 @@ Real_t CalcElemCharacteristicLength_resumable( const Real_t x[8],
 # 1822 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
          const Real_t volume)
 # 1823 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 4, (size_t)(12342427844960695632UL), (size_t)(12342427844960695633UL), (size_t)(12342427844960695634UL), (size_t)(0UL), "CalcElemCharacteristicLength|x|0", &____must_checkpoint_CalcElemCharacteristicLength_x_0, "double*", (void *)(&x), (size_t)8, 1, 0, 0, "CalcElemCharacteristicLength|y|0", &____must_checkpoint_CalcElemCharacteristicLength_y_0, "double*", (void *)(&y), (size_t)8, 1, 0, 0, "CalcElemCharacteristicLength|z|0", &____must_checkpoint_CalcElemCharacteristicLength_z_0, "double*", (void *)(&z), (size_t)8, 1, 0, 0, "CalcElemCharacteristicLength|volume|0", &____must_checkpoint_CalcElemCharacteristicLength_volume_0, "double", (void *)(&volume), (size_t)8, 0, 0, 0) ; Real_t charLength;
-Real_t a;
- if (____must_checkpoint_CalcElemCharacteristicLength_charLength_0 || ____must_checkpoint_CalcElemCharacteristicLength_a_0) { register_stack_vars(2, "CalcElemCharacteristicLength|charLength|0", &____must_checkpoint_CalcElemCharacteristicLength_charLength_0, "double", (void *)(&charLength), (size_t)8, 0, 0, 0, "CalcElemCharacteristicLength|a|0", &____must_checkpoint_CalcElemCharacteristicLength_a_0, "double", (void *)(&a), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(12342427844960695632UL), (size_t)(12342427844960695633UL), (size_t)(12342427844960695634UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1824 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     charLength = (Real_t(0.)) ;
+ Real_t a; Real_t charLength; charLength = (Real_t(0.)) ;
 # 1825 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1826 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
 # 1829 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: charLength = ({ calling((void*)fmax, 1, 0UL, ____alias_loc_id_6, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1830 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1831 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
 # 1834 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_2: charLength = ({ calling((void*)fmax, 2, 0UL, ____alias_loc_id_7, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1835 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1836 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
 # 1839 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_3: charLength = ({ calling((void*)fmax, 3, 0UL, ____alias_loc_id_8, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1840 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1841 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
 # 1844 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_4: charLength = ({ calling((void*)fmax, 4, 0UL, ____alias_loc_id_9, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1845 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1846 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
 # 1849 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_5: charLength = ({ calling((void*)fmax, 5, 0UL, ____alias_loc_id_10, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1850 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1851 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
 # 1854 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_6: charLength = ({ calling((void*)fmax, 6, 0UL, ____alias_loc_id_11, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1855 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1856 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- charLength = Real_t(4.0) * volume / ({ calling_npm(0, 0); SQRT_npm(charLength); });
+ charLength = Real_t(4.0) * volume / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(charLength); });
 # 1857 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1858 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_37, ____chimes_did_disable31); return charLength;
+ rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_27, ____chimes_did_disable31); return charLength;
 # 1859 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 1860 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5491,7 +5500,7 @@ void CalcElemVelocityGrandient_resumable( const Real_t* const xvel,
 # 1921 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  d[3] = .5 * ( dzddy + dyddz );
 # 1922 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, ____alias_loc_id_39, ____chimes_did_disable32); }
+rm_stack(false, 0UL, "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, ____alias_loc_id_29, ____chimes_did_disable32); }
 # 1923 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1924 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcKinematicsForElems_npm( Index_t numElem, Real_t dt );
@@ -5500,13 +5509,7 @@ static inline
 # 1925 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcKinematicsForElems_resumable( Index_t numElem, Real_t dt )
 # 1926 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable33 = new_stack((void *)(&CalcKinematicsForElems), "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, 2, 2, (size_t)(0UL), (size_t)(0UL), "CalcKinematicsForElems|numElem|0", &____must_checkpoint_CalcKinematicsForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0, "CalcKinematicsForElems|dt|0", &____must_checkpoint_CalcKinematicsForElems_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; Index_t j;
-Real_t dt2;
-Index_t *elemToNode;
-Real_t relativeVolume;
-Real_t volume;
-Real_t detJ;
-Real_t zd_local[8];
+{const int ____chimes_did_disable33 = new_stack((void *)(&CalcKinematicsForElems), "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; Real_t zd_local[8];
 Real_t yd_local[8];
 Real_t xd_local[8];
 Real_t z_local[8];
@@ -5514,18 +5517,18 @@ Real_t y_local[8];
 Real_t x_local[8];
 Real_t D[6];
 Real_t B[3][8];
- if (____must_checkpoint_CalcKinematicsForElems_j_0 || ____must_checkpoint_CalcKinematicsForElems_dt2_0 || ____must_checkpoint_CalcKinematicsForElems_elemToNode_0 || ____must_checkpoint_CalcKinematicsForElems_relativeVolume_0 || ____must_checkpoint_CalcKinematicsForElems_volume_0 || ____must_checkpoint_CalcKinematicsForElems_detJ_0 || ____must_checkpoint_CalcKinematicsForElems_zd_local_0 || ____must_checkpoint_CalcKinematicsForElems_yd_local_0 || ____must_checkpoint_CalcKinematicsForElems_xd_local_0 || ____must_checkpoint_CalcKinematicsForElems_z_local_0 || ____must_checkpoint_CalcKinematicsForElems_y_local_0 || ____must_checkpoint_CalcKinematicsForElems_x_local_0 || ____must_checkpoint_CalcKinematicsForElems_B_0) { register_stack_vars(13, "CalcKinematicsForElems|j|0", &____must_checkpoint_CalcKinematicsForElems_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "CalcKinematicsForElems|dt2|0", &____must_checkpoint_CalcKinematicsForElems_dt2_0, "double", (void *)(&dt2), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|elemToNode|0", &____must_checkpoint_CalcKinematicsForElems_elemToNode_0, "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0, "CalcKinematicsForElems|relativeVolume|0", &____must_checkpoint_CalcKinematicsForElems_relativeVolume_0, "double", (void *)(&relativeVolume), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|volume|0", &____must_checkpoint_CalcKinematicsForElems_volume_0, "double", (void *)(&volume), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|detJ|0", &____must_checkpoint_CalcKinematicsForElems_detJ_0, "double", (void *)(&detJ), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|zd_local|0", &____must_checkpoint_CalcKinematicsForElems_zd_local_0, "[8 x double]", (void *)(zd_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|yd_local|0", &____must_checkpoint_CalcKinematicsForElems_yd_local_0, "[8 x double]", (void *)(yd_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|xd_local|0", &____must_checkpoint_CalcKinematicsForElems_xd_local_0, "[8 x double]", (void *)(xd_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|z_local|0", &____must_checkpoint_CalcKinematicsForElems_z_local_0, "[8 x double]", (void *)(z_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|y_local|0", &____must_checkpoint_CalcKinematicsForElems_y_local_0, "[8 x double]", (void *)(y_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|x_local|0", &____must_checkpoint_CalcKinematicsForElems_x_local_0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|B|0", &____must_checkpoint_CalcKinematicsForElems_B_0, "[3 x [8 x double]]", (void *)(B), (size_t)192, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;; { call_lbl_3: bool ____chimes_disable15 = disable_current_thread(); unsigned ____chimes_parent_stack_depth12 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth12 = get_thread_stack_depth(); size_t ____chimes_region_id12; unsigned ____chimes_parent_thread12 = entering_omp_parallel(3, &____chimes_region_id12, 16, &B, &D, &detJ, &dt, &dt2, &elemToNode, &j, &numElem, &relativeVolume, &volume, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); int ____chimes_first_iter12 = 1;
+ if (____must_checkpoint_CalcKinematicsForElems_x_local_0 || ____must_checkpoint_CalcKinematicsForElems_B_0) { register_stack_vars(2, "CalcKinematicsForElems|x_local|0", &____must_checkpoint_CalcKinematicsForElems_x_local_0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|B|0", &____must_checkpoint_CalcKinematicsForElems_B_0, "[3 x [8 x double]]", (void *)(B), (size_t)192, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;; { call_lbl_2: bool ____chimes_disable15 = disable_current_thread(); unsigned ____chimes_parent_stack_depth12 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth12 = get_thread_stack_depth(); size_t ____chimes_region_id12; unsigned ____chimes_parent_thread12 = entering_omp_parallel(2, &____chimes_region_id12, 10, &B, &D, &dt, &numElem, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); int ____chimes_first_iter12 = 1;
 # 1927 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(numElem, dt) firstprivate(____chimes_first_iter12) firstprivate(B) firstprivate(D) firstprivate(x_local) firstprivate(y_local) firstprivate(z_local) firstprivate(xd_local) firstprivate(yd_local) firstprivate(zd_local) firstprivate(detJ) firstprivate(volume) firstprivate(relativeVolume) firstprivate(elemToNode) firstprivate(dt2) firstprivate(j)
+#pragma omp parallel for firstprivate(numElem, dt) firstprivate(____chimes_first_iter12) firstprivate(B) firstprivate(D) firstprivate(x_local) firstprivate(y_local) firstprivate(z_local) firstprivate(xd_local) firstprivate(yd_local) firstprivate(zd_local)
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1929 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  for( Index_t k=0 ; k<numElem ; ++k )
 # 1930 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- {if (____chimes_first_iter12) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread12, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth12, ____chimes_region_id12, 16, &B, &D, &detJ, &dt, &dt2, &elemToNode, &j, &numElem, &relativeVolume, &volume, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); ____chimes_first_iter12 = 0; }
+ {if (____chimes_first_iter12) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread12, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth12, ____chimes_region_id12, 10, &B, &D, &dt, &numElem, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); ____chimes_first_iter12 = 0; }
 # 1931 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    ;
 # 1932 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5543,14 +5546,14 @@ Real_t B[3][8];
 # 1938 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    ;
 # 1939 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     detJ = (0.) ;
+   Real_t detJ; detJ = (0.) ;
 # 1940 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1941 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ;
+  Real_t volume; ;
 # 1942 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ;
+  Real_t relativeVolume; ;
 # 1943 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     elemToNode = (domain.nodelist + (k * 8)) ;
+   Index_t *elemToNode; elemToNode = (domain.nodelist + (k * 8)) ;
 # 1944 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1945 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1946 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5570,7 +5573,7 @@ Real_t B[3][8];
 # 1953 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1954 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1955 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  volume = ({ calling_npm(3, 0, 12342427844960695086UL, 12342427844960691029UL, 12342427844960695087UL, 12342427844960691030UL, 12342427844960695088UL, 12342427844960691031UL); CalcElemVolume_npm(x_local, y_local, z_local); });
+  volume = ({ calling_npm("CalcElemVolume", 0UL, 3, 12342427844960695086UL, 12342427844960695087UL, 12342427844960695088UL); CalcElemVolume_npm(x_local, y_local, z_local); });
 # 1956 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   relativeVolume = volume / domain.volo[k] ;
 # 1957 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5580,13 +5583,7 @@ Real_t B[3][8];
 # 1959 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1960 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1961 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   call_lbl_1: domain.arealg[k] = CalcElemCharacteristicLength(x_local,
-# 1962 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-              y_local,
-# 1963 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-              z_local,
-# 1964 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-              volume);
+  domain.arealg[k] = ({ calling_npm("CalcElemCharacteristicLength", 0UL, 4, 12342427844960695086UL, 12342427844960695087UL, 12342427844960695088UL, 0UL); CalcElemCharacteristicLength_npm(x_local, y_local, z_local, volume); });
 # 1965 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1966 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1967 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5605,9 +5602,9 @@ Real_t B[3][8];
   } }
 # 1974 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1975 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     dt2 = (0.5 * dt) ;
+   Real_t dt2; dt2 = (0.5 * dt) ;
 # 1976 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { for ( j = (0) ; j<8 ; ++j )
+  { Index_t j; for ( j = (0) ; j<8 ; ++j )
 # 1977 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   {
 # 1978 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5620,10 +5617,10 @@ Real_t B[3][8];
   } }
 # 1982 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1983 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(5, 0, 12342427844960695086UL, 12342427844960696297UL, 12342427844960695087UL, 12342427844960696298UL, 12342427844960695088UL, 12342427844960696299UL, 12342427844960695084UL, 12342427844960696300UL, 12342427844960695092UL, 12342427844960696301UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
+  ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 5, 12342427844960695086UL, 12342427844960695087UL, 12342427844960695088UL, 12342427844960695084UL, 12342427844960695092UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
 # 1987 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1988 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(5, 0, 12342427844960695089UL, 12342427844960696833UL, 12342427844960695090UL, 12342427844960696834UL, 12342427844960695091UL, 12342427844960696835UL, 12342427844960695084UL, 12342427844960696836UL, 12342427844960695085UL, 12342427844960696838UL); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
+  ({ calling_npm("CalcElemVelocityGrandient", 0UL, 6, 12342427844960695089UL, 12342427844960695090UL, 12342427844960695091UL, 12342427844960695084UL, 0UL, 12342427844960695085UL); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
 # 1992 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1993 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1994 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5635,7 +5632,7 @@ Real_t B[3][8];
 # 1997 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth12, ____chimes_region_id12); reenable_current_thread(____chimes_disable15); }
 # 1998 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, ____alias_loc_id_36, ____chimes_did_disable33); }
+rm_stack(false, 0UL, "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, ____alias_loc_id_26, ____chimes_did_disable33); }
 # 1999 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2000 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcLagrangeElements_npm(Real_t deltatime);
@@ -5644,14 +5641,13 @@ static inline
 # 2001 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcLagrangeElements_resumable(Real_t deltatime)
 # 2002 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable34 = new_stack((void *)(&CalcLagrangeElements), "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, 1, 0, (size_t)(0UL)) ; Index_t numElem;
- if (____must_checkpoint_CalcLagrangeElements_numElem_0) { register_stack_vars(1, "CalcLagrangeElements|numElem|0", &____must_checkpoint_CalcLagrangeElements_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable34 = new_stack((void *)(&CalcLagrangeElements), "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2003 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    numElem = (domain.numElem) ;
+  Index_t numElem; numElem = (domain.numElem) ;
 # 2004 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  if (numElem > 0) {
 # 2005 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   call_lbl_1: ({ calling((void*)CalcKinematicsForElems, 1, 0UL, ____alias_loc_id_4, 2, (size_t)(0UL), (size_t)(0UL)); (CalcKinematicsForElems)(numElem, deltatime); }) ; { call_lbl_4: bool ____chimes_disable16 = disable_current_thread(); unsigned ____chimes_parent_stack_depth13 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth13 = get_thread_stack_depth(); size_t ____chimes_region_id13; unsigned ____chimes_parent_thread13 = entering_omp_parallel(4, &____chimes_region_id13, 1, &numElem); int ____chimes_first_iter13 = 1; ;
+  ({ calling_npm("CalcKinematicsForElems", 0UL, 2, 0UL, 0UL); CalcKinematicsForElems_npm(numElem, deltatime); }); { call_lbl_3: bool ____chimes_disable16 = disable_current_thread(); unsigned ____chimes_parent_stack_depth13 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth13 = get_thread_stack_depth(); size_t ____chimes_region_id13; unsigned ____chimes_parent_thread13 = entering_omp_parallel(3, &____chimes_region_id13, 1, &numElem); int ____chimes_first_iter13 = 1; ;
 # 2006 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2007 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2008 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -5695,7 +5691,7 @@ void CalcLagrangeElements_resumable(Real_t deltatime)
 # 2028 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2029 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, ____alias_loc_id_25, ____chimes_did_disable34); }
+rm_stack(false, 0UL, "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, ____alias_loc_id_15, ____chimes_did_disable34); }
 # 2030 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2031 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcMonotonicQGradientsForElems_npm();
@@ -5881,7 +5877,7 @@ void CalcMonotonicQGradientsForElems_resumable()
   az = dxi*dyj - dyi*dxj ;
 # 2127 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2128 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_zeta[i] = vol / ({ calling_npm(0, 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+  domain.delx_zeta[i] = vol / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 2129 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2130 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -5910,7 +5906,7 @@ void CalcMonotonicQGradientsForElems_resumable()
   az = dxj*dyk - dyj*dxk ;
 # 2145 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2146 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_xi[i] = vol / ({ calling_npm(0, 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+  domain.delx_xi[i] = vol / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 2147 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2148 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -5939,7 +5935,7 @@ void CalcMonotonicQGradientsForElems_resumable()
   az = dxk*dyi - dyk*dxi ;
 # 2163 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2164 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_eta[i] = vol / ({ calling_npm(0, 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+  domain.delx_eta[i] = vol / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 2165 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2166 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -5961,7 +5957,7 @@ void CalcMonotonicQGradientsForElems_resumable()
  } leaving_omp_parallel(____chimes_call_stack_depth14, ____chimes_region_id14); reenable_current_thread(____chimes_disable17); }
 # 2176 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2177 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcMonotonicQGradientsForElems", &____must_manage_CalcMonotonicQGradientsForElems, ____alias_loc_id_33, ____chimes_did_disable35); }
+rm_stack(false, 0UL, "CalcMonotonicQGradientsForElems", &____must_manage_CalcMonotonicQGradientsForElems, ____alias_loc_id_23, ____chimes_did_disable35); }
 # 2178 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2179 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcMonotonicQRegionForElems_npm( Real_t qlc_monoq, Real_t qqc_monoq, Real_t monoq_limiter_mult, Real_t monoq_max_slope, Real_t ptiny, Index_t elength );
@@ -6214,7 +6210,7 @@ void CalcMonotonicQRegionForElems_resumable(
 # 2316 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth15, ____chimes_region_id15); reenable_current_thread(____chimes_disable18); }
 # 2317 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcMonotonicQRegionForElems", &____must_manage_CalcMonotonicQRegionForElems, ____alias_loc_id_35, ____chimes_did_disable36); }
+rm_stack(false, 0UL, "CalcMonotonicQRegionForElems", &____must_manage_CalcMonotonicQRegionForElems, ____alias_loc_id_25, ____chimes_did_disable36); }
 # 2318 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2319 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcMonotonicQForElems_npm();
@@ -6246,11 +6242,11 @@ void CalcMonotonicQForElems_resumable()
 # 2335 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t qqc_monoq; qqc_monoq = (domain.qqc_monoq) ;
 # 2336 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(0, 0); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
+  ({ calling_npm("CalcMonotonicQRegionForElems", 0UL, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
 # 2345 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2346 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcMonotonicQForElems", &____must_manage_CalcMonotonicQForElems, ____alias_loc_id_34, ____chimes_did_disable37); }
+rm_stack(false, 0UL, "CalcMonotonicQForElems", &____must_manage_CalcMonotonicQForElems, ____alias_loc_id_24, ____chimes_did_disable37); }
 # 2347 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2348 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcQForElems_npm();
@@ -6271,12 +6267,12 @@ void CalcQForElems_resumable()
 # 2357 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2358 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2359 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcMonotonicQGradientsForElems_npm(); }) ;
+ ({ calling_npm("CalcMonotonicQGradientsForElems", 0UL, 0); CalcMonotonicQGradientsForElems_npm(); }) ;
 # 2360 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2361 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2362 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2363 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcMonotonicQForElems_npm(); }) ;
+ ({ calling_npm("CalcMonotonicQForElems", 0UL, 0); CalcMonotonicQForElems_npm(); }) ;
 # 2364 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2365 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2366 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6305,7 +6301,7 @@ void CalcQForElems_resumable()
 # 2378 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2379 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcQForElems", &____must_manage_CalcQForElems, ____alias_loc_id_26, ____chimes_did_disable38); }
+rm_stack(false, 0UL, "CalcQForElems", &____must_manage_CalcQForElems, ____alias_loc_id_16, ____chimes_did_disable38); }
 # 2380 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2381 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcPressureForElems_npm(Real_t* p_new, Real_t* bvc, Real_t* pbvc, Real_t* e_old, Real_t* compression, Real_t *vnewc, Real_t pmin, Real_t p_cut, Real_t eosvmax, Index_t length);
@@ -6355,7 +6351,7 @@ void CalcPressureForElems_resumable(Real_t* p_new, Real_t* bvc,
   p_new[i] = bvc[i] * e_old[i] ;
 # 2400 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2401 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
 # 2403 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2404 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   if (vnewc[i] >= eosvmax) {p_new[i] = Real_t(0.); } ;
@@ -6365,7 +6361,7 @@ void CalcPressureForElems_resumable(Real_t* p_new, Real_t* bvc,
 # 2409 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth17, ____chimes_region_id17); reenable_current_thread(____chimes_disable20); }
 # 2410 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcPressureForElems", &____must_manage_CalcPressureForElems, ____alias_loc_id_32, ____chimes_did_disable39); }
+rm_stack(false, 0UL, "CalcPressureForElems", &____must_manage_CalcPressureForElems, ____alias_loc_id_22, ____chimes_did_disable39); }
 # 2411 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2412 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcEnergyForElems_npm(Real_t* p_new, Real_t* e_new, Real_t* q_new, Real_t* bvc, Real_t* pbvc, Real_t* p_old, Real_t* e_old, Real_t* q_old, Real_t* compression, Real_t* compHalfStep, Real_t* vnewc, Real_t* work, Real_t* delvc, Real_t pmin, Real_t p_cut, Real_t e_cut, Real_t q_cut, Real_t emin, Real_t* qq, Real_t* ql, Real_t rho0, Real_t eosvmax, Index_t length);
@@ -6419,7 +6415,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  } leaving_omp_parallel(____chimes_call_stack_depth18, ____chimes_region_id18); reenable_current_thread(____chimes_disable21); }
 # 2435 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2436 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(6, 0, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_5: bool ____chimes_disable22 = disable_current_thread(); unsigned ____chimes_parent_stack_depth19 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth19 = get_thread_stack_depth(); size_t ____chimes_region_id19; unsigned ____chimes_parent_thread19 = entering_omp_parallel(5, &____chimes_region_id19, 2, &length, &rho0); int ____chimes_first_iter19 = 1; ;
+ ({ calling_npm("CalcPressureForElems", 0UL, 10, 12342427844960692631UL, 12342427844960693198UL, 12342427844960693199UL, 12342427844960693196UL, 12342427844960693204UL, 12342427844960693205UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_5: bool ____chimes_disable22 = disable_current_thread(); unsigned ____chimes_parent_stack_depth19 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth19 = get_thread_stack_depth(); size_t ____chimes_region_id19; unsigned ____chimes_parent_thread19 = entering_omp_parallel(5, &____chimes_region_id19, 2, &length, &rho0); int ____chimes_first_iter19 = 1; ;
 # 2438 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2439 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2439 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6450,7 +6446,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2452 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } else {
 # 2453 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ssc = ({ calling_npm(0, 0); SQRT_npm(ssc); }) ;
+    ssc = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssc); }) ;
 # 2454 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    }
 # 2455 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6481,7 +6477,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
   e_new[i] += Real_t(0.5) * work[i];
 # 2468 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2469 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(e_new[i]); }) < e_cut) {
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
 # 2470 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    e_new[i] = Real_t(0.) ;
 # 2471 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6496,7 +6492,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  } leaving_omp_parallel(____chimes_call_stack_depth20, ____chimes_region_id20); reenable_current_thread(____chimes_disable23); }
 # 2476 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2477 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(6, 0, 12342427844960693195UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693203UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_7: bool ____chimes_disable24 = disable_current_thread(); unsigned ____chimes_parent_stack_depth21 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth21 = get_thread_stack_depth(); size_t ____chimes_region_id21; unsigned ____chimes_parent_thread21 = entering_omp_parallel(7, &____chimes_region_id21, 4, &e_cut, &emin, &length, &rho0); int ____chimes_first_iter21 = 1; ;
+ ({ calling_npm("CalcPressureForElems", 0UL, 10, 12342427844960693195UL, 12342427844960693198UL, 12342427844960693199UL, 12342427844960693196UL, 12342427844960693203UL, 12342427844960693205UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_7: bool ____chimes_disable24 = disable_current_thread(); unsigned ____chimes_parent_stack_depth21 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth21 = get_thread_stack_depth(); size_t ____chimes_region_id21; unsigned ____chimes_parent_thread21 = entering_omp_parallel(7, &____chimes_region_id21, 4, &e_cut, &emin, &length, &rho0); int ____chimes_first_iter21 = 1; ;
 # 2479 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2480 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2480 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6529,7 +6525,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2494 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } else {
 # 2495 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ssc = ({ calling_npm(0, 0); SQRT_npm(ssc); }) ;
+    ssc = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssc); }) ;
 # 2496 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    }
 # 2497 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6546,7 +6542,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
                                + (p_new[i] + q_tilde)) * delvc[i]*sixth ;
 # 2504 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2505 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(e_new[i]); }) < e_cut) {
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
 # 2506 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    e_new[i] = Real_t(0.) ;
 # 2507 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6561,7 +6557,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  } leaving_omp_parallel(____chimes_call_stack_depth21, ____chimes_region_id21); reenable_current_thread(____chimes_disable24); }
 # 2512 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2513 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(6, 0, 12342427844960693195UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693203UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_8: bool ____chimes_disable25 = disable_current_thread(); unsigned ____chimes_parent_stack_depth22 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth22 = get_thread_stack_depth(); size_t ____chimes_region_id22; unsigned ____chimes_parent_thread22 = entering_omp_parallel(8, &____chimes_region_id22, 3, &length, &q_cut, &rho0); int ____chimes_first_iter22 = 1; ;
+ ({ calling_npm("CalcPressureForElems", 0UL, 10, 12342427844960693195UL, 12342427844960693198UL, 12342427844960693199UL, 12342427844960693196UL, 12342427844960693203UL, 12342427844960693205UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_8: bool ____chimes_disable25 = disable_current_thread(); unsigned ____chimes_parent_stack_depth22 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth22 = get_thread_stack_depth(); size_t ____chimes_region_id22; unsigned ____chimes_parent_thread22 = entering_omp_parallel(8, &____chimes_region_id22, 3, &length, &q_cut, &rho0); int ____chimes_first_iter22 = 1; ;
 # 2515 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6584,7 +6580,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2525 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } else {
 # 2526 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ssc = ({ calling_npm(0, 0); SQRT_npm(ssc); }) ;
+    ssc = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssc); }) ;
 # 2527 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    }
 # 2528 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6592,7 +6588,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    q_new[i] = (ssc*ql[i] + qq[i]) ;
 # 2530 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2531 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (({ calling_npm(0, 0); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
+   if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
 # 2532 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   }
 # 2533 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6602,7 +6598,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  free_wrapper(pHalfStep, 12342427844960692631UL) ;
 # 2536 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2537 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_30, ____chimes_did_disable40); return ;
+ rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_20, ____chimes_did_disable40); return ;
 # 2538 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 2539 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6639,7 +6635,7 @@ void CalcSoundSpeedForElems_resumable(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2553 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   else {
 # 2554 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ssTmp = ({ calling_npm(0, 0); SQRT_npm(ssTmp); });
+   ssTmp = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssTmp); });
 # 2555 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   }
 # 2556 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6647,7 +6643,7 @@ void CalcSoundSpeedForElems_resumable(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2557 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth23, ____chimes_region_id23); reenable_current_thread(____chimes_disable26); }
 # 2558 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, ____alias_loc_id_31, ____chimes_did_disable41); }
+rm_stack(false, 0UL, "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, ____alias_loc_id_21, ____chimes_did_disable41); }
 # 2559 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2560 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void EvalEOSForElems_npm(Real_t *vnewc, Index_t length);
@@ -6878,7 +6874,7 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
  } leaving_omp_parallel(____chimes_call_stack_depth24, ____chimes_region_id24); }
 # 2660 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2661 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(21, 0, 12342427844960692068UL, 12342427844960693195UL, 12342427844960692075UL, 12342427844960693196UL, 12342427844960692082UL, 12342427844960693197UL, 12342427844960692089UL, 12342427844960693198UL, 12342427844960692096UL, 12342427844960693199UL, 12342427844960692019UL, 12342427844960693200UL, 12342427844960692005UL, 12342427844960693201UL, 12342427844960692026UL, 12342427844960693202UL, 12342427844960692033UL, 12342427844960693203UL, 12342427844960692040UL, 12342427844960693204UL, 12342427844960692543UL, 12342427844960693205UL, 12342427844960692061UL, 12342427844960693206UL, 12342427844960692012UL, 12342427844960693207UL, 12342427844960692047UL, 12342427844960693213UL, 12342427844960692054UL, 12342427844960693214UL, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); }); { call_lbl_39: unsigned ____chimes_parent_stack_depth25 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth25 = get_thread_stack_depth(); size_t ____chimes_region_id25; unsigned ____chimes_parent_thread25 = entering_omp_parallel(39, &____chimes_region_id25, 0); ;
+ ({ calling_npm("CalcEnergyForElems", 0UL, 23, 12342427844960692068UL, 12342427844960692075UL, 12342427844960692082UL, 12342427844960692089UL, 12342427844960692096UL, 12342427844960692019UL, 12342427844960692005UL, 12342427844960692026UL, 12342427844960692033UL, 12342427844960692040UL, 12342427844960692543UL, 12342427844960692061UL, 12342427844960692012UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960692047UL, 12342427844960692054UL, 0UL, 0UL, 0UL); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); }); { call_lbl_39: unsigned ____chimes_parent_stack_depth25 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth25 = get_thread_stack_depth(); size_t ____chimes_region_id25; unsigned ____chimes_parent_thread25 = entering_omp_parallel(39, &____chimes_region_id25, 0); ;
 # 2666 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2667 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2668 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -6943,7 +6939,7 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
  } leaving_omp_parallel(____chimes_call_stack_depth25, ____chimes_region_id25); }
 # 2691 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2692 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(5, 0, 12342427844960692543UL, 12342427844960693319UL, 12342427844960692075UL, 12342427844960693321UL, 12342427844960692068UL, 12342427844960693322UL, 12342427844960692096UL, 12342427844960693323UL, 12342427844960692089UL, 12342427844960693324UL); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
+ ({ calling_npm("CalcSoundSpeedForElems", 0UL, 8, 12342427844960692543UL, 0UL, 12342427844960692075UL, 12342427844960692068UL, 12342427844960692096UL, 12342427844960692089UL, 0UL, 0UL); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2694 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2695 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(pbvc, 12342427844960692096UL) ;
@@ -6974,7 +6970,7 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
 # 2708 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(e_old, 12342427844960692005UL) ;
 # 2709 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_29, ____chimes_did_disable42); }
+rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_19, ____chimes_did_disable42); }
 # 2710 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2711 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void ApplyMaterialPropertiesForElems_npm();
@@ -7098,7 +7094,7 @@ void ApplyMaterialPropertiesForElems_resumable()
   } leaving_omp_parallel(____chimes_call_stack_depth26, ____chimes_region_id26); }
 # 2767 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2768 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(27, 0, 12342427844960691746UL, 12342427844960692543UL, 12342427844960692068UL, 12342427844960693195UL, 12342427844960692075UL, 12342427844960693196UL, 12342427844960692082UL, 12342427844960693197UL, 12342427844960692089UL, 12342427844960693198UL, 12342427844960692096UL, 12342427844960693199UL, 12342427844960692019UL, 12342427844960693200UL, 12342427844960692005UL, 12342427844960693201UL, 12342427844960692026UL, 12342427844960693202UL, 12342427844960692033UL, 12342427844960693203UL, 12342427844960692040UL, 12342427844960693204UL, 12342427844960692543UL, 12342427844960693205UL, 12342427844960692061UL, 12342427844960693206UL, 12342427844960692012UL, 12342427844960693207UL, 12342427844960692047UL, 12342427844960693213UL, 12342427844960692054UL, 12342427844960693214UL, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL, 12342427844960692543UL, 12342427844960693319UL, 12342427844960692075UL, 12342427844960693321UL, 12342427844960692068UL, 12342427844960693322UL, 12342427844960692096UL, 12342427844960693323UL, 12342427844960692089UL, 12342427844960693324UL); EvalEOSForElems_npm(vnewc, length); });
+  ({ calling_npm("EvalEOSForElems", 0UL, 2, 12342427844960691746UL, 0UL); EvalEOSForElems_npm(vnewc, length); });
 # 2769 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2770 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   free_wrapper(vnewc, 12342427844960691746UL) ;
@@ -7106,7 +7102,7 @@ void ApplyMaterialPropertiesForElems_resumable()
 # 2772 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2773 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "ApplyMaterialPropertiesForElems", &____must_manage_ApplyMaterialPropertiesForElems, ____alias_loc_id_27, ____chimes_did_disable43); }
+rm_stack(false, 0UL, "ApplyMaterialPropertiesForElems", &____must_manage_ApplyMaterialPropertiesForElems, ____alias_loc_id_17, ____chimes_did_disable43); }
 # 2774 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2775 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void UpdateVolumesForElems_npm();
@@ -7137,7 +7133,7 @@ void UpdateVolumesForElems_resumable()
    tmpV = domain.vnew[i] ;
 # 2786 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2787 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (({ calling_npm(0, 0); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
+   if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
 # 2789 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    domain.v[i] = tmpV ;
 # 2790 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7146,7 +7142,7 @@ void UpdateVolumesForElems_resumable()
  }
 # 2792 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2793 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "UpdateVolumesForElems", &____must_manage_UpdateVolumesForElems, ____alias_loc_id_28, ____chimes_did_disable44); return ;
+ rm_stack(false, 0UL, "UpdateVolumesForElems", &____must_manage_UpdateVolumesForElems, ____alias_loc_id_18, ____chimes_did_disable44); return ;
 # 2794 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 2795 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7157,24 +7153,24 @@ static inline
 # 2797 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void LagrangeElements_resumable()
 # 2798 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable45 = new_stack((void *)(&LagrangeElements), "LagrangeElements", &____must_manage_LagrangeElements, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable45 = new_stack((void *)(&LagrangeElements), "LagrangeElements", &____must_manage_LagrangeElements, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2799 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t deltatime; deltatime = (domain.deltatime) ;
 # 2800 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2801 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: ({ calling((void*)CalcLagrangeElements, 1, 0UL, ____alias_loc_id_1, 1, (size_t)(0UL)); (CalcLagrangeElements)(deltatime); }) ;
+ ({ calling_npm("CalcLagrangeElements", 0UL, 1, 0UL); CalcLagrangeElements_npm(deltatime); }) ;
 # 2802 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2803 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2804 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcQForElems_npm(); }) ;
+ ({ calling_npm("CalcQForElems", 0UL, 0); CalcQForElems_npm(); }) ;
 # 2805 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2806 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(27, 0, 12342427844960691746UL, 12342427844960692543UL, 12342427844960692068UL, 12342427844960693195UL, 12342427844960692075UL, 12342427844960693196UL, 12342427844960692082UL, 12342427844960693197UL, 12342427844960692089UL, 12342427844960693198UL, 12342427844960692096UL, 12342427844960693199UL, 12342427844960692019UL, 12342427844960693200UL, 12342427844960692005UL, 12342427844960693201UL, 12342427844960692026UL, 12342427844960693202UL, 12342427844960692033UL, 12342427844960693203UL, 12342427844960692040UL, 12342427844960693204UL, 12342427844960692543UL, 12342427844960693205UL, 12342427844960692061UL, 12342427844960693206UL, 12342427844960692012UL, 12342427844960693207UL, 12342427844960692047UL, 12342427844960693213UL, 12342427844960692054UL, 12342427844960693214UL, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL, 12342427844960692543UL, 12342427844960693319UL, 12342427844960692075UL, 12342427844960693321UL, 12342427844960692068UL, 12342427844960693322UL, 12342427844960692096UL, 12342427844960693323UL, 12342427844960692089UL, 12342427844960693324UL); ApplyMaterialPropertiesForElems_npm(); }) ;
+ ({ calling_npm("ApplyMaterialPropertiesForElems", 0UL, 0); ApplyMaterialPropertiesForElems_npm(); }) ;
 # 2807 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2808 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); UpdateVolumesForElems_npm(); }) ;
+ ({ calling_npm("UpdateVolumesForElems", 0UL, 0); UpdateVolumesForElems_npm(); }) ;
 # 2809 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "LagrangeElements", &____must_manage_LagrangeElements, 0, ____chimes_did_disable45); }
+rm_stack(false, 0UL, "LagrangeElements", &____must_manage_LagrangeElements, ____alias_loc_id_11, ____chimes_did_disable45); }
 # 2810 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2811 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcCourantConstraintForElems_npm();
@@ -7183,25 +7179,21 @@ static inline
 # 2812 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcCourantConstraintForElems_resumable()
 # 2813 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable46 = new_stack((void *)(&CalcCourantConstraintForElems), "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, 0, 0) ; Real_t qqc2;
-Index_t length;
-Index_t courant_elem;
-Real_t dtcourant;
- if (____must_checkpoint_CalcCourantConstraintForElems_qqc2_0 || ____must_checkpoint_CalcCourantConstraintForElems_length_0 || ____must_checkpoint_CalcCourantConstraintForElems_courant_elem_0 || ____must_checkpoint_CalcCourantConstraintForElems_dtcourant_0) { register_stack_vars(4, "CalcCourantConstraintForElems|qqc2|0", &____must_checkpoint_CalcCourantConstraintForElems_qqc2_0, "double", (void *)(&qqc2), (size_t)8, 0, 0, 0, "CalcCourantConstraintForElems|length|0", &____must_checkpoint_CalcCourantConstraintForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "CalcCourantConstraintForElems|courant_elem|0", &____must_checkpoint_CalcCourantConstraintForElems_courant_elem_0, "i32", (void *)(&courant_elem), (size_t)4, 0, 0, 0, "CalcCourantConstraintForElems|dtcourant|0", &____must_checkpoint_CalcCourantConstraintForElems_dtcourant_0, "double", (void *)(&dtcourant), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
+{const int ____chimes_did_disable46 = new_stack((void *)(&CalcCourantConstraintForElems), "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, 0, 0) ; if (____chimes_replaying) { goto lbl_0; } ; ;
 # 2814 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    dtcourant = (Real_t(1.0E+20)) ;
+  Real_t dtcourant; dtcourant = (Real_t(1.0E+20)) ;
 # 2815 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    courant_elem = (-1) ;
+  Index_t courant_elem; courant_elem = (-1) ;
 # 2816 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t qqc; qqc = (domain.qqc) ;
 # 2817 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    length = (domain.numElem) ;
+  Index_t length; length = (domain.numElem) ;
 # 2818 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2819 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    qqc2 = (Real_t(64.) * qqc * qqc) ;
+  Real_t qqc2; qqc2 = (Real_t(64.) * qqc * qqc) ;
 # 2820 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2821 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         Index_t threads; call_lbl_1: threads = ( ({ calling((void*)omp_get_num_threads, 1, 0UL, 0, 0); (omp_get_num_threads)(); }) ) ;
+         Index_t threads; threads = (omp_get_num_threads()) ;
 # 2822 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2823 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2824 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7209,7 +7201,7 @@ Real_t dtcourant;
 # 2826 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
          lbl_0: Index_t courant_elem_per_thread[threads]; if (____chimes_replaying) { goto lbl_1; } ;
 # 2827 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_1: Real_t dtcourant_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
+         lbl_1: Real_t dtcourant_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 2828 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2829 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
         { Index_t i; for ( i = (0) ; i < threads; i++) {
@@ -7248,7 +7240,7 @@ Real_t dtcourant;
   }
 # 2847 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2848 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = ({ calling_npm(0, 0); SQRT_npm(dtf); }) ;
+  dtf = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(dtf); }) ;
 # 2849 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2850 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   dtf = domain.arealg[indx] / dtf ;
@@ -7308,7 +7300,7 @@ Real_t dtcourant;
  }
 # 2884 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2885 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_22, ____chimes_did_disable46); return ;
+ rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_12, ____chimes_did_disable46); return ;
 # 2886 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 2887 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7319,22 +7311,18 @@ static inline
 # 2889 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcHydroConstraintForElems_resumable()
 # 2890 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; Index_t length;
-Real_t dvovmax;
-Index_t hydro_elem;
-Real_t dthydro;
- if (____must_checkpoint_CalcHydroConstraintForElems_length_0 || ____must_checkpoint_CalcHydroConstraintForElems_dvovmax_0 || ____must_checkpoint_CalcHydroConstraintForElems_hydro_elem_0 || ____must_checkpoint_CalcHydroConstraintForElems_dthydro_0) { register_stack_vars(4, "CalcHydroConstraintForElems|length|0", &____must_checkpoint_CalcHydroConstraintForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "CalcHydroConstraintForElems|dvovmax|0", &____must_checkpoint_CalcHydroConstraintForElems_dvovmax_0, "double", (void *)(&dvovmax), (size_t)8, 0, 0, 0, "CalcHydroConstraintForElems|hydro_elem|0", &____must_checkpoint_CalcHydroConstraintForElems_hydro_elem_0, "i32", (void *)(&hydro_elem), (size_t)4, 0, 0, 0, "CalcHydroConstraintForElems|dthydro|0", &____must_checkpoint_CalcHydroConstraintForElems_dthydro_0, "double", (void *)(&dthydro), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
+{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; if (____chimes_replaying) { goto lbl_0; } ; ;
 # 2891 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    dthydro = (Real_t(1.0E+20)) ;
+  Real_t dthydro; dthydro = (Real_t(1.0E+20)) ;
 # 2892 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    hydro_elem = (-1) ;
+  Index_t hydro_elem; hydro_elem = (-1) ;
 # 2893 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    dvovmax = (domain.dvovmax) ;
+  Real_t dvovmax; dvovmax = (domain.dvovmax) ;
 # 2894 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    length = (domain.numElem) ;
+  Index_t length; length = (domain.numElem) ;
 # 2895 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2896 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t threads; call_lbl_1: threads = ( ({ calling((void*)omp_get_num_threads, 1, 0UL, 0, 0); (omp_get_num_threads)(); }) ) ;
+  Index_t threads; threads = (omp_get_num_threads()) ;
 # 2897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2898 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2899 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7342,7 +7330,7 @@ Real_t dthydro;
 # 2901 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
          lbl_0: Real_t dthydro_per_thread[threads]; if (____chimes_replaying) { goto lbl_1; } ;
 # 2902 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_1: Index_t hydro_elem_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ;
+         lbl_1: Index_t hydro_elem_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 2903 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2904 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
         { Index_t i; for ( i = (0) ; i < threads; i++) {
@@ -7368,7 +7356,7 @@ Real_t dthydro;
 # 2914 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
                 if (domain.vdov[indx] != Real_t(0.)) {
 # 2915 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm(0, 0); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
+                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
 # 2916 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2917 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
                          Index_t thread_num; thread_num = (omp_get_thread_num()) ;
@@ -7416,7 +7404,7 @@ Real_t dthydro;
  }
 # 2943 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2944 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_23, ____chimes_did_disable47); return ;
+ rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_13, ____chimes_did_disable47); return ;
 # 2945 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 # 2946 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7425,14 +7413,14 @@ static inline void CalcTimeConstraintsForElems_npm();
 static inline void CalcTimeConstraintsForElems_quick(); static inline void CalcTimeConstraintsForElems();
 static inline
 # 2948 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void CalcTimeConstraintsForElems_resumable() {const int ____chimes_did_disable48 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+void CalcTimeConstraintsForElems_resumable() {const int ____chimes_did_disable48 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2949 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2950 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: ({ calling((void*)CalcCourantConstraintForElems, 1, 0UL, 0, 0); (CalcCourantConstraintForElems)(); }) ;
+ ({ calling_npm("CalcCourantConstraintForElems", 0UL, 0); CalcCourantConstraintForElems_npm(); }) ;
 # 2951 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2952 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2953 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_2: ({ calling((void*)CalcHydroConstraintForElems, 2, 0UL, 0, 0); (CalcHydroConstraintForElems)(); }) ;
+ ({ calling_npm("CalcHydroConstraintForElems", 0UL, 0); CalcHydroConstraintForElems_npm(); }) ;
 # 2954 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable48); }
 # 2955 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7443,19 +7431,19 @@ static inline
 # 2957 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void LagrangeLeapFrog_resumable()
 # 2958 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable49 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable49 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2959 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2960 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2961 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(69, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); LagrangeNodal_npm(); });
+ ({ calling_npm("LagrangeNodal", 0UL, 0); LagrangeNodal_npm(); });
 # 2962 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2963 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2964 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2965 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: ({ calling((void*)LagrangeElements, 1, 0UL, 0, 0); (LagrangeElements)(); }) ;
+ ({ calling_npm("LagrangeElements", 0UL, 0); LagrangeElements_npm(); });
 # 2966 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2967 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_2: ({ calling((void*)CalcTimeConstraintsForElems, 2, 0UL, 0, 0); (CalcTimeConstraintsForElems)(); }) ;
+ ({ calling_npm("CalcTimeConstraintsForElems", 0UL, 0); CalcTimeConstraintsForElems_npm(); });
 # 2968 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2969 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2970 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7471,7 +7459,7 @@ Real_t z_local[8];
 Real_t y_local[8];
 Real_t x_local[8];
 Index_t edgeElems;
- register_stack_vars(4, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&start), (size_t)16, 0, 1, 0, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(4, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i32 }", (void *)(&start), (size_t)16, 0, 1, 0, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 2974 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      edgeElems = (atoi(argv[1])) ;
 # 2975 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7502,14 +7490,14 @@ Index_t edgeElems;
 # 3000 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3001 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3002 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689533UL); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
+ ({ calling_npm("AllocateElemPersistent", 0UL, 2, 12342427844960703828UL, 0UL); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
 # 3003 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689612UL); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
+ ({ calling_npm("AllocateElemTemporary", 0UL, 2, 12342427844960703828UL, 0UL); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
 # 3004 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3005 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689334UL); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
+ ({ calling_npm("AllocateNodalPersistent", 0UL, 2, 12342427844960703828UL, 0UL); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
 # 3006 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689642UL); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
+ ({ calling_npm("AllocateNodesets", 0UL, 2, 12342427844960703828UL, 0UL); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
 # 3007 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3008 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3009 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7598,7 +7586,7 @@ Index_t edgeElems;
  } }
 # 3055 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3056 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689964UL); AllocateNodeElemIndexes_npm(&domain); });
+ ({ calling_npm("AllocateNodeElemIndexes", 0UL, 1, 12342427844960703828UL); AllocateNodeElemIndexes_npm(&domain); });
 # 3057 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3058 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3059 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7699,7 +7687,7 @@ Index_t edgeElems;
 # 3112 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3113 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3114 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Real_t volume; volume = (({ calling_npm(3, 0, 12342427844960689988UL, 12342427844960691029UL, 12342427844960689989UL, 12342427844960691030UL, 12342427844960689990UL, 12342427844960691031UL); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
+   Real_t volume; volume = (({ calling_npm("CalcElemVolume", 0UL, 3, 12342427844960689988UL, 12342427844960689989UL, 12342427844960689990UL); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
 # 3115 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.volo[i] = volume ;
 # 3116 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7838,9 +7826,9 @@ Index_t edgeElems;
  while(domain.time < domain.stoptime ) {
 # 3192 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3193 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(0, 0); TimeIncrement_npm(); }) ;
+  ({ calling_npm("TimeIncrement", 0UL, 0); TimeIncrement_npm(); }) ;
 # 3194 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   call_lbl_3: ({ calling((void*)LagrangeLeapFrog, 3, 0UL, ____alias_loc_id_0, 0); (LagrangeLeapFrog)(); }) ;
+  ({ calling_npm("LagrangeLeapFrog", 0UL, 0); LagrangeLeapFrog_npm(); }) ;
 # 3195 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3196 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3197 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7849,7 +7837,7 @@ Index_t edgeElems;
 # 3200 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3201 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3202 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, 0, 0); (checkpoint)(); }) ;
+         call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 3203 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3204 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
@@ -7887,7 +7875,7 @@ Index_t edgeElems;
 # 3224 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 3225 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Real_t AbsDiff; AbsDiff = (({ calling_npm(0, 0); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
+    Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
 # 3226 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    TotalAbsDiff += AbsDiff;
 # 3227 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -7914,18 +7902,18 @@ Index_t edgeElems;
  printf("        MaxRelDiff   = %12.6e\n\n", MaxRelDiff );
 # 3240 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3241 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_17, ____chimes_did_disable50); return 0 ;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable50); return 0 ;
 # 3242 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
-inline real8 SQRT_quick(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_24, ____chimes_did_disable0); return sqrt(arg) ; }
+inline real8 SQRT_quick(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_14, ____chimes_did_disable0); return sqrt(arg) ; }
 
 inline real8 SQRT(real8 arg) { return (____chimes_replaying ? SQRT_resumable(arg) : SQRT_quick(arg)); }
 
-inline real8 CBRT_quick(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_53, ____chimes_did_disable1); return cbrt(arg) ; }
+inline real8 CBRT_quick(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_43, ____chimes_did_disable1); return cbrt(arg) ; }
 
 inline real8 CBRT(real8 arg) { return (____chimes_replaying ? CBRT_resumable(arg) : CBRT_quick(arg)); }
 
-inline real8 FABS_quick(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_20, ____chimes_did_disable2); return fabs(arg) ; }
+inline real8 FABS_quick(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_9, ____chimes_did_disable2); return fabs(arg) ; }
 
 inline real8 FABS(real8 arg) { return (____chimes_replaying ? FABS_resumable(arg) : FABS_quick(arg)); }
 
@@ -7946,11 +7934,11 @@ void AllocateNodalPersistent_quick(Domain *self, size_t size)
 # 381 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->zd = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0) ;
 # 382 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_7: ({ calling((void*)memset, 7, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->xd, 0, sizeof(Real_t) * size); }) ;
+    memset(self->xd, 0x00, sizeof(Real_t) * size);
 # 383 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_8: ({ calling((void*)memset, 8, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->yd, 0, sizeof(Real_t) * size); }) ;
+    memset(self->yd, 0x00, sizeof(Real_t) * size);
 # 384 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_9: ({ calling((void*)memset, 9, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->zd, 0, sizeof(Real_t) * size); }) ;
+    memset(self->zd, 0x00, sizeof(Real_t) * size);
 # 385 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 386 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->xdd = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
@@ -7959,11 +7947,11 @@ void AllocateNodalPersistent_quick(Domain *self, size_t size)
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->zdd = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
 # 389 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_13: ({ calling((void*)memset, 13, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->xdd, 0, sizeof(Real_t) * size); }) ;
+    memset(self->xdd, 0x00, sizeof(Real_t) * size);
 # 390 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_14: ({ calling((void*)memset, 14, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->ydd, 0, sizeof(Real_t) * size); }) ;
+    memset(self->ydd, 0x00, sizeof(Real_t) * size);
 # 391 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_15: ({ calling((void*)memset, 15, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->zdd, 0, sizeof(Real_t) * size); }) ;
+    memset(self->zdd, 0x00, sizeof(Real_t) * size);
 # 392 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 393 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->fx = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
@@ -7975,9 +7963,9 @@ void AllocateNodalPersistent_quick(Domain *self, size_t size)
 # 397 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->nodalMass = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689195UL, 0, 0);
 # 398 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_20: ({ calling((void*)memset, 20, 0UL, 0, 3, (size_t)(12342427844960689195UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->nodalMass, 0, sizeof(Real_t) * size); }) ;
+    memset(self->nodalMass, 0x00, sizeof(Real_t) * size);
 # 399 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, ____alias_loc_id_12, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, ____alias_loc_id_1, ____chimes_did_disable3); }
 
 void AllocateNodalPersistent(Domain *self, size_t size) { (____chimes_replaying ? AllocateNodalPersistent_resumable(self, size) : AllocateNodalPersistent_quick(self, size)); }
 
@@ -8008,12 +7996,12 @@ void AllocateElemPersistent_quick(Domain *self, size_t size)
 # 415 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->e = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 416 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_11: ({ calling((void*)memset, 11, 0UL, 0, 3, (size_t)(12342427844960689353UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->e, 0, sizeof(Real_t) * size); }) ;
+    memset(self->e, 0x00, sizeof(Real_t) * size);
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->p = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 419 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     call_lbl_13: ({ calling((void*)memset, 13, 0UL, 0, 3, (size_t)(12342427844960689353UL), (size_t)(0UL), (size_t)(0UL)); (memset)(self->p, 0, sizeof(Real_t) * size); }) ;
+    memset(self->p, 0x00, sizeof(Real_t) * size);
 # 420 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->q = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 421 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8041,7 +8029,7 @@ void AllocateElemPersistent_quick(Domain *self, size_t size)
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->elemMass = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689353UL, 0, 0);
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, ____alias_loc_id_13, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, ____alias_loc_id_2, ____chimes_did_disable4); }
 
 void AllocateElemPersistent(Domain *self, size_t size) { (____chimes_replaying ? AllocateElemPersistent_resumable(self, size) : AllocateElemPersistent_quick(self, size)); }
 
@@ -8072,7 +8060,7 @@ void AllocateElemTemporary_quick(Domain *self, size_t size)
 # 453 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->vnew = (Real_t*)malloc_wrapper(sizeof(Real_t) * size, 12342427844960689543UL, 0, 0);
 # 454 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateElemTemporary", &____must_manage_AllocateElemTemporary, ____alias_loc_id_14, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "AllocateElemTemporary", &____must_manage_AllocateElemTemporary, ____alias_loc_id_3, ____chimes_did_disable5); }
 
 void AllocateElemTemporary(Domain *self, size_t size) { (____chimes_replaying ? AllocateElemTemporary_resumable(self, size) : AllocateElemTemporary_quick(self, size)); }
 
@@ -8086,7 +8074,7 @@ void AllocateNodesets_quick(Domain *self, size_t size)
 # 460 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     self->symmZ = (Index_t*)malloc_wrapper(sizeof(Index_t) * size, 12342427844960689622UL, 0, 0);
 # 461 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateNodesets", &____must_manage_AllocateNodesets, ____alias_loc_id_15, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "AllocateNodesets", &____must_manage_AllocateNodesets, ____alias_loc_id_4, ____chimes_did_disable6); }
 
 void AllocateNodesets(Domain *self, size_t size) { (____chimes_replaying ? AllocateNodesets_resumable(self, size) : AllocateNodesets_quick(self, size)); }
 
@@ -8192,7 +8180,7 @@ void AllocateNodeElemIndexes_quick(Domain *self)
 # 519 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     } }
 # 520 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "AllocateNodeElemIndexes", &____must_manage_AllocateNodeElemIndexes, ____alias_loc_id_16, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "AllocateNodeElemIndexes", &____must_manage_AllocateNodeElemIndexes, ____alias_loc_id_5, ____chimes_did_disable7); }
 
 void AllocateNodeElemIndexes(Domain *self) { (____chimes_replaying ? AllocateNodeElemIndexes_resumable(self) : AllocateNodeElemIndexes_quick(self)); }
 
@@ -8270,7 +8258,7 @@ void TimeIncrement_quick()
 # 597 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ++domain.cycle ;
 # 598 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "TimeIncrement", &____must_manage_TimeIncrement, ____alias_loc_id_19, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "TimeIncrement", &____must_manage_TimeIncrement, ____alias_loc_id_8, ____chimes_did_disable8); }
 
 static inline
 # 552 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8299,7 +8287,7 @@ void InitStressTermsForElems_quick(Index_t numElem,
 # 610 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
 # 611 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, ____alias_loc_id_47, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, ____alias_loc_id_37, ____chimes_did_disable9); }
 
 static inline
 # 601 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8462,7 +8450,7 @@ void CalcElemShapeFunctionDerivatives_quick( const Real_t* const x,
 # 699 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  *volume = Real_t(8.) * ( fjxet * cjxet + fjyet * cjyet + fjzet * cjzet);
 # 700 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, ____alias_loc_id_38, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, ____alias_loc_id_28, ____chimes_did_disable10); }
 
 static inline
 # 614 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8541,7 +8529,7 @@ void SumElemFaceNormal_quick(Real_t *normalX0, Real_t *normalY0, Real_t *normalZ
 # 735 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  *normalZ3 += areaZ;
 # 736 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, ____alias_loc_id_58, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, ____alias_loc_id_48, ____chimes_did_disable11); }
 
 static inline
 # 703 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8588,24 +8576,24 @@ void CalcElemNodeNormals_quick(Real_t pfx[8],
  } }
 # 751 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 752 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
 # 758 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 759 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
 # 765 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 766 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
 # 772 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 773 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
 # 779 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 780 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
 # 786 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 787 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(12, 0, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
+ ({ calling_npm("SumElemFaceNormal", 0UL, 24, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 12342427844960702770UL, 12342427844960702771UL, 12342427844960702772UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
 # 793 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_56, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_46, ____chimes_did_disable12); }
 
 static inline
 # 739 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8716,7 +8704,7 @@ void SumElemStressesToNodeForces_quick( const Real_t B[][8],
 # 844 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  fz[7] = -( stress_zz * pfz7 );
 # 845 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, ____alias_loc_id_57, ____chimes_did_disable13); }
+rm_stack(false, 0UL, "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, ____alias_loc_id_47, ____chimes_did_disable13); }
 
 static inline
 # 796 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8797,13 +8785,13 @@ Real_t B[3][8];
 # 876 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 877 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 878 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(5, 0, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
+  ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 5, 12342427844960697514UL, 12342427844960697515UL, 12342427844960697516UL, 12342427844960697513UL, 12342427844960697795UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
 # 880 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 881 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(18, 0, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
+  ({ calling_npm("CalcElemNodeNormals", 0UL, 6, 12342427844960697513UL, 12342427844960697513UL, 12342427844960697513UL, 12342427844960697514UL, 12342427844960697515UL, 12342427844960697516UL); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
 # 883 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 884 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(4, 0, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], &fx_elem[k*8], &fy_elem[k*8], &fz_elem[k*8]); }) ;
+  ({ calling_npm("SumElemStressesToNodeForces", 0UL, 7, 12342427844960697513UL, 0UL, 0UL, 0UL, 12342427844960697547UL, 12342427844960697554UL, 12342427844960697561UL); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], &fx_elem[k*8], &fy_elem[k*8], &fz_elem[k*8]); }) ;
 # 897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); reenable_current_thread(____chimes_disable1); }
@@ -8863,7 +8851,7 @@ Real_t B[3][8];
 # 924 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(fx_elem, 12342427844960697547UL) ;
 # 925 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_48, ____chimes_did_disable14); }
+rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_38, ____chimes_did_disable14); }
 
 static inline
 # 848 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -8953,7 +8941,7 @@ void CollectDomainNodesToElemNodes_quick(const Index_t* elemToNode,
  elemZ[7] = domain.z[nd7i];
 # 969 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 970 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, ____alias_loc_id_50, ____chimes_did_disable15); }
+rm_stack(false, 0UL, "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, ____alias_loc_id_40, ____chimes_did_disable15); }
 
 static inline
 # 929 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9018,7 +9006,7 @@ void VoluDer_quick(const Real_t x0, const Real_t x1, const Real_t x2,
 # 999 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  *dvdz *= twelfth;
 # 1000 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "VoluDer", &____must_manage_VoluDer, ____alias_loc_id_55, ____chimes_did_disable16); }
+rm_stack(false, 0UL, "VoluDer", &____must_manage_VoluDer, ____alias_loc_id_45, ____chimes_did_disable16); }
 
 static inline
 # 973 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9052,23 +9040,23 @@ void CalcElemVolumeDerivative_quick(Real_t dvdx[8],
 # 1009 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(12342427844960698800UL), (size_t)(12342427844960698801UL), (size_t)(12342427844960698802UL), (size_t)(12342427844960698803UL), (size_t)(12342427844960698804UL), (size_t)(12342427844960698805UL)) ; ; ;
 # 1010 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
 # 1014 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
 # 1018 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
 # 1022 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
 # 1026 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
 # 1030 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
 # 1034 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
 # 1038 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(3, 0, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
+ ({ calling_npm("VoluDer", 0UL, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960698800UL, 12342427844960698801UL, 12342427844960698802UL); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
 # 1042 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_51, ____chimes_did_disable17); }
+rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_41, ____chimes_did_disable17); }
 
 static inline
 # 1003 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9376,7 +9364,7 @@ void CalcElemFBHourglassForce_quick(Real_t *xd, Real_t *yd, Real_t *zd, Real_t *
 # 1224 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   hourgam7[i02] * h02 + hourgam7[i03] * h03);
 # 1225 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, ____alias_loc_id_54, ____chimes_did_disable18); }
+rm_stack(false, 0UL, "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, ____alias_loc_id_44, ____chimes_did_disable18); }
 
 static inline
 # 1045 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9616,7 +9604,7 @@ Real_t gamma[4][8];
 # 1358 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   mass1=domain.elemMass[i2];
 # 1359 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  volume13=({ calling_npm(0, 0); CBRT_npm(determ[i2]); });
+  volume13=({ calling_npm("CBRT", 0UL, 1, 0UL); CBRT_npm(determ[i2]); });
 # 1360 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1361 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Index_t n0si2; n0si2 = (elemToNode[0]) ;
@@ -9690,7 +9678,7 @@ Real_t gamma[4][8];
   coefficient = - hourg * Real_t(0.01) * ss1 * mass1 / volume13;
 # 1398 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1399 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(14, 0, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
+  ({ calling_npm("CalcElemFBHourglassForce", 0UL, 15, 12342427844960698836UL, 12342427844960698837UL, 12342427844960698838UL, 12342427844960698828UL, 12342427844960698829UL, 12342427844960698830UL, 12342427844960698831UL, 12342427844960698832UL, 12342427844960698833UL, 12342427844960698834UL, 12342427844960698835UL, 0UL, 12342427844960698824UL, 12342427844960698825UL, 12342427844960698826UL); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
 # 1403 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1404 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   fx_local = &fx_elem[i3] ;
@@ -9807,7 +9795,7 @@ Real_t gamma[4][8];
 # 1494 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(fx_elem, 12342427844960698893UL) ;
 # 1495 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_52, ____chimes_did_disable19); }
+rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_42, ____chimes_did_disable19); }
 
 static inline
 # 1228 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9864,10 +9852,10 @@ Real_t x1[8];
 # 1515 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Index_t *elemToNode; elemToNode = (domain.nodelist + (8 * i)) ;
 # 1516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(4, 0, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
+  ({ calling_npm("CollectDomainNodesToElemNodes", 0UL, 4, 12342427844960691674UL, 12342427844960697807UL, 12342427844960697808UL, 12342427844960697809UL); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
 # 1517 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1518 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(9, 0, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
+  ({ calling_npm("CalcElemVolumeDerivative", 0UL, 6, 12342427844960697810UL, 12342427844960697811UL, 12342427844960697812UL, 12342427844960697807UL, 12342427844960697808UL, 12342427844960697809UL); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
 # 1519 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1520 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1521 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9906,7 +9894,7 @@ Real_t x1[8];
 # 1540 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  if ( hgcoef > Real_t(0.) ) {
 # 1541 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(21, 0, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
+  ({ calling_npm("CalcFBHourglassForceForElems", 0UL, 8, 12342427844960698034UL, 12342427844960697852UL, 12342427844960697859UL, 12342427844960697866UL, 12342427844960697831UL, 12342427844960697838UL, 12342427844960697845UL, 0UL); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
 # 1542 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 1543 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9924,7 +9912,7 @@ Real_t x1[8];
  free_wrapper(dvdx, 12342427844960697831UL) ;
 # 1550 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1551 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_49, ____chimes_did_disable20); return ;
+ rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_39, ____chimes_did_disable20); return ;
 # 1552 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -9954,12 +9942,12 @@ void CalcVolumeForceForElems_quick()
 # 1564 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1565 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1566 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(3, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
+  ({ calling_npm("InitStressTermsForElems", 0UL, 4, 0UL, 12342427844960697441UL, 12342427844960697438UL, 12342427844960697435UL); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
 # 1567 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1568 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1569 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1570 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(31, 0, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }); { call_lbl_11: bool ____chimes_disable6 = disable_current_thread(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(11, &____chimes_region_id6, 1, &numElem); int ____chimes_first_iter6 = 1; ;
+  ({ calling_npm("IntegrateStressForElems", 0UL, 5, 0UL, 12342427844960697441UL, 12342427844960697438UL, 12342427844960697435UL, 12342427844960697417UL); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }); { call_lbl_11: bool ____chimes_disable6 = disable_current_thread(); unsigned ____chimes_parent_stack_depth6 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth6 = get_thread_stack_depth(); size_t ____chimes_region_id6; unsigned ____chimes_parent_thread6 = entering_omp_parallel(11, &____chimes_region_id6, 1, &numElem); int ____chimes_first_iter6 = 1; ;
 # 1571 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1572 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1573 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -9980,7 +9968,7 @@ void CalcVolumeForceForElems_quick()
   } leaving_omp_parallel(____chimes_call_stack_depth6, ____chimes_region_id6); reenable_current_thread(____chimes_disable6); }
 # 1579 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1580 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(35, 0, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
+  ({ calling_npm("CalcHourglassControlForElems", 0UL, 2, 12342427844960697417UL, 0UL); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1581 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1582 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   free_wrapper(determ, 12342427844960697417UL) ;
@@ -9993,7 +9981,7 @@ void CalcVolumeForceForElems_quick()
 # 1586 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 1587 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, ____alias_loc_id_46, ____chimes_did_disable21); }
+rm_stack(false, 0UL, "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, ____alias_loc_id_36, ____chimes_did_disable21); }
 
 static inline
 # 1555 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10023,13 +10011,13 @@ static inline void CalcForceForNodes_quick()
 # 1598 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1599 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1600 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(69, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcVolumeForceForElems_npm(); }) ;
+ ({ calling_npm("CalcVolumeForceForElems", 0UL, 0); CalcVolumeForceForElems_npm(); }) ;
 # 1601 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1602 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1603 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1604 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1605 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcForceForNodes", &____must_manage_CalcForceForNodes, ____alias_loc_id_41, ____chimes_did_disable22); }
+rm_stack(false, 0UL, "CalcForceForNodes", &____must_manage_CalcForceForNodes, ____alias_loc_id_31, ____chimes_did_disable22); }
 
 static inline void CalcForceForNodes() { (____chimes_replaying ? CalcForceForNodes_resumable() : CalcForceForNodes_quick()); }
 
@@ -10057,7 +10045,7 @@ void CalcAccelerationForNodes_quick()
 # 1616 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth8, ____chimes_region_id8); reenable_current_thread(____chimes_disable8); }
 # 1617 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcAccelerationForNodes", &____must_manage_CalcAccelerationForNodes, ____alias_loc_id_42, ____chimes_did_disable23); }
+rm_stack(false, 0UL, "CalcAccelerationForNodes", &____must_manage_CalcAccelerationForNodes, ____alias_loc_id_32, ____chimes_did_disable23); }
 
 static inline
 # 1608 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10114,7 +10102,7 @@ void ApplyAccelerationBoundaryConditionsForNodes_quick()
 # 1641 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     } leaving_omp_parallel(____chimes_call_stack_depth9, ____chimes_region_id9); }
 # 1642 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "ApplyAccelerationBoundaryConditionsForNodes", &____must_manage_ApplyAccelerationBoundaryConditionsForNodes, ____alias_loc_id_43, ____chimes_did_disable24); }
+rm_stack(false, 0UL, "ApplyAccelerationBoundaryConditionsForNodes", &____must_manage_ApplyAccelerationBoundaryConditionsForNodes, ____alias_loc_id_33, ____chimes_did_disable24); }
 
 static inline
 # 1621 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10144,27 +10132,27 @@ void CalcVelocityForNodes_quick(const Real_t dt, const Real_t u_cut)
 # 1654 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   xdtmp = domain.xd[i] + domain.xdd[i] * dt ;
 # 1655 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
 # 1656 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.xd[i] = xdtmp ;
 # 1657 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1658 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ydtmp = domain.yd[i] + domain.ydd[i] * dt ;
 # 1659 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
 # 1660 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.yd[i] = ydtmp ;
 # 1661 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1662 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   zdtmp = domain.zd[i] + domain.zdd[i] * dt ;
 # 1663 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
 # 1664 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.zd[i] = zdtmp ;
 # 1665 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth10, ____chimes_region_id10); reenable_current_thread(____chimes_disable13); }
 # 1666 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcVelocityForNodes", &____must_manage_CalcVelocityForNodes, ____alias_loc_id_44, ____chimes_did_disable25); }
+rm_stack(false, 0UL, "CalcVelocityForNodes", &____must_manage_CalcVelocityForNodes, ____alias_loc_id_34, ____chimes_did_disable25); }
 
 static inline
 # 1645 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10197,7 +10185,7 @@ void CalcPositionForNodes_quick(const Real_t dt)
 # 1679 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth11, ____chimes_region_id11); reenable_current_thread(____chimes_disable14); }
 # 1680 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcPositionForNodes", &____must_manage_CalcPositionForNodes, ____alias_loc_id_45, ____chimes_did_disable26); }
+rm_stack(false, 0UL, "CalcPositionForNodes", &____must_manage_CalcPositionForNodes, ____alias_loc_id_35, ____chimes_did_disable26); }
 
 static inline
 # 1669 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10216,22 +10204,22 @@ void LagrangeNodal_quick()
 # 1688 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1689 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1690 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(69, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); CalcForceForNodes_npm(); });
+ ({ calling_npm("CalcForceForNodes", 0UL, 0); CalcForceForNodes_npm(); });
 # 1691 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1692 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcAccelerationForNodes_npm(); });
+ ({ calling_npm("CalcAccelerationForNodes", 0UL, 0); CalcAccelerationForNodes_npm(); });
 # 1693 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1694 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
+ ({ calling_npm("ApplyAccelerationBoundaryConditionsForNodes", 0UL, 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
 # 1695 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1696 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcVelocityForNodes_npm(delt, u_cut); }) ;
+ ({ calling_npm("CalcVelocityForNodes", 0UL, 2, 0UL, 0UL); CalcVelocityForNodes_npm(delt, u_cut); }) ;
 # 1697 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1698 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcPositionForNodes_npm(delt); });
+ ({ calling_npm("CalcPositionForNodes", 0UL, 1, 0UL); CalcPositionForNodes_npm(delt); });
 # 1699 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1700 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_21, ____chimes_did_disable27); return;
+ rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_10, ____chimes_did_disable27); return;
 # 1701 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -10365,7 +10353,7 @@ Real_t CalcElemVolumeScalar_quick( const Real_t x0, const Real_t x1,
  volume *= twelveth;
 # 1784 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1785 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcElemVolumeScalar", &____must_manage_CalcElemVolumeScalar, ____alias_loc_id_59, ____chimes_did_disable28); return volume ;
+ rm_stack(false, 0UL, "CalcElemVolumeScalar", &____must_manage_CalcElemVolumeScalar, ____alias_loc_id_49, ____chimes_did_disable28); return volume ;
 # 1786 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -10401,7 +10389,7 @@ Real_t CalcElemVolume_quick( const Real_t x[8], const Real_t y[8], const Real_t 
 # 1790 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable29 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 3, 0, (size_t)(12342427844960691029UL), (size_t)(12342427844960691030UL), (size_t)(12342427844960691031UL)) ; ; ;
 # 1791 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_18, ____chimes_did_disable29); return ({ calling_npm(0, 0); CalcElemVolumeScalar_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
+ rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_7, ____chimes_did_disable29); return ({ calling_npm("CalcElemVolumeScalar", 0UL, 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcElemVolumeScalar_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
 # 1794 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -10439,7 +10427,7 @@ Real_t AreaFace_quick( const Real_t x0, const Real_t x1,
 # 1810 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t area; area = ((fx * fx + fy * fy + fz * fz) * (gx * gx + gy * gy + gz * gz) - (fx * gx + fy * gy + fz * gz) * (fx * gx + fy * gy + fz * gz)) ;
 # 1815 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_40, ____chimes_did_disable30); return area ;
+ rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_30, ____chimes_did_disable30); return area ;
 # 1816 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -10467,47 +10455,45 @@ Real_t CalcElemCharacteristicLength_quick( const Real_t x[8],
 # 1822 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
          const Real_t volume)
 # 1823 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 4, (size_t)(12342427844960695632UL), (size_t)(12342427844960695633UL), (size_t)(12342427844960695634UL), (size_t)(0UL), "CalcElemCharacteristicLength|x|0", &____must_checkpoint_CalcElemCharacteristicLength_x_0, "double*", (void *)(&x), (size_t)8, 1, 0, 0, "CalcElemCharacteristicLength|y|0", &____must_checkpoint_CalcElemCharacteristicLength_y_0, "double*", (void *)(&y), (size_t)8, 1, 0, 0, "CalcElemCharacteristicLength|z|0", &____must_checkpoint_CalcElemCharacteristicLength_z_0, "double*", (void *)(&z), (size_t)8, 1, 0, 0, "CalcElemCharacteristicLength|volume|0", &____must_checkpoint_CalcElemCharacteristicLength_volume_0, "double", (void *)(&volume), (size_t)8, 0, 0, 0) ; Real_t charLength;
-Real_t a;
- if (____must_checkpoint_CalcElemCharacteristicLength_charLength_0 || ____must_checkpoint_CalcElemCharacteristicLength_a_0) { register_stack_vars(2, "CalcElemCharacteristicLength|charLength|0", &____must_checkpoint_CalcElemCharacteristicLength_charLength_0, "double", (void *)(&charLength), (size_t)8, 0, 0, 0, "CalcElemCharacteristicLength|a|0", &____must_checkpoint_CalcElemCharacteristicLength_a_0, "double", (void *)(&a), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(12342427844960695632UL), (size_t)(12342427844960695633UL), (size_t)(12342427844960695634UL), (size_t)(0UL)) ; ; ;
 # 1824 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     charLength = (Real_t(0.)) ;
+ Real_t a; Real_t charLength; charLength = (Real_t(0.)) ;
 # 1825 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1826 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
 # 1829 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: charLength = ({ calling((void*)fmax, 1, 0UL, ____alias_loc_id_6, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1830 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1831 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
 # 1834 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_2: charLength = ({ calling((void*)fmax, 2, 0UL, ____alias_loc_id_7, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1835 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1836 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
 # 1839 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_3: charLength = ({ calling((void*)fmax, 3, 0UL, ____alias_loc_id_8, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1840 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1841 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
 # 1844 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_4: charLength = ({ calling((void*)fmax, 4, 0UL, ____alias_loc_id_9, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1845 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1846 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
 # 1849 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_5: charLength = ({ calling((void*)fmax, 5, 0UL, ____alias_loc_id_10, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1850 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1851 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- a = ({ calling_npm(0, 0); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
+ a = ({ calling_npm("AreaFace", 0UL, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
 # 1854 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_6: charLength = ({ calling((void*)fmax, 6, 0UL, ____alias_loc_id_11, 2, (size_t)(0UL), (size_t)(0UL)); (fmax)(a, charLength); }) ;
+ charLength = fmax(a,charLength) ;
 # 1855 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1856 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- charLength = Real_t(4.0) * volume / ({ calling_npm(0, 0); SQRT_npm(charLength); });
+ charLength = Real_t(4.0) * volume / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(charLength); });
 # 1857 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1858 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_37, ____chimes_did_disable31); return charLength;
+ rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_27, ____chimes_did_disable31); return charLength;
 # 1859 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -10634,7 +10620,7 @@ void CalcElemVelocityGrandient_quick( const Real_t* const xvel,
 # 1921 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  d[3] = .5 * ( dzddy + dyddz );
 # 1922 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, ____alias_loc_id_39, ____chimes_did_disable32); }
+rm_stack(false, 0UL, "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, ____alias_loc_id_29, ____chimes_did_disable32); }
 
 static inline
 # 1862 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10654,13 +10640,7 @@ static inline
 # 1925 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcKinematicsForElems_quick( Index_t numElem, Real_t dt )
 # 1926 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable33 = new_stack((void *)(&CalcKinematicsForElems), "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, 2, 2, (size_t)(0UL), (size_t)(0UL), "CalcKinematicsForElems|numElem|0", &____must_checkpoint_CalcKinematicsForElems_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0, "CalcKinematicsForElems|dt|0", &____must_checkpoint_CalcKinematicsForElems_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0) ; Index_t j;
-Real_t dt2;
-Index_t *elemToNode;
-Real_t relativeVolume;
-Real_t volume;
-Real_t detJ;
-Real_t zd_local[8];
+{const int ____chimes_did_disable33 = new_stack((void *)(&CalcKinematicsForElems), "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; Real_t zd_local[8];
 Real_t yd_local[8];
 Real_t xd_local[8];
 Real_t z_local[8];
@@ -10668,18 +10648,18 @@ Real_t y_local[8];
 Real_t x_local[8];
 Real_t D[6];
 Real_t B[3][8];
- if (____must_checkpoint_CalcKinematicsForElems_j_0 || ____must_checkpoint_CalcKinematicsForElems_dt2_0 || ____must_checkpoint_CalcKinematicsForElems_elemToNode_0 || ____must_checkpoint_CalcKinematicsForElems_relativeVolume_0 || ____must_checkpoint_CalcKinematicsForElems_volume_0 || ____must_checkpoint_CalcKinematicsForElems_detJ_0 || ____must_checkpoint_CalcKinematicsForElems_zd_local_0 || ____must_checkpoint_CalcKinematicsForElems_yd_local_0 || ____must_checkpoint_CalcKinematicsForElems_xd_local_0 || ____must_checkpoint_CalcKinematicsForElems_z_local_0 || ____must_checkpoint_CalcKinematicsForElems_y_local_0 || ____must_checkpoint_CalcKinematicsForElems_x_local_0 || ____must_checkpoint_CalcKinematicsForElems_B_0) { register_stack_vars(13, "CalcKinematicsForElems|j|0", &____must_checkpoint_CalcKinematicsForElems_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "CalcKinematicsForElems|dt2|0", &____must_checkpoint_CalcKinematicsForElems_dt2_0, "double", (void *)(&dt2), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|elemToNode|0", &____must_checkpoint_CalcKinematicsForElems_elemToNode_0, "i32*", (void *)(&elemToNode), (size_t)8, 1, 0, 0, "CalcKinematicsForElems|relativeVolume|0", &____must_checkpoint_CalcKinematicsForElems_relativeVolume_0, "double", (void *)(&relativeVolume), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|volume|0", &____must_checkpoint_CalcKinematicsForElems_volume_0, "double", (void *)(&volume), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|detJ|0", &____must_checkpoint_CalcKinematicsForElems_detJ_0, "double", (void *)(&detJ), (size_t)8, 0, 0, 0, "CalcKinematicsForElems|zd_local|0", &____must_checkpoint_CalcKinematicsForElems_zd_local_0, "[8 x double]", (void *)(zd_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|yd_local|0", &____must_checkpoint_CalcKinematicsForElems_yd_local_0, "[8 x double]", (void *)(yd_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|xd_local|0", &____must_checkpoint_CalcKinematicsForElems_xd_local_0, "[8 x double]", (void *)(xd_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|z_local|0", &____must_checkpoint_CalcKinematicsForElems_z_local_0, "[8 x double]", (void *)(z_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|y_local|0", &____must_checkpoint_CalcKinematicsForElems_y_local_0, "[8 x double]", (void *)(y_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|x_local|0", &____must_checkpoint_CalcKinematicsForElems_x_local_0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|B|0", &____must_checkpoint_CalcKinematicsForElems_B_0, "[3 x [8 x double]]", (void *)(B), (size_t)192, 0, 0, 0); } ; ;; { call_lbl_3: bool ____chimes_disable15 = disable_current_thread(); unsigned ____chimes_parent_stack_depth12 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth12 = get_thread_stack_depth(); size_t ____chimes_region_id12; unsigned ____chimes_parent_thread12 = entering_omp_parallel(3, &____chimes_region_id12, 16, &B, &D, &detJ, &dt, &dt2, &elemToNode, &j, &numElem, &relativeVolume, &volume, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); int ____chimes_first_iter12 = 1;
+ if (____must_checkpoint_CalcKinematicsForElems_x_local_0 || ____must_checkpoint_CalcKinematicsForElems_B_0) { register_stack_vars(2, "CalcKinematicsForElems|x_local|0", &____must_checkpoint_CalcKinematicsForElems_x_local_0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "CalcKinematicsForElems|B|0", &____must_checkpoint_CalcKinematicsForElems_B_0, "[3 x [8 x double]]", (void *)(B), (size_t)192, 0, 0, 0); } ; ;; { call_lbl_2: bool ____chimes_disable15 = disable_current_thread(); unsigned ____chimes_parent_stack_depth12 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth12 = get_thread_stack_depth(); size_t ____chimes_region_id12; unsigned ____chimes_parent_thread12 = entering_omp_parallel(2, &____chimes_region_id12, 10, &B, &D, &dt, &numElem, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); int ____chimes_first_iter12 = 1;
 # 1927 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(numElem, dt) firstprivate(____chimes_first_iter12) firstprivate(B) firstprivate(D) firstprivate(x_local) firstprivate(y_local) firstprivate(z_local) firstprivate(xd_local) firstprivate(yd_local) firstprivate(zd_local) firstprivate(detJ) firstprivate(volume) firstprivate(relativeVolume) firstprivate(elemToNode) firstprivate(dt2) firstprivate(j)
+#pragma omp parallel for firstprivate(numElem, dt) firstprivate(____chimes_first_iter12) firstprivate(B) firstprivate(D) firstprivate(x_local) firstprivate(y_local) firstprivate(z_local) firstprivate(xd_local) firstprivate(yd_local) firstprivate(zd_local)
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1928 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1929 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  for( Index_t k=0 ; k<numElem ; ++k )
 # 1930 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- {if (____chimes_first_iter12) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread12, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth12, ____chimes_region_id12, 16, &B, &D, &detJ, &dt, &dt2, &elemToNode, &j, &numElem, &relativeVolume, &volume, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); ____chimes_first_iter12 = 0; }
+ {if (____chimes_first_iter12) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread12, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth12, ____chimes_region_id12, 10, &B, &D, &dt, &numElem, &x_local, &xd_local, &y_local, &yd_local, &z_local, &zd_local); ____chimes_first_iter12 = 0; }
 # 1931 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    ;
 # 1932 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10697,14 +10677,14 @@ Real_t B[3][8];
 # 1938 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    ;
 # 1939 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     detJ = (0.) ;
+   Real_t detJ; detJ = (0.) ;
 # 1940 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1941 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ;
+  Real_t volume; ;
 # 1942 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ;
+  Real_t relativeVolume; ;
 # 1943 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     elemToNode = (domain.nodelist + (k * 8)) ;
+   Index_t *elemToNode; elemToNode = (domain.nodelist + (k * 8)) ;
 # 1944 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1945 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1946 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10724,7 +10704,7 @@ Real_t B[3][8];
 # 1953 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1954 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1955 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  volume = ({ calling_npm(3, 0, 12342427844960695086UL, 12342427844960691029UL, 12342427844960695087UL, 12342427844960691030UL, 12342427844960695088UL, 12342427844960691031UL); CalcElemVolume_npm(x_local, y_local, z_local); });
+  volume = ({ calling_npm("CalcElemVolume", 0UL, 3, 12342427844960695086UL, 12342427844960695087UL, 12342427844960695088UL); CalcElemVolume_npm(x_local, y_local, z_local); });
 # 1956 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   relativeVolume = volume / domain.volo[k] ;
 # 1957 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10734,7 +10714,7 @@ Real_t B[3][8];
 # 1959 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1960 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1961 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   call_lbl_1: domain.arealg[k] = CalcElemCharacteristicLength_quick(x_local, y_local, z_local, volume);
+  domain.arealg[k] = ({ calling_npm("CalcElemCharacteristicLength", 0UL, 4, 12342427844960695086UL, 12342427844960695087UL, 12342427844960695088UL, 0UL); CalcElemCharacteristicLength_npm(x_local, y_local, z_local, volume); });
 # 1965 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1966 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1967 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10753,9 +10733,9 @@ Real_t B[3][8];
   } }
 # 1974 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1975 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     dt2 = (0.5 * dt) ;
+   Real_t dt2; dt2 = (0.5 * dt) ;
 # 1976 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { for ( j = (0) ; j<8 ; ++j )
+  { Index_t j; for ( j = (0) ; j<8 ; ++j )
 # 1977 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   {
 # 1978 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10768,10 +10748,10 @@ Real_t B[3][8];
   } }
 # 1982 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1983 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(5, 0, 12342427844960695086UL, 12342427844960696297UL, 12342427844960695087UL, 12342427844960696298UL, 12342427844960695088UL, 12342427844960696299UL, 12342427844960695084UL, 12342427844960696300UL, 12342427844960695092UL, 12342427844960696301UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
+  ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 5, 12342427844960695086UL, 12342427844960695087UL, 12342427844960695088UL, 12342427844960695084UL, 12342427844960695092UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
 # 1987 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1988 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(5, 0, 12342427844960695089UL, 12342427844960696833UL, 12342427844960695090UL, 12342427844960696834UL, 12342427844960695091UL, 12342427844960696835UL, 12342427844960695084UL, 12342427844960696836UL, 12342427844960695085UL, 12342427844960696838UL); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
+  ({ calling_npm("CalcElemVelocityGrandient", 0UL, 6, 12342427844960695089UL, 12342427844960695090UL, 12342427844960695091UL, 12342427844960695084UL, 0UL, 12342427844960695085UL); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
 # 1992 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1993 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 1994 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10783,7 +10763,7 @@ Real_t B[3][8];
 # 1997 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth12, ____chimes_region_id12); reenable_current_thread(____chimes_disable15); }
 # 1998 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, ____alias_loc_id_36, ____chimes_did_disable33); }
+rm_stack(false, 0UL, "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, ____alias_loc_id_26, ____chimes_did_disable33); }
 
 static inline
 # 1925 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10793,14 +10773,13 @@ static inline
 # 2001 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcLagrangeElements_quick(Real_t deltatime)
 # 2002 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable34 = new_stack((void *)(&CalcLagrangeElements), "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, 1, 0, (size_t)(0UL)) ; Index_t numElem;
- if (____must_checkpoint_CalcLagrangeElements_numElem_0) { register_stack_vars(1, "CalcLagrangeElements|numElem|0", &____must_checkpoint_CalcLagrangeElements_numElem_0, "i32", (void *)(&numElem), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable34 = new_stack((void *)(&CalcLagrangeElements), "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, 1, 0, (size_t)(0UL)) ; ; ;
 # 2003 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    numElem = (domain.numElem) ;
+  Index_t numElem; numElem = (domain.numElem) ;
 # 2004 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  if (numElem > 0) {
 # 2005 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   call_lbl_1: ({ calling((void*)CalcKinematicsForElems, 1, 0UL, ____alias_loc_id_4, 2, (size_t)(0UL), (size_t)(0UL)); CalcKinematicsForElems_quick(numElem, deltatime); }) ; { call_lbl_4: bool ____chimes_disable16 = disable_current_thread(); unsigned ____chimes_parent_stack_depth13 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth13 = get_thread_stack_depth(); size_t ____chimes_region_id13; unsigned ____chimes_parent_thread13 = entering_omp_parallel(4, &____chimes_region_id13, 1, &numElem); int ____chimes_first_iter13 = 1; ;
+  ({ calling_npm("CalcKinematicsForElems", 0UL, 2, 0UL, 0UL); CalcKinematicsForElems_npm(numElem, deltatime); }); { call_lbl_3: bool ____chimes_disable16 = disable_current_thread(); unsigned ____chimes_parent_stack_depth13 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth13 = get_thread_stack_depth(); size_t ____chimes_region_id13; unsigned ____chimes_parent_thread13 = entering_omp_parallel(3, &____chimes_region_id13, 1, &numElem); int ____chimes_first_iter13 = 1; ;
 # 2006 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2007 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2008 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -10844,7 +10823,7 @@ void CalcLagrangeElements_quick(Real_t deltatime)
 # 2028 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2029 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, ____alias_loc_id_25, ____chimes_did_disable34); }
+rm_stack(false, 0UL, "CalcLagrangeElements", &____must_manage_CalcLagrangeElements, ____alias_loc_id_15, ____chimes_did_disable34); }
 
 static inline
 # 2001 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11031,7 +11010,7 @@ void CalcMonotonicQGradientsForElems_quick()
   az = dxi*dyj - dyi*dxj ;
 # 2127 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2128 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_zeta[i] = vol / ({ calling_npm(0, 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+  domain.delx_zeta[i] = vol / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 2129 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2130 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -11060,7 +11039,7 @@ void CalcMonotonicQGradientsForElems_quick()
   az = dxj*dyk - dyj*dxk ;
 # 2145 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2146 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_xi[i] = vol / ({ calling_npm(0, 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+  domain.delx_xi[i] = vol / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 2147 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2148 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -11089,7 +11068,7 @@ void CalcMonotonicQGradientsForElems_quick()
   az = dxk*dyi - dyk*dxi ;
 # 2163 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2164 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_eta[i] = vol / ({ calling_npm(0, 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+  domain.delx_eta[i] = vol / ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 2165 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2166 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -11111,7 +11090,7 @@ void CalcMonotonicQGradientsForElems_quick()
  } leaving_omp_parallel(____chimes_call_stack_depth14, ____chimes_region_id14); reenable_current_thread(____chimes_disable17); }
 # 2176 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2177 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcMonotonicQGradientsForElems", &____must_manage_CalcMonotonicQGradientsForElems, ____alias_loc_id_33, ____chimes_did_disable35); }
+rm_stack(false, 0UL, "CalcMonotonicQGradientsForElems", &____must_manage_CalcMonotonicQGradientsForElems, ____alias_loc_id_23, ____chimes_did_disable35); }
 
 static inline
 # 2032 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11365,7 +11344,7 @@ void CalcMonotonicQRegionForElems_quick(
 # 2316 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth15, ____chimes_region_id15); reenable_current_thread(____chimes_disable18); }
 # 2317 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcMonotonicQRegionForElems", &____must_manage_CalcMonotonicQRegionForElems, ____alias_loc_id_35, ____chimes_did_disable36); }
+rm_stack(false, 0UL, "CalcMonotonicQRegionForElems", &____must_manage_CalcMonotonicQRegionForElems, ____alias_loc_id_25, ____chimes_did_disable36); }
 
 static inline
 # 2180 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11412,11 +11391,11 @@ void CalcMonotonicQForElems_quick()
 # 2335 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    Real_t qqc_monoq; qqc_monoq = (domain.qqc_monoq) ;
 # 2336 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(0, 0); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
+  ({ calling_npm("CalcMonotonicQRegionForElems", 0UL, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
 # 2345 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2346 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcMonotonicQForElems", &____must_manage_CalcMonotonicQForElems, ____alias_loc_id_34, ____chimes_did_disable37); }
+rm_stack(false, 0UL, "CalcMonotonicQForElems", &____must_manage_CalcMonotonicQForElems, ____alias_loc_id_24, ____chimes_did_disable37); }
 
 static inline
 # 2320 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11438,12 +11417,12 @@ void CalcQForElems_quick()
 # 2357 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2358 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2359 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcMonotonicQGradientsForElems_npm(); }) ;
+ ({ calling_npm("CalcMonotonicQGradientsForElems", 0UL, 0); CalcMonotonicQGradientsForElems_npm(); }) ;
 # 2360 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2361 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2362 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2363 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcMonotonicQForElems_npm(); }) ;
+ ({ calling_npm("CalcMonotonicQForElems", 0UL, 0); CalcMonotonicQForElems_npm(); }) ;
 # 2364 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2365 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2366 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11472,7 +11451,7 @@ void CalcQForElems_quick()
 # 2378 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2379 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcQForElems", &____must_manage_CalcQForElems, ____alias_loc_id_26, ____chimes_did_disable38); }
+rm_stack(false, 0UL, "CalcQForElems", &____must_manage_CalcQForElems, ____alias_loc_id_16, ____chimes_did_disable38); }
 
 static inline
 # 2349 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11523,7 +11502,7 @@ void CalcPressureForElems_quick(Real_t* p_new, Real_t* bvc,
   p_new[i] = bvc[i] * e_old[i] ;
 # 2400 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2401 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
 # 2403 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2404 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   if (vnewc[i] >= eosvmax) {p_new[i] = Real_t(0.); } ;
@@ -11533,7 +11512,7 @@ void CalcPressureForElems_quick(Real_t* p_new, Real_t* bvc,
 # 2409 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth17, ____chimes_region_id17); reenable_current_thread(____chimes_disable20); }
 # 2410 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcPressureForElems", &____must_manage_CalcPressureForElems, ____alias_loc_id_32, ____chimes_did_disable39); }
+rm_stack(false, 0UL, "CalcPressureForElems", &____must_manage_CalcPressureForElems, ____alias_loc_id_22, ____chimes_did_disable39); }
 
 static inline
 # 2382 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11598,7 +11577,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  } leaving_omp_parallel(____chimes_call_stack_depth18, ____chimes_region_id18); reenable_current_thread(____chimes_disable21); }
 # 2435 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2436 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(6, 0, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_5: bool ____chimes_disable22 = disable_current_thread(); unsigned ____chimes_parent_stack_depth19 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth19 = get_thread_stack_depth(); size_t ____chimes_region_id19; unsigned ____chimes_parent_thread19 = entering_omp_parallel(5, &____chimes_region_id19, 2, &length, &rho0); int ____chimes_first_iter19 = 1; ;
+ ({ calling_npm("CalcPressureForElems", 0UL, 10, 12342427844960692631UL, 12342427844960693198UL, 12342427844960693199UL, 12342427844960693196UL, 12342427844960693204UL, 12342427844960693205UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_5: bool ____chimes_disable22 = disable_current_thread(); unsigned ____chimes_parent_stack_depth19 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth19 = get_thread_stack_depth(); size_t ____chimes_region_id19; unsigned ____chimes_parent_thread19 = entering_omp_parallel(5, &____chimes_region_id19, 2, &length, &rho0); int ____chimes_first_iter19 = 1; ;
 # 2438 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2439 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2439 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11629,7 +11608,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2452 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } else {
 # 2453 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ssc = ({ calling_npm(0, 0); SQRT_npm(ssc); }) ;
+    ssc = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssc); }) ;
 # 2454 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    }
 # 2455 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11660,7 +11639,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
   e_new[i] += Real_t(0.5) * work[i];
 # 2468 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2469 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(e_new[i]); }) < e_cut) {
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
 # 2470 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    e_new[i] = Real_t(0.) ;
 # 2471 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11675,7 +11654,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  } leaving_omp_parallel(____chimes_call_stack_depth20, ____chimes_region_id20); reenable_current_thread(____chimes_disable23); }
 # 2476 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2477 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(6, 0, 12342427844960693195UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693203UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_7: bool ____chimes_disable24 = disable_current_thread(); unsigned ____chimes_parent_stack_depth21 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth21 = get_thread_stack_depth(); size_t ____chimes_region_id21; unsigned ____chimes_parent_thread21 = entering_omp_parallel(7, &____chimes_region_id21, 4, &e_cut, &emin, &length, &rho0); int ____chimes_first_iter21 = 1; ;
+ ({ calling_npm("CalcPressureForElems", 0UL, 10, 12342427844960693195UL, 12342427844960693198UL, 12342427844960693199UL, 12342427844960693196UL, 12342427844960693203UL, 12342427844960693205UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_7: bool ____chimes_disable24 = disable_current_thread(); unsigned ____chimes_parent_stack_depth21 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth21 = get_thread_stack_depth(); size_t ____chimes_region_id21; unsigned ____chimes_parent_thread21 = entering_omp_parallel(7, &____chimes_region_id21, 4, &e_cut, &emin, &length, &rho0); int ____chimes_first_iter21 = 1; ;
 # 2479 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2480 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2480 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11708,7 +11687,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2494 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } else {
 # 2495 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ssc = ({ calling_npm(0, 0); SQRT_npm(ssc); }) ;
+    ssc = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssc); }) ;
 # 2496 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    }
 # 2497 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11725,7 +11704,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
                                + (p_new[i] + q_tilde)) * delvc[i]*sixth ;
 # 2504 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2505 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (({ calling_npm(0, 0); FABS_npm(e_new[i]); }) < e_cut) {
+  if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
 # 2506 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    e_new[i] = Real_t(0.) ;
 # 2507 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11740,7 +11719,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  } leaving_omp_parallel(____chimes_call_stack_depth21, ____chimes_region_id21); reenable_current_thread(____chimes_disable24); }
 # 2512 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2513 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(6, 0, 12342427844960693195UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693203UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_8: bool ____chimes_disable25 = disable_current_thread(); unsigned ____chimes_parent_stack_depth22 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth22 = get_thread_stack_depth(); size_t ____chimes_region_id22; unsigned ____chimes_parent_thread22 = entering_omp_parallel(8, &____chimes_region_id22, 3, &length, &q_cut, &rho0); int ____chimes_first_iter22 = 1; ;
+ ({ calling_npm("CalcPressureForElems", 0UL, 10, 12342427844960693195UL, 12342427844960693198UL, 12342427844960693199UL, 12342427844960693196UL, 12342427844960693203UL, 12342427844960693205UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); }); { call_lbl_8: bool ____chimes_disable25 = disable_current_thread(); unsigned ____chimes_parent_stack_depth22 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth22 = get_thread_stack_depth(); size_t ____chimes_region_id22; unsigned ____chimes_parent_thread22 = entering_omp_parallel(8, &____chimes_region_id22, 3, &length, &q_cut, &rho0); int ____chimes_first_iter22 = 1; ;
 # 2515 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2516 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11763,7 +11742,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2525 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } else {
 # 2526 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ssc = ({ calling_npm(0, 0); SQRT_npm(ssc); }) ;
+    ssc = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssc); }) ;
 # 2527 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    }
 # 2528 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11771,7 +11750,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    q_new[i] = (ssc*ql[i] + qq[i]) ;
 # 2530 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2531 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (({ calling_npm(0, 0); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
+   if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
 # 2532 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   }
 # 2533 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11781,7 +11760,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
  free_wrapper(pHalfStep, 12342427844960692631UL) ;
 # 2536 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2537 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_30, ____chimes_did_disable40); return ;
+ rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_20, ____chimes_did_disable40); return ;
 # 2538 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -11837,7 +11816,7 @@ void CalcSoundSpeedForElems_quick(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2553 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   else {
 # 2554 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ssTmp = ({ calling_npm(0, 0); SQRT_npm(ssTmp); });
+   ssTmp = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(ssTmp); });
 # 2555 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   }
 # 2556 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -11845,7 +11824,7 @@ void CalcSoundSpeedForElems_quick(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2557 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } leaving_omp_parallel(____chimes_call_stack_depth23, ____chimes_region_id23); reenable_current_thread(____chimes_disable26); }
 # 2558 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, ____alias_loc_id_31, ____chimes_did_disable41); }
+rm_stack(false, 0UL, "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, ____alias_loc_id_21, ____chimes_did_disable41); }
 
 static inline
 # 2541 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12081,7 +12060,7 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
  } leaving_omp_parallel(____chimes_call_stack_depth24, ____chimes_region_id24); }
 # 2660 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2661 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(21, 0, 12342427844960692068UL, 12342427844960693195UL, 12342427844960692075UL, 12342427844960693196UL, 12342427844960692082UL, 12342427844960693197UL, 12342427844960692089UL, 12342427844960693198UL, 12342427844960692096UL, 12342427844960693199UL, 12342427844960692019UL, 12342427844960693200UL, 12342427844960692005UL, 12342427844960693201UL, 12342427844960692026UL, 12342427844960693202UL, 12342427844960692033UL, 12342427844960693203UL, 12342427844960692040UL, 12342427844960693204UL, 12342427844960692543UL, 12342427844960693205UL, 12342427844960692061UL, 12342427844960693206UL, 12342427844960692012UL, 12342427844960693207UL, 12342427844960692047UL, 12342427844960693213UL, 12342427844960692054UL, 12342427844960693214UL, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); }); { call_lbl_39: unsigned ____chimes_parent_stack_depth25 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth25 = get_thread_stack_depth(); size_t ____chimes_region_id25; unsigned ____chimes_parent_thread25 = entering_omp_parallel(39, &____chimes_region_id25, 0); ;
+ ({ calling_npm("CalcEnergyForElems", 0UL, 23, 12342427844960692068UL, 12342427844960692075UL, 12342427844960692082UL, 12342427844960692089UL, 12342427844960692096UL, 12342427844960692019UL, 12342427844960692005UL, 12342427844960692026UL, 12342427844960692033UL, 12342427844960692040UL, 12342427844960692543UL, 12342427844960692061UL, 12342427844960692012UL, 0UL, 0UL, 0UL, 0UL, 0UL, 12342427844960692047UL, 12342427844960692054UL, 0UL, 0UL, 0UL); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); }); { call_lbl_39: unsigned ____chimes_parent_stack_depth25 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth25 = get_thread_stack_depth(); size_t ____chimes_region_id25; unsigned ____chimes_parent_thread25 = entering_omp_parallel(39, &____chimes_region_id25, 0); ;
 # 2666 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2667 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2668 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12146,7 +12125,7 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
  } leaving_omp_parallel(____chimes_call_stack_depth25, ____chimes_region_id25); }
 # 2691 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2692 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(5, 0, 12342427844960692543UL, 12342427844960693319UL, 12342427844960692075UL, 12342427844960693321UL, 12342427844960692068UL, 12342427844960693322UL, 12342427844960692096UL, 12342427844960693323UL, 12342427844960692089UL, 12342427844960693324UL); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
+ ({ calling_npm("CalcSoundSpeedForElems", 0UL, 8, 12342427844960692543UL, 0UL, 12342427844960692075UL, 12342427844960692068UL, 12342427844960692096UL, 12342427844960692089UL, 0UL, 0UL); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2694 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2695 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(pbvc, 12342427844960692096UL) ;
@@ -12177,7 +12156,7 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
 # 2708 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  free_wrapper(e_old, 12342427844960692005UL) ;
 # 2709 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_29, ____chimes_did_disable42); }
+rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_19, ____chimes_did_disable42); }
 
 static inline
 # 2561 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12302,7 +12281,7 @@ void ApplyMaterialPropertiesForElems_quick()
   } leaving_omp_parallel(____chimes_call_stack_depth26, ____chimes_region_id26); }
 # 2767 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2768 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(27, 0, 12342427844960691746UL, 12342427844960692543UL, 12342427844960692068UL, 12342427844960693195UL, 12342427844960692075UL, 12342427844960693196UL, 12342427844960692082UL, 12342427844960693197UL, 12342427844960692089UL, 12342427844960693198UL, 12342427844960692096UL, 12342427844960693199UL, 12342427844960692019UL, 12342427844960693200UL, 12342427844960692005UL, 12342427844960693201UL, 12342427844960692026UL, 12342427844960693202UL, 12342427844960692033UL, 12342427844960693203UL, 12342427844960692040UL, 12342427844960693204UL, 12342427844960692543UL, 12342427844960693205UL, 12342427844960692061UL, 12342427844960693206UL, 12342427844960692012UL, 12342427844960693207UL, 12342427844960692047UL, 12342427844960693213UL, 12342427844960692054UL, 12342427844960693214UL, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL, 12342427844960692543UL, 12342427844960693319UL, 12342427844960692075UL, 12342427844960693321UL, 12342427844960692068UL, 12342427844960693322UL, 12342427844960692096UL, 12342427844960693323UL, 12342427844960692089UL, 12342427844960693324UL); EvalEOSForElems_npm(vnewc, length); });
+  ({ calling_npm("EvalEOSForElems", 0UL, 2, 12342427844960691746UL, 0UL); EvalEOSForElems_npm(vnewc, length); });
 # 2769 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2770 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   free_wrapper(vnewc, 12342427844960691746UL) ;
@@ -12310,7 +12289,7 @@ void ApplyMaterialPropertiesForElems_quick()
 # 2772 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
 # 2773 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "ApplyMaterialPropertiesForElems", &____must_manage_ApplyMaterialPropertiesForElems, ____alias_loc_id_27, ____chimes_did_disable43); }
+rm_stack(false, 0UL, "ApplyMaterialPropertiesForElems", &____must_manage_ApplyMaterialPropertiesForElems, ____alias_loc_id_17, ____chimes_did_disable43); }
 
 static inline
 # 2712 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12342,7 +12321,7 @@ void UpdateVolumesForElems_quick()
    tmpV = domain.vnew[i] ;
 # 2786 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2787 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (({ calling_npm(0, 0); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
+   if (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
 # 2789 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    domain.v[i] = tmpV ;
 # 2790 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12351,7 +12330,7 @@ void UpdateVolumesForElems_quick()
  }
 # 2792 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2793 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "UpdateVolumesForElems", &____must_manage_UpdateVolumesForElems, ____alias_loc_id_28, ____chimes_did_disable44); return ;
+ rm_stack(false, 0UL, "UpdateVolumesForElems", &____must_manage_UpdateVolumesForElems, ____alias_loc_id_18, ____chimes_did_disable44); return ;
 # 2794 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -12368,19 +12347,19 @@ void LagrangeElements_quick()
   Real_t deltatime; deltatime = (domain.deltatime) ;
 # 2800 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2801 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: ({ calling((void*)CalcLagrangeElements, 1, 0UL, ____alias_loc_id_1, 1, (size_t)(0UL)); CalcLagrangeElements_quick(deltatime); }) ;
+ ({ calling_npm("CalcLagrangeElements", 0UL, 1, 0UL); CalcLagrangeElements_npm(deltatime); }) ;
 # 2802 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2803 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2804 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); CalcQForElems_npm(); }) ;
+ ({ calling_npm("CalcQForElems", 0UL, 0); CalcQForElems_npm(); }) ;
 # 2805 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2806 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(27, 0, 12342427844960691746UL, 12342427844960692543UL, 12342427844960692068UL, 12342427844960693195UL, 12342427844960692075UL, 12342427844960693196UL, 12342427844960692082UL, 12342427844960693197UL, 12342427844960692089UL, 12342427844960693198UL, 12342427844960692096UL, 12342427844960693199UL, 12342427844960692019UL, 12342427844960693200UL, 12342427844960692005UL, 12342427844960693201UL, 12342427844960692026UL, 12342427844960693202UL, 12342427844960692033UL, 12342427844960693203UL, 12342427844960692040UL, 12342427844960693204UL, 12342427844960692543UL, 12342427844960693205UL, 12342427844960692061UL, 12342427844960693206UL, 12342427844960692012UL, 12342427844960693207UL, 12342427844960692047UL, 12342427844960693213UL, 12342427844960692054UL, 12342427844960693214UL, 12342427844960692631UL, 12342427844960693466UL, 12342427844960693198UL, 12342427844960693467UL, 12342427844960693199UL, 12342427844960693468UL, 12342427844960693196UL, 12342427844960693469UL, 12342427844960693204UL, 12342427844960693470UL, 12342427844960693205UL, 12342427844960693471UL, 12342427844960692543UL, 12342427844960693319UL, 12342427844960692075UL, 12342427844960693321UL, 12342427844960692068UL, 12342427844960693322UL, 12342427844960692096UL, 12342427844960693323UL, 12342427844960692089UL, 12342427844960693324UL); ApplyMaterialPropertiesForElems_npm(); }) ;
+ ({ calling_npm("ApplyMaterialPropertiesForElems", 0UL, 0); ApplyMaterialPropertiesForElems_npm(); }) ;
 # 2807 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2808 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(0, 0); UpdateVolumesForElems_npm(); }) ;
+ ({ calling_npm("UpdateVolumesForElems", 0UL, 0); UpdateVolumesForElems_npm(); }) ;
 # 2809 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "LagrangeElements", &____must_manage_LagrangeElements, 0, ____chimes_did_disable45); }
+rm_stack(false, 0UL, "LagrangeElements", &____must_manage_LagrangeElements, ____alias_loc_id_11, ____chimes_did_disable45); }
 
 static inline
 # 2797 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12390,25 +12369,21 @@ static inline
 # 2812 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcCourantConstraintForElems_quick()
 # 2813 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable46 = new_stack((void *)(&CalcCourantConstraintForElems), "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, 0, 0) ; Real_t qqc2;
-Index_t length;
-Index_t courant_elem;
-Real_t dtcourant;
- if (____must_checkpoint_CalcCourantConstraintForElems_qqc2_0 || ____must_checkpoint_CalcCourantConstraintForElems_length_0 || ____must_checkpoint_CalcCourantConstraintForElems_courant_elem_0 || ____must_checkpoint_CalcCourantConstraintForElems_dtcourant_0) { register_stack_vars(4, "CalcCourantConstraintForElems|qqc2|0", &____must_checkpoint_CalcCourantConstraintForElems_qqc2_0, "double", (void *)(&qqc2), (size_t)8, 0, 0, 0, "CalcCourantConstraintForElems|length|0", &____must_checkpoint_CalcCourantConstraintForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "CalcCourantConstraintForElems|courant_elem|0", &____must_checkpoint_CalcCourantConstraintForElems_courant_elem_0, "i32", (void *)(&courant_elem), (size_t)4, 0, 0, 0, "CalcCourantConstraintForElems|dtcourant|0", &____must_checkpoint_CalcCourantConstraintForElems_dtcourant_0, "double", (void *)(&dtcourant), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable46 = new_stack((void *)(&CalcCourantConstraintForElems), "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, 0, 0) ; ; ;
 # 2814 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    dtcourant = (Real_t(1.0E+20)) ;
+  Real_t dtcourant; dtcourant = (Real_t(1.0E+20)) ;
 # 2815 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    courant_elem = (-1) ;
+  Index_t courant_elem; courant_elem = (-1) ;
 # 2816 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Real_t qqc; qqc = (domain.qqc) ;
 # 2817 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    length = (domain.numElem) ;
+  Index_t length; length = (domain.numElem) ;
 # 2818 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2819 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    qqc2 = (Real_t(64.) * qqc * qqc) ;
+  Real_t qqc2; qqc2 = (Real_t(64.) * qqc * qqc) ;
 # 2820 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2821 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         Index_t threads; call_lbl_1: threads = ( ({ calling((void*)omp_get_num_threads, 1, 0UL, 0, 0); (omp_get_num_threads)(); }) ) ;
+         Index_t threads; threads = (omp_get_num_threads()) ;
 # 2822 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2823 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2824 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12455,7 +12430,7 @@ Real_t dtcourant;
   }
 # 2847 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2848 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = ({ calling_npm(0, 0); SQRT_npm(dtf); }) ;
+  dtf = ({ calling_npm("SQRT", 0UL, 1, 0UL); SQRT_npm(dtf); }) ;
 # 2849 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2850 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   dtf = domain.arealg[indx] / dtf ;
@@ -12515,7 +12490,7 @@ Real_t dtcourant;
  }
 # 2884 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2885 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_22, ____chimes_did_disable46); return ;
+ rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_12, ____chimes_did_disable46); return ;
 # 2886 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -12527,22 +12502,18 @@ static inline
 # 2889 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcHydroConstraintForElems_quick()
 # 2890 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; Index_t length;
-Real_t dvovmax;
-Index_t hydro_elem;
-Real_t dthydro;
- if (____must_checkpoint_CalcHydroConstraintForElems_length_0 || ____must_checkpoint_CalcHydroConstraintForElems_dvovmax_0 || ____must_checkpoint_CalcHydroConstraintForElems_hydro_elem_0 || ____must_checkpoint_CalcHydroConstraintForElems_dthydro_0) { register_stack_vars(4, "CalcHydroConstraintForElems|length|0", &____must_checkpoint_CalcHydroConstraintForElems_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "CalcHydroConstraintForElems|dvovmax|0", &____must_checkpoint_CalcHydroConstraintForElems_dvovmax_0, "double", (void *)(&dvovmax), (size_t)8, 0, 0, 0, "CalcHydroConstraintForElems|hydro_elem|0", &____must_checkpoint_CalcHydroConstraintForElems_hydro_elem_0, "i32", (void *)(&hydro_elem), (size_t)4, 0, 0, 0, "CalcHydroConstraintForElems|dthydro|0", &____must_checkpoint_CalcHydroConstraintForElems_dthydro_0, "double", (void *)(&dthydro), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; ; ;
 # 2891 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    dthydro = (Real_t(1.0E+20)) ;
+  Real_t dthydro; dthydro = (Real_t(1.0E+20)) ;
 # 2892 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    hydro_elem = (-1) ;
+  Index_t hydro_elem; hydro_elem = (-1) ;
 # 2893 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    dvovmax = (domain.dvovmax) ;
+  Real_t dvovmax; dvovmax = (domain.dvovmax) ;
 # 2894 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    length = (domain.numElem) ;
+  Index_t length; length = (domain.numElem) ;
 # 2895 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2896 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t threads; call_lbl_1: threads = ( ({ calling((void*)omp_get_num_threads, 1, 0UL, 0, 0); (omp_get_num_threads)(); }) ) ;
+  Index_t threads; threads = (omp_get_num_threads()) ;
 # 2897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2898 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2899 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12576,7 +12547,7 @@ Real_t dthydro;
 # 2914 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
                 if (domain.vdov[indx] != Real_t(0.)) {
 # 2915 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm(0, 0); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
+                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
 # 2916 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2917 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
                          Index_t thread_num; thread_num = (omp_get_thread_num()) ;
@@ -12624,7 +12595,7 @@ Real_t dthydro;
  }
 # 2943 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2944 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_23, ____chimes_did_disable47); return ;
+ rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_13, ____chimes_did_disable47); return ;
 # 2945 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -12637,11 +12608,11 @@ static inline
 void CalcTimeConstraintsForElems_quick() {const int ____chimes_did_disable48 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; ; ;
 # 2949 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2950 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: ({ calling((void*)CalcCourantConstraintForElems, 1, 0UL, 0, 0); CalcCourantConstraintForElems_quick(); }) ;
+ ({ calling_npm("CalcCourantConstraintForElems", 0UL, 0); CalcCourantConstraintForElems_npm(); }) ;
 # 2951 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2952 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2953 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_2: ({ calling((void*)CalcHydroConstraintForElems, 2, 0UL, 0, 0); CalcHydroConstraintForElems_quick(); }) ;
+ ({ calling_npm("CalcHydroConstraintForElems", 0UL, 0); CalcHydroConstraintForElems_npm(); }) ;
 # 2954 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable48); }
 
@@ -12657,15 +12628,15 @@ void LagrangeLeapFrog_quick()
 # 2959 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2960 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2961 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(69, 0, 12342427844960697441UL, 12342427844960697500UL, 12342427844960697438UL, 12342427844960697501UL, 12342427844960697435UL, 12342427844960697502UL, 12342427844960697441UL, 12342427844960697792UL, 12342427844960697438UL, 12342427844960697793UL, 12342427844960697435UL, 12342427844960697794UL, 12342427844960697417UL, 12342427844960697795UL, 12342427844960697514UL, 12342427844960696297UL, 12342427844960697515UL, 12342427844960696298UL, 12342427844960697516UL, 12342427844960696299UL, 12342427844960697513UL, 12342427844960696300UL, 12342427844960697795UL, 12342427844960696301UL, 12342427844960697513UL, 12342427844960702770UL, 12342427844960697513UL, 12342427844960702771UL, 12342427844960697513UL, 12342427844960702772UL, 12342427844960697514UL, 12342427844960702773UL, 12342427844960697515UL, 12342427844960702774UL, 12342427844960697516UL, 12342427844960702775UL, 12342427844960702770UL, 12342427844960703373UL, 12342427844960702771UL, 12342427844960703374UL, 12342427844960702772UL, 12342427844960703375UL, 12342427844960702770UL, 12342427844960703376UL, 12342427844960702771UL, 12342427844960703377UL, 12342427844960702772UL, 12342427844960703378UL, 12342427844960702770UL, 12342427844960703379UL, 12342427844960702771UL, 12342427844960703380UL, 12342427844960702772UL, 12342427844960703381UL, 12342427844960702770UL, 12342427844960703382UL, 12342427844960702771UL, 12342427844960703383UL, 12342427844960702772UL, 12342427844960703384UL, 12342427844960697513UL, 12342427844960703134UL, 12342427844960697547UL, 12342427844960703138UL, 12342427844960697554UL, 12342427844960703139UL, 12342427844960697561UL, 12342427844960703140UL, 12342427844960697417UL, 12342427844960698034UL, 12342427844960691674UL, 12342427844960698289UL, 12342427844960697807UL, 12342427844960698290UL, 12342427844960697808UL, 12342427844960698291UL, 12342427844960697809UL, 12342427844960698292UL, 12342427844960697810UL, 12342427844960698800UL, 12342427844960697811UL, 12342427844960698801UL, 12342427844960697812UL, 12342427844960698802UL, 12342427844960697807UL, 12342427844960698803UL, 12342427844960697808UL, 12342427844960698804UL, 12342427844960697809UL, 12342427844960698805UL, 12342427844960698800UL, 12342427844960702355UL, 12342427844960698801UL, 12342427844960702356UL, 12342427844960698802UL, 12342427844960702357UL, 12342427844960698034UL, 12342427844960700185UL, 12342427844960697852UL, 12342427844960700186UL, 12342427844960697859UL, 12342427844960700187UL, 12342427844960697866UL, 12342427844960700188UL, 12342427844960697831UL, 12342427844960700189UL, 12342427844960697838UL, 12342427844960700190UL, 12342427844960697845UL, 12342427844960700191UL, 12342427844960698836UL, 12342427844960702090UL, 12342427844960698837UL, 12342427844960702091UL, 12342427844960698838UL, 12342427844960702092UL, 12342427844960698828UL, 12342427844960702093UL, 12342427844960698829UL, 12342427844960702094UL, 12342427844960698830UL, 12342427844960702095UL, 12342427844960698831UL, 12342427844960702096UL, 12342427844960698832UL, 12342427844960702097UL, 12342427844960698833UL, 12342427844960702098UL, 12342427844960698834UL, 12342427844960702099UL, 12342427844960698835UL, 12342427844960702100UL, 12342427844960698824UL, 12342427844960702102UL, 12342427844960698825UL, 12342427844960702103UL, 12342427844960698826UL, 12342427844960702104UL); LagrangeNodal_npm(); });
+ ({ calling_npm("LagrangeNodal", 0UL, 0); LagrangeNodal_npm(); });
 # 2962 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2963 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2964 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2965 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_1: ({ calling((void*)LagrangeElements, 1, 0UL, 0, 0); LagrangeElements_quick(); }) ;
+ ({ calling_npm("LagrangeElements", 0UL, 0); LagrangeElements_npm(); });
 # 2966 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2967 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  call_lbl_2: ({ calling((void*)CalcTimeConstraintsForElems, 2, 0UL, 0, 0); CalcTimeConstraintsForElems_quick(); }) ;
+ ({ calling_npm("CalcTimeConstraintsForElems", 0UL, 0); CalcTimeConstraintsForElems_npm(); });
 # 2968 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2969 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2970 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12714,14 +12685,14 @@ Index_t edgeElems;
 # 3000 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3001 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3002 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689533UL); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
+ ({ calling_npm("AllocateElemPersistent", 0UL, 2, 12342427844960703828UL, 0UL); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
 # 3003 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689612UL); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
+ ({ calling_npm("AllocateElemTemporary", 0UL, 2, 12342427844960703828UL, 0UL); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
 # 3004 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3005 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689334UL); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
+ ({ calling_npm("AllocateNodalPersistent", 0UL, 2, 12342427844960703828UL, 0UL); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
 # 3006 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689642UL); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
+ ({ calling_npm("AllocateNodesets", 0UL, 2, 12342427844960703828UL, 0UL); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
 # 3007 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3008 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3009 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12810,7 +12781,7 @@ Index_t edgeElems;
  } }
 # 3055 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3056 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm(1, 0, 12342427844960703828UL, 12342427844960689964UL); AllocateNodeElemIndexes_npm(&domain); });
+ ({ calling_npm("AllocateNodeElemIndexes", 0UL, 1, 12342427844960703828UL); AllocateNodeElemIndexes_npm(&domain); });
 # 3057 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3058 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3059 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -12911,7 +12882,7 @@ Index_t edgeElems;
 # 3112 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3113 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3114 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Real_t volume; volume = (({ calling_npm(3, 0, 12342427844960689988UL, 12342427844960691029UL, 12342427844960689989UL, 12342427844960691030UL, 12342427844960689990UL, 12342427844960691031UL); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
+   Real_t volume; volume = (({ calling_npm("CalcElemVolume", 0UL, 3, 12342427844960689988UL, 12342427844960689989UL, 12342427844960689990UL); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
 # 3115 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   domain.volo[i] = volume ;
 # 3116 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -13050,9 +13021,9 @@ Index_t edgeElems;
  while(domain.time < domain.stoptime ) {
 # 3192 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3193 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm(0, 0); TimeIncrement_npm(); }) ;
+  ({ calling_npm("TimeIncrement", 0UL, 0); TimeIncrement_npm(); }) ;
 # 3194 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   call_lbl_3: ({ calling((void*)LagrangeLeapFrog, 3, 0UL, ____alias_loc_id_0, 0); LagrangeLeapFrog_quick(); }) ;
+  ({ calling_npm("LagrangeLeapFrog", 0UL, 0); LagrangeLeapFrog_npm(); }) ;
 # 3195 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3196 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3197 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -13061,7 +13032,7 @@ Index_t edgeElems;
 # 3200 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3201 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3202 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         call_lbl_4: ({ calling((void*)checkpoint, 4, 0UL, 0, 0); (checkpoint)(); }) ;
+         call_lbl_3: ({ calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
 # 3203 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3204 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
@@ -13099,7 +13070,7 @@ Index_t edgeElems;
 # 3224 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 3225 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Real_t AbsDiff; AbsDiff = (({ calling_npm(0, 0); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
+    Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0UL, 1, 0UL); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
 # 3226 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    TotalAbsDiff += AbsDiff;
 # 3227 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
@@ -13126,7 +13097,7 @@ Index_t edgeElems;
  printf("        MaxRelDiff   = %12.6e\n\n", MaxRelDiff );
 # 3240 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3241 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_17, ____chimes_did_disable50); return 0 ;
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable50); return 0 ;
 # 3242 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
@@ -13930,7 +13901,7 @@ void IntegrateStressForElems_npm( Index_t numElem,
   CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local);
 # 883 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 884 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], &fx_elem[k * 8], &fy_elem[k * 8], &fz_elem[k * 8]) ;
+  SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], &fx_elem[k*8], &fy_elem[k*8], &fz_elem[k*8]) ;
 # 897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 897 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
@@ -16023,7 +15994,7 @@ void CalcMonotonicQGradientsForElems_npm()
   az = dxi*dyj - dyi*dxj ;
 # 2127 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2128 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_zeta[i] = vol / SQRT_npm(ax * ax + ay * ay + az * az + ptiny) ;
+  domain.delx_zeta[i] = vol / SQRT_npm(ax*ax + ay*ay + az*az + ptiny) ;
 # 2129 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2130 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -16052,7 +16023,7 @@ void CalcMonotonicQGradientsForElems_npm()
   az = dxj*dyk - dyj*dxk ;
 # 2145 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2146 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_xi[i] = vol / SQRT_npm(ax * ax + ay * ay + az * az + ptiny) ;
+  domain.delx_xi[i] = vol / SQRT_npm(ax*ax + ay*ay + az*az + ptiny) ;
 # 2147 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2148 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -16081,7 +16052,7 @@ void CalcMonotonicQGradientsForElems_npm()
   az = dxk*dyi - dyk*dxi ;
 # 2163 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2164 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.delx_eta[i] = vol / SQRT_npm(ax * ax + ay * ay + az * az + ptiny) ;
+  domain.delx_eta[i] = vol / SQRT_npm(ax*ax + ay*ay + az*az + ptiny) ;
 # 2165 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2166 "/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   ax *= norm ;
@@ -17563,13 +17534,397 @@ void LagrangeLeapFrog_npm()
 
 
 
+#pragma GCC push_options
+#pragma GCC optimize(0)
 
 
 static int module_init() {
-    init_module(12342427844960689186UL, 170, 51, 41, 12, 2, 12342427844960689186UL + 13173UL, 12342427844960689186UL + 13585UL, 12342427844960689186UL + 9626UL, 12342427844960689186UL + 11005UL, 12342427844960689186UL + 7129UL, 12342427844960689186UL + 7650UL, 12342427844960689186UL + 7117UL, 12342427844960689186UL + 7648UL, 12342427844960689186UL + 7116UL, 12342427844960689186UL + 7647UL, 12342427844960689186UL + 7119UL, 12342427844960689186UL + 7650UL, 12342427844960689186UL + 7118UL, 12342427844960689186UL + 7649UL, 12342427844960689186UL + 13172UL, 12342427844960689186UL + 13584UL, 12342427844960689186UL + 4145UL, 12342427844960689186UL + 4284UL, 12342427844960689186UL + 4144UL, 12342427844960689186UL + 4283UL, 12342427844960689186UL + 4146UL, 12342427844960689186UL + 4285UL, 12342427844960689186UL + 4141UL, 12342427844960689186UL + 4280UL, 12342427844960689186UL + 4143UL, 12342427844960689186UL + 4282UL, 12342427844960689186UL + 4142UL, 12342427844960689186UL + 4281UL, 12342427844960689186UL + 347UL, 12342427844960689186UL + 167UL, 12342427844960689186UL + 9625UL, 12342427844960689186UL + 11004UL, 12342427844960689186UL + 5909UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 349UL, 12342427844960689186UL + 426UL, 12342427844960689186UL + 9624UL, 12342427844960689186UL + 11003UL, 12342427844960689186UL + 8627UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 13956UL, 12342427844960689186UL + 14188UL, 12342427844960689186UL + 12938UL, 12342427844960689186UL + 13169UL, 12342427844960689186UL + 12939UL, 12342427844960689186UL + 13170UL, 12342427844960689186UL + 4032UL, 12342427844960689186UL + 4133UL, 12342427844960689186UL + 4035UL, 12342427844960689186UL + 4136UL, 12342427844960689186UL + 4034UL, 12342427844960689186UL + 4135UL, 12342427844960689186UL + 4037UL, 12342427844960689186UL + 4138UL, 12342427844960689186UL + 4036UL, 12342427844960689186UL + 4137UL, 12342427844960689186UL + 7121UL, 12342427844960689186UL + 7652UL, 12342427844960689186UL + 11024UL, 12342427844960689186UL + 12914UL, 12342427844960689186UL + 11027UL, 12342427844960689186UL + 12917UL, 12342427844960689186UL + 11026UL, 12342427844960689186UL + 12916UL, 12342427844960689186UL + 11021UL, 12342427844960689186UL + 12911UL, 12342427844960689186UL + 11020UL, 12342427844960689186UL + 12910UL, 12342427844960689186UL + 11023UL, 12342427844960689186UL + 12913UL, 12342427844960689186UL + 11022UL, 12342427844960689186UL + 12912UL, 12342427844960689186UL + 13590UL, 12342427844960689186UL + 13948UL, 12342427844960689186UL + 11028UL, 12342427844960689186UL + 12918UL, 12342427844960689186UL + 6451UL, 12342427844960689186UL + 7112UL, 12342427844960689186UL + 6450UL, 12342427844960689186UL + 7111UL, 12342427844960689186UL + 6453UL, 12342427844960689186UL + 7114UL, 12342427844960689186UL + 6452UL, 12342427844960689186UL + 7113UL, 12342427844960689186UL + 6454UL, 12342427844960689186UL + 7115UL, 12342427844960689186UL + 7131UL, 12342427844960689186UL + 7650UL, 12342427844960689186UL + 7130UL, 12342427844960689186UL + 7650UL, 12342427844960689186UL + 8321UL, 12342427844960689186UL + 8609UL, 12342427844960689186UL + 8320UL, 12342427844960689186UL + 8608UL, 12342427844960689186UL + 8323UL, 12342427844960689186UL + 8361UL, 12342427844960689186UL + 3383UL, 12342427844960689186UL + 3445UL, 12342427844960689186UL + 799UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 428UL, 12342427844960689186UL + 456UL, 12342427844960689186UL + 13959UL, 12342427844960689186UL + 14191UL, 12342427844960689186UL + 8851UL, 12342427844960689186UL + 9104UL, 12342427844960689186UL + 426UL, 12342427844960689186UL + 357UL, 12342427844960689186UL + 2763UL, 12342427844960689186UL + 2910UL, 12342427844960689186UL + 2762UL, 12342427844960689186UL + 2903UL, 12342427844960689186UL + 2761UL, 12342427844960689186UL + 2896UL, 12342427844960689186UL + 2760UL, 12342427844960689186UL + 2889UL, 12342427844960689186UL + 13958UL, 12342427844960689186UL + 14190UL, 12342427844960689186UL + 11018UL, 12342427844960689186UL + 12908UL, 12342427844960689186UL + 6170UL, 12342427844960689186UL + 6447UL, 12342427844960689186UL + 6171UL, 12342427844960689186UL + 6448UL, 12342427844960689186UL + 784UL, 12342427844960689186UL + 1758UL, 12342427844960689186UL + 4299UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 11014UL, 12342427844960689186UL + 12904UL, 12342427844960689186UL + 2512UL, 12342427844960689186UL + 2560UL, 12342427844960689186UL + 11015UL, 12342427844960689186UL + 12905UL, 12342427844960689186UL + 11016UL, 12342427844960689186UL + 12906UL, 12342427844960689186UL + 458UL, 12342427844960689186UL + 778UL, 12342427844960689186UL + 11017UL, 12342427844960689186UL + 12907UL, 12342427844960689186UL + 456UL, 12342427844960689186UL + 436UL, 12342427844960689186UL + 6169UL, 12342427844960689186UL + 6446UL, 12342427844960689186UL + 9630UL, 12342427844960689186UL + 9707UL, 12342427844960689186UL + 9631UL, 12342427844960689186UL + 9714UL, 12342427844960689186UL + 9632UL, 12342427844960689186UL + 9721UL, 12342427844960689186UL + 9635UL, 12342427844960689186UL + 9707UL, 12342427844960689186UL + 9636UL, 12342427844960689186UL + 9714UL, 12342427844960689186UL + 9637UL, 12342427844960689186UL + 9721UL, 12342427844960689186UL + 3368UL, 12342427844960689186UL + 4017UL, 12342427844960689186UL + 3369UL, 12342427844960689186UL + 4018UL, 12342427844960689186UL + 3364UL, 12342427844960689186UL + 4013UL, 12342427844960689186UL + 3365UL, 12342427844960689186UL + 4014UL, 12342427844960689186UL + 3366UL, 12342427844960689186UL + 4015UL, 12342427844960689186UL + 3367UL, 12342427844960689186UL + 4016UL, 12342427844960689186UL + 3360UL, 12342427844960689186UL + 4009UL, 12342427844960689186UL + 3361UL, 12342427844960689186UL + 4010UL, 12342427844960689186UL + 3362UL, 12342427844960689186UL + 4011UL, 12342427844960689186UL + 3363UL, 12342427844960689186UL + 4012UL, 12342427844960689186UL + 8615UL, 12342427844960689186UL + 8652UL, 12342427844960689186UL + 8614UL, 12342427844960689186UL + 8645UL, 12342427844960689186UL + 8617UL, 12342427844960689186UL + 8666UL, 12342427844960689186UL + 8616UL, 12342427844960689186UL + 8659UL, 12342427844960689186UL + 8610UL, 12342427844960689186UL + 8848UL, 12342427844960689186UL + 9107UL, 12342427844960689186UL + 9614UL, 12342427844960689186UL + 8619UL, 12342427844960689186UL + 8680UL, 12342427844960689186UL + 8618UL, 12342427844960689186UL + 8673UL, 12342427844960689186UL + 13962UL, 12342427844960689186UL + 14194UL, 12342427844960689186UL + 13963UL, 12342427844960689186UL + 14195UL, 12342427844960689186UL + 13960UL, 12342427844960689186UL + 14192UL, 12342427844960689186UL + 13961UL, 12342427844960689186UL + 14193UL, 12342427844960689186UL + 469UL, 12342427844960689186UL + 541UL, 12342427844960689186UL + 13964UL, 12342427844960689186UL + 14196UL, 12342427844960689186UL + 13965UL, 12342427844960689186UL + 14197UL, 12342427844960689186UL + 464UL, 12342427844960689186UL + 541UL, 12342427844960689186UL + 13594UL, 12342427844960689186UL + 13952UL, 12342427844960689186UL + 9623UL, 12342427844960689186UL + 11002UL, 12342427844960689186UL + 9622UL, 12342427844960689186UL + 11001UL, 12342427844960689186UL + 9621UL, 12342427844960689186UL + 11000UL, 12342427844960689186UL + 9620UL, 12342427844960689186UL + 10999UL, 12342427844960689186UL + 8261UL, 12342427844960689186UL + 8314UL, 12342427844960689186UL + 8262UL, 12342427844960689186UL + 8315UL, 12342427844960689186UL + 8263UL, 12342427844960689186UL + 8316UL, 12342427844960689186UL + 13596UL, 12342427844960689186UL + 13954UL, 12342427844960689186UL + 13595UL, 12342427844960689186UL + 13953UL, 12342427844960689186UL + 2210UL, 12342427844960689186UL + 2233UL, 12342427844960689186UL + 3379UL, 12342427844960689186UL + 4028UL, 12342427844960689186UL + 3378UL, 12342427844960689186UL + 4027UL, 12342427844960689186UL + 3372UL, 12342427844960689186UL + 4021UL, 12342427844960689186UL + 3371UL, 12342427844960689186UL + 4020UL, 12342427844960689186UL + 3370UL, 12342427844960689186UL + 4019UL, 12342427844960689186UL + 2756UL, 12342427844960689186UL + 2861UL, 12342427844960689186UL + 2757UL, 12342427844960689186UL + 2868UL, 12342427844960689186UL + 2754UL, 12342427844960689186UL + 2847UL, 12342427844960689186UL + 2755UL, 12342427844960689186UL + 2854UL, 12342427844960689186UL + 2752UL, 12342427844960689186UL + 2833UL, 12342427844960689186UL + 2753UL, 12342427844960689186UL + 2840UL, 12342427844960689186UL + 2750UL, 12342427844960689186UL + 2819UL, 12342427844960689186UL + 2751UL, 12342427844960689186UL + 2826UL, 12342427844960689186UL + 2758UL, 12342427844960689186UL + 2875UL, 12342427844960689186UL + 2759UL, 12342427844960689186UL + 2882UL, 12342427844960689186UL + 8170UL, 12342427844960689186UL + 8252UL, 12342427844960689186UL + 8171UL, 12342427844960689186UL + 8249UL, 12342427844960689186UL + 8172UL, 12342427844960689186UL + 8231UL, 12342427844960689186UL + 9108UL, 12342427844960689186UL + 9615UL, 12342427844960689186UL + 9109UL, 12342427844960689186UL + 9616UL, 12342427844960689186UL + 13957UL, 12342427844960689186UL + 14189UL, 12342427844960689186UL + 158UL, 12342427844960689186UL + 347UL, 12342427844960689186UL + 13955UL, 12342427844960689186UL + 14187UL, 12342427844960689186UL + 2739UL, 12342427844960689186UL + 3357UL, 12342427844960689186UL + 8325UL, 12342427844960689186UL + 8375UL, 12342427844960689186UL + 8324UL, 12342427844960689186UL + 8368UL, 12342427844960689186UL + 13966UL, 12342427844960689186UL + 14198UL, 12342427844960689186UL + 12940UL, 12342427844960689186UL + 13171UL, 12342427844960689186UL + 1UL, 12342427844960689186UL + 148UL, 12342427844960689186UL + 11019UL, 12342427844960689186UL + 12909UL, 12342427844960689186UL + 1758UL, 12342427844960689186UL + 844UL, 12342427844960689186UL + 14642UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 14643UL, 12342427844960689186UL + 768UL, 12342427844960689186UL + 9111UL, 12342427844960689186UL + 9618UL, 12342427844960689186UL + 9110UL, 12342427844960689186UL + 9617UL, 12342427844960689186UL + 8169UL, 12342427844960689186UL + 8255UL, 12342427844960689186UL + 9112UL, 12342427844960689186UL + 9619UL, 12342427844960689186UL + 778UL, 12342427844960689186UL + 541UL, 12342427844960689186UL + 148UL, 12342427844960689186UL + 9UL, 12342427844960689186UL + 8853UL, 12342427844960689186UL + 9106UL, 12342427844960689186UL + 8318UL, 12342427844960689186UL + 8606UL, 12342427844960689186UL + 8319UL, 12342427844960689186UL + 8607UL, 12342427844960689186UL + 8850UL, 12342427844960689186UL + 9103UL, 12342427844960689186UL + 9653UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 2000UL, 12342427844960689186UL + 2029UL, 12342427844960689186UL + 8331UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 13177UL, 12342427844960689186UL + 13589UL, 12342427844960689186UL + 1762UL, 12342427844960689186UL + 1845UL, 12342427844960689186UL + 8852UL, 12342427844960689186UL + 9105UL, 12342427844960689186UL + 1760UL, 12342427844960689186UL + 1843UL, 12342427844960689186UL + 1761UL, 12342427844960689186UL + 1844UL, 12342427844960689186UL + 13175UL, 12342427844960689186UL + 13587UL, 12342427844960689186UL + 13174UL, 12342427844960689186UL + 13586UL, 12342427844960689186UL + 805UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 13176UL, 12342427844960689186UL + 13588UL, "Domain", 85, "double*", (int)__builtin_offsetof (struct Domain, x), "double*", (int)__builtin_offsetof (struct Domain, y), "double*", (int)__builtin_offsetof (struct Domain, z), "double*", (int)__builtin_offsetof (struct Domain, xd), "double*", (int)__builtin_offsetof (struct Domain, yd), "double*", (int)__builtin_offsetof (struct Domain, zd), "double*", (int)__builtin_offsetof (struct Domain, xdd), "double*", (int)__builtin_offsetof (struct Domain, ydd), "double*", (int)__builtin_offsetof (struct Domain, zdd), "double*", (int)__builtin_offsetof (struct Domain, fx), "double*", (int)__builtin_offsetof (struct Domain, fy), "double*", (int)__builtin_offsetof (struct Domain, fz), "double*", (int)__builtin_offsetof (struct Domain, nodalMass), "int*", (int)__builtin_offsetof (struct Domain, symmX), "int*", (int)__builtin_offsetof (struct Domain, symmY), "int*", (int)__builtin_offsetof (struct Domain, symmZ), "int*", (int)__builtin_offsetof (struct Domain, nodeElemCount), "int*", (int)__builtin_offsetof (struct Domain, nodeElemStart), "int*", (int)__builtin_offsetof (struct Domain, nodeElemCornerList), "int", (int)__builtin_offsetof (struct Domain, cornerListSize), "int*", (int)__builtin_offsetof (struct Domain, matElemlist), "int*", (int)__builtin_offsetof (struct Domain, nodelist), "int*", (int)__builtin_offsetof (struct Domain, lxim), "int*", (int)__builtin_offsetof (struct Domain, lxip), "int*", (int)__builtin_offsetof (struct Domain, letam), "int*", (int)__builtin_offsetof (struct Domain, letap), "int*", (int)__builtin_offsetof (struct Domain, lzetam), "int*", (int)__builtin_offsetof (struct Domain, lzetap), "int*", (int)__builtin_offsetof (struct Domain, elemBC), "double*", (int)__builtin_offsetof (struct Domain, dxx), "double*", (int)__builtin_offsetof (struct Domain, dyy), "double*", (int)__builtin_offsetof (struct Domain, dzz), "double*", (int)__builtin_offsetof (struct Domain, delv_xi), "double*", (int)__builtin_offsetof (struct Domain, delv_eta), "double*", (int)__builtin_offsetof (struct Domain, delv_zeta), "double*", (int)__builtin_offsetof (struct Domain, delx_xi), "double*", (int)__builtin_offsetof (struct Domain, delx_eta), "double*", (int)__builtin_offsetof (struct Domain, delx_zeta), "double*", (int)__builtin_offsetof (struct Domain, e), "double*", (int)__builtin_offsetof (struct Domain, p), "double*", (int)__builtin_offsetof (struct Domain, q), "double*", (int)__builtin_offsetof (struct Domain, ql), "double*", (int)__builtin_offsetof (struct Domain, qq), "double*", (int)__builtin_offsetof (struct Domain, v), "double*", (int)__builtin_offsetof (struct Domain, volo), "double*", (int)__builtin_offsetof (struct Domain, vnew), "double*", (int)__builtin_offsetof (struct Domain, delv), "double*", (int)__builtin_offsetof (struct Domain, vdov), "double*", (int)__builtin_offsetof (struct Domain, arealg), "double*", (int)__builtin_offsetof (struct Domain, ss), "double*", (int)__builtin_offsetof (struct Domain, elemMass), "double", (int)__builtin_offsetof (struct Domain, dtfixed), "double", (int)__builtin_offsetof (struct Domain, time), "double", (int)__builtin_offsetof (struct Domain, deltatime), "double", (int)__builtin_offsetof (struct Domain, deltatimemultlb), "double", (int)__builtin_offsetof (struct Domain, deltatimemultub), "double", (int)__builtin_offsetof (struct Domain, stoptime), "double", (int)__builtin_offsetof (struct Domain, u_cut), "double", (int)__builtin_offsetof (struct Domain, hgcoef), "double", (int)__builtin_offsetof (struct Domain, qstop), "double", (int)__builtin_offsetof (struct Domain, monoq_max_slope), "double", (int)__builtin_offsetof (struct Domain, monoq_limiter_mult), "double", (int)__builtin_offsetof (struct Domain, e_cut), "double", (int)__builtin_offsetof (struct Domain, p_cut), "double", (int)__builtin_offsetof (struct Domain, ss4o3), "double", (int)__builtin_offsetof (struct Domain, q_cut), "double", (int)__builtin_offsetof (struct Domain, v_cut), "double", (int)__builtin_offsetof (struct Domain, qlc_monoq), "double", (int)__builtin_offsetof (struct Domain, qqc_monoq), "double", (int)__builtin_offsetof (struct Domain, qqc), "double", (int)__builtin_offsetof (struct Domain, eosvmax), "double", (int)__builtin_offsetof (struct Domain, eosvmin), "double", (int)__builtin_offsetof (struct Domain, pmin), "double", (int)__builtin_offsetof (struct Domain, emin), "double", (int)__builtin_offsetof (struct Domain, dvovmax), "double", (int)__builtin_offsetof (struct Domain, refdens), "double", (int)__builtin_offsetof (struct Domain, dtcourant), "double", (int)__builtin_offsetof (struct Domain, dthydro), "double", (int)__builtin_offsetof (struct Domain, dtmax), "int", (int)__builtin_offsetof (struct Domain, cycle), "int", (int)__builtin_offsetof (struct Domain, sizeX), "int", (int)__builtin_offsetof (struct Domain, sizeY), "int", (int)__builtin_offsetof (struct Domain, sizeZ), "int", (int)__builtin_offsetof (struct Domain, numElem), "int", (int)__builtin_offsetof (struct Domain, numNode), "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec), "CalcVolumeForceForElems", 3, "InitStressTermsForElems", "IntegrateStressForElems", "CalcHourglassControlForElems", "AllocateElemTemporary", 0, "IntegrateStressForElems", 3, "CalcElemShapeFunctionDerivatives", "CalcElemNodeNormals", "SumElemStressesToNodeForces", "CalcTimeConstraintsForElems", 2, "CalcCourantConstraintForElems", "CalcHydroConstraintForElems", "CalcKinematicsForElems", 4, "CalcElemVolume", "CalcElemCharacteristicLength", "CalcElemShapeFunctionDerivatives", "CalcElemVelocityGrandient", "CalcHourglassControlForElems", 3, "CollectDomainNodesToElemNodes", "CalcElemVolumeDerivative", "CalcFBHourglassForceForElems", "CalcElemVolumeDerivative", 8, "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "CalcPressureForElems", 1, "FABS", "AllocateNodeElemIndexes", 0, "CalcAccelerationForNodes", 0, "CalcElemVolumeScalar", 0, "EvalEOSForElems", 2, "CalcEnergyForElems", "CalcSoundSpeedForElems", "FABS", 0, "CalcLagrangeElements", 1, "CalcKinematicsForElems", "VoluDer", 0, "CalcElemFBHourglassForce", 0, "UpdateVolumesForElems", 1, "FABS", "CalcElemShapeFunctionDerivatives", 0, "CBRT", 0, "main", 10, "AllocateElemPersistent", "AllocateElemTemporary", "AllocateNodalPersistent", "AllocateNodesets", "AllocateNodeElemIndexes", "CalcElemVolume", "TimeIncrement", "LagrangeLeapFrog", "checkpoint", "FABS", "CalcMonotonicQRegionForElems", 0, "InitStressTermsForElems", 0, "TimeIncrement", 0, "SumElemStressesToNodeForces", 0, "CalcMonotonicQGradientsForElems", 3, "SQRT", "SQRT", "SQRT", "LagrangeElements", 4, "CalcLagrangeElements", "CalcQForElems", "ApplyMaterialPropertiesForElems", "UpdateVolumesForElems", "AllocateNodesets", 0, "CalcCourantConstraintForElems", 2, "omp_get_num_threads", "SQRT", "AreaFace", 0, "CalcElemVolume", 1, "CalcElemVolumeScalar", "CalcPositionForNodes", 0, "CalcElemVelocityGrandient", 0, "CollectDomainNodesToElemNodes", 0, "CalcMonotonicQForElems", 1, "CalcMonotonicQRegionForElems", "AllocateElemPersistent", 0, "CalcHydroConstraintForElems", 2, "omp_get_num_threads", "FABS", "CalcForceForNodes", 1, "CalcVolumeForceForElems", "SumElemFaceNormal", 0, "ApplyMaterialPropertiesForElems", 1, "EvalEOSForElems", "CalcVelocityForNodes", 3, "FABS", "FABS", "FABS", "AllocateNodalPersistent", 0, "LagrangeLeapFrog", 3, "LagrangeNodal", "LagrangeElements", "CalcTimeConstraintsForElems", "CalcElemNodeNormals", 6, "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SQRT", 0, "CalcSoundSpeedForElems", 1, "SQRT", "CalcElemCharacteristicLength", 13, "AreaFace", "fmax", "AreaFace", "fmax", "AreaFace", "fmax", "AreaFace", "fmax", "AreaFace", "fmax", "AreaFace", "fmax", "SQRT", "CalcEnergyForElems", 9, "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS", "CalcQForElems", 2, "CalcMonotonicQGradientsForElems", "CalcMonotonicQForElems", "LagrangeNodal", 5, "CalcForceForNodes", "CalcAccelerationForNodes", "ApplyAccelerationBoundaryConditionsForNodes", "CalcVelocityForNodes", "CalcPositionForNodes", "CalcFBHourglassForceForElems", 2, "CBRT", "CalcElemFBHourglassForce", "ApplyAccelerationBoundaryConditionsForNodes", 0, "main|x_local|0", 1, "main", "main|start|0", 1, "main", "main|end|0", 1, "main", "CalcCourantConstraintForElems|dtcourant|0", 1, "omp_get_num_threads", "CalcCourantConstraintForElems|courant_elem|0", 1, "omp_get_num_threads", "CalcCourantConstraintForElems|length|0", 1, "omp_get_num_threads", "CalcCourantConstraintForElems|qqc2|0", 1, "omp_get_num_threads", "CalcHydroConstraintForElems|dthydro|0", 1, "omp_get_num_threads", "CalcHydroConstraintForElems|hydro_elem|0", 1, "omp_get_num_threads", "CalcHydroConstraintForElems|dvovmax|0", 1, "omp_get_num_threads", "CalcHydroConstraintForElems|length|0", 1, "omp_get_num_threads", "CalcLagrangeElements|numElem|0", 1, "CalcKinematicsForElems", "CalcKinematicsForElems|numElem|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|dt|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|k|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|B|0", 1, "CalcKinematicsForElems", "CalcKinematicsForElems|x_local|0", 1, "CalcKinematicsForElems", "CalcKinematicsForElems|y_local|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|z_local|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|xd_local|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|yd_local|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|zd_local|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|detJ|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|volume|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|relativeVolume|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|elemToNode|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|lnode|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|gnode|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|lnode|1", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|gnode|1", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|dt2|0", 1, "CalcElemCharacteristicLength", "CalcKinematicsForElems|j|0", 1, "CalcElemCharacteristicLength", "CalcElemCharacteristicLength|x|0", 1, "fmax", "CalcElemCharacteristicLength|y|0", 1, "fmax", "CalcElemCharacteristicLength|z|0", 1, "fmax", "CalcElemCharacteristicLength|volume|0", 1, "fmax", "CalcElemCharacteristicLength|a|0", 1, "fmax", "CalcElemCharacteristicLength|charLength|0", 1, "fmax", "IntegrateStressForElems|B|0", 1, "IntegrateStressForElems", "CalcHourglassControlForElems|x1|0", 1, "CalcHourglassControlForElems", "CalcFBHourglassForceForElems|hgfx|0", 1, "CalcFBHourglassForceForElems", &____alias_loc_id_0, (unsigned)45, 12342427844960689186UL + 782UL, 12342427844960689186UL + 783UL, 12342427844960689186UL + 784UL, 12342427844960689186UL + 785UL, 12342427844960689186UL + 786UL, 12342427844960689186UL + 787UL, 12342427844960689186UL + 788UL, 12342427844960689186UL + 789UL, 12342427844960689186UL + 790UL, 12342427844960689186UL + 791UL, 12342427844960689186UL + 792UL, 12342427844960689186UL + 793UL, 12342427844960689186UL + 794UL, 12342427844960689186UL + 795UL, 12342427844960689186UL + 796UL, 12342427844960689186UL + 797UL, 12342427844960689186UL + 798UL, 12342427844960689186UL + 799UL, 12342427844960689186UL + 800UL, 12342427844960689186UL + 801UL, 12342427844960689186UL + 802UL, 12342427844960689186UL + 803UL, 12342427844960689186UL + 804UL, 12342427844960689186UL + 805UL, 12342427844960689186UL + 806UL, 12342427844960689186UL + 807UL, 12342427844960689186UL + 808UL, 12342427844960689186UL + 809UL, 12342427844960689186UL + 810UL, 12342427844960689186UL + 811UL, 12342427844960689186UL + 812UL, 12342427844960689186UL + 813UL, 12342427844960689186UL + 814UL, 12342427844960689186UL + 815UL, 12342427844960689186UL + 816UL, 12342427844960689186UL + 817UL, 12342427844960689186UL + 818UL, 12342427844960689186UL + 819UL, 12342427844960689186UL + 820UL, 12342427844960689186UL + 821UL, 12342427844960689186UL + 822UL, 12342427844960689186UL + 823UL, 12342427844960689186UL + 824UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 14642UL, &____alias_loc_id_1, (unsigned)1, 12342427844960689186UL + 1981UL, &____alias_loc_id_2, (unsigned)5, 12342427844960689186UL + 1994UL, 12342427844960689186UL + 1995UL, 12342427844960689186UL + 1996UL, 12342427844960689186UL + 1997UL, 12342427844960689186UL + 1998UL, &____alias_loc_id_3, (unsigned)4, 12342427844960689186UL + 2205UL, 12342427844960689186UL + 2206UL, 12342427844960689186UL + 2207UL, 12342427844960689186UL + 2208UL, &____alias_loc_id_4, (unsigned)2, 12342427844960689186UL + 2369UL, 12342427844960689186UL + 2370UL, &____alias_loc_id_5, (unsigned)20, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 5895UL, 12342427844960689186UL + 5896UL, 12342427844960689186UL + 5897UL, 12342427844960689186UL + 5900UL, 12342427844960689186UL + 5901UL, 12342427844960689186UL + 5902UL, 12342427844960689186UL + 5903UL, 12342427844960689186UL + 5904UL, 12342427844960689186UL + 5905UL, 12342427844960689186UL + 5906UL, 12342427844960689186UL + 5907UL, 12342427844960689186UL + 5908UL, 12342427844960689186UL + 5909UL, 12342427844960689186UL + 5910UL, 12342427844960689186UL + 5911UL, 12342427844960689186UL + 5912UL, 12342427844960689186UL + 5913UL, 12342427844960689186UL + 5914UL, 12342427844960689186UL + 5915UL, &____alias_loc_id_6, (unsigned)6, 12342427844960689186UL + 6169UL, 12342427844960689186UL + 6170UL, 12342427844960689186UL + 6171UL, 12342427844960689186UL + 6172UL, 12342427844960689186UL + 6173UL, 12342427844960689186UL + 6174UL, &____alias_loc_id_7, (unsigned)2, 12342427844960689186UL + 6173UL, 12342427844960689186UL + 6174UL, &____alias_loc_id_8, (unsigned)2, 12342427844960689186UL + 6173UL, 12342427844960689186UL + 6174UL, &____alias_loc_id_9, (unsigned)2, 12342427844960689186UL + 6173UL, 12342427844960689186UL + 6174UL, &____alias_loc_id_10, (unsigned)2, 12342427844960689186UL + 6173UL, 12342427844960689186UL + 6174UL, &____alias_loc_id_11, (unsigned)2, 12342427844960689186UL + 6173UL, 12342427844960689186UL + 6174UL, &____alias_loc_id_12, (unsigned)3, 12342427844960689186UL + 1UL, 12342427844960689186UL + 2UL, 12342427844960689186UL + 148UL, &____alias_loc_id_13, (unsigned)5, 12342427844960689186UL + 158UL, 12342427844960689186UL + 159UL, 12342427844960689186UL + 160UL, 12342427844960689186UL + 167UL, 12342427844960689186UL + 347UL, &____alias_loc_id_14, (unsigned)3, 12342427844960689186UL + 349UL, 12342427844960689186UL + 350UL, 12342427844960689186UL + 426UL, &____alias_loc_id_15, (unsigned)3, 12342427844960689186UL + 428UL, 12342427844960689186UL + 429UL, 12342427844960689186UL + 456UL, &____alias_loc_id_16, (unsigned)20, 12342427844960689186UL + 458UL, 12342427844960689186UL + 460UL, 12342427844960689186UL + 461UL, 12342427844960689186UL + 462UL, 12342427844960689186UL + 463UL, 12342427844960689186UL + 464UL, 12342427844960689186UL + 465UL, 12342427844960689186UL + 466UL, 12342427844960689186UL + 467UL, 12342427844960689186UL + 468UL, 12342427844960689186UL + 469UL, 12342427844960689186UL + 470UL, 12342427844960689186UL + 471UL, 12342427844960689186UL + 472UL, 12342427844960689186UL + 473UL, 12342427844960689186UL + 474UL, 12342427844960689186UL + 475UL, 12342427844960689186UL + 476UL, 12342427844960689186UL + 541UL, 12342427844960689186UL + 778UL, &____alias_loc_id_17, (unsigned)54, 12342427844960689186UL + 782UL, 12342427844960689186UL + 783UL, 12342427844960689186UL + 784UL, 12342427844960689186UL + 785UL, 12342427844960689186UL + 786UL, 12342427844960689186UL + 787UL, 12342427844960689186UL + 788UL, 12342427844960689186UL + 789UL, 12342427844960689186UL + 790UL, 12342427844960689186UL + 791UL, 12342427844960689186UL + 792UL, 12342427844960689186UL + 793UL, 12342427844960689186UL + 794UL, 12342427844960689186UL + 795UL, 12342427844960689186UL + 796UL, 12342427844960689186UL + 797UL, 12342427844960689186UL + 798UL, 12342427844960689186UL + 799UL, 12342427844960689186UL + 800UL, 12342427844960689186UL + 801UL, 12342427844960689186UL + 802UL, 12342427844960689186UL + 803UL, 12342427844960689186UL + 804UL, 12342427844960689186UL + 805UL, 12342427844960689186UL + 806UL, 12342427844960689186UL + 807UL, 12342427844960689186UL + 808UL, 12342427844960689186UL + 809UL, 12342427844960689186UL + 810UL, 12342427844960689186UL + 811UL, 12342427844960689186UL + 812UL, 12342427844960689186UL + 813UL, 12342427844960689186UL + 814UL, 12342427844960689186UL + 815UL, 12342427844960689186UL + 816UL, 12342427844960689186UL + 817UL, 12342427844960689186UL + 818UL, 12342427844960689186UL + 819UL, 12342427844960689186UL + 820UL, 12342427844960689186UL + 821UL, 12342427844960689186UL + 822UL, 12342427844960689186UL + 823UL, 12342427844960689186UL + 824UL, 12342427844960689186UL + 827UL, 12342427844960689186UL + 828UL, 12342427844960689186UL + 829UL, 12342427844960689186UL + 830UL, 12342427844960689186UL + 831UL, 12342427844960689186UL + 832UL, 12342427844960689186UL + 833UL, 12342427844960689186UL + 834UL, 12342427844960689186UL + 835UL, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 14642UL, &____alias_loc_id_18, (unsigned)3, 12342427844960689186UL + 1760UL, 12342427844960689186UL + 1761UL, 12342427844960689186UL + 1762UL, &____alias_loc_id_19, (unsigned)5, 12342427844960689186UL + 1848UL, 12342427844960689186UL + 1849UL, 12342427844960689186UL + 1850UL, 12342427844960689186UL + 1851UL, 12342427844960689186UL + 14642UL, &____alias_loc_id_20, (unsigned)1, 12342427844960689186UL + 1956UL, &____alias_loc_id_21, (unsigned)2, 12342427844960689186UL + 1964UL, 12342427844960689186UL + 1965UL, &____alias_loc_id_22, (unsigned)14, 12342427844960689186UL + 1994UL, 12342427844960689186UL + 1995UL, 12342427844960689186UL + 1999UL, 12342427844960689186UL + 2000UL, 12342427844960689186UL + 2001UL, 12342427844960689186UL + 2002UL, 12342427844960689186UL + 2003UL, 12342427844960689186UL + 2004UL, 12342427844960689186UL + 2005UL, 12342427844960689186UL + 2006UL, 12342427844960689186UL + 2007UL, 12342427844960689186UL + 2031UL, 12342427844960689186UL + 2035UL, 12342427844960689186UL + 14642UL, &____alias_loc_id_23, (unsigned)14, 12342427844960689186UL + 2205UL, 12342427844960689186UL + 2206UL, 12342427844960689186UL + 2209UL, 12342427844960689186UL + 2210UL, 12342427844960689186UL + 2211UL, 12342427844960689186UL + 2212UL, 12342427844960689186UL + 2213UL, 12342427844960689186UL + 2214UL, 12342427844960689186UL + 2215UL, 12342427844960689186UL + 2216UL, 12342427844960689186UL + 2217UL, 12342427844960689186UL + 2235UL, 12342427844960689186UL + 2239UL, 12342427844960689186UL + 14642UL, &____alias_loc_id_24, (unsigned)1, 12342427844960689186UL + 2361UL, &____alias_loc_id_25, (unsigned)6, 12342427844960689186UL + 2369UL, 12342427844960689186UL + 2370UL, 12342427844960689186UL + 2371UL, 12342427844960689186UL + 2372UL, 12342427844960689186UL + 2373UL, 12342427844960689186UL + 2488UL, &____alias_loc_id_26, (unsigned)4, 12342427844960689186UL + 2462UL, 12342427844960689186UL + 2463UL, 12342427844960689186UL + 2464UL, 12342427844960689186UL + 2465UL, &____alias_loc_id_27, (unsigned)12, 12342427844960689186UL + 2509UL, 12342427844960689186UL + 2510UL, 12342427844960689186UL + 2511UL, 12342427844960689186UL + 2512UL, 12342427844960689186UL + 2513UL, 12342427844960689186UL + 2514UL, 12342427844960689186UL + 2515UL, 12342427844960689186UL + 2516UL, 12342427844960689186UL + 2517UL, 12342427844960689186UL + 2518UL, 12342427844960689186UL + 2519UL, 12342427844960689186UL + 2560UL, &____alias_loc_id_28, (unsigned)5, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 2691UL, 12342427844960689186UL + 2692UL, 12342427844960689186UL + 2693UL, 12342427844960689186UL + 2694UL, &____alias_loc_id_29, (unsigned)55, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 2739UL, 12342427844960689186UL + 2740UL, 12342427844960689186UL + 2741UL, 12342427844960689186UL + 2742UL, 12342427844960689186UL + 2743UL, 12342427844960689186UL + 2744UL, 12342427844960689186UL + 2745UL, 12342427844960689186UL + 2746UL, 12342427844960689186UL + 2747UL, 12342427844960689186UL + 2748UL, 12342427844960689186UL + 2749UL, 12342427844960689186UL + 2750UL, 12342427844960689186UL + 2751UL, 12342427844960689186UL + 2752UL, 12342427844960689186UL + 2753UL, 12342427844960689186UL + 2754UL, 12342427844960689186UL + 2755UL, 12342427844960689186UL + 2756UL, 12342427844960689186UL + 2757UL, 12342427844960689186UL + 2758UL, 12342427844960689186UL + 2759UL, 12342427844960689186UL + 2760UL, 12342427844960689186UL + 2761UL, 12342427844960689186UL + 2762UL, 12342427844960689186UL + 2763UL, 12342427844960689186UL + 2764UL, 12342427844960689186UL + 2765UL, 12342427844960689186UL + 2766UL, 12342427844960689186UL + 2767UL, 12342427844960689186UL + 2768UL, 12342427844960689186UL + 2769UL, 12342427844960689186UL + 2770UL, 12342427844960689186UL + 2771UL, 12342427844960689186UL + 2772UL, 12342427844960689186UL + 2773UL, 12342427844960689186UL + 2774UL, 12342427844960689186UL + 2775UL, 12342427844960689186UL + 2776UL, 12342427844960689186UL + 2777UL, 12342427844960689186UL + 2778UL, 12342427844960689186UL + 2779UL, 12342427844960689186UL + 2780UL, 12342427844960689186UL + 2781UL, 12342427844960689186UL + 2782UL, 12342427844960689186UL + 2783UL, 12342427844960689186UL + 2819UL, 12342427844960689186UL + 2826UL, 12342427844960689186UL + 2833UL, 12342427844960689186UL + 2840UL, 12342427844960689186UL + 2847UL, 12342427844960689186UL + 2854UL, 12342427844960689186UL + 2861UL, 12342427844960689186UL + 2868UL, 12342427844960689186UL + 2875UL, &____alias_loc_id_30, (unsigned)37, 12342427844960689186UL + 3360UL, 12342427844960689186UL + 3361UL, 12342427844960689186UL + 3362UL, 12342427844960689186UL + 3363UL, 12342427844960689186UL + 3364UL, 12342427844960689186UL + 3365UL, 12342427844960689186UL + 3366UL, 12342427844960689186UL + 3367UL, 12342427844960689186UL + 3368UL, 12342427844960689186UL + 3369UL, 12342427844960689186UL + 3370UL, 12342427844960689186UL + 3371UL, 12342427844960689186UL + 3372UL, 12342427844960689186UL + 3373UL, 12342427844960689186UL + 3374UL, 12342427844960689186UL + 3375UL, 12342427844960689186UL + 3376UL, 12342427844960689186UL + 3377UL, 12342427844960689186UL + 3378UL, 12342427844960689186UL + 3379UL, 12342427844960689186UL + 3380UL, 12342427844960689186UL + 3381UL, 12342427844960689186UL + 3382UL, 12342427844960689186UL + 3383UL, 12342427844960689186UL + 3384UL, 12342427844960689186UL + 3385UL, 12342427844960689186UL + 3386UL, 12342427844960689186UL + 3387UL, 12342427844960689186UL + 3388UL, 12342427844960689186UL + 3389UL, 12342427844960689186UL + 3390UL, 12342427844960689186UL + 3391UL, 12342427844960689186UL + 3392UL, 12342427844960689186UL + 3393UL, 12342427844960689186UL + 3394UL, 12342427844960689186UL + 4010UL, 12342427844960689186UL + 4011UL, &____alias_loc_id_31, (unsigned)12, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 4032UL, 12342427844960689186UL + 4033UL, 12342427844960689186UL + 4034UL, 12342427844960689186UL + 4035UL, 12342427844960689186UL + 4036UL, 12342427844960689186UL + 4037UL, 12342427844960689186UL + 4038UL, 12342427844960689186UL + 4039UL, 12342427844960689186UL + 4040UL, 12342427844960689186UL + 4041UL, 12342427844960689186UL + 4042UL, &____alias_loc_id_32, (unsigned)16, 12342427844960689186UL + 4141UL, 12342427844960689186UL + 4142UL, 12342427844960689186UL + 4143UL, 12342427844960689186UL + 4144UL, 12342427844960689186UL + 4145UL, 12342427844960689186UL + 4146UL, 12342427844960689186UL + 4147UL, 12342427844960689186UL + 4148UL, 12342427844960689186UL + 4149UL, 12342427844960689186UL + 4150UL, 12342427844960689186UL + 4151UL, 12342427844960689186UL + 4152UL, 12342427844960689186UL + 4153UL, 12342427844960689186UL + 4280UL, 12342427844960689186UL + 4281UL, 12342427844960689186UL + 4282UL, &____alias_loc_id_33, (unsigned)78, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 4290UL, 12342427844960689186UL + 4291UL, 12342427844960689186UL + 4292UL, 12342427844960689186UL + 4293UL, 12342427844960689186UL + 4294UL, 12342427844960689186UL + 4295UL, 12342427844960689186UL + 4296UL, 12342427844960689186UL + 4297UL, 12342427844960689186UL + 4298UL, 12342427844960689186UL + 4299UL, 12342427844960689186UL + 4300UL, 12342427844960689186UL + 4301UL, 12342427844960689186UL + 4302UL, 12342427844960689186UL + 4303UL, 12342427844960689186UL + 4304UL, 12342427844960689186UL + 4305UL, 12342427844960689186UL + 4306UL, 12342427844960689186UL + 4307UL, 12342427844960689186UL + 4308UL, 12342427844960689186UL + 4309UL, 12342427844960689186UL + 4310UL, 12342427844960689186UL + 4311UL, 12342427844960689186UL + 4312UL, 12342427844960689186UL + 4313UL, 12342427844960689186UL + 4314UL, 12342427844960689186UL + 4315UL, 12342427844960689186UL + 4316UL, 12342427844960689186UL + 4317UL, 12342427844960689186UL + 4318UL, 12342427844960689186UL + 4319UL, 12342427844960689186UL + 4320UL, 12342427844960689186UL + 4321UL, 12342427844960689186UL + 4322UL, 12342427844960689186UL + 4323UL, 12342427844960689186UL + 4324UL, 12342427844960689186UL + 4325UL, 12342427844960689186UL + 4326UL, 12342427844960689186UL + 4327UL, 12342427844960689186UL + 4328UL, 12342427844960689186UL + 4329UL, 12342427844960689186UL + 4330UL, 12342427844960689186UL + 4331UL, 12342427844960689186UL + 4332UL, 12342427844960689186UL + 4333UL, 12342427844960689186UL + 4334UL, 12342427844960689186UL + 4335UL, 12342427844960689186UL + 4336UL, 12342427844960689186UL + 4337UL, 12342427844960689186UL + 4338UL, 12342427844960689186UL + 4339UL, 12342427844960689186UL + 4340UL, 12342427844960689186UL + 4341UL, 12342427844960689186UL + 4342UL, 12342427844960689186UL + 4343UL, 12342427844960689186UL + 4344UL, 12342427844960689186UL + 4345UL, 12342427844960689186UL + 4346UL, 12342427844960689186UL + 4347UL, 12342427844960689186UL + 4348UL, 12342427844960689186UL + 4349UL, 12342427844960689186UL + 4350UL, 12342427844960689186UL + 4351UL, 12342427844960689186UL + 4352UL, 12342427844960689186UL + 4353UL, 12342427844960689186UL + 4354UL, 12342427844960689186UL + 4355UL, 12342427844960689186UL + 4356UL, 12342427844960689186UL + 4357UL, 12342427844960689186UL + 4358UL, 12342427844960689186UL + 4359UL, 12342427844960689186UL + 4360UL, 12342427844960689186UL + 4361UL, 12342427844960689186UL + 4362UL, 12342427844960689186UL + 4363UL, 12342427844960689186UL + 4364UL, 12342427844960689186UL + 4365UL, 12342427844960689186UL + 4366UL, &____alias_loc_id_34, (unsigned)6, 12342427844960689186UL + 5327UL, 12342427844960689186UL + 5328UL, 12342427844960689186UL + 5329UL, 12342427844960689186UL + 5330UL, 12342427844960689186UL + 5331UL, 12342427844960689186UL + 5332UL, &____alias_loc_id_35, (unsigned)22, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 5362UL, 12342427844960689186UL + 5363UL, 12342427844960689186UL + 5364UL, 12342427844960689186UL + 5365UL, 12342427844960689186UL + 5366UL, 12342427844960689186UL + 5367UL, 12342427844960689186UL + 5368UL, 12342427844960689186UL + 5369UL, 12342427844960689186UL + 5370UL, 12342427844960689186UL + 5371UL, 12342427844960689186UL + 5372UL, 12342427844960689186UL + 5373UL, 12342427844960689186UL + 5374UL, 12342427844960689186UL + 5375UL, 12342427844960689186UL + 5376UL, 12342427844960689186UL + 5377UL, 12342427844960689186UL + 5378UL, 12342427844960689186UL + 5379UL, 12342427844960689186UL + 5380UL, 12342427844960689186UL + 5381UL, 12342427844960689186UL + 5382UL, &____alias_loc_id_36, (unsigned)14, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 5895UL, 12342427844960689186UL + 5896UL, 12342427844960689186UL + 5897UL, 12342427844960689186UL + 5900UL, 12342427844960689186UL + 5901UL, 12342427844960689186UL + 5902UL, 12342427844960689186UL + 5903UL, 12342427844960689186UL + 5904UL, 12342427844960689186UL + 5905UL, 12342427844960689186UL + 5912UL, 12342427844960689186UL + 5913UL, 12342427844960689186UL + 5914UL, 12342427844960689186UL + 5915UL, &____alias_loc_id_37, (unsigned)1, 12342427844960689186UL + 6174UL, &____alias_loc_id_38, (unsigned)49, 12342427844960689186UL + 6450UL, 12342427844960689186UL + 6451UL, 12342427844960689186UL + 6452UL, 12342427844960689186UL + 6453UL, 12342427844960689186UL + 6454UL, 12342427844960689186UL + 6455UL, 12342427844960689186UL + 6456UL, 12342427844960689186UL + 6457UL, 12342427844960689186UL + 6458UL, 12342427844960689186UL + 6459UL, 12342427844960689186UL + 6460UL, 12342427844960689186UL + 6461UL, 12342427844960689186UL + 6462UL, 12342427844960689186UL + 6463UL, 12342427844960689186UL + 6464UL, 12342427844960689186UL + 6465UL, 12342427844960689186UL + 6466UL, 12342427844960689186UL + 6467UL, 12342427844960689186UL + 6468UL, 12342427844960689186UL + 6469UL, 12342427844960689186UL + 6470UL, 12342427844960689186UL + 6471UL, 12342427844960689186UL + 6472UL, 12342427844960689186UL + 6473UL, 12342427844960689186UL + 6474UL, 12342427844960689186UL + 6475UL, 12342427844960689186UL + 6476UL, 12342427844960689186UL + 6477UL, 12342427844960689186UL + 6478UL, 12342427844960689186UL + 6479UL, 12342427844960689186UL + 6480UL, 12342427844960689186UL + 6481UL, 12342427844960689186UL + 6482UL, 12342427844960689186UL + 6483UL, 12342427844960689186UL + 6484UL, 12342427844960689186UL + 6485UL, 12342427844960689186UL + 6486UL, 12342427844960689186UL + 6487UL, 12342427844960689186UL + 6488UL, 12342427844960689186UL + 6489UL, 12342427844960689186UL + 6490UL, 12342427844960689186UL + 6491UL, 12342427844960689186UL + 6492UL, 12342427844960689186UL + 6493UL, 12342427844960689186UL + 6494UL, 12342427844960689186UL + 6495UL, 12342427844960689186UL + 6496UL, 12342427844960689186UL + 7114UL, 12342427844960689186UL + 7115UL, &____alias_loc_id_39, (unsigned)17, 12342427844960689186UL + 7116UL, 12342427844960689186UL + 7117UL, 12342427844960689186UL + 7118UL, 12342427844960689186UL + 7119UL, 12342427844960689186UL + 7120UL, 12342427844960689186UL + 7121UL, 12342427844960689186UL + 7122UL, 12342427844960689186UL + 7123UL, 12342427844960689186UL + 7124UL, 12342427844960689186UL + 7125UL, 12342427844960689186UL + 7126UL, 12342427844960689186UL + 7127UL, 12342427844960689186UL + 7128UL, 12342427844960689186UL + 7129UL, 12342427844960689186UL + 7130UL, 12342427844960689186UL + 7131UL, 12342427844960689186UL + 7652UL, &____alias_loc_id_40, (unsigned)19, 12342427844960689186UL + 7653UL, 12342427844960689186UL + 7654UL, 12342427844960689186UL + 7655UL, 12342427844960689186UL + 7656UL, 12342427844960689186UL + 7657UL, 12342427844960689186UL + 7658UL, 12342427844960689186UL + 7659UL, 12342427844960689186UL + 7660UL, 12342427844960689186UL + 7661UL, 12342427844960689186UL + 7662UL, 12342427844960689186UL + 7663UL, 12342427844960689186UL + 7664UL, 12342427844960689186UL + 7665UL, 12342427844960689186UL + 7666UL, 12342427844960689186UL + 7667UL, 12342427844960689186UL + 7668UL, 12342427844960689186UL + 7669UL, 12342427844960689186UL + 7670UL, 12342427844960689186UL + 7671UL, &____alias_loc_id_41, (unsigned)3, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 7815UL, 12342427844960689186UL + 7816UL, &____alias_loc_id_42, (unsigned)3, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 7849UL, 12342427844960689186UL + 7850UL, &____alias_loc_id_43, (unsigned)5, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 7915UL, 12342427844960689186UL + 7916UL, 12342427844960689186UL + 7917UL, 12342427844960689186UL + 7918UL, &____alias_loc_id_44, (unsigned)8, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 7990UL, 12342427844960689186UL + 7991UL, 12342427844960689186UL + 7992UL, 12342427844960689186UL + 7993UL, 12342427844960689186UL + 7994UL, 12342427844960689186UL + 7995UL, 12342427844960689186UL + 7996UL, &____alias_loc_id_45, (unsigned)4, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 8103UL, 12342427844960689186UL + 8104UL, 12342427844960689186UL + 8105UL, &____alias_loc_id_46, (unsigned)7, 12342427844960689186UL + 8167UL, 12342427844960689186UL + 8168UL, 12342427844960689186UL + 8169UL, 12342427844960689186UL + 8170UL, 12342427844960689186UL + 8171UL, 12342427844960689186UL + 8172UL, 12342427844960689186UL + 8173UL, &____alias_loc_id_47, (unsigned)8, 12342427844960689186UL + 8260UL, 12342427844960689186UL + 8261UL, 12342427844960689186UL + 8262UL, 12342427844960689186UL + 8263UL, 12342427844960689186UL + 8264UL, 12342427844960689186UL + 8314UL, 12342427844960689186UL + 8315UL, 12342427844960689186UL + 8316UL, &____alias_loc_id_48, (unsigned)26, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 8317UL, 12342427844960689186UL + 8318UL, 12342427844960689186UL + 8319UL, 12342427844960689186UL + 8320UL, 12342427844960689186UL + 8321UL, 12342427844960689186UL + 8322UL, 12342427844960689186UL + 8323UL, 12342427844960689186UL + 8324UL, 12342427844960689186UL + 8325UL, 12342427844960689186UL + 8326UL, 12342427844960689186UL + 8328UL, 12342427844960689186UL + 8329UL, 12342427844960689186UL + 8330UL, 12342427844960689186UL + 8331UL, 12342427844960689186UL + 8332UL, 12342427844960689186UL + 8333UL, 12342427844960689186UL + 8334UL, 12342427844960689186UL + 8335UL, 12342427844960689186UL + 8336UL, 12342427844960689186UL + 8337UL, 12342427844960689186UL + 8338UL, 12342427844960689186UL + 8339UL, 12342427844960689186UL + 8340UL, 12342427844960689186UL + 8341UL, 12342427844960689186UL + 8342UL, &____alias_loc_id_49, (unsigned)21, 12342427844960689186UL + 8610UL, 12342427844960689186UL + 8611UL, 12342427844960689186UL + 8612UL, 12342427844960689186UL + 8613UL, 12342427844960689186UL + 8614UL, 12342427844960689186UL + 8615UL, 12342427844960689186UL + 8616UL, 12342427844960689186UL + 8617UL, 12342427844960689186UL + 8618UL, 12342427844960689186UL + 8619UL, 12342427844960689186UL + 8620UL, 12342427844960689186UL + 8627UL, 12342427844960689186UL + 8628UL, 12342427844960689186UL + 8629UL, 12342427844960689186UL + 8645UL, 12342427844960689186UL + 8652UL, 12342427844960689186UL + 8659UL, 12342427844960689186UL + 8666UL, 12342427844960689186UL + 8673UL, 12342427844960689186UL + 8680UL, 12342427844960689186UL + 8848UL, &____alias_loc_id_50, (unsigned)15, 12342427844960689186UL + 8850UL, 12342427844960689186UL + 8851UL, 12342427844960689186UL + 8852UL, 12342427844960689186UL + 8853UL, 12342427844960689186UL + 8854UL, 12342427844960689186UL + 8855UL, 12342427844960689186UL + 8856UL, 12342427844960689186UL + 8857UL, 12342427844960689186UL + 8858UL, 12342427844960689186UL + 8859UL, 12342427844960689186UL + 8860UL, 12342427844960689186UL + 8861UL, 12342427844960689186UL + 9104UL, 12342427844960689186UL + 9105UL, 12342427844960689186UL + 9106UL, &____alias_loc_id_51, (unsigned)6, 12342427844960689186UL + 9107UL, 12342427844960689186UL + 9108UL, 12342427844960689186UL + 9109UL, 12342427844960689186UL + 9110UL, 12342427844960689186UL + 9111UL, 12342427844960689186UL + 9112UL, &____alias_loc_id_52, (unsigned)61, 12342427844960689186UL + 2488UL, 12342427844960689186UL + 9620UL, 12342427844960689186UL + 9621UL, 12342427844960689186UL + 9622UL, 12342427844960689186UL + 9623UL, 12342427844960689186UL + 9624UL, 12342427844960689186UL + 9625UL, 12342427844960689186UL + 9626UL, 12342427844960689186UL + 9627UL, 12342427844960689186UL + 9628UL, 12342427844960689186UL + 9629UL, 12342427844960689186UL + 9630UL, 12342427844960689186UL + 9631UL, 12342427844960689186UL + 9632UL, 12342427844960689186UL + 9633UL, 12342427844960689186UL + 9634UL, 12342427844960689186UL + 9635UL, 12342427844960689186UL + 9636UL, 12342427844960689186UL + 9637UL, 12342427844960689186UL + 9641UL, 12342427844960689186UL + 9642UL, 12342427844960689186UL + 9643UL, 12342427844960689186UL + 9644UL, 12342427844960689186UL + 9645UL, 12342427844960689186UL + 9646UL, 12342427844960689186UL + 9647UL, 12342427844960689186UL + 9648UL, 12342427844960689186UL + 9649UL, 12342427844960689186UL + 9650UL, 12342427844960689186UL + 9651UL, 12342427844960689186UL + 9652UL, 12342427844960689186UL + 9653UL, 12342427844960689186UL + 9654UL, 12342427844960689186UL + 9655UL, 12342427844960689186UL + 9656UL, 12342427844960689186UL + 9657UL, 12342427844960689186UL + 9658UL, 12342427844960689186UL + 9659UL, 12342427844960689186UL + 9660UL, 12342427844960689186UL + 9661UL, 12342427844960689186UL + 9662UL, 12342427844960689186UL + 9663UL, 12342427844960689186UL + 9664UL, 12342427844960689186UL + 9665UL, 12342427844960689186UL + 9666UL, 12342427844960689186UL + 9667UL, 12342427844960689186UL + 9668UL, 12342427844960689186UL + 9669UL, 12342427844960689186UL + 9670UL, 12342427844960689186UL + 9671UL, 12342427844960689186UL + 9672UL, 12342427844960689186UL + 9673UL, 12342427844960689186UL + 9674UL, 12342427844960689186UL + 9675UL, 12342427844960689186UL + 9676UL, 12342427844960689186UL + 9677UL, 12342427844960689186UL + 9678UL, 12342427844960689186UL + 9679UL, 12342427844960689186UL + 9707UL, 12342427844960689186UL + 9714UL, 12342427844960689186UL + 9721UL, &____alias_loc_id_53, (unsigned)1, 12342427844960689186UL + 11007UL, &____alias_loc_id_54, (unsigned)26, 12342427844960689186UL + 11014UL, 12342427844960689186UL + 11015UL, 12342427844960689186UL + 11016UL, 12342427844960689186UL + 11017UL, 12342427844960689186UL + 11018UL, 12342427844960689186UL + 11019UL, 12342427844960689186UL + 11020UL, 12342427844960689186UL + 11021UL, 12342427844960689186UL + 11022UL, 12342427844960689186UL + 11023UL, 12342427844960689186UL + 11024UL, 12342427844960689186UL + 11025UL, 12342427844960689186UL + 11026UL, 12342427844960689186UL + 11027UL, 12342427844960689186UL + 11028UL, 12342427844960689186UL + 11029UL, 12342427844960689186UL + 11030UL, 12342427844960689186UL + 11031UL, 12342427844960689186UL + 11032UL, 12342427844960689186UL + 11033UL, 12342427844960689186UL + 11034UL, 12342427844960689186UL + 11035UL, 12342427844960689186UL + 11036UL, 12342427844960689186UL + 12916UL, 12342427844960689186UL + 12917UL, 12342427844960689186UL + 12918UL, &____alias_loc_id_55, (unsigned)25, 12342427844960689186UL + 12920UL, 12342427844960689186UL + 12921UL, 12342427844960689186UL + 12922UL, 12342427844960689186UL + 12923UL, 12342427844960689186UL + 12924UL, 12342427844960689186UL + 12925UL, 12342427844960689186UL + 12926UL, 12342427844960689186UL + 12927UL, 12342427844960689186UL + 12928UL, 12342427844960689186UL + 12929UL, 12342427844960689186UL + 12930UL, 12342427844960689186UL + 12931UL, 12342427844960689186UL + 12932UL, 12342427844960689186UL + 12933UL, 12342427844960689186UL + 12934UL, 12342427844960689186UL + 12935UL, 12342427844960689186UL + 12936UL, 12342427844960689186UL + 12937UL, 12342427844960689186UL + 12938UL, 12342427844960689186UL + 12939UL, 12342427844960689186UL + 12940UL, 12342427844960689186UL + 12941UL, 12342427844960689186UL + 13169UL, 12342427844960689186UL + 13170UL, 12342427844960689186UL + 13171UL, &____alias_loc_id_56, (unsigned)10, 12342427844960689186UL + 13172UL, 12342427844960689186UL + 13173UL, 12342427844960689186UL + 13174UL, 12342427844960689186UL + 13175UL, 12342427844960689186UL + 13176UL, 12342427844960689186UL + 13177UL, 12342427844960689186UL + 13178UL, 12342427844960689186UL + 13584UL, 12342427844960689186UL + 13585UL, 12342427844960689186UL + 13586UL, &____alias_loc_id_57, (unsigned)34, 12342427844960689186UL + 13590UL, 12342427844960689186UL + 13591UL, 12342427844960689186UL + 13592UL, 12342427844960689186UL + 13593UL, 12342427844960689186UL + 13594UL, 12342427844960689186UL + 13595UL, 12342427844960689186UL + 13596UL, 12342427844960689186UL + 13597UL, 12342427844960689186UL + 13598UL, 12342427844960689186UL + 13599UL, 12342427844960689186UL + 13600UL, 12342427844960689186UL + 13601UL, 12342427844960689186UL + 13602UL, 12342427844960689186UL + 13603UL, 12342427844960689186UL + 13604UL, 12342427844960689186UL + 13605UL, 12342427844960689186UL + 13606UL, 12342427844960689186UL + 13607UL, 12342427844960689186UL + 13608UL, 12342427844960689186UL + 13609UL, 12342427844960689186UL + 13610UL, 12342427844960689186UL + 13611UL, 12342427844960689186UL + 13612UL, 12342427844960689186UL + 13613UL, 12342427844960689186UL + 13614UL, 12342427844960689186UL + 13615UL, 12342427844960689186UL + 13616UL, 12342427844960689186UL + 13617UL, 12342427844960689186UL + 13618UL, 12342427844960689186UL + 13619UL, 12342427844960689186UL + 13620UL, 12342427844960689186UL + 13952UL, 12342427844960689186UL + 13953UL, 12342427844960689186UL + 13954UL, &____alias_loc_id_58, (unsigned)45, 12342427844960689186UL + 13955UL, 12342427844960689186UL + 13956UL, 12342427844960689186UL + 13957UL, 12342427844960689186UL + 13958UL, 12342427844960689186UL + 13959UL, 12342427844960689186UL + 13960UL, 12342427844960689186UL + 13961UL, 12342427844960689186UL + 13962UL, 12342427844960689186UL + 13963UL, 12342427844960689186UL + 13964UL, 12342427844960689186UL + 13965UL, 12342427844960689186UL + 13966UL, 12342427844960689186UL + 13967UL, 12342427844960689186UL + 13968UL, 12342427844960689186UL + 13969UL, 12342427844960689186UL + 13970UL, 12342427844960689186UL + 13971UL, 12342427844960689186UL + 13972UL, 12342427844960689186UL + 13973UL, 12342427844960689186UL + 13974UL, 12342427844960689186UL + 13975UL, 12342427844960689186UL + 13976UL, 12342427844960689186UL + 13977UL, 12342427844960689186UL + 13978UL, 12342427844960689186UL + 13979UL, 12342427844960689186UL + 13980UL, 12342427844960689186UL + 13981UL, 12342427844960689186UL + 13982UL, 12342427844960689186UL + 13983UL, 12342427844960689186UL + 13984UL, 12342427844960689186UL + 13985UL, 12342427844960689186UL + 13986UL, 12342427844960689186UL + 13987UL, 12342427844960689186UL + 14187UL, 12342427844960689186UL + 14188UL, 12342427844960689186UL + 14189UL, 12342427844960689186UL + 14190UL, 12342427844960689186UL + 14191UL, 12342427844960689186UL + 14192UL, 12342427844960689186UL + 14193UL, 12342427844960689186UL + 14194UL, 12342427844960689186UL + 14195UL, 12342427844960689186UL + 14196UL, 12342427844960689186UL + 14197UL, 12342427844960689186UL + 14198UL, &____alias_loc_id_59, (unsigned)62, 12342427844960689186UL + 14211UL, 12342427844960689186UL + 14212UL, 12342427844960689186UL + 14213UL, 12342427844960689186UL + 14214UL, 12342427844960689186UL + 14215UL, 12342427844960689186UL + 14216UL, 12342427844960689186UL + 14217UL, 12342427844960689186UL + 14218UL, 12342427844960689186UL + 14219UL, 12342427844960689186UL + 14220UL, 12342427844960689186UL + 14221UL, 12342427844960689186UL + 14222UL, 12342427844960689186UL + 14223UL, 12342427844960689186UL + 14224UL, 12342427844960689186UL + 14225UL, 12342427844960689186UL + 14226UL, 12342427844960689186UL + 14227UL, 12342427844960689186UL + 14228UL, 12342427844960689186UL + 14229UL, 12342427844960689186UL + 14230UL, 12342427844960689186UL + 14231UL, 12342427844960689186UL + 14232UL, 12342427844960689186UL + 14233UL, 12342427844960689186UL + 14234UL, 12342427844960689186UL + 14235UL, 12342427844960689186UL + 14236UL, 12342427844960689186UL + 14237UL, 12342427844960689186UL + 14238UL, 12342427844960689186UL + 14239UL, 12342427844960689186UL + 14240UL, 12342427844960689186UL + 14241UL, 12342427844960689186UL + 14242UL, 12342427844960689186UL + 14243UL, 12342427844960689186UL + 14244UL, 12342427844960689186UL + 14245UL, 12342427844960689186UL + 14246UL, 12342427844960689186UL + 14247UL, 12342427844960689186UL + 14248UL, 12342427844960689186UL + 14249UL, 12342427844960689186UL + 14250UL, 12342427844960689186UL + 14251UL, 12342427844960689186UL + 14252UL, 12342427844960689186UL + 14253UL, 12342427844960689186UL + 14254UL, 12342427844960689186UL + 14255UL, 12342427844960689186UL + 14256UL, 12342427844960689186UL + 14257UL, 12342427844960689186UL + 14258UL, 12342427844960689186UL + 14259UL, 12342427844960689186UL + 14260UL, 12342427844960689186UL + 14261UL, 12342427844960689186UL + 14262UL, 12342427844960689186UL + 14263UL, 12342427844960689186UL + 14264UL, 12342427844960689186UL + 14265UL, 12342427844960689186UL + 14266UL, 12342427844960689186UL + 14267UL, 12342427844960689186UL + 14268UL, 12342427844960689186UL + 14269UL, 12342427844960689186UL + 14270UL, 12342427844960689186UL + 14271UL, 12342427844960689186UL + 14272UL);
+    init_module(12342427844960689186UL, 170, 51, 8, 50, 50, 0, 50, 2,
+                           &____alias_loc_id_0, (unsigned)45, (12342427844960689186UL + 782UL), (12342427844960689186UL + 783UL), (12342427844960689186UL + 784UL), (12342427844960689186UL + 785UL), (12342427844960689186UL + 786UL), (12342427844960689186UL + 787UL), (12342427844960689186UL + 788UL), (12342427844960689186UL + 789UL), (12342427844960689186UL + 790UL), (12342427844960689186UL + 791UL), (12342427844960689186UL + 792UL), (12342427844960689186UL + 793UL), (12342427844960689186UL + 794UL), (12342427844960689186UL + 795UL), (12342427844960689186UL + 796UL), (12342427844960689186UL + 797UL), (12342427844960689186UL + 798UL), (12342427844960689186UL + 799UL), (12342427844960689186UL + 800UL), (12342427844960689186UL + 801UL), (12342427844960689186UL + 802UL), (12342427844960689186UL + 803UL), (12342427844960689186UL + 804UL), (12342427844960689186UL + 805UL), (12342427844960689186UL + 806UL), (12342427844960689186UL + 807UL), (12342427844960689186UL + 808UL), (12342427844960689186UL + 809UL), (12342427844960689186UL + 810UL), (12342427844960689186UL + 811UL), (12342427844960689186UL + 812UL), (12342427844960689186UL + 813UL), (12342427844960689186UL + 814UL), (12342427844960689186UL + 815UL), (12342427844960689186UL + 816UL), (12342427844960689186UL + 817UL), (12342427844960689186UL + 818UL), (12342427844960689186UL + 819UL), (12342427844960689186UL + 820UL), (12342427844960689186UL + 821UL), (12342427844960689186UL + 822UL), (12342427844960689186UL + 823UL), (12342427844960689186UL + 824UL), (12342427844960689186UL + 2488UL), (12342427844960689186UL + 14642UL),
+                           &____alias_loc_id_1, (unsigned)3, (12342427844960689186UL + 1UL), (12342427844960689186UL + 2UL), (12342427844960689186UL + 148UL),
+                           &____alias_loc_id_2, (unsigned)5, (12342427844960689186UL + 158UL), (12342427844960689186UL + 159UL), (12342427844960689186UL + 160UL), (12342427844960689186UL + 167UL), (12342427844960689186UL + 347UL),
+                           &____alias_loc_id_3, (unsigned)3, (12342427844960689186UL + 349UL), (12342427844960689186UL + 350UL), (12342427844960689186UL + 426UL),
+                           &____alias_loc_id_4, (unsigned)3, (12342427844960689186UL + 428UL), (12342427844960689186UL + 429UL), (12342427844960689186UL + 456UL),
+                           &____alias_loc_id_5, (unsigned)20, (12342427844960689186UL + 458UL), (12342427844960689186UL + 460UL), (12342427844960689186UL + 461UL), (12342427844960689186UL + 462UL), (12342427844960689186UL + 463UL), (12342427844960689186UL + 464UL), (12342427844960689186UL + 465UL), (12342427844960689186UL + 466UL), (12342427844960689186UL + 467UL), (12342427844960689186UL + 468UL), (12342427844960689186UL + 469UL), (12342427844960689186UL + 470UL), (12342427844960689186UL + 471UL), (12342427844960689186UL + 472UL), (12342427844960689186UL + 473UL), (12342427844960689186UL + 474UL), (12342427844960689186UL + 475UL), (12342427844960689186UL + 476UL), (12342427844960689186UL + 541UL), (12342427844960689186UL + 778UL),
+                           &____alias_loc_id_6, (unsigned)54, (12342427844960689186UL + 782UL), (12342427844960689186UL + 783UL), (12342427844960689186UL + 784UL), (12342427844960689186UL + 785UL), (12342427844960689186UL + 786UL), (12342427844960689186UL + 787UL), (12342427844960689186UL + 788UL), (12342427844960689186UL + 789UL), (12342427844960689186UL + 790UL), (12342427844960689186UL + 791UL), (12342427844960689186UL + 792UL), (12342427844960689186UL + 793UL), (12342427844960689186UL + 794UL), (12342427844960689186UL + 795UL), (12342427844960689186UL + 796UL), (12342427844960689186UL + 797UL), (12342427844960689186UL + 798UL), (12342427844960689186UL + 799UL), (12342427844960689186UL + 800UL), (12342427844960689186UL + 801UL), (12342427844960689186UL + 802UL), (12342427844960689186UL + 803UL), (12342427844960689186UL + 804UL), (12342427844960689186UL + 805UL), (12342427844960689186UL + 806UL), (12342427844960689186UL + 807UL), (12342427844960689186UL + 808UL), (12342427844960689186UL + 809UL), (12342427844960689186UL + 810UL), (12342427844960689186UL + 811UL), (12342427844960689186UL + 812UL), (12342427844960689186UL + 813UL), (12342427844960689186UL + 814UL), (12342427844960689186UL + 815UL), (12342427844960689186UL + 816UL), (12342427844960689186UL + 817UL), (12342427844960689186UL + 818UL), (12342427844960689186UL + 819UL), (12342427844960689186UL + 820UL), (12342427844960689186UL + 821UL), (12342427844960689186UL + 822UL), (12342427844960689186UL + 823UL), (12342427844960689186UL + 824UL), (12342427844960689186UL + 827UL), (12342427844960689186UL + 828UL), (12342427844960689186UL + 829UL), (12342427844960689186UL + 830UL), (12342427844960689186UL + 831UL), (12342427844960689186UL + 832UL), (12342427844960689186UL + 833UL), (12342427844960689186UL + 834UL), (12342427844960689186UL + 835UL), (12342427844960689186UL + 2488UL), (12342427844960689186UL + 14642UL),
+                           &____alias_loc_id_7, (unsigned)3, (12342427844960689186UL + 1760UL), (12342427844960689186UL + 1761UL), (12342427844960689186UL + 1762UL),
+                           &____alias_loc_id_8, (unsigned)5, (12342427844960689186UL + 1848UL), (12342427844960689186UL + 1849UL), (12342427844960689186UL + 1850UL), (12342427844960689186UL + 1851UL), (12342427844960689186UL + 14642UL),
+                           &____alias_loc_id_9, (unsigned)1, (12342427844960689186UL + 1956UL),
+                            &____alias_loc_id_10, (unsigned)2, (12342427844960689186UL + 1964UL), (12342427844960689186UL + 1965UL),
+                            &____alias_loc_id_11, (unsigned)1, (12342427844960689186UL + 1981UL),
+                            &____alias_loc_id_12, (unsigned)17, (12342427844960689186UL + 1994UL), (12342427844960689186UL + 1995UL), (12342427844960689186UL + 1996UL), (12342427844960689186UL + 1997UL), (12342427844960689186UL + 1998UL), (12342427844960689186UL + 1999UL), (12342427844960689186UL + 2000UL), (12342427844960689186UL + 2001UL), (12342427844960689186UL + 2002UL), (12342427844960689186UL + 2003UL), (12342427844960689186UL + 2004UL), (12342427844960689186UL + 2005UL), (12342427844960689186UL + 2006UL), (12342427844960689186UL + 2007UL), (12342427844960689186UL + 2031UL), (12342427844960689186UL + 2035UL), (12342427844960689186UL + 14642UL),
+                            &____alias_loc_id_13, (unsigned)16, (12342427844960689186UL + 2205UL), (12342427844960689186UL + 2206UL), (12342427844960689186UL + 2207UL), (12342427844960689186UL + 2208UL), (12342427844960689186UL + 2209UL), (12342427844960689186UL + 2210UL), (12342427844960689186UL + 2211UL), (12342427844960689186UL + 2212UL), (12342427844960689186UL + 2213UL), (12342427844960689186UL + 2214UL), (12342427844960689186UL + 2215UL), (12342427844960689186UL + 2216UL), (12342427844960689186UL + 2217UL), (12342427844960689186UL + 2235UL), (12342427844960689186UL + 2239UL), (12342427844960689186UL + 14642UL),
+                            &____alias_loc_id_14, (unsigned)1, (12342427844960689186UL + 2361UL),
+                            &____alias_loc_id_15, (unsigned)6, (12342427844960689186UL + 2369UL), (12342427844960689186UL + 2370UL), (12342427844960689186UL + 2371UL), (12342427844960689186UL + 2372UL), (12342427844960689186UL + 2373UL), (12342427844960689186UL + 2488UL),
+                            &____alias_loc_id_16, (unsigned)4, (12342427844960689186UL + 2462UL), (12342427844960689186UL + 2463UL), (12342427844960689186UL + 2464UL), (12342427844960689186UL + 2465UL),
+                            &____alias_loc_id_17, (unsigned)12, (12342427844960689186UL + 2509UL), (12342427844960689186UL + 2510UL), (12342427844960689186UL + 2511UL), (12342427844960689186UL + 2512UL), (12342427844960689186UL + 2513UL), (12342427844960689186UL + 2514UL), (12342427844960689186UL + 2515UL), (12342427844960689186UL + 2516UL), (12342427844960689186UL + 2517UL), (12342427844960689186UL + 2518UL), (12342427844960689186UL + 2519UL), (12342427844960689186UL + 2560UL),
+                            &____alias_loc_id_18, (unsigned)5, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 2691UL), (12342427844960689186UL + 2692UL), (12342427844960689186UL + 2693UL), (12342427844960689186UL + 2694UL),
+                            &____alias_loc_id_19, (unsigned)55, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 2739UL), (12342427844960689186UL + 2740UL), (12342427844960689186UL + 2741UL), (12342427844960689186UL + 2742UL), (12342427844960689186UL + 2743UL), (12342427844960689186UL + 2744UL), (12342427844960689186UL + 2745UL), (12342427844960689186UL + 2746UL), (12342427844960689186UL + 2747UL), (12342427844960689186UL + 2748UL), (12342427844960689186UL + 2749UL), (12342427844960689186UL + 2750UL), (12342427844960689186UL + 2751UL), (12342427844960689186UL + 2752UL), (12342427844960689186UL + 2753UL), (12342427844960689186UL + 2754UL), (12342427844960689186UL + 2755UL), (12342427844960689186UL + 2756UL), (12342427844960689186UL + 2757UL), (12342427844960689186UL + 2758UL), (12342427844960689186UL + 2759UL), (12342427844960689186UL + 2760UL), (12342427844960689186UL + 2761UL), (12342427844960689186UL + 2762UL), (12342427844960689186UL + 2763UL), (12342427844960689186UL + 2764UL), (12342427844960689186UL + 2765UL), (12342427844960689186UL + 2766UL), (12342427844960689186UL + 2767UL), (12342427844960689186UL + 2768UL), (12342427844960689186UL + 2769UL), (12342427844960689186UL + 2770UL), (12342427844960689186UL + 2771UL), (12342427844960689186UL + 2772UL), (12342427844960689186UL + 2773UL), (12342427844960689186UL + 2774UL), (12342427844960689186UL + 2775UL), (12342427844960689186UL + 2776UL), (12342427844960689186UL + 2777UL), (12342427844960689186UL + 2778UL), (12342427844960689186UL + 2779UL), (12342427844960689186UL + 2780UL), (12342427844960689186UL + 2781UL), (12342427844960689186UL + 2782UL), (12342427844960689186UL + 2783UL), (12342427844960689186UL + 2819UL), (12342427844960689186UL + 2826UL), (12342427844960689186UL + 2833UL), (12342427844960689186UL + 2840UL), (12342427844960689186UL + 2847UL), (12342427844960689186UL + 2854UL), (12342427844960689186UL + 2861UL), (12342427844960689186UL + 2868UL), (12342427844960689186UL + 2875UL),
+                            &____alias_loc_id_20, (unsigned)37, (12342427844960689186UL + 3360UL), (12342427844960689186UL + 3361UL), (12342427844960689186UL + 3362UL), (12342427844960689186UL + 3363UL), (12342427844960689186UL + 3364UL), (12342427844960689186UL + 3365UL), (12342427844960689186UL + 3366UL), (12342427844960689186UL + 3367UL), (12342427844960689186UL + 3368UL), (12342427844960689186UL + 3369UL), (12342427844960689186UL + 3370UL), (12342427844960689186UL + 3371UL), (12342427844960689186UL + 3372UL), (12342427844960689186UL + 3373UL), (12342427844960689186UL + 3374UL), (12342427844960689186UL + 3375UL), (12342427844960689186UL + 3376UL), (12342427844960689186UL + 3377UL), (12342427844960689186UL + 3378UL), (12342427844960689186UL + 3379UL), (12342427844960689186UL + 3380UL), (12342427844960689186UL + 3381UL), (12342427844960689186UL + 3382UL), (12342427844960689186UL + 3383UL), (12342427844960689186UL + 3384UL), (12342427844960689186UL + 3385UL), (12342427844960689186UL + 3386UL), (12342427844960689186UL + 3387UL), (12342427844960689186UL + 3388UL), (12342427844960689186UL + 3389UL), (12342427844960689186UL + 3390UL), (12342427844960689186UL + 3391UL), (12342427844960689186UL + 3392UL), (12342427844960689186UL + 3393UL), (12342427844960689186UL + 3394UL), (12342427844960689186UL + 4010UL), (12342427844960689186UL + 4011UL),
+                            &____alias_loc_id_21, (unsigned)12, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 4032UL), (12342427844960689186UL + 4033UL), (12342427844960689186UL + 4034UL), (12342427844960689186UL + 4035UL), (12342427844960689186UL + 4036UL), (12342427844960689186UL + 4037UL), (12342427844960689186UL + 4038UL), (12342427844960689186UL + 4039UL), (12342427844960689186UL + 4040UL), (12342427844960689186UL + 4041UL), (12342427844960689186UL + 4042UL),
+                            &____alias_loc_id_22, (unsigned)16, (12342427844960689186UL + 4141UL), (12342427844960689186UL + 4142UL), (12342427844960689186UL + 4143UL), (12342427844960689186UL + 4144UL), (12342427844960689186UL + 4145UL), (12342427844960689186UL + 4146UL), (12342427844960689186UL + 4147UL), (12342427844960689186UL + 4148UL), (12342427844960689186UL + 4149UL), (12342427844960689186UL + 4150UL), (12342427844960689186UL + 4151UL), (12342427844960689186UL + 4152UL), (12342427844960689186UL + 4153UL), (12342427844960689186UL + 4280UL), (12342427844960689186UL + 4281UL), (12342427844960689186UL + 4282UL),
+                            &____alias_loc_id_23, (unsigned)78, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 4290UL), (12342427844960689186UL + 4291UL), (12342427844960689186UL + 4292UL), (12342427844960689186UL + 4293UL), (12342427844960689186UL + 4294UL), (12342427844960689186UL + 4295UL), (12342427844960689186UL + 4296UL), (12342427844960689186UL + 4297UL), (12342427844960689186UL + 4298UL), (12342427844960689186UL + 4299UL), (12342427844960689186UL + 4300UL), (12342427844960689186UL + 4301UL), (12342427844960689186UL + 4302UL), (12342427844960689186UL + 4303UL), (12342427844960689186UL + 4304UL), (12342427844960689186UL + 4305UL), (12342427844960689186UL + 4306UL), (12342427844960689186UL + 4307UL), (12342427844960689186UL + 4308UL), (12342427844960689186UL + 4309UL), (12342427844960689186UL + 4310UL), (12342427844960689186UL + 4311UL), (12342427844960689186UL + 4312UL), (12342427844960689186UL + 4313UL), (12342427844960689186UL + 4314UL), (12342427844960689186UL + 4315UL), (12342427844960689186UL + 4316UL), (12342427844960689186UL + 4317UL), (12342427844960689186UL + 4318UL), (12342427844960689186UL + 4319UL), (12342427844960689186UL + 4320UL), (12342427844960689186UL + 4321UL), (12342427844960689186UL + 4322UL), (12342427844960689186UL + 4323UL), (12342427844960689186UL + 4324UL), (12342427844960689186UL + 4325UL), (12342427844960689186UL + 4326UL), (12342427844960689186UL + 4327UL), (12342427844960689186UL + 4328UL), (12342427844960689186UL + 4329UL), (12342427844960689186UL + 4330UL), (12342427844960689186UL + 4331UL), (12342427844960689186UL + 4332UL), (12342427844960689186UL + 4333UL), (12342427844960689186UL + 4334UL), (12342427844960689186UL + 4335UL), (12342427844960689186UL + 4336UL), (12342427844960689186UL + 4337UL), (12342427844960689186UL + 4338UL), (12342427844960689186UL + 4339UL), (12342427844960689186UL + 4340UL), (12342427844960689186UL + 4341UL), (12342427844960689186UL + 4342UL), (12342427844960689186UL + 4343UL), (12342427844960689186UL + 4344UL), (12342427844960689186UL + 4345UL), (12342427844960689186UL + 4346UL), (12342427844960689186UL + 4347UL), (12342427844960689186UL + 4348UL), (12342427844960689186UL + 4349UL), (12342427844960689186UL + 4350UL), (12342427844960689186UL + 4351UL), (12342427844960689186UL + 4352UL), (12342427844960689186UL + 4353UL), (12342427844960689186UL + 4354UL), (12342427844960689186UL + 4355UL), (12342427844960689186UL + 4356UL), (12342427844960689186UL + 4357UL), (12342427844960689186UL + 4358UL), (12342427844960689186UL + 4359UL), (12342427844960689186UL + 4360UL), (12342427844960689186UL + 4361UL), (12342427844960689186UL + 4362UL), (12342427844960689186UL + 4363UL), (12342427844960689186UL + 4364UL), (12342427844960689186UL + 4365UL), (12342427844960689186UL + 4366UL),
+                            &____alias_loc_id_24, (unsigned)6, (12342427844960689186UL + 5327UL), (12342427844960689186UL + 5328UL), (12342427844960689186UL + 5329UL), (12342427844960689186UL + 5330UL), (12342427844960689186UL + 5331UL), (12342427844960689186UL + 5332UL),
+                            &____alias_loc_id_25, (unsigned)22, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 5362UL), (12342427844960689186UL + 5363UL), (12342427844960689186UL + 5364UL), (12342427844960689186UL + 5365UL), (12342427844960689186UL + 5366UL), (12342427844960689186UL + 5367UL), (12342427844960689186UL + 5368UL), (12342427844960689186UL + 5369UL), (12342427844960689186UL + 5370UL), (12342427844960689186UL + 5371UL), (12342427844960689186UL + 5372UL), (12342427844960689186UL + 5373UL), (12342427844960689186UL + 5374UL), (12342427844960689186UL + 5375UL), (12342427844960689186UL + 5376UL), (12342427844960689186UL + 5377UL), (12342427844960689186UL + 5378UL), (12342427844960689186UL + 5379UL), (12342427844960689186UL + 5380UL), (12342427844960689186UL + 5381UL), (12342427844960689186UL + 5382UL),
+                            &____alias_loc_id_26, (unsigned)20, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 5895UL), (12342427844960689186UL + 5896UL), (12342427844960689186UL + 5897UL), (12342427844960689186UL + 5900UL), (12342427844960689186UL + 5901UL), (12342427844960689186UL + 5902UL), (12342427844960689186UL + 5903UL), (12342427844960689186UL + 5904UL), (12342427844960689186UL + 5905UL), (12342427844960689186UL + 5906UL), (12342427844960689186UL + 5907UL), (12342427844960689186UL + 5908UL), (12342427844960689186UL + 5909UL), (12342427844960689186UL + 5910UL), (12342427844960689186UL + 5911UL), (12342427844960689186UL + 5912UL), (12342427844960689186UL + 5913UL), (12342427844960689186UL + 5914UL), (12342427844960689186UL + 5915UL),
+                            &____alias_loc_id_27, (unsigned)6, (12342427844960689186UL + 6169UL), (12342427844960689186UL + 6170UL), (12342427844960689186UL + 6171UL), (12342427844960689186UL + 6172UL), (12342427844960689186UL + 6173UL), (12342427844960689186UL + 6174UL),
+                            &____alias_loc_id_28, (unsigned)49, (12342427844960689186UL + 6450UL), (12342427844960689186UL + 6451UL), (12342427844960689186UL + 6452UL), (12342427844960689186UL + 6453UL), (12342427844960689186UL + 6454UL), (12342427844960689186UL + 6455UL), (12342427844960689186UL + 6456UL), (12342427844960689186UL + 6457UL), (12342427844960689186UL + 6458UL), (12342427844960689186UL + 6459UL), (12342427844960689186UL + 6460UL), (12342427844960689186UL + 6461UL), (12342427844960689186UL + 6462UL), (12342427844960689186UL + 6463UL), (12342427844960689186UL + 6464UL), (12342427844960689186UL + 6465UL), (12342427844960689186UL + 6466UL), (12342427844960689186UL + 6467UL), (12342427844960689186UL + 6468UL), (12342427844960689186UL + 6469UL), (12342427844960689186UL + 6470UL), (12342427844960689186UL + 6471UL), (12342427844960689186UL + 6472UL), (12342427844960689186UL + 6473UL), (12342427844960689186UL + 6474UL), (12342427844960689186UL + 6475UL), (12342427844960689186UL + 6476UL), (12342427844960689186UL + 6477UL), (12342427844960689186UL + 6478UL), (12342427844960689186UL + 6479UL), (12342427844960689186UL + 6480UL), (12342427844960689186UL + 6481UL), (12342427844960689186UL + 6482UL), (12342427844960689186UL + 6483UL), (12342427844960689186UL + 6484UL), (12342427844960689186UL + 6485UL), (12342427844960689186UL + 6486UL), (12342427844960689186UL + 6487UL), (12342427844960689186UL + 6488UL), (12342427844960689186UL + 6489UL), (12342427844960689186UL + 6490UL), (12342427844960689186UL + 6491UL), (12342427844960689186UL + 6492UL), (12342427844960689186UL + 6493UL), (12342427844960689186UL + 6494UL), (12342427844960689186UL + 6495UL), (12342427844960689186UL + 6496UL), (12342427844960689186UL + 7114UL), (12342427844960689186UL + 7115UL),
+                            &____alias_loc_id_29, (unsigned)17, (12342427844960689186UL + 7116UL), (12342427844960689186UL + 7117UL), (12342427844960689186UL + 7118UL), (12342427844960689186UL + 7119UL), (12342427844960689186UL + 7120UL), (12342427844960689186UL + 7121UL), (12342427844960689186UL + 7122UL), (12342427844960689186UL + 7123UL), (12342427844960689186UL + 7124UL), (12342427844960689186UL + 7125UL), (12342427844960689186UL + 7126UL), (12342427844960689186UL + 7127UL), (12342427844960689186UL + 7128UL), (12342427844960689186UL + 7129UL), (12342427844960689186UL + 7130UL), (12342427844960689186UL + 7131UL), (12342427844960689186UL + 7652UL),
+                            &____alias_loc_id_30, (unsigned)19, (12342427844960689186UL + 7653UL), (12342427844960689186UL + 7654UL), (12342427844960689186UL + 7655UL), (12342427844960689186UL + 7656UL), (12342427844960689186UL + 7657UL), (12342427844960689186UL + 7658UL), (12342427844960689186UL + 7659UL), (12342427844960689186UL + 7660UL), (12342427844960689186UL + 7661UL), (12342427844960689186UL + 7662UL), (12342427844960689186UL + 7663UL), (12342427844960689186UL + 7664UL), (12342427844960689186UL + 7665UL), (12342427844960689186UL + 7666UL), (12342427844960689186UL + 7667UL), (12342427844960689186UL + 7668UL), (12342427844960689186UL + 7669UL), (12342427844960689186UL + 7670UL), (12342427844960689186UL + 7671UL),
+                            &____alias_loc_id_31, (unsigned)3, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 7815UL), (12342427844960689186UL + 7816UL),
+                            &____alias_loc_id_32, (unsigned)3, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 7849UL), (12342427844960689186UL + 7850UL),
+                            &____alias_loc_id_33, (unsigned)5, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 7915UL), (12342427844960689186UL + 7916UL), (12342427844960689186UL + 7917UL), (12342427844960689186UL + 7918UL),
+                            &____alias_loc_id_34, (unsigned)8, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 7990UL), (12342427844960689186UL + 7991UL), (12342427844960689186UL + 7992UL), (12342427844960689186UL + 7993UL), (12342427844960689186UL + 7994UL), (12342427844960689186UL + 7995UL), (12342427844960689186UL + 7996UL),
+                            &____alias_loc_id_35, (unsigned)4, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 8103UL), (12342427844960689186UL + 8104UL), (12342427844960689186UL + 8105UL),
+                            &____alias_loc_id_36, (unsigned)7, (12342427844960689186UL + 8167UL), (12342427844960689186UL + 8168UL), (12342427844960689186UL + 8169UL), (12342427844960689186UL + 8170UL), (12342427844960689186UL + 8171UL), (12342427844960689186UL + 8172UL), (12342427844960689186UL + 8173UL),
+                            &____alias_loc_id_37, (unsigned)8, (12342427844960689186UL + 8260UL), (12342427844960689186UL + 8261UL), (12342427844960689186UL + 8262UL), (12342427844960689186UL + 8263UL), (12342427844960689186UL + 8264UL), (12342427844960689186UL + 8314UL), (12342427844960689186UL + 8315UL), (12342427844960689186UL + 8316UL),
+                            &____alias_loc_id_38, (unsigned)26, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 8317UL), (12342427844960689186UL + 8318UL), (12342427844960689186UL + 8319UL), (12342427844960689186UL + 8320UL), (12342427844960689186UL + 8321UL), (12342427844960689186UL + 8322UL), (12342427844960689186UL + 8323UL), (12342427844960689186UL + 8324UL), (12342427844960689186UL + 8325UL), (12342427844960689186UL + 8326UL), (12342427844960689186UL + 8328UL), (12342427844960689186UL + 8329UL), (12342427844960689186UL + 8330UL), (12342427844960689186UL + 8331UL), (12342427844960689186UL + 8332UL), (12342427844960689186UL + 8333UL), (12342427844960689186UL + 8334UL), (12342427844960689186UL + 8335UL), (12342427844960689186UL + 8336UL), (12342427844960689186UL + 8337UL), (12342427844960689186UL + 8338UL), (12342427844960689186UL + 8339UL), (12342427844960689186UL + 8340UL), (12342427844960689186UL + 8341UL), (12342427844960689186UL + 8342UL),
+                            &____alias_loc_id_39, (unsigned)21, (12342427844960689186UL + 8610UL), (12342427844960689186UL + 8611UL), (12342427844960689186UL + 8612UL), (12342427844960689186UL + 8613UL), (12342427844960689186UL + 8614UL), (12342427844960689186UL + 8615UL), (12342427844960689186UL + 8616UL), (12342427844960689186UL + 8617UL), (12342427844960689186UL + 8618UL), (12342427844960689186UL + 8619UL), (12342427844960689186UL + 8620UL), (12342427844960689186UL + 8627UL), (12342427844960689186UL + 8628UL), (12342427844960689186UL + 8629UL), (12342427844960689186UL + 8645UL), (12342427844960689186UL + 8652UL), (12342427844960689186UL + 8659UL), (12342427844960689186UL + 8666UL), (12342427844960689186UL + 8673UL), (12342427844960689186UL + 8680UL), (12342427844960689186UL + 8848UL),
+                            &____alias_loc_id_40, (unsigned)15, (12342427844960689186UL + 8850UL), (12342427844960689186UL + 8851UL), (12342427844960689186UL + 8852UL), (12342427844960689186UL + 8853UL), (12342427844960689186UL + 8854UL), (12342427844960689186UL + 8855UL), (12342427844960689186UL + 8856UL), (12342427844960689186UL + 8857UL), (12342427844960689186UL + 8858UL), (12342427844960689186UL + 8859UL), (12342427844960689186UL + 8860UL), (12342427844960689186UL + 8861UL), (12342427844960689186UL + 9104UL), (12342427844960689186UL + 9105UL), (12342427844960689186UL + 9106UL),
+                            &____alias_loc_id_41, (unsigned)6, (12342427844960689186UL + 9107UL), (12342427844960689186UL + 9108UL), (12342427844960689186UL + 9109UL), (12342427844960689186UL + 9110UL), (12342427844960689186UL + 9111UL), (12342427844960689186UL + 9112UL),
+                            &____alias_loc_id_42, (unsigned)61, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 9620UL), (12342427844960689186UL + 9621UL), (12342427844960689186UL + 9622UL), (12342427844960689186UL + 9623UL), (12342427844960689186UL + 9624UL), (12342427844960689186UL + 9625UL), (12342427844960689186UL + 9626UL), (12342427844960689186UL + 9627UL), (12342427844960689186UL + 9628UL), (12342427844960689186UL + 9629UL), (12342427844960689186UL + 9630UL), (12342427844960689186UL + 9631UL), (12342427844960689186UL + 9632UL), (12342427844960689186UL + 9633UL), (12342427844960689186UL + 9634UL), (12342427844960689186UL + 9635UL), (12342427844960689186UL + 9636UL), (12342427844960689186UL + 9637UL), (12342427844960689186UL + 9641UL), (12342427844960689186UL + 9642UL), (12342427844960689186UL + 9643UL), (12342427844960689186UL + 9644UL), (12342427844960689186UL + 9645UL), (12342427844960689186UL + 9646UL), (12342427844960689186UL + 9647UL), (12342427844960689186UL + 9648UL), (12342427844960689186UL + 9649UL), (12342427844960689186UL + 9650UL), (12342427844960689186UL + 9651UL), (12342427844960689186UL + 9652UL), (12342427844960689186UL + 9653UL), (12342427844960689186UL + 9654UL), (12342427844960689186UL + 9655UL), (12342427844960689186UL + 9656UL), (12342427844960689186UL + 9657UL), (12342427844960689186UL + 9658UL), (12342427844960689186UL + 9659UL), (12342427844960689186UL + 9660UL), (12342427844960689186UL + 9661UL), (12342427844960689186UL + 9662UL), (12342427844960689186UL + 9663UL), (12342427844960689186UL + 9664UL), (12342427844960689186UL + 9665UL), (12342427844960689186UL + 9666UL), (12342427844960689186UL + 9667UL), (12342427844960689186UL + 9668UL), (12342427844960689186UL + 9669UL), (12342427844960689186UL + 9670UL), (12342427844960689186UL + 9671UL), (12342427844960689186UL + 9672UL), (12342427844960689186UL + 9673UL), (12342427844960689186UL + 9674UL), (12342427844960689186UL + 9675UL), (12342427844960689186UL + 9676UL), (12342427844960689186UL + 9677UL), (12342427844960689186UL + 9678UL), (12342427844960689186UL + 9679UL), (12342427844960689186UL + 9707UL), (12342427844960689186UL + 9714UL), (12342427844960689186UL + 9721UL),
+                            &____alias_loc_id_43, (unsigned)1, (12342427844960689186UL + 11007UL),
+                            &____alias_loc_id_44, (unsigned)26, (12342427844960689186UL + 11014UL), (12342427844960689186UL + 11015UL), (12342427844960689186UL + 11016UL), (12342427844960689186UL + 11017UL), (12342427844960689186UL + 11018UL), (12342427844960689186UL + 11019UL), (12342427844960689186UL + 11020UL), (12342427844960689186UL + 11021UL), (12342427844960689186UL + 11022UL), (12342427844960689186UL + 11023UL), (12342427844960689186UL + 11024UL), (12342427844960689186UL + 11025UL), (12342427844960689186UL + 11026UL), (12342427844960689186UL + 11027UL), (12342427844960689186UL + 11028UL), (12342427844960689186UL + 11029UL), (12342427844960689186UL + 11030UL), (12342427844960689186UL + 11031UL), (12342427844960689186UL + 11032UL), (12342427844960689186UL + 11033UL), (12342427844960689186UL + 11034UL), (12342427844960689186UL + 11035UL), (12342427844960689186UL + 11036UL), (12342427844960689186UL + 12916UL), (12342427844960689186UL + 12917UL), (12342427844960689186UL + 12918UL),
+                            &____alias_loc_id_45, (unsigned)25, (12342427844960689186UL + 12920UL), (12342427844960689186UL + 12921UL), (12342427844960689186UL + 12922UL), (12342427844960689186UL + 12923UL), (12342427844960689186UL + 12924UL), (12342427844960689186UL + 12925UL), (12342427844960689186UL + 12926UL), (12342427844960689186UL + 12927UL), (12342427844960689186UL + 12928UL), (12342427844960689186UL + 12929UL), (12342427844960689186UL + 12930UL), (12342427844960689186UL + 12931UL), (12342427844960689186UL + 12932UL), (12342427844960689186UL + 12933UL), (12342427844960689186UL + 12934UL), (12342427844960689186UL + 12935UL), (12342427844960689186UL + 12936UL), (12342427844960689186UL + 12937UL), (12342427844960689186UL + 12938UL), (12342427844960689186UL + 12939UL), (12342427844960689186UL + 12940UL), (12342427844960689186UL + 12941UL), (12342427844960689186UL + 13169UL), (12342427844960689186UL + 13170UL), (12342427844960689186UL + 13171UL),
+                            &____alias_loc_id_46, (unsigned)10, (12342427844960689186UL + 13172UL), (12342427844960689186UL + 13173UL), (12342427844960689186UL + 13174UL), (12342427844960689186UL + 13175UL), (12342427844960689186UL + 13176UL), (12342427844960689186UL + 13177UL), (12342427844960689186UL + 13178UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL),
+                            &____alias_loc_id_47, (unsigned)34, (12342427844960689186UL + 13590UL), (12342427844960689186UL + 13591UL), (12342427844960689186UL + 13592UL), (12342427844960689186UL + 13593UL), (12342427844960689186UL + 13594UL), (12342427844960689186UL + 13595UL), (12342427844960689186UL + 13596UL), (12342427844960689186UL + 13597UL), (12342427844960689186UL + 13598UL), (12342427844960689186UL + 13599UL), (12342427844960689186UL + 13600UL), (12342427844960689186UL + 13601UL), (12342427844960689186UL + 13602UL), (12342427844960689186UL + 13603UL), (12342427844960689186UL + 13604UL), (12342427844960689186UL + 13605UL), (12342427844960689186UL + 13606UL), (12342427844960689186UL + 13607UL), (12342427844960689186UL + 13608UL), (12342427844960689186UL + 13609UL), (12342427844960689186UL + 13610UL), (12342427844960689186UL + 13611UL), (12342427844960689186UL + 13612UL), (12342427844960689186UL + 13613UL), (12342427844960689186UL + 13614UL), (12342427844960689186UL + 13615UL), (12342427844960689186UL + 13616UL), (12342427844960689186UL + 13617UL), (12342427844960689186UL + 13618UL), (12342427844960689186UL + 13619UL), (12342427844960689186UL + 13620UL), (12342427844960689186UL + 13952UL), (12342427844960689186UL + 13953UL), (12342427844960689186UL + 13954UL),
+                            &____alias_loc_id_48, (unsigned)45, (12342427844960689186UL + 13955UL), (12342427844960689186UL + 13956UL), (12342427844960689186UL + 13957UL), (12342427844960689186UL + 13958UL), (12342427844960689186UL + 13959UL), (12342427844960689186UL + 13960UL), (12342427844960689186UL + 13961UL), (12342427844960689186UL + 13962UL), (12342427844960689186UL + 13963UL), (12342427844960689186UL + 13964UL), (12342427844960689186UL + 13965UL), (12342427844960689186UL + 13966UL), (12342427844960689186UL + 13967UL), (12342427844960689186UL + 13968UL), (12342427844960689186UL + 13969UL), (12342427844960689186UL + 13970UL), (12342427844960689186UL + 13971UL), (12342427844960689186UL + 13972UL), (12342427844960689186UL + 13973UL), (12342427844960689186UL + 13974UL), (12342427844960689186UL + 13975UL), (12342427844960689186UL + 13976UL), (12342427844960689186UL + 13977UL), (12342427844960689186UL + 13978UL), (12342427844960689186UL + 13979UL), (12342427844960689186UL + 13980UL), (12342427844960689186UL + 13981UL), (12342427844960689186UL + 13982UL), (12342427844960689186UL + 13983UL), (12342427844960689186UL + 13984UL), (12342427844960689186UL + 13985UL), (12342427844960689186UL + 13986UL), (12342427844960689186UL + 13987UL), (12342427844960689186UL + 14187UL), (12342427844960689186UL + 14188UL), (12342427844960689186UL + 14189UL), (12342427844960689186UL + 14190UL), (12342427844960689186UL + 14191UL), (12342427844960689186UL + 14192UL), (12342427844960689186UL + 14193UL), (12342427844960689186UL + 14194UL), (12342427844960689186UL + 14195UL), (12342427844960689186UL + 14196UL), (12342427844960689186UL + 14197UL), (12342427844960689186UL + 14198UL),
+                            &____alias_loc_id_49, (unsigned)62, (12342427844960689186UL + 14211UL), (12342427844960689186UL + 14212UL), (12342427844960689186UL + 14213UL), (12342427844960689186UL + 14214UL), (12342427844960689186UL + 14215UL), (12342427844960689186UL + 14216UL), (12342427844960689186UL + 14217UL), (12342427844960689186UL + 14218UL), (12342427844960689186UL + 14219UL), (12342427844960689186UL + 14220UL), (12342427844960689186UL + 14221UL), (12342427844960689186UL + 14222UL), (12342427844960689186UL + 14223UL), (12342427844960689186UL + 14224UL), (12342427844960689186UL + 14225UL), (12342427844960689186UL + 14226UL), (12342427844960689186UL + 14227UL), (12342427844960689186UL + 14228UL), (12342427844960689186UL + 14229UL), (12342427844960689186UL + 14230UL), (12342427844960689186UL + 14231UL), (12342427844960689186UL + 14232UL), (12342427844960689186UL + 14233UL), (12342427844960689186UL + 14234UL), (12342427844960689186UL + 14235UL), (12342427844960689186UL + 14236UL), (12342427844960689186UL + 14237UL), (12342427844960689186UL + 14238UL), (12342427844960689186UL + 14239UL), (12342427844960689186UL + 14240UL), (12342427844960689186UL + 14241UL), (12342427844960689186UL + 14242UL), (12342427844960689186UL + 14243UL), (12342427844960689186UL + 14244UL), (12342427844960689186UL + 14245UL), (12342427844960689186UL + 14246UL), (12342427844960689186UL + 14247UL), (12342427844960689186UL + 14248UL), (12342427844960689186UL + 14249UL), (12342427844960689186UL + 14250UL), (12342427844960689186UL + 14251UL), (12342427844960689186UL + 14252UL), (12342427844960689186UL + 14253UL), (12342427844960689186UL + 14254UL), (12342427844960689186UL + 14255UL), (12342427844960689186UL + 14256UL), (12342427844960689186UL + 14257UL), (12342427844960689186UL + 14258UL), (12342427844960689186UL + 14259UL), (12342427844960689186UL + 14260UL), (12342427844960689186UL + 14261UL), (12342427844960689186UL + 14262UL), (12342427844960689186UL + 14263UL), (12342427844960689186UL + 14264UL), (12342427844960689186UL + 14265UL), (12342427844960689186UL + 14266UL), (12342427844960689186UL + 14267UL), (12342427844960689186UL + 14268UL), (12342427844960689186UL + 14269UL), (12342427844960689186UL + 14270UL), (12342427844960689186UL + 14271UL), (12342427844960689186UL + 14272UL),
+                            "SQRT", (void *)(&SQRT_npm), 0, 1, 0UL, 0UL, 1, "sqrt", 1, 0UL, 0UL,
+                            "CBRT", (void *)(&CBRT_npm), 0, 1, 0UL, 0UL, 1, "cbrt", 1, 0UL, 0UL,
+                            "FABS", (void *)(&FABS_npm), 0, 1, 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
+                            "AllocateNodalPersistent", (void *)(&AllocateNodalPersistent_npm), 0, 2, (12342427844960689186UL + 148UL), 0UL, 0UL, 20, "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL, "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL, "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL, "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL, "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL, "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL, "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "malloc", 1, 0UL, (12342427844960689186UL + 9UL), "memset", 3, (12342427844960689186UL + 9UL), 0UL, 0UL, 0UL,
+                            "AllocateElemPersistent", (void *)(&AllocateElemPersistent_npm), 0, 2, (12342427844960689186UL + 347UL), 0UL, 0UL, 23, "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "memset", 3, (12342427844960689186UL + 167UL), 0UL, 0UL, 0UL, "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "memset", 3, (12342427844960689186UL + 167UL), 0UL, 0UL, 0UL, "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL), "malloc", 1, 0UL, (12342427844960689186UL + 167UL),
+                            "AllocateElemTemporary", (void *)(&AllocateElemTemporary_npm), 0, 2, (12342427844960689186UL + 426UL), 0UL, 0UL, 10, "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL), "malloc", 1, 0UL, (12342427844960689186UL + 357UL),
+                            "AllocateNodesets", (void *)(&AllocateNodesets_npm), 0, 2, (12342427844960689186UL + 456UL), 0UL, 0UL, 3, "malloc", 1, 0UL, (12342427844960689186UL + 436UL), "malloc", 1, 0UL, (12342427844960689186UL + 436UL), "malloc", 1, 0UL, (12342427844960689186UL + 436UL),
+                            "AllocateNodeElemIndexes", (void *)(&AllocateNodeElemIndexes_npm), 0, 1, (12342427844960689186UL + 778UL), 0UL, 5, "malloc", 1, 0UL, (12342427844960689186UL + 541UL), "malloc", 1, 0UL, (12342427844960689186UL + 541UL), "malloc", 1, 0UL, (12342427844960689186UL + 541UL), "fprintf", 2, (12342427844960689186UL + 768UL), (12342427844960689186UL + 14644UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "TimeIncrement", (void *)(&TimeIncrement_npm), 0, 0, 0UL, 0,
+                            "InitStressTermsForElems", (void *)(&InitStressTermsForElems_npm), 0, 4, 0UL, (12342427844960689186UL + 8314UL), (12342427844960689186UL + 8315UL), (12342427844960689186UL + 8316UL), 0UL, 0,
+                            "CalcElemShapeFunctionDerivatives", (void *)(&CalcElemShapeFunctionDerivatives_npm), 0, 5, (12342427844960689186UL + 7111UL), (12342427844960689186UL + 7112UL), (12342427844960689186UL + 7113UL), (12342427844960689186UL + 7114UL), (12342427844960689186UL + 7115UL), 0UL, 0,
+                            "SumElemFaceNormal", (void *)(&SumElemFaceNormal_npm), 0, 24, (12342427844960689186UL + 14187UL), (12342427844960689186UL + 14188UL), (12342427844960689186UL + 14189UL), (12342427844960689186UL + 14190UL), (12342427844960689186UL + 14191UL), (12342427844960689186UL + 14192UL), (12342427844960689186UL + 14193UL), (12342427844960689186UL + 14194UL), (12342427844960689186UL + 14195UL), (12342427844960689186UL + 14196UL), (12342427844960689186UL + 14197UL), (12342427844960689186UL + 14198UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
+                            "CalcElemNodeNormals", (void *)(&CalcElemNodeNormals_npm), 0, 6, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13587UL), (12342427844960689186UL + 13588UL), (12342427844960689186UL + 13589UL), 0UL, 6, "SumElemFaceNormal", 24, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), (12342427844960689186UL + 13584UL), (12342427844960689186UL + 13585UL), (12342427844960689186UL + 13586UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "SumElemStressesToNodeForces", (void *)(&SumElemStressesToNodeForces_npm), 0, 7, (12342427844960689186UL + 13948UL), 0UL, 0UL, 0UL, (12342427844960689186UL + 13952UL), (12342427844960689186UL + 13953UL), (12342427844960689186UL + 13954UL), 0UL, 0,
+                            "IntegrateStressForElems", (void *)(&IntegrateStressForElems_npm), 0, 5, 0UL, (12342427844960689186UL + 8606UL), (12342427844960689186UL + 8607UL), (12342427844960689186UL + 8608UL), (12342427844960689186UL + 8609UL), 0UL, 9, "malloc", 1, 0UL, (12342427844960689186UL + 8361UL), "malloc", 1, 0UL, (12342427844960689186UL + 8368UL), "malloc", 1, 0UL, (12342427844960689186UL + 8375UL), "CalcElemShapeFunctionDerivatives", 5, (12342427844960689186UL + 8328UL), (12342427844960689186UL + 8329UL), (12342427844960689186UL + 8330UL), (12342427844960689186UL + 8327UL), (12342427844960689186UL + 8609UL), 0UL, "CalcElemNodeNormals", 6, (12342427844960689186UL + 8327UL), (12342427844960689186UL + 8327UL), (12342427844960689186UL + 8327UL), (12342427844960689186UL + 8328UL), (12342427844960689186UL + 8329UL), (12342427844960689186UL + 8330UL), 0UL, "SumElemStressesToNodeForces", 7, (12342427844960689186UL + 8327UL), 0UL, 0UL, 0UL, (12342427844960689186UL + 8361UL), (12342427844960689186UL + 8368UL), (12342427844960689186UL + 8375UL), 0UL, "free", 1, (12342427844960689186UL + 8375UL), 0UL, "free", 1, (12342427844960689186UL + 8368UL), 0UL, "free", 1, (12342427844960689186UL + 8361UL), 0UL,
+                            "CollectDomainNodesToElemNodes", (void *)(&CollectDomainNodesToElemNodes_npm), 0, 4, (12342427844960689186UL + 9103UL), (12342427844960689186UL + 9104UL), (12342427844960689186UL + 9105UL), (12342427844960689186UL + 9106UL), 0UL, 0,
+                            "VoluDer", (void *)(&VoluDer_npm), 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 13169UL), (12342427844960689186UL + 13170UL), (12342427844960689186UL + 13171UL), 0UL, 0,
+                            "CalcElemVolumeDerivative", (void *)(&CalcElemVolumeDerivative_npm), 0, 6, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), (12342427844960689186UL + 9617UL), (12342427844960689186UL + 9618UL), (12342427844960689186UL + 9619UL), 0UL, 8, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 9614UL), (12342427844960689186UL + 9615UL), (12342427844960689186UL + 9616UL), 0UL,
+                            "CalcElemFBHourglassForce", (void *)(&CalcElemFBHourglassForce_npm), 0, 15, (12342427844960689186UL + 12904UL), (12342427844960689186UL + 12905UL), (12342427844960689186UL + 12906UL), (12342427844960689186UL + 12907UL), (12342427844960689186UL + 12908UL), (12342427844960689186UL + 12909UL), (12342427844960689186UL + 12910UL), (12342427844960689186UL + 12911UL), (12342427844960689186UL + 12912UL), (12342427844960689186UL + 12913UL), (12342427844960689186UL + 12914UL), 0UL, (12342427844960689186UL + 12916UL), (12342427844960689186UL + 12917UL), (12342427844960689186UL + 12918UL), 0UL, 0,
+                            "CalcFBHourglassForceForElems", (void *)(&CalcFBHourglassForceForElems_npm), 0, 8, (12342427844960689186UL + 10999UL), (12342427844960689186UL + 11000UL), (12342427844960689186UL + 11001UL), (12342427844960689186UL + 11002UL), (12342427844960689186UL + 11003UL), (12342427844960689186UL + 11004UL), (12342427844960689186UL + 11005UL), 0UL, 0UL, 8, "malloc", 1, 0UL, (12342427844960689186UL + 9707UL), "malloc", 1, 0UL, (12342427844960689186UL + 9714UL), "malloc", 1, 0UL, (12342427844960689186UL + 9721UL), "CBRT", 1, 0UL, 0UL, "CalcElemFBHourglassForce", 15, (12342427844960689186UL + 9650UL), (12342427844960689186UL + 9651UL), (12342427844960689186UL + 9652UL), (12342427844960689186UL + 9642UL), (12342427844960689186UL + 9643UL), (12342427844960689186UL + 9644UL), (12342427844960689186UL + 9645UL), (12342427844960689186UL + 9646UL), (12342427844960689186UL + 9647UL), (12342427844960689186UL + 9648UL), (12342427844960689186UL + 9649UL), 0UL, (12342427844960689186UL + 9638UL), (12342427844960689186UL + 9639UL), (12342427844960689186UL + 9640UL), 0UL, "free", 1, (12342427844960689186UL + 9721UL), 0UL, "free", 1, (12342427844960689186UL + 9714UL), 0UL, "free", 1, (12342427844960689186UL + 9707UL), 0UL,
+                            "CalcHourglassControlForElems", (void *)(&CalcHourglassControlForElems_npm), 0, 2, (12342427844960689186UL + 8848UL), 0UL, 0UL, 16, "malloc", 1, 0UL, (12342427844960689186UL + 8645UL), "malloc", 1, 0UL, (12342427844960689186UL + 8652UL), "malloc", 1, 0UL, (12342427844960689186UL + 8659UL), "malloc", 1, 0UL, (12342427844960689186UL + 8666UL), "malloc", 1, 0UL, (12342427844960689186UL + 8673UL), "malloc", 1, 0UL, (12342427844960689186UL + 8680UL), "CollectDomainNodesToElemNodes", 4, (12342427844960689186UL + 2488UL), (12342427844960689186UL + 8621UL), (12342427844960689186UL + 8622UL), (12342427844960689186UL + 8623UL), 0UL, "CalcElemVolumeDerivative", 6, (12342427844960689186UL + 8624UL), (12342427844960689186UL + 8625UL), (12342427844960689186UL + 8626UL), (12342427844960689186UL + 8621UL), (12342427844960689186UL + 8622UL), (12342427844960689186UL + 8623UL), 0UL, "exit", 1, 0UL, 0UL, "CalcFBHourglassForceForElems", 8, (12342427844960689186UL + 8848UL), (12342427844960689186UL + 8666UL), (12342427844960689186UL + 8673UL), (12342427844960689186UL + 8680UL), (12342427844960689186UL + 8645UL), (12342427844960689186UL + 8652UL), (12342427844960689186UL + 8659UL), 0UL, 0UL, "free", 1, (12342427844960689186UL + 8680UL), 0UL, "free", 1, (12342427844960689186UL + 8673UL), 0UL, "free", 1, (12342427844960689186UL + 8666UL), 0UL, "free", 1, (12342427844960689186UL + 8659UL), 0UL, "free", 1, (12342427844960689186UL + 8652UL), 0UL, "free", 1, (12342427844960689186UL + 8645UL), 0UL,
+                            "CalcVolumeForceForElems", (void *)(&CalcVolumeForceForElems_npm), 0, 0, 0UL, 12, "malloc", 1, 0UL, (12342427844960689186UL + 8255UL), "malloc", 1, 0UL, (12342427844960689186UL + 8252UL), "malloc", 1, 0UL, (12342427844960689186UL + 8249UL), "malloc", 1, 0UL, (12342427844960689186UL + 8231UL), "InitStressTermsForElems", 4, 0UL, (12342427844960689186UL + 8255UL), (12342427844960689186UL + 8252UL), (12342427844960689186UL + 8249UL), 0UL, "IntegrateStressForElems", 5, 0UL, (12342427844960689186UL + 8255UL), (12342427844960689186UL + 8252UL), (12342427844960689186UL + 8249UL), (12342427844960689186UL + 8231UL), 0UL, "exit", 1, 0UL, 0UL, "CalcHourglassControlForElems", 2, (12342427844960689186UL + 8231UL), 0UL, 0UL, "free", 1, (12342427844960689186UL + 8231UL), 0UL, "free", 1, (12342427844960689186UL + 8249UL), 0UL, "free", 1, (12342427844960689186UL + 8252UL), 0UL, "free", 1, (12342427844960689186UL + 8255UL), 0UL,
+                            "CalcForceForNodes", (void *)(&CalcForceForNodes_npm), 0, 0, 0UL, 1, "CalcVolumeForceForElems", 0, 0UL,
+                            "CalcAccelerationForNodes", (void *)(&CalcAccelerationForNodes_npm), 0, 0, 0UL, 0,
+                            "ApplyAccelerationBoundaryConditionsForNodes", (void *)(&ApplyAccelerationBoundaryConditionsForNodes_npm), 0, 0, 0UL, 0,
+                            "CalcVelocityForNodes", (void *)(&CalcVelocityForNodes_npm), 0, 2, 0UL, 0UL, 0UL, 3, "FABS", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL,
+                            "CalcPositionForNodes", (void *)(&CalcPositionForNodes_npm), 0, 1, 0UL, 0UL, 0,
+                            "LagrangeNodal", (void *)(&LagrangeNodal_npm), 0, 0, 0UL, 5, "CalcForceForNodes", 0, 0UL, "CalcAccelerationForNodes", 0, 0UL, "ApplyAccelerationBoundaryConditionsForNodes", 0, 0UL, "CalcVelocityForNodes", 2, 0UL, 0UL, 0UL, "CalcPositionForNodes", 1, 0UL, 0UL,
+                            "CalcElemVolumeScalar", (void *)(&CalcElemVolumeScalar_npm), 0, 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
+                            "CalcElemVolume", (void *)(&CalcElemVolume_npm), 0, 3, (12342427844960689186UL + 1843UL), (12342427844960689186UL + 1844UL), (12342427844960689186UL + 1845UL), 0UL, 1, "CalcElemVolumeScalar", 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "AreaFace", (void *)(&AreaFace_npm), 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
+                            "CalcElemCharacteristicLength", (void *)(&CalcElemCharacteristicLength_npm), 0, 4, (12342427844960689186UL + 6446UL), (12342427844960689186UL + 6447UL), (12342427844960689186UL + 6448UL), 0UL, 0UL, 13, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fmax", 2, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fmax", 2, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fmax", 2, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fmax", 2, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fmax", 2, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fmax", 2, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL,
+                            "CalcElemVelocityGrandient", (void *)(&CalcElemVelocityGrandient_npm), 0, 6, (12342427844960689186UL + 7647UL), (12342427844960689186UL + 7648UL), (12342427844960689186UL + 7649UL), (12342427844960689186UL + 7650UL), 0UL, (12342427844960689186UL + 7652UL), 0UL, 0,
+                            "CalcKinematicsForElems", (void *)(&CalcKinematicsForElems_npm), 0, 2, 0UL, 0UL, 0UL, 4, "CalcElemVolume", 3, (12342427844960689186UL + 5900UL), (12342427844960689186UL + 5901UL), (12342427844960689186UL + 5902UL), 0UL, "CalcElemCharacteristicLength", 4, (12342427844960689186UL + 5900UL), (12342427844960689186UL + 5901UL), (12342427844960689186UL + 5902UL), 0UL, 0UL, "CalcElemShapeFunctionDerivatives", 5, (12342427844960689186UL + 5900UL), (12342427844960689186UL + 5901UL), (12342427844960689186UL + 5902UL), (12342427844960689186UL + 5898UL), (12342427844960689186UL + 5906UL), 0UL, "CalcElemVelocityGrandient", 6, (12342427844960689186UL + 5903UL), (12342427844960689186UL + 5904UL), (12342427844960689186UL + 5905UL), (12342427844960689186UL + 5898UL), 0UL, (12342427844960689186UL + 5899UL), 0UL,
+                            "CalcLagrangeElements", (void *)(&CalcLagrangeElements_npm), 0, 1, 0UL, 0UL, 2, "CalcKinematicsForElems", 2, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL,
+                            "CalcMonotonicQGradientsForElems", (void *)(&CalcMonotonicQGradientsForElems_npm), 0, 0, 0UL, 3, "SQRT", 1, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "SQRT", 1, 0UL, 0UL,
+                            "CalcMonotonicQRegionForElems", (void *)(&CalcMonotonicQRegionForElems_npm), 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
+                            "CalcMonotonicQForElems", (void *)(&CalcMonotonicQForElems_npm), 0, 0, 0UL, 1, "CalcMonotonicQRegionForElems", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "CalcQForElems", (void *)(&CalcQForElems_npm), 0, 0, 0UL, 3, "CalcMonotonicQGradientsForElems", 0, 0UL, "CalcMonotonicQForElems", 0, 0UL, "exit", 1, 0UL, 0UL,
+                            "CalcPressureForElems", (void *)(&CalcPressureForElems_npm), 0, 10, (12342427844960689186UL + 4280UL), (12342427844960689186UL + 4281UL), (12342427844960689186UL + 4282UL), (12342427844960689186UL + 4283UL), (12342427844960689186UL + 4284UL), (12342427844960689186UL + 4285UL), 0UL, 0UL, 0UL, 0UL, 0UL, 1, "FABS", 1, 0UL, 0UL,
+                            "CalcEnergyForElems", (void *)(&CalcEnergyForElems_npm), 0, 23, (12342427844960689186UL + 4009UL), (12342427844960689186UL + 4010UL), (12342427844960689186UL + 4011UL), (12342427844960689186UL + 4012UL), (12342427844960689186UL + 4013UL), (12342427844960689186UL + 4014UL), (12342427844960689186UL + 4015UL), (12342427844960689186UL + 4016UL), (12342427844960689186UL + 4017UL), (12342427844960689186UL + 4018UL), (12342427844960689186UL + 4019UL), (12342427844960689186UL + 4020UL), (12342427844960689186UL + 4021UL), 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 4027UL), (12342427844960689186UL + 4028UL), 0UL, 0UL, 0UL, 0UL, 11, "malloc", 1, 0UL, (12342427844960689186UL + 3445UL), "CalcPressureForElems", 10, (12342427844960689186UL + 3445UL), (12342427844960689186UL + 4012UL), (12342427844960689186UL + 4013UL), (12342427844960689186UL + 4010UL), (12342427844960689186UL + 4018UL), (12342427844960689186UL + 4019UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "CalcPressureForElems", 10, (12342427844960689186UL + 4009UL), (12342427844960689186UL + 4012UL), (12342427844960689186UL + 4013UL), (12342427844960689186UL + 4010UL), (12342427844960689186UL + 4017UL), (12342427844960689186UL + 4019UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "CalcPressureForElems", 10, (12342427844960689186UL + 4009UL), (12342427844960689186UL + 4012UL), (12342427844960689186UL + 4013UL), (12342427844960689186UL + 4010UL), (12342427844960689186UL + 4017UL), (12342427844960689186UL + 4019UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "free", 1, (12342427844960689186UL + 3445UL), 0UL,
+                            "CalcSoundSpeedForElems", (void *)(&CalcSoundSpeedForElems_npm), 0, 8, (12342427844960689186UL + 4133UL), 0UL, (12342427844960689186UL + 4135UL), (12342427844960689186UL + 4136UL), (12342427844960689186UL + 4137UL), (12342427844960689186UL + 4138UL), 0UL, 0UL, 0UL, 1, "SQRT", 1, 0UL, 0UL,
+                            "EvalEOSForElems", (void *)(&EvalEOSForElems_npm), 0, 2, (12342427844960689186UL + 3357UL), 0UL, 0UL, 30, "malloc", 1, 0UL, (12342427844960689186UL + 2819UL), "malloc", 1, 0UL, (12342427844960689186UL + 2826UL), "malloc", 1, 0UL, (12342427844960689186UL + 2833UL), "malloc", 1, 0UL, (12342427844960689186UL + 2840UL), "malloc", 1, 0UL, (12342427844960689186UL + 2847UL), "malloc", 1, 0UL, (12342427844960689186UL + 2854UL), "malloc", 1, 0UL, (12342427844960689186UL + 2861UL), "malloc", 1, 0UL, (12342427844960689186UL + 2868UL), "malloc", 1, 0UL, (12342427844960689186UL + 2875UL), "malloc", 1, 0UL, (12342427844960689186UL + 2882UL), "malloc", 1, 0UL, (12342427844960689186UL + 2889UL), "malloc", 1, 0UL, (12342427844960689186UL + 2896UL), "malloc", 1, 0UL, (12342427844960689186UL + 2903UL), "malloc", 1, 0UL, (12342427844960689186UL + 2910UL), "CalcEnergyForElems", 23, (12342427844960689186UL + 2882UL), (12342427844960689186UL + 2889UL), (12342427844960689186UL + 2896UL), (12342427844960689186UL + 2903UL), (12342427844960689186UL + 2910UL), (12342427844960689186UL + 2833UL), (12342427844960689186UL + 2819UL), (12342427844960689186UL + 2840UL), (12342427844960689186UL + 2847UL), (12342427844960689186UL + 2854UL), (12342427844960689186UL + 3357UL), (12342427844960689186UL + 2875UL), (12342427844960689186UL + 2826UL), 0UL, 0UL, 0UL, 0UL, 0UL, (12342427844960689186UL + 2861UL), (12342427844960689186UL + 2868UL), 0UL, 0UL, 0UL, 0UL, "CalcSoundSpeedForElems", 8, (12342427844960689186UL + 3357UL), 0UL, (12342427844960689186UL + 2889UL), (12342427844960689186UL + 2882UL), (12342427844960689186UL + 2910UL), (12342427844960689186UL + 2903UL), 0UL, 0UL, 0UL, "free", 1, (12342427844960689186UL + 2910UL), 0UL, "free", 1, (12342427844960689186UL + 2903UL), 0UL, "free", 1, (12342427844960689186UL + 2896UL), 0UL, "free", 1, (12342427844960689186UL + 2889UL), 0UL, "free", 1, (12342427844960689186UL + 2882UL), 0UL, "free", 1, (12342427844960689186UL + 2875UL), 0UL, "free", 1, (12342427844960689186UL + 2868UL), 0UL, "free", 1, (12342427844960689186UL + 2861UL), 0UL, "free", 1, (12342427844960689186UL + 2854UL), 0UL, "free", 1, (12342427844960689186UL + 2847UL), 0UL, "free", 1, (12342427844960689186UL + 2840UL), 0UL, "free", 1, (12342427844960689186UL + 2833UL), 0UL, "free", 1, (12342427844960689186UL + 2826UL), 0UL, "free", 1, (12342427844960689186UL + 2819UL), 0UL,
+                            "ApplyMaterialPropertiesForElems", (void *)(&ApplyMaterialPropertiesForElems_npm), 0, 0, 0UL, 4, "malloc", 1, 0UL, (12342427844960689186UL + 2560UL), "exit", 1, 0UL, 0UL, "EvalEOSForElems", 2, (12342427844960689186UL + 2560UL), 0UL, 0UL, "free", 1, (12342427844960689186UL + 2560UL), 0UL,
+                            "UpdateVolumesForElems", (void *)(&UpdateVolumesForElems_npm), 0, 0, 0UL, 1, "FABS", 1, 0UL, 0UL,
+                            "LagrangeElements", (void *)(&LagrangeElements_npm), 0, 0, 0UL, 4, "CalcLagrangeElements", 1, 0UL, 0UL, "CalcQForElems", 0, 0UL, "ApplyMaterialPropertiesForElems", 0, 0UL, "UpdateVolumesForElems", 0, 0UL,
+                            "CalcCourantConstraintForElems", (void *)(&CalcCourantConstraintForElems_npm), 0, 0, 0UL, 3, "omp_get_num_threads", 0, 0UL, "SQRT", 1, 0UL, 0UL, "omp_get_thread_num", 0, 0UL,
+                            "CalcHydroConstraintForElems", (void *)(&CalcHydroConstraintForElems_npm), 0, 0, 0UL, 3, "omp_get_num_threads", 0, 0UL, "FABS", 1, 0UL, 0UL, "omp_get_thread_num", 0, 0UL,
+                            "CalcTimeConstraintsForElems", (void *)(&CalcTimeConstraintsForElems_npm), 0, 0, 0UL, 2, "CalcCourantConstraintForElems", 0, 0UL, "CalcHydroConstraintForElems", 0, 0UL,
+                            "LagrangeLeapFrog", (void *)(&LagrangeLeapFrog_npm), 0, 0, 0UL, 3, "LagrangeNodal", 0, 0UL, "LagrangeElements", 0, 0UL, "CalcTimeConstraintsForElems", 0, 0UL,
+                           "SQRT", &(____chimes_does_checkpoint_SQRT_npm),
+                           "CBRT", &(____chimes_does_checkpoint_CBRT_npm),
+                           "FABS", &(____chimes_does_checkpoint_FABS_npm),
+                           "AllocateNodalPersistent", &(____chimes_does_checkpoint_AllocateNodalPersistent_npm),
+                           "AllocateElemPersistent", &(____chimes_does_checkpoint_AllocateElemPersistent_npm),
+                           "AllocateElemTemporary", &(____chimes_does_checkpoint_AllocateElemTemporary_npm),
+                           "AllocateNodesets", &(____chimes_does_checkpoint_AllocateNodesets_npm),
+                           "AllocateNodeElemIndexes", &(____chimes_does_checkpoint_AllocateNodeElemIndexes_npm),
+                           "TimeIncrement", &(____chimes_does_checkpoint_TimeIncrement_npm),
+                           "InitStressTermsForElems", &(____chimes_does_checkpoint_InitStressTermsForElems_npm),
+                           "CalcElemShapeFunctionDerivatives", &(____chimes_does_checkpoint_CalcElemShapeFunctionDerivatives_npm),
+                           "SumElemFaceNormal", &(____chimes_does_checkpoint_SumElemFaceNormal_npm),
+                           "CalcElemNodeNormals", &(____chimes_does_checkpoint_CalcElemNodeNormals_npm),
+                           "SumElemStressesToNodeForces", &(____chimes_does_checkpoint_SumElemStressesToNodeForces_npm),
+                           "IntegrateStressForElems", &(____chimes_does_checkpoint_IntegrateStressForElems_npm),
+                           "CollectDomainNodesToElemNodes", &(____chimes_does_checkpoint_CollectDomainNodesToElemNodes_npm),
+                           "VoluDer", &(____chimes_does_checkpoint_VoluDer_npm),
+                           "CalcElemVolumeDerivative", &(____chimes_does_checkpoint_CalcElemVolumeDerivative_npm),
+                           "CalcElemFBHourglassForce", &(____chimes_does_checkpoint_CalcElemFBHourglassForce_npm),
+                           "CalcFBHourglassForceForElems", &(____chimes_does_checkpoint_CalcFBHourglassForceForElems_npm),
+                           "CalcHourglassControlForElems", &(____chimes_does_checkpoint_CalcHourglassControlForElems_npm),
+                           "CalcVolumeForceForElems", &(____chimes_does_checkpoint_CalcVolumeForceForElems_npm),
+                           "CalcForceForNodes", &(____chimes_does_checkpoint_CalcForceForNodes_npm),
+                           "CalcAccelerationForNodes", &(____chimes_does_checkpoint_CalcAccelerationForNodes_npm),
+                           "ApplyAccelerationBoundaryConditionsForNodes", &(____chimes_does_checkpoint_ApplyAccelerationBoundaryConditionsForNodes_npm),
+                           "CalcVelocityForNodes", &(____chimes_does_checkpoint_CalcVelocityForNodes_npm),
+                           "CalcPositionForNodes", &(____chimes_does_checkpoint_CalcPositionForNodes_npm),
+                           "LagrangeNodal", &(____chimes_does_checkpoint_LagrangeNodal_npm),
+                           "CalcElemVolumeScalar", &(____chimes_does_checkpoint_CalcElemVolumeScalar_npm),
+                           "CalcElemVolume", &(____chimes_does_checkpoint_CalcElemVolume_npm),
+                           "AreaFace", &(____chimes_does_checkpoint_AreaFace_npm),
+                           "CalcElemCharacteristicLength", &(____chimes_does_checkpoint_CalcElemCharacteristicLength_npm),
+                           "CalcElemVelocityGrandient", &(____chimes_does_checkpoint_CalcElemVelocityGrandient_npm),
+                           "CalcKinematicsForElems", &(____chimes_does_checkpoint_CalcKinematicsForElems_npm),
+                           "CalcLagrangeElements", &(____chimes_does_checkpoint_CalcLagrangeElements_npm),
+                           "CalcMonotonicQGradientsForElems", &(____chimes_does_checkpoint_CalcMonotonicQGradientsForElems_npm),
+                           "CalcMonotonicQRegionForElems", &(____chimes_does_checkpoint_CalcMonotonicQRegionForElems_npm),
+                           "CalcMonotonicQForElems", &(____chimes_does_checkpoint_CalcMonotonicQForElems_npm),
+                           "CalcQForElems", &(____chimes_does_checkpoint_CalcQForElems_npm),
+                           "CalcPressureForElems", &(____chimes_does_checkpoint_CalcPressureForElems_npm),
+                           "CalcEnergyForElems", &(____chimes_does_checkpoint_CalcEnergyForElems_npm),
+                           "CalcSoundSpeedForElems", &(____chimes_does_checkpoint_CalcSoundSpeedForElems_npm),
+                           "EvalEOSForElems", &(____chimes_does_checkpoint_EvalEOSForElems_npm),
+                           "ApplyMaterialPropertiesForElems", &(____chimes_does_checkpoint_ApplyMaterialPropertiesForElems_npm),
+                           "UpdateVolumesForElems", &(____chimes_does_checkpoint_UpdateVolumesForElems_npm),
+                           "LagrangeElements", &(____chimes_does_checkpoint_LagrangeElements_npm),
+                           "CalcCourantConstraintForElems", &(____chimes_does_checkpoint_CalcCourantConstraintForElems_npm),
+                           "CalcHydroConstraintForElems", &(____chimes_does_checkpoint_CalcHydroConstraintForElems_npm),
+                           "CalcTimeConstraintsForElems", &(____chimes_does_checkpoint_CalcTimeConstraintsForElems_npm),
+                           "LagrangeLeapFrog", &(____chimes_does_checkpoint_LagrangeLeapFrog_npm),
+                             (12342427844960689186UL + 13173UL), (12342427844960689186UL + 13585UL),
+                             (12342427844960689186UL + 9626UL), (12342427844960689186UL + 11005UL),
+                             (12342427844960689186UL + 7129UL), (12342427844960689186UL + 7650UL),
+                             (12342427844960689186UL + 7117UL), (12342427844960689186UL + 7648UL),
+                             (12342427844960689186UL + 7116UL), (12342427844960689186UL + 7647UL),
+                             (12342427844960689186UL + 7119UL), (12342427844960689186UL + 7650UL),
+                             (12342427844960689186UL + 7118UL), (12342427844960689186UL + 7649UL),
+                             (12342427844960689186UL + 13172UL), (12342427844960689186UL + 13584UL),
+                             (12342427844960689186UL + 4145UL), (12342427844960689186UL + 4284UL),
+                             (12342427844960689186UL + 4144UL), (12342427844960689186UL + 4283UL),
+                             (12342427844960689186UL + 4146UL), (12342427844960689186UL + 4285UL),
+                             (12342427844960689186UL + 4141UL), (12342427844960689186UL + 4280UL),
+                             (12342427844960689186UL + 4143UL), (12342427844960689186UL + 4282UL),
+                             (12342427844960689186UL + 4142UL), (12342427844960689186UL + 4281UL),
+                             (12342427844960689186UL + 347UL), (12342427844960689186UL + 167UL),
+                             (12342427844960689186UL + 9625UL), (12342427844960689186UL + 11004UL),
+                             (12342427844960689186UL + 5909UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 349UL), (12342427844960689186UL + 426UL),
+                             (12342427844960689186UL + 9624UL), (12342427844960689186UL + 11003UL),
+                             (12342427844960689186UL + 8627UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 13956UL), (12342427844960689186UL + 14188UL),
+                             (12342427844960689186UL + 12938UL), (12342427844960689186UL + 13169UL),
+                             (12342427844960689186UL + 12939UL), (12342427844960689186UL + 13170UL),
+                             (12342427844960689186UL + 4032UL), (12342427844960689186UL + 4133UL),
+                             (12342427844960689186UL + 4035UL), (12342427844960689186UL + 4136UL),
+                             (12342427844960689186UL + 4034UL), (12342427844960689186UL + 4135UL),
+                             (12342427844960689186UL + 4037UL), (12342427844960689186UL + 4138UL),
+                             (12342427844960689186UL + 4036UL), (12342427844960689186UL + 4137UL),
+                             (12342427844960689186UL + 7121UL), (12342427844960689186UL + 7652UL),
+                             (12342427844960689186UL + 11024UL), (12342427844960689186UL + 12914UL),
+                             (12342427844960689186UL + 11027UL), (12342427844960689186UL + 12917UL),
+                             (12342427844960689186UL + 11026UL), (12342427844960689186UL + 12916UL),
+                             (12342427844960689186UL + 11021UL), (12342427844960689186UL + 12911UL),
+                             (12342427844960689186UL + 11020UL), (12342427844960689186UL + 12910UL),
+                             (12342427844960689186UL + 11023UL), (12342427844960689186UL + 12913UL),
+                             (12342427844960689186UL + 11022UL), (12342427844960689186UL + 12912UL),
+                             (12342427844960689186UL + 13590UL), (12342427844960689186UL + 13948UL),
+                             (12342427844960689186UL + 11028UL), (12342427844960689186UL + 12918UL),
+                             (12342427844960689186UL + 6451UL), (12342427844960689186UL + 7112UL),
+                             (12342427844960689186UL + 6450UL), (12342427844960689186UL + 7111UL),
+                             (12342427844960689186UL + 6453UL), (12342427844960689186UL + 7114UL),
+                             (12342427844960689186UL + 6452UL), (12342427844960689186UL + 7113UL),
+                             (12342427844960689186UL + 6454UL), (12342427844960689186UL + 7115UL),
+                             (12342427844960689186UL + 7131UL), (12342427844960689186UL + 7650UL),
+                             (12342427844960689186UL + 7130UL), (12342427844960689186UL + 7650UL),
+                             (12342427844960689186UL + 8321UL), (12342427844960689186UL + 8609UL),
+                             (12342427844960689186UL + 8320UL), (12342427844960689186UL + 8608UL),
+                             (12342427844960689186UL + 8323UL), (12342427844960689186UL + 8361UL),
+                             (12342427844960689186UL + 3383UL), (12342427844960689186UL + 3445UL),
+                             (12342427844960689186UL + 799UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 428UL), (12342427844960689186UL + 456UL),
+                             (12342427844960689186UL + 13959UL), (12342427844960689186UL + 14191UL),
+                             (12342427844960689186UL + 8851UL), (12342427844960689186UL + 9104UL),
+                             (12342427844960689186UL + 426UL), (12342427844960689186UL + 357UL),
+                             (12342427844960689186UL + 2763UL), (12342427844960689186UL + 2910UL),
+                             (12342427844960689186UL + 2762UL), (12342427844960689186UL + 2903UL),
+                             (12342427844960689186UL + 2761UL), (12342427844960689186UL + 2896UL),
+                             (12342427844960689186UL + 2760UL), (12342427844960689186UL + 2889UL),
+                             (12342427844960689186UL + 13958UL), (12342427844960689186UL + 14190UL),
+                             (12342427844960689186UL + 11018UL), (12342427844960689186UL + 12908UL),
+                             (12342427844960689186UL + 6170UL), (12342427844960689186UL + 6447UL),
+                             (12342427844960689186UL + 6171UL), (12342427844960689186UL + 6448UL),
+                             (12342427844960689186UL + 784UL), (12342427844960689186UL + 1758UL),
+                             (12342427844960689186UL + 4299UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 11014UL), (12342427844960689186UL + 12904UL),
+                             (12342427844960689186UL + 2512UL), (12342427844960689186UL + 2560UL),
+                             (12342427844960689186UL + 11015UL), (12342427844960689186UL + 12905UL),
+                             (12342427844960689186UL + 11016UL), (12342427844960689186UL + 12906UL),
+                             (12342427844960689186UL + 458UL), (12342427844960689186UL + 778UL),
+                             (12342427844960689186UL + 11017UL), (12342427844960689186UL + 12907UL),
+                             (12342427844960689186UL + 456UL), (12342427844960689186UL + 436UL),
+                             (12342427844960689186UL + 6169UL), (12342427844960689186UL + 6446UL),
+                             (12342427844960689186UL + 9630UL), (12342427844960689186UL + 9707UL),
+                             (12342427844960689186UL + 9631UL), (12342427844960689186UL + 9714UL),
+                             (12342427844960689186UL + 9632UL), (12342427844960689186UL + 9721UL),
+                             (12342427844960689186UL + 9635UL), (12342427844960689186UL + 9707UL),
+                             (12342427844960689186UL + 9636UL), (12342427844960689186UL + 9714UL),
+                             (12342427844960689186UL + 9637UL), (12342427844960689186UL + 9721UL),
+                             (12342427844960689186UL + 3368UL), (12342427844960689186UL + 4017UL),
+                             (12342427844960689186UL + 3369UL), (12342427844960689186UL + 4018UL),
+                             (12342427844960689186UL + 3364UL), (12342427844960689186UL + 4013UL),
+                             (12342427844960689186UL + 3365UL), (12342427844960689186UL + 4014UL),
+                             (12342427844960689186UL + 3366UL), (12342427844960689186UL + 4015UL),
+                             (12342427844960689186UL + 3367UL), (12342427844960689186UL + 4016UL),
+                             (12342427844960689186UL + 3360UL), (12342427844960689186UL + 4009UL),
+                             (12342427844960689186UL + 3361UL), (12342427844960689186UL + 4010UL),
+                             (12342427844960689186UL + 3362UL), (12342427844960689186UL + 4011UL),
+                             (12342427844960689186UL + 3363UL), (12342427844960689186UL + 4012UL),
+                             (12342427844960689186UL + 8615UL), (12342427844960689186UL + 8652UL),
+                             (12342427844960689186UL + 8614UL), (12342427844960689186UL + 8645UL),
+                             (12342427844960689186UL + 8617UL), (12342427844960689186UL + 8666UL),
+                             (12342427844960689186UL + 8616UL), (12342427844960689186UL + 8659UL),
+                             (12342427844960689186UL + 8610UL), (12342427844960689186UL + 8848UL),
+                             (12342427844960689186UL + 9107UL), (12342427844960689186UL + 9614UL),
+                             (12342427844960689186UL + 8619UL), (12342427844960689186UL + 8680UL),
+                             (12342427844960689186UL + 8618UL), (12342427844960689186UL + 8673UL),
+                             (12342427844960689186UL + 13962UL), (12342427844960689186UL + 14194UL),
+                             (12342427844960689186UL + 13963UL), (12342427844960689186UL + 14195UL),
+                             (12342427844960689186UL + 13960UL), (12342427844960689186UL + 14192UL),
+                             (12342427844960689186UL + 13961UL), (12342427844960689186UL + 14193UL),
+                             (12342427844960689186UL + 469UL), (12342427844960689186UL + 541UL),
+                             (12342427844960689186UL + 13964UL), (12342427844960689186UL + 14196UL),
+                             (12342427844960689186UL + 13965UL), (12342427844960689186UL + 14197UL),
+                             (12342427844960689186UL + 464UL), (12342427844960689186UL + 541UL),
+                             (12342427844960689186UL + 13594UL), (12342427844960689186UL + 13952UL),
+                             (12342427844960689186UL + 9623UL), (12342427844960689186UL + 11002UL),
+                             (12342427844960689186UL + 9622UL), (12342427844960689186UL + 11001UL),
+                             (12342427844960689186UL + 9621UL), (12342427844960689186UL + 11000UL),
+                             (12342427844960689186UL + 9620UL), (12342427844960689186UL + 10999UL),
+                             (12342427844960689186UL + 8261UL), (12342427844960689186UL + 8314UL),
+                             (12342427844960689186UL + 8262UL), (12342427844960689186UL + 8315UL),
+                             (12342427844960689186UL + 8263UL), (12342427844960689186UL + 8316UL),
+                             (12342427844960689186UL + 13596UL), (12342427844960689186UL + 13954UL),
+                             (12342427844960689186UL + 13595UL), (12342427844960689186UL + 13953UL),
+                             (12342427844960689186UL + 2210UL), (12342427844960689186UL + 2233UL),
+                             (12342427844960689186UL + 3379UL), (12342427844960689186UL + 4028UL),
+                             (12342427844960689186UL + 3378UL), (12342427844960689186UL + 4027UL),
+                             (12342427844960689186UL + 3372UL), (12342427844960689186UL + 4021UL),
+                             (12342427844960689186UL + 3371UL), (12342427844960689186UL + 4020UL),
+                             (12342427844960689186UL + 3370UL), (12342427844960689186UL + 4019UL),
+                             (12342427844960689186UL + 2756UL), (12342427844960689186UL + 2861UL),
+                             (12342427844960689186UL + 2757UL), (12342427844960689186UL + 2868UL),
+                             (12342427844960689186UL + 2754UL), (12342427844960689186UL + 2847UL),
+                             (12342427844960689186UL + 2755UL), (12342427844960689186UL + 2854UL),
+                             (12342427844960689186UL + 2752UL), (12342427844960689186UL + 2833UL),
+                             (12342427844960689186UL + 2753UL), (12342427844960689186UL + 2840UL),
+                             (12342427844960689186UL + 2750UL), (12342427844960689186UL + 2819UL),
+                             (12342427844960689186UL + 2751UL), (12342427844960689186UL + 2826UL),
+                             (12342427844960689186UL + 2758UL), (12342427844960689186UL + 2875UL),
+                             (12342427844960689186UL + 2759UL), (12342427844960689186UL + 2882UL),
+                             (12342427844960689186UL + 8170UL), (12342427844960689186UL + 8252UL),
+                             (12342427844960689186UL + 8171UL), (12342427844960689186UL + 8249UL),
+                             (12342427844960689186UL + 8172UL), (12342427844960689186UL + 8231UL),
+                             (12342427844960689186UL + 9108UL), (12342427844960689186UL + 9615UL),
+                             (12342427844960689186UL + 9109UL), (12342427844960689186UL + 9616UL),
+                             (12342427844960689186UL + 13957UL), (12342427844960689186UL + 14189UL),
+                             (12342427844960689186UL + 158UL), (12342427844960689186UL + 347UL),
+                             (12342427844960689186UL + 13955UL), (12342427844960689186UL + 14187UL),
+                             (12342427844960689186UL + 2739UL), (12342427844960689186UL + 3357UL),
+                             (12342427844960689186UL + 8325UL), (12342427844960689186UL + 8375UL),
+                             (12342427844960689186UL + 8324UL), (12342427844960689186UL + 8368UL),
+                             (12342427844960689186UL + 13966UL), (12342427844960689186UL + 14198UL),
+                             (12342427844960689186UL + 12940UL), (12342427844960689186UL + 13171UL),
+                             (12342427844960689186UL + 1UL), (12342427844960689186UL + 148UL),
+                             (12342427844960689186UL + 11019UL), (12342427844960689186UL + 12909UL),
+                             (12342427844960689186UL + 1758UL), (12342427844960689186UL + 844UL),
+                             (12342427844960689186UL + 14642UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 14643UL), (12342427844960689186UL + 768UL),
+                             (12342427844960689186UL + 9111UL), (12342427844960689186UL + 9618UL),
+                             (12342427844960689186UL + 9110UL), (12342427844960689186UL + 9617UL),
+                             (12342427844960689186UL + 8169UL), (12342427844960689186UL + 8255UL),
+                             (12342427844960689186UL + 9112UL), (12342427844960689186UL + 9619UL),
+                             (12342427844960689186UL + 778UL), (12342427844960689186UL + 541UL),
+                             (12342427844960689186UL + 148UL), (12342427844960689186UL + 9UL),
+                             (12342427844960689186UL + 8853UL), (12342427844960689186UL + 9106UL),
+                             (12342427844960689186UL + 8318UL), (12342427844960689186UL + 8606UL),
+                             (12342427844960689186UL + 8319UL), (12342427844960689186UL + 8607UL),
+                             (12342427844960689186UL + 8850UL), (12342427844960689186UL + 9103UL),
+                             (12342427844960689186UL + 9653UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 2000UL), (12342427844960689186UL + 2029UL),
+                             (12342427844960689186UL + 8331UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 13177UL), (12342427844960689186UL + 13589UL),
+                             (12342427844960689186UL + 1762UL), (12342427844960689186UL + 1845UL),
+                             (12342427844960689186UL + 8852UL), (12342427844960689186UL + 9105UL),
+                             (12342427844960689186UL + 1760UL), (12342427844960689186UL + 1843UL),
+                             (12342427844960689186UL + 1761UL), (12342427844960689186UL + 1844UL),
+                             (12342427844960689186UL + 13175UL), (12342427844960689186UL + 13587UL),
+                             (12342427844960689186UL + 13174UL), (12342427844960689186UL + 13586UL),
+                             (12342427844960689186UL + 805UL), (12342427844960689186UL + 2488UL),
+                             (12342427844960689186UL + 13176UL), (12342427844960689186UL + 13588UL),
+                     "Domain", 85, "double*", (int)__builtin_offsetof (struct Domain, x), "double*", (int)__builtin_offsetof (struct Domain, y), "double*", (int)__builtin_offsetof (struct Domain, z), "double*", (int)__builtin_offsetof (struct Domain, xd), "double*", (int)__builtin_offsetof (struct Domain, yd), "double*", (int)__builtin_offsetof (struct Domain, zd), "double*", (int)__builtin_offsetof (struct Domain, xdd), "double*", (int)__builtin_offsetof (struct Domain, ydd), "double*", (int)__builtin_offsetof (struct Domain, zdd), "double*", (int)__builtin_offsetof (struct Domain, fx), "double*", (int)__builtin_offsetof (struct Domain, fy), "double*", (int)__builtin_offsetof (struct Domain, fz), "double*", (int)__builtin_offsetof (struct Domain, nodalMass), "int*", (int)__builtin_offsetof (struct Domain, symmX), "int*", (int)__builtin_offsetof (struct Domain, symmY), "int*", (int)__builtin_offsetof (struct Domain, symmZ), "int*", (int)__builtin_offsetof (struct Domain, nodeElemCount), "int*", (int)__builtin_offsetof (struct Domain, nodeElemStart), "int*", (int)__builtin_offsetof (struct Domain, nodeElemCornerList), "int", (int)__builtin_offsetof (struct Domain, cornerListSize), "int*", (int)__builtin_offsetof (struct Domain, matElemlist), "int*", (int)__builtin_offsetof (struct Domain, nodelist), "int*", (int)__builtin_offsetof (struct Domain, lxim), "int*", (int)__builtin_offsetof (struct Domain, lxip), "int*", (int)__builtin_offsetof (struct Domain, letam), "int*", (int)__builtin_offsetof (struct Domain, letap), "int*", (int)__builtin_offsetof (struct Domain, lzetam), "int*", (int)__builtin_offsetof (struct Domain, lzetap), "int*", (int)__builtin_offsetof (struct Domain, elemBC), "double*", (int)__builtin_offsetof (struct Domain, dxx), "double*", (int)__builtin_offsetof (struct Domain, dyy), "double*", (int)__builtin_offsetof (struct Domain, dzz), "double*", (int)__builtin_offsetof (struct Domain, delv_xi), "double*", (int)__builtin_offsetof (struct Domain, delv_eta), "double*", (int)__builtin_offsetof (struct Domain, delv_zeta), "double*", (int)__builtin_offsetof (struct Domain, delx_xi), "double*", (int)__builtin_offsetof (struct Domain, delx_eta), "double*", (int)__builtin_offsetof (struct Domain, delx_zeta), "double*", (int)__builtin_offsetof (struct Domain, e), "double*", (int)__builtin_offsetof (struct Domain, p), "double*", (int)__builtin_offsetof (struct Domain, q), "double*", (int)__builtin_offsetof (struct Domain, ql), "double*", (int)__builtin_offsetof (struct Domain, qq), "double*", (int)__builtin_offsetof (struct Domain, v), "double*", (int)__builtin_offsetof (struct Domain, volo), "double*", (int)__builtin_offsetof (struct Domain, vnew), "double*", (int)__builtin_offsetof (struct Domain, delv), "double*", (int)__builtin_offsetof (struct Domain, vdov), "double*", (int)__builtin_offsetof (struct Domain, arealg), "double*", (int)__builtin_offsetof (struct Domain, ss), "double*", (int)__builtin_offsetof (struct Domain, elemMass), "double", (int)__builtin_offsetof (struct Domain, dtfixed), "double", (int)__builtin_offsetof (struct Domain, time), "double", (int)__builtin_offsetof (struct Domain, deltatime), "double", (int)__builtin_offsetof (struct Domain, deltatimemultlb), "double", (int)__builtin_offsetof (struct Domain, deltatimemultub), "double", (int)__builtin_offsetof (struct Domain, stoptime), "double", (int)__builtin_offsetof (struct Domain, u_cut), "double", (int)__builtin_offsetof (struct Domain, hgcoef), "double", (int)__builtin_offsetof (struct Domain, qstop), "double", (int)__builtin_offsetof (struct Domain, monoq_max_slope), "double", (int)__builtin_offsetof (struct Domain, monoq_limiter_mult), "double", (int)__builtin_offsetof (struct Domain, e_cut), "double", (int)__builtin_offsetof (struct Domain, p_cut), "double", (int)__builtin_offsetof (struct Domain, ss4o3), "double", (int)__builtin_offsetof (struct Domain, q_cut), "double", (int)__builtin_offsetof (struct Domain, v_cut), "double", (int)__builtin_offsetof (struct Domain, qlc_monoq), "double", (int)__builtin_offsetof (struct Domain, qqc_monoq), "double", (int)__builtin_offsetof (struct Domain, qqc), "double", (int)__builtin_offsetof (struct Domain, eosvmax), "double", (int)__builtin_offsetof (struct Domain, eosvmin), "double", (int)__builtin_offsetof (struct Domain, pmin), "double", (int)__builtin_offsetof (struct Domain, emin), "double", (int)__builtin_offsetof (struct Domain, dvovmax), "double", (int)__builtin_offsetof (struct Domain, refdens), "double", (int)__builtin_offsetof (struct Domain, dtcourant), "double", (int)__builtin_offsetof (struct Domain, dthydro), "double", (int)__builtin_offsetof (struct Domain, dtmax), "int", (int)__builtin_offsetof (struct Domain, cycle), "int", (int)__builtin_offsetof (struct Domain, sizeX), "int", (int)__builtin_offsetof (struct Domain, sizeY), "int", (int)__builtin_offsetof (struct Domain, sizeZ), "int", (int)__builtin_offsetof (struct Domain, numElem), "int", (int)__builtin_offsetof (struct Domain, numNode),
+                     "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec),
+                             "CalcVolumeForceForElems", 3, "InitStressTermsForElems", "IntegrateStressForElems", "CalcHourglassControlForElems",
+                             "AllocateElemTemporary", 0,
+                             "IntegrateStressForElems", 3, "CalcElemShapeFunctionDerivatives", "CalcElemNodeNormals", "SumElemStressesToNodeForces",
+                             "CalcTimeConstraintsForElems", 2, "CalcCourantConstraintForElems", "CalcHydroConstraintForElems",
+                             "CalcKinematicsForElems", 4, "CalcElemVolume", "CalcElemCharacteristicLength", "CalcElemShapeFunctionDerivatives", "CalcElemVelocityGrandient",
+                             "CalcHourglassControlForElems", 3, "CollectDomainNodesToElemNodes", "CalcElemVolumeDerivative", "CalcFBHourglassForceForElems",
+                             "CalcElemVolumeDerivative", 8, "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer",
+                             "CalcPressureForElems", 1, "FABS",
+                             "AllocateNodeElemIndexes", 0,
+                             "CalcAccelerationForNodes", 0,
+                             "CalcElemVolumeScalar", 0,
+                             "EvalEOSForElems", 2, "CalcEnergyForElems", "CalcSoundSpeedForElems",
+                             "FABS", 0,
+                             "CalcLagrangeElements", 1, "CalcKinematicsForElems",
+                             "VoluDer", 0,
+                             "CalcElemFBHourglassForce", 0,
+                             "UpdateVolumesForElems", 1, "FABS",
+                             "CalcElemShapeFunctionDerivatives", 0,
+                             "CBRT", 0,
+                             "main", 10, "AllocateElemPersistent", "AllocateElemTemporary", "AllocateNodalPersistent", "AllocateNodesets", "AllocateNodeElemIndexes", "CalcElemVolume", "TimeIncrement", "LagrangeLeapFrog", "checkpoint", "FABS",
+                             "CalcMonotonicQRegionForElems", 0,
+                             "InitStressTermsForElems", 0,
+                             "TimeIncrement", 0,
+                             "SumElemStressesToNodeForces", 0,
+                             "CalcMonotonicQGradientsForElems", 3, "SQRT", "SQRT", "SQRT",
+                             "LagrangeElements", 4, "CalcLagrangeElements", "CalcQForElems", "ApplyMaterialPropertiesForElems", "UpdateVolumesForElems",
+                             "AllocateNodesets", 0,
+                             "CalcCourantConstraintForElems", 1, "SQRT",
+                             "AreaFace", 0,
+                             "CalcElemVolume", 1, "CalcElemVolumeScalar",
+                             "CalcPositionForNodes", 0,
+                             "CalcElemVelocityGrandient", 0,
+                             "CollectDomainNodesToElemNodes", 0,
+                             "CalcMonotonicQForElems", 1, "CalcMonotonicQRegionForElems",
+                             "AllocateElemPersistent", 0,
+                             "CalcHydroConstraintForElems", 1, "FABS",
+                             "CalcForceForNodes", 1, "CalcVolumeForceForElems",
+                             "SumElemFaceNormal", 0,
+                             "ApplyMaterialPropertiesForElems", 1, "EvalEOSForElems",
+                             "CalcVelocityForNodes", 3, "FABS", "FABS", "FABS",
+                             "AllocateNodalPersistent", 0,
+                             "LagrangeLeapFrog", 3, "LagrangeNodal", "LagrangeElements", "CalcTimeConstraintsForElems",
+                             "CalcElemNodeNormals", 6, "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal",
+                             "SQRT", 0,
+                             "CalcSoundSpeedForElems", 1, "SQRT",
+                             "CalcElemCharacteristicLength", 7, "AreaFace", "AreaFace", "AreaFace", "AreaFace", "AreaFace", "AreaFace", "SQRT",
+                             "CalcEnergyForElems", 9, "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS",
+                             "CalcQForElems", 2, "CalcMonotonicQGradientsForElems", "CalcMonotonicQForElems",
+                             "LagrangeNodal", 5, "CalcForceForNodes", "CalcAccelerationForNodes", "ApplyAccelerationBoundaryConditionsForNodes", "CalcVelocityForNodes", "CalcPositionForNodes",
+                             "CalcFBHourglassForceForElems", 2, "CBRT", "CalcElemFBHourglassForce",
+                             "ApplyAccelerationBoundaryConditionsForNodes", 0,
+                        "main|x_local|0", 1, "main",
+                        "main|start|0", 1, "main",
+                        "main|end|0", 1, "main",
+                        "CalcKinematicsForElems|B|0", 1, "CalcKinematicsForElems",
+                        "CalcKinematicsForElems|x_local|0", 1, "CalcKinematicsForElems",
+                        "IntegrateStressForElems|B|0", 1, "IntegrateStressForElems",
+                        "CalcHourglassControlForElems|x1|0", 1, "CalcHourglassControlForElems",
+                        "CalcFBHourglassForceForElems|hgfx|0", 1, "CalcFBHourglassForceForElems");
     register_global_var("global|domain", "%struct.Domain = type { double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, i32*, i32*, i32*, i32*, i32*, i32*, i32, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, i32, i32, i32, i32 }", (void *)(&domain), 656, 0, 1, 50, (int)__builtin_offsetof (struct Domain, x), (int)__builtin_offsetof (struct Domain, y), (int)__builtin_offsetof (struct Domain, z), (int)__builtin_offsetof (struct Domain, xd), (int)__builtin_offsetof (struct Domain, yd), (int)__builtin_offsetof (struct Domain, zd), (int)__builtin_offsetof (struct Domain, xdd), (int)__builtin_offsetof (struct Domain, ydd), (int)__builtin_offsetof (struct Domain, zdd), (int)__builtin_offsetof (struct Domain, fx), (int)__builtin_offsetof (struct Domain, fy), (int)__builtin_offsetof (struct Domain, fz), (int)__builtin_offsetof (struct Domain, nodalMass), (int)__builtin_offsetof (struct Domain, symmX), (int)__builtin_offsetof (struct Domain, symmY), (int)__builtin_offsetof (struct Domain, symmZ), (int)__builtin_offsetof (struct Domain, nodeElemCount), (int)__builtin_offsetof (struct Domain, nodeElemStart), (int)__builtin_offsetof (struct Domain, nodeElemCornerList), (int)__builtin_offsetof (struct Domain, matElemlist), (int)__builtin_offsetof (struct Domain, nodelist), (int)__builtin_offsetof (struct Domain, lxim), (int)__builtin_offsetof (struct Domain, lxip), (int)__builtin_offsetof (struct Domain, letam), (int)__builtin_offsetof (struct Domain, letap), (int)__builtin_offsetof (struct Domain, lzetam), (int)__builtin_offsetof (struct Domain, lzetap), (int)__builtin_offsetof (struct Domain, elemBC), (int)__builtin_offsetof (struct Domain, dxx), (int)__builtin_offsetof (struct Domain, dyy), (int)__builtin_offsetof (struct Domain, dzz), (int)__builtin_offsetof (struct Domain, delv_xi), (int)__builtin_offsetof (struct Domain, delv_eta), (int)__builtin_offsetof (struct Domain, delv_zeta), (int)__builtin_offsetof (struct Domain, delx_xi), (int)__builtin_offsetof (struct Domain, delx_eta), (int)__builtin_offsetof (struct Domain, delx_zeta), (int)__builtin_offsetof (struct Domain, e), (int)__builtin_offsetof (struct Domain, p), (int)__builtin_offsetof (struct Domain, q), (int)__builtin_offsetof (struct Domain, ql), (int)__builtin_offsetof (struct Domain, qq), (int)__builtin_offsetof (struct Domain, v), (int)__builtin_offsetof (struct Domain, volo), (int)__builtin_offsetof (struct Domain, vnew), (int)__builtin_offsetof (struct Domain, delv), (int)__builtin_offsetof (struct Domain, vdov), (int)__builtin_offsetof (struct Domain, arealg), (int)__builtin_offsetof (struct Domain, ss), (int)__builtin_offsetof (struct Domain, elemMass));
-    register_functions(51, "LULESH_OMP.cc.pre.hard.cpp", "AllocateNodalPersistent", &AllocateNodalPersistent, "AllocateElemPersistent", &AllocateElemPersistent, "AllocateElemTemporary", &AllocateElemTemporary, "AllocateNodesets", &AllocateNodesets, "AllocateNodeElemIndexes", &AllocateNodeElemIndexes, "main", &main, "CalcElemVolume", &CalcElemVolume, "TimeIncrement", &TimeIncrement, "LagrangeLeapFrog", &LagrangeLeapFrog, "FABS", &FABS, "LagrangeNodal", &LagrangeNodal, "LagrangeElements", &LagrangeElements, "CalcTimeConstraintsForElems", &CalcTimeConstraintsForElems, "CalcCourantConstraintForElems", &CalcCourantConstraintForElems, "CalcHydroConstraintForElems", &CalcHydroConstraintForElems, "SQRT", &SQRT, "CalcLagrangeElements", &CalcLagrangeElements, "CalcQForElems", &CalcQForElems, "ApplyMaterialPropertiesForElems", &ApplyMaterialPropertiesForElems, "UpdateVolumesForElems", &UpdateVolumesForElems, "EvalEOSForElems", &EvalEOSForElems, "CalcEnergyForElems", &CalcEnergyForElems, "CalcSoundSpeedForElems", &CalcSoundSpeedForElems, "CalcPressureForElems", &CalcPressureForElems, "CalcMonotonicQGradientsForElems", &CalcMonotonicQGradientsForElems, "CalcMonotonicQForElems", &CalcMonotonicQForElems, "CalcMonotonicQRegionForElems", &CalcMonotonicQRegionForElems, "CalcKinematicsForElems", &CalcKinematicsForElems, "CalcElemCharacteristicLength", &CalcElemCharacteristicLength, "CalcElemShapeFunctionDerivatives", &CalcElemShapeFunctionDerivatives, "CalcElemVelocityGrandient", &CalcElemVelocityGrandient, "AreaFace", &AreaFace, "CalcForceForNodes", &CalcForceForNodes, "CalcAccelerationForNodes", &CalcAccelerationForNodes, "ApplyAccelerationBoundaryConditionsForNodes", &ApplyAccelerationBoundaryConditionsForNodes, "CalcVelocityForNodes", &CalcVelocityForNodes, "CalcPositionForNodes", &CalcPositionForNodes, "CalcVolumeForceForElems", &CalcVolumeForceForElems, "InitStressTermsForElems", &InitStressTermsForElems, "IntegrateStressForElems", &IntegrateStressForElems, "CalcHourglassControlForElems", &CalcHourglassControlForElems, "CollectDomainNodesToElemNodes", &CollectDomainNodesToElemNodes, "CalcElemVolumeDerivative", &CalcElemVolumeDerivative, "CalcFBHourglassForceForElems", &CalcFBHourglassForceForElems, "CBRT", &CBRT, "CalcElemFBHourglassForce", &CalcElemFBHourglassForce, "VoluDer", &VoluDer, "CalcElemNodeNormals", &CalcElemNodeNormals, "SumElemStressesToNodeForces", &SumElemStressesToNodeForces, "SumElemFaceNormal", &SumElemFaceNormal, "CalcElemVolumeScalar", &CalcElemVolumeScalar);
+    register_functions(51, "LULESH_OMP.cc.pre.extern_ptrs.cpp", "CalcVolumeForceForElems", &CalcVolumeForceForElems, "AllocateElemTemporary", &AllocateElemTemporary, "IntegrateStressForElems", &IntegrateStressForElems, "CalcTimeConstraintsForElems", &CalcTimeConstraintsForElems, "CalcKinematicsForElems", &CalcKinematicsForElems, "CalcHourglassControlForElems", &CalcHourglassControlForElems, "CalcElemVolumeDerivative", &CalcElemVolumeDerivative, "CalcPressureForElems", &CalcPressureForElems, "AllocateNodeElemIndexes", &AllocateNodeElemIndexes, "CalcAccelerationForNodes", &CalcAccelerationForNodes, "CalcElemVolumeScalar", &CalcElemVolumeScalar, "EvalEOSForElems", &EvalEOSForElems, "FABS", &FABS, "CalcLagrangeElements", &CalcLagrangeElements, "VoluDer", &VoluDer, "CalcElemFBHourglassForce", &CalcElemFBHourglassForce, "UpdateVolumesForElems", &UpdateVolumesForElems, "CalcElemShapeFunctionDerivatives", &CalcElemShapeFunctionDerivatives, "CBRT", &CBRT, "main", &main, "CalcMonotonicQRegionForElems", &CalcMonotonicQRegionForElems, "InitStressTermsForElems", &InitStressTermsForElems, "TimeIncrement", &TimeIncrement, "SumElemStressesToNodeForces", &SumElemStressesToNodeForces, "CalcMonotonicQGradientsForElems", &CalcMonotonicQGradientsForElems, "LagrangeElements", &LagrangeElements, "AllocateNodesets", &AllocateNodesets, "CalcCourantConstraintForElems", &CalcCourantConstraintForElems, "AreaFace", &AreaFace, "CalcElemVolume", &CalcElemVolume, "CalcPositionForNodes", &CalcPositionForNodes, "CalcElemVelocityGrandient", &CalcElemVelocityGrandient, "CollectDomainNodesToElemNodes", &CollectDomainNodesToElemNodes, "CalcMonotonicQForElems", &CalcMonotonicQForElems, "AllocateElemPersistent", &AllocateElemPersistent, "CalcHydroConstraintForElems", &CalcHydroConstraintForElems, "CalcForceForNodes", &CalcForceForNodes, "SumElemFaceNormal", &SumElemFaceNormal, "ApplyMaterialPropertiesForElems", &ApplyMaterialPropertiesForElems, "CalcVelocityForNodes", &CalcVelocityForNodes, "AllocateNodalPersistent", &AllocateNodalPersistent, "LagrangeLeapFrog", &LagrangeLeapFrog, "CalcElemNodeNormals", &CalcElemNodeNormals, "SQRT", &SQRT, "CalcSoundSpeedForElems", &CalcSoundSpeedForElems, "CalcElemCharacteristicLength", &CalcElemCharacteristicLength, "CalcEnergyForElems", &CalcEnergyForElems, "CalcQForElems", &CalcQForElems, "LagrangeNodal", &LagrangeNodal, "CalcFBHourglassForceForElems", &CalcFBHourglassForceForElems, "ApplyAccelerationBoundaryConditionsForNodes", &ApplyAccelerationBoundaryConditionsForNodes);
     return 0;
 }
+#pragma GCC pop_options
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

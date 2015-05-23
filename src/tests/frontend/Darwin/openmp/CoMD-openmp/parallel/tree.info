@@ -1,7 +1,7 @@
 getNRanks 0 DOES_NOT
 getMyRank 0 DOES_NOT
 printRank 0 DOES_NOT
-timestampBarrier 0 MAY barrierParallel 53 4 printRank 54 9 time 56 14 ctime 57 23
+timestampBarrier 0 DOES_NOT barrierParallel 53 4 printRank 54 9
 barrierParallel 0 DOES_NOT
 initParallel 0 DOES_NOT
 destroyParallel 0 DOES_NOT

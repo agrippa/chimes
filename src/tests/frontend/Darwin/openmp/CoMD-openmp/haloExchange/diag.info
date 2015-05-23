@@ -15,7 +15,6 @@ ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchan
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 260 15 len=16 initHaloExchange_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 262 38 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 262 64 , 18379826249005484727UL, 0, 1, (int)sizeof(struct HaloExchangeSt), 4, (int)__builtin_offsetof(struct HaloExchangeSt, loadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, unloadBuffer), (int)__builtin_offsetof(struct HaloExchangeSt, destroy), (int)__builtin_offsetof(struct HaloExchangeSt, parms)
-ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 284 6 len=12 exchangeData_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 289 28 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 289 49 , 18379826249005486486UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 290 28 len=6 malloc_wrapper

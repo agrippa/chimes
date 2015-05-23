@@ -30,25 +30,27 @@ void CallTranslator::visitChildren(const clang::Stmt *s) {
 }
 
 std::string CallTranslator::to_string(const clang::Stmt *stmt) {
-    std::string s;
-    llvm::raw_string_ostream stream(s);
+    std::string s = rewriter->getRewrittenText(clang::SourceRange(
+                stmt->getLocStart(), stmt->getLocEnd()));
+    return s;
+    // llvm::raw_string_ostream stream(s);
 
-    stmt->printPretty(stream, NULL, Context->getPrintingPolicy());
-    stream.flush();
+    // stmt->printPretty(stream, NULL, Context->getPrintingPolicy());
+    // stream.flush();
 
-    int start_index = 0;
-    while (start_index < s.length() && std::isspace(s[start_index])) {
-        start_index++;
-    }
+    // int start_index = 0;
+    // while (start_index < s.length() && std::isspace(s[start_index])) {
+    //     start_index++;
+    // }
 
-    int end_index = s.length() - 1;
-    while (end_index >= 0 && std::isspace(s[end_index])) {
-        end_index--;
-    }
+    // int end_index = s.length() - 1;
+    // while (end_index >= 0 && std::isspace(s[end_index])) {
+    //     end_index--;
+    // }
 
-    std::string trimmed = s.substr(start_index, end_index - start_index + 1);
-    std::replace(trimmed.begin(), trimmed.end(), '\n', ' ');
-    return trimmed;
+    // std::string trimmed = s.substr(start_index, end_index - start_index + 1);
+    // std::replace(trimmed.begin(), trimmed.end(), '\n', ' ');
+    // return trimmed;
 }
 
 static std::string get_external_func_name(std::string fname) {

@@ -1,6 +1,6 @@
 GXX?=g++
 NVCC=nvcc
-GXX_FLAGS=-fPIC -Wall -O3 -pg
+GXX_FLAGS=-fPIC -Wall -O0 -g
 NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \

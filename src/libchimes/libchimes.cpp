@@ -1499,6 +1499,106 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     assert(!initialized);
     initialized_modules.insert(module_id);
 
+    // Generate unique IDs for each change location
+    for (int i = 0; i < n_change_locs; i++) {
+        unsigned this_loc_id = count_change_locations++;
+
+        unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
+        const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+        change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
+                    this_loc_id, set<size_t>()));
+        for (unsigned j = 0; j < n_aliases_at_loc; j++) {
+            size_t alias = va_arg(vl, size_t);
+            change_loc_id_to_aliases.at(this_loc_id).insert(alias);
+        }
+        *change_loc_id_ptr = this_loc_id;
+    }
+
+    // Iterate over the NPM functions defined inside this compilation unit.
+    for (int i = 0; i < n_provided_npm_functions; i++) {
+        std::string fname(va_arg(vl, char *));
+        void *fptr = va_arg(vl, void *);
+
+        // Alias locations that are stored in this function
+        const int n_alias_locs = va_arg(vl, int);
+        set<unsigned> alias_locs;
+        for (int j = 0; j < n_alias_locs; j++) {
+            unsigned *loc_id_ptr = va_arg(vl, unsigned *);
+            alias_locs.insert(*loc_id_ptr);
+        }
+
+        /*
+         * The aliases that this function assigns to its input parameters and
+         * its returned value.
+         */
+        vector<size_t> param_aliases;
+        size_t return_alias;
+        const int n_param_aliases = va_arg(vl, int);
+        for (int j = 0; j < n_param_aliases; j++) {
+            param_aliases.push_back(va_arg(vl, size_t));
+        }
+        return_alias = va_arg(vl, size_t);
+        function_io_aliases outer_aliases(param_aliases, return_alias);
+
+        /*
+         * The set of calls made from the current function, including the name
+         * of the function called, the number of arguments passed, the aliases
+         * assigned to each of those arguments, and the return alias assigned to
+         * any value that is returned.
+         */
+        const int n_calls_made = va_arg(vl, int);
+        vector<call_aliases> calls;
+        for (int j = 0; j < n_calls_made; j++) {
+            vector<size_t> arg_aliases;
+            size_t return_alias;
+
+            string callee_name(va_arg(vl, const char *));
+            const int n_args = va_arg(vl, int);
+            for (int k = 0; k < n_args; k++) {
+                arg_aliases.push_back(va_arg(vl, size_t));
+            }
+            return_alias = va_arg(vl, size_t);
+            calls.push_back(call_aliases(callee_name, arg_aliases,
+                        return_alias));
+        }
+
+        VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
+                        fptr)).second);
+        VERIFY(fname_to_alias_locs.insert(pair<string, set<unsigned> >(fname,
+                        alias_locs)).second);
+        VERIFY(fname_to_outer_aliases.insert(pair<string, function_io_aliases>(
+                        fname, outer_aliases)).second);
+        VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
+                        fname, calls)).second);
+
+    }
+
+    // Iterate over the NPM functions that this compilation unit depends on
+    for (int i = 0; i < n_external_npm_functions; i++) {
+        std::string npm_fname(va_arg(vl, const char *));
+        void **fptr = va_arg(vl, void **);
+
+        if (requested_npm_functions.find(npm_fname) ==
+                requested_npm_functions.end()) {
+            requested_npm_functions.insert(pair<string, vector<void **> >(
+                        npm_fname, vector<void **>()));
+        }
+
+        requested_npm_functions.at(npm_fname).push_back(fptr);
+    }
+
+    /*
+     * Get the addresses of the global variables which prevent conditional NPM
+     * execution.
+     */
+    for (int i = 0; i < n_npm_conditionals; i++) {
+        std::string func_name(va_arg(vl, const char *));
+        int *conditional = va_arg(vl, int *);
+
+        VERIFY(npm_conditional_pointers.insert(pair<string, int *>(func_name,
+                        conditional)).second);
+    }
+
     VERIFY(pthread_rwlock_wrlock(&contains_lock) == 0);
     for (int i = 0; i < n_contains_mappings; i++) {
         size_t container = va_arg(vl, size_t);
@@ -1607,106 +1707,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
             var_checkpoint_causes[var_name_str].insert(cause_str);
         }
-    }
-
-    // Generate unique IDs for each change location
-    for (int i = 0; i < n_change_locs; i++) {
-        unsigned this_loc_id = count_change_locations++;
-
-        unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
-        unsigned n_aliases_at_loc = va_arg(vl, unsigned);
-        change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
-                    this_loc_id, set<size_t>()));
-        for (unsigned j = 0; j < n_aliases_at_loc; j++) {
-            size_t alias = va_arg(vl, size_t);
-            change_loc_id_to_aliases.at(this_loc_id).insert(alias);
-        }
-        *change_loc_id_ptr = this_loc_id;
-    }
-
-    // Iterate over the NPM functions defined inside this compilation unit.
-    for (int i = 0; i < n_provided_npm_functions; i++) {
-        std::string fname(va_arg(vl, char *));
-        void *fptr = va_arg(vl, void *);
-
-        // Alias locations that are stored in this function
-        int n_alias_locs = va_arg(vl, int);
-        set<unsigned> alias_locs;
-        for (int j = 0; j < n_alias_locs; j++) {
-            unsigned *loc_id_ptr = va_arg(vl, unsigned *);
-            alias_locs.insert(*loc_id_ptr);
-        }
-
-        /*
-         * The aliases that this function assigns to its input parameters and
-         * its returned value.
-         */
-        vector<size_t> param_aliases;
-        size_t return_alias;
-        int n_param_aliases = va_arg(vl, int);
-        for (int j = 0; j < n_param_aliases; j++) {
-            param_aliases.push_back(va_arg(vl, size_t));
-        }
-        return_alias = va_arg(vl, size_t);
-        function_io_aliases outer_aliases(param_aliases, return_alias);
-
-        /*
-         * The set of calls made from the current function, including the name
-         * of the function called, the number of arguments passed, the aliases
-         * assigned to each of those arguments, and the return alias assigned to
-         * any value that is returned.
-         */
-        int n_calls_made = va_arg(vl, int);
-        vector<call_aliases> calls;
-        for (int j = 0; j < n_calls_made; j++) {
-            vector<size_t> arg_aliases;
-            size_t return_alias;
-
-            string callee_name(va_arg(vl, const char *));
-            int n_args = va_arg(vl, int);
-            for (int k = 0; k < n_args; k++) {
-                arg_aliases.push_back(va_arg(vl, size_t));
-            }
-            return_alias = va_arg(vl, size_t);
-            calls.push_back(call_aliases(callee_name, arg_aliases,
-                        return_alias));
-        }
-
-        VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
-                        fptr)).second);
-        VERIFY(fname_to_alias_locs.insert(pair<string, set<unsigned> >(fname,
-                        alias_locs)).second);
-        VERIFY(fname_to_outer_aliases.insert(pair<string, function_io_aliases>(
-                        fname, outer_aliases)).second);
-        VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
-                        fname, calls)).second);
-
-    }
-
-    // Iterate over the NPM functions that this compilation unit depends on
-    for (int i = 0; i < n_external_npm_functions; i++) {
-        std::string npm_fname(va_arg(vl, const char *));
-        void **fptr = va_arg(vl, void **);
-
-        if (requested_npm_functions.find(npm_fname) ==
-                requested_npm_functions.end()) {
-            requested_npm_functions.insert(pair<string, vector<void **> >(
-                        npm_fname, vector<void **>()));
-        }
-
-        requested_npm_functions.at(npm_fname).push_back(fptr);
-    }
-
-    /*
-     * Get the addresses of the global variables which prevent conditional NPM
-     * execution.
-     */
-    for (int i = 0; i < n_npm_conditionals; i++) {
-        std::string func_name(va_arg(vl, const char *));
-        int *conditional = va_arg(vl, int *);
-
-        VERIFY(npm_conditional_pointers.insert(pair<string, int *>(func_name,
-                        conditional)).second);
     }
 
     va_end(vl);
