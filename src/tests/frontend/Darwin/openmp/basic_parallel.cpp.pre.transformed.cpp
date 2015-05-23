@@ -10,6 +10,7 @@ typedef long unsigned int size_t;
 # 1 "basic_parallel.cpp.pre.transformed.cpp"
 
 
+
 static unsigned ____alias_loc_id_0;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 1 "/tmp/chimes-frontend//"
@@ -467,14 +468,17 @@ FILE *funopen(const void *,
 # 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
+extern void calling_npm(const char *name, size_t return_alias, int n_params,
+        ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs,
+        int n_provided_npm_functions, int n_external_npm_functions,
+        int n_npm_conditionals, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -510,7 +514,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1795,7 +1799,6 @@ extern void register_custom_init_handler(const char *obj_name,
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp" 2
 # 4 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 5 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-void foo_npm();
 void foo_quick(); void foo();
 void foo_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", (int *)0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 6 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
@@ -1874,19 +1877,13 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 
-void foo_npm() {
-# 6 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-    checkpoint();
-# 7 "/Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-}
-
 
 
 
 
 static int module_init() {
-    init_module(17008665004289634901UL, 1, 2, 0, 1, 0, 17008665004289634901UL + 5UL, 17008665004289634901UL + 29UL, "main", 1, "foo", "foo", 1, "checkpoint", &____alias_loc_id_0, (unsigned)7, 17008665004289634901UL + 3UL, 17008665004289634901UL + 4UL, 17008665004289634901UL + 5UL, 17008665004289634901UL + 6UL, 17008665004289634901UL + 7UL, 17008665004289634901UL + 8UL, 17008665004289634901UL + 9UL);
-    register_functions(2, "basic_parallel.cpp.pre.hard.cpp", "foo", &foo, "main", &main);
+    init_module(17008665004289634901UL, 1, 2, 0, 1, 0, 0, 0, 0, &____alias_loc_id_0, (unsigned)7, (17008665004289634901UL + 3UL), (17008665004289634901UL + 4UL), (17008665004289634901UL + 5UL), (17008665004289634901UL + 6UL), (17008665004289634901UL + 7UL), (17008665004289634901UL + 8UL), (17008665004289634901UL + 9UL), (17008665004289634901UL + 5UL), (17008665004289634901UL + 29UL), "main", 1, "foo", "foo", 1, "checkpoint");
+    register_functions(2, "basic_parallel.cpp.pre.extern_ptrs.cpp", "main", &main, "foo", &foo);
     return 0;
 }
 

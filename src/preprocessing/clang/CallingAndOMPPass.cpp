@@ -1126,7 +1126,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     if (no_checkpoint) {
                         ReplaceText(clang::SourceRange(call->getLocStart(),
                                     call->getLocEnd()), npm_call);
-                    } else if (insertions->get_distance_from_main(curr_func) < 2) {
+                        continue;
+                    } else if (insertions->have_main_in_call_tree() &&
+                            insertions->get_distance_from_main(curr_func) < 2) {
                         std::string regular_call = generateNormalCall(call, loc,
                                 lbl, callsite);
                         std::string cond_call = "(____chimes_does_checkpoint_" +
@@ -1134,9 +1136,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                             ") : (" + npm_call + "))";
                         ReplaceText(clang::SourceRange(call->getLocStart(),
                                     call->getLocEnd()), cond_call);
+                        continue;
                     }
-
-                    continue;
                 }
 
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {

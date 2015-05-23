@@ -4,21 +4,21 @@ ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 94 6 len=7 yamlEnd_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 102 6 len=14 printSeparator_npm
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 4 alias_group_changed(____alias_loc_id_0); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 1 const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(5761392777509905396UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 44 1 rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_5, ____chimes_did_disable0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 23 rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 1 const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 0, (size_t)(5761392777509905396UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 44 1 rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 23 rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 47 1 const int ____chimes_did_disable1 = new_stack((void *)(&yamlBegin), "yamlBegin", &____must_manage_yamlBegin, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 62 1 rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_3, ____chimes_did_disable1); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 64 rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0, ____chimes_did_disable2); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 62 1 rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 64 rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 65 1 const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(5761392777509905353UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct.__sFILE*", (void *)(&file), (size_t)8, 1, 0, 0); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 92 1 rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, 0, ____chimes_did_disable2); 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 92 1 rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 96 23 rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 95 1 const int ____chimes_did_disable3 = new_stack((void *)(&yamlEnd), "yamlEnd", &____must_manage_yamlEnd, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 100 1 rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 103 1 const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(5761392777509905360UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 106 1 rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_4, ____chimes_did_disable4); 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 2 const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 1, (size_t)(5761392777509905396UL), "getTimeString|timestring|0", &____must_checkpoint_getTimeString_timestring_0, "i8*", (void *)(&timestring), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 290 
+InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 106 1 rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 2 const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 0, (size_t)(5761392777509905396UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 161 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 31 4 time_t rawtime; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 31 18 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 32 4 struct tm *timeinfo; ;
@@ -43,25 +43,18 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlO
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 95 110 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 103 2 const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(5761392777509905360UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 103 164 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 4  call_lbl_1: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 4  call_lbl_1: 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 53 4  call_lbl_3: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 45  call_lbl_2: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 36  call_lbl_16: 
-InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 4  call_lbl_19: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 96 4  call_lbl_1: 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 29 13 len=13 getTimeString_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 17  ({  calling((void*)time, 1, 0UL, ____alias_loc_id_2, 1, (size_t)(5761392777509905364UL)); (time)(&rawtime); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 30 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 31 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 31 18 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 289  ; time_t rawtime;
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 160  ; time_t rawtime;
  if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 46 6 len=9 yamlBegin_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 22  ({  calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 32 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 53 17  ({  calling((void*)time, 3, 0UL, 0, 1, (size_t)(5761392777509905246UL)); (time)(&rawtime); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 53 31 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 51 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 51 21 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 52 4 
@@ -75,19 +68,16 @@ char filename[64];
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 64 6 len=11 yamlAppInfo_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 63  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 71 4 ({ calling_npm(1, 0, 5761392777509905353UL, 5761392777509905360UL); printSeparator_npm(file); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 71 4 ({ calling_npm("printSeparator", 0UL, 1, 5761392777509905353UL); printSeparator_npm(file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 71 23 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 77  ({  calling((void*)builtWithMpi, 16, 0UL, 0, 0); (builtWithMpi)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 90 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 18  ({  calling((void*)getTimeString, 19, 0UL, ____alias_loc_id_1, 1, (size_t)(5761392777509905296UL)); (getTimeString)(timestring); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 42 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 6 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 33 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 4 ({ calling_npm("getTimeString", 0UL, 1, 5761392777509905296UL); getTimeString_npm(timestring); })
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 28 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 87 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 87 23 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 65 274  ; char timestring[32];
-int ____chimes_unroll_var_0;
- if (____must_checkpoint_yamlAppInfo_timestring_0 || ____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0) { register_stack_vars(2, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0, "yamlAppInfo|____chimes_unroll_var_0|0", &____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_yamlAppInfo_timestring_0) { register_stack_vars(1, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 94 6 len=7 yamlEnd_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 96 22  ({  calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 96 32 
@@ -95,17 +85,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/y
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 102 6 len=14 printSeparator_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 103 163  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 29 13 len=13 getTimeString_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 17  ({  calling((void*)time, 1, 0UL, ____alias_loc_id_2, 1, (size_t)(5761392777509905364UL)); (time)(&rawtime); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 33 30 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 31 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 31 18 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 289  ; time_t rawtime;
- if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 30 160  ; time_t rawtime;
+ if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 46 6 len=9 yamlBegin_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 22  ({  calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 48 32 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 53 17  ({  calling((void*)time, 3, 0UL, 0, 1, (size_t)(5761392777509905246UL)); (time)(&rawtime); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 53 31 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 51 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 51 21 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 52 4 
@@ -115,23 +101,20 @@ RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutp
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 47 115  ; char sdate[25];
 time_t rawtime;
 char filename[64];
- if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 64 6 len=11 yamlAppInfo_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 63  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 69 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 71 4 ({ calling_npm(1, 0, 5761392777509905353UL, 5761392777509905360UL); printSeparator_npm(file); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 71 4 ({ calling_npm("printSeparator", 0UL, 1, 5761392777509905353UL); printSeparator_npm(file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 71 23 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 77  ({  calling((void*)builtWithMpi, 16, 0UL, 0, 0); (builtWithMpi)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 90 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 18  ({  calling((void*)getTimeString, 19, 0UL, ____alias_loc_id_1, 1, (size_t)(5761392777509905296UL)); (getTimeString)(timestring); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 42 
-RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 6 
-RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 84 33 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 4 ({ calling_npm("getTimeString", 0UL, 1, 5761392777509905296UL); getTimeString_npm(timestring); })
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 88 28 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 87 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 87 23 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 65 274  ; char timestring[32];
-int ____chimes_unroll_var_0;
- if (____must_checkpoint_yamlAppInfo_timestring_0 || ____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0) { register_stack_vars(2, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0, "yamlAppInfo|____chimes_unroll_var_0|0", &____must_checkpoint_yamlAppInfo_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_yamlAppInfo_timestring_0) { register_stack_vars(1, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 94 6 len=7 yamlEnd_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 96 22  ({  calling((void*)printRank, 1, 0UL, 0, 0); (printRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/yamlOutput.c 96 32 

@@ -1,3 +1,3 @@
-omp_get_thread_num 12 40 0
-printf 12 9 0 43 0 0
-_Z10checkpointv 15 5 0
+omp_get_thread_num main 12 40 0
+printf main 12 9 0 43 0 0
+checkpoint main 15 5 0

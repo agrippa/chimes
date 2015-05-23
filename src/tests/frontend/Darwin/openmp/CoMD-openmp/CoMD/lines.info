@@ -25,7 +25,6 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 263 75 : { 954, 955, 956, 957, 958 } prop:call:initLjPot
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 425 18 : { 998, 999, 1000, 1001, 1002 } direct:call:getNRanks
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 11 : { 1001 } direct:call:printRank
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 11 : { 1001, 1003, 1004, 1005, 1006, 1007, 1008 } prop:call:printRank
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 452 8 : { 1001, 1003, 1004, 1005, 1006, 1007, 1008 } prop:call:strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 11 : { 1001 } direct:call:printRank
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 4 : { 1009 } direct:call:bcastParallel
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 11 : { 1001, 1003, 1004, 1005, 1006, 1007, 1008, 1009 } prop:call:printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 11 : { 1001, 1003, 1004, 1005, 1006, 1007, 1008, 1009 } prop:call:printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 4 : { 1001, 1003, 1004, 1005, 1006, 1007, 1008, 1009 } prop:call:bcastParallel

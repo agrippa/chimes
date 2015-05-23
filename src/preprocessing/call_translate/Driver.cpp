@@ -63,7 +63,6 @@ public:
                     R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
                 int line = R.getSourceMgr().getPresumedLoc(
                         fdecl->getLocStart()).getLine();
-                llvm::errs() << fdecl->getNameAsString() << " starts at line " << line << "\n";
                 function_starting_lines.insert(line);
 
                 std::string fname = fdecl->getName().str();
@@ -185,13 +184,11 @@ int main(int argc, const char **argv) {
       for (std::set<int>::iterator i = function_starting_lines.begin(),
               e = function_starting_lines.end(); i != e; i++) {
           int start_line = *i;
-          llvm::errs() << "Comparing start_line=" << start_line << " line_no=" << line_no << " containing_decl_line=" << containing_decl_line << "\n";
           if (start_line < line_no && (containing_decl_line == -1 ||
                       start_line > containing_decl_line)) {
               containing_decl_line = start_line;
           }
       }
-      llvm::errs() << call.get_function_name() << "\n";
       assert(containing_decl_line != -1);
 
       extern_out << call.get_function_name() << " " << call.get_var() << " " <<

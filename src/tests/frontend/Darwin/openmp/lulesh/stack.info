@@ -27,7 +27,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc AllocateNodeElemIndexes|clv|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|argc|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|argv|0 " i8** " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|edgeElems|0 " i32 " 32 0 0 1 LagrangeLeapFrog checkpoint
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|edgeElems|0 " i32 " 32 0 0 1 checkpoint
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|edgeNodes|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|tx|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc main|ty|0 " double " 64 0 0 0
@@ -89,11 +89,11 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|delt|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeNodal|u_cut|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc LagrangeElements|deltatime|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0 1 omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0 1 omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|qqc|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|length|0 " i32 " 32 0 0 1 omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|qqc2|0 " double " 64 0 0 1 omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|length|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|qqc2|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|threads|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|1 " i32 " 32 0 0 0
@@ -103,10 +103,10 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|i|2 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|courant_elem_per_thread|0 " [na x i32] " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcCourantConstraintForElems|dtcourant_per_thread|0 " [na x double] " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dthydro|0 " double " 64 0 0 1 omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem|0 " i32 " 32 0 0 1 omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dvovmax|0 " double " 64 0 0 1 omp_get_num_threads
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|length|0 " i32 " 32 0 0 1 omp_get_num_threads
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dthydro|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dvovmax|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|length|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|threads|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|i|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|i|1 " i32 " 32 0 0 0
@@ -118,7 +118,7 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem_per_thread|0 " [na x i32] " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc SQRT|arg|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|deltatime|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0 1 CalcKinematicsForElems
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|k|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|vdov|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcLagrangeElements|vdovthird|0 " double " 64 0 0 0
@@ -349,33 +349,33 @@
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQRegionForElems|delvxeta|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQRegionForElems|delvxzeta|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcMonotonicQRegionForElems|rho|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|numElem|0 " i32 " 32 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|dt|0 " double " 64 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|k|0 " i32 " 32 0 0 1 CalcElemCharacteristicLength
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|numElem|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|dt|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|k|0 " i32 " 32 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|B|0 " [3 x [8 x double]] " 1536 0 0 1 CalcKinematicsForElems
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|D|0 " [6 x double] " 384 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|x_local|0 " [8 x double] " 512 0 0 1 CalcKinematicsForElems
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|y_local|0 " [8 x double] " 512 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|z_local|0 " [8 x double] " 512 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|xd_local|0 " [8 x double] " 512 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|yd_local|0 " [8 x double] " 512 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|zd_local|0 " [8 x double] " 512 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|detJ|0 " double " 64 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|volume|0 " double " 64 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|relativeVolume|0 " double " 64 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|elemToNode|0 " i32* " 64 1 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|lnode|0 " i32 " 32 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|gnode|0 " i32 " 32 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|lnode|1 " i32 " 32 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|gnode|1 " i32 " 32 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|dt2|0 " double " 64 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|j|0 " i32 " 32 0 0 1 CalcElemCharacteristicLength
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|x|0 " double* " 64 1 0 1 fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|y|0 " double* " 64 1 0 1 fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|z|0 " double* " 64 1 0 1 fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|volume|0 " double " 64 0 0 1 fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|a|0 " double " 64 0 0 1 fmax
-/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 1 fmax
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|y_local|0 " [8 x double] " 512 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|z_local|0 " [8 x double] " 512 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|xd_local|0 " [8 x double] " 512 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|yd_local|0 " [8 x double] " 512 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|zd_local|0 " [8 x double] " 512 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|detJ|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|volume|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|relativeVolume|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|elemToNode|0 " i32* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|lnode|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|gnode|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|lnode|1 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|gnode|1 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|dt2|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcKinematicsForElems|j|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|x|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|y|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|z|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|volume|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|a|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemShapeFunctionDerivatives|x|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemShapeFunctionDerivatives|y|0 " double* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc CalcElemShapeFunctionDerivatives|z|0 " double* " 64 1 0 0

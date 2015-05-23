@@ -9,5 +9,5 @@ validateResult 0 MAY printRank 302 8
 destroySimulation 0 MAY destroyLinkCells 229 4 destroyAtoms 230 4 destroyHaloExchange 231 4
 finalizeSubsystems 0 MAY yamlEnd 254 4
 initPotential 0 MAY initEamPot 263 22 initLjPot 263 75
-sanityChecks 0 MAY getNRanks 425 18 printRank 428 11 printRank 444 11 strcasecmp 452 8 printRank 455 11 bcastParallel 461 4
+sanityChecks 0 MAY getNRanks 425 18 printRank 428 11 printRank 444 11 printRank 455 11 bcastParallel 461 4
 initSpecies 0 DOES_NOT

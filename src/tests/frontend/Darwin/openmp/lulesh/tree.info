@@ -6,15 +6,15 @@ AllocateNodeElemIndexes 0 DOES_NOT
 main 0 DOES AllocateElemPersistent 3002 2 AllocateElemTemporary 3003 2 AllocateNodalPersistent 3005 2 AllocateNodesets 3006 2 AllocateNodeElemIndexes 3056 2 CalcElemVolume 3114 19 TimeIncrement 3193 3 LagrangeLeapFrog 3194 3 checkpoint 3202 9 FABS 3225 21
 CalcElemVolume 0 DOES_NOT CalcElemVolumeScalar 1791 9
 TimeIncrement 0 DOES_NOT
-LagrangeLeapFrog 0 MAY LagrangeNodal 2961 2 LagrangeElements 2965 2 CalcTimeConstraintsForElems 2967 2
+LagrangeLeapFrog 0 DOES_NOT LagrangeNodal 2961 2 LagrangeElements 2965 2 CalcTimeConstraintsForElems 2967 2
 FABS 0 DOES_NOT
 LagrangeNodal 0 DOES_NOT CalcForceForNodes 1690 2 CalcAccelerationForNodes 1692 2 ApplyAccelerationBoundaryConditionsForNodes 1694 2 CalcVelocityForNodes 1696 2 CalcPositionForNodes 1698 2
-LagrangeElements 0 MAY CalcLagrangeElements 2801 2 CalcQForElems 2804 2 ApplyMaterialPropertiesForElems 2806 2 UpdateVolumesForElems 2808 2
-CalcTimeConstraintsForElems 0 MAY CalcCourantConstraintForElems 2950 2 CalcHydroConstraintForElems 2953 2
-CalcCourantConstraintForElems 0 MAY omp_get_num_threads 2821 27 SQRT 2848 9
-CalcHydroConstraintForElems 0 MAY omp_get_num_threads 2896 20 FABS 2915 52
+LagrangeElements 0 DOES_NOT CalcLagrangeElements 2801 2 CalcQForElems 2804 2 ApplyMaterialPropertiesForElems 2806 2 UpdateVolumesForElems 2808 2
+CalcTimeConstraintsForElems 0 DOES_NOT CalcCourantConstraintForElems 2950 2 CalcHydroConstraintForElems 2953 2
+CalcCourantConstraintForElems 0 DOES_NOT SQRT 2848 9
+CalcHydroConstraintForElems 0 DOES_NOT FABS 2915 52
 SQRT 0 DOES_NOT
-CalcLagrangeElements 0 MAY CalcKinematicsForElems 2005 3
+CalcLagrangeElements 0 DOES_NOT CalcKinematicsForElems 2005 3
 CalcQForElems 0 DOES_NOT CalcMonotonicQGradientsForElems 2359 2 CalcMonotonicQForElems 2363 2
 ApplyMaterialPropertiesForElems 0 DOES_NOT EvalEOSForElems 2768 3
 UpdateVolumesForElems 0 DOES_NOT FABS 2787 8
@@ -25,8 +25,8 @@ CalcPressureForElems 0 DOES_NOT FABS 2401 7
 CalcMonotonicQGradientsForElems 0 DOES_NOT SQRT 2128 31 SQRT 2146 29 SQRT 2164 30
 CalcMonotonicQForElems 0 DOES_NOT CalcMonotonicQRegionForElems 2336 3
 CalcMonotonicQRegionForElems 0 DOES_NOT
-CalcKinematicsForElems 0 MAY CalcElemVolume 1955 12 CalcElemCharacteristicLength 1961 22 CalcElemShapeFunctionDerivatives 1983 3 CalcElemVelocityGrandient 1988 3
-CalcElemCharacteristicLength 0 MAY AreaFace 1826 6 fmax 1829 15 AreaFace 1831 6 fmax 1834 15 AreaFace 1836 6 fmax 1839 15 AreaFace 1841 6 fmax 1844 15 AreaFace 1846 6 fmax 1849 15 AreaFace 1851 6 fmax 1854 15 SQRT 1856 38
+CalcKinematicsForElems 0 DOES_NOT CalcElemVolume 1955 12 CalcElemCharacteristicLength 1961 22 CalcElemShapeFunctionDerivatives 1983 3 CalcElemVelocityGrandient 1988 3
+CalcElemCharacteristicLength 0 DOES_NOT AreaFace 1826 6 AreaFace 1831 6 AreaFace 1836 6 AreaFace 1841 6 AreaFace 1846 6 AreaFace 1851 6 SQRT 1856 38
 CalcElemShapeFunctionDerivatives 0 DOES_NOT
 CalcElemVelocityGrandient 0 DOES_NOT
 AreaFace 0 DOES_NOT

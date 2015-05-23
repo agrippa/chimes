@@ -40,17 +40,17 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|potName|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|potType|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|pot|0 " %struct.BasePotentialSt* " 64 1 0 1 initEamPot initLjPot
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|cutoff|0 " double " 64 0 0 1 bcastParallel getNRanks printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|latticeConst|0 " double " 64 0 0 1 bcastParallel getNRanks printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|latticeType|0 " i8* " 64 1 0 1 bcastParallel getNRanks printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|failCode|0 " i32 " 32 0 0 1 bcastParallel getNRanks printRank strcasecmp
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|cutoff|0 " double " 64 0 0 1 bcastParallel getNRanks printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|latticeConst|0 " double " 64 0 0 1 bcastParallel getNRanks printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|latticeType|0 " i8* " 64 1 0 1 bcastParallel getNRanks printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|failCode|0 " i32 " 32 0 0 1 bcastParallel getNRanks printRank
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|nProcs|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|minx|0 " double " 64 0 0 1 bcastParallel printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|miny|0 " double " 64 0 0 1 bcastParallel printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|minz|0 " double " 64 0 0 1 bcastParallel printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizex|0 " double " 64 0 0 1 bcastParallel printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizey|0 " double " 64 0 0 1 bcastParallel printRank strcasecmp
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizez|0 " double " 64 0 0 1 bcastParallel printRank strcasecmp
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|minx|0 " double " 64 0 0 1 bcastParallel printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|miny|0 " double " 64 0 0 1 bcastParallel printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|minz|0 " double " 64 0 0 1 bcastParallel printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizex|0 " double " 64 0 0 1 bcastParallel printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizey|0 " double " 64 0 0 1 bcastParallel printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizez|0 " double " 64 0 0 1 bcastParallel printRank
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|checkCode|0 " i32 " 32 0 0 1 sanityChecks
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSpecies|pot|0 " %struct.BasePotentialSt* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSpecies|species|0 " %struct.SpeciesDataSt* " 64 1 0 0
