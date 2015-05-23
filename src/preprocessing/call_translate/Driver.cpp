@@ -28,10 +28,16 @@ static llvm::cl::opt<std::string> quick_data_file("q",
 static llvm::cl::opt<std::string> npm_data_file("n",
         llvm::cl::desc("NPM data file"),
         llvm::cl::value_desc("npm_data_file"));
+static llvm::cl::opt<std::string> extern_npm_file("e",
+        llvm::cl::desc("Extern NPM file"),
+        llvm::cl::value_desc("extern_npm_file"));
 
 INSIDE_FUNC curr_func_is_quick = UNKNOWN;
 INSIDE_FUNC curr_func_is_npm = UNKNOWN;
 static CallTranslator *transform = NULL;
+std::map<std::string, ExternalNPMCall> external_calls;
+std::set<int> function_starting_lines;
+std::set<std::string> *ignorable = NULL;
 
 class TransformASTConsumer : public ASTConsumer {
 public:
@@ -55,18 +61,28 @@ public:
 
             if (fdecl->isThisDeclarationADefinition() &&
                     R.getSourceMgr().isInMainFile(fdecl->getLocation())) {
+                int line = R.getSourceMgr().getPresumedLoc(
+                        fdecl->getLocStart()).getLine();
+                llvm::errs() << fdecl->getNameAsString() << " starts at line " << line << "\n";
+                function_starting_lines.insert(line);
+
                 std::string fname = fdecl->getName().str();
+
                 std::string quick("_quick");
                 std::string resumable("_resumable");
                 std::string npm("_npm");
-                if (fname.find(quick) == fname.size() - quick.size()) {
+
+                if (fname.size() > quick.size() &&
+                        fname.find(quick) == fname.size() - quick.size()) {
                     curr_func_is_quick = YES;
                     curr_func_is_npm = NO;
-                } else if (fname.find(npm) == fname.size() - npm.size()) {
+                } else if (fname.size() > npm.size() &&
+                        fname.find(npm) == fname.size() - npm.size()) {
                     curr_func_is_npm = YES;
                     curr_func_is_quick = NO;
-                } else if (fname.find(resumable) == fname.size() -
-                        resumable.size()) {
+                } else if (fname.size() > resumable.size() &&
+                        fname.find(resumable) == fname.size() -
+                            resumable.size()) {
                     curr_func_is_quick = NO;
                     curr_func_is_npm = NO;
                 } else {
@@ -125,6 +141,23 @@ int main(int argc, const char **argv) {
   check_opt(output_file, "output_file");
   check_opt(quick_data_file, "quick_data_file");
   check_opt(npm_data_file, "npm_data_file");
+  check_opt(extern_npm_file, "extern_npm_file");
+
+  ignorable = new std::set<std::string>();
+  char *chimes_home = getenv("CHIMES_HOME");
+  assert(chimes_home);
+  std::stringstream file_ss;
+  file_ss << std::string(chimes_home) <<
+      "/src/preprocessing/non_checkpointing.conf";
+
+  std::ifstream infile(file_ss.str());
+  std::string line;
+  while (std::getline(infile, line)) {
+      if (line.size() > 0) {
+          ignorable->insert(line);
+      }
+  }
+  infile.close();
 
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
@@ -140,6 +173,32 @@ int main(int argc, const char **argv) {
   ClangTool *Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
   int err = Tool->run(factory);
   if (err) return err;
+
+  std::ofstream extern_out(std::string(extern_npm_file.c_str()));
+  for (std::map<std::string, ExternalNPMCall>::iterator i =
+          external_calls.begin(), e = external_calls.end(); i != e; i++) {
+      std::string original_name = i->first;
+      ExternalNPMCall call = i->second;
+
+      int line_no = call.get_first_line_referenced();
+      int containing_decl_line = -1;
+      for (std::set<int>::iterator i = function_starting_lines.begin(),
+              e = function_starting_lines.end(); i != e; i++) {
+          int start_line = *i;
+          llvm::errs() << "Comparing start_line=" << start_line << " line_no=" << line_no << " containing_decl_line=" << containing_decl_line << "\n";
+          if (start_line < line_no && (containing_decl_line == -1 ||
+                      start_line > containing_decl_line)) {
+              containing_decl_line = start_line;
+          }
+      }
+      llvm::errs() << call.get_function_name() << "\n";
+      assert(containing_decl_line != -1);
+
+      extern_out << call.get_function_name() << " " << call.get_var() << " " <<
+          containing_decl_line << " " << call.get_filename() << " " <<
+          call.get_var_decl() << " = NULL;\n";
+  }
+  extern_out.close();
 
   return 0;
 }

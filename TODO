@@ -26,3 +26,15 @@
 7. Don't support function-local static variables (splitting variable declaration
    from assignment breaks them).
 8. Don't support directly returning function call results.
+9. There is some weirdness around getting into NPM mode in the first place. We
+   don’t really want to instrument every single function call with this logic.
+   Right now what it does is check if each function being called that is within
+   the same compilation unit has been converted to NPM, and if it is the call is
+   translated at runtime to call the NPM version. However, this only works if
+   the main body of the computation is beneath a function call that is
+   convertible to NPM and is inside the same compilation unit as its caller.
+   some basic improvements would be to just do this analysis for every call in
+   main, or something like that. but if you have a lot of jumping across
+   compilation units, the function calls will never have been converted to NPM
+   at compile time so we’ll never get into NPM mode (even though the NPM
+   function pointers are available).

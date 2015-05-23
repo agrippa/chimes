@@ -6,6 +6,15 @@ from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
                    get_aliases_changed
 
 
+class ExternNPM(object):
+    def __init__(self, original_fname, varname, line_no, filename, decl):
+        self.original_fname = original_fname
+        self.varname = varname
+        self.line_no = line_no
+        self.filename = filename
+        self.decl = decl
+
+
 class FunctionInfo(object):
     def __init__(self, name):
         self.name = name
@@ -60,6 +69,31 @@ def parse_64bit_int(s):
         # 2.x separates int and long, so we need to explicitly ask for long
         i = long(s)
     return i
+
+
+def get_npms(filename):
+    result = []
+    fp = open(filename, 'r')
+    line = fp.readline()
+    while len(line) > 0:
+        result.append(line.split()[0] + '_npm')
+        while '-----' not in line:
+            line = fp.readline()
+        line = fp.readline()
+
+    fp.close()
+    return result
+
+
+def get_externs(filename):
+    result = []
+    fp = open(filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        result.append(ExternNPM(tokens[0], tokens[1], int(tokens[2]),
+                                tokens[3], ' '.join(tokens[4:])))
+    fp.close()
+    return result
 
 
 def get_functions(func_filename):
@@ -202,11 +236,11 @@ def write_constant(c, module_id_str):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 13:
+    if len(sys.argv) != 15:
         print('usage: python module_init.py input-file output-file ' +
               'module-id-file reachable-file globals-file structs-file ' +
               'constants-file stack-var-file call-tree-file lines-file ' +
-              'exits-file func-file')
+              'exits-file func-file externs-file npm-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
@@ -221,6 +255,8 @@ if __name__ == '__main__':
     lines_filename = sys.argv[10]
     exits_filename = sys.argv[11]
     func_filename = sys.argv[12]
+    externs_filename = sys.argv[13]
+    npm_filename = sys.argv[14]
 
     module_id_str = get_module_id_str(module_id_filename)
     reachable = get_reachable_mappings(reachable_filename)
@@ -232,6 +268,13 @@ if __name__ == '__main__':
     changed = get_aliases_changed(lines_filename)
     exits = get_exit_info(exits_filename)
     functions = get_functions(func_filename)
+    externs = get_externs(externs_filename)
+    defined_npms = get_npms(npm_filename)
+
+    n_change_locs = len(changed)
+    for e in exits:
+        if len(e.groups_changed) > 0:
+            n_change_locs += 1
 
     input_file = open(input_filename, 'r')
     output_file = open(output_filename, 'w')
@@ -248,7 +291,9 @@ if __name__ == '__main__':
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
                       str(len(reachable)) + ', ' + str(len(call_tree)) + \
                       ', ' + str(count_conditionally_checkpointable_vars) + \
-                      ', ' + str(len(changed)) + ', ' + str(len(structs)))
+                      ', ' + str(n_change_locs) + ', ' + \
+                      str(len(defined_npms)) + ', ' + str(len(externs)) + \
+                      ', ' + str(len(structs)))
 
     for k in reachable.keys():
         output_file.write(', ' + module_id_str + 'UL + ' + k + 'UL, ' +
@@ -283,11 +328,18 @@ if __name__ == '__main__':
         count += 1
 
     for ex in exits:
-        output_file.write(', &' + get_alias_loc_var(count) +
-                          ', (unsigned)' + str(len(ex.groups_changed)))
-        for alias in ex.groups_changed:
-            output_file.write(', ' + module_id_str + 'UL + ' + alias + 'UL')
-        count += 1
+        if len(ex.groups_changed) > 0:
+            output_file.write(', &' + get_alias_loc_var(count) +
+                              ', (unsigned)' + str(len(ex.groups_changed)))
+            for alias in ex.groups_changed:
+                output_file.write(', ' + module_id_str + 'UL + ' + alias + 'UL')
+            count += 1
+
+    for npm in defined_npms:
+        output_file.write(', "' + npm + '", (void *)(' + npm + ')')
+
+    for ex in externs:
+        output_file.write(', "' + ex.original_fname + '", (void **)&(' + ex.varname + ')')
 
     output_file.write(');\n')
 

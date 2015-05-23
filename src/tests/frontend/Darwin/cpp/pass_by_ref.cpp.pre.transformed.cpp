@@ -483,7 +483,9 @@ extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs,
+        int n_provided_npm_functions, int n_external_npm_functions,
+        int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -519,7 +521,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1774,8 +1776,8 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(12387876047547725256UL, 1, 1, 1, 1, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "foo", "checkpoint", "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 12387876047547725256UL + 1UL, 12387876047547725256UL + 2UL, 12387876047547725256UL + 3UL);
-    register_functions(1, "pass_by_ref.cpp.pre.hard.cpp", "main", &main);
+    init_module(12387876047547725256UL, 1, 1, 1, 1, 0, 0, 0, 12387876047547725256UL + 3UL, 12387876047547725256UL + 16UL, "main", 2, "foo", "checkpoint", "main|b|0", 1, "main", &____alias_loc_id_0, (unsigned)3, 12387876047547725256UL + 1UL, 12387876047547725256UL + 2UL, 12387876047547725256UL + 3UL);
+    register_functions(1, "pass_by_ref.cpp.pre.extern_ptrs.cpp", "main", &main);
     return 0;
 }
 

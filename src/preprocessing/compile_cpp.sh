@@ -19,7 +19,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O2"
+GXX_FLAGS="-g -O0"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
@@ -246,9 +246,10 @@ for INPUT in ${ABS_INPUTS[@]}; do
     NAME="${TRANSFORMED_FILE%.*}"
     TRANSFORMED_FILE=${NAME}.register.${EXT}
     INCLUDE_QUICK_FILE=${NAME}.quick.${EXT}
-    HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
+    HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
+    FUNCTION_PTR_FILE=${NAME}.extern_ptrs.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 
     echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
@@ -266,16 +267,22 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Hardcoding quick/resumable/npm calls when possible in ${NPM_FILE}
     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
         -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
-        ${NPM_FILE} -- -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include \
-        $INCLUDES ${CHIMES_DEF} ${DEFINES}
+        -e ${INFO_FILE_PREFIX}.externs ${NPM_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
 
-    echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} ${HARDCODED_CALLS_FILE} ${FINAL_FILE} \
+    echo Adding NPM function pointer declarations to ${HARDCODED_CALLS_FILE}
+    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${HARDCODED_CALLS_FILE} \
+      ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
+
+    echo Setting up module initialization for ${FUNCTION_PTR_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} ${FUNCTION_PTR_FILE} ${FINAL_FILE} \
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
         ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
-        ${INFO_FILE_PREFIX}.exit.info ${INFO_FILE_PREFIX}.func.info
+        ${INFO_FILE_PREFIX}.exit.info ${INFO_FILE_PREFIX}.func.info \
+        ${INFO_FILE_PREFIX}.externs ${INFO_FILE_PREFIX}.npm.decls
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \

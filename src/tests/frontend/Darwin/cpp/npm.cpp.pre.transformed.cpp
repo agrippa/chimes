@@ -487,7 +487,9 @@ extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
 extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
+        int nfunctions, int nvars, int n_change_locs,
+        int n_provided_npm_functions, int n_external_npm_functions,
+        int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -523,7 +525,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+# 69 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1829,8 +1831,8 @@ int foo_npm(int a) {
 
 
 static int module_init() {
-    init_module(14784949486998103574UL, 1, 3, 0, 1, 0, 14784949486998103574UL + 20UL, 14784949486998103574UL + 41UL, "main", 2, "foo", "checkpoint", "foo", 1, "bar", "bar", 0, &____alias_loc_id_0, (unsigned)5, 14784949486998103574UL + 18UL, 14784949486998103574UL + 19UL, 14784949486998103574UL + 20UL, 14784949486998103574UL + 21UL, 14784949486998103574UL + 22UL, &____alias_loc_id_1, (unsigned)1, 14784949486998103574UL + 1UL, &____alias_loc_id_2, (unsigned)1, 14784949486998103574UL + 10UL, &____alias_loc_id_3, (unsigned)1, 14784949486998103574UL + 22UL);
-    register_functions(3, "npm.cpp.pre.hard.cpp", "bar", &bar, "foo", &foo, "main", &main);
+    init_module(14784949486998103574UL, 1, 3, 0, 1, 2, 0, 0, 14784949486998103574UL + 20UL, 14784949486998103574UL + 41UL, "main", 2, "foo", "checkpoint", "foo", 1, "bar", "bar", 0, &____alias_loc_id_0, (unsigned)5, 14784949486998103574UL + 18UL, 14784949486998103574UL + 19UL, 14784949486998103574UL + 20UL, 14784949486998103574UL + 21UL, 14784949486998103574UL + 22UL, &____alias_loc_id_1, (unsigned)1, 14784949486998103574UL + 1UL, &____alias_loc_id_2, (unsigned)1, 14784949486998103574UL + 10UL, &____alias_loc_id_3, (unsigned)1, 14784949486998103574UL + 22UL, "bar_npm", bar_npm, "foo_npm", foo_npm);
+    register_functions(3, "npm.cpp.pre.extern_ptrs.cpp", "bar", &bar, "foo", &foo, "main", &main);
     return 0;
 }
 

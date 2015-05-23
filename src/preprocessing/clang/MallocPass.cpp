@@ -26,7 +26,8 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     presumed_start.getLine()));
     }
 
-    if (npm_pass && toplevel->getNameInfo().getAsString() != "main") {
+    if (npm_pass && toplevel->getNameInfo().getAsString() != "main" &&
+            insertions->eligible_npm_function(toplevel->getNameAsString())) {
         clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
         int current_name_len = toplevel->getNameInfo().getAsString().size();
 

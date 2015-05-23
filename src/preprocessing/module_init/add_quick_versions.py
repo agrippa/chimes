@@ -13,7 +13,7 @@ class Insertion(object):
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         print('usage: python add_quick_versions.py input-file output-file ' +
-              '-b bodies-file -d decl-file')
+              '-b bodies-file -d decl-file -e externs-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
@@ -21,6 +21,7 @@ if __name__ == '__main__':
 
     bodies_files = []
     decl_files = []
+    extern_files = []
 
     # Parse command line arguments
     index = 3
@@ -30,6 +31,8 @@ if __name__ == '__main__':
             bodies_files.append(sys.argv[index + 1])
         elif t == '-d':
             decl_files.append(sys.argv[index + 1])
+        elif t == '-e':
+            extern_files.append(sys.argv[index + 1])
         else:
             print('Unrecognized option "' + t + '"')
             sys.exit(1)
@@ -60,6 +63,19 @@ if __name__ == '__main__':
 
             line = data.readline()
         data.close()
+
+    for f in extern_files:
+        fp = open(f, 'r')
+        for line in fp:
+            tokens = line.split()
+            original_fname = tokens[0]
+            varname = tokens[1]
+            line_no = int(tokens[2])
+            filename = tokens[3]
+            decl = ' '.join(tokens[4:])
+
+            insertions.append(Insertion(line_no, filename, decl))
+        fp.close()
 
     inp = open(input_filename, 'r')
     output = open(output_filename, 'w')
