@@ -80,6 +80,12 @@ static llvm::cl::opt<std::string> quick_version_file("q",
 static llvm::cl::opt<std::string> npm_dump_file("n",
         llvm::cl::desc("NPM dump file"),
         llvm::cl::value_desc("npm_dump_file"));
+static llvm::cl::opt<std::string> calls_dump_file("g",
+        llvm::cl::desc("Calls dump file"),
+        llvm::cl::value_desc("calls_dump_file"));
+static llvm::cl::opt<std::string> alias_locs_dump_file("h",
+        llvm::cl::desc("Alias locs dump file"),
+        llvm::cl::value_desc("alias_locs_dump_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -462,6 +468,8 @@ int main(int argc, const char **argv) {
   check_opt(call_tree_file, "Call tree file");
   check_opt(quick_version_file, "Quick version");
   check_opt(npm_dump_file, "NPM Dump file");
+  check_opt(calls_dump_file, "Calls Dump file");
+  check_opt(alias_locs_dump_file, "Alias locs dump file");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");

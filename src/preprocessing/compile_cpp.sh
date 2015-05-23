@@ -239,6 +239,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -b ${INFO_FILE_PREFIX}.tree.info \
             -q ${INFO_FILE_PREFIX}.quick \
             -n ${INFO_FILE_PREFIX}.npm \
+            -g ${INFO_FILE_PREFIX}.calls \
+            -h ${INFO_FILE_PREFIX}.alias_locs \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -282,13 +284,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls
 
     echo Setting up module initialization for ${NPM_CONDS_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} ${NPM_CONDS_FILE} ${FINAL_FILE} \
-        ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
-        ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
-        ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
-        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
-        ${INFO_FILE_PREFIX}.exit.info ${INFO_FILE_PREFIX}.func.info \
-        ${INFO_FILE_PREFIX}.externs ${INFO_FILE_PREFIX}.npm.decls
+    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${NPM_CONDS_FILE} -o ${FINAL_FILE} \
+        -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
+        -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
+        -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
+        -t ${INFO_FILE_PREFIX}.tree.info -l ${INFO_FILE_PREFIX}.lines.info \
+        -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
+        -e ${INFO_FILE_PREFIX}.externs -n ${INFO_FILE_PREFIX}.npm.decls \
+        -d ${INFO_FILE_RPEFIX}.calls -h ${INFO_FILE_PREFIX}.alias_locs
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \
