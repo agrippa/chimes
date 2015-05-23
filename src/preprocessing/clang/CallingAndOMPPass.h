@@ -119,6 +119,10 @@ private:
     void VisitRegion(OMPRegion *region);
     void verify_supported_clauses(std::string pragma_name,
             std::map<std::string, std::vector<std::string> > *clauses);
+    std::string generateNPMCall(CallLocation loc,
+            AliasesPassedToCallSite callsite, const CallExpr *call);
+    std::string generateNormalCall(const CallExpr *call,
+            CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite);
 
     std::set<std::string> get_private_vars(std::map<std::string,
             std::vector<std::string> > *clauses);

@@ -819,6 +819,14 @@ void init_chimes() {
         }
     } while (changed);
 
+#ifdef VERBOSE
+    for (map<string, bool>::iterator i = does_checkpoint.begin(),
+            e = does_checkpoint.end(); i != e; i++) {
+        fprintf(stderr, "%s does checkpoint? %d\n", i->first.c_str(),
+                i->second);
+    }
+#endif
+
     /*
      * Resolve any NPM function pointers that different compilation units depend
      * on, and updated the compilation-unit-local function pointers for those
@@ -837,6 +845,10 @@ void init_chimes() {
                     does_checkpoint.find(fname) != does_checkpoint.end() &&
                     !does_checkpoint.at(fname)) {
                 *ptr_to_ptr = provided_npm_functions.at(fname);
+            } else {
+#ifdef VERBOSE
+                fprintf(stderr, "Seems like we're missing %s?\n", fname.c_str());
+#endif
             }
         }
     }

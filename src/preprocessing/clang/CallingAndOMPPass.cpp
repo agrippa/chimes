@@ -873,6 +873,109 @@ void CallingAndOMPPass::collectCallAliasPairings(
     }
 }
 
+std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
+        AliasesPassedToCallSite callsite, const CallExpr *call) {
+    std::stringstream ss;
+
+    std::set<std::string> visited;
+    vector<pair<size_t, size_t> > new_aliases;
+    set<string> changed_alias_locs;
+    collectCallAliasPairings(loc.get_funcname(), callsite,
+            &new_aliases, &changed_alias_locs, &visited);
+
+    ss << "({ calling_npm(" << new_aliases.size() << ", " <<
+        changed_alias_locs.size();
+    for (vector<pair<size_t, size_t> >::iterator new_iter =
+            new_aliases.begin(), new_end = new_aliases.end();
+            new_iter != new_end; new_iter++) {
+        pair<size_t, size_t> curr = *new_iter;
+        ss << ", " << curr.first << "UL, " << curr.second <<
+            "UL";
+    }
+    for (set<string>::iterator loc_iter =
+            changed_alias_locs.begin(), loc_end =
+            changed_alias_locs.end(); loc_iter != loc_end;
+            loc_iter++) {
+        string curr_loc = *loc_iter;
+        ss << ", " << curr_loc;
+    }
+    ss << "); ";
+
+    ss << loc.get_funcname() + "_npm(";
+    for (int a = 0; a < call->getNumArgs(); a++) {
+        const Expr *arg = call->getArg(a);
+        if (a != 0) ss << ", ";
+        ss << getRewrittenText(clang::SourceRange(
+                    arg->getLocStart(), arg->getLocEnd()));
+    }
+    ss << "); })";
+
+    return (ss.str());
+}
+
+std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
+        CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite) {
+    std::string func_symbol = get_func_symbol(call, &loc);
+
+    /*
+     * Default parameters cannot be checkpointed, nor are they
+     * printable.
+     */
+    int nargs = call->getNumArgs();
+    while (nargs > 0 &&
+            isa<CXXDefaultArgExpr>(call->getArg(
+                    nargs - 1))) {
+        nargs--;
+    }
+
+    std::stringstream ss;
+    std::vector<string> arg_varnames;
+    int count_args_with_side_effects =
+        extractArgsWithSideEffects(call, &loc, nargs, &ss,
+                &arg_varnames);
+
+    std::stringstream replace_func_call;
+    replace_func_call << "(" << func_symbol << ")(";
+
+    if (count_args_with_side_effects > 0) {
+        ss << " if (!____chimes_replaying) { ";
+    }
+    for (int i = 0; i < nargs; i++) {
+        const Expr *arg = call->getArg(i);
+        if (needsToBeHoisted(loc.get_funcname(), arg)) {
+            ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
+                "); ";
+        }
+
+        if (i > 0) replace_func_call << ", ";
+        replace_func_call << arg_varnames[i];
+    }
+    if (count_args_with_side_effects > 0) {
+        ss << " } ";
+    }
+    replace_func_call << ")";
+
+    clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
+            call->getLocStart());
+    StateChangeInsertion *state = insertions->get_matching(
+            call_start_loc.getLine(),
+            call_start_loc.getColumn(),
+            call_start_loc.getFilename());
+    std::string loc_arg = (state == NULL ? "0" :
+            insertions->get_alias_loc_var(state->get_id()));
+
+    ss << " calling((void*)" <<
+        func_symbol << ", " << lbl.get_lbl() << ", " <<
+        callsite.get_return_alias() << "UL, " << loc_arg <<
+        ", " << callsite.nparams();
+    for (unsigned a = 0; a < callsite.nparams(); a++) {
+        ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
+    }
+    ss << "); ";
+
+    return (" ({ " + ss.str() + replace_func_call.str() + "; }) ");
+}
+
 void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
@@ -1107,108 +1210,18 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 bool no_checkpoint = insertions->does_not_cause_checkpoint(
                             loc.get_funcname());
                 if (is_converted_to_npm && no_checkpoint) {
-                    std::stringstream ss;
-
-                    std::set<std::string> visited;
-                    vector<pair<size_t, size_t> > new_aliases;
-                    set<string> changed_alias_locs;
-                    collectCallAliasPairings(loc.get_funcname(), callsite,
-                            &new_aliases, &changed_alias_locs, &visited);
-
-                    ss << "({ calling_npm(" << new_aliases.size() << ", " <<
-                        changed_alias_locs.size();
-                    for (vector<pair<size_t, size_t> >::iterator new_iter =
-                            new_aliases.begin(), new_end = new_aliases.end();
-                            new_iter != new_end; new_iter++) {
-                        pair<size_t, size_t> curr = *new_iter;
-                        ss << ", " << curr.first << "UL, " << curr.second <<
-                            "UL";
-                    }
-                    for (set<string>::iterator loc_iter =
-                            changed_alias_locs.begin(), loc_end =
-                            changed_alias_locs.end(); loc_iter != loc_end;
-                            loc_iter++) {
-                        string curr_loc = *loc_iter;
-                        ss << ", " << curr_loc;
-                    }
-                    ss << "); ";
-
-                    ss << loc.get_funcname() + "_npm(";
-                    for (int a = 0; a < call->getNumArgs(); a++) {
-                        const Expr *arg = call->getArg(a);
-                        if (a != 0) ss << ", ";
-                        ss << getRewrittenText(clang::SourceRange(
-                                    arg->getLocStart(), arg->getLocEnd()));
-                    }
-                    ss << "); })";
+                    std::string npm_call = generateNPMCall(loc, callsite, call);
                     ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), ss.str());
+                                call->getLocEnd()), npm_call);
 
                     continue;
                 }
 
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {
-                    std::string func_symbol = get_func_symbol(call, &loc);
-
-                    /*
-                     * Default parameters cannot be checkpointed, nor are they
-                     * printable.
-                     */
-                    int nargs = call->getNumArgs();
-                    while (nargs > 0 &&
-                            isa<CXXDefaultArgExpr>(call->getArg(
-                                    nargs - 1))) {
-                        nargs--;
-                    }
-
-                    std::stringstream ss;
-                    std::vector<string> arg_varnames;
-                    int count_args_with_side_effects =
-                        extractArgsWithSideEffects(call, &loc, nargs, &ss,
-                                &arg_varnames);
-
-                    std::stringstream replace_func_call;
-                    replace_func_call << "(" << func_symbol << ")(";
-
-                    if (count_args_with_side_effects > 0) {
-                        ss << " if (!____chimes_replaying) { ";
-                    }
-                    for (int i = 0; i < nargs; i++) {
-                        const Expr *arg = call->getArg(i);
-                        if (needsToBeHoisted(loc.get_funcname(), arg)) {
-                            ss << arg_varnames[i] << " = (" << stmtToString(arg) <<
-                                "); ";
-                        }
-
-                        if (i > 0) replace_func_call << ", ";
-                        replace_func_call << arg_varnames[i];
-                    }
-                    if (count_args_with_side_effects > 0) {
-                        ss << " } ";
-                    }
-                    replace_func_call << ")";
-
-                    clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
-                            call->getLocStart());
-                    StateChangeInsertion *state = insertions->get_matching(
-                            call_start_loc.getLine(),
-                            call_start_loc.getColumn(),
-                            call_start_loc.getFilename());
-                    std::string loc_arg = (state == NULL ? "0" :
-                            insertions->get_alias_loc_var(state->get_id()));
-
-                    ss << " calling((void*)" <<
-                        func_symbol << ", " << lbl.get_lbl() << ", " <<
-                        callsite.get_return_alias() << "UL, " << loc_arg <<
-                        ", " << callsite.nparams();
-                    for (unsigned a = 0; a < callsite.nparams(); a++) {
-                        ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
-                    }
-                    ss << "); ";
+                    std::string regular_call = generateNormalCall(call, loc, lbl, callsite);
 
                     ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()),
-                            " ({ " + ss.str() + replace_func_call.str() + "; }) ");
+                                call->getLocEnd()), regular_call);
                 }
             }
         }
