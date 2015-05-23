@@ -477,6 +477,7 @@ int main(int argc, const char **argv) {
           ignorable->insert(line);
       }
   }
+  infile.close();
 
   bool updateFile = true;
   if (contains_line_markings.compare("true") == 0) {

@@ -1207,6 +1207,12 @@ bool DesiredInsertions::has_callees(std::string name) {
     return (call_tree->find(name) != call_tree->end());
 }
 
+bool DesiredInsertions::eligible_npm_function(std::string fname) {
+    return (call_tree->find(fname) != call_tree->end() &&
+            !call_tree->at(fname)->get_calls_unknown_functions() &&
+            call_tree->at(fname)->get_may_checkpoint() != DOES);
+}
+
 FunctionCallees *DesiredInsertions::get_callees(std::string name) {
     if (call_tree->find(name) == call_tree->end()) {
         return NULL;

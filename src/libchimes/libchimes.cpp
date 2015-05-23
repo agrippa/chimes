@@ -360,7 +360,22 @@ static unsigned count_change_locations = 1;
  */
 static set<void *> *already_translated = NULL;
 
+/*
+ * Custom initialization handlers for third-party object types (e.g.
+ * cudaStream_t, omp_lock_t, etc).
+ */
 static map<string, void (*)(void *)> init_handlers;
+
+/*
+ * A mapping from plain function name to the location of its definition.
+ */
+static map<string, void *> provided_npm_functions;
+
+/*
+ * A mapping from plain function name to a list of locations where its
+ * definition is required.
+ */
+static map<string, vector<void **> > requested_npm_functions;
 
 /*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
@@ -803,6 +818,28 @@ void init_chimes() {
             }
         }
     } while (changed);
+
+    /*
+     * Resolve any NPM function pointers that different compilation units depend
+     * on, and updated the compilation-unit-local function pointers for those
+     * externally defined NPM function pointers.
+     */
+    for (map<string, vector<void **> >::iterator i =
+            requested_npm_functions.begin(), e = requested_npm_functions.end();
+            i != e; i++) {
+        string fname = i->first;
+        for (vector<void **>::iterator ii = i->second.begin(),
+                ee = i->second.end(); ii != ee; ii++) {
+            void **ptr_to_ptr = *ii;
+
+            if (provided_npm_functions.find(fname) !=
+                    provided_npm_functions.end() &&
+                    does_checkpoint.find(fname) != does_checkpoint.end() &&
+                    !does_checkpoint.at(fname)) {
+                *ptr_to_ptr = provided_npm_functions.at(fname);
+            }
+        }
+    }
 
     for (map<string, set<string> >::iterator i = var_checkpoint_causes.begin(),
             e = var_checkpoint_causes.end(); i != e; i++) {
@@ -1305,7 +1342,8 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, int n_change_locs, int nstructs, ...) {
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1443,6 +1481,30 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             change_loc_id_to_aliases.at(this_loc_id).insert(alias);
         }
         *change_loc_id_ptr = this_loc_id;
+    }
+
+    // Iterate over the NPM functions defined inside this compilation unit.
+    for (int i = 0; i < n_provided_npm_functions; i++) {
+        std::string npm_fname(va_arg(vl, char *));
+        void *fptr = va_arg(vl, void *);
+
+        assert(provided_npm_functions.find(npm_fname) ==
+                provided_npm_functions.end());
+        provided_npm_functions[npm_fname] = fptr;
+    }
+
+    // Iterate over the NPM functions that this compilation unit depends on
+    for (int i = 0; i < n_external_npm_functions; i++) {
+        std::string npm_fname(va_arg(vl, const char *));
+        void **fptr = va_arg(vl, void **);
+
+        if (requested_npm_functions.find(npm_fname) ==
+                requested_npm_functions.end()) {
+            requested_npm_functions.insert(pair<string, vector<void **> >(
+                        npm_fname, vector<void **>()));
+        }
+
+        requested_npm_functions.at(npm_fname).push_back(fptr);
     }
 
     va_end(vl);

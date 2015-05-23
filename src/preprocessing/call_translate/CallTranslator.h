@@ -6,6 +6,34 @@
 
 enum INSIDE_FUNC {YES, NO, UNKNOWN};
 
+class ExternalNPMCall {
+    public:
+        ExternalNPMCall(std::string set_function_name, std::string set_var,
+                std::string set_var_decl, int set_first_line_referenced,
+                std::string set_filename) :
+            function_name(set_function_name), var(set_var),
+            var_decl(set_var_decl), filename(set_filename),
+            first_line_referenced(set_first_line_referenced) { }
+        void update_line(int new_line) {
+            if (new_line < first_line_referenced) {
+                first_line_referenced = new_line;
+            }
+        }
+
+        std::string get_function_name() { return function_name; }
+        std::string get_var() { return var; }
+        std::string get_var_decl() { return var_decl; }
+        std::string get_filename() { return filename; }
+        int get_first_line_referenced() { return first_line_referenced; }
+
+    private:
+        std::string function_name;
+        std::string var;
+        std::string var_decl;
+        std::string filename;
+        int first_line_referenced;
+};
+
 class CallTranslator : public clang::ConstStmtVisitor<CallTranslator> {
     public:
         CallTranslator(const char *quick_data_filename,

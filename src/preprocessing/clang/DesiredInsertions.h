@@ -498,6 +498,7 @@ public:
     bool has_callees(std::string name);
     bool may_cause_checkpoint(std::string fname);
     bool does_not_cause_checkpoint(std::string fname);
+    bool eligible_npm_function(std::string fname);
 
     std::string get_alias_loc_var(unsigned id);
 
