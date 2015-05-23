@@ -499,6 +499,10 @@ public:
     bool may_cause_checkpoint(std::string fname);
     bool does_not_cause_checkpoint(std::string fname);
     bool eligible_npm_function(std::string fname);
+    bool have_main_in_call_tree();
+    int get_distance_from_main(std::string fname);
+    int get_distance_from_main_helper(std::string curr,
+            std::string target, int depth);
 
     std::string get_alias_loc_var(unsigned id);
 

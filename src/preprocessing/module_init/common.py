@@ -136,3 +136,17 @@ def get_exit_info(exit_filename):
             exits.append(ExitInfo(tokens[0], tokens[1], tokens[2:]))
     fp.close()
     return exits
+
+
+def get_npms(filename):
+    result = []
+    fp = open(filename, 'r')
+    line = fp.readline()
+    while len(line) > 0:
+        result.append(line.split()[0] + '_npm')
+        while '-----' not in line:
+            line = fp.readline()
+        line = fp.readline()
+
+    fp.close()
+    return result
