@@ -877,27 +877,10 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
         AliasesPassedToCallSite callsite, const CallExpr *call) {
     std::stringstream ss;
 
-    // std::set<std::string> visited;
-    // vector<pair<size_t, size_t> > new_aliases;
-    // set<string> changed_alias_locs;
-    // collectCallAliasPairings(loc.get_funcname(), callsite,
-    //         &new_aliases, &changed_alias_locs, &visited);
-
-    ss << "({ calling_npm(" << new_aliases.size() << ", " <<
-        changed_alias_locs.size();
-    for (vector<pair<size_t, size_t> >::iterator new_iter =
-            new_aliases.begin(), new_end = new_aliases.end();
-            new_iter != new_end; new_iter++) {
-        pair<size_t, size_t> curr = *new_iter;
-        ss << ", " << curr.first << "UL, " << curr.second <<
-            "UL";
-    }
-    for (set<string>::iterator loc_iter =
-            changed_alias_locs.begin(), loc_end =
-            changed_alias_locs.end(); loc_iter != loc_end;
-            loc_iter++) {
-        string curr_loc = *loc_iter;
-        ss << ", " << curr_loc;
+    ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " <<
+        callsite.get_return_alias() << "UL, " << callsite.nparams();
+    for (int i = 0; i < callsite.nparams(); i++) {
+        ss << ", " << callsite.alias_no_for(i) << "UL";
     }
     ss << "); ";
 
@@ -909,8 +892,7 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
                     arg->getLocStart(), arg->getLocEnd()));
     }
     ss << "); })";
-
-    return (ss.str());
+    return ss.str();
 }
 
 std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
