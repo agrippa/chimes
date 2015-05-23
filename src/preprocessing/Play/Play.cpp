@@ -798,6 +798,8 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
         Function *F = &*I;
 
         if (F != NULL && !F->empty()) {
+            std::string caller_name = demangledFunctionName(F->getName().str());
+
             Function::BasicBlockListType &bblist = F->getBasicBlockList();
             for (Function::BasicBlockListType::iterator bb_iter =
                     bblist.begin(), bb_end = bblist.end(); bb_iter != bb_end;
@@ -814,7 +816,8 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                         MemSetInst *memset = dyn_cast<MemSetInst>(&inst);
                         assert(memset != NULL);
 
-                        fprintf(fp, "memset %d %d 0 %lu 0 0\n", line, col,
+                        fprintf(fp, "memset %s %d %d 0 %lu 0 0\n",
+                                caller_name.c_str(), line, col,
                                 searchForValueInKnownAliases(memset->getDest(),
                                     value_to_alias_group));
 
@@ -822,7 +825,8 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                         MemTransferInst *transfer = dyn_cast<MemTransferInst>(&inst);
                         assert(transfer != NULL);
 
-                        fprintf(fp, "memcpy %d %d 0 %lu %lu 0\n", line, col,
+                        fprintf(fp, "memcpy %s %d %d 0 %lu %lu 0\n",
+                                caller_name.c_str(), line, col,
                                 searchForValueInKnownAliases(transfer->getDest(),
                                     value_to_alias_group),
                                 searchForValueInKnownAliases(transfer->getSource(),
@@ -840,7 +844,7 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                             // Call through function pointer
                             name = "anon";
                         } else {
-                            name = callee->getName().str();
+                            name = demangledFunctionName(callee->getName().str());
                         }
 
                         size_t return_alias = 0;
@@ -853,8 +857,8 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                                     call, value_to_alias_group, false);
                         }
 
-                        fprintf(fp, "%s %d %d %lu", name.c_str(), line, col,
-                                return_alias);
+                        fprintf(fp, "%s %s %d %d %lu", name.c_str(),
+                                caller_name.c_str(), line, col, return_alias);
 
                         for (unsigned i = 0; i < call->getNumArgOperands();
                                 i++) {

@@ -134,6 +134,8 @@ def get_exit_info(exit_filename):
         tokens = line.split()
         if len(tokens) > 2: # if there are aliases changed here
             exits.append(ExitInfo(tokens[0], tokens[1], tokens[2:]))
+        else:
+            exits.append(ExitInfo(tokens[0], tokens[1], []))
     fp.close()
     return exits
 
@@ -143,7 +145,7 @@ def get_npms(filename):
     fp = open(filename, 'r')
     line = fp.readline()
     while len(line) > 0:
-        result.append(line.split()[0] + '_npm')
+        result.append(line.split()[0])
         while '-----' not in line:
             line = fp.readline()
         line = fp.readline()

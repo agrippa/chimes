@@ -103,11 +103,14 @@ class FunctionArgumentAliasGroups {
 
 class AliasesPassedToCallSite {
     public:
-        AliasesPassedToCallSite(std::string set_funcname, int set_line,
-                int set_col, size_t set_return_alias) : funcname(set_funcname),
-                line(set_line), col(set_col), return_alias(set_return_alias) {}
+        AliasesPassedToCallSite(std::string set_funcname,
+                std::string set_caller_name, int set_line, int set_col,
+                size_t set_return_alias) : funcname(set_funcname),
+                caller_name(set_caller_name), line(set_line), col(set_col),
+                return_alias(set_return_alias) {}
 
         std::string get_funcname() { return funcname; }
+        std::string get_caller_name() { return caller_name; }
         int get_line() { return line; }
         void update_line(int set_line) { line = set_line; }
         void add_alias_no(size_t alias_no) { alias_nos.push_back(alias_no); }
@@ -125,6 +128,7 @@ class AliasesPassedToCallSite {
 
     private:
         std::string funcname;
+        std::string caller_name;
         int line;
         int col;
         size_t return_alias;

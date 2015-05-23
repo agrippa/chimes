@@ -272,6 +272,10 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
         line = line.substr(end + 1);
 
         end = line.find(' ');
+        std::string caller_name = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
         int line_no = atoi(line.substr(0, end).c_str());
         line = line.substr(end + 1);
 
@@ -284,15 +288,15 @@ std::vector<AliasesPassedToCallSite> *DesiredInsertions::parseCallSites() {
         if (end == std::string::npos) {
             size_t alias = unique_alias(strtoul(line.c_str(), NULL, 10));
 
-            callsite = new AliasesPassedToCallSite(funcname, line_no,
-                    col, alias);
+            callsite = new AliasesPassedToCallSite(funcname, caller_name,
+                    line_no, col, alias);
         } else {
             size_t alias = unique_alias(
                     strtoul(line.substr(0, end).c_str(), NULL, 10));
             line = line.substr(end + 1);
 
-            callsite = new AliasesPassedToCallSite(funcname, line_no,
-                    col, alias);
+            callsite = new AliasesPassedToCallSite(funcname, caller_name,
+                    line_no, col, alias);
 
             end = line.find(' ');
             while (end != std::string::npos) {
@@ -953,18 +957,22 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatch
     std::vector<AliasesPassedToCallSite>::iterator e = callsites->end();
     while (i != e) {
         AliasesPassedToCallSite curr = *i;
-        if (curr.get_line() == line &&
-                curr.get_funcname().find(callee_name) != std::string::npos) {
-            /*
-             * TODO This is super ugly. The callee_name passed here is the
-             * name as it appears in the source code. The function name
-             * stored in curr is a mangled name (some C++ mangling
-             * convention? not sure). Here, we just wait for the first match
-             * where the user-visible name is a substring of the mangled
-             * name.
-             */
+        if (curr.get_line() == line && curr.get_funcname() == callee_name) {
             break;
         }
+
+        // if (curr.get_line() == line &&
+        //         curr.get_funcname().find(callee_name) != std::string::npos) {
+        //     /*
+        //      * TODO This is super ugly. The callee_name passed here is the
+        //      * name as it appears in the source code. The function name
+        //      * stored in curr is a mangled name (some C++ mangling
+        //      * convention? not sure). Here, we just wait for the first match
+        //      * where the user-visible name is a substring of the mangled
+        //      * name.
+        //      */
+        //     break;
+        // }
         i++;
     }
 
