@@ -877,11 +877,11 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
         AliasesPassedToCallSite callsite, const CallExpr *call) {
     std::stringstream ss;
 
-    std::set<std::string> visited;
-    vector<pair<size_t, size_t> > new_aliases;
-    set<string> changed_alias_locs;
-    collectCallAliasPairings(loc.get_funcname(), callsite,
-            &new_aliases, &changed_alias_locs, &visited);
+    // std::set<std::string> visited;
+    // vector<pair<size_t, size_t> > new_aliases;
+    // set<string> changed_alias_locs;
+    // collectCallAliasPairings(loc.get_funcname(), callsite,
+    //         &new_aliases, &changed_alias_locs, &visited);
 
     ss << "({ calling_npm(" << new_aliases.size() << ", " <<
         changed_alias_locs.size();
@@ -1209,10 +1209,20 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                             loc.get_funcname()) != npm_functions.end());
                 bool no_checkpoint = insertions->does_not_cause_checkpoint(
                             loc.get_funcname());
-                if (is_converted_to_npm && no_checkpoint) {
+                if (is_converted_to_npm) {
                     std::string npm_call = generateNPMCall(loc, callsite, call);
-                    ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), npm_call);
+                    if (no_checkpoint) {
+                        ReplaceText(clang::SourceRange(call->getLocStart(),
+                                    call->getLocEnd()), npm_call);
+                    } else if (insertions->get_distance_from_main(curr_func) < 2) {
+                        std::string regular_call = generateNormalCall(call, loc,
+                                lbl, callsite);
+                        std::string cond_call = "(____chimes_does_checkpoint_" +
+                            loc.get_funcname() + "_npm ? (" + regular_call +
+                            ") : (" + npm_call + "))";
+                        ReplaceText(clang::SourceRange(call->getLocStart(),
+                                    call->getLocEnd()), cond_call);
+                    }
 
                     continue;
                 }

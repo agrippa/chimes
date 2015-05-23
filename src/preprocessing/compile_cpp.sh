@@ -127,6 +127,7 @@ OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
+ADD_NPM_CONDS=${CHIMES_HOME}/src/preprocessing/module_init/add_cond_npm_vars.py
 INSERT_LINES=${CHIMES_HOME}/src/preprocessing/insert_line_numbers.py
 FIRSTPRIVATE_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp/firstprivate_appender.py
 CHIMES_DEF=-D__CHIMES_SUPPORT
@@ -250,6 +251,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
     FUNCTION_PTR_FILE=${NAME}.extern_ptrs.${EXT}
+    NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 
     echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
@@ -273,10 +275,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Adding NPM function pointer declarations to ${HARDCODED_CALLS_FILE}
     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${HARDCODED_CALLS_FILE} \
-      ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
+        ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
 
-    echo Setting up module initialization for ${FUNCTION_PTR_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} ${FUNCTION_PTR_FILE} ${FINAL_FILE} \
+    echo Adding NPM conditionals to ${FUNCTION_PTR_FILE}
+    cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${FUNCTION_PTR_FILE} \
+        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls
+
+    echo Setting up module initialization for ${NPM_CONDS_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} ${NPM_CONDS_FILE} ${FINAL_FILE} \
         ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
         ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
         ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \

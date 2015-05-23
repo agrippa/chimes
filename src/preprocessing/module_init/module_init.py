@@ -3,7 +3,7 @@ import os
 import sys
 from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
                    always_checkpoints, get_exit_info, get_alias_loc_var, \
-                   get_aliases_changed
+                   get_aliases_changed, get_npms
 
 
 class ExternNPM(object):
@@ -69,20 +69,6 @@ def parse_64bit_int(s):
         # 2.x separates int and long, so we need to explicitly ask for long
         i = long(s)
     return i
-
-
-def get_npms(filename):
-    result = []
-    fp = open(filename, 'r')
-    line = fp.readline()
-    while len(line) > 0:
-        result.append(line.split()[0] + '_npm')
-        while '-----' not in line:
-            line = fp.readline()
-        line = fp.readline()
-
-    fp.close()
-    return result
 
 
 def get_externs(filename):

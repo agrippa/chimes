@@ -1203,6 +1203,40 @@ bool DesiredInsertions::always_checkpoints(StackAlloc *alloc) {
     return (false);
 }
 
+bool DesiredInsertions::have_main_in_call_tree() {
+    return (call_tree->find("main") != call_tree->end());
+}
+
+int DesiredInsertions::get_distance_from_main_helper(std::string curr,
+        std::string target, int depth) {
+    if (curr == target) return depth;
+
+    if (has_callees(curr)) {
+        FunctionCallees *callees = call_tree->at(curr);
+        assert(callees);
+
+        int min_depth = -1;
+        for (std::vector<CheckpointCause>::iterator i = callees->begin(),
+                e = callees->end(); i != e; i++) {
+            CheckpointCause cause = *i;
+            std::string fname = cause.get_name();
+            int child_depth = get_distance_from_main_helper(fname, target,
+                    depth + 1);
+            if (child_depth != -1 && (min_depth == -1 ||
+                        child_depth < min_depth)) {
+                min_depth = child_depth;
+            }
+        }
+        return (min_depth);
+    }
+    return -1;
+}
+
+int DesiredInsertions::get_distance_from_main(std::string fname) {
+    assert(have_main_in_call_tree());
+    return get_distance_from_main_helper("main", fname, 0);
+}
+
 bool DesiredInsertions::has_callees(std::string name) {
     return (call_tree->find(name) != call_tree->end());
 }
