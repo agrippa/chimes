@@ -293,13 +293,13 @@ for INPUT in ${ABS_INPUTS[@]}; do
       ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
 
     echo Setting up module initialization for ${FUNCTION_PTR_FILE}
-    cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} ${FUNCTION_PTR_FILE} ${FINAL_FILE} \
-        ${INFO_FILE_PREFIX}.module.info ${INFO_FILE_PREFIX}.reachable.info \
-        ${INFO_FILE_PREFIX}.globals.info ${INFO_FILE_PREFIX}.struct.info \
-        ${INFO_FILE_PREFIX}.constants.info ${INFO_FILE_PREFIX}.stack.info \
-        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
-        ${INFO_FILE_PREFIX}.exit.info ${INFO_FILE_PREFIX}.func.info \
-        ${INFO_FILE_PREFIX}.externs ${INFO_FILE_PREFIX}.npm.decls
+    cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} -i ${FUNCTION_PTR_FILE} -o ${FINAL_FILE} \
+        -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
+        -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
+        -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
+        -t ${INFO_FILE_PREFIX}.tree.info -l ${INFO_FILE_PREFIX}.lines.info \
+        -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
+        -e ${INFO_FILE_PREFIX}.externs -n ${INFO_FILE_PREFIX}.npm.decls
 
     echo Postprocessing ${FINAL_FILE}
     cd ${NVCC_WORK_DIR} && ${GXX} -E -I${CUDA_HOME}/include -include stddef.h \

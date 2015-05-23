@@ -6,6 +6,101 @@ from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
                    get_aliases_changed, get_npms
 
 
+class ModuleInitConfig(object):
+    def __init__(self):
+        self.input_filename = None
+        self.output_filename = None
+        self.module_id_filename = None
+        self.reachable_filename = None
+        self.globals_filename = None
+        self.structs_filename = None
+        self.constants_filename = None
+        self.stack_var_filename = None
+        self.call_tree_filename = None
+        self.lines_filename = None
+        self.exits_filename = None
+        self.func_filename = None
+        self.externs_filename = None
+        self.npm_filename = None
+        self.calls_filename = None
+        self.locs_filename = None
+
+    def check(self):
+        if self.input_filename is None:
+            print('Missing input filename')
+            usage()
+        if self.output_filename is None:
+            print('Missing output filename')
+            usage()
+        if self.module_id_filename is None:
+            print('Missing module id filename')
+            usage()
+        if self.reachable_filename is None:
+            print('Missing reachable filename')
+            usage()
+        if self.globals_filename is None:
+            print('Missing globals filename')
+            usage()
+        if self.structs_filename is None:
+            print('Missing structs filename')
+            usage()
+        if self.constants_filename is None:
+            print('Missing constants filename')
+            usage()
+        if self.stack_var_filename is None:
+            print('Missing stack filename')
+            usage()
+        if self.call_tree_filename is None:
+            print('Missing call tree filename')
+            usage()
+        if self.lines_filename is None:
+            print('Missing lines filename')
+            usage()
+        if self.exits_filename is None:
+            print('Missing exits filename')
+            usage()
+        if self.func_filename is None:
+            print('Missing function filename')
+            usage()
+        if self.externs_filename is None:
+            print('Missing externs filename')
+            usage()
+        if self.npm_filename is None:
+            print('Missing NPM filename')
+            usage()
+        if self.calls_filename is None:
+            print('Missing calls filename')
+            usage()
+        if self.locs_filename is None:
+            print('Missing locs filename')
+            usage()
+
+
+class ChangeLocVars(object):
+    def __init__(self, fname):
+        self.fname = fname
+        self.varnames = []
+
+    def add_var(self, v):
+        self.varnames.append(v)
+
+    def size(self):
+        return len(self.varnames)
+
+
+class Call(object):
+    def __init__(self, callee_name, caller_name, line_no, col, parent_return_alias):
+        self.callee_name = callee_name
+        self.caller_name = caller_name
+        self.line_no = line_no
+        self.col = col
+        self.parent_return_alias_str = parent_return_alias
+        self.param_aliases_str = []
+
+    def add_param_alias(self, a):
+        self.param_aliases_str.append(a)
+
+
 class ExternNPM(object):
     def __init__(self, original_fname, varname, line_no, filename, decl):
         self.original_fname = original_fname
@@ -18,6 +113,10 @@ class ExternNPM(object):
 class FunctionInfo(object):
     def __init__(self, name):
         self.name = name
+        self.arg_aliases_str = []
+
+    def add_arg_alias(self, a):
+        self.arg_aliases_str.append(a)
 
 
 class GlobalVar(object):
@@ -82,8 +181,49 @@ def get_externs(filename):
     return result
 
 
+def get_change_locs(locs_filename):
+    locs = {}
+    fp = open(locs_filename, 'r')
+    for line in fp:
+        tokens = line.split()
+
+        loc = ChangeLocVars(tokens[0])
+        for t in tokens[1:]:
+            loc.add_var(t)
+
+        assert tokens[0] not in locs
+        locs[tokens[0]] = loc
+
+    fp.close()
+
+    return locs
+
+def get_callsites(call_filename):
+    callsites = {}
+    fp = open(call_filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        callee_name = tokens[0]
+        caller_name = tokens[1]
+        line_no = int(tokens[2])
+        col = int(tokens[3])
+        return_alias_str = tokens[4]
+
+        site = Call(callee_name, caller_name, line_no, col, return_alias_str)
+
+        for t in tokens[5:]:
+            site.add_param_alias(t)
+
+        if caller_name not in callsites.keys():
+            callsites[caller_name] = []
+        callsites[caller_name].append(site)
+    fp.close()
+
+    return callsites
+
+
 def get_functions(func_filename):
-    functions = []
+    functions = {}
     fp = open(func_filename, 'r')
 
     invalid_cuda_functions = ['dim3::dim3', 'cudaError']
@@ -91,7 +231,12 @@ def get_functions(func_filename):
     for line in fp:
         tokens = line.split()
         if tokens[0] not in invalid_cuda_functions:
-            functions.append(FunctionInfo(tokens[0]))
+            assert tokens[0] not in functions
+
+            f = FunctionInfo(tokens[0])
+            for t in tokens[1:]:
+                f.add_arg_alias(t)
+            functions[tokens[0]] = f
 
     fp.close()
     return functions
@@ -221,49 +366,111 @@ def write_constant(c, module_id_str):
                       c.constant_size + ');\n')
 
 
+def get_alias_str(module_id_str, alias_str):
+    if alias_str == '0':
+        return '0UL'
+    else:
+        return '(' + module_id_str + 'UL + ' + alias_str + 'UL)'
+
+
+def find_in_exits(fname, exits):
+    for e in exits:
+        if e.funcname == fname:
+            return e
+    assert false, fname
+
+
+def usage():
+    print('usage: python module_init.py ' +
+          '-i input-file ' +
+          '-o output-file ' + 
+          '-m module-id-file ' + 
+          '-r reachable-file ' + 
+          '-g globals-file ' +
+          '-s structs-file ' +
+          '-c constants-file ' +
+          '-v stack-vars-file ' +
+          '-t call-tree-file ' +
+          '-l lines-file ' +
+          '-x exits-file ' +
+          '-f func-file ' +
+          '-e externs-file ' +
+          '-n npm-file ' +
+          '-d calls-filename ' + 
+          '-h locs-filename ')
+    sys.exit(1)
+
+
+def configure(cfg, argv):
+    index = 0
+    while index < len(argv):
+        t = argv[index]
+        if t == '-i':
+            cfg.input_filename = argv[index + 1]
+        elif t == '-o':
+            cfg.output_filename = argv[index + 1]
+        elif t == '-m':
+            cfg.module_id_filename = argv[index + 1]
+        elif t == '-r':
+            cfg.reachable_filename = argv[index + 1]
+        elif t == '-g':
+            cfg.globals_filename = argv[index + 1]
+        elif t == '-s':
+            cfg.structs_filename = argv[index + 1]
+        elif t == '-c':
+            cfg.constants_filename = argv[index + 1]
+        elif t == '-v':
+            cfg.stack_var_filename = argv[index + 1]
+        elif t == '-t':
+            cfg.call_tree_filename = argv[index + 1]
+        elif t == '-l':
+            cfg.lines_filename = argv[index + 1]
+        elif t == '-x':
+            cfg.exits_filename = argv[index + 1]
+        elif t == '-f':
+            cfg.func_filename = argv[index + 1]
+        elif t == '-e':
+            cfg.externs_filename = argv[index + 1]
+        elif t == '-n':
+            cfg.npm_filename = argv[index + 1]
+        elif t == '-d':
+            cfg.calls_filename = argv[index + 1]
+        elif t == '-h':
+            cfg.locs_filename = argv[index + 1]
+        else:
+            print('Unrecognized command line argument "' + t + '"')
+            sys.exit(1)
+
+        index += 2
+
+
 if __name__ == '__main__':
-    if len(sys.argv) != 15:
-        print('usage: python module_init.py input-file output-file ' +
-              'module-id-file reachable-file globals-file structs-file ' +
-              'constants-file stack-var-file call-tree-file lines-file ' +
-              'exits-file func-file externs-file npm-file')
-        sys.exit(1)
+    cfg = ModuleInitConfig()
+    configure(cfg, sys.argv[1:])
+    cfg.check()
 
-    input_filename = sys.argv[1]
-    output_filename = sys.argv[2]
-    module_id_filename = sys.argv[3]
-    reachable_filename = sys.argv[4]
-    globals_filename = sys.argv[5]
-    structs_filename = sys.argv[6]
-    constants_filename = sys.argv[7]
-    stack_var_filename = sys.argv[8]
-    call_tree_filename = sys.argv[9]
-    lines_filename = sys.argv[10]
-    exits_filename = sys.argv[11]
-    func_filename = sys.argv[12]
-    externs_filename = sys.argv[13]
-    npm_filename = sys.argv[14]
-
-    module_id_str = get_module_id_str(module_id_filename)
-    reachable = get_reachable_mappings(reachable_filename)
-    glbls = get_globals(globals_filename)
-    constants = get_constants(constants_filename)
-    structs = get_structs(structs_filename)
-    stack_vars = get_stack_vars(stack_var_filename)
-    call_tree = get_call_tree(call_tree_filename)
-    changed = get_aliases_changed(lines_filename)
-    exits = get_exit_info(exits_filename)
-    functions = get_functions(func_filename)
-    externs = get_externs(externs_filename)
-    defined_npms = get_npms(npm_filename)
+    module_id_str = get_module_id_str(cfg.module_id_filename)
+    reachable = get_reachable_mappings(cfg.reachable_filename)
+    glbls = get_globals(cfg.globals_filename)
+    constants = get_constants(cfg.constants_filename)
+    structs = get_structs(cfg.structs_filename)
+    stack_vars = get_stack_vars(cfg.stack_var_filename)
+    call_tree = get_call_tree(cfg.call_tree_filename)
+    changed = get_aliases_changed(cfg.lines_filename)
+    exits = get_exit_info(cfg.exits_filename)
+    functions = get_functions(cfg.func_filename)
+    externs = get_externs(cfg.externs_filename)
+    defined_npms = get_npms(cfg.npm_filename)
+    callsites = get_callsites(cfg.calls_filename)
+    change_loc_vars = get_change_locs(cfg.locs_filename)
 
     n_change_locs = len(changed)
     for e in exits:
         if len(e.groups_changed) > 0:
             n_change_locs += 1
 
-    input_file = open(input_filename, 'r')
-    output_file = open(output_filename, 'w')
+    input_file = open(cfg.input_filename, 'r')
+    output_file = open(cfg.output_filename, 'w')
 
     transfer(input_file, output_file)
 
@@ -271,19 +478,22 @@ if __name__ == '__main__':
     for var in stack_vars:
         if not always_checkpoints(var, call_tree):
             count_conditionally_checkpointable_vars += 1
-            
+
 
     output_file.write('\n\nstatic int module_init() {\n')
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
-                      str(len(reachable)) + ', ' + str(len(call_tree)) + \
-                      ', ' + str(count_conditionally_checkpointable_vars) + \
-                      ', ' + str(n_change_locs) + ', ' + \
-                      str(len(defined_npms)) + ', ' + str(len(externs)) + \
-                      ', ' + str(len(structs)))
+                      str(len(reachable)) + ', ' +
+                      str(len(call_tree)) + ', ' +
+                      str(count_conditionally_checkpointable_vars) + ', ' +
+                      str(n_change_locs) + ', ' +
+                      str(len(defined_npms)) + ', ' +
+                      str(len(externs)) + ', ' +
+                      str(len(defined_npms)) + ', ' +
+                      str(len(structs)))
 
     for k in reachable.keys():
-        output_file.write(', ' + module_id_str + 'UL + ' + k + 'UL, ' +
-                          module_id_str + 'UL + ' + reachable[k] + 'UL')
+        output_file.write(', ' + get_alias_str(module_id_str, k) + ', ' +
+                          get_alias_str(module_id_str, reachable[k]))
 
     for s in structs:
         output_file.write(', "' + s.name + '", ' + str(len(s.fields)))
@@ -305,12 +515,14 @@ if __name__ == '__main__':
             for cause in var.causes:
                 output_file.write(', "' + cause + '"')
 
+    # We must traverse changed before exits to ensure consistency in the
+    # location IDs generated here with the ones generated by the clang pass.
     count = 0
     for change_set in changed:
         output_file.write(', &' + get_alias_loc_var(count) +
                           ', (unsigned)' + str(len(change_set.aliases_changed)))
         for alias in change_set.aliases_changed:
-            output_file.write(', ' + module_id_str + 'UL + ' + alias + 'UL')
+            output_file.write(', ' + get_alias_str(module_id_str, alias))
         count += 1
 
     for ex in exits:
@@ -318,14 +530,56 @@ if __name__ == '__main__':
             output_file.write(', &' + get_alias_loc_var(count) +
                               ', (unsigned)' + str(len(ex.groups_changed)))
             for alias in ex.groups_changed:
-                output_file.write(', ' + module_id_str + 'UL + ' + alias + 'UL')
+                output_file.write(', ' + get_alias_str(module_id_str, alias))
             count += 1
 
     for npm in defined_npms:
+
+        assert fname in functions, fname
+        func_info = functions[fname]
+        func_exit_info = find_in_exits(fname, exits)
+
         output_file.write(', "' + npm + '", (void *)(' + npm + ')')
+
+        # If no assignments are made in a function (e.g. if it's simply a return
+        # statement) it may not have any change locations.
+        if fname not in change_loc_vars:
+            output_file.write(', 0')
+        else:
+            locs = change_loc_vars[fname]
+            output_file.write(', ' + str(locs.size()))
+            for var in locs.varnames:
+                output_file.write(', &' + var)
+
+        output_file.write(', ' + str(len(func_info.arg_aliases_str)))
+        for alias in func_info.arg_aliases_str:
+            output_file.write(', ' + get_alias_str(module_id_str, alias))
+        output_file.write(', ' + get_alias_str(module_id_str,
+                                               func_exit_info.return_alias))
+
+        # If there is no entry in callsites for fname, it is because fname calls
+        # no functions.
+        if fname not in callsites:
+            output_file.write(', 0')
+        else:
+            calls = callsites[fname]
+            output_file.write(', ' + str(len(calls)))
+            for c in calls:
+                output_file.write(', "' + c.callee_name + '", ' +
+                                  str(len(c.param_aliases_str)))
+                for arg_alias in c.param_aliases_str:
+                    output_file.write(', ' + get_alias_str(module_id_str,
+                                                           arg_alias))
+                output_file.write(', ' + get_alias_str(module_id_str,
+                                                       c.parent_return_alias_str))
+
 
     for ex in externs:
         output_file.write(', "' + ex.original_fname + '", (void **)&(' + ex.varname + ')')
+
+    for npm in defined_npms:
+        output_file.write(', "' + npm + '", &(____chimes_does_checkpoint_' +
+                          npm + '_npm)')
 
     output_file.write(');\n')
 
@@ -336,7 +590,7 @@ if __name__ == '__main__':
         write_constant(c, module_id_str)
 
     output_file.write('    register_functions(' + str(len(functions)) + ', "' +
-                      input_filename + '"')
+                      self.input_filename + '"')
     for f in functions:
         output_file.write(', "' + f.name + '", &' + f.name)
     output_file.write(');\n')
