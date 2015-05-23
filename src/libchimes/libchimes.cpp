@@ -25,6 +25,7 @@
 #include "perf_profile.h"
 
 #include "libchimes.h"
+#include "npm_context.h"
 #include "chimes_common.h"
 #include "struct_field.h"
 #include "constant_var.h"
@@ -402,6 +403,13 @@ static map<string, function_io_aliases> fname_to_outer_aliases;
 static map<string, vector<void **> > requested_npm_functions;
 
 /*
+ * A mapping from function name to the full NPM context that must be used when
+ * that function is called to ensure that all of the proper state change is
+ * registered.
+ */
+static map<string, npm_context> fname_to_npm_info;
+
+/*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
  * to prevent redundant checkpointing of in-memory state that hasn't changed
  * since the last checkpoint. Currently, we use a high-throughput hashing
@@ -735,6 +743,70 @@ void register_custom_init_handler(const char *obj_name, void (*fp)(void *)) {
     init_handlers[obj_name_str] = fp;
 }
 
+static void addCallToNPMContext(npm_context *ctx, call_aliases call) {
+    if (fname_to_outer_aliases.find(call.get_callee_name()) ==
+            fname_to_outer_aliases.end()) {
+        /*
+         * Functions external to this program but which have been identified as
+         * non-checkpointable (e.g. malloc) may be passed here, but their
+         * information does not need to be included in the NPM context.
+         */
+        return;
+    }
+    function_io_aliases callee =
+        fname_to_outer_aliases.at(call.get_callee_name());
+
+    assert(call.get_n_args() == callee.get_n_params());
+    if (call.get_return_alias() == 0UL || callee.get_return_alias() == 0UL) {
+        assert(call.get_return_alias() == 0UL &&
+                callee.get_return_alias() == 0UL);
+    } else {
+        ctx->add_created_alias(call.get_return_alias(),
+                callee.get_return_alias());
+    }
+
+    for (int a = 0; a < call.get_n_args(); a++) {
+        size_t parent = call.get_arg_alias(a);
+        size_t child = callee.get_param_alias(a);
+
+        if (parent == 0UL || child == 0UL) {
+            assert(parent == 0UL && child == 0UL);
+        } else {
+            ctx->add_created_alias(parent, child);
+        }
+    }
+}
+
+static void constructNPMContext(npm_context *ctx, string current_function,
+        set<string> *visited) {
+    if (visited->find(current_function) != visited->end()) {
+        return;
+    }
+    visited->insert(current_function);
+
+    if (fname_to_alias_locs.find(current_function) == fname_to_alias_locs.end()) {
+        /*
+         * We won't have information on the internal alias change locations for
+         * certain functions which are statically identified as
+         * non-checkpointable (e.g. malloc).
+         */
+        return;
+    }
+
+    set<unsigned> locs = fname_to_alias_locs[current_function];
+    ctx->add_alias_locs(locs);
+
+    vector<call_aliases> calls_made = fname_to_calls_made[current_function];
+    for (vector<call_aliases>::iterator i = calls_made.begin(),
+            e = calls_made.end(); i != e; i++) {
+        call_aliases call = *i;
+
+        addCallToNPMContext(ctx, call);
+
+        constructNPMContext(ctx, call.get_callee_name(), visited);
+    }
+}
+
 void init_chimes() {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
@@ -862,6 +934,24 @@ void init_chimes() {
          */
         if (!does_checkpoint.at(i->first)) {
             *(i->second) = 0;
+        }
+    }
+
+    /*
+     * Iterate over all non-checkpointing functions and collect NPM info for
+     * them.
+     */
+    for (map<string, bool>::iterator i = does_checkpoint.begin(),
+            e = does_checkpoint.end(); i != e; i++) {
+        std::string fname = i->first;
+
+        if (!i->second) {
+            set<string> visited;
+            npm_context ctx(fname);
+            constructNPMContext(&ctx, i->first, &visited);
+
+            VERIFY(fname_to_npm_info.insert(pair<string, npm_context>(fname,
+                            ctx)).second);
         }
     }
 
@@ -1615,9 +1705,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         std::string func_name(va_arg(vl, const char *));
         int *conditional = va_arg(vl, int *);
 
-        assert(npm_conditional_pointers.find(func_name_str) ==
-                npm_conditional_pointers.end());
-        npm_conditional_pointers[func_name_str] = conditional;
+        VERIFY(npm_conditional_pointers.insert(pair<string, int *>(func_name,
+                        conditional)).second);
     }
 
     va_end(vl);
@@ -1677,6 +1766,14 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 
     if (program_stack->size() > 0 && func_ptr != ctx->get_func_ptr()) {
         if (!ctx->get_printed_func_ptr_mismatch()) {
+            /*
+             * Reasons we can get here:
+             *   1. Control passed through a third-party function which used a
+             *      function pointer to call back into transformed code.
+             *   2. Function call passed to a constructor.
+             *   3. Function call from inside a non-resumable parallel section
+             *      (e.g. an omp for).
+             */
             fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
                     "function that we entered (%p) for function %s. Possibly passed"
                     " through a third-party library.\n", ctx->get_func_ptr(),
@@ -1775,24 +1872,49 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return NOT_DISABLED;
 }
 
-void calling_npm(int n_new_aliases, int n_change_locs, ...) {
+void calling_npm(const char *name, size_t return_alias, int n_params, ...) {
     thread_ctx *ctx = get_my_context();
+    std::string fname(name);
+    assert(fname_to_npm_info.find(fname) != fname_to_npm_info.end());
+    npm_context npm_ctx = fname_to_npm_info.at(fname);
 
-    va_list vl;
-    va_start(vl, n_change_locs);
-
-    for (int i = 0; i < n_new_aliases; i++) {
-        size_t parent = va_arg(vl, size_t);
-        size_t child = va_arg(vl, size_t);
+    for (vector<pair<size_t, size_t> >::iterator i =
+            npm_ctx.get_aliases_created()->begin(), e =
+            npm_ctx.get_aliases_created()->end(); i != e; i++) {
+        size_t parent = (*i).first;
+        size_t child = (*i).second;
 
         assert(valid_group(parent) && valid_group(child));
         merge_alias_groups(parent, child);
     }
 
-    for (int i = 0; i < n_change_locs; i++) {
-        unsigned loc_id = va_arg(vl, unsigned);
+    for (set<unsigned>::iterator i = npm_ctx.get_alias_locs()->begin(),
+            e = npm_ctx.get_alias_locs()->end(); i != e; i++) {
+        unsigned loc_id = *i;
         assert(loc_id > 0);
         alias_group_changed_helper(loc_id, ctx);
+    }
+
+    assert(fname_to_outer_aliases.find(fname) != fname_to_outer_aliases.end());
+    function_io_aliases callee = fname_to_outer_aliases.at(fname);
+    if (return_alias == 0UL || callee.get_return_alias() == 0UL) {
+        assert(return_alias == 0UL && callee.get_return_alias() == 0UL);
+    } else {
+        merge_alias_groups(return_alias, callee.get_return_alias());
+    }
+
+    assert(callee.get_n_params() == n_params);
+    va_list vl;
+    va_start(vl, n_params);
+    for (int i = 0; i < n_params; i++) {
+        size_t parent = va_arg(vl, size_t);
+        size_t child = callee.get_param_alias(i);
+
+        if (parent == 0UL || child == 0UL) {
+            assert(parent == 0UL && child == 0UL);
+        } else {
+            merge_alias_groups(parent, child);
+        }
     }
     va_end(vl);
 }

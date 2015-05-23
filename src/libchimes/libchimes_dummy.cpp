@@ -63,7 +63,8 @@ void init_chimes() {
 #endif
 }
 
-void calling_npm(int n_new_aliases, int n_change_locs, ...) {
+void calling_npm(const char *name, size_t return_alias, int n_params,
+        ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
@@ -86,10 +87,10 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return 1;
 }
 
-void init_module(size_t module_id, int n_contains_mappings,
+extern void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs,
         int n_provided_npm_functions, int n_external_npm_functions,
-        int nstructs, ...) { }
+        int n_npm_conditionals, int nstructs, ...) { }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled) {
