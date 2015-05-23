@@ -239,8 +239,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -b ${INFO_FILE_PREFIX}.tree.info \
             -q ${INFO_FILE_PREFIX}.quick \
             -n ${INFO_FILE_PREFIX}.npm \
-            -g ${INFO_FILE_PREFIX}.calls \
-            -h ${INFO_FILE_PREFIX}.alias_locs \
+            -e ${INFO_FILE_PREFIX}.locs \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -268,10 +267,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${FIRSTPRIVATE_FILE} ${NPM_FILE} \
         -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls
 
-    echo Hardcoding quick/resumable/npm calls when possible in ${NPM_FILE}
+    echo Adding NPM conditionals to ${NPM_FILE}
+    cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
+        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls
+
+    echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
         -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
-        -e ${INFO_FILE_PREFIX}.externs ${NPM_FILE} -- \
+        -e ${INFO_FILE_PREFIX}.externs ${NPM_CONDS_FILE} -- \
         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
         ${CHIMES_DEF} ${DEFINES}
 
@@ -279,19 +282,15 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${HARDCODED_CALLS_FILE} \
         ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
 
-    echo Adding NPM conditionals to ${FUNCTION_PTR_FILE}
-    cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${FUNCTION_PTR_FILE} \
-        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls
-
-    echo Setting up module initialization for ${NPM_CONDS_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${NPM_CONDS_FILE} -o ${FINAL_FILE} \
+    echo Setting up module initialization for ${FUNCTION_PTR_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${FUNCTION_PTR_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
         -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
         -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
         -t ${INFO_FILE_PREFIX}.tree.info -l ${INFO_FILE_PREFIX}.lines.info \
         -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
         -e ${INFO_FILE_PREFIX}.externs -n ${INFO_FILE_PREFIX}.npm.decls \
-        -d ${INFO_FILE_RPEFIX}.calls -h ${INFO_FILE_PREFIX}.alias_locs
+        -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \

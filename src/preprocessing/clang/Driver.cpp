@@ -80,10 +80,7 @@ static llvm::cl::opt<std::string> quick_version_file("q",
 static llvm::cl::opt<std::string> npm_dump_file("n",
         llvm::cl::desc("NPM dump file"),
         llvm::cl::value_desc("npm_dump_file"));
-static llvm::cl::opt<std::string> calls_dump_file("g",
-        llvm::cl::desc("Calls dump file"),
-        llvm::cl::value_desc("calls_dump_file"));
-static llvm::cl::opt<std::string> alias_locs_dump_file("h",
+static llvm::cl::opt<std::string> loc_file("e",
         llvm::cl::desc("Alias locs dump file"),
         llvm::cl::value_desc("alias_locs_dump_file"));
 
@@ -468,8 +465,7 @@ int main(int argc, const char **argv) {
   check_opt(call_tree_file, "Call tree file");
   check_opt(quick_version_file, "Quick version");
   check_opt(npm_dump_file, "NPM Dump file");
-  check_opt(calls_dump_file, "Calls Dump file");
-  check_opt(alias_locs_dump_file, "Alias locs dump file");
+  check_opt(loc_file, "Alias locs dump file");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -598,6 +594,27 @@ int main(int argc, const char **argv) {
           current_output_file = input_file;
       }
   }
+
+  /*
+   * Dump a mapping from function name to the variable names that store the
+   * globally unique location ID for all alias change locations inside it.
+   */
+  std::ofstream loc_dump_file(std::string(loc_file.c_str()));
+  for (std::map<std::string, std::set<std::string> >::iterator i =
+          func_to_alias_locs.begin(), e = func_to_alias_locs.end(); i != e;
+          i++) {
+      std::string fname = i->first;
+      std::set<std::string> varnames = i->second;
+
+      loc_dump_file << fname;
+      for (std::set<std::string>::iterator ii = varnames.begin(),
+              ee = varnames.end(); ii != ee; ii++) {
+          std::string varname = *ii;
+          loc_dump_file << " " << varname;
+      }
+      loc_dump_file << "\n";
+  }
+  loc_dump_file.close();
 
   delete insertions;
 

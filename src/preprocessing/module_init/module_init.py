@@ -377,7 +377,7 @@ def find_in_exits(fname, exits):
     for e in exits:
         if e.funcname == fname:
             return e
-    assert false, fname
+    assert False, fname
 
 
 def usage():
@@ -533,13 +533,13 @@ if __name__ == '__main__':
                 output_file.write(', ' + get_alias_str(module_id_str, alias))
             count += 1
 
-    for npm in defined_npms:
+    for fname in defined_npms:
 
         assert fname in functions, fname
         func_info = functions[fname]
         func_exit_info = find_in_exits(fname, exits)
 
-        output_file.write(', "' + npm + '", (void *)(' + npm + ')')
+        output_file.write(', "' + fname + '", (void *)(' + fname + '_npm)')
 
         # If no assignments are made in a function (e.g. if it's simply a return
         # statement) it may not have any change locations.
@@ -590,9 +590,9 @@ if __name__ == '__main__':
         write_constant(c, module_id_str)
 
     output_file.write('    register_functions(' + str(len(functions)) + ', "' +
-                      self.input_filename + '"')
-    for f in functions:
-        output_file.write(', "' + f.name + '", &' + f.name)
+                      cfg.input_filename + '"')
+    for f in functions.keys():
+        output_file.write(', "' + f + '", &' + f)
     output_file.write(');\n')
 
     output_file.write('    return 0;\n')
