@@ -28,6 +28,7 @@ extern std::set<std::string> *ignorable;
 extern std::map<int, std::vector<CallLabel> > call_lbls;
 extern std::map<std::string, std::set<string>> func_to_alias_locs;
 extern std::set<std::string> npm_functions;
+extern std::map<std::string, ExternalNPMCall> external_calls;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -803,8 +804,37 @@ int CallingAndOMPPass::extractArgsWithSideEffects(const CallExpr *call,
     return (count_args_with_side_effects);
 }
 
+static std::string get_external_func_name(std::string fname) {
+    return ("____chimes_extern_func_" + fname);
+}
+
+std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
+        CallLocation loc, AliasesPassedToCallSite callsite) {
+    std::stringstream ss;
+    std::string fptr_type = call->getCallee()->getType().getAsString();
+
+    ss << "((" << fptr_type << ")(translate_fptr((void *)" <<
+        stmtToString(call->getCallee()) << ", " <<
+        callsite.get_return_alias() << "UL, " << callsite.nparams();
+
+    for (int i = 0; i < callsite.nparams(); i++) {
+        ss << ", " << callsite.alias_no_for(i) << "UL";
+    }
+    ss << ")))(";
+
+    for (int a = 0; a < call->getNumArgs(); a++) {
+        const Expr *arg = call->getArg(a);
+        if (a != 0) ss << ", ";
+        ss << getRewrittenText(clang::SourceRange(
+                    arg->getLocStart(), arg->getLocEnd()));
+    }
+    ss << ")";
+    return ss.str();
+}
+
 std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
-        AliasesPassedToCallSite callsite, const CallExpr *call) {
+        AliasesPassedToCallSite callsite, const CallExpr *call,
+        bool use_function_pointer) {
     std::stringstream ss;
 
     ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " <<
@@ -814,7 +844,11 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
     }
     ss << "); ";
 
-    ss << loc.get_funcname() + "_npm(";
+    if (use_function_pointer) {
+        ss << "(*" << get_external_func_name(loc.get_funcname()) << ")(";
+    } else {
+        ss << loc.get_funcname() + "_npm(";
+    }
     for (int a = 0; a < call->getNumArgs(); a++) {
         const Expr *arg = call->getArg(a);
         if (a != 0) ss << ", ";
@@ -1121,27 +1155,45 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                             loc.get_funcname()) != npm_functions.end());
                 bool no_checkpoint = insertions->does_not_cause_checkpoint(
                             loc.get_funcname());
-                if (is_converted_to_npm) {
-                    std::string npm_call = generateNPMCall(loc, callsite, call);
-                    if (no_checkpoint) {
-                        ReplaceText(clang::SourceRange(call->getLocStart(),
-                                    call->getLocEnd()), npm_call);
-                        continue;
-                    } else if (insertions->have_main_in_call_tree() &&
-                            insertions->get_distance_from_main(curr_func) < 2) {
-                        std::string regular_call = generateNormalCall(call, loc,
-                                lbl, callsite);
-                        std::string cond_call = "(____chimes_does_checkpoint_" +
-                            loc.get_funcname() + "_npm ? (" + regular_call +
-                            ") : (" + npm_call + "))";
-                        ReplaceText(clang::SourceRange(call->getLocStart(),
-                                    call->getLocEnd()), cond_call);
-                        continue;
-                    }
+                if (is_converted_to_npm && no_checkpoint) {
+                    std::string npm_call = generateNPMCall(loc, callsite, call,
+                            false);
+                    ReplaceText(clang::SourceRange(call->getLocStart(),
+                                call->getLocEnd()), npm_call);
+                    continue;
+                }
+
+                if (insertions->have_main_in_call_tree() &&
+                        insertions->get_distance_from_main(curr_func) < 2 &&
+                        loc.get_funcname() != "checkpoint" &&
+                        call->getDirectCallee()) {
+                    /*
+                     * Use a function pointer if this is an externally
+                     * defined function
+                     */
+                    std::string npm_call = generateNPMCall(loc, callsite, call,
+                            npm_functions.find(loc.get_funcname()) ==
+                                npm_functions.end());
+                    std::string regular_call = generateNormalCall(call, loc,
+                            lbl, callsite);
+                    std::string cond_call = "(____chimes_does_checkpoint_" +
+                        loc.get_funcname() + "_npm ? (" + regular_call +
+                        ") : (" + npm_call + "))";
+                    ReplaceText(clang::SourceRange(call->getLocStart(),
+                                call->getLocEnd()), cond_call);
+                    continue;
+                }
+                if (!call->getDirectCallee()) {
+                    std::string ptr_call = generateFunctionPointerCall(call,
+                            loc, callsite);
+                    ReplaceText(clang::SourceRange(call->getLocStart(),
+                                call->getLocEnd()), ptr_call);
+                    continue;
                 }
 
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {
-                    std::string regular_call = generateNormalCall(call, loc, lbl, callsite);
+                    std::string regular_call = generateNormalCall(call, loc,
+                            lbl, callsite);
 
                     ReplaceText(clang::SourceRange(call->getLocStart(),
                                 call->getLocEnd()), regular_call);
@@ -1299,7 +1351,52 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                     calls_found.at(line_no).push_back(CallLocation(
                                 callee_name, presumed.getColumn(), call));
                 }
+            }
 
+            /*
+             * If not a function pointer call and not a function we know won't
+             * checkpoint, declare a conditional NPM variable for it and create
+             * a function pointer declaration for it.
+             */
+            if (call->getDirectCallee() &&
+                    ignorable->find(callee_name) == ignorable->end() &&
+                    callee_name != "checkpoint") {
+                const FunctionType *ftype = call->getDirectCallee()->getFunctionType();
+                std::string type_str =
+                    ftype->getCanonicalTypeInternal().getAsString();
+
+                int index = 0;
+                while (type_str[index] != '(') index++;
+                type_str.insert(index, "(*" + get_external_func_name(callee_name) + ")");
+
+                const int line_no = SM->getPresumedLoc(
+                        call->getLocStart()).getLine();
+                std::string varname = get_external_func_name(
+                        callee_name);
+
+                if (external_calls.find(callee_name) ==
+                        external_calls.end()) {
+
+                    std::string filename = SM->getPresumedLoc(
+                            call->getLocStart()).getFilename();
+                    const clang::FunctionType *type =
+                        call->getDirectCallee()->getFunctionType();
+                    assert(type);
+                    std::string type_str =
+                        type->getCanonicalTypeInternal().getAsString();
+
+                    int index = 0;
+                    while (type_str[index] != '(') index++;
+                    type_str.insert(index, "(*" + varname + ")");
+
+                    external_calls.insert(
+                            std::pair<std::string, ExternalNPMCall>(
+                                callee_name, ExternalNPMCall(callee_name,
+                                    varname, "static " + type_str, line_no,
+                                    filename)));
+                } else {
+                    external_calls.at(callee_name).update_line(line_no);
+                }
             }
 
             if (callee_name == "new_stack") {

@@ -1,3 +1,11 @@
+class ExternNPM(object):
+    def __init__(self, original_fname, varname, line_no, filename, decl):
+        self.original_fname = original_fname
+        self.varname = varname
+        self.line_no = line_no
+        self.filename = filename
+        self.decl = decl
+
 
 class StackVar(object):
     def __init__(self, name):
@@ -152,3 +160,17 @@ def get_npms(filename):
 
     fp.close()
     return result
+
+
+def get_externs(filename):
+    result = []
+    fp = open(filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        result.append(ExternNPM(tokens[0], tokens[1], int(tokens[2]),
+                                tokens[3], ' '.join(tokens[4:])))
+    fp.close()
+    return result
+
+
+

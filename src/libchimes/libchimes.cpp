@@ -379,6 +379,17 @@ static map<string, void (*)(void *)> init_handlers;
 static map<string, void *> provided_npm_functions;
 
 /*
+ * A mapping from the name of the original function to its function pointer, and
+ * a mapping from the address of the original function to its NPM counterpart.
+ * If we find that for a function in fname_to_original_function no checkpoint is
+ * ever created, the corresponding mapping is inserted in
+ * original_function_to_npm. This is used to allow NPM mode even through
+ * function pointer calls.
+ */
+static map<string, void *> fname_to_original_function;
+static map<void *, pair<void *, string> > original_function_to_npm;
+
+/*
  * A mapping from NPM function name to the set of alias change locations inside
  * of it.
  */
@@ -952,6 +963,15 @@ void init_chimes() {
 
             VERIFY(fname_to_npm_info.insert(pair<string, npm_context>(fname,
                             ctx)).second);
+
+            if (fname_to_original_function.find(fname) !=
+                    fname_to_original_function.end()) {
+                void *npm_fptr = provided_npm_functions.at(fname);
+                void *original_ptr = fname_to_original_function.at(fname);
+                original_function_to_npm.insert(
+                        pair<void *, pair<void *, string> >(original_ptr,
+                            pair<void *, string>(npm_fptr, fname)));
+            }
         }
     }
 
@@ -1518,6 +1538,11 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     for (int i = 0; i < n_provided_npm_functions; i++) {
         std::string fname(va_arg(vl, char *));
         void *fptr = va_arg(vl, void *);
+        void *original_fptr = va_arg(vl, void *);
+
+        assert(fname_to_original_function.find(fname) ==
+                fname_to_original_function.end());
+        fname_to_original_function[fname] = original_fptr;
 
         // Alias locations that are stored in this function
         const int n_alias_locs = va_arg(vl, int);
@@ -1872,7 +1897,8 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return NOT_DISABLED;
 }
 
-void calling_npm(const char *name, size_t return_alias, int n_params, ...) {
+void calling_npm_helper(const char *name, size_t return_alias, int n_params,
+        va_list vl) {
     thread_ctx *ctx = get_my_context();
     std::string fname(name);
     assert(fname_to_npm_info.find(fname) != fname_to_npm_info.end());
@@ -1904,8 +1930,7 @@ void calling_npm(const char *name, size_t return_alias, int n_params, ...) {
     }
 
     assert(callee.get_n_params() == n_params);
-    va_list vl;
-    va_start(vl, n_params);
+
     for (int i = 0; i < n_params; i++) {
         size_t parent = va_arg(vl, size_t);
         size_t child = callee.get_param_alias(i);
@@ -1916,6 +1941,28 @@ void calling_npm(const char *name, size_t return_alias, int n_params, ...) {
             merge_alias_groups(parent, child);
         }
     }
+}
+
+void *translate_fptr(void *fptr, size_t return_alias, int n_params, ...) {
+    map<void *, pair<void *, string> >::iterator exists =
+        original_function_to_npm.find(fptr);
+    if (exists != original_function_to_npm.end()) {
+        va_list vl;
+        va_start(vl, n_params);
+        calling_npm_helper(exists->second.second.c_str(), return_alias,
+                n_params, vl);
+        va_end(vl);
+
+        return exists->second.first;
+    } else {
+        return fptr;
+    }
+}
+
+void calling_npm(const char *name, size_t return_alias, int n_params, ...) {
+    va_list vl;
+    va_start(vl, n_params);
+    calling_npm_helper(name, return_alias, n_params, vl);
     va_end(vl);
 }
 

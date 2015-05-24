@@ -83,6 +83,9 @@ static llvm::cl::opt<std::string> npm_dump_file("n",
 static llvm::cl::opt<std::string> loc_file("e",
         llvm::cl::desc("Alias locs dump file"),
         llvm::cl::value_desc("alias_locs_dump_file"));
+static llvm::cl::opt<std::string> list_of_externs_file("g",
+        llvm::cl::desc("List of externs file"),
+        llvm::cl::value_desc("list_of_externs_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -95,6 +98,7 @@ std::map<std::string, int> earliest_call_line;
 std::map<std::string, int> function_starting_lines;
 std::map<std::string, std::set<std::string>> func_to_alias_locs;
 std::set<std::string> npm_functions;
+std::map<std::string, ExternalNPMCall> external_calls;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -466,6 +470,7 @@ int main(int argc, const char **argv) {
   check_opt(quick_version_file, "Quick version");
   check_opt(npm_dump_file, "NPM Dump file");
   check_opt(loc_file, "Alias locs dump file");
+  check_opt(list_of_externs_file, "List of externs file");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -615,6 +620,34 @@ int main(int argc, const char **argv) {
       loc_dump_file << "\n";
   }
   loc_dump_file.close();
+
+  /*
+   * Dump a list of functions called from NPM functions.
+   */
+  std::ofstream extern_out(std::string(list_of_externs_file.c_str()));
+  for (std::map<std::string, ExternalNPMCall>::iterator i =
+          external_calls.begin(), e = external_calls.end(); i != e; i++) {
+      std::string original_name = i->first;
+      ExternalNPMCall call = i->second;
+
+      int line_no = call.get_first_line_referenced();
+      int containing_decl_line = -1;
+      for (std::map<std::string, int>::iterator i =
+              function_starting_lines.begin(), e =
+              function_starting_lines.end(); i != e; i++) {
+          int start_line = i->second;
+          if (start_line < line_no && (containing_decl_line == -1 ||
+                      start_line > containing_decl_line)) {
+              containing_decl_line = start_line;
+          }
+      }
+      assert(containing_decl_line != -1);
+
+      extern_out << call.get_function_name() << " " << call.get_var() << " " <<
+          containing_decl_line << " " << call.get_filename() << " " <<
+          call.get_var_decl() << " = 0x0;\n";
+  }
+  extern_out.close();
 
   delete insertions;
 

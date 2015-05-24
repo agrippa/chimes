@@ -240,6 +240,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -q ${INFO_FILE_PREFIX}.quick \
             -n ${INFO_FILE_PREFIX}.npm \
             -e ${INFO_FILE_PREFIX}.locs \
+            -g ${INFO_FILE_PREFIX}.list_of_externs \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -263,13 +264,15 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${INCLUDE_QUICK_FILE} \
         ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
 
-    echo Adding NPM function declarations and bodies to ${FIRSTPRIVATE_FILE}
+    echo Adding NPM function declarations, bodies, and pointers to ${FIRSTPRIVATE_FILE}
     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${FIRSTPRIVATE_FILE} ${NPM_FILE} \
-        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls
+        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
+        -e ${INFO_FILE_PREFIX}.list_of_externs 
 
     echo Adding NPM conditionals to ${NPM_FILE}
     cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
-        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls
+        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
+        ${INFO_FILE_PREFIX}.list_of_externs
 
     echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
@@ -278,18 +281,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
         ${CHIMES_DEF} ${DEFINES}
 
-    echo Adding NPM function pointer declarations to ${HARDCODED_CALLS_FILE}
-    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${HARDCODED_CALLS_FILE} \
-        ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
-
-    echo Setting up module initialization for ${FUNCTION_PTR_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${FUNCTION_PTR_FILE} -o ${FINAL_FILE} \
+    echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${HARDCODED_CALLS_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
         -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
         -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
         -t ${INFO_FILE_PREFIX}.tree.info -l ${INFO_FILE_PREFIX}.lines.info \
         -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
-        -e ${INFO_FILE_PREFIX}.externs -n ${INFO_FILE_PREFIX}.npm.decls \
+        -e ${INFO_FILE_PREFIX}.list_of_externs -n ${INFO_FILE_PREFIX}.npm.decls \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs
 
     echo Postprocessing ${FINAL_FILE}
