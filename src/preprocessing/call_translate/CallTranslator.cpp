@@ -30,27 +30,8 @@ void CallTranslator::visitChildren(const clang::Stmt *s) {
 }
 
 std::string CallTranslator::to_string(const clang::Stmt *stmt) {
-    std::string s = rewriter->getRewrittenText(clang::SourceRange(
-                stmt->getLocStart(), stmt->getLocEnd()));
-    return s;
-    // llvm::raw_string_ostream stream(s);
-
-    // stmt->printPretty(stream, NULL, Context->getPrintingPolicy());
-    // stream.flush();
-
-    // int start_index = 0;
-    // while (start_index < s.length() && std::isspace(s[start_index])) {
-    //     start_index++;
-    // }
-
-    // int end_index = s.length() - 1;
-    // while (end_index >= 0 && std::isspace(s[end_index])) {
-    //     end_index--;
-    // }
-
-    // std::string trimmed = s.substr(start_index, end_index - start_index + 1);
-    // std::replace(trimmed.begin(), trimmed.end(), '\n', ' ');
-    // return trimmed;
+    return (rewriter->getRewrittenText(clang::SourceRange(
+                stmt->getLocStart(), stmt->getLocEnd())));
 }
 
 static std::string get_external_func_name(std::string fname) {
@@ -61,7 +42,8 @@ void CallTranslator::VisitStmt(const clang::Stmt *s) {
     // Insert braces around all if and for statement bodies
     if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
         const clang::FunctionDecl *callee = call->getDirectCallee();
-        if (callee && SM->isInMainFile(callee->getLocStart())) {
+
+        if (callee) {
             std::string callee_name = callee->getNameAsString();
             assert(callee_name.size() > 0);
 
@@ -87,33 +69,9 @@ void CallTranslator::VisitStmt(const clang::Stmt *s) {
                      * We need to reference an externally defined NPM function
                      * through a function pointer.
                      */
-                    const int line_no = SM->getPresumedLoc(
-                            call->getLocStart()).getLine();
                     std::string varname = get_external_func_name(
                             callee_name);
 
-                    // if (external_calls.find(callee_name) ==
-                    //         external_calls.end()) {
-
-                    //     std::string filename = SM->getPresumedLoc(
-                    //             call->getLocStart()).getFilename();
-                    //     const clang::FunctionType *type =
-                    //         callee->getFunctionType();
-                    //     assert(type);
-                    //     std::string type_str =
-                    //         type->getCanonicalTypeInternal().getAsString();
-
-                    //     int index = 0;
-                    //     while (type_str[index] != '(') index++;
-                    //     type_str.insert(index, "(*" + varname + ")");
-
-                    //     external_calls.insert(
-                    //             std::pair<std::string, ExternalNPMCall>(
-                    //                 callee_name, ExternalNPMCall(callee_name,
-                    //                     varname, type_str, line_no, filename)));
-                    // } else {
-                    //     external_calls.at(callee_name).update_line(line_no);
-                    // }
                     replace_with = ("(*" + varname + ")");
                 }
             }

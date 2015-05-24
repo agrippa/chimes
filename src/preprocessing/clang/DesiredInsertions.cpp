@@ -1249,10 +1249,43 @@ bool DesiredInsertions::has_callees(std::string name) {
     return (call_tree->find(name) != call_tree->end());
 }
 
+bool DesiredInsertions::no_children_call_function_ptrs(std::string fname,
+        std::set<std::string> *visited) {
+    if (visited->find(fname) != visited->end()) {
+        return true;
+    }
+    visited->insert(fname);
+
+    if (call_tree->find(fname) != call_tree->end()) {
+        if (call_tree->at(fname)->get_calls_unknown_functions()) {
+            return false;
+        }
+
+        for (std::vector<CheckpointCause>::iterator i =
+                call_tree->at(fname)->begin(), e = call_tree->at(fname)->end();
+                i != e; i++) {
+            CheckpointCause cause = *i;
+            if (!no_children_call_function_ptrs(cause.get_name(), visited)) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
 bool DesiredInsertions::eligible_npm_function(std::string fname) {
+    std::set<std::string> visited;
     return (call_tree->find(fname) != call_tree->end() &&
-            !call_tree->at(fname)->get_calls_unknown_functions() &&
+            no_children_call_function_ptrs(fname, &visited) &&
             call_tree->at(fname)->get_may_checkpoint() != DOES);
+}
+
+bool DesiredInsertions::calls_unknown_functions(std::string fname) {
+    if (call_tree->find(fname) == call_tree->end()) {
+        return false;
+    }
+    return (call_tree->at(fname)->get_calls_unknown_functions());
 }
 
 FunctionCallees *DesiredInsertions::get_callees(std::string name) {
@@ -1260,6 +1293,13 @@ FunctionCallees *DesiredInsertions::get_callees(std::string name) {
         return NULL;
     }
     return (call_tree->at(name));
+}
+
+bool DesiredInsertions::always_checkpoints(std::string fname) {
+    if (has_callees(fname)) {
+        return (get_callees(fname)->get_may_checkpoint() == DOES);
+    }
+    return false;
 }
 
 bool DesiredInsertions::does_not_cause_checkpoint(std::string fname) {

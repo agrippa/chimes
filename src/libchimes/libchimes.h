@@ -6,10 +6,10 @@
 
 extern void init_chimes();
 
-extern void *translate_fptr(void *fptr, size_t return_alias,
+extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
+        unsigned loc_id, int n_params, ...);
+extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
         int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, int n_params,
-        ...);
 extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
         unsigned loc_id, unsigned naliases, ...);
 extern int get_next_call();
