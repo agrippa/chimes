@@ -332,7 +332,7 @@ static map<string, bool> does_checkpoint;
  * Pointers to conditional variables protecting NPM mode for functions which may
  * not create checkpoints.
  */
-static map<string, int *> npm_conditional_pointers;
+static map<string, vector<int *> > npm_conditional_pointers;
 
 /*
  * A mapping from unique variable names to the functions called which mean they
@@ -934,17 +934,27 @@ void init_chimes() {
     }
 #endif
 
-    for (map<string, int *>::iterator i = npm_conditional_pointers.begin(),
-            e = npm_conditional_pointers.end(); i != e; i++) {
-        assert(does_checkpoint.find(i->first) != does_checkpoint.end());
+    for (map<string, vector<int *> >::iterator i =
+            npm_conditional_pointers.begin(), e =
+            npm_conditional_pointers.end(); i != e; i++) {
         /*
-         * All variables are initialized to one, so we set to 0 if we discover a
-         * function that will not cause a checkpoint (and for which this
-         * information could not be discovered at compile time) and which we can
-         * therefore run in NPM mode.
+         * If there isn't an entry in does_checkpoint for this function, it must
+         * be an externally compiled function that we don't have checkpointing
+         * information on.
          */
-        if (!does_checkpoint.at(i->first)) {
-            *(i->second) = 0;
+        if (does_checkpoint.find(i->first) != does_checkpoint.end()) {
+            /*
+             * All variables are initialized to one, so we set to 0 if we
+             * discover a function that will not cause a checkpoint (and for
+             * which this information could not be discovered at compile time)
+             * and which we can therefore run in NPM mode.
+             */
+            if (!does_checkpoint.at(i->first)) {
+                for (vector<int *>::iterator ii = i->second.begin(),
+                        ee = i->second.end(); ii != ee; ii++) {
+                    *(*ii) = 0;
+                }
+            }
         }
     }
 
@@ -984,19 +994,24 @@ void init_chimes() {
             requested_npm_functions.begin(), e = requested_npm_functions.end();
             i != e; i++) {
         string fname = i->first;
-        for (vector<void **>::iterator ii = i->second.begin(),
-                ee = i->second.end(); ii != ee; ii++) {
-            void **ptr_to_ptr = *ii;
+        void *npm_fptr = NULL;
 
-            if (provided_npm_functions.find(fname) !=
-                    provided_npm_functions.end() &&
-                    does_checkpoint.find(fname) != does_checkpoint.end() &&
-                    !does_checkpoint.at(fname)) {
-                *ptr_to_ptr = provided_npm_functions.at(fname);
-            } else {
+        if (provided_npm_functions.find(fname) !=
+                provided_npm_functions.end() &&
+                does_checkpoint.find(fname) != does_checkpoint.end() &&
+                !does_checkpoint.at(fname)) {
+            npm_fptr = provided_npm_functions.at(fname);
+        } else {
 #ifdef VERBOSE
-                fprintf(stderr, "Seems like we're missing %s?\n", fname.c_str());
+            fprintf(stderr, "Seems like we're missing %s?\n", fname.c_str());
 #endif
+        }
+
+        if (npm_fptr) {
+            for (vector<void **>::iterator ii = i->second.begin(),
+                    ee = i->second.end(); ii != ee; ii++) {
+                void **ptr_to_ptr = *ii;
+                *ptr_to_ptr = npm_fptr;
             }
         }
     }
@@ -1620,8 +1635,12 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         std::string func_name(va_arg(vl, const char *));
         int *conditional = va_arg(vl, int *);
 
-        VERIFY(npm_conditional_pointers.insert(pair<string, int *>(func_name,
-                        conditional)).second);
+        if (npm_conditional_pointers.find(func_name) ==
+                npm_conditional_pointers.end()) {
+            VERIFY(npm_conditional_pointers.insert(pair<string, vector<int *> >(
+                            func_name, vector<int *>())).second);
+        }
+        npm_conditional_pointers.at(func_name).push_back(conditional);
     }
 
     VERIFY(pthread_rwlock_wrlock(&contains_lock) == 0);
@@ -1897,12 +1916,16 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return NOT_DISABLED;
 }
 
-void calling_npm_helper(const char *name, size_t return_alias, int n_params,
-        va_list vl) {
+static void calling_npm_helper(const char *name, size_t return_alias,
+        unsigned loc_id, int n_params, va_list vl) {
     thread_ctx *ctx = get_my_context();
     std::string fname(name);
     assert(fname_to_npm_info.find(fname) != fname_to_npm_info.end());
     npm_context npm_ctx = fname_to_npm_info.at(fname);
+
+    if (loc_id > 0) {
+        alias_group_changed_helper(loc_id, ctx);
+    }
 
     for (vector<pair<size_t, size_t> >::iterator i =
             npm_ctx.get_aliases_created()->begin(), e =
@@ -1943,31 +1966,16 @@ void calling_npm_helper(const char *name, size_t return_alias, int n_params,
     }
 }
 
-void *translate_fptr(void *fptr, size_t return_alias, int n_params, ...) {
-    map<void *, pair<void *, string> >::iterator exists =
-        original_function_to_npm.find(fptr);
-    if (exists != original_function_to_npm.end()) {
-        va_list vl;
-        va_start(vl, n_params);
-        calling_npm_helper(exists->second.second.c_str(), return_alias,
-                n_params, vl);
-        va_end(vl);
-
-        return exists->second.first;
-    } else {
-        return fptr;
-    }
-}
-
-void calling_npm(const char *name, size_t return_alias, int n_params, ...) {
+void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
+        int n_params, ...) {
     va_list vl;
     va_start(vl, n_params);
-    calling_npm_helper(name, return_alias, n_params, vl);
+    calling_npm_helper(name, return_alias, loc_id, n_params, vl);
     va_end(vl);
 }
 
-void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
-        unsigned naliases, ...) {
+static void calling_helper(void *func_ptr, int lbl, size_t set_return_alias,
+        unsigned loc_id, unsigned naliases, va_list vl) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -2002,15 +2010,39 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
      */
     ctx->set_return_alias(set_return_alias);
 
-    va_list vl;
-    va_start(vl, naliases);
     ctx->init_parent_aliases(vl, naliases);
-    va_end(vl);
 
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLING, __start_time);
 #endif
+}
+
+void *translate_fptr(void *fptr, int lbl, size_t return_alias, unsigned loc_id,
+        int n_params, ...) {
+    map<void *, pair<void *, string> >::iterator exists =
+        original_function_to_npm.find(fptr);
+    void *result;
+    va_list vl;
+    va_start(vl, n_params);
+    if (exists != original_function_to_npm.end()) {
+        calling_npm_helper(exists->second.second.c_str(), return_alias, loc_id,
+                n_params, vl);
+        result = exists->second.first;
+    } else {
+        calling_helper(fptr, lbl, return_alias, loc_id, n_params, vl);
+        result = fptr;
+    }
+    va_end(vl);
+    return (result);
+}
+
+void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
+        unsigned naliases, ...) {
+    va_list vl;
+    va_start(vl, naliases);
+    calling_helper(func_ptr, lbl, set_return_alias, loc_id, naliases, vl);
+    va_end(vl);
 }
 
 static void add_return_alias(bool has_return_alias, size_t returned_alias,
@@ -2803,7 +2835,6 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
          */
         for (stack_frame::iterator i = unpacked->begin(),
                 e = unpacked->end(); i != e; i++) {
-            fprintf(stderr, "unpacked=%s\n", i->first.c_str());
             assert(live->find(i->first) != live->end());
 
             string name = i->first;

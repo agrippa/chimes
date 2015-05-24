@@ -99,6 +99,7 @@ std::map<std::string, int> function_starting_lines;
 std::map<std::string, std::set<std::string>> func_to_alias_locs;
 std::set<std::string> npm_functions;
 std::map<std::string, ExternalNPMCall> external_calls;
+std::set<std::string> definitions_in_main_file;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -182,6 +183,7 @@ public:
                 assert(fdecl != NULL);
                 curr_func = fdecl->getNameAsString();
                 curr_func_decl = fdecl;
+                definitions_in_main_file.insert(curr_func);
 
                 if (insertions->isNvCompilerFunction(curr_func)) continue;
 
@@ -643,9 +645,17 @@ int main(int argc, const char **argv) {
       }
       assert(containing_decl_line != -1);
 
+      /*
+       * NPM function pointers are initialized to the default implementation for
+       * cases where an externally defined function which we know won't
+       * checkpoint (e.g. an inline function in a header file) is used. The
+       * calling function will still execute in NPM mode because we can assert
+       * it does not create a checkpoint, but this pointer will never be updated
+       * with an NPM version of this function because it does not exist.
+       */
       extern_out << call.get_function_name() << " " << call.get_var() << " " <<
           containing_decl_line << " " << call.get_filename() << " " <<
-          call.get_var_decl() << " = 0x0;\n";
+          call.get_var_decl() << " = " << call.get_function_name() << ";\n";
   }
   extern_out.close();
 

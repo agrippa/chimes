@@ -527,10 +527,14 @@ public:
 
     bool always_checkpoints(StackAlloc *alloc);
     FunctionCallees *get_callees(std::string name);
+    bool calls_unknown_functions(std::string fname);
     bool has_callees(std::string name);
     bool may_cause_checkpoint(std::string fname);
     bool does_not_cause_checkpoint(std::string fname);
+    bool always_checkpoints(std::string fname);
     bool eligible_npm_function(std::string fname);
+    bool no_children_call_function_ptrs(std::string fname,
+        std::set<std::string> *visited);
     bool have_main_in_call_tree();
     int get_distance_from_main(std::string fname);
     int get_distance_from_main_helper(std::string curr,

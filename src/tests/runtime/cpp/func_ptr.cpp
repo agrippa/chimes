@@ -1,15 +1,19 @@
-#include "checkpoint.h"
+#include <checkpoint.h>
+#include <assert.h>
+
+int (*fptr)(int) = NULL;
 
 int foo(int a) {
-    return a + 3;
+    return a + 5;
 }
 
 int main(int argc, char **argv) {
-    int c = 4;
-    int (*fp)(int) = &foo;
-    int b = (*fp)(c);
+    fptr = foo;
+    int b = (*fptr)(6);
 
     checkpoint();
 
-    return b + c;
+    assert(b == 11);
+
+    return b;
 }

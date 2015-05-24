@@ -29,6 +29,7 @@ extern std::map<int, std::vector<CallLabel> > call_lbls;
 extern std::map<std::string, std::set<string>> func_to_alias_locs;
 extern std::set<std::string> npm_functions;
 extern std::map<std::string, ExternalNPMCall> external_calls;
+extern std::set<string> definitions_in_main_file;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -808,14 +809,28 @@ static std::string get_external_func_name(std::string fname) {
     return ("____chimes_extern_func_" + fname);
 }
 
+std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call) {
+    clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
+            call->getLocStart());
+    StateChangeInsertion *state = insertions->get_matching(
+            call_start_loc.getLine(),
+            call_start_loc.getColumn(),
+            call_start_loc.getFilename());
+    return (state == NULL ? "0" :
+            insertions->get_alias_loc_var(state->get_id()));
+}
+
 std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
-        CallLocation loc, AliasesPassedToCallSite callsite) {
+        CallLocation loc, AliasesPassedToCallSite callsite, CallLabel lbl) {
     std::stringstream ss;
     std::string fptr_type = call->getCallee()->getType().getAsString();
 
+    std::string loc_arg = get_loc_arg(call);
+
     ss << "((" << fptr_type << ")(translate_fptr((void *)" <<
-        stmtToString(call->getCallee()) << ", " <<
-        callsite.get_return_alias() << "UL, " << callsite.nparams();
+        stmtToString(call->getCallee()) << ", " << lbl.get_lbl() << ", " <<
+        callsite.get_return_alias() << "UL, " << loc_arg << ", " <<
+        callsite.nparams();
 
     for (int i = 0; i < callsite.nparams(); i++) {
         ss << ", " << callsite.alias_no_for(i) << "UL";
@@ -836,9 +851,11 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
         AliasesPassedToCallSite callsite, const CallExpr *call,
         bool use_function_pointer) {
     std::stringstream ss;
+    std::string loc_arg = get_loc_arg(call);
 
     ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " <<
-        callsite.get_return_alias() << "UL, " << callsite.nparams();
+        callsite.get_return_alias() << "UL, " << loc_arg << ", " <<
+        callsite.nparams();
     for (int i = 0; i < callsite.nparams(); i++) {
         ss << ", " << callsite.alias_no_for(i) << "UL";
     }
@@ -901,14 +918,7 @@ std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
     }
     replace_func_call << ")";
 
-    clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
-            call->getLocStart());
-    StateChangeInsertion *state = insertions->get_matching(
-            call_start_loc.getLine(),
-            call_start_loc.getColumn(),
-            call_start_loc.getFilename());
-    std::string loc_arg = (state == NULL ? "0" :
-            insertions->get_alias_loc_var(state->get_id()));
+    std::string loc_arg = get_loc_arg(call);
 
     ss << " calling((void*)" <<
         func_symbol << ", " << lbl.get_lbl() << ", " <<
@@ -1155,6 +1165,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                             loc.get_funcname()) != npm_functions.end());
                 bool no_checkpoint = insertions->does_not_cause_checkpoint(
                             loc.get_funcname());
+                bool always_checkpoints = insertions->always_checkpoints(
+                        loc.get_funcname());
+                bool calls_unknown = insertions->calls_unknown_functions(
+                        loc.get_funcname());
                 if (is_converted_to_npm && no_checkpoint) {
                     std::string npm_call = generateNPMCall(loc, callsite, call,
                             false);
@@ -1163,10 +1177,11 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     continue;
                 }
 
-                if (insertions->have_main_in_call_tree() &&
+                if (call->getDirectCallee() && !always_checkpoints &&
+                        !calls_unknown &&
+                        insertions->have_main_in_call_tree() &&
                         insertions->get_distance_from_main(curr_func) < 2 &&
-                        loc.get_funcname() != "checkpoint" &&
-                        call->getDirectCallee()) {
+                        loc.get_funcname() != "checkpoint") {
                     /*
                      * Use a function pointer if this is an externally
                      * defined function
@@ -1181,13 +1196,16 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         ") : (" + npm_call + "))";
                     ReplaceText(clang::SourceRange(call->getLocStart(),
                                 call->getLocEnd()), cond_call);
+                    ompTree->add_function_call(call, lbl.get_lbl());
                     continue;
                 }
+
                 if (!call->getDirectCallee()) {
                     std::string ptr_call = generateFunctionPointerCall(call,
-                            loc, callsite);
+                            loc, callsite, lbl);
                     ReplaceText(clang::SourceRange(call->getLocStart(),
                                 call->getLocEnd()), ptr_call);
+                    ompTree->add_function_call(call, lbl.get_lbl());
                     continue;
                 }
 
@@ -1360,14 +1378,18 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
              */
             if (call->getDirectCallee() &&
                     ignorable->find(callee_name) == ignorable->end() &&
-                    callee_name != "checkpoint") {
-                const FunctionType *ftype = call->getDirectCallee()->getFunctionType();
+                    callee_name != "checkpoint" &&
+                    definitions_in_main_file.find(callee_name) ==
+                        definitions_in_main_file.end()) {
+                const FunctionType *ftype =
+                    call->getDirectCallee()->getFunctionType();
                 std::string type_str =
                     ftype->getCanonicalTypeInternal().getAsString();
 
                 int index = 0;
                 while (type_str[index] != '(') index++;
-                type_str.insert(index, "(*" + get_external_func_name(callee_name) + ")");
+                type_str.insert(index, "(*" +
+                        get_external_func_name(callee_name) + ")");
 
                 const int line_no = SM->getPresumedLoc(
                         call->getLocStart()).getLine();

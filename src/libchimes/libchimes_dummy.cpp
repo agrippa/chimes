@@ -113,8 +113,9 @@ void init_chimes() {
     }
 }
 
-void calling_npm(const char *name, size_t return_alias, int n_params,
-        ...) {
+
+void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
+        int n_params, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
@@ -140,7 +141,8 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return 1;
 }
 
-void *translate_fptr(void *fptr, size_t return_alias, int n_params, ...) {
+void *translate_fptr(void *fptr, int lbl, size_t return_alias,
+        unsigned loc_id, int n_params, ...) {
     map<void *, void *>::iterator exists = original_function_to_npm.find(fptr);
     if (exists != original_function_to_npm.end()) {
         return exists->second;

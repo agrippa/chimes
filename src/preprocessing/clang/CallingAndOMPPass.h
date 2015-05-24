@@ -99,6 +99,7 @@ private:
     std::string get_unique_region_varname();
     std::string get_unique_argument_varname();
     std::string get_unique_disable_varname();
+    std::string get_loc_arg(const CallExpr *call);
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is
@@ -125,7 +126,7 @@ private:
     std::string generateNormalCall(const CallExpr *call,
             CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite);
     std::string generateFunctionPointerCall(const CallExpr *call,
-            CallLocation loc, AliasesPassedToCallSite callsite);
+            CallLocation loc, AliasesPassedToCallSite callsite, CallLabel lbl);
 
     std::set<std::string> get_private_vars(std::map<std::string,
             std::vector<std::string> > *clauses);
