@@ -146,6 +146,7 @@ namespace {
         bool isKnownFunction(Function *F);
         CALLS_CHECKPOINT knownFunctionCreatesCheckpoint(Function *F);
         std::map<std::string, CALLS_CHECKPOINT> doesFunctionCreateCheckpoint;
+        std::map<std::string, std::vector<unsigned> > functionChanges;
 
         void printFunctions(Module &M);
         void printValuesAndAliasGroups(
@@ -1054,20 +1055,42 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
                     value_to_alias_group.end());
             size_t group = value_to_alias_group[store->getPointerOperand()];
             groups->insert(group);
-        } else if (isa<CallInst>(curr_inst) && !isa<IntrinsicInst>(curr_inst)) {
+        } else if (isa<CallInst>(curr_inst)) {
+            CallInst *call = dyn_cast<CallInst>(curr_inst);
+            Function *callee = call->getCalledFunction();
+            /*
+             * For functions that we know aren't a part of this compilation
+             * unit, update the change set to include any of their pointer
+             * arguments that we know are modified. TODO is this a problem for
+             * any other function that is outside this compilation unit but in a
+             * third-party library instead?
+             */
+            if (isKnownFunction(callee)) {
+                std::vector<unsigned> changes = functionChanges.at(
+                        callee->getName().str());
+                for (std::vector<unsigned>::iterator i = changes.begin(),
+                        e = changes.end(); i!= e; i++) {
+                    unsigned arg = *i;
+                    assert(arg < call->getNumArgOperands());
+                    Value *arg_val = call->getArgOperand(arg);
+                    assert(arg_val->getType()->isPointerTy());
+                    size_t group = value_to_alias_group.at(arg_val);
+                    groups->insert(group);
+                }
+            }
             /*
              * If we hit a call, we need to register the changes made within a
              * basic block so that a callee that calls checkpoint() knows to
              * checkpoint that state.
              */
-            CallInst *call = dyn_cast<CallInst>(curr_inst);
-            Function *callee = call->getCalledFunction();
-            if (mayCreateCheckpoint(callee) != DOES_NOT) {
-                if (groups->size() > 0) {
-                    unionGroups(call->getDebugLoc().getLine(),
-                            call->getDebugLoc().getCol(), filename, groups,
-                            false, true, callee, M);
-                    groups = new std::set<size_t>();
+            if (!isa<IntrinsicInst>(curr_inst)) {
+                if (mayCreateCheckpoint(callee) != DOES_NOT) {
+                    if (groups->size() > 0) {
+                        unionGroups(call->getDebugLoc().getLine(),
+                                call->getDebugLoc().getCol(), filename, groups,
+                                false, true, callee, M);
+                        groups = new std::set<size_t>();
+                    }
                 }
             }
         }
@@ -1230,16 +1253,38 @@ void Play::initKnownFunctions() {
             nchars--;
         }
 
-        if (nchars > 0) {
-            doesFunctionCreateCheckpoint[std::string(line)] = DOES_NOT;
+        std::string s(line);
+
+        std::string fname;
+        std::vector<unsigned> changes;
+
+        size_t end = s.find(' ');
+        while (end != std::string::npos) {
+            if (fname.size() == 0) {
+                fname = s.substr(0, end);
+            } else {
+                changes.push_back(atoi(s.substr(0, end).c_str()));
+            }
+            s = s.substr(end + 1);
+            end = s.find(' ');
+        }
+        if (fname.size() == 0) {
+            fname = s;
+        } else {
+            changes.push_back(atoi(s.c_str()));
+        }
+
+        if (fname.size() > 0) {
+            functionChanges[fname] = changes;
+            doesFunctionCreateCheckpoint[fname] = DOES_NOT;
         }
     }
     fclose(fp);
 }
 
 bool Play::isKnownFunction(Function *F) {
-    return doesFunctionCreateCheckpoint.find(F->getName().str()) !=
-        doesFunctionCreateCheckpoint.end();
+    return (F != NULL && doesFunctionCreateCheckpoint.find(F->getName().str()) !=
+        doesFunctionCreateCheckpoint.end());
 }
 
 CALLS_CHECKPOINT Play::knownFunctionCreatesCheckpoint(Function *F) {
