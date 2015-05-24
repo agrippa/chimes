@@ -208,7 +208,9 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
+static int get_my_tid_may_fail();
 static thread_ctx *get_my_context();
+static thread_ctx *get_my_context_may_fail();
 static thread_ctx *get_context_for(unsigned tid);
 static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out);
 
@@ -256,6 +258,7 @@ static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
  * or just repeated function names.
  */
 static map<string, map<string, void *> > functions;
+static set<string> all_functions;
 
 /*
  * A mapping from alias groups to the alias group that they may contain (in the
@@ -360,6 +363,15 @@ static map<string, bool> need_to_checkpoint;
  */
 static map<unsigned, set<size_t> > change_loc_id_to_aliases;
 static unsigned count_change_locations = 1;
+
+/*
+ * This map stores the alias groups which may be members of the specified alias
+ * change locations depending on whether we know that certain functions are
+ * defined/transformed by CHIMES. If they are not, we must conservatively assume
+ * that all pointer-typed arguments are changed by these external functions and
+ * the set of alias groups that may change is added to change_loc_id_to_aliases.
+ */
+static map<unsigned, map<string, set<size_t> > > possible_alias_changes;
 
 /*
  * During resume, track what locations in memory (heap or stack) have already
@@ -1040,6 +1052,48 @@ void init_chimes() {
         need_to_checkpoint[varname] = must_checkpoint;
     }
 
+    /*
+     * Check for any missing function definitions that mean we need to make more
+     * conserviative decisions about the aliases changed by a function call.
+     */
+    for (map<unsigned, map<string, set<size_t> > >::iterator i =
+            possible_alias_changes.begin(), e = possible_alias_changes.end();
+            i != e; i++) {
+        unsigned loc_id = i->first;
+        map<string, set<size_t> > funcname_to_aliases = i->second;
+
+#ifdef VERBOSE
+        fprintf(stderr, "looking at location %u for possible additional "
+                "aliases, %u possible contributing functions\n", loc_id,
+                funcname_to_aliases.size());
+#endif
+
+        for (map<string, set<size_t> >::iterator ii =
+                funcname_to_aliases.begin(), ee = funcname_to_aliases.end();
+                ii != ee; ii++) {
+            string funcname = ii->first;
+            set<size_t> aliases = ii->second;
+
+            if (all_functions.find(funcname) == all_functions.end()) {
+#ifdef VERBOSE
+                fprintf(stderr, "Missing function %s causes conservative alias "
+                        "change groups for location %u\n", funcname.c_str(),
+                        loc_id);
+#endif
+                for (set<size_t>::iterator iii = aliases.begin(),
+                        eee = aliases.end(); iii != eee; iii++) {
+                    change_loc_id_to_aliases.at(loc_id).insert(*iii);
+                }
+            } else {
+#ifdef VERBOSE
+                fprintf(stderr, "Have definition for function %s so can skip "
+                        "conservative change sets at location %u\n",
+                        funcname.c_str(), loc_id);
+#endif
+            }
+        }
+    }
+
     char *checkpoint_file = getenv("CHIMES_CHECKPOINT_FILE");
     if (checkpoint_file != NULL) {
         /*
@@ -1540,12 +1594,42 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
         unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
         const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
-        change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
-                    this_loc_id, set<size_t>()));
+        const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
+
+#ifdef VERBOSE
+        fprintf(stderr, "Change location %u has %u aliases, %u more possible "
+                "aliases\n", this_loc_id, n_aliases_at_loc,
+                n_possible_aliases_at_loc);
+#endif
+
+        set<size_t> aliases_changed;
         for (unsigned j = 0; j < n_aliases_at_loc; j++) {
             size_t alias = va_arg(vl, size_t);
-            change_loc_id_to_aliases.at(this_loc_id).insert(alias);
+            aliases_changed.insert(alias);
         }
+        change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
+                    this_loc_id, aliases_changed));
+
+        map<string, set<size_t> > possible_aliases;
+        for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
+            std::string funcname(va_arg(vl, const char *));
+            unsigned naliases = va_arg(vl, unsigned);
+
+            assert(possible_aliases.find(funcname) == possible_aliases.end());
+            possible_aliases.insert(pair<string, set<size_t> >(funcname,
+                        set<size_t>()));
+
+            for (unsigned k = 0; k < naliases; k++) {
+                size_t alias = va_arg(vl, size_t);
+                possible_aliases.at(funcname).insert(alias);
+            }
+        }
+
+        possible_alias_changes.insert(
+                pair<unsigned, map<string, set<size_t> > >(this_loc_id,
+                    possible_aliases));
+
+
         *change_loc_id_ptr = this_loc_id;
     }
 
@@ -1805,7 +1889,15 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
 
-    thread_ctx *ctx = get_my_context();
+    thread_ctx *ctx = get_my_context_may_fail();
+    /*
+     * If we enter a quick function underneath NPM mode (e.g. through a function
+     * pointer passed to a third-party library) we know it is safe to skip
+     * everything.
+     */
+    if (!ctx) {
+        return (ALREADY_DISABLED);
+    }
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
 
     if (program_stack->size() > 0 && func_ptr != ctx->get_func_ptr()) {
@@ -2076,7 +2168,10 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ms();
 
-    thread_ctx *ctx = get_my_context();
+    thread_ctx *ctx = get_my_context_may_fail();
+    if (!ctx) {
+        return;
+    }
 
     if (!need_to_manage_stack(conditional, std::string(funcname)) ||
             ctx->is_disabled()) {
@@ -2422,6 +2517,7 @@ void register_functions(int nfunctions, const char *module_name, ...) {
                 functions[module_name_str].end());
 
         functions[module_name_str][func_name_str] = func_ptr;
+        all_functions.insert(func_name_str);
     }
     va_end(vl);
 
@@ -4292,6 +4388,22 @@ void chimes_error() {
     exit(42);
 }
 
+static int get_my_tid_may_fail() {
+    pthread_t self = pthread_self();
+
+    VERIFY(pthread_rwlock_rdlock(&pthread_to_id_lock) == 0);
+    map<pthread_t, unsigned>::iterator found = pthread_to_id.find(self);
+    int self_id;
+    if (found == pthread_to_id.end()) {
+        self_id = -1;
+    } else {
+        self_id = found->second;
+    }
+    VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+
+    return self_id;
+}
+
 static unsigned get_my_tid() {
     pthread_t self = pthread_self();
 
@@ -4309,6 +4421,12 @@ static thread_ctx *get_context_for(unsigned tid) {
     VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
     return result;
+}
+
+static thread_ctx *get_my_context_may_fail() {
+    int tid = get_my_tid_may_fail();
+    if (tid < 0) return NULL;
+    else return get_context_for(tid);
 }
 
 static thread_ctx *get_my_context() {

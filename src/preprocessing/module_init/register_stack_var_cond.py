@@ -49,7 +49,7 @@ if __name__ == '__main__':
                           ';\n')
         count_sets += 1
     for e in exits:
-        if len(e.groups_changed) > 0:
+        if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0:
             output_file.write('static unsigned ' +
                               get_alias_loc_var(count_sets) + ';\n')
             count_sets += 1
