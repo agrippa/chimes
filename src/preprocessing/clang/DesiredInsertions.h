@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include <map>
@@ -96,22 +97,71 @@ class ReachableInfo {
 
 class FunctionExit {
     public:
-        FunctionExit(unsigned set_id, size_t set_return_alias) :
-            id(set_id), return_alias(set_return_alias) {}
+        FunctionExit(std::string set_func_name, unsigned set_id,
+                size_t set_return_alias) : func_name(set_func_name), id(set_id),
+            return_alias(set_return_alias) {}
 
+        void update_id(unsigned s) { id = s; }
         unsigned get_id() { return (id); }
         size_t get_return_alias() { return return_alias; }
         std::set<size_t> get_groups_changed_at_termination() {
             return groups_changed_at_termination;
         }
+        std::map<std::string, std::set<size_t> > get_groups_possibly_changed_at_termination() {
+            return (possibly_changed_at_termination);
+        }
+
         void add_changed_group_at_term(size_t group) {
             groups_changed_at_termination.insert(group);
         }
+        void add_possibly_changed_groups(std::string fname, std::set<size_t> groups) {
+            if (possibly_changed_at_termination.find(fname) == possibly_changed_at_termination.end()) {
+                possibly_changed_at_termination.insert(std::pair<std::string,
+                        std::set<size_t> >(fname, std::set<size_t>()));
+            }
+
+            for (std::set<size_t>::iterator i = groups.begin(),
+                    e = groups.end(); i != e; i++) {
+                possibly_changed_at_termination.at(fname).insert(*i);
+            }
+        }
+
+        std::string str() {
+            std::stringstream ss;
+            ss << "exit location (id=" << id << ") [\n";
+            ss << "  funcname=" << func_name << "\n";
+            ss << "  return_alias=" << return_alias << "\n";
+            ss << "  groups_changed=[\n";
+            for (std::set<size_t>::iterator i =
+                    groups_changed_at_termination.begin(), e =
+                    groups_changed_at_termination.end(); i != e; i++) {
+                ss << "    " << *i << "\n";
+            }
+            ss << "  ]\n";
+            ss << "  groups_possibly_changed=[\n";
+            for (std::map<std::string, std::set<size_t> >::iterator i =
+                    possibly_changed_at_termination.begin(), e =
+                    possibly_changed_at_termination.end(); i != e; i++) {
+                std::string fname = i->first;
+                std::set<size_t> groups = i->second;
+                ss << "    " << fname << "-> {\n";
+                for (std::set<size_t>::iterator ii = groups.begin(),
+                        ee = groups.end(); ii != ee; ii++) {
+                    ss << "      " << *ii << "\n";
+                }
+                ss << "    }\n";
+            }
+            ss << "  ]\n";
+            ss << "]\n";
+            return ss.str();
+        }
 
     private:
+        std::string func_name;
         unsigned id;
         size_t return_alias;
         std::set<size_t> groups_changed_at_termination;
+        std::map<std::string, std::set<size_t> > possibly_changed_at_termination;
 };
 
 class FunctionArgumentAliasGroups {
@@ -392,10 +442,12 @@ class StateChangeInsertion {
 public:
     StateChangeInsertion(unsigned set_id, std::string set_filename,
             int set_line_no, int set_col, std::vector<size_t> *set_groups,
+            std::map<std::string, std::set<size_t> > *set_possibly_changed_groups,
             std::string set_direct, std::string set_call,
             std::string set_reason) :
             id(set_id), filename(set_filename), line_no(set_line_no),
-            col(set_col), groups(set_groups) {
+            col(set_col), groups(set_groups),
+            possibly_changed_groups(set_possibly_changed_groups) {
         direct = (set_direct == "direct");
         call = (set_call == "call");
         reason = set_reason;
@@ -414,12 +466,43 @@ public:
     bool is_terminator() { return !call; }
     std::string get_reason() { return reason; }
 
+    std::string str() {
+        std::stringstream ss;
+        ss << "state change location (id=" << id << ") {\n";
+        ss << "  loc=" << filename << ":" << line_no << ":" << col << "\n";
+        ss << "  direct? " << (direct ? "true" : "false") << ", call? " <<
+            (call ? "true" : "false") << ", reason=" << reason << "\n";
+        ss << "  groups=[";
+        for (std::vector<size_t>::iterator i = groups->begin(),
+                e = groups->end(); i != e; i++) {
+            ss << " " << *i;
+        }
+        ss << " ]\n";
+        ss << "  possibly_changed_groups=[\n";
+        for (std::map<std::string, std::set<size_t> >::iterator i =
+                possibly_changed_groups->begin(), e =
+                possibly_changed_groups->end(); i != e; i++) {
+            std::string fname = i->first;
+            std::set<size_t> groups = i->second;
+            ss << "    " << fname << " -> {";
+            for (std::set<size_t>::iterator ii = groups.begin(),
+                    ee = groups.end(); ii != ee; ii++) {
+                ss << " " << *ii;
+            }
+            ss << " }\n";
+        }
+        ss << "  ]\n";
+        ss << "\n";
+        return ss.str();
+    }
+
 private:
     unsigned id;
     std::string filename;
     int line_no;
     int col;
     std::vector<size_t> *groups;
+    std::map<std::string, std::set<size_t> > *possibly_changed_groups;
 
     bool direct;
     bool call;
@@ -472,7 +555,7 @@ public:
     }
 
     bool contains(int line, int col, const char *filename);
-    std::vector<size_t> *get_groups(int line, int col, const char *filename);
+    // std::vector<size_t> *get_groups(int line, int col, const char *filename);
 
     void update_alias_change_locations(int line, int col,
             const char *filename, int delta);

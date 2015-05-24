@@ -360,6 +360,14 @@ def find_in_exits(fname, exits):
     assert False, fname
 
 
+def write_possible_changes(fp, possible_aliases_changed, module_id_str):
+    for funcname in possible_aliases_changed.keys():
+        aliases = possible_aliases_changed[funcname]
+        fp.write(', "' + funcname + '", (unsigned)' + str(len(aliases)))
+        for a in aliases:
+            fp.write(', ' + get_alias_str(module_id_str, a))
+
+
 def usage():
     print('usage: python module_init.py ' +
           '-i input-file ' +
@@ -446,7 +454,7 @@ if __name__ == '__main__':
 
     n_change_locs = len(changed)
     for e in exits:
-        if len(e.groups_changed) > 0:
+        if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0:
             n_change_locs += 1
 
     input_file = open(cfg.input_filename, 'r')
@@ -483,17 +491,28 @@ if __name__ == '__main__':
     count = 0
     for change_set in changed:
         output_file.write(',\n         /* alias loc ' + str(count) + ' */ &' + get_alias_loc_var(count) +
-                          ', (unsigned)' + str(len(change_set.aliases_changed)))
+                          ', (unsigned)' +
+                          str(len(change_set.aliases_changed)) +
+                          ', (unsigned)' +
+                          str(len(change_set.possible_aliases_changed)))
         for alias in change_set.aliases_changed:
             output_file.write(', ' + get_alias_str(module_id_str, alias))
+
+        write_possible_changes(output_file, change_set.possible_aliases_changed,
+                               module_id_str)
         count += 1
 
     for ex in exits:
-        if len(ex.groups_changed) > 0:
-            output_file.write(',\n         /* alias loc ' + str(count) + ' */ &' + get_alias_loc_var(count) +
-                              ', (unsigned)' + str(len(ex.groups_changed)))
+        if len(ex.groups_changed) > 0 or len(ex.possible_groups_changed) > 0:
+            output_file.write(',\n         /* alias loc ' + str(count) +
+                              ' */ &' + get_alias_loc_var(count) +
+                              ', (unsigned)' + str(len(ex.groups_changed)) +
+                              ', (unsigned)' +
+                              str(len(ex.possible_groups_changed)))
             for alias in ex.groups_changed:
                 output_file.write(', ' + get_alias_str(module_id_str, alias))
+            write_possible_changes(output_file, ex.possible_groups_changed,
+                                   module_id_str)
             count += 1
 
     for fname in defined_npms:

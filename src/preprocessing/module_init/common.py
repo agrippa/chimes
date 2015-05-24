@@ -28,15 +28,57 @@ class Callees(object):
 
 
 class AliasesChanged(object):
-    def __init__(self, aliases_changed):
+    def __init__(self, filename, line_no, col, reason, aliases_changed,
+                 possible_aliases_changed):
+        self.filename = filename
+        self.line_no = line_no
+        self.col = col
+        self.reason = reason
         self.aliases_changed = aliases_changed
+        self.possible_aliases_changed = possible_aliases_changed
+
+    def __str__(self):
+        s = 'state change location {\n'
+        s += '  loc=' + self.filename + ':' + str(self.line_no) + ':' + \
+             str(self.col) + '\n'
+        s += '  reason=' + self.reason + '\n'
+        s += '  aliases_changed=['
+        for g in self.aliases_changed:
+            s += ' ' + g
+        s += ' ]\n'
+        s += '  possible_aliases_changed=[\n'
+        for fname in self.possible_aliases_changed.keys():
+            s += '    ' + fname + ' -> {\n'
+            for g in self.possible_aliases_changed[fname]:
+                s += '      ' + g + '\n'
+            s += '    }\n'
+        s += '  ]\n'
+        s += '}\n'
+        return s
 
 
 class ExitInfo(object):
-    def __init__(self, funcname, return_alias, groups_changed):
+    def __init__(self, funcname, return_alias, groups_changed,
+                 possible_groups_changed):
         self.funcname = funcname
         self.return_alias = return_alias
         self.groups_changed = groups_changed
+        self.possible_groups_changed = possible_groups_changed
+
+    def __str__(self):
+        s = 'terminator info {\n'
+        s += '  funcname=' + self.funcname + '\n'
+        s += '  return_alias=' + self.return_alias + '\n'
+        s += '  groups_changed=' + str(self.groups_changed) + '\n'
+        s += '  possible_groups_changed={\n'
+        for f in self.possible_groups_changed.keys():
+            s += '    ' + f + ' -> {\n'
+            for g in self.possible_groups_changed[f]:
+                s += '      ' + g + '\n'
+            s += '    }\n'
+        s += '  }\n'
+        s += '}\n'
+        return s
 
 
 def transfer(input_file, output_file):
@@ -116,22 +158,66 @@ def count_alias_sets(lines_filename):
     return count
 
 
+def filter_commas(aliases):
+    return [(t[:len(t) - 1] if t[len(t) - 1] == ',' else t) for t in aliases]
+
+
 def get_aliases_changed(lines_filename):
     changed = []
     fp = open(lines_filename, 'r')
 
     for line in fp:
         tokens = line.split()
+        filename = tokens[0]
+        line_no = int(tokens[1])
+        col = int(tokens[2])
+
         index = 5
         end = index
         while tokens[end] != '}':
             end += 1
 
         aliases = tokens[index:end]
-        aliases = [(t[:len(t) - 1] if t[len(t) - 1] == ',' else t) for t in aliases]
-        changed.append(AliasesChanged(aliases))
+        aliases = filter_commas(aliases)
+        index = end
+
+        index += 1
+        reason = tokens[index]
+
+        index += 1 # skip past open brace
+        assert tokens[index] == '{'
+        index += 1
+
+        if tokens[index] == '}':
+            changed.append(AliasesChanged(filename, line_no, col, reason,
+                                          aliases, {}))
+        else:
+            all_possible_aliases = {}
+            while True:
+                fname = tokens[index]
+                assert tokens[index + 1] == '{'
+                index += 2
+                end = index
+                while tokens[end][0] != '}':
+                    end += 1
+                possible_aliases = tokens[index:end]
+                possible_aliases = filter_commas(possible_aliases)
+               
+                assert fname not in all_possible_aliases
+                all_possible_aliases[fname] = possible_aliases
+
+                index = end + 1
+                if tokens[index] == '}':
+                    break
+            changed.append(AliasesChanged(filename, line_no, col, reason,
+                                          aliases, all_possible_aliases))
 
     fp.close()
+
+    for c in changed:
+        print(str(c))
+        print()
+
     return changed
 
 
@@ -140,11 +226,44 @@ def get_exit_info(exit_filename):
     fp = open(exit_filename, 'r')
     for line in fp:
         tokens = line.split()
-        if len(tokens) > 2: # if there are aliases changed here
-            exits.append(ExitInfo(tokens[0], tokens[1], tokens[2:]))
-        else:
-            exits.append(ExitInfo(tokens[0], tokens[1], []))
+        funcname = tokens[0]
+        return_alias_str = tokens[1]
+
+        n_changed = int(tokens[2])
+        changed = []
+        index = 3
+        while n_changed > 0:
+            changed.append(tokens[index])
+            n_changed -= 1
+            index += 1
+
+        n_possibly_changed = int(tokens[index])
+        index += 1
+        possibly_changed = {}
+        while n_possibly_changed > 0:
+            fname = tokens[index]
+            index += 1
+            n_nested = int(tokens[index])
+            index += 1
+
+            nested_changes = []
+            while n_nested > 0:
+                nested_changes.append(tokens[index])
+                n_nested -= 1
+                index += 1
+
+            assert fname not in possibly_changed
+            possibly_changed[fname] = nested_changes
+            n_possibly_changed -= 1
+
+        exits.append(ExitInfo(funcname, return_alias_str, changed,
+                              possibly_changed))
     fp.close()
+
+    for e in exits:
+        print(str(e))
+        print()
+
     return exits
 
 
