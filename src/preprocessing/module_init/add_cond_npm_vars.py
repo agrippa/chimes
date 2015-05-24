@@ -4,13 +4,14 @@ import sys
 from common import transfer, get_npms
 
 if __name__ == '__main__':
-    if len(sys.argv) != 4:
-        print('usage: python add_cond_npm_vars.py input-file output-file npm-file')
+    if len(sys.argv) != 5:
+        print('usage: python add_cond_npm_vars.py input-file output-file npm-file externs-file')
         sys.exit(1)
 
     input_filename = sys.argv[1]
     output_filename = sys.argv[2]
     npm_filename = sys.argv[3]
+    externs_filename = sys.argv[4]
 
     npms = get_npms(npm_filename)
 
@@ -18,7 +19,18 @@ if __name__ == '__main__':
     output_file = open(output_filename, 'w')
 
     for npm in npms:
-        output_file.write('int ____chimes_does_checkpoint_' + npm + '_npm = 1;\n')
+        output_file.write('static int ____chimes_does_checkpoint_' + npm.strip() + '_npm = 1;\n')
+
+    fp = open(externs_filename, 'r')
+    for line in fp:
+        # First token is the original function name, the rest of this line is a
+        # function pointer declaration
+        tokens = line.split()
+        if tokens[0] not in npms:
+            output_file.write('static int ____chimes_does_checkpoint_' + tokens[0] + '_npm = 1;\n')
+            npms.append(tokens[0])
+    fp.close()
+
     output_file.write('\n')
 
     transfer(input_file, output_file)

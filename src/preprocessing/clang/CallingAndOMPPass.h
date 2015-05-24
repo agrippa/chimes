@@ -120,9 +120,12 @@ private:
     void verify_supported_clauses(std::string pragma_name,
             std::map<std::string, std::vector<std::string> > *clauses);
     std::string generateNPMCall(CallLocation loc,
-            AliasesPassedToCallSite callsite, const CallExpr *call);
+            AliasesPassedToCallSite callsite, const CallExpr *call,
+            bool use_function_pointer);
     std::string generateNormalCall(const CallExpr *call,
             CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite);
+    std::string generateFunctionPointerCall(const CallExpr *call,
+            CallLocation loc, AliasesPassedToCallSite callsite);
 
     std::set<std::string> get_private_vars(std::map<std::string,
             std::vector<std::string> > *clauses);

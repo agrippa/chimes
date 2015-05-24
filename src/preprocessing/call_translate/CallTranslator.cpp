@@ -16,7 +16,7 @@
 
 extern INSIDE_FUNC curr_func_is_quick;
 extern INSIDE_FUNC curr_func_is_npm;
-extern std::map<std::string, ExternalNPMCall> external_calls;
+// extern std::map<std::string, ExternalNPMCall> external_calls;
 extern std::set<std::string> *ignorable;
 
 void CallTranslator::visitChildren(const clang::Stmt *s) {
@@ -92,28 +92,28 @@ void CallTranslator::VisitStmt(const clang::Stmt *s) {
                     std::string varname = get_external_func_name(
                             callee_name);
 
-                    if (external_calls.find(callee_name) ==
-                            external_calls.end()) {
+                    // if (external_calls.find(callee_name) ==
+                    //         external_calls.end()) {
 
-                        std::string filename = SM->getPresumedLoc(
-                                call->getLocStart()).getFilename();
-                        const clang::FunctionType *type =
-                            callee->getFunctionType();
-                        assert(type);
-                        std::string type_str =
-                            type->getCanonicalTypeInternal().getAsString();
+                    //     std::string filename = SM->getPresumedLoc(
+                    //             call->getLocStart()).getFilename();
+                    //     const clang::FunctionType *type =
+                    //         callee->getFunctionType();
+                    //     assert(type);
+                    //     std::string type_str =
+                    //         type->getCanonicalTypeInternal().getAsString();
 
-                        int index = 0;
-                        while (type_str[index] != '(') index++;
-                        type_str.insert(index, "(*" + varname + ")");
+                    //     int index = 0;
+                    //     while (type_str[index] != '(') index++;
+                    //     type_str.insert(index, "(*" + varname + ")");
 
-                        external_calls.insert(
-                                std::pair<std::string, ExternalNPMCall>(
-                                    callee_name, ExternalNPMCall(callee_name,
-                                        varname, type_str, line_no, filename)));
-                    } else {
-                        external_calls.at(callee_name).update_line(line_no);
-                    }
+                    //     external_calls.insert(
+                    //             std::pair<std::string, ExternalNPMCall>(
+                    //                 callee_name, ExternalNPMCall(callee_name,
+                    //                     varname, type_str, line_no, filename)));
+                    // } else {
+                    //     external_calls.at(callee_name).update_line(line_no);
+                    // }
                     replace_with = ("(*" + varname + ")");
                 }
             }

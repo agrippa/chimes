@@ -3,7 +3,7 @@ import os
 import sys
 from common import StackVar, transfer, get_stack_vars, Callees, get_call_tree, \
                    always_checkpoints, get_exit_info, get_alias_loc_var, \
-                   get_aliases_changed, get_npms
+                   get_aliases_changed, get_npms, get_externs, ExternNPM
 
 
 class ModuleInitConfig(object):
@@ -101,15 +101,6 @@ class Call(object):
         self.param_aliases_str.append(a)
 
 
-class ExternNPM(object):
-    def __init__(self, original_fname, varname, line_no, filename, decl):
-        self.original_fname = original_fname
-        self.varname = varname
-        self.line_no = line_no
-        self.filename = filename
-        self.decl = decl
-
-
 class FunctionInfo(object):
     def __init__(self, name):
         self.name = name
@@ -168,17 +159,6 @@ def parse_64bit_int(s):
         # 2.x separates int and long, so we need to explicitly ask for long
         i = long(s)
     return i
-
-
-def get_externs(filename):
-    result = []
-    fp = open(filename, 'r')
-    for line in fp:
-        tokens = line.split()
-        result.append(ExternNPM(tokens[0], tokens[1], int(tokens[2]),
-                                tokens[3], ' '.join(tokens[4:])))
-    fp.close()
-    return result
 
 
 def get_change_locs(locs_filename):
@@ -485,8 +465,8 @@ if __name__ == '__main__':
     # problem because these methods are only called once per file at the very
     # start of execution time and that wouldn't be included in any
     # performance-critical sections.
-    output_file.write('#pragma GCC push_options\n')
-    output_file.write('#pragma GCC optimize(0)\n')
+    # output_file.write('#pragma GCC push_options\n')
+    # output_file.write('#pragma GCC optimize(0)\n')
     output_file.write('\n\nstatic int module_init() {\n')
     output_file.write('    init_module(' + module_id_str + 'UL, ' +
                       str(len(reachable)) + ', ' +
@@ -495,7 +475,7 @@ if __name__ == '__main__':
                       str(n_change_locs) + ', ' +
                       str(len(defined_npms)) + ', ' +
                       str(len(externs)) + ', ' +
-                      str(len(defined_npms)) + ', ' +
+                      str(len(defined_npms) + len(externs)) + ', ' +
                       str(len(structs)))
 
     # We must traverse changed before exits to ensure consistency in the
@@ -522,7 +502,9 @@ if __name__ == '__main__':
         func_info = functions[fname]
         func_exit_info = find_in_exits(fname, exits)
 
-        output_file.write(',\n         /* provided NPM */ "' + fname + '", (void *)(&' + fname + '_npm)')
+        output_file.write(',\n         /* provided NPM */ "' + fname +
+                          '", (void *)(&' + fname + '_npm), (void *)(&' +
+                          fname + ')')
 
         # If no assignments are made in a function (e.g. if it's simply a return
         # statement) it may not have any change locations.
@@ -558,11 +540,17 @@ if __name__ == '__main__':
 
 
     for ex in externs:
-        output_file.write(',\n        /* external NPM dep */ "' + ex.original_fname + '", (void **)&(' + ex.varname + ')')
+        output_file.write(',\n        /* external NPM dep */ "' +
+                          ex.original_fname + '", (void **)&(' + ex.varname +
+                          ')')
 
     for npm in defined_npms:
         output_file.write(',\n        /* NPM cond var */ "' + npm + '", &(____chimes_does_checkpoint_' +
                           npm + '_npm)')
+    for ex in externs:
+        output_file.write(',\n        /* NPM cond var */ "' + ex.original_fname + '", &(____chimes_does_checkpoint_' +
+                          ex.original_fname + '_npm)')
+        
 
     for k in reachable.keys():
         output_file.write(',\n        /* reachable pair */ ' + get_alias_str(module_id_str, k) + ', ' +
@@ -604,7 +592,7 @@ if __name__ == '__main__':
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')
-    output_file.write('#pragma GCC pop_options\n')
+    # output_file.write('#pragma GCC pop_options\n')
     output_file.write('\n')
     output_file.write('static const int __libchimes_module_init = module_init();\n\n')
 

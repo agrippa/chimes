@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <assert.h>
 
+#include <set>
 #include <string>
 #include <map>
 #include <vector>
@@ -43,6 +44,8 @@ static unsigned long long count_checkpoint = 0;
 int ____chimes_replaying = 0;
 static map<string, vector<void **> > requested_npm_functions;
 static map<string, void *> provided_npm_functions;
+static set<int *> all_npm_conditionals;
+static map<void *, void *> original_function_to_npm;
 
 #ifdef __CHIMES_PROFILE
 void onexit() {
@@ -72,21 +75,40 @@ void init_chimes() {
 #ifdef __CHIMES_PROFILE
     atexit(onexit);
 #endif
+    fprintf(stderr, "\n");
     /*
      * Resolve any NPM function pointers that different compilation units depend
      * on, and updated the compilation-unit-local function pointers for those
      * externally defined NPM function pointers.
      */
+    bool all_satisfied = true;
     for (map<string, vector<void **> >::iterator i =
             requested_npm_functions.begin(), e = requested_npm_functions.end();
-            i != e; i++) {
+            i != e && all_satisfied; i++) {
         string fname = i->first;
         for (vector<void **>::iterator ii = i->second.begin(),
                 ee = i->second.end(); ii != ee; ii++) {
             void **ptr_to_ptr = *ii;
 
-            assert(provided_npm_functions.find(fname) != provided_npm_functions.end());
-            *ptr_to_ptr = provided_npm_functions.at(fname);
+#ifdef VERBOSE
+            fprintf(stderr, "%s satisfied? %d\n", fname.c_str(),
+                    provided_npm_functions.find(fname) !=
+                    provided_npm_functions.end());
+#endif
+
+            if (provided_npm_functions.find(fname) == provided_npm_functions.end()) {
+                all_satisfied = false;
+                break;
+            } else {
+                *ptr_to_ptr = provided_npm_functions.at(fname);
+            }
+        }
+    }
+
+    if (all_satisfied) {
+        for (set<int *>::iterator i = all_npm_conditionals.begin(),
+                e = all_npm_conditionals.end(); i != e; i++) {
+            *(*i) = 0;
         }
     }
 }
@@ -112,10 +134,22 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_new_stack, 1);
 #endif
+#ifdef VERBOSE
+    fprintf(stderr, "Entering %s\n", funcname);
+#endif
     return 1;
 }
 
-extern void init_module(size_t module_id, int n_contains_mappings,
+void *translate_fptr(void *fptr, size_t return_alias, int n_params, ...) {
+    map<void *, void *>::iterator exists = original_function_to_npm.find(fptr);
+    if (exists != original_function_to_npm.end()) {
+        return exists->second;
+    } else {
+        return fptr;
+    }
+}
+
+void init_module(size_t module_id, int n_contains_mappings,
         int nfunctions, int nvars, int n_change_locs,
         int n_provided_npm_functions, int n_external_npm_functions,
         int n_npm_conditionals, int nstructs, ...) {
@@ -136,7 +170,15 @@ extern void init_module(size_t module_id, int n_contains_mappings,
     for (int i = 0; i < n_provided_npm_functions; i++) {
         std::string fname(va_arg(vl, char *));
         void *fptr = va_arg(vl, void *);
+        void *original_fptr = va_arg(vl, void *);
 
+        assert(original_function_to_npm.find(original_fptr) ==
+                original_function_to_npm.end());
+        original_function_to_npm[original_fptr] = fptr;
+
+#ifdef VERBOSE
+        fprintf(stderr, "%s provided\n", fname.c_str());
+#endif
         VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
                         fptr)).second);
 
@@ -195,8 +237,7 @@ extern void init_module(size_t module_id, int n_contains_mappings,
         std::string func_name(va_arg(vl, const char *));
         int *conditional = va_arg(vl, int *);
 
-        // For dummy mode, always run in NPM mode
-        *conditional = 0;
+        all_npm_conditionals.insert(conditional);
     }
 
     va_end(vl);

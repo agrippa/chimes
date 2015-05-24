@@ -35,7 +35,7 @@ static llvm::cl::opt<std::string> extern_npm_file("e",
 INSIDE_FUNC curr_func_is_quick = UNKNOWN;
 INSIDE_FUNC curr_func_is_npm = UNKNOWN;
 static CallTranslator *transform = NULL;
-std::map<std::string, ExternalNPMCall> external_calls;
+// std::map<std::string, ExternalNPMCall> external_calls;
 std::set<int> function_starting_lines;
 std::set<std::string> *ignorable = NULL;
 
@@ -173,29 +173,29 @@ int main(int argc, const char **argv) {
   int err = Tool->run(factory);
   if (err) return err;
 
-  std::ofstream extern_out(std::string(extern_npm_file.c_str()));
-  for (std::map<std::string, ExternalNPMCall>::iterator i =
-          external_calls.begin(), e = external_calls.end(); i != e; i++) {
-      std::string original_name = i->first;
-      ExternalNPMCall call = i->second;
+  // std::ofstream extern_out(std::string(extern_npm_file.c_str()));
+  // for (std::map<std::string, ExternalNPMCall>::iterator i =
+  //         external_calls.begin(), e = external_calls.end(); i != e; i++) {
+  //     std::string original_name = i->first;
+  //     ExternalNPMCall call = i->second;
 
-      int line_no = call.get_first_line_referenced();
-      int containing_decl_line = -1;
-      for (std::set<int>::iterator i = function_starting_lines.begin(),
-              e = function_starting_lines.end(); i != e; i++) {
-          int start_line = *i;
-          if (start_line < line_no && (containing_decl_line == -1 ||
-                      start_line > containing_decl_line)) {
-              containing_decl_line = start_line;
-          }
-      }
-      assert(containing_decl_line != -1);
+  //     int line_no = call.get_first_line_referenced();
+  //     int containing_decl_line = -1;
+  //     for (std::set<int>::iterator i = function_starting_lines.begin(),
+  //             e = function_starting_lines.end(); i != e; i++) {
+  //         int start_line = *i;
+  //         if (start_line < line_no && (containing_decl_line == -1 ||
+  //                     start_line > containing_decl_line)) {
+  //             containing_decl_line = start_line;
+  //         }
+  //     }
+  //     assert(containing_decl_line != -1);
 
-      extern_out << call.get_function_name() << " " << call.get_var() << " " <<
-          containing_decl_line << " " << call.get_filename() << " " <<
-          call.get_var_decl() << " = NULL;\n";
-  }
-  extern_out.close();
+  //     extern_out << call.get_function_name() << " " << call.get_var() << " " <<
+  //         containing_decl_line << " " << call.get_filename() << " " <<
+  //         call.get_var_decl() << " = NULL;\n";
+  // }
+  // extern_out.close();
 
   return 0;
 }
