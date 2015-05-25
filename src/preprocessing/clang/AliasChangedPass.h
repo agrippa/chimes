@@ -38,6 +38,8 @@ public:
     bool createsOMPTree() override { return false; }
     bool requiresMangledVarsReset() { return false; }
     bool transformsOriginal() { return false; }
+private:
+    bool isRValueOfAssignment(const clang::Stmt *curr, const clang::Stmt *prev);
 };
 
 #endif

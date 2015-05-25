@@ -1623,9 +1623,19 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         void *fptr = va_arg(vl, void *);
         void *original_fptr = va_arg(vl, void *);
 
-        assert(fname_to_original_function.find(fname) ==
-                fname_to_original_function.end());
-        fname_to_original_function[fname] = original_fptr;
+        /*
+         * original_fptr will be NULL for any functions whose addresses are not
+         * taken within the same compilation unit. This serves as an
+         * optimization to help the compiler with inter-procedural analysis --
+         * code runs much more slowly when you load the function address for
+         * every function in a compilation unit, forcing the compiler to make
+         * more conservative decisions.
+         */
+        if (original_fptr) {
+            assert(fname_to_original_function.find(fname) ==
+                    fname_to_original_function.end());
+            fname_to_original_function[fname] = original_fptr;
+        }
 
         // Alias locations that are stored in this function
         const int n_alias_locs = va_arg(vl, int);
