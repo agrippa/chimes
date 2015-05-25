@@ -1210,11 +1210,18 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 }
 
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {
-                    std::string regular_call = generateNormalCall(call, loc,
-                            lbl, callsite);
+                    std::string new_call;
+                    if (loc.get_funcname() == "checkpoint") {
+                        std::stringstream ss;
+                        ss << "checkpoint_transformed(" << lbl.get_lbl() <<
+                            ", " << get_loc_arg(call) << ")";
+                        new_call = ss.str();
+                    } else {
+                        new_call = generateNormalCall(call, loc, lbl, callsite);
+                    }
 
                     ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), regular_call);
+                                call->getLocEnd()), new_call);
                 }
             }
         }

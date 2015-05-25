@@ -39,10 +39,10 @@
 #define SHA1_BLOCK_SIZE  64
 #define SHA1_DIGEST_SIZE 20
 
-#if defined(__cplusplus)
-extern "C"
-{
-#endif
+// #if defined(__cplusplus)
+// extern "C"
+// {
+// #endif
 
 /** BEGIN: UTS RNG Harness **/
 
@@ -99,8 +99,8 @@ VOID_RETURN sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ct
 VOID_RETURN sha1_end(unsigned char hval[], sha1_ctx ctx[1]);
 VOID_RETURN sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
 
-#if defined(__cplusplus)
-}
-#endif
+// #if defined(__cplusplus)
+// }
+// #endif
 
 #endif

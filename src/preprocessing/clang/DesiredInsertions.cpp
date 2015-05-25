@@ -1078,9 +1078,6 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatch
     }
 
     return i;
-    // AliasesPassedToCallSite result = *i;
-    // callsites->erase(i);
-    // return result;
 }
 
 FunctionArgumentAliasGroups* DesiredInsertions::findMatchingFunctionNullReturn(

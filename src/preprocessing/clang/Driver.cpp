@@ -485,7 +485,12 @@ int main(int argc, const char **argv) {
   std::string line;
   while (std::getline(infile, line)) {
       if (line.size() > 0) {
-          ignorable->insert(line);
+          size_t end = line.find(' ');
+          if (end == std::string::npos) {
+              ignorable->insert(line);
+          } else {
+              ignorable->insert(line.substr(0, end));
+          }
       }
   }
   infile.close();

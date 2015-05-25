@@ -3080,7 +3080,12 @@ void reenable_current_thread(bool was_disabled) {
     }
 }
 
+// The code transformer should replace any calls to checkpoint
 void checkpoint() {
+    assert(false);
+}
+
+void checkpoint_transformed(int lbl, unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -3088,11 +3093,20 @@ void checkpoint() {
         perf_profile::current_time_ms();
 
     clock_t enter_time = clock();
-    new_stack((void *)checkpoint, "checkpoint", NULL, 0, 0);
+
+    thread_ctx *ctx = get_my_context();
+    VERIFY(!ctx->is_disabled());
+    ctx->set_calling_label(lbl);
+    ctx->set_func_ptr((void *)checkpoint_transformed);
+    ctx->set_return_alias(0UL);
+    ctx->clear_parent_aliases();
+    if (loc_id > 0) {
+        alias_group_changed_helper(loc_id, ctx);
+    }
+
+    new_stack((void *)checkpoint_transformed, "checkpoint", NULL, 0, 0);
     const bool was_a_replay = ____chimes_replaying;
     checkpoint_ctx *curr_ckpt;
-
-    VERIFY(!get_my_context()->is_disabled());
 
     bool checkpointing_thread = wait_for_all_threads(&enter_time, &curr_ckpt);
 
