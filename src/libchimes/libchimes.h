@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
         unsigned loc_id, int n_params, ...);

@@ -152,9 +152,6 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_new_stack, 1);
 #endif
-#ifdef VERBOSE
-    fprintf(stderr, "Entering %s\n", funcname);
-#endif
     return 1;
 }
 
@@ -423,10 +420,14 @@ cudaError_t cudaMalloc_wrapper(void **ptr, size_t size, size_t group,
 cudaError_t cudaFree_wrapper(void *ptr, size_t group) { }
 #endif
 
-void checkpoint() {
+void checkpoint_transformed(int lbl, unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_checkpoint, 1);
 #endif
+}
+
+void checkpoint() {
+    assert(false);
 }
 
 void wait_for_checkpoint() { }

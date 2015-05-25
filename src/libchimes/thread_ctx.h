@@ -71,6 +71,10 @@ class thread_ctx {
             return parent_aliases[i];
         }
 
+        void clear_parent_aliases() {
+            parent_aliases_length = 0;
+        }
+
         void init_parent_aliases(va_list vl, unsigned naliases) {
             if (naliases > parent_aliases_capacity) {
                 parent_aliases_capacity *= 2;

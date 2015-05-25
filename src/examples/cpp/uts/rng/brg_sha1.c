@@ -39,10 +39,10 @@
 #include "brg_sha1.h"
 #include "brg_endian.h"
 
-#if defined(__cplusplus)
-extern "C"
-{
-#endif
+// #if defined(__cplusplus)
+// extern "C"
+// {
+// #endif
 
 /** BEGIN: UTS RNG Harness **/
 
@@ -134,9 +134,9 @@ int rng_showtype(char *strBuf, int ind) {
 #define rotr32(x,n)   (((x) >> n) | ((x) << (32 - n)))
 #endif
 
-#if !defined(bswap_32)
+// #if !defined(bswap_32)
 #define bswap_32(x) ((rotr32((x), 24) & 0x00ff00ff) | (rotr32((x), 8) & 0xff00ff00))
-#endif
+// #endif
 
 #if (PLATFORM_BYTE_ORDER == IS_LITTLE_ENDIAN)
 #define SWAP_BYTES
@@ -332,6 +332,6 @@ VOID_RETURN sha1(unsigned char hval[], const unsigned char data[], unsigned long
     sha1_begin(cx); sha1_hash(data, len, cx); sha1_end(hval, cx);
 }
 
-#if defined(__cplusplus)
-}
-#endif
+//#if defined(__cplusplus)
+//}
+//#endif
