@@ -32,6 +32,8 @@ static unsigned long long count_leaving_omp_parallel = 0;
 static unsigned long long count_get_parent_vars_stack_depth = 0;
 static unsigned long long count_get_thread_stack_depth = 0;
 static unsigned long long count_checkpoint = 0;
+static map<int, size_t> calling_lbls;
+static pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
 #endif
 
 /*
@@ -68,6 +70,12 @@ void onexit() {
     fprintf(stderr, "get_parent_vars_stack_depth %llu\n", count_get_parent_vars_stack_depth);
     fprintf(stderr, "get_thread_stack_depth %llu\n", count_get_thread_stack_depth);
     fprintf(stderr, "checkpoint %llu\n", count_checkpoint);
+    fprintf(stderr, "\n");
+    fprintf(stderr, "Calling stats:\n");
+    for (map<int, size_t>::iterator i = calling_lbls.begin(),
+            e = calling_lbls.end(); i != e; i++) {
+        fprintf(stderr, "  lbl %d - %lu\n", i->first, i->second);
+    }
 }
 #endif
 
@@ -125,6 +133,15 @@ void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
         unsigned naliases, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling, 1);
+
+    assert(pthread_mutex_lock(&count_mutex) == 0);
+    map<int, size_t>::iterator found = calling_lbls.find(lbl);
+    if (found == calling_lbls.end()) {
+        calling_lbls.insert(pair<int, size_t>(lbl, 1));
+    } else {
+        found->second = found->second + 1;
+    }
+    assert(pthread_mutex_unlock(&count_mutex) == 0);
 #endif
 }
 
@@ -163,8 +180,18 @@ void init_module(size_t module_id, int n_contains_mappings,
 
         va_arg(vl, unsigned *);
         const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+        const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
+
         for (unsigned j = 0; j < n_aliases_at_loc; j++) {
             va_arg(vl, size_t);
+        }
+
+        for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
+            va_arg(vl, const char *);
+            unsigned naliases = va_arg(vl, unsigned);
+            for (unsigned k = 0; k < naliases; k++) {
+                va_arg(vl, size_t);
+            }
         }
     }
 

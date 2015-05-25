@@ -961,6 +961,10 @@ void init_chimes() {
              * which this information could not be discovered at compile time)
              * and which we can therefore run in NPM mode.
              */
+#ifdef VERBOSE
+            fprintf(stderr, "Setting conditional NPM variables for %s\n",
+                    i->first.c_str());
+#endif
             if (!does_checkpoint.at(i->first)) {
                 for (vector<int *>::iterator ii = i->second.begin(),
                         ee = i->second.end(); ii != ee; ii++) {
