@@ -198,9 +198,11 @@ void init_module(size_t module_id, int n_contains_mappings,
         void *fptr = va_arg(vl, void *);
         void *original_fptr = va_arg(vl, void *);
 
-        assert(original_function_to_npm.find(original_fptr) ==
-                original_function_to_npm.end());
-        original_function_to_npm[original_fptr] = fptr;
+        if (original_fptr) {
+            assert(original_function_to_npm.find(original_fptr) ==
+                    original_function_to_npm.end());
+            original_function_to_npm[original_fptr] = fptr;
+        }
 
 #ifdef VERBOSE
         fprintf(stderr, "%s provided\n", fname.c_str());
