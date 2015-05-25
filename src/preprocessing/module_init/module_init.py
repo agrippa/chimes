@@ -460,6 +460,9 @@ if __name__ == '__main__':
     input_file = open(cfg.input_filename, 'r')
     output_file = open(cfg.output_filename, 'w')
 
+    output_file.write('extern char __executable_start;\n')
+    output_file.write('extern char __etext;\n')
+
     transfer(input_file, output_file)
 
     count_conditionally_checkpointable_vars= 0
@@ -603,11 +606,16 @@ if __name__ == '__main__':
     for c in constants:
         write_constant(c, module_id_str)
 
-    output_file.write('    register_functions(' + str(len(functions)) + ', "' +
-                      cfg.input_filename + '"')
-    for f in functions.keys():
-        output_file.write(', "' + f + '", &' + f)
-    output_file.write(');\n')
+    output_file.write('    register_text((void *)&__executable_start, ' +
+                      '(size_t)((&__etext) - (&__executable_start)));\n')
+    # for f in functions.keys():
+    #     output_file.write('    const void *' + f + '_ptr = (const void *)(' + f + ');\n')
+
+    # output_file.write('    register_functions(' + str(len(functions)) + ', "' +
+    #                   cfg.input_filename + '"')
+    # for f in functions.keys():
+    #     output_file.write(', "' + f + '", ' + f + '_ptr')
+    # output_file.write(');\n')
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')

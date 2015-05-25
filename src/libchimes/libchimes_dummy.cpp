@@ -320,7 +320,7 @@ void register_global_var(const char *mangled_name, const char *full_type,
 void register_constant(size_t const_id, void *address,
         size_t length) { }
 
-void register_functions(int nfunctions, const char *module_name,  ...) { }
+void register_text(void *start, size_t len) { }
 
 int alias_group_changed(unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
