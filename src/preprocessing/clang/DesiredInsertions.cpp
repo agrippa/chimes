@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#define VERBOSE
+// #define VERBOSE
 
 static int find_group_end(std::string *s) {
     int index = 0;
@@ -249,7 +249,7 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
             }
         }
 
-        if (info->get_groups_changed_at_termination.size() > 0 ||
+        if (info->get_groups_changed_at_termination().size() > 0 ||
                 info->get_groups_possibly_changed_at_termination().size() > 0) {
             info->update_id(count_locs++);
         }

@@ -1136,17 +1136,25 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
         } else if (!isa<IntrinsicInst>(call)) {
             std::string fname = demangledFunctionName(callee->getName().str());
 
-            if (groups_possibly_changed->find(fname) ==
-                    groups_possibly_changed->end()) {
-                groups_possibly_changed->insert(std::pair<std::string,
-                        std::set<size_t> >(fname, std::set<size_t>()));
-            }
-
+            int n_pointer_args = 0;
             for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
                 Value *arg_val = call->getArgOperand(arg);
-                if (arg_val->getType()->isPointerTy()) {
-                    size_t group = value_to_alias_group.at(arg_val);
-                    groups_possibly_changed->at(fname).insert(group);
+                if (arg_val->getType()->isPointerTy()) n_pointer_args++;
+            }
+
+            if (n_pointer_args > 0) {
+                if (groups_possibly_changed->find(fname) ==
+                        groups_possibly_changed->end()) {
+                    groups_possibly_changed->insert(std::pair<std::string,
+                            std::set<size_t> >(fname, std::set<size_t>()));
+                }
+
+                for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
+                    Value *arg_val = call->getArgOperand(arg);
+                    if (arg_val->getType()->isPointerTy()) {
+                        size_t group = value_to_alias_group.at(arg_val);
+                        groups_possibly_changed->at(fname).insert(group);
+                    }
                 }
             }
         }

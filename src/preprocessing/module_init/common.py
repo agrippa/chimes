@@ -214,9 +214,9 @@ def get_aliases_changed(lines_filename):
 
     fp.close()
 
-    for c in changed:
-        print(str(c))
-        print()
+#     for c in changed:
+#         print(str(c))
+#         print()
 
     return changed
 
@@ -260,9 +260,9 @@ def get_exit_info(exit_filename):
                               possibly_changed))
     fp.close()
 
-    for e in exits:
-        print(str(e))
-        print()
+#     for e in exits:
+#         print(str(e))
+#         print()
 
     return exits
 
