@@ -325,9 +325,11 @@ else
         FILES_STR="${FILES_STR} $f"
     done
 
-    ${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
+    COMPILE_CMD="${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
-        ${LINKER_FLAGS}
+        ${LINKER_FLAGS}"
+    # [[ ! $VERBOSE ]] || echo $COMPILE_CMD
+    $COMPILE_CMD
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

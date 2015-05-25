@@ -252,12 +252,13 @@ static map<size_t, constant_var *> constants;
 static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
- * A mapping from module name to a mapping from unique function name to a
- * pointer to that function in the running application. Multiple modules (i.e.
- * files) may have definitions of the same function, e.g. for inline functions
- * or just repeated function names.
+ * The start and end of the TEXT region of the running executable. This
+ * information can be used to update function pointers without getting the
+ * address of every function in the compilation unit (which messes with compiler
+ * inter-procedural analysis).
  */
-static map<string, map<string, void *> > functions;
+static void *text_start = NULL;
+static size_t text_len = 0;
 static set<string> all_functions;
 
 /*
@@ -478,7 +479,7 @@ static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "leaving_omp_parallel", "register_thread_local_stack_vars",
     "entering_omp_parallel", "checkpoint_thread", "checkpoint", "init_chimes",
     "wait_for_all_threads", "hashing", "register_stack_vars",
-    "register_functions" };
+    "register_text" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
@@ -486,7 +487,6 @@ perf_profile pp(PROFILE_LABELS, N_LABELS);
 static map<unsigned, vector<stack_frame *> *> *unpacked_program_stacks;
 static map<std::string, stack_var *> *unpacked_global_vars;
 static map<size_t, constant_var*> *unpacked_constants;
-static map<string, map<string, void *> > *unpacked_functions;
 static map<unsigned, pair<unsigned, unsigned> > *unpacked_thread_hierarchy;
 static map<unsigned, clock_t> *checkpoint_entry_deltas;
 /*
@@ -1196,16 +1196,12 @@ void init_chimes() {
                 constants_serialized_len);
 
         // read in function pointers from previous program execution
-        uint64_t functions_serialized_len;
-        safe_read(fd, &functions_serialized_len,
-                sizeof(functions_serialized_len), "functions_serialized_len",
+        void *unpacked_text_start;
+        size_t unpacked_text_len;
+        safe_read(fd, &unpacked_text_start, sizeof(unpacked_text_start),
+                "text_start", checkpoint_file);
+        safe_read(fd, &unpacked_text_len, sizeof(unpacked_text_len), "text_len",
                 checkpoint_file);
-        unsigned char *functions_serialized = (unsigned char *)malloc(
-                functions_serialized_len);
-        safe_read(fd, functions_serialized, functions_serialized_len,
-                "functions_serialized", checkpoint_file);
-        unpacked_functions = deserialize_functions(functions_serialized,
-                functions_serialized_len);
 
         // read in thread state
         uint64_t thread_hierarchy_serialized_len;
@@ -1281,26 +1277,10 @@ void init_chimes() {
                             live->get_length())));
         }
 
-        for (map<string, map<string, void *> >::iterator m_i =
-                functions.begin(), m_e = functions.end(); m_i != m_e; m_i++) {
-            string module_name = m_i->first;
-
-            assert(unpacked_functions->find(module_name) != unpacked_functions->end());
-            map<string, void *> dead_funcs = unpacked_functions->at(module_name);
-
-            for (map<string, void *>::iterator i = m_i->second.begin(),
-                    e = m_i->second.end(); i != e; i++) {
-                string funcname = i->first;
-                void *live = i->second;
-
-                assert(dead_funcs.find(funcname) != dead_funcs.end());
-                void *dead = dead_funcs.at(funcname);
-
-                assert(old_to_new->find(dead) == old_to_new->end());
-                old_to_new->insert(pair<void *, ptr_and_size *>(dead,
-                            new ptr_and_size(live, 1)));
-            }
-        }
+        assert(old_to_new->find(unpacked_text_start) == old_to_new->end());
+        assert(unpacked_text_len == text_len); // This is very strict
+        old_to_new->insert(pair<void *, ptr_and_size *>(unpacked_text_start,
+                    new ptr_and_size(text_start, text_len)));
 
         /*
          * find pointers in the heap and restore them to point to the correct
@@ -2496,38 +2476,14 @@ void register_constant(size_t const_id, void *address, size_t length) {
 #endif
 }
 
-void register_functions(int nfunctions, const char *module_name, ...) {
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
-#endif
-
-    std::string module_name_str(module_name);
-    assert(functions.find(module_name_str) == functions.end());
-    functions.insert(pair<string, map<string, void *> >(module_name_str,
-                map<string, void *>()));
-
-    va_list vl;
-    va_start(vl, module_name);
-    for (int i = 0; i < nfunctions; i++) {
-        char *func_name = va_arg(vl, char *);
-        void *func_ptr = va_arg(vl, void *);
-
-        string func_name_str(func_name);
-#ifdef VERBOSE
-        fprintf(stderr, "register_functions: module=%s name=%s ptr=%p\n",
-                module_name, func_name_str.c_str(), func_ptr);
-#endif
-        assert(functions[module_name_str].find(func_name_str) ==
-                functions[module_name_str].end());
-
-        functions[module_name_str][func_name_str] = func_ptr;
-        all_functions.insert(func_name_str);
+void register_text(void *start, size_t len) {
+    if (text_start == NULL) {
+        text_start = start;
+        text_len = len;
+    } else {
+        assert(text_start == start);
+        assert(text_len == len);
     }
-    va_end(vl);
-
-#ifdef __CHIMES_PROFILE
-    pp.add_time(REGISTER_FUNCTIONS, __start_time);
-#endif
 }
 
 int alias_group_changed(unsigned loc_id) {
@@ -2820,12 +2776,10 @@ typedef struct _checkpoint_thread_ctx {
     unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
     unsigned char *constants_serialized;
-    unsigned char *functions_serialized;
     unsigned char *thread_hierarchy_serialized;
     uint64_t stacks_serialized_len;
     uint64_t globals_serialized_len;
     uint64_t constants_serialized_len;
-    uint64_t functions_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
@@ -3412,8 +3366,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                     &checkpoint_ctx->globals_serialized_len);
             checkpoint_ctx->constants_serialized = serialize_constants(&constants,
                     &checkpoint_ctx->constants_serialized_len);
-            checkpoint_ctx->functions_serialized = serialize_functions(
-                    &functions, &checkpoint_ctx->functions_serialized_len);
             checkpoint_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
                     &thread_ctxs,
                     &checkpoint_ctx->thread_hierarchy_serialized_len);
@@ -3811,8 +3763,6 @@ void *checkpoint_func(void *data) {
     uint64_t globals_serialized_len = ctx->globals_serialized_len;
     unsigned char *constants_serialized = ctx->constants_serialized;
     uint64_t constants_serialized_len = ctx->constants_serialized_len;
-    unsigned char *functions_serialized = ctx->functions_serialized;
-    uint64_t functions_serialized_len = ctx->functions_serialized_len;
     unsigned char *thread_hierarchy_serialized =
         ctx->thread_hierarchy_serialized;
     uint64_t thread_hierarchy_serialized_len =
@@ -3917,11 +3867,10 @@ void *checkpoint_func(void *data) {
             constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
 
     // Write the function pointers out
-    prep_async_safe_write(fd, &functions_serialized_len,
-            sizeof(functions_serialized_len), count_bytes, &count_bytes,
-            "functions_serialized_len", &async_tokens);
-    prep_async_safe_write(fd, functions_serialized, functions_serialized_len,
-            count_bytes, &count_bytes, "functions_serialized", &async_tokens);
+    prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
+            &count_bytes, "text_start", &async_tokens);
+    prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
+            &count_bytes, "text_len", &async_tokens);
 
     // Write out the thread hierarchy
     prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
@@ -4028,7 +3977,6 @@ void *checkpoint_func(void *data) {
     free(stacks_serialized);
     free(globals_serialized);
     free(constants_serialized);
-    free(functions_serialized);
     free(thread_hierarchy_serialized);
     free(serialized_times);
     free(serialized_traces);
