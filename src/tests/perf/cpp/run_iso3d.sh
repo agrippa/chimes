@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # # DYLD_LIBRARY_PATH=$CHIMES_HOME/src/examples/cpp/lib/:$DYLD_LIBRARY_PATH \
 # LD_LIBRARY_PATH=$CHIMES_HOME/src/examples/cpp/lib/:$LD_LIBRARY_PATH \
 #                 time ./iso3d_chimes -x 1550 -y 1550 -z 1550 -i 3

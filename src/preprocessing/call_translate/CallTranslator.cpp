@@ -52,6 +52,8 @@ void CallTranslator::VisitStmt(const clang::Stmt *s) {
                     is_quick_transformed(callee_name)) {
                 replace_with = callee_name + "_quick";
             } else if (curr_func_is_npm == YES) {
+                llvm::errs() << "checking if \"" << callee_name <<
+                    "\" is in ignorable? " << (ignorable->find(callee_name) != ignorable->end()) << "\n";
                 if (ignorable->find(callee_name) != ignorable->end()) {
                     /*
                      * Skip this function, we know it is an externally defined
