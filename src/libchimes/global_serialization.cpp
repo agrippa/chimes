@@ -26,7 +26,7 @@ unsigned char *serialize_globals(map<string, stack_var *> *globals,
     }
 
     serialization = (unsigned char *)realloc(serialization, serialization_used);
-    assert(serialization);
+    assert(serialization || serialization_used == 0);
     *out_len = serialization_used;
 
     return serialization;

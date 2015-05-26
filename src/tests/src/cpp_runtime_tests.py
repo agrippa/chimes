@@ -60,7 +60,7 @@ ISO3D = RuntimeTest('Iso3D',
                     cli_args='-i 3')
 SMITH_WATERMAN = RuntimeTest('SmithWaterman',
                              ['smithWaterman/smith_waterman.cpp'], 0, -1,
-                             cli_args='20 20')
+                             cli_args='20 20 2')
 LULESH = RuntimeTest('Lulesh', ['lulesh/LULESH.cc'], 0, -1, cli_args='1')
 COMD = RuntimeTest('CoMD',
                    ['CoMD/src-mpi/CoMD.c', 'CoMD/src-mpi/decomposition.c',

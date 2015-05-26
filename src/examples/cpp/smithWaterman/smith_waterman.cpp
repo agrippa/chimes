@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
-#include <time.h>
 #include <assert.h>
-
+#include <time.h>
 #ifdef __CHIMES_SUPPORT
 #include "checkpoint.h"
 #endif
@@ -12,8 +11,6 @@
 #define TRANSITION_PENALTY -2
 #define TRANSVERSION_PENALTY -4
 #define MATCH 2
-
-#define INDEX(row, col, ncols) ((row) * (ncols) + (col))
 
 signed char* string_1;
 signed char* string_2;
@@ -91,64 +88,85 @@ static void random_init(signed char *s, unsigned long long len) {
     }
 }
 
-int main ( int argc, char* argv[] ) {
+void kernel(const unsigned long long c, const unsigned long long chunking, int *current,
+        int *prev, unsigned long long n_char_in_file_1,
+        unsigned long long n_char_in_file_2) {
     unsigned long long i, j;
-	int nthreads = 1;
+    for (i = 1 + (c * chunking); i < 1 + ((c + 1) * chunking); i++) {
+        current[0] = GAP_PENALTY*i;
+        for ( j = 1; j < n_char_in_file_1+1; ++j ) {
+            signed char char_from_1 = string_1[j-1];
+            signed char char_from_2 = string_2[i-1];
 
-	if ( argc < 3 ) {
-        fprintf(stderr, "Usage: %s length1 length2\n", argv[0]);
+            int diag_score = prev[j-1] + alignment_score_matrix[char_from_2][char_from_1];
+            int left_score = current[j-1] + alignment_score_matrix[char_from_1][GAP];
+            int  top_score = prev[j  ] + alignment_score_matrix[GAP][char_from_2];
+
+            int bigger_of_left_top = (left_score > top_score) ? left_score : top_score;
+            current[j] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
+        }
+
+        int *temp = prev;
+        prev = current;
+        current = temp;
+    }
+}
+
+int main ( int argc, char* argv[] ) {
+    int i, j;
+	int *result_array[2];
+
+	if ( argc != 4 ) {
+		fprintf(stderr, "Usage: %s length1 length2 chunking\n", argv[0]);
 		exit(1);
 	}
 
-    unsigned long long length1 = strtoull(argv[1], NULL, 10);
-    unsigned long long length2 = strtoull(argv[2], NULL, 10);
+    unsigned long long n_char_in_file_1 = strtoull(argv[1], NULL, 10);
+    unsigned long long n_char_in_file_2 = strtoull(argv[2], NULL, 10);
+    unsigned long long chunking = strtoull(argv[3], NULL, 10);
+    assert(chunking % 2 == 0);
 
-    unsigned long long n_char_in_file_1 = length1;
-    unsigned long long n_char_in_file_2 = length2;
+    if (n_char_in_file_2 % chunking != 0) {
+        fprintf(stderr, "length2 (%llu) must be evenly divisible by chunking "
+                "(%llu)\n", n_char_in_file_2, chunking);
+        return 1;
+    }
+    printf("Processing length1=%llu length2=%llu\n", n_char_in_file_1,
+            n_char_in_file_2);
+
+    unsigned long long nchunks = n_char_in_file_2 / chunking;
+    srand(123);
 
     string_1 = (signed char *)malloc(n_char_in_file_1);
     string_2 = (signed char *)malloc(n_char_in_file_2);
-
-    srand(123);
     random_init(string_1, n_char_in_file_1);
     random_init(string_2, n_char_in_file_2);
-    fprintf(stdout, "Working on matrix of size %llu x %llu\n",
-            n_char_in_file_1, n_char_in_file_2);
 
-    int **matrix = (int **)malloc(sizeof(int *) * (n_char_in_file_1 + 1));
-    assert(matrix);
-    for (unsigned long long i = 0; i < n_char_in_file_1 + 1; i++) {
-        matrix[i] = (int *)malloc(sizeof(int) * (n_char_in_file_2 + 1));
-        assert(matrix[i]);
-    }
+	result_array[0] = (int *)malloc(sizeof(int)*(n_char_in_file_1+1));
+	result_array[1] = (int *)malloc(sizeof(int)*(n_char_in_file_1+1));
 
-    for (i = 0; i < n_char_in_file_2 + 1; i++) {
-        matrix[0][i] = GAP_PENALTY * (i);
-    }
-    for (i = 0; i < n_char_in_file_1 + 1; i++) {
-        matrix[i][0] = GAP_PENALTY * (i * n_char_in_file_2);
-    }
-	
-    struct timeval begin,end;
+	int prev = 0;
+	int current = 1;
+
+    fprintf(stderr, "Starting...\n");
+    struct timeval begin,end, intermediate;
     gettimeofday(&begin,0);
 
-    for (i = 1; i < n_char_in_file_1 + 1; i++) {
-        for (j = 1; j < n_char_in_file_2 + 1; j++) {
-            signed char char_from_1 = string_1[i - 1];
-            signed char char_from_2 = string_2[j - 1];
+    for ( i = 0; i < n_char_in_file_1+1; ++i ) {
+		result_array[prev][i] = GAP_PENALTY*i;
+    }
 
-            int diag_score = matrix[i - 1][j - 1] +
-                alignment_score_matrix[char_from_2][char_from_1];
-            int left_score = matrix[i][j - 1] +
-                alignment_score_matrix[char_from_1][GAP];
-            int top_score = matrix[i - 1][j] +
-                alignment_score_matrix[GAP][char_from_2];
+    for (unsigned long long c = 0; c < nchunks; c++) {
+        kernel(c, chunking, result_array[current], result_array[prev],
+                n_char_in_file_1, n_char_in_file_2);
 
-            int bigger_of_left_top = (left_score > top_score) ? left_score :
-                top_score;
-            matrix[i][j] = (bigger_of_left_top > diag_score) ?
-                bigger_of_left_top : diag_score;
-        }
+        gettimeofday(&intermediate, 0);
+        unsigned long long elapsed = ((intermediate.tv_sec - begin.tv_sec) * 1000) +
+            ((intermediate.tv_usec - begin.tv_usec) / 1000);
+        unsigned long long estimate = elapsed / (c + 1);
+        fprintf(stderr, "%llu / %llu: %llu ms elapsed, %llu estimated total\n",
+                c + 1, nchunks, elapsed, estimate * nchunks);
+
 #ifdef __CHIMES_SUPPORT
         checkpoint();
 #endif
@@ -156,17 +174,8 @@ int main ( int argc, char* argv[] ) {
 
     gettimeofday(&end,0);
     fprintf(stdout, "The computation took %f seconds\n",
-            ((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*
-            1.0/1000000);
-
-    int score = matrix[n_char_in_file_1][n_char_in_file_2];
-    fprintf(stdout, "score: %d\n", score);
-
-    for (unsigned long long i = 0; i < n_char_in_file_1 + 1; i++) {
-        free(matrix[i]);
-    }
-    free(matrix);
-
+            ((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
+	fprintf(stdout, "score: %d\n", result_array[prev][n_char_in_file_1]);
     return 0;
 }
 
