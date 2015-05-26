@@ -78,19 +78,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -126,7 +125,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3232,7 +3231,7 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
 
 
 static int module_init() {
-    init_module(4025409710155506038UL, 18, 11, 22, 17, 0, 0, 0, 2,
+    init_module(4025409710155506038UL, 18, 11, 22, 17, 0, 0, 0, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)2, (4025409710155506038UL + 1UL), (4025409710155506038UL + 2UL), (4025409710155506038UL + 4UL), (4025409710155506038UL + 5UL), "sha1_begin", (unsigned)1, (4025409710155506038UL + 3UL), "sha1_hash", (unsigned)2, (4025409710155506038UL + 3UL), (4025409710155506038UL + 4UL),
                            &____alias_loc_id_1, (unsigned)11, (unsigned)1, (4025409710155506038UL + 100UL), (4025409710155506038UL + 101UL), (4025409710155506038UL + 102UL), (4025409710155506038UL + 103UL), (4025409710155506038UL + 104UL), (4025409710155506038UL + 105UL), (4025409710155506038UL + 106UL), (4025409710155506038UL + 107UL), (4025409710155506038UL + 108UL), (4025409710155506038UL + 109UL), (4025409710155506038UL + 227UL), "sha1_compile", (unsigned)1, (4025409710155506038UL + 227UL),
                            &____alias_loc_id_2, (unsigned)8, (unsigned)1, (4025409710155506038UL + 228UL), (4025409710155506038UL + 229UL), (4025409710155506038UL + 230UL), (4025409710155506038UL + 231UL), (4025409710155506038UL + 232UL), (4025409710155506038UL + 233UL), (4025409710155506038UL + 234UL), (4025409710155506038UL + 398UL), "sha1_compile", (unsigned)1, (4025409710155506038UL + 398UL),

@@ -40,7 +40,7 @@ class function_io_aliases {
                 size_t set_return_alias) : param_aliases(set_param_aliases),
                 return_alias(set_return_alias) { }
 
-        int get_n_params() { return param_aliases.size(); }
+        unsigned get_n_params() { return param_aliases.size(); }
         size_t get_param_alias(int index) { return param_aliases[index]; }
         size_t get_return_alias() { return return_alias; }
     private:
@@ -58,7 +58,7 @@ class call_aliases {
         std::string get_callee_name() {
             return callee_name;
         }
-        int get_n_args() { return arg_aliases.size(); }
+        unsigned get_n_args() { return arg_aliases.size(); }
         size_t get_arg_alias(int index) { return arg_aliases[index]; }
         size_t get_return_alias() { return return_alias; }
     private:

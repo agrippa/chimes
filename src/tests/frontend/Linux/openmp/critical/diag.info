@@ -28,7 +28,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 15 5 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 25 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 16 34 ; bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 21 9  reenable_current_thread(____chimes_disable1); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/critical.cpp 24 22  ({  calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 0); (foo)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/critical.cpp 24 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/critical.cpp 24 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 15 5 ; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 9 168  ;  
@@ -42,7 +42,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 15 5 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 25 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 16 34 ; bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 21 9  reenable_current_thread(____chimes_disable1); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/critical.cpp 24 22  ({  calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 0); (foo)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/critical.cpp 24 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/critical.cpp 24 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 15 5 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/critical.cpp 9 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  

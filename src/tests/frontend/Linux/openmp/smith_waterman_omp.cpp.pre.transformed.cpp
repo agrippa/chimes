@@ -86,19 +86,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -134,7 +133,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2843,7 +2842,7 @@ int PUT_resumable(int row, int col) {const int ____chimes_did_disable6 = new_sta
 # 229 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int success; success = (0) ;
 # 230 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  int await_tile; await_tile = (({ calling_npm("GUID_DIAG", 0UL, 0, 2, 0UL, 0UL); GUID_DIAG_npm(row, col); })) ;
+  int await_tile; await_tile = (({ calling_npm("GUID_DIAG", 0); GUID_DIAG_npm(row, col); })) ;
 # 231 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 232 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  {
@@ -2868,14 +2867,14 @@ int PUT_resumable(int row, int col) {const int ____chimes_did_disable6 = new_sta
 int PUT_DIAG_npm(int row, int col);
 int PUT_DIAG_quick(int row, int col); int PUT_DIAG(int row, int col);
 int PUT_RCOL_npm(int row, int col);
-int PUT_DIAG_resumable(int row, int col) {const int ____chimes_did_disable7 = new_stack((void *)(&PUT_DIAG), "PUT_DIAG", &____must_manage_PUT_DIAG, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "PUT_DIAG", &____must_manage_PUT_DIAG, ____alias_loc_id_8, ____chimes_did_disable7); return ({ calling_npm("PUT", 0UL, 0, 2, 0UL, 0UL); PUT_npm(row+1, col+1); }); }
+int PUT_DIAG_resumable(int row, int col) {const int ____chimes_did_disable7 = new_stack((void *)(&PUT_DIAG), "PUT_DIAG", &____must_manage_PUT_DIAG, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "PUT_DIAG", &____must_manage_PUT_DIAG, ____alias_loc_id_8, ____chimes_did_disable7); return ({ calling_npm("PUT", 0); PUT_npm(row+1, col+1); }); }
 # 243 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 int PUT_RCOL_quick(int row, int col); int PUT_RCOL(int row, int col);
 int PUT_BROW_npm(int row, int col);
-int PUT_RCOL_resumable(int row, int col) {const int ____chimes_did_disable8 = new_stack((void *)(&PUT_RCOL), "PUT_RCOL", &____must_manage_PUT_RCOL, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "PUT_RCOL", &____must_manage_PUT_RCOL, ____alias_loc_id_9, ____chimes_did_disable8); return ({ calling_npm("PUT", 0UL, 0, 2, 0UL, 0UL); PUT_npm(row, col+1); }); }
+int PUT_RCOL_resumable(int row, int col) {const int ____chimes_did_disable8 = new_stack((void *)(&PUT_RCOL), "PUT_RCOL", &____must_manage_PUT_RCOL, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "PUT_RCOL", &____must_manage_PUT_RCOL, ____alias_loc_id_9, ____chimes_did_disable8); return ({ calling_npm("PUT", 0); PUT_npm(row, col+1); }); }
 # 244 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 int PUT_BROW_quick(int row, int col); int PUT_BROW(int row, int col);
-int PUT_BROW_resumable(int row, int col) {const int ____chimes_did_disable9 = new_stack((void *)(&PUT_BROW), "PUT_BROW", &____must_manage_PUT_BROW, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "PUT_BROW", &____must_manage_PUT_BROW, ____alias_loc_id_10, ____chimes_did_disable9); return ({ calling_npm("PUT", 0UL, 0, 2, 0UL, 0UL); PUT_npm(row+1, col); }); }
+int PUT_BROW_resumable(int row, int col) {const int ____chimes_did_disable9 = new_stack((void *)(&PUT_BROW), "PUT_BROW", &____must_manage_PUT_BROW, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "PUT_BROW", &____must_manage_PUT_BROW, ____alias_loc_id_10, ____chimes_did_disable9); return ({ calling_npm("PUT", 0); PUT_npm(row+1, col); }); }
 # 245 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 246 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 enum Nucleotide {GAP=0, ADENINE, CYTOSINE, GUANINE, THYMINE};
@@ -3003,7 +3002,7 @@ size_t clear_whitespaces_do_mapping_resumable ( signed char* buffer, long size )
             case 'A': case 'C': case 'G': case 'T':
 # 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0UL, 0, 1, 0UL); char_mapping_npm(curr_char); });
+                buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); });
 # 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 break;
 # 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3038,7 +3037,7 @@ signed char* read_file_resumable( FILE* file, size_t* n_chars ) {const int ____c
 # 325 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 326 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0UL, 0, 2, 2727067958040902852UL, 0UL); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
+    *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
 # 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(true, 2727067958040902852UL, "read_file", &____must_manage_read_file, ____alias_loc_id_14, ____chimes_did_disable14); return file_buffer;
 # 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3158,7 +3157,7 @@ void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes
 # 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
 # 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(i, j); })) ;
+                 int success; success = (({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, j); })) ;
 # 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
 # 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3166,7 +3165,7 @@ void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes
 # 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j + 1) ;
 # 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0UL, 0, 3, 0UL, 0UL, 2727067958040903412UL); add_tile_to_run_npm(row, col, next); });
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
 # 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3175,7 +3174,7 @@ void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes
 # 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((j+1) < n_tiles_x) {
 # 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_RCOL", 0UL, 0, 2, 0UL, 0UL); PUT_RCOL_npm(i, j); })) ;
+                 int success; success = (({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, j); })) ;
 # 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
 # 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3183,7 +3182,7 @@ void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes
 # 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j + 1) ;
 # 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0UL, 0, 3, 0UL, 0UL, 2727067958040903412UL); add_tile_to_run_npm(row, col, next); });
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
 # 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3192,7 +3191,7 @@ void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes
 # 409 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((i+1) < n_tiles_y) {
 # 410 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_BROW", 0UL, 0, 2, 0UL, 0UL); PUT_BROW_npm(i, j); })) ;
+                 int success; success = (({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(i, j); })) ;
 # 411 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
 # 412 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3200,7 +3199,7 @@ void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes
 # 413 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j) ;
 # 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0UL, 0, 3, 0UL, 0UL, 2727067958040903412UL); add_tile_to_run_npm(row, col, next); });
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
 # 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3277,9 +3276,9 @@ int i;
     string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 2727067958040903134UL, 0, 0);
 # 451 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 452 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0UL, 0, 2, 2727067958040903134UL, 0UL); random_init_npm(string_1, n_char_in_file_1); });
+    ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
 # 453 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0UL, 0, 2, 2727067958040903134UL, 0UL); random_init_npm(string_2, n_char_in_file_2); });
+    ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
 # 454 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 455 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fprintf(stdout, "Tile width  %d\n", tile_width);
@@ -3331,14 +3330,14 @@ int i;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  tile_diag[((n_tiles_y - 1) + (0 - 0))] = 0;
 # 485 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- ({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(0, 0); });
+ ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, 0); });
 # 486 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 487 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_x; i++) {
 # 488 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (i - 0))] = -1*(i*tile_width);
 # 489 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(0, i); });
+  ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, i); });
 # 490 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 491 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3346,7 +3345,7 @@ int i;
 # 492 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (0 - i))] = -1*(i*tile_height);
 # 493 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(i, 0); });
+  ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, 0); });
 # 494 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 495 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3360,7 +3359,7 @@ int i;
 # 500 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_height; j++) { tile_edges_y[i][j] = -1 * ((i - 1) * tile_height + j); };
 # 502 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_RCOL", 0UL, 0, 2, 0UL, 0UL); PUT_RCOL_npm(i, 0); });
+  ({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, 0); });
 # 503 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 504 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3374,7 +3373,7 @@ int i;
 # 509 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_width; j++) { tile_edges_x[i][j] = -1 * ((i - 1) * tile_width + j); };
 # 511 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_BROW", 0UL, 0, 2, 0UL, 0UL); PUT_BROW_npm(0, i); });
+  ({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(0, i); });
 # 512 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 513 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3469,7 +3468,7 @@ int i;
 # 589 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 {
 # 590 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    mine = ({ calling_npm("pop_next_tile", 2727067958040903965UL, 0, 1, 2727067958040903869UL); pop_next_tile_npm(curr); });
+                    mine = ({ calling_npm("pop_next_tile", 0); pop_next_tile_npm(curr); });
 # 591 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 } reenable_current_thread(____chimes_disable3);
 # 592 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3478,7 +3477,7 @@ int i;
 # 594 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (!done) {
 # 595 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("task_func", 0UL, 0, 3, 0UL, 0UL, 2727067958040903869UL); task_func_npm(mine->row, mine->col, next); });
+                    ({ calling_npm("task_func", 0); task_func_npm(mine->row, mine->col, next); });
 # 596 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 597 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3581,7 +3580,7 @@ int PUT_quick(int row, int col) {const int ____chimes_did_disable6 = new_stack((
 # 229 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int success; success = (0) ;
 # 230 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  int await_tile; await_tile = (({ calling_npm("GUID_DIAG", 0UL, 0, 2, 0UL, 0UL); GUID_DIAG_npm(row, col); })) ;
+  int await_tile; await_tile = (({ calling_npm("GUID_DIAG", 0); GUID_DIAG_npm(row, col); })) ;
 # 231 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 232 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  {
@@ -3604,15 +3603,15 @@ int PUT_quick(int row, int col) {const int ____chimes_did_disable6 = new_stack((
 
 int PUT(int row, int col) { return (____chimes_replaying ? PUT_resumable(row, col) : PUT_quick(row, col)); }
 
-int PUT_DIAG_quick(int row, int col) {const int ____chimes_did_disable7 = new_stack((void *)(&PUT_DIAG), "PUT_DIAG", &____must_manage_PUT_DIAG, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "PUT_DIAG", &____must_manage_PUT_DIAG, ____alias_loc_id_8, ____chimes_did_disable7); return ({ calling_npm("PUT", 0UL, 0, 2, 0UL, 0UL); PUT_npm(row+1, col+1); }); }
+int PUT_DIAG_quick(int row, int col) {const int ____chimes_did_disable7 = new_stack((void *)(&PUT_DIAG), "PUT_DIAG", &____must_manage_PUT_DIAG, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "PUT_DIAG", &____must_manage_PUT_DIAG, ____alias_loc_id_8, ____chimes_did_disable7); return ({ calling_npm("PUT", 0); PUT_npm(row+1, col+1); }); }
 
 int PUT_DIAG(int row, int col) { return (____chimes_replaying ? PUT_DIAG_resumable(row, col) : PUT_DIAG_quick(row, col)); }
 
-int PUT_RCOL_quick(int row, int col) {const int ____chimes_did_disable8 = new_stack((void *)(&PUT_RCOL), "PUT_RCOL", &____must_manage_PUT_RCOL, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "PUT_RCOL", &____must_manage_PUT_RCOL, ____alias_loc_id_9, ____chimes_did_disable8); return ({ calling_npm("PUT", 0UL, 0, 2, 0UL, 0UL); PUT_npm(row, col+1); }); }
+int PUT_RCOL_quick(int row, int col) {const int ____chimes_did_disable8 = new_stack((void *)(&PUT_RCOL), "PUT_RCOL", &____must_manage_PUT_RCOL, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "PUT_RCOL", &____must_manage_PUT_RCOL, ____alias_loc_id_9, ____chimes_did_disable8); return ({ calling_npm("PUT", 0); PUT_npm(row, col+1); }); }
 
 int PUT_RCOL(int row, int col) { return (____chimes_replaying ? PUT_RCOL_resumable(row, col) : PUT_RCOL_quick(row, col)); }
 
-int PUT_BROW_quick(int row, int col) {const int ____chimes_did_disable9 = new_stack((void *)(&PUT_BROW), "PUT_BROW", &____must_manage_PUT_BROW, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "PUT_BROW", &____must_manage_PUT_BROW, ____alias_loc_id_10, ____chimes_did_disable9); return ({ calling_npm("PUT", 0UL, 0, 2, 0UL, 0UL); PUT_npm(row+1, col); }); }
+int PUT_BROW_quick(int row, int col) {const int ____chimes_did_disable9 = new_stack((void *)(&PUT_BROW), "PUT_BROW", &____must_manage_PUT_BROW, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "PUT_BROW", &____must_manage_PUT_BROW, ____alias_loc_id_10, ____chimes_did_disable9); return ({ calling_npm("PUT", 0); PUT_npm(row+1, col); }); }
 
 int PUT_BROW(int row, int col) { return (____chimes_replaying ? PUT_BROW_resumable(row, col) : PUT_BROW_quick(row, col)); }
 
@@ -3716,7 +3715,7 @@ size_t clear_whitespaces_do_mapping_quick ( signed char* buffer, long size ) {co
             case 'A': case 'C': case 'G': case 'T':
 # 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0UL, 0, 1, 0UL); char_mapping_npm(curr_char); });
+                buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); });
 # 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 break;
 # 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3750,7 +3749,7 @@ signed char* read_file_quick( FILE* file, size_t* n_chars ) {const int ____chime
 # 325 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 326 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0UL, 0, 2, 2727067958040902852UL, 0UL); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
+    *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
 # 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(true, 2727067958040902852UL, "read_file", &____must_manage_read_file, ____alias_loc_id_14, ____chimes_did_disable14); return file_buffer;
 # 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3867,7 +3866,7 @@ void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did
 # 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
 # 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(i, j); })) ;
+                 int success; success = (({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, j); })) ;
 # 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
 # 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3875,7 +3874,7 @@ void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did
 # 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j + 1) ;
 # 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0UL, 0, 3, 0UL, 0UL, 2727067958040903412UL); add_tile_to_run_npm(row, col, next); });
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
 # 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3884,7 +3883,7 @@ void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did
 # 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((j+1) < n_tiles_x) {
 # 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_RCOL", 0UL, 0, 2, 0UL, 0UL); PUT_RCOL_npm(i, j); })) ;
+                 int success; success = (({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, j); })) ;
 # 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
 # 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3892,7 +3891,7 @@ void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did
 # 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j + 1) ;
 # 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0UL, 0, 3, 0UL, 0UL, 2727067958040903412UL); add_tile_to_run_npm(row, col, next); });
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
 # 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3901,7 +3900,7 @@ void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did
 # 409 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((i+1) < n_tiles_y) {
 # 410 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_BROW", 0UL, 0, 2, 0UL, 0UL); PUT_BROW_npm(i, j); })) ;
+                 int success; success = (({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(i, j); })) ;
 # 411 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
 # 412 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3909,7 +3908,7 @@ void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did
 # 413 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j) ;
 # 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0UL, 0, 3, 0UL, 0UL, 2727067958040903412UL); add_tile_to_run_npm(row, col, next); });
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
 # 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -3986,9 +3985,9 @@ int i;
     string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 2727067958040903134UL, 0, 0);
 # 451 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 452 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0UL, 0, 2, 2727067958040903134UL, 0UL); random_init_npm(string_1, n_char_in_file_1); });
+    ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
 # 453 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0UL, 0, 2, 2727067958040903134UL, 0UL); random_init_npm(string_2, n_char_in_file_2); });
+    ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
 # 454 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 455 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fprintf(stdout, "Tile width  %d\n", tile_width);
@@ -4040,14 +4039,14 @@ int i;
 # 484 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  tile_diag[((n_tiles_y - 1) + (0 - 0))] = 0;
 # 485 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- ({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(0, 0); });
+ ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, 0); });
 # 486 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 487 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_x; i++) {
 # 488 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (i - 0))] = -1*(i*tile_width);
 # 489 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(0, i); });
+  ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, i); });
 # 490 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 491 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -4055,7 +4054,7 @@ int i;
 # 492 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (0 - i))] = -1*(i*tile_height);
 # 493 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_DIAG", 0UL, 0, 2, 0UL, 0UL); PUT_DIAG_npm(i, 0); });
+  ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, 0); });
 # 494 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 495 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -4069,7 +4068,7 @@ int i;
 # 500 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_height; j++) { tile_edges_y[i][j] = -1 * ((i - 1) * tile_height + j); };
 # 502 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_RCOL", 0UL, 0, 2, 0UL, 0UL); PUT_RCOL_npm(i, 0); });
+  ({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, 0); });
 # 503 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 504 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -4083,7 +4082,7 @@ int i;
 # 509 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_width; j++) { tile_edges_x[i][j] = -1 * ((i - 1) * tile_width + j); };
 # 511 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  ({ calling_npm("PUT_BROW", 0UL, 0, 2, 0UL, 0UL); PUT_BROW_npm(0, i); });
+  ({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(0, i); });
 # 512 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
 # 513 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -4178,7 +4177,7 @@ int i;
 # 589 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 {
 # 590 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    mine = ({ calling_npm("pop_next_tile", 2727067958040903965UL, 0, 1, 2727067958040903869UL); pop_next_tile_npm(curr); });
+                    mine = ({ calling_npm("pop_next_tile", 0); pop_next_tile_npm(curr); });
 # 591 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 } reenable_current_thread(____chimes_disable3);
 # 592 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -4187,7 +4186,7 @@ int i;
 # 594 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (!done) {
 # 595 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("task_func", 0UL, 0, 3, 0UL, 0UL, 2727067958040903869UL); task_func_npm(mine->row, mine->col, next); });
+                    ({ calling_npm("task_func", 0); task_func_npm(mine->row, mine->col, next); });
 # 596 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
 # 597 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
@@ -4610,7 +4609,7 @@ void task_func_npm(int i, int j, tiles_to_run *next) {
 
 
 static int module_init() {
-    init_module(2727067958040902507UL, 33, 19, 0, 20, 18, 0, 18, 7,
+    init_module(2727067958040902507UL, 33, 19, 0, 20, 18, 0, 18, 21, 0, 7,
                            &____alias_loc_id_0, (unsigned)32, (unsigned)3, (2727067958040902507UL + 137UL), (2727067958040902507UL + 515UL), (2727067958040902507UL + 536UL), (2727067958040902507UL + 538UL), (2727067958040902507UL + 727UL), (2727067958040902507UL + 906UL), (2727067958040902507UL + 907UL), (2727067958040902507UL + 908UL), (2727067958040902507UL + 909UL), (2727067958040902507UL + 910UL), (2727067958040902507UL + 912UL), (2727067958040902507UL + 913UL), (2727067958040902507UL + 914UL), (2727067958040902507UL + 915UL), (2727067958040902507UL + 916UL), (2727067958040902507UL + 917UL), (2727067958040902507UL + 918UL), (2727067958040902507UL + 919UL), (2727067958040902507UL + 920UL), (2727067958040902507UL + 921UL), (2727067958040902507UL + 922UL), (2727067958040902507UL + 923UL), (2727067958040902507UL + 924UL), (2727067958040902507UL + 1362UL), (2727067958040902507UL + 1371UL), (2727067958040902507UL + 1668UL), (2727067958040902507UL + 1670UL), (2727067958040902507UL + 1676UL), (2727067958040902507UL + 1678UL), (2727067958040902507UL + 1680UL), (2727067958040902507UL + 1686UL), (2727067958040902507UL + 1688UL), "task_func", (unsigned)1, (2727067958040902507UL + 1362UL), "random_init", (unsigned)1, (2727067958040902507UL + 627UL), "pop_next_tile", (unsigned)1, (2727067958040902507UL + 1362UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (2727067958040902507UL + 1UL), (2727067958040902507UL + 2UL),
                            &____alias_loc_id_2, (unsigned)2, (unsigned)0, (2727067958040902507UL + 22UL), (2727067958040902507UL + 23UL),
@@ -4725,7 +4724,28 @@ static int module_init() {
                              "PUT", 1, "GUID_DIAG",
                              "add_tile_to_run", 0,
                              "TILE_ROW", 0,
-                             "TILE_COL", 0);
+                             "TILE_COL", 0,
+        "GUID_DIAG", 0UL, (int)2, 0UL, 0UL,
+        "PUT", 0UL, (int)2, 0UL, 0UL,
+        "PUT", 0UL, (int)2, 0UL, 0UL,
+        "PUT", 0UL, (int)2, 0UL, 0UL,
+        "char_mapping", 0UL, (int)1, 0UL,
+        "clear_whitespaces_do_mapping", 0UL, (int)2, 2727067958040902852UL, 0UL,
+        "PUT_DIAG", 0UL, (int)2, 0UL, 0UL,
+        "add_tile_to_run", 0UL, (int)3, 0UL, 0UL, 2727067958040903412UL,
+        "PUT_RCOL", 0UL, (int)2, 0UL, 0UL,
+        "add_tile_to_run", 0UL, (int)3, 0UL, 0UL, 2727067958040903412UL,
+        "PUT_BROW", 0UL, (int)2, 0UL, 0UL,
+        "add_tile_to_run", 0UL, (int)3, 0UL, 0UL, 2727067958040903412UL,
+        "random_init", 0UL, (int)2, 2727067958040903134UL, 0UL,
+        "random_init", 0UL, (int)2, 2727067958040903134UL, 0UL,
+        "PUT_DIAG", 0UL, (int)2, 0UL, 0UL,
+        "PUT_DIAG", 0UL, (int)2, 0UL, 0UL,
+        "PUT_DIAG", 0UL, (int)2, 0UL, 0UL,
+        "PUT_RCOL", 0UL, (int)2, 0UL, 0UL,
+        "PUT_BROW", 0UL, (int)2, 0UL, 0UL,
+        "pop_next_tile", 2727067958040903965UL, (int)1, 2727067958040903869UL,
+        "task_func", 0UL, (int)3, 0UL, 0UL, 2727067958040903869UL);
     register_global_var("global|string_1", "i8*", (void *)(&string_1), 8.0, 1, 0, 0);
     register_global_var("global|string_2", "i8*", (void *)(&string_2), 8.0, 1, 0, 0);
     register_global_var("global|strlen_1", "i32", (void *)(&strlen_1), 4.0, 0, 0, 0);

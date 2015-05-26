@@ -14,7 +14,7 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 13 5  call_lbl_2:
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 5 5 len=3 foo_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 5 127  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 9 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0UL, 0, 1, 0UL)))(6)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0, 0UL, 1, 0UL)))(6)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 11 41 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 13 18 checkpoint_transformed(2, ____alias_loc_id_1)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 13 29 
@@ -25,7 +25,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 9 168  ;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 5 5 len=3 foo_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 5 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 9 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0UL, 0, 1, 0UL)))(6)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 11 32 ((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0, 0UL, 1, 0UL)))(6)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 11 41 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 13 18 checkpoint_transformed(2, ____alias_loc_id_1)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_ptr.cpp 13 29 

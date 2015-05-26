@@ -57,19 +57,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -105,7 +104,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -5400,9 +5399,9 @@ config conf;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
       ;
 # 88 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_setup_config_npm ? ( ({ calling((void*)setup_config, 1, 0UL, ____alias_loc_id_0, 3, (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(10242080558348865124UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", 0UL, ____alias_loc_id_0, 3, 10242080558348864756UL, 0UL, 10242080558348865124UL); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })));
+     call_lbl_1: (____chimes_does_checkpoint_setup_config_npm ? ( ({ calling((void*)setup_config, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(10242080558348865124UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_0); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })));
 # 89 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_2: (____chimes_does_checkpoint_init_progress_npm ? ( ({ int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled); } calling((void*)init_progress, 2, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ) : (({ calling_npm("init_progress", 0UL, 0, 3, 0UL, 0UL, 0UL); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })));
+     call_lbl_2: (____chimes_does_checkpoint_init_progress_npm ? ( ({ int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled); } calling((void*)init_progress, 2, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ) : (({ calling_npm("init_progress", 0); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })));
 # 90 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 91 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
        dx = (20.F) ;
@@ -5448,15 +5447,15 @@ config conf;
     }
 # 114 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 115 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_12: (____chimes_does_checkpoint_config_sources_npm ? ( ({ source ** ____chimes_arg6; int * ____chimes_arg7; int ____chimes_arg8; int ____chimes_arg9; int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps); } calling((void*)config_sources, 12, 0UL, ____alias_loc_id_1, 5, (size_t)(10242080558348864756UL), (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ) : (({ calling_npm("config_sources", 0UL, ____alias_loc_id_1, 5, 10242080558348864756UL, 10242080558348864756UL, 0UL, 0UL, 0UL); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })));
+     call_lbl_12: (____chimes_does_checkpoint_config_sources_npm ? ( ({ source ** ____chimes_arg6; int * ____chimes_arg7; int ____chimes_arg8; int ____chimes_arg9; int ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps); } calling((void*)config_sources, 12, ____alias_loc_id_1, 0UL, 5, (size_t)(10242080558348864756UL), (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ) : (({ calling_npm("config_sources", ____alias_loc_id_1); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })));
 # 116 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-        call_lbl_13: srcs = ((____chimes_does_checkpoint_sample_sources_npm ? ( ({ source * ____chimes_arg11; int ____chimes_arg12; int ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps); } calling((void*)sample_sources, 13, 10242080558348865106UL, 0, 4, (size_t)(10242080558348864932UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) : (({ calling_npm("sample_sources", 10242080558348865106UL, 0, 4, 10242080558348864932UL, 0UL, 0UL, 0UL); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))) ;
+        call_lbl_13: srcs = ((____chimes_does_checkpoint_sample_sources_npm ? ( ({ source * ____chimes_arg11; int ____chimes_arg12; int ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps); } calling((void*)sample_sources, 13, 0, 10242080558348865106UL, 4, (size_t)(10242080558348864932UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) : (({ calling_npm("sample_sources", 0); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))) ;
 # 117 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_14: (____chimes_does_checkpoint_init_data_npm ? ( ({ calling((void*)init_data, 14, 0UL, ____alias_loc_id_2, 9, (size_t)(10242080558348864996UL), (size_t)(10242080558348864996UL), (size_t)(10242080558348864998UL), (size_t)(10242080558348864999UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", 0UL, ____alias_loc_id_2, 9, 10242080558348864996UL, 10242080558348864996UL, 10242080558348864998UL, 10242080558348864999UL, 0UL, 0UL, 0UL, 0UL, 0UL); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })));
+     call_lbl_14: (____chimes_does_checkpoint_init_data_npm ? ( ({ calling((void*)init_data, 14, ____alias_loc_id_2, 0UL, 9, (size_t)(10242080558348864996UL), (size_t)(10242080558348864996UL), (size_t)(10242080558348864998UL), (size_t)(10242080558348864999UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_2); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })));
 # 119 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 120 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-        call_lbl_15: start = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 15, 0UL, 0, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0UL, 0, 0); (*____chimes_extern_func_seconds)(); })))) ;
+        call_lbl_15: start = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 15, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))) ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     { for ( step = (0) ; step < conf.nsteps; step++) {
 # 122 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
@@ -5471,7 +5470,7 @@ config conf;
         } }
 # 128 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 129 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-        ({ calling_npm("fwd", 0UL, 0, 11, 10242080558348864996UL, 10242080558348864996UL, 10242080558348864998UL, 10242080558348864999UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); });
+        ({ calling_npm("fwd", 0); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); });
 # 131 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 132 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
            tmp = (next) ;
@@ -5486,14 +5485,14 @@ config conf;
 # 138 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 139 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 140 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-         call_lbl_17: (____chimes_does_checkpoint_update_progress_npm ? ( ({ int ____chimes_arg24; if (!____chimes_replaying) { ____chimes_arg24 = (step + 1); } calling((void*)update_progress, 17, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(____chimes_arg24); }) ) : (({ calling_npm("update_progress", 0UL, 0, 1, 0UL); (*____chimes_extern_func_update_progress)(step + 1); })));
+         call_lbl_17: (____chimes_does_checkpoint_update_progress_npm ? ( ({ int ____chimes_arg24; if (!____chimes_replaying) { ____chimes_arg24 = (step + 1); } calling((void*)update_progress, 17, 0, 0UL, 1, (size_t)(0UL)); (update_progress)(____chimes_arg24); }) ) : (({ calling_npm("update_progress", 0); (*____chimes_extern_func_update_progress)(step + 1); })));
 # 141 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0UL, 0, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0UL, 0, 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
+    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 144 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, 0UL, ____alias_loc_id_5, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", 0UL, ____alias_loc_id_5, 0); (*____chimes_extern_func_finish_progress)(); })));
+     call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })));
 # 145 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 146 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
        point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
@@ -5505,7 +5504,7 @@ config conf;
 # 150 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     if (conf.save_text != -1) {
 # 151 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-         call_lbl_22: (____chimes_does_checkpoint_save_layer_text_npm ? ( ({ int ____chimes_arg26; int ____chimes_arg29; int ____chimes_arg30; int ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg26 = (conf.save_text); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nx); ____chimes_arg32 = (conf.radius); } calling((void*)save_layer_text, 22, 0UL, ____alias_loc_id_6, 8, (size_t)(10242080558348864996UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10242080558348865505UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg26, dimx, dimy, ____chimes_arg29, ____chimes_arg30, "snap.text", ____chimes_arg32); }) ) : (({ calling_npm("save_layer_text", 0UL, ____alias_loc_id_6, 8, 10242080558348864996UL, 0UL, 0UL, 0UL, 0UL, 0UL, 10242080558348865505UL, 0UL); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })));
+         call_lbl_22: (____chimes_does_checkpoint_save_layer_text_npm ? ( ({ int ____chimes_arg26; int ____chimes_arg29; int ____chimes_arg30; int ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg26 = (conf.save_text); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nx); ____chimes_arg32 = (conf.radius); } calling((void*)save_layer_text, 22, ____alias_loc_id_6, 0UL, 8, (size_t)(10242080558348864996UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10242080558348865505UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg26, dimx, dimy, ____chimes_arg29, ____chimes_arg30, "snap.text", ____chimes_arg32); }) ) : (({ calling_npm("save_layer_text", ____alias_loc_id_6); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })));
 # 153 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     }
 # 154 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
@@ -5612,9 +5611,9 @@ config conf;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
       ;
 # 88 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_setup_config_npm ? ( ({ calling((void*)setup_config, 1, 0UL, ____alias_loc_id_0, 3, (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(10242080558348865124UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", 0UL, ____alias_loc_id_0, 3, 10242080558348864756UL, 0UL, 10242080558348865124UL); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })));
+     call_lbl_1: (____chimes_does_checkpoint_setup_config_npm ? ( ({ calling((void*)setup_config, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(10242080558348865124UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_0); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })));
 # 89 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_2: (____chimes_does_checkpoint_init_progress_npm ? ( ({ calling((void*)init_progress, 2, 0UL, 0, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); }) ) : (({ calling_npm("init_progress", 0UL, 0, 3, 0UL, 0UL, 0UL); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })));
+     call_lbl_2: (____chimes_does_checkpoint_init_progress_npm ? ( ({ calling((void*)init_progress, 2, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); }) ) : (({ calling_npm("init_progress", 0); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })));
 # 90 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 91 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
        dx = (20.F) ;
@@ -5660,15 +5659,15 @@ config conf;
     }
 # 114 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 115 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_12: (____chimes_does_checkpoint_config_sources_npm ? ( ({ calling((void*)config_sources, 12, 0UL, ____alias_loc_id_1, 5, (size_t)(10242080558348864756UL), (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); }) ) : (({ calling_npm("config_sources", 0UL, ____alias_loc_id_1, 5, 10242080558348864756UL, 10242080558348864756UL, 0UL, 0UL, 0UL); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })));
+     call_lbl_12: (____chimes_does_checkpoint_config_sources_npm ? ( ({ calling((void*)config_sources, 12, ____alias_loc_id_1, 0UL, 5, (size_t)(10242080558348864756UL), (size_t)(10242080558348864756UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); }) ) : (({ calling_npm("config_sources", ____alias_loc_id_1); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })));
 # 116 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-        call_lbl_13: srcs = ((____chimes_does_checkpoint_sample_sources_npm ? ( ({ calling((void*)sample_sources, 13, 10242080558348865106UL, 0, 4, (size_t)(10242080558348864932UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) : (({ calling_npm("sample_sources", 10242080558348865106UL, 0, 4, 10242080558348864932UL, 0UL, 0UL, 0UL); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))) ;
+        call_lbl_13: srcs = ((____chimes_does_checkpoint_sample_sources_npm ? ( ({ calling((void*)sample_sources, 13, 0, 10242080558348865106UL, 4, (size_t)(10242080558348864932UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) : (({ calling_npm("sample_sources", 0); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))) ;
 # 117 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_14: (____chimes_does_checkpoint_init_data_npm ? ( ({ calling((void*)init_data, 14, 0UL, ____alias_loc_id_2, 9, (size_t)(10242080558348864996UL), (size_t)(10242080558348864996UL), (size_t)(10242080558348864998UL), (size_t)(10242080558348864999UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", 0UL, ____alias_loc_id_2, 9, 10242080558348864996UL, 10242080558348864996UL, 10242080558348864998UL, 10242080558348864999UL, 0UL, 0UL, 0UL, 0UL, 0UL); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })));
+     call_lbl_14: (____chimes_does_checkpoint_init_data_npm ? ( ({ calling((void*)init_data, 14, ____alias_loc_id_2, 0UL, 9, (size_t)(10242080558348864996UL), (size_t)(10242080558348864996UL), (size_t)(10242080558348864998UL), (size_t)(10242080558348864999UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_2); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })));
 # 119 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 120 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-        call_lbl_15: start = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 15, 0UL, 0, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0UL, 0, 0); (*____chimes_extern_func_seconds)(); })))) ;
+        call_lbl_15: start = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 15, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))) ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     { for ( step = (0) ; step < conf.nsteps; step++) {
 # 122 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
@@ -5683,7 +5682,7 @@ config conf;
         } }
 # 128 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 129 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-        ({ calling_npm("fwd", 0UL, 0, 11, 10242080558348864996UL, 10242080558348864996UL, 10242080558348864998UL, 10242080558348864999UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); });
+        ({ calling_npm("fwd", 0); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); });
 # 131 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 132 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
            tmp = (next) ;
@@ -5698,14 +5697,14 @@ config conf;
 # 138 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 139 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 140 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-         call_lbl_17: (____chimes_does_checkpoint_update_progress_npm ? ( ({ calling((void*)update_progress, 17, 0UL, 0, 1, (size_t)(0UL)); (update_progress)(step + 1); }) ) : (({ calling_npm("update_progress", 0UL, 0, 1, 0UL); (*____chimes_extern_func_update_progress)(step + 1); })));
+         call_lbl_17: (____chimes_does_checkpoint_update_progress_npm ? ( ({ calling((void*)update_progress, 17, 0, 0UL, 1, (size_t)(0UL)); (update_progress)(step + 1); }) ) : (({ calling_npm("update_progress", 0); (*____chimes_extern_func_update_progress)(step + 1); })));
 # 141 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0UL, 0, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0UL, 0, 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
+    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 144 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-     call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, 0UL, ____alias_loc_id_5, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", 0UL, ____alias_loc_id_5, 0); (*____chimes_extern_func_finish_progress)(); })));
+     call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })));
 # 145 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 146 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
        point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
@@ -5717,7 +5716,7 @@ config conf;
 # 150 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     if (conf.save_text != -1) {
 # 151 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-         call_lbl_22: (____chimes_does_checkpoint_save_layer_text_npm ? ( ({ calling((void*)save_layer_text, 22, 0UL, ____alias_loc_id_6, 8, (size_t)(10242080558348864996UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10242080558348865505UL), (size_t)(0UL)); (save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ) : (({ calling_npm("save_layer_text", 0UL, ____alias_loc_id_6, 8, 10242080558348864996UL, 0UL, 0UL, 0UL, 0UL, 0UL, 10242080558348865505UL, 0UL); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })));
+         call_lbl_22: (____chimes_does_checkpoint_save_layer_text_npm ? ( ({ calling((void*)save_layer_text, 22, ____alias_loc_id_6, 0UL, 8, (size_t)(10242080558348864996UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10242080558348865505UL), (size_t)(0UL)); (save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ) : (({ calling_npm("save_layer_text", ____alias_loc_id_6); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })));
 # 153 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     }
 # 154 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
@@ -5817,7 +5816,7 @@ static void fwd_npm(float *next, float *curr, float *vsq,
 
 
 static int module_init() {
-    init_module(10242080558348864752UL, 14, 2, 3, 9, 1, 9, 10, 2,
+    init_module(10242080558348864752UL, 14, 2, 3, 9, 1, 9, 10, 1, 10, 2,
                            &____alias_loc_id_0, (unsigned)3, (unsigned)1, (10242080558348864752UL + 1UL), (10242080558348864752UL + 2UL), (10242080558348864752UL + 3UL), "setup_config", (unsigned)2, (10242080558348864752UL + 4UL), (10242080558348864752UL + 372UL),
                            &____alias_loc_id_1, (unsigned)10, (unsigned)1, (10242080558348864752UL + 5UL), (10242080558348864752UL + 6UL), (10242080558348864752UL + 7UL), (10242080558348864752UL + 8UL), (10242080558348864752UL + 9UL), (10242080558348864752UL + 10UL), (10242080558348864752UL + 11UL), (10242080558348864752UL + 12UL), (10242080558348864752UL + 13UL), (10242080558348864752UL + 14UL), "config_sources", (unsigned)1, (10242080558348864752UL + 4UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)3, (10242080558348864752UL + 15UL), "config_sources", (unsigned)1, (10242080558348864752UL + 4UL), "init_data", (unsigned)3, (10242080558348864752UL + 244UL), (10242080558348864752UL + 246UL), (10242080558348864752UL + 247UL), "sample_sources", (unsigned)1, (10242080558348864752UL + 180UL),
@@ -5867,7 +5866,18 @@ static int module_init() {
                              "main", 12, "setup_config", "init_progress", "config_sources", "sample_sources", "init_data", "seconds", "fwd", "checkpoint", "update_progress", "seconds", "finish_progress", "save_layer_text",
                         "main|conf|0", 1, "main",
                         "main|elapsed_s|0", 2, "save_layer_text", "finish_progress",
-                        "main|point_rate|0", 1, "save_layer_text");
+                        "main|point_rate|0", 1, "save_layer_text",
+        "fwd", 0UL, (int)11, 10242080558348864996UL, 10242080558348864996UL, 10242080558348864998UL, 10242080558348864999UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "setup_config", 0UL, (int)3, 10242080558348864756UL, 0UL, 10242080558348865124UL,
+        "init_progress", 0UL, (int)3, 0UL, 0UL, 0UL,
+        "config_sources", 0UL, (int)5, 10242080558348864756UL, 10242080558348864756UL, 0UL, 0UL, 0UL,
+        "sample_sources", 10242080558348865106UL, (int)4, 10242080558348864932UL, 0UL, 0UL, 0UL,
+        "init_data", 0UL, (int)9, 10242080558348864996UL, 10242080558348864996UL, 10242080558348864998UL, 10242080558348864999UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "seconds", 0UL, (int)0,
+        "update_progress", 0UL, (int)1, 0UL,
+        "seconds", 0UL, (int)0,
+        "finish_progress", 0UL, (int)0,
+        "save_layer_text", 0UL, (int)8, 10242080558348864996UL, 0UL, 0UL, 0UL, 0UL, 0UL, 10242080558348865505UL, 0UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

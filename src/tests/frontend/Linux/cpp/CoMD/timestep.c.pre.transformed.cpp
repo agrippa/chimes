@@ -63,19 +63,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -111,7 +110,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2658,11 +2657,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 38 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
    {
 # 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      ({ calling_npm("advanceVelocity", 0UL, 0, 3, 7237354288423011274UL, 0UL, 0UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 44 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2670,11 +2669,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
 # 48 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      ({ calling_npm("advancePosition", 0UL, 0, 3, 7237354288423011274UL, 0UL, 0UL); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
+      ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 51 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 52 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2682,11 +2681,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 55 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0UL, 0, 1, (size_t)(7237354288423011274UL)); (redistributeAtoms)(s); }) ;
+       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0, 0UL, 1, (size_t)(7237354288423011274UL)); (redistributeAtoms)(s); }) ;
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
 # 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2694,11 +2693,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-       call_lbl_12: ({ calling((void*)computeForce, 12, 0UL, 0, 1, (size_t)(7237354288423011274UL)); (computeForce)(s); }) ;
+       call_lbl_12: ({ calling((void*)computeForce, 12, 0, 0UL, 1, (size_t)(7237354288423011274UL)); (computeForce)(s); }) ;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
 # 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2706,11 +2705,11 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
 # 69 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 70 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      ({ calling_npm("advanceVelocity", 0UL, 0, 3, 7237354288423011274UL, 0UL, 0UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 74 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 75 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 76 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2720,7 +2719,7 @@ double timestep_resumable(SimFlat* s, int nSteps, real_t dt)
    } }
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 80 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_18: ({ calling((void*)kineticEnergy, 18, 0UL, ____alias_loc_id_1, 1, (size_t)(7237354288423011274UL)); (kineticEnergy)(s); }) ;
+    call_lbl_18: ({ calling((void*)kineticEnergy, 18, ____alias_loc_id_1, 0UL, 1, (size_t)(7237354288423011274UL)); (kineticEnergy)(s); }) ;
 # 81 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 82 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
    rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
@@ -2732,7 +2731,7 @@ void computeForce_resumable(SimFlat* s)
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(7237354288423011698UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0UL, ____alias_loc_id_4, 1, 7237354288423011698UL)))(s);
+    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, ____alias_loc_id_4, 0UL, 1, 7237354288423011698UL)))(s);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 # 89 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2832,11 +2831,11 @@ real_t eLocal[2];
 # 138 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
     ;
 # 139 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 140 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0UL, 0, 3, (size_t)(7237354288423011700UL), (size_t)(7237354288423011706UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0, 0UL, 3, (size_t)(7237354288423011700UL), (size_t)(7237354288423011706UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
    s->ePotential = eSum[0];
@@ -2852,17 +2851,17 @@ void redistributeAtoms_resumable(SimFlat* sim)
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7237354288423011652UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; int ii;
  if (____must_checkpoint_redistributeAtoms_ii_0) { register_stack_vars(1, "redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_1: ({ LinkCell * ____chimes_arg18; Atoms * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (sim->boxes); ____chimes_arg19 = (sim->atoms); } calling((void*)updateLinkCells, 1, 0UL, ____alias_loc_id_2, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL)); (updateLinkCells)(____chimes_arg18, ____chimes_arg19); }) ;
+    call_lbl_1: ({ LinkCell * ____chimes_arg18; Atoms * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (sim->boxes); ____chimes_arg19 = (sim->atoms); } calling((void*)updateLinkCells, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL)); (updateLinkCells)(____chimes_arg18, ____chimes_arg19); }) ;
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_3: ({ HaloExchange * ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg21 = (sim->atomExchange); } calling((void*)haloExchange, 3, 0UL, 0, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011652UL)); (haloExchange)(____chimes_arg21, sim); }) ;
+    call_lbl_3: ({ HaloExchange * ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg21 = (sim->atomExchange); } calling((void*)haloExchange, 3, 0, 0UL, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011652UL)); (haloExchange)(____chimes_arg21, sim); }) ;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ Atoms * ____chimes_arg24; LinkCell * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes); } calling((void*)sortAtomsInCell, 5, 0UL, 0, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) ; } };
+   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ Atoms * ____chimes_arg24; LinkCell * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes); } calling((void*)sortAtomsInCell, 5, 0, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) ; } };
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 double timestep_quick(SimFlat* s, int nSteps, real_t dt)
@@ -2874,11 +2873,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 38 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
    {
 # 39 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 40 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      ({ calling_npm("advanceVelocity", 0UL, 0, 3, 7237354288423011274UL, 0UL, 0UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 41 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_2: ({ calling((void*)profileStop, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 44 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2886,11 +2885,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
+      do { call_lbl_4: ({ calling((void*)profileStart, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(positionTimer); }) ; } while(0);
 # 48 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      ({ calling_npm("advancePosition", 0UL, 0, 3, 7237354288423011274UL, 0UL, 0UL); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
+      ({ calling_npm("advancePosition", 0); advancePosition_npm(s, s->boxes->nLocalBoxes, dt); });
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
+      do { call_lbl_5: ({ calling((void*)profileStop, 5, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(positionTimer); }) ; } while(0);
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 51 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 52 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2898,11 +2897,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 55 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_7: ({ calling((void*)profileStart, 7, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(redistributeTimer); }) ; } while(0);
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0UL, 0, 1, (size_t)(7237354288423011274UL)); redistributeAtoms_quick(s); }) ;
+       call_lbl_8: ({ calling((void*)redistributeAtoms, 8, 0, 0UL, 1, (size_t)(7237354288423011274UL)); redistributeAtoms_quick(s); }) ;
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
+      do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(redistributeTimer); }) ; } while(0);
 # 58 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 59 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2910,11 +2909,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_11: ({ calling((void*)profileStart, 11, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(computeForceTimer); }) ; } while(0);
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-       call_lbl_12: ({ calling((void*)computeForce, 12, 0UL, 0, 1, (size_t)(7237354288423011274UL)); computeForce_quick(s); }) ;
+       call_lbl_12: ({ calling((void*)computeForce, 12, 0, 0UL, 1, (size_t)(7237354288423011274UL)); computeForce_quick(s); }) ;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
+      do { call_lbl_13: ({ calling((void*)profileStop, 13, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(computeForceTimer); }) ; } while(0);
 # 66 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2922,11 +2921,11 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
 # 69 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 70 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 71 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
+      do { call_lbl_15: ({ calling((void*)profileStart, 15, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) ; } while(0);
 # 72 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      ({ calling_npm("advanceVelocity", 0UL, 0, 3, 7237354288423011274UL, 0UL, 0UL); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
+      ({ calling_npm("advanceVelocity", 0); advanceVelocity_npm(s, s->boxes->nLocalBoxes, 0.5*dt); });
 # 73 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
+      do { call_lbl_16: ({ calling((void*)profileStop, 16, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(velocityTimer); }) ; } while(0);
 # 74 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 75 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 76 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2936,7 +2935,7 @@ double timestep_quick(SimFlat* s, int nSteps, real_t dt)
    } }
 # 79 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 80 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_18: ({ calling((void*)kineticEnergy, 18, 0UL, ____alias_loc_id_1, 1, (size_t)(7237354288423011274UL)); kineticEnergy_quick(s); }) ;
+    call_lbl_18: ({ calling((void*)kineticEnergy, 18, ____alias_loc_id_1, 0UL, 1, (size_t)(7237354288423011274UL)); kineticEnergy_quick(s); }) ;
 # 81 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 82 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
    rm_stack(false, 0UL, "timestep", (int *)0x0, 0, ____chimes_did_disable0); return s->ePotential;
@@ -2949,7 +2948,7 @@ void computeForce_quick(SimFlat* s)
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(7237354288423011698UL)) ; ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0UL, ____alias_loc_id_4, 1, 7237354288423011698UL)))(s);
+    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, ____alias_loc_id_4, 0UL, 1, 7237354288423011698UL)))(s);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 
@@ -3048,11 +3047,11 @@ real_t eLocal[2];
 # 138 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
     ;
 # 139 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_1: ({ calling((void*)profileStart, 1, 0UL, ____alias_loc_id_5, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 140 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0UL, 0, 3, (size_t)(7237354288423011700UL), (size_t)(7237354288423011706UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0, 0UL, 3, (size_t)(7237354288423011700UL), (size_t)(7237354288423011706UL), (size_t)(0UL)); (addRealParallel)(eLocal, eSum, 2); }) ;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
    s->ePotential = eSum[0];
@@ -3068,17 +3067,17 @@ void redistributeAtoms_quick(SimFlat* sim)
 {const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7237354288423011652UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0) ; int ii;
  if (____must_checkpoint_redistributeAtoms_ii_0) { register_stack_vars(1, "redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } ; ;
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_1: ({ calling((void*)updateLinkCells, 1, 0UL, ____alias_loc_id_2, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
+    call_lbl_1: ({ calling((void*)updateLinkCells, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) ;
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0UL, 0, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_2: ({ calling((void*)profileStart, 2, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(atomHaloTimer); }) ; } while(0);
 # 165 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_3: ({ calling((void*)haloExchange, 3, 0UL, 0, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011652UL)); (haloExchange)(sim->atomExchange, sim); }) ;
+    call_lbl_3: ({ calling((void*)haloExchange, 3, 0, 0UL, 2, (size_t)(7237354288423011654UL), (size_t)(7237354288423011652UL)); (haloExchange)(sim->atomExchange, sim); }) ;
 # 166 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
+   do { call_lbl_4: ({ calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ calling((void*)sortAtomsInCell, 5, 0UL, 0, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) ; } };
+   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ calling((void*)sortAtomsInCell, 5, 0, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) ; } };
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 
@@ -3209,7 +3208,7 @@ void redistributeAtoms_npm(SimFlat* sim)
 
 
 static int module_init() {
-    init_module(7237354288423011253UL, 16, 6, 4, 11, 4, 6, 10, 10,
+    init_module(7237354288423011253UL, 16, 6, 4, 11, 4, 6, 10, 3, 0, 10,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)1, (7237354288423011253UL + 1UL), (7237354288423011253UL + 2UL), (7237354288423011253UL + 3UL), (7237354288423011253UL + 4UL), "kineticEnergy", (unsigned)1, (7237354288423011253UL + 21UL),
                            &____alias_loc_id_1, (unsigned)4, (unsigned)1, (7237354288423011253UL + 1UL), (7237354288423011253UL + 2UL), (7237354288423011253UL + 3UL), (7237354288423011253UL + 4UL), "kineticEnergy", (unsigned)1, (7237354288423011253UL + 21UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)1, (7237354288423011253UL + 385UL), "updateLinkCells", (unsigned)1, (7237354288423011253UL + 401UL),
@@ -3276,7 +3275,10 @@ static int module_init() {
                         "redistributeAtoms|sim|0", 5, "updateLinkCells", "sortAtomsInCell", "profileStop", "profileStart", "haloExchange",
                         "redistributeAtoms|ii|0", 1, "sortAtomsInCell",
                         "kineticEnergy|s|0", 3, "profileStop", "profileStart", "addRealParallel",
-                        "kineticEnergy|eLocal|0", 1, "kineticEnergy");
+                        "kineticEnergy|eLocal|0", 1, "kineticEnergy",
+        "advanceVelocity", 0UL, (int)3, 7237354288423011274UL, 0UL, 0UL,
+        "advancePosition", 0UL, (int)3, 7237354288423011274UL, 0UL, 0UL,
+        "advanceVelocity", 0UL, (int)3, 7237354288423011274UL, 0UL, 0UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

@@ -99,9 +99,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 45 5 len=9 printRank_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 46 115  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 51 6 len=16 timestampBarrier_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4 ({ calling_npm("barrierParallel", 0UL, 0, 0); barrierParallel_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4 ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 9 ({ calling_npm("printRank", 0UL, 0, 0); printRank_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 9 ({ calling_npm("printRank", 0); printRank_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 19 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 13 
@@ -130,9 +130,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 45 5 len=9 printRank_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 46 115  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 51 6 len=16 timestampBarrier_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4 ({ calling_npm("barrierParallel", 0UL, 0, 0); barrierParallel_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 4 ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 53 20 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 9 ({ calling_npm("printRank", 0UL, 0, 0); printRank_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 9 ({ calling_npm("printRank", 0); printRank_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 54 19 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c 56 13 

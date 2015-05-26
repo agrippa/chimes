@@ -77,19 +77,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -125,7 +124,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3312,7 +3311,7 @@ real_t epsilon;
 # 156 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
 # 157 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       ({ calling((void*)zeroReal3, -1, 0UL, 0, 1, (size_t)(15692222973149251135UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
+       ({ calling((void*)zeroReal3, -1, 0, 0UL, 1, (size_t)(15692222973149251135UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3338,7 +3337,7 @@ real_t epsilon;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue;; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-          call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, 0UL, 0, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
+          call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, 0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       { for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -3575,7 +3574,7 @@ real_t epsilon;
 # 156 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    {
 # 157 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-       ({ calling((void*)zeroReal3, -1, 0UL, 0, 1, (size_t)(15692222973149251135UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
+       ({ calling((void*)zeroReal3, -1, 0, 0UL, 1, (size_t)(15692222973149251135UL)); (zeroReal3)(s->atoms->f[iii]); }) ;
 # 158 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       s->atoms->U[iii] = 0.;
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3601,7 +3600,7 @@ real_t epsilon;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue;; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-          call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, 0UL, 0, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
+          call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, 0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       { for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -3944,7 +3943,7 @@ int ljForce_npm(SimFlat* s)
 
 
 static int module_init() {
-    init_module(15692222973149250863UL, 13, 5, 26, 6, 4, 2, 6, 10,
+    init_module(15692222973149250863UL, 13, 5, 26, 6, 4, 2, 6, 0, 0, 10,
                            &____alias_loc_id_0, (unsigned)33, (unsigned)2, (15692222973149250863UL + 77UL), (15692222973149250863UL + 78UL), (15692222973149250863UL + 79UL), (15692222973149250863UL + 80UL), (15692222973149250863UL + 81UL), (15692222973149250863UL + 82UL), (15692222973149250863UL + 83UL), (15692222973149250863UL + 84UL), (15692222973149250863UL + 85UL), (15692222973149250863UL + 86UL), (15692222973149250863UL + 87UL), (15692222973149250863UL + 88UL), (15692222973149250863UL + 90UL), (15692222973149250863UL + 91UL), (15692222973149250863UL + 92UL), (15692222973149250863UL + 93UL), (15692222973149250863UL + 94UL), (15692222973149250863UL + 95UL), (15692222973149250863UL + 96UL), (15692222973149250863UL + 97UL), (15692222973149250863UL + 98UL), (15692222973149250863UL + 99UL), (15692222973149250863UL + 100UL), (15692222973149250863UL + 101UL), (15692222973149250863UL + 102UL), (15692222973149250863UL + 103UL), (15692222973149250863UL + 104UL), (15692222973149250863UL + 105UL), (15692222973149250863UL + 106UL), (15692222973149250863UL + 107UL), (15692222973149250863UL + 108UL), (15692222973149250863UL + 268UL), (15692222973149250863UL + 272UL), "zeroReal3", (unsigned)1, (15692222973149250863UL + 272UL), "getNeighborBoxes", (unsigned)2, (15692222973149250863UL + 89UL), (15692222973149250863UL + 270UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (15692222973149250863UL + 1UL), (15692222973149250863UL + 2UL), (15692222973149250863UL + 25UL),
                            &____alias_loc_id_2, (unsigned)2, (unsigned)0, (15692222973149250863UL + 29UL), (15692222973149250863UL + 31UL),

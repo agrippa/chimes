@@ -26,7 +26,7 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 9 5 len=4 main_
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 13 20 ;  { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 15 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 22 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 22  ({  calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 0); (foo)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 15 5 ; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 9 167  ;  
@@ -38,7 +38,7 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 9 5 len=4 main_
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 13 20 ;  { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 15 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 22 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 22  ({  calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 0); (foo)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 21 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 15 5 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/barrier.cpp 9 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  

@@ -25,6 +25,7 @@
 #include "perf_profile.h"
 
 #include "libchimes.h"
+#include "merge_info.h"
 #include "npm_context.h"
 #include "chimes_common.h"
 #include "struct_field.h"
@@ -107,6 +108,28 @@ typedef struct _serialized_checkpoint_time {
     unsigned tid;
     clock_t delta;
 } serialized_checkpoint_time;
+
+typedef struct _checkpoint_thread_ctx {
+    unsigned char *stacks_serialized;
+    unsigned char *globals_serialized;
+    unsigned char *constants_serialized;
+    unsigned char *thread_hierarchy_serialized;
+    uint64_t stacks_serialized_len;
+    uint64_t globals_serialized_len;
+    uint64_t constants_serialized_len;
+    uint64_t thread_hierarchy_serialized_len;
+
+    std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
+
+    vector<checkpointable_heap_allocation> *heap_to_checkpoint;
+
+    void *contains_serialized;
+    size_t contains_serialized_len;
+    void *serialized_alias_groups;
+    size_t serialized_alias_groups_len;
+
+    map<unsigned, vector<int> *> *stack_trackers;
+} checkpoint_thread_ctx;
 
 class checkpoint_ctx {
     public:
@@ -203,6 +226,9 @@ inline void register_stack_var_helper(std::string mangled_name_str,
         std::vector<stack_frame *> *program_stack);
 static inline void alias_group_changed_helper(unsigned loc_id,
         thread_ctx *ctx);
+static void merge_npm_aliases(string fname, size_t return_alias,
+        vector<size_t> param_aliases);
+static void *checkpoint_func(void *data);
 
 static std::vector<stack_frame *> *get_my_stack();
 static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
@@ -430,7 +456,14 @@ static map<string, vector<void **> > requested_npm_functions;
  * that function is called to ensure that all of the proper state change is
  * registered.
  */
-static map<string, npm_context> fname_to_npm_info;
+static map<string, npm_context *> fname_to_npm_info;
+
+/*
+ * Mapping from possibly dynamically inserted NPM calls to the parent-child
+ * alias merges that need to be done for that function call.
+ */
+static map<string, vector<merge_info> > npm_callee_to_dynamic_merge_info;
+static map<string, vector<merge_info> > npm_callee_to_static_merge_info;
 
 /*
  * Variables related to the hashing of large arrays. Hashing is done in CHIMES
@@ -447,7 +480,7 @@ static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
 // Just dump things smaller than this, don't waste time hashing.
 static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
 // The target size of a checkpoint, as a percentage of total heap bytes.
-static double target_checkpoint_size_perc = 0.1;
+static double target_checkpoint_size_perc = 0.2;
 
 // The target amount of overhead to add to the host program.
 static bool disable_throttling = false;
@@ -498,7 +531,9 @@ static std::map<void *, ptr_and_size *> *old_to_new;
 static std::map<std::string, std::vector<struct_field> *> structs;
 
 static pthread_t checkpoint_thread;
+static checkpoint_thread_ctx running_checkpoint_ctx;
 static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t checkpoint_cond = PTHREAD_COND_INITIALIZER;
 static volatile int checkpoint_thread_running = 0;
 
 int ____chimes_replaying = 0;
@@ -787,7 +822,7 @@ static void addCallToNPMContext(npm_context *ctx, call_aliases call) {
                 callee.get_return_alias());
     }
 
-    for (int a = 0; a < call.get_n_args(); a++) {
+    for (unsigned a = 0; a < call.get_n_args(); a++) {
         size_t parent = call.get_arg_alias(a);
         size_t child = callee.get_param_alias(a);
 
@@ -838,6 +873,9 @@ void init_chimes() {
     atexit(onexit);
 
     register_custom_init_handler("omp_lock_t", init_omp_lock);
+
+    pthread_create(&checkpoint_thread, NULL, checkpoint_func,
+            &running_checkpoint_ctx);
 
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
@@ -977,16 +1015,22 @@ void init_chimes() {
      * Iterate over all non-checkpointing functions and collect NPM info for
      * them.
      */
-    for (map<string, bool>::iterator i = does_checkpoint.begin(),
-            e = does_checkpoint.end(); i != e; i++) {
+    for (map<string, void *>::iterator i = provided_npm_functions.begin(),
+            e = provided_npm_functions.end(); i != e; i++) {
         std::string fname = i->first;
+        const bool does_not_cause_checkpoint = (does_checkpoint.find(fname) !=
+                does_checkpoint.end() && !does_checkpoint.at(fname));
+#ifdef VERBOSE
+        fprintf(stderr, "Generating NPM info for function %s, does not "
+                "checkpoint? %d\n", fname.c_str(), does_not_cause_checkpoint);
+#endif
 
-        if (!i->second) {
+        if (does_not_cause_checkpoint) {
             set<string> visited;
-            npm_context ctx(fname);
-            constructNPMContext(&ctx, i->first, &visited);
+            npm_context *ctx = new npm_context(fname);
+            constructNPMContext(ctx, fname, &visited);
 
-            VERIFY(fname_to_npm_info.insert(pair<string, npm_context>(fname,
+            VERIFY(fname_to_npm_info.insert(pair<string, npm_context *>(fname,
                             ctx)).second);
 
             if (fname_to_original_function.find(fname) !=
@@ -996,6 +1040,46 @@ void init_chimes() {
                 original_function_to_npm.insert(
                         pair<void *, pair<void *, string> >(original_ptr,
                             pair<void *, string>(npm_fptr, fname)));
+            }
+        }
+    }
+
+    for (map<string, vector<merge_info> >::iterator i =
+            npm_callee_to_static_merge_info.begin(), e =
+            npm_callee_to_static_merge_info.end(); i != e; i++) {
+        string callee_name = i->first;
+        vector<merge_info> info = i->second;
+
+        for (vector<merge_info>::iterator ii = info.begin(), ee = info.end();
+                ii != ee; ii++) {
+            merge_info curr = *ii;
+            merge_npm_aliases(callee_name, curr.get_return_alias(),
+                    curr.get_param_aliases());
+        }
+    }
+
+    for (map<string, vector<merge_info> >::iterator i =
+            npm_callee_to_dynamic_merge_info.begin(), e =
+            npm_callee_to_dynamic_merge_info.end(); i != e; i++) {
+        string callee_name = i->first;
+        vector<merge_info> info = i->second;
+
+        /*
+         * Information on the outermost aliases for this function may be missing
+         * if it is not convertible to NPM mode (e.g. makes function pointer
+         * calls). In this case, there's no need to insert this aliases ahead of
+         * time, as they will always be inserted at runtime by calling(). Hence,
+         * we check if callee is in the provided NPM functions here.
+         */
+        if (does_checkpoint.find(callee_name) != does_checkpoint.end() &&
+                provided_npm_functions.find(callee_name) !=
+                    provided_npm_functions.end() &&
+                !does_checkpoint.at(callee_name)) {
+            for (vector<merge_info>::iterator ii = info.begin(),
+                    ee = info.end(); ii != ee; ii++) {
+                merge_info curr = *ii;
+                merge_npm_aliases(callee_name, curr.get_return_alias(),
+                        curr.get_param_aliases());
             }
         }
     }
@@ -1552,10 +1636,39 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     }
 }
 
+static void parse_merges(int n_merges, va_list vl,
+        map<string, vector<merge_info> > *out) {
+    for (int i = 0; i < n_merges; i++) {
+        std::string callee_name(va_arg(vl, const char *));
+        size_t return_alias = va_arg(vl, size_t);
+        int n_param_aliases = va_arg(vl, int);
+#ifdef VERBOSE
+        fprintf(stderr, "Parsing NPM merges for callee=%s return_alias=%lu "
+                "n_param_aliases=%d\n", callee_name.c_str(), return_alias,
+                n_param_aliases);
+#endif
+
+        vector<size_t> param_aliases;
+        for (int j = 0; j < n_param_aliases; j++) {
+            size_t alias = va_arg(vl, size_t);
+#ifdef VERBOSE
+            fprintf(stderr, "  param alias %d: %lu\n", j, alias);
+#endif
+            param_aliases.push_back(alias);
+        }
+
+        if (out->find(callee_name) == out->end()) {
+            out->insert(pair<string, vector<merge_info> >(callee_name,
+                        vector<merge_info>()));
+        }
+        out->at(callee_name).push_back(merge_info(param_aliases, return_alias));
+    }
+}
+
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         int nvars, int n_change_locs, int n_provided_npm_functions,
-        int n_external_npm_functions, int n_npm_conditionals, int nstructs,
-        ...) {
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -1572,10 +1685,22 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
     // Generate unique IDs for each change location
     for (int i = 0; i < n_change_locs; i++) {
+        // Unique ID for this location
         unsigned this_loc_id = count_change_locations++;
 
+        /*
+         * Location in the host application to store the integer ID of this
+         * location.
+         */
         unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
+        // Number of aliases that have definitely changed at this location
         const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+        /*
+         * Number of aliases which may have to be marked changed at this
+         * location. These are groups that are passed to externally defined
+         * functions. If we do not get that function registered at runtime, we
+         * have to conservatively assume these groups have changed.
+         */
         const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
 
 #ifdef VERBOSE
@@ -1584,6 +1709,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                 n_possible_aliases_at_loc);
 #endif
 
+        // Read definite changes
         set<size_t> aliases_changed;
         for (unsigned j = 0; j < n_aliases_at_loc; j++) {
             size_t alias = va_arg(vl, size_t);
@@ -1592,6 +1718,10 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
                     this_loc_id, aliases_changed));
 
+        /*
+         * Read a mapping from externally defined function name to the aliases
+         * it is passed which it may (or may not) change.
+         */
         map<string, set<size_t> > possible_aliases;
         for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
             std::string funcname(va_arg(vl, const char *));
@@ -1610,7 +1740,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         possible_alias_changes.insert(
                 pair<unsigned, map<string, set<size_t> > >(this_loc_id,
                     possible_aliases));
-
 
         *change_loc_id_ptr = this_loc_id;
     }
@@ -1686,7 +1815,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                         fname, outer_aliases)).second);
         VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
                         fname, calls)).second);
-
     }
 
     // Iterate over the NPM functions that this compilation unit depends on
@@ -1719,7 +1847,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         npm_conditional_pointers.at(func_name).push_back(conditional);
     }
 
-    VERIFY(pthread_rwlock_wrlock(&contains_lock) == 0);
+    // Read an initial parent-child relationship of alias groups
     for (int i = 0; i < n_contains_mappings; i++) {
         size_t container = va_arg(vl, size_t);
         size_t child = va_arg(vl, size_t);
@@ -1729,7 +1857,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             contains[container] = child;
         }
     }
-    VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
     for (int i = 0; i < nstructs; i++) {
         char *struct_name = va_arg(vl, char *);
@@ -1828,6 +1955,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             var_checkpoint_causes[var_name_str].insert(cause_str);
         }
     }
+
+    parse_merges(n_static_merges, vl, &npm_callee_to_static_merge_info);
+    parse_merges(n_dynamic_merges, vl, &npm_callee_to_dynamic_merge_info);
 
     va_end(vl);
 
@@ -2000,20 +2130,24 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return NOT_DISABLED;
 }
 
-static void calling_npm_helper(const char *name, size_t return_alias,
-        unsigned loc_id, int n_params, va_list vl) {
-    thread_ctx *ctx = get_my_context();
-    std::string fname(name);
-    assert(fname_to_npm_info.find(fname) != fname_to_npm_info.end());
-    npm_context npm_ctx = fname_to_npm_info.at(fname);
+static void merge_npm_aliases(string fname, size_t return_alias,
+        vector<size_t> param_aliases) {
+#ifdef VERBOSE
+    fprintf(stderr, "Doing ahead of time merge for %s\n", fname.c_str());
+#endif
+    npm_context *npm_ctx = fname_to_npm_info.at(fname);
+    function_io_aliases callee = fname_to_outer_aliases.at(fname);
 
-    if (loc_id > 0) {
-        alias_group_changed_helper(loc_id, ctx);
-    }
+#ifdef VERBOSE
+    fprintf(stderr, "  callee.return_alias=%lu\n", callee.get_return_alias());
+    fprintf(stderr, "  callee.n_params=%d\n", callee.get_n_params());
+    fprintf(stderr, "  caller.return_alias=%lu\n", return_alias);
+    fprintf(stderr, "  caller.n_params=%d\n", param_aliases.size());
+#endif
 
     for (vector<pair<size_t, size_t> >::iterator i =
-            npm_ctx.get_aliases_created()->begin(), e =
-            npm_ctx.get_aliases_created()->end(); i != e; i++) {
+            npm_ctx->get_aliases_created()->begin(), e =
+            npm_ctx->get_aliases_created()->end(); i != e; i++) {
         size_t parent = (*i).first;
         size_t child = (*i).second;
 
@@ -2021,25 +2155,16 @@ static void calling_npm_helper(const char *name, size_t return_alias,
         merge_alias_groups(parent, child);
     }
 
-    for (set<unsigned>::iterator i = npm_ctx.get_alias_locs()->begin(),
-            e = npm_ctx.get_alias_locs()->end(); i != e; i++) {
-        unsigned loc_id = *i;
-        assert(loc_id > 0);
-        alias_group_changed_helper(loc_id, ctx);
-    }
-
-    assert(fname_to_outer_aliases.find(fname) != fname_to_outer_aliases.end());
-    function_io_aliases callee = fname_to_outer_aliases.at(fname);
     if (return_alias == 0UL || callee.get_return_alias() == 0UL) {
         assert(return_alias == 0UL && callee.get_return_alias() == 0UL);
     } else {
         merge_alias_groups(return_alias, callee.get_return_alias());
     }
 
-    assert(callee.get_n_params() == n_params);
+    assert(callee.get_n_params() == param_aliases.size());
 
-    for (int i = 0; i < n_params; i++) {
-        size_t parent = va_arg(vl, size_t);
+    for (unsigned i = 0; i < param_aliases.size(); i++) {
+        size_t parent = param_aliases.at(i);
         size_t child = callee.get_param_alias(i);
 
         if (parent == 0UL || child == 0UL) {
@@ -2050,16 +2175,39 @@ static void calling_npm_helper(const char *name, size_t return_alias,
     }
 }
 
-void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...) {
-    va_list vl;
-    va_start(vl, n_params);
-    calling_npm_helper(name, return_alias, loc_id, n_params, vl);
-    va_end(vl);
+static void calling_npm_helper(const char *name, unsigned loc_id,
+        bool has_alias_info, size_t return_alias, int n_params, va_list vl) {
+    thread_ctx *ctx = get_my_context();
+    std::string fname(name);
+    npm_context *npm_ctx = fname_to_npm_info.at(fname);
+
+    if (loc_id > 0) {
+        alias_group_changed_helper(loc_id, ctx);
+    }
+
+    for (set<unsigned>::iterator i = npm_ctx->get_alias_locs()->begin(),
+            e = npm_ctx->get_alias_locs()->end(); i != e; i++) {
+        unsigned loc_id = *i;
+        assert(loc_id > 0);
+        alias_group_changed_helper(loc_id, ctx);
+    }
+
+    if (has_alias_info) {
+        vector<size_t> param_aliases;
+        for (int i = 0; i < n_params; i++) {
+            size_t alias = va_arg(vl, size_t);
+            param_aliases.push_back(alias);
+        }
+        merge_npm_aliases(fname, return_alias, param_aliases);
+    }
 }
 
-static void calling_helper(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, va_list vl) {
+void calling_npm(const char *name, unsigned loc_id) {
+    calling_npm_helper(name, loc_id, false, 0, 0, 0x0);
+}
+
+static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, va_list vl) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ms();
 #endif
@@ -2102,7 +2250,7 @@ static void calling_helper(void *func_ptr, int lbl, size_t set_return_alias,
 #endif
 }
 
-void *translate_fptr(void *fptr, int lbl, size_t return_alias, unsigned loc_id,
+void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         int n_params, ...) {
     map<void *, pair<void *, string> >::iterator exists =
         original_function_to_npm.find(fptr);
@@ -2110,22 +2258,22 @@ void *translate_fptr(void *fptr, int lbl, size_t return_alias, unsigned loc_id,
     va_list vl;
     va_start(vl, n_params);
     if (exists != original_function_to_npm.end()) {
-        calling_npm_helper(exists->second.second.c_str(), return_alias, loc_id,
-                n_params, vl);
+        calling_npm_helper(exists->second.second.c_str(), loc_id, true,
+                return_alias, n_params, vl);
         result = exists->second.first;
     } else {
-        calling_helper(fptr, lbl, return_alias, loc_id, n_params, vl);
+        calling_helper(fptr, lbl, loc_id, return_alias, n_params, vl);
         result = fptr;
     }
     va_end(vl);
     return (result);
 }
 
-void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
+void calling(void *func_ptr, int lbl, unsigned loc_id, size_t return_alias,
         unsigned naliases, ...) {
     va_list vl;
     va_start(vl, naliases);
-    calling_helper(func_ptr, lbl, set_return_alias, loc_id, naliases, vl);
+    calling_helper(func_ptr, lbl, loc_id, return_alias, naliases, vl);
     va_end(vl);
 }
 
@@ -2780,33 +2928,9 @@ void free_wrapper(void *ptr, size_t group) {
 #endif
 }
 
-typedef struct _checkpoint_thread_ctx {
-    unsigned char *stacks_serialized;
-    unsigned char *globals_serialized;
-    unsigned char *constants_serialized;
-    unsigned char *thread_hierarchy_serialized;
-    uint64_t stacks_serialized_len;
-    uint64_t globals_serialized_len;
-    uint64_t constants_serialized_len;
-    uint64_t thread_hierarchy_serialized_len;
-
-    std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
-
-    vector<checkpointable_heap_allocation> *heap_to_checkpoint;
-
-    void *contains_serialized;
-    size_t contains_serialized_len;
-    void *serialized_alias_groups;
-    size_t serialized_alias_groups_len;
-
-    map<unsigned, vector<int> *> *stack_trackers;
-} checkpoint_thread_ctx;
-
-static void *checkpoint_func(void *data);
-
 void wait_for_checkpoint() {
     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-    if (checkpoint_thread_running) {
+    if (checkpoint_thread_running == 1) {
         pthread_join(checkpoint_thread, NULL);
     }
     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
@@ -2922,21 +3046,23 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
 
+    checkpoint_ctx *curr_ckpt = NULL;
     if (checkpoint_initializing == 0) {
         // first thread in the checkpoint
         size_t checkpoint_id = sync_id_counter++;
         checkpoint_initializing = checkpoint_id;
 
-        assert(checkpoint_info.find(checkpoint_id) == checkpoint_info.end());
-        checkpoint_info.insert(std::pair<size_t, checkpoint_ctx*>(checkpoint_id,
-                    new checkpoint_ctx(checkpoint_id, thread_count)));
+        curr_ckpt = new checkpoint_ctx(checkpoint_id, thread_count);
+        VERIFY(checkpoint_info.insert(std::pair<size_t, checkpoint_ctx*>(
+                        checkpoint_id, curr_ckpt)).second);
     }
-    checkpoint_ctx *curr_ckpt = checkpoint_info.at(checkpoint_initializing);
+    curr_ckpt = (curr_ckpt ? curr_ckpt :
+            checkpoint_info.at(checkpoint_initializing));
 
-    unsigned checkpoint_thread_count = curr_ckpt->incr_threads_in_checkpoint();
+    const unsigned checkpoint_thread_count = curr_ckpt->incr_threads_in_checkpoint();
 
     if (entry_ptr) {
-        unsigned tid = get_my_tid();
+        const unsigned tid = get_my_tid();
         curr_ckpt->add_entry_time(tid, *entry_ptr);
     }
 
@@ -3173,11 +3299,11 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
             thread_ctx *ctx = i->second;
             ctx->set_stack_nesting(1);
         }
-    } else if (checkpointing_thread && !checkpoint_thread_running &&
+    } else if (checkpointing_thread && checkpoint_thread_running == 0 &&
             within_overhead_bounds()) {
         VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
-        if (checkpoint_thread_running) {
+        if (checkpoint_thread_running == 1) {
             VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
         } else {
             checkpoint_thread_running = 1;
@@ -3366,51 +3492,46 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
             delete all_changed;
 
-            checkpoint_thread_ctx *checkpoint_ctx = (checkpoint_thread_ctx *)malloc(
-                    sizeof(checkpoint_thread_ctx));
-            assert(checkpoint_ctx);
-            checkpoint_ctx->stacks_serialized = serialize_program_stacks(&thread_ctxs,
-                    &checkpoint_ctx->stacks_serialized_len);
-            checkpoint_ctx->globals_serialized = serialize_globals(&global_vars,
-                    &checkpoint_ctx->globals_serialized_len);
-            checkpoint_ctx->constants_serialized = serialize_constants(&constants,
-                    &checkpoint_ctx->constants_serialized_len);
-            checkpoint_ctx->thread_hierarchy_serialized = serialize_thread_hierarchy(
+            running_checkpoint_ctx.stacks_serialized = serialize_program_stacks(&thread_ctxs,
+                    &running_checkpoint_ctx.stacks_serialized_len);
+            running_checkpoint_ctx.globals_serialized = serialize_globals(&global_vars,
+                    &running_checkpoint_ctx.globals_serialized_len);
+            running_checkpoint_ctx.constants_serialized = serialize_constants(&constants,
+                    &running_checkpoint_ctx.constants_serialized_len);
+            running_checkpoint_ctx.thread_hierarchy_serialized = serialize_thread_hierarchy(
                     &thread_ctxs,
-                    &checkpoint_ctx->thread_hierarchy_serialized_len);
-            checkpoint_ctx->heap_to_checkpoint = to_checkpoint;
+                    &running_checkpoint_ctx.thread_hierarchy_serialized_len);
+            running_checkpoint_ctx.heap_to_checkpoint = to_checkpoint;
 
-            checkpoint_ctx->checkpoint_entry_times =
+            running_checkpoint_ctx.checkpoint_entry_times =
                 new std::vector<std::pair<unsigned, clock_t> >(
                         curr_ckpt->get_checkpoint_entry_times());
-            std::sort(checkpoint_ctx->checkpoint_entry_times->begin(),
-                    checkpoint_ctx->checkpoint_entry_times->end(),
+            std::sort(running_checkpoint_ctx.checkpoint_entry_times->begin(),
+                    running_checkpoint_ctx.checkpoint_entry_times->end(),
                     compare_entry_times);
 
-            checkpoint_ctx->stack_trackers = new map<unsigned, vector<int> *>();
+            running_checkpoint_ctx.stack_trackers = new map<unsigned, vector<int> *>();
             for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
                     te = thread_ctxs.end(); ti != te; ti++) {
                 unsigned thread = ti->first;
                 thread_ctx *info = ti->second;
-                (*checkpoint_ctx->stack_trackers)[thread] = new vector<int>();
-                info->get_stack_tracker().copy(checkpoint_ctx->stack_trackers->at(thread));
+                (*running_checkpoint_ctx.stack_trackers)[thread] = new vector<int>();
+                info->get_stack_tracker().copy(running_checkpoint_ctx.stack_trackers->at(thread));
             }
 
             VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
-            checkpoint_ctx->contains_serialized = serialize_containers(
-                    &contains, &(checkpoint_ctx->contains_serialized_len));
+            running_checkpoint_ctx.contains_serialized = serialize_containers(
+                    &contains, &(running_checkpoint_ctx.contains_serialized_len));
             VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
             VERIFY(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
-            checkpoint_ctx->serialized_alias_groups = serialize_alias_groups(
+            running_checkpoint_ctx.serialized_alias_groups = serialize_alias_groups(
                     &aliased_groups,
-                    &(checkpoint_ctx->serialized_alias_groups_len));
+                    &(running_checkpoint_ctx.serialized_alias_groups_len));
             VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
 
+            VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
             VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-
-            pthread_create(&checkpoint_thread, NULL, checkpoint_func,
-                    checkpoint_ctx);
         }
     }
 
@@ -3747,7 +3868,7 @@ static int wait_for_running_writes(struct aiocb * aio_list[],
         } else {
             fprintf(stderr, "Unexpected error on aio_write to %s\n",
                     dump_filename);
-            fprintf(stderr, "fildes=%d offset=%lld nbytes=%lu buf=%p a=%d\n",
+            fprintf(stderr, "fildes=%d offset=%ld nbytes=%lu buf=%p a=%d\n",
                     curr->aio_fildes, curr->aio_offset, curr->aio_nbytes,
                     curr->aio_buf, a);
             perror(NULL);
@@ -3763,252 +3884,274 @@ static int wait_for_running_writes(struct aiocb * aio_list[],
 }
 
 void *checkpoint_func(void *data) {
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
-#endif
     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
-    unsigned char *stacks_serialized = ctx->stacks_serialized;
-    uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
-    unsigned char *globals_serialized = ctx->globals_serialized;
-    uint64_t globals_serialized_len = ctx->globals_serialized_len;
-    unsigned char *constants_serialized = ctx->constants_serialized;
-    uint64_t constants_serialized_len = ctx->constants_serialized_len;
-    unsigned char *thread_hierarchy_serialized =
-        ctx->thread_hierarchy_serialized;
-    uint64_t thread_hierarchy_serialized_len =
-        ctx->thread_hierarchy_serialized_len;
-    vector<checkpointable_heap_allocation> *to_checkpoint =
-        ctx->heap_to_checkpoint;
-    void *contains_serialized = ctx->contains_serialized;
-    size_t contains_serialized_len = ctx->contains_serialized_len;
-    void *serialized_alias_groups = ctx->serialized_alias_groups;
-    size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
 
-    vector<aiocb *> async_tokens;
-    off_t count_bytes = 0;
+    while (true) {
+        VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
-    /*
-     * Until we implement the planned client-server architecture, just dump
-     * checkpoints to a file locally. Right now, we naively dump everything.
-     */
-
-    // Total number of async writes issued below
-    int n_writes_running = 0;
-
-    // Find a unique file for this checkpoint
-    int count = 0;
-    char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
-    sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
-    int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
-    while (fd < 0) {
-        count++;
-        sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
-        fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
-    }
-
-#ifdef VERBOSE
-    fprintf(stderr, "Creating checkpoint in \"%s\", previous_checkpoint="
-            "\"%s\"\n", dump_filename, previous_checkpoint_filename);
-#endif
-
-    // Write the name of the preceding checkpoint file out
-    size_t filename_length = strlen(previous_checkpoint_filename) + 1;
-    prep_async_safe_write(fd, &filename_length,
-            sizeof(filename_length), count_bytes, &count_bytes, "filename_length", &async_tokens);
-    prep_async_safe_write(fd, previous_checkpoint_filename,
-            filename_length, count_bytes, &count_bytes, "previous_checkpoint_filename", &async_tokens);
-
-    size_t heap_offset = -1; // placeholder until we figure out the actual value
-    off_t heap_offset_offset = sizeof(filename_length) + filename_length;
-    prep_async_safe_write(fd, &heap_offset,
-                sizeof(heap_offset), count_bytes, &count_bytes, "heap_offset", &async_tokens);
-
-    // Write the heap entry times to the dump file, sorted by entry order
-    int n_checkpoint_times = ctx->checkpoint_entry_times->size();
-    prep_async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
-                &count_bytes, "n_checkpoint_times", &async_tokens);
-    serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
-            n_checkpoint_times * sizeof(serialized_checkpoint_time));
-    assert(serialized_times);
-
-    int index = 0;
-    clock_t baseline;
-    for (vector<pair<unsigned, clock_t> >::iterator i =
-            ctx->checkpoint_entry_times->begin(),
-            e = ctx->checkpoint_entry_times->end(); i != e; i++) {
-        unsigned tid = i->first;
-        clock_t t = i->second;
-        if (index == 0) {
-            baseline = t;
+        while (checkpoint_thread_running == 0) {
+            VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
         }
-        clock_t delta = t - baseline;
-        serialized_times[index].tid = tid;
-        serialized_times[index].delta = delta;
-        index++;
-    }
-    prep_async_safe_write(fd, serialized_times,
-                n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
-                &count_bytes, "serialized_times", &async_tokens);
 
-    // Write the trace of function calls out
-    size_t serialized_traces_len;
-    void *serialized_traces = serialize_traces(ctx->stack_trackers,
-            &serialized_traces_len);
-    prep_async_safe_write(fd, &serialized_traces_len,
-                sizeof(serialized_traces_len), count_bytes, &count_bytes, "serialized_traces_len", &async_tokens);
-    prep_async_safe_write(fd, serialized_traces,
-                serialized_traces_len, count_bytes, &count_bytes, "serialized_traces", &async_tokens);
-
-    // Write the serialized stack out
-    prep_async_safe_write(fd, &stacks_serialized_len,
-                sizeof(stacks_serialized_len), count_bytes, &count_bytes, "stacks_serialized_len", &async_tokens);
-    prep_async_safe_write(fd, stacks_serialized,
-                ctx->stacks_serialized_len, count_bytes, &count_bytes, "stacks_serialized", &async_tokens);
-
-    // Write the serialized globals out
-    prep_async_safe_write(fd, &globals_serialized_len,
-                sizeof(globals_serialized_len), count_bytes, &count_bytes, "globals_serialized_len", &async_tokens);
-    prep_async_safe_write(fd, globals_serialized,
-            globals_serialized_len, count_bytes, &count_bytes, "globals_serialized", &async_tokens);
-
-    // Write the constants out
-    prep_async_safe_write(fd, &constants_serialized_len,
-            sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
-    prep_async_safe_write(fd, constants_serialized,
-            constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
-
-    // Write the function pointers out
-    prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
-            &count_bytes, "text_start", &async_tokens);
-    prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
-            &count_bytes, "text_len", &async_tokens);
-
-    // Write out the thread hierarchy
-    prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
-            sizeof(thread_hierarchy_serialized_len), count_bytes, &count_bytes, "thread_hierarchy_serialized_len", &async_tokens);
-    prep_async_safe_write(fd, thread_hierarchy_serialized,
-            thread_hierarchy_serialized_len, count_bytes, &count_bytes, "thread_hierarchy_serialized", &async_tokens);
-
-    /*
-     * At the end (after all asynchronous I/Os have completed) we write a
-     * pointer to the heap offset into the file near the front.
-     *
-     * TODO
-     */
-    heap_offset = count_bytes;
-
-    // Write the heap allocations out
-    uint64_t n_heap_allocs = to_checkpoint->size();
-    prep_async_safe_write(fd, &n_heap_allocs,
-                sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
-    vector<serialized_heap_var> *serialized_heap_vars =
-        serialize_checkpointable_heap(to_checkpoint);
-    assert(serialized_heap_vars->size() == to_checkpoint->size());
-
-    for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-        prep_async_safe_write(fd,
-                    serialized_heap_vars->at(i).get_serialized(),
-                    serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
-                    &count_bytes, "serialized_heap_vars", &async_tokens);
-        prep_async_safe_write(fd,
-                    to_checkpoint->at(i).get_buffer(),
-                    serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
-                    &count_bytes, "to_checkpoint", &async_tokens);
-    }
-
-    prep_async_safe_write(fd, &contains_serialized_len,
-            sizeof(contains_serialized_len), count_bytes, &count_bytes,
-            "contains_serialized_len", &async_tokens);
-    prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
-                count_bytes, &count_bytes, "serialized_contains",
-                &async_tokens);
-
-    prep_async_safe_write(fd, &serialized_alias_groups_len,
-                sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,
-                "serialized_alias_groups_len", &async_tokens);
-    prep_async_safe_write(fd, serialized_alias_groups,
-                serialized_alias_groups_len, count_bytes, &count_bytes,
-                "serialized_alias_groups", &async_tokens);
-
-    /*
-     * Done! Wait for async I/Os and finally write the heap offset info in the
-     * header of the checkpoint file.
-     *
-     * Iterate in reverse so we wait for the last ones first.
-     */
-    struct aiocb * aio_list[async_tokens.size()];
-    while (!async_tokens.empty()) {
-        aiocb *torun = async_tokens.front();
-        async_tokens.erase(async_tokens.begin());
+        VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
         /*
-         * Some writes may be empty (e.g. if there are no globals then the
-         * serialized globals len will be == 0).
+         * Main thread will signal checkpoint thread to exit by setting an
+         * invalid value.
          */
-        if (torun->aio_nbytes == 0) {
-            free(torun);
-            continue;
-        }
-
-        int err = aio_write(torun);
-
-        if (err == -1) {
-            async_tokens.push_back(torun);
-            if (errno == EAGAIN) {
-                if (n_writes_running) {
-                    n_writes_running = wait_for_running_writes(aio_list,
-                            n_writes_running, &count_bytes, dump_filename, &async_tokens);
-                }
-            } else {
-                fprintf(stderr, "Unexpected error while writing asynchronously "
-                        "to %s\n", dump_filename);
-                perror(NULL);
-                exit(1);
-            }
-        } else {
-            aio_list[n_writes_running++] = torun;
-        }
-    }
-
-    while (n_writes_running > 0) {
-        n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
-                &count_bytes, dump_filename, &async_tokens);
-    }
-
-    VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
-            dump_filename) == heap_offset_offset);
-    safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
-            dump_filename);
-    close(fd);
-
-    for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-        free(to_checkpoint->at(i).get_buffer());
-        free(serialized_heap_vars->at(i).get_serialized());
-    }
-
-    free(stacks_serialized);
-    free(globals_serialized);
-    free(constants_serialized);
-    free(thread_hierarchy_serialized);
-    free(serialized_times);
-    free(serialized_traces);
-    free(contains_serialized);
-    free(serialized_alias_groups);
-    delete to_checkpoint;
-    delete ctx->stack_trackers;
-    delete ctx->checkpoint_entry_times;
-    delete serialized_heap_vars;
-    free(ctx);
-
-    strcpy(previous_checkpoint_filename, dump_filename);
-
-    checkpoint_thread_running = 0;
+        if (checkpoint_thread_running == -1) break;
 
 #ifdef __CHIMES_PROFILE
-    pp.add_time(CHECKPOINT_THREAD, __start_time);
+        const unsigned long long __start_time = perf_profile::current_time_ms();
+#endif
+        unsigned char *stacks_serialized = ctx->stacks_serialized;
+        uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
+        unsigned char *globals_serialized = ctx->globals_serialized;
+        uint64_t globals_serialized_len = ctx->globals_serialized_len;
+        unsigned char *constants_serialized = ctx->constants_serialized;
+        uint64_t constants_serialized_len = ctx->constants_serialized_len;
+        unsigned char *thread_hierarchy_serialized =
+            ctx->thread_hierarchy_serialized;
+        uint64_t thread_hierarchy_serialized_len =
+            ctx->thread_hierarchy_serialized_len;
+        vector<checkpointable_heap_allocation> *to_checkpoint =
+            ctx->heap_to_checkpoint;
+        void *contains_serialized = ctx->contains_serialized;
+        size_t contains_serialized_len = ctx->contains_serialized_len;
+        void *serialized_alias_groups = ctx->serialized_alias_groups;
+        size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
+
+        vector<aiocb *> async_tokens;
+        off_t count_bytes = 0;
+
+        /*
+         * Until we implement the planned client-server architecture, just dump
+         * checkpoints to a file locally. Right now, we naively dump everything.
+         */
+
+        // Total number of async writes issued below
+        int n_writes_running = 0;
+
+        // Find a unique file for this checkpoint
+        int count = 0;
+        char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
+        sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
+        int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
+        while (fd < 0) {
+            count++;
+            sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
+            fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
+        }
+
+#ifdef VERBOSE
+        fprintf(stderr, "Creating checkpoint in \"%s\", previous_checkpoint="
+                "\"%s\"\n", dump_filename, previous_checkpoint_filename);
 #endif
 
-    return NULL;
+        // Write the name of the preceding checkpoint file out
+        size_t filename_length = strlen(previous_checkpoint_filename) + 1;
+        prep_async_safe_write(fd, &filename_length,
+                sizeof(filename_length), count_bytes, &count_bytes, "filename_length", &async_tokens);
+        prep_async_safe_write(fd, previous_checkpoint_filename,
+                filename_length, count_bytes, &count_bytes, "previous_checkpoint_filename", &async_tokens);
+
+        size_t heap_offset = -1; // placeholder until we figure out the actual value
+        off_t heap_offset_offset = sizeof(filename_length) + filename_length;
+        prep_async_safe_write(fd, &heap_offset,
+                    sizeof(heap_offset), count_bytes, &count_bytes, "heap_offset", &async_tokens);
+
+        // Write the heap entry times to the dump file, sorted by entry order
+        int n_checkpoint_times = ctx->checkpoint_entry_times->size();
+        prep_async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
+                    &count_bytes, "n_checkpoint_times", &async_tokens);
+        serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
+                n_checkpoint_times * sizeof(serialized_checkpoint_time));
+        assert(serialized_times);
+
+        int index = 0;
+        clock_t baseline;
+        for (vector<pair<unsigned, clock_t> >::iterator i =
+                ctx->checkpoint_entry_times->begin(),
+                e = ctx->checkpoint_entry_times->end(); i != e; i++) {
+            unsigned tid = i->first;
+            clock_t t = i->second;
+            if (index == 0) {
+                baseline = t;
+            }
+            clock_t delta = t - baseline;
+            serialized_times[index].tid = tid;
+            serialized_times[index].delta = delta;
+            index++;
+        }
+        prep_async_safe_write(fd, serialized_times,
+                    n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
+                    &count_bytes, "serialized_times", &async_tokens);
+
+        // Write the trace of function calls out
+        size_t serialized_traces_len;
+        void *serialized_traces = serialize_traces(ctx->stack_trackers,
+                &serialized_traces_len);
+        prep_async_safe_write(fd, &serialized_traces_len,
+                    sizeof(serialized_traces_len), count_bytes, &count_bytes, "serialized_traces_len", &async_tokens);
+        prep_async_safe_write(fd, serialized_traces,
+                    serialized_traces_len, count_bytes, &count_bytes, "serialized_traces", &async_tokens);
+
+        // Write the serialized stack out
+        prep_async_safe_write(fd, &stacks_serialized_len,
+                    sizeof(stacks_serialized_len), count_bytes, &count_bytes, "stacks_serialized_len", &async_tokens);
+        prep_async_safe_write(fd, stacks_serialized,
+                    ctx->stacks_serialized_len, count_bytes, &count_bytes, "stacks_serialized", &async_tokens);
+
+        // Write the serialized globals out
+        prep_async_safe_write(fd, &globals_serialized_len,
+                    sizeof(globals_serialized_len), count_bytes, &count_bytes, "globals_serialized_len", &async_tokens);
+        prep_async_safe_write(fd, globals_serialized,
+                globals_serialized_len, count_bytes, &count_bytes, "globals_serialized", &async_tokens);
+
+        // Write the constants out
+        prep_async_safe_write(fd, &constants_serialized_len,
+                sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
+        prep_async_safe_write(fd, constants_serialized,
+                constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
+
+        // Write the function pointers out
+        prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
+                &count_bytes, "text_start", &async_tokens);
+        prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
+                &count_bytes, "text_len", &async_tokens);
+
+        // Write out the thread hierarchy
+        prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
+                sizeof(thread_hierarchy_serialized_len), count_bytes, &count_bytes, "thread_hierarchy_serialized_len", &async_tokens);
+        prep_async_safe_write(fd, thread_hierarchy_serialized,
+                thread_hierarchy_serialized_len, count_bytes, &count_bytes, "thread_hierarchy_serialized", &async_tokens);
+
+        /*
+         * At the end (after all asynchronous I/Os have completed) we write a
+         * pointer to the heap offset into the file near the front.
+         *
+         * TODO
+         */
+        heap_offset = count_bytes;
+
+        // Write the heap allocations out
+        uint64_t n_heap_allocs = to_checkpoint->size();
+        prep_async_safe_write(fd, &n_heap_allocs,
+                    sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
+        vector<serialized_heap_var> *serialized_heap_vars =
+            serialize_checkpointable_heap(to_checkpoint);
+        assert(serialized_heap_vars->size() == to_checkpoint->size());
+
+        for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+            prep_async_safe_write(fd,
+                        serialized_heap_vars->at(i).get_serialized(),
+                        serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
+                        &count_bytes, "serialized_heap_vars", &async_tokens);
+            prep_async_safe_write(fd,
+                        to_checkpoint->at(i).get_buffer(),
+                        serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
+                        &count_bytes, "to_checkpoint", &async_tokens);
+        }
+
+        prep_async_safe_write(fd, &contains_serialized_len,
+                sizeof(contains_serialized_len), count_bytes, &count_bytes,
+                "contains_serialized_len", &async_tokens);
+        prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
+                    count_bytes, &count_bytes, "serialized_contains",
+                    &async_tokens);
+
+        prep_async_safe_write(fd, &serialized_alias_groups_len,
+                    sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,
+                    "serialized_alias_groups_len", &async_tokens);
+        prep_async_safe_write(fd, serialized_alias_groups,
+                    serialized_alias_groups_len, count_bytes, &count_bytes,
+                    "serialized_alias_groups", &async_tokens);
+
+        /*
+         * Done! Wait for async I/Os and finally write the heap offset info in the
+         * header of the checkpoint file.
+         *
+         * Iterate in reverse so we wait for the last ones first.
+         */
+        struct aiocb * aio_list[async_tokens.size()];
+        while (!async_tokens.empty()) {
+            aiocb *torun = async_tokens.front();
+            async_tokens.erase(async_tokens.begin());
+
+            /*
+             * Some writes may be empty (e.g. if there are no globals then the
+             * serialized globals len will be == 0).
+             */
+            if (torun->aio_nbytes == 0) {
+                free(torun);
+                continue;
+            }
+
+            int err = aio_write(torun);
+
+            if (err == -1) {
+                async_tokens.push_back(torun);
+                if (errno == EAGAIN) {
+                    if (n_writes_running) {
+                        n_writes_running = wait_for_running_writes(aio_list,
+                                n_writes_running, &count_bytes, dump_filename, &async_tokens);
+                    }
+                } else {
+                    fprintf(stderr, "Unexpected error while writing asynchronously "
+                            "to %s\n", dump_filename);
+                    perror(NULL);
+                    exit(1);
+                }
+            } else {
+                aio_list[n_writes_running++] = torun;
+            }
+        }
+
+        while (n_writes_running > 0) {
+            n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
+                    &count_bytes, dump_filename, &async_tokens);
+        }
+
+        VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
+                dump_filename) == heap_offset_offset);
+        safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
+                dump_filename);
+        close(fd);
+
+        for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+            free(to_checkpoint->at(i).get_buffer());
+            free(serialized_heap_vars->at(i).get_serialized());
+        }
+
+        free(stacks_serialized);
+        free(globals_serialized);
+        free(constants_serialized);
+        free(thread_hierarchy_serialized);
+        free(serialized_times);
+        free(serialized_traces);
+        free(contains_serialized);
+        free(serialized_alias_groups);
+        delete to_checkpoint;
+        delete ctx->stack_trackers;
+        delete ctx->checkpoint_entry_times;
+        delete serialized_heap_vars;
+
+        strcpy(previous_checkpoint_filename, dump_filename);
+
+        VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+        assert(checkpoint_thread_running == 1 ||
+                checkpoint_thread_running == -1);
+        if (checkpoint_thread_running == -1) break;
+
+        checkpoint_thread_running = 0;
+        VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+
+#ifdef __CHIMES_PROFILE
+        pp.add_time(CHECKPOINT_THREAD, __start_time);
+#endif
+    }
+
+    return (NULL);
 }
 
 static stack_var *find_var(void *addr,
@@ -4427,17 +4570,21 @@ void onexit() {
 #ifdef VERBOSE
     fprintf(stderr, "Done\n");
 #endif
-    if (checkpoint_thread_running) {
+    checkpoint_thread_running = -1;
 #ifdef VERBOSE
-        fprintf(stderr, "Joining\n");
+    fprintf(stderr, "Signalling...\n");
 #endif
-        pthread_join(checkpoint_thread, NULL);
+    VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
 #ifdef VERBOSE
-        fprintf(stderr, "Done\n");
+    fprintf(stderr, "Unlocking...\n");
 #endif
-    }
     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-#ifdef __CHIMES_PROFILE
-    fprintf(stderr, "%s\n", pp.tostr().c_str());
+#ifdef VERBOSE
+    fprintf(stderr, "Joining\n");
+#endif
+    pthread_join(checkpoint_thread, NULL);
+
+#ifdef VERBOSE
+    fprintf(stderr, "Done\n");
 #endif
 }

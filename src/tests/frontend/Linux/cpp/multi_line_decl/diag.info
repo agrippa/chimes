@@ -21,7 +21,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0UL, 0, 2, 0UL, 0UL); foo_npm(ptr[0], a); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 95 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 11 
@@ -35,7 +35,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 5 len=4 main_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0UL, 0, 2, 0UL, 0UL); foo_npm(ptr[0], a); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 95 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 11 

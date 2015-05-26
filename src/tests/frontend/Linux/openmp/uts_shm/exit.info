@@ -1,20 +1,20 @@
-omp_global_lock_alloc 3 0 0
+omp_global_lock_alloc 3 1 1 0
 impl_getName 2028 1 14 0
 impl_paramsToStr 0 2 37 38 0
 impl_parseParam 0 4 106 107 108 2015 0
 impl_helpMessage 0 0 0
 impl_abort 0 1 152 0
-ss_mkEmpty 0 0 0
+ss_mkEmpty 0 2 161 185 0
 ss_error 0 1 188 0
-ss_init 0 0 2 ss_error 1 2046 ss_mkEmpty 1 297
+ss_init 0 4 198 199 200 297 2 ss_error 1 2046 ss_mkEmpty 1 297
 ss_push 0 4 299 300 301 376 2 rng_showstate 2 382 2021 ss_error 1 2048
 ss_top 432 3 409 410 411 2 rng_showstate 2 432 2021 ss_error 1 2050
 ss_pop 0 4 463 464 465 518 2 rng_showstate 2 490 2021 ss_error 1 2050
 ss_topPosn 0 1 519 1 ss_error 1 2054
 ss_localDepth 0 1 538 0
-ss_release 0 0 2 omp_unset_lock 1 558 ss_error 1 2049
-ss_acquire 0 0 1 omp_unset_lock 1 607
-ss_steal 0 5 657 658 659 661 908 4 omp_set_lock 1 872 omp_unset_lock 1 872 rng_showstate 2 845 2021 ss_error 3 2041 2057 2060
+ss_release 0 3 550 551 595 1 ss_error 1 2049
+ss_acquire 0 4 597 598 599 648 0
+ss_steal 0 13 650 651 652 653 654 655 656 657 658 659 661 908 1307 2 rng_showstate 2 845 2021 ss_error 3 2041 2057 2060
 findwork 0 4 911 912 913 914 0
 ss_initState 0 2 954 1001 0
 ss_setState 0 4 1002 1003 1004 1074 1 ss_error 1 2065
@@ -22,8 +22,8 @@ initNode 0 2 1076 1089 0
 initRootNode 0 0 0
 genChildren 0 6 1109 1111 1112 1218 1219 1220 5 releaseNodes 1 1220 rng_showstate 2 1218 2021 rng_spawn 2 1218 1219 ss_push 2 1219 1220 ss_topPosn 1 1220
 releaseNodes 0 1 1226 3 ss_localDepth 1 1259 ss_release 1 1259 ss_setState 1 1259
-cb_init 0 0 0
-cbarrier_wait 0 0 0
+cb_init 0 2 2015 2026 0
+cbarrier_wait 0 6 1279 1280 1281 1282 1307 2015 0
 cbarrier_cancel 0 1 2015 0
 parTreeSearch 0 0 8 genChildren 3 1413 1450 1515 releaseNodes 1 1515 ss_acquire 1 1515 ss_localDepth 1 1515 ss_pop 1 1515 ss_setState 1 1515 ss_steal 1 1515 ss_top 1 1515
 showStats 0 1 1519 0

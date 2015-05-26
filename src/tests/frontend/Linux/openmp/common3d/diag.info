@@ -60,13 +60,13 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 4
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 56 6 len=14 default_config_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 56 197  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 73 6 len=12 setup_config_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0UL, 0, 1, 1053281035032759841UL); default_config_npm(conf); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 77 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 102 30  ({  calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(1053281035032759735UL), (size_t)(1053281035032759771UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 102 30  ({  calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(1053281035032759735UL), (size_t)(1053281035032759771UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 102 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 120 17 ({ calling_npm("usage", 0UL, 0, 1, 1053281035032759843UL); usage_npm(argv); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 120 17 ({ calling_npm("usage", 0); usage_npm(argv); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 120 27 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 125 55 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 74 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 74 10 
@@ -81,13 +81,13 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 4
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 56 6 len=14 default_config_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 56 197  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 73 6 len=12 setup_config_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0UL, 0, 1, 1053281035032759841UL); default_config_npm(conf); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 77 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 77 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 102 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 8, 0UL, ____alias_loc_id_0, 2, (size_t)(1053281035032759735UL), (size_t)(1053281035032759771UL)); (parse_source)(optarg, ____chimes_arg1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 102 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 8, ____alias_loc_id_0, 0UL, 2, (size_t)(1053281035032759735UL), (size_t)(1053281035032759771UL)); (parse_source)(optarg, ____chimes_arg1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 102 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 120 17 ({ calling_npm("usage", 0UL, 0, 1, 1053281035032759843UL); usage_npm(argv); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 120 17 ({ calling_npm("usage", 0); usage_npm(argv); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 120 27 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 125 37  ({  calling((void*)getNumCUDADevices, 13, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 125 55 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 74 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common3d.cpp 74 10 

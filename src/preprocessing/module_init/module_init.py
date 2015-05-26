@@ -25,6 +25,8 @@ class ModuleInitConfig(object):
         self.calls_filename = None
         self.locs_filename = None
         self.fptrs_loaded_filename = None
+        self.static_merge_filename = None
+        self.dynamic_merge_filename = None
 
     def check(self):
         if self.input_filename is None:
@@ -78,6 +80,19 @@ class ModuleInitConfig(object):
         if self.fptrs_loaded_filename is None:
             print('Missing fptrs loaded filename')
             usage()
+        if self.static_merge_filename is None:
+            print('Static merge filename')
+            usage()
+        if self.dynamic_merge_filename is None:
+            print('Dynamic merge filename')
+            usage()
+
+
+class Merge(object):
+    def __init__(self, callee_name, return_alias, param_aliases):
+        self.callee_name = callee_name
+        self.return_alias = return_alias
+        self.param_aliases = param_aliases
 
 
 class ChangeLocVars(object):
@@ -341,6 +356,19 @@ def get_structs(structs_filename):
     return structs
 
 
+def get_merges(filename):
+    merges = []
+    fp = open(filename, 'r')
+    for line in fp:
+        tokens = line.split()
+        callee_name = tokens[0]
+        return_alias = tokens[1]
+        param_aliases = tokens[2:]
+        merges.append(Merge(callee_name, return_alias, param_aliases))
+    fp.close()
+    return merges
+
+
 def write_global(g, func_name, var_label):
     output_file.write('    ' + func_name + '("' + var_label + '|' + g.name + '", "' +
                       g.full_type + '", (void *)(&' + g.name + '), ' +
@@ -381,6 +409,15 @@ def write_possible_changes(fp, possible_aliases_changed, module_id_str):
             fp.write(', ' + get_alias_str(module_id_str, a))
 
 
+def write_merges(output_file, merges):
+    for merge in merges:
+        output_file.write(',\n        "' + merge.callee_name + '", ' +
+                          merge.return_alias + 'UL, (int)' +
+                          str(len(merge.param_aliases)))
+        for alias in merge.param_aliases:
+            output_file.write(', ' + alias + 'UL')
+
+
 def usage():
     print('usage: python module_init.py ' +
           '-i input-file ' +
@@ -399,7 +436,9 @@ def usage():
           '-n npm-file ' +
           '-d calls-filename ' + 
           '-h locs-filename ' +
-          '-j fptrs-loaded-filename')
+          '-j fptrs-loaded-filename ' +
+          '-ms static-merge-filename ' +
+          '-md dynamic-merge-filename')
     sys.exit(1)
 
 
@@ -441,6 +480,10 @@ def configure(cfg, argv):
             cfg.locs_filename = argv[index + 1]
         elif t == '-j':
             cfg.fptrs_loaded_filename = argv[index + 1]
+        elif t == '-ms':
+            cfg.static_merge_filename = argv[index + 1]
+        elif t == '-md':
+            cfg.dynamic_merge_filename = argv[index + 1]
         else:
             print('Unrecognized command line argument "' + t + '"')
             sys.exit(1)
@@ -468,6 +511,8 @@ if __name__ == '__main__':
     callsites = get_callsites(cfg.calls_filename)
     change_loc_vars = get_change_locs(cfg.locs_filename)
     fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
+    static_merges = get_merges(cfg.static_merge_filename)
+    dynamic_merges = get_merges(cfg.dynamic_merge_filename)
 
     n_change_locs = len(changed)
     for e in exits:
@@ -504,6 +549,8 @@ if __name__ == '__main__':
                       str(len(defined_npms)) + ', ' +
                       str(len(externs)) + ', ' +
                       str(len(defined_npms) + len(externs)) + ', ' +
+                      str(len(static_merges)) + ', ' +
+                      str(len(dynamic_merges)) + ', ' +
                       str(len(structs)))
 
     # We must traverse changed before exits to ensure consistency in the
@@ -618,6 +665,9 @@ if __name__ == '__main__':
             output_file.write(',\n        /* stack var */ "' + var.name + '", ' + str(len(var.causes)))
             for cause in var.causes:
                 output_file.write(', "' + cause + '"')
+
+    write_merges(output_file, static_merges)
+    write_merges(output_file, dynamic_merges)
 
     output_file.write(');\n')
 

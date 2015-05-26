@@ -36,19 +36,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -84,7 +83,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2413,7 +2412,7 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(6519850416441441789UL, 5, 1, 0, 2, 0, 0, 0, 2,
+    init_module(6519850416441441789UL, 5, 1, 0, 2, 0, 0, 0, 0, 0, 2,
                            &____alias_loc_id_0, (unsigned)11, (unsigned)0, (6519850416441441789UL + 1UL), (6519850416441441789UL + 2UL), (6519850416441441789UL + 3UL), (6519850416441441789UL + 4UL), (6519850416441441789UL + 5UL), (6519850416441441789UL + 6UL), (6519850416441441789UL + 7UL), (6519850416441441789UL + 8UL), (6519850416441441789UL + 9UL), (6519850416441441789UL + 10UL), (6519850416441441789UL + 27UL),
                            &____alias_loc_id_1, (unsigned)11, (unsigned)0, (6519850416441441789UL + 1UL), (6519850416441441789UL + 2UL), (6519850416441441789UL + 3UL), (6519850416441441789UL + 4UL), (6519850416441441789UL + 5UL), (6519850416441441789UL + 6UL), (6519850416441441789UL + 7UL), (6519850416441441789UL + 8UL), (6519850416441441789UL + 9UL), (6519850416441441789UL + 11UL), (6519850416441441789UL + 27UL),
                              (6519850416441441789UL + 9UL), (6519850416441441789UL + 27UL),

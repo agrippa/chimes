@@ -22,9 +22,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 7 5 len=3 bar_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 7 127  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 11 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 64 ({ calling_npm("bar", 0UL, 0, 1, 0UL); bar_npm(a); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 78 ({ calling_npm("foo", 0UL, 0, 1, 0UL); foo_npm(3 + ____chimes_unroll_var_0); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 78 ({ calling_npm("foo", 0); foo_npm(3 + ____chimes_unroll_var_0); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 109 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 15 29 
@@ -37,9 +37,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 7 5 len=3 bar_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 7 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 11 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 64 ({ calling_npm("bar", 0UL, 0, 1, 0UL); bar_npm(a); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 78 ({ calling_npm("foo", 0UL, 0, 1, 0UL); foo_npm(3 + ____chimes_unroll_var_0); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 78 ({ calling_npm("foo", 0); foo_npm(3 + ____chimes_unroll_var_0); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 14 109 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/nested_indirect_call.cpp 15 29 
