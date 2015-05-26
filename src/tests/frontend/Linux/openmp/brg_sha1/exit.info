@@ -1,0 +1,11 @@
+rng_init 0 0 1 sha1_end 2 3 63
+sha1_begin 0 2 67 99 0
+sha1_hash 0 10 100 101 102 103 104 105 106 107 109 227 1 sha1_compile 1 227
+sha1_end 0 8 228 229 230 231 232 234 397 398 1 sha1_compile 1 398
+rng_spawn 0 0 2 sha1_end 2 402 444 sha1_hash 2 402 403
+rng_rand 0 3 446 447 448 0
+rng_nextrand 0 2 487 488 1 sha1_end 2 486 530
+rng_showstate 550 2 531 532 0
+rng_showtype 0 2 553 554 0
+sha1_compile 0 8 571 572 573 574 575 576 577 4883 0
+sha1 0 0 1 sha1_end 2 4892 4910

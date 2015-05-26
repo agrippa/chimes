@@ -1,0 +1,171 @@
+malloc omp_global_lock_alloc 57 37 3 0
+omp_init_lock omp_global_lock_alloc 58 3 0 3
+memset impl_getName 293 3 0 14 0 0
+sprintf impl_paramsToStr 300 10 0 102 2033
+omp_get_num_threads impl_paramsToStr 301 84 0
+sprintf impl_paramsToStr 301 24 0 102 2034 0
+sprintf impl_paramsToStr 301 142 0 102 2035 0
+sprintf impl_paramsToStr 301 252 0 102 2036 0
+sprintf impl_paramsToStr 301 0 0 102 2036 0
+sprintf impl_paramsToStr 301 0 0 102 2038
+atoi impl_parseParam 324 19 0 145
+atoi impl_parseParam 326 17 0 145
+atoi impl_parseParam 331 15 0 145
+printf impl_helpMessage 361 5 0 2039
+printf impl_helpMessage 362 5 0 2040
+printf impl_helpMessage 363 5 0 2041
+exit impl_abort 380 3 0 0
+omp_set_lock ss_mkEmpty 422 3 0 166
+omp_unset_lock ss_mkEmpty 427 3 0 166
+omp_get_thread_num ss_error 432 33 0
+printf ss_error 432 3 0 2042 0 197
+exit ss_error 433 3 0 0
+omp_get_thread_num ss_init 440 86 0
+printf ss_init 440 19 0 2044 0 297 0
+malloc ss_init 446 26 221 0
+omp_get_thread_num ss_init 455 20 0
+printf ss_init 454 5 0 2035 0 0
+ss_error ss_init 456 5 0 2046
+omp_global_lock_alloc ss_init 458 16 221
+omp_get_thread_num ss_init 459 59 0
+printf ss_init 459 19 0 2047 0 221
+ss_mkEmpty ss_init 473 3 0 297
+ss_error ss_push 479 32 0 2048
+rng_showstate ss_push 481 53 325 382 2021
+omp_get_thread_num ss_push 481 149 0
+printf ss_push 481 95 0 2049 0 0 325 0
+memcpy ss_push 484 3 0 343 382 0
+ss_error ss_top 494 28 0 2050
+rng_showstate ss_top 497 53 444 432 2021
+omp_get_thread_num ss_top 497 160 0
+printf ss_top 497 95 0 2051 0 0 444 0 0
+ss_error ss_pop 507 28 0 2050
+rng_showstate ss_pop 511 53 502 490 2021
+omp_get_thread_num ss_pop 511 160 0
+printf ss_pop 511 95 0 2051 0 0 502 0 0
+ss_error ss_topPosn 520 28 0 2054
+omp_set_lock ss_release 532 3 0 558
+ss_error ss_release 533 107 0 2049
+omp_unset_lock ss_release 540 3 0 558
+omp_set_lock ss_acquire 548 3 0 607
+omp_unset_lock ss_acquire 555 3 0 607
+ss_error ss_steal 567 34 0 2041
+ss_error ss_steal 570 36 0 2057
+omp_get_thread_num ss_steal 574 57 0
+printf ss_steal 574 20 0 2050 0 0
+omp_set_lock ss_steal 577 3 0 872
+omp_get_thread_num ss_steal 584 57 0
+printf ss_steal 584 20 0 2050 0 0
+ss_error ss_steal 591 55 0 2060
+omp_unset_lock ss_steal 608 3 0 872
+omp_get_thread_num ss_steal 610 57 0
+printf ss_steal 610 20 0 2050 0 0
+memcpy ss_steal 621 5 0 845 872 0
+rng_showstate ss_steal 629 43 853 845 2021
+omp_get_thread_num ss_steal 630 16 0
+printf ss_steal 629 85 0 2062 0 0 0 853 0 0 0 872
+omp_get_thread_num ss_steal 647 7 0
+printf ss_steal 646 7 0 2063 0 0 0 0 0 0
+omp_get_num_threads findwork 656 19 0
+omp_get_thread_num findwork 657 10 0
+omp_get_num_threads findwork 657 38 0
+uts_wctime ss_initState 674 17 0
+omp_get_thread_num ss_initState 680 65 0
+printf ss_initState 680 19 0 2064 0 0 0
+ss_error ss_setState 687 33 0 2065
+uts_wctime ss_setState 691 10 0
+omp_get_thread_num ss_setState 715 71 0
+printf ss_setState 715 19 0 2066 0 0 0 0
+uts_initRoot initRootNode 912 3 0 1100 0
+uts_numChildren genChildren 959 17 0 1218
+uts_childType genChildren 960 15 0 1218
+ss_topPosn genChildren 965 36 0 1220
+rng_showstate genChildren 965 86 1150 1218 2021
+omp_get_thread_num genChildren 966 12 0
+printf genChildren 965 133 0 2067 0 0 1150 0 0
+rng_spawn genChildren 986 9 0 1218 1219 0
+ss_push genChildren 988 7 0 1220 1219
+releaseNodes genChildren 989 7 0 1220
+ss_localDepth releaseNodes 1098 9 0 1259
+ss_setState releaseNodes 1100 7 0 1259 0
+ss_release releaseNodes 1101 7 0 1259 0
+ss_setState releaseNodes 1104 9 0 1259 0
+cbarrier_cancel releaseNodes 1105 9 0
+ss_setState releaseNodes 1114 7 0 1259 0
+omp_global_lock_alloc cb_init 1007 11 1289
+omp_get_thread_num cb_init 1008 56 0
+printf cb_init 1008 19 0 2050 0 1289
+omp_set_lock cb_init 1012 3 0 1289
+omp_unset_lock cb_init 1016 3 0 1289
+omp_get_thread_num cbarrier_wait 1023 12 0
+omp_set_lock cbarrier_wait 1025 3 0 1289
+omp_get_num_threads cbarrier_wait 1030 19 0
+omp_get_thread_num cbarrier_wait 1041 14 0
+omp_unset_lock cbarrier_wait 1042 3 0 1289
+omp_get_thread_num cbarrier_wait 1044 81 0
+printf cbarrier_wait 1044 20 0 2070 0 0 0
+omp_get_thread_num cbarrier_wait 1059 94 0
+printf cbarrier_wait 1059 20 0 2071 0 0 0 0
+omp_set_lock cbarrier_wait 1064 3 0 1289
+omp_get_thread_num cbarrier_wait 1072 16 0
+omp_unset_lock cbarrier_wait 1073 3 0 1289
+omp_get_thread_num cbarrier_wait 1075 81 0
+printf cbarrier_wait 1075 20 0 2070 0 0 0
+initNode parTreeSearch 1131 3 0 1413
+ss_localDepth parTreeSearch 1136 22 0 1515
+omp_get_thread_num parTreeSearch 1137 50 0
+fprintf parTreeSearch 1137 5 0 1432 2036 0 0
+ss_setState parTreeSearch 1141 7 0 1515 0
+ss_top parTreeSearch 1144 16 1450 1515
+genChildren parTreeSearch 1147 2 0 1450 1413 1515
+ss_pop parTreeSearch 1156 9 0 1515
+releaseNodes parTreeSearch 1161 7 0 1515
+ss_localDepth parTreeSearch 1162 20 0 1515
+ss_acquire parTreeSearch 1168 9 0 1515 0
+ss_setState parTreeSearch 1177 7 0 1515 0
+findwork parTreeSearch 1178 18 0 0
+ss_steal parTreeSearch 1181 14 0 1515 0 0
+findwork parTreeSearch 1182 30 0 0
+ss_setState parTreeSearch 1194 5 0 1515 0
+cbarrier_wait parTreeSearch 1195 12 0
+checkpoint parTreeSearch 1199 5 0
+omp_get_num_threads showStats 1236 18 0
+printf showStats 1271 5 0 2075
+uts_showStats showStats 1274 3 0 0 0 0 0 0 0
+printf showStats 1278 7 0 2077 0 0 0
+printf showStats 1280 7 0 2078 0
+printf showStats 1283 5 0 2050 0
+printf showStats 1284 5 0 2080 0 0 0
+printf showStats 1286 5 0 2035 0 0
+printf showStats 1293 7 0 2082 0
+printf showStats 1294 7 0 2083 0
+printf showStats 1295 7 0 2083 0
+printf showStats 1296 7 0 2083 0
+printf showStats 1297 7 0 2083 0
+printf showStats 1298 7 0 2083 0
+printf showStats 1299 7 0 2083 0
+printf showStats 1300 7 0 2046 0 0
+printf showStats 1302 7 0 2046 0 0
+printf showStats 1304 7 0 2046 0 0
+printf showStats 1306 7 0 2046 0 0
+printf showStats 1308 7 0 2044 0 0 0
+printf showStats 1311 7 0 2094
+uts_parseParams main 1371 3 0 0 2012
+cb_init main 1379 3 0
+omp_get_thread_num main 1388 9 0
+uts_printParams main 1389 7 0
+malloc main 1412 56 1307 0
+omp_get_thread_num main 1412 16 0
+omp_get_thread_num main 1413 36 0
+ss_init main 1414 5 0 1307 0
+omp_get_thread_num main 1418 9 0
+initRootNode main 1419 7 0 1945 0
+ss_push main 1420 7 0 1307 1945
+checkpoint main 1428 5 0
+ss_initState main 1432 5 0 1307
+uts_wctime main 1432 28 0
+parTreeSearch main 1433 5 0 1307
+uts_wctime main 1434 10 0
+checkpoint main 1446 5 0
+omp_get_thread_num main 1450 9 0
+showStats main 1451 7 0 0

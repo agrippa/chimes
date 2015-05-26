@@ -1,0 +1,5 @@
+save_text 0 DOES_NOT
+init_data 0 DOES_NOT
+usage 0 DOES_NOT
+default_config 0 DOES_NOT
+setup_config 0 MAY default_config 75 5 parse_source 97 17 usage 115 17 getNumCUDADevices 120 23

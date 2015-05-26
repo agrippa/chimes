@@ -1,0 +1,1 @@
+/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp 609 9 : { 137, 515, 536, 538, 727, 906, 907, 908, 909, 910, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 1362, 1371, 1668, 1670, 1676, 1678, 1680, 1686, 1688 } prop:call:checkpoint { pop_next_tile { 1362 }, random_init { 627 }, task_func { 1362 } }

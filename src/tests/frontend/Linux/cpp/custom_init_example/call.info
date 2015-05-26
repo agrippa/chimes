@@ -1,0 +1,5 @@
+register_custom_init_handler main 14 5 0 54 58
+malloc main 16 21 27 0
+checkpoint main 19 5 0
+wait_for_checkpoint main 20 5 0
+__assert_fail main 22 45 0 55 56 0 57

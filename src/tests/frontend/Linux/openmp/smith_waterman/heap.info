@@ -1,0 +1,28 @@
+321 47 345 malloc
+449 31 627 malloc
+450 31 627 malloc
+476 21 137 malloc
+483 20 137 malloc
+497 24 536 malloc 1 0
+499 27 538 malloc
+506 24 536 malloc 1 0
+508 27 538 malloc
+515 25 515 malloc 1 0
+517 28 727 malloc 1 0
+518 71 729 malloc
+530 21 137 malloc
+531 22 137 malloc
+567 41 1362 malloc 0 1 _tiles_to_run q base
+568 26 1371 malloc 0 1 _tile
+575 41 1362 malloc 0 1 _tiles_to_run q base
+576 26 1371 malloc 0 1 _tile
+619 43 729 free
+621 3 727 free
+623 2 515 free
+625 36 538 free
+627 2 536 free
+629 36 538 free
+631 2 536 free
+633 2 137 free
+635 2 627 free
+636 2 627 free

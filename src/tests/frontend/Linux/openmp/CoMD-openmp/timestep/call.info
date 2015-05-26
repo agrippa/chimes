@@ -1,0 +1,30 @@
+profileStart timestep 41 12 0 0
+advanceVelocity timestep 42 7 0 21 0 0
+profileStop timestep 43 12 0 0
+checkpoint timestep 46 7 0
+profileStart timestep 49 12 0 0
+advancePosition timestep 50 7 0 21 0 0
+profileStop timestep 51 12 0 0
+checkpoint timestep 54 7 0
+profileStart timestep 57 12 0 0
+redistributeAtoms timestep 58 7 0 21
+profileStop timestep 59 12 0 0
+checkpoint timestep 62 7 0
+profileStart timestep 65 12 0 0
+computeForce timestep 66 7 0 21
+profileStop timestep 67 12 0 0
+checkpoint timestep 70 7 0
+profileStart timestep 73 12 0 0
+advanceVelocity timestep 74 7 0 21 0 0
+profileStop timestep 75 12 0 0
+checkpoint timestep 78 7 0
+kineticEnergy timestep 82 4 0 21
+updateLinkCells redistributeAtoms 170 4 0 401 401
+profileStart redistributeAtoms 172 9 0 0
+haloExchange redistributeAtoms 173 4 0 401 399
+profileStop redistributeAtoms 174 9 0 0
+sortAtomsInCell redistributeAtoms 177 58 0 401 401 0
+anon computeForce 89 4 0 445
+profileStart kineticEnergy 147 9 0 0
+addRealParallel kineticEnergy 148 4 0 447 454 0
+profileStop kineticEnergy 149 9 0 0

@@ -1,0 +1,3 @@
+omp_get_thread_num main 14 44 0
+printf main 14 13 0 31 0 0
+checkpoint main 15 13 0

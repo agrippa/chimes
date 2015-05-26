@@ -257,6 +257,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -q ${INFO_FILE_PREFIX}.quick \
             -n ${INFO_FILE_PREFIX}.npm \
             -e ${INFO_FILE_PREFIX}.locs \
+            -g ${INFO_FILE_PREFIX}.list_of_externs \
+            -j ${INFO_FILE_PREFIX}.fptrs \
             ${INTERMEDIATE_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include -I${STDDEF_FOLDER} $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -268,7 +270,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
-    FUNCTION_PTR_FILE=${NAME}.extern_ptrs.${EXT}
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 
@@ -282,11 +283,13 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Adding NPM function declarations and bodies to $FIRSTPRIVATE_FILE
     cd ${NVCC_WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${FIRSTPRIVATE_FILE} ${NPM_FILE} \
-        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls
+        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
+        -e ${INFO_FILE_PREFIX}.list_of_externs 
 
     echo Adding NPM conditionals to ${NPM_FILE}
     cd ${NVCC_WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
-        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls
+        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
+        ${INFO_FILE_PREFIX}.list_of_externs
 
     echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
     cd ${NVCC_WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
@@ -295,24 +298,21 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
         ${CHIMES_DEF} ${DEFINES}
 
-    echo Adding NPM function pointer declarations to ${HARDCODED_CALLS_FILE}
-    cd ${NVCC_WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${HARDCODED_CALLS_FILE} \
-      ${FUNCTION_PTR_FILE} -e ${INFO_FILE_PREFIX}.externs
-
-    echo Setting up module initialization for ${FUNCTION_PTR_FILE}
-    cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} -i ${FUNCTION_PTR_FILE} -o ${FINAL_FILE} \
+    echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
+    cd ${NVCC_WORK_DIR} && python ${MODULE_INIT} -i ${HARDCODED_CALLS_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
         -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
         -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
         -t ${INFO_FILE_PREFIX}.tree.info -l ${INFO_FILE_PREFIX}.lines.info \
         -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
-        -e ${INFO_FILE_PREFIX}.externs -n ${INFO_FILE_PREFIX}.npm.decls \
-        -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs
+        -e ${INFO_FILE_PREFIX}.list_of_externs -n ${INFO_FILE_PREFIX}.npm.decls \
+        -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
+        -j ${INFO_FILE_PREFIX}.fptrs
 
-    echo Postprocessing ${FINAL_FILE}
-    cd ${NVCC_WORK_DIR} && ${GXX} -E -I${CUDA_HOME}/include -include stddef.h \
-        ${CHIMES_DEF} ${DEFINES} ${FINAL_FILE} -o ${FINAL_FILE}.post && mv \
-        ${FINAL_FILE}.post ${FINAL_FILE}
+#     echo Postprocessing ${FINAL_FILE}
+#     cd ${NVCC_WORK_DIR} && ${GXX} -E -I${CUDA_HOME}/include -include stddef.h \
+#         ${CHIMES_DEF} ${DEFINES} ${FINAL_FILE} -o ${FINAL_FILE}.post
+#     mv ${NVCC_WORK_DIR}/${FINAL_FILE}.post ${NVCC_WORK_DIR}/${FINAL_FILE}
 
     FINAL_FILE=$(dirname ${INTERMEDIATE_FILE})/${FINAL_FILE}
 
@@ -322,6 +322,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cp ${FINAL_FILE} ${INTERMEDIATE_FILE}
     cat ${ENV_FILE} ${POST_CMD_FILE} > ${ENV_POST_FILE}
     chmod +x ${ENV_POST_FILE}
+
+    echo "Finishing NVCC commands"
     cd ${NVCC_WORK_DIR} && ${ENV_POST_FILE}
 
     if [[ ! -f ${OBJ_FILE} ]]; then
@@ -329,6 +331,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
         exit 1
     fi
 done
+
+echo Finishing
 
 for f in ${LAST_FILES[@]}; do
     echo $f

@@ -2842,7 +2842,7 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
     if (old_to_new->find(dead->get_address()) != old_to_new->end()) {
         ptr_and_size *existing = old_to_new->at(dead->get_address());
         assert(existing->get_ptr() == live->get_address());
-        assert(existing->get_size() == live->get_size());
+        existing->update_size(live->get_size());
     } else {
         old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
                     new ptr_and_size(live->get_address(), live->get_size())));

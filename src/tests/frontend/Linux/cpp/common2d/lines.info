@@ -1,0 +1,2 @@
+/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 17 : { 285, 286, 287, 288, 406, 423 } prop:call:parse_source { default_config { 406 }, parse_source { 308, 336 }, usage { 408 } }
+/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 23 : { 285, 286, 287, 288, 406, 423 } prop:call:getNumCUDADevices { default_config { 406 }, parse_source { 308, 336 }, usage { 408 } }

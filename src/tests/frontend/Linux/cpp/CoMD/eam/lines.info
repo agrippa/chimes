@@ -1,0 +1,12 @@
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 8 : { 1, 2, 3, 4, 22 } prop:call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 28 : { 90, 91, 92, 93, 94, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 114, 115, 117, 118, 119, 156 } prop:call:initForceHaloExchange { getNeighborBoxes { 95, 156 }, initForceHaloExchange { 156 }, interpolate { 110, 111, 112, 113, 120, 121, 156 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 23 : { 90, 91, 92, 93, 94, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 114, 115, 117, 118, 119, 156 } prop:call:getNeighborBoxes { getNeighborBoxes { 95, 156 }, initForceHaloExchange { 156 }, interpolate { 110, 111, 112, 113, 120, 121, 156 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 9 : { 90, 91, 92, 93, 94, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 114, 115, 117, 118, 119, 156 } prop:call:profileStart { getNeighborBoxes { 95, 156 }, initForceHaloExchange { 156 }, interpolate { 110, 111, 112, 113, 120, 121, 156 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 23 : { 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 156 } prop:call:getNeighborBoxes { getNeighborBoxes { 95, 156 }, interpolate { 136, 137, 156 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 4 : { 1022, 1023 } prop:call:destroyHaloExchange { destroyHaloExchange { 1033 }, destroyInterpolationObject { 1033 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1587 } prop:call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1588 } prop:call:bcastParallel { bcastParallel { 1588 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1679 } direct:call:bcastInterpolationObject { bcastInterpolationObject { 1679 }, bcastParallel { 1588 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 1851 } direct:call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 1852 } prop:call:bcastParallel { bcastParallel { 1852 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 1853, 1892, 1894 } prop:call:bcastParallel { bcastParallel { 1919 } }

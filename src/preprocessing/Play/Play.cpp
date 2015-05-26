@@ -594,11 +594,15 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
             return false;
         }
     } else {
+        if (var->getName().str() == "fatbinData") {
+            return false;
+        }
         /*
          * TODO named global constants should be simpler to handle, but until I
          * have an example of them to verify that on I'll hold off on adding
          * support
          */
+        llvm::errs() << "\"" << var->getName().str() << "\"\n";
         llvm::errs() << *var << "\n";
         assert(false);
     }
@@ -686,6 +690,7 @@ void Play::findGlobalsAndConstants(Module &M, const char *globals_filename,
     std::set<std::string> unsupported_sections;
     unsupported_sections.insert("__NV_CUDA,__fatbin");
     unsupported_sections.insert("__NV_CUDA,__nv_fatbin");
+    unsupported_sections.insert(".nvFatBinSegment");
 
     for (Module::global_iterator i = M.global_begin(), e = M.global_end();
             i != e; i++) {
@@ -693,7 +698,10 @@ void Play::findGlobalsAndConstants(Module &M, const char *globals_filename,
         if (GlobalVariable *var = dyn_cast<GlobalVariable>(G)) {
 
             if (var->isConstant()) {
-                if (unsupported_sections.find(std::string(var->getSection())) ==
+                std::string section_str(var->getSection());
+                llvm::errs() << "\"" << section_str << "\"\n";
+                if (section_str.find("@fatbinData") == 0 ||
+                        unsupported_sections.find(section_str) ==
                         unsupported_sections.end()) {
                     if (dumpConstant(var, constants_fp, constant_index, layout)) {
                         constant_index++;
