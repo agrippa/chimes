@@ -130,6 +130,16 @@ class FrontendTest(object):
         self.extra_cli_args = '' if extra_cli_args is None else extra_cli_args
 
 
+def set_custom_compiler(CONFIG):
+    if os.path.isfile('/opt/apps/gcc/4.8.2/bin/g++'):
+        CONFIG.set_custom_compiler('/opt/apps/gcc/4.8.2/bin/g++')
+    elif os.path.isfile('/usr/local/bin/g++'):
+        CONFIG.set_custom_compiler('/usr/local/bin/g++')
+    else:
+        print('Could not detect compatible compiler')
+        sys.exit(1)
+
+
 def get_platform_directory():
     """
     Get the platform-specific subdirectory for the frontend tests.
