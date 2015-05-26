@@ -24,6 +24,7 @@ void *serialize_alias_groups(map<size_t, vector<size_t> *> *aliased_groups,
     }
 
     void *buffer = malloc(len);
+    assert(buffer);
     unsigned char *iter = (unsigned char *)buffer;
 
     memcpy(iter, &n_aliased_groups, sizeof(n_aliased_groups));

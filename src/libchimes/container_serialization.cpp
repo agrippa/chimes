@@ -8,6 +8,7 @@ void *serialize_containers(map<size_t, size_t> *contains,
         size_t *out_len) {
     size_t len = sizeof(unsigned) + (contains->size() * 2 * sizeof(size_t));
     void *buffer = malloc(len);
+    assert(buffer);
     unsigned char *iter = (unsigned char *)buffer;
 
     unsigned n_contains_mappings = contains->size();

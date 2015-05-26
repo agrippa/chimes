@@ -23,6 +23,7 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
         uint64_t *out_len) {
     unsigned char *serialization =
         (unsigned char *)malloc(initial_serialization_size);
+    assert(serialization);
     register uint64_t serialization_capacity = initial_serialization_size;
     register uint64_t serialization_used = 0;
 
@@ -53,6 +54,7 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
      * dump.
      */
     serialization = (unsigned char *)realloc(serialization, serialization_used);
+    assert(serialization);
     *out_len = serialization_used;
 
     return serialization;
@@ -63,6 +65,7 @@ unsigned char *serialize_program_stacks(
         uint64_t *out_len) {
     unsigned nthreads = thread_ctxs->size();
     unsigned char *serialized = (unsigned char *)malloc(sizeof(nthreads));
+    assert(serialized);
     uint64_t total_len = sizeof(nthreads);
     memcpy(serialized, &nthreads, sizeof(nthreads));
 
@@ -79,6 +82,7 @@ unsigned char *serialize_program_stacks(
         size_t new_len = total_len + sizeof(thread_id) +
             sizeof(stack_serialized_len) + stack_serialized_len;
         serialized = (unsigned char *)realloc(serialized, new_len);
+        assert(serialized);
 
         unsigned char *base = serialized + total_len;
         memcpy(base, &thread_id, sizeof(thread_id));
