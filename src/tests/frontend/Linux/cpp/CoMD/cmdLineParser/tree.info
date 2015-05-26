@@ -1,0 +1,9 @@
+addArg 0 DOES_NOT myOptionAlloc 102 8 lastOption 104 49
+myOptionAlloc 0 DOES_NOT dupString 51 14 dupString 52 17
+lastOption 0 DOES_NOT
+freeArgs 0 DOES_NOT myOptionFree 118 16
+myOptionFree 0 DOES_NOT
+printArgs 0 DOES_NOT
+processArgs 0 DOES_NOT findOption 180 11
+findOption 0 DOES_NOT
+dupString 0 DOES_NOT

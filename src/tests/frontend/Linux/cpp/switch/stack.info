@@ -1,0 +1,5 @@
+/home/jmg3/num-debug/src/examples/cpp/switch.cpp foo|a|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/switch.cpp bar|b|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/switch.cpp main|argc|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/switch.cpp main|argv|0 " i8** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/cpp/switch.cpp main|d|0 " i32 " 32 0 0 1 checkpoint

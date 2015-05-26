@@ -1,0 +1,22 @@
+sha1_begin rng_init 62 3 0 3
+sha1_hash rng_init 63 3 0 4 0 3
+sha1_end rng_init 64 3 0 63 3
+memcpy sha1_hash 274 9 0 227 225 0
+anon sha1_hash 276 0 0 0
+sha1_compile sha1_hash 277 9 0 227
+memcpy sha1_hash 280 5 0 227 225 0
+anon sha1_end 291 0 0 0
+sha1_compile sha1_end 306 9 0 398
+sha1_compile sha1_end 321 5 0 398
+sha1_begin rng_spawn 77 2 0 402
+sha1_hash rng_spawn 78 2 0 443 0 402
+sha1_hash rng_spawn 79 2 0 403 0 402
+sha1_end rng_spawn 80 2 0 444 402
+sha1_begin rng_nextrand 99 2 0 486
+sha1_hash rng_nextrand 100 2 0 530 0 486
+sha1_end rng_nextrand 101 2 0 530 486
+sprintf rng_showstate 112 3 0 550 4913 0 0
+sprintf rng_showtype 118 10 0 569 4914 0
+sha1_begin sha1 332 5 0 4892
+sha1_hash sha1 332 21 0 4911 0 4892
+sha1_end sha1 332 47 0 4910 4892

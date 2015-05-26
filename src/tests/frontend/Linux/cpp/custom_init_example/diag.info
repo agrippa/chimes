@@ -1,0 +1,40 @@
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 6 len=7 handler_npm
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 21 len=6 malloc_wrapper
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 38 , 18396799246570390418UL, 0, 1, (int)sizeof(struct _foo), 0
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 21 len=6 malloc_wrapper
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 38 , 18396799246570390418UL, 0, 1, (int)sizeof(struct _foo), 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 25 const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(18396799246570390404UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 11 1 rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 23 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(18396799246570390437UL)); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 26 const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(18396799246570390404UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 168 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 9 5  foo *f_ptr;  f_ptr = ((foo *)ptr) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 9 28 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18396799246570390437UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 171 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 5  foo *f;  f = ((foo *)malloc_wrapper(sizeof(foo), 18396799246570390418UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 107 
+InsertText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 5  call_lbl_2: 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 6 len=7 handler_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 167  ;  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 18 checkpoint_transformed(2, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 12 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 14 5   lbl_0: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 14 49 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 168  ; foo *f;
+ register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0);  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 6 len=7 handler_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 8 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 18 checkpoint_transformed(2, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 19 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 16 12 
+InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 14 5   lbl_0: 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 14 49 ; if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/custom_init_example.cpp 13 168  ; foo *f;
+ register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0);  if (____chimes_replaying) { goto lbl_0; }  

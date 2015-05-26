@@ -1,0 +1,13 @@
+doSteal " i32 " 32 0 0 
+chunkSize " i32 " 32 0 0 
+cbint " i32 " 32 0 0 
+pollint " i32 " 32 0 0 
+stats " i32 " 32 0 0 
+unbType " i32 " 32 0 0 
+debug_str " [1000 x i8] " 8000 0 0 
+stealStack " [32 x %struct.stealStack_t*] " 2048 0 0 
+cb_cancel " i32 " 32 0 0 
+cb_count " i32 " 32 0 0 
+cb_done " i32 " 32 0 0 
+cb_lock " %struct.omp_lock_t* " 64 1 0 
+startTime " [32 x double] " 2048 0 0 

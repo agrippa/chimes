@@ -1,0 +1,8 @@
+AtomsSt 0 nLocal "int" nGlobal "int" gid "int*" iSpecies "int*" r "[ 3 x double ]*" p "[ 3 x double ]*" f "[ 3 x double ]*" U "double*"
+BasePotentialSt 0
+DomainSt 0 procGrid "[ 3 x int ]" procCoord "[ 3 x int ]" globalMin "[ 3 x double ]" globalMax "[ 3 x double ]" globalExtent "[ 3 x double ]" localMin "[ 3 x double ]" localMax "[ 3 x double ]" localExtent "[ 3 x double ]"
+HaloExchangeSt 0
+LinkCellSt 0 gridSize "[ 3 x int ]" nLocalBoxes "int" nHaloBoxes "int" nTotalBoxes "int" localMin "[ 3 x double ]" localMax "[ 3 x double ]" boxSize "[ 3 x double ]" invBoxSize "[ 3 x double ]" nAtoms "int*" nbrBoxes "int**"
+SimFlatSt 0 nSteps "int" printRate "int" dt "double" domain "%struct.DomainSt*" boxes "%struct.LinkCellSt*" atoms "%struct.AtomsSt*" species "%struct.SpeciesDataSt*" ePotential "double" eKinetic "double" pot "%struct.BasePotentialSt*" atomExchange "%struct.HaloExchangeSt*"
+SpeciesDataSt 0 name "[ 3 x char ]" atomicNo "int" mass "double"
+TimerHandle 0

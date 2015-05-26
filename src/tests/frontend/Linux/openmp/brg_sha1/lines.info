@@ -1,0 +1,6 @@
+/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 63 3 : { 1, 2, 4, 5 } prop:call:sha1_hash { sha1_begin { 3 }, sha1_hash { 3, 4 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 276 0 : { 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 227 } prop:call:NULL { sha1_compile { 227 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 291 0 : { 228, 229, 230, 231, 232, 233, 234, 398 } prop:call:NULL { sha1_compile { 398 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 78 2 : { 399, 400, 401, 403 } direct:call:sha1_hash { sha1_begin { 402 }, sha1_hash { 402, 443 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 100 2 : { 485 } direct:call:sha1_hash { sha1_begin { 486 }, sha1_hash { 486, 530 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c 332 21 : { 4889, 4890, 4891 } direct:call:sha1_hash { sha1_begin { 4892 }, sha1_hash { 4892, 4911 } }

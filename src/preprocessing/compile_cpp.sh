@@ -253,7 +253,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
-    FUNCTION_PTR_FILE=${NAME}.extern_ptrs.${EXT}
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 

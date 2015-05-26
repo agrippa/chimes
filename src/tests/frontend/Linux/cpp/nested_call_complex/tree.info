@@ -1,0 +1,3 @@
+foo 0 DOES_NOT
+bar 0 DOES_NOT
+main 0 DOES bar 14 36 bar 14 75 foo 14 109 checkpoint 15 5

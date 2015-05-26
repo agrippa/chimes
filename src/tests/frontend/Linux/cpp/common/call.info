@@ -1,0 +1,47 @@
+gettimeofday seconds 47 13 0 1 2
+exp ricker_wavelet 58 56 0 0
+strchr parse_source 64 25 114 185 0
+fprintf parse_source 66 9 0 119 600
+exit parse_source 68 9 0 0
+strchr parse_source 71 26 173 114 0
+fprintf parse_source 73 9 0 119 600
+exit parse_source 75 9 0 0
+strchr parse_source 78 25 154 173 0
+fprintf parse_source 80 9 0 119 600
+exit parse_source 82 9 0 0
+atoi parse_source 89 14 0 185
+atoi parse_source 90 14 0 114
+atof parse_source 91 17 0 173
+atoi parse_source 92 14 0 154
+malloc config_sources 97 27 260 0
+fprintf config_sources 99 13 0 119 601
+exit config_sources 100 13 0 0
+fprintf config_sources 113 13 0 119 602
+exit config_sources 114 13 0 0
+fprintf config_sources 117 13 0 119 602
+exit config_sources 118 13 0 0
+fprintf config_sources 121 13 0 119 602
+exit config_sources 122 13 0 0
+malloc sample_sources 128 37 340 0
+fprintf sample_sources 130 9 0 119 601
+exit sample_sources 131 9 0 0
+malloc sample_sources 135 35 360 0
+fprintf sample_sources 137 13 0 119 601
+exit sample_sources 138 13 0 0
+ricker_wavelet sample_sources 140 9 0 360 0 0 0
+fprintf init_progress 148 9 0 119 606
+exit init_progress 149 9 0 0
+fprintf init_progress 153 9 0 119 607
+exit init_progress 154 9 0 0
+malloc init_progress 161 31 452 0
+__assert_fail init_progress 162 60 0 609 610 0 611
+fprintf init_progress 175 5 0 119 615 452
+fprintf update_progress 186 9 0 119 616
+exit update_progress 188 9 0 0
+fprintf update_progress 198 9 0 119 617
+exit update_progress 199 9 0 0
+fprintf update_progress 208 13 0 119 618
+fprintf update_progress 211 9 0 119 615 452
+update_progress finish_progress 222 5 0 0
+fprintf finish_progress 223 5 0 119 618
+free finish_progress 225 5 0 452

@@ -2,7 +2,7 @@
 #define LIBCHIMES_H
 
 #include <stddef.h>
-#include <stdio.h>
+// #include <stdio.h>
 
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);

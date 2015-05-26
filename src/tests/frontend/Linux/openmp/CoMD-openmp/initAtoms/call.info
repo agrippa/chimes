@@ -1,0 +1,45 @@
+malloc initAtoms 25 27 8 0
+malloc initAtoms 29 24 20 0
+malloc initAtoms 30 29 20 0
+malloc initAtoms 31 24 20 0
+malloc initAtoms 32 24 20 0
+malloc initAtoms 33 24 20 0
+malloc initAtoms 34 24 20 0
+zeroReal3 initAtoms 43 7 0 20
+zeroReal3 initAtoms 44 7 0 20
+zeroReal3 initAtoms 45 7 0 20
+free destroyAtoms 54 21 0 153
+free destroyAtoms 57 26 0 153
+free destroyAtoms 60 19 0 153
+free destroyAtoms 63 19 0 153
+free destroyAtoms 66 19 0 153
+free destroyAtoms 69 19 0 153
+free destroyAtoms 72 4 0 239
+memcpy createFccLattice 84 4 0 249 1318 0
+floor createFccLattice 94 19 0 0
+ceil createFccLattice 95 17 0 0
+putAtomInBox createFccLattice 100 0 0 504 504 0 0 0 0 0 0 0 0
+profileStart createFccLattice 116 9 0 0
+addIntParallel createFccLattice 117 4 0 504 504 0
+profileStop createFccLattice 118 9 0 0
+__assert_fail createFccLattice 120 66 0 1319 1320 0 1321
+computeVcm setVcm 128 4 0 719 566
+memset computeVcm 222 4 0 723 0 0
+memset computeVcm 223 4 0 724 0 0
+profileStart computeVcm 249 9 0 0
+addRealParallel computeVcm 250 4 0 723 724 0
+profileStop computeVcm 251 9 0 0
+sqrt setTemperature 170 25 0 0
+mkSeed setTemperature 171 26 0 0 0
+gasdev setTemperature 172 48 0 913
+gasdev setTemperature 173 48 0 913
+gasdev setTemperature 174 48 0 913
+memset setTemperature 180 4 0 914 0 0
+setVcm setTemperature 181 4 0 1183 914
+kineticEnergy setTemperature 182 4 0 1183
+sqrt setTemperature 185 25 0 0
+kineticEnergy setTemperature 196 4 0 1183
+mkSeed randomDisplacements 211 26 0 0 0
+lcg61 randomDisplacements 212 39 0 1200
+lcg61 randomDisplacements 213 39 0 1200
+lcg61 randomDisplacements 214 39 0 1200

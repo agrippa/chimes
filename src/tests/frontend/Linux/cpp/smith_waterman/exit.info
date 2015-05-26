@@ -1,0 +1,6 @@
+char_mapping 0 2 1 2 0
+print_matrix 0 5 25 26 27 28 29 0
+clear_whitespaces_do_mapping 0 6 81 82 83 84 85 123 0
+read_file 146 7 125 126 127 128 129 146 166 1 clear_whitespaces_do_mapping 1 146
+main 0 18 176 177 178 179 181 182 183 184 185 186 187 188 189 196 197 448 450 574 1 random_init 1 362
+random_init 0 5 524 525 526 527 556 0

@@ -11,6 +11,7 @@ class ptr_and_size {
                 size(set_size) { }
         void *get_ptr() { return ptr; }
         size_t get_size() { return size; }
+        void update_size(size_t s) { size = (s > size ? s : size); }
 };
 
 #endif
